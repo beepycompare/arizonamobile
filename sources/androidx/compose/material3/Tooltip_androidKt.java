@@ -1,133 +1,107 @@
 package androidx.compose.material3;
 
-import android.content.res.Configuration;
-import androidx.compose.foundation.layout.AlignmentLineKt;
-import androidx.compose.foundation.layout.Arrangement;
-import androidx.compose.foundation.layout.BoxKt;
-import androidx.compose.foundation.layout.BoxScopeInstance;
-import androidx.compose.foundation.layout.ColumnKt;
-import androidx.compose.foundation.layout.ColumnScopeInstance;
-import androidx.compose.foundation.layout.PaddingKt;
-import androidx.compose.foundation.layout.SizeKt;
 import androidx.compose.material3.tokens.ElevationTokens;
-import androidx.compose.material3.tokens.PlainTooltipTokens;
 import androidx.compose.material3.tokens.RichTooltipTokens;
-import androidx.compose.runtime.Applier;
-import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
-import androidx.compose.runtime.CompositionLocalKt;
-import androidx.compose.runtime.CompositionLocalMap;
-import androidx.compose.runtime.ProvidedValue;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
-import androidx.compose.runtime.Updater;
-import androidx.compose.runtime.internal.ComposableLambdaKt;
-import androidx.compose.ui.Alignment;
-import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
-import androidx.compose.ui.draw.CacheDrawScope;
-import androidx.compose.ui.draw.DrawResult;
-import androidx.compose.ui.geometry.InlineClassHelperKt;
-import androidx.compose.ui.geometry.Offset;
-import androidx.compose.ui.geometry.OffsetKt;
-import androidx.compose.ui.geometry.Rect;
-import androidx.compose.ui.geometry.Size;
-import androidx.compose.ui.graphics.AndroidPath_androidKt;
-import androidx.compose.ui.graphics.Color;
-import androidx.compose.ui.graphics.Path;
 import androidx.compose.ui.graphics.Shape;
-import androidx.compose.ui.graphics.drawscope.ContentDrawScope;
-import androidx.compose.ui.graphics.drawscope.DrawScope;
-import androidx.compose.ui.layout.LayoutCoordinates;
-import androidx.compose.ui.layout.LayoutCoordinatesKt;
-import androidx.compose.ui.layout.MeasurePolicy;
-import androidx.compose.ui.node.ComposeUiNode;
-import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
-import androidx.compose.ui.platform.CompositionLocalsKt;
-import androidx.compose.ui.text.TextStyle;
-import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.unit.DpSize;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import kotlin.Deprecated;
+import kotlin.DeprecationLevel;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Tooltip.android.kt */
-@Metadata(d1 = {"\u0000f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001ao\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\n2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0011H\u0007ø\u0001\u0000¢\u0006\u0004\b\u0012\u0010\u0013\u001a\u0093\u0001\u0010\u0014\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\u0003\u001a\u00020\u00042\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0010¢\u0006\u0002\b\u00112\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0010¢\u0006\u0002\b\u00112\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\u0011\u0010\u0019\u001a\r\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0011H\u0007ø\u0001\u0000¢\u0006\u0004\b\u001a\u0010\u001b\u001aH\u0010\u001c\u001a\u00020\u001d*\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010\u000b\u001a\u00020\n2\u0006\u0010\u0005\u001a\u00020\u00062\b\u0010%\u001a\u0004\u0018\u00010&H\u0003ø\u0001\u0000¢\u0006\u0004\b'\u0010(\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006)"}, d2 = {"PlainTooltip", "", "Landroidx/compose/material3/TooltipScope;", "modifier", "Landroidx/compose/ui/Modifier;", "caretSize", "Landroidx/compose/ui/unit/DpSize;", "shape", "Landroidx/compose/ui/graphics/Shape;", "contentColor", "Landroidx/compose/ui/graphics/Color;", "containerColor", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "shadowElevation", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "PlainTooltip-7QI4Sbk", "(Landroidx/compose/material3/TooltipScope;Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;JJFFLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "RichTooltip", "title", "action", "colors", "Landroidx/compose/material3/RichTooltipColors;", "text", "RichTooltip-yDvdmqw", "(Landroidx/compose/material3/TooltipScope;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;JLandroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/RichTooltipColors;FFLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "drawCaretWithPath", "Landroidx/compose/ui/draw/DrawResult;", "Landroidx/compose/ui/draw/CacheDrawScope;", "caretType", "Landroidx/compose/material3/CaretType;", "density", "Landroidx/compose/ui/unit/Density;", "configuration", "Landroid/content/res/Configuration;", "anchorLayoutCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "drawCaretWithPath-JKu-mZY", "(Landroidx/compose/ui/draw/CacheDrawScope;Landroidx/compose/material3/CaretType;Landroidx/compose/ui/unit/Density;Landroid/content/res/Configuration;JJLandroidx/compose/ui/layout/LayoutCoordinates;)Landroidx/compose/ui/draw/DrawResult;", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\u001al\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\n2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0011H\u0007¢\u0006\u0004\b\u0012\u0010\u0013\u001av\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0014\u001a\u00020\r2\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\n2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0011H\u0007¢\u0006\u0004\b\u0012\u0010\u0015\u001a\u0090\u0001\u0010\u0016\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\u0003\u001a\u00020\u00042\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0010¢\u0006\u0002\b\u00112\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0010¢\u0006\u0002\b\u00112\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\u0011\u0010\u001b\u001a\r\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0011H\u0007¢\u0006\u0004\b\u001c\u0010\u001d\u001a\u009a\u0001\u0010\u0016\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\u0003\u001a\u00020\u00042\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0010¢\u0006\u0002\b\u00112\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0010¢\u0006\u0002\b\u00112\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0014\u001a\u00020\r2\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\u0011\u0010\u001b\u001a\r\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0011H\u0007¢\u0006\u0004\b\u001c\u0010\u001e¨\u0006\u001f"}, d2 = {"PlainTooltipAndroid", "", "Landroidx/compose/material3/TooltipScope;", "modifier", "Landroidx/compose/ui/Modifier;", "caretSize", "Landroidx/compose/ui/unit/DpSize;", "shape", "Landroidx/compose/ui/graphics/Shape;", "contentColor", "Landroidx/compose/ui/graphics/Color;", "containerColor", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "shadowElevation", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "PlainTooltip", "(Landroidx/compose/material3/TooltipScope;Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;JJFFLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "maxWidth", "(Landroidx/compose/material3/TooltipScope;Landroidx/compose/ui/Modifier;JFLandroidx/compose/ui/graphics/Shape;JJFFLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "RichTooltipAndroid", "title", "action", "colors", "Landroidx/compose/material3/RichTooltipColors;", "text", "RichTooltip", "(Landroidx/compose/material3/TooltipScope;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;JLandroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/RichTooltipColors;FFLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/material3/TooltipScope;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;JFLandroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/RichTooltipColors;FFLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;III)V", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class Tooltip_androidKt {
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0175  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x017e  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0187  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x019b  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x01a7  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x01b3  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x01b9  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x01bc  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x01c8  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x01dc  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x01f9  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x01fb  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x01fe  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x02e5  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x02f8  */
-    /* JADX WARN: Removed duplicated region for block: B:187:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x006a  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0070  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0104  */
-    /* renamed from: PlainTooltip-7QI4Sbk  reason: not valid java name */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit PlainTooltipAndroid_7QI4Sbk$lambda$0(TooltipScope tooltipScope, Modifier modifier, long j, Shape shape, long j2, long j3, float f, float f2, Function2 function2, int i, int i2, Composer composer, int i3) {
+        PlainTooltip(tooltipScope, modifier, j, shape, j2, j3, f, f2, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit PlainTooltipAndroid_m9Er_Xc$lambda$1(TooltipScope tooltipScope, Modifier modifier, long j, float f, Shape shape, long j2, long j3, float f2, float f3, Function2 function2, int i, int i2, Composer composer, int i3) {
+        PlainTooltip(tooltipScope, modifier, j, f, shape, j2, j3, f2, f3, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit RichTooltipAndroid_ZuUcA3Q$lambda$3(TooltipScope tooltipScope, Modifier modifier, Function2 function2, Function2 function22, long j, float f, Shape shape, RichTooltipColors richTooltipColors, float f2, float f3, Function2 function23, int i, int i2, int i3, Composer composer, int i4) {
+        RichTooltip(tooltipScope, modifier, function2, function22, j, f, shape, richTooltipColors, f2, f3, function23, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit RichTooltipAndroid_yDvdmqw$lambda$2(TooltipScope tooltipScope, Modifier modifier, Function2 function2, Function2 function22, long j, Shape shape, RichTooltipColors richTooltipColors, float f, float f2, Function2 function23, int i, int i2, Composer composer, int i3) {
+        RichTooltip(tooltipScope, modifier, function2, function22, j, shape, richTooltipColors, f, f2, function23, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:158:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0101  */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use overload with maxWidth parameter.")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2965PlainTooltip7QI4Sbk(final TooltipScope tooltipScope, Modifier modifier, long j, Shape shape, long j2, long j3, float f, float f2, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void PlainTooltip(final TooltipScope tooltipScope, Modifier modifier, long j, Shape shape, long j2, long j3, float f, float f2, final Function2 function2, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
-        Shape shape2;
-        final long j4;
+        long j4;
+        Object obj;
         long j5;
-        int i4;
-        float f3;
-        int i5;
         long j6;
-        float f4;
-        float f5;
-        Shape shape3;
-        int i6;
+        int i4;
+        int i5;
+        final float f3;
+        final Modifier modifier2;
         final long j7;
-        long j8;
-        Modifier modifier2;
-        Composer composer2;
-        final Modifier modifier3;
+        final Shape shape2;
+        final long j8;
         final long j9;
-        final Shape shape4;
-        final long j10;
-        final float f6;
-        final float f7;
+        final float f4;
         ScopeUpdateScope endRestartGroup;
+        Modifier modifier3;
+        Shape shape3;
+        long j10;
+        float f5;
+        float f6;
+        int i6;
+        long j11;
+        long j12;
+        long j13;
         int i7;
         int i8;
-        Composer startRestartGroup = composer.startRestartGroup(1407069716);
-        ComposerKt.sourceInformation(startRestartGroup, "C(PlainTooltip)P(4,0:c#ui.unit.DpSize,6,3:c#ui.graphics.Color,1:c#ui.graphics.Color,7:c#ui.unit.Dp,5:c#ui.unit.Dp)208@8412L26,209@8482L24,211@8552L26,96@3876L606,90@3685L797:Tooltip.android.kt#uh7d8r");
+        int i9;
+        Composer startRestartGroup = composer.startRestartGroup(2114904198);
+        ComposerKt.sourceInformation(startRestartGroup, "C(PlainTooltipAndroid)N(modifier,caretSize:c#ui.unit.DpSize,shape,contentColor:c#ui.graphics.Color,containerColor:c#ui.graphics.Color,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp,content)61@2558L377:Tooltip.android.kt#uh7d8r");
         if ((Integer.MIN_VALUE & i2) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -135,60 +109,68 @@ public final class Tooltip_androidKt {
         } else {
             i3 = i;
         }
-        int i9 = i2 & 1;
-        if (i9 != 0) {
+        int i10 = i2 & 1;
+        if (i10 != 0) {
             i3 |= 48;
         } else if ((i & 48) == 0) {
             companion = modifier;
             i3 |= startRestartGroup.changed(companion) ? 32 : 16;
-            if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                i3 |= ((i2 & 2) == 0 && startRestartGroup.changed(j)) ? 256 : 128;
+            if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) != 0) {
+                if ((i2 & 2) == 0) {
+                    j4 = j;
+                    if (startRestartGroup.changed(j4)) {
+                        i9 = 256;
+                        i3 |= i9;
+                    }
+                } else {
+                    j4 = j;
+                }
+                i9 = 128;
+                i3 |= i9;
+            } else {
+                j4 = j;
             }
             if ((i & 3072) != 0) {
                 if ((i2 & 4) == 0) {
-                    shape2 = shape;
-                    if (startRestartGroup.changed(shape2)) {
+                    obj = shape;
+                    if (startRestartGroup.changed(obj)) {
                         i8 = 2048;
                         i3 |= i8;
                     }
                 } else {
-                    shape2 = shape;
+                    obj = shape;
                 }
                 i8 = 1024;
                 i3 |= i8;
             } else {
-                shape2 = shape;
+                obj = shape;
             }
             if ((i & 24576) != 0) {
                 if ((i2 & 8) == 0) {
-                    j4 = j2;
-                    if (startRestartGroup.changed(j4)) {
+                    j5 = j2;
+                    if (startRestartGroup.changed(j5)) {
                         i7 = 16384;
                         i3 |= i7;
                     }
                 } else {
-                    j4 = j2;
+                    j5 = j2;
                 }
                 i7 = 8192;
                 i3 |= i7;
             } else {
-                j4 = j2;
+                j5 = j2;
             }
-            if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
-                j5 = j3;
-                i3 |= ((i2 & 16) == 0 && startRestartGroup.changed(j5)) ? 131072 : 65536;
+            if ((196608 & i) != 0) {
+                j6 = j3;
+                i3 |= ((i2 & 16) == 0 && startRestartGroup.changed(j6)) ? 131072 : 65536;
             } else {
-                j5 = j3;
+                j6 = j3;
             }
             i4 = i2 & 32;
             if (i4 == 0) {
                 i3 |= 1572864;
-                f3 = f;
-            } else {
-                f3 = f;
-                if ((i & 1572864) == 0) {
-                    i3 |= startRestartGroup.changed(f3) ? 1048576 : 524288;
-                }
+            } else if ((i & 1572864) == 0) {
+                i3 |= startRestartGroup.changed(f) ? 1048576 : 524288;
             }
             i5 = i2 & 64;
             if (i5 == 0) {
@@ -200,233 +182,126 @@ public final class Tooltip_androidKt {
                 i3 |= 100663296;
             } else if ((i & 100663296) == 0) {
                 i3 |= startRestartGroup.changedInstance(function2) ? 67108864 : 33554432;
-            }
-            if ((38347923 & i3) == 38347922 || !startRestartGroup.getSkipping()) {
-                startRestartGroup.startDefaults();
-                if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                    if (i9 != 0) {
-                        companion = Modifier.Companion;
-                    }
-                    if ((i2 & 2) == 0) {
-                        j6 = DpSize.Companion.m7371getUnspecifiedMYxV2XQ();
-                        i3 &= -897;
+                if (startRestartGroup.shouldExecute((i3 & 38347923) != 38347922, i3 & 1)) {
+                    startRestartGroup.startDefaults();
+                    ComposerKt.sourceInformation(startRestartGroup, "54@2282L26,55@2352L24,56@2422L26");
+                    if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                        startRestartGroup.skipToGroupEnd();
+                        if ((i2 & 2) != 0) {
+                            i3 &= -897;
+                        }
+                        if ((i2 & 4) != 0) {
+                            i3 &= -7169;
+                        }
+                        if ((i2 & 8) != 0) {
+                            i3 &= -57345;
+                        }
+                        if ((i2 & 16) != 0) {
+                            i3 &= -458753;
+                        }
+                        i6 = i3;
+                        modifier3 = companion;
+                        j11 = j4;
+                        shape3 = obj;
+                        j12 = j5;
+                        j13 = j6;
+                        f6 = f;
+                        f5 = f2;
                     } else {
-                        j6 = j;
+                        if (i10 != 0) {
+                            companion = Modifier.Companion;
+                        }
+                        if ((i2 & 2) != 0) {
+                            j4 = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+                            i3 &= -897;
+                        }
+                        if ((i2 & 4) != 0) {
+                            i3 &= -7169;
+                            obj = TooltipDefaults.INSTANCE.getPlainTooltipContainerShape(startRestartGroup, 6);
+                        }
+                        if ((i2 & 8) != 0) {
+                            j5 = TooltipDefaults.INSTANCE.getPlainTooltipContentColor(startRestartGroup, 6);
+                            i3 &= -57345;
+                        }
+                        if ((i2 & 16) != 0) {
+                            j6 = TooltipDefaults.INSTANCE.getPlainTooltipContainerColor(startRestartGroup, 6);
+                            i3 &= -458753;
+                        }
+                        float m7995constructorimpl = i4 != 0 ? Dp.m7995constructorimpl(0) : f;
+                        if (i5 != 0) {
+                            shape3 = obj;
+                            j10 = j5;
+                            f6 = m7995constructorimpl;
+                            f5 = Dp.m7995constructorimpl(0);
+                            i6 = i3;
+                            modifier3 = companion;
+                        } else {
+                            modifier3 = companion;
+                            shape3 = obj;
+                            j10 = j5;
+                            f5 = f2;
+                            f6 = m7995constructorimpl;
+                            i6 = i3;
+                        }
+                        j11 = j4;
+                        j12 = j10;
+                        j13 = j6;
                     }
-                    if ((i2 & 4) != 0) {
-                        i3 &= -7169;
-                        shape2 = TooltipDefaults.INSTANCE.getPlainTooltipContainerShape(startRestartGroup, 6);
+                    startRestartGroup.endDefaults();
+                    if (ComposerKt.isTraceInProgress()) {
+                        ComposerKt.traceEventStart(2114904198, i6, -1, "androidx.compose.material3.PlainTooltipAndroid (Tooltip.android.kt:61)");
                     }
-                    if ((i2 & 8) != 0) {
-                        j4 = TooltipDefaults.INSTANCE.getPlainTooltipContentColor(startRestartGroup, 6);
-                        i3 &= -57345;
+                    int i11 = i6 << 3;
+                    long j14 = j11;
+                    TooltipKt.m3373PlainTooltipgv3ox5I(tooltipScope, modifier3, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j11), TooltipDefaults.INSTANCE.m3361getPlainTooltipMaxWidthD9Ej5fM(), shape3, j12, j13, f6, f5, function2, startRestartGroup, (i11 & 1879048192) | (i6 & 14) | 3072 | (i6 & 112) | (i11 & 57344) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024), 0);
+                    if (ComposerKt.isTraceInProgress()) {
+                        ComposerKt.traceEventEnd();
                     }
-                    if ((i2 & 16) != 0) {
-                        j5 = TooltipDefaults.INSTANCE.getPlainTooltipContainerColor(startRestartGroup, 6);
-                        i3 &= -458753;
-                    }
-                    float m7264constructorimpl = i4 == 0 ? Dp.m7264constructorimpl(0) : f3;
-                    if (i5 == 0) {
-                        f5 = m7264constructorimpl;
-                        shape3 = shape2;
-                        f4 = Dp.m7264constructorimpl(0);
-                    } else {
-                        f4 = f2;
-                        f5 = m7264constructorimpl;
-                        shape3 = shape2;
-                    }
-                    i6 = i3;
-                    j7 = j6;
+                    modifier2 = modifier3;
+                    f3 = f5;
+                    f4 = f6;
+                    j9 = j13;
+                    j8 = j12;
+                    shape2 = shape3;
+                    j7 = j14;
                 } else {
                     startRestartGroup.skipToGroupEnd();
-                    if ((i2 & 2) != 0) {
-                        i3 &= -897;
-                    }
-                    if ((i2 & 4) != 0) {
-                        i3 &= -7169;
-                    }
-                    if ((i2 & 8) != 0) {
-                        i3 &= -57345;
-                    }
-                    if ((i2 & 16) != 0) {
-                        i3 &= -458753;
-                    }
-                    f4 = f2;
-                    shape3 = shape2;
-                    f5 = f3;
-                    i6 = i3;
-                    j7 = j;
-                }
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1407069716, i6, -1, "androidx.compose.material3.PlainTooltip (Tooltip.android.kt:73)");
-                }
-                startRestartGroup.startReplaceGroup(-333850415);
-                ComposerKt.sourceInformation(startRestartGroup, "76@3183L7,77@3242L7,78@3281L343");
-                if (j7 == InlineClassHelperKt.UnspecifiedPackedFloats) {
-                    j8 = j5;
+                    f3 = f2;
                     modifier2 = companion;
-                } else {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                    Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
-                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    final Density density = (Density) consume;
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                    Object consume2 = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalConfiguration());
-                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    final Configuration configuration = (Configuration) consume2;
-                    Modifier.Companion companion2 = Modifier.Companion;
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -333845325, "CC(remember):Tooltip.android.kt#9igjgp");
-                    boolean changed = ((((458752 & i6) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && startRestartGroup.changed(j5)) || (i6 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072) | startRestartGroup.changed(density) | startRestartGroup.changedInstance(configuration) | ((((i6 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && startRestartGroup.changed(j7)) || (i6 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
-                    Object rememberedValue = startRestartGroup.rememberedValue();
-                    if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                        final long j11 = j7;
-                        final long j12 = j5;
-                        j8 = j12;
-                        rememberedValue = (Function2) new Function2<CacheDrawScope, LayoutCoordinates, DrawResult>() { // from class: androidx.compose.material3.Tooltip_androidKt$PlainTooltip$drawCaretModifier$1$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(2);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function2
-                            public final DrawResult invoke(CacheDrawScope cacheDrawScope, LayoutCoordinates layoutCoordinates) {
-                                DrawResult m2968drawCaretWithPathJKumZY;
-                                m2968drawCaretWithPathJKumZY = Tooltip_androidKt.m2968drawCaretWithPathJKumZY(cacheDrawScope, CaretType.Plain, Density.this, configuration, j12, j11, layoutCoordinates);
-                                return m2968drawCaretWithPathJKumZY;
-                            }
-                        };
-                        startRestartGroup.updateRememberedValue(rememberedValue);
-                    } else {
-                        j8 = j5;
-                    }
-                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    modifier2 = tooltipScope.drawCaret(companion2, (Function2) rememberedValue).then(companion);
+                    j7 = j4;
+                    shape2 = obj;
+                    j8 = j5;
+                    j9 = j6;
+                    f4 = f;
                 }
-                startRestartGroup.endReplaceGroup();
-                int i10 = i6 >> 6;
-                composer2 = startRestartGroup;
-                SurfaceKt.m2664SurfaceT9BRK9s(modifier2, shape3, j8, 0L, f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1430116975, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$PlainTooltip$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                        invoke(composer3, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(Composer composer3, int i11) {
-                        ComposerKt.sourceInformation(composer3, "C97@3886L590:Tooltip.android.kt#uh7d8r");
-                        if ((i11 & 3) != 2 || !composer3.getSkipping()) {
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(1430116975, i11, -1, "androidx.compose.material3.PlainTooltip.<anonymous> (Tooltip.android.kt:97)");
-                            }
-                            Modifier padding = PaddingKt.padding(SizeKt.m898sizeInqDBjuR0$default(Modifier.Companion, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getPlainTooltipMaxWidth(), 0.0f, 8, null), TooltipKt.getPlainTooltipContentPadding());
-                            long j13 = j4;
-                            Function2<Composer, Integer, Unit> function22 = function2;
-                            ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                            CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, padding);
-                            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                            if (!(composer3.getApplier() instanceof Applier)) {
-                                ComposablesKt.invalidApplier();
-                            }
-                            composer3.startReusableNode();
-                            if (composer3.getInserting()) {
-                                composer3.createNode(constructor);
-                            } else {
-                                composer3.useNode();
-                            }
-                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
-                            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                            }
-                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                            ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                            ComposerKt.sourceInformationMarkerStart(composer3, 1903647947, "C106@4266L5,108@4285L181:Tooltip.android.kt#uh7d8r");
-                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j13)), TextKt.getLocalTextStyle().provides(TypographyKt.getValue(PlainTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6))}, function22, composer3, ProvidedValue.$stable);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            composer3.endNode();
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                                return;
-                            }
-                            return;
+                endRestartGroup = startRestartGroup.endRestartGroup();
+                if (endRestartGroup != null) {
+                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.Tooltip_androidKt$$ExternalSyntheticLambda2
+                        @Override // kotlin.jvm.functions.Function2
+                        public final Object invoke(Object obj2, Object obj3) {
+                            Unit PlainTooltipAndroid_7QI4Sbk$lambda$0;
+                            PlainTooltipAndroid_7QI4Sbk$lambda$0 = Tooltip_androidKt.PlainTooltipAndroid_7QI4Sbk$lambda$0(TooltipScope.this, modifier2, j7, shape2, j8, j9, f4, f3, function2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                            return PlainTooltipAndroid_7QI4Sbk$lambda$0;
                         }
-                        composer3.skipToGroupEnd();
-                    }
-                }, startRestartGroup, 54), composer2, ((i6 >> 9) & 896) | (i10 & 112) | 12582912 | (57344 & i10) | (i10 & 458752), 72);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
+                    });
+                    return;
                 }
-                modifier3 = companion;
-                j9 = j4;
-                shape4 = shape3;
-                j10 = j8;
-                f6 = f5;
-                f7 = f4;
-            } else {
-                startRestartGroup.skipToGroupEnd();
-                j7 = j;
-                composer2 = startRestartGroup;
-                modifier3 = companion;
-                shape4 = shape2;
-                j10 = j5;
-                j9 = j4;
-                f6 = f3;
-                f7 = f2;
-            }
-            endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup == null) {
-                endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$PlainTooltip$2
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                        invoke(composer3, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(Composer composer3, int i11) {
-                        Tooltip_androidKt.m2965PlainTooltip7QI4Sbk(TooltipScope.this, modifier3, j7, shape4, j9, j10, f6, f7, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
-                    }
-                });
                 return;
             }
-            return;
+            if (startRestartGroup.shouldExecute((i3 & 38347923) != 38347922, i3 & 1)) {
+            }
+            endRestartGroup = startRestartGroup.endRestartGroup();
+            if (endRestartGroup != null) {
+            }
         }
         companion = modifier;
-        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) != 0) {
         }
         if ((i & 3072) != 0) {
         }
         if ((i & 24576) != 0) {
         }
-        if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
+        if ((196608 & i) != 0) {
         }
         i4 = i2 & 32;
         if (i4 == 0) {
@@ -436,191 +311,80 @@ public final class Tooltip_androidKt {
         }
         if ((i2 & 128) == 0) {
         }
-        if ((38347923 & i3) == 38347922) {
+        if (startRestartGroup.shouldExecute((i3 & 38347923) != 38347922, i3 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i & 1) != 0) {
-        }
-        if (i9 != 0) {
-        }
-        if ((i2 & 2) == 0) {
-        }
-        if ((i2 & 4) != 0) {
-        }
-        if ((i2 & 8) != 0) {
-        }
-        if ((i2 & 16) != 0) {
-        }
-        if (i4 == 0) {
-        }
-        if (i5 == 0) {
-        }
-        i6 = i3;
-        j7 = j6;
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        startRestartGroup.startReplaceGroup(-333850415);
-        ComposerKt.sourceInformation(startRestartGroup, "76@3183L7,77@3242L7,78@3281L343");
-        if (j7 == InlineClassHelperKt.UnspecifiedPackedFloats) {
-        }
-        startRestartGroup.endReplaceGroup();
-        int i102 = i6 >> 6;
-        composer2 = startRestartGroup;
-        SurfaceKt.m2664SurfaceT9BRK9s(modifier2, shape3, j8, 0L, f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1430116975, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$PlainTooltip$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                invoke(composer3, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Composer composer3, int i11) {
-                ComposerKt.sourceInformation(composer3, "C97@3886L590:Tooltip.android.kt#uh7d8r");
-                if ((i11 & 3) != 2 || !composer3.getSkipping()) {
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(1430116975, i11, -1, "androidx.compose.material3.PlainTooltip.<anonymous> (Tooltip.android.kt:97)");
-                    }
-                    Modifier padding = PaddingKt.padding(SizeKt.m898sizeInqDBjuR0$default(Modifier.Companion, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getPlainTooltipMaxWidth(), 0.0f, 8, null), TooltipKt.getPlainTooltipContentPadding());
-                    long j13 = j4;
-                    Function2<Composer, Integer, Unit> function22 = function2;
-                    ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                    MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                    ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                    int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                    CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, padding);
-                    Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                    ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                    if (!(composer3.getApplier() instanceof Applier)) {
-                        ComposablesKt.invalidApplier();
-                    }
-                    composer3.startReusableNode();
-                    if (composer3.getInserting()) {
-                        composer3.createNode(constructor);
-                    } else {
-                        composer3.useNode();
-                    }
-                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
-                    Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                    }
-                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                    ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                    BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                    ComposerKt.sourceInformationMarkerStart(composer3, 1903647947, "C106@4266L5,108@4285L181:Tooltip.android.kt#uh7d8r");
-                    CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j13)), TextKt.getLocalTextStyle().provides(TypographyKt.getValue(PlainTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6))}, function22, composer3, ProvidedValue.$stable);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    composer3.endNode();
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                        return;
-                    }
-                    return;
-                }
-                composer3.skipToGroupEnd();
-            }
-        }, startRestartGroup, 54), composer2, ((i6 >> 9) & 896) | (i102 & 112) | 12582912 | (57344 & i102) | (i102 & 458752), 72);
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        modifier3 = companion;
-        j9 = j4;
-        shape4 = shape3;
-        j10 = j8;
-        f6 = f5;
-        f7 = f4;
-        endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup == null) {
+        endRestartGroup = startRestartGroup.endRestartGroup();
+        if (endRestartGroup != null) {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0142  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0166  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0196  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x019e  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x01a1  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x01a6  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x01b4  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x01c4  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x01d6  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x01dd  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x01e1  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x01f0  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x0201  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x025f  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0262  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0266  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x02fe  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0365  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x037c  */
-    /* JADX WARN: Removed duplicated region for block: B:188:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0073  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0104  */
-    /* renamed from: RichTooltip-yDvdmqw  reason: not valid java name */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x014b  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0209  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0215  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0237  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x0245  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:177:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00e4  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0105  */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility.")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2966RichTooltipyDvdmqw(final TooltipScope tooltipScope, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, long j, Shape shape, RichTooltipColors richTooltipColors, float f, float f2, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void PlainTooltip(final TooltipScope tooltipScope, Modifier modifier, long j, float f, Shape shape, long j2, long j3, float f2, float f3, final Function2 function2, Composer composer, final int i, final int i2) {
         int i3;
-        Modifier.Companion companion;
+        Object obj;
+        long j4;
         int i4;
-        final Object obj;
+        float f4;
+        Object obj2;
+        long j5;
         int i5;
-        final Object obj2;
-        long j2;
-        Object obj3;
         int i6;
+        final float f5;
         int i7;
         int i8;
-        RichTooltipColors richTooltipColors2;
-        float f3;
         int i9;
-        float f4;
-        RichTooltipColors richTooltipColors3;
-        long j3;
-        Modifier modifier2;
-        final RichTooltipColors richTooltipColors4;
-        Composer composer2;
-        final Function2<? super Composer, ? super Integer, Unit> function24;
-        final float f5;
+        final Modifier modifier2;
+        final long j6;
         final float f6;
-        final Modifier modifier3;
-        final long j4;
-        final Function2<? super Composer, ? super Integer, Unit> function25;
         final Shape shape2;
+        Composer composer2;
+        final long j7;
+        final long j8;
+        final float f7;
         ScopeUpdateScope endRestartGroup;
+        Modifier.Companion companion;
+        long j9;
+        float m3361getPlainTooltipMaxWidthD9Ej5fM;
+        Shape shape3;
+        long j10;
+        long j11;
+        long j12;
+        Shape shape4;
+        long j13;
         int i10;
-        Composer startRestartGroup = composer.startRestartGroup(1867454921);
-        ComposerKt.sourceInformation(startRestartGroup, "C(RichTooltip)P(3,7!1,1:c#ui.unit.DpSize,5!1,8:c#ui.unit.Dp,4:c#ui.unit.Dp)255@9959L25,257@10034L19,*148@5873L7,150@5944L11,150@5956L61,178@6991L1595,167@6622L1964:Tooltip.android.kt#uh7d8r");
+        float m7995constructorimpl;
+        float f8;
+        int i11;
+        int i12;
+        Composer startRestartGroup = composer.startRestartGroup(1456881596);
+        ComposerKt.sourceInformation(startRestartGroup, "C(PlainTooltipAndroid)N(modifier,caretSize:c#ui.unit.DpSize,maxWidth:c#ui.unit.Dp,shape,contentColor:c#ui.graphics.Color,containerColor:c#ui.graphics.Color,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp,content)105@4515L349:Tooltip.android.kt#uh7d8r");
         if ((Integer.MIN_VALUE & i2) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -628,8 +392,370 @@ public final class Tooltip_androidKt {
         } else {
             i3 = i;
         }
-        int i11 = i2 & 1;
-        if (i11 != 0) {
+        int i13 = i2 & 1;
+        if (i13 != 0) {
+            i3 |= 48;
+        } else if ((i & 48) == 0) {
+            obj = modifier;
+            i3 |= startRestartGroup.changed(obj) ? 32 : 16;
+            if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) != 0) {
+                if ((i2 & 2) == 0) {
+                    j4 = j;
+                    if (startRestartGroup.changed(j4)) {
+                        i12 = 256;
+                        i3 |= i12;
+                    }
+                } else {
+                    j4 = j;
+                }
+                i12 = 128;
+                i3 |= i12;
+            } else {
+                j4 = j;
+            }
+            i4 = i2 & 4;
+            if (i4 == 0) {
+                i3 |= 3072;
+            } else if ((i & 3072) == 0) {
+                f4 = f;
+                i3 |= startRestartGroup.changed(f4) ? 2048 : 1024;
+                if ((i & 24576) == 0) {
+                    if ((i2 & 8) == 0) {
+                        obj2 = shape;
+                        if (startRestartGroup.changed(obj2)) {
+                            i11 = 16384;
+                            i3 |= i11;
+                        }
+                    } else {
+                        obj2 = shape;
+                    }
+                    i11 = 8192;
+                    i3 |= i11;
+                } else {
+                    obj2 = shape;
+                }
+                if ((196608 & i) == 0) {
+                    j5 = j2;
+                    i3 |= ((i2 & 16) == 0 && startRestartGroup.changed(j5)) ? 131072 : 65536;
+                } else {
+                    j5 = j2;
+                }
+                if ((1572864 & i) == 0) {
+                    i5 = i3 | (((i2 & 32) == 0 && startRestartGroup.changed(j3)) ? 1048576 : 524288);
+                } else {
+                    i5 = i3;
+                }
+                i6 = i2 & 64;
+                if (i6 != 0) {
+                    i5 |= 12582912;
+                    f5 = f2;
+                } else {
+                    f5 = f2;
+                    if ((i & 12582912) == 0) {
+                        i5 |= startRestartGroup.changed(f5) ? 8388608 : 4194304;
+                    }
+                }
+                i7 = i2 & 128;
+                if (i7 != 0) {
+                    i5 |= 100663296;
+                } else if ((i & 100663296) == 0) {
+                    i8 = i7;
+                    i5 |= startRestartGroup.changed(f3) ? 67108864 : 33554432;
+                    int i14 = 805306368;
+                    if ((i2 & 256) == 0) {
+                        if ((i & 805306368) != 0) {
+                            i9 = i5;
+                            if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
+                                startRestartGroup.startDefaults();
+                                ComposerKt.sourceInformation(startRestartGroup, "98@4239L26,99@4309L24,100@4379L26");
+                                if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                    startRestartGroup.skipToGroupEnd();
+                                    if ((i2 & 2) != 0) {
+                                        i9 &= -897;
+                                    }
+                                    if ((i2 & 8) != 0) {
+                                        i9 &= -57345;
+                                    }
+                                    if ((i2 & 16) != 0) {
+                                        i9 &= -458753;
+                                    }
+                                    if ((i2 & 32) != 0) {
+                                        i9 &= -3670017;
+                                    }
+                                    companion = obj;
+                                    j12 = j4;
+                                    m3361getPlainTooltipMaxWidthD9Ej5fM = f4;
+                                    shape4 = obj2;
+                                    j10 = j5;
+                                    j13 = j3;
+                                } else {
+                                    companion = i13 != 0 ? Modifier.Companion : obj;
+                                    if ((i2 & 2) != 0) {
+                                        j9 = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+                                        i9 &= -897;
+                                    } else {
+                                        j9 = j4;
+                                    }
+                                    m3361getPlainTooltipMaxWidthD9Ej5fM = i4 != 0 ? TooltipDefaults.INSTANCE.m3361getPlainTooltipMaxWidthD9Ej5fM() : f4;
+                                    if ((i2 & 8) != 0) {
+                                        shape3 = TooltipDefaults.INSTANCE.getPlainTooltipContainerShape(startRestartGroup, 6);
+                                        i9 &= -57345;
+                                    } else {
+                                        shape3 = obj2;
+                                    }
+                                    if ((i2 & 16) != 0) {
+                                        j10 = TooltipDefaults.INSTANCE.getPlainTooltipContentColor(startRestartGroup, 6);
+                                        i9 &= -458753;
+                                    } else {
+                                        j10 = j5;
+                                    }
+                                    if ((i2 & 32) != 0) {
+                                        j11 = TooltipDefaults.INSTANCE.getPlainTooltipContainerColor(startRestartGroup, 6);
+                                        i9 &= -3670017;
+                                    } else {
+                                        j11 = j3;
+                                    }
+                                    float m7995constructorimpl2 = i6 != 0 ? Dp.m7995constructorimpl(0) : f5;
+                                    if (i8 != 0) {
+                                        f5 = m7995constructorimpl2;
+                                        i10 = i9;
+                                        m7995constructorimpl = Dp.m7995constructorimpl(0);
+                                        j12 = j9;
+                                        shape4 = shape3;
+                                        j13 = j11;
+                                        startRestartGroup.endDefaults();
+                                        if (ComposerKt.isTraceInProgress()) {
+                                            f8 = m7995constructorimpl;
+                                        } else {
+                                            f8 = m7995constructorimpl;
+                                            ComposerKt.traceEventStart(1456881596, i10, -1, "androidx.compose.material3.PlainTooltipAndroid (Tooltip.android.kt:104)");
+                                        }
+                                        int i15 = 2147482750 & i10;
+                                        long j14 = j12;
+                                        float f9 = m3361getPlainTooltipMaxWidthD9Ej5fM;
+                                        long j15 = j10;
+                                        float f10 = f5;
+                                        float f11 = f8;
+                                        TooltipKt.m3373PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j12), f9, shape4, j15, j13, f10, f11, function2, startRestartGroup, i15, 0);
+                                        if (ComposerKt.isTraceInProgress()) {
+                                            ComposerKt.traceEventEnd();
+                                        }
+                                        modifier2 = companion;
+                                        f5 = f10;
+                                        composer2 = startRestartGroup;
+                                        f7 = f11;
+                                        j8 = j13;
+                                        j7 = j15;
+                                        f6 = f9;
+                                        shape2 = shape4;
+                                        j6 = j14;
+                                    } else {
+                                        f5 = m7995constructorimpl2;
+                                        j12 = j9;
+                                        shape4 = shape3;
+                                        j13 = j11;
+                                    }
+                                }
+                                i10 = i9;
+                                m7995constructorimpl = f3;
+                                startRestartGroup.endDefaults();
+                                if (ComposerKt.isTraceInProgress()) {
+                                }
+                                int i152 = 2147482750 & i10;
+                                long j142 = j12;
+                                float f92 = m3361getPlainTooltipMaxWidthD9Ej5fM;
+                                long j152 = j10;
+                                float f102 = f5;
+                                float f112 = f8;
+                                TooltipKt.m3373PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j12), f92, shape4, j152, j13, f102, f112, function2, startRestartGroup, i152, 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                }
+                                modifier2 = companion;
+                                f5 = f102;
+                                composer2 = startRestartGroup;
+                                f7 = f112;
+                                j8 = j13;
+                                j7 = j152;
+                                f6 = f92;
+                                shape2 = shape4;
+                                j6 = j142;
+                            } else {
+                                startRestartGroup.skipToGroupEnd();
+                                modifier2 = obj;
+                                j6 = j4;
+                                f6 = f4;
+                                shape2 = obj2;
+                                composer2 = startRestartGroup;
+                                j7 = j5;
+                                j8 = j3;
+                                f7 = f3;
+                            }
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup != null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.Tooltip_androidKt$$ExternalSyntheticLambda3
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj3, Object obj4) {
+                                        Unit PlainTooltipAndroid_m9Er_Xc$lambda$1;
+                                        PlainTooltipAndroid_m9Er_Xc$lambda$1 = Tooltip_androidKt.PlainTooltipAndroid_m9Er_Xc$lambda$1(TooltipScope.this, modifier2, j6, f6, shape2, j7, j8, f5, f7, function2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                                        return PlainTooltipAndroid_m9Er_Xc$lambda$1;
+                                    }
+                                });
+                                return;
+                            }
+                            return;
+                        }
+                        i14 = startRestartGroup.changedInstance(function2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                    }
+                    i5 |= i14;
+                    i9 = i5;
+                    if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
+                    }
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup != null) {
+                    }
+                }
+                i8 = i7;
+                int i142 = 805306368;
+                if ((i2 & 256) == 0) {
+                }
+                i5 |= i142;
+                i9 = i5;
+                if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
+                }
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup != null) {
+                }
+            }
+            f4 = f;
+            if ((i & 24576) == 0) {
+            }
+            if ((196608 & i) == 0) {
+            }
+            if ((1572864 & i) == 0) {
+            }
+            i6 = i2 & 64;
+            if (i6 != 0) {
+            }
+            i7 = i2 & 128;
+            if (i7 != 0) {
+            }
+            i8 = i7;
+            int i1422 = 805306368;
+            if ((i2 & 256) == 0) {
+            }
+            i5 |= i1422;
+            i9 = i5;
+            if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
+            }
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup != null) {
+            }
+        }
+        obj = modifier;
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) != 0) {
+        }
+        i4 = i2 & 4;
+        if (i4 == 0) {
+        }
+        f4 = f;
+        if ((i & 24576) == 0) {
+        }
+        if ((196608 & i) == 0) {
+        }
+        if ((1572864 & i) == 0) {
+        }
+        i6 = i2 & 64;
+        if (i6 != 0) {
+        }
+        i7 = i2 & 128;
+        if (i7 != 0) {
+        }
+        i8 = i7;
+        int i14222 = 805306368;
+        if ((i2 & 256) == 0) {
+        }
+        i5 |= i14222;
+        i9 = i5;
+        if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
+        }
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup != null) {
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0155  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x025b  */
+    /* JADX WARN: Removed duplicated region for block: B:165:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0107  */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use overload with maxWidth parameter.")
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final /* synthetic */ void RichTooltip(final TooltipScope tooltipScope, Modifier modifier, Function2 function2, Function2 function22, long j, Shape shape, RichTooltipColors richTooltipColors, float f, float f2, final Function2 function23, Composer composer, final int i, final int i2) {
+        int i3;
+        Modifier.Companion companion;
+        int i4;
+        Object obj;
+        int i5;
+        Object obj2;
+        long j2;
+        Object obj3;
+        int i6;
+        Object obj4;
+        int i7;
+        float f3;
+        int i8;
+        int i9;
+        final Function2 function24;
+        final Function2 function25;
+        final RichTooltipColors richTooltipColors2;
+        final Shape shape2;
+        final float f4;
+        final float f5;
+        final Modifier modifier2;
+        final long j3;
+        ScopeUpdateScope endRestartGroup;
+        float m4231getContainerElevationD9Ej5fM;
+        int i10;
+        Function2 function26;
+        float f6;
+        Modifier modifier3;
+        Function2 function27;
+        RichTooltipColors richTooltipColors3;
+        long j4;
+        Shape shape3;
+        int i11;
+        Composer startRestartGroup = composer.startRestartGroup(-244908363);
+        ComposerKt.sourceInformation(startRestartGroup, "C(RichTooltipAndroid)N(modifier,title,action,caretSize:c#ui.unit.DpSize,shape,colors,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp,text)154@6569L364:Tooltip.android.kt#uh7d8r");
+        if ((Integer.MIN_VALUE & i2) != 0) {
+            i3 = i | 6;
+        } else if ((i & 6) == 0) {
+            i3 = ((i & 8) == 0 ? startRestartGroup.changed(tooltipScope) : startRestartGroup.changedInstance(tooltipScope) ? 4 : 2) | i;
+        } else {
+            i3 = i;
+        }
+        int i12 = i2 & 1;
+        if (i12 != 0) {
             i3 |= 48;
         } else if ((i & 48) == 0) {
             companion = modifier;
@@ -652,973 +778,204 @@ public final class Tooltip_androidKt {
                     } else {
                         j2 = j;
                     }
-                    if ((196608 & i) != 0) {
+                    if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
                         if ((i2 & 16) == 0) {
                             obj3 = shape;
                             if (startRestartGroup.changed(obj3)) {
-                                i10 = 131072;
-                                i3 |= i10;
+                                i11 = 131072;
+                                i3 |= i11;
                             }
                         } else {
                             obj3 = shape;
                         }
-                        i10 = 65536;
-                        i3 |= i10;
+                        i11 = 65536;
+                        i3 |= i11;
                     } else {
                         obj3 = shape;
                     }
-                    if ((i & 1572864) == 0) {
-                        i3 |= ((i2 & 32) == 0 && startRestartGroup.changed(richTooltipColors)) ? 1048576 : 524288;
+                    if ((i & 1572864) != 0) {
+                        i6 = 196608;
+                        obj4 = richTooltipColors;
+                        i3 |= ((i2 & 32) == 0 && startRestartGroup.changed(obj4)) ? 1048576 : 524288;
+                    } else {
+                        i6 = 196608;
+                        obj4 = richTooltipColors;
                     }
-                    i6 = i2 & 64;
-                    if (i6 == 0) {
-                        i3 |= 12582912;
-                    } else if ((i & 12582912) == 0) {
-                        i3 |= startRestartGroup.changed(f) ? 8388608 : 4194304;
-                    }
-                    i7 = i2 & 128;
+                    i7 = i2 & 64;
                     if (i7 == 0) {
+                        i3 |= 12582912;
+                        f3 = f;
+                    } else {
+                        f3 = f;
+                        if ((i & 12582912) == 0) {
+                            i3 |= startRestartGroup.changed(f3) ? 8388608 : 4194304;
+                        }
+                    }
+                    i8 = i2 & 128;
+                    if (i8 == 0) {
                         i3 |= 100663296;
                     } else if ((i & 100663296) == 0) {
-                        i8 = i7;
+                        i9 = i8;
                         i3 |= startRestartGroup.changed(f2) ? 67108864 : 33554432;
                         if ((i2 & 256) != 0) {
                             i3 |= 805306368;
                         } else if ((i & 805306368) == 0) {
                             i3 |= startRestartGroup.changedInstance(function23) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
-                        }
-                        int i12 = i3;
-                        if ((306783379 & i3) == 306783378 || !startRestartGroup.getSkipping()) {
-                            startRestartGroup.startDefaults();
-                            if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                                if (i11 != 0) {
-                                    companion = Modifier.Companion;
-                                }
-                                if (i4 != 0) {
-                                    obj = null;
-                                }
-                                if (i5 != 0) {
-                                    obj2 = null;
-                                }
-                                if ((i2 & 8) != 0) {
-                                    j2 = DpSize.Companion.m7371getUnspecifiedMYxV2XQ();
-                                    i12 &= -57345;
-                                }
-                                if ((i2 & 16) != 0) {
-                                    i12 &= -458753;
-                                    obj3 = TooltipDefaults.INSTANCE.getRichTooltipContainerShape(startRestartGroup, 6);
-                                }
-                                if ((i2 & 32) != 0) {
-                                    richTooltipColors2 = TooltipDefaults.INSTANCE.richTooltipColors(startRestartGroup, 6);
-                                    i12 &= -3670017;
-                                } else {
-                                    richTooltipColors2 = richTooltipColors;
-                                }
-                                float m3294getLevel0D9Ej5fM = i6 != 0 ? ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM() : f;
-                                if (i8 != 0) {
-                                    int i13 = i12;
-                                    f3 = m3294getLevel0D9Ej5fM;
-                                    i9 = i13;
-                                    f4 = RichTooltipTokens.INSTANCE.m3592getContainerElevationD9Ej5fM();
-                                } else {
-                                    int i14 = i12;
-                                    f3 = m3294getLevel0D9Ej5fM;
-                                    i9 = i14;
-                                    f4 = f2;
-                                }
-                            } else {
-                                startRestartGroup.skipToGroupEnd();
-                                if ((i2 & 8) != 0) {
-                                    i12 &= -57345;
-                                }
-                                if ((i2 & 16) != 0) {
-                                    i12 &= -458753;
-                                }
-                                if ((i2 & 32) != 0) {
-                                    i12 &= -3670017;
-                                }
-                                richTooltipColors2 = richTooltipColors;
-                                f4 = f2;
-                                i9 = i12;
-                                f3 = f;
-                            }
-                            startRestartGroup.endDefaults();
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(1867454921, i9, -1, "androidx.compose.material3.RichTooltip (Tooltip.android.kt:147)");
-                            }
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                            Object consume = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            final long m2048applyTonalElevationRFCenO8 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume).m7278unboximpl() + f3), startRestartGroup, 0);
-                            Shape shape3 = obj3;
-                            startRestartGroup.startReplaceGroup(1472746423);
-                            ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
-                            if (j2 != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                final Density density = (Density) consume2;
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                Object consume3 = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalConfiguration());
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                final Configuration configuration = (Configuration) consume3;
-                                Modifier.Companion companion2 = Modifier.Companion;
-                                richTooltipColors3 = richTooltipColors2;
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1472751513, "CC(remember):Tooltip.android.kt#9igjgp");
-                                boolean changed = startRestartGroup.changed(density) | startRestartGroup.changedInstance(configuration) | startRestartGroup.changed(m2048applyTonalElevationRFCenO8) | ((((57344 & i9) ^ 24576) > 16384 && startRestartGroup.changed(j2)) || (i9 & 24576) == 16384);
-                                Object rememberedValue = startRestartGroup.rememberedValue();
-                                if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                                    final long j5 = j2;
-                                    Object obj4 = new Function2<CacheDrawScope, LayoutCoordinates, DrawResult>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$drawCaretModifier$1$1
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        {
-                                            super(2);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public final DrawResult invoke(CacheDrawScope cacheDrawScope, LayoutCoordinates layoutCoordinates) {
-                                            DrawResult m2968drawCaretWithPathJKumZY;
-                                            m2968drawCaretWithPathJKumZY = Tooltip_androidKt.m2968drawCaretWithPathJKumZY(cacheDrawScope, CaretType.Rich, Density.this, configuration, m2048applyTonalElevationRFCenO8, j5, layoutCoordinates);
-                                            return m2968drawCaretWithPathJKumZY;
-                                        }
-                                    };
-                                    j3 = j5;
-                                    rememberedValue = (Function2) obj4;
-                                    startRestartGroup.updateRememberedValue(rememberedValue);
-                                } else {
-                                    j3 = j2;
-                                }
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                modifier2 = tooltipScope.drawCaret(companion2, (Function2) rememberedValue).then(companion);
-                            } else {
-                                richTooltipColors3 = richTooltipColors2;
-                                j3 = j2;
-                                modifier2 = companion;
-                            }
-                            startRestartGroup.endReplaceGroup();
-                            richTooltipColors4 = richTooltipColors3;
-                            int i15 = i9 >> 9;
-                            SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape3, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                    invoke(composer3, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r19v0 */
-                                /* JADX WARN: Type inference failed for: r19v1 */
-                                /* JADX WARN: Type inference failed for: r19v2 */
-                                public final void invoke(Composer composer3, int i16) {
-                                    ?? r19;
-                                    Function2<Composer, Integer, Unit> function26;
-                                    RichTooltipColors richTooltipColors5;
-                                    ComposerKt.sourceInformation(composer3, "C179@7066L5,180@7133L5,181@7210L5,183@7225L1355:Tooltip.android.kt#uh7d8r");
-                                    if ((i16 & 3) != 2 || !composer3.getSkipping()) {
+                            if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
+                                startRestartGroup.startDefaults();
+                                ComposerKt.sourceInformation(startRestartGroup, "148@6318L25,149@6393L19");
+                                if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
+                                    if (i12 != 0) {
+                                        companion = Modifier.Companion;
+                                    }
+                                    if (i4 != 0) {
+                                        obj = null;
+                                    }
+                                    if (i5 != 0) {
+                                        obj2 = null;
+                                    }
+                                    if ((i2 & 8) != 0) {
+                                        j2 = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+                                        i3 &= -57345;
+                                    }
+                                    if ((i2 & 16) != 0) {
+                                        i3 &= -458753;
+                                        obj3 = TooltipDefaults.INSTANCE.getRichTooltipContainerShape(startRestartGroup, 6);
+                                    }
+                                    if ((i2 & 32) != 0) {
+                                        obj4 = TooltipDefaults.INSTANCE.richTooltipColors(startRestartGroup, 6);
+                                        i3 = (-3670017) & i3;
+                                    }
+                                    if (i7 != 0) {
+                                        f3 = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+                                    }
+                                    if (i9 != 0) {
+                                        Function2 function28 = obj2;
+                                        m4231getContainerElevationD9Ej5fM = RichTooltipTokens.INSTANCE.m4231getContainerElevationD9Ej5fM();
+                                        i10 = i3;
+                                        function26 = function28;
+                                        f6 = f3;
+                                        modifier3 = companion;
+                                        function27 = obj;
+                                        richTooltipColors3 = obj4;
+                                        j4 = j2;
+                                        shape3 = obj3;
+                                        startRestartGroup.endDefaults();
                                         if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(317290958, i16, -1, "androidx.compose.material3.RichTooltip.<anonymous> (Tooltip.android.kt:179)");
+                                            ComposerKt.traceEventStart(-244908363, i10, -1, "androidx.compose.material3.RichTooltipAndroid (Tooltip.android.kt:154)");
                                         }
-                                        TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
-                                        TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
-                                        TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                                        Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
-                                        Function2<Composer, Integer, Unit> function27 = obj;
-                                        Function2<Composer, Integer, Unit> function28 = obj2;
-                                        RichTooltipColors richTooltipColors6 = richTooltipColors4;
-                                        Function2<Composer, Integer, Unit> function29 = function23;
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                                        MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer3, 0);
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                        int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                        CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
-                                        Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                        if (!(composer3.getApplier() instanceof Applier)) {
-                                            ComposablesKt.invalidApplier();
-                                        }
-                                        composer3.startReusableNode();
-                                        if (composer3.getInserting()) {
-                                            composer3.createNode(constructor);
-                                        } else {
-                                            composer3.useNode();
-                                        }
-                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
-                                        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                        }
-                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                                        ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
-                                        composer3.startReplaceGroup(955016030);
-                                        ComposerKt.sourceInformation(composer3, "*185@7347L344");
-                                        if (function27 == null) {
-                                            function26 = function28;
-                                            richTooltipColors5 = richTooltipColors6;
-                                            r19 = 1;
-                                        } else {
-                                            r19 = 1;
-                                            function26 = function28;
-                                            richTooltipColors5 = richTooltipColors6;
-                                            Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
-                                            ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                            int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                            CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
-                                            Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                            if (!(composer3.getApplier() instanceof Applier)) {
-                                                ComposablesKt.invalidApplier();
-                                            }
-                                            composer3.startReusableNode();
-                                            if (composer3.getInserting()) {
-                                                composer3.createNode(constructor2);
-                                            } else {
-                                                composer3.useNode();
-                                            }
-                                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
-                                            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                                            }
-                                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                            ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                            ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            composer3.endNode();
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            Unit unit = Unit.INSTANCE;
-                                            Unit unit2 = Unit.INSTANCE;
-                                        }
-                                        composer3.endReplaceGroup();
-                                        Modifier textVerticalPadding = TooltipKt.textVerticalPadding(Modifier.Companion, function27 != null ? r19 : false, function26 != null ? r19 : false);
-                                        ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                        MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                        int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                        CompositionLocalMap currentCompositionLocalMap3 = composer3.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, textVerticalPadding);
-                                        Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                        if (!(composer3.getApplier() instanceof Applier)) {
-                                            ComposablesKt.invalidApplier();
-                                        }
-                                        composer3.startReusableNode();
-                                        if (composer3.getInserting()) {
-                                            composer3.createNode(constructor3);
-                                        } else {
-                                            composer3.useNode();
-                                        }
-                                        Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
-                                        Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                                        }
-                                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                        BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                        ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
-                                        ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                                        providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
-                                        providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
-                                        CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        composer3.endNode();
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        composer3.startReplaceGroup(955039618);
-                                        ComposerKt.sourceInformation(composer3, "*201@8080L476");
-                                        if (function26 != null) {
-                                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
-                                            ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                            MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                            int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                            CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
-                                            Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
-                                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                            if (!(composer3.getApplier() instanceof Applier)) {
-                                                ComposablesKt.invalidApplier();
-                                            }
-                                            composer3.startReusableNode();
-                                            if (composer3.getInserting()) {
-                                                composer3.createNode(constructor4);
-                                            } else {
-                                                composer3.useNode();
-                                            }
-                                            Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
-                                            Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                                m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                                m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
-                                            }
-                                            Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
-                                            ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                            BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
-                                            ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
-                                            ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                                            providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
-                                            providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
-                                            CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            composer3.endNode();
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                                            Unit unit3 = Unit.INSTANCE;
-                                            Unit unit4 = Unit.INSTANCE;
-                                        }
-                                        composer3.endReplaceGroup();
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        composer3.endNode();
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
+                                        int i13 = i10 << 3;
+                                        long j5 = j4;
+                                        TooltipKt.m3375RichTooltipEkvW5A0(tooltipScope, modifier3, function27, function26, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j4), TooltipDefaults.INSTANCE.m3362getRichTooltipMaxWidthD9Ej5fM(), shape3, richTooltipColors3, f6, m4231getContainerElevationD9Ej5fM, function23, startRestartGroup, (i10 & 14) | i6 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (i13 & 3670016) | (i13 & 29360128) | (i13 & 234881024) | (i13 & 1879048192), (i10 >> 27) & 14, 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
-                                            return;
                                         }
-                                        return;
+                                        function25 = function26;
+                                        f4 = m4231getContainerElevationD9Ej5fM;
+                                        function24 = function27;
+                                        f5 = f6;
+                                        modifier2 = modifier3;
+                                        richTooltipColors2 = richTooltipColors3;
+                                        shape2 = shape3;
+                                        j3 = j5;
                                     }
-                                    composer3.skipToGroupEnd();
+                                } else {
+                                    startRestartGroup.skipToGroupEnd();
+                                    if ((i2 & 8) != 0) {
+                                        i3 &= -57345;
+                                    }
+                                    if ((i2 & 16) != 0) {
+                                        i3 &= -458753;
+                                    }
+                                    if ((i2 & 32) != 0) {
+                                        i3 &= -3670017;
+                                    }
                                 }
-                            }, startRestartGroup, 54), startRestartGroup, ((i9 >> 12) & 112) | 12582912 | (57344 & i15) | (i15 & 458752), 72);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
+                                f6 = f3;
+                                i10 = i3;
+                                modifier3 = companion;
+                                function27 = obj;
+                                function26 = obj2;
+                                richTooltipColors3 = obj4;
+                                j4 = j2;
+                                shape3 = obj3;
+                                m4231getContainerElevationD9Ej5fM = f2;
+                                startRestartGroup.endDefaults();
+                                if (ComposerKt.isTraceInProgress()) {
+                                }
+                                int i132 = i10 << 3;
+                                long j52 = j4;
+                                TooltipKt.m3375RichTooltipEkvW5A0(tooltipScope, modifier3, function27, function26, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j4), TooltipDefaults.INSTANCE.m3362getRichTooltipMaxWidthD9Ej5fM(), shape3, richTooltipColors3, f6, m4231getContainerElevationD9Ej5fM, function23, startRestartGroup, (i10 & 14) | i6 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (i132 & 3670016) | (i132 & 29360128) | (i132 & 234881024) | (i132 & 1879048192), (i10 >> 27) & 14, 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                }
+                                function25 = function26;
+                                f4 = m4231getContainerElevationD9Ej5fM;
+                                function24 = function27;
+                                f5 = f6;
+                                modifier2 = modifier3;
+                                richTooltipColors2 = richTooltipColors3;
+                                shape2 = shape3;
+                                j3 = j52;
+                            } else {
+                                startRestartGroup.skipToGroupEnd();
+                                function24 = obj;
+                                function25 = obj2;
+                                richTooltipColors2 = obj4;
+                                shape2 = obj3;
+                                f4 = f2;
+                                f5 = f3;
+                                modifier2 = companion;
+                                j3 = j2;
                             }
-                            composer2 = startRestartGroup;
-                            function24 = obj2;
-                            f5 = f3;
-                            f6 = f4;
-                            long j6 = j3;
-                            modifier3 = companion;
-                            j4 = j6;
-                            function25 = obj;
-                            shape2 = shape3;
-                        } else {
-                            startRestartGroup.skipToGroupEnd();
-                            richTooltipColors4 = richTooltipColors;
-                            composer2 = startRestartGroup;
-                            modifier3 = companion;
-                            function25 = obj;
-                            function24 = obj2;
-                            shape2 = obj3;
-                            j4 = j2;
-                            f5 = f;
-                            f6 = f2;
-                        }
-                        endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup != null) {
-                            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$2
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                    invoke(composer3, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer3, int i16) {
-                                    Tooltip_androidKt.m2966RichTooltipyDvdmqw(TooltipScope.this, modifier3, function25, function24, j4, shape2, richTooltipColors4, f5, f6, function23, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
-                                }
-                            });
-                            return;
-                        }
-                        return;
-                    }
-                    i8 = i7;
-                    if ((i2 & 256) != 0) {
-                    }
-                    int i122 = i3;
-                    if ((306783379 & i3) == 306783378) {
-                    }
-                    startRestartGroup.startDefaults();
-                    if ((i & 1) != 0) {
-                    }
-                    if (i11 != 0) {
-                    }
-                    if (i4 != 0) {
-                    }
-                    if (i5 != 0) {
-                    }
-                    if ((i2 & 8) != 0) {
-                    }
-                    if ((i2 & 16) != 0) {
-                    }
-                    if ((i2 & 32) != 0) {
-                    }
-                    if (i6 != 0) {
-                    }
-                    if (i8 != 0) {
-                    }
-                    startRestartGroup.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                    Object consume4 = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
-                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    final long m2048applyTonalElevationRFCenO82 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume4).m7278unboximpl() + f3), startRestartGroup, 0);
-                    Shape shape32 = obj3;
-                    startRestartGroup.startReplaceGroup(1472746423);
-                    ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
-                    if (j2 != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                    }
-                    startRestartGroup.endReplaceGroup();
-                    richTooltipColors4 = richTooltipColors3;
-                    int i152 = i9 >> 9;
-                    SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape32, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(2);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                            invoke(composer3, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        /* JADX WARN: Multi-variable type inference failed */
-                        /* JADX WARN: Type inference failed for: r19v0 */
-                        /* JADX WARN: Type inference failed for: r19v1 */
-                        /* JADX WARN: Type inference failed for: r19v2 */
-                        public final void invoke(Composer composer3, int i16) {
-                            ?? r19;
-                            Function2<Composer, Integer, Unit> function26;
-                            RichTooltipColors richTooltipColors5;
-                            ComposerKt.sourceInformation(composer3, "C179@7066L5,180@7133L5,181@7210L5,183@7225L1355:Tooltip.android.kt#uh7d8r");
-                            if ((i16 & 3) != 2 || !composer3.getSkipping()) {
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(317290958, i16, -1, "androidx.compose.material3.RichTooltip.<anonymous> (Tooltip.android.kt:179)");
-                                }
-                                TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
-                                TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
-                                TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                                Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
-                                Function2<Composer, Integer, Unit> function27 = obj;
-                                Function2<Composer, Integer, Unit> function28 = obj2;
-                                RichTooltipColors richTooltipColors6 = richTooltipColors4;
-                                Function2<Composer, Integer, Unit> function29 = function23;
-                                ComposerKt.sourceInformationMarkerStart(composer3, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                                MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer3, 0);
-                                ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
-                                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                if (!(composer3.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                composer3.startReusableNode();
-                                if (composer3.getInserting()) {
-                                    composer3.createNode(constructor);
-                                } else {
-                                    composer3.useNode();
-                                }
-                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
-                                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                }
-                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                                ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
-                                composer3.startReplaceGroup(955016030);
-                                ComposerKt.sourceInformation(composer3, "*185@7347L344");
-                                if (function27 == null) {
-                                    function26 = function28;
-                                    richTooltipColors5 = richTooltipColors6;
-                                    r19 = 1;
-                                } else {
-                                    r19 = 1;
-                                    function26 = function28;
-                                    richTooltipColors5 = richTooltipColors6;
-                                    Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
-                                    ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                    MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                    ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                    int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                    CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
-                                    Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                    ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                    if (!(composer3.getApplier() instanceof Applier)) {
-                                        ComposablesKt.invalidApplier();
+                            endRestartGroup = startRestartGroup.endRestartGroup();
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.Tooltip_androidKt$$ExternalSyntheticLambda1
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj5, Object obj6) {
+                                        Unit RichTooltipAndroid_yDvdmqw$lambda$2;
+                                        RichTooltipAndroid_yDvdmqw$lambda$2 = Tooltip_androidKt.RichTooltipAndroid_yDvdmqw$lambda$2(TooltipScope.this, modifier2, function24, function25, j3, shape2, richTooltipColors2, f5, f4, function23, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
+                                        return RichTooltipAndroid_yDvdmqw$lambda$2;
                                     }
-                                    composer3.startReusableNode();
-                                    if (composer3.getInserting()) {
-                                        composer3.createNode(constructor2);
-                                    } else {
-                                        composer3.useNode();
-                                    }
-                                    Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
-                                    Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                        m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                                    }
-                                    Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                    ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                    BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                    ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                                    CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    composer3.endNode();
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    Unit unit = Unit.INSTANCE;
-                                    Unit unit2 = Unit.INSTANCE;
-                                }
-                                composer3.endReplaceGroup();
-                                Modifier textVerticalPadding = TooltipKt.textVerticalPadding(Modifier.Companion, function27 != null ? r19 : false, function26 != null ? r19 : false);
-                                ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                CompositionLocalMap currentCompositionLocalMap3 = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, textVerticalPadding);
-                                Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                if (!(composer3.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                composer3.startReusableNode();
-                                if (composer3.getInserting()) {
-                                    composer3.createNode(constructor3);
-                                } else {
-                                    composer3.useNode();
-                                }
-                                Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
-                                Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                    m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                    m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                                }
-                                Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
-                                ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                                providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
-                                providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
-                                CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                composer3.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                composer3.startReplaceGroup(955039618);
-                                ComposerKt.sourceInformation(composer3, "*201@8080L476");
-                                if (function26 != null) {
-                                    Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
-                                    ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                    MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                    ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                    int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                    CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
-                                    Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
-                                    ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                    if (!(composer3.getApplier() instanceof Applier)) {
-                                        ComposablesKt.invalidApplier();
-                                    }
-                                    composer3.startReusableNode();
-                                    if (composer3.getInserting()) {
-                                        composer3.createNode(constructor4);
-                                    } else {
-                                        composer3.useNode();
-                                    }
-                                    Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
-                                    Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                        m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                        m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
-                                    }
-                                    Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
-                                    ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                    BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
-                                    ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
-                                    ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                                    providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
-                                    providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
-                                    CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    composer3.endNode();
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                    Unit unit3 = Unit.INSTANCE;
-                                    Unit unit4 = Unit.INSTANCE;
-                                }
-                                composer3.endReplaceGroup();
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                composer3.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                    return;
-                                }
+                                });
                                 return;
                             }
-                            composer3.skipToGroupEnd();
+                            return;
                         }
-                    }, startRestartGroup, 54), startRestartGroup, ((i9 >> 12) & 112) | 12582912 | (57344 & i152) | (i152 & 458752), 72);
-                    if (ComposerKt.isTraceInProgress()) {
+                        if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
+                        }
+                        endRestartGroup = startRestartGroup.endRestartGroup();
+                        if (endRestartGroup == null) {
+                        }
                     }
-                    composer2 = startRestartGroup;
-                    function24 = obj2;
-                    f5 = f3;
-                    f6 = f4;
-                    long j62 = j3;
-                    modifier3 = companion;
-                    j4 = j62;
-                    function25 = obj;
-                    shape2 = shape32;
-                    endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup != null) {
+                    i9 = i8;
+                    if ((i2 & 256) != 0) {
+                    }
+                    if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
+                    }
+                    endRestartGroup = startRestartGroup.endRestartGroup();
+                    if (endRestartGroup == null) {
                     }
                 }
                 obj2 = function22;
                 if ((i & 24576) != 0) {
                 }
-                if ((196608 & i) != 0) {
+                if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
                 }
-                if ((i & 1572864) == 0) {
+                if ((i & 1572864) != 0) {
                 }
-                i6 = i2 & 64;
-                if (i6 == 0) {
-                }
-                i7 = i2 & 128;
+                i7 = i2 & 64;
                 if (i7 == 0) {
                 }
-                i8 = i7;
+                i8 = i2 & 128;
+                if (i8 == 0) {
+                }
+                i9 = i8;
                 if ((i2 & 256) != 0) {
                 }
-                int i1222 = i3;
-                if ((306783379 & i3) == 306783378) {
+                if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i & 1) != 0) {
-                }
-                if (i11 != 0) {
-                }
-                if (i4 != 0) {
-                }
-                if (i5 != 0) {
-                }
-                if ((i2 & 8) != 0) {
-                }
-                if ((i2 & 16) != 0) {
-                }
-                if ((i2 & 32) != 0) {
-                }
-                if (i6 != 0) {
-                }
-                if (i8 != 0) {
-                }
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                Object consume42 = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                final long m2048applyTonalElevationRFCenO822 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume42).m7278unboximpl() + f3), startRestartGroup, 0);
-                Shape shape322 = obj3;
-                startRestartGroup.startReplaceGroup(1472746423);
-                ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
-                if (j2 != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                }
-                startRestartGroup.endReplaceGroup();
-                richTooltipColors4 = richTooltipColors3;
-                int i1522 = i9 >> 9;
-                SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape322, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                        invoke(composer3, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    /* JADX WARN: Multi-variable type inference failed */
-                    /* JADX WARN: Type inference failed for: r19v0 */
-                    /* JADX WARN: Type inference failed for: r19v1 */
-                    /* JADX WARN: Type inference failed for: r19v2 */
-                    public final void invoke(Composer composer3, int i16) {
-                        ?? r19;
-                        Function2<Composer, Integer, Unit> function26;
-                        RichTooltipColors richTooltipColors5;
-                        ComposerKt.sourceInformation(composer3, "C179@7066L5,180@7133L5,181@7210L5,183@7225L1355:Tooltip.android.kt#uh7d8r");
-                        if ((i16 & 3) != 2 || !composer3.getSkipping()) {
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(317290958, i16, -1, "androidx.compose.material3.RichTooltip.<anonymous> (Tooltip.android.kt:179)");
-                            }
-                            TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
-                            TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
-                            TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                            Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
-                            Function2<Composer, Integer, Unit> function27 = obj;
-                            Function2<Composer, Integer, Unit> function28 = obj2;
-                            RichTooltipColors richTooltipColors6 = richTooltipColors4;
-                            Function2<Composer, Integer, Unit> function29 = function23;
-                            ComposerKt.sourceInformationMarkerStart(composer3, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer3, 0);
-                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                            CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
-                            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                            if (!(composer3.getApplier() instanceof Applier)) {
-                                ComposablesKt.invalidApplier();
-                            }
-                            composer3.startReusableNode();
-                            if (composer3.getInserting()) {
-                                composer3.createNode(constructor);
-                            } else {
-                                composer3.useNode();
-                            }
-                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
-                            Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                            }
-                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                            ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                            ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                            ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
-                            composer3.startReplaceGroup(955016030);
-                            ComposerKt.sourceInformation(composer3, "*185@7347L344");
-                            if (function27 == null) {
-                                function26 = function28;
-                                richTooltipColors5 = richTooltipColors6;
-                                r19 = 1;
-                            } else {
-                                r19 = 1;
-                                function26 = function28;
-                                richTooltipColors5 = richTooltipColors6;
-                                Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
-                                ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
-                                Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                if (!(composer3.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                composer3.startReusableNode();
-                                if (composer3.getInserting()) {
-                                    composer3.createNode(constructor2);
-                                } else {
-                                    composer3.useNode();
-                                }
-                                Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
-                                Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                    m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                    m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                                }
-                                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                composer3.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                Unit unit = Unit.INSTANCE;
-                                Unit unit2 = Unit.INSTANCE;
-                            }
-                            composer3.endReplaceGroup();
-                            Modifier textVerticalPadding = TooltipKt.textVerticalPadding(Modifier.Companion, function27 != null ? r19 : false, function26 != null ? r19 : false);
-                            ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                            MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                            int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                            CompositionLocalMap currentCompositionLocalMap3 = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, textVerticalPadding);
-                            Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                            if (!(composer3.getApplier() instanceof Applier)) {
-                                ComposablesKt.invalidApplier();
-                            }
-                            composer3.startReusableNode();
-                            if (composer3.getInserting()) {
-                                composer3.createNode(constructor3);
-                            } else {
-                                composer3.useNode();
-                            }
-                            Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
-                            Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                            }
-                            Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                            ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                            BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                            ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
-                            ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                            providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
-                            providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
-                            CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            composer3.endNode();
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            composer3.startReplaceGroup(955039618);
-                            ComposerKt.sourceInformation(composer3, "*201@8080L476");
-                            if (function26 != null) {
-                                Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
-                                ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
-                                Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                if (!(composer3.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                composer3.startReusableNode();
-                                if (composer3.getInserting()) {
-                                    composer3.createNode(constructor4);
-                                } else {
-                                    composer3.useNode();
-                                }
-                                Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
-                                Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                    m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                    m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
-                                }
-                                Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
-                                ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                                providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
-                                providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
-                                CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                composer3.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                Unit unit3 = Unit.INSTANCE;
-                                Unit unit4 = Unit.INSTANCE;
-                            }
-                            composer3.endReplaceGroup();
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            composer3.endNode();
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                                return;
-                            }
-                            return;
-                        }
-                        composer3.skipToGroupEnd();
-                    }
-                }, startRestartGroup, 54), startRestartGroup, ((i9 >> 12) & 112) | 12582912 | (57344 & i1522) | (i1522 & 458752), 72);
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                composer2 = startRestartGroup;
-                function24 = obj2;
-                f5 = f3;
-                f6 = f4;
-                long j622 = j3;
-                modifier3 = companion;
-                j4 = j622;
-                function25 = obj;
-                shape2 = shape322;
-                endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup != null) {
+                endRestartGroup = startRestartGroup.endRestartGroup();
+                if (endRestartGroup == null) {
                 }
             }
             obj = function2;
@@ -1628,286 +985,23 @@ public final class Tooltip_androidKt {
             obj2 = function22;
             if ((i & 24576) != 0) {
             }
-            if ((196608 & i) != 0) {
+            if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
             }
-            if ((i & 1572864) == 0) {
+            if ((i & 1572864) != 0) {
             }
-            i6 = i2 & 64;
-            if (i6 == 0) {
-            }
-            i7 = i2 & 128;
+            i7 = i2 & 64;
             if (i7 == 0) {
             }
-            i8 = i7;
+            i8 = i2 & 128;
+            if (i8 == 0) {
+            }
+            i9 = i8;
             if ((i2 & 256) != 0) {
             }
-            int i12222 = i3;
-            if ((306783379 & i3) == 306783378) {
+            if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i & 1) != 0) {
-            }
-            if (i11 != 0) {
-            }
-            if (i4 != 0) {
-            }
-            if (i5 != 0) {
-            }
-            if ((i2 & 8) != 0) {
-            }
-            if ((i2 & 16) != 0) {
-            }
-            if ((i2 & 32) != 0) {
-            }
-            if (i6 != 0) {
-            }
-            if (i8 != 0) {
-            }
-            startRestartGroup.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-            Object consume422 = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final long m2048applyTonalElevationRFCenO8222 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume422).m7278unboximpl() + f3), startRestartGroup, 0);
-            Shape shape3222 = obj3;
-            startRestartGroup.startReplaceGroup(1472746423);
-            ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
-            if (j2 != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            }
-            startRestartGroup.endReplaceGroup();
-            richTooltipColors4 = richTooltipColors3;
-            int i15222 = i9 >> 9;
-            SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape3222, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                    invoke(composer3, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                /* JADX WARN: Multi-variable type inference failed */
-                /* JADX WARN: Type inference failed for: r19v0 */
-                /* JADX WARN: Type inference failed for: r19v1 */
-                /* JADX WARN: Type inference failed for: r19v2 */
-                public final void invoke(Composer composer3, int i16) {
-                    ?? r19;
-                    Function2<Composer, Integer, Unit> function26;
-                    RichTooltipColors richTooltipColors5;
-                    ComposerKt.sourceInformation(composer3, "C179@7066L5,180@7133L5,181@7210L5,183@7225L1355:Tooltip.android.kt#uh7d8r");
-                    if ((i16 & 3) != 2 || !composer3.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(317290958, i16, -1, "androidx.compose.material3.RichTooltip.<anonymous> (Tooltip.android.kt:179)");
-                        }
-                        TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
-                        TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
-                        TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                        Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
-                        Function2<Composer, Integer, Unit> function27 = obj;
-                        Function2<Composer, Integer, Unit> function28 = obj2;
-                        RichTooltipColors richTooltipColors6 = richTooltipColors4;
-                        Function2<Composer, Integer, Unit> function29 = function23;
-                        ComposerKt.sourceInformationMarkerStart(composer3, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                        MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer3, 0);
-                        ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                        int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                        CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
-                        Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                        ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                        if (!(composer3.getApplier() instanceof Applier)) {
-                            ComposablesKt.invalidApplier();
-                        }
-                        composer3.startReusableNode();
-                        if (composer3.getInserting()) {
-                            composer3.createNode(constructor);
-                        } else {
-                            composer3.useNode();
-                        }
-                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
-                        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                        }
-                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                        ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                        ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
-                        composer3.startReplaceGroup(955016030);
-                        ComposerKt.sourceInformation(composer3, "*185@7347L344");
-                        if (function27 == null) {
-                            function26 = function28;
-                            richTooltipColors5 = richTooltipColors6;
-                            r19 = 1;
-                        } else {
-                            r19 = 1;
-                            function26 = function28;
-                            richTooltipColors5 = richTooltipColors6;
-                            Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
-                            ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                            int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                            CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
-                            Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                            if (!(composer3.getApplier() instanceof Applier)) {
-                                ComposablesKt.invalidApplier();
-                            }
-                            composer3.startReusableNode();
-                            if (composer3.getInserting()) {
-                                composer3.createNode(constructor2);
-                            } else {
-                                composer3.useNode();
-                            }
-                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
-                            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                            }
-                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                            ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                            ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            composer3.endNode();
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            Unit unit = Unit.INSTANCE;
-                            Unit unit2 = Unit.INSTANCE;
-                        }
-                        composer3.endReplaceGroup();
-                        Modifier textVerticalPadding = TooltipKt.textVerticalPadding(Modifier.Companion, function27 != null ? r19 : false, function26 != null ? r19 : false);
-                        ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                        MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                        ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                        int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                        CompositionLocalMap currentCompositionLocalMap3 = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, textVerticalPadding);
-                        Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                        ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                        if (!(composer3.getApplier() instanceof Applier)) {
-                            ComposablesKt.invalidApplier();
-                        }
-                        composer3.startReusableNode();
-                        if (composer3.getInserting()) {
-                            composer3.createNode(constructor3);
-                        } else {
-                            composer3.useNode();
-                        }
-                        Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
-                        Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                        }
-                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                        BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                        ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
-                        ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                        providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
-                        providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
-                        CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        composer3.endNode();
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        composer3.startReplaceGroup(955039618);
-                        ComposerKt.sourceInformation(composer3, "*201@8080L476");
-                        if (function26 != null) {
-                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
-                            ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                            MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                            int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                            CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
-                            Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
-                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                            if (!(composer3.getApplier() instanceof Applier)) {
-                                ComposablesKt.invalidApplier();
-                            }
-                            composer3.startReusableNode();
-                            if (composer3.getInserting()) {
-                                composer3.createNode(constructor4);
-                            } else {
-                                composer3.useNode();
-                            }
-                            Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
-                            Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
-                            }
-                            Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
-                            ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                            BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
-                            ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
-                            ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                            providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
-                            providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
-                            CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            composer3.endNode();
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            Unit unit3 = Unit.INSTANCE;
-                            Unit unit4 = Unit.INSTANCE;
-                        }
-                        composer3.endReplaceGroup();
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        composer3.endNode();
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer3.skipToGroupEnd();
-                }
-            }, startRestartGroup, 54), startRestartGroup, ((i9 >> 12) & 112) | 12582912 | (57344 & i15222) | (i15222 & 458752), 72);
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            composer2 = startRestartGroup;
-            function24 = obj2;
-            f5 = f3;
-            f6 = f4;
-            long j6222 = j3;
-            modifier3 = companion;
-            j4 = j6222;
-            function25 = obj;
-            shape2 = shape3222;
-            endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup != null) {
+            endRestartGroup = startRestartGroup.endRestartGroup();
+            if (endRestartGroup == null) {
             }
         }
         companion = modifier;
@@ -1921,375 +1015,404 @@ public final class Tooltip_androidKt {
         obj2 = function22;
         if ((i & 24576) != 0) {
         }
-        if ((196608 & i) != 0) {
+        if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
         }
-        if ((i & 1572864) == 0) {
+        if ((i & 1572864) != 0) {
         }
-        i6 = i2 & 64;
-        if (i6 == 0) {
-        }
-        i7 = i2 & 128;
+        i7 = i2 & 64;
         if (i7 == 0) {
         }
-        i8 = i7;
+        i8 = i2 & 128;
+        if (i8 == 0) {
+        }
+        i9 = i8;
         if ((i2 & 256) != 0) {
         }
-        int i122222 = i3;
-        if ((306783379 & i3) == 306783378) {
+        if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i & 1) != 0) {
-        }
-        if (i11 != 0) {
-        }
-        if (i4 != 0) {
-        }
-        if (i5 != 0) {
-        }
-        if ((i2 & 8) != 0) {
-        }
-        if ((i2 & 16) != 0) {
-        }
-        if ((i2 & 32) != 0) {
-        }
-        if (i6 != 0) {
-        }
-        if (i8 != 0) {
-        }
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-        Object consume4222 = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        final long m2048applyTonalElevationRFCenO82222 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume4222).m7278unboximpl() + f3), startRestartGroup, 0);
-        Shape shape32222 = obj3;
-        startRestartGroup.startReplaceGroup(1472746423);
-        ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
-        if (j2 != InlineClassHelperKt.UnspecifiedPackedFloats) {
-        }
-        startRestartGroup.endReplaceGroup();
-        richTooltipColors4 = richTooltipColors3;
-        int i152222 = i9 >> 9;
-        SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape32222, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                invoke(composer3, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r19v0 */
-            /* JADX WARN: Type inference failed for: r19v1 */
-            /* JADX WARN: Type inference failed for: r19v2 */
-            public final void invoke(Composer composer3, int i16) {
-                ?? r19;
-                Function2<Composer, Integer, Unit> function26;
-                RichTooltipColors richTooltipColors5;
-                ComposerKt.sourceInformation(composer3, "C179@7066L5,180@7133L5,181@7210L5,183@7225L1355:Tooltip.android.kt#uh7d8r");
-                if ((i16 & 3) != 2 || !composer3.getSkipping()) {
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(317290958, i16, -1, "androidx.compose.material3.RichTooltip.<anonymous> (Tooltip.android.kt:179)");
-                    }
-                    TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
-                    TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
-                    TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                    Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
-                    Function2<Composer, Integer, Unit> function27 = obj;
-                    Function2<Composer, Integer, Unit> function28 = obj2;
-                    RichTooltipColors richTooltipColors6 = richTooltipColors4;
-                    Function2<Composer, Integer, Unit> function29 = function23;
-                    ComposerKt.sourceInformationMarkerStart(composer3, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                    MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer3, 0);
-                    ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                    int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                    CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
-                    Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                    ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                    if (!(composer3.getApplier() instanceof Applier)) {
-                        ComposablesKt.invalidApplier();
-                    }
-                    composer3.startReusableNode();
-                    if (composer3.getInserting()) {
-                        composer3.createNode(constructor);
-                    } else {
-                        composer3.useNode();
-                    }
-                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
-                    Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                    }
-                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                    ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                    ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                    ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
-                    composer3.startReplaceGroup(955016030);
-                    ComposerKt.sourceInformation(composer3, "*185@7347L344");
-                    if (function27 == null) {
-                        function26 = function28;
-                        richTooltipColors5 = richTooltipColors6;
-                        r19 = 1;
-                    } else {
-                        r19 = 1;
-                        function26 = function28;
-                        richTooltipColors5 = richTooltipColors6;
-                        Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
-                        ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                        MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                        ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                        int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                        CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
-                        Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                        ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                        if (!(composer3.getApplier() instanceof Applier)) {
-                            ComposablesKt.invalidApplier();
-                        }
-                        composer3.startReusableNode();
-                        if (composer3.getInserting()) {
-                            composer3.createNode(constructor2);
-                        } else {
-                            composer3.useNode();
-                        }
-                        Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
-                        Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                        }
-                        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                        BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                        ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                        CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        composer3.endNode();
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        Unit unit = Unit.INSTANCE;
-                        Unit unit2 = Unit.INSTANCE;
-                    }
-                    composer3.endReplaceGroup();
-                    Modifier textVerticalPadding = TooltipKt.textVerticalPadding(Modifier.Companion, function27 != null ? r19 : false, function26 != null ? r19 : false);
-                    ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                    MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                    ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                    int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                    CompositionLocalMap currentCompositionLocalMap3 = composer3.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, textVerticalPadding);
-                    Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                    ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                    if (!(composer3.getApplier() instanceof Applier)) {
-                        ComposablesKt.invalidApplier();
-                    }
-                    composer3.startReusableNode();
-                    if (composer3.getInserting()) {
-                        composer3.createNode(constructor3);
-                    } else {
-                        composer3.useNode();
-                    }
-                    Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
-                    Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                        m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                        m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                    }
-                    Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                    ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                    BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                    ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
-                    ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                    providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
-                    providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
-                    CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    composer3.endNode();
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    composer3.startReplaceGroup(955039618);
-                    ComposerKt.sourceInformation(composer3, "*201@8080L476");
-                    if (function26 != null) {
-                        Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
-                        ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                        MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                        ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                        int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                        CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
-                        Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
-                        ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                        if (!(composer3.getApplier() instanceof Applier)) {
-                            ComposablesKt.invalidApplier();
-                        }
-                        composer3.startReusableNode();
-                        if (composer3.getInserting()) {
-                            composer3.createNode(constructor4);
-                        } else {
-                            composer3.useNode();
-                        }
-                        Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
-                        Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                            m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                            m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
-                        }
-                        Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                        BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
-                        ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
-                        ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                        providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
-                        providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
-                        CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        composer3.endNode();
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        Unit unit3 = Unit.INSTANCE;
-                        Unit unit4 = Unit.INSTANCE;
-                    }
-                    composer3.endReplaceGroup();
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    composer3.endNode();
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                        return;
-                    }
-                    return;
-                }
-                composer3.skipToGroupEnd();
-            }
-        }, startRestartGroup, 54), startRestartGroup, ((i9 >> 12) & 112) | 12582912 | (57344 & i152222) | (i152222 & 458752), 72);
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        composer2 = startRestartGroup;
-        function24 = obj2;
-        f5 = f3;
-        f6 = f4;
-        long j62222 = j3;
-        modifier3 = companion;
-        j4 = j62222;
-        function25 = obj;
-        shape2 = shape32222;
-        endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup != null) {
+        endRestartGroup = startRestartGroup.endRestartGroup();
+        if (endRestartGroup == null) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: drawCaretWithPath-JKu-mZY  reason: not valid java name */
-    public static final DrawResult m2968drawCaretWithPathJKumZY(CacheDrawScope cacheDrawScope, CaretType caretType, Density density, Configuration configuration, final long j, long j2, final LayoutCoordinates layoutCoordinates) {
-        long j3;
-        final Path Path = AndroidPath_androidKt.Path();
-        if (layoutCoordinates != null) {
-            int mo423roundToPx0680j_4 = density.mo423roundToPx0680j_4(DpSize.m7360getHeightD9Ej5fM(j2));
-            int mo423roundToPx0680j_42 = density.mo423roundToPx0680j_4(DpSize.m7362getWidthD9Ej5fM(j2));
-            int mo423roundToPx0680j_43 = density.mo423roundToPx0680j_4(Dp.m7264constructorimpl(configuration.screenWidthDp));
-            int mo423roundToPx0680j_44 = density.mo423roundToPx0680j_4(TooltipKt.getSpacingBetweenTooltipAndAnchor());
-            Rect boundsInWindow = LayoutCoordinatesKt.boundsInWindow(layoutCoordinates);
-            float left = boundsInWindow.getLeft();
-            float right = boundsInWindow.getRight();
-            float top = boundsInWindow.getTop();
-            float f = 2;
-            float f2 = (right + left) / f;
-            float f3 = right - left;
-            float m4374getWidthimpl = Size.m4374getWidthimpl(cacheDrawScope.m4089getSizeNHjbRc());
-            float m4371getHeightimpl = Size.m4371getHeightimpl(cacheDrawScope.m4089getSizeNHjbRc());
-            boolean z = (top - m4371getHeightimpl) - ((float) mo423roundToPx0680j_44) < 0.0f;
-            if (z) {
-                m4371getHeightimpl = 0.0f;
-            }
-            if (caretType == CaretType.Plain) {
-                float f4 = mo423roundToPx0680j_43;
-                if ((m4374getWidthimpl / f) + f2 > f4) {
-                    j3 = OffsetKt.Offset(m4374getWidthimpl - (f4 - f2), m4371getHeightimpl);
-                } else {
-                    j3 = OffsetKt.Offset(f2 - Math.max(left - ((Size.m4374getWidthimpl(cacheDrawScope.m4089getSizeNHjbRc()) / f) - (f3 / f)), 0.0f), m4371getHeightimpl);
-                }
-            } else {
-                long Offset = OffsetKt.Offset(f2 - left, m4371getHeightimpl);
-                float f5 = mo423roundToPx0680j_43;
-                if (left + m4374getWidthimpl > f5) {
-                    float f6 = right - m4374getWidthimpl;
-                    Offset = OffsetKt.Offset(f2 - f6, m4371getHeightimpl);
-                    if (f6 < 0.0f) {
-                        float f7 = m4374getWidthimpl / f;
-                        float f8 = f3 / f;
-                        if ((left - f7) + f8 <= 0.0f) {
-                            j3 = OffsetKt.Offset(f2, m4371getHeightimpl);
-                        } else if ((right + f7) - f8 >= f5) {
-                            j3 = OffsetKt.Offset(m4374getWidthimpl - (f5 - f2), m4371getHeightimpl);
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0145  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x016c  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x026d  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0283  */
+    /* JADX WARN: Removed duplicated region for block: B:187:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0104  */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility.")
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final /* synthetic */ void RichTooltip(final TooltipScope tooltipScope, Modifier modifier, Function2 function2, Function2 function22, long j, float f, Shape shape, RichTooltipColors richTooltipColors, float f2, float f3, final Function2 function23, Composer composer, final int i, final int i2, final int i3) {
+        int i4;
+        Object obj;
+        int i5;
+        Object obj2;
+        int i6;
+        Object obj3;
+        long j2;
+        int i7;
+        float f4;
+        RichTooltipColors richTooltipColors2;
+        int i8;
+        int i9;
+        int i10;
+        int i11;
+        int i12;
+        final Shape shape2;
+        final float f5;
+        final Modifier modifier2;
+        final Function2 function24;
+        Composer composer2;
+        final float f6;
+        final float f7;
+        final RichTooltipColors richTooltipColors3;
+        final Function2 function25;
+        final long j3;
+        ScopeUpdateScope endRestartGroup;
+        Modifier.Companion companion;
+        long j4;
+        Shape shape3;
+        int i13;
+        Function2 function26;
+        float f8;
+        float f9;
+        float f10;
+        RichTooltipColors richTooltipColors4;
+        long j5;
+        Function2 function27;
+        int i14;
+        Composer startRestartGroup = composer.startRestartGroup(-905938553);
+        ComposerKt.sourceInformation(startRestartGroup, "C(RichTooltipAndroid)N(modifier,title,action,caretSize:c#ui.unit.DpSize,maxWidth:c#ui.unit.Dp,shape,colors,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp,text)202@8696L337:Tooltip.android.kt#uh7d8r");
+        if ((Integer.MIN_VALUE & i3) != 0) {
+            i4 = i | 6;
+        } else if ((i & 6) == 0) {
+            i4 = ((i & 8) == 0 ? startRestartGroup.changed(tooltipScope) : startRestartGroup.changedInstance(tooltipScope) ? 4 : 2) | i;
+        } else {
+            i4 = i;
+        }
+        int i15 = i3 & 1;
+        if (i15 != 0) {
+            i4 |= 48;
+        } else if ((i & 48) == 0) {
+            obj = modifier;
+            i4 |= startRestartGroup.changed(obj) ? 32 : 16;
+            i5 = i3 & 2;
+            if (i5 == 0) {
+                i4 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+            } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                obj2 = function2;
+                i4 |= startRestartGroup.changedInstance(obj2) ? 256 : 128;
+                i6 = i3 & 4;
+                if (i6 != 0) {
+                    i4 |= 3072;
+                } else if ((i & 3072) == 0) {
+                    obj3 = function22;
+                    i4 |= startRestartGroup.changedInstance(obj3) ? 2048 : 1024;
+                    if ((i & 24576) != 0) {
+                        if ((i3 & 8) == 0) {
+                            j2 = j;
+                            if (startRestartGroup.changed(j2)) {
+                                i14 = 16384;
+                                i4 |= i14;
+                            }
                         } else {
-                            j3 = OffsetKt.Offset(f7, m4371getHeightimpl);
+                            j2 = j;
+                        }
+                        i14 = 8192;
+                        i4 |= i14;
+                    } else {
+                        j2 = j;
+                    }
+                    i7 = i3 & 16;
+                    if (i7 == 0) {
+                        i4 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                        f4 = f;
+                    } else {
+                        f4 = f;
+                        if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                            i4 |= startRestartGroup.changed(f4) ? 131072 : 65536;
                         }
                     }
+                    if ((i & 1572864) == 0) {
+                        i4 |= ((i3 & 32) == 0 && startRestartGroup.changed(shape)) ? 1048576 : 524288;
+                    }
+                    if ((i & 12582912) != 0) {
+                        richTooltipColors2 = richTooltipColors;
+                        i4 |= ((i3 & 64) == 0 && startRestartGroup.changed(richTooltipColors2)) ? 8388608 : 4194304;
+                    } else {
+                        richTooltipColors2 = richTooltipColors;
+                    }
+                    i8 = i3 & 128;
+                    if (i8 == 0) {
+                        i4 |= 100663296;
+                    } else if ((i & 100663296) == 0) {
+                        i9 = i8;
+                        i4 |= startRestartGroup.changed(f2) ? 67108864 : 33554432;
+                        i10 = i3 & 256;
+                        if (i10 != 0) {
+                            i4 |= 805306368;
+                        } else if ((i & 805306368) == 0) {
+                            i11 = i10;
+                            i4 |= startRestartGroup.changed(f3) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                            if ((i3 & 512) == 0) {
+                                i12 = i2 | 6;
+                            } else if ((i2 & 6) == 0) {
+                                i12 = i2 | (startRestartGroup.changedInstance(function23) ? 4 : 2);
+                            } else {
+                                i12 = i2;
+                            }
+                            if (!startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i12 & 3) != 2, i4 & 1)) {
+                                startRestartGroup.startDefaults();
+                                ComposerKt.sourceInformation(startRestartGroup, "196@8445L25,197@8520L19");
+                                if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                    startRestartGroup.skipToGroupEnd();
+                                    if ((i3 & 8) != 0) {
+                                        i4 &= -57345;
+                                    }
+                                    if ((i3 & 32) != 0) {
+                                        i4 &= -3670017;
+                                    }
+                                    if ((i3 & 64) != 0) {
+                                        i4 &= -29360129;
+                                    }
+                                    Function2 function28 = obj3;
+                                    i13 = i4;
+                                    function26 = function28;
+                                    shape3 = shape;
+                                    f10 = f2;
+                                    f8 = f4;
+                                    companion = obj;
+                                    function27 = obj2;
+                                    f9 = f3;
+                                    richTooltipColors4 = richTooltipColors2;
+                                    j5 = j2;
+                                } else {
+                                    companion = i15 != 0 ? Modifier.Companion : obj;
+                                    if (i5 != 0) {
+                                        obj2 = null;
+                                    }
+                                    Function2 function29 = i6 == 0 ? obj3 : null;
+                                    if ((i3 & 8) != 0) {
+                                        j4 = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+                                        i4 &= -57345;
+                                    } else {
+                                        j4 = j2;
+                                    }
+                                    if (i7 != 0) {
+                                        f4 = TooltipDefaults.INSTANCE.m3362getRichTooltipMaxWidthD9Ej5fM();
+                                    }
+                                    if ((i3 & 32) != 0) {
+                                        shape3 = TooltipDefaults.INSTANCE.getRichTooltipContainerShape(startRestartGroup, 6);
+                                        i4 &= -3670017;
+                                    } else {
+                                        shape3 = shape;
+                                    }
+                                    if ((i3 & 64) != 0) {
+                                        richTooltipColors2 = TooltipDefaults.INSTANCE.richTooltipColors(startRestartGroup, 6);
+                                        i4 = (-29360129) & i4;
+                                    }
+                                    float m3888getLevel0D9Ej5fM = i9 != 0 ? ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM() : f2;
+                                    if (i11 != 0) {
+                                        long j6 = j4;
+                                        f10 = m3888getLevel0D9Ej5fM;
+                                        richTooltipColors4 = richTooltipColors2;
+                                        function27 = obj2;
+                                        f9 = RichTooltipTokens.INSTANCE.m4231getContainerElevationD9Ej5fM();
+                                        i13 = i4;
+                                        function26 = function29;
+                                        f8 = f4;
+                                        j5 = j6;
+                                    } else {
+                                        i13 = i4;
+                                        function26 = function29;
+                                        f8 = f4;
+                                        Function2 function210 = obj2;
+                                        f9 = f3;
+                                        long j7 = j4;
+                                        f10 = m3888getLevel0D9Ej5fM;
+                                        richTooltipColors4 = richTooltipColors2;
+                                        j5 = j7;
+                                        function27 = function210;
+                                    }
+                                }
+                                startRestartGroup.endDefaults();
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(-905938553, i13, i12, "androidx.compose.material3.RichTooltipAndroid (Tooltip.android.kt:201)");
+                                }
+                                long j8 = j5;
+                                float f11 = f8;
+                                Shape shape4 = shape3;
+                                TooltipKt.m3375RichTooltipEkvW5A0(tooltipScope, companion, function27, function26, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j5), f11, shape4, richTooltipColors4, f10, f9, function23, startRestartGroup, i13 & 2147426302, i12 & 14, 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventEnd();
+                                }
+                                function25 = function26;
+                                f5 = f10;
+                                composer2 = startRestartGroup;
+                                function24 = function27;
+                                shape2 = shape4;
+                                f6 = f9;
+                                modifier2 = companion;
+                                richTooltipColors3 = richTooltipColors4;
+                                f7 = f11;
+                                j3 = j8;
+                            } else {
+                                startRestartGroup.skipToGroupEnd();
+                                shape2 = shape;
+                                f5 = f2;
+                                modifier2 = obj;
+                                function24 = obj2;
+                                composer2 = startRestartGroup;
+                                f6 = f3;
+                                f7 = f4;
+                                richTooltipColors3 = richTooltipColors2;
+                                function25 = obj3;
+                                j3 = j2;
+                            }
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.Tooltip_androidKt$$ExternalSyntheticLambda0
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj4, Object obj5) {
+                                        Unit RichTooltipAndroid_ZuUcA3Q$lambda$3;
+                                        RichTooltipAndroid_ZuUcA3Q$lambda$3 = Tooltip_androidKt.RichTooltipAndroid_ZuUcA3Q$lambda$3(TooltipScope.this, modifier2, function24, function25, j3, f7, shape2, richTooltipColors3, f5, f6, function23, i, i2, i3, (Composer) obj4, ((Integer) obj5).intValue());
+                                        return RichTooltipAndroid_ZuUcA3Q$lambda$3;
+                                    }
+                                });
+                                return;
+                            }
+                            return;
+                        }
+                        i11 = i10;
+                        if ((i3 & 512) == 0) {
+                        }
+                        if (!startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i12 & 3) != 2, i4 & 1)) {
+                        }
+                        endRestartGroup = composer2.endRestartGroup();
+                        if (endRestartGroup == null) {
+                        }
+                    }
+                    i9 = i8;
+                    i10 = i3 & 256;
+                    if (i10 != 0) {
+                    }
+                    i11 = i10;
+                    if ((i3 & 512) == 0) {
+                    }
+                    if (!startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i12 & 3) != 2, i4 & 1)) {
+                    }
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup == null) {
+                    }
                 }
-                j3 = Offset;
+                obj3 = function22;
+                if ((i & 24576) != 0) {
+                }
+                i7 = i3 & 16;
+                if (i7 == 0) {
+                }
+                if ((i & 1572864) == 0) {
+                }
+                if ((i & 12582912) != 0) {
+                }
+                i8 = i3 & 128;
+                if (i8 == 0) {
+                }
+                i9 = i8;
+                i10 = i3 & 256;
+                if (i10 != 0) {
+                }
+                i11 = i10;
+                if ((i3 & 512) == 0) {
+                }
+                if (!startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i12 & 3) != 2, i4 & 1)) {
+                }
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup == null) {
+                }
             }
-            if (z) {
-                Path.moveTo(Offset.m4305getXimpl(j3), Offset.m4306getYimpl(j3));
-                float f9 = mo423roundToPx0680j_42 / 2;
-                Path.lineTo(Offset.m4305getXimpl(j3) + f9, Offset.m4306getYimpl(j3));
-                Path.lineTo(Offset.m4305getXimpl(j3), Offset.m4306getYimpl(j3) - mo423roundToPx0680j_4);
-                Path.lineTo(Offset.m4305getXimpl(j3) - f9, Offset.m4306getYimpl(j3));
-                Path.close();
-            } else {
-                Path.moveTo(Offset.m4305getXimpl(j3), Offset.m4306getYimpl(j3));
-                float f10 = mo423roundToPx0680j_42 / 2;
-                Path.lineTo(Offset.m4305getXimpl(j3) + f10, Offset.m4306getYimpl(j3));
-                Path.lineTo(Offset.m4305getXimpl(j3), Offset.m4306getYimpl(j3) + mo423roundToPx0680j_4);
-                Path.lineTo(Offset.m4305getXimpl(j3) - f10, Offset.m4306getYimpl(j3));
-                Path.close();
+            obj2 = function2;
+            i6 = i3 & 4;
+            if (i6 != 0) {
+            }
+            obj3 = function22;
+            if ((i & 24576) != 0) {
+            }
+            i7 = i3 & 16;
+            if (i7 == 0) {
+            }
+            if ((i & 1572864) == 0) {
+            }
+            if ((i & 12582912) != 0) {
+            }
+            i8 = i3 & 128;
+            if (i8 == 0) {
+            }
+            i9 = i8;
+            i10 = i3 & 256;
+            if (i10 != 0) {
+            }
+            i11 = i10;
+            if ((i3 & 512) == 0) {
+            }
+            if (!startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i12 & 3) != 2, i4 & 1)) {
+            }
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup == null) {
             }
         }
-        return cacheDrawScope.onDrawWithContent(new Function1<ContentDrawScope, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$drawCaretWithPath$4
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(ContentDrawScope contentDrawScope) {
-                invoke2(contentDrawScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(ContentDrawScope contentDrawScope) {
-                if (LayoutCoordinates.this != null) {
-                    contentDrawScope.drawContent();
-                    DrawScope.m5118drawPathLG529CI$default(contentDrawScope, Path, j, 0.0f, null, null, 0, 60, null);
-                }
-            }
-        });
+        obj = modifier;
+        i5 = i3 & 2;
+        if (i5 == 0) {
+        }
+        obj2 = function2;
+        i6 = i3 & 4;
+        if (i6 != 0) {
+        }
+        obj3 = function22;
+        if ((i & 24576) != 0) {
+        }
+        i7 = i3 & 16;
+        if (i7 == 0) {
+        }
+        if ((i & 1572864) == 0) {
+        }
+        if ((i & 12582912) != 0) {
+        }
+        i8 = i3 & 128;
+        if (i8 == 0) {
+        }
+        i9 = i8;
+        i10 = i3 & 256;
+        if (i10 != 0) {
+        }
+        i11 = i10;
+        if ((i3 & 512) == 0) {
+        }
+        if (!startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i12 & 3) != 2, i4 & 1)) {
+        }
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup == null) {
+        }
     }
 }

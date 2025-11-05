@@ -1,16 +1,14 @@
 package io.appmetrica.analytics;
 
 import android.location.Location;
-import android.text.TextUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.AbstractC0243f4;
-import io.appmetrica.analytics.impl.C0170c8;
-import io.appmetrica.analytics.impl.C0265g0;
-import io.appmetrica.analytics.impl.Gb;
-import io.appmetrica.analytics.impl.Kn;
-import io.appmetrica.analytics.impl.L5;
-import io.appmetrica.analytics.impl.ro;
+import io.appmetrica.analytics.impl.C0283h0;
+import io.appmetrica.analytics.impl.C0615u5;
+import io.appmetrica.analytics.impl.Gn;
+import io.appmetrica.analytics.impl.K7;
+import io.appmetrica.analytics.impl.O3;
+import io.appmetrica.analytics.impl.no;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Collection;
@@ -21,7 +19,7 @@ import java.util.Locale;
 import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public class AppMetricaConfig {
     public final Map<String, Object> additionalConfig;
     public final Boolean advIdentifiersTracking;
@@ -52,15 +50,15 @@ public class AppMetricaConfig {
     public final Boolean sessionsAutoTrackingEnabled;
     public final String userProfileID;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public static class Builder {
-        private static final Kn D = new Kn(new C0265g0());
+        private static final Gn D = new Gn(new C0283h0());
         private Integer A;
         private List B;
         private final HashMap C;
 
         /* renamed from: a  reason: collision with root package name */
-        private final L5 f193a;
+        private final C0615u5 f178a;
         private final String b;
         private String c;
         private Integer d;
@@ -202,7 +200,7 @@ public class AppMetricaConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.n = Integer.valueOf(this.f193a.a(i));
+            this.n = Integer.valueOf(this.f178a.a(i));
             return this;
         }
 
@@ -241,7 +239,7 @@ public class AppMetricaConfig {
             this.x = new LinkedHashMap();
             this.C = new HashMap();
             D.a(str);
-            this.f193a = new L5(str);
+            this.f178a = new C0615u5(str);
             this.b = str;
         }
     }
@@ -251,121 +249,35 @@ public class AppMetricaConfig {
     }
 
     public static AppMetricaConfig fromJson(String str) {
-        HashMap c;
-        HashMap c2;
-        new C0170c8();
-        if (TextUtils.isEmpty(str)) {
+        Builder a2 = new O3().a(str);
+        if (a2 == null) {
             return null;
         }
-        try {
-            JSONObject jSONObject = new JSONObject(str);
-            Builder newConfigBuilder = newConfigBuilder(jSONObject.getString("apikey"));
-            if (jSONObject.has("app_version")) {
-                newConfigBuilder.withAppVersion(jSONObject.optString("app_version"));
-            }
-            if (jSONObject.has("session_timeout")) {
-                newConfigBuilder.withSessionTimeout(jSONObject.getInt("session_timeout"));
-            }
-            newConfigBuilder.withLocation(AbstractC0243f4.a(jSONObject.optString(FirebaseAnalytics.Param.LOCATION)));
-            newConfigBuilder.withPreloadInfo(AbstractC0243f4.b(jSONObject.optString("preload_info")));
-            if (jSONObject.has("logs") && jSONObject.optBoolean("logs")) {
-                newConfigBuilder.withLogs();
-            }
-            if (jSONObject.has("crash_enabled")) {
-                newConfigBuilder.withCrashReporting(jSONObject.optBoolean("crash_enabled"));
-            }
-            if (jSONObject.has("crash_native_enabled")) {
-                newConfigBuilder.withNativeCrashReporting(jSONObject.optBoolean("crash_native_enabled"));
-            }
-            if (jSONObject.has("location_enabled")) {
-                newConfigBuilder.withLocationTracking(jSONObject.optBoolean("location_enabled"));
-            }
-            if (jSONObject.has("adv_identifiers_tracking")) {
-                newConfigBuilder.withAdvIdentifiersTracking(jSONObject.optBoolean("adv_identifiers_tracking", true));
-            }
-            if (jSONObject.has("max_reports_in_db_count")) {
-                newConfigBuilder.withMaxReportsInDatabaseCount(jSONObject.optInt("max_reports_in_db_count"));
-            }
-            if (jSONObject.has("error_environment") && (c2 = Gb.c(jSONObject.optString("error_environment"))) != null) {
-                for (Map.Entry entry : c2.entrySet()) {
-                    newConfigBuilder.withErrorEnvironmentValue((String) entry.getKey(), (String) entry.getValue());
-                }
-            }
-            if (jSONObject.has("first_activation_as_update")) {
-                newConfigBuilder.handleFirstActivationAsUpdate(jSONObject.optBoolean("first_activation_as_update"));
-            }
-            if (jSONObject.has("data_sending_enabled")) {
-                newConfigBuilder.withDataSendingEnabled(jSONObject.optBoolean("data_sending_enabled"));
-            }
-            if (jSONObject.has("user_profile_id")) {
-                newConfigBuilder.withUserProfileID(jSONObject.optString("user_profile_id", null));
-            }
-            if (jSONObject.has("revenue_auto_tracking_enabled")) {
-                newConfigBuilder.withRevenueAutoTrackingEnabled(jSONObject.optBoolean("revenue_auto_tracking_enabled"));
-            }
-            if (jSONObject.has("sessions_auto_tracking_enabled")) {
-                newConfigBuilder.withSessionsAutoTrackingEnabled(jSONObject.optBoolean("sessions_auto_tracking_enabled"));
-            }
-            if (jSONObject.has("app_open_tracking_enabled")) {
-                newConfigBuilder.withAppOpenTrackingEnabled(jSONObject.optBoolean("app_open_tracking_enabled"));
-            }
-            if (jSONObject.has(CommonUrlParts.DEVICE_TYPE)) {
-                newConfigBuilder.withDeviceType(jSONObject.optString(CommonUrlParts.DEVICE_TYPE));
-            }
-            if (jSONObject.has(CommonUrlParts.APP_VERSION_CODE)) {
-                newConfigBuilder.withAppBuildNumber(jSONObject.optInt(CommonUrlParts.APP_VERSION_CODE));
-            }
-            if (jSONObject.has("dispatch_period_seconds")) {
-                newConfigBuilder.withDispatchPeriodSeconds(jSONObject.optInt("dispatch_period_seconds"));
-            }
-            if (jSONObject.has("max_reports_count")) {
-                newConfigBuilder.withMaxReportsCount(jSONObject.optInt("max_reports_count"));
-            }
-            if (jSONObject.has("app_environment") && (c = Gb.c(jSONObject.optString("app_environment"))) != null) {
-                for (Map.Entry entry2 : c.entrySet()) {
-                    newConfigBuilder.withAppEnvironmentValue((String) entry2.getKey(), (String) entry2.getValue());
-                }
-            }
-            if (jSONObject.has("anr_monitoring")) {
-                newConfigBuilder.withAnrMonitoring(jSONObject.optBoolean("anr_monitoring"));
-            }
-            if (jSONObject.has("anr_monitoring_timeout")) {
-                newConfigBuilder.withAnrMonitoringTimeout(jSONObject.optInt("anr_monitoring_timeout"));
-            }
-            if (jSONObject.has("customHosts")) {
-                newConfigBuilder.withCustomHosts(Gb.a(jSONObject.optJSONArray("customHosts")));
-            }
-            if (jSONObject.has("additional_config")) {
-                jSONObject.optJSONObject("additional_config");
-            }
-            return newConfigBuilder.build();
-        } catch (Throwable unused) {
-            return null;
-        }
+        return a2.build();
     }
 
     public static Builder newConfigBuilder(String str) {
         return new Builder(str, 0);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008d A[Catch: all -> 0x011d, TryCatch #1 {all -> 0x011d, blocks: (B:3:0x0005, B:14:0x0058, B:18:0x0092, B:22:0x00e8, B:24:0x00fd, B:28:0x010b, B:27:0x0106, B:29:0x010e, B:21:0x00e3, B:17:0x008d), top: B:35:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00e3 A[Catch: all -> 0x011d, TryCatch #1 {all -> 0x011d, blocks: (B:3:0x0005, B:14:0x0058, B:18:0x0092, B:22:0x00e8, B:24:0x00fd, B:28:0x010b, B:27:0x0106, B:29:0x010e, B:21:0x00e3, B:17:0x008d), top: B:35:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00fd A[Catch: all -> 0x011d, TryCatch #1 {all -> 0x011d, blocks: (B:3:0x0005, B:14:0x0058, B:18:0x0092, B:22:0x00e8, B:24:0x00fd, B:28:0x010b, B:27:0x0106, B:29:0x010e, B:21:0x00e3, B:17:0x008d), top: B:35:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008f A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00e8 A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0102 A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public String toJson() {
         String str;
         List<String> list;
-        new C0170c8();
+        new K7();
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("apikey", this.apiKey);
             jSONObject.put("app_version", this.appVersion);
             jSONObject.put("session_timeout", this.sessionTimeout);
-            jSONObject.put(FirebaseAnalytics.Param.LOCATION, AbstractC0243f4.a(this.location));
+            jSONObject.put(FirebaseAnalytics.Param.LOCATION, O3.a(this.location));
             PreloadInfo preloadInfo = this.preloadInfo;
             JSONArray jSONArray = null;
             if (preloadInfo != null) {
@@ -403,7 +315,7 @@ public class AppMetricaConfig {
                 jSONObject.put("anr_monitoring_timeout", this.anrMonitoringTimeout);
                 list = this.customHosts;
                 if (list != null) {
-                    if (!ro.a((Collection) list)) {
+                    if (!no.a((Collection) list)) {
                         jSONArray = new JSONArray((Collection) list);
                     }
                     jSONObject.put("customHosts", jSONArray);

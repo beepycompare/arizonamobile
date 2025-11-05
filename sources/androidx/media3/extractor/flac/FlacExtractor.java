@@ -22,7 +22,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class FlacExtractor implements Extractor {
     private static final int BUFFER_LENGTH = 32768;
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: androidx.media3.extractor.flac.FlacExtractor$$ExternalSyntheticLambda0
@@ -57,7 +57,7 @@ public final class FlacExtractor implements Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 

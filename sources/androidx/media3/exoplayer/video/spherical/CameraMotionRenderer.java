@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.ExoPlaybackException;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CameraMotionRenderer extends BaseRenderer {
     private static final int SAMPLE_WINDOW_DURATION_US = 100000;
     private static final String TAG = "CameraMotionRenderer";

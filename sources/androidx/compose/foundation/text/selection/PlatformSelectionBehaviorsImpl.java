@@ -68,7 +68,7 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
     @Override // androidx.compose.foundation.text.selection.PlatformSelectionBehaviors
     /* renamed from: suggestSelectionForLongPressOrDoubleClick-pYaCw-w */
     public Object mo1746suggestSelectionForLongPressOrDoubleClickpYaCww(CharSequence charSequence, long j, Continuation<? super TextRange> continuation) {
-        if (charSequence.length() == 0 || TextRange.m6720getCollapsedimpl(j)) {
+        if (charSequence.length() == 0 || TextRange.m7451getCollapsedimpl(j)) {
             return null;
         }
         return requireTextClassificationSession(new PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2(charSequence, j, this, null), continuation);
@@ -77,7 +77,7 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
     @Override // androidx.compose.foundation.text.selection.PlatformSelectionBehaviors
     /* renamed from: onShowContextMenu-Sb-Bc2M */
     public Object mo1745onShowContextMenuSbBc2M(CharSequence charSequence, long j, Continuation<? super Unit> continuation) {
-        if (charSequence.length() == 0 || TextRange.m6720getCollapsedimpl(j)) {
+        if (charSequence.length() == 0 || TextRange.m7451getCollapsedimpl(j)) {
             return Unit.INSTANCE;
         }
         return requireTextClassificationSession(new PlatformSelectionBehaviorsImpl$onShowContextMenu$2(this, charSequence, j, null), continuation);
@@ -162,7 +162,7 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
                     }
                     Unit unit2 = Unit.INSTANCE;
                     mutex.unlock(null);
-                    classifyText = textClassifier2.classifyText(new TextClassification.Request.Builder(charSequence2, TextRange.m6724getMinimpl(j2), TextRange.m6723getMaximpl(j2)).setDefaultLocales(getAndroidLocalList()).build());
+                    classifyText = textClassifier2.classifyText(new TextClassification.Request.Builder(charSequence2, TextRange.m7455getMinimpl(j2), TextRange.m7454getMaximpl(j2)).setDefaultLocales(getAndroidLocalList()).build());
                     mutex2 = this.mutex;
                     platformSelectionBehaviorsImpl$classifyText$1.L$0 = charSequence2;
                     platformSelectionBehaviorsImpl$classifyText$1.L$1 = classifyText;
@@ -186,7 +186,7 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
             }
             Unit unit22 = Unit.INSTANCE;
             mutex.unlock(null);
-            classifyText = textClassifier2.classifyText(new TextClassification.Request.Builder(charSequence2, TextRange.m6724getMinimpl(j2), TextRange.m6723getMaximpl(j2)).setDefaultLocales(getAndroidLocalList()).build());
+            classifyText = textClassifier2.classifyText(new TextClassification.Request.Builder(charSequence2, TextRange.m7455getMinimpl(j2), TextRange.m7454getMaximpl(j2)).setDefaultLocales(getAndroidLocalList()).build());
             mutex2 = this.mutex;
             platformSelectionBehaviorsImpl$classifyText$1.L$0 = charSequence2;
             platformSelectionBehaviorsImpl$classifyText$1.L$1 = classifyText;

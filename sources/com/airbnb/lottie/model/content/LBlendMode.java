@@ -24,28 +24,24 @@ public enum LBlendMode {
     HARD_MIX;
 
     public BlendModeCompat toNativeBlendMode() {
-        int ordinal = ordinal();
-        if (ordinal == 1) {
-            if (Build.VERSION.SDK_INT >= 29) {
-                return BlendModeCompat.MULTIPLY;
-            }
-            return BlendModeCompat.MODULATE;
-        } else if (ordinal != 2) {
-            if (ordinal != 3) {
-                if (ordinal != 4) {
-                    if (ordinal != 5) {
-                        if (ordinal != 16) {
-                            return null;
-                        }
-                        return BlendModeCompat.PLUS;
-                    }
-                    return BlendModeCompat.LIGHTEN;
+        switch (this) {
+            case MULTIPLY:
+                if (Build.VERSION.SDK_INT >= 29) {
+                    return BlendModeCompat.MULTIPLY;
                 }
+                return BlendModeCompat.MODULATE;
+            case SCREEN:
+                return BlendModeCompat.SCREEN;
+            case OVERLAY:
+                return BlendModeCompat.OVERLAY;
+            case DARKEN:
                 return BlendModeCompat.DARKEN;
-            }
-            return BlendModeCompat.OVERLAY;
-        } else {
-            return BlendModeCompat.SCREEN;
+            case LIGHTEN:
+                return BlendModeCompat.LIGHTEN;
+            case ADD:
+                return BlendModeCompat.PLUS;
+            default:
+                return null;
         }
     }
 }

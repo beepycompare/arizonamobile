@@ -40,14 +40,14 @@ final class IntrinsicWidthNode extends IntrinsicSizeModifier {
     public long mo789calculateContentConstraintsl58MMJ0(MeasureScope measureScope, Measurable measurable, long j) {
         int maxIntrinsicWidth;
         if (this.width == IntrinsicSize.Min) {
-            maxIntrinsicWidth = measurable.minIntrinsicWidth(Constraints.m7216getMaxHeightimpl(j));
+            maxIntrinsicWidth = measurable.minIntrinsicWidth(Constraints.m7947getMaxHeightimpl(j));
         } else {
-            maxIntrinsicWidth = measurable.maxIntrinsicWidth(Constraints.m7216getMaxHeightimpl(j));
+            maxIntrinsicWidth = measurable.maxIntrinsicWidth(Constraints.m7947getMaxHeightimpl(j));
         }
         if (maxIntrinsicWidth < 0) {
             maxIntrinsicWidth = 0;
         }
-        return Constraints.Companion.m7229fixedWidthOenEA2s(maxIntrinsicWidth);
+        return Constraints.Companion.m7960fixedWidthOenEA2s(maxIntrinsicWidth);
     }
 
     @Override // androidx.compose.foundation.layout.IntrinsicSizeModifier, androidx.compose.ui.node.LayoutModifierNode

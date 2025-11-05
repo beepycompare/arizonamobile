@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class anim {
-        public static int fragment_fast_out_extra_slow_in = 0x7f010022;
+        public static int fragment_fast_out_extra_slow_in = 0x7f010024;
 
         private anim() {
         }
@@ -25,9 +25,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int fragment_container_view_tag = 0x7f0a053b;
-        public static int special_effects_controller_view_tag = 0x7f0a0caf;
-        public static int visible_removing_fragment_view_tag = 0x7f0a0f45;
+        public static int fragment_container_view_tag = 0x7f0a0558;
+        public static int special_effects_controller_view_tag = 0x7f0a0ce5;
+        public static int visible_removing_fragment_view_tag = 0x7f0a0fa4;
 
         private id() {
         }

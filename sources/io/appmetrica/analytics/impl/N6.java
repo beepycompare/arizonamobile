@@ -1,15 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.backport.Function;
-/* loaded from: classes4.dex */
-public final class N6 implements Function {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
-    /* renamed from: a */
-    public final Cn apply(Thread thread) {
-        String name = thread.getName();
-        int priority = thread.getPriority();
-        long id = thread.getId();
-        ThreadGroup threadGroup = thread.getThreadGroup();
-        return new Cn(name, priority, id, threadGroup != null ? threadGroup.getName() : "", null, null);
+/* loaded from: classes3.dex */
+public abstract /* synthetic */ class N6 {
+    public static /* synthetic */ String a(int i) {
+        if (i != 1) {
+            if (i == 2) {
+                return "db_overflow";
+            }
+            throw null;
+        }
+        return "bad_request";
     }
 }

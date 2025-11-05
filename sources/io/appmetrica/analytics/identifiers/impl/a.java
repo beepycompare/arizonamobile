@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.identifiers.impl;
 
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f327a;
+    public final String f343a;
     public final String b;
     public final Boolean c;
 
     public a(String str, String str2, Boolean bool) {
-        this.f327a = str;
+        this.f343a = str;
         this.b = str2;
         this.c = bool;
     }
@@ -21,13 +21,13 @@ public final class a {
         }
         if (obj instanceof a) {
             a aVar = (a) obj;
-            return Intrinsics.areEqual(this.f327a, aVar.f327a) && Intrinsics.areEqual(this.b, aVar.b) && Intrinsics.areEqual(this.c, aVar.c);
+            return Intrinsics.areEqual(this.f343a, aVar.f343a) && Intrinsics.areEqual(this.b, aVar.b) && Intrinsics.areEqual(this.c, aVar.c);
         }
         return false;
     }
 
     public final int hashCode() {
-        int hashCode = this.f327a.hashCode() * 31;
+        int hashCode = this.f343a.hashCode() * 31;
         String str = this.b;
         int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
         Boolean bool = this.c;
@@ -35,6 +35,6 @@ public final class a {
     }
 
     public final String toString() {
-        return "AdvIdInfo(provider=" + this.f327a + ", advId=" + this.b + ", limitedAdTracking=" + this.c + ')';
+        return "AdvIdInfo(provider=" + this.f343a + ", advId=" + this.b + ", limitedAdTracking=" + this.c + ')';
     }
 }

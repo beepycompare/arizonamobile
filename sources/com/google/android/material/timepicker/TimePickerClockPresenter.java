@@ -8,7 +8,7 @@ import androidx.exifinterface.media.ExifInterface;
 import com.google.android.material.R;
 import com.google.android.material.timepicker.ClockHandView;
 import com.google.android.material.timepicker.TimePickerView;
-import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
+import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* loaded from: classes4.dex */
 class TimePickerClockPresenter implements ClockHandView.OnRotateListener, TimePickerView.OnSelectionChange, TimePickerView.OnPeriodChangeListener, ClockHandView.OnActionUpListener, TimePickerPresenter {
     private static final int DEGREES_PER_HOUR = 30;

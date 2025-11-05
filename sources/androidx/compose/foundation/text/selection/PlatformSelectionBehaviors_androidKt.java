@@ -107,7 +107,7 @@ public final class PlatformSelectionBehaviors_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: canReuse-h5sm0ck  reason: not valid java name */
     public static final boolean m1754canReuseh5sm0ck(TextClassificationResult textClassificationResult, CharSequence charSequence, long j) {
-        return TextRange.m6719equalsimpl0(j, textClassificationResult.m1819getSelectiond9O1mEE()) && Intrinsics.areEqual(charSequence, textClassificationResult.getText());
+        return TextRange.m7450equalsimpl0(j, textClassificationResult.m1819getSelectiond9O1mEE()) && Intrinsics.areEqual(charSequence, textClassificationResult.getText());
     }
 
     /* renamed from: addPlatformTextContextMenuItems-71BSaZU  reason: not valid java name */
@@ -117,10 +117,10 @@ public final class PlatformSelectionBehaviors_androidKt {
             if (charSequence == null || textRange == null) {
                 return;
             }
-            ProcessText_androidKt.m1401addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m6730unboximpl());
+            ProcessText_androidKt.m1401addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7461unboximpl());
             return;
         }
-        ((PlatformSelectionBehaviorsImpl) platformSelectionBehaviors).m1749addSmartSelectionTextContextMenuItemsYmzfRxQ$foundation_release(textContextMenuBuilderScope, charSequence, textRange.m6730unboximpl(), function1);
-        ProcessText_androidKt.m1401addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m6730unboximpl());
+        ((PlatformSelectionBehaviorsImpl) platformSelectionBehaviors).m1749addSmartSelectionTextContextMenuItemsYmzfRxQ$foundation_release(textContextMenuBuilderScope, charSequence, textRange.m7461unboximpl(), function1);
+        ProcessText_androidKt.m1401addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7461unboximpl());
     }
 }

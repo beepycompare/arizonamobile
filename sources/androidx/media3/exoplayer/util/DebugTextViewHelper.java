@@ -10,7 +10,7 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.DecoderCounters;
 import androidx.media3.exoplayer.ExoPlayer;
 import java.util.Locale;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DebugTextViewHelper {
     private static final int REFRESH_INTERVAL_MS = 1000;
     private final ExoPlayer player;
@@ -115,7 +115,7 @@ public class DebugTextViewHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class Updater implements Player.Listener, Runnable {
         private Updater() {
         }

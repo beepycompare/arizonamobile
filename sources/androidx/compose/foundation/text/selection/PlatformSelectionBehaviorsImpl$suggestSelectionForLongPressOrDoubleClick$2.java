@@ -68,7 +68,7 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             TextClassifier textClassifier = (TextClassifier) this.L$0;
-            TextSelection.Request.Builder builder = new TextSelection.Request.Builder(this.$text, TextRange.m6724getMinimpl(this.$selection), TextRange.m6723getMaximpl(this.$selection));
+            TextSelection.Request.Builder builder = new TextSelection.Request.Builder(this.$text, TextRange.m7455getMinimpl(this.$selection), TextRange.m7454getMaximpl(this.$selection));
             androidLocalList = this.this$0.getAndroidLocalList();
             TextSelection.Request.Builder defaultLocales = builder.setDefaultLocales(androidLocalList);
             if (Build.VERSION.SDK_INT >= 31) {
@@ -129,6 +129,6 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
             ResultKt.throwOnFailure(obj);
             j2 = j;
         }
-        return TextRange.m6714boximpl(j2);
+        return TextRange.m7445boximpl(j2);
     }
 }

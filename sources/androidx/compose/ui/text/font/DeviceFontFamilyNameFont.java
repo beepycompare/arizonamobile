@@ -24,19 +24,19 @@ final class DeviceFontFamilyNameFont extends AndroidFont {
 
     @Override // androidx.compose.ui.text.font.Font
     /* renamed from: getStyle-_-LCdwA */
-    public int mo6791getStyle_LCdwA() {
+    public int mo7522getStyle_LCdwA() {
         return this.style;
     }
 
     private DeviceFontFamilyNameFont(String str, FontWeight fontWeight, int i, FontVariation.Settings settings) {
-        super(FontLoadingStrategy.Companion.m6832getOptionalLocalPKNRLFQ(), NamedFontLoader.INSTANCE, settings, null);
+        super(FontLoadingStrategy.Companion.m7563getOptionalLocalPKNRLFQ(), NamedFontLoader.INSTANCE, settings, null);
         this.familyName = str;
         this.weight = fontWeight;
         this.style = i;
     }
 
     public final android.graphics.Typeface loadCached(Context context) {
-        return PlatformTypefaces_androidKt.PlatformTypefaces().mo6869optionalOnDeviceFontFamilyByName78DK7lM(this.familyName, getWeight(), mo6791getStyle_LCdwA(), getVariationSettings(), context);
+        return PlatformTypefaces_androidKt.PlatformTypefaces().mo7600optionalOnDeviceFontFamilyByName78DK7lM(this.familyName, getWeight(), mo7522getStyle_LCdwA(), getVariationSettings(), context);
     }
 
     public boolean equals(Object obj) {
@@ -45,16 +45,16 @@ final class DeviceFontFamilyNameFont extends AndroidFont {
         }
         if (obj instanceof DeviceFontFamilyNameFont) {
             DeviceFontFamilyNameFont deviceFontFamilyNameFont = (DeviceFontFamilyNameFont) obj;
-            return DeviceFontFamilyName.m6804equalsimpl0(this.familyName, deviceFontFamilyNameFont.familyName) && Intrinsics.areEqual(getWeight(), deviceFontFamilyNameFont.getWeight()) && FontStyle.m6839equalsimpl0(mo6791getStyle_LCdwA(), deviceFontFamilyNameFont.mo6791getStyle_LCdwA()) && Intrinsics.areEqual(getVariationSettings(), deviceFontFamilyNameFont.getVariationSettings());
+            return DeviceFontFamilyName.m7535equalsimpl0(this.familyName, deviceFontFamilyNameFont.familyName) && Intrinsics.areEqual(getWeight(), deviceFontFamilyNameFont.getWeight()) && FontStyle.m7570equalsimpl0(mo7522getStyle_LCdwA(), deviceFontFamilyNameFont.mo7522getStyle_LCdwA()) && Intrinsics.areEqual(getVariationSettings(), deviceFontFamilyNameFont.getVariationSettings());
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((DeviceFontFamilyName.m6805hashCodeimpl(this.familyName) * 31) + getWeight().hashCode()) * 31) + FontStyle.m6840hashCodeimpl(mo6791getStyle_LCdwA())) * 31) + getVariationSettings().hashCode();
+        return (((((DeviceFontFamilyName.m7536hashCodeimpl(this.familyName) * 31) + getWeight().hashCode()) * 31) + FontStyle.m7571hashCodeimpl(mo7522getStyle_LCdwA())) * 31) + getVariationSettings().hashCode();
     }
 
     public String toString() {
-        return "Font(familyName=\"" + ((Object) DeviceFontFamilyName.m6806toStringimpl(this.familyName)) + "\", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m6841toStringimpl(mo6791getStyle_LCdwA())) + ')';
+        return "Font(familyName=\"" + ((Object) DeviceFontFamilyName.m7537toStringimpl(this.familyName)) + "\", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7572toStringimpl(mo7522getStyle_LCdwA())) + ')';
     }
 }

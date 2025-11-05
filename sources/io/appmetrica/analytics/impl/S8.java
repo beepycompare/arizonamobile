@@ -1,82 +1,54 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-/* loaded from: classes4.dex */
-public final class S8 extends MessageNano {
-    public static volatile S8[] b;
+import android.content.ContentValues;
+/* loaded from: classes3.dex */
+public final class S8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public P8 f669a;
+    public final String f680a;
+    public String b;
+    public final Long c;
+    public final Long d;
+    public final Long e;
+    public final Long f;
+    public final C0518q7 g;
+    public final EnumC0320ib h;
+    public final Integer i;
+    public final String j;
+    public final Integer k;
+    public final Integer l;
+    public final String m;
+    public final String n;
+    public final N8 o;
+    public final EnumC0370ka p;
+    public final EnumC0594t9 q;
+    public final Boolean r;
+    public final Integer s;
+    public final byte[] t;
 
-    public S8() {
-        a();
-    }
-
-    public static S8[] b() {
-        if (b == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (b == null) {
-                    b = new S8[0];
-                }
-            }
-        }
-        return b;
-    }
-
-    public final S8 a() {
-        this.f669a = null;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        P8 p8 = this.f669a;
-        return p8 != null ? CodedOutputByteBufferNano.computeMessageSize(1, p8) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        P8 p8 = this.f669a;
-        if (p8 != null) {
-            codedOutputByteBufferNano.writeMessage(1, p8);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final S8 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag != 10) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                if (this.f669a == null) {
-                    this.f669a = new P8();
-                }
-                codedInputByteBufferNano.readMessage(this.f669a);
-            }
-        }
-        return this;
-    }
-
-    public static S8 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new S8().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static S8 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (S8) MessageNano.mergeFrom(new S8(), bArr);
+    public S8(ContentValues contentValues) {
+        C0418m7 model = new C0443n7(null, 1, null).toModel(contentValues);
+        this.f680a = model.a().j();
+        this.b = model.a().p();
+        this.c = model.c();
+        this.d = model.b();
+        this.e = model.a().k();
+        this.f = model.d();
+        this.g = model.a().i();
+        this.h = model.e();
+        this.i = model.a().d();
+        this.j = model.a().f();
+        this.k = model.a().o();
+        this.l = model.a().c();
+        this.m = model.a().b();
+        this.n = model.a().m();
+        N8 e = model.a().e();
+        this.o = e == null ? N8.a(null) : e;
+        EnumC0370ka h = model.a().h();
+        this.p = h == null ? EnumC0370ka.a(null) : h;
+        this.q = model.a().n();
+        this.r = model.a().a();
+        this.s = model.a().l();
+        this.t = model.a().g();
     }
 }

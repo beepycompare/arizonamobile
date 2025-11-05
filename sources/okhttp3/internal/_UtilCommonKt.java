@@ -21,7 +21,6 @@ import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.ArrayIteratorKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.TypeIntrinsics;
 import kotlin.text.StringsKt;
@@ -39,7 +38,7 @@ import okio.Sink;
 public final class _UtilCommonKt {
     public static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
     private static final Options UNICODE_BOMS = Options.Companion.of(ByteString.Companion.decodeHex("efbbbf"), ByteString.Companion.decodeHex("feff"), ByteString.Companion.decodeHex("fffe0000"), ByteString.Companion.decodeHex("fffe"), ByteString.Companion.decodeHex("0000feff"));
-    public static final String USER_AGENT = "okhttp/5.1.0";
+    public static final String USER_AGENT = "okhttp/5.3.0";
 
     public static final int and(byte b, int i) {
         return b & i;
@@ -97,9 +96,8 @@ public final class _UtilCommonKt {
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         if (strArr.length != 0 && strArr2 != null && strArr2.length != 0) {
             for (String str : strArr) {
-                Iterator it = ArrayIteratorKt.iterator(strArr2);
-                while (it.hasNext()) {
-                    if (comparator.compare(str, (String) it.next()) == 0) {
+                for (String str2 : strArr2) {
+                    if (comparator.compare(str, str2) == 0) {
                         return true;
                     }
                 }

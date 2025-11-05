@@ -34,19 +34,19 @@ public final class MathUtilsKt {
         if (SelectionManagerKt.m1802containsInclusiveUv8p0NA(rect, j)) {
             return 0.0f;
         }
-        float m4304getDistanceSquaredimpl = Offset.m4304getDistanceSquaredimpl(Offset.m4309minusMKHz9U(rect.m4340getTopLeftF1C5BW0(), j));
-        if (m4304getDistanceSquaredimpl >= Float.MAX_VALUE) {
-            m4304getDistanceSquaredimpl = Float.MAX_VALUE;
+        float m5034getDistanceSquaredimpl = Offset.m5034getDistanceSquaredimpl(Offset.m5039minusMKHz9U(rect.m5070getTopLeftF1C5BW0(), j));
+        if (m5034getDistanceSquaredimpl >= Float.MAX_VALUE) {
+            m5034getDistanceSquaredimpl = Float.MAX_VALUE;
         }
-        float m4304getDistanceSquaredimpl2 = Offset.m4304getDistanceSquaredimpl(Offset.m4309minusMKHz9U(rect.m4341getTopRightF1C5BW0(), j));
-        if (m4304getDistanceSquaredimpl2 < m4304getDistanceSquaredimpl) {
-            m4304getDistanceSquaredimpl = m4304getDistanceSquaredimpl2;
+        float m5034getDistanceSquaredimpl2 = Offset.m5034getDistanceSquaredimpl(Offset.m5039minusMKHz9U(rect.m5071getTopRightF1C5BW0(), j));
+        if (m5034getDistanceSquaredimpl2 < m5034getDistanceSquaredimpl) {
+            m5034getDistanceSquaredimpl = m5034getDistanceSquaredimpl2;
         }
-        float m4304getDistanceSquaredimpl3 = Offset.m4304getDistanceSquaredimpl(Offset.m4309minusMKHz9U(rect.m4333getBottomLeftF1C5BW0(), j));
-        if (m4304getDistanceSquaredimpl3 < m4304getDistanceSquaredimpl) {
-            m4304getDistanceSquaredimpl = m4304getDistanceSquaredimpl3;
+        float m5034getDistanceSquaredimpl3 = Offset.m5034getDistanceSquaredimpl(Offset.m5039minusMKHz9U(rect.m5063getBottomLeftF1C5BW0(), j));
+        if (m5034getDistanceSquaredimpl3 < m5034getDistanceSquaredimpl) {
+            m5034getDistanceSquaredimpl = m5034getDistanceSquaredimpl3;
         }
-        float m4304getDistanceSquaredimpl4 = Offset.m4304getDistanceSquaredimpl(Offset.m4309minusMKHz9U(rect.m4334getBottomRightF1C5BW0(), j));
-        return m4304getDistanceSquaredimpl4 < m4304getDistanceSquaredimpl ? m4304getDistanceSquaredimpl4 : m4304getDistanceSquaredimpl;
+        float m5034getDistanceSquaredimpl4 = Offset.m5034getDistanceSquaredimpl(Offset.m5039minusMKHz9U(rect.m5064getBottomRightF1C5BW0(), j));
+        return m5034getDistanceSquaredimpl4 < m5034getDistanceSquaredimpl ? m5034getDistanceSquaredimpl4 : m5034getDistanceSquaredimpl;
     }
 }

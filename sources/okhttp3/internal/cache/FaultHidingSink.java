@@ -15,10 +15,6 @@ public class FaultHidingSink extends ForwardingSink {
     private boolean hasErrors;
     private final Function1<IOException, Unit> onException;
 
-    public final Function1<IOException, Unit> getOnException() {
-        return this.onException;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public FaultHidingSink(Sink delegate, Function1<? super IOException, Unit> onException) {
@@ -26,6 +22,10 @@ public class FaultHidingSink extends ForwardingSink {
         Intrinsics.checkNotNullParameter(delegate, "delegate");
         Intrinsics.checkNotNullParameter(onException, "onException");
         this.onException = onException;
+    }
+
+    public final Function1<IOException, Unit> getOnException() {
+        return this.onException;
     }
 
     @Override // okio.ForwardingSink, okio.Sink

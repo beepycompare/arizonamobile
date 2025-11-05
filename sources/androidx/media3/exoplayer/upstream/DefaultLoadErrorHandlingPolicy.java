@@ -8,7 +8,7 @@ import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import androidx.media3.exoplayer.upstream.Loader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultLoadErrorHandlingPolicy implements LoadErrorHandlingPolicy {
     private static final int DEFAULT_BEHAVIOR_MIN_LOADABLE_RETRY_COUNT = -1;
     public static final long DEFAULT_LOCATION_EXCLUSION_MS = 300000;

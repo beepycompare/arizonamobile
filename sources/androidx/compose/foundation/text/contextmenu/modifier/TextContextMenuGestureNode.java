@@ -54,7 +54,7 @@ public final class TextContextMenuGestureNode extends DelegatingNode implements 
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                    m1425invokek4lQ0M(offset.m4315unboximpl());
+                    m1425invokek4lQ0M(offset.m5045unboximpl());
                     return Unit.INSTANCE;
                 }
 
@@ -132,7 +132,7 @@ public final class TextContextMenuGestureNode extends DelegatingNode implements 
         public long mo1426positiontuRUvjQ(LayoutCoordinates layoutCoordinates) {
             LayoutCoordinates localCoordinates = TextContextMenuGestureNode.this.getLocalCoordinates();
             if (localCoordinates != null) {
-                return layoutCoordinates.mo5976localPositionOfR5De75A(localCoordinates, this.localClickOffset);
+                return layoutCoordinates.mo6706localPositionOfR5De75A(localCoordinates, this.localClickOffset);
             }
             InlineClassHelperKt.throwIllegalStateExceptionForNullCheck(TextContextMenuGestureNode.MESSAGE);
             throw new KotlinNothingValueException();
@@ -140,7 +140,7 @@ public final class TextContextMenuGestureNode extends DelegatingNode implements 
 
         @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider
         public Rect contentBounds(LayoutCoordinates layoutCoordinates) {
-            return RectKt.m4345Recttz77jQw(mo1426positiontuRUvjQ(layoutCoordinates), Size.Companion.m4383getZeroNHjbRc());
+            return RectKt.m5075Recttz77jQw(mo1426positiontuRUvjQ(layoutCoordinates), Size.Companion.m5113getZeroNHjbRc());
         }
 
         @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider

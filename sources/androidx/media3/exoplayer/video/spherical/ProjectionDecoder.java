@@ -6,7 +6,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.video.spherical.Projection;
 import java.util.ArrayList;
 import java.util.zip.Inflater;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class ProjectionDecoder {
     private static final int MAX_COORDINATE_COUNT = 10000;
     private static final int MAX_TRIANGLE_INDICES = 128000;

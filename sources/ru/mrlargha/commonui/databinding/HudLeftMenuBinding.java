@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class HudLeftMenuBinding implements ViewBinding {
     public final ImageView btnOpenBattlePass;
     public final ImageView btnOpenQuest;

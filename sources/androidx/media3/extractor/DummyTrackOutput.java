@@ -6,7 +6,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.TrackOutput;
 import java.io.IOException;
 @Deprecated
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DummyTrackOutput implements TrackOutput {
     private final DiscardingTrackOutput discardingTrackOutput = new DiscardingTrackOutput();
 

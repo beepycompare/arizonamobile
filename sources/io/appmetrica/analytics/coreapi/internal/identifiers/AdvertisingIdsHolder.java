@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.coreapi.internal.identifiers;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class AdvertisingIdsHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AdTrackingInfoResult f254a;
+    private final AdTrackingInfoResult f267a;
     private final AdTrackingInfoResult b;
     private final AdTrackingInfoResult c;
 
@@ -14,7 +14,7 @@ public class AdvertisingIdsHolder {
     }
 
     public AdTrackingInfoResult getGoogle() {
-        return this.f254a;
+        return this.f267a;
     }
 
     public AdTrackingInfoResult getHuawei() {
@@ -26,11 +26,11 @@ public class AdvertisingIdsHolder {
     }
 
     public String toString() {
-        return "AdvertisingIdsHolder{mGoogle=" + this.f254a + ", mHuawei=" + this.b + ", yandex=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "AdvertisingIdsHolder{mGoogle=" + this.f267a + ", mHuawei=" + this.b + ", yandex=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public AdvertisingIdsHolder(AdTrackingInfoResult adTrackingInfoResult, AdTrackingInfoResult adTrackingInfoResult2, AdTrackingInfoResult adTrackingInfoResult3) {
-        this.f254a = adTrackingInfoResult;
+        this.f267a = adTrackingInfoResult;
         this.b = adTrackingInfoResult2;
         this.c = adTrackingInfoResult3;
     }

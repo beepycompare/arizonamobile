@@ -44,14 +44,14 @@ public abstract class RippleIndicationInstance implements IndicationInstance {
     }
 
     /* renamed from: drawStateLayer-H2RKhps  reason: not valid java name */
-    public final void m1864drawStateLayerH2RKhps(DrawScope drawScope, float f, long j) {
+    public final void m1862drawStateLayerH2RKhps(DrawScope drawScope, float f, long j) {
         float f2;
         StateLayer stateLayer = this.stateLayer;
         if (Float.isNaN(f)) {
-            f2 = RippleAnimationKt.m1858getRippleEndRadiuscSwnlzA(drawScope, this.bounded, drawScope.mo5128getSizeNHjbRc());
+            f2 = RippleAnimationKt.m1856getRippleEndRadiuscSwnlzA(drawScope, this.bounded, drawScope.mo5858getSizeNHjbRc());
         } else {
             f2 = drawScope.mo429toPx0680j_4(f);
         }
-        stateLayer.m1872drawStateLayermxwnekA(drawScope, f2, j);
+        stateLayer.m1870drawStateLayermxwnekA(drawScope, f2, j);
     }
 }

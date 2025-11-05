@@ -1,9 +1,10 @@
 package com.google.android.gms.common.api.internal;
 
 import android.os.Bundle;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class zzb implements Runnable {
     final /* synthetic */ LifecycleCallback zza;
     final /* synthetic */ String zzb;
@@ -13,47 +14,33 @@ public final class zzb implements Runnable {
     public zzb(zzc zzcVar, LifecycleCallback lifecycleCallback, String str) {
         this.zza = lifecycleCallback;
         this.zzb = str;
+        Objects.requireNonNull(zzcVar);
         this.zzc = zzcVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        int i5;
         Bundle bundle;
-        Bundle bundle2;
-        Bundle bundle3;
         zzc zzcVar = this.zzc;
-        i = zzcVar.zzb;
-        if (i > 0) {
+        if (zzcVar.zzm() > 0) {
             LifecycleCallback lifecycleCallback = this.zza;
-            bundle = zzcVar.zzc;
-            if (bundle != null) {
-                String str = this.zzb;
-                bundle3 = zzcVar.zzc;
-                bundle2 = bundle3.getBundle(str);
+            if (zzcVar.zzn() != null) {
+                bundle = zzcVar.zzn().getBundle(this.zzb);
             } else {
-                bundle2 = null;
+                bundle = null;
             }
-            lifecycleCallback.onCreate(bundle2);
+            lifecycleCallback.onCreate(bundle);
         }
-        i2 = this.zzc.zzb;
-        if (i2 >= 2) {
+        if (zzcVar.zzm() >= 2) {
             this.zza.onStart();
         }
-        i3 = this.zzc.zzb;
-        if (i3 >= 3) {
+        if (zzcVar.zzm() >= 3) {
             this.zza.onResume();
         }
-        i4 = this.zzc.zzb;
-        if (i4 >= 4) {
+        if (zzcVar.zzm() >= 4) {
             this.zza.onStop();
         }
-        i5 = this.zzc.zzb;
-        if (i5 >= 5) {
+        if (zzcVar.zzm() >= 5) {
             this.zza.onDestroy();
         }
     }

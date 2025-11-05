@@ -1,31 +1,55 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
+import kotlin.jvm.internal.Intrinsics;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
-public final class Ao implements zo {
+/* loaded from: classes3.dex */
+public final class Ao {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0119a9 f358a;
+    public final Do f402a;
+    public final Do b;
+    public final Bo c;
+    public JSONObject d;
 
-    public Ao() {
-        this(new C0119a9());
+    public Ao(Do r1, Do r2, Bo bo) {
+        this.f402a = r1;
+        this.b = r2;
+        this.c = bo;
     }
 
-    @Override // io.appmetrica.analytics.impl.zo
-    public final byte[] a(C0403l9 c0403l9, Gh gh) {
-        if (!((C0652v5) gh.l).B() && !TextUtils.isEmpty(c0403l9.b)) {
-            try {
-                JSONObject jSONObject = new JSONObject(c0403l9.b);
-                jSONObject.remove("preloadInfo");
-                c0403l9.b = jSONObject.toString();
-            } catch (Throwable unused) {
-            }
+    public final synchronized JSONObject a() {
+        JSONObject jSONObject;
+        if (this.d == null) {
+            JSONObject a2 = this.c.a(a(this.f402a), a(this.b));
+            this.d = a2;
+            a(a2);
         }
-        return this.f358a.a(c0403l9, gh);
+        jSONObject = this.d;
+        if (jSONObject == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("fileContents");
+            jSONObject = null;
+        }
+        return jSONObject;
     }
 
-    public Ao(C0119a9 c0119a9) {
-        this.f358a = c0119a9;
+    public static JSONObject a(Do r1) {
+        try {
+            String a2 = r1.a();
+            return a2 != null ? new JSONObject(a2) : new JSONObject();
+        } catch (Throwable unused) {
+            return new JSONObject();
+        }
+    }
+
+    public final synchronized void a(JSONObject jSONObject) {
+        String jSONObject2 = jSONObject.toString();
+        try {
+            this.f402a.a(jSONObject2);
+        } catch (Throwable unused) {
+        }
+        try {
+            this.b.a(jSONObject2);
+        } catch (Throwable unused2) {
+        }
     }
 }

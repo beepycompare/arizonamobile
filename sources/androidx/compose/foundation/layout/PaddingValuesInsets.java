@@ -37,7 +37,7 @@ final class PaddingValuesInsets implements WindowInsets {
 
     public String toString() {
         LayoutDirection layoutDirection = LayoutDirection.Ltr;
-        return "PaddingValues(" + ((Object) Dp.m7275toStringimpl(this.paddingValues.mo786calculateLeftPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m7275toStringimpl(this.paddingValues.mo788calculateTopPaddingD9Ej5fM())) + ", " + ((Object) Dp.m7275toStringimpl(this.paddingValues.mo787calculateRightPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m7275toStringimpl(this.paddingValues.mo785calculateBottomPaddingD9Ej5fM())) + ')';
+        return "PaddingValues(" + ((Object) Dp.m8006toStringimpl(this.paddingValues.mo786calculateLeftPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m8006toStringimpl(this.paddingValues.mo788calculateTopPaddingD9Ej5fM())) + ", " + ((Object) Dp.m8006toStringimpl(this.paddingValues.mo787calculateRightPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m8006toStringimpl(this.paddingValues.mo785calculateBottomPaddingD9Ej5fM())) + ')';
     }
 
     public boolean equals(Object obj) {

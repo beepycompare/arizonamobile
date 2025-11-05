@@ -5,11 +5,11 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
 import io.appmetrica.analytics.networktasks.internal.DefaultResponseParser;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SendingDataTaskHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RequestBodyEncrypter f1270a;
+    private final RequestBodyEncrypter f1311a;
     private final Compressor b;
     private final TimeProvider c;
     private final RequestDataHolder d;
@@ -33,7 +33,7 @@ public class SendingDataTaskHelper {
         byte[] encrypt;
         try {
             byte[] compress = this.b.compress(bArr);
-            if (compress != null && (encrypt = this.f1270a.encrypt(compress)) != null) {
+            if (compress != null && (encrypt = this.f1311a.encrypt(compress)) != null) {
                 this.d.setPostData(encrypt);
                 return true;
             }
@@ -43,7 +43,7 @@ public class SendingDataTaskHelper {
     }
 
     public SendingDataTaskHelper(RequestBodyEncrypter requestBodyEncrypter, Compressor compressor, TimeProvider timeProvider, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, NetworkResponseHandler<DefaultResponseParser.Response> networkResponseHandler) {
-        this.f1270a = requestBodyEncrypter;
+        this.f1311a = requestBodyEncrypter;
         this.b = compressor;
         this.c = timeProvider;
         this.d = requestDataHolder;

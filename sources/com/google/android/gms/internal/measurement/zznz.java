@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zznz {
     public static final /* synthetic */ int zza = 0;
     private static final zzoi zzb;

@@ -6,31 +6,22 @@ import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class AccountPicker {
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-    /* loaded from: classes3.dex */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* loaded from: classes4.dex */
     public static class AccountChooserOptions {
         private Account zza;
-        private boolean zzb;
+        private ArrayList zzb;
         private ArrayList zzc;
-        private ArrayList zzd;
-        private boolean zze;
-        private String zzf;
-        private Bundle zzg;
-        private boolean zzh;
-        private int zzi;
-        private String zzj;
-        private boolean zzk;
-        private zza zzl;
-        private String zzm;
-        private boolean zzn;
-        private boolean zzo;
+        private boolean zzd;
+        private String zze;
+        private Bundle zzf;
 
-        /* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-        /* loaded from: classes3.dex */
+        /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+        /* loaded from: classes4.dex */
         public static class Builder {
             private Account zza;
             private ArrayList zzb;
@@ -43,21 +34,12 @@ public final class AccountPicker {
                 Preconditions.checkArgument(true, "We only support hostedDomain filter for account chip styled account picker");
                 Preconditions.checkArgument(true, "Consent is only valid for account chip styled account picker");
                 AccountChooserOptions accountChooserOptions = new AccountChooserOptions();
-                accountChooserOptions.zzd = this.zzc;
-                accountChooserOptions.zzc = this.zzb;
-                accountChooserOptions.zze = this.zzd;
-                accountChooserOptions.zzl = null;
-                accountChooserOptions.zzj = null;
-                accountChooserOptions.zzg = this.zzf;
-                accountChooserOptions.zza = this.zza;
-                accountChooserOptions.zzb = false;
-                accountChooserOptions.zzh = false;
-                accountChooserOptions.zzm = null;
-                accountChooserOptions.zzi = 0;
-                accountChooserOptions.zzf = this.zze;
-                accountChooserOptions.zzk = false;
-                accountChooserOptions.zzn = false;
-                accountChooserOptions.zzo = false;
+                accountChooserOptions.zzf(this.zzc);
+                accountChooserOptions.zzd(this.zzb);
+                accountChooserOptions.zzh(this.zzd);
+                accountChooserOptions.zzl(this.zzf);
+                accountChooserOptions.zzb(this.zza);
+                accountChooserOptions.zzj(this.zze);
                 return accountChooserOptions;
             }
 
@@ -92,49 +74,52 @@ public final class AccountPicker {
             }
         }
 
-        static /* bridge */ /* synthetic */ boolean zzA(AccountChooserOptions accountChooserOptions) {
-            boolean z = accountChooserOptions.zzo;
-            return false;
+        final /* synthetic */ Account zza() {
+            return this.zza;
         }
 
-        static /* bridge */ /* synthetic */ boolean zzB(AccountChooserOptions accountChooserOptions) {
-            boolean z = accountChooserOptions.zzb;
-            return false;
+        final /* synthetic */ void zzb(Account account) {
+            this.zza = account;
         }
 
-        static /* bridge */ /* synthetic */ boolean zzC(AccountChooserOptions accountChooserOptions) {
-            boolean z = accountChooserOptions.zzh;
-            return false;
+        final /* synthetic */ ArrayList zzc() {
+            return this.zzb;
         }
 
-        static /* bridge */ /* synthetic */ boolean zzD(AccountChooserOptions accountChooserOptions) {
-            boolean z = accountChooserOptions.zzk;
-            return false;
+        final /* synthetic */ void zzd(ArrayList arrayList) {
+            this.zzb = arrayList;
         }
 
-        static /* bridge */ /* synthetic */ int zza(AccountChooserOptions accountChooserOptions) {
-            int i = accountChooserOptions.zzi;
-            return 0;
+        final /* synthetic */ ArrayList zze() {
+            return this.zzc;
         }
 
-        static /* bridge */ /* synthetic */ zza zzd(AccountChooserOptions accountChooserOptions) {
-            zza zzaVar = accountChooserOptions.zzl;
-            return null;
+        final /* synthetic */ void zzf(ArrayList arrayList) {
+            this.zzc = arrayList;
         }
 
-        static /* bridge */ /* synthetic */ String zze(AccountChooserOptions accountChooserOptions) {
-            String str = accountChooserOptions.zzj;
-            return null;
+        final /* synthetic */ boolean zzg() {
+            return this.zzd;
         }
 
-        static /* bridge */ /* synthetic */ String zzf(AccountChooserOptions accountChooserOptions) {
-            String str = accountChooserOptions.zzm;
-            return null;
+        final /* synthetic */ void zzh(boolean z) {
+            this.zzd = z;
         }
 
-        static /* bridge */ /* synthetic */ boolean zzz(AccountChooserOptions accountChooserOptions) {
-            boolean z = accountChooserOptions.zzn;
-            return false;
+        final /* synthetic */ String zzi() {
+            return this.zze;
+        }
+
+        final /* synthetic */ void zzj(String str) {
+            this.zze = str;
+        }
+
+        final /* synthetic */ Bundle zzk() {
+            return this.zzf;
+        }
+
+        final /* synthetic */ void zzl(Bundle bundle) {
+            this.zzf = bundle;
         }
     }
 
@@ -164,41 +149,26 @@ public final class AccountPicker {
 
     public static Intent newChooseAccountIntent(AccountChooserOptions accountChooserOptions) {
         Intent intent = new Intent();
-        AccountChooserOptions.zzD(accountChooserOptions);
-        AccountChooserOptions.zze(accountChooserOptions);
         Preconditions.checkArgument(true, "We only support hostedDomain filter for account chip styled account picker");
-        AccountChooserOptions.zzd(accountChooserOptions);
         Preconditions.checkArgument(true, "Consent is only valid for account chip styled account picker");
-        AccountChooserOptions.zzB(accountChooserOptions);
         Preconditions.checkArgument(true, "Making the selected account non-clickable is only supported for the THEME_DAY_NIGHT_GOOGLE_MATERIAL2, THEME_LIGHT_GOOGLE_MATERIAL3, THEME_DARK_GOOGLE_MATERIAL3 or THEME_DAY_NIGHT_GOOGLE_MATERIAL3 themes");
-        AccountChooserOptions.zzD(accountChooserOptions);
         intent.setAction("com.google.android.gms.common.account.CHOOSE_ACCOUNT");
         intent.setPackage("com.google.android.gms");
-        intent.putExtra("allowableAccounts", accountChooserOptions.zzc);
-        if (accountChooserOptions.zzd != null) {
-            intent.putExtra("allowableAccountTypes", (String[]) accountChooserOptions.zzd.toArray(new String[0]));
+        intent.putExtra("allowableAccounts", accountChooserOptions.zzc());
+        if (accountChooserOptions.zze() != null) {
+            intent.putExtra("allowableAccountTypes", (String[]) accountChooserOptions.zze().toArray(new String[0]));
         }
-        intent.putExtra("addAccountOptions", accountChooserOptions.zzg);
-        intent.putExtra("selectedAccount", accountChooserOptions.zza);
-        AccountChooserOptions.zzB(accountChooserOptions);
+        intent.putExtra("addAccountOptions", accountChooserOptions.zzk());
+        intent.putExtra("selectedAccount", accountChooserOptions.zza());
         intent.putExtra("selectedAccountIsNotClickable", false);
-        intent.putExtra("alwaysPromptForAccount", accountChooserOptions.zze);
-        intent.putExtra("descriptionTextOverride", accountChooserOptions.zzf);
-        AccountChooserOptions.zzC(accountChooserOptions);
+        intent.putExtra("alwaysPromptForAccount", accountChooserOptions.zzg());
+        intent.putExtra("descriptionTextOverride", accountChooserOptions.zzi());
         intent.putExtra("setGmsCoreAccount", false);
-        AccountChooserOptions.zzf(accountChooserOptions);
         intent.putExtra("realClientPackage", (String) null);
-        AccountChooserOptions.zza(accountChooserOptions);
         intent.putExtra("overrideTheme", 0);
-        AccountChooserOptions.zzD(accountChooserOptions);
         intent.putExtra("overrideCustomTheme", 0);
-        AccountChooserOptions.zze(accountChooserOptions);
         intent.putExtra("hostedDomainFilter", (String) null);
         Bundle bundle = new Bundle();
-        AccountChooserOptions.zzD(accountChooserOptions);
-        AccountChooserOptions.zzd(accountChooserOptions);
-        AccountChooserOptions.zzz(accountChooserOptions);
-        AccountChooserOptions.zzA(accountChooserOptions);
         if (!bundle.isEmpty()) {
             intent.putExtra("first_party_options_bundle", bundle);
         }

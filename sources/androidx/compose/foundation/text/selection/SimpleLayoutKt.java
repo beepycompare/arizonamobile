@@ -80,15 +80,15 @@ public final class SimpleLayoutKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             function2.invoke(startRestartGroup, Integer.valueOf((i6 >> 6) & 14));
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

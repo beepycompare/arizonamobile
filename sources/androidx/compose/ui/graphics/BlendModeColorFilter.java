@@ -18,12 +18,12 @@ public final class BlendModeColorFilter extends ColorFilter {
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m4493getColor0d7_KjU() {
+    public final long m5223getColor0d7_KjU() {
         return this.color;
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m4492getBlendMode0nO6VwU() {
+    public final int m5222getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
@@ -34,7 +34,7 @@ public final class BlendModeColorFilter extends ColorFilter {
     }
 
     private BlendModeColorFilter(long j, int i) {
-        this(j, i, AndroidColorFilter_androidKt.m4412actualTintColorFilterxETnrds(j, i), null);
+        this(j, i, AndroidColorFilter_androidKt.m5142actualTintColorFilterxETnrds(j, i), null);
     }
 
     public boolean equals(Object obj) {
@@ -43,16 +43,16 @@ public final class BlendModeColorFilter extends ColorFilter {
         }
         if (obj instanceof BlendModeColorFilter) {
             BlendModeColorFilter blendModeColorFilter = (BlendModeColorFilter) obj;
-            return Color.m4550equalsimpl0(this.color, blendModeColorFilter.color) && BlendMode.m4459equalsimpl0(this.blendMode, blendModeColorFilter.blendMode);
+            return Color.m5280equalsimpl0(this.color, blendModeColorFilter.color) && BlendMode.m5189equalsimpl0(this.blendMode, blendModeColorFilter.blendMode);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Color.m4556hashCodeimpl(this.color) * 31) + BlendMode.m4460hashCodeimpl(this.blendMode);
+        return (Color.m5286hashCodeimpl(this.color) * 31) + BlendMode.m5190hashCodeimpl(this.blendMode);
     }
 
     public String toString() {
-        return "BlendModeColorFilter(color=" + ((Object) Color.m4557toStringimpl(this.color)) + ", blendMode=" + ((Object) BlendMode.m4461toStringimpl(this.blendMode)) + ')';
+        return "BlendModeColorFilter(color=" + ((Object) Color.m5287toStringimpl(this.color)) + ", blendMode=" + ((Object) BlendMode.m5191toStringimpl(this.blendMode)) + ')';
     }
 }

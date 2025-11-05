@@ -44,8 +44,10 @@ public final class DocumentsHealthBinding implements ViewBinding {
     private final ConstraintLayout rootView;
     public final LinearLayout table1;
     public final LinearLayout table2;
+    public final TextView tvDrugs;
+    public final TextView tvInsurance;
 
-    private DocumentsHealthBinding(ConstraintLayout constraintLayout, ImageView imageView, DocumentsHealthBarItemBinding documentsHealthBarItemBinding, DocumentsHealthBarItemBinding documentsHealthBarItemBinding2, DocumentsHealthBarItemBinding documentsHealthBarItemBinding3, DocumentsHealthBarItemBinding documentsHealthBarItemBinding4, DocumentsHealthBarItemBinding documentsHealthBarItemBinding5, DocumentsHealthBarItemBinding documentsHealthBarItemBinding6, DocumentsHealthBarItemBinding documentsHealthBarItemBinding7, DocumentsHealthBarItemBinding documentsHealthBarItemBinding8, DocumentsHealthBarItemBinding documentsHealthBarItemBinding9, DocumentsHealthBarItemBinding documentsHealthBarItemBinding10, TextView textView, TextView textView2, TextView textView3, TextView textView4, LinearLayout linearLayout, TextView textView5, TextView textView6, LinearLayout linearLayout2, TextView textView7, ImageView imageView2, TextView textView8, TextView textView9, LinearLayout linearLayout3, ImageView imageView3, TextView textView10, TextView textView11, TextView textView12, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6) {
+    private DocumentsHealthBinding(ConstraintLayout constraintLayout, ImageView imageView, DocumentsHealthBarItemBinding documentsHealthBarItemBinding, DocumentsHealthBarItemBinding documentsHealthBarItemBinding2, DocumentsHealthBarItemBinding documentsHealthBarItemBinding3, DocumentsHealthBarItemBinding documentsHealthBarItemBinding4, DocumentsHealthBarItemBinding documentsHealthBarItemBinding5, DocumentsHealthBarItemBinding documentsHealthBarItemBinding6, DocumentsHealthBarItemBinding documentsHealthBarItemBinding7, DocumentsHealthBarItemBinding documentsHealthBarItemBinding8, DocumentsHealthBarItemBinding documentsHealthBarItemBinding9, DocumentsHealthBarItemBinding documentsHealthBarItemBinding10, TextView textView, TextView textView2, TextView textView3, TextView textView4, LinearLayout linearLayout, TextView textView5, TextView textView6, LinearLayout linearLayout2, TextView textView7, ImageView imageView2, TextView textView8, TextView textView9, LinearLayout linearLayout3, ImageView imageView3, TextView textView10, TextView textView11, TextView textView12, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, TextView textView13, TextView textView14) {
         this.rootView = constraintLayout;
         this.alertNot = imageView;
         this.bar1 = documentsHealthBarItemBinding;
@@ -78,6 +80,8 @@ public final class DocumentsHealthBinding implements ViewBinding {
         this.reviewContainer = linearLayout4;
         this.table1 = linearLayout5;
         this.table2 = linearLayout6;
+        this.tvDrugs = textView13;
+        this.tvInsurance = textView14;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -199,7 +203,15 @@ public final class DocumentsHealthBinding implements ViewBinding {
                                                                                                                             i = R.id.table2;
                                                                                                                             LinearLayout linearLayout6 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                                                                                                             if (linearLayout6 != null) {
-                                                                                                                                return new DocumentsHealthBinding((ConstraintLayout) view, imageView, bind, bind2, bind3, bind4, bind5, bind6, bind7, bind8, bind9, bind10, textView, textView2, textView3, textView4, linearLayout, textView5, textView6, linearLayout2, textView7, imageView2, textView8, textView9, linearLayout3, imageView3, textView10, textView11, textView12, linearLayout4, linearLayout5, linearLayout6);
+                                                                                                                                i = R.id.tv_drugs;
+                                                                                                                                TextView textView13 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                if (textView13 != null) {
+                                                                                                                                    i = R.id.tv_insurance;
+                                                                                                                                    TextView textView14 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                    if (textView14 != null) {
+                                                                                                                                        return new DocumentsHealthBinding((ConstraintLayout) view, imageView, bind, bind2, bind3, bind4, bind5, bind6, bind7, bind8, bind9, bind10, textView, textView2, textView3, textView4, linearLayout, textView5, textView6, linearLayout2, textView7, imageView2, textView8, textView9, linearLayout3, imageView3, textView10, textView11, textView12, linearLayout4, linearLayout5, linearLayout6, textView13, textView14);
+                                                                                                                                    }
+                                                                                                                                }
                                                                                                                             }
                                                                                                                         }
                                                                                                                     }

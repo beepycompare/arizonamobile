@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class VideoDecoderGLSurfaceView extends GLSurfaceView implements VideoDecoderOutputBufferRenderer {
     private static final String TAG = "VideoDecoderGLSV";
     private final Renderer renderer;
@@ -46,7 +46,7 @@ public final class VideoDecoderGLSurfaceView extends GLSurfaceView implements Vi
         this.renderer.setOutputBuffer(videoDecoderOutputBuffer);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class Renderer implements GLSurfaceView.Renderer {
         private static final String FRAGMENT_SHADER = "precision mediump float;\nvarying vec2 interp_tc_y;\nvarying vec2 interp_tc_u;\nvarying vec2 interp_tc_v;\nuniform sampler2D y_tex;\nuniform sampler2D u_tex;\nuniform sampler2D v_tex;\nuniform mat3 mColorConversion;\nvoid main() {\n  vec3 yuv;\n  yuv.x = texture2D(y_tex, interp_tc_y).r - 0.0625;\n  yuv.y = texture2D(u_tex, interp_tc_u).r - 0.5;\n  yuv.z = texture2D(v_tex, interp_tc_v).r - 0.5;\n  gl_FragColor = vec4(mColorConversion * yuv, 1.0);\n}\n";
         private static final String VERTEX_SHADER = "varying vec2 interp_tc_y;\nvarying vec2 interp_tc_u;\nvarying vec2 interp_tc_v;\nattribute vec4 in_pos;\nattribute vec2 in_tc_y;\nattribute vec2 in_tc_u;\nattribute vec2 in_tc_v;\nvoid main() {\n  gl_Position = in_pos;\n  interp_tc_y = in_tc_y;\n  interp_tc_u = in_tc_u;\n  interp_tc_v = in_tc_v;\n}\n";

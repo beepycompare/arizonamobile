@@ -17,17 +17,22 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import kotlin.ExceptionsKt;
+import java.util.concurrent.atomic.AtomicReference;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.JvmClassMappingKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.reflect.KClass;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.EventListener;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.internal.Tags;
+import okhttp3.internal.TagsKt;
 import okhttp3.internal._UtilCommonKt;
 import okhttp3.internal._UtilJvmKt;
 import okhttp3.internal.cache.CacheInterceptor;
@@ -41,7 +46,7 @@ import okhttp3.internal.platform.Platform;
 import okio.AsyncTimeout;
 import okio.Timeout;
 /* compiled from: RealCall.kt */
-@Metadata(d1 = {"\u0000©\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u001a\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0005*\u0001\u0019\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u0002deB\u001f\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u0018\u001a\u000205H\u0016J\b\u00106\u001a\u00020\u0001H\u0016J\b\u00107\u001a\u00020\u0007H\u0016J\b\u00108\u001a\u000209H\u0016J\b\u0010:\u001a\u00020\tH\u0016J\b\u0010;\u001a\u00020<H\u0016J\u0010\u0010=\u001a\u0002092\u0006\u0010>\u001a\u00020?H\u0016J\b\u0010@\u001a\u00020\tH\u0016J\b\u0010A\u001a\u000209H\u0002J\r\u0010B\u001a\u00020<H\u0000¢\u0006\u0002\bCJ\u001e\u0010D\u001a\u0002092\u0006\u00107\u001a\u00020\u00072\u0006\u0010E\u001a\u00020\t2\u0006\u0010F\u001a\u00020GJ\u0015\u0010H\u001a\u00020'2\u0006\u0010F\u001a\u00020GH\u0000¢\u0006\u0002\bIJ\u000e\u0010J\u001a\u0002092\u0006\u0010#\u001a\u00020\"J?\u0010K\u001a\u0002HL\"\n\b\u0000\u0010L*\u0004\u0018\u00010M2\u0006\u0010/\u001a\u00020'2\b\b\u0002\u0010N\u001a\u00020\t2\b\b\u0002\u0010O\u001a\u00020\t2\u0006\u0010P\u001a\u0002HLH\u0000¢\u0006\u0004\bQ\u0010RJ\u0019\u0010S\u001a\u0004\u0018\u00010M2\b\u0010P\u001a\u0004\u0018\u00010MH\u0000¢\u0006\u0002\bTJ!\u0010U\u001a\u0002HL\"\n\b\u0000\u0010L*\u0004\u0018\u00010M2\u0006\u0010P\u001a\u0002HLH\u0002¢\u0006\u0002\u0010VJ\u000f\u0010W\u001a\u0004\u0018\u00010XH\u0000¢\u0006\u0002\bYJ!\u0010Z\u001a\u0002HL\"\n\b\u0000\u0010L*\u0004\u0018\u00010M2\u0006\u0010[\u001a\u0002HLH\u0002¢\u0006\u0002\u0010VJ\u0006\u0010&\u001a\u000209J\u0015\u0010\\\u001a\u0002092\u0006\u0010]\u001a\u00020\tH\u0000¢\u0006\u0002\b^J\u0006\u0010_\u001a\u00020\tJ\b\u0010`\u001a\u00020aH\u0002J\r\u0010b\u001a\u00020aH\u0000¢\u0006\u0002\bcR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\u00020\u0015X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0010\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010#\u001a\u0004\u0018\u00010\"2\b\u0010!\u001a\u0004\u0018\u00010\"@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u000e\u0010&\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010(\u001a\u0004\u0018\u00010'2\b\u0010!\u001a\u0004\u0018\u00010'@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010/\u001a\u0004\u0018\u00010'X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u00100\u001a\b\u0012\u0004\u0012\u00020201X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b3\u00104¨\u0006f"}, d2 = {"Lokhttp3/internal/connection/RealCall;", "Lokhttp3/Call;", "", "Lokhttp3/internal/concurrent/Lockable;", "client", "Lokhttp3/OkHttpClient;", "originalRequest", "Lokhttp3/Request;", "forWebSocket", "", "<init>", "(Lokhttp3/OkHttpClient;Lokhttp3/Request;Z)V", "getClient", "()Lokhttp3/OkHttpClient;", "getOriginalRequest", "()Lokhttp3/Request;", "getForWebSocket", "()Z", "connectionPool", "Lokhttp3/internal/connection/RealConnectionPool;", "eventListener", "Lokhttp3/EventListener;", "getEventListener$okhttp", "()Lokhttp3/EventListener;", "timeout", "okhttp3/internal/connection/RealCall$timeout$1", "Lokhttp3/internal/connection/RealCall$timeout$1;", "executed", "Ljava/util/concurrent/atomic/AtomicBoolean;", "callStackTrace", "", "exchangeFinder", "Lokhttp3/internal/connection/ExchangeFinder;", "value", "Lokhttp3/internal/connection/RealConnection;", "connection", "getConnection", "()Lokhttp3/internal/connection/RealConnection;", "timeoutEarlyExit", "Lokhttp3/internal/connection/Exchange;", "interceptorScopedExchange", "getInterceptorScopedExchange$okhttp", "()Lokhttp3/internal/connection/Exchange;", "requestBodyOpen", "responseBodyOpen", "expectMoreExchanges", "canceled", "exchange", "plansToCancel", "Ljava/util/concurrent/CopyOnWriteArrayList;", "Lokhttp3/internal/connection/RoutePlanner$Plan;", "getPlansToCancel$okhttp", "()Ljava/util/concurrent/CopyOnWriteArrayList;", "Lokio/Timeout;", "clone", "request", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "isCanceled", "execute", "Lokhttp3/Response;", "enqueue", "responseCallback", "Lokhttp3/Callback;", "isExecuted", "callStart", "getResponseWithInterceptorChain", "getResponseWithInterceptorChain$okhttp", "enterNetworkInterceptorExchange", "newRoutePlanner", "chain", "Lokhttp3/internal/http/RealInterceptorChain;", "initExchange", "initExchange$okhttp", "acquireConnectionNoEvents", "messageDone", ExifInterface.LONGITUDE_EAST, "Ljava/io/IOException;", "requestDone", "responseDone", "e", "messageDone$okhttp", "(Lokhttp3/internal/connection/Exchange;ZZLjava/io/IOException;)Ljava/io/IOException;", "noMoreExchanges", "noMoreExchanges$okhttp", "callDone", "(Ljava/io/IOException;)Ljava/io/IOException;", "releaseConnectionNoEvents", "Ljava/net/Socket;", "releaseConnectionNoEvents$okhttp", "timeoutExit", "cause", "exitNetworkInterceptorExchange", "closeExchange", "exitNetworkInterceptorExchange$okhttp", "retryAfterFailure", "toLoggableString", "", "redactedUrl", "redactedUrl$okhttp", "AsyncCall", "CallReference", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000É\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u001a\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0005*\u0001\u0019\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u0002uvB\u001f\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u0018\u001a\u00020;H\u0016J'\u0010<\u001a\u0004\u0018\u0001H=\"\b\b\u0000\u0010=*\u00020\u001e2\f\u0010>\u001a\b\u0012\u0004\u0012\u0002H=0?H\u0016¢\u0006\u0002\u0010@J%\u0010<\u001a\u0004\u0018\u0001H=\"\u0004\b\u0000\u0010=2\u000e\u0010>\u001a\n\u0012\u0006\b\u0001\u0012\u0002H=0AH\u0016¢\u0006\u0002\u0010BJ3\u0010<\u001a\u0002H=\"\b\b\u0000\u0010=*\u00020\u001e2\f\u0010>\u001a\b\u0012\u0004\u0012\u0002H=0?2\f\u0010C\u001a\b\u0012\u0004\u0012\u0002H=0DH\u0016¢\u0006\u0002\u0010EJ3\u0010<\u001a\u0002H=\"\b\b\u0000\u0010=*\u00020\u001e2\f\u0010>\u001a\b\u0012\u0004\u0012\u0002H=0A2\f\u0010C\u001a\b\u0012\u0004\u0012\u0002H=0DH\u0016¢\u0006\u0002\u0010FJ\b\u0010G\u001a\u00020\u0001H\u0016J\b\u0010H\u001a\u00020\u0007H\u0016J\b\u0010I\u001a\u00020JH\u0016J\b\u0010K\u001a\u00020\tH\u0016J\b\u0010L\u001a\u00020MH\u0016J\u0010\u0010N\u001a\u00020J2\u0006\u0010O\u001a\u00020PH\u0016J\b\u0010Q\u001a\u00020\tH\u0016J\b\u0010R\u001a\u00020JH\u0002J\r\u0010S\u001a\u00020MH\u0000¢\u0006\u0002\bTJ\u001e\u0010U\u001a\u00020J2\u0006\u0010H\u001a\u00020\u00072\u0006\u0010V\u001a\u00020\t2\u0006\u0010W\u001a\u00020XJ\u0015\u0010Y\u001a\u00020'2\u0006\u0010W\u001a\u00020XH\u0000¢\u0006\u0002\bZJ\u000e\u0010[\u001a\u00020J2\u0006\u0010#\u001a\u00020\"JI\u0010\\\u001a\u0004\u0018\u00010]2\u0006\u00101\u001a\u00020'2\b\b\u0002\u0010^\u001a\u00020\t2\b\b\u0002\u0010_\u001a\u00020\t2\b\b\u0002\u0010`\u001a\u00020\t2\b\b\u0002\u0010a\u001a\u00020\t2\b\u0010b\u001a\u0004\u0018\u00010]H\u0000¢\u0006\u0002\bcJ\u0019\u0010d\u001a\u0004\u0018\u00010]2\b\u0010b\u001a\u0004\u0018\u00010]H\u0000¢\u0006\u0002\beJ\u0014\u0010f\u001a\u0004\u0018\u00010]2\b\u0010b\u001a\u0004\u0018\u00010]H\u0002J\u000f\u0010g\u001a\u0004\u0018\u00010hH\u0000¢\u0006\u0002\biJ\u0014\u0010j\u001a\u0004\u0018\u00010]2\b\u0010k\u001a\u0004\u0018\u00010]H\u0002J\u0006\u0010&\u001a\u00020JJ\u0006\u0010l\u001a\u00020JJ\u0015\u0010m\u001a\u00020J2\u0006\u0010n\u001a\u00020\tH\u0000¢\u0006\u0002\boJ\u0006\u0010p\u001a\u00020\tJ\b\u0010q\u001a\u00020rH\u0002J\r\u0010s\u001a\u00020rH\u0000¢\u0006\u0002\btR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\u00020\u0015X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0010\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010#\u001a\u0004\u0018\u00010\"2\b\u0010!\u001a\u0004\u0018\u00010\"@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u000e\u0010&\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010(\u001a\u0004\u0018\u00010'2\b\u0010!\u001a\u0004\u0018\u00010'@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00101\u001a\u0004\u0018\u00010'X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u00102\u001a\b\u0012\u0004\u0012\u00020403X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b5\u00106R\u001c\u00107\u001a\u0010\u0012\f\u0012\n :*\u0004\u0018\u0001090908X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006w"}, d2 = {"Lokhttp3/internal/connection/RealCall;", "Lokhttp3/Call;", "", "Lokhttp3/internal/concurrent/Lockable;", "client", "Lokhttp3/OkHttpClient;", "originalRequest", "Lokhttp3/Request;", "forWebSocket", "", "<init>", "(Lokhttp3/OkHttpClient;Lokhttp3/Request;Z)V", "getClient", "()Lokhttp3/OkHttpClient;", "getOriginalRequest", "()Lokhttp3/Request;", "getForWebSocket", "()Z", "connectionPool", "Lokhttp3/internal/connection/RealConnectionPool;", "eventListener", "Lokhttp3/EventListener;", "getEventListener$okhttp", "()Lokhttp3/EventListener;", "timeout", "okhttp3/internal/connection/RealCall$timeout$1", "Lokhttp3/internal/connection/RealCall$timeout$1;", "executed", "Ljava/util/concurrent/atomic/AtomicBoolean;", "callStackTrace", "", "exchangeFinder", "Lokhttp3/internal/connection/ExchangeFinder;", "value", "Lokhttp3/internal/connection/RealConnection;", "connection", "getConnection", "()Lokhttp3/internal/connection/RealConnection;", "timeoutEarlyExit", "Lokhttp3/internal/connection/Exchange;", "interceptorScopedExchange", "getInterceptorScopedExchange$okhttp", "()Lokhttp3/internal/connection/Exchange;", "requestBodyOpen", "responseBodyOpen", "socketSinkOpen", "socketSourceOpen", "expectMoreExchanges", "canceled", "exchange", "plansToCancel", "Ljava/util/concurrent/CopyOnWriteArrayList;", "Lokhttp3/internal/connection/RoutePlanner$Plan;", "getPlansToCancel$okhttp", "()Ljava/util/concurrent/CopyOnWriteArrayList;", "tags", "Ljava/util/concurrent/atomic/AtomicReference;", "Lokhttp3/internal/Tags;", "kotlin.jvm.PlatformType", "Lokio/Timeout;", "tag", ExifInterface.GPS_DIRECTION_TRUE, "type", "Lkotlin/reflect/KClass;", "(Lkotlin/reflect/KClass;)Ljava/lang/Object;", "Ljava/lang/Class;", "(Ljava/lang/Class;)Ljava/lang/Object;", "computeIfAbsent", "Lkotlin/Function0;", "(Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "(Ljava/lang/Class;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "clone", "request", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "isCanceled", "execute", "Lokhttp3/Response;", "enqueue", "responseCallback", "Lokhttp3/Callback;", "isExecuted", "callStart", "getResponseWithInterceptorChain", "getResponseWithInterceptorChain$okhttp", "enterNetworkInterceptorExchange", "newRoutePlanner", "chain", "Lokhttp3/internal/http/RealInterceptorChain;", "initExchange", "initExchange$okhttp", "acquireConnectionNoEvents", "messageDone", "Ljava/io/IOException;", "requestDone", "responseDone", "socketSourceDone", "socketSinkDone", "e", "messageDone$okhttp", "noMoreExchanges", "noMoreExchanges$okhttp", "callDone", "releaseConnectionNoEvents", "Ljava/net/Socket;", "releaseConnectionNoEvents$okhttp", "timeoutExit", "cause", "upgradeToSocket", "exitNetworkInterceptorExchange", "closeExchange", "exitNetworkInterceptorExchange$okhttp", "retryAfterFailure", "toLoggableString", "", "redactedUrl", "redactedUrl$okhttp", "AsyncCall", "CallReference", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class RealCall implements Call, Cloneable, Lockable {
     private Object callStackTrace;
@@ -60,10 +65,13 @@ public final class RealCall implements Call, Cloneable, Lockable {
     private final CopyOnWriteArrayList<RoutePlanner.Plan> plansToCancel;
     private boolean requestBodyOpen;
     private boolean responseBodyOpen;
+    private boolean socketSinkOpen;
+    private boolean socketSourceOpen;
+    private final AtomicReference<Tags> tags;
     private final RealCall$timeout$1 timeout;
     private boolean timeoutEarlyExit;
 
-    /* JADX WARN: Type inference failed for: r4v5, types: [okhttp3.internal.connection.RealCall$timeout$1] */
+    /* JADX WARN: Type inference failed for: r5v5, types: [okhttp3.internal.connection.RealCall$timeout$1] */
     public RealCall(OkHttpClient client, Request originalRequest, boolean z) {
         Intrinsics.checkNotNullParameter(client, "client");
         Intrinsics.checkNotNullParameter(originalRequest, "originalRequest");
@@ -72,17 +80,18 @@ public final class RealCall implements Call, Cloneable, Lockable {
         this.forWebSocket = z;
         this.connectionPool = client.connectionPool().getDelegate$okhttp();
         this.eventListener = client.eventListenerFactory().create(this);
-        ?? r4 = new AsyncTimeout() { // from class: okhttp3.internal.connection.RealCall$timeout$1
+        ?? r5 = new AsyncTimeout() { // from class: okhttp3.internal.connection.RealCall$timeout$1
             @Override // okio.AsyncTimeout
             protected void timedOut() {
                 RealCall.this.cancel();
             }
         };
-        r4.timeout(client.callTimeoutMillis(), TimeUnit.MILLISECONDS);
-        this.timeout = r4;
+        r5.timeout(client.callTimeoutMillis(), TimeUnit.MILLISECONDS);
+        this.timeout = r5;
         this.executed = new AtomicBoolean();
         this.expectMoreExchanges = true;
         this.plansToCancel = new CopyOnWriteArrayList<>();
+        this.tags = new AtomicReference<>(originalRequest.getTags$okhttp());
     }
 
     public final OkHttpClient getClient() {
@@ -119,6 +128,32 @@ public final class RealCall implements Call, Cloneable, Lockable {
     }
 
     @Override // okhttp3.Call
+    public <T> T tag(KClass<T> type) {
+        Intrinsics.checkNotNullParameter(type, "type");
+        return (T) JvmClassMappingKt.getJavaClass((KClass) type).cast(this.tags.get().get(type));
+    }
+
+    @Override // okhttp3.Call
+    public <T> T tag(Class<? extends T> type) {
+        Intrinsics.checkNotNullParameter(type, "type");
+        return (T) tag(JvmClassMappingKt.getKotlinClass(type));
+    }
+
+    @Override // okhttp3.Call
+    public <T> T tag(KClass<T> type, Function0<? extends T> computeIfAbsent) {
+        Intrinsics.checkNotNullParameter(type, "type");
+        Intrinsics.checkNotNullParameter(computeIfAbsent, "computeIfAbsent");
+        return (T) TagsKt.computeIfAbsent(this.tags, type, computeIfAbsent);
+    }
+
+    @Override // okhttp3.Call
+    public <T> T tag(Class<T> type, Function0<? extends T> computeIfAbsent) {
+        Intrinsics.checkNotNullParameter(type, "type");
+        Intrinsics.checkNotNullParameter(computeIfAbsent, "computeIfAbsent");
+        return (T) TagsKt.computeIfAbsent(this.tags, JvmClassMappingKt.getKotlinClass(type), computeIfAbsent);
+    }
+
+    @Override // okhttp3.Call
     public Call clone() {
         return new RealCall(this.client, this.originalRequest, this.forWebSocket);
     }
@@ -141,7 +176,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
         Iterator<RoutePlanner.Plan> it = this.plansToCancel.iterator();
         Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
         while (it.hasNext()) {
-            it.next().mo11013cancel();
+            it.next().mo11754cancel();
         }
         this.eventListener.canceled(this);
     }
@@ -197,8 +232,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
         if (!this.forWebSocket) {
             CollectionsKt.addAll(arrayList2, this.client.networkInterceptors());
         }
-        arrayList2.add(new CallServerInterceptor(this.forWebSocket));
-        boolean z = false;
+        arrayList2.add(CallServerInterceptor.INSTANCE);
         try {
             try {
                 Response proceed = new RealInterceptorChain(this, arrayList, 0, null, this.originalRequest, this.client.connectTimeoutMillis(), this.client.readTimeoutMillis(), this.client.writeTimeoutMillis()).proceed(this.originalRequest);
@@ -209,13 +243,12 @@ public final class RealCall implements Call, Cloneable, Lockable {
                 noMoreExchanges$okhttp(null);
                 return proceed;
             } catch (IOException e) {
-                z = true;
                 IOException noMoreExchanges$okhttp = noMoreExchanges$okhttp(e);
                 Intrinsics.checkNotNull(noMoreExchanges$okhttp, "null cannot be cast to non-null type kotlin.Throwable");
                 throw noMoreExchanges$okhttp;
             }
         } catch (Throwable th) {
-            if (!z) {
+            if (0 == 0) {
                 noMoreExchanges$okhttp(null);
             }
             throw th;
@@ -232,13 +265,13 @@ public final class RealCall implements Call, Cloneable, Lockable {
             if (this.responseBodyOpen) {
                 throw new IllegalStateException("cannot make a new request because the previous response is still open: please call response.close()".toString());
             }
-            if (this.requestBodyOpen) {
+            if (this.requestBodyOpen || this.socketSourceOpen || this.socketSinkOpen) {
                 throw new IllegalStateException("Check failed.");
             }
             Unit unit = Unit.INSTANCE;
         }
         if (z) {
-            RealRoutePlanner realRoutePlanner = new RealRoutePlanner(this.client.getTaskRunner$okhttp(), this.connectionPool, this.client.readTimeoutMillis(), this.client.writeTimeoutMillis(), chain.getConnectTimeoutMillis$okhttp(), chain.getReadTimeoutMillis$okhttp(), this.client.pingIntervalMillis(), this.client.retryOnConnectionFailure(), this.client.fastFallback(), this.client.address(request.url()), this.client.getRouteDatabase$okhttp(), new CallConnectionUser(this, this.connectionPool.getConnectionListener$okhttp(), chain));
+            RealRoutePlanner realRoutePlanner = new RealRoutePlanner(this.client.getTaskRunner$okhttp(), this.connectionPool, this.client.readTimeoutMillis(), this.client.writeTimeoutMillis(), chain.getConnectTimeoutMillis$okhttp(), chain.getReadTimeoutMillis$okhttp(), this.client.pingIntervalMillis(), this.client.retryOnConnectionFailure(), this.client.fastFallback(), this.client.address(request.url()), this.client.getRouteDatabase$okhttp(), this, request);
             this.exchangeFinder = this.client.fastFallback() ? new FastFallbackExchangeFinder(realRoutePlanner, this.client.getTaskRunner$okhttp()) : new SequentialExchangeFinder(realRoutePlanner);
         }
     }
@@ -250,10 +283,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
             if (!this.expectMoreExchanges) {
                 throw new IllegalStateException("released".toString());
             }
-            if (this.responseBodyOpen) {
-                throw new IllegalStateException("Check failed.");
-            }
-            if (this.requestBodyOpen) {
+            if (this.responseBodyOpen || this.requestBodyOpen || this.socketSourceOpen || this.socketSinkOpen) {
                 throw new IllegalStateException("Check failed.");
             }
             Unit unit = Unit.INSTANCE;
@@ -288,29 +318,37 @@ public final class RealCall implements Call, Cloneable, Lockable {
         throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + realConnection);
     }
 
-    public static /* synthetic */ IOException messageDone$okhttp$default(RealCall realCall, Exchange exchange, boolean z, boolean z2, IOException iOException, int i, Object obj) {
+    public static /* synthetic */ IOException messageDone$okhttp$default(RealCall realCall, Exchange exchange, boolean z, boolean z2, boolean z3, boolean z4, IOException iOException, int i, Object obj) {
         if ((i & 2) != 0) {
             z = false;
         }
         if ((i & 4) != 0) {
             z2 = false;
         }
-        return realCall.messageDone$okhttp(exchange, z, z2, iOException);
+        if ((i & 8) != 0) {
+            z3 = false;
+        }
+        if ((i & 16) != 0) {
+            z4 = false;
+        }
+        return realCall.messageDone$okhttp(exchange, z, z2, z3, z4, iOException);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0024 A[Catch: all -> 0x001a, TryCatch #0 {all -> 0x001a, blocks: (B:58:0x0015, B:67:0x0024, B:69:0x0028, B:70:0x002a, B:72:0x002f, B:77:0x0038, B:79:0x003c, B:84:0x0045, B:64:0x001e), top: B:96:0x0015 }] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0028 A[Catch: all -> 0x001a, TryCatch #0 {all -> 0x001a, blocks: (B:58:0x0015, B:67:0x0024, B:69:0x0028, B:70:0x002a, B:72:0x002f, B:77:0x0038, B:79:0x003c, B:84:0x0045, B:64:0x001e), top: B:96:0x0015 }] */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0032 A[Catch: all -> 0x001b, TryCatch #0 {all -> 0x001b, blocks: (B:70:0x0016, B:85:0x0032, B:87:0x0036, B:89:0x003a, B:91:0x003e, B:92:0x0040, B:94:0x0045, B:96:0x0049, B:98:0x004d, B:103:0x0056, B:108:0x0060, B:76:0x0020, B:79:0x0026, B:82:0x002c), top: B:120:0x0016 }] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0036 A[Catch: all -> 0x001b, TryCatch #0 {all -> 0x001b, blocks: (B:70:0x0016, B:85:0x0032, B:87:0x0036, B:89:0x003a, B:91:0x003e, B:92:0x0040, B:94:0x0045, B:96:0x0049, B:98:0x004d, B:103:0x0056, B:108:0x0060, B:76:0x0020, B:79:0x0026, B:82:0x002c), top: B:120:0x0016 }] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x003a A[Catch: all -> 0x001b, TryCatch #0 {all -> 0x001b, blocks: (B:70:0x0016, B:85:0x0032, B:87:0x0036, B:89:0x003a, B:91:0x003e, B:92:0x0040, B:94:0x0045, B:96:0x0049, B:98:0x004d, B:103:0x0056, B:108:0x0060, B:76:0x0020, B:79:0x0026, B:82:0x002c), top: B:120:0x0016 }] */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x003e A[Catch: all -> 0x001b, TryCatch #0 {all -> 0x001b, blocks: (B:70:0x0016, B:85:0x0032, B:87:0x0036, B:89:0x003a, B:91:0x003e, B:92:0x0040, B:94:0x0045, B:96:0x0049, B:98:0x004d, B:103:0x0056, B:108:0x0060, B:76:0x0020, B:79:0x0026, B:82:0x002c), top: B:120:0x0016 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final <E extends IOException> E messageDone$okhttp(Exchange exchange, boolean z, boolean z2, E e) {
-        boolean z3;
-        boolean z4;
+    public final IOException messageDone$okhttp(Exchange exchange, boolean z, boolean z2, boolean z3, boolean z4, IOException iOException) {
         boolean z5;
+        boolean z6;
+        boolean z7;
         Intrinsics.checkNotNullParameter(exchange, "exchange");
         if (Intrinsics.areEqual(exchange, this.exchange)) {
             synchronized (this) {
-                z3 = false;
+                z5 = false;
                 if (z) {
                     try {
                         if (!this.requestBodyOpen) {
@@ -321,48 +359,58 @@ public final class RealCall implements Call, Cloneable, Lockable {
                         if (z2) {
                             this.responseBodyOpen = false;
                         }
-                        z5 = this.requestBodyOpen;
-                        boolean z6 = z5 && !this.responseBodyOpen;
-                        if (!z5 && !this.responseBodyOpen && !this.expectMoreExchanges) {
-                            z3 = true;
+                        if (z4) {
+                            this.socketSinkOpen = false;
                         }
-                        z4 = z3;
-                        z3 = z6;
+                        if (z3) {
+                            this.socketSourceOpen = false;
+                        }
+                        z7 = (!this.requestBodyOpen || this.responseBodyOpen || this.socketSinkOpen || this.socketSourceOpen) ? false : true;
+                        if (z7 && !this.expectMoreExchanges) {
+                            z5 = true;
+                        }
+                        boolean z8 = z5;
+                        z5 = z7;
+                        z6 = z8;
                         Unit unit = Unit.INSTANCE;
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
-                if (!z2 || !this.responseBodyOpen) {
-                    z4 = false;
+                if ((!z2 || !this.responseBodyOpen) && ((!z4 || !this.socketSinkOpen) && (!z3 || !this.socketSourceOpen))) {
+                    z6 = false;
                     Unit unit2 = Unit.INSTANCE;
                 }
                 if (z) {
                 }
                 if (z2) {
                 }
-                z5 = this.requestBodyOpen;
-                if (z5) {
+                if (z4) {
                 }
-                if (!z5) {
-                    z3 = true;
+                if (z3) {
                 }
-                z4 = z3;
-                z3 = z6;
+                if (!this.requestBodyOpen) {
+                }
+                if (z7) {
+                    z5 = true;
+                }
+                boolean z82 = z5;
+                z5 = z7;
+                z6 = z82;
                 Unit unit22 = Unit.INSTANCE;
             }
-            if (z3) {
+            if (z5) {
                 this.exchange = null;
                 RealConnection realConnection = this.connection;
                 if (realConnection != null) {
                     realConnection.incrementSuccessCount$okhttp();
                 }
             }
-            if (z4) {
-                return (E) callDone(e);
+            if (z6) {
+                return callDone(iOException);
             }
         }
-        return e;
+        return iOException;
     }
 
     public final IOException noMoreExchanges$okhttp(IOException iOException) {
@@ -371,7 +419,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
             z = false;
             if (this.expectMoreExchanges) {
                 this.expectMoreExchanges = false;
-                if (!this.requestBodyOpen && !this.responseBodyOpen) {
+                if (!this.requestBodyOpen && !this.responseBodyOpen && !this.socketSinkOpen && !this.socketSourceOpen) {
                     z = true;
                 }
             }
@@ -380,7 +428,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
         return z ? callDone(iOException) : iOException;
     }
 
-    private final <E extends IOException> E callDone(E e) {
+    private final IOException callDone(IOException iOException) {
         Socket releaseConnectionNoEvents$okhttp;
         RealCall realCall = this;
         if (!_UtilJvmKt.assertionsEnabled || !Thread.holdsLock(realCall)) {
@@ -408,14 +456,14 @@ public final class RealCall implements Call, Cloneable, Lockable {
                     throw new IllegalStateException("Check failed.");
                 }
             }
-            E e2 = (E) timeoutExit(e);
-            if (e != null) {
-                Intrinsics.checkNotNull(e2);
-                this.eventListener.callFailed(this, e2);
-                return e2;
+            IOException timeoutExit = timeoutExit(iOException);
+            if (iOException != null) {
+                Intrinsics.checkNotNull(timeoutExit);
+                this.eventListener.callFailed(this, timeoutExit);
+                return timeoutExit;
             }
             this.eventListener.callEnd(this);
-            return e2;
+            return timeoutExit;
         }
         throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST NOT hold lock on " + realCall);
     }
@@ -454,15 +502,15 @@ public final class RealCall implements Call, Cloneable, Lockable {
         throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + realConnection2);
     }
 
-    private final <E extends IOException> E timeoutExit(E e) {
+    private final IOException timeoutExit(IOException iOException) {
         if (!this.timeoutEarlyExit && exit()) {
             InterruptedIOException interruptedIOException = new InterruptedIOException("timeout");
-            if (e != null) {
-                interruptedIOException.initCause(e);
+            if (iOException != null) {
+                interruptedIOException.initCause(iOException);
             }
             return interruptedIOException;
         }
-        return e;
+        return iOException;
     }
 
     public final void timeoutEarlyExit() {
@@ -471,6 +519,28 @@ public final class RealCall implements Call, Cloneable, Lockable {
         }
         this.timeoutEarlyExit = true;
         exit();
+    }
+
+    public final void upgradeToSocket() {
+        timeoutEarlyExit();
+        synchronized (this) {
+            if (this.exchange == null) {
+                throw new IllegalStateException("Check failed.");
+            }
+            if (this.socketSinkOpen || this.socketSourceOpen) {
+                throw new IllegalStateException("Check failed.");
+            }
+            if (this.requestBodyOpen) {
+                throw new IllegalStateException("Check failed.");
+            }
+            if (!this.responseBodyOpen) {
+                throw new IllegalStateException("Check failed.");
+            }
+            this.responseBodyOpen = false;
+            this.socketSinkOpen = true;
+            this.socketSourceOpen = true;
+            Unit unit = Unit.INSTANCE;
+        }
     }
 
     public final void exitNetworkInterceptorExchange$okhttp(boolean z) {
@@ -585,34 +655,39 @@ public final class RealCall implements Call, Cloneable, Lockable {
                 realCall.timeout.enter();
                 boolean z = false;
                 try {
-                    try {
-                        this.responseCallback.onResponse(realCall, realCall.getResponseWithInterceptorChain$okhttp());
-                        client = realCall.getClient();
-                    } catch (IOException e) {
-                        e = e;
-                        z = true;
-                        if (z) {
-                            Platform.Companion.get().log("Callback failure for " + realCall.toLoggableString(), 4, e);
-                        } else {
-                            this.responseCallback.onFailure(realCall, e);
-                        }
-                        client = realCall.getClient();
-                        client.dispatcher().finished$okhttp(this);
-                    } catch (Throwable th) {
-                        th = th;
-                        z = true;
-                        realCall.cancel();
-                        if (!z) {
-                            IOException iOException = new IOException("canceled due to " + th);
-                            ExceptionsKt.addSuppressed(iOException, th);
-                            this.responseCallback.onFailure(realCall, iOException);
-                        }
-                        throw th;
-                    }
+                } catch (IOException e) {
+                    e = e;
+                } catch (Throwable th) {
+                    th = th;
+                }
+                try {
+                    this.responseCallback.onResponse(realCall, realCall.getResponseWithInterceptorChain$okhttp());
+                    client = realCall.getClient();
                 } catch (IOException e2) {
                     e = e2;
+                    z = true;
+                    if (z) {
+                        Platform.Companion.get().log("Callback failure for " + realCall.toLoggableString(), 4, e);
+                    } else {
+                        this.responseCallback.onFailure(realCall, e);
+                    }
+                    client = realCall.getClient();
+                    client.dispatcher().finished$okhttp(this);
                 } catch (Throwable th2) {
                     th = th2;
+                    z = true;
+                    realCall.cancel();
+                    if (!z) {
+                        IOException iOException = new IOException("canceled due to " + th);
+                        iOException.initCause(th);
+                        this.responseCallback.onFailure(realCall, iOException);
+                    }
+                    if (!(th instanceof InterruptedException)) {
+                        throw th;
+                    }
+                    Thread.currentThread().interrupt();
+                    client = realCall.getClient();
+                    client.dispatcher().finished$okhttp(this);
                 }
                 client.dispatcher().finished$okhttp(this);
             } finally {
@@ -627,15 +702,15 @@ public final class RealCall implements Call, Cloneable, Lockable {
     public static final class CallReference extends WeakReference<RealCall> {
         private final Object callStackTrace;
 
-        public final Object getCallStackTrace() {
-            return this.callStackTrace;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public CallReference(RealCall referent, Object obj) {
             super(referent);
             Intrinsics.checkNotNullParameter(referent, "referent");
             this.callStackTrace = obj;
+        }
+
+        public final Object getCallStackTrace() {
+            return this.callStackTrace;
         }
     }
 }

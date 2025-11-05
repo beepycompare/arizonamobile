@@ -364,7 +364,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                         return Unit.INSTANCE;
                     } finally {
                         channel = this.this$0.channel;
-                        channel.mo8140trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
+                        channel.mo8871trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
                     }
                 }
             }
@@ -419,7 +419,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
             while (true) {
                 if (i >= size) {
                     break;
-                } else if (!PointerType.m5910equalsimpl0(changes.get(i).m5842getTypeT8wyACA(), PointerType.Companion.m5915getMouseT8wyACA())) {
+                } else if (!PointerType.m6640equalsimpl0(changes.get(i).m6572getTypeT8wyACA(), PointerType.Companion.m6645getMouseT8wyACA())) {
                     i++;
                 } else if (scrollConfig != null && this.pointerInputModifierMouse == null) {
                     this.pointerInputModifierMouse = (PointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new PointerInputEventHandler() { // from class: androidx.compose.foundation.gestures.TransformableNode$onPointerEvent$2

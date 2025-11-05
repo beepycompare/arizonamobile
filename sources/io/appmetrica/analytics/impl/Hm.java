@@ -1,20 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import java.io.IOException;
-/* loaded from: classes4.dex */
-public final class Hm extends T2 {
-    @Override // io.appmetrica.analytics.impl.T2, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    /* renamed from: b */
-    public final Gm defaultValue() {
-        Gm gm = new Gm();
-        gm.i = new Bm();
-        return gm;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+/* loaded from: classes3.dex */
+public final class Hm implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0732ym fromModel(Gm gm) {
+        C0732ym c0732ym = new C0732ym();
+        c0732ym.f1218a = gm.f496a;
+        return c0732ym;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    /* renamed from: a */
-    public final Gm toState(byte[] bArr) throws IOException {
-        return (Gm) MessageNano.mergeFrom(new Gm(), bArr);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        return new Gm(((C0732ym) obj).f1218a);
+    }
+
+    public final Gm a(C0732ym c0732ym) {
+        return new Gm(c0732ym.f1218a);
     }
 }

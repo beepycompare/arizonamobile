@@ -59,7 +59,7 @@ public final class TextFieldStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextFieldState textFieldState = (TextFieldState) RememberSaveableKt.m3995rememberSaveable(objArr, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) rememberedValue, composer, 48);
+        TextFieldState textFieldState = (TextFieldState) RememberSaveableKt.m4725rememberSaveable(objArr, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) rememberedValue, composer, 48);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -115,8 +115,8 @@ public final class TextFieldStateKt {
         if (mutableVector != null && mutableVector.getSize() != 0) {
             return CollectionsKt.toList(mutableVector.asMutableList());
         }
-        if (textRange != null && !TextRange.m6720getCollapsedimpl(textRange.m6730unboximpl())) {
-            return CollectionsKt.listOf(new AnnotatedString.Range(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, TextDecoration.Companion.getUnderline(), (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 61439, (DefaultConstructorMarker) null), TextRange.m6724getMinimpl(textRange.m6730unboximpl()), TextRange.m6723getMaximpl(textRange.m6730unboximpl())));
+        if (textRange != null && !TextRange.m7451getCollapsedimpl(textRange.m7461unboximpl())) {
+            return CollectionsKt.listOf(new AnnotatedString.Range(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, TextDecoration.Companion.getUnderline(), (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 61439, (DefaultConstructorMarker) null), TextRange.m7455getMinimpl(textRange.m7461unboximpl()), TextRange.m7454getMaximpl(textRange.m7461unboximpl())));
         }
         return CollectionsKt.emptyList();
     }

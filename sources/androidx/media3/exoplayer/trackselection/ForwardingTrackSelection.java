@@ -6,7 +6,7 @@ import androidx.media3.exoplayer.source.chunk.Chunk;
 import androidx.media3.exoplayer.source.chunk.MediaChunk;
 import androidx.media3.exoplayer.source.chunk.MediaChunkIterator;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ForwardingTrackSelection implements ExoTrackSelection {
     private final ExoTrackSelection trackSelection;
 

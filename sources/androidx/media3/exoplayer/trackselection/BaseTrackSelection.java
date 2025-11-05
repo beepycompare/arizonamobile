@@ -9,7 +9,7 @@ import androidx.media3.exoplayer.source.chunk.MediaChunk;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseTrackSelection implements ExoTrackSelection {
     private final long[] excludeUntilTimes;
     private final Format[] formats;

@@ -7,13 +7,13 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import com.google.android.gms.common.ConnectionResult;
 import java.util.concurrent.Executor;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public abstract class GmsClientSupervisor {
     static HandlerThread zza = null;
     private static final Object zzb = new Object();
     private static int zzc = 9;
-    private static zzs zzd = null;
+    private static zzq zzd = null;
     private static Executor zze = null;
     private static boolean zzf = false;
 
@@ -31,7 +31,7 @@ public abstract class GmsClientSupervisor {
                 } else {
                     mainLooper = context.getMainLooper();
                 }
-                zzd = new zzs(applicationContext, mainLooper, zze);
+                zzd = new zzq(applicationContext, mainLooper, zze);
             }
         }
         return zzd;
@@ -52,9 +52,9 @@ public abstract class GmsClientSupervisor {
 
     public static void setDefaultBindExecutor(Executor executor) {
         synchronized (zzb) {
-            zzs zzsVar = zzd;
-            if (zzsVar != null) {
-                zzsVar.zzi(executor);
+            zzq zzqVar = zzd;
+            if (zzqVar != null) {
+                zzqVar.zze(executor);
             }
             zze = executor;
         }
@@ -72,37 +72,37 @@ public abstract class GmsClientSupervisor {
 
     public static void setUseHandlerThreadForCallbacks() {
         synchronized (zzb) {
-            zzs zzsVar = zzd;
-            if (zzsVar != null && !zzf) {
-                zzsVar.zzj(getOrStartHandlerThread().getLooper());
+            zzq zzqVar = zzd;
+            if (zzqVar != null && !zzf) {
+                zzqVar.zzd(getOrStartHandlerThread().getLooper());
             }
             zzf = true;
         }
     }
 
     public boolean bindService(ComponentName componentName, ServiceConnection serviceConnection, String str) {
-        return zza(new zzo(componentName, 4225), serviceConnection, str, null).isSuccess();
+        return zza(new zzn(componentName, 4225), serviceConnection, str, null).isSuccess();
     }
 
     public void unbindService(ComponentName componentName, ServiceConnection serviceConnection, String str) {
-        zzb(new zzo(componentName, 4225), serviceConnection, str);
+        zzc(new zzn(componentName, 4225), serviceConnection, str);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public abstract ConnectionResult zza(zzo zzoVar, ServiceConnection serviceConnection, String str, Executor executor);
+    public abstract ConnectionResult zza(zzn zznVar, ServiceConnection serviceConnection, String str, Executor executor);
 
-    protected abstract void zzb(zzo zzoVar, ServiceConnection serviceConnection, String str);
-
-    public final void zzc(String str, String str2, int i, ServiceConnection serviceConnection, String str3, boolean z) {
-        zzb(new zzo(str, str2, 4225, z), serviceConnection, str3);
+    public final void zzb(String str, String str2, int i, ServiceConnection serviceConnection, String str3, boolean z) {
+        zzc(new zzn(str, str2, 4225, z), serviceConnection, str3);
     }
 
+    protected abstract void zzc(zzn zznVar, ServiceConnection serviceConnection, String str);
+
     public void unbindService(String str, ServiceConnection serviceConnection, String str2) {
-        zzb(new zzo(str, 4225, false), serviceConnection, str2);
+        zzc(new zzn(str, 4225, false), serviceConnection, str2);
     }
 
     public boolean bindService(ComponentName componentName, ServiceConnection serviceConnection, String str, Executor executor) {
-        return zza(new zzo(componentName, 4225), serviceConnection, str, executor).isSuccess();
+        return zza(new zzn(componentName, 4225), serviceConnection, str, executor).isSuccess();
     }
 
     public static HandlerThread getOrStartHandlerThread(int i) {
@@ -119,6 +119,6 @@ public abstract class GmsClientSupervisor {
     }
 
     public boolean bindService(String str, ServiceConnection serviceConnection, String str2) {
-        return zza(new zzo(str, 4225, false), serviceConnection, str2, null).isSuccess();
+        return zza(new zzn(str, 4225, false), serviceConnection, str2, null).isSuccess();
     }
 }

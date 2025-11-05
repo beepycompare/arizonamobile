@@ -2,6 +2,7 @@ package androidx.compose.material3;
 
 import androidx.compose.animation.core.Animatable;
 import androidx.compose.animation.core.AnimationVector1D;
+import androidx.compose.animation.core.FiniteAnimationSpec;
 import androidx.compose.animation.core.VectorConvertersKt;
 import androidx.compose.runtime.State;
 import androidx.compose.ui.Modifier;
@@ -20,10 +21,11 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 /* compiled from: TabRow.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u00012\u00020\u0002B)\u0012\u0012\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00050\u0004\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0002\u0010\u000bJ&\u0010\u001f\u001a\u00020 *\u00020!2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020%H\u0016ø\u0001\u0000¢\u0006\u0004\b&\u0010'R\u001a\u0010\t\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u0016\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\u0004\u0018\u00010\u0011X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\n\u0000R\u001c\u0010\u0013\u001a\u0010\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u0015\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R&\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00050\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u001c\u0010\u001e\u001a\u0010\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u0015\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006("}, d2 = {"Landroidx/compose/material3/TabIndicatorOffsetNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "tabPositionsState", "Landroidx/compose/runtime/State;", "", "Landroidx/compose/material3/TabPosition;", "selectedTabIndex", "", "followContentSize", "", "(Landroidx/compose/runtime/State;IZ)V", "getFollowContentSize", "()Z", "setFollowContentSize", "(Z)V", "initialOffset", "Landroidx/compose/ui/unit/Dp;", "initialWidth", "offsetAnimatable", "Landroidx/compose/animation/core/Animatable;", "Landroidx/compose/animation/core/AnimationVector1D;", "getSelectedTabIndex", "()I", "setSelectedTabIndex", "(I)V", "getTabPositionsState", "()Landroidx/compose/runtime/State;", "setTabPositionsState", "(Landroidx/compose/runtime/State;)V", "widthAnimatable", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B9\u0012\u0012\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00050\u0004\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f¢\u0006\u0004\b\u000e\u0010\u000fJ#\u0010&\u001a\u00020'*\u00020(2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020,H\u0016¢\u0006\u0004\b-\u0010.R&\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00050\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001a\u0010\u0007\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001a\u0010\t\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR \u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u001c\u0010 \u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\"\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010#\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\"\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010%\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006/"}, d2 = {"Landroidx/compose/material3/TabIndicatorOffsetNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "tabPositionsState", "Landroidx/compose/runtime/State;", "", "Landroidx/compose/material3/TabPosition;", "selectedTabIndex", "", "followContentSize", "", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "Landroidx/compose/ui/unit/Dp;", "<init>", "(Landroidx/compose/runtime/State;IZLandroidx/compose/animation/core/FiniteAnimationSpec;)V", "getTabPositionsState", "()Landroidx/compose/runtime/State;", "setTabPositionsState", "(Landroidx/compose/runtime/State;)V", "getSelectedTabIndex", "()I", "setSelectedTabIndex", "(I)V", "getFollowContentSize", "()Z", "setFollowContentSize", "(Z)V", "getAnimationSpec", "()Landroidx/compose/animation/core/FiniteAnimationSpec;", "setAnimationSpec", "(Landroidx/compose/animation/core/FiniteAnimationSpec;)V", "offsetAnimatable", "Landroidx/compose/animation/core/Animatable;", "Landroidx/compose/animation/core/AnimationVector1D;", "widthAnimatable", "initialOffset", "initialWidth", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TabIndicatorOffsetNode extends Modifier.Node implements LayoutModifierNode {
     public static final int $stable = 8;
+    private FiniteAnimationSpec<Dp> animationSpec;
     private boolean followContentSize;
     private Dp initialOffset;
     private Dp initialWidth;
@@ -56,33 +58,39 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
         this.followContentSize = z;
     }
 
-    public TabIndicatorOffsetNode(State<? extends List<TabPosition>> state, int i, boolean z) {
+    public final FiniteAnimationSpec<Dp> getAnimationSpec() {
+        return this.animationSpec;
+    }
+
+    public final void setAnimationSpec(FiniteAnimationSpec<Dp> finiteAnimationSpec) {
+        this.animationSpec = finiteAnimationSpec;
+    }
+
+    public TabIndicatorOffsetNode(State<? extends List<TabPosition>> state, int i, boolean z, FiniteAnimationSpec<Dp> finiteAnimationSpec) {
         this.tabPositionsState = state;
         this.selectedTabIndex = i;
         this.followContentSize = z;
+        this.animationSpec = finiteAnimationSpec;
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        float m2706getWidthD9Ej5fM;
+        float m3042getWidthD9Ej5fM;
         if (this.tabPositionsState.getValue().isEmpty()) {
-            return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$measure$1
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(Placeable.PlacementScope placementScope) {
-                }
-
+            return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                    invoke2(placementScope);
-                    return Unit.INSTANCE;
+                public final Object invoke(Object obj) {
+                    Unit measure_3p2s80s$lambda$0;
+                    measure_3p2s80s$lambda$0 = TabIndicatorOffsetNode.measure_3p2s80s$lambda$0((Placeable.PlacementScope) obj);
+                    return measure_3p2s80s$lambda$0;
                 }
             }, 4, null);
         }
         if (this.followContentSize) {
-            m2706getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2703getContentWidthD9Ej5fM();
+            m3042getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m3039getContentWidthD9Ej5fM();
         } else {
-            m2706getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2706getWidthD9Ej5fM();
+            m3042getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m3042getWidthD9Ej5fM();
         }
         if (this.initialWidth != null) {
             Animatable<Dp, AnimationVector1D> animatable = this.widthAnimatable;
@@ -93,13 +101,13 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
                 this.widthAnimatable = animatable2;
                 animatable = animatable2;
             }
-            if (!Dp.m7269equalsimpl0(m2706getWidthD9Ej5fM, animatable.getTargetValue().m7278unboximpl())) {
-                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$2(animatable, m2706getWidthD9Ej5fM, null), 3, null);
+            if (!Dp.m8000equalsimpl0(m3042getWidthD9Ej5fM, animatable.getTargetValue().m8009unboximpl())) {
+                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$2(animatable, m3042getWidthD9Ej5fM, this, null), 3, null);
             }
         } else {
-            this.initialWidth = Dp.m7262boximpl(m2706getWidthD9Ej5fM);
+            this.initialWidth = Dp.m7993boximpl(m3042getWidthD9Ej5fM);
         }
-        float m2704getLeftD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2704getLeftD9Ej5fM();
+        float m3040getLeftD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m3040getLeftD9Ej5fM();
         if (this.initialOffset != null) {
             Animatable<Dp, AnimationVector1D> animatable3 = this.offsetAnimatable;
             if (animatable3 == null) {
@@ -109,47 +117,48 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
                 this.offsetAnimatable = animatable4;
                 animatable3 = animatable4;
             }
-            if (!Dp.m7269equalsimpl0(m2704getLeftD9Ej5fM, animatable3.getTargetValue().m7278unboximpl())) {
-                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$3(animatable3, m2704getLeftD9Ej5fM, null), 3, null);
+            if (!Dp.m8000equalsimpl0(m3040getLeftD9Ej5fM, animatable3.getTargetValue().m8009unboximpl())) {
+                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$3(animatable3, m3040getLeftD9Ej5fM, this, null), 3, null);
             }
         } else {
-            this.initialOffset = Dp.m7262boximpl(m2704getLeftD9Ej5fM);
+            this.initialOffset = Dp.m7993boximpl(m3040getLeftD9Ej5fM);
         }
         if (measureScope.getLayoutDirection() == LayoutDirection.Ltr) {
             Animatable<Dp, AnimationVector1D> animatable5 = this.offsetAnimatable;
             if (animatable5 != null) {
-                m2704getLeftD9Ej5fM = animatable5.getValue().m7278unboximpl();
+                m3040getLeftD9Ej5fM = animatable5.getValue().m8009unboximpl();
             }
         } else {
             Animatable<Dp, AnimationVector1D> animatable6 = this.offsetAnimatable;
             if (animatable6 != null) {
-                m2704getLeftD9Ej5fM = animatable6.getValue().m7278unboximpl();
+                m3040getLeftD9Ej5fM = animatable6.getValue().m8009unboximpl();
             }
-            m2704getLeftD9Ej5fM = Dp.m7264constructorimpl(-m2704getLeftD9Ej5fM);
+            m3040getLeftD9Ej5fM = Dp.m7995constructorimpl(-m3040getLeftD9Ej5fM);
         }
         Animatable<Dp, AnimationVector1D> animatable7 = this.widthAnimatable;
         if (animatable7 != null) {
-            m2706getWidthD9Ej5fM = animatable7.getValue().m7278unboximpl();
+            m3042getWidthD9Ej5fM = animatable7.getValue().m8009unboximpl();
         }
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, measureScope.mo423roundToPx0680j_4(m2706getWidthD9Ej5fM), measureScope.mo423roundToPx0680j_4(m2706getWidthD9Ej5fM), 0, 0, 12, null));
-        final float f = m2704getLeftD9Ej5fM;
-        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$measure$4
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.m7938copyZbe2FdA$default(j, measureScope.mo423roundToPx0680j_4(m3042getWidthD9Ej5fM), measureScope.mo423roundToPx0680j_4(m3042getWidthD9Ej5fM), 0, 0, 12, null));
+        final float f = m3040getLeftD9Ej5fM;
+        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable.PlacementScope.place$default(placementScope, Placeable.this, measureScope.mo423roundToPx0680j_4(f), 0, 0.0f, 4, null);
+            public final Object invoke(Object obj) {
+                Unit measure_3p2s80s$lambda$3;
+                measure_3p2s80s$lambda$3 = TabIndicatorOffsetNode.measure_3p2s80s$lambda$3(Placeable.this, measureScope, f, (Placeable.PlacementScope) obj);
+                return measure_3p2s80s$lambda$3;
             }
         }, 4, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measure_3p2s80s$lambda$0(Placeable.PlacementScope placementScope) {
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measure_3p2s80s$lambda$3(Placeable placeable, MeasureScope measureScope, float f, Placeable.PlacementScope placementScope) {
+        Placeable.PlacementScope.place$default(placementScope, placeable, measureScope.mo423roundToPx0680j_4(f), 0, 0.0f, 4, null);
+        return Unit.INSTANCE;
     }
 }

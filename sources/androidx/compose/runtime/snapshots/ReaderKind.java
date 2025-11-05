@@ -12,54 +12,54 @@ public final class ReaderKind {
     private final int mask;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ReaderKind m4007boximpl(int i) {
+    public static final /* synthetic */ ReaderKind m4737boximpl(int i) {
         return new ReaderKind(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4008constructorimpl(int i) {
+    public static int m4738constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4010equalsimpl(int i, Object obj) {
-        return (obj instanceof ReaderKind) && i == ((ReaderKind) obj).m4016unboximpl();
+    public static boolean m4740equalsimpl(int i, Object obj) {
+        return (obj instanceof ReaderKind) && i == ((ReaderKind) obj).m4746unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4011equalsimpl0(int i, int i2) {
+    public static final boolean m4741equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4012hashCodeimpl(int i) {
+    public static int m4742hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: isReadIn-h_f27i8  reason: not valid java name */
-    public static final boolean m4013isReadInh_f27i8(int i, int i2) {
+    public static final boolean m4743isReadInh_f27i8(int i, int i2) {
         return (i & i2) != 0;
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4014toStringimpl(int i) {
+    public static String m4744toStringimpl(int i) {
         return "ReaderKind(mask=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4010equalsimpl(this.mask, obj);
+        return m4740equalsimpl(this.mask, obj);
     }
 
     public int hashCode() {
-        return m4012hashCodeimpl(this.mask);
+        return m4742hashCodeimpl(this.mask);
     }
 
     public String toString() {
-        return m4014toStringimpl(this.mask);
+        return m4744toStringimpl(this.mask);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4016unboximpl() {
+    public final /* synthetic */ int m4746unboximpl() {
         return this.mask;
     }
 
@@ -68,11 +68,11 @@ public final class ReaderKind {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ int m4009constructorimpl$default(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ int m4739constructorimpl$default(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i2 & 1) != 0) {
             i = 0;
         }
-        return m4008constructorimpl(i);
+        return m4738constructorimpl(i);
     }
 
     public final int getMask() {
@@ -80,8 +80,8 @@ public final class ReaderKind {
     }
 
     /* renamed from: withReadIn-3QSx2Dw  reason: not valid java name */
-    public static final int m4015withReadIn3QSx2Dw(int i, int i2) {
-        return m4008constructorimpl(i | i2);
+    public static final int m4745withReadIn3QSx2Dw(int i, int i2) {
+        return m4738constructorimpl(i | i2);
     }
 
     /* compiled from: StateObjectImpl.kt */
@@ -96,18 +96,18 @@ public final class ReaderKind {
         }
 
         /* renamed from: getComposition-6f8NoZ8  reason: not valid java name */
-        public final int m4017getComposition6f8NoZ8() {
-            return ReaderKind.m4008constructorimpl(1);
+        public final int m4747getComposition6f8NoZ8() {
+            return ReaderKind.m4738constructorimpl(1);
         }
 
         /* renamed from: getSnapshotStateObserver-6f8NoZ8  reason: not valid java name */
-        public final int m4019getSnapshotStateObserver6f8NoZ8() {
-            return ReaderKind.m4008constructorimpl(2);
+        public final int m4749getSnapshotStateObserver6f8NoZ8() {
+            return ReaderKind.m4738constructorimpl(2);
         }
 
         /* renamed from: getSnapshotFlow-6f8NoZ8  reason: not valid java name */
-        public final int m4018getSnapshotFlow6f8NoZ8() {
-            return ReaderKind.m4008constructorimpl(4);
+        public final int m4748getSnapshotFlow6f8NoZ8() {
+            return ReaderKind.m4738constructorimpl(4);
         }
     }
 }

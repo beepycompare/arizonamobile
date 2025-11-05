@@ -284,7 +284,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
     }
 
     public static final IntOffset OpenContextMenu$lambda$3$lambda$2(TextContextMenuDataProvider textContextMenuDataProvider, Function0 function0) {
-        return IntOffset.m7383boximpl(IntOffsetKt.m7409roundk4lQ0M(textContextMenuDataProvider.mo1426positiontuRUvjQ((LayoutCoordinates) function0.invoke())));
+        return IntOffset.m8114boximpl(IntOffsetKt.m8140roundk4lQ0M(textContextMenuDataProvider.mo1426positiontuRUvjQ((LayoutCoordinates) function0.invoke())));
     }
 
     public static final Unit OpenContextMenu$lambda$5$lambda$4(TextContextMenuSession textContextMenuSession) {
@@ -394,7 +394,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
                 }, null, false, ((TextContextMenuItem) textContextMenuComponent).getLeadingIcon() == 0 ? null : ComposableLambdaKt.composableLambdaInstance(-1930700965, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$DefaultTextContextMenuDropdown$1$1$1$2
                     @Override // kotlin.jvm.functions.Function3
                     public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                        m1410invokeek8zF_U(color.m4559unboximpl(), composer, num.intValue());
+                        m1410invokeek8zF_U(color.m5289unboximpl(), composer, num.intValue());
                         return Unit.INSTANCE;
                     }
 
@@ -502,7 +502,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             boolean z = (i3 & 112) == 32;
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (z || rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = j == 16 ? null : ColorFilter.Companion.m4590tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
+                rememberedValue2 = j == 16 ? null : ColorFilter.Companion.m5320tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

@@ -37,7 +37,7 @@ import java.util.Collections;
 import java.util.Set;
 import org.checkerframework.checker.initialization.qual.NotOnlyInitialized;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class GoogleApi<O extends Api.ApiOptions> implements HasApiKey<O> {
     protected final GoogleApiManager zaa;
     private final Context zab;
@@ -52,14 +52,14 @@ public abstract class GoogleApi<O extends Api.ApiOptions> implements HasApiKey<O
     private final StatusExceptionMapper zaj;
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Settings {
         public static final Settings DEFAULT_SETTINGS = new Builder().build();
         public final StatusExceptionMapper zaa;
         public final Looper zab;
 
         /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static class Builder {
             private StatusExceptionMapper zaa;
             private Looper zab;

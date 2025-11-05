@@ -279,7 +279,7 @@ public class ConstraintSet {
         sMapToConstant.append(R.styleable.Constraint_android_id, 38);
         sMapToConstant.append(R.styleable.Constraint_motionProgress, PROGRESS);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintWidth_percent, WIDTH_PERCENT);
-        sMapToConstant.append(R.styleable.Constraint_layout_constraintHeight_percent, HEIGHT_PERCENT);
+        sMapToConstant.append(R.styleable.Constraint_layout_constraintHeight_percent, 70);
         sMapToConstant.append(R.styleable.Constraint_layout_wrapBehaviorInParent, 97);
         sMapToConstant.append(R.styleable.Constraint_chainUseRtl, 71);
         sMapToConstant.append(R.styleable.Constraint_barrierDirection, BARRIER_DIRECTION);
@@ -357,7 +357,7 @@ public class ConstraintSet {
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_motionTarget, MOTION_TARGET);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_motionProgress, PROGRESS);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintWidth_percent, WIDTH_PERCENT);
-        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintHeight_percent, HEIGHT_PERCENT);
+        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintHeight_percent, 70);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_chainUseRtl, 71);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_barrierDirection, BARRIER_DIRECTION);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_barrierMargin, BARRIER_MARGIN);
@@ -1037,7 +1037,7 @@ public class ConstraintSet {
             sMapToConstant.append(R.styleable.Layout_layout_constraintCircleRadius, CIRCLE_RADIUS);
             sMapToConstant.append(R.styleable.Layout_layout_constraintCircleAngle, 63);
             sMapToConstant.append(R.styleable.Layout_layout_constraintWidth_percent, WIDTH_PERCENT);
-            sMapToConstant.append(R.styleable.Layout_layout_constraintHeight_percent, HEIGHT_PERCENT);
+            sMapToConstant.append(R.styleable.Layout_layout_constraintHeight_percent, 70);
             sMapToConstant.append(R.styleable.Layout_chainUseRtl, 71);
             sMapToConstant.append(R.styleable.Layout_barrierDirection, BARRIER_DIRECTION);
             sMapToConstant.append(R.styleable.Layout_barrierMargin, BARRIER_MARGIN);
@@ -1203,7 +1203,7 @@ public class ConstraintSet {
                                     case WIDTH_PERCENT /* 69 */:
                                         this.widthPercent = obtainStyledAttributes.getFloat(index, 1.0f);
                                         continue;
-                                    case HEIGHT_PERCENT /* 70 */:
+                                    case 70:
                                         this.heightPercent = obtainStyledAttributes.getFloat(index, 1.0f);
                                         continue;
                                     case 71:
@@ -1779,7 +1779,7 @@ public class ConstraintSet {
         }
 
         /* renamed from: clone */
-        public Constraint m7750clone() {
+        public Constraint m8481clone() {
             Constraint constraint = new Constraint();
             constraint.layout.copyFrom(this.layout);
             constraint.motion.copyFrom(this.motion);
@@ -1955,7 +1955,7 @@ public class ConstraintSet {
         for (Integer num : constraintSet.mConstraints.keySet()) {
             Constraint constraint = constraintSet.mConstraints.get(num);
             if (constraint != null) {
-                this.mConstraints.put(num, constraint.m7750clone());
+                this.mConstraints.put(num, constraint.m8481clone());
             }
         }
     }
@@ -3574,8 +3574,8 @@ public class ConstraintSet {
                 case WIDTH_PERCENT /* 69 */:
                     delta.add(WIDTH_PERCENT, typedArray.getFloat(index, 1.0f));
                     break;
-                case HEIGHT_PERCENT /* 70 */:
-                    delta.add(HEIGHT_PERCENT, typedArray.getFloat(index, 1.0f));
+                case 70:
+                    delta.add(70, typedArray.getFloat(index, 1.0f));
                     break;
                 case 71:
                     Log.e(TAG, "CURRENTLY UNSUPPORTED");
@@ -3760,7 +3760,7 @@ public class ConstraintSet {
                             case WIDTH_PERCENT /* 69 */:
                                 constraint.layout.widthPercent = f;
                                 return;
-                            case HEIGHT_PERCENT /* 70 */:
+                            case 70:
                                 constraint.layout.heightPercent = f;
                                 return;
                             default:
@@ -4189,7 +4189,7 @@ public class ConstraintSet {
                 case WIDTH_PERCENT /* 69 */:
                     constraint.layout.widthPercent = typedArray.getFloat(index, 1.0f);
                     break;
-                case HEIGHT_PERCENT /* 70 */:
+                case 70:
                     constraint.layout.heightPercent = typedArray.getFloat(index, 1.0f);
                     break;
                 case 71:

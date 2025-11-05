@@ -79,11 +79,11 @@ public final class AlignmentLineOffsetDpElement extends ModifierNodeElement<Alig
             return true;
         }
         AlignmentLineOffsetDpElement alignmentLineOffsetDpElement = obj instanceof AlignmentLineOffsetDpElement ? (AlignmentLineOffsetDpElement) obj : null;
-        return alignmentLineOffsetDpElement != null && Intrinsics.areEqual(this.alignmentLine, alignmentLineOffsetDpElement.alignmentLine) && Dp.m7269equalsimpl0(this.before, alignmentLineOffsetDpElement.before) && Dp.m7269equalsimpl0(this.after, alignmentLineOffsetDpElement.after);
+        return alignmentLineOffsetDpElement != null && Intrinsics.areEqual(this.alignmentLine, alignmentLineOffsetDpElement.alignmentLine) && Dp.m8000equalsimpl0(this.before, alignmentLineOffsetDpElement.before) && Dp.m8000equalsimpl0(this.after, alignmentLineOffsetDpElement.after);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((this.alignmentLine.hashCode() * 31) + Dp.m7270hashCodeimpl(this.before)) * 31) + Dp.m7270hashCodeimpl(this.after);
+        return (((this.alignmentLine.hashCode() * 31) + Dp.m8001hashCodeimpl(this.before)) * 31) + Dp.m8001hashCodeimpl(this.after);
     }
 }

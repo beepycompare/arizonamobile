@@ -4,10 +4,10 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class anim {
-        public static int nav_default_enter_anim = 0x7f010033;
-        public static int nav_default_exit_anim = 0x7f010034;
-        public static int nav_default_pop_enter_anim = 0x7f010035;
-        public static int nav_default_pop_exit_anim = 0x7f010036;
+        public static int nav_default_enter_anim = 0x7f010035;
+        public static int nav_default_exit_anim = 0x7f010036;
+        public static int nav_default_pop_enter_anim = 0x7f010037;
+        public static int nav_default_pop_exit_anim = 0x7f010038;
 
         private anim() {
         }
@@ -34,9 +34,9 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int dest_title = 0x7f130075;
-        public static int nav_app_bar_navigate_up_description = 0x7f13019f;
-        public static int nav_app_bar_open_drawer_description = 0x7f1301a0;
+        public static int dest_title = 0x7f130082;
+        public static int nav_app_bar_navigate_up_description = 0x7f1301c6;
+        public static int nav_app_bar_open_drawer_description = 0x7f1301c7;
 
         private string() {
         }

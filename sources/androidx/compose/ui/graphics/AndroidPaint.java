@@ -14,7 +14,7 @@ public final class AndroidPaint implements Paint {
 
     public AndroidPaint(android.graphics.Paint paint) {
         this.internalPaint = paint;
-        this._blendMode = BlendMode.Companion.m4490getSrcOver0nO6VwU();
+        this._blendMode = BlendMode.Companion.m5220getSrcOver0nO6VwU();
     }
 
     public AndroidPaint() {
@@ -48,42 +48,42 @@ public final class AndroidPaint implements Paint {
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public long mo4420getColor0d7_KjU() {
+    public long mo5150getColor0d7_KjU() {
         return AndroidPaint_androidKt.getNativeColor(this.internalPaint);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: setColor-8_81llA  reason: not valid java name */
-    public void mo4426setColor8_81llA(long j) {
-        AndroidPaint_androidKt.m4432setNativeColor4WTKRHQ(this.internalPaint, j);
+    public void mo5156setColor8_81llA(long j) {
+        AndroidPaint_androidKt.m5162setNativeColor4WTKRHQ(this.internalPaint, j);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public int mo4419getBlendMode0nO6VwU() {
+    public int mo5149getBlendMode0nO6VwU() {
         return this._blendMode;
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    public void mo4425setBlendModes9anfk8(int i) {
-        if (BlendMode.m4459equalsimpl0(this._blendMode, i)) {
+    public void mo5155setBlendModes9anfk8(int i) {
+        if (BlendMode.m5189equalsimpl0(this._blendMode, i)) {
             return;
         }
         this._blendMode = i;
-        AndroidPaint_androidKt.m4431setNativeBlendModeGB0RdKg(this.internalPaint, i);
+        AndroidPaint_androidKt.m5161setNativeBlendModeGB0RdKg(this.internalPaint, i);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: getStyle-TiuSbCo  reason: not valid java name */
-    public int mo4424getStyleTiuSbCo() {
+    public int mo5154getStyleTiuSbCo() {
         return AndroidPaint_androidKt.getNativeStyle(this.internalPaint);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: setStyle-k9PVt8s  reason: not valid java name */
-    public void mo4430setStylek9PVt8s(int i) {
-        AndroidPaint_androidKt.m4436setNativeStyle5YerkU(this.internalPaint, i);
+    public void mo5160setStylek9PVt8s(int i) {
+        AndroidPaint_androidKt.m5166setNativeStyle5YerkU(this.internalPaint, i);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
@@ -98,26 +98,26 @@ public final class AndroidPaint implements Paint {
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: getStrokeCap-KaPHkGw  reason: not valid java name */
-    public int mo4422getStrokeCapKaPHkGw() {
+    public int mo5152getStrokeCapKaPHkGw() {
         return AndroidPaint_androidKt.getNativeStrokeCap(this.internalPaint);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: setStrokeCap-BeK7IIE  reason: not valid java name */
-    public void mo4428setStrokeCapBeK7IIE(int i) {
-        AndroidPaint_androidKt.m4434setNativeStrokeCapCSYIeUk(this.internalPaint, i);
+    public void mo5158setStrokeCapBeK7IIE(int i) {
+        AndroidPaint_androidKt.m5164setNativeStrokeCapCSYIeUk(this.internalPaint, i);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: getStrokeJoin-LxFBmk8  reason: not valid java name */
-    public int mo4423getStrokeJoinLxFBmk8() {
+    public int mo5153getStrokeJoinLxFBmk8() {
         return AndroidPaint_androidKt.getNativeStrokeJoin(this.internalPaint);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: setStrokeJoin-Ww9F2mQ  reason: not valid java name */
-    public void mo4429setStrokeJoinWw9F2mQ(int i) {
-        AndroidPaint_androidKt.m4435setNativeStrokeJoinkLtJ_vA(this.internalPaint, i);
+    public void mo5159setStrokeJoinWw9F2mQ(int i) {
+        AndroidPaint_androidKt.m5165setNativeStrokeJoinkLtJ_vA(this.internalPaint, i);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
@@ -132,14 +132,14 @@ public final class AndroidPaint implements Paint {
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: getFilterQuality-f-v9h1I  reason: not valid java name */
-    public int mo4421getFilterQualityfv9h1I() {
+    public int mo5151getFilterQualityfv9h1I() {
         return AndroidPaint_androidKt.getNativeFilterQuality(this.internalPaint);
     }
 
     @Override // androidx.compose.ui.graphics.Paint
     /* renamed from: setFilterQuality-vDHp3xo  reason: not valid java name */
-    public void mo4427setFilterQualityvDHp3xo(int i) {
-        AndroidPaint_androidKt.m4433setNativeFilterQuality50PEsBU(this.internalPaint, i);
+    public void mo5157setFilterQualityvDHp3xo(int i) {
+        AndroidPaint_androidKt.m5163setNativeFilterQuality50PEsBU(this.internalPaint, i);
     }
 
     @Override // androidx.compose.ui.graphics.Paint

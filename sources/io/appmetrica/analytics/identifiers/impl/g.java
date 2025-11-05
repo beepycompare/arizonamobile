@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.identifiers.impl;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class g extends Exception {
     public g(String str) {
         super(str);

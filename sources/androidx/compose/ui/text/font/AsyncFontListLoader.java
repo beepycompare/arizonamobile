@@ -123,7 +123,7 @@ public final class AsyncFontListLoader implements State<Object> {
                         if (i2 < size) {
                             try {
                                 Font font3 = list.get(i2);
-                                if (FontLoadingStrategy.m6826equalsimpl0(font3.mo6783getLoadingStrategyPKNRLFQ(), FontLoadingStrategy.Companion.m6830getAsyncPKNRLFQ())) {
+                                if (FontLoadingStrategy.m7557equalsimpl0(font3.mo7514getLoadingStrategyPKNRLFQ(), FontLoadingStrategy.Companion.m7561getAsyncPKNRLFQ())) {
                                     asyncFontListLoader$load$12.L$0 = list;
                                     asyncFontListLoader$load$12.L$1 = font3;
                                     asyncFontListLoader$load$12.I$0 = i2;
@@ -137,7 +137,7 @@ public final class AsyncFontListLoader implements State<Object> {
                                         i3 = i2;
                                         asyncFontListLoader$load$13 = asyncFontListLoader$load$12;
                                         if (obj == null) {
-                                            setValue(FontSynthesis_androidKt.m6860synthesizeTypefaceFxwP2eA(this.typefaceRequest.m6886getFontSynthesisGVVA2EU(), obj, font, this.typefaceRequest.getFontWeight(), this.typefaceRequest.m6885getFontStyle_LCdwA()));
+                                            setValue(FontSynthesis_androidKt.m7591synthesizeTypefaceFxwP2eA(this.typefaceRequest.m7617getFontSynthesisGVVA2EU(), obj, font, this.typefaceRequest.getFontWeight(), this.typefaceRequest.m7616getFontStyle_LCdwA()));
                                             Unit unit = Unit.INSTANCE;
                                             boolean isActive = JobKt.isActive(asyncFontListLoader$load$13.getContext());
                                             this.cacheable = false;

@@ -23,7 +23,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 /* compiled from: com.google.android.gms:play-services-stats@@17.0.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WakeLock {
     private static final long zzb = TimeUnit.DAYS.toMillis(366);
     private static volatile ScheduledExecutorService zzc = null;

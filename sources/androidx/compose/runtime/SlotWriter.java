@@ -562,10 +562,10 @@ public final class SlotWriter {
     }
 
     /* JADX WARN: Type inference failed for: r12v0 */
-    /* JADX WARN: Type inference failed for: r12v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r12v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r12v2 */
     /* JADX WARN: Type inference failed for: r13v0 */
-    /* JADX WARN: Type inference failed for: r13v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r13v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r13v2 */
     private final void startGroup(int i, Object obj, boolean z, Object obj2) {
         int access$groupSize;
@@ -765,8 +765,8 @@ public final class SlotWriter {
         }
         MutableIntList mutableIntList = this.pendingRecalculateMarks;
         if (mutableIntList != null) {
-            while (PrioritySet.m3825isNotEmptyimpl(mutableIntList) && PrioritySet.m3826peekimpl(mutableIntList) >= i) {
-                PrioritySet.m3827takeMaximpl(mutableIntList);
+            while (PrioritySet.m4555isNotEmptyimpl(mutableIntList) && PrioritySet.m4556peekimpl(mutableIntList) >= i) {
+                PrioritySet.m4557takeMaximpl(mutableIntList);
             }
         }
         boolean removeGroups = removeGroups(i, this.currentGroup - i);
@@ -1213,8 +1213,8 @@ public final class SlotWriter {
     private final void recalculateMarks() {
         MutableIntList mutableIntList = this.pendingRecalculateMarks;
         if (mutableIntList != null) {
-            while (PrioritySet.m3825isNotEmptyimpl(mutableIntList)) {
-                m3845updateContainsMarkNowXpTMRCE(PrioritySet.m3827takeMaximpl(mutableIntList), mutableIntList);
+            while (PrioritySet.m4555isNotEmptyimpl(mutableIntList)) {
+                m4575updateContainsMarkNowXpTMRCE(PrioritySet.m4557takeMaximpl(mutableIntList), mutableIntList);
             }
         }
     }
@@ -1224,15 +1224,15 @@ public final class SlotWriter {
         if (i >= 0) {
             MutableIntList mutableIntList = this.pendingRecalculateMarks;
             if (mutableIntList == null) {
-                mutableIntList = PrioritySet.m3820constructorimpl$default(null, 1, null);
+                mutableIntList = PrioritySet.m4550constructorimpl$default(null, 1, null);
                 this.pendingRecalculateMarks = mutableIntList;
             }
-            PrioritySet.m3817addimpl(mutableIntList, i);
+            PrioritySet.m4547addimpl(mutableIntList, i);
         }
     }
 
     /* renamed from: updateContainsMarkNow-XpTMRCE  reason: not valid java name */
-    private final void m3845updateContainsMarkNowXpTMRCE(int i, MutableIntList mutableIntList) {
+    private final void m4575updateContainsMarkNowXpTMRCE(int i, MutableIntList mutableIntList) {
         int groupIndexToAddress = groupIndexToAddress(i);
         boolean childContainsAnyMarks = childContainsAnyMarks(i);
         int[] iArr = this.groups;
@@ -1240,7 +1240,7 @@ public final class SlotWriter {
             SlotTableKt.access$updateContainsMark(iArr, groupIndexToAddress, childContainsAnyMarks);
             int parent = parent(i);
             if (parent >= 0) {
-                PrioritySet.m3817addimpl(mutableIntList, parent);
+                PrioritySet.m4547addimpl(mutableIntList, parent);
             }
         }
     }

@@ -38,19 +38,19 @@ public abstract class LazyGridMeasuredItemProvider extends LazyLayoutMeasuredIte
 
     /* renamed from: getAndMeasure-m8Kt_7k  reason: not valid java name */
     public final LazyGridMeasuredItem m1010getAndMeasurem8Kt_7k(int i, long j, int i2, int i3, int i4) {
-        int m7218getMinHeightimpl;
+        int m7949getMinHeightimpl;
         Object key = this.itemProvider.getKey(i);
         Object contentType = this.itemProvider.getContentType(i);
         List<Placeable> list = m1052getPlaceables3p2s80s(this.measureScope, i, j);
-        if (Constraints.m7215getHasFixedWidthimpl(j)) {
-            m7218getMinHeightimpl = Constraints.m7219getMinWidthimpl(j);
+        if (Constraints.m7946getHasFixedWidthimpl(j)) {
+            m7949getMinHeightimpl = Constraints.m7950getMinWidthimpl(j);
         } else {
-            if (!Constraints.m7214getHasFixedHeightimpl(j)) {
+            if (!Constraints.m7945getHasFixedHeightimpl(j)) {
                 InlineClassHelperKt.throwIllegalArgumentException("does not have fixed height");
             }
-            m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j);
+            m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
         }
-        return mo1004createItemO3s9Psw(i, key, contentType, m7218getMinHeightimpl, i4, list, j, i2, i3);
+        return mo1004createItemO3s9Psw(i, key, contentType, m7949getMinHeightimpl, i4, list, j, i2, i3);
     }
 
     public final LazyLayoutKeyIndexMap getKeyIndexMap() {

@@ -6,7 +6,7 @@ import androidx.compose.runtime.ComposerKt;
 import androidx.compose.ui.graphics.Color;
 import kotlin.Metadata;
 /* compiled from: TimePicker.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\r\u0010\b\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\tJ\u009e\u0001\u0010\b\u001a\u00020\u00042\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u000b2\b\b\u0002\u0010\u000e\u001a\u00020\u000b2\b\b\u0002\u0010\u000f\u001a\u00020\u000b2\b\b\u0002\u0010\u0010\u001a\u00020\u000b2\b\b\u0002\u0010\u0011\u001a\u00020\u000b2\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\b\b\u0002\u0010\u0013\u001a\u00020\u000b2\b\b\u0002\u0010\u0014\u001a\u00020\u000b2\b\b\u0002\u0010\u0015\u001a\u00020\u000b2\b\b\u0002\u0010\u0016\u001a\u00020\u000b2\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\b\u0019\u0010\u001aJ\u0015\u0010\u001b\u001a\u00020\u001cH\u0007ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b\u001d\u0010\u001eR\u0018\u0010\u0003\u001a\u00020\u0004*\u00020\u00058@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u001f"}, d2 = {"Landroidx/compose/material3/TimePickerDefaults;", "", "()V", "defaultTimePickerColors", "Landroidx/compose/material3/TimePickerColors;", "Landroidx/compose/material3/ColorScheme;", "getDefaultTimePickerColors$material3_release", "(Landroidx/compose/material3/ColorScheme;)Landroidx/compose/material3/TimePickerColors;", "colors", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/TimePickerColors;", "clockDialColor", "Landroidx/compose/ui/graphics/Color;", "clockDialSelectedContentColor", "clockDialUnselectedContentColor", "selectorColor", "containerColor", "periodSelectorBorderColor", "periodSelectorSelectedContainerColor", "periodSelectorUnselectedContainerColor", "periodSelectorSelectedContentColor", "periodSelectorUnselectedContentColor", "timeSelectorSelectedContainerColor", "timeSelectorUnselectedContainerColor", "timeSelectorSelectedContentColor", "timeSelectorUnselectedContentColor", "colors-u3YEpmA", "(JJJJJJJJJJJJJJLandroidx/compose/runtime/Composer;III)Landroidx/compose/material3/TimePickerColors;", "layoutType", "Landroidx/compose/material3/TimePickerLayoutType;", "layoutType-sDNSZnc", "(Landroidx/compose/runtime/Composer;I)I", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\r\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006J\u009b\u0001\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\b2\b\b\u0002\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\b2\b\b\u0002\u0010\r\u001a\u00020\b2\b\b\u0002\u0010\u000e\u001a\u00020\b2\b\b\u0002\u0010\u000f\u001a\u00020\b2\b\b\u0002\u0010\u0010\u001a\u00020\b2\b\b\u0002\u0010\u0011\u001a\u00020\b2\b\b\u0002\u0010\u0012\u001a\u00020\b2\b\b\u0002\u0010\u0013\u001a\u00020\b2\b\b\u0002\u0010\u0014\u001a\u00020\b2\b\b\u0002\u0010\u0015\u001a\u00020\bH\u0007¢\u0006\u0004\b\u0016\u0010\u0017J\u000f\u0010\u001c\u001a\u00020\u001dH\u0007¢\u0006\u0004\b\u001e\u0010\u001fR\u0018\u0010\u0018\u001a\u00020\u0005*\u00020\u00198@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u0006 "}, d2 = {"Landroidx/compose/material3/TimePickerDefaults;", "", "<init>", "()V", "colors", "Landroidx/compose/material3/TimePickerColors;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/TimePickerColors;", "clockDialColor", "Landroidx/compose/ui/graphics/Color;", "clockDialSelectedContentColor", "clockDialUnselectedContentColor", "selectorColor", "containerColor", "periodSelectorBorderColor", "periodSelectorSelectedContainerColor", "periodSelectorUnselectedContainerColor", "periodSelectorSelectedContentColor", "periodSelectorUnselectedContentColor", "timeSelectorSelectedContainerColor", "timeSelectorUnselectedContainerColor", "timeSelectorSelectedContentColor", "timeSelectorUnselectedContentColor", "colors-u3YEpmA", "(JJJJJJJJJJJJJJLandroidx/compose/runtime/Composer;III)Landroidx/compose/material3/TimePickerColors;", "defaultTimePickerColors", "Landroidx/compose/material3/ColorScheme;", "getDefaultTimePickerColors$material3", "(Landroidx/compose/material3/ColorScheme;)Landroidx/compose/material3/TimePickerColors;", "layoutType", "Landroidx/compose/material3/TimePickerLayoutType;", "layoutType-sDNSZnc", "(Landroidx/compose/runtime/Composer;I)I", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TimePickerDefaults {
     public static final int $stable = 0;
@@ -16,63 +16,63 @@ public final class TimePickerDefaults {
     }
 
     public final TimePickerColors colors(Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -2085808058, "C(colors)270@13292L11:TimePicker.kt#uh7d8r");
+        ComposerKt.sourceInformationMarkerStart(composer, -2085808058, "C(colors)284@13803L11:TimePicker.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-2085808058, i, -1, "androidx.compose.material3.TimePickerDefaults.colors (TimePicker.kt:270)");
+            ComposerKt.traceEventStart(-2085808058, i, -1, "androidx.compose.material3.TimePickerDefaults.colors (TimePicker.kt:284)");
         }
-        TimePickerColors defaultTimePickerColors$material3_release = getDefaultTimePickerColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6));
+        TimePickerColors defaultTimePickerColors$material3 = getDefaultTimePickerColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return defaultTimePickerColors$material3_release;
+        return defaultTimePickerColors$material3;
     }
 
     /* renamed from: colors-u3YEpmA  reason: not valid java name */
-    public final TimePickerColors m2838colorsu3YEpmA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, Composer composer, int i, int i2, int i3) {
-        ComposerKt.sourceInformationMarkerStart(composer, -646352288, "C(colors)P(0:c#ui.graphics.Color,1:c#ui.graphics.Color,2:c#ui.graphics.Color,9:c#ui.graphics.Color,3:c#ui.graphics.Color,4:c#ui.graphics.Color,5:c#ui.graphics.Color,7:c#ui.graphics.Color,6:c#ui.graphics.Color,8:c#ui.graphics.Color,10:c#ui.graphics.Color,12:c#ui.graphics.Color,11:c#ui.graphics.Color,13:c#ui.graphics.Color)317@16058L11:TimePicker.kt#uh7d8r");
-        long m4585getUnspecified0d7_KjU = (i3 & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
-        long m4585getUnspecified0d7_KjU2 = (i3 & 2) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j2;
-        long m4585getUnspecified0d7_KjU3 = (i3 & 4) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3;
-        long m4585getUnspecified0d7_KjU4 = (i3 & 8) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
-        long m4585getUnspecified0d7_KjU5 = (i3 & 16) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j5;
-        long m4585getUnspecified0d7_KjU6 = (i3 & 32) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j6;
-        long m4585getUnspecified0d7_KjU7 = (i3 & 64) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j7;
-        long m4585getUnspecified0d7_KjU8 = (i3 & 128) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j8;
-        long m4585getUnspecified0d7_KjU9 = (i3 & 256) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j9;
-        long m4585getUnspecified0d7_KjU10 = (i3 & 512) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j10;
-        long m4585getUnspecified0d7_KjU11 = (i3 & 1024) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j11;
-        long m4585getUnspecified0d7_KjU12 = (i3 & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j12;
-        long m4585getUnspecified0d7_KjU13 = (i3 & 4096) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j13;
-        long m4585getUnspecified0d7_KjU14 = (i3 & 8192) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j14;
+    public final TimePickerColors m3192colorsu3YEpmA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, Composer composer, int i, int i2, int i3) {
+        ComposerKt.sourceInformationMarkerStart(composer, -646352288, "C(colors)N(clockDialColor:c#ui.graphics.Color,clockDialSelectedContentColor:c#ui.graphics.Color,clockDialUnselectedContentColor:c#ui.graphics.Color,selectorColor:c#ui.graphics.Color,containerColor:c#ui.graphics.Color,periodSelectorBorderColor:c#ui.graphics.Color,periodSelectorSelectedContainerColor:c#ui.graphics.Color,periodSelectorUnselectedContainerColor:c#ui.graphics.Color,periodSelectorSelectedContentColor:c#ui.graphics.Color,periodSelectorUnselectedContentColor:c#ui.graphics.Color,timeSelectorSelectedContainerColor:c#ui.graphics.Color,timeSelectorUnselectedContainerColor:c#ui.graphics.Color,timeSelectorSelectedContentColor:c#ui.graphics.Color,timeSelectorUnselectedContentColor:c#ui.graphics.Color)331@16569L11:TimePicker.kt#uh7d8r");
+        long m5315getUnspecified0d7_KjU = (i3 & 1) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j;
+        long m5315getUnspecified0d7_KjU2 = (i3 & 2) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j2;
+        long m5315getUnspecified0d7_KjU3 = (i3 & 4) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j3;
+        long m5315getUnspecified0d7_KjU4 = (i3 & 8) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j4;
+        long m5315getUnspecified0d7_KjU5 = (i3 & 16) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j5;
+        long m5315getUnspecified0d7_KjU6 = (i3 & 32) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j6;
+        long m5315getUnspecified0d7_KjU7 = (i3 & 64) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j7;
+        long m5315getUnspecified0d7_KjU8 = (i3 & 128) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j8;
+        long m5315getUnspecified0d7_KjU9 = (i3 & 256) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j9;
+        long m5315getUnspecified0d7_KjU10 = (i3 & 512) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j10;
+        long m5315getUnspecified0d7_KjU11 = (i3 & 1024) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j11;
+        long m5315getUnspecified0d7_KjU12 = (i3 & 2048) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j12;
+        long m5315getUnspecified0d7_KjU13 = (i3 & 4096) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j13;
+        long m5315getUnspecified0d7_KjU14 = (i3 & 8192) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j14;
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-646352288, i, i2, "androidx.compose.material3.TimePickerDefaults.colors (TimePicker.kt:317)");
+            ComposerKt.traceEventStart(-646352288, i, i2, "androidx.compose.material3.TimePickerDefaults.colors (TimePicker.kt:331)");
         }
-        TimePickerColors m2819copydVHXu7A = getDefaultTimePickerColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2819copydVHXu7A(m4585getUnspecified0d7_KjU, m4585getUnspecified0d7_KjU4, m4585getUnspecified0d7_KjU5, m4585getUnspecified0d7_KjU6, m4585getUnspecified0d7_KjU2, m4585getUnspecified0d7_KjU3, m4585getUnspecified0d7_KjU7, m4585getUnspecified0d7_KjU8, m4585getUnspecified0d7_KjU9, m4585getUnspecified0d7_KjU10, m4585getUnspecified0d7_KjU11, m4585getUnspecified0d7_KjU12, m4585getUnspecified0d7_KjU13, m4585getUnspecified0d7_KjU14);
+        TimePickerColors m3173copydVHXu7A = getDefaultTimePickerColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m3173copydVHXu7A(m5315getUnspecified0d7_KjU, m5315getUnspecified0d7_KjU4, m5315getUnspecified0d7_KjU5, m5315getUnspecified0d7_KjU6, m5315getUnspecified0d7_KjU2, m5315getUnspecified0d7_KjU3, m5315getUnspecified0d7_KjU7, m5315getUnspecified0d7_KjU8, m5315getUnspecified0d7_KjU9, m5315getUnspecified0d7_KjU10, m5315getUnspecified0d7_KjU11, m5315getUnspecified0d7_KjU12, m5315getUnspecified0d7_KjU13, m5315getUnspecified0d7_KjU14);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2819copydVHXu7A;
+        return m3173copydVHXu7A;
     }
 
-    public final TimePickerColors getDefaultTimePickerColors$material3_release(ColorScheme colorScheme) {
-        TimePickerColors defaultTimePickerColorsCached$material3_release = colorScheme.getDefaultTimePickerColorsCached$material3_release();
-        if (defaultTimePickerColorsCached$material3_release == null) {
-            TimePickerColors timePickerColors = new TimePickerColors(ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getClockDialColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getClockDialSelectorHandleContainerColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getContainerColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getPeriodSelectorOutlineColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getClockDialSelectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getClockDialUnselectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getPeriodSelectorSelectedContainerColor()), Color.Companion.m4584getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getPeriodSelectorSelectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getPeriodSelectorUnselectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getTimeSelectorSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getTimeSelectorUnselectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getTimeSelectorSelectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getTimeSelectorUnselectedLabelTextColor()), null);
-            colorScheme.setDefaultTimePickerColorsCached$material3_release(timePickerColors);
+    public final TimePickerColors getDefaultTimePickerColors$material3(ColorScheme colorScheme) {
+        TimePickerColors defaultTimePickerColorsCached$material3 = colorScheme.getDefaultTimePickerColorsCached$material3();
+        if (defaultTimePickerColorsCached$material3 == null) {
+            TimePickerColors timePickerColors = new TimePickerColors(ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getClockDialColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getClockDialSelectorHandleContainerColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getContainerColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getPeriodSelectorOutlineColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getClockDialSelectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getClockDialUnselectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getPeriodSelectorSelectedContainerColor()), Color.Companion.m5314getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getPeriodSelectorSelectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getPeriodSelectorUnselectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getTimeSelectorSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getTimeSelectorUnselectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getTimeSelectorSelectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, TimePickerTokens.INSTANCE.getTimeSelectorUnselectedLabelTextColor()), null);
+            colorScheme.setDefaultTimePickerColorsCached$material3(timePickerColors);
             return timePickerColors;
         }
-        return defaultTimePickerColorsCached$material3_release;
+        return defaultTimePickerColorsCached$material3;
     }
 
     /* renamed from: layoutType-sDNSZnc  reason: not valid java name */
-    public final int m2839layoutTypesDNSZnc(Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 517161502, "C(layoutType)367@19209L27:TimePicker.kt#uh7d8r");
+    public final int m3193layoutTypesDNSZnc(Composer composer, int i) {
+        ComposerKt.sourceInformationMarkerStart(composer, 517161502, "C(layoutType)381@19721L27:TimePicker.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(517161502, i, -1, "androidx.compose.material3.TimePickerDefaults.layoutType (TimePicker.kt:367)");
+            ComposerKt.traceEventStart(517161502, i, -1, "androidx.compose.material3.TimePickerDefaults.layoutType (TimePicker.kt:381)");
         }
-        int defaultTimePickerLayoutType = TimePicker_androidKt.getDefaultTimePickerLayoutType(composer, 0);
+        int defaultTimePickerLayoutType = TimePickerKt.getDefaultTimePickerLayoutType(composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

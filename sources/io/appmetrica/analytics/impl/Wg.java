@@ -1,14 +1,17 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public abstract class Wg {
 
-import android.content.Context;
-/* loaded from: classes4.dex */
-public final class Wg extends AbstractC0238f {
-    public Wg(Context context, Xg xg) {
-        super(context, xg);
+    /* renamed from: a  reason: collision with root package name */
+    public final C0210e5 f744a;
+
+    public Wg(C0210e5 c0210e5) {
+        this.f744a = c0210e5;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0238f
-    public final void b(C0478o6 c0478o6, N4 n4) {
-        this.b.a(c0478o6, n4);
+    public final C0210e5 a() {
+        return this.f744a;
     }
+
+    public abstract boolean a(W5 w5);
 }

@@ -4,7 +4,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-stats@@17.0.1 */
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public @interface CodePackage {
     public static final String COMMON = "COMMON";
     public static final String DRIVE = "DRIVE";

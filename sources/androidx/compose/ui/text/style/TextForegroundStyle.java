@@ -24,7 +24,7 @@ public interface TextForegroundStyle {
     Brush getBrush();
 
     /* renamed from: getColor-0d7_KjU */
-    long mo7034getColor0d7_KjU();
+    long mo7765getColor0d7_KjU();
 
     default TextForegroundStyle merge(TextForegroundStyle textForegroundStyle) {
         boolean z = textForegroundStyle instanceof BrushStyle;
@@ -80,8 +80,8 @@ public interface TextForegroundStyle {
 
         @Override // androidx.compose.ui.text.style.TextForegroundStyle
         /* renamed from: getColor-0d7_KjU */
-        public long mo7034getColor0d7_KjU() {
-            return Color.Companion.m4585getUnspecified0d7_KjU();
+        public long mo7765getColor0d7_KjU() {
+            return Color.Companion.m5315getUnspecified0d7_KjU();
         }
     }
 
@@ -95,7 +95,7 @@ public interface TextForegroundStyle {
         }
 
         /* renamed from: from-8_81llA  reason: not valid java name */
-        public final TextForegroundStyle m7169from8_81llA(long j) {
+        public final TextForegroundStyle m7900from8_81llA(long j) {
             return j != 16 ? new ColorStyle(j, null) : Unspecified.INSTANCE;
         }
 
@@ -104,7 +104,7 @@ public interface TextForegroundStyle {
                 return Unspecified.INSTANCE;
             }
             if (brush instanceof SolidColor) {
-                return m7169from8_81llA(TextDrawStyleKt.m7168modulateDxMtmZc(((SolidColor) brush).m4901getValue0d7_KjU(), f));
+                return m7900from8_81llA(TextDrawStyleKt.m7899modulateDxMtmZc(((SolidColor) brush).m5631getValue0d7_KjU(), f));
             }
             if (brush instanceof ShaderBrush) {
                 return new BrushStyle((ShaderBrush) brush, f);

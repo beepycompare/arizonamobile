@@ -83,7 +83,7 @@ public final class TextFieldState {
         MutableState mutableStateOf$default2;
         this.textUndoManager = textUndoManager;
         String str2 = str;
-        this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(str2, TextRangeKt.m6732coerceIn8ffj60Q(j, 0, str.length()), null, null, null, null, 60, null), null, null, null, 14, null);
+        this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(str2, TextRangeKt.m7463coerceIn8ffj60Q(j, 0, str.length()), null, null, null, null, 60, null), null, null, null, 14, null);
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.isEditing$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(new TextFieldCharSequence(str2, j, null, null, null, null, 60, null), null, 2, null);
@@ -163,7 +163,7 @@ public final class TextFieldState {
         Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
         Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
         try {
-            return "TextFieldState(selection=" + ((Object) TextRange.m6729toStringimpl(m1448getSelectiond9O1mEE())) + ", text=\"" + ((Object) getText()) + "\")";
+            return "TextFieldState(selection=" + ((Object) TextRange.m7460toStringimpl(m1448getSelectiond9O1mEE())) + ", text=\"" + ((Object) getText()) + "\")";
         } finally {
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
         }
@@ -192,9 +192,9 @@ public final class TextFieldState {
     public final void commitEdit(TextFieldBuffer textFieldBuffer) {
         TextFieldBuffer textFieldBuffer2;
         boolean z = textFieldBuffer.getChanges().getChangeCount() > 0;
-        boolean m6719equalsimpl0 = TextRange.m6719equalsimpl0(textFieldBuffer.m1438getSelectiond9O1mEE(), this.mainBuffer.m1438getSelectiond9O1mEE());
-        boolean z2 = !m6719equalsimpl0;
-        if (!z && m6719equalsimpl0) {
+        boolean m7450equalsimpl0 = TextRange.m7450equalsimpl0(textFieldBuffer.m1438getSelectiond9O1mEE(), this.mainBuffer.m1438getSelectiond9O1mEE());
+        boolean z2 = !m7450equalsimpl0;
+        if (!z && m7450equalsimpl0) {
             textFieldBuffer.setCanCallAddStyle$foundation_release(true);
         }
         if (z) {
@@ -248,7 +248,7 @@ public final class TextFieldState {
         List m1451finalizeComposingAnnotationsitr0ztk;
         List m1451finalizeComposingAnnotationsitr0ztk2;
         TextFieldCharSequence value$foundation_release = getValue$foundation_release();
-        if (this.mainBuffer.getChangeTracker$foundation_release().getChangeCount() == 0 && TextRange.m6719equalsimpl0(value$foundation_release.m1446getSelectiond9O1mEE(), this.mainBuffer.m1438getSelectiond9O1mEE())) {
+        if (this.mainBuffer.getChangeTracker$foundation_release().getChangeCount() == 0 && TextRange.m7450equalsimpl0(value$foundation_release.m1446getSelectiond9O1mEE(), this.mainBuffer.m1438getSelectiond9O1mEE())) {
             if (Intrinsics.areEqual(value$foundation_release.m1445getCompositionMzsxiRA(), this.mainBuffer.m1436getCompositionMzsxiRA$foundation_release()) && Intrinsics.areEqual(value$foundation_release.getHighlight(), this.mainBuffer.getHighlight$foundation_release()) && Intrinsics.areEqual(value$foundation_release.getComposingAnnotations(), this.mainBuffer.getComposingAnnotations$foundation_release())) {
                 return;
             }
@@ -279,9 +279,9 @@ public final class TextFieldState {
         inputTransformation.transformInput(textFieldBuffer);
         boolean contentEquals = StringsKt.contentEquals(textFieldBuffer.asCharSequence(), textFieldCharSequence);
         boolean z4 = !contentEquals;
-        boolean m6719equalsimpl0 = TextRange.m6719equalsimpl0(textFieldBuffer.m1438getSelectiond9O1mEE(), textFieldCharSequence.m1446getSelectiond9O1mEE());
-        boolean z5 = !m6719equalsimpl0;
-        if (!contentEquals || !m6719equalsimpl0) {
+        boolean m7450equalsimpl0 = TextRange.m7450equalsimpl0(textFieldBuffer.m1438getSelectiond9O1mEE(), textFieldCharSequence.m1446getSelectiond9O1mEE());
+        boolean z5 = !m7450equalsimpl0;
+        if (!contentEquals || !m7450equalsimpl0) {
             syncMainBufferToTemporaryBuffer$foundation_release(textFieldBuffer, z4, z5);
         } else {
             updateValueAndNotifyListeners(value$foundation_release, TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldBuffer, 0L, textFieldCharSequence.m1445getCompositionMzsxiRA(), null, null, 13, null), z);
@@ -326,7 +326,7 @@ public final class TextFieldState {
         if (z) {
             this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(textFieldBuffer.toString(), textFieldBuffer.m1438getSelectiond9O1mEE(), null, null, null, null, 60, null), null, null, null, 14, null);
         } else if (z2) {
-            this.mainBuffer.m1440setSelection5zctL8(TextRangeKt.TextRange(TextRange.m6726getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()), TextRange.m6721getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE())));
+            this.mainBuffer.m1440setSelection5zctL8(TextRangeKt.TextRange(TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()), TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE())));
         }
         if (z || z2 || !Intrinsics.areEqual(m1435toTextFieldCharSequencewFTz33Y$foundation_release$default.m1445getCompositionMzsxiRA(), textFieldBuffer.m1436getCompositionMzsxiRA$foundation_release())) {
             this.mainBuffer.commitComposition$foundation_release();
@@ -346,7 +346,7 @@ public final class TextFieldState {
 
         @Override // androidx.compose.runtime.saveable.Saver
         public Object save(SaverScope saverScope, TextFieldState textFieldState) {
-            return CollectionsKt.listOf(textFieldState.getText().toString(), Integer.valueOf(TextRange.m6726getStartimpl(textFieldState.m1448getSelectiond9O1mEE())), Integer.valueOf(TextRange.m6721getEndimpl(textFieldState.m1448getSelectiond9O1mEE())), TextUndoManager.Companion.Saver.INSTANCE.save(saverScope, textFieldState.getTextUndoManager$foundation_release()));
+            return CollectionsKt.listOf(textFieldState.getText().toString(), Integer.valueOf(TextRange.m7457getStartimpl(textFieldState.m1448getSelectiond9O1mEE())), Integer.valueOf(TextRange.m7452getEndimpl(textFieldState.m1448getSelectiond9O1mEE())), TextUndoManager.Companion.Saver.INSTANCE.save(saverScope, textFieldState.getTextUndoManager$foundation_release()));
         }
 
         @Override // androidx.compose.runtime.saveable.Saver

@@ -1,5 +1,6 @@
 package coil3.intercept;
 
+import androidx.media3.container.MdtaMetadataEntry;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EngineInterceptor.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "coil3.intercept.EngineInterceptor", f = "EngineInterceptor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {75}, m = "intercept", n = {"chain", "request", "data", "size", "eventListener", "options", "scale", "mappedData", "cacheKey", "cacheValue"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"})
+@DebugMetadata(c = "coil3.intercept.EngineInterceptor", f = "EngineInterceptor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT}, m = "intercept", n = {"chain", "request", "data", "size", "eventListener", "options", "scale", "mappedData", "cacheKey", "cacheValue"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"})
 /* loaded from: classes3.dex */
 public final class EngineInterceptor$intercept$1 extends ContinuationImpl {
     Object L$0;

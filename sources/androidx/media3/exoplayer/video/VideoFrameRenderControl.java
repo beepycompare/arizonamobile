@@ -9,7 +9,7 @@ import androidx.media3.common.util.SystemClock;
 import androidx.media3.common.util.TimedValueQueue;
 import androidx.media3.exoplayer.ExoPlaybackException;
 import androidx.media3.exoplayer.video.VideoFrameReleaseControl;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class VideoFrameRenderControl {
     private final FrameRenderer frameRenderer;
     private long outputStreamStartPositionUs;
@@ -24,7 +24,7 @@ final class VideoFrameRenderControl {
     private long lastPresentationTimeUs = C.TIME_UNSET;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface FrameRenderer {
         void dropFrame();
 

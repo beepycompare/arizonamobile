@@ -1,18 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
-/* loaded from: classes4.dex */
-public final class Xj implements InterfaceC0534qb {
+/* loaded from: classes3.dex */
+public final class Xj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f746a;
+    public final String f758a;
+    public final String b;
 
-    public Xj(PluginErrorDetails pluginErrorDetails) {
-        this.f746a = pluginErrorDetails;
+    public Xj(String str, String str2) {
+        this.f758a = str;
+        this.b = str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0534qb
-    public final void a(InterfaceC0558rb interfaceC0558rb) {
-        interfaceC0558rb.getPluginExtension().reportUnhandledException(this.f746a);
+    public final String toString() {
+        return "SelfReportingLazyEvent(eventName='" + this.f758a + "', eventValue='" + this.b + "')";
     }
 }

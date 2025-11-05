@@ -80,7 +80,7 @@ final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode
         Intrinsics.checkNotNullParameter(contentDrawScope, "<this>");
         GraphicsLayer createGraphicsLayer = DelegatableNodeKt.requireGraphicsContext(this).createGraphicsLayer();
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m5126recordJVtK1S4$default(contentDrawScope2, createGraphicsLayer, 0L, new Function1() { // from class: com.skydoves.cloudy.CloudyModifierNode$$ExternalSyntheticLambda0
+        DrawScope.m5856recordJVtK1S4$default(contentDrawScope2, createGraphicsLayer, 0L, new Function1() { // from class: com.skydoves.cloudy.CloudyModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit draw$lambda$1;

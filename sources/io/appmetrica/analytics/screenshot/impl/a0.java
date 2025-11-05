@@ -1,62 +1,29 @@
 package io.appmetrica.analytics.screenshot.impl;
-
-import android.app.ActivityManager;
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
-import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
-public final class a0 implements Runnable {
+/* loaded from: classes3.dex */
+public final class a0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ d0 f1312a;
+    public final boolean f1354a;
+    public final long b;
 
-    public a0(d0 d0Var) {
-        this.f1312a = d0Var;
+    public a0(boolean z, long j) {
+        this.f1354a = z;
+        this.b = j;
     }
 
-    public static final Boolean a(d0 d0Var, a0 a0Var, C0783m c0783m, ActivityManager activityManager) {
-        Object obj;
-        List<ActivityManager.RunningServiceInfo> runningServices = activityManager.getRunningServices(200);
-        if (runningServices == null) {
-            runningServices = CollectionsKt.emptyList();
-        }
-        for (ActivityManager.RunningServiceInfo runningServiceInfo : runningServices) {
-        }
-        Iterator<T> it = runningServices.iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                obj = null;
-                break;
-            }
-            obj = it.next();
-            if (Intrinsics.areEqual(((ActivityManager.RunningServiceInfo) obj).process, "com.android.systemui:screenshot")) {
-                break;
-            }
-        }
-        if (((ActivityManager.RunningServiceInfo) obj) != null) {
-            ((C0791v) d0Var.b).a("ServiceScreenshotCaptor");
-        }
-        return Boolean.valueOf(d0Var.c.postDelayed(a0Var, TimeUnit.SECONDS.toMillis(c0783m.b)));
+    public final long a() {
+        return this.b;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        final C0783m c0783m = this.f1312a.e;
-        if (this.f1312a.d || c0783m == null || !c0783m.f1329a) {
-            return;
-        }
-        Context context = this.f1312a.f1318a.getContext();
-        final d0 d0Var = this.f1312a;
-        SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "running service screenshot captor", "ActivityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.screenshot.impl.a0$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
-            public final Object apply(Object obj) {
-                return a0.a(d0.this, this, c0783m, (ActivityManager) obj);
-            }
-        });
+    public final boolean b() {
+        return this.f1354a;
+    }
+
+    public final String toString() {
+        return "ServiceCaptorConfig(enabled=" + this.f1354a + ", delaySeconds=" + this.b + ')';
+    }
+
+    public a0() {
+        this(new P().f1345a, new P().b);
     }
 }

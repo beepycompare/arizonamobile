@@ -82,10 +82,10 @@ public final class PathHitTester {
     }
 
     /* renamed from: contains-k-4lQ0M  reason: not valid java name */
-    public final boolean m4845containsk4lQ0M(long j) {
+    public final boolean m5575containsk4lQ0M(long j) {
         int i;
         int lineWinding;
-        if (!this.path.isEmpty() && this.bounds.m4331containsk4lQ0M(j)) {
+        if (!this.path.isEmpty() && this.bounds.m5061containsk4lQ0M(j)) {
             float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
             float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
             float[] fArr = this.curves;
@@ -123,7 +123,7 @@ public final class PathHitTester {
             } else {
                 i = 0;
             }
-            if (PathFillType.m4839equalsimpl0(this.path.mo4438getFillTypeRgk1Os(), PathFillType.Companion.m4843getEvenOddRgk1Os())) {
+            if (PathFillType.m5569equalsimpl0(this.path.mo5168getFillTypeRgk1Os(), PathFillType.Companion.m5573getEvenOddRgk1Os())) {
                 i &= 1;
             }
             if (i != 0) {

@@ -1,6 +1,5 @@
 package kotlinx.coroutines.flow;
 
-import androidx.compose.material3.MenuKt;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -20,7 +19,7 @@ public final class FlowKt__TransformKt$chunked$$inlined$unsafeFlow$1<T> implemen
     final /* synthetic */ Flow $this_chunked$inlined;
 
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$chunked$$inlined$unsafeFlow$1", f = "Transform.kt", i = {0, 0}, l = {110, MenuKt.InTransitionDuration}, m = "collect", n = {"$this$chunked_u24lambda_u2413", "result"}, s = {"L$0", "L$1"})
+    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$chunked$$inlined$unsafeFlow$1", f = "Transform.kt", i = {0, 0}, l = {110, 120}, m = "collect", n = {"$this$chunked_u24lambda_u2413", "result"}, s = {"L$0", "L$1"})
     /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$chunked$$inlined$unsafeFlow$1$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends ContinuationImpl {

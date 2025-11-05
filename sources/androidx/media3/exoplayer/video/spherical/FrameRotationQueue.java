@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.video.spherical;
 import android.opengl.Matrix;
 import androidx.media3.common.util.GlUtil;
 import androidx.media3.common.util.TimedValueQueue;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class FrameRotationQueue {
     private boolean recenterMatrixComputed;
     private final float[] recenterMatrix = new float[16];

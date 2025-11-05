@@ -1,25 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class E0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f420a;
+    public final NativeCrashSource f447a;
     public final String b;
-    public final CounterConfigurationReporterType c;
-    public final int d;
-    public final String e;
-    public final String f;
+    public final String c;
+    public final String d;
+    public final long e;
+    public final F0 f;
 
-    public E0(String str, String str2, CounterConfigurationReporterType counterConfigurationReporterType, int i, String str3, String str4) {
-        this.f420a = str;
-        this.b = str2;
-        this.c = counterConfigurationReporterType;
-        this.d = i;
-        this.e = str3;
-        this.f = str4;
+    public E0(NativeCrashSource nativeCrashSource, String str, String str2, String str3, long j, F0 f0) {
+        this.f447a = nativeCrashSource;
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
+        this.e = j;
+        this.f = f0;
     }
 
     public final boolean equals(Object obj) {
@@ -28,7 +28,7 @@ public final class E0 {
         }
         if (obj instanceof E0) {
             E0 e0 = (E0) obj;
-            return Intrinsics.areEqual(this.f420a, e0.f420a) && Intrinsics.areEqual(this.b, e0.b) && this.c == e0.c && this.d == e0.d && Intrinsics.areEqual(this.e, e0.e) && Intrinsics.areEqual(this.f, e0.f);
+            return this.f447a == e0.f447a && Intrinsics.areEqual(this.b, e0.b) && Intrinsics.areEqual(this.c, e0.c) && Intrinsics.areEqual(this.d, e0.d) && this.e == e0.e && Intrinsics.areEqual(this.f, e0.f);
         }
         return false;
     }
@@ -36,12 +36,12 @@ public final class E0 {
     public final int hashCode() {
         int hashCode = this.b.hashCode();
         int hashCode2 = this.c.hashCode();
-        int hashCode3 = (this.e.hashCode() + ((Integer.hashCode(this.d) + ((hashCode2 + ((hashCode + (this.f420a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31;
-        String str = this.f;
-        return hashCode3 + (str == null ? 0 : str.hashCode());
+        int hashCode3 = this.d.hashCode();
+        int hashCode4 = Long.hashCode(this.e);
+        return this.f.hashCode() + ((hashCode4 + ((hashCode3 + ((hashCode2 + ((hashCode + (this.f447a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
-        return "AppMetricaNativeCrashMetadata(apiKey=" + this.f420a + ", packageName=" + this.b + ", reporterType=" + this.c + ", processID=" + this.d + ", processSessionID=" + this.e + ", errorEnvironment=" + this.f + ')';
+        return "AppMetricaNativeCrash(source=" + this.f447a + ", handlerVersion=" + this.b + ", uuid=" + this.c + ", dumpFile=" + this.d + ", creationTime=" + this.e + ", metadata=" + this.f + ')';
     }
 }

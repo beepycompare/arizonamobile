@@ -541,7 +541,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit dragAndDropNode$lambda$8(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, Offset offset) {
-        long m1591fromWindowToDecorationUv8p0NA = TextLayoutStateKt.m1591fromWindowToDecorationUv8p0NA(textFieldDecoratorModifierNode.textLayoutState, offset.m4315unboximpl());
+        long m1591fromWindowToDecorationUv8p0NA = TextLayoutStateKt.m1591fromWindowToDecorationUv8p0NA(textFieldDecoratorModifierNode.textLayoutState, offset.m5045unboximpl());
         int m1581getOffsetForPosition3MmeM6k$default = TextLayoutState.m1581getOffsetForPosition3MmeM6k$default(textFieldDecoratorModifierNode.textLayoutState, m1591fromWindowToDecorationUv8p0NA, false, 2, null);
         if (m1581getOffsetForPosition3MmeM6k$default >= 0) {
             textFieldDecoratorModifierNode.textFieldState.m1603selectCharsIn5zctL8(TextRangeKt.TextRange(m1581getOffsetForPosition3MmeM6k$default));
@@ -615,7 +615,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     public void draw(ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
         if (getAutofillHighlightOn()) {
-            DrawScope.m5122drawRectnJ9OG0$default(contentDrawScope, ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, AutofillHighlightKt.getLocalAutofillHighlightColor())).m4559unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+            DrawScope.m5852drawRectnJ9OG0$default(contentDrawScope, ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, AutofillHighlightKt.getLocalAutofillHighlightColor())).m5289unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         }
     }
 
@@ -686,7 +686,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                 disposeInputSession();
             }
         }
-        if (z != z6 || z5 != z7 || !ImeAction.m6895equalsimpl0(keyboardOptions.m1284getImeActionOrDefaulteUduSuo$foundation_release(), keyboardOptions2.m1284getImeActionOrDefaulteUduSuo$foundation_release()) || z4 != z8) {
+        if (z != z6 || z5 != z7 || !ImeAction.m7626equalsimpl0(keyboardOptions.m1284getImeActionOrDefaulteUduSuo$foundation_release(), keyboardOptions2.m1284getImeActionOrDefaulteUduSuo$foundation_release()) || z4 != z8) {
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
         if (!Intrinsics.areEqual(textFieldSelectionState, textFieldSelectionState2)) {
@@ -738,7 +738,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         long m1446getSelectiond9O1mEE = outputText.m1446getSelectiond9O1mEE();
         SemanticsPropertiesKt.setInputText(semanticsPropertyReceiver, new AnnotatedString(this.textFieldState.getUntransformedText().toString(), null, 2, null));
         SemanticsPropertiesKt.setEditableText(semanticsPropertyReceiver, new AnnotatedString(outputText.toString(), null, 2, null));
-        SemanticsPropertiesKt.m6494setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, m1446getSelectiond9O1mEE);
+        SemanticsPropertiesKt.m7224setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, m1446getSelectiond9O1mEE);
         if (!this.enabled) {
             SemanticsPropertiesKt.disabled(semanticsPropertyReceiver);
         }
@@ -791,7 +791,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             }
         }, 1, null);
         final int m1284getImeActionOrDefaulteUduSuo$foundation_release = this.keyboardOptions.m1284getImeActionOrDefaulteUduSuo$foundation_release();
-        SemanticsPropertiesKt.m6490onImeAction9UiTYpY$default(semanticsPropertyReceiver, m1284getImeActionOrDefaulteUduSuo$foundation_release, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda24
+        SemanticsPropertiesKt.m7220onImeAction9UiTYpY$default(semanticsPropertyReceiver, m1284getImeActionOrDefaulteUduSuo$foundation_release, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 boolean applySemantics$lambda$21;
@@ -815,7 +815,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                 return Boolean.valueOf(applySemantics$lambda$23);
             }
         }, 1, null);
-        if (!TextRange.m6720getCollapsedimpl(m1446getSelectiond9O1mEE) && !this.isPassword) {
+        if (!TextRange.m7451getCollapsedimpl(m1446getSelectiond9O1mEE) && !this.isPassword) {
             SemanticsPropertiesKt.copyText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
@@ -904,7 +904,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         if (!textFieldDecoratorModifierNode.enabled || Math.min(i, i2) < 0 || Math.max(i, i2) > visualText.length()) {
             return false;
         }
-        if (i == TextRange.m6726getStartimpl(m1446getSelectiond9O1mEE) && i2 == TextRange.m6721getEndimpl(m1446getSelectiond9O1mEE)) {
+        if (i == TextRange.m7457getStartimpl(m1446getSelectiond9O1mEE) && i2 == TextRange.m7452getEndimpl(m1446getSelectiond9O1mEE)) {
             return true;
         }
         long TextRange = TextRangeKt.TextRange(i, i2);
@@ -1124,7 +1124,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     /* renamed from: onImeActionPerformed-KlQnJC8  reason: not valid java name */
     public final boolean m1564onImeActionPerformedKlQnJC8(final int i) {
         KeyboardActionHandler keyboardActionHandler;
-        if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6912getNoneeUduSuo()) || ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6908getDefaulteUduSuo()) || (keyboardActionHandler = this.keyboardActionHandler) == null) {
+        if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7643getNoneeUduSuo()) || ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7639getDefaulteUduSuo()) || (keyboardActionHandler = this.keyboardActionHandler) == null) {
             return m1563defaultKeyboardActionWithResultKlQnJC8(i);
         }
         if (keyboardActionHandler != null) {
@@ -1150,13 +1150,13 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: defaultKeyboardActionWithResult-KlQnJC8  reason: not valid java name */
     public final boolean m1563defaultKeyboardActionWithResultKlQnJC8(int i) {
-        if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6911getNexteUduSuo())) {
-            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4198moveFocus3ESFkO8(FocusDirection.Companion.m4192getNextdhqQ8s());
+        if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7642getNexteUduSuo())) {
+            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4922getNextdhqQ8s());
             return true;
-        } else if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6913getPreviouseUduSuo())) {
-            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4198moveFocus3ESFkO8(FocusDirection.Companion.m4193getPreviousdhqQ8s());
+        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7644getPreviouseUduSuo())) {
+            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4923getPreviousdhqQ8s());
             return true;
-        } else if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6909getDoneeUduSuo())) {
+        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7640getDoneeUduSuo())) {
             requireKeyboardController().hide();
             return true;
         } else {

@@ -11,7 +11,7 @@ import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import java.io.IOException;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class TimeOffsetMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     private MediaPeriod.Callback callback;
     private final MediaPeriod mediaPeriod;
@@ -142,7 +142,7 @@ final class TimeOffsetMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class TimeOffsetSampleStream implements SampleStream {
         private final SampleStream sampleStream;
         private final long timeOffsetUs;

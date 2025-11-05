@@ -60,14 +60,14 @@ public final class ContextMenuColors {
             return false;
         }
         ContextMenuColors contextMenuColors = (ContextMenuColors) obj;
-        return Color.m4550equalsimpl0(this.backgroundColor, contextMenuColors.backgroundColor) && Color.m4550equalsimpl0(this.textColor, contextMenuColors.textColor) && Color.m4550equalsimpl0(this.iconColor, contextMenuColors.iconColor) && Color.m4550equalsimpl0(this.disabledTextColor, contextMenuColors.disabledTextColor) && Color.m4550equalsimpl0(this.disabledIconColor, contextMenuColors.disabledIconColor);
+        return Color.m5280equalsimpl0(this.backgroundColor, contextMenuColors.backgroundColor) && Color.m5280equalsimpl0(this.textColor, contextMenuColors.textColor) && Color.m5280equalsimpl0(this.iconColor, contextMenuColors.iconColor) && Color.m5280equalsimpl0(this.disabledTextColor, contextMenuColors.disabledTextColor) && Color.m5280equalsimpl0(this.disabledIconColor, contextMenuColors.disabledIconColor);
     }
 
     public int hashCode() {
-        return (((((((Color.m4556hashCodeimpl(this.backgroundColor) * 31) + Color.m4556hashCodeimpl(this.textColor)) * 31) + Color.m4556hashCodeimpl(this.iconColor)) * 31) + Color.m4556hashCodeimpl(this.disabledTextColor)) * 31) + Color.m4556hashCodeimpl(this.disabledIconColor);
+        return (((((((Color.m5286hashCodeimpl(this.backgroundColor) * 31) + Color.m5286hashCodeimpl(this.textColor)) * 31) + Color.m5286hashCodeimpl(this.iconColor)) * 31) + Color.m5286hashCodeimpl(this.disabledTextColor)) * 31) + Color.m5286hashCodeimpl(this.disabledIconColor);
     }
 
     public String toString() {
-        return "ContextMenuColors(backgroundColor=" + ((Object) Color.m4557toStringimpl(this.backgroundColor)) + ", textColor=" + ((Object) Color.m4557toStringimpl(this.textColor)) + ", iconColor=" + ((Object) Color.m4557toStringimpl(this.iconColor)) + ", disabledTextColor=" + ((Object) Color.m4557toStringimpl(this.disabledTextColor)) + ", disabledIconColor=" + ((Object) Color.m4557toStringimpl(this.disabledIconColor)) + ')';
+        return "ContextMenuColors(backgroundColor=" + ((Object) Color.m5287toStringimpl(this.backgroundColor)) + ", textColor=" + ((Object) Color.m5287toStringimpl(this.textColor)) + ", iconColor=" + ((Object) Color.m5287toStringimpl(this.iconColor)) + ", disabledTextColor=" + ((Object) Color.m5287toStringimpl(this.disabledTextColor)) + ", disabledIconColor=" + ((Object) Color.m5287toStringimpl(this.disabledIconColor)) + ')';
     }
 }

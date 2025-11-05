@@ -1,34 +1,56 @@
 package com.google.android.gms.internal.common;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-final class zzw extends zzz {
-    final /* synthetic */ zzr zza;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzw {
+    private final zzp zza;
+    private final boolean zzb;
+    private final zzu zzc;
+
+    private zzw(zzu zzuVar, boolean z, zzp zzpVar, int i) {
+        this.zzc = zzuVar;
+        this.zzb = z;
+        this.zza = zzpVar;
+    }
+
+    public static zzw zza(zzp zzpVar) {
+        return new zzw(new zzu(zzpVar), false, zzo.zza, Integer.MAX_VALUE);
+    }
+
+    public final zzw zzb() {
+        return new zzw(this.zzc, true, this.zza, Integer.MAX_VALUE);
+    }
+
+    public final Iterable zzc(CharSequence charSequence) {
+        return new zzt(this, charSequence);
+    }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzw(zzx zzxVar, zzaa zzaaVar, CharSequence charSequence, zzr zzrVar) {
-        super(zzaaVar, charSequence);
-        this.zza = zzrVar;
+    public final /* synthetic */ Iterator zze(CharSequence charSequence) {
+        return this.zzc.zza(this, charSequence);
     }
 
-    @Override // com.google.android.gms.internal.common.zzz
-    final int zzc(int i) {
-        return i + 1;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzp zzf() {
+        return this.zza;
     }
 
-    @Override // com.google.android.gms.internal.common.zzz
-    final int zzd(int i) {
-        CharSequence charSequence = this.zzb;
-        int length = charSequence.length();
-        zzv.zzb(i, length, FirebaseAnalytics.Param.INDEX);
-        while (i < length) {
-            if (this.zza.zza(charSequence.charAt(i))) {
-                return i;
-            }
-            i++;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ boolean zzg() {
+        return this.zzb;
+    }
+
+    public final List zzd(CharSequence charSequence) {
+        charSequence.getClass();
+        Iterator zza = this.zzc.zza(this, charSequence);
+        ArrayList arrayList = new ArrayList();
+        while (zza.hasNext()) {
+            arrayList.add((String) zza.next());
         }
-        return -1;
+        return Collections.unmodifiableList(arrayList);
     }
 }

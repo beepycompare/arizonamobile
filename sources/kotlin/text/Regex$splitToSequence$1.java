@@ -12,7 +12,7 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.sequences.SequenceScope;
-import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
+import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Regex.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlin/sequences/SequenceScope;", ""}, k = 3, mv = {2, 2, 0}, xi = 48)

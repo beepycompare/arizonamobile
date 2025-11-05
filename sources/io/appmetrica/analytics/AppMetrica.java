@@ -7,189 +7,189 @@ import android.content.Intent;
 import android.location.Location;
 import android.webkit.WebView;
 import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import io.appmetrica.analytics.impl.AbstractC0573s1;
-import io.appmetrica.analytics.impl.C0548r1;
-import io.appmetrica.analytics.impl.H0;
+import io.appmetrica.analytics.impl.AbstractC0586t1;
+import io.appmetrica.analytics.impl.C0561s1;
+import io.appmetrica.analytics.impl.I0;
 import io.appmetrica.analytics.plugins.AppMetricaPlugins;
 import io.appmetrica.analytics.profile.UserProfile;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class AppMetrica {
     public static void activate(Context context, AppMetricaConfig appMetricaConfig) {
-        AbstractC0573s1.f1075a.a(context, appMetricaConfig);
+        AbstractC0586t1.f1122a.a(context, appMetricaConfig);
     }
 
     public static void activateReporter(Context context, ReporterConfig reporterConfig) {
-        AbstractC0573s1.f1075a.a(context, reporterConfig);
+        AbstractC0586t1.f1122a.a(context, reporterConfig);
     }
 
     public static void clearAppEnvironment() {
-        AbstractC0573s1.f1075a.a();
+        AbstractC0586t1.f1122a.a();
     }
 
     public static void enableActivityAutoTracking(Application application) {
-        AbstractC0573s1.f1075a.a(application);
+        AbstractC0586t1.f1122a.a(application);
     }
 
     public static String getDeviceId(Context context) {
-        return AbstractC0573s1.f1075a.b();
+        return AbstractC0586t1.f1122a.b();
     }
 
     public static int getLibraryApiLevel() {
-        return BuildConfig.API_LEVEL;
+        return 116;
     }
 
     public static String getLibraryVersion() {
-        return "7.12.0";
+        return "7.13.0";
     }
 
     public static AppMetricaPlugins getPluginExtension() {
-        return H0.f468a;
+        return I0.f516a;
     }
 
     public static IReporter getReporter(Context context, String str) {
-        return AbstractC0573s1.f1075a.a(context, str);
+        return AbstractC0586t1.f1122a.a(context, str);
     }
 
     public static String getUuid(Context context) {
-        return AbstractC0573s1.f1075a.a(context).id;
+        return AbstractC0586t1.f1122a.a(context).id;
     }
 
     public static void initWebViewReporting(WebView webView) {
-        AbstractC0573s1.f1075a.a(webView);
+        AbstractC0586t1.f1122a.a(webView);
     }
 
     public static void pauseSession(Activity activity) {
-        AbstractC0573s1.f1075a.a(activity);
+        AbstractC0586t1.f1122a.a(activity);
     }
 
     public static void putAppEnvironmentValue(String str, String str2) {
-        AbstractC0573s1.f1075a.a(str, str2);
+        AbstractC0586t1.f1122a.a(str, str2);
     }
 
     public static void putErrorEnvironmentValue(String str, String str2) {
-        AbstractC0573s1.f1075a.b(str, str2);
+        AbstractC0586t1.f1122a.b(str, str2);
     }
 
     public static void registerAnrListener(AnrListener anrListener) {
-        AbstractC0573s1.f1075a.a(anrListener);
+        AbstractC0586t1.f1122a.a(anrListener);
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue) {
-        AbstractC0573s1.f1075a.a(adRevenue);
+        AbstractC0586t1.f1122a.a(adRevenue);
     }
 
     public static void reportAnr(Map<Thread, StackTraceElement[]> map) {
-        AbstractC0573s1.f1075a.a(map);
+        AbstractC0586t1.f1122a.a(map);
     }
 
     public static void reportAppOpen(Activity activity) {
-        AbstractC0573s1.f1075a.b(activity);
+        AbstractC0586t1.f1122a.b(activity);
     }
 
     public static void reportECommerce(ECommerceEvent eCommerceEvent) {
-        AbstractC0573s1.f1075a.a(eCommerceEvent);
+        AbstractC0586t1.f1122a.a(eCommerceEvent);
     }
 
     public static void reportError(String str, String str2) {
-        AbstractC0573s1.f1075a.a(str, str2, (Throwable) null);
+        AbstractC0586t1.f1122a.a(str, str2, (Throwable) null);
     }
 
     public static void reportEvent(String str) {
-        AbstractC0573s1.f1075a.b(str);
+        AbstractC0586t1.f1122a.b(str);
     }
 
     public static void reportExternalAdRevenue(Object... objArr) {
-        AbstractC0573s1.f1075a.b(objArr);
+        AbstractC0586t1.f1122a.b(objArr);
     }
 
     public static void reportExternalAttribution(ExternalAttribution externalAttribution) {
-        AbstractC0573s1.f1075a.a(externalAttribution);
+        AbstractC0586t1.f1122a.a(externalAttribution);
     }
 
     public static void reportReferralUrl(String str) {
-        AbstractC0573s1.f1075a.d(str);
+        AbstractC0586t1.f1122a.d(str);
     }
 
     public static void reportRevenue(Revenue revenue) {
-        AbstractC0573s1.f1075a.a(revenue);
+        AbstractC0586t1.f1122a.a(revenue);
     }
 
     public static void reportUnhandledException(Throwable th) {
-        AbstractC0573s1.f1075a.a(th);
+        AbstractC0586t1.f1122a.a(th);
     }
 
     public static void reportUserProfile(UserProfile userProfile) {
-        AbstractC0573s1.f1075a.a(userProfile);
+        AbstractC0586t1.f1122a.a(userProfile);
     }
 
     public static void requestDeferredDeeplink(DeferredDeeplinkListener deferredDeeplinkListener) {
-        AbstractC0573s1.f1075a.a(deferredDeeplinkListener);
+        AbstractC0586t1.f1122a.a(deferredDeeplinkListener);
     }
 
     public static void requestDeferredDeeplinkParameters(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
-        AbstractC0573s1.f1075a.a(deferredDeeplinkParametersListener);
+        AbstractC0586t1.f1122a.a(deferredDeeplinkParametersListener);
     }
 
     public static void requestStartupParams(Context context, StartupParamsCallback startupParamsCallback, List<String> list) {
-        C0548r1 c0548r1 = AbstractC0573s1.f1075a;
+        C0561s1 c0561s1 = AbstractC0586t1.f1122a;
         if (list.isEmpty()) {
             list = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH);
         }
-        c0548r1.a(context, startupParamsCallback, list);
+        c0561s1.a(context, startupParamsCallback, list);
     }
 
     public static void resumeSession(Activity activity) {
-        AbstractC0573s1.f1075a.c(activity);
+        AbstractC0586t1.f1122a.c(activity);
     }
 
     public static void sendEventsBuffer() {
-        AbstractC0573s1.f1075a.f();
+        AbstractC0586t1.f1122a.f();
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        AbstractC0573s1.f1075a.a(z);
+        AbstractC0586t1.f1122a.a(z);
     }
 
     public static void setDataSendingEnabled(boolean z) {
-        AbstractC0573s1.f1075a.b(z);
+        AbstractC0586t1.f1122a.b(z);
     }
 
     public static void setLocation(Location location) {
-        AbstractC0573s1.f1075a.a(location);
+        AbstractC0586t1.f1122a.a(location);
     }
 
     public static void setLocationTracking(boolean z) {
-        AbstractC0573s1.f1075a.c(z);
+        AbstractC0586t1.f1122a.c(z);
     }
 
     public static void setUserProfileID(String str) {
-        AbstractC0573s1.f1075a.e(str);
+        AbstractC0586t1.f1122a.e(str);
     }
 
     public static void reportAppOpen(Intent intent) {
-        AbstractC0573s1.f1075a.a(intent);
+        AbstractC0586t1.f1122a.a(intent);
     }
 
     public static void reportError(String str, String str2, Throwable th) {
-        AbstractC0573s1.f1075a.a(str, str2, th);
+        AbstractC0586t1.f1122a.a(str, str2, th);
     }
 
     public static void reportEvent(String str, String str2) {
-        AbstractC0573s1.f1075a.c(str, str2);
+        AbstractC0586t1.f1122a.c(str, str2);
     }
 
     public static void reportAppOpen(String str) {
-        AbstractC0573s1.f1075a.a(str);
+        AbstractC0586t1.f1122a.a(str);
     }
 
     public static void reportError(String str, Throwable th) {
-        AbstractC0573s1.f1075a.a(str, th);
+        AbstractC0586t1.f1122a.a(str, th);
     }
 
     public static void reportEvent(String str, Map<String, Object> map) {
-        AbstractC0573s1.f1075a.a(str, map);
+        AbstractC0586t1.f1122a.a(str, map);
     }
 }

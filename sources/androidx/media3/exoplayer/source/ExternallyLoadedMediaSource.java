@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ExternallyLoadedMediaSource extends BaseMediaSource {
     private final ExternalLoader externalLoader;
     private MediaItem mediaItem;
@@ -24,7 +24,7 @@ public final class ExternallyLoadedMediaSource extends BaseMediaSource {
     protected void releaseSourceInternal() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory implements MediaSource.Factory {
         private final ExternalLoader externalLoader;
         private final long timelineDurationUs;

@@ -102,7 +102,7 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
             }
         });
         this.subInventoryAdapter = subInventoryAdapter;
-        UpgradesInventoryAdapter upgradesInventoryAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda3
+        UpgradesInventoryAdapter upgradesInventoryAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit accessoriesInventoryAdapter$lambda$0;
@@ -123,9 +123,9 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
                 accessoriesInventoryAdapter$lambda$2 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
                 return accessoriesInventoryAdapter$lambda$2;
             }
-        });
+        }, 1, null);
         this.accessoriesInventoryAdapter = upgradesInventoryAdapter;
-        UpgradesInventoryAdapter upgradesInventoryAdapter2 = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda6
+        UpgradesInventoryAdapter upgradesInventoryAdapter2 = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit upgradesInventoryAdapter$lambda$0;
@@ -146,7 +146,7 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
                 upgradesInventoryAdapter$lambda$2 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
                 return upgradesInventoryAdapter$lambda$2;
             }
-        });
+        }, 1, null);
         this.upgradesInventoryAdapter = upgradesInventoryAdapter2;
         addViewToConstraintLayout(constraintLayout, -1, -1);
         UtilsKt.checkItemsName(activity, z);
@@ -300,7 +300,7 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         List<InventoryItem> items = inventoryResponse.getItems();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
         for (InventoryItem inventoryItem : items) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, 2031615, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, 4128767, null));
         }
         return arrayList;
     }

@@ -7,7 +7,7 @@ import java.util.Set;
 import kotlin.Metadata;
 /* compiled from: LayoutCoordinates.kt */
 @Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\u0017\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0018H\u0016¢\u0006\u0004\b\u001a\u0010\u001bJ\u0017\u0010\u001c\u001a\u00020\u00182\u0006\u0010\u001d\u001a\u00020\u0018H\u0016¢\u0006\u0004\b\u001e\u0010\u001bJ\u0017\u0010\u001f\u001a\u00020\u00182\u0006\u0010 \u001a\u00020\u0018H&¢\u0006\u0004\b!\u0010\u001bJ\u0017\u0010\"\u001a\u00020\u00182\u0006\u0010\u001d\u001a\u00020\u0018H&¢\u0006\u0004\b#\u0010\u001bJ\u0017\u0010$\u001a\u00020\u00182\u0006\u0010\u001d\u001a\u00020\u0018H&¢\u0006\u0004\b%\u0010\u001bJ\u001f\u0010&\u001a\u00020\u00182\u0006\u0010'\u001a\u00020\u00002\u0006\u0010(\u001a\u00020\u0018H&¢\u0006\u0004\b)\u0010*J+\u0010&\u001a\u00020\u00182\u0006\u0010'\u001a\u00020\u00002\b\b\u0002\u0010(\u001a\u00020\u00182\b\b\u0002\u0010+\u001a\u00020\u0011H\u0016¢\u0006\u0004\b,\u0010-J\u001a\u0010.\u001a\u00020/2\u0006\u0010'\u001a\u00020\u00002\b\b\u0002\u00100\u001a\u00020\u0011H&J\u001f\u00101\u001a\u0002022\u0006\u0010'\u001a\u00020\u00002\u0006\u00103\u001a\u000204H\u0016¢\u0006\u0004\b5\u00106J\u0017\u00107\u001a\u0002022\u0006\u00103\u001a\u000204H\u0016¢\u0006\u0004\b8\u00109J\u0011\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020\bH¦\u0002R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0018\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X¦\u0004¢\u0006\u0006\u001a\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\u0004\u0018\u00010\u0000X¦\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u0004\u0018\u00010\u0000X¦\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\rR\u0012\u0010\u0010\u001a\u00020\u0011X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\u00118VX\u0096\u0004¢\u0006\f\u0012\u0004\b\u0014\u0010\u0015\u001a\u0004\b\u0016\u0010\u0012ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006=À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/layout/LayoutCoordinates;", "", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "()J", "providedAlignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "getProvidedAlignmentLines", "()Ljava/util/Set;", "parentLayoutCoordinates", "getParentLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "parentCoordinates", "getParentCoordinates", "isAttached", "", "()Z", "introducesMotionFrameOfReference", "getIntroducesMotionFrameOfReference$annotations", "()V", "getIntroducesMotionFrameOfReference", "screenToLocal", "Landroidx/compose/ui/geometry/Offset;", "relativeToScreen", "screenToLocal-MK-Hz9U", "(J)J", "localToScreen", "relativeToLocal", "localToScreen-MK-Hz9U", "windowToLocal", "relativeToWindow", "windowToLocal-MK-Hz9U", "localToWindow", "localToWindow-MK-Hz9U", "localToRoot", "localToRoot-MK-Hz9U", "localPositionOf", "sourceCoordinates", "relativeToSource", "localPositionOf-R5De75A", "(Landroidx/compose/ui/layout/LayoutCoordinates;J)J", "includeMotionFrameOfReference", "localPositionOf-S_NoaFU", "(Landroidx/compose/ui/layout/LayoutCoordinates;JZ)J", "localBoundingBoxOf", "Landroidx/compose/ui/geometry/Rect;", "clipBounds", "transformFrom", "", "matrix", "Landroidx/compose/ui/graphics/Matrix;", "transformFrom-EL8BTi8", "(Landroidx/compose/ui/layout/LayoutCoordinates;[F)V", "transformToScreen", "transformToScreen-58bKbWc", "([F)V", "get", "", "alignmentLine", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface LayoutCoordinates {
     int get(AlignmentLine alignmentLine);
 
@@ -22,27 +22,27 @@ public interface LayoutCoordinates {
     Set<AlignmentLine> getProvidedAlignmentLines();
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    long mo5975getSizeYbymL2g();
+    long mo6705getSizeYbymL2g();
 
     boolean isAttached();
 
     Rect localBoundingBoxOf(LayoutCoordinates layoutCoordinates, boolean z);
 
     /* renamed from: localPositionOf-R5De75A  reason: not valid java name */
-    long mo5976localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j);
+    long mo6706localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j);
 
     /* renamed from: localToRoot-MK-Hz9U  reason: not valid java name */
-    long mo5978localToRootMKHz9U(long j);
+    long mo6708localToRootMKHz9U(long j);
 
     /* renamed from: localToWindow-MK-Hz9U  reason: not valid java name */
-    long mo5980localToWindowMKHz9U(long j);
+    long mo6710localToWindowMKHz9U(long j);
 
     /* renamed from: windowToLocal-MK-Hz9U  reason: not valid java name */
-    long mo5984windowToLocalMKHz9U(long j);
+    long mo6714windowToLocalMKHz9U(long j);
 
     /* compiled from: LayoutCoordinates.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class DefaultImpls {
         public static /* synthetic */ void getIntroducesMotionFrameOfReference$annotations() {
         }
@@ -54,61 +54,61 @@ public interface LayoutCoordinates {
 
         @Deprecated
         /* renamed from: screenToLocal-MK-Hz9U  reason: not valid java name */
-        public static long m5988screenToLocalMKHz9U(LayoutCoordinates layoutCoordinates, long j) {
-            return LayoutCoordinates.super.mo5981screenToLocalMKHz9U(j);
+        public static long m6718screenToLocalMKHz9U(LayoutCoordinates layoutCoordinates, long j) {
+            return LayoutCoordinates.super.mo6711screenToLocalMKHz9U(j);
         }
 
         @Deprecated
         /* renamed from: localToScreen-MK-Hz9U  reason: not valid java name */
-        public static long m5987localToScreenMKHz9U(LayoutCoordinates layoutCoordinates, long j) {
-            return LayoutCoordinates.super.mo5979localToScreenMKHz9U(j);
+        public static long m6717localToScreenMKHz9U(LayoutCoordinates layoutCoordinates, long j) {
+            return LayoutCoordinates.super.mo6709localToScreenMKHz9U(j);
         }
 
         @Deprecated
         /* renamed from: localPositionOf-S_NoaFU  reason: not valid java name */
-        public static long m5985localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
-            return LayoutCoordinates.super.mo5977localPositionOfS_NoaFU(layoutCoordinates2, j, z);
+        public static long m6715localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
+            return LayoutCoordinates.super.mo6707localPositionOfS_NoaFU(layoutCoordinates2, j, z);
         }
 
         @Deprecated
         /* renamed from: transformFrom-EL8BTi8  reason: not valid java name */
-        public static void m5989transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, float[] fArr) {
-            LayoutCoordinates.super.mo5982transformFromEL8BTi8(layoutCoordinates2, fArr);
+        public static void m6719transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, float[] fArr) {
+            LayoutCoordinates.super.mo6712transformFromEL8BTi8(layoutCoordinates2, fArr);
         }
 
         @Deprecated
         /* renamed from: transformToScreen-58bKbWc  reason: not valid java name */
-        public static void m5990transformToScreen58bKbWc(LayoutCoordinates layoutCoordinates, float[] fArr) {
-            LayoutCoordinates.super.mo5983transformToScreen58bKbWc(fArr);
+        public static void m6720transformToScreen58bKbWc(LayoutCoordinates layoutCoordinates, float[] fArr) {
+            LayoutCoordinates.super.mo6713transformToScreen58bKbWc(fArr);
         }
     }
 
     /* renamed from: screenToLocal-MK-Hz9U  reason: not valid java name */
-    default long mo5981screenToLocalMKHz9U(long j) {
-        return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+    default long mo6711screenToLocalMKHz9U(long j) {
+        return Offset.Companion.m5050getUnspecifiedF1C5BW0();
     }
 
     /* renamed from: localToScreen-MK-Hz9U  reason: not valid java name */
-    default long mo5979localToScreenMKHz9U(long j) {
-        return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+    default long mo6709localToScreenMKHz9U(long j) {
+        return Offset.Companion.m5050getUnspecifiedF1C5BW0();
     }
 
     /* renamed from: localPositionOf-S_NoaFU$default  reason: not valid java name */
-    static /* synthetic */ long m5974localPositionOfS_NoaFU$default(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z, int i, Object obj) {
+    static /* synthetic */ long m6704localPositionOfS_NoaFU$default(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                j = Offset.Companion.m4321getZeroF1C5BW0();
+                j = Offset.Companion.m5051getZeroF1C5BW0();
             }
             if ((i & 4) != 0) {
                 z = true;
             }
-            return layoutCoordinates.mo5977localPositionOfS_NoaFU(layoutCoordinates2, j, z);
+            return layoutCoordinates.mo6707localPositionOfS_NoaFU(layoutCoordinates2, j, z);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: localPositionOf-S_NoaFU");
     }
 
     /* renamed from: localPositionOf-S_NoaFU  reason: not valid java name */
-    default long mo5977localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
+    default long mo6707localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
         throw new UnsupportedOperationException("localPositionOf is not implemented on this LayoutCoordinates");
     }
 
@@ -123,12 +123,12 @@ public interface LayoutCoordinates {
     }
 
     /* renamed from: transformFrom-EL8BTi8  reason: not valid java name */
-    default void mo5982transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
+    default void mo6712transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
         InlineClassHelperKt.throwUnsupportedOperationException("transformFrom is not implemented on this LayoutCoordinates");
     }
 
     /* renamed from: transformToScreen-58bKbWc  reason: not valid java name */
-    default void mo5983transformToScreen58bKbWc(float[] fArr) {
+    default void mo6713transformToScreen58bKbWc(float[] fArr) {
         throw new UnsupportedOperationException("transformToScreen is not implemented on this LayoutCoordinates");
     }
 }

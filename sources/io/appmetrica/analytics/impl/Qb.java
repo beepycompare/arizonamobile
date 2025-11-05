@@ -1,17 +1,23 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Qb implements yo {
-    @Override // io.appmetrica.analytics.impl.yo
-    public final wo a(String str) {
-        if (str == null) {
-            return new wo(this, false, "key is null");
+
+import android.content.res.Configuration;
+import android.os.LocaleList;
+import java.util.ArrayList;
+import java.util.Locale;
+/* loaded from: classes3.dex */
+public abstract class Qb {
+    public static final ArrayList a(Configuration configuration) {
+        ArrayList arrayList = new ArrayList();
+        LocaleList locales = configuration.getLocales();
+        if (locales != null) {
+            int size = locales.size();
+            for (int i = 0; i < size; i++) {
+                Locale locale = locales.get(i);
+                if (locale != null) {
+                    arrayList.add(Le.a(locale));
+                }
+            }
         }
-        if (str.startsWith("appmetrica")) {
-            return new wo(this, false, "key starts with appmetrica");
-        }
-        if (str.length() > 200) {
-            return new wo(this, false, "key length more then 200 characters");
-        }
-        return new wo(this, true, "");
+        return arrayList;
     }
 }

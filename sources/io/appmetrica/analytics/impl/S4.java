@@ -1,46 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.os.ResultReceiver;
-/* loaded from: classes4.dex */
-public final class S4 implements D4 {
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Lambda;
+/* loaded from: classes3.dex */
+public final class S4 extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f665a;
-    public final V4 b;
-    public final ResultReceiver c;
+    public static final S4 f676a = new S4();
 
-    public S4(Context context, V4 v4, N4 n4) {
-        this.f665a = context;
-        this.b = v4;
-        this.c = n4.c;
-        v4.a(this);
+    public S4() {
+        super(0);
     }
 
-    @Override // io.appmetrica.analytics.impl.D4
-    public final void a(C0478o6 c0478o6, N4 n4) {
-        this.b.a(n4.b);
-        this.b.a(c0478o6, this);
-    }
-
-    public final V4 b() {
-        return this.b;
-    }
-
-    public final Context c() {
-        return this.f665a;
-    }
-
-    public final ResultReceiver d() {
-        return this.c;
-    }
-
-    public final void a(C0551r4 c0551r4) {
-        ResultReceiverC0117a7.a(this.c, c0551r4);
-    }
-
-    @Override // io.appmetrica.analytics.impl.D4
-    public final void a() {
-        this.b.b(this);
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        return 1;
     }
 }

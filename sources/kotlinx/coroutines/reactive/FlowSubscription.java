@@ -245,7 +245,7 @@ public final class FlowSubscription<T> extends AbstractCoroutine<Unit> implement
                 continuation = (Continuation) producer$volatile$FU.getAndSet(this, null);
             } while (continuation == null);
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
+            continuation.resumeWith(Result.m9847constructorimpl(Unit.INSTANCE));
         }
     }
 }

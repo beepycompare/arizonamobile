@@ -1,53 +1,48 @@
 package com.google.android.gms.common;
 
+import android.content.Context;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzp implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        boolean z = false;
-        boolean z2 = false;
-        boolean z3 = false;
-        boolean z4 = false;
-        String str = null;
-        IBinder iBinder = null;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            switch (SafeParcelReader.getFieldId(readHeader)) {
-                case 1:
-                    str = SafeParcelReader.createString(parcel, readHeader);
-                    break;
-                case 2:
-                    z = SafeParcelReader.readBoolean(parcel, readHeader);
-                    break;
-                case 3:
-                    z2 = SafeParcelReader.readBoolean(parcel, readHeader);
-                    break;
-                case 4:
-                    iBinder = SafeParcelReader.readIBinder(parcel, readHeader);
-                    break;
-                case 5:
-                    z3 = SafeParcelReader.readBoolean(parcel, readHeader);
-                    break;
-                case 6:
-                    z4 = SafeParcelReader.readBoolean(parcel, readHeader);
-                    break;
-                default:
-                    SafeParcelReader.skipUnknownField(parcel, readHeader);
-                    break;
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzo(str, z, z2, iBinder, z3, z4);
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import com.google.android.gms.dynamic.IObjectWrapper;
+import com.google.android.gms.dynamic.ObjectWrapper;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzp extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zzp> CREATOR = new zzq();
+    private final String zza;
+    private final boolean zzb;
+    private final boolean zzc;
+    private final Context zzd;
+    private final boolean zze;
+    private final boolean zzf;
+    private final boolean zzg;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzp(String str, boolean z, boolean z2, IBinder iBinder, boolean z3, boolean z4, boolean z5) {
+        this.zza = str;
+        this.zzb = z;
+        this.zzc = z2;
+        this.zzd = (Context) ObjectWrapper.unwrap(IObjectWrapper.Stub.asInterface(iBinder));
+        this.zze = z3;
+        this.zzf = z4;
+        this.zzg = z5;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new zzo[i];
+    /* JADX WARN: Type inference failed for: r5v5, types: [com.google.android.gms.dynamic.IObjectWrapper, android.os.IBinder] */
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        String str = this.zza;
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeString(parcel, 1, str, false);
+        SafeParcelWriter.writeBoolean(parcel, 2, this.zzb);
+        SafeParcelWriter.writeBoolean(parcel, 3, this.zzc);
+        SafeParcelWriter.writeIBinder(parcel, 4, ObjectWrapper.wrap(this.zzd), false);
+        SafeParcelWriter.writeBoolean(parcel, 5, this.zze);
+        SafeParcelWriter.writeBoolean(parcel, 6, this.zzf);
+        SafeParcelWriter.writeBoolean(parcel, 8, this.zzg);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 }

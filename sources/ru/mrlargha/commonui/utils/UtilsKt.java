@@ -15,6 +15,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -32,8 +34,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import io.appmetrica.analytics.AppMetrica;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.ecommerce.ECommerceAmount;
 import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
 import io.appmetrica.analytics.ecommerce.ECommerceEvent;
@@ -62,18 +64,13 @@ import kotlin.collections.MapsKt;
 import kotlin.io.CloseableKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Ref;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineExceptionHandler;
-import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.Job;
-import kotlinx.coroutines.SupervisorKt;
 import okhttp3.OkHttpClient;
 import okhttp3.Protocol;
 import okhttp3.ResponseBody;
@@ -86,13 +83,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.elements.hud.presentation.models.ServerInfoItem;
+import ru.mrlargha.commonui.elements.hud.presentation.models.SharedPreferenceKeys;
 import ru.mrlargha.commonui.elements.inventory.domain.ChangeFromSlot;
 import ru.mrlargha.commonui.elements.inventory.domain.ChangeToSlot;
 import ru.mrlargha.commonui.elements.inventory.domain.InventoryApi;
 import ru.mrlargha.commonui.elements.inventory.domain.InventorySendRequest;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
+import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 /* compiled from: Utils.kt */
-@Metadata(d1 = {"\u0000¨\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\u001a\u0012\u0010\u0014\u001a\u00020\u0015*\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018\u001a\n\u0010\u0019\u001a\u00020\u001a*\u00020\u001b\u001a\n\u0010\u001c\u001a\u00020\u0018*\u00020\u001b\u001a\"\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u00182\b\b\u0002\u0010\"\u001a\u00020 \u001a\u0018\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020 \u001a\u0012\u0010$\u001a\u0004\u0018\u00010\u001e2\u0006\u0010%\u001a\u00020&H\u0002\u001a \u0010'\u001a\u00020\u00182\u0006\u0010(\u001a\u00020\u00182\u0006\u0010)\u001a\u00020\u00182\u0006\u0010*\u001a\u00020\u0018H\u0002\u001aM\u0010+\u001a\u0002H,\"\u0004\b\u0000\u0010,*\u0002H,2\u0017\u0010-\u001a\u0013\u0012\u0004\u0012\u0002H,\u0012\u0004\u0012\u00020\u000e0.¢\u0006\u0002\b/2\u0017\u00100\u001a\u0013\u0012\u0004\u0012\u0002H,\u0012\u0004\u0012\u00020\u00150.¢\u0006\u0002\b/H\u0086\bø\u0001\u0000¢\u0006\u0002\u00101\u001a\u0016\u00102\u001a\u00020\u001e2\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u00020\u0018\u001a\u0018\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u0002082\u0006\u00109\u001a\u00020:H\u0007\u001a\u000e\u0010;\u001a\u00020 2\u0006\u0010<\u001a\u00020 \u001a\u000e\u0010=\u001a\u00020\u00182\u0006\u0010>\u001a\u00020\u0018\u001a\u0018\u0010?\u001a\u0004\u0018\u00010 2\u0006\u00103\u001a\u0002042\u0006\u0010@\u001a\u00020 \u001a\u000e\u0010A\u001a\u00020\u00182\u0006\u0010B\u001a\u00020\u0018\u001a\u0014\u0010C\u001a\b\u0012\u0004\u0012\u00020 0\u00012\u0006\u0010D\u001a\u00020\u001b\u001a\u001e\u0010E\u001a\u00020\u00152\u0006\u00109\u001a\u00020\u00162\u0006\u0010F\u001a\u00020\u00182\u0006\u0010D\u001a\u00020\u001b\u001a\u001e\u0010E\u001a\u00020\u00152\u0006\u00109\u001a\u00020G2\u0006\u0010F\u001a\u00020\u00182\u0006\u0010D\u001a\u00020\u001b\u001a\u000e\u0010H\u001a\u00020 2\u0006\u0010I\u001a\u00020 \u001a\u0016\u0010J\u001a\u00020\u00152\u0006\u0010K\u001a\u00020L2\u0006\u0010M\u001a\u00020\u001e\u001a\u0016\u0010N\u001a\u00020\u00152\u0006\u0010K\u001a\u00020L2\u0006\u00103\u001a\u000204\u001a\u0016\u0010O\u001a\u00020\u00152\u0006\u00103\u001a\u0002042\u0006\u0010P\u001a\u00020\u000e\u001a\"\u0010Q\u001a\u00020\u00152\u0006\u00103\u001a\u0002042\u0006\u0010R\u001a\u00020\u00182\n\b\u0002\u0010S\u001a\u0004\u0018\u00010T\u001a&\u0010U\u001a\u00020\u00152\u0006\u0010V\u001a\u00020W2\u0006\u0010X\u001a\u00020\u00182\u0006\u0010Y\u001a\u0002082\u0006\u0010Z\u001a\u000208\u001a\u001a\u0010[\u001a\u0004\u0018\u0001082\b\u0010\\\u001a\u0004\u0018\u0001082\u0006\u0010]\u001a\u000208\u001a\u000e\u0010^\u001a\u00020 2\u0006\u0010_\u001a\u00020 \u001a\u000e\u0010`\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0018\u001a\u000e\u0010a\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0018\u001a\u001e\u0010g\u001a\u00020\u00152\u0006\u00103\u001a\u0002042\u0006\u0010h\u001a\u00020 2\u0006\u0010i\u001a\u00020\u0018\u001a\u000e\u0010j\u001a\u00020\u00152\u0006\u0010k\u001a\u00020 \u001a\u0018\u0010l\u001a\u00020\u00152\u0006\u00103\u001a\u0002042\u0006\u0010h\u001a\u00020 H\u0002\u001a\u0015\u0010m\u001a\u00020\u000e*\u00020\u00182\u0006\u0010n\u001a\u00020\u0018H\u0082\u0004\u001a\u0006\u0010o\u001a\u00020 \u001a\u0012\u0010p\u001a\u00020 2\b\u0010q\u001a\u0004\u0018\u00010 H\u0002\u001a\u0016\u0010r\u001a\u00020\u00152\u0006\u00103\u001a\u0002042\u0006\u0010h\u001a\u00020 \u001a\u0016\u0010s\u001a\u00020\u00152\u0006\u00103\u001a\u0002042\u0006\u0010t\u001a\u00020 \u001a\u0016\u0010u\u001a\u00020\u00152\u0006\u00103\u001a\u0002042\u0006\u0010t\u001a\u00020 \u001a\u0016\u0010v\u001a\u00020\u00152\u0006\u00103\u001a\u0002042\u0006\u0010w\u001a\u00020\u0018\u001a\n\u0010x\u001a\u00020y*\u000204\u001a\u000e\u0010z\u001a\u00020\u000e2\u0006\u00103\u001a\u000204\u001a\u000e\u0010{\u001a\u00020|2\u0006\u00103\u001a\u000204\u001a\u000e\u0010}\u001a\u00020 2\u0006\u0010~\u001a\u00020\u007f\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012\"\u0011\u0010\u0013\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0010\"\u000e\u0010#\u001a\u00020\u0018X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010b\u001a\u00020\u0018X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010c\u001a\u00020\u0018X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010d\u001a\u00020\u0018X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010e\u001a\u00020\u0018X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010f\u001a\u00020\u0018X\u0086T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u0080\u0001"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "_isArizonaType", "", "get_isArizonaType", "()Z", "set_isArizonaType", "(Z)V", "isArizonaType", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getBitmapFromVectorDrawable", "context", "Landroid/content/Context;", "drawableId", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "DEFAULT_ANALYTICS", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "sendDataAnalytics", NotificationCompat.CATEGORY_EVENT, "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "flag", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "sendAdjustAnalytics", "eventId", "getBaseShredPref", "Landroid/content/SharedPreferences;", "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatTime", "millisUntilFinished", "", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ª\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0003\u001a\u0012\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c\u001a\n\u0010\u001d\u001a\u00020\u001e*\u00020\u001f\u001a\n\u0010 \u001a\u00020\u001c*\u00020\u001f\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c2\b\b\u0002\u0010&\u001a\u00020$\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$2\b\b\u0002\u0010&\u001a\u00020$\u001a\u0018\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0018\u0010(\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0012\u0010)\u001a\u0004\u0018\u00010\"2\u0006\u0010*\u001a\u00020+H\u0002\u001a \u0010,\u001a\u00020\u001c2\u0006\u0010-\u001a\u00020\u001c2\u0006\u0010.\u001a\u00020\u001c2\u0006\u0010/\u001a\u00020\u001cH\u0002\u001aM\u00100\u001a\u0002H1\"\u0004\b\u0000\u00101*\u0002H12\u0017\u00102\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u000e03¢\u0006\u0002\b42\u0017\u00105\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u001903¢\u0006\u0002\b4H\u0086\bø\u0001\u0000¢\u0006\u0002\u00106\u001a\u0016\u00107\u001a\u00020\"2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u001c\u001a\u0018\u0010;\u001a\u00020\u000e2\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020?H\u0007\u001a\u000e\u0010@\u001a\u00020$2\u0006\u0010A\u001a\u00020$\u001a\u000e\u0010B\u001a\u00020\u001c2\u0006\u0010C\u001a\u00020\u001c\u001a\u0018\u0010D\u001a\u0004\u0018\u00010$2\u0006\u00108\u001a\u0002092\u0006\u0010E\u001a\u00020$\u001a\u000e\u0010F\u001a\u00020\u001c2\u0006\u0010G\u001a\u00020\u001c\u001a\u0014\u0010H\u001a\b\u0012\u0004\u0012\u00020$0\u00012\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020\u001a2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020L2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u000e\u0010M\u001a\u00020$2\u0006\u0010N\u001a\u00020$\u001a\u0016\u0010O\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020\"\u001a\u0016\u0010S\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u00108\u001a\u000209\u001a\u0016\u0010T\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010U\u001a\u00020\u000e\u001a\"\u0010V\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010W\u001a\u00020\u001c2\n\b\u0002\u0010X\u001a\u0004\u0018\u00010Y\u001a&\u0010Z\u001a\u00020\u00192\u0006\u0010[\u001a\u00020\\2\u0006\u0010]\u001a\u00020\u001c2\u0006\u0010^\u001a\u00020=2\u0006\u0010_\u001a\u00020=\u001a\u001a\u0010`\u001a\u0004\u0018\u00010=2\b\u0010a\u001a\u0004\u0018\u00010=2\u0006\u0010b\u001a\u00020=\u001a\u000e\u0010c\u001a\u00020$2\u0006\u0010d\u001a\u00020$\u001a\u000e\u0010e\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u000e\u0010f\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u001e\u0010l\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010m\u001a\u00020$2\u0006\u0010n\u001a\u00020\u001c\u001a\u000e\u0010o\u001a\u00020\u00192\u0006\u0010p\u001a\u00020$\u001a\u0018\u0010q\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010m\u001a\u00020$H\u0002\u001a\u0015\u0010r\u001a\u00020\u000e*\u00020\u001c2\u0006\u0010s\u001a\u00020\u001cH\u0082\u0004\u001a\u0006\u0010t\u001a\u00020$\u001a\u0012\u0010u\u001a\u00020$2\b\u0010v\u001a\u0004\u0018\u00010$H\u0002\u001a\u0016\u0010w\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010m\u001a\u00020$\u001a\u0016\u0010x\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010y\u001a\u00020$\u001a\u0016\u0010z\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010y\u001a\u00020$\u001a\u0016\u0010{\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010|\u001a\u00020\u001c\u001a\n\u0010}\u001a\u00020~*\u000209\u001a\u000e\u0010\u007f\u001a\u00020\u000e2\u0006\u00108\u001a\u000209\u001a\u0010\u0010\u0080\u0001\u001a\u00030\u0081\u00012\u0006\u00108\u001a\u000209\u001a\u0010\u0010\u0082\u0001\u001a\u00020$2\u0007\u0010\u0083\u0001\u001a\u00020\u001c\u001a\u0011\u0010\u0084\u0001\u001a\u00020$2\b\u0010\u0085\u0001\u001a\u00030\u0086\u0001\u001a\u001c\u0010\u0087\u0001\u001a\u00020\u0019*\u00020\u001a2\u0007\u0010\u0088\u0001\u001a\u00020$2\u0006\u0010C\u001a\u00020\u001c\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012\"\u0011\u0010\u0013\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0010\"\u001a\u0010\u0014\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0010\"\u0004\b\u0016\u0010\u0012\"\u0011\u0010\u0017\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0010\"\u000e\u0010'\u001a\u00020\u001cX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010g\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010h\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010i\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010j\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010k\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u0089\u0001"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "_isArizonaType", "", "get_isArizonaType", "()Z", "set_isArizonaType", "(Z)V", "isArizonaType", "_isDebug", "get_isDebug", "set_isDebug", "isDebug", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getIconFromArchiveWithFormat", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getBitmapFromVectorDrawable", "context", "Landroid/content/Context;", "drawableId", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "DEFAULT_ANALYTICS", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "sendDataAnalytics", NotificationCompat.CATEGORY_EVENT, "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "flag", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "sendAdjustAnalytics", "eventId", "getBaseShredPref", "Landroid/content/SharedPreferences;", "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatNumberWithSpaces", "number", "formatTime", "millisUntilFinished", "", "setColoredTextBeforeDot", "fullText", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UtilsKt {
     public static final int APP_ADJUST = 8;
@@ -104,6 +103,7 @@ public final class UtilsKt {
     private static ZipFile zipFileIcons;
     private static List<ItemsInfo> itemsName = CollectionsKt.emptyList();
     private static boolean _isArizonaType = true;
+    private static boolean _isDebug = true;
 
     private static final boolean hasFlag(int i, int i2) {
         return (i & i2) != 0;
@@ -136,6 +136,18 @@ public final class UtilsKt {
 
     public static final boolean isArizonaType() {
         return _isArizonaType;
+    }
+
+    public static final boolean get_isDebug() {
+        return _isDebug;
+    }
+
+    public static final void set_isDebug(boolean z) {
+        _isDebug = z;
+    }
+
+    public static final boolean isDebug() {
+        return _isDebug;
     }
 
     public static final void setTextTimeFormat(TextView textView, int i) {
@@ -214,12 +226,70 @@ public final class UtilsKt {
         }
     }
 
+    public static /* synthetic */ Bitmap getIconFromArchive$default(String str, String str2, String str3, int i, Object obj) {
+        if ((i & 4) != 0) {
+            str3 = "";
+        }
+        return getIconFromArchive(str, str2, str3);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0059 A[Catch: Exception -> 0x005f, TRY_LEAVE, TryCatch #0 {Exception -> 0x005f, blocks: (B:3:0x0010, B:6:0x001a, B:8:0x001e, B:14:0x0059, B:9:0x0038, B:11:0x003c), top: B:20:0x0010 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x005e A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Bitmap getIconFromArchive(String folderName, String item, String gearsIconName) {
+        ZipEntry entry;
+        Intrinsics.checkNotNullParameter(folderName, "folderName");
+        Intrinsics.checkNotNullParameter(item, "item");
+        Intrinsics.checkNotNullParameter(gearsIconName, "gearsIconName");
+        try {
+            if (Intrinsics.areEqual(folderName, "gears")) {
+                ZipFile zipFile = zipFileIcons;
+                if (zipFile != null) {
+                    entry = zipFile.getEntry(folderName + "/" + gearsIconName);
+                    if (entry == null) {
+                        return getBitmapFromEntry(entry);
+                    }
+                    return null;
+                }
+                entry = null;
+                if (entry == null) {
+                }
+            } else {
+                ZipFile zipFile2 = zipFileIcons;
+                if (zipFile2 != null) {
+                    entry = zipFile2.getEntry(folderName + "/" + item);
+                    if (entry == null) {
+                    }
+                }
+                entry = null;
+                if (entry == null) {
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static final Bitmap getIconFromArchive(String folderName, String item) {
         ZipEntry entry;
         Intrinsics.checkNotNullParameter(folderName, "folderName");
         Intrinsics.checkNotNullParameter(item, "item");
         ZipFile zipFile = zipFileIcons;
         if (zipFile == null || (entry = zipFile.getEntry(folderName + "/" + item + ".webp")) == null) {
+            return null;
+        }
+        return getBitmapFromEntry(entry);
+    }
+
+    public static final Bitmap getIconFromArchiveWithFormat(String folderName, String item) {
+        ZipEntry entry;
+        Intrinsics.checkNotNullParameter(folderName, "folderName");
+        Intrinsics.checkNotNullParameter(item, "item");
+        ZipFile zipFile = zipFileIcons;
+        if (zipFile == null || (entry = zipFile.getEntry(folderName + "/" + item)) == null) {
             return null;
         }
         return getBitmapFromEntry(entry);
@@ -398,23 +468,13 @@ public final class UtilsKt {
         setImage(imageView, getBitmapFromVectorDrawable(context, R.drawable.baseline_warning_24));
     }
 
-    /* JADX WARN: Type inference failed for: r1v12, types: [T, java.lang.Object] */
     public static final void checkItemsName(Context context, boolean z) {
         Intrinsics.checkNotNullParameter(context, "context");
         if (itemsName.isEmpty()) {
-            Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            SharedPreferences sharedPreferences = context.getSharedPreferences("flavorType", 0);
-            CoroutineScope CoroutineScope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain().plus(SupervisorKt.SupervisorJob((Job) null)).plus(new UtilsKt$checkItemsName$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key, context)));
-            int i = sharedPreferences.getInt("server_id", 0);
-            String serverApiUrl = FirebaseConfigHelper.INSTANCE.getServerApiUrl();
-            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
-            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
-            Retrofit build = new Retrofit.Builder().baseUrl(serverApiUrl).client(new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()).addConverterFactory(GsonConverterFactory.create()).build();
-            Intrinsics.checkNotNullExpressionValue(build, "build(...)");
-            ?? create = build.create(InventoryApi.class);
-            Intrinsics.checkNotNullExpressionValue(create, "create(...)");
-            objectRef.element = create;
-            BuildersKt__Builders_commonKt.launch$default(CoroutineScope, Dispatchers.getIO(), null, new UtilsKt$checkItemsName$1(objectRef, z, "Bearer " + sharedPreferences.getString("api_token", ""), i, null), 2, null);
+            Context applicationContext = context.getApplicationContext();
+            Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
+            ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(applicationContext, 0);
+            BuildersKt.launch$default(arizonaRetrofit.getScope(), Dispatchers.getIO(), null, new UtilsKt$checkItemsName$1((InventoryApi) ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, 6, null), null), 2, null);
         }
     }
 
@@ -427,10 +487,10 @@ public final class UtilsKt {
 
     public static final void getItemsJson(Context context, int i, File file) {
         Intrinsics.checkNotNullParameter(context, "context");
-        if (file != null) {
-            BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), null, null, new UtilsKt$getItemsJson$1(i, file, context, null), 3, null);
-        } else {
+        if (file == null) {
             Log.w("getItemsJson", "External files dir is null");
+        } else {
+            BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), null, null, new UtilsKt$getItemsJson$1(i, file, context, null), 3, null);
         }
     }
 
@@ -536,7 +596,12 @@ public final class UtilsKt {
             if (photoBitmap == null) {
                 photoBitmap = inventoryItem.getPhotoBitmap();
             }
-            return InventoryItem.copy$default(inventoryItem, slot, num, id, str, num2, num3, background, num4, num5, num6, num7, num8, l, num9, num10, num11, inventoryType, num12, photoBitmap, false, false, 1572864, null);
+            Bitmap bitmap = photoBitmap;
+            String effect = newItem.getEffect();
+            if (effect == null) {
+                effect = inventoryItem.getEffect();
+            }
+            return InventoryItem.copy$default(inventoryItem, slot, num, id, str, num2, num3, background, num4, num5, num6, num7, num8, l, num9, num10, num11, inventoryType, num12, bitmap, false, false, effect, 1572864, null);
         }
         return null;
     }
@@ -825,9 +890,16 @@ public final class UtilsKt {
     public static final ServerInfoItem getServerId(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         SharedPreferences baseShredPref = getBaseShredPref(context);
-        int i = baseShredPref.getInt("server_id", 0);
-        String string = baseShredPref.getString("api_token", "");
-        return new ServerInfoItem(string != null ? string : "", i);
+        int i = baseShredPref.getInt(SharedPreferenceKeys.SERVER_ID.getKeyName(), 0);
+        String string = baseShredPref.getString(SharedPreferenceKeys.API_TOKEN.getKeyName(), "");
+        return new ServerInfoItem(string != null ? string : "", i, baseShredPref.getInt(SharedPreferenceKeys.ACCOUNT_ID.getKeyName(), 0));
+    }
+
+    public static final String formatNumberWithSpaces(int i) {
+        StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
+        String format = String.format("%,d", Arrays.copyOf(new Object[]{Integer.valueOf(i)}, 1));
+        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
+        return StringsKt.replace$default(format, StringUtils.COMMA, " ", false, 4, (Object) null);
     }
 
     public static final String formatTime(long j) {
@@ -839,5 +911,19 @@ public final class UtilsKt {
         String format = String.format("%02d:%02d", Arrays.copyOf(new Object[]{Long.valueOf(j4), Long.valueOf(j5)}, 2));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         return format;
+    }
+
+    public static final void setColoredTextBeforeDot(TextView textView, String fullText, int i) {
+        Intrinsics.checkNotNullParameter(textView, "<this>");
+        Intrinsics.checkNotNullParameter(fullText, "fullText");
+        String str = fullText;
+        int indexOf$default = StringsKt.indexOf$default((CharSequence) str, '.', 0, false, 6, (Object) null);
+        if (indexOf$default == -1) {
+            textView.setText(str);
+            return;
+        }
+        SpannableString spannableString = new SpannableString(str);
+        spannableString.setSpan(new ForegroundColorSpan(i), 0, indexOf$default, 33);
+        textView.setText(spannableString);
     }
 }

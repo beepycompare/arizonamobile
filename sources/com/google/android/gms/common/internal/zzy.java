@@ -1,30 +1,33 @@
 package com.google.android.gms.common.internal;
 
+import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
-import com.google.android.gms.dynamic.IObjectWrapper;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzy extends com.google.android.gms.internal.common.zza implements zzaa {
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzy extends com.google.android.gms.internal.common.zza implements IGmsCallbacks {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzy(IBinder iBinder) {
-        super(iBinder, "com.google.android.gms.common.internal.ICertData");
+        super(iBinder, "com.google.android.gms.common.internal.IGmsCallbacks");
     }
 
-    @Override // com.google.android.gms.common.internal.zzaa
-    public final int zzc() throws RemoteException {
-        Parcel zzB = zzB(2, zza());
-        int readInt = zzB.readInt();
-        zzB.recycle();
-        return readInt;
+    @Override // com.google.android.gms.common.internal.IGmsCallbacks
+    public final void onPostInitComplete(int i, IBinder iBinder, Bundle bundle) throws RemoteException {
+        Parcel zza = zza();
+        zza.writeInt(i);
+        zza.writeStrongBinder(iBinder);
+        com.google.android.gms.internal.common.zzc.zzc(zza, bundle);
+        zzD(1, zza);
     }
 
-    @Override // com.google.android.gms.common.internal.zzaa
-    public final IObjectWrapper zzd() throws RemoteException {
-        Parcel zzB = zzB(1, zza());
-        IObjectWrapper asInterface = IObjectWrapper.Stub.asInterface(zzB.readStrongBinder());
-        zzB.recycle();
-        return asInterface;
+    @Override // com.google.android.gms.common.internal.IGmsCallbacks
+    public final void zzb(int i, Bundle bundle) throws RemoteException {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.common.internal.IGmsCallbacks
+    public final void zzc(int i, IBinder iBinder, zzj zzjVar) throws RemoteException {
+        throw null;
     }
 }

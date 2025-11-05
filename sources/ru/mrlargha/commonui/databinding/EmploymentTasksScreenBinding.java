@@ -15,7 +15,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class EmploymentTasksScreenBinding implements ViewBinding {
     public final AppCompatButton btnClose;
     public final AppCompatButton btnHistory;

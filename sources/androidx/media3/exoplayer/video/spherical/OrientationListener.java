@@ -7,7 +7,7 @@ import android.hardware.SensorManager;
 import android.opengl.Matrix;
 import android.view.Display;
 import androidx.media3.extractor.ts.TsExtractor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class OrientationListener implements SensorEventListener {
     private final Display display;
     private final Listener[] listeners;
@@ -17,7 +17,7 @@ final class OrientationListener implements SensorEventListener {
     private final float[] recenterMatrix4x4 = new float[16];
     private final float[] angles = new float[3];
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onOrientationChange(float[] fArr, float f);
     }

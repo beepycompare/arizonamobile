@@ -1,15 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-/* loaded from: classes4.dex */
-public final class Ko implements Consumer {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f547a = "WebView interface setup failed because javascript is disabled for the WebView.";
-
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).warning(this.f547a, new Object[0]);
+import java.util.Map;
+/* loaded from: classes3.dex */
+public final class Ko implements InterfaceC0584t {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0584t
+    public final Map<String, String> a(Map<String, String> map) {
+        map.put("source", "yandex");
+        return map;
     }
 }

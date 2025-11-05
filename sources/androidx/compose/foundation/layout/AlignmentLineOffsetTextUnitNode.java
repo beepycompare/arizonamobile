@@ -61,7 +61,7 @@ final class AlignmentLineOffsetTextUnitNode extends Modifier.Node implements Lay
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         MeasureResult m666alignmentLineOffsetMeasuretjqqzMA;
-        m666alignmentLineOffsetMeasuretjqqzMA = AlignmentLineKt.m666alignmentLineOffsetMeasuretjqqzMA(measureScope, this.alignmentLine, TextUnit.m7456getRawTypeimpl(this.before) == 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : measureScope.mo424toDpGaN1DYA(this.before), TextUnit.m7456getRawTypeimpl(this.after) == 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : measureScope.mo424toDpGaN1DYA(this.after), measurable, j);
+        m666alignmentLineOffsetMeasuretjqqzMA = AlignmentLineKt.m666alignmentLineOffsetMeasuretjqqzMA(measureScope, this.alignmentLine, TextUnit.m8187getRawTypeimpl(this.before) == 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : measureScope.mo424toDpGaN1DYA(this.before), TextUnit.m8187getRawTypeimpl(this.after) == 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : measureScope.mo424toDpGaN1DYA(this.after), measurable, j);
         return m666alignmentLineOffsetMeasuretjqqzMA;
     }
 }

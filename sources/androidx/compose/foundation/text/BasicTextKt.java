@@ -62,77 +62,87 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000ª\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u0083\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00132\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0007¢\u0006\u0004\b\u0016\u0010\u0017\u001a\u0099\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00182\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\u0014\b\u0002\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u001b0\u001a2\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00132\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0007¢\u0006\u0004\b\u001c\u0010\u001d\u001aw\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0013H\u0007¢\u0006\u0004\b\u001e\u0010\u001f\u001a\u008d\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00182\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\u0014\b\u0002\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u001b0\u001a2\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0013H\u0007¢\u0006\u0004\b\u0016\u0010 \u001aa\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u0010H\u0007¢\u0006\u0004\b!\u0010\"\u001aw\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00182\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\u0014\b\u0002\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u001b0\u001aH\u0007¢\u0006\u0004\b#\u0010$\u001ak\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u0010H\u0007¢\u0006\u0004\b#\u0010%\u001a\u0081\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00182\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\u0014\b\u0002\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u001b0\u001aH\u0007¢\u0006\u0004\b\u001e\u0010&\u001a\u001e\u0010'\u001a\u000e\u0012\u0004\u0012\u00020)\u0012\u0004\u0012\u00020)0(2\b\u0010*\u001a\u0004\u0018\u00010+H\u0002\u001a@\u0010,\u001a\u001e\u0012\u0018\u0012\u0016\u0012\u0004\u0012\u00020/\u0012\f\u0012\n\u0012\u0004\u0012\u000201\u0018\u0001000.\u0018\u00010-2\f\u00102\u001a\b\u0012\u0004\u0012\u0002030-2\f\u00104\u001a\b\u0012\u0004\u0012\u00020\u000e00H\u0002\u001aÉ\u0001\u00105\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00182\u0006\u0010\u0006\u001a\u00020\u00072\u0014\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u00106\u001a\u0002072\u0014\u00108\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020:09\u0018\u00010-2\u001c\u0010;\u001a\u0018\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010<0-\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\u0010=\u001a\u0004\u0018\u00010>2\b\u0010\u0012\u001a\u0004\u0018\u00010\u00132\u0014\u0010?\u001a\u0010\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0002¢\u0006\u0004\bA\u0010B\u001a·\u0001\u0010C\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00182\u0014\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\u0006\u0010D\u001a\u00020\u000e2\u0014\b\u0002\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u001b0\u001a2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u00106\u001a\u0002072\b\u0010=\u001a\u0004\u0018\u00010>2\b\u0010\u0012\u001a\u0004\u0018\u00010\u00132\u0014\u0010?\u001a\u0010\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u0001\u0018\u00010\t2\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0003¢\u0006\u0004\bE\u0010F¨\u0006G²\u0006\n\u0010H\u001a\u00020\u0018X\u008a\u008e\u0002"}, d2 = {"BasicText", "", "text", "", "modifier", "Landroidx/compose/ui/Modifier;", "style", "Landroidx/compose/ui/text/TextStyle;", "onTextLayout", "Lkotlin/Function1;", "Landroidx/compose/ui/text/TextLayoutResult;", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "color", "Landroidx/compose/ui/graphics/ColorProducer;", "autoSize", "Landroidx/compose/foundation/text/TextAutoSize;", "BasicText-RWo7tUw", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZIILandroidx/compose/ui/graphics/ColorProducer;Landroidx/compose/foundation/text/TextAutoSize;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/ui/text/AnnotatedString;", "inlineContent", "", "Landroidx/compose/foundation/text/InlineTextContent;", "BasicText-CL7eQgs", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZIILjava/util/Map;Landroidx/compose/ui/graphics/ColorProducer;Landroidx/compose/foundation/text/TextAutoSize;Landroidx/compose/runtime/Composer;III)V", "BasicText-VhcvRP8", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZIILandroidx/compose/ui/graphics/ColorProducer;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZIILjava/util/Map;Landroidx/compose/ui/graphics/ColorProducer;Landroidx/compose/runtime/Composer;II)V", "BasicText-BpD7jsM", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZILandroidx/compose/runtime/Composer;II)V", "BasicText-4YKlhWE", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZILjava/util/Map;Landroidx/compose/runtime/Composer;II)V", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZIILandroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZIILjava/util/Map;Landroidx/compose/runtime/Composer;II)V", "selectionIdSaver", "Landroidx/compose/runtime/saveable/Saver;", "", "selectionRegistrar", "Landroidx/compose/foundation/text/selection/SelectionRegistrar;", "measureWithTextRangeMeasureConstraints", "", "Lkotlin/Pair;", "Landroidx/compose/ui/layout/Placeable;", "Lkotlin/Function0;", "Landroidx/compose/ui/unit/IntOffset;", "measurables", "Landroidx/compose/ui/layout/Measurable;", "shouldMeasureLinks", "textModifier", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "placeholders", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "onPlaceholderLayout", "Landroidx/compose/ui/geometry/Rect;", "selectionController", "Landroidx/compose/foundation/text/modifiers/SelectionController;", "onShowTranslation", "Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;", "textModifier-CL7eQgs", "(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function1;IZIILandroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;Lkotlin/jvm/functions/Function1;Landroidx/compose/foundation/text/modifiers/SelectionController;Landroidx/compose/ui/graphics/ColorProducer;Lkotlin/jvm/functions/Function1;Landroidx/compose/foundation/text/TextAutoSize;)Landroidx/compose/ui/Modifier;", "LayoutWithLinksAndInlineContent", "hasInlineContent", "LayoutWithLinksAndInlineContent-11Od_4g", "(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/AnnotatedString;Lkotlin/jvm/functions/Function1;ZLjava/util/Map;Landroidx/compose/ui/text/TextStyle;IZIILandroidx/compose/ui/text/font/FontFamily$Resolver;Landroidx/compose/foundation/text/modifiers/SelectionController;Landroidx/compose/ui/graphics/ColorProducer;Lkotlin/jvm/functions/Function1;Landroidx/compose/foundation/text/TextAutoSize;Landroidx/compose/runtime/Composer;III)V", "foundation_release", "displayedText"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicTextKt {
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_4YKlhWE$lambda$16(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, Map map, int i3, int i4, Composer composer, int i5) {
         m1237BasicText4YKlhWE(annotatedString, modifier, textStyle, function1, i, z, i2, map, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_4YKlhWE$lambda$17(String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, int i4, int i5, Composer composer, int i6) {
         m1238BasicText4YKlhWE(str, modifier, textStyle, function1, i, z, i2, i3, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_BpD7jsM$lambda$15(String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, int i4, Composer composer, int i5) {
         m1239BasicTextBpD7jsM(str, modifier, textStyle, function1, i, z, i2, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_CL7eQgs$lambda$12(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, ColorProducer colorProducer, TextAutoSize textAutoSize, int i4, int i5, int i6, Composer composer, int i7) {
         m1240BasicTextCL7eQgs(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, colorProducer, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_RWo7tUw$lambda$14(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, ColorProducer colorProducer, int i4, int i5, Composer composer, int i6) {
         m1241BasicTextRWo7tUw(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, colorProducer, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_RWo7tUw$lambda$3(String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, ColorProducer colorProducer, TextAutoSize textAutoSize, int i4, int i5, Composer composer, int i6) {
         m1242BasicTextRWo7tUw(str, modifier, textStyle, function1, i, z, i2, i3, colorProducer, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_VhcvRP8$lambda$13(String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, ColorProducer colorProducer, int i4, int i5, Composer composer, int i6) {
         m1244BasicTextVhcvRP8(str, modifier, textStyle, function1, i, z, i2, i3, colorProducer, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_VhcvRP8$lambda$18(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, int i4, int i5, Composer composer, int i6) {
         m1243BasicTextVhcvRP8(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final AnnotatedString LayoutWithLinksAndInlineContent_11Od_4g$lambda$27$lambda$26(AnnotatedString annotatedString) {
         return annotatedString;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit LayoutWithLinksAndInlineContent_11Od_4g$lambda$43(Modifier modifier, AnnotatedString annotatedString, Function1 function1, boolean z, Map map, TextStyle textStyle, int i, boolean z2, int i2, int i3, FontFamily.Resolver resolver, SelectionController selectionController, ColorProducer colorProducer, Function1 function12, TextAutoSize textAutoSize, int i4, int i5, int i6, Composer composer, int i7) {
         m1245LayoutWithLinksAndInlineContent11Od_4g(modifier, annotatedString, function1, z, map, textStyle, i, z2, i2, i3, resolver, selectionController, colorProducer, function12, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:214:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:278:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:290:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x0155  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x015e  */
-    /* JADX WARN: Removed duplicated region for block: B:370:0x03d4  */
-    /* JADX WARN: Removed duplicated region for block: B:373:0x03ec  */
-    /* JADX WARN: Removed duplicated region for block: B:375:? A[RETURN, SYNTHETIC] */
-    /* renamed from: BasicText-RWo7tUw */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0129  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0152  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0155  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x03d4  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x03ec  */
+    /* JADX WARN: Removed duplicated region for block: B:187:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0106  */
+    /* renamed from: BasicText-RWo7tUw  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -253,7 +263,7 @@ public final class BasicTextKt {
                                             obj = TextStyle.Companion.getDefault();
                                         }
                                         Function1<? super TextLayoutResult, Unit> function13 = i8 != 0 ? null : obj2;
-                                        int m7199getClipgIe3tQ8 = i9 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i10;
+                                        int m7930getClipgIe3tQ8 = i9 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i10;
                                         boolean z3 = i11 != 0 ? true : z;
                                         int i26 = i12 != 0 ? Integer.MAX_VALUE : i2;
                                         int i27 = i14 != 0 ? 1 : i3;
@@ -293,7 +303,7 @@ public final class BasicTextKt {
                                             }
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             i22 = i6;
-                                            long longValue = ((Number) RememberSaveableKt.m3995rememberSaveable(objArr, selectionIdSaver, (Function0<? extends Object>) rememberedValue, startRestartGroup, 0)).longValue();
+                                            long longValue = ((Number) RememberSaveableKt.m4725rememberSaveable(objArr, selectionIdSaver, (Function0<? extends Object>) rememberedValue, startRestartGroup, 0)).longValue();
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 565696955, "CC(remember):BasicText.kt#9igjgp");
                                             boolean changed = startRestartGroup.changed(longValue) | startRestartGroup.changed(selectionRegistrar) | startRestartGroup.changed(m1849getBackgroundColor0d7_KjU);
                                             Object rememberedValue2 = startRestartGroup.rememberedValue();
@@ -326,7 +336,7 @@ public final class BasicTextKt {
                                             Object consume4 = startRestartGroup.consume(CompositionLocalsKt.getLocalFontFamilyResolver());
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             modifier3 = companion;
-                                            m1246textModifierCL7eQgs = m1246textModifierCL7eQgs(modifier3, annotatedString, textStyle3, function13, m7199getClipgIe3tQ8, z3, i21, i23, (FontFamily.Resolver) consume4, null, null, selectionController, colorProducer3, null, textAutoSize3);
+                                            m1246textModifierCL7eQgs = m1246textModifierCL7eQgs(modifier3, annotatedString, textStyle3, function13, m7930getClipgIe3tQ8, z3, i21, i23, (FontFamily.Resolver) consume4, null, null, selectionController, colorProducer3, null, textAutoSize3);
                                             startRestartGroup.endReplaceGroup();
                                         } else {
                                             startRestartGroup.startReplaceGroup(357887763);
@@ -335,7 +345,7 @@ public final class BasicTextKt {
                                             TextStyle textStyle4 = obj;
                                             textStyle3 = textStyle4;
                                             i23 = i28;
-                                            m1246textModifierCL7eQgs = companion.then(new TextStringSimpleElement(str, textStyle4, resolver, m7199getClipgIe3tQ8, z3, i21, i28, colorProducer3, null));
+                                            m1246textModifierCL7eQgs = companion.then(new TextStringSimpleElement(str, textStyle4, resolver, m7930getClipgIe3tQ8, z3, i21, i28, colorProducer3, null));
                                             modifier3 = companion;
                                         }
                                         EmptyMeasurePolicy emptyMeasurePolicy = EmptyMeasurePolicy.INSTANCE;
@@ -354,14 +364,14 @@ public final class BasicTextKt {
                                         } else {
                                             startRestartGroup.useNode();
                                         }
-                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                                        Updater.m3874setimpl(m3867constructorimpl, emptyMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                                        Updater.m4604setimpl(m4597constructorimpl, emptyMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                            m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                            m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                            m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                         }
                                         startRestartGroup.endNode();
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -373,7 +383,7 @@ public final class BasicTextKt {
                                         modifier2 = modifier3;
                                         textStyle2 = textStyle3;
                                         function12 = function13;
-                                        i19 = m7199getClipgIe3tQ8;
+                                        i19 = m7930getClipgIe3tQ8;
                                         z2 = z3;
                                         i20 = i21;
                                         i18 = i23;
@@ -558,35 +568,35 @@ public final class BasicTextKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:393:0x0255, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x0255, code lost:
         if (r5 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L125;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:292:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:323:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:324:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x0177  */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x0189  */
-    /* JADX WARN: Removed duplicated region for block: B:438:0x04a6  */
-    /* JADX WARN: Removed duplicated region for block: B:441:0x04c2  */
-    /* JADX WARN: Removed duplicated region for block: B:443:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0129  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0177  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0189  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x04a6  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x04c2  */
+    /* JADX WARN: Removed duplicated region for block: B:221:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0106  */
     /* JADX WARN: Type inference failed for: r9v9 */
-    /* renamed from: BasicText-CL7eQgs */
+    /* renamed from: BasicText-CL7eQgs  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -723,7 +733,7 @@ public final class BasicTextKt {
                                             TextStyle textStyle5 = i8 != 0 ? TextStyle.Companion.getDefault() : obj;
                                             Function1<? super TextLayoutResult, Unit> function15 = i9 != 0 ? null : obj2;
                                             if (i10 != 0) {
-                                                i11 = TextOverflow.Companion.m7199getClipgIe3tQ8();
+                                                i11 = TextOverflow.Companion.m7930getClipgIe3tQ8();
                                             }
                                             boolean z4 = i12 != 0 ? true : z;
                                             if (i13 != 0) {
@@ -785,7 +795,7 @@ public final class BasicTextKt {
                                                 };
                                                 startRestartGroup.updateRememberedValue(rememberedValue);
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                long longValue = ((Number) RememberSaveableKt.m3995rememberSaveable(objArr, selectionIdSaver, (Function0<? extends Object>) rememberedValue, startRestartGroup, 0)).longValue();
+                                                long longValue = ((Number) RememberSaveableKt.m4725rememberSaveable(objArr, selectionIdSaver, (Function0<? extends Object>) rememberedValue, startRestartGroup, 0)).longValue();
                                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1713812553, "CC(remember):BasicText.kt#9igjgp");
                                                 boolean changed = startRestartGroup.changed(longValue) | startRestartGroup.changed(selectionRegistrar) | startRestartGroup.changed(m1849getBackgroundColor0d7_KjU);
                                                 Object rememberedValue2 = startRestartGroup.rememberedValue();
@@ -831,14 +841,14 @@ public final class BasicTextKt {
                                                 } else {
                                                     startRestartGroup.useNode();
                                                 }
-                                                Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                                                Updater.m3874setimpl(m3867constructorimpl, emptyMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                                                Updater.m4604setimpl(m4597constructorimpl, emptyMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                                    m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                                 }
                                                 startRestartGroup.endNode();
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1115,6 +1125,7 @@ public final class BasicTextKt {
         return mutableState.getValue();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_CL7eQgs$lambda$11$lambda$10(MutableState mutableState, TextAnnotatedStringNode.TextSubstitutionValue textSubstitutionValue) {
         AnnotatedString original;
         if (textSubstitutionValue.isShowingSubstitution()) {
@@ -1126,28 +1137,28 @@ public final class BasicTextKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:171:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x01c7  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:289:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01df  */
+    /* JADX WARN: Removed duplicated region for block: B:144:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0104  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
-    /* renamed from: BasicText-VhcvRP8 */
+    /* renamed from: BasicText-VhcvRP8  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1265,7 +1276,7 @@ public final class BasicTextKt {
                                         }
                                         Function1 function13 = i8 != 0 ? null : obj3;
                                         if (i9 != 0) {
-                                            i21 = TextOverflow.Companion.m7199getClipgIe3tQ8();
+                                            i21 = TextOverflow.Companion.m7930getClipgIe3tQ8();
                                             i20 = i11;
                                         } else {
                                             i20 = i11;
@@ -1459,30 +1470,30 @@ public final class BasicTextKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:185:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x01fc  */
-    /* JADX WARN: Removed duplicated region for block: B:315:0x0215  */
-    /* JADX WARN: Removed duplicated region for block: B:317:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0152  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x015b  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x01fc  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0215  */
+    /* JADX WARN: Removed duplicated region for block: B:158:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0104  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
-    /* renamed from: BasicText-RWo7tUw */
+    /* renamed from: BasicText-RWo7tUw  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1611,7 +1622,7 @@ public final class BasicTextKt {
                                             }
                                             TextStyle textStyle3 = i7 != 0 ? TextStyle.Companion.getDefault() : obj2;
                                             Function1 function13 = i8 != 0 ? null : obj3;
-                                            int m7199getClipgIe3tQ8 = i9 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i10;
+                                            int m7930getClipgIe3tQ8 = i9 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i10;
                                             if (i22 != 0) {
                                                 i23 = i14;
                                                 z3 = true;
@@ -1640,14 +1651,14 @@ public final class BasicTextKt {
                                                 ComposerKt.traceEventStart(-1064305212, i6, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:359)");
                                             }
                                             composer2 = startRestartGroup;
-                                            m1240BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, m7199getClipgIe3tQ8, z3, i25, i27, emptyMap, colorProducer3, null, composer2, i6 & 2147483646, 0, 1024);
+                                            m1240BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, m7930getClipgIe3tQ8, z3, i25, i27, emptyMap, colorProducer3, null, composer2, i6 & 2147483646, 0, 1024);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
                                             modifier2 = companion;
                                             textStyle2 = textStyle3;
                                             function12 = function13;
-                                            i20 = m7199getClipgIe3tQ8;
+                                            i20 = m7930getClipgIe3tQ8;
                                             z2 = z3;
                                             i19 = i25;
                                             i21 = i27;
@@ -1847,24 +1858,24 @@ public final class BasicTextKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:140:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x006a  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x00ef  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x0174  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x0188  */
-    /* JADX WARN: Removed duplicated region for block: B:227:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0188  */
+    /* JADX WARN: Removed duplicated region for block: B:113:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00ef  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
-    /* renamed from: BasicText-BpD7jsM */
+    /* renamed from: BasicText-BpD7jsM  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1956,7 +1967,7 @@ public final class BasicTextKt {
                                 }
                                 Function1 function13 = i7 != 0 ? null : function1;
                                 if (i13 != 0) {
-                                    i15 = TextOverflow.Companion.m7199getClipgIe3tQ8();
+                                    i15 = TextOverflow.Companion.m7930getClipgIe3tQ8();
                                     i14 = i9;
                                 } else {
                                     i14 = i9;
@@ -2084,26 +2095,26 @@ public final class BasicTextKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:157:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x010c  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:261:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x01b6  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x01cc  */
+    /* JADX WARN: Removed duplicated region for block: B:130:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x010c  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0115  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
-    /* renamed from: BasicText-4YKlhWE */
+    /* renamed from: BasicText-4YKlhWE  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2212,7 +2223,7 @@ public final class BasicTextKt {
                                         i16 = i9;
                                         function13 = obj3;
                                     }
-                                    int m7199getClipgIe3tQ8 = i15 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
+                                    int m7930getClipgIe3tQ8 = i15 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
                                     boolean z3 = i16 != 0 ? true : z;
                                     int i18 = i10 != 0 ? Integer.MAX_VALUE : i2;
                                     Map emptyMap = i12 != 0 ? MapsKt.emptyMap() : map;
@@ -2220,14 +2231,14 @@ public final class BasicTextKt {
                                         ComposerKt.traceEventStart(-648605928, i5, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:408)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m1240BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, m7199getClipgIe3tQ8, z3, i18, 1, emptyMap, null, null, composer2, (i5 & 14) | 12582912 | (i5 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | ((i5 << 3) & 234881024), 0, 1536);
+                                    m1240BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, m7930getClipgIe3tQ8, z3, i18, 1, emptyMap, null, null, composer2, (i5 & 14) | 12582912 | (i5 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | ((i5 << 3) & 234881024), 0, 1536);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
                                     modifier2 = companion;
                                     textStyle2 = textStyle3;
                                     function12 = function13;
-                                    i13 = m7199getClipgIe3tQ8;
+                                    i13 = m7930getClipgIe3tQ8;
                                     z2 = z3;
                                     i14 = i18;
                                     map2 = emptyMap;
@@ -2355,26 +2366,26 @@ public final class BasicTextKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:157:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x010c  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x0192  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x01a8  */
-    /* JADX WARN: Removed duplicated region for block: B:261:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0192  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x01a8  */
+    /* JADX WARN: Removed duplicated region for block: B:130:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x010c  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0115  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compat")
-    /* renamed from: BasicText-4YKlhWE */
+    /* renamed from: BasicText-4YKlhWE  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2483,7 +2494,7 @@ public final class BasicTextKt {
                                         i18 = i10;
                                         function13 = obj3;
                                     }
-                                    int m7199getClipgIe3tQ8 = i17 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
+                                    int m7930getClipgIe3tQ8 = i17 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
                                     boolean z3 = i18 != 0 ? true : z;
                                     int i20 = i11 != 0 ? Integer.MAX_VALUE : i2;
                                     int i21 = i13 != 0 ? 1 : i3;
@@ -2491,14 +2502,14 @@ public final class BasicTextKt {
                                         ComposerKt.traceEventStart(1542716361, i6, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:433)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m1242BasicTextRWo7tUw(str2, companion, textStyle3, function13, m7199getClipgIe3tQ8, z3, i20, i21, (ColorProducer) null, (TextAutoSize) null, composer2, i6 & 33554430, (int) ViewUtils.EDGE_TO_EDGE_FLAGS);
+                                    m1242BasicTextRWo7tUw(str2, companion, textStyle3, function13, m7930getClipgIe3tQ8, z3, i20, i21, (ColorProducer) null, (TextAutoSize) null, composer2, i6 & 33554430, (int) ViewUtils.EDGE_TO_EDGE_FLAGS);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
                                     modifier2 = companion;
                                     textStyle2 = textStyle3;
                                     function12 = function13;
-                                    i14 = m7199getClipgIe3tQ8;
+                                    i14 = m7930getClipgIe3tQ8;
                                     z2 = z3;
                                     i15 = i20;
                                     i16 = i21;
@@ -2626,28 +2637,28 @@ public final class BasicTextKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:170:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x01cf  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:287:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x01cf  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x01e7  */
+    /* JADX WARN: Removed duplicated region for block: B:143:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0104  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compat")
-    /* renamed from: BasicText-VhcvRP8 */
+    /* renamed from: BasicText-VhcvRP8  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2765,7 +2776,7 @@ public final class BasicTextKt {
                                         }
                                         Function1 function13 = i8 != 0 ? null : obj3;
                                         if (i9 != 0) {
-                                            i21 = TextOverflow.Companion.m7199getClipgIe3tQ8();
+                                            i21 = TextOverflow.Companion.m7930getClipgIe3tQ8();
                                             i20 = i11;
                                         } else {
                                             i20 = i11;
@@ -2977,6 +2988,7 @@ public final class BasicTextKt {
         });
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Long selectionIdSaver$lambda$19(SelectionRegistrar selectionRegistrar, SaverScope saverScope, long j) {
         if (SelectionRegistrarKt.hasSelection(selectionRegistrar, j)) {
             return Long.valueOf(j);
@@ -2984,6 +2996,7 @@ public final class BasicTextKt {
         return null;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final List<Pair<Placeable, Function0<IntOffset>>> measureWithTextRangeMeasureConstraints(List<? extends Measurable> list, Function0<Boolean> function0) {
         if (function0.invoke().booleanValue()) {
             TextRangeLayoutMeasureScope textRangeLayoutMeasureScope = new TextRangeLayoutMeasureScope();
@@ -2994,14 +3007,14 @@ public final class BasicTextKt {
                 Object parentData = measurable.getParentData();
                 Intrinsics.checkNotNull(parentData, "null cannot be cast to non-null type androidx.compose.foundation.text.TextRangeLayoutModifier");
                 TextRangeLayoutMeasureResult measure = ((TextRangeLayoutModifier) parentData).getMeasurePolicy().measure(textRangeLayoutMeasureScope);
-                arrayList.add(new Pair(measurable.mo5967measureBRTryo0(Constraints.Companion.m7226fitPrioritizingWidthZbe2FdA(measure.getWidth(), measure.getWidth(), measure.getHeight(), measure.getHeight())), measure.getPlace()));
+                arrayList.add(new Pair(measurable.mo6697measureBRTryo0(Constraints.Companion.m7957fitPrioritizingWidthZbe2FdA(measure.getWidth(), measure.getWidth(), measure.getHeight(), measure.getHeight())), measure.getPlace()));
             }
             return arrayList;
         }
         return null;
     }
 
-    /* renamed from: textModifier-CL7eQgs */
+    /* renamed from: textModifier-CL7eQgs  reason: not valid java name */
     private static final Modifier m1246textModifierCL7eQgs(Modifier modifier, AnnotatedString annotatedString, TextStyle textStyle, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, Function1<? super List<Rect>, Unit> function12, SelectionController selectionController, ColorProducer colorProducer, Function1<? super TextAnnotatedStringNode.TextSubstitutionValue, Unit> function13, TextAutoSize textAutoSize) {
         if (selectionController == null) {
             return modifier.then(Modifier.Companion).then(new TextAnnotatedStringElement(annotatedString, textStyle, resolver, function1, i, z, i2, i3, list, function12, null, colorProducer, textAutoSize, function13, null));
@@ -3009,37 +3022,37 @@ public final class BasicTextKt {
         return modifier.then(selectionController.getModifier()).then(new SelectableTextAnnotatedStringElement(annotatedString, textStyle, resolver, function1, i, z, i2, i3, list, function12, selectionController, colorProducer, textAutoSize, null));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:522:0x0361, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:229:0x0361, code lost:
         if (r1 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L156;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:369:0x00e5  */
-    /* JADX WARN: Removed duplicated region for block: B:370:0x00e9  */
-    /* JADX WARN: Removed duplicated region for block: B:380:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:381:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:391:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:392:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:402:0x0142  */
-    /* JADX WARN: Removed duplicated region for block: B:403:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:413:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:414:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:424:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:425:0x0187  */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x019e  */
-    /* JADX WARN: Removed duplicated region for block: B:435:0x01a1  */
-    /* JADX WARN: Removed duplicated region for block: B:445:0x01b9  */
-    /* JADX WARN: Removed duplicated region for block: B:446:0x01bc  */
-    /* JADX WARN: Removed duplicated region for block: B:458:0x01e1  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x01f4  */
-    /* JADX WARN: Removed duplicated region for block: B:580:0x0589  */
-    /* JADX WARN: Removed duplicated region for block: B:583:0x0594  */
-    /* JADX WARN: Removed duplicated region for block: B:585:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0184  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0187  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x019e  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01a1  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x01bc  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x01e1  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x01f4  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x0589  */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x0594  */
+    /* JADX WARN: Removed duplicated region for block: B:292:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0127  */
     /* JADX WARN: Type inference failed for: r5v56 */
-    /* renamed from: LayoutWithLinksAndInlineContent-11Od_4g */
+    /* renamed from: LayoutWithLinksAndInlineContent-11Od_4g  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3377,15 +3390,15 @@ public final class BasicTextKt {
                                     } else {
                                         startRestartGroup.useNode();
                                     }
-                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                                    Updater.m3874setimpl(m3867constructorimpl, textMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                                    Updater.m4604setimpl(m4597constructorimpl, textMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                        m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                        m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                     }
-                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -433564842, "C:BasicText.kt#423gt5");
                                     if (textLinkScope2 == null) {
                                         startRestartGroup.startReplaceGroup(-433557001);
@@ -3536,11 +3549,13 @@ public final class BasicTextKt {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final AnnotatedString LayoutWithLinksAndInlineContent_11Od_4g$lambda$25$lambda$24(TextLinkScope textLinkScope, AnnotatedString annotatedString) {
         AnnotatedString applyAnnotators$foundation_release;
         return (textLinkScope == null || (applyAnnotators$foundation_release = textLinkScope.applyAnnotators$foundation_release()) == null) ? annotatedString : applyAnnotators$foundation_release;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit LayoutWithLinksAndInlineContent_11Od_4g$lambda$30$lambda$29(MutableState mutableState, List list) {
         if (mutableState != null) {
             mutableState.setValue(list);
@@ -3548,6 +3563,7 @@ public final class BasicTextKt {
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit LayoutWithLinksAndInlineContent_11Od_4g$lambda$34$lambda$33(TextLinkScope textLinkScope, Function1 function1, TextLayoutResult textLayoutResult) {
         if (textLinkScope != null) {
             textLinkScope.setTextLayoutResult(textLayoutResult);
@@ -3558,6 +3574,7 @@ public final class BasicTextKt {
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final boolean LayoutWithLinksAndInlineContent_11Od_4g$lambda$37$lambda$36(TextLinkScope textLinkScope) {
         if (textLinkScope != null) {
             return textLinkScope.getShouldMeasureLinks().invoke().booleanValue();
@@ -3565,6 +3582,7 @@ public final class BasicTextKt {
         return false;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final boolean LayoutWithLinksAndInlineContent_11Od_4g$lambda$40$lambda$39(TextLinkScope textLinkScope) {
         if (textLinkScope != null) {
             return textLinkScope.getShouldMeasureLinks().invoke().booleanValue();
@@ -3572,6 +3590,7 @@ public final class BasicTextKt {
         return false;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final List LayoutWithLinksAndInlineContent_11Od_4g$lambda$42$lambda$41(MutableState mutableState) {
         if (mutableState != null) {
             return (List) mutableState.getValue();

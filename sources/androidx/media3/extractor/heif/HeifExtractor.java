@@ -7,7 +7,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SingleSampleExtractor;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class HeifExtractor implements Extractor {
     private static final int FILE_SIGNATURE_SEGMENT_LENGTH = 4;
     private static final int HEIF_FILE_SIGNATURE_PART_1 = 1718909296;

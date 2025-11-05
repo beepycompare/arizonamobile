@@ -2,11 +2,11 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class E implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        return new F(parcel.readByte() != 0, parcel.readLong());
+        return new F((C0783z) parcel.readParcelable(C0783z.class.getClassLoader()), (H) parcel.readParcelable(H.class.getClassLoader()), (B) parcel.readParcelable(B.class.getClassLoader()));
     }
 
     @Override // android.os.Parcelable.Creator

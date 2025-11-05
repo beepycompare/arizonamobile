@@ -89,7 +89,7 @@ public final class TextDelegate {
     }
 
     public /* synthetic */ TextDelegate(AnnotatedString annotatedString, TextStyle textStyle, int i, int i2, boolean z, int i3, Density density, FontFamily.Resolver resolver, List list, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, textStyle, (i4 & 4) != 0 ? Integer.MAX_VALUE : i, (i4 & 8) != 0 ? 1 : i2, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i3, density, resolver, (i4 & 256) != 0 ? CollectionsKt.emptyList() : list, null);
+        this(annotatedString, textStyle, (i4 & 4) != 0 ? Integer.MAX_VALUE : i, (i4 & 8) != 0 ? 1 : i2, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i3, density, resolver, (i4 & 256) != 0 ? CollectionsKt.emptyList() : list, null);
     }
 
     /* renamed from: getOverflow-gIe3tQ8  reason: not valid java name */
@@ -153,13 +153,13 @@ public final class TextDelegate {
     /* renamed from: layoutText-K40F9xA  reason: not valid java name */
     private final MultiParagraph m1342layoutTextK40F9xA(long j, LayoutDirection layoutDirection) {
         layoutIntrinsics(layoutDirection);
-        int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-        int m7217getMaxWidthimpl = ((this.softWrap || TextOverflow.m7190equalsimpl0(this.overflow, TextOverflow.Companion.m7200getEllipsisgIe3tQ8())) && Constraints.m7213getHasBoundedWidthimpl(j)) ? Constraints.m7217getMaxWidthimpl(j) : Integer.MAX_VALUE;
-        int i = (this.softWrap || !TextOverflow.m7190equalsimpl0(this.overflow, TextOverflow.Companion.m7200getEllipsisgIe3tQ8())) ? this.maxLines : 1;
-        if (m7219getMinWidthimpl != m7217getMaxWidthimpl) {
-            m7217getMaxWidthimpl = RangesKt.coerceIn(getMaxIntrinsicWidth(), m7219getMinWidthimpl, m7217getMaxWidthimpl);
+        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+        int m7948getMaxWidthimpl = ((this.softWrap || TextOverflow.m7921equalsimpl0(this.overflow, TextOverflow.Companion.m7931getEllipsisgIe3tQ8())) && Constraints.m7944getHasBoundedWidthimpl(j)) ? Constraints.m7948getMaxWidthimpl(j) : Integer.MAX_VALUE;
+        int i = (this.softWrap || !TextOverflow.m7921equalsimpl0(this.overflow, TextOverflow.Companion.m7931getEllipsisgIe3tQ8())) ? this.maxLines : 1;
+        if (m7950getMinWidthimpl != m7948getMaxWidthimpl) {
+            m7948getMaxWidthimpl = RangesKt.coerceIn(getMaxIntrinsicWidth(), m7950getMinWidthimpl, m7948getMaxWidthimpl);
         }
-        return new MultiParagraph(getNonNullIntrinsics(), Constraints.Companion.m7226fitPrioritizingWidthZbe2FdA(0, m7217getMaxWidthimpl, 0, Constraints.m7216getMaxHeightimpl(j)), i, this.overflow, (DefaultConstructorMarker) null);
+        return new MultiParagraph(getNonNullIntrinsics(), Constraints.Companion.m7957fitPrioritizingWidthZbe2FdA(0, m7948getMaxWidthimpl, 0, Constraints.m7947getMaxHeightimpl(j)), i, this.overflow, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: layout-NN6Ew-U$default  reason: not valid java name */
@@ -173,13 +173,13 @@ public final class TextDelegate {
     /* renamed from: layout-NN6Ew-U  reason: not valid java name */
     public final TextLayoutResult m1344layoutNN6EwU(long j, LayoutDirection layoutDirection, TextLayoutResult textLayoutResult) {
         if (textLayoutResult != null && TextLayoutHelperKt.m1383canReuse7_7YC6M(textLayoutResult, this.text, this.style, this.placeholders, this.maxLines, this.softWrap, this.overflow, this.density, layoutDirection, this.fontFamilyResolver, j)) {
-            TextLayoutInput textLayoutInput = new TextLayoutInput(textLayoutResult.getLayoutInput().getText(), this.style, textLayoutResult.getLayoutInput().getPlaceholders(), textLayoutResult.getLayoutInput().getMaxLines(), textLayoutResult.getLayoutInput().getSoftWrap(), textLayoutResult.getLayoutInput().m6693getOverflowgIe3tQ8(), textLayoutResult.getLayoutInput().getDensity(), textLayoutResult.getLayoutInput().getLayoutDirection(), textLayoutResult.getLayoutInput().getFontFamilyResolver(), j, (DefaultConstructorMarker) null);
+            TextLayoutInput textLayoutInput = new TextLayoutInput(textLayoutResult.getLayoutInput().getText(), this.style, textLayoutResult.getLayoutInput().getPlaceholders(), textLayoutResult.getLayoutInput().getMaxLines(), textLayoutResult.getLayoutInput().getSoftWrap(), textLayoutResult.getLayoutInput().m7424getOverflowgIe3tQ8(), textLayoutResult.getLayoutInput().getDensity(), textLayoutResult.getLayoutInput().getLayoutDirection(), textLayoutResult.getLayoutInput().getFontFamilyResolver(), j, (DefaultConstructorMarker) null);
             int ceilToIntPx = TextDelegateKt.ceilToIntPx(textLayoutResult.getMultiParagraph().getWidth());
-            return textLayoutResult.m6695copyO0kMr_c(textLayoutInput, ConstraintsKt.m7231constrain4WqzIAM(j, IntSize.m7430constructorimpl((TextDelegateKt.ceilToIntPx(textLayoutResult.getMultiParagraph().getHeight()) & 4294967295L) | (ceilToIntPx << 32))));
+            return textLayoutResult.m7426copyO0kMr_c(textLayoutInput, ConstraintsKt.m7962constrain4WqzIAM(j, IntSize.m8161constructorimpl((TextDelegateKt.ceilToIntPx(textLayoutResult.getMultiParagraph().getHeight()) & 4294967295L) | (ceilToIntPx << 32))));
         }
         MultiParagraph m1342layoutTextK40F9xA = m1342layoutTextK40F9xA(j, layoutDirection);
         int ceilToIntPx2 = TextDelegateKt.ceilToIntPx(m1342layoutTextK40F9xA.getWidth());
-        return new TextLayoutResult(new TextLayoutInput(this.text, this.style, this.placeholders, this.maxLines, this.softWrap, this.overflow, this.density, layoutDirection, this.fontFamilyResolver, j, (DefaultConstructorMarker) null), m1342layoutTextK40F9xA, ConstraintsKt.m7231constrain4WqzIAM(j, IntSize.m7430constructorimpl((TextDelegateKt.ceilToIntPx(m1342layoutTextK40F9xA.getHeight()) & 4294967295L) | (ceilToIntPx2 << 32))), null);
+        return new TextLayoutResult(new TextLayoutInput(this.text, this.style, this.placeholders, this.maxLines, this.softWrap, this.overflow, this.density, layoutDirection, this.fontFamilyResolver, j, (DefaultConstructorMarker) null), m1342layoutTextK40F9xA, ConstraintsKt.m7962constrain4WqzIAM(j, IntSize.m8161constructorimpl((TextDelegateKt.ceilToIntPx(m1342layoutTextK40F9xA.getHeight()) & 4294967295L) | (ceilToIntPx2 << 32))), null);
     }
 
     /* compiled from: TextDelegate.kt */

@@ -10,17 +10,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class CollectionUtils {
     private CollectionUtils() {
     }
 
     public static boolean isEmpty(Collection<?> collection) {
-        if (collection == null) {
-            return true;
-        }
-        return collection.isEmpty();
+        return collection == null || collection.isEmpty();
     }
 
     @Deprecated
@@ -29,29 +26,34 @@ public final class CollectionUtils {
     }
 
     public static <K, V> Map<K, V> mapOf(K k, V v, K k2, V v2, K k3, V v3) {
-        Map zza = zza(3, false);
-        zza.put(k, v);
-        zza.put(k2, v2);
-        zza.put(k3, v3);
-        return Collections.unmodifiableMap(zza);
+        Map zzb = zzb(3, false);
+        zzb.put(k, v);
+        zzb.put(k2, v2);
+        zzb.put(k3, v3);
+        return Collections.unmodifiableMap(zzb);
     }
 
     public static <K, V> Map<K, V> mapOfKeyValueArrays(K[] kArr, V[] vArr) {
         int length = kArr.length;
         int length2 = vArr.length;
         if (length != length2) {
-            throw new IllegalArgumentException("Key and values array lengths not equal: " + length + " != " + length2);
+            StringBuilder sb = new StringBuilder(String.valueOf(length).length() + 44 + String.valueOf(length2).length());
+            sb.append("Key and values array lengths not equal: ");
+            sb.append(length);
+            sb.append(" != ");
+            sb.append(length2);
+            throw new IllegalArgumentException(sb.toString());
         } else if (length == 0) {
             return Collections.emptyMap();
         } else {
             if (length == 1) {
                 return Collections.singletonMap(kArr[0], vArr[0]);
             }
-            Map zza = zza(length, false);
+            Map zzb = zzb(length, false);
             for (int i = 0; i < kArr.length; i++) {
-                zza.put(kArr[i], vArr[i]);
+                zzb.put(kArr[i], vArr[i]);
             }
-            return Collections.unmodifiableMap(zza);
+            return Collections.unmodifiableMap(zzb);
         }
     }
 
@@ -59,19 +61,19 @@ public final class CollectionUtils {
         if (i == 0) {
             return new ArraySet();
         }
-        return zzb(i, true);
+        return zza(i, true);
     }
 
     @Deprecated
     public static <T> Set<T> setOf(T t, T t2, T t3) {
-        Set zzb = zzb(3, false);
-        zzb.add(t);
-        zzb.add(t2);
-        zzb.add(t3);
-        return Collections.unmodifiableSet(zzb);
+        Set zza = zza(3, false);
+        zza.add(t);
+        zza.add(t2);
+        zza.add(t3);
+        return Collections.unmodifiableSet(zza);
     }
 
-    private static Map zza(int i, boolean z) {
+    private static Map zzb(int i, boolean z) {
         if (i <= 256) {
             return new ArrayMap(i);
         }
@@ -83,7 +85,7 @@ public final class CollectionUtils {
         return Collections.singletonList(t);
     }
 
-    private static Set zzb(int i, boolean z) {
+    private static Set zza(int i, boolean z) {
         if (i > (true != z ? 256 : 128)) {
             return new HashSet(i, true != z ? 1.0f : 0.75f);
         }
@@ -103,14 +105,14 @@ public final class CollectionUtils {
     }
 
     public static <K, V> Map<K, V> mapOf(K k, V v, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, K k6, V v6) {
-        Map zza = zza(6, false);
-        zza.put(k, v);
-        zza.put(k2, v2);
-        zza.put(k3, v3);
-        zza.put(k4, v4);
-        zza.put(k5, v5);
-        zza.put(k6, v6);
-        return Collections.unmodifiableMap(zza);
+        Map zzb = zzb(6, false);
+        zzb.put(k, v);
+        zzb.put(k2, v2);
+        zzb.put(k3, v3);
+        zzb.put(k4, v4);
+        zzb.put(k5, v5);
+        zzb.put(k6, v6);
+        return Collections.unmodifiableMap(zzb);
     }
 
     @Deprecated
@@ -121,26 +123,26 @@ public final class CollectionUtils {
                 if (length == 2) {
                     T t = tArr[0];
                     T t2 = tArr[1];
-                    Set zzb = zzb(2, false);
-                    zzb.add(t);
-                    zzb.add(t2);
-                    return Collections.unmodifiableSet(zzb);
+                    Set zza = zza(2, false);
+                    zza.add(t);
+                    zza.add(t2);
+                    return Collections.unmodifiableSet(zza);
                 } else if (length != 3) {
                     if (length == 4) {
                         T t3 = tArr[0];
                         T t4 = tArr[1];
                         T t5 = tArr[2];
                         T t6 = tArr[3];
-                        Set zzb2 = zzb(4, false);
-                        zzb2.add(t3);
-                        zzb2.add(t4);
-                        zzb2.add(t5);
-                        zzb2.add(t6);
-                        return Collections.unmodifiableSet(zzb2);
+                        Set zza2 = zza(4, false);
+                        zza2.add(t3);
+                        zza2.add(t4);
+                        zza2.add(t5);
+                        zza2.add(t6);
+                        return Collections.unmodifiableSet(zza2);
                     }
-                    Set zzb3 = zzb(length, false);
-                    Collections.addAll(zzb3, tArr);
-                    return Collections.unmodifiableSet(zzb3);
+                    Set zza3 = zza(length, false);
+                    Collections.addAll(zza3, tArr);
+                    return Collections.unmodifiableSet(zza3);
                 } else {
                     return setOf(tArr[0], tArr[1], tArr[2]);
                 }

@@ -94,7 +94,7 @@ final class AnchoredDraggableNode$drag$2<T> extends SuspendLambda implements Fun
             overscrollEffect2 = anchoredDraggableNode.overscrollEffect;
             Intrinsics.checkNotNull(overscrollEffect2);
             m446toOffsettuRUvjQ = anchoredDraggableNode.m446toOffsettuRUvjQ(m445toFloatk4lQ0M);
-            Offset.m4294boximpl(overscrollEffect2.mo246applyToScrollRhakbz0(m446toOffsettuRUvjQ, NestedScrollSource.Companion.m5732getUserInputWNlRxjI(), new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2$$ExternalSyntheticLambda1
+            Offset.m5024boximpl(overscrollEffect2.mo246applyToScrollRhakbz0(m446toOffsettuRUvjQ, NestedScrollSource.Companion.m6462getUserInputWNlRxjI(), new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Offset invokeSuspend$lambda$1$lambda$0;
@@ -113,11 +113,11 @@ final class AnchoredDraggableNode$drag$2<T> extends SuspendLambda implements Fun
         AnchoredDraggableState anchoredDraggableState2;
         long m446toOffsettuRUvjQ;
         anchoredDraggableState = anchoredDraggableNode.state;
-        m445toFloatk4lQ0M = anchoredDraggableNode.m445toFloatk4lQ0M(offset.m4315unboximpl());
+        m445toFloatk4lQ0M = anchoredDraggableNode.m445toFloatk4lQ0M(offset.m5045unboximpl());
         float newOffsetForDelta$foundation_release = anchoredDraggableState.newOffsetForDelta$foundation_release(m445toFloatk4lQ0M);
         anchoredDraggableState2 = anchoredDraggableNode.state;
         m446toOffsettuRUvjQ = anchoredDraggableNode.m446toOffsettuRUvjQ(newOffsetForDelta$foundation_release - anchoredDraggableState2.requireOffset());
         AnchoredDragScope.dragTo$default(anchoredDragScope, newOffsetForDelta$foundation_release, 0.0f, 2, null);
-        return Offset.m4294boximpl(m446toOffsettuRUvjQ);
+        return Offset.m5024boximpl(m446toOffsettuRUvjQ);
     }
 }

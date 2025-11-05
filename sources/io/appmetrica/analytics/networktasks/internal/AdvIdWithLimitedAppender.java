@@ -4,7 +4,7 @@ import android.net.Uri;
 import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
 import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AdvIdWithLimitedAppender implements IParamsAppender<AdvertisingIdsHolder> {
     private static void a(Uri.Builder builder, String str, String str2, AdTrackingInfo adTrackingInfo) {
         String str3 = "";

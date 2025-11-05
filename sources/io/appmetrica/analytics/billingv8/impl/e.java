@@ -7,23 +7,23 @@ import io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 import java.util.List;
 import kotlin.jvm.functions.Function0;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class e extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ f f242a;
+    public final /* synthetic */ f f255a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ QueryProductDetailsResult c;
 
     public e(f fVar, BillingResult billingResult, QueryProductDetailsResult queryProductDetailsResult) {
-        this.f242a = fVar;
+        this.f255a = fVar;
         this.b = billingResult;
         this.c = queryProductDetailsResult;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        f fVar = this.f242a;
+        f fVar = this.f255a;
         BillingResult billingResult = this.b;
         List productDetailsList = this.c.getProductDetailsList();
         fVar.getClass();
@@ -35,7 +35,7 @@ public final class e extends SafeRunnable {
             k kVar = new k(utilsProvider, function0, list, productDetailsList, dVar, fVar.g);
             dVar.b.add(kVar);
             if (fVar.b.isReady()) {
-                fVar.b.queryPurchasesAsync(QueryPurchasesParams.newBuilder().setProductType(fVar.f243a).build(), kVar);
+                fVar.b.queryPurchasesAsync(QueryPurchasesParams.newBuilder().setProductType(fVar.f256a).build(), kVar);
             } else {
                 fVar.f.a(kVar);
                 fVar.g.onUpdateFinished();
@@ -43,7 +43,7 @@ public final class e extends SafeRunnable {
         } else {
             fVar.g.onUpdateFinished();
         }
-        f fVar2 = this.f242a;
+        f fVar2 = this.f255a;
         fVar2.f.a(fVar2);
     }
 }

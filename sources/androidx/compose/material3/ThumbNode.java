@@ -3,6 +3,7 @@ package androidx.compose.material3;
 import androidx.compose.animation.core.Animatable;
 import androidx.compose.animation.core.AnimatableKt;
 import androidx.compose.animation.core.AnimationVector1D;
+import androidx.compose.animation.core.FiniteAnimationSpec;
 import androidx.compose.foundation.interaction.InteractionSource;
 import androidx.compose.material3.tokens.SwitchTokens;
 import androidx.compose.ui.Modifier;
@@ -18,10 +19,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Switch.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B\u0015\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0002\u0010\u0007J\b\u0010\u001a\u001a\u00020\u001bH\u0016J\u0006\u0010\u001c\u001a\u00020\u001bJ&\u0010\u001d\u001a\u00020\u001e*\u00020\u001f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#H\u0016ø\u0001\u0000¢\u0006\u0004\b$\u0010%R\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0014\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u0016\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\u00020\u00068VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\tR\u001c\u0010\u0019\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u0016\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006&"}, d2 = {"Landroidx/compose/material3/ThumbNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "checked", "", "(Landroidx/compose/foundation/interaction/InteractionSource;Z)V", "getChecked", "()Z", "setChecked", "(Z)V", "initialOffset", "", "initialSize", "getInteractionSource", "()Landroidx/compose/foundation/interaction/InteractionSource;", "setInteractionSource", "(Landroidx/compose/foundation/interaction/InteractionSource;)V", "isPressed", "offsetAnim", "Landroidx/compose/animation/core/Animatable;", "Landroidx/compose/animation/core/AnimationVector1D;", "shouldAutoInvalidate", "getShouldAutoInvalidate", "sizeAnim", "onAttach", "", "update", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B%\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010!\u001a\u00020\"H\u0016J#\u0010#\u001a\u00020$*\u00020%2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0016¢\u0006\u0004\b*\u0010+J\u0006\u0010,\u001a\u00020\"R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R \u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u0014\u0010\u0018\u001a\u00020\u00068VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u0011R\u000e\u0010\u001a\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u001b\u001a\u0010\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u001e\u001a\u0010\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006-"}, d2 = {"Landroidx/compose/material3/ThumbNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "checked", "", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "", "<init>", "(Landroidx/compose/foundation/interaction/InteractionSource;ZLandroidx/compose/animation/core/FiniteAnimationSpec;)V", "getInteractionSource", "()Landroidx/compose/foundation/interaction/InteractionSource;", "setInteractionSource", "(Landroidx/compose/foundation/interaction/InteractionSource;)V", "getChecked", "()Z", "setChecked", "(Z)V", "getAnimationSpec", "()Landroidx/compose/animation/core/FiniteAnimationSpec;", "setAnimationSpec", "(Landroidx/compose/animation/core/FiniteAnimationSpec;)V", "shouldAutoInvalidate", "getShouldAutoInvalidate", "isPressed", "offsetAnim", "Landroidx/compose/animation/core/Animatable;", "Landroidx/compose/animation/core/AnimationVector1D;", "sizeAnim", "initialOffset", "initialSize", "onAttach", "", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "update", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class ThumbNode extends Modifier.Node implements LayoutModifierNode {
+public final class ThumbNode extends Modifier.Node implements LayoutModifierNode {
+    private FiniteAnimationSpec<Float> animationSpec;
     private boolean checked;
     private float initialOffset = Float.NaN;
     private float initialSize = Float.NaN;
@@ -51,9 +54,18 @@ final class ThumbNode extends Modifier.Node implements LayoutModifierNode {
         this.checked = z;
     }
 
-    public ThumbNode(InteractionSource interactionSource, boolean z) {
+    public final FiniteAnimationSpec<Float> getAnimationSpec() {
+        return this.animationSpec;
+    }
+
+    public final void setAnimationSpec(FiniteAnimationSpec<Float> finiteAnimationSpec) {
+        this.animationSpec = finiteAnimationSpec;
+    }
+
+    public ThumbNode(InteractionSource interactionSource, boolean z, FiniteAnimationSpec<Float> finiteAnimationSpec) {
         this.interactionSource = interactionSource;
         this.checked = z;
+        this.animationSpec = finiteAnimationSpec;
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -68,9 +80,9 @@ final class ThumbNode extends Modifier.Node implements LayoutModifierNode {
         float f;
         float f2;
         float f3;
-        boolean z = (measurable.maxIntrinsicHeight(Constraints.m7217getMaxWidthimpl(j)) == 0 || measurable.maxIntrinsicWidth(Constraints.m7216getMaxHeightimpl(j)) == 0) ? false : true;
+        boolean z = (measurable.maxIntrinsicHeight(Constraints.m7948getMaxWidthimpl(j)) == 0 || measurable.maxIntrinsicWidth(Constraints.m7947getMaxHeightimpl(j)) == 0) ? false : true;
         if (this.isPressed) {
-            thumbDiameter = SwitchTokens.INSTANCE.m3640getPressedHandleWidthD9Ej5fM();
+            thumbDiameter = SwitchTokens.INSTANCE.m4323getPressedHandleWidthD9Ej5fM();
         } else if (z || this.checked) {
             thumbDiameter = SwitchKt.getThumbDiameter();
         } else {
@@ -79,18 +91,18 @@ final class ThumbNode extends Modifier.Node implements LayoutModifierNode {
         float f4 = measureScope.mo429toPx0680j_4(thumbDiameter);
         Animatable<Float, AnimationVector1D> animatable = this.sizeAnim;
         int floatValue = (int) (animatable != null ? animatable.getValue().floatValue() : f4);
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(floatValue, floatValue));
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(floatValue, floatValue));
         f = SwitchKt.SwitchHeight;
-        final float f5 = measureScope.mo429toPx0680j_4(Dp.m7264constructorimpl(Dp.m7264constructorimpl(f - measureScope.mo425toDpu2uoSUM(f4)) / 2.0f));
+        final float f5 = measureScope.mo429toPx0680j_4(Dp.m7995constructorimpl(Dp.m7995constructorimpl(f - measureScope.mo425toDpu2uoSUM(f4)) / 2.0f));
         f2 = SwitchKt.SwitchWidth;
-        float m7264constructorimpl = Dp.m7264constructorimpl(f2 - SwitchKt.getThumbDiameter());
+        float m7995constructorimpl = Dp.m7995constructorimpl(f2 - SwitchKt.getThumbDiameter());
         f3 = SwitchKt.ThumbPadding;
-        float f6 = measureScope.mo429toPx0680j_4(Dp.m7264constructorimpl(m7264constructorimpl - f3));
+        float f6 = measureScope.mo429toPx0680j_4(Dp.m7995constructorimpl(m7995constructorimpl - f3));
         boolean z2 = this.isPressed;
         if (z2 && this.checked) {
-            f5 = f6 - measureScope.mo429toPx0680j_4(SwitchTokens.INSTANCE.m3646getTrackOutlineWidthD9Ej5fM());
+            f5 = f6 - measureScope.mo429toPx0680j_4(SwitchTokens.INSTANCE.m4329getTrackOutlineWidthD9Ej5fM());
         } else if (z2 && !this.checked) {
-            f5 = measureScope.mo429toPx0680j_4(SwitchTokens.INSTANCE.m3646getTrackOutlineWidthD9Ej5fM());
+            f5 = measureScope.mo429toPx0680j_4(SwitchTokens.INSTANCE.m4329getTrackOutlineWidthD9Ej5fM());
         } else if (this.checked) {
             f5 = f6;
         }
@@ -106,27 +118,21 @@ final class ThumbNode extends Modifier.Node implements LayoutModifierNode {
             this.initialSize = f4;
             this.initialOffset = f5;
         }
-        return MeasureScope.layout$default(measureScope, floatValue, floatValue, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.ThumbNode$measure$3
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        return MeasureScope.layout$default(measureScope, floatValue, floatValue, null, new Function1() { // from class: androidx.compose.material3.ThumbNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                Animatable animatable4;
-                Placeable placeable = Placeable.this;
-                animatable4 = this.offsetAnim;
-                Placeable.PlacementScope.placeRelative$default(placementScope, placeable, (int) (animatable4 != null ? ((Number) animatable4.getValue()).floatValue() : f5), 0, 0.0f, 4, null);
+            public final Object invoke(Object obj) {
+                Unit measure_3p2s80s$lambda$0;
+                measure_3p2s80s$lambda$0 = ThumbNode.measure_3p2s80s$lambda$0(Placeable.this, this, f5, (Placeable.PlacementScope) obj);
+                return measure_3p2s80s$lambda$0;
             }
         }, 4, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measure_3p2s80s$lambda$0(Placeable placeable, ThumbNode thumbNode, float f, Placeable.PlacementScope placementScope) {
+        Animatable<Float, AnimationVector1D> animatable = thumbNode.offsetAnim;
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable, animatable != null ? (int) animatable.getValue().floatValue() : (int) f, 0, 0.0f, 4, null);
+        return Unit.INSTANCE;
     }
 
     public final void update() {

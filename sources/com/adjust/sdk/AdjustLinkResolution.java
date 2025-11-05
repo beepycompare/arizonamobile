@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 /* loaded from: classes3.dex */
 public final class AdjustLinkResolution {
     private static volatile ExecutorService executor = null;
-    private static final String[] expectedUrlHostSuffixArray = {"adjust.com", "adj.st", "go.link"};
+    private static final String[] expectedUrlHostSuffixArray = {"adjust.com", "adj.st", "go.link", "adjust.net.in", "adjust.cn", "adjust.world", "adjust.io"};
     private static final int maxRecursions = 10;
 
     /* loaded from: classes3.dex */

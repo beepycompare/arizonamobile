@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.ResultTransform;
 import com.google.android.gms.common.api.TransformedResult;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class OptionalPendingResultImpl<R extends Result> extends OptionalPendingResult<R> {
     private final BasePendingResult zaa;
 

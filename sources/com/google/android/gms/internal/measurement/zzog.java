@@ -2,7 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzog {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String zza(zzlh zzlhVar) {

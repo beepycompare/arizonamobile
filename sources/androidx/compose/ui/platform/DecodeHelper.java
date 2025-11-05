@@ -66,7 +66,7 @@ public final class DecodeHelper {
                                                 } else if (dataAvailable() < 8) {
                                                     break;
                                                 } else {
-                                                    mutableSpanStyle.m6430setBackground8_81llA(m6389decodeColor0d7_KjU());
+                                                    mutableSpanStyle.m7160setBackground8_81llA(m7119decodeColor0d7_KjU());
                                                 }
                                             } else if (dataAvailable() < 8) {
                                                 break;
@@ -76,12 +76,12 @@ public final class DecodeHelper {
                                         } else if (dataAvailable() < 4) {
                                             break;
                                         } else {
-                                            mutableSpanStyle.m6431setBaselineShift_isdbwI(BaselineShift.m7020boximpl(m6387decodeBaselineShifty9eOQZs()));
+                                            mutableSpanStyle.m7161setBaselineShift_isdbwI(BaselineShift.m7751boximpl(m7117decodeBaselineShifty9eOQZs()));
                                         }
                                     } else if (dataAvailable() < 5) {
                                         break;
                                     } else {
-                                        mutableSpanStyle.m6436setLetterSpacingR2X_6o(m6392decodeTextUnitXSAIIZE());
+                                        mutableSpanStyle.m7166setLetterSpacingR2X_6o(m7122decodeTextUnitXSAIIZE());
                                     }
                                 } else {
                                     mutableSpanStyle.setFontFeatureSettings(decodeString());
@@ -89,12 +89,12 @@ public final class DecodeHelper {
                             } else if (dataAvailable() < 1) {
                                 break;
                             } else {
-                                mutableSpanStyle.m6435setFontSynthesistDdu0R4(FontSynthesis.m6847boximpl(m6391decodeFontSynthesisGVVA2EU()));
+                                mutableSpanStyle.m7165setFontSynthesistDdu0R4(FontSynthesis.m7578boximpl(m7121decodeFontSynthesisGVVA2EU()));
                             }
                         } else if (dataAvailable() < 1) {
                             break;
                         } else {
-                            mutableSpanStyle.m6434setFontStylemLjRB2g(FontStyle.m6836boximpl(m6390decodeFontStyle_LCdwA()));
+                            mutableSpanStyle.m7164setFontStylemLjRB2g(FontStyle.m7567boximpl(m7120decodeFontStyle_LCdwA()));
                         }
                     } else if (dataAvailable() < 4) {
                         break;
@@ -104,37 +104,37 @@ public final class DecodeHelper {
                 } else if (dataAvailable() < 5) {
                     break;
                 } else {
-                    mutableSpanStyle.m6433setFontSizeR2X_6o(m6392decodeTextUnitXSAIIZE());
+                    mutableSpanStyle.m7163setFontSizeR2X_6o(m7122decodeTextUnitXSAIIZE());
                 }
             } else if (dataAvailable() < 8) {
                 break;
             } else {
-                mutableSpanStyle.m6432setColor8_81llA(m6389decodeColor0d7_KjU());
+                mutableSpanStyle.m7162setColor8_81llA(m7119decodeColor0d7_KjU());
             }
         }
         return mutableSpanStyle.toSpanStyle();
     }
 
     /* renamed from: decodeColor-0d7_KjU  reason: not valid java name */
-    public final long m6389decodeColor0d7_KjU() {
+    public final long m7119decodeColor0d7_KjU() {
         return AndroidColor_androidKt.fromColorLong(Color.Companion, this.parcel.readLong());
     }
 
     /* renamed from: decodeTextUnit-XSAIIZE  reason: not valid java name */
-    public final long m6392decodeTextUnitXSAIIZE() {
-        long m7492getUnspecifiedUIouoOA;
+    public final long m7122decodeTextUnitXSAIIZE() {
+        long m8223getUnspecifiedUIouoOA;
         byte decodeByte = decodeByte();
         if (decodeByte == 1) {
-            m7492getUnspecifiedUIouoOA = TextUnitType.Companion.m7491getSpUIouoOA();
+            m8223getUnspecifiedUIouoOA = TextUnitType.Companion.m8222getSpUIouoOA();
         } else if (decodeByte == 2) {
-            m7492getUnspecifiedUIouoOA = TextUnitType.Companion.m7490getEmUIouoOA();
+            m8223getUnspecifiedUIouoOA = TextUnitType.Companion.m8221getEmUIouoOA();
         } else {
-            m7492getUnspecifiedUIouoOA = TextUnitType.Companion.m7492getUnspecifiedUIouoOA();
+            m8223getUnspecifiedUIouoOA = TextUnitType.Companion.m8223getUnspecifiedUIouoOA();
         }
-        if (TextUnitType.m7486equalsimpl0(m7492getUnspecifiedUIouoOA, TextUnitType.Companion.m7492getUnspecifiedUIouoOA())) {
-            return TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
+        if (TextUnitType.m8217equalsimpl0(m8223getUnspecifiedUIouoOA, TextUnitType.Companion.m8223getUnspecifiedUIouoOA())) {
+            return TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
         }
-        return TextUnitKt.m7470TextUnitanM5pPY(decodeFloat(), m7492getUnspecifiedUIouoOA);
+        return TextUnitKt.m8201TextUnitanM5pPY(decodeFloat(), m8223getUnspecifiedUIouoOA);
     }
 
     public final FontWeight decodeFontWeight() {
@@ -142,38 +142,38 @@ public final class DecodeHelper {
     }
 
     /* renamed from: decodeFontStyle-_-LCdwA  reason: not valid java name */
-    public final int m6390decodeFontStyle_LCdwA() {
+    public final int m7120decodeFontStyle_LCdwA() {
         byte decodeByte = decodeByte();
         if (decodeByte == 0) {
-            return FontStyle.Companion.m6846getNormal_LCdwA();
+            return FontStyle.Companion.m7577getNormal_LCdwA();
         }
         if (decodeByte == 1) {
-            return FontStyle.Companion.m6845getItalic_LCdwA();
+            return FontStyle.Companion.m7576getItalic_LCdwA();
         }
-        return FontStyle.Companion.m6846getNormal_LCdwA();
+        return FontStyle.Companion.m7577getNormal_LCdwA();
     }
 
     /* renamed from: decodeFontSynthesis-GVVA2EU  reason: not valid java name */
-    public final int m6391decodeFontSynthesisGVVA2EU() {
+    public final int m7121decodeFontSynthesisGVVA2EU() {
         byte decodeByte = decodeByte();
         if (decodeByte == 0) {
-            return FontSynthesis.Companion.m6857getNoneGVVA2EU();
+            return FontSynthesis.Companion.m7588getNoneGVVA2EU();
         }
         if (decodeByte == 1) {
-            return FontSynthesis.Companion.m6856getAllGVVA2EU();
+            return FontSynthesis.Companion.m7587getAllGVVA2EU();
         }
         if (decodeByte == 3) {
-            return FontSynthesis.Companion.m6858getStyleGVVA2EU();
+            return FontSynthesis.Companion.m7589getStyleGVVA2EU();
         }
         if (decodeByte == 2) {
-            return FontSynthesis.Companion.m6859getWeightGVVA2EU();
+            return FontSynthesis.Companion.m7590getWeightGVVA2EU();
         }
-        return FontSynthesis.Companion.m6857getNoneGVVA2EU();
+        return FontSynthesis.Companion.m7588getNoneGVVA2EU();
     }
 
     /* renamed from: decodeBaselineShift-y9eOQZs  reason: not valid java name */
-    private final float m6387decodeBaselineShifty9eOQZs() {
-        return BaselineShift.m7021constructorimpl(decodeFloat());
+    private final float m7117decodeBaselineShifty9eOQZs() {
+        return BaselineShift.m7752constructorimpl(decodeFloat());
     }
 
     private final TextGeometricTransform decodeTextGeometricTransform() {
@@ -197,10 +197,10 @@ public final class DecodeHelper {
     }
 
     private final Shadow decodeShadow() {
-        long m6389decodeColor0d7_KjU = m6389decodeColor0d7_KjU();
+        long m7119decodeColor0d7_KjU = m7119decodeColor0d7_KjU();
         float decodeFloat = decodeFloat();
         float decodeFloat2 = decodeFloat();
-        return new Shadow(m6389decodeColor0d7_KjU, Offset.m4297constructorimpl((Float.floatToRawIntBits(decodeFloat2) & 4294967295L) | (Float.floatToRawIntBits(decodeFloat) << 32)), decodeFloat(), null);
+        return new Shadow(m7119decodeColor0d7_KjU, Offset.m5027constructorimpl((Float.floatToRawIntBits(decodeFloat2) & 4294967295L) | (Float.floatToRawIntBits(decodeFloat) << 32)), decodeFloat(), null);
     }
 
     private final byte decodeByte() {
@@ -212,8 +212,8 @@ public final class DecodeHelper {
     }
 
     /* renamed from: decodeULong-s-VKNKU  reason: not valid java name */
-    private final long m6388decodeULongsVKNKU() {
-        return ULong.m9285constructorimpl(this.parcel.readLong());
+    private final long m7118decodeULongsVKNKU() {
+        return ULong.m10026constructorimpl(this.parcel.readLong());
     }
 
     private final float decodeFloat() {

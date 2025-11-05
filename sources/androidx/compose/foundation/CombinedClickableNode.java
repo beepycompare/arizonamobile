@@ -140,26 +140,26 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
     protected boolean mo234onClickKeyDownEventZmokQxo(KeyEvent keyEvent) {
         boolean z;
         Job launch$default;
-        long m5695getKeyZmokQxo = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-        if (this.onLongClick == null || this.longKeyPressJobs.get(m5695getKeyZmokQxo) != null) {
+        long m6425getKeyZmokQxo = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+        if (this.onLongClick == null || this.longKeyPressJobs.get(m6425getKeyZmokQxo) != null) {
             z = false;
         } else {
             MutableLongObjectMap<Job> mutableLongObjectMap = this.longKeyPressJobs;
             launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new CombinedClickableNode$onClickKeyDownEvent$1(this, null), 3, null);
-            mutableLongObjectMap.set(m5695getKeyZmokQxo, launch$default);
+            mutableLongObjectMap.set(m6425getKeyZmokQxo, launch$default);
             z = true;
         }
-        DoubleKeyClickState doubleKeyClickState = this.doubleKeyClickStates.get(m5695getKeyZmokQxo);
+        DoubleKeyClickState doubleKeyClickState = this.doubleKeyClickStates.get(m6425getKeyZmokQxo);
         if (doubleKeyClickState != null) {
             if (doubleKeyClickState.getJob().isActive()) {
                 Job.DefaultImpls.cancel$default(doubleKeyClickState.getJob(), (CancellationException) null, 1, (Object) null);
                 if (!doubleKeyClickState.getDoubleTapMinTimeMillisElapsed()) {
                     getOnClick().invoke();
-                    this.doubleKeyClickStates.remove(m5695getKeyZmokQxo);
+                    this.doubleKeyClickStates.remove(m6425getKeyZmokQxo);
                     return z;
                 }
             } else {
-                this.doubleKeyClickStates.remove(m5695getKeyZmokQxo);
+                this.doubleKeyClickStates.remove(m6425getKeyZmokQxo);
             }
         }
         return z;
@@ -170,10 +170,10 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
     protected boolean mo235onClickKeyUpEventZmokQxo(KeyEvent keyEvent) {
         Function0<Unit> function0;
         Job launch$default;
-        long m5695getKeyZmokQxo = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
+        long m6425getKeyZmokQxo = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
         boolean z = false;
-        if (this.longKeyPressJobs.get(m5695getKeyZmokQxo) != null) {
-            Job job = this.longKeyPressJobs.get(m5695getKeyZmokQxo);
+        if (this.longKeyPressJobs.get(m6425getKeyZmokQxo) != null) {
+            Job job = this.longKeyPressJobs.get(m6425getKeyZmokQxo);
             if (job != null) {
                 if (job.isActive()) {
                     Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
@@ -181,18 +181,18 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
                     z = true;
                 }
             }
-            this.longKeyPressJobs.remove(m5695getKeyZmokQxo);
+            this.longKeyPressJobs.remove(m6425getKeyZmokQxo);
         }
         if (this.onDoubleClick != null) {
-            if (this.doubleKeyClickStates.get(m5695getKeyZmokQxo) != null) {
+            if (this.doubleKeyClickStates.get(m6425getKeyZmokQxo) != null) {
                 if (!z && (function0 = this.onDoubleClick) != null) {
                     function0.invoke();
                 }
-                this.doubleKeyClickStates.remove(m5695getKeyZmokQxo);
+                this.doubleKeyClickStates.remove(m6425getKeyZmokQxo);
             } else if (!z) {
                 MutableLongObjectMap<DoubleKeyClickState> mutableLongObjectMap = this.doubleKeyClickStates;
-                launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new CombinedClickableNode$onClickKeyUpEvent$2(this, m5695getKeyZmokQxo, null), 3, null);
-                mutableLongObjectMap.set(m5695getKeyZmokQxo, new DoubleKeyClickState(launch$default));
+                launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new CombinedClickableNode$onClickKeyUpEvent$2(this, m6425getKeyZmokQxo, null), 3, null);
+                mutableLongObjectMap.set(m6425getKeyZmokQxo, new DoubleKeyClickState(launch$default));
             }
         } else if (!z) {
             getOnClick().invoke();

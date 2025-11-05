@@ -1,36 +1,62 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import android.os.Handler;
-import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
-import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
-/* loaded from: classes4.dex */
-public final class d0 implements P {
+import android.app.ActivityManager;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
+/* loaded from: classes3.dex */
+public final class d0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1318a;
-    public final Q b;
-    public final Handler c;
-    public volatile boolean d;
-    public volatile C0783m e;
-    public final a0 f = new a0(this);
+    public final /* synthetic */ g0 f1358a;
 
-    public d0(ClientContext clientContext, Q q) {
-        this.f1318a = clientContext;
-        this.b = q;
-        this.c = clientContext.getClientExecutorProvider().getDefaultExecutor().getHandler();
+    public d0(g0 g0Var) {
+        this.f1358a = g0Var;
     }
 
-    @Override // io.appmetrica.analytics.screenshot.impl.P
-    public final void a(C0782l c0782l) {
-        this.e = c0782l != null ? c0782l.b : null;
+    public static final Boolean a(g0 g0Var, d0 d0Var, C0772n c0772n, ActivityManager activityManager) {
+        Object obj;
+        List<ActivityManager.RunningServiceInfo> runningServices = activityManager.getRunningServices(200);
+        if (runningServices == null) {
+            runningServices = CollectionsKt.emptyList();
+        }
+        for (ActivityManager.RunningServiceInfo runningServiceInfo : runningServices) {
+        }
+        Iterator<T> it = runningServices.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            if (Intrinsics.areEqual(((ActivityManager.RunningServiceInfo) obj).process, "com.android.systemui:screenshot")) {
+                break;
+            }
+        }
+        if (((ActivityManager.RunningServiceInfo) obj) != null) {
+            ((C0781x) g0Var.b).a("ServiceScreenshotCaptor");
+        }
+        return Boolean.valueOf(g0Var.c.postDelayed(d0Var, TimeUnit.SECONDS.toMillis(c0772n.b)));
     }
 
-    public final String b() {
-        return "ServiceScreenshotCaptor";
-    }
-
-    @Override // io.appmetrica.analytics.screenshot.impl.P
-    public final void a() {
-        this.f1318a.getActivityLifecycleRegistry().registerListener(new c0(this), ActivityEvent.RESUMED, ActivityEvent.PAUSED);
+    @Override // java.lang.Runnable
+    public final void run() {
+        final C0772n c0772n = this.f1358a.e;
+        if (this.f1358a.d || c0772n == null || !c0772n.f1372a) {
+            return;
+        }
+        Context context = this.f1358a.f1362a.getContext();
+        final g0 g0Var = this.f1358a;
+        SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "running service screenshot captor", "ActivityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.screenshot.impl.d0$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+            public final Object apply(Object obj) {
+                return d0.a(g0.this, this, c0772n, (ActivityManager) obj);
+            }
+        });
     }
 }

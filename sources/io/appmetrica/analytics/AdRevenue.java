@@ -1,11 +1,11 @@
 package io.appmetrica.analytics;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.ro;
+import io.appmetrica.analytics.impl.no;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public class AdRevenue {
     public final String adNetwork;
     public final String adPlacementId;
@@ -18,11 +18,11 @@ public class AdRevenue {
     public final Map<String, String> payload;
     public final String precision;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final BigDecimal f190a;
+        private final BigDecimal f175a;
         private final Currency b;
         private AdType c;
         private String d;
@@ -38,7 +38,7 @@ public class AdRevenue {
         }
 
         public AdRevenue build() {
-            return new AdRevenue(this.f190a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, 0);
+            return new AdRevenue(this.f175a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, 0);
         }
 
         public Builder withAdNetwork(String str) {
@@ -82,7 +82,7 @@ public class AdRevenue {
         }
 
         private Builder(BigDecimal bigDecimal, Currency currency) {
-            this.f190a = bigDecimal;
+            this.f175a = bigDecimal;
             this.b = currency;
         }
     }
@@ -109,10 +109,10 @@ public class AdRevenue {
     }
 
     public static Builder newBuilder(long j, Currency currency) {
-        return new Builder(ro.a(j), currency, 0);
+        return new Builder(no.a(j), currency, 0);
     }
 
     public static Builder newBuilder(double d, Currency currency) {
-        return new Builder(new BigDecimal(ro.a(d)), currency, 0);
+        return new Builder(new BigDecimal(no.a(d)), currency, 0);
     }
 }

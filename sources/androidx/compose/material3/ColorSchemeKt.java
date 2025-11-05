@@ -13,31 +13,34 @@ import androidx.compose.ui.graphics.ColorKt;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.common.C;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import io.appmetrica.analytics.impl.O2;
+import io.appmetrica.analytics.impl.H2;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.functions.Function0;
 /* compiled from: ColorScheme.kt */
-@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b5\n\u0002\u0018\u0002\n\u0002\b\n\u001a\u001a\u0010\u000f\u001a\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\b\u0011\u0010\u0012\u001a´\u0002\u0010\u0013\u001a\u00020\u00042\b\b\u0002\u0010\u0014\u001a\u00020\u000b2\b\b\u0002\u0010\u0015\u001a\u00020\u000b2\b\b\u0002\u0010\u0016\u001a\u00020\u000b2\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u000b2\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\u001a\u001a\u00020\u000b2\b\b\u0002\u0010\u001b\u001a\u00020\u000b2\b\b\u0002\u0010\u001c\u001a\u00020\u000b2\b\b\u0002\u0010\u001d\u001a\u00020\u000b2\b\b\u0002\u0010\u001e\u001a\u00020\u000b2\b\b\u0002\u0010\u001f\u001a\u00020\u000b2\b\b\u0002\u0010 \u001a\u00020\u000b2\b\b\u0002\u0010!\u001a\u00020\u000b2\b\b\u0002\u0010\"\u001a\u00020\u000b2\b\b\u0002\u0010#\u001a\u00020\u000b2\b\b\u0002\u0010$\u001a\u00020\u000b2\b\b\u0002\u0010%\u001a\u00020\u000b2\b\b\u0002\u0010&\u001a\u00020\u000b2\b\b\u0002\u0010'\u001a\u00020\u000b2\b\b\u0002\u0010(\u001a\u00020\u000b2\b\b\u0002\u0010)\u001a\u00020\u000b2\b\b\u0002\u0010*\u001a\u00020\u000b2\b\b\u0002\u0010+\u001a\u00020\u000b2\b\b\u0002\u0010,\u001a\u00020\u000b2\b\b\u0002\u0010-\u001a\u00020\u000b2\b\b\u0002\u0010.\u001a\u00020\u000b2\b\b\u0002\u0010/\u001a\u00020\u000b2\b\b\u0002\u00100\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\b1\u00102\u001aø\u0002\u0010\u0013\u001a\u00020\u00042\b\b\u0002\u0010\u0014\u001a\u00020\u000b2\b\b\u0002\u0010\u0015\u001a\u00020\u000b2\b\b\u0002\u0010\u0016\u001a\u00020\u000b2\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u000b2\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\u001a\u001a\u00020\u000b2\b\b\u0002\u0010\u001b\u001a\u00020\u000b2\b\b\u0002\u0010\u001c\u001a\u00020\u000b2\b\b\u0002\u0010\u001d\u001a\u00020\u000b2\b\b\u0002\u0010\u001e\u001a\u00020\u000b2\b\b\u0002\u0010\u001f\u001a\u00020\u000b2\b\b\u0002\u0010 \u001a\u00020\u000b2\b\b\u0002\u0010!\u001a\u00020\u000b2\b\b\u0002\u0010\"\u001a\u00020\u000b2\b\b\u0002\u0010#\u001a\u00020\u000b2\b\b\u0002\u0010$\u001a\u00020\u000b2\b\b\u0002\u0010%\u001a\u00020\u000b2\b\b\u0002\u0010&\u001a\u00020\u000b2\b\b\u0002\u0010'\u001a\u00020\u000b2\b\b\u0002\u0010(\u001a\u00020\u000b2\b\b\u0002\u0010)\u001a\u00020\u000b2\b\b\u0002\u0010*\u001a\u00020\u000b2\b\b\u0002\u0010+\u001a\u00020\u000b2\b\b\u0002\u0010,\u001a\u00020\u000b2\b\b\u0002\u0010-\u001a\u00020\u000b2\b\b\u0002\u0010.\u001a\u00020\u000b2\b\b\u0002\u0010/\u001a\u00020\u000b2\b\b\u0002\u00100\u001a\u00020\u000b2\b\b\u0002\u00103\u001a\u00020\u000b2\b\b\u0002\u00104\u001a\u00020\u000b2\b\b\u0002\u00105\u001a\u00020\u000b2\b\b\u0002\u00106\u001a\u00020\u000b2\b\b\u0002\u00107\u001a\u00020\u000b2\b\b\u0002\u00108\u001a\u00020\u000b2\b\b\u0002\u00109\u001a\u00020\u000bø\u0001\u0000¢\u0006\u0004\b:\u0010;\u001a\b\u0010<\u001a\u00020\u0004H\u0000\u001a´\u0002\u0010=\u001a\u00020\u00042\b\b\u0002\u0010\u0014\u001a\u00020\u000b2\b\b\u0002\u0010\u0015\u001a\u00020\u000b2\b\b\u0002\u0010\u0016\u001a\u00020\u000b2\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u000b2\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\u001a\u001a\u00020\u000b2\b\b\u0002\u0010\u001b\u001a\u00020\u000b2\b\b\u0002\u0010\u001c\u001a\u00020\u000b2\b\b\u0002\u0010\u001d\u001a\u00020\u000b2\b\b\u0002\u0010\u001e\u001a\u00020\u000b2\b\b\u0002\u0010\u001f\u001a\u00020\u000b2\b\b\u0002\u0010 \u001a\u00020\u000b2\b\b\u0002\u0010!\u001a\u00020\u000b2\b\b\u0002\u0010\"\u001a\u00020\u000b2\b\b\u0002\u0010#\u001a\u00020\u000b2\b\b\u0002\u0010$\u001a\u00020\u000b2\b\b\u0002\u0010%\u001a\u00020\u000b2\b\b\u0002\u0010&\u001a\u00020\u000b2\b\b\u0002\u0010'\u001a\u00020\u000b2\b\b\u0002\u0010(\u001a\u00020\u000b2\b\b\u0002\u0010)\u001a\u00020\u000b2\b\b\u0002\u0010*\u001a\u00020\u000b2\b\b\u0002\u0010+\u001a\u00020\u000b2\b\b\u0002\u0010,\u001a\u00020\u000b2\b\b\u0002\u0010-\u001a\u00020\u000b2\b\b\u0002\u0010.\u001a\u00020\u000b2\b\b\u0002\u0010/\u001a\u00020\u000b2\b\b\u0002\u00100\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\b>\u00102\u001aø\u0002\u0010=\u001a\u00020\u00042\b\b\u0002\u0010\u0014\u001a\u00020\u000b2\b\b\u0002\u0010\u0015\u001a\u00020\u000b2\b\b\u0002\u0010\u0016\u001a\u00020\u000b2\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u000b2\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\u001a\u001a\u00020\u000b2\b\b\u0002\u0010\u001b\u001a\u00020\u000b2\b\b\u0002\u0010\u001c\u001a\u00020\u000b2\b\b\u0002\u0010\u001d\u001a\u00020\u000b2\b\b\u0002\u0010\u001e\u001a\u00020\u000b2\b\b\u0002\u0010\u001f\u001a\u00020\u000b2\b\b\u0002\u0010 \u001a\u00020\u000b2\b\b\u0002\u0010!\u001a\u00020\u000b2\b\b\u0002\u0010\"\u001a\u00020\u000b2\b\b\u0002\u0010#\u001a\u00020\u000b2\b\b\u0002\u0010$\u001a\u00020\u000b2\b\b\u0002\u0010%\u001a\u00020\u000b2\b\b\u0002\u0010&\u001a\u00020\u000b2\b\b\u0002\u0010'\u001a\u00020\u000b2\b\b\u0002\u0010(\u001a\u00020\u000b2\b\b\u0002\u0010)\u001a\u00020\u000b2\b\b\u0002\u0010*\u001a\u00020\u000b2\b\b\u0002\u0010+\u001a\u00020\u000b2\b\b\u0002\u0010,\u001a\u00020\u000b2\b\b\u0002\u0010-\u001a\u00020\u000b2\b\b\u0002\u0010.\u001a\u00020\u000b2\b\b\u0002\u0010/\u001a\u00020\u000b2\b\b\u0002\u00100\u001a\u00020\u000b2\b\b\u0002\u00103\u001a\u00020\u000b2\b\b\u0002\u00104\u001a\u00020\u000b2\b\b\u0002\u00105\u001a\u00020\u000b2\b\b\u0002\u00106\u001a\u00020\u000b2\b\b\u0002\u00107\u001a\u00020\u000b2\b\b\u0002\u00108\u001a\u00020\u000b2\b\b\u0002\u00109\u001a\u00020\u000bø\u0001\u0000¢\u0006\u0004\b?\u0010;\u001a&\u0010@\u001a\u00020\u000b*\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u000b2\u0006\u0010A\u001a\u00020BH\u0001ø\u0001\u0000¢\u0006\u0004\bC\u0010D\u001a\u001e\u0010\u000f\u001a\u00020\u000b*\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\bE\u0010F\u001a\u0019\u0010G\u001a\u00020\u000b*\u00020\u00042\u0006\u0010\n\u001a\u00020\fH\u0001¢\u0006\u0002\u0010H\u001a\u001e\u0010I\u001a\u00020\u000b*\u00020\u00042\u0006\u0010A\u001a\u00020BH\u0007ø\u0001\u0000¢\u0006\u0004\bJ\u0010K\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u001a\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0017\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\b0\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0006\"\u0018\u0010\n\u001a\u00020\u000b*\u00020\f8AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000e\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006L"}, d2 = {"DisabledAlpha", "", "LocalColorScheme", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/compose/material3/ColorScheme;", "getLocalColorScheme", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "LocalTonalElevationEnabled", "", "getLocalTonalElevationEnabled", "value", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getValue", "(Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;Landroidx/compose/runtime/Composer;I)J", "contentColorFor", TtmlNode.ATTR_TTS_BACKGROUND_COLOR, "contentColorFor-ek8zF_U", "(JLandroidx/compose/runtime/Composer;I)J", "darkColorScheme", "primary", "onPrimary", "primaryContainer", "onPrimaryContainer", "inversePrimary", "secondary", "onSecondary", "secondaryContainer", "onSecondaryContainer", "tertiary", "onTertiary", "tertiaryContainer", "onTertiaryContainer", O2.g, "onBackground", "surface", "onSurface", "surfaceVariant", "onSurfaceVariant", "surfaceTint", "inverseSurface", "inverseOnSurface", "error", "onError", "errorContainer", "onErrorContainer", "outline", "outlineVariant", "scrim", "darkColorScheme-G1PFc-w", "(JJJJJJJJJJJJJJJJJJJJJJJJJJJJJ)Landroidx/compose/material3/ColorScheme;", "surfaceBright", "surfaceContainer", "surfaceContainerHigh", "surfaceContainerHighest", "surfaceContainerLow", "surfaceContainerLowest", "surfaceDim", "darkColorScheme-C-Xl9yA", "(JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ)Landroidx/compose/material3/ColorScheme;", "expressiveLightColorScheme", "lightColorScheme", "lightColorScheme-G1PFc-w", "lightColorScheme-C-Xl9yA", "applyTonalElevation", "elevation", "Landroidx/compose/ui/unit/Dp;", "applyTonalElevation-RFCenO8", "(Landroidx/compose/material3/ColorScheme;JFLandroidx/compose/runtime/Composer;I)J", "contentColorFor-4WTKRHQ", "(Landroidx/compose/material3/ColorScheme;J)J", "fromToken", "(Landroidx/compose/material3/ColorScheme;Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;)J", "surfaceColorAtElevation", "surfaceColorAtElevation-3ABfNKs", "(Landroidx/compose/material3/ColorScheme;F)J", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b;\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0002\u001aí\u0003\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u00032\b\b\u0002\u0010\u000f\u001a\u00020\u00032\b\b\u0002\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\u0012\u001a\u00020\u00032\b\b\u0002\u0010\u0013\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\b\b\u0002\u0010\u0016\u001a\u00020\u00032\b\b\u0002\u0010\u0017\u001a\u00020\u00032\b\b\u0002\u0010\u0018\u001a\u00020\u00032\b\b\u0002\u0010\u0019\u001a\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u00032\b\b\u0002\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u00032\b\b\u0002\u0010\u001e\u001a\u00020\u00032\b\b\u0002\u0010\u001f\u001a\u00020\u00032\b\b\u0002\u0010 \u001a\u00020\u00032\b\b\u0002\u0010!\u001a\u00020\u00032\b\b\u0002\u0010\"\u001a\u00020\u00032\b\b\u0002\u0010#\u001a\u00020\u00032\b\b\u0002\u0010$\u001a\u00020\u00032\b\b\u0002\u0010%\u001a\u00020\u00032\b\b\u0002\u0010&\u001a\u00020\u00032\b\b\u0002\u0010'\u001a\u00020\u00032\b\b\u0002\u0010(\u001a\u00020\u00032\b\b\u0002\u0010)\u001a\u00020\u00032\b\b\u0002\u0010*\u001a\u00020\u00032\b\b\u0002\u0010+\u001a\u00020\u00032\b\b\u0002\u0010,\u001a\u00020\u00032\b\b\u0002\u0010-\u001a\u00020\u00032\b\b\u0002\u0010.\u001a\u00020\u00032\b\b\u0002\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\u00032\b\b\u0002\u00101\u001a\u00020\u00032\b\b\u0002\u00102\u001a\u00020\u0003¢\u0006\u0004\b3\u00104\u001aí\u0003\u00105\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u00032\b\b\u0002\u0010\u000f\u001a\u00020\u00032\b\b\u0002\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\u0012\u001a\u00020\u00032\b\b\u0002\u0010\u0013\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\b\b\u0002\u0010\u0016\u001a\u00020\u00032\b\b\u0002\u0010\u0017\u001a\u00020\u00032\b\b\u0002\u0010\u0018\u001a\u00020\u00032\b\b\u0002\u0010\u0019\u001a\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u00032\b\b\u0002\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u00032\b\b\u0002\u0010\u001e\u001a\u00020\u00032\b\b\u0002\u0010\u001f\u001a\u00020\u00032\b\b\u0002\u0010 \u001a\u00020\u00032\b\b\u0002\u0010!\u001a\u00020\u00032\b\b\u0002\u0010\"\u001a\u00020\u00032\b\b\u0002\u0010#\u001a\u00020\u00032\b\b\u0002\u0010$\u001a\u00020\u00032\b\b\u0002\u0010%\u001a\u00020\u00032\b\b\u0002\u0010&\u001a\u00020\u00032\b\b\u0002\u0010'\u001a\u00020\u00032\b\b\u0002\u0010(\u001a\u00020\u00032\b\b\u0002\u0010)\u001a\u00020\u00032\b\b\u0002\u0010*\u001a\u00020\u00032\b\b\u0002\u0010+\u001a\u00020\u00032\b\b\u0002\u0010,\u001a\u00020\u00032\b\b\u0002\u0010-\u001a\u00020\u00032\b\b\u0002\u0010.\u001a\u00020\u00032\b\b\u0002\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\u00032\b\b\u0002\u00101\u001a\u00020\u00032\b\b\u0002\u00102\u001a\u00020\u0003¢\u0006\u0004\b6\u00104\u001a\u001b\u00107\u001a\u00020\u0003*\u00020\u00012\u0006\u00108\u001a\u00020\u0003H\u0007¢\u0006\u0004\b9\u0010:\u001a\u0017\u00107\u001a\u00020\u00032\u0006\u00108\u001a\u00020\u0003H\u0007¢\u0006\u0004\b;\u0010<\u001a\u001b\u0010=\u001a\u00020\u0003*\u00020\u00012\u0006\u0010>\u001a\u00020?H\u0007¢\u0006\u0004\b@\u0010A\u001a\b\u0010B\u001a\u00020\u0001H\u0000\u001a÷\u0002\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u00032\b\b\u0002\u0010\u000f\u001a\u00020\u00032\b\b\u0002\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\u0012\u001a\u00020\u00032\b\b\u0002\u0010\u0013\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\b\b\u0002\u0010\u0016\u001a\u00020\u00032\b\b\u0002\u0010\u0017\u001a\u00020\u00032\b\b\u0002\u0010\u0018\u001a\u00020\u00032\b\b\u0002\u0010\u0019\u001a\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u00032\b\b\u0002\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u00032\b\b\u0002\u0010\u001e\u001a\u00020\u00032\b\b\u0002\u0010\u001f\u001a\u00020\u00032\b\b\u0002\u0010 \u001a\u00020\u00032\b\b\u0002\u0010!\u001a\u00020\u00032\b\b\u0002\u0010\"\u001a\u00020\u00032\b\b\u0002\u0010#\u001a\u00020\u00032\b\b\u0002\u0010$\u001a\u00020\u00032\b\b\u0002\u0010%\u001a\u00020\u00032\b\b\u0002\u0010&\u001a\u00020\u0003H\u0007¢\u0006\u0004\bC\u0010D\u001a±\u0002\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u00032\b\b\u0002\u0010\u000f\u001a\u00020\u00032\b\b\u0002\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\u0012\u001a\u00020\u00032\b\b\u0002\u0010\u0013\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\b\b\u0002\u0010\u0016\u001a\u00020\u00032\b\b\u0002\u0010\u0017\u001a\u00020\u00032\b\b\u0002\u0010\u0018\u001a\u00020\u00032\b\b\u0002\u0010\u0019\u001a\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u00032\b\b\u0002\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u00032\b\b\u0002\u0010\u001e\u001a\u00020\u00032\b\b\u0002\u0010\u001f\u001a\u00020\u0003H\u0007¢\u0006\u0004\bE\u0010F\u001a÷\u0002\u00105\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u00032\b\b\u0002\u0010\u000f\u001a\u00020\u00032\b\b\u0002\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\u0012\u001a\u00020\u00032\b\b\u0002\u0010\u0013\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\b\b\u0002\u0010\u0016\u001a\u00020\u00032\b\b\u0002\u0010\u0017\u001a\u00020\u00032\b\b\u0002\u0010\u0018\u001a\u00020\u00032\b\b\u0002\u0010\u0019\u001a\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u00032\b\b\u0002\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u00032\b\b\u0002\u0010\u001e\u001a\u00020\u00032\b\b\u0002\u0010\u001f\u001a\u00020\u00032\b\b\u0002\u0010 \u001a\u00020\u00032\b\b\u0002\u0010!\u001a\u00020\u00032\b\b\u0002\u0010\"\u001a\u00020\u00032\b\b\u0002\u0010#\u001a\u00020\u00032\b\b\u0002\u0010$\u001a\u00020\u00032\b\b\u0002\u0010%\u001a\u00020\u00032\b\b\u0002\u0010&\u001a\u00020\u0003H\u0007¢\u0006\u0004\bG\u0010D\u001a±\u0002\u00105\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u00032\b\b\u0002\u0010\u000f\u001a\u00020\u00032\b\b\u0002\u0010\u0010\u001a\u00020\u00032\b\b\u0002\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\u0012\u001a\u00020\u00032\b\b\u0002\u0010\u0013\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\b\b\u0002\u0010\u0016\u001a\u00020\u00032\b\b\u0002\u0010\u0017\u001a\u00020\u00032\b\b\u0002\u0010\u0018\u001a\u00020\u00032\b\b\u0002\u0010\u0019\u001a\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u00032\b\b\u0002\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u00032\b\b\u0002\u0010\u001e\u001a\u00020\u00032\b\b\u0002\u0010\u001f\u001a\u00020\u0003H\u0007¢\u0006\u0004\bH\u0010F\u001a\u0019\u0010I\u001a\u00020\u0003*\u00020\u00012\u0006\u0010J\u001a\u00020KH\u0001¢\u0006\u0002\u0010L\u001a#\u0010U\u001a\u00020\u0003*\u00020\u00012\u0006\u00108\u001a\u00020\u00032\u0006\u0010>\u001a\u00020?H\u0001¢\u0006\u0004\bV\u0010W\"\u001a\u0010M\u001a\b\u0012\u0004\u0012\u00020\u00010NX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bO\u0010P\"\u000e\u0010Q\u001a\u00020RX\u0080T¢\u0006\u0002\n\u0000\"\u0018\u0010J\u001a\u00020\u0003*\u00020K8AX\u0080\u0004¢\u0006\u0006\u001a\u0004\bS\u0010T\"\u0017\u0010X\u001a\b\u0012\u0004\u0012\u00020Y0N¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010P¨\u0006["}, d2 = {"lightColorScheme", "Landroidx/compose/material3/ColorScheme;", "primary", "Landroidx/compose/ui/graphics/Color;", "onPrimary", "primaryContainer", "onPrimaryContainer", "inversePrimary", "secondary", "onSecondary", "secondaryContainer", "onSecondaryContainer", "tertiary", "onTertiary", "tertiaryContainer", "onTertiaryContainer", H2.g, "onBackground", "surface", "onSurface", "surfaceVariant", "onSurfaceVariant", "surfaceTint", "inverseSurface", "inverseOnSurface", "error", "onError", "errorContainer", "onErrorContainer", "outline", "outlineVariant", "scrim", "surfaceBright", "surfaceContainer", "surfaceContainerHigh", "surfaceContainerHighest", "surfaceContainerLow", "surfaceContainerLowest", "surfaceDim", "primaryFixed", "primaryFixedDim", "onPrimaryFixed", "onPrimaryFixedVariant", "secondaryFixed", "secondaryFixedDim", "onSecondaryFixed", "onSecondaryFixedVariant", "tertiaryFixed", "tertiaryFixedDim", "onTertiaryFixed", "onTertiaryFixedVariant", "lightColorScheme-_VG5OTI", "(JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ)Landroidx/compose/material3/ColorScheme;", "darkColorScheme", "darkColorScheme-_VG5OTI", "contentColorFor", TtmlNode.ATTR_TTS_BACKGROUND_COLOR, "contentColorFor-4WTKRHQ", "(Landroidx/compose/material3/ColorScheme;J)J", "contentColorFor-ek8zF_U", "(JLandroidx/compose/runtime/Composer;I)J", "surfaceColorAtElevation", "elevation", "Landroidx/compose/ui/unit/Dp;", "surfaceColorAtElevation-3ABfNKs", "(Landroidx/compose/material3/ColorScheme;F)J", "expressiveLightColorScheme", "lightColorScheme-C-Xl9yA", "(JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ)Landroidx/compose/material3/ColorScheme;", "lightColorScheme-G1PFc-w", "(JJJJJJJJJJJJJJJJJJJJJJJJJJJJJ)Landroidx/compose/material3/ColorScheme;", "darkColorScheme-C-Xl9yA", "darkColorScheme-G1PFc-w", "fromToken", "value", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "(Landroidx/compose/material3/ColorScheme;Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;)J", "LocalColorScheme", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "getLocalColorScheme", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "DisabledAlpha", "", "getValue", "(Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;Landroidx/compose/runtime/Composer;I)J", "applyTonalElevation", "applyTonalElevation-RFCenO8", "(Landroidx/compose/material3/ColorScheme;JFLandroidx/compose/runtime/Composer;I)J", "LocalTonalElevationEnabled", "", "getLocalTonalElevationEnabled", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ColorSchemeKt {
     public static final float DisabledAlpha = 0.38f;
-    private static final ProvidableCompositionLocal<ColorScheme> LocalColorScheme = CompositionLocalKt.staticCompositionLocalOf(new Function0<ColorScheme>() { // from class: androidx.compose.material3.ColorSchemeKt$LocalColorScheme$1
-        /* JADX WARN: Can't rename method to resolve collision */
+    private static final ProvidableCompositionLocal<ColorScheme> LocalColorScheme = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.material3.ColorSchemeKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
-        public final ColorScheme invoke() {
-            return ColorSchemeKt.m2056lightColorSchemeCXl9yA$default(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -1, 15, null);
+        public final Object invoke() {
+            ColorScheme LocalColorScheme$lambda$1;
+            LocalColorScheme$lambda$1 = ColorSchemeKt.LocalColorScheme$lambda$1();
+            return LocalColorScheme$lambda$1;
         }
     });
-    private static final ProvidableCompositionLocal<Boolean> LocalTonalElevationEnabled = CompositionLocalKt.staticCompositionLocalOf(new Function0<Boolean>() { // from class: androidx.compose.material3.ColorSchemeKt$LocalTonalElevationEnabled$1
-        /* JADX WARN: Can't rename method to resolve collision */
+    private static final ProvidableCompositionLocal<Boolean> LocalTonalElevationEnabled = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.material3.ColorSchemeKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
-        public final Boolean invoke() {
-            return true;
+        public final Object invoke() {
+            boolean LocalTonalElevationEnabled$lambda$2;
+            LocalTonalElevationEnabled$lambda$2 = ColorSchemeKt.LocalTonalElevationEnabled$lambda$2();
+            return Boolean.valueOf(LocalTonalElevationEnabled$lambda$2);
         }
     });
 
     /* compiled from: ColorScheme.kt */
-    @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -188,364 +191,541 @@ public final class ColorSchemeKt {
                 iArr[ColorSchemeKeyTokens.TertiaryContainer.ordinal()] = 36;
             } catch (NoSuchFieldError unused36) {
             }
+            try {
+                iArr[ColorSchemeKeyTokens.PrimaryFixed.ordinal()] = 37;
+            } catch (NoSuchFieldError unused37) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.PrimaryFixedDim.ordinal()] = 38;
+            } catch (NoSuchFieldError unused38) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.OnPrimaryFixed.ordinal()] = 39;
+            } catch (NoSuchFieldError unused39) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.OnPrimaryFixedVariant.ordinal()] = 40;
+            } catch (NoSuchFieldError unused40) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.SecondaryFixed.ordinal()] = 41;
+            } catch (NoSuchFieldError unused41) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.SecondaryFixedDim.ordinal()] = 42;
+            } catch (NoSuchFieldError unused42) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.OnSecondaryFixed.ordinal()] = 43;
+            } catch (NoSuchFieldError unused43) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.OnSecondaryFixedVariant.ordinal()] = 44;
+            } catch (NoSuchFieldError unused44) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.TertiaryFixed.ordinal()] = 45;
+            } catch (NoSuchFieldError unused45) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.TertiaryFixedDim.ordinal()] = 46;
+            } catch (NoSuchFieldError unused46) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.OnTertiaryFixed.ordinal()] = 47;
+            } catch (NoSuchFieldError unused47) {
+            }
+            try {
+                iArr[ColorSchemeKeyTokens.OnTertiaryFixedVariant.ordinal()] = 48;
+            } catch (NoSuchFieldError unused48) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
-    /* renamed from: lightColorScheme-C-Xl9yA$default */
-    public static /* synthetic */ ColorScheme m2056lightColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
-        long m3232getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3232getPrimary0d7_KjU() : j;
-        long m3216getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3216getOnPrimary0d7_KjU() : j2;
-        long m3233getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3233getPrimaryContainer0d7_KjU() : j3;
-        long m3217getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3217getOnPrimaryContainer0d7_KjU() : j4;
-        long m3211getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3211getInversePrimary0d7_KjU() : j5;
-        long m3237getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3237getSecondary0d7_KjU() : j6;
-        long m3220getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3220getOnSecondary0d7_KjU() : j7;
-        long m3238getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3238getSecondaryContainer0d7_KjU() : j8;
-        long j37 = m3232getPrimary0d7_KjU;
-        long m3221getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3221getOnSecondaryContainer0d7_KjU() : j9;
-        long m3251getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3251getTertiary0d7_KjU() : j10;
-        long m3226getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3226getOnTertiary0d7_KjU() : j11;
-        long m3252getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3252getTertiaryContainer0d7_KjU() : j12;
-        long m3227getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3227getOnTertiaryContainer0d7_KjU() : j13;
-        long m3207getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3207getBackground0d7_KjU() : j14;
-        long m3213getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3213getOnBackground0d7_KjU() : j15;
-        long m3241getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3241getSurface0d7_KjU() : j16;
-        long m3224getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3224getOnSurface0d7_KjU() : j17;
-        long m3250getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3250getSurfaceVariant0d7_KjU() : j18;
-        long m3225getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3225getOnSurfaceVariant0d7_KjU() : j19;
-        long j38 = (i & 524288) != 0 ? j37 : j20;
-        long m3212getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3212getInverseSurface0d7_KjU() : j21;
-        long m3210getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3210getInverseOnSurface0d7_KjU() : j22;
-        long m3208getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3208getError0d7_KjU() : j23;
-        long m3214getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3214getOnError0d7_KjU() : j24;
-        long m3209getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3209getErrorContainer0d7_KjU() : j25;
-        long m3215getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3215getOnErrorContainer0d7_KjU() : j26;
-        long m3230getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3230getOutline0d7_KjU() : j27;
-        long m3231getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3231getOutlineVariant0d7_KjU() : j28;
-        long m3236getScrim0d7_KjU = (i & 268435456) != 0 ? ColorLightTokens.INSTANCE.m3236getScrim0d7_KjU() : j29;
-        long m3242getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3242getSurfaceBright0d7_KjU() : j30;
-        long m3243getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorLightTokens.INSTANCE.m3243getSurfaceContainer0d7_KjU() : j31;
-        long m3244getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorLightTokens.INSTANCE.m3244getSurfaceContainerHigh0d7_KjU() : j32;
-        long m3245getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorLightTokens.INSTANCE.m3245getSurfaceContainerHighest0d7_KjU() : j33;
-        long m3246getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorLightTokens.INSTANCE.m3246getSurfaceContainerLow0d7_KjU() : j34;
-        long m3247getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorLightTokens.INSTANCE.m3247getSurfaceContainerLowest0d7_KjU() : j35;
-        if ((i2 & 8) != 0) {
-            j36 = ColorLightTokens.INSTANCE.m3248getSurfaceDim0d7_KjU();
+    public static final boolean LocalTonalElevationEnabled$lambda$2() {
+        return true;
+    }
+
+    /* renamed from: lightColorScheme-_VG5OTI$default */
+    public static /* synthetic */ ColorScheme m2141lightColorScheme_VG5OTI$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48, int i, int i2, Object obj) {
+        long m3811getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3811getPrimary0d7_KjU() : j;
+        long m3795getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3795getOnPrimary0d7_KjU() : j2;
+        long m3812getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3812getPrimaryContainer0d7_KjU() : j3;
+        long m3796getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3796getOnPrimaryContainer0d7_KjU() : j4;
+        long m3790getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3790getInversePrimary0d7_KjU() : j5;
+        long m3816getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3816getSecondary0d7_KjU() : j6;
+        long m3799getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3799getOnSecondary0d7_KjU() : j7;
+        long j49 = m3811getPrimary0d7_KjU;
+        long m3817getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3817getSecondaryContainer0d7_KjU() : j8;
+        long m3800getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3800getOnSecondaryContainer0d7_KjU() : j9;
+        long m3830getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3830getTertiary0d7_KjU() : j10;
+        long m3805getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3805getOnTertiary0d7_KjU() : j11;
+        long m3831getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3831getTertiaryContainer0d7_KjU() : j12;
+        long m3806getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3806getOnTertiaryContainer0d7_KjU() : j13;
+        long m3786getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3786getBackground0d7_KjU() : j14;
+        long m3792getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3792getOnBackground0d7_KjU() : j15;
+        long m3820getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3820getSurface0d7_KjU() : j16;
+        long m3803getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3803getOnSurface0d7_KjU() : j17;
+        long m3829getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3829getSurfaceVariant0d7_KjU() : j18;
+        long m3804getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3804getOnSurfaceVariant0d7_KjU() : j19;
+        long j50 = (i & 524288) != 0 ? j49 : j20;
+        long m3791getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3791getInverseSurface0d7_KjU() : j21;
+        long m3789getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3789getInverseOnSurface0d7_KjU() : j22;
+        long m3787getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3787getError0d7_KjU() : j23;
+        long m3793getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3793getOnError0d7_KjU() : j24;
+        long m3788getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3788getErrorContainer0d7_KjU() : j25;
+        long m3794getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3794getOnErrorContainer0d7_KjU() : j26;
+        long m3809getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3809getOutline0d7_KjU() : j27;
+        long m3810getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3810getOutlineVariant0d7_KjU() : j28;
+        long m3815getScrim0d7_KjU = (i & 268435456) != 0 ? ColorLightTokens.INSTANCE.m3815getScrim0d7_KjU() : j29;
+        long m3821getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3821getSurfaceBright0d7_KjU() : j30;
+        long m3822getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorLightTokens.INSTANCE.m3822getSurfaceContainer0d7_KjU() : j31;
+        long m3823getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorLightTokens.INSTANCE.m3823getSurfaceContainerHigh0d7_KjU() : j32;
+        long m3824getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorLightTokens.INSTANCE.m3824getSurfaceContainerHighest0d7_KjU() : j33;
+        long m3825getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorLightTokens.INSTANCE.m3825getSurfaceContainerLow0d7_KjU() : j34;
+        long m3826getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorLightTokens.INSTANCE.m3826getSurfaceContainerLowest0d7_KjU() : j35;
+        long m3827getSurfaceDim0d7_KjU = (i2 & 8) != 0 ? ColorLightTokens.INSTANCE.m3827getSurfaceDim0d7_KjU() : j36;
+        long m3813getPrimaryFixed0d7_KjU = (i2 & 16) != 0 ? ColorLightTokens.INSTANCE.m3813getPrimaryFixed0d7_KjU() : j37;
+        long m3814getPrimaryFixedDim0d7_KjU = (i2 & 32) != 0 ? ColorLightTokens.INSTANCE.m3814getPrimaryFixedDim0d7_KjU() : j38;
+        long m3797getOnPrimaryFixed0d7_KjU = (i2 & 64) != 0 ? ColorLightTokens.INSTANCE.m3797getOnPrimaryFixed0d7_KjU() : j39;
+        long m3798getOnPrimaryFixedVariant0d7_KjU = (i2 & 128) != 0 ? ColorLightTokens.INSTANCE.m3798getOnPrimaryFixedVariant0d7_KjU() : j40;
+        long m3818getSecondaryFixed0d7_KjU = (i2 & 256) != 0 ? ColorLightTokens.INSTANCE.m3818getSecondaryFixed0d7_KjU() : j41;
+        long m3819getSecondaryFixedDim0d7_KjU = (i2 & 512) != 0 ? ColorLightTokens.INSTANCE.m3819getSecondaryFixedDim0d7_KjU() : j42;
+        long m3801getOnSecondaryFixed0d7_KjU = (i2 & 1024) != 0 ? ColorLightTokens.INSTANCE.m3801getOnSecondaryFixed0d7_KjU() : j43;
+        long m3802getOnSecondaryFixedVariant0d7_KjU = (i2 & 2048) != 0 ? ColorLightTokens.INSTANCE.m3802getOnSecondaryFixedVariant0d7_KjU() : j44;
+        long m3832getTertiaryFixed0d7_KjU = (i2 & 4096) != 0 ? ColorLightTokens.INSTANCE.m3832getTertiaryFixed0d7_KjU() : j45;
+        long m3833getTertiaryFixedDim0d7_KjU = (i2 & 8192) != 0 ? ColorLightTokens.INSTANCE.m3833getTertiaryFixedDim0d7_KjU() : j46;
+        long m3807getOnTertiaryFixed0d7_KjU = (i2 & 16384) != 0 ? ColorLightTokens.INSTANCE.m3807getOnTertiaryFixed0d7_KjU() : j47;
+        if ((i2 & 32768) != 0) {
+            j48 = ColorLightTokens.INSTANCE.m3808getOnTertiaryFixedVariant0d7_KjU();
         }
-        return m2055lightColorSchemeCXl9yA(j37, m3216getOnPrimary0d7_KjU, m3233getPrimaryContainer0d7_KjU, m3217getOnPrimaryContainer0d7_KjU, m3211getInversePrimary0d7_KjU, m3237getSecondary0d7_KjU, m3220getOnSecondary0d7_KjU, m3238getSecondaryContainer0d7_KjU, m3221getOnSecondaryContainer0d7_KjU, m3251getTertiary0d7_KjU, m3226getOnTertiary0d7_KjU, m3252getTertiaryContainer0d7_KjU, m3227getOnTertiaryContainer0d7_KjU, m3207getBackground0d7_KjU, m3213getOnBackground0d7_KjU, m3241getSurface0d7_KjU, m3224getOnSurface0d7_KjU, m3250getSurfaceVariant0d7_KjU, m3225getOnSurfaceVariant0d7_KjU, j38, m3212getInverseSurface0d7_KjU, m3210getInverseOnSurface0d7_KjU, m3208getError0d7_KjU, m3214getOnError0d7_KjU, m3209getErrorContainer0d7_KjU, m3215getOnErrorContainer0d7_KjU, m3230getOutline0d7_KjU, m3231getOutlineVariant0d7_KjU, m3236getScrim0d7_KjU, m3242getSurfaceBright0d7_KjU, m3243getSurfaceContainer0d7_KjU, m3244getSurfaceContainerHigh0d7_KjU, m3245getSurfaceContainerHighest0d7_KjU, m3246getSurfaceContainerLow0d7_KjU, m3247getSurfaceContainerLowest0d7_KjU, j36);
+        return m2140lightColorScheme_VG5OTI(j49, m3795getOnPrimary0d7_KjU, m3812getPrimaryContainer0d7_KjU, m3796getOnPrimaryContainer0d7_KjU, m3790getInversePrimary0d7_KjU, m3816getSecondary0d7_KjU, m3799getOnSecondary0d7_KjU, m3817getSecondaryContainer0d7_KjU, m3800getOnSecondaryContainer0d7_KjU, m3830getTertiary0d7_KjU, m3805getOnTertiary0d7_KjU, m3831getTertiaryContainer0d7_KjU, m3806getOnTertiaryContainer0d7_KjU, m3786getBackground0d7_KjU, m3792getOnBackground0d7_KjU, m3820getSurface0d7_KjU, m3803getOnSurface0d7_KjU, m3829getSurfaceVariant0d7_KjU, m3804getOnSurfaceVariant0d7_KjU, j50, m3791getInverseSurface0d7_KjU, m3789getInverseOnSurface0d7_KjU, m3787getError0d7_KjU, m3793getOnError0d7_KjU, m3788getErrorContainer0d7_KjU, m3794getOnErrorContainer0d7_KjU, m3809getOutline0d7_KjU, m3810getOutlineVariant0d7_KjU, m3815getScrim0d7_KjU, m3821getSurfaceBright0d7_KjU, m3822getSurfaceContainer0d7_KjU, m3823getSurfaceContainerHigh0d7_KjU, m3824getSurfaceContainerHighest0d7_KjU, m3825getSurfaceContainerLow0d7_KjU, m3826getSurfaceContainerLowest0d7_KjU, m3827getSurfaceDim0d7_KjU, m3813getPrimaryFixed0d7_KjU, m3814getPrimaryFixedDim0d7_KjU, m3797getOnPrimaryFixed0d7_KjU, m3798getOnPrimaryFixedVariant0d7_KjU, m3818getSecondaryFixed0d7_KjU, m3819getSecondaryFixedDim0d7_KjU, m3801getOnSecondaryFixed0d7_KjU, m3802getOnSecondaryFixedVariant0d7_KjU, m3832getTertiaryFixed0d7_KjU, m3833getTertiaryFixedDim0d7_KjU, m3807getOnTertiaryFixed0d7_KjU, j48);
     }
 
-    /* renamed from: lightColorScheme-C-Xl9yA */
-    public static final ColorScheme m2055lightColorSchemeCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
-        return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, null);
+    /* renamed from: lightColorScheme-_VG5OTI */
+    public static final ColorScheme m2140lightColorScheme_VG5OTI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48) {
+        return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, null);
     }
 
-    /* renamed from: lightColorScheme-G1PFc-w$default */
-    public static /* synthetic */ ColorScheme m2058lightColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
-        long m3232getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3232getPrimary0d7_KjU() : j;
-        long m3216getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3216getOnPrimary0d7_KjU() : j2;
-        long m3233getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3233getPrimaryContainer0d7_KjU() : j3;
-        long m3217getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3217getOnPrimaryContainer0d7_KjU() : j4;
-        long m3211getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3211getInversePrimary0d7_KjU() : j5;
-        long m3237getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3237getSecondary0d7_KjU() : j6;
-        long m3220getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3220getOnSecondary0d7_KjU() : j7;
-        long m3238getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3238getSecondaryContainer0d7_KjU() : j8;
-        long j30 = m3232getPrimary0d7_KjU;
-        long m3221getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3221getOnSecondaryContainer0d7_KjU() : j9;
-        long m3251getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3251getTertiary0d7_KjU() : j10;
-        long m3226getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3226getOnTertiary0d7_KjU() : j11;
-        long m3252getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3252getTertiaryContainer0d7_KjU() : j12;
-        long m3227getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3227getOnTertiaryContainer0d7_KjU() : j13;
-        long m3207getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3207getBackground0d7_KjU() : j14;
-        long m3213getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3213getOnBackground0d7_KjU() : j15;
-        long m3241getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3241getSurface0d7_KjU() : j16;
-        long m3224getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3224getOnSurface0d7_KjU() : j17;
-        long m3250getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3250getSurfaceVariant0d7_KjU() : j18;
-        long m3225getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3225getOnSurfaceVariant0d7_KjU() : j19;
-        long j31 = (i & 524288) != 0 ? j30 : j20;
-        long m3212getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3212getInverseSurface0d7_KjU() : j21;
-        long m3210getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3210getInverseOnSurface0d7_KjU() : j22;
-        long m3208getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3208getError0d7_KjU() : j23;
-        long m3214getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3214getOnError0d7_KjU() : j24;
-        long m3209getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3209getErrorContainer0d7_KjU() : j25;
-        long m3215getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3215getOnErrorContainer0d7_KjU() : j26;
-        long m3230getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3230getOutline0d7_KjU() : j27;
-        long m3231getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3231getOutlineVariant0d7_KjU() : j28;
-        if ((i & 268435456) != 0) {
-            j29 = ColorLightTokens.INSTANCE.m3236getScrim0d7_KjU();
+    /* renamed from: darkColorScheme-_VG5OTI$default */
+    public static /* synthetic */ ColorScheme m2135darkColorScheme_VG5OTI$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48, int i, int i2, Object obj) {
+        long m3763getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3763getPrimary0d7_KjU() : j;
+        long m3747getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3747getOnPrimary0d7_KjU() : j2;
+        long m3764getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3764getPrimaryContainer0d7_KjU() : j3;
+        long m3748getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3748getOnPrimaryContainer0d7_KjU() : j4;
+        long m3742getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3742getInversePrimary0d7_KjU() : j5;
+        long m3768getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3768getSecondary0d7_KjU() : j6;
+        long m3751getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3751getOnSecondary0d7_KjU() : j7;
+        long j49 = m3763getPrimary0d7_KjU;
+        long m3769getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3769getSecondaryContainer0d7_KjU() : j8;
+        long m3752getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3752getOnSecondaryContainer0d7_KjU() : j9;
+        long m3782getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3782getTertiary0d7_KjU() : j10;
+        long m3757getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3757getOnTertiary0d7_KjU() : j11;
+        long m3783getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3783getTertiaryContainer0d7_KjU() : j12;
+        long m3758getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3758getOnTertiaryContainer0d7_KjU() : j13;
+        long m3738getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3738getBackground0d7_KjU() : j14;
+        long m3744getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3744getOnBackground0d7_KjU() : j15;
+        long m3772getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3772getSurface0d7_KjU() : j16;
+        long m3755getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3755getOnSurface0d7_KjU() : j17;
+        long m3781getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3781getSurfaceVariant0d7_KjU() : j18;
+        long m3756getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3756getOnSurfaceVariant0d7_KjU() : j19;
+        long j50 = (i & 524288) != 0 ? j49 : j20;
+        long m3743getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3743getInverseSurface0d7_KjU() : j21;
+        long m3741getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3741getInverseOnSurface0d7_KjU() : j22;
+        long m3739getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3739getError0d7_KjU() : j23;
+        long m3745getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3745getOnError0d7_KjU() : j24;
+        long m3740getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3740getErrorContainer0d7_KjU() : j25;
+        long m3746getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3746getOnErrorContainer0d7_KjU() : j26;
+        long m3761getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3761getOutline0d7_KjU() : j27;
+        long m3762getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3762getOutlineVariant0d7_KjU() : j28;
+        long m3767getScrim0d7_KjU = (i & 268435456) != 0 ? ColorDarkTokens.INSTANCE.m3767getScrim0d7_KjU() : j29;
+        long m3773getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3773getSurfaceBright0d7_KjU() : j30;
+        long m3774getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorDarkTokens.INSTANCE.m3774getSurfaceContainer0d7_KjU() : j31;
+        long m3775getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorDarkTokens.INSTANCE.m3775getSurfaceContainerHigh0d7_KjU() : j32;
+        long m3776getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorDarkTokens.INSTANCE.m3776getSurfaceContainerHighest0d7_KjU() : j33;
+        long m3777getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorDarkTokens.INSTANCE.m3777getSurfaceContainerLow0d7_KjU() : j34;
+        long m3778getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorDarkTokens.INSTANCE.m3778getSurfaceContainerLowest0d7_KjU() : j35;
+        long m3779getSurfaceDim0d7_KjU = (i2 & 8) != 0 ? ColorDarkTokens.INSTANCE.m3779getSurfaceDim0d7_KjU() : j36;
+        long m3765getPrimaryFixed0d7_KjU = (i2 & 16) != 0 ? ColorDarkTokens.INSTANCE.m3765getPrimaryFixed0d7_KjU() : j37;
+        long m3766getPrimaryFixedDim0d7_KjU = (i2 & 32) != 0 ? ColorDarkTokens.INSTANCE.m3766getPrimaryFixedDim0d7_KjU() : j38;
+        long m3749getOnPrimaryFixed0d7_KjU = (i2 & 64) != 0 ? ColorDarkTokens.INSTANCE.m3749getOnPrimaryFixed0d7_KjU() : j39;
+        long m3750getOnPrimaryFixedVariant0d7_KjU = (i2 & 128) != 0 ? ColorDarkTokens.INSTANCE.m3750getOnPrimaryFixedVariant0d7_KjU() : j40;
+        long m3770getSecondaryFixed0d7_KjU = (i2 & 256) != 0 ? ColorDarkTokens.INSTANCE.m3770getSecondaryFixed0d7_KjU() : j41;
+        long m3771getSecondaryFixedDim0d7_KjU = (i2 & 512) != 0 ? ColorDarkTokens.INSTANCE.m3771getSecondaryFixedDim0d7_KjU() : j42;
+        long m3753getOnSecondaryFixed0d7_KjU = (i2 & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3753getOnSecondaryFixed0d7_KjU() : j43;
+        long m3754getOnSecondaryFixedVariant0d7_KjU = (i2 & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3754getOnSecondaryFixedVariant0d7_KjU() : j44;
+        long m3784getTertiaryFixed0d7_KjU = (i2 & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3784getTertiaryFixed0d7_KjU() : j45;
+        long m3785getTertiaryFixedDim0d7_KjU = (i2 & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3785getTertiaryFixedDim0d7_KjU() : j46;
+        long m3759getOnTertiaryFixed0d7_KjU = (i2 & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3759getOnTertiaryFixed0d7_KjU() : j47;
+        if ((i2 & 32768) != 0) {
+            j48 = ColorDarkTokens.INSTANCE.m3760getOnTertiaryFixedVariant0d7_KjU();
         }
-        return m2056lightColorSchemeCXl9yA$default(j30, m3216getOnPrimary0d7_KjU, m3233getPrimaryContainer0d7_KjU, m3217getOnPrimaryContainer0d7_KjU, m3211getInversePrimary0d7_KjU, m3237getSecondary0d7_KjU, m3220getOnSecondary0d7_KjU, m3238getSecondaryContainer0d7_KjU, m3221getOnSecondaryContainer0d7_KjU, m3251getTertiary0d7_KjU, m3226getOnTertiary0d7_KjU, m3252getTertiaryContainer0d7_KjU, m3227getOnTertiaryContainer0d7_KjU, m3207getBackground0d7_KjU, m3213getOnBackground0d7_KjU, m3241getSurface0d7_KjU, m3224getOnSurface0d7_KjU, m3250getSurfaceVariant0d7_KjU, m3225getOnSurfaceVariant0d7_KjU, j31, m3212getInverseSurface0d7_KjU, m3210getInverseOnSurface0d7_KjU, m3208getError0d7_KjU, m3214getOnError0d7_KjU, m3209getErrorContainer0d7_KjU, m3215getOnErrorContainer0d7_KjU, m3230getOutline0d7_KjU, m3231getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 15, null);
+        return m2134darkColorScheme_VG5OTI(j49, m3747getOnPrimary0d7_KjU, m3764getPrimaryContainer0d7_KjU, m3748getOnPrimaryContainer0d7_KjU, m3742getInversePrimary0d7_KjU, m3768getSecondary0d7_KjU, m3751getOnSecondary0d7_KjU, m3769getSecondaryContainer0d7_KjU, m3752getOnSecondaryContainer0d7_KjU, m3782getTertiary0d7_KjU, m3757getOnTertiary0d7_KjU, m3783getTertiaryContainer0d7_KjU, m3758getOnTertiaryContainer0d7_KjU, m3738getBackground0d7_KjU, m3744getOnBackground0d7_KjU, m3772getSurface0d7_KjU, m3755getOnSurface0d7_KjU, m3781getSurfaceVariant0d7_KjU, m3756getOnSurfaceVariant0d7_KjU, j50, m3743getInverseSurface0d7_KjU, m3741getInverseOnSurface0d7_KjU, m3739getError0d7_KjU, m3745getOnError0d7_KjU, m3740getErrorContainer0d7_KjU, m3746getOnErrorContainer0d7_KjU, m3761getOutline0d7_KjU, m3762getOutlineVariant0d7_KjU, m3767getScrim0d7_KjU, m3773getSurfaceBright0d7_KjU, m3774getSurfaceContainer0d7_KjU, m3775getSurfaceContainerHigh0d7_KjU, m3776getSurfaceContainerHighest0d7_KjU, m3777getSurfaceContainerLow0d7_KjU, m3778getSurfaceContainerLowest0d7_KjU, m3779getSurfaceDim0d7_KjU, m3765getPrimaryFixed0d7_KjU, m3766getPrimaryFixedDim0d7_KjU, m3749getOnPrimaryFixed0d7_KjU, m3750getOnPrimaryFixedVariant0d7_KjU, m3770getSecondaryFixed0d7_KjU, m3771getSecondaryFixedDim0d7_KjU, m3753getOnSecondaryFixed0d7_KjU, m3754getOnSecondaryFixedVariant0d7_KjU, m3784getTertiaryFixed0d7_KjU, m3785getTertiaryFixedDim0d7_KjU, m3759getOnTertiaryFixed0d7_KjU, j48);
     }
 
-    /* renamed from: darkColorScheme-C-Xl9yA$default */
-    public static /* synthetic */ ColorScheme m2052darkColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
-        long m3184getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3184getPrimary0d7_KjU() : j;
-        long m3168getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3168getOnPrimary0d7_KjU() : j2;
-        long m3185getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3185getPrimaryContainer0d7_KjU() : j3;
-        long m3169getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3169getOnPrimaryContainer0d7_KjU() : j4;
-        long m3163getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3163getInversePrimary0d7_KjU() : j5;
-        long m3189getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3189getSecondary0d7_KjU() : j6;
-        long m3172getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3172getOnSecondary0d7_KjU() : j7;
-        long m3190getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3190getSecondaryContainer0d7_KjU() : j8;
-        long j37 = m3184getPrimary0d7_KjU;
-        long m3173getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3173getOnSecondaryContainer0d7_KjU() : j9;
-        long m3203getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3203getTertiary0d7_KjU() : j10;
-        long m3178getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3178getOnTertiary0d7_KjU() : j11;
-        long m3204getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3204getTertiaryContainer0d7_KjU() : j12;
-        long m3179getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3179getOnTertiaryContainer0d7_KjU() : j13;
-        long m3159getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3159getBackground0d7_KjU() : j14;
-        long m3165getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3165getOnBackground0d7_KjU() : j15;
-        long m3193getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3193getSurface0d7_KjU() : j16;
-        long m3176getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3176getOnSurface0d7_KjU() : j17;
-        long m3202getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3202getSurfaceVariant0d7_KjU() : j18;
-        long m3177getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3177getOnSurfaceVariant0d7_KjU() : j19;
-        long j38 = (i & 524288) != 0 ? j37 : j20;
-        long m3164getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3164getInverseSurface0d7_KjU() : j21;
-        long m3162getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3162getInverseOnSurface0d7_KjU() : j22;
-        long m3160getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3160getError0d7_KjU() : j23;
-        long m3166getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3166getOnError0d7_KjU() : j24;
-        long m3161getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3161getErrorContainer0d7_KjU() : j25;
-        long m3167getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3167getOnErrorContainer0d7_KjU() : j26;
-        long m3182getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3182getOutline0d7_KjU() : j27;
-        long m3183getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3183getOutlineVariant0d7_KjU() : j28;
-        long m3188getScrim0d7_KjU = (i & 268435456) != 0 ? ColorDarkTokens.INSTANCE.m3188getScrim0d7_KjU() : j29;
-        long m3194getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3194getSurfaceBright0d7_KjU() : j30;
-        long m3195getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorDarkTokens.INSTANCE.m3195getSurfaceContainer0d7_KjU() : j31;
-        long m3196getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorDarkTokens.INSTANCE.m3196getSurfaceContainerHigh0d7_KjU() : j32;
-        long m3197getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorDarkTokens.INSTANCE.m3197getSurfaceContainerHighest0d7_KjU() : j33;
-        long m3198getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorDarkTokens.INSTANCE.m3198getSurfaceContainerLow0d7_KjU() : j34;
-        long m3199getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorDarkTokens.INSTANCE.m3199getSurfaceContainerLowest0d7_KjU() : j35;
-        if ((i2 & 8) != 0) {
-            j36 = ColorDarkTokens.INSTANCE.m3200getSurfaceDim0d7_KjU();
-        }
-        return m2051darkColorSchemeCXl9yA(j37, m3168getOnPrimary0d7_KjU, m3185getPrimaryContainer0d7_KjU, m3169getOnPrimaryContainer0d7_KjU, m3163getInversePrimary0d7_KjU, m3189getSecondary0d7_KjU, m3172getOnSecondary0d7_KjU, m3190getSecondaryContainer0d7_KjU, m3173getOnSecondaryContainer0d7_KjU, m3203getTertiary0d7_KjU, m3178getOnTertiary0d7_KjU, m3204getTertiaryContainer0d7_KjU, m3179getOnTertiaryContainer0d7_KjU, m3159getBackground0d7_KjU, m3165getOnBackground0d7_KjU, m3193getSurface0d7_KjU, m3176getOnSurface0d7_KjU, m3202getSurfaceVariant0d7_KjU, m3177getOnSurfaceVariant0d7_KjU, j38, m3164getInverseSurface0d7_KjU, m3162getInverseOnSurface0d7_KjU, m3160getError0d7_KjU, m3166getOnError0d7_KjU, m3161getErrorContainer0d7_KjU, m3167getOnErrorContainer0d7_KjU, m3182getOutline0d7_KjU, m3183getOutlineVariant0d7_KjU, m3188getScrim0d7_KjU, m3194getSurfaceBright0d7_KjU, m3195getSurfaceContainer0d7_KjU, m3196getSurfaceContainerHigh0d7_KjU, m3197getSurfaceContainerHighest0d7_KjU, m3198getSurfaceContainerLow0d7_KjU, m3199getSurfaceContainerLowest0d7_KjU, j36);
-    }
-
-    /* renamed from: darkColorScheme-C-Xl9yA */
-    public static final ColorScheme m2051darkColorSchemeCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
-        return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, null);
-    }
-
-    /* renamed from: darkColorScheme-G1PFc-w$default */
-    public static /* synthetic */ ColorScheme m2054darkColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
-        long m3184getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3184getPrimary0d7_KjU() : j;
-        long m3168getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3168getOnPrimary0d7_KjU() : j2;
-        long m3185getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3185getPrimaryContainer0d7_KjU() : j3;
-        long m3169getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3169getOnPrimaryContainer0d7_KjU() : j4;
-        long m3163getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3163getInversePrimary0d7_KjU() : j5;
-        long m3189getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3189getSecondary0d7_KjU() : j6;
-        long m3172getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3172getOnSecondary0d7_KjU() : j7;
-        long m3190getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3190getSecondaryContainer0d7_KjU() : j8;
-        long j30 = m3184getPrimary0d7_KjU;
-        long m3173getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3173getOnSecondaryContainer0d7_KjU() : j9;
-        long m3203getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3203getTertiary0d7_KjU() : j10;
-        long m3178getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3178getOnTertiary0d7_KjU() : j11;
-        long m3204getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3204getTertiaryContainer0d7_KjU() : j12;
-        long m3179getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3179getOnTertiaryContainer0d7_KjU() : j13;
-        long m3159getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3159getBackground0d7_KjU() : j14;
-        long m3165getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3165getOnBackground0d7_KjU() : j15;
-        long m3193getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3193getSurface0d7_KjU() : j16;
-        long m3176getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3176getOnSurface0d7_KjU() : j17;
-        long m3202getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3202getSurfaceVariant0d7_KjU() : j18;
-        long m3177getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3177getOnSurfaceVariant0d7_KjU() : j19;
-        long j31 = (i & 524288) != 0 ? j30 : j20;
-        long m3164getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3164getInverseSurface0d7_KjU() : j21;
-        long m3162getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3162getInverseOnSurface0d7_KjU() : j22;
-        long m3160getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3160getError0d7_KjU() : j23;
-        long m3166getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3166getOnError0d7_KjU() : j24;
-        long m3161getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3161getErrorContainer0d7_KjU() : j25;
-        long m3167getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3167getOnErrorContainer0d7_KjU() : j26;
-        long m3182getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3182getOutline0d7_KjU() : j27;
-        long m3183getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3183getOutlineVariant0d7_KjU() : j28;
-        if ((i & 268435456) != 0) {
-            j29 = ColorDarkTokens.INSTANCE.m3188getScrim0d7_KjU();
-        }
-        return m2052darkColorSchemeCXl9yA$default(j30, m3168getOnPrimary0d7_KjU, m3185getPrimaryContainer0d7_KjU, m3169getOnPrimaryContainer0d7_KjU, m3163getInversePrimary0d7_KjU, m3189getSecondary0d7_KjU, m3172getOnSecondary0d7_KjU, m3190getSecondaryContainer0d7_KjU, m3173getOnSecondaryContainer0d7_KjU, m3203getTertiary0d7_KjU, m3178getOnTertiary0d7_KjU, m3204getTertiaryContainer0d7_KjU, m3179getOnTertiaryContainer0d7_KjU, m3159getBackground0d7_KjU, m3165getOnBackground0d7_KjU, m3193getSurface0d7_KjU, m3176getOnSurface0d7_KjU, m3202getSurfaceVariant0d7_KjU, m3177getOnSurfaceVariant0d7_KjU, j31, m3164getInverseSurface0d7_KjU, m3162getInverseOnSurface0d7_KjU, m3160getError0d7_KjU, m3166getOnError0d7_KjU, m3161getErrorContainer0d7_KjU, m3167getOnErrorContainer0d7_KjU, m3182getOutline0d7_KjU, m3183getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 15, null);
+    /* renamed from: darkColorScheme-_VG5OTI */
+    public static final ColorScheme m2134darkColorScheme_VG5OTI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48) {
+        return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, null);
     }
 
     /* renamed from: contentColorFor-4WTKRHQ */
-    public static final long m2049contentColorFor4WTKRHQ(ColorScheme colorScheme, long j) {
-        if (Color.m4550equalsimpl0(j, colorScheme.m2031getPrimary0d7_KjU())) {
-            return colorScheme.m2021getOnPrimary0d7_KjU();
+    public static final long m2128contentColorFor4WTKRHQ(ColorScheme colorScheme, long j) {
+        if (Color.m5280equalsimpl0(j, colorScheme.m2102getPrimary0d7_KjU())) {
+            return colorScheme.m2086getOnPrimary0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2034getSecondary0d7_KjU())) {
-            return colorScheme.m2023getOnSecondary0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2107getSecondary0d7_KjU())) {
+            return colorScheme.m2090getOnSecondary0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2046getTertiary0d7_KjU())) {
-            return colorScheme.m2027getOnTertiary0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2121getTertiary0d7_KjU())) {
+            return colorScheme.m2096getOnTertiary0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2012getBackground0d7_KjU())) {
-            return colorScheme.m2018getOnBackground0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2077getBackground0d7_KjU())) {
+            return colorScheme.m2083getOnBackground0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2013getError0d7_KjU())) {
-            return colorScheme.m2019getOnError0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2078getError0d7_KjU())) {
+            return colorScheme.m2084getOnError0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2032getPrimaryContainer0d7_KjU())) {
-            return colorScheme.m2022getOnPrimaryContainer0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2103getPrimaryContainer0d7_KjU())) {
+            return colorScheme.m2087getOnPrimaryContainer0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2035getSecondaryContainer0d7_KjU())) {
-            return colorScheme.m2024getOnSecondaryContainer0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2108getSecondaryContainer0d7_KjU())) {
+            return colorScheme.m2091getOnSecondaryContainer0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2047getTertiaryContainer0d7_KjU())) {
-            return colorScheme.m2028getOnTertiaryContainer0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2122getTertiaryContainer0d7_KjU())) {
+            return colorScheme.m2097getOnTertiaryContainer0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2014getErrorContainer0d7_KjU())) {
-            return colorScheme.m2020getOnErrorContainer0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2079getErrorContainer0d7_KjU())) {
+            return colorScheme.m2085getOnErrorContainer0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2017getInverseSurface0d7_KjU())) {
-            return colorScheme.m2015getInverseOnSurface0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2082getInverseSurface0d7_KjU())) {
+            return colorScheme.m2080getInverseOnSurface0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2036getSurface0d7_KjU())) {
-            return colorScheme.m2025getOnSurface0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2111getSurface0d7_KjU())) {
+            return colorScheme.m2094getOnSurface0d7_KjU();
         }
-        if (Color.m4550equalsimpl0(j, colorScheme.m2045getSurfaceVariant0d7_KjU())) {
-            return colorScheme.m2026getOnSurfaceVariant0d7_KjU();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2120getSurfaceVariant0d7_KjU())) {
+            return colorScheme.m2095getOnSurfaceVariant0d7_KjU();
         }
-        if (!Color.m4550equalsimpl0(j, colorScheme.m2037getSurfaceBright0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2038getSurfaceContainer0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2039getSurfaceContainerHigh0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2040getSurfaceContainerHighest0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2041getSurfaceContainerLow0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2042getSurfaceContainerLowest0d7_KjU())) {
-            return Color.Companion.m4585getUnspecified0d7_KjU();
+        if (!Color.m5280equalsimpl0(j, colorScheme.m2112getSurfaceBright0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2113getSurfaceContainer0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2114getSurfaceContainerHigh0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2115getSurfaceContainerHighest0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2116getSurfaceContainerLow0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2117getSurfaceContainerLowest0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2118getSurfaceDim0d7_KjU())) {
+            if (!Color.m5280equalsimpl0(j, colorScheme.m2104getPrimaryFixed0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2105getPrimaryFixedDim0d7_KjU())) {
+                if (!Color.m5280equalsimpl0(j, colorScheme.m2109getSecondaryFixed0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2110getSecondaryFixedDim0d7_KjU())) {
+                    if (!Color.m5280equalsimpl0(j, colorScheme.m2123getTertiaryFixed0d7_KjU()) && !Color.m5280equalsimpl0(j, colorScheme.m2124getTertiaryFixedDim0d7_KjU())) {
+                        return Color.Companion.m5315getUnspecified0d7_KjU();
+                    }
+                    return colorScheme.m2098getOnTertiaryFixed0d7_KjU();
+                }
+                return colorScheme.m2092getOnSecondaryFixed0d7_KjU();
+            }
+            return colorScheme.m2088getOnPrimaryFixed0d7_KjU();
         }
-        return colorScheme.m2025getOnSurface0d7_KjU();
+        return colorScheme.m2094getOnSurface0d7_KjU();
     }
 
     /* renamed from: contentColorFor-ek8zF_U */
-    public static final long m2050contentColorForek8zF_U(long j, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 509589638, "C(contentColorFor)P(0:c#ui.graphics.Color):ColorScheme.kt#uh7d8r");
+    public static final long m2129contentColorForek8zF_U(long j, Composer composer, int i) {
+        ComposerKt.sourceInformationMarkerStart(composer, 509589638, "C(contentColorFor)N(backgroundColor:c#ui.graphics.Color)1112@50936L11:ColorScheme.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(509589638, i, -1, "androidx.compose.material3.contentColorFor (ColorScheme.kt:878)");
+            ComposerKt.traceEventStart(509589638, i, -1, "androidx.compose.material3.contentColorFor (ColorScheme.kt:1112)");
         }
-        composer.startReplaceGroup(-1680936624);
-        ComposerKt.sourceInformation(composer, "*878@39525L11,879@39609L7");
-        long m2049contentColorFor4WTKRHQ = m2049contentColorFor4WTKRHQ(MaterialTheme.INSTANCE.getColorScheme(composer, 6), j);
-        if (m2049contentColorFor4WTKRHQ == 16) {
-            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+        composer.startReplaceGroup(89374938);
+        ComposerKt.sourceInformation(composer, "*1113@51020L7");
+        long m2128contentColorFor4WTKRHQ = m2128contentColorFor4WTKRHQ(MaterialTheme.INSTANCE.getColorScheme(composer, 6), j);
+        if (m2128contentColorFor4WTKRHQ == 16) {
+            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(ContentColorKt.getLocalContentColor());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            m2049contentColorFor4WTKRHQ = ((Color) consume).m4559unboximpl();
+            m2128contentColorFor4WTKRHQ = ((Color) consume).m5289unboximpl();
         }
         composer.endReplaceGroup();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2049contentColorFor4WTKRHQ;
-    }
-
-    /* renamed from: applyTonalElevation-RFCenO8 */
-    public static final long m2048applyTonalElevationRFCenO8(ColorScheme colorScheme, long j, float f, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1610977682, "C(applyTonalElevation)P(0:c#ui.graphics.Color,1:c#ui.unit.Dp)896@40465L7:ColorScheme.kt#uh7d8r");
-        if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1610977682, i, -1, "androidx.compose.material3.applyTonalElevation (ColorScheme.kt:895)");
-        }
-        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-        Object consume = composer.consume(LocalTonalElevationEnabled);
-        ComposerKt.sourceInformationMarkerEnd(composer);
-        boolean booleanValue = ((Boolean) consume).booleanValue();
-        if (Color.m4550equalsimpl0(j, colorScheme.m2036getSurface0d7_KjU()) && booleanValue) {
-            j = m2059surfaceColorAtElevation3ABfNKs(colorScheme, f);
-        }
-        if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventEnd();
-        }
-        ComposerKt.sourceInformationMarkerEnd(composer);
-        return j;
+        return m2128contentColorFor4WTKRHQ;
     }
 
     public static final ColorScheme expressiveLightColorScheme() {
-        return m2056lightColorSchemeCXl9yA$default(0L, 0L, 0L, PaletteTokens.INSTANCE.m3543getPrimary300d7_KjU(), 0L, 0L, 0L, 0L, PaletteTokens.INSTANCE.m3556getSecondary300d7_KjU(), 0L, 0L, 0L, PaletteTokens.INSTANCE.m3556getSecondary300d7_KjU(), 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -4361, 15, null);
+        return m2141lightColorScheme_VG5OTI$default(0L, 0L, 0L, PaletteTokens.INSTANCE.m4188getPrimary300d7_KjU(), 0L, 0L, 0L, 0L, PaletteTokens.INSTANCE.m4201getSecondary300d7_KjU(), 0L, 0L, 0L, PaletteTokens.INSTANCE.m4214getTertiary300d7_KjU(), 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, PaletteTokens.INSTANCE.m4138getError300d7_KjU(), 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -33558793, 65535, null);
+    }
+
+    /* renamed from: lightColorScheme-C-Xl9yA$default */
+    public static /* synthetic */ ColorScheme m2137lightColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
+        long m3811getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3811getPrimary0d7_KjU() : j;
+        long m3795getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3795getOnPrimary0d7_KjU() : j2;
+        long m3812getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3812getPrimaryContainer0d7_KjU() : j3;
+        long m3796getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3796getOnPrimaryContainer0d7_KjU() : j4;
+        long m3790getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3790getInversePrimary0d7_KjU() : j5;
+        long m3816getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3816getSecondary0d7_KjU() : j6;
+        long m3799getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3799getOnSecondary0d7_KjU() : j7;
+        long m3817getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3817getSecondaryContainer0d7_KjU() : j8;
+        long j37 = m3811getPrimary0d7_KjU;
+        long m3800getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3800getOnSecondaryContainer0d7_KjU() : j9;
+        long m3830getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3830getTertiary0d7_KjU() : j10;
+        long m3805getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3805getOnTertiary0d7_KjU() : j11;
+        long m3831getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3831getTertiaryContainer0d7_KjU() : j12;
+        long m3806getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3806getOnTertiaryContainer0d7_KjU() : j13;
+        long m3786getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3786getBackground0d7_KjU() : j14;
+        long m3792getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3792getOnBackground0d7_KjU() : j15;
+        long m3820getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3820getSurface0d7_KjU() : j16;
+        long m3803getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3803getOnSurface0d7_KjU() : j17;
+        long m3829getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3829getSurfaceVariant0d7_KjU() : j18;
+        long m3804getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3804getOnSurfaceVariant0d7_KjU() : j19;
+        long j38 = (i & 524288) != 0 ? j37 : j20;
+        long m3791getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3791getInverseSurface0d7_KjU() : j21;
+        long m3789getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3789getInverseOnSurface0d7_KjU() : j22;
+        long m3787getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3787getError0d7_KjU() : j23;
+        long m3793getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3793getOnError0d7_KjU() : j24;
+        long m3788getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3788getErrorContainer0d7_KjU() : j25;
+        long m3794getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3794getOnErrorContainer0d7_KjU() : j26;
+        long m3809getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3809getOutline0d7_KjU() : j27;
+        long m3810getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3810getOutlineVariant0d7_KjU() : j28;
+        long m3815getScrim0d7_KjU = (i & 268435456) != 0 ? ColorLightTokens.INSTANCE.m3815getScrim0d7_KjU() : j29;
+        long m3821getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3821getSurfaceBright0d7_KjU() : j30;
+        long m3822getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorLightTokens.INSTANCE.m3822getSurfaceContainer0d7_KjU() : j31;
+        long m3823getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorLightTokens.INSTANCE.m3823getSurfaceContainerHigh0d7_KjU() : j32;
+        long m3824getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorLightTokens.INSTANCE.m3824getSurfaceContainerHighest0d7_KjU() : j33;
+        long m3825getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorLightTokens.INSTANCE.m3825getSurfaceContainerLow0d7_KjU() : j34;
+        long m3826getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorLightTokens.INSTANCE.m3826getSurfaceContainerLowest0d7_KjU() : j35;
+        if ((i2 & 8) != 0) {
+            j36 = ColorLightTokens.INSTANCE.m3827getSurfaceDim0d7_KjU();
+        }
+        return m2141lightColorScheme_VG5OTI$default(j37, m3795getOnPrimary0d7_KjU, m3812getPrimaryContainer0d7_KjU, m3796getOnPrimaryContainer0d7_KjU, m3790getInversePrimary0d7_KjU, m3816getSecondary0d7_KjU, m3799getOnSecondary0d7_KjU, m3817getSecondaryContainer0d7_KjU, m3800getOnSecondaryContainer0d7_KjU, m3830getTertiary0d7_KjU, m3805getOnTertiary0d7_KjU, m3831getTertiaryContainer0d7_KjU, m3806getOnTertiaryContainer0d7_KjU, m3786getBackground0d7_KjU, m3792getOnBackground0d7_KjU, m3820getSurface0d7_KjU, m3803getOnSurface0d7_KjU, m3829getSurfaceVariant0d7_KjU, m3804getOnSurfaceVariant0d7_KjU, j38, m3791getInverseSurface0d7_KjU, m3789getInverseOnSurface0d7_KjU, m3787getError0d7_KjU, m3793getOnError0d7_KjU, m3788getErrorContainer0d7_KjU, m3794getOnErrorContainer0d7_KjU, m3809getOutline0d7_KjU, m3810getOutlineVariant0d7_KjU, m3815getScrim0d7_KjU, m3821getSurfaceBright0d7_KjU, m3822getSurfaceContainer0d7_KjU, m3823getSurfaceContainerHigh0d7_KjU, m3824getSurfaceContainerHighest0d7_KjU, m3825getSurfaceContainerLow0d7_KjU, m3826getSurfaceContainerLowest0d7_KjU, j36, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0, 65520, null);
+    }
+
+    /* renamed from: lightColorScheme-G1PFc-w$default */
+    public static /* synthetic */ ColorScheme m2139lightColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
+        long m3811getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3811getPrimary0d7_KjU() : j;
+        long m3795getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3795getOnPrimary0d7_KjU() : j2;
+        long m3812getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3812getPrimaryContainer0d7_KjU() : j3;
+        long m3796getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3796getOnPrimaryContainer0d7_KjU() : j4;
+        long m3790getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3790getInversePrimary0d7_KjU() : j5;
+        long m3816getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3816getSecondary0d7_KjU() : j6;
+        long m3799getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3799getOnSecondary0d7_KjU() : j7;
+        long m3817getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3817getSecondaryContainer0d7_KjU() : j8;
+        long j30 = m3811getPrimary0d7_KjU;
+        long m3800getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3800getOnSecondaryContainer0d7_KjU() : j9;
+        long m3830getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3830getTertiary0d7_KjU() : j10;
+        long m3805getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3805getOnTertiary0d7_KjU() : j11;
+        long m3831getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3831getTertiaryContainer0d7_KjU() : j12;
+        long m3806getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3806getOnTertiaryContainer0d7_KjU() : j13;
+        long m3786getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3786getBackground0d7_KjU() : j14;
+        long m3792getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3792getOnBackground0d7_KjU() : j15;
+        long m3820getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3820getSurface0d7_KjU() : j16;
+        long m3803getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3803getOnSurface0d7_KjU() : j17;
+        long m3829getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3829getSurfaceVariant0d7_KjU() : j18;
+        long m3804getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3804getOnSurfaceVariant0d7_KjU() : j19;
+        long j31 = (i & 524288) != 0 ? j30 : j20;
+        long m3791getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3791getInverseSurface0d7_KjU() : j21;
+        long m3789getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3789getInverseOnSurface0d7_KjU() : j22;
+        long m3787getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3787getError0d7_KjU() : j23;
+        long m3793getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3793getOnError0d7_KjU() : j24;
+        long m3788getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3788getErrorContainer0d7_KjU() : j25;
+        long m3794getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3794getOnErrorContainer0d7_KjU() : j26;
+        long m3809getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3809getOutline0d7_KjU() : j27;
+        long m3810getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3810getOutlineVariant0d7_KjU() : j28;
+        if ((i & 268435456) != 0) {
+            j29 = ColorLightTokens.INSTANCE.m3815getScrim0d7_KjU();
+        }
+        return m2141lightColorScheme_VG5OTI$default(j30, m3795getOnPrimary0d7_KjU, m3812getPrimaryContainer0d7_KjU, m3796getOnPrimaryContainer0d7_KjU, m3790getInversePrimary0d7_KjU, m3816getSecondary0d7_KjU, m3799getOnSecondary0d7_KjU, m3817getSecondaryContainer0d7_KjU, m3800getOnSecondaryContainer0d7_KjU, m3830getTertiary0d7_KjU, m3805getOnTertiary0d7_KjU, m3831getTertiaryContainer0d7_KjU, m3806getOnTertiaryContainer0d7_KjU, m3786getBackground0d7_KjU, m3792getOnBackground0d7_KjU, m3820getSurface0d7_KjU, m3803getOnSurface0d7_KjU, m3829getSurfaceVariant0d7_KjU, m3804getOnSurfaceVariant0d7_KjU, j31, m3791getInverseSurface0d7_KjU, m3789getInverseOnSurface0d7_KjU, m3787getError0d7_KjU, m3793getOnError0d7_KjU, m3788getErrorContainer0d7_KjU, m3794getOnErrorContainer0d7_KjU, m3809getOutline0d7_KjU, m3810getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 65535, null);
+    }
+
+    /* renamed from: darkColorScheme-C-Xl9yA$default */
+    public static /* synthetic */ ColorScheme m2131darkColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
+        long m3763getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3763getPrimary0d7_KjU() : j;
+        long m3747getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3747getOnPrimary0d7_KjU() : j2;
+        long m3764getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3764getPrimaryContainer0d7_KjU() : j3;
+        long m3748getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3748getOnPrimaryContainer0d7_KjU() : j4;
+        long m3742getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3742getInversePrimary0d7_KjU() : j5;
+        long m3768getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3768getSecondary0d7_KjU() : j6;
+        long m3751getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3751getOnSecondary0d7_KjU() : j7;
+        long m3769getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3769getSecondaryContainer0d7_KjU() : j8;
+        long j37 = m3763getPrimary0d7_KjU;
+        long m3752getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3752getOnSecondaryContainer0d7_KjU() : j9;
+        long m3782getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3782getTertiary0d7_KjU() : j10;
+        long m3757getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3757getOnTertiary0d7_KjU() : j11;
+        long m3783getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3783getTertiaryContainer0d7_KjU() : j12;
+        long m3758getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3758getOnTertiaryContainer0d7_KjU() : j13;
+        long m3738getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3738getBackground0d7_KjU() : j14;
+        long m3744getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3744getOnBackground0d7_KjU() : j15;
+        long m3772getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3772getSurface0d7_KjU() : j16;
+        long m3755getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3755getOnSurface0d7_KjU() : j17;
+        long m3781getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3781getSurfaceVariant0d7_KjU() : j18;
+        long m3756getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3756getOnSurfaceVariant0d7_KjU() : j19;
+        long j38 = (i & 524288) != 0 ? j37 : j20;
+        long m3743getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3743getInverseSurface0d7_KjU() : j21;
+        long m3741getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3741getInverseOnSurface0d7_KjU() : j22;
+        long m3739getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3739getError0d7_KjU() : j23;
+        long m3745getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3745getOnError0d7_KjU() : j24;
+        long m3740getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3740getErrorContainer0d7_KjU() : j25;
+        long m3746getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3746getOnErrorContainer0d7_KjU() : j26;
+        long m3761getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3761getOutline0d7_KjU() : j27;
+        long m3762getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3762getOutlineVariant0d7_KjU() : j28;
+        long m3767getScrim0d7_KjU = (i & 268435456) != 0 ? ColorDarkTokens.INSTANCE.m3767getScrim0d7_KjU() : j29;
+        long m3773getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3773getSurfaceBright0d7_KjU() : j30;
+        long m3774getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorDarkTokens.INSTANCE.m3774getSurfaceContainer0d7_KjU() : j31;
+        long m3775getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorDarkTokens.INSTANCE.m3775getSurfaceContainerHigh0d7_KjU() : j32;
+        long m3776getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorDarkTokens.INSTANCE.m3776getSurfaceContainerHighest0d7_KjU() : j33;
+        long m3777getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorDarkTokens.INSTANCE.m3777getSurfaceContainerLow0d7_KjU() : j34;
+        long m3778getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorDarkTokens.INSTANCE.m3778getSurfaceContainerLowest0d7_KjU() : j35;
+        if ((i2 & 8) != 0) {
+            j36 = ColorDarkTokens.INSTANCE.m3779getSurfaceDim0d7_KjU();
+        }
+        return m2135darkColorScheme_VG5OTI$default(j37, m3747getOnPrimary0d7_KjU, m3764getPrimaryContainer0d7_KjU, m3748getOnPrimaryContainer0d7_KjU, m3742getInversePrimary0d7_KjU, m3768getSecondary0d7_KjU, m3751getOnSecondary0d7_KjU, m3769getSecondaryContainer0d7_KjU, m3752getOnSecondaryContainer0d7_KjU, m3782getTertiary0d7_KjU, m3757getOnTertiary0d7_KjU, m3783getTertiaryContainer0d7_KjU, m3758getOnTertiaryContainer0d7_KjU, m3738getBackground0d7_KjU, m3744getOnBackground0d7_KjU, m3772getSurface0d7_KjU, m3755getOnSurface0d7_KjU, m3781getSurfaceVariant0d7_KjU, m3756getOnSurfaceVariant0d7_KjU, j38, m3743getInverseSurface0d7_KjU, m3741getInverseOnSurface0d7_KjU, m3739getError0d7_KjU, m3745getOnError0d7_KjU, m3740getErrorContainer0d7_KjU, m3746getOnErrorContainer0d7_KjU, m3761getOutline0d7_KjU, m3762getOutlineVariant0d7_KjU, m3767getScrim0d7_KjU, m3773getSurfaceBright0d7_KjU, m3774getSurfaceContainer0d7_KjU, m3775getSurfaceContainerHigh0d7_KjU, m3776getSurfaceContainerHighest0d7_KjU, m3777getSurfaceContainerLow0d7_KjU, m3778getSurfaceContainerLowest0d7_KjU, j36, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0, 65520, null);
+    }
+
+    /* renamed from: darkColorScheme-G1PFc-w$default */
+    public static /* synthetic */ ColorScheme m2133darkColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
+        long m3763getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3763getPrimary0d7_KjU() : j;
+        long m3747getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3747getOnPrimary0d7_KjU() : j2;
+        long m3764getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3764getPrimaryContainer0d7_KjU() : j3;
+        long m3748getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3748getOnPrimaryContainer0d7_KjU() : j4;
+        long m3742getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3742getInversePrimary0d7_KjU() : j5;
+        long m3768getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3768getSecondary0d7_KjU() : j6;
+        long m3751getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3751getOnSecondary0d7_KjU() : j7;
+        long m3769getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3769getSecondaryContainer0d7_KjU() : j8;
+        long j30 = m3763getPrimary0d7_KjU;
+        long m3752getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3752getOnSecondaryContainer0d7_KjU() : j9;
+        long m3782getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3782getTertiary0d7_KjU() : j10;
+        long m3757getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3757getOnTertiary0d7_KjU() : j11;
+        long m3783getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3783getTertiaryContainer0d7_KjU() : j12;
+        long m3758getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3758getOnTertiaryContainer0d7_KjU() : j13;
+        long m3738getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3738getBackground0d7_KjU() : j14;
+        long m3744getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3744getOnBackground0d7_KjU() : j15;
+        long m3772getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3772getSurface0d7_KjU() : j16;
+        long m3755getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3755getOnSurface0d7_KjU() : j17;
+        long m3781getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3781getSurfaceVariant0d7_KjU() : j18;
+        long m3756getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3756getOnSurfaceVariant0d7_KjU() : j19;
+        long j31 = (i & 524288) != 0 ? j30 : j20;
+        long m3743getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3743getInverseSurface0d7_KjU() : j21;
+        long m3741getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3741getInverseOnSurface0d7_KjU() : j22;
+        long m3739getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3739getError0d7_KjU() : j23;
+        long m3745getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3745getOnError0d7_KjU() : j24;
+        long m3740getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3740getErrorContainer0d7_KjU() : j25;
+        long m3746getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3746getOnErrorContainer0d7_KjU() : j26;
+        long m3761getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3761getOutline0d7_KjU() : j27;
+        long m3762getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3762getOutlineVariant0d7_KjU() : j28;
+        if ((i & 268435456) != 0) {
+            j29 = ColorDarkTokens.INSTANCE.m3767getScrim0d7_KjU();
+        }
+        return m2135darkColorScheme_VG5OTI$default(j30, m3747getOnPrimary0d7_KjU, m3764getPrimaryContainer0d7_KjU, m3748getOnPrimaryContainer0d7_KjU, m3742getInversePrimary0d7_KjU, m3768getSecondary0d7_KjU, m3751getOnSecondary0d7_KjU, m3769getSecondaryContainer0d7_KjU, m3752getOnSecondaryContainer0d7_KjU, m3782getTertiary0d7_KjU, m3757getOnTertiary0d7_KjU, m3783getTertiaryContainer0d7_KjU, m3758getOnTertiaryContainer0d7_KjU, m3738getBackground0d7_KjU, m3744getOnBackground0d7_KjU, m3772getSurface0d7_KjU, m3755getOnSurface0d7_KjU, m3781getSurfaceVariant0d7_KjU, m3756getOnSurfaceVariant0d7_KjU, j31, m3743getInverseSurface0d7_KjU, m3741getInverseOnSurface0d7_KjU, m3739getError0d7_KjU, m3745getOnError0d7_KjU, m3740getErrorContainer0d7_KjU, m3746getOnErrorContainer0d7_KjU, m3761getOutline0d7_KjU, m3762getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 65535, null);
     }
 
     public static final long fromToken(ColorScheme colorScheme, ColorSchemeKeyTokens colorSchemeKeyTokens) {
         switch (WhenMappings.$EnumSwitchMapping$0[colorSchemeKeyTokens.ordinal()]) {
             case 1:
-                return colorScheme.m2012getBackground0d7_KjU();
+                return colorScheme.m2077getBackground0d7_KjU();
             case 2:
-                return colorScheme.m2013getError0d7_KjU();
+                return colorScheme.m2078getError0d7_KjU();
             case 3:
-                return colorScheme.m2014getErrorContainer0d7_KjU();
+                return colorScheme.m2079getErrorContainer0d7_KjU();
             case 4:
-                return colorScheme.m2015getInverseOnSurface0d7_KjU();
+                return colorScheme.m2080getInverseOnSurface0d7_KjU();
             case 5:
-                return colorScheme.m2016getInversePrimary0d7_KjU();
+                return colorScheme.m2081getInversePrimary0d7_KjU();
             case 6:
-                return colorScheme.m2017getInverseSurface0d7_KjU();
+                return colorScheme.m2082getInverseSurface0d7_KjU();
             case 7:
-                return colorScheme.m2018getOnBackground0d7_KjU();
+                return colorScheme.m2083getOnBackground0d7_KjU();
             case 8:
-                return colorScheme.m2019getOnError0d7_KjU();
+                return colorScheme.m2084getOnError0d7_KjU();
             case 9:
-                return colorScheme.m2020getOnErrorContainer0d7_KjU();
+                return colorScheme.m2085getOnErrorContainer0d7_KjU();
             case 10:
-                return colorScheme.m2021getOnPrimary0d7_KjU();
+                return colorScheme.m2086getOnPrimary0d7_KjU();
             case 11:
-                return colorScheme.m2022getOnPrimaryContainer0d7_KjU();
+                return colorScheme.m2087getOnPrimaryContainer0d7_KjU();
             case 12:
-                return colorScheme.m2023getOnSecondary0d7_KjU();
+                return colorScheme.m2090getOnSecondary0d7_KjU();
             case 13:
-                return colorScheme.m2024getOnSecondaryContainer0d7_KjU();
+                return colorScheme.m2091getOnSecondaryContainer0d7_KjU();
             case 14:
-                return colorScheme.m2025getOnSurface0d7_KjU();
+                return colorScheme.m2094getOnSurface0d7_KjU();
             case 15:
-                return colorScheme.m2026getOnSurfaceVariant0d7_KjU();
+                return colorScheme.m2095getOnSurfaceVariant0d7_KjU();
             case 16:
-                return colorScheme.m2044getSurfaceTint0d7_KjU();
+                return colorScheme.m2119getSurfaceTint0d7_KjU();
             case 17:
-                return colorScheme.m2027getOnTertiary0d7_KjU();
+                return colorScheme.m2096getOnTertiary0d7_KjU();
             case 18:
-                return colorScheme.m2028getOnTertiaryContainer0d7_KjU();
+                return colorScheme.m2097getOnTertiaryContainer0d7_KjU();
             case 19:
-                return colorScheme.m2029getOutline0d7_KjU();
+                return colorScheme.m2100getOutline0d7_KjU();
             case 20:
-                return colorScheme.m2030getOutlineVariant0d7_KjU();
+                return colorScheme.m2101getOutlineVariant0d7_KjU();
             case 21:
-                return colorScheme.m2031getPrimary0d7_KjU();
+                return colorScheme.m2102getPrimary0d7_KjU();
             case 22:
-                return colorScheme.m2032getPrimaryContainer0d7_KjU();
+                return colorScheme.m2103getPrimaryContainer0d7_KjU();
             case 23:
-                return colorScheme.m2033getScrim0d7_KjU();
+                return colorScheme.m2106getScrim0d7_KjU();
             case 24:
-                return colorScheme.m2034getSecondary0d7_KjU();
+                return colorScheme.m2107getSecondary0d7_KjU();
             case 25:
-                return colorScheme.m2035getSecondaryContainer0d7_KjU();
+                return colorScheme.m2108getSecondaryContainer0d7_KjU();
             case 26:
-                return colorScheme.m2036getSurface0d7_KjU();
+                return colorScheme.m2111getSurface0d7_KjU();
             case 27:
-                return colorScheme.m2045getSurfaceVariant0d7_KjU();
+                return colorScheme.m2120getSurfaceVariant0d7_KjU();
             case 28:
-                return colorScheme.m2037getSurfaceBright0d7_KjU();
+                return colorScheme.m2112getSurfaceBright0d7_KjU();
             case 29:
-                return colorScheme.m2038getSurfaceContainer0d7_KjU();
+                return colorScheme.m2113getSurfaceContainer0d7_KjU();
             case 30:
-                return colorScheme.m2039getSurfaceContainerHigh0d7_KjU();
+                return colorScheme.m2114getSurfaceContainerHigh0d7_KjU();
             case 31:
-                return colorScheme.m2040getSurfaceContainerHighest0d7_KjU();
+                return colorScheme.m2115getSurfaceContainerHighest0d7_KjU();
             case 32:
-                return colorScheme.m2041getSurfaceContainerLow0d7_KjU();
+                return colorScheme.m2116getSurfaceContainerLow0d7_KjU();
             case 33:
-                return colorScheme.m2042getSurfaceContainerLowest0d7_KjU();
+                return colorScheme.m2117getSurfaceContainerLowest0d7_KjU();
             case 34:
-                return colorScheme.m2043getSurfaceDim0d7_KjU();
+                return colorScheme.m2118getSurfaceDim0d7_KjU();
             case 35:
-                return colorScheme.m2046getTertiary0d7_KjU();
+                return colorScheme.m2121getTertiary0d7_KjU();
             case 36:
-                return colorScheme.m2047getTertiaryContainer0d7_KjU();
+                return colorScheme.m2122getTertiaryContainer0d7_KjU();
+            case 37:
+                return colorScheme.m2104getPrimaryFixed0d7_KjU();
+            case 38:
+                return colorScheme.m2105getPrimaryFixedDim0d7_KjU();
+            case 39:
+                return colorScheme.m2088getOnPrimaryFixed0d7_KjU();
+            case 40:
+                return colorScheme.m2089getOnPrimaryFixedVariant0d7_KjU();
+            case 41:
+                return colorScheme.m2109getSecondaryFixed0d7_KjU();
+            case 42:
+                return colorScheme.m2110getSecondaryFixedDim0d7_KjU();
+            case 43:
+                return colorScheme.m2092getOnSecondaryFixed0d7_KjU();
+            case 44:
+                return colorScheme.m2093getOnSecondaryFixedVariant0d7_KjU();
+            case 45:
+                return colorScheme.m2123getTertiaryFixed0d7_KjU();
+            case 46:
+                return colorScheme.m2124getTertiaryFixedDim0d7_KjU();
+            case 47:
+                return colorScheme.m2098getOnTertiaryFixed0d7_KjU();
+            case 48:
+                return colorScheme.m2099getOnTertiaryFixedVariant0d7_KjU();
             default:
-                return Color.Companion.m4585getUnspecified0d7_KjU();
+                throw new NoWhenBranchMatchedException();
         }
+    }
+
+    public static final ColorScheme LocalColorScheme$lambda$1() {
+        return m2141lightColorScheme_VG5OTI$default(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -1, 65535, null);
     }
 
     public static final ProvidableCompositionLocal<ColorScheme> getLocalColorScheme() {
         return LocalColorScheme;
     }
 
-    public static final ProvidableCompositionLocal<Boolean> getLocalTonalElevationEnabled() {
-        return LocalTonalElevationEnabled;
-    }
-
     public static final long getValue(ColorSchemeKeyTokens colorSchemeKeyTokens, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -810780884, "C1009@45379L11:ColorScheme.kt#uh7d8r");
+        ComposerKt.sourceInformationMarkerStart(composer, -810780884, "C(<get-value>)1524@69711L11:ColorScheme.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-810780884, i, -1, "androidx.compose.material3.<get-value> (ColorScheme.kt:1009)");
+            ComposerKt.traceEventStart(-810780884, i, -1, "androidx.compose.material3.<get-value> (ColorScheme.kt:1524)");
         }
         long fromToken = fromToken(MaterialTheme.INSTANCE.getColorScheme(composer, 6), colorSchemeKeyTokens);
         if (ComposerKt.isTraceInProgress()) {
@@ -555,11 +735,35 @@ public final class ColorSchemeKt {
         return fromToken;
     }
 
-    /* renamed from: surfaceColorAtElevation-3ABfNKs */
-    public static final long m2059surfaceColorAtElevation3ABfNKs(ColorScheme colorScheme, float f) {
-        if (Dp.m7269equalsimpl0(f, Dp.m7264constructorimpl(0))) {
-            return colorScheme.m2036getSurface0d7_KjU();
+    /* renamed from: applyTonalElevation-RFCenO8 */
+    public static final long m2127applyTonalElevationRFCenO8(ColorScheme colorScheme, long j, float f, Composer composer, int i) {
+        ComposerKt.sourceInformationMarkerStart(composer, -1610977682, "C(applyTonalElevation)N(backgroundColor:c#ui.graphics.Color,elevation:c#ui.unit.Dp)1540@70581L7:ColorScheme.kt#uh7d8r");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-1610977682, i, -1, "androidx.compose.material3.applyTonalElevation (ColorScheme.kt:1539)");
         }
-        return ColorKt.m4594compositeOverOWjLjI(Color.m4548copywmQWz5c$default(colorScheme.m2044getSurfaceTint0d7_KjU(), ((((float) Math.log(f + 1)) * 4.5f) + 2.0f) / 100.0f, 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2036getSurface0d7_KjU());
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+        Object consume = composer.consume(LocalTonalElevationEnabled);
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        boolean booleanValue = ((Boolean) consume).booleanValue();
+        if (Color.m5280equalsimpl0(j, colorScheme.m2111getSurface0d7_KjU()) && booleanValue) {
+            j = m2142surfaceColorAtElevation3ABfNKs(colorScheme, f);
+        }
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        return j;
+    }
+
+    public static final ProvidableCompositionLocal<Boolean> getLocalTonalElevationEnabled() {
+        return LocalTonalElevationEnabled;
+    }
+
+    /* renamed from: surfaceColorAtElevation-3ABfNKs */
+    public static final long m2142surfaceColorAtElevation3ABfNKs(ColorScheme colorScheme, float f) {
+        if (Dp.m8000equalsimpl0(f, Dp.m7995constructorimpl(0))) {
+            return colorScheme.m2111getSurface0d7_KjU();
+        }
+        return ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(colorScheme.m2119getSurfaceTint0d7_KjU(), ((((float) Math.log(f + 1)) * 4.5f) + 2.0f) / 100.0f, 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2111getSurface0d7_KjU());
     }
 }

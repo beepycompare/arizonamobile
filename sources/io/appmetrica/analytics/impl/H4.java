@@ -1,16 +1,17 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class H4 {
+/* loaded from: classes3.dex */
+public abstract class H4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f472a = I4.f489a;
-    public boolean b = I4.b;
-    public boolean c = I4.c;
-    public boolean d = I4.d;
-    public boolean e = I4.e;
-    public Boolean f = null;
+    public final E4 f501a;
 
-    public final J4 a() {
-        return new J4(this);
+    public H4(E4 e4) {
+        this.f501a = e4;
     }
+
+    public final E4 a() {
+        return this.f501a;
+    }
+
+    public abstract boolean a(W5 w5, B4 b4);
 }

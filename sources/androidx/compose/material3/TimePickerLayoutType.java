@@ -5,50 +5,50 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: TimePicker.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001a\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\f\u0010\u0005J\u000f\u0010\r\u001a\u00020\u000eH\u0016¢\u0006\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/material3/TimePickerLayoutType;", "", "value", "", "constructor-impl", "(I)I", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "Companion", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/material3/TimePickerLayoutType;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class TimePickerLayoutType {
     public static final Companion Companion = new Companion(null);
-    private static final int Horizontal = m2857constructorimpl(0);
-    private static final int Vertical = m2857constructorimpl(1);
+    private static final int Horizontal = m3240constructorimpl(0);
+    private static final int Vertical = m3240constructorimpl(1);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TimePickerLayoutType m2856boximpl(int i) {
+    public static final /* synthetic */ TimePickerLayoutType m3239boximpl(int i) {
         return new TimePickerLayoutType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m2857constructorimpl(int i) {
+    public static int m3240constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2858equalsimpl(int i, Object obj) {
-        return (obj instanceof TimePickerLayoutType) && i == ((TimePickerLayoutType) obj).m2862unboximpl();
+    public static boolean m3241equalsimpl(int i, Object obj) {
+        return (obj instanceof TimePickerLayoutType) && i == ((TimePickerLayoutType) obj).m3245unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2859equalsimpl0(int i, int i2) {
+    public static final boolean m3242equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2860hashCodeimpl(int i) {
+    public static int m3243hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m2858equalsimpl(this.value, obj);
+        return m3241equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2860hashCodeimpl(this.value);
+        return m3243hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2862unboximpl() {
+    public final /* synthetic */ int m3245unboximpl() {
         return this.value;
     }
 
@@ -57,7 +57,7 @@ public final class TimePickerLayoutType {
     }
 
     /* compiled from: TimePicker.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\t\u0010\u0006\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\n"}, d2 = {"Landroidx/compose/material3/TimePickerLayoutType$Companion;", "", "()V", "Horizontal", "Landroidx/compose/material3/TimePickerLayoutType;", "getHorizontal-QJTpgSE", "()I", "I", "Vertical", "getVertical-QJTpgSE", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007¨\u0006\u000b"}, d2 = {"Landroidx/compose/material3/TimePickerLayoutType$Companion;", "", "<init>", "()V", "Horizontal", "Landroidx/compose/material3/TimePickerLayoutType;", "getHorizontal-QJTpgSE", "()I", "I", "Vertical", "getVertical-QJTpgSE", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -68,22 +68,22 @@ public final class TimePickerLayoutType {
         }
 
         /* renamed from: getHorizontal-QJTpgSE  reason: not valid java name */
-        public final int m2863getHorizontalQJTpgSE() {
+        public final int m3246getHorizontalQJTpgSE() {
             return TimePickerLayoutType.Horizontal;
         }
 
         /* renamed from: getVertical-QJTpgSE  reason: not valid java name */
-        public final int m2864getVerticalQJTpgSE() {
+        public final int m3247getVerticalQJTpgSE() {
             return TimePickerLayoutType.Vertical;
         }
     }
 
     public String toString() {
-        return m2861toStringimpl(this.value);
+        return m3244toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2861toStringimpl(int i) {
-        return m2859equalsimpl0(i, Horizontal) ? "Horizontal" : m2859equalsimpl0(i, Vertical) ? "Vertical" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m3244toStringimpl(int i) {
+        return m3242equalsimpl0(i, Horizontal) ? "Horizontal" : m3242equalsimpl0(i, Vertical) ? "Vertical" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

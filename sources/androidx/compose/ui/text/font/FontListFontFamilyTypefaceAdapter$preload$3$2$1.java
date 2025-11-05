@@ -87,7 +87,7 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
                 if (i == 0) {
                     ResultKt.throwOnFailure(obj);
                     this.label = 1;
-                    obj = TimeoutKt.withTimeout(15000L, new C00411(this.$resourceLoader, this.$font, null), this);
+                    obj = TimeoutKt.withTimeout(15000L, new C00291(this.$resourceLoader, this.$font, null), this);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -111,13 +111,13 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
         @DebugMetadata(c = "androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1$1$1", f = "FontListFontFamilyTypefaceAdapter.kt", i = {}, l = {112}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes2.dex */
-        public static final class C00411 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
+        public static final class C00291 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
             final /* synthetic */ Font $font;
             final /* synthetic */ PlatformFontLoader $resourceLoader;
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00411(PlatformFontLoader platformFontLoader, Font font, Continuation<? super C00411> continuation) {
+            C00291(PlatformFontLoader platformFontLoader, Font font, Continuation<? super C00291> continuation) {
                 super(2, continuation);
                 this.$resourceLoader = platformFontLoader;
                 this.$font = font;
@@ -125,7 +125,7 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new C00411(this.$resourceLoader, this.$font, continuation);
+                return new C00291(this.$resourceLoader, this.$font, continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
@@ -135,7 +135,7 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final Object invoke2(CoroutineScope coroutineScope, Continuation<Object> continuation) {
-                return ((C00411) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00291) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

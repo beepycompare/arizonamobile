@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.vending.expansion.downloader.Constants;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgu extends zzjf {
     private char zza;
     private long zzb;

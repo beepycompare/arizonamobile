@@ -11,7 +11,7 @@ import androidx.media3.exoplayer.source.MediaSourceEventListener;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class CompositeMediaSource<T> extends BaseMediaSource {
     private final HashMap<T, MediaSourceAndListener<T>> childSources = new HashMap<>();
     private Handler eventHandler;
@@ -31,7 +31,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: onChildSourceInfoRefreshed */
-    public abstract void m7986x28f9175(T t, MediaSource mediaSource, Timeline timeline);
+    public abstract void m8717x28f9175(T t, MediaSource mediaSource, Timeline timeline);
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.media3.exoplayer.source.BaseMediaSource
@@ -79,7 +79,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         MediaSource.MediaSourceCaller mediaSourceCaller = new MediaSource.MediaSourceCaller() { // from class: androidx.media3.exoplayer.source.CompositeMediaSource$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.source.MediaSource.MediaSourceCaller
             public final void onSourceInfoRefreshed(MediaSource mediaSource2, Timeline timeline) {
-                CompositeMediaSource.this.m7986x28f9175(t, mediaSource2, timeline);
+                CompositeMediaSource.this.m8717x28f9175(t, mediaSource2, timeline);
             }
         };
         ForwardingEventListener forwardingEventListener = new ForwardingEventListener(t);
@@ -113,7 +113,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         mediaSourceAndListener.mediaSource.removeDrmEventListener(mediaSourceAndListener.eventListener);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class MediaSourceAndListener<T> {
         public final MediaSource.MediaSourceCaller caller;
         public final CompositeMediaSource<T>.ForwardingEventListener eventListener;
@@ -126,7 +126,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class ForwardingEventListener implements MediaSourceEventListener, DrmSessionEventListener {
         private DrmSessionEventListener.EventDispatcher drmEventDispatcher;
         private final T id;

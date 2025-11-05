@@ -40,25 +40,27 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DatePickerDialog.android.kt */
-@Metadata(d1 = {"\u0000N\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u009a\u0001\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\t2\u0011\u0010\n\u001a\r\u0012\u0004\u0012\u00020\u00070\t¢\u0006\u0002\b\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\u0015\b\u0002\u0010\u000e\u001a\u000f\u0012\u0004\u0012\u00020\u0007\u0018\u00010\t¢\u0006\u0002\b\u000b2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00012\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00152\u001c\u0010\u0016\u001a\u0018\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u00070\u0017¢\u0006\u0002\b\u000b¢\u0006\u0002\b\u0019H\u0007ø\u0001\u0000¢\u0006\u0004\b\u001a\u0010\u001b\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0003\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001c"}, d2 = {"DialogButtonsCrossAxisSpacing", "Landroidx/compose/ui/unit/Dp;", "F", "DialogButtonsMainAxisSpacing", "DialogButtonsPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "DatePickerDialog", "", "onDismissRequest", "Lkotlin/Function0;", "confirmButton", "Landroidx/compose/runtime/Composable;", "modifier", "Landroidx/compose/ui/Modifier;", "dismissButton", "shape", "Landroidx/compose/ui/graphics/Shape;", "tonalElevation", "colors", "Landroidx/compose/material3/DatePickerColors;", "properties", "Landroidx/compose/ui/window/DialogProperties;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/ColumnScope;", "Lkotlin/ExtensionFunctionType;", "DatePickerDialog-GmEhDVc", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/graphics/Shape;FLandroidx/compose/material3/DatePickerColors;Landroidx/compose/ui/window/DialogProperties;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a\u0097\u0001\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0015\b\u0002\u0010\b\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00052\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\u001c\u0010\u0011\u001a\u0018\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00010\u0012¢\u0006\u0002\b\u0005¢\u0006\u0002\b\u0014H\u0007¢\u0006\u0004\b\u0015\u0010\u0016\"\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010\u0019\u001a\u00020\fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001a\"\u0010\u0010\u001b\u001a\u00020\fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001a¨\u0006\u001c"}, d2 = {"DatePickerDialog", "", "onDismissRequest", "Lkotlin/Function0;", "confirmButton", "Landroidx/compose/runtime/Composable;", "modifier", "Landroidx/compose/ui/Modifier;", "dismissButton", "shape", "Landroidx/compose/ui/graphics/Shape;", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "colors", "Landroidx/compose/material3/DatePickerColors;", "properties", "Landroidx/compose/ui/window/DialogProperties;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/ColumnScope;", "Lkotlin/ExtensionFunctionType;", "DatePickerDialog-GmEhDVc", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/graphics/Shape;FLandroidx/compose/material3/DatePickerColors;Landroidx/compose/ui/window/DialogProperties;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "DialogButtonsPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "DialogButtonsMainAxisSpacing", "F", "DialogButtonsCrossAxisSpacing", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DatePickerDialog_androidKt {
-    private static final float DialogButtonsCrossAxisSpacing = Dp.m7264constructorimpl(12);
+    private static final float DialogButtonsCrossAxisSpacing = Dp.m7995constructorimpl(12);
     private static final float DialogButtonsMainAxisSpacing;
     private static final PaddingValues DialogButtonsPadding;
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0160  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0183  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x01ea  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x01fc  */
-    /* JADX WARN: Removed duplicated region for block: B:145:? A[RETURN, SYNTHETIC] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit DatePickerDialog_GmEhDVc$lambda$0(Function0 function0, Function2 function2, Modifier modifier, Function2 function22, Shape shape, float f, DatePickerColors datePickerColors, DialogProperties dialogProperties, Function3 function3, int i, int i2, Composer composer, int i3) {
+        m2218DatePickerDialogGmEhDVc(function0, function2, modifier, function22, shape, f, datePickerColors, dialogProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x01c2  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x01fb  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0206  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0217  */
+    /* JADX WARN: Removed duplicated region for block: B:147:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0050  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006c  */
@@ -77,7 +79,7 @@ public final class DatePickerDialog_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2145DatePickerDialogGmEhDVc(final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Shape shape, float f, DatePickerColors datePickerColors, DialogProperties dialogProperties, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2218DatePickerDialogGmEhDVc(final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Shape shape, float f, DatePickerColors datePickerColors, DialogProperties dialogProperties, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         int i4;
         Modifier.Companion companion;
@@ -88,18 +90,27 @@ public final class DatePickerDialog_androidKt {
         float f2;
         final DatePickerColors datePickerColors2;
         int i7;
-        DialogProperties dialogProperties2;
-        final DialogProperties dialogProperties3;
-        final float f3;
-        final Function2<? super Composer, ? super Integer, Unit> function23;
-        final Modifier modifier2;
-        Composer composer2;
-        final Shape shape2;
-        ScopeUpdateScope endRestartGroup;
         int i8;
+        Composer composer2;
+        final Modifier modifier2;
+        final Function2<? super Composer, ? super Integer, Unit> function23;
+        final Shape shape2;
+        final float f3;
+        final DialogProperties dialogProperties2;
+        ScopeUpdateScope endRestartGroup;
         int i9;
-        Composer startRestartGroup = composer.startRestartGroup(-36517340);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DatePickerDialog)P(5,1,4,3,7,8:c#ui.unit.Dp!1,6)71@3518L5,73@3635L8,81@3937L1615,77@3787L1765:DatePickerDialog.android.kt#uh7d8r");
+        int i10;
+        DialogProperties dialogProperties3;
+        final Function2<? super Composer, ? super Integer, Unit> function24;
+        final float f4;
+        int i11;
+        Modifier modifier3;
+        final Shape shape3;
+        boolean z;
+        int i12;
+        int i13;
+        Composer startRestartGroup = composer.startRestartGroup(219718641);
+        ComposerKt.sourceInformation(startRestartGroup, "C(DatePickerDialog)N(onDismissRequest,confirmButton,modifier,dismissButton,shape,tonalElevation:c#ui.unit.Dp,colors,properties,content)79@3746L1617,75@3595L1768:DatePickerDialog.android.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -127,14 +138,14 @@ public final class DatePickerDialog_androidKt {
                         if ((i2 & 16) == 0) {
                             obj2 = shape;
                             if (startRestartGroup.changed(obj2)) {
-                                i9 = 16384;
-                                i3 |= i9;
+                                i13 = 16384;
+                                i3 |= i13;
                             }
                         } else {
                             obj2 = shape;
                         }
-                        i9 = 8192;
-                        i3 |= i9;
+                        i13 = 8192;
+                        i3 |= i13;
                     } else {
                         obj2 = shape;
                     }
@@ -148,14 +159,14 @@ public final class DatePickerDialog_androidKt {
                             if ((i2 & 64) == 0) {
                                 datePickerColors2 = datePickerColors;
                                 if (startRestartGroup.changed(datePickerColors2)) {
-                                    i8 = 1048576;
-                                    i3 |= i8;
+                                    i12 = 1048576;
+                                    i3 |= i12;
                                 }
                             } else {
                                 datePickerColors2 = datePickerColors;
                             }
-                            i8 = 524288;
-                            i3 |= i8;
+                            i12 = 524288;
+                            i3 |= i12;
                         } else {
                             datePickerColors2 = datePickerColors;
                         }
@@ -169,9 +180,11 @@ public final class DatePickerDialog_androidKt {
                             i3 |= 100663296;
                         } else if ((i & 100663296) == 0) {
                             i3 |= startRestartGroup.changedInstance(function3) ? 67108864 : 33554432;
-                            if ((i3 & 38347923) == 38347922 || !startRestartGroup.getSkipping()) {
+                            i8 = i3;
+                            if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i8 & 1)) {
                                 startRestartGroup.startDefaults();
-                                if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
+                                ComposerKt.sourceInformation(startRestartGroup, "55@2765L5,57@2882L8");
+                                if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                                     if (i4 != 0) {
                                         companion = Modifier.Companion;
                                     }
@@ -179,361 +192,83 @@ public final class DatePickerDialog_androidKt {
                                         obj = null;
                                     }
                                     if ((i2 & 16) != 0) {
-                                        i3 &= -57345;
+                                        i9 = i8 & (-57345);
                                         obj2 = DatePickerDefaults.INSTANCE.getShape(startRestartGroup, 6);
+                                    } else {
+                                        i9 = i8;
                                     }
                                     if (i6 != 0) {
-                                        f2 = DatePickerDefaults.INSTANCE.m2144getTonalElevationD9Ej5fM();
+                                        f2 = DatePickerDefaults.INSTANCE.m2217getTonalElevationD9Ej5fM();
                                     }
                                     if ((i2 & 64) != 0) {
-                                        i3 &= -3670017;
                                         datePickerColors2 = DatePickerDefaults.INSTANCE.colors(startRestartGroup, 6);
+                                        i10 = i9 & (-3670017);
+                                    } else {
+                                        i10 = i9;
                                     }
                                     if (i7 != 0) {
-                                        dialogProperties2 = new DialogProperties(false, false, false, 3, (DefaultConstructorMarker) null);
-                                        Modifier modifier3 = companion;
-                                        final Function2<? super Composer, ? super Integer, Unit> function24 = obj;
-                                        final float f4 = f2;
-                                        final Shape shape3 = obj2;
+                                        dialogProperties3 = new DialogProperties(false, false, false, 3, (DefaultConstructorMarker) null);
+                                        function24 = obj;
+                                        f4 = f2;
+                                        i11 = i10;
+                                        modifier3 = companion;
+                                        shape3 = obj2;
+                                        z = false;
                                         startRestartGroup.endDefaults();
                                         if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-36517340, i3, -1, "androidx.compose.material3.DatePickerDialog (DatePickerDialog.android.kt:76)");
+                                            ComposerKt.traceEventStart(219718641, i11, -1, "androidx.compose.material3.DatePickerDialog (DatePickerDialog.android.kt:74)");
                                         }
-                                        AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier3, null, false, 3, null), dialogProperties2, ComposableLambdaKt.rememberComposableLambda(-10625622, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
-
+                                        AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier3, null, z, 3, null), dialogProperties3, ComposableLambdaKt.rememberComposableLambda(1108953335, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                                 invoke(composer3, num.intValue());
                                                 return Unit.INSTANCE;
                                             }
 
-                                            public final void invoke(Composer composer3, int i10) {
-                                                ComposerKt.sourceInformation(composer3, "C89@4257L1289,82@3947L1599:DatePickerDialog.android.kt#uh7d8r");
-                                                if ((i10 & 3) != 2 || !composer3.getSkipping()) {
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventStart(-10625622, i10, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:82)");
-                                                    }
-                                                    Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3262getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3261getContainerHeightD9Ej5fM(), 1, null);
-                                                    Shape shape4 = Shape.this;
-                                                    long m2117getContainerColor0d7_KjU = datePickerColors2.m2117getContainerColor0d7_KjU();
-                                                    float f5 = f4;
-                                                    final Function3<ColumnScope, Composer, Integer, Unit> function32 = function3;
-                                                    final Function2<Composer, Integer, Unit> function25 = function24;
-                                                    final Function2<Composer, Integer, Unit> function26 = function2;
-                                                    SurfaceKt.m2664SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2117getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1706202235, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
-                                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                        /* JADX WARN: Multi-variable type inference failed */
-                                                        {
-                                                            super(2);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function2
-                                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                            invoke(composer4, num.intValue());
-                                                            return Unit.INSTANCE;
-                                                        }
-
-                                                        public final void invoke(Composer composer4, int i11) {
-                                                            PaddingValues paddingValues;
-                                                            ComposerKt.sourceInformation(composer4, "C90@4271L1265:DatePickerDialog.android.kt#uh7d8r");
-                                                            if ((i11 & 3) != 2 || !composer4.getSkipping()) {
-                                                                if (ComposerKt.isTraceInProgress()) {
-                                                                    ComposerKt.traceEventStart(-1706202235, i11, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:90)");
-                                                                }
-                                                                Function3<ColumnScope, Composer, Integer, Unit> function33 = function32;
-                                                                final Function2<Composer, Integer, Unit> function27 = function25;
-                                                                final Function2<Composer, Integer, Unit> function28 = function26;
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                                                                MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), composer4, 6);
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                                                int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                                                CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, Modifier.Companion);
-                                                                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                                                if (!(composer4.getApplier() instanceof Applier)) {
-                                                                    ComposablesKt.invalidApplier();
-                                                                }
-                                                                composer4.startReusableNode();
-                                                                if (composer4.getInserting()) {
-                                                                    composer4.createNode(constructor);
-                                                                } else {
-                                                                    composer4.useNode();
-                                                                }
-                                                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                                                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                                                }
-                                                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                                                                ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -2140243970, "C96@4721L64,98@4829L693:DatePickerDialog.android.kt#uh7d8r");
-                                                                Modifier weight = columnScopeInstance.weight(Modifier.Companion, 1.0f, false);
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                                                MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                                                int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                                                CompositionLocalMap currentCompositionLocalMap2 = composer4.getCurrentCompositionLocalMap();
-                                                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer4, weight);
-                                                                Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                                                if (!(composer4.getApplier() instanceof Applier)) {
-                                                                    ComposablesKt.invalidApplier();
-                                                                }
-                                                                composer4.startReusableNode();
-                                                                if (composer4.getInserting()) {
-                                                                    composer4.createNode(constructor2);
-                                                                } else {
-                                                                    composer4.useNode();
-                                                                }
-                                                                Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
-                                                                Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                                if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                                    m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                                    m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                                                                }
-                                                                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                                                BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, 1276701771, "C96@4774L9:DatePickerDialog.android.kt#uh7d8r");
-                                                                function33.invoke(columnScopeInstance, composer4, 6);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                composer4.endNode();
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
-                                                                paddingValues = DatePickerDialog_androidKt.DialogButtonsPadding;
-                                                                Modifier padding = PaddingKt.padding(align, paddingValues);
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                                                MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                                                int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                                                CompositionLocalMap currentCompositionLocalMap3 = composer4.getCurrentCompositionLocalMap();
-                                                                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer4, padding);
-                                                                Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                                                if (!(composer4.getApplier() instanceof Applier)) {
-                                                                    ComposablesKt.invalidApplier();
-                                                                }
-                                                                composer4.startReusableNode();
-                                                                if (composer4.getInserting()) {
-                                                                    composer4.createNode(constructor3);
-                                                                } else {
-                                                                    composer4.useNode();
-                                                                }
-                                                                Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer4);
-                                                                Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                                Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                                if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                                                    m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                                                    m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                                                                }
-                                                                Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                                                BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                                                ComposerKt.sourceInformationMarkerStart(composer4, 1276882687, "C100@5030L5,101@5106L5,102@5134L370,99@4927L577:DatePickerDialog.android.kt#uh7d8r");
-                                                                ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(642347978, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
-                                                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                                    /* JADX WARN: Multi-variable type inference failed */
-                                                                    {
-                                                                        super(2);
-                                                                    }
-
-                                                                    @Override // kotlin.jvm.functions.Function2
-                                                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
-                                                                        invoke(composer5, num.intValue());
-                                                                        return Unit.INSTANCE;
-                                                                    }
-
-                                                                    public final void invoke(Composer composer5, int i12) {
-                                                                        float f6;
-                                                                        float f7;
-                                                                        ComposerKt.sourceInformation(composer5, "C106@5359L123,103@5160L322:DatePickerDialog.android.kt#uh7d8r");
-                                                                        if ((i12 & 3) != 2 || !composer5.getSkipping()) {
-                                                                            if (ComposerKt.isTraceInProgress()) {
-                                                                                ComposerKt.traceEventStart(642347978, i12, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:103)");
-                                                                            }
-                                                                            f6 = DatePickerDialog_androidKt.DialogButtonsMainAxisSpacing;
-                                                                            f7 = DatePickerDialog_androidKt.DialogButtonsCrossAxisSpacing;
-                                                                            final Function2<Composer, Integer, Unit> function29 = function27;
-                                                                            final Function2<Composer, Integer, Unit> function210 = function28;
-                                                                            AlertDialogKt.m1877AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(1241707635, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
-                                                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                                                /* JADX WARN: Multi-variable type inference failed */
-                                                                                {
-                                                                                    super(2);
-                                                                                }
-
-                                                                                @Override // kotlin.jvm.functions.Function2
-                                                                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
-                                                                                    invoke(composer6, num.intValue());
-                                                                                    return Unit.INSTANCE;
-                                                                                }
-
-                                                                                public final void invoke(Composer composer6, int i13) {
-                                                                                    ComposerKt.sourceInformation(composer6, "C108@5441L15:DatePickerDialog.android.kt#uh7d8r");
-                                                                                    if ((i13 & 3) != 2 || !composer6.getSkipping()) {
-                                                                                        if (ComposerKt.isTraceInProgress()) {
-                                                                                            ComposerKt.traceEventStart(1241707635, i13, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:107)");
-                                                                                        }
-                                                                                        Function2<Composer, Integer, Unit> function211 = function29;
-                                                                                        composer6.startReplaceGroup(-779485335);
-                                                                                        ComposerKt.sourceInformation(composer6, "107@5404L8");
-                                                                                        if (function211 != null) {
-                                                                                            function211.invoke(composer6, 0);
-                                                                                            Unit unit = Unit.INSTANCE;
-                                                                                        }
-                                                                                        composer6.endReplaceGroup();
-                                                                                        function210.invoke(composer6, 0);
-                                                                                        if (ComposerKt.isTraceInProgress()) {
-                                                                                            ComposerKt.traceEventEnd();
-                                                                                            return;
-                                                                                        }
-                                                                                        return;
-                                                                                    }
-                                                                                    composer6.skipToGroupEnd();
-                                                                                }
-                                                                            }, composer5, 54), composer5, 438);
-                                                                            if (ComposerKt.isTraceInProgress()) {
-                                                                                ComposerKt.traceEventEnd();
-                                                                                return;
-                                                                            }
-                                                                            return;
-                                                                        }
-                                                                        composer5.skipToGroupEnd();
-                                                                    }
-                                                                }, composer4, 54), composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                composer4.endNode();
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                composer4.endNode();
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                                if (ComposerKt.isTraceInProgress()) {
-                                                                    ComposerKt.traceEventEnd();
-                                                                    return;
-                                                                }
-                                                                return;
-                                                            }
-                                                            composer4.skipToGroupEnd();
-                                                        }
-                                                    }, composer3, 54), composer3, 12582918, 104);
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventEnd();
-                                                        return;
-                                                    }
+                                            public final void invoke(Composer composer3, int i14) {
+                                                ComposerKt.sourceInformation(composer3, "C87@4066L1291,80@3756L1601:DatePickerDialog.android.kt#uh7d8r");
+                                                if (!composer3.shouldExecute((i14 & 3) != 2, i14 & 1)) {
+                                                    composer3.skipToGroupEnd();
                                                     return;
                                                 }
-                                                composer3.skipToGroupEnd();
-                                            }
-                                        }, startRestartGroup, 54), startRestartGroup, (i3 & 14) | 3072 | ((i3 >> 15) & 896), 0);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                        }
-                                        dialogProperties3 = dialogProperties2;
-                                        f3 = f4;
-                                        function23 = function24;
-                                        modifier2 = modifier3;
-                                        composer2 = startRestartGroup;
-                                        shape2 = shape3;
-                                    }
-                                } else {
-                                    startRestartGroup.skipToGroupEnd();
-                                    if ((i2 & 16) != 0) {
-                                        i3 &= -57345;
-                                    }
-                                    if ((i2 & 64) != 0) {
-                                        i3 &= -3670017;
-                                    }
-                                }
-                                dialogProperties2 = dialogProperties;
-                                Modifier modifier32 = companion;
-                                final Function2<? super Composer, ? super Integer, Unit> function242 = obj;
-                                final float f42 = f2;
-                                final Shape shape32 = obj2;
-                                startRestartGroup.endDefaults();
-                                if (ComposerKt.isTraceInProgress()) {
-                                }
-                                AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier32, null, false, 3, null), dialogProperties2, ComposableLambdaKt.rememberComposableLambda(-10625622, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    {
-                                        super(2);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                        invoke(composer3, num.intValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(Composer composer3, int i10) {
-                                        ComposerKt.sourceInformation(composer3, "C89@4257L1289,82@3947L1599:DatePickerDialog.android.kt#uh7d8r");
-                                        if ((i10 & 3) != 2 || !composer3.getSkipping()) {
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventStart(-10625622, i10, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:82)");
-                                            }
-                                            Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3262getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3261getContainerHeightD9Ej5fM(), 1, null);
-                                            Shape shape4 = Shape.this;
-                                            long m2117getContainerColor0d7_KjU = datePickerColors2.m2117getContainerColor0d7_KjU();
-                                            float f5 = f42;
-                                            final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function32 = function3;
-                                            final Function2<? super Composer, ? super Integer, Unit> function25 = function242;
-                                            final Function2<? super Composer, ? super Integer, Unit> function26 = function2;
-                                            SurfaceKt.m2664SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2117getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1706202235, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
-                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                /* JADX WARN: Multi-variable type inference failed */
-                                                {
-                                                    super(2);
+                                                if (ComposerKt.isTraceInProgress()) {
+                                                    ComposerKt.traceEventStart(1108953335, i14, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:80)");
                                                 }
+                                                Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3843getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3842getContainerHeightD9Ej5fM(), 1, null);
+                                                Shape shape4 = Shape.this;
+                                                long m2188getContainerColor0d7_KjU = datePickerColors2.m2188getContainerColor0d7_KjU();
+                                                float f5 = f4;
+                                                final Function3<ColumnScope, Composer, Integer, Unit> function32 = function3;
+                                                final Function2<Composer, Integer, Unit> function25 = function24;
+                                                final Function2<Composer, Integer, Unit> function26 = function2;
+                                                SurfaceKt.m2996SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2188getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1782015378, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
+                                                    @Override // kotlin.jvm.functions.Function2
+                                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
+                                                        invoke(composer4, num.intValue());
+                                                        return Unit.INSTANCE;
+                                                    }
 
-                                                @Override // kotlin.jvm.functions.Function2
-                                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                    invoke(composer4, num.intValue());
-                                                    return Unit.INSTANCE;
-                                                }
-
-                                                public final void invoke(Composer composer4, int i11) {
-                                                    PaddingValues paddingValues;
-                                                    ComposerKt.sourceInformation(composer4, "C90@4271L1265:DatePickerDialog.android.kt#uh7d8r");
-                                                    if ((i11 & 3) != 2 || !composer4.getSkipping()) {
+                                                    public final void invoke(Composer composer4, int i15) {
+                                                        PaddingValues paddingValues;
+                                                        ComposerKt.sourceInformation(composer4, "C88@4080L1267:DatePickerDialog.android.kt#uh7d8r");
+                                                        if (!composer4.shouldExecute((i15 & 3) != 2, i15 & 1)) {
+                                                            composer4.skipToGroupEnd();
+                                                            return;
+                                                        }
                                                         if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(-1706202235, i11, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:90)");
+                                                            ComposerKt.traceEventStart(1782015378, i15, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:88)");
                                                         }
                                                         Function3<ColumnScope, Composer, Integer, Unit> function33 = function32;
-                                                        final Function2<? super Composer, ? super Integer, Unit> function27 = function25;
-                                                        final Function2<? super Composer, ? super Integer, Unit> function28 = function26;
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
+                                                        final Function2<Composer, Integer, Unit> function27 = function25;
+                                                        final Function2<Composer, Integer, Unit> function28 = function26;
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
                                                         MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), composer4, 6);
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                                         CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
                                                         Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, Modifier.Companion);
                                                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                         if (!(composer4.getApplier() instanceof Applier)) {
                                                             ComposablesKt.invalidApplier();
                                                         }
@@ -543,27 +278,27 @@ public final class DatePickerDialog_androidKt {
                                                         } else {
                                                             composer4.useNode();
                                                         }
-                                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                                        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer4);
+                                                        Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                            m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                            m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                         }
-                                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
+                                                        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                                         ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -2140243970, "C96@4721L64,98@4829L693:DatePickerDialog.android.kt#uh7d8r");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1407374204, "C94@4530L64,96@4638L695:DatePickerDialog.android.kt#uh7d8r");
                                                         Modifier weight = columnScopeInstance.weight(Modifier.Companion, 1.0f, false);
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                                         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                         int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                                         CompositionLocalMap currentCompositionLocalMap2 = composer4.getCurrentCompositionLocalMap();
                                                         Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer4, weight);
                                                         Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                         if (!(composer4.getApplier() instanceof Applier)) {
                                                             ComposablesKt.invalidApplier();
                                                         }
@@ -573,18 +308,18 @@ public final class DatePickerDialog_androidKt {
                                                         } else {
                                                             composer4.useNode();
                                                         }
-                                                        Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
-                                                        Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                        Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer4);
+                                                        Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                        Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                        if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                        if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                            m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                            m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                         }
-                                                        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
+                                                        Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, 1276701771, "C96@4774L9:DatePickerDialog.android.kt#uh7d8r");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -114868488, "C94@4583L9:DatePickerDialog.android.kt#uh7d8r");
                                                         function33.invoke(columnScopeInstance, composer4, 6);
                                                         ComposerKt.sourceInformationMarkerEnd(composer4);
                                                         ComposerKt.sourceInformationMarkerEnd(composer4);
@@ -595,14 +330,14 @@ public final class DatePickerDialog_androidKt {
                                                         Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
                                                         paddingValues = DatePickerDialog_androidKt.DialogButtonsPadding;
                                                         Modifier padding = PaddingKt.padding(align, paddingValues);
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                                         MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                         int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                                         CompositionLocalMap currentCompositionLocalMap3 = composer4.getCurrentCompositionLocalMap();
                                                         Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer4, padding);
                                                         Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                         if (!(composer4.getApplier() instanceof Applier)) {
                                                             ComposablesKt.invalidApplier();
                                                         }
@@ -612,79 +347,66 @@ public final class DatePickerDialog_androidKt {
                                                         } else {
                                                             composer4.useNode();
                                                         }
-                                                        Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer4);
-                                                        Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                        Composer m4597constructorimpl3 = Updater.m4597constructorimpl(composer4);
+                                                        Updater.m4604setimpl(m4597constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                        Updater.m4604setimpl(m4597constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                        if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                                                        if (m4597constructorimpl3.getInserting() || !Intrinsics.areEqual(m4597constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                                            m4597constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                                            m4597constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                                                         }
-                                                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
+                                                        Updater.m4604setimpl(m4597constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                         BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, 1276882687, "C100@5030L5,101@5106L5,102@5134L370,99@4927L577:DatePickerDialog.android.kt#uh7d8r");
-                                                        ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(642347978, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
-                                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                            /* JADX WARN: Multi-variable type inference failed */
-                                                            {
-                                                                super(2);
-                                                            }
-
+                                                        ComposerKt.sourceInformationMarkerStart(composer4, 775961793, "C98@4839L5,99@4915L5,100@4944L371,97@4736L579:DatePickerDialog.android.kt#uh7d8r");
+                                                        ProvideContentColorTextStyleKt.m3529ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(-1103927529, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
                                                             @Override // kotlin.jvm.functions.Function2
                                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
                                                                 invoke(composer5, num.intValue());
                                                                 return Unit.INSTANCE;
                                                             }
 
-                                                            public final void invoke(Composer composer5, int i12) {
+                                                            public final void invoke(Composer composer5, int i16) {
                                                                 float f6;
                                                                 float f7;
-                                                                ComposerKt.sourceInformation(composer5, "C106@5359L123,103@5160L322:DatePickerDialog.android.kt#uh7d8r");
-                                                                if ((i12 & 3) != 2 || !composer5.getSkipping()) {
+                                                                ComposerKt.sourceInformation(composer5, "C104@5170L123,101@4970L323:DatePickerDialog.android.kt#uh7d8r");
+                                                                if (composer5.shouldExecute((i16 & 3) != 2, i16 & 1)) {
                                                                     if (ComposerKt.isTraceInProgress()) {
-                                                                        ComposerKt.traceEventStart(642347978, i12, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:103)");
+                                                                        ComposerKt.traceEventStart(-1103927529, i16, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:101)");
                                                                     }
                                                                     f6 = DatePickerDialog_androidKt.DialogButtonsMainAxisSpacing;
                                                                     f7 = DatePickerDialog_androidKt.DialogButtonsCrossAxisSpacing;
-                                                                    final Function2<? super Composer, ? super Integer, Unit> function29 = function27;
-                                                                    final Function2<? super Composer, ? super Integer, Unit> function210 = function28;
-                                                                    AlertDialogKt.m1877AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(1241707635, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
-                                                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                                        /* JADX WARN: Multi-variable type inference failed */
-                                                                        {
-                                                                            super(2);
-                                                                        }
-
+                                                                    final Function2<Composer, Integer, Unit> function29 = function27;
+                                                                    final Function2<Composer, Integer, Unit> function210 = function28;
+                                                                    AlertDialogKt.m1878AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(-1980163584, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
                                                                         @Override // kotlin.jvm.functions.Function2
                                                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
                                                                             invoke(composer6, num.intValue());
                                                                             return Unit.INSTANCE;
                                                                         }
 
-                                                                        public final void invoke(Composer composer6, int i13) {
-                                                                            ComposerKt.sourceInformation(composer6, "C108@5441L15:DatePickerDialog.android.kt#uh7d8r");
-                                                                            if ((i13 & 3) != 2 || !composer6.getSkipping()) {
-                                                                                if (ComposerKt.isTraceInProgress()) {
-                                                                                    ComposerKt.traceEventStart(1241707635, i13, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:107)");
-                                                                                }
-                                                                                Function2<Composer, Integer, Unit> function211 = function29;
-                                                                                composer6.startReplaceGroup(-779485335);
-                                                                                ComposerKt.sourceInformation(composer6, "107@5404L8");
-                                                                                if (function211 != null) {
-                                                                                    function211.invoke(composer6, 0);
-                                                                                    Unit unit = Unit.INSTANCE;
-                                                                                }
-                                                                                composer6.endReplaceGroup();
-                                                                                function210.invoke(composer6, 0);
-                                                                                if (ComposerKt.isTraceInProgress()) {
-                                                                                    ComposerKt.traceEventEnd();
-                                                                                    return;
-                                                                                }
+                                                                        public final void invoke(Composer composer6, int i17) {
+                                                                            ComposerKt.sourceInformation(composer6, "C106@5252L15:DatePickerDialog.android.kt#uh7d8r");
+                                                                            if (!composer6.shouldExecute((i17 & 3) != 2, i17 & 1)) {
+                                                                                composer6.skipToGroupEnd();
                                                                                 return;
                                                                             }
-                                                                            composer6.skipToGroupEnd();
+                                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                                ComposerKt.traceEventStart(-1980163584, i17, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:105)");
+                                                                            }
+                                                                            Function2<Composer, Integer, Unit> function211 = function29;
+                                                                            if (function211 == null) {
+                                                                                composer6.startReplaceGroup(322524505);
+                                                                            } else {
+                                                                                composer6.startReplaceGroup(-266690648);
+                                                                                ComposerKt.sourceInformation(composer6, "105@5215L8");
+                                                                                function211.invoke(composer6, 0);
+                                                                            }
+                                                                            composer6.endReplaceGroup();
+                                                                            function210.invoke(composer6, 0);
+                                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                                ComposerKt.traceEventEnd();
+                                                                            }
                                                                         }
                                                                     }, composer5, 54), composer5, 438);
                                                                     if (ComposerKt.isTraceInProgress()) {
@@ -710,147 +432,92 @@ public final class DatePickerDialog_androidKt {
                                                         ComposerKt.sourceInformationMarkerEnd(composer4);
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventEnd();
-                                                            return;
                                                         }
-                                                        return;
                                                     }
-                                                    composer4.skipToGroupEnd();
+                                                }, composer3, 54), composer3, 12582918, 104);
+                                                if (ComposerKt.isTraceInProgress()) {
+                                                    ComposerKt.traceEventEnd();
                                                 }
-                                            }, composer3, 54), composer3, 12582918, 104);
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventEnd();
-                                                return;
                                             }
-                                            return;
+                                        }, startRestartGroup, 54), startRestartGroup, (i11 & 14) | 3072 | ((i11 >> 15) & 896), 0);
+                                        if (ComposerKt.isTraceInProgress()) {
+                                            ComposerKt.traceEventEnd();
                                         }
-                                        composer3.skipToGroupEnd();
+                                        dialogProperties2 = dialogProperties3;
+                                        f3 = f4;
+                                        function23 = function24;
+                                        modifier2 = modifier3;
+                                        composer2 = startRestartGroup;
+                                        shape2 = shape3;
                                     }
-                                }, startRestartGroup, 54), startRestartGroup, (i3 & 14) | 3072 | ((i3 >> 15) & 896), 0);
+                                } else {
+                                    startRestartGroup.skipToGroupEnd();
+                                    i10 = (i2 & 16) != 0 ? i8 & (-57345) : i8;
+                                    if ((i2 & 64) != 0) {
+                                        i10 &= -3670017;
+                                    }
+                                }
+                                dialogProperties3 = dialogProperties;
+                                i11 = i10;
+                                modifier3 = companion;
+                                function24 = obj;
+                                f4 = f2;
+                                z = false;
+                                shape3 = obj2;
+                                startRestartGroup.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
-                                dialogProperties3 = dialogProperties2;
-                                f3 = f42;
-                                function23 = function242;
-                                modifier2 = modifier32;
-                                composer2 = startRestartGroup;
-                                shape2 = shape32;
-                            } else {
-                                startRestartGroup.skipToGroupEnd();
-                                composer2 = startRestartGroup;
-                                modifier2 = companion;
-                                function23 = obj;
-                                shape2 = obj2;
-                                f3 = f2;
-                                dialogProperties3 = dialogProperties;
-                            }
-                            final DatePickerColors datePickerColors3 = datePickerColors2;
-                            endRestartGroup = composer2.endRestartGroup();
-                            if (endRestartGroup == null) {
-                                endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$2
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    {
-                                        super(2);
-                                    }
-
+                                AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier3, null, z, 3, null), dialogProperties3, ComposableLambdaKt.rememberComposableLambda(1108953335, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                         invoke(composer3, num.intValue());
                                         return Unit.INSTANCE;
                                     }
 
-                                    public final void invoke(Composer composer3, int i10) {
-                                        DatePickerDialog_androidKt.m2145DatePickerDialogGmEhDVc(function0, function2, modifier2, function23, shape2, f3, datePickerColors3, dialogProperties3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
-                                    }
-                                });
-                                return;
-                            }
-                            return;
-                        }
-                        if ((i3 & 38347923) == 38347922) {
-                        }
-                        startRestartGroup.startDefaults();
-                        if ((i & 1) != 0) {
-                        }
-                        if (i4 != 0) {
-                        }
-                        if (i5 != 0) {
-                        }
-                        if ((i2 & 16) != 0) {
-                        }
-                        if (i6 != 0) {
-                        }
-                        if ((i2 & 64) != 0) {
-                        }
-                        if (i7 != 0) {
-                        }
-                        dialogProperties2 = dialogProperties;
-                        Modifier modifier322 = companion;
-                        final Function2<? super Composer, ? super Integer, Unit> function2422 = obj;
-                        final float f422 = f2;
-                        final Shape shape322 = obj2;
-                        startRestartGroup.endDefaults();
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier322, null, false, 3, null), dialogProperties2, ComposableLambdaKt.rememberComposableLambda(-10625622, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            /* JADX WARN: Multi-variable type inference failed */
-                            {
-                                super(2);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                invoke(composer3, num.intValue());
-                                return Unit.INSTANCE;
-                            }
-
-                            public final void invoke(Composer composer3, int i10) {
-                                ComposerKt.sourceInformation(composer3, "C89@4257L1289,82@3947L1599:DatePickerDialog.android.kt#uh7d8r");
-                                if ((i10 & 3) != 2 || !composer3.getSkipping()) {
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-10625622, i10, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:82)");
-                                    }
-                                    Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3262getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3261getContainerHeightD9Ej5fM(), 1, null);
-                                    Shape shape4 = Shape.this;
-                                    long m2117getContainerColor0d7_KjU = datePickerColors2.m2117getContainerColor0d7_KjU();
-                                    float f5 = f422;
-                                    final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function32 = function3;
-                                    final Function2<? super Composer, ? super Integer, Unit> function25 = function2422;
-                                    final Function2<? super Composer, ? super Integer, Unit> function26 = function2;
-                                    SurfaceKt.m2664SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2117getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1706202235, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
+                                    public final void invoke(Composer composer3, int i14) {
+                                        ComposerKt.sourceInformation(composer3, "C87@4066L1291,80@3756L1601:DatePickerDialog.android.kt#uh7d8r");
+                                        if (!composer3.shouldExecute((i14 & 3) != 2, i14 & 1)) {
+                                            composer3.skipToGroupEnd();
+                                            return;
                                         }
-
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                            invoke(composer4, num.intValue());
-                                            return Unit.INSTANCE;
+                                        if (ComposerKt.isTraceInProgress()) {
+                                            ComposerKt.traceEventStart(1108953335, i14, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:80)");
                                         }
+                                        Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3843getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3842getContainerHeightD9Ej5fM(), 1, null);
+                                        Shape shape4 = Shape.this;
+                                        long m2188getContainerColor0d7_KjU = datePickerColors2.m2188getContainerColor0d7_KjU();
+                                        float f5 = f4;
+                                        final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function32 = function3;
+                                        final Function2<? super Composer, ? super Integer, Unit> function25 = function24;
+                                        final Function2<? super Composer, ? super Integer, Unit> function26 = function2;
+                                        SurfaceKt.m2996SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2188getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1782015378, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
+                                            @Override // kotlin.jvm.functions.Function2
+                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
+                                                invoke(composer4, num.intValue());
+                                                return Unit.INSTANCE;
+                                            }
 
-                                        public final void invoke(Composer composer4, int i11) {
-                                            PaddingValues paddingValues;
-                                            ComposerKt.sourceInformation(composer4, "C90@4271L1265:DatePickerDialog.android.kt#uh7d8r");
-                                            if ((i11 & 3) != 2 || !composer4.getSkipping()) {
+                                            public final void invoke(Composer composer4, int i15) {
+                                                PaddingValues paddingValues;
+                                                ComposerKt.sourceInformation(composer4, "C88@4080L1267:DatePickerDialog.android.kt#uh7d8r");
+                                                if (!composer4.shouldExecute((i15 & 3) != 2, i15 & 1)) {
+                                                    composer4.skipToGroupEnd();
+                                                    return;
+                                                }
                                                 if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(-1706202235, i11, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:90)");
+                                                    ComposerKt.traceEventStart(1782015378, i15, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:88)");
                                                 }
                                                 Function3<ColumnScope, Composer, Integer, Unit> function33 = function32;
                                                 final Function2<? super Composer, ? super Integer, Unit> function27 = function25;
                                                 final Function2<? super Composer, ? super Integer, Unit> function28 = function26;
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
                                                 MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), composer4, 6);
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                                 CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
                                                 Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, Modifier.Companion);
                                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                 if (!(composer4.getApplier() instanceof Applier)) {
                                                     ComposablesKt.invalidApplier();
                                                 }
@@ -860,27 +527,27 @@ public final class DatePickerDialog_androidKt {
                                                 } else {
                                                     composer4.useNode();
                                                 }
-                                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m4597constructorimpl = Updater.m4597constructorimpl(composer4);
+                                                Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                    m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                 }
-                                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
+                                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -2140243970, "C96@4721L64,98@4829L693:DatePickerDialog.android.kt#uh7d8r");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -1407374204, "C94@4530L64,96@4638L695:DatePickerDialog.android.kt#uh7d8r");
                                                 Modifier weight = columnScopeInstance.weight(Modifier.Companion, 1.0f, false);
-                                                ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                                 CompositionLocalMap currentCompositionLocalMap2 = composer4.getCurrentCompositionLocalMap();
                                                 Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer4, weight);
                                                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                 if (!(composer4.getApplier() instanceof Applier)) {
                                                     ComposablesKt.invalidApplier();
                                                 }
@@ -890,18 +557,18 @@ public final class DatePickerDialog_androidKt {
                                                 } else {
                                                     composer4.useNode();
                                                 }
-                                                Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
-                                                Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer4);
+                                                Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                    m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                    m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                    m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                    m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                 }
-                                                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
+                                                Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                                ComposerKt.sourceInformationMarkerStart(composer4, 1276701771, "C96@4774L9:DatePickerDialog.android.kt#uh7d8r");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -114868488, "C94@4583L9:DatePickerDialog.android.kt#uh7d8r");
                                                 function33.invoke(columnScopeInstance, composer4, 6);
                                                 ComposerKt.sourceInformationMarkerEnd(composer4);
                                                 ComposerKt.sourceInformationMarkerEnd(composer4);
@@ -912,14 +579,14 @@ public final class DatePickerDialog_androidKt {
                                                 Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
                                                 paddingValues = DatePickerDialog_androidKt.DialogButtonsPadding;
                                                 Modifier padding = PaddingKt.padding(align, paddingValues);
-                                                ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                                 MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                 int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                                 CompositionLocalMap currentCompositionLocalMap3 = composer4.getCurrentCompositionLocalMap();
                                                 Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer4, padding);
                                                 Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                 if (!(composer4.getApplier() instanceof Applier)) {
                                                     ComposablesKt.invalidApplier();
                                                 }
@@ -929,79 +596,66 @@ public final class DatePickerDialog_androidKt {
                                                 } else {
                                                     composer4.useNode();
                                                 }
-                                                Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer4);
-                                                Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m4597constructorimpl3 = Updater.m4597constructorimpl(composer4);
+                                                Updater.m4604setimpl(m4597constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4604setimpl(m4597constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                                    m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                                    m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                                                if (m4597constructorimpl3.getInserting() || !Intrinsics.areEqual(m4597constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                                    m4597constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                                    m4597constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                                                 }
-                                                Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                                ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
+                                                Updater.m4604setimpl(m4597constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                                                ComposerKt.sourceInformationMarkerStart(composer4, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                                ComposerKt.sourceInformationMarkerStart(composer4, 1276882687, "C100@5030L5,101@5106L5,102@5134L370,99@4927L577:DatePickerDialog.android.kt#uh7d8r");
-                                                ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(642347978, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
-                                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                    /* JADX WARN: Multi-variable type inference failed */
-                                                    {
-                                                        super(2);
-                                                    }
-
+                                                ComposerKt.sourceInformationMarkerStart(composer4, 775961793, "C98@4839L5,99@4915L5,100@4944L371,97@4736L579:DatePickerDialog.android.kt#uh7d8r");
+                                                ProvideContentColorTextStyleKt.m3529ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(-1103927529, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
                                                     @Override // kotlin.jvm.functions.Function2
                                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
                                                         invoke(composer5, num.intValue());
                                                         return Unit.INSTANCE;
                                                     }
 
-                                                    public final void invoke(Composer composer5, int i12) {
+                                                    public final void invoke(Composer composer5, int i16) {
                                                         float f6;
                                                         float f7;
-                                                        ComposerKt.sourceInformation(composer5, "C106@5359L123,103@5160L322:DatePickerDialog.android.kt#uh7d8r");
-                                                        if ((i12 & 3) != 2 || !composer5.getSkipping()) {
+                                                        ComposerKt.sourceInformation(composer5, "C104@5170L123,101@4970L323:DatePickerDialog.android.kt#uh7d8r");
+                                                        if (composer5.shouldExecute((i16 & 3) != 2, i16 & 1)) {
                                                             if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventStart(642347978, i12, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:103)");
+                                                                ComposerKt.traceEventStart(-1103927529, i16, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:101)");
                                                             }
                                                             f6 = DatePickerDialog_androidKt.DialogButtonsMainAxisSpacing;
                                                             f7 = DatePickerDialog_androidKt.DialogButtonsCrossAxisSpacing;
                                                             final Function2<? super Composer, ? super Integer, Unit> function29 = function27;
                                                             final Function2<? super Composer, ? super Integer, Unit> function210 = function28;
-                                                            AlertDialogKt.m1877AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(1241707635, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
-                                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                                /* JADX WARN: Multi-variable type inference failed */
-                                                                {
-                                                                    super(2);
-                                                                }
-
+                                                            AlertDialogKt.m1878AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(-1980163584, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
                                                                 @Override // kotlin.jvm.functions.Function2
                                                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
                                                                     invoke(composer6, num.intValue());
                                                                     return Unit.INSTANCE;
                                                                 }
 
-                                                                public final void invoke(Composer composer6, int i13) {
-                                                                    ComposerKt.sourceInformation(composer6, "C108@5441L15:DatePickerDialog.android.kt#uh7d8r");
-                                                                    if ((i13 & 3) != 2 || !composer6.getSkipping()) {
-                                                                        if (ComposerKt.isTraceInProgress()) {
-                                                                            ComposerKt.traceEventStart(1241707635, i13, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:107)");
-                                                                        }
-                                                                        Function2<Composer, Integer, Unit> function211 = function29;
-                                                                        composer6.startReplaceGroup(-779485335);
-                                                                        ComposerKt.sourceInformation(composer6, "107@5404L8");
-                                                                        if (function211 != null) {
-                                                                            function211.invoke(composer6, 0);
-                                                                            Unit unit = Unit.INSTANCE;
-                                                                        }
-                                                                        composer6.endReplaceGroup();
-                                                                        function210.invoke(composer6, 0);
-                                                                        if (ComposerKt.isTraceInProgress()) {
-                                                                            ComposerKt.traceEventEnd();
-                                                                            return;
-                                                                        }
+                                                                public final void invoke(Composer composer6, int i17) {
+                                                                    ComposerKt.sourceInformation(composer6, "C106@5252L15:DatePickerDialog.android.kt#uh7d8r");
+                                                                    if (!composer6.shouldExecute((i17 & 3) != 2, i17 & 1)) {
+                                                                        composer6.skipToGroupEnd();
                                                                         return;
                                                                     }
-                                                                    composer6.skipToGroupEnd();
+                                                                    if (ComposerKt.isTraceInProgress()) {
+                                                                        ComposerKt.traceEventStart(-1980163584, i17, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:105)");
+                                                                    }
+                                                                    Function2<Composer, Integer, Unit> function211 = function29;
+                                                                    if (function211 == null) {
+                                                                        composer6.startReplaceGroup(322524505);
+                                                                    } else {
+                                                                        composer6.startReplaceGroup(-266690648);
+                                                                        ComposerKt.sourceInformation(composer6, "105@5215L8");
+                                                                        function211.invoke(composer6, 0);
+                                                                    }
+                                                                    composer6.endReplaceGroup();
+                                                                    function210.invoke(composer6, 0);
+                                                                    if (ComposerKt.isTraceInProgress()) {
+                                                                        ComposerKt.traceEventEnd();
+                                                                    }
                                                                 }
                                                             }, composer5, 54), composer5, 438);
                                                             if (ComposerKt.isTraceInProgress()) {
@@ -1027,30 +681,49 @@ public final class DatePickerDialog_androidKt {
                                                 ComposerKt.sourceInformationMarkerEnd(composer4);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
-                                                    return;
                                                 }
-                                                return;
                                             }
-                                            composer4.skipToGroupEnd();
+                                        }, composer3, 54), composer3, 12582918, 104);
+                                        if (ComposerKt.isTraceInProgress()) {
+                                            ComposerKt.traceEventEnd();
                                         }
-                                    }, composer3, 54), composer3, 12582918, 104);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                        return;
                                     }
-                                    return;
+                                }, startRestartGroup, 54), startRestartGroup, (i11 & 14) | 3072 | ((i11 >> 15) & 896), 0);
+                                if (ComposerKt.isTraceInProgress()) {
                                 }
-                                composer3.skipToGroupEnd();
+                                dialogProperties2 = dialogProperties3;
+                                f3 = f4;
+                                function23 = function24;
+                                modifier2 = modifier3;
+                                composer2 = startRestartGroup;
+                                shape2 = shape3;
+                            } else {
+                                startRestartGroup.skipToGroupEnd();
+                                composer2 = startRestartGroup;
+                                modifier2 = companion;
+                                function23 = obj;
+                                shape2 = obj2;
+                                f3 = f2;
+                                dialogProperties2 = dialogProperties;
                             }
-                        }, startRestartGroup, 54), startRestartGroup, (i3 & 14) | 3072 | ((i3 >> 15) & 896), 0);
-                        if (ComposerKt.isTraceInProgress()) {
+                            final DatePickerColors datePickerColors3 = datePickerColors2;
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$$ExternalSyntheticLambda0
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj3, Object obj4) {
+                                        Unit DatePickerDialog_GmEhDVc$lambda$0;
+                                        DatePickerDialog_GmEhDVc$lambda$0 = DatePickerDialog_androidKt.DatePickerDialog_GmEhDVc$lambda$0(Function0.this, function2, modifier2, function23, shape2, f3, datePickerColors3, dialogProperties2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                                        return DatePickerDialog_GmEhDVc$lambda$0;
+                                    }
+                                });
+                                return;
+                            }
+                            return;
                         }
-                        dialogProperties3 = dialogProperties2;
-                        f3 = f422;
-                        function23 = function2422;
-                        modifier2 = modifier322;
-                        composer2 = startRestartGroup;
-                        shape2 = shape322;
+                        i8 = i3;
+                        if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i8 & 1)) {
+                        }
                         final DatePickerColors datePickerColors32 = datePickerColors2;
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup == null) {
@@ -1064,289 +737,9 @@ public final class DatePickerDialog_androidKt {
                     }
                     if ((i2 & 256) != 0) {
                     }
-                    if ((i3 & 38347923) == 38347922) {
+                    i8 = i3;
+                    if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i8 & 1)) {
                     }
-                    startRestartGroup.startDefaults();
-                    if ((i & 1) != 0) {
-                    }
-                    if (i4 != 0) {
-                    }
-                    if (i5 != 0) {
-                    }
-                    if ((i2 & 16) != 0) {
-                    }
-                    if (i6 != 0) {
-                    }
-                    if ((i2 & 64) != 0) {
-                    }
-                    if (i7 != 0) {
-                    }
-                    dialogProperties2 = dialogProperties;
-                    Modifier modifier3222 = companion;
-                    final Function2<? super Composer, ? super Integer, Unit> function24222 = obj;
-                    final float f4222 = f2;
-                    final Shape shape3222 = obj2;
-                    startRestartGroup.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier3222, null, false, 3, null), dialogProperties2, ComposableLambdaKt.rememberComposableLambda(-10625622, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(2);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                            invoke(composer3, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        public final void invoke(Composer composer3, int i10) {
-                            ComposerKt.sourceInformation(composer3, "C89@4257L1289,82@3947L1599:DatePickerDialog.android.kt#uh7d8r");
-                            if ((i10 & 3) != 2 || !composer3.getSkipping()) {
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(-10625622, i10, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:82)");
-                                }
-                                Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3262getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3261getContainerHeightD9Ej5fM(), 1, null);
-                                Shape shape4 = Shape.this;
-                                long m2117getContainerColor0d7_KjU = datePickerColors2.m2117getContainerColor0d7_KjU();
-                                float f5 = f4222;
-                                final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function32 = function3;
-                                final Function2<? super Composer, ? super Integer, Unit> function25 = function24222;
-                                final Function2<? super Composer, ? super Integer, Unit> function26 = function2;
-                                SurfaceKt.m2664SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2117getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1706202235, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    {
-                                        super(2);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                        invoke(composer4, num.intValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(Composer composer4, int i11) {
-                                        PaddingValues paddingValues;
-                                        ComposerKt.sourceInformation(composer4, "C90@4271L1265:DatePickerDialog.android.kt#uh7d8r");
-                                        if ((i11 & 3) != 2 || !composer4.getSkipping()) {
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventStart(-1706202235, i11, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:90)");
-                                            }
-                                            Function3<ColumnScope, Composer, Integer, Unit> function33 = function32;
-                                            final Function2<? super Composer, ? super Integer, Unit> function27 = function25;
-                                            final Function2<? super Composer, ? super Integer, Unit> function28 = function26;
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                                            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), composer4, 6);
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                            CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, Modifier.Companion);
-                                            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                            if (!(composer4.getApplier() instanceof Applier)) {
-                                                ComposablesKt.invalidApplier();
-                                            }
-                                            composer4.startReusableNode();
-                                            if (composer4.getInserting()) {
-                                                composer4.createNode(constructor);
-                                            } else {
-                                                composer4.useNode();
-                                            }
-                                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                            Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                            }
-                                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                                            ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -2140243970, "C96@4721L64,98@4829L693:DatePickerDialog.android.kt#uh7d8r");
-                                            Modifier weight = columnScopeInstance.weight(Modifier.Companion, 1.0f, false);
-                                            ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                            int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                            CompositionLocalMap currentCompositionLocalMap2 = composer4.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer4, weight);
-                                            Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                            if (!(composer4.getApplier() instanceof Applier)) {
-                                                ComposablesKt.invalidApplier();
-                                            }
-                                            composer4.startReusableNode();
-                                            if (composer4.getInserting()) {
-                                                composer4.createNode(constructor2);
-                                            } else {
-                                                composer4.useNode();
-                                            }
-                                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
-                                            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                                            }
-                                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                            ComposerKt.sourceInformationMarkerStart(composer4, 1276701771, "C96@4774L9:DatePickerDialog.android.kt#uh7d8r");
-                                            function33.invoke(columnScopeInstance, composer4, 6);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            composer4.endNode();
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
-                                            paddingValues = DatePickerDialog_androidKt.DialogButtonsPadding;
-                                            Modifier padding = PaddingKt.padding(align, paddingValues);
-                                            ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                            MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                            int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                            CompositionLocalMap currentCompositionLocalMap3 = composer4.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer4, padding);
-                                            Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                            if (!(composer4.getApplier() instanceof Applier)) {
-                                                ComposablesKt.invalidApplier();
-                                            }
-                                            composer4.startReusableNode();
-                                            if (composer4.getInserting()) {
-                                                composer4.createNode(constructor3);
-                                            } else {
-                                                composer4.useNode();
-                                            }
-                                            Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer4);
-                                            Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                                m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                                m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                                            }
-                                            Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                            ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                            BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                            ComposerKt.sourceInformationMarkerStart(composer4, 1276882687, "C100@5030L5,101@5106L5,102@5134L370,99@4927L577:DatePickerDialog.android.kt#uh7d8r");
-                                            ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(642347978, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
-                                                /* JADX INFO: Access modifiers changed from: package-private */
-                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                /* JADX WARN: Multi-variable type inference failed */
-                                                {
-                                                    super(2);
-                                                }
-
-                                                @Override // kotlin.jvm.functions.Function2
-                                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
-                                                    invoke(composer5, num.intValue());
-                                                    return Unit.INSTANCE;
-                                                }
-
-                                                public final void invoke(Composer composer5, int i12) {
-                                                    float f6;
-                                                    float f7;
-                                                    ComposerKt.sourceInformation(composer5, "C106@5359L123,103@5160L322:DatePickerDialog.android.kt#uh7d8r");
-                                                    if ((i12 & 3) != 2 || !composer5.getSkipping()) {
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(642347978, i12, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:103)");
-                                                        }
-                                                        f6 = DatePickerDialog_androidKt.DialogButtonsMainAxisSpacing;
-                                                        f7 = DatePickerDialog_androidKt.DialogButtonsCrossAxisSpacing;
-                                                        final Function2<? super Composer, ? super Integer, Unit> function29 = function27;
-                                                        final Function2<? super Composer, ? super Integer, Unit> function210 = function28;
-                                                        AlertDialogKt.m1877AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(1241707635, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
-                                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                            /* JADX WARN: Multi-variable type inference failed */
-                                                            {
-                                                                super(2);
-                                                            }
-
-                                                            @Override // kotlin.jvm.functions.Function2
-                                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
-                                                                invoke(composer6, num.intValue());
-                                                                return Unit.INSTANCE;
-                                                            }
-
-                                                            public final void invoke(Composer composer6, int i13) {
-                                                                ComposerKt.sourceInformation(composer6, "C108@5441L15:DatePickerDialog.android.kt#uh7d8r");
-                                                                if ((i13 & 3) != 2 || !composer6.getSkipping()) {
-                                                                    if (ComposerKt.isTraceInProgress()) {
-                                                                        ComposerKt.traceEventStart(1241707635, i13, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:107)");
-                                                                    }
-                                                                    Function2<Composer, Integer, Unit> function211 = function29;
-                                                                    composer6.startReplaceGroup(-779485335);
-                                                                    ComposerKt.sourceInformation(composer6, "107@5404L8");
-                                                                    if (function211 != null) {
-                                                                        function211.invoke(composer6, 0);
-                                                                        Unit unit = Unit.INSTANCE;
-                                                                    }
-                                                                    composer6.endReplaceGroup();
-                                                                    function210.invoke(composer6, 0);
-                                                                    if (ComposerKt.isTraceInProgress()) {
-                                                                        ComposerKt.traceEventEnd();
-                                                                        return;
-                                                                    }
-                                                                    return;
-                                                                }
-                                                                composer6.skipToGroupEnd();
-                                                            }
-                                                        }, composer5, 54), composer5, 438);
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventEnd();
-                                                            return;
-                                                        }
-                                                        return;
-                                                    }
-                                                    composer5.skipToGroupEnd();
-                                                }
-                                            }, composer4, 54), composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            composer4.endNode();
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            composer4.endNode();
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventEnd();
-                                                return;
-                                            }
-                                            return;
-                                        }
-                                        composer4.skipToGroupEnd();
-                                    }
-                                }, composer3, 54), composer3, 12582918, 104);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                    return;
-                                }
-                                return;
-                            }
-                            composer3.skipToGroupEnd();
-                        }
-                    }, startRestartGroup, 54), startRestartGroup, (i3 & 14) | 3072 | ((i3 >> 15) & 896), 0);
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    dialogProperties3 = dialogProperties2;
-                    f3 = f4222;
-                    function23 = function24222;
-                    modifier2 = modifier3222;
-                    composer2 = startRestartGroup;
-                    shape2 = shape3222;
                     final DatePickerColors datePickerColors322 = datePickerColors2;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup == null) {
@@ -1366,289 +759,9 @@ public final class DatePickerDialog_androidKt {
                 }
                 if ((i2 & 256) != 0) {
                 }
-                if ((i3 & 38347923) == 38347922) {
+                i8 = i3;
+                if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i8 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i & 1) != 0) {
-                }
-                if (i4 != 0) {
-                }
-                if (i5 != 0) {
-                }
-                if ((i2 & 16) != 0) {
-                }
-                if (i6 != 0) {
-                }
-                if ((i2 & 64) != 0) {
-                }
-                if (i7 != 0) {
-                }
-                dialogProperties2 = dialogProperties;
-                Modifier modifier32222 = companion;
-                final Function2<? super Composer, ? super Integer, Unit> function242222 = obj;
-                final float f42222 = f2;
-                final Shape shape32222 = obj2;
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier32222, null, false, 3, null), dialogProperties2, ComposableLambdaKt.rememberComposableLambda(-10625622, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                        invoke(composer3, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(Composer composer3, int i10) {
-                        ComposerKt.sourceInformation(composer3, "C89@4257L1289,82@3947L1599:DatePickerDialog.android.kt#uh7d8r");
-                        if ((i10 & 3) != 2 || !composer3.getSkipping()) {
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-10625622, i10, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:82)");
-                            }
-                            Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3262getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3261getContainerHeightD9Ej5fM(), 1, null);
-                            Shape shape4 = Shape.this;
-                            long m2117getContainerColor0d7_KjU = datePickerColors2.m2117getContainerColor0d7_KjU();
-                            float f5 = f42222;
-                            final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function32 = function3;
-                            final Function2<? super Composer, ? super Integer, Unit> function25 = function242222;
-                            final Function2<? super Composer, ? super Integer, Unit> function26 = function2;
-                            SurfaceKt.m2664SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2117getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1706202235, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                    invoke(composer4, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer4, int i11) {
-                                    PaddingValues paddingValues;
-                                    ComposerKt.sourceInformation(composer4, "C90@4271L1265:DatePickerDialog.android.kt#uh7d8r");
-                                    if ((i11 & 3) != 2 || !composer4.getSkipping()) {
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-1706202235, i11, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:90)");
-                                        }
-                                        Function3<ColumnScope, Composer, Integer, Unit> function33 = function32;
-                                        final Function2<? super Composer, ? super Integer, Unit> function27 = function25;
-                                        final Function2<? super Composer, ? super Integer, Unit> function28 = function26;
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                                        MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), composer4, 6);
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                        int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                        CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, Modifier.Companion);
-                                        Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                        if (!(composer4.getApplier() instanceof Applier)) {
-                                            ComposablesKt.invalidApplier();
-                                        }
-                                        composer4.startReusableNode();
-                                        if (composer4.getInserting()) {
-                                            composer4.createNode(constructor);
-                                        } else {
-                                            composer4.useNode();
-                                        }
-                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                        }
-                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                                        ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -2140243970, "C96@4721L64,98@4829L693:DatePickerDialog.android.kt#uh7d8r");
-                                        Modifier weight = columnScopeInstance.weight(Modifier.Companion, 1.0f, false);
-                                        ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                        MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                        int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                        CompositionLocalMap currentCompositionLocalMap2 = composer4.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer4, weight);
-                                        Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                        if (!(composer4.getApplier() instanceof Applier)) {
-                                            ComposablesKt.invalidApplier();
-                                        }
-                                        composer4.startReusableNode();
-                                        if (composer4.getInserting()) {
-                                            composer4.createNode(constructor2);
-                                        } else {
-                                            composer4.useNode();
-                                        }
-                                        Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
-                                        Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                                        }
-                                        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                        BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                        ComposerKt.sourceInformationMarkerStart(composer4, 1276701771, "C96@4774L9:DatePickerDialog.android.kt#uh7d8r");
-                                        function33.invoke(columnScopeInstance, composer4, 6);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        composer4.endNode();
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
-                                        paddingValues = DatePickerDialog_androidKt.DialogButtonsPadding;
-                                        Modifier padding = PaddingKt.padding(align, paddingValues);
-                                        ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                        MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                        int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                        CompositionLocalMap currentCompositionLocalMap3 = composer4.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer4, padding);
-                                        Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                        if (!(composer4.getApplier() instanceof Applier)) {
-                                            ComposablesKt.invalidApplier();
-                                        }
-                                        composer4.startReusableNode();
-                                        if (composer4.getInserting()) {
-                                            composer4.createNode(constructor3);
-                                        } else {
-                                            composer4.useNode();
-                                        }
-                                        Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer4);
-                                        Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                                        }
-                                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                        ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                        BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                        ComposerKt.sourceInformationMarkerStart(composer4, 1276882687, "C100@5030L5,101@5106L5,102@5134L370,99@4927L577:DatePickerDialog.android.kt#uh7d8r");
-                                        ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(642347978, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
-
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
-                                                invoke(composer5, num.intValue());
-                                                return Unit.INSTANCE;
-                                            }
-
-                                            public final void invoke(Composer composer5, int i12) {
-                                                float f6;
-                                                float f7;
-                                                ComposerKt.sourceInformation(composer5, "C106@5359L123,103@5160L322:DatePickerDialog.android.kt#uh7d8r");
-                                                if ((i12 & 3) != 2 || !composer5.getSkipping()) {
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventStart(642347978, i12, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:103)");
-                                                    }
-                                                    f6 = DatePickerDialog_androidKt.DialogButtonsMainAxisSpacing;
-                                                    f7 = DatePickerDialog_androidKt.DialogButtonsCrossAxisSpacing;
-                                                    final Function2<? super Composer, ? super Integer, Unit> function29 = function27;
-                                                    final Function2<? super Composer, ? super Integer, Unit> function210 = function28;
-                                                    AlertDialogKt.m1877AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(1241707635, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
-                                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                        /* JADX WARN: Multi-variable type inference failed */
-                                                        {
-                                                            super(2);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function2
-                                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
-                                                            invoke(composer6, num.intValue());
-                                                            return Unit.INSTANCE;
-                                                        }
-
-                                                        public final void invoke(Composer composer6, int i13) {
-                                                            ComposerKt.sourceInformation(composer6, "C108@5441L15:DatePickerDialog.android.kt#uh7d8r");
-                                                            if ((i13 & 3) != 2 || !composer6.getSkipping()) {
-                                                                if (ComposerKt.isTraceInProgress()) {
-                                                                    ComposerKt.traceEventStart(1241707635, i13, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:107)");
-                                                                }
-                                                                Function2<Composer, Integer, Unit> function211 = function29;
-                                                                composer6.startReplaceGroup(-779485335);
-                                                                ComposerKt.sourceInformation(composer6, "107@5404L8");
-                                                                if (function211 != null) {
-                                                                    function211.invoke(composer6, 0);
-                                                                    Unit unit = Unit.INSTANCE;
-                                                                }
-                                                                composer6.endReplaceGroup();
-                                                                function210.invoke(composer6, 0);
-                                                                if (ComposerKt.isTraceInProgress()) {
-                                                                    ComposerKt.traceEventEnd();
-                                                                    return;
-                                                                }
-                                                                return;
-                                                            }
-                                                            composer6.skipToGroupEnd();
-                                                        }
-                                                    }, composer5, 54), composer5, 438);
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventEnd();
-                                                        return;
-                                                    }
-                                                    return;
-                                                }
-                                                composer5.skipToGroupEnd();
-                                            }
-                                        }, composer4, 54), composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        composer4.endNode();
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        composer4.endNode();
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                            return;
-                                        }
-                                        return;
-                                    }
-                                    composer4.skipToGroupEnd();
-                                }
-                            }, composer3, 54), composer3, 12582918, 104);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                                return;
-                            }
-                            return;
-                        }
-                        composer3.skipToGroupEnd();
-                    }
-                }, startRestartGroup, 54), startRestartGroup, (i3 & 14) | 3072 | ((i3 >> 15) & 896), 0);
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                dialogProperties3 = dialogProperties2;
-                f3 = f42222;
-                function23 = function242222;
-                modifier2 = modifier32222;
-                composer2 = startRestartGroup;
-                shape2 = shape32222;
                 final DatePickerColors datePickerColors3222 = datePickerColors2;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup == null) {
@@ -1672,289 +785,9 @@ public final class DatePickerDialog_androidKt {
             }
             if ((i2 & 256) != 0) {
             }
-            if ((i3 & 38347923) == 38347922) {
+            i8 = i3;
+            if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i8 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i & 1) != 0) {
-            }
-            if (i4 != 0) {
-            }
-            if (i5 != 0) {
-            }
-            if ((i2 & 16) != 0) {
-            }
-            if (i6 != 0) {
-            }
-            if ((i2 & 64) != 0) {
-            }
-            if (i7 != 0) {
-            }
-            dialogProperties2 = dialogProperties;
-            Modifier modifier322222 = companion;
-            final Function2<? super Composer, ? super Integer, Unit> function2422222 = obj;
-            final float f422222 = f2;
-            final Shape shape322222 = obj2;
-            startRestartGroup.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier322222, null, false, 3, null), dialogProperties2, ComposableLambdaKt.rememberComposableLambda(-10625622, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                    invoke(composer3, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer3, int i10) {
-                    ComposerKt.sourceInformation(composer3, "C89@4257L1289,82@3947L1599:DatePickerDialog.android.kt#uh7d8r");
-                    if ((i10 & 3) != 2 || !composer3.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-10625622, i10, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:82)");
-                        }
-                        Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3262getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3261getContainerHeightD9Ej5fM(), 1, null);
-                        Shape shape4 = Shape.this;
-                        long m2117getContainerColor0d7_KjU = datePickerColors2.m2117getContainerColor0d7_KjU();
-                        float f5 = f422222;
-                        final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function32 = function3;
-                        final Function2<? super Composer, ? super Integer, Unit> function25 = function2422222;
-                        final Function2<? super Composer, ? super Integer, Unit> function26 = function2;
-                        SurfaceKt.m2664SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2117getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1706202235, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            /* JADX WARN: Multi-variable type inference failed */
-                            {
-                                super(2);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                invoke(composer4, num.intValue());
-                                return Unit.INSTANCE;
-                            }
-
-                            public final void invoke(Composer composer4, int i11) {
-                                PaddingValues paddingValues;
-                                ComposerKt.sourceInformation(composer4, "C90@4271L1265:DatePickerDialog.android.kt#uh7d8r");
-                                if ((i11 & 3) != 2 || !composer4.getSkipping()) {
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-1706202235, i11, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:90)");
-                                    }
-                                    Function3<ColumnScope, Composer, Integer, Unit> function33 = function32;
-                                    final Function2<? super Composer, ? super Integer, Unit> function27 = function25;
-                                    final Function2<? super Composer, ? super Integer, Unit> function28 = function26;
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                                    MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), composer4, 6);
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                    int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                    CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, Modifier.Companion);
-                                    Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                    if (!(composer4.getApplier() instanceof Applier)) {
-                                        ComposablesKt.invalidApplier();
-                                    }
-                                    composer4.startReusableNode();
-                                    if (composer4.getInserting()) {
-                                        composer4.createNode(constructor);
-                                    } else {
-                                        composer4.useNode();
-                                    }
-                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                    Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                    }
-                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                                    ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -2140243970, "C96@4721L64,98@4829L693:DatePickerDialog.android.kt#uh7d8r");
-                                    Modifier weight = columnScopeInstance.weight(Modifier.Companion, 1.0f, false);
-                                    ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                    MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                    int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                    CompositionLocalMap currentCompositionLocalMap2 = composer4.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer4, weight);
-                                    Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                    if (!(composer4.getApplier() instanceof Applier)) {
-                                        ComposablesKt.invalidApplier();
-                                    }
-                                    composer4.startReusableNode();
-                                    if (composer4.getInserting()) {
-                                        composer4.createNode(constructor2);
-                                    } else {
-                                        composer4.useNode();
-                                    }
-                                    Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
-                                    Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                        m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                                    }
-                                    Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                    BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                    ComposerKt.sourceInformationMarkerStart(composer4, 1276701771, "C96@4774L9:DatePickerDialog.android.kt#uh7d8r");
-                                    function33.invoke(columnScopeInstance, composer4, 6);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    composer4.endNode();
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
-                                    paddingValues = DatePickerDialog_androidKt.DialogButtonsPadding;
-                                    Modifier padding = PaddingKt.padding(align, paddingValues);
-                                    ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                    MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                    int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                    CompositionLocalMap currentCompositionLocalMap3 = composer4.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer4, padding);
-                                    Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                    if (!(composer4.getApplier() instanceof Applier)) {
-                                        ComposablesKt.invalidApplier();
-                                    }
-                                    composer4.startReusableNode();
-                                    if (composer4.getInserting()) {
-                                        composer4.createNode(constructor3);
-                                    } else {
-                                        composer4.useNode();
-                                    }
-                                    Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer4);
-                                    Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                    Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                        m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                        m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                                    }
-                                    Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                    ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                    BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                    ComposerKt.sourceInformationMarkerStart(composer4, 1276882687, "C100@5030L5,101@5106L5,102@5134L370,99@4927L577:DatePickerDialog.android.kt#uh7d8r");
-                                    ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(642347978, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
-                                            invoke(composer5, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer5, int i12) {
-                                            float f6;
-                                            float f7;
-                                            ComposerKt.sourceInformation(composer5, "C106@5359L123,103@5160L322:DatePickerDialog.android.kt#uh7d8r");
-                                            if ((i12 & 3) != 2 || !composer5.getSkipping()) {
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(642347978, i12, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:103)");
-                                                }
-                                                f6 = DatePickerDialog_androidKt.DialogButtonsMainAxisSpacing;
-                                                f7 = DatePickerDialog_androidKt.DialogButtonsCrossAxisSpacing;
-                                                final Function2<? super Composer, ? super Integer, Unit> function29 = function27;
-                                                final Function2<? super Composer, ? super Integer, Unit> function210 = function28;
-                                                AlertDialogKt.m1877AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(1241707635, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
-                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                    /* JADX WARN: Multi-variable type inference failed */
-                                                    {
-                                                        super(2);
-                                                    }
-
-                                                    @Override // kotlin.jvm.functions.Function2
-                                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
-                                                        invoke(composer6, num.intValue());
-                                                        return Unit.INSTANCE;
-                                                    }
-
-                                                    public final void invoke(Composer composer6, int i13) {
-                                                        ComposerKt.sourceInformation(composer6, "C108@5441L15:DatePickerDialog.android.kt#uh7d8r");
-                                                        if ((i13 & 3) != 2 || !composer6.getSkipping()) {
-                                                            if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventStart(1241707635, i13, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:107)");
-                                                            }
-                                                            Function2<Composer, Integer, Unit> function211 = function29;
-                                                            composer6.startReplaceGroup(-779485335);
-                                                            ComposerKt.sourceInformation(composer6, "107@5404L8");
-                                                            if (function211 != null) {
-                                                                function211.invoke(composer6, 0);
-                                                                Unit unit = Unit.INSTANCE;
-                                                            }
-                                                            composer6.endReplaceGroup();
-                                                            function210.invoke(composer6, 0);
-                                                            if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventEnd();
-                                                                return;
-                                                            }
-                                                            return;
-                                                        }
-                                                        composer6.skipToGroupEnd();
-                                                    }
-                                                }, composer5, 54), composer5, 438);
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventEnd();
-                                                    return;
-                                                }
-                                                return;
-                                            }
-                                            composer5.skipToGroupEnd();
-                                        }
-                                    }, composer4, 54), composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    composer4.endNode();
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    composer4.endNode();
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    ComposerKt.sourceInformationMarkerEnd(composer4);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                        return;
-                                    }
-                                    return;
-                                }
-                                composer4.skipToGroupEnd();
-                            }
-                        }, composer3, 54), composer3, 12582918, 104);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer3.skipToGroupEnd();
-                }
-            }, startRestartGroup, 54), startRestartGroup, (i3 & 14) | 3072 | ((i3 >> 15) & 896), 0);
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            dialogProperties3 = dialogProperties2;
-            f3 = f422222;
-            function23 = function2422222;
-            modifier2 = modifier322222;
-            composer2 = startRestartGroup;
-            shape2 = shape322222;
             final DatePickerColors datePickerColors32222 = datePickerColors2;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup == null) {
@@ -1981,289 +814,9 @@ public final class DatePickerDialog_androidKt {
         }
         if ((i2 & 256) != 0) {
         }
-        if ((i3 & 38347923) == 38347922) {
+        i8 = i3;
+        if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i8 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i & 1) != 0) {
-        }
-        if (i4 != 0) {
-        }
-        if (i5 != 0) {
-        }
-        if ((i2 & 16) != 0) {
-        }
-        if (i6 != 0) {
-        }
-        if ((i2 & 64) != 0) {
-        }
-        if (i7 != 0) {
-        }
-        dialogProperties2 = dialogProperties;
-        Modifier modifier3222222 = companion;
-        final Function2<? super Composer, ? super Integer, Unit> function24222222 = obj;
-        final float f4222222 = f2;
-        final Shape shape3222222 = obj2;
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        AlertDialogKt.BasicAlertDialog(function0, SizeKt.wrapContentHeight$default(modifier3222222, null, false, 3, null), dialogProperties2, ComposableLambdaKt.rememberComposableLambda(-10625622, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                invoke(composer3, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Composer composer3, int i10) {
-                ComposerKt.sourceInformation(composer3, "C89@4257L1289,82@3947L1599:DatePickerDialog.android.kt#uh7d8r");
-                if ((i10 & 3) != 2 || !composer3.getSkipping()) {
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(-10625622, i10, -1, "androidx.compose.material3.DatePickerDialog.<anonymous> (DatePickerDialog.android.kt:82)");
-                    }
-                    Modifier m882heightInVpY3zN4$default = SizeKt.m882heightInVpY3zN4$default(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3262getContainerWidthD9Ej5fM()), 0.0f, DatePickerModalTokens.INSTANCE.m3261getContainerHeightD9Ej5fM(), 1, null);
-                    Shape shape4 = Shape.this;
-                    long m2117getContainerColor0d7_KjU = datePickerColors2.m2117getContainerColor0d7_KjU();
-                    float f5 = f4222222;
-                    final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function32 = function3;
-                    final Function2<? super Composer, ? super Integer, Unit> function25 = function24222222;
-                    final Function2<? super Composer, ? super Integer, Unit> function26 = function2;
-                    SurfaceKt.m2664SurfaceT9BRK9s(m882heightInVpY3zN4$default, shape4, m2117getContainerColor0d7_KjU, 0L, f5, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1706202235, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1.1
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(2);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                            invoke(composer4, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        public final void invoke(Composer composer4, int i11) {
-                            PaddingValues paddingValues;
-                            ComposerKt.sourceInformation(composer4, "C90@4271L1265:DatePickerDialog.android.kt#uh7d8r");
-                            if ((i11 & 3) != 2 || !composer4.getSkipping()) {
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(-1706202235, i11, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous> (DatePickerDialog.android.kt:90)");
-                                }
-                                Function3<ColumnScope, Composer, Integer, Unit> function33 = function32;
-                                final Function2<? super Composer, ? super Integer, Unit> function27 = function25;
-                                final Function2<? super Composer, ? super Integer, Unit> function28 = function26;
-                                ComposerKt.sourceInformationMarkerStart(composer4, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                                MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), Alignment.Companion.getStart(), composer4, 6);
-                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, Modifier.Companion);
-                                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                if (!(composer4.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                composer4.startReusableNode();
-                                if (composer4.getInserting()) {
-                                    composer4.createNode(constructor);
-                                } else {
-                                    composer4.useNode();
-                                }
-                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                }
-                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                                ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(composer4, -2140243970, "C96@4721L64,98@4829L693:DatePickerDialog.android.kt#uh7d8r");
-                                Modifier weight = columnScopeInstance.weight(Modifier.Companion, 1.0f, false);
-                                ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                CompositionLocalMap currentCompositionLocalMap2 = composer4.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer4, weight);
-                                Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                if (!(composer4.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                composer4.startReusableNode();
-                                if (composer4.getInserting()) {
-                                    composer4.createNode(constructor2);
-                                } else {
-                                    composer4.useNode();
-                                }
-                                Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
-                                Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                    m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                    m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                                }
-                                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(composer4, 1276701771, "C96@4774L9:DatePickerDialog.android.kt#uh7d8r");
-                                function33.invoke(columnScopeInstance, composer4, 6);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                composer4.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getEnd());
-                                paddingValues = DatePickerDialog_androidKt.DialogButtonsPadding;
-                                Modifier padding = PaddingKt.padding(align, paddingValues);
-                                ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                CompositionLocalMap currentCompositionLocalMap3 = composer4.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer4, padding);
-                                Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                if (!(composer4.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                composer4.startReusableNode();
-                                if (composer4.getInserting()) {
-                                    composer4.createNode(constructor3);
-                                } else {
-                                    composer4.useNode();
-                                }
-                                Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer4);
-                                Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                    m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                    m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                                }
-                                Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(composer4, 1276882687, "C100@5030L5,101@5106L5,102@5134L370,99@4927L577:DatePickerDialog.android.kt#uh7d8r");
-                                ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(ColorSchemeKt.getValue(DialogTokens.INSTANCE.getActionLabelTextColor(), composer4, 6), TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer4, 6), ComposableLambdaKt.rememberComposableLambda(642347978, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    {
-                                        super(2);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
-                                        invoke(composer5, num.intValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(Composer composer5, int i12) {
-                                        float f6;
-                                        float f7;
-                                        ComposerKt.sourceInformation(composer5, "C106@5359L123,103@5160L322:DatePickerDialog.android.kt#uh7d8r");
-                                        if ((i12 & 3) != 2 || !composer5.getSkipping()) {
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventStart(642347978, i12, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:103)");
-                                            }
-                                            f6 = DatePickerDialog_androidKt.DialogButtonsMainAxisSpacing;
-                                            f7 = DatePickerDialog_androidKt.DialogButtonsCrossAxisSpacing;
-                                            final Function2<? super Composer, ? super Integer, Unit> function29 = function27;
-                                            final Function2<? super Composer, ? super Integer, Unit> function210 = function28;
-                                            AlertDialogKt.m1877AlertDialogFlowRowixp7dh8(f6, f7, ComposableLambdaKt.rememberComposableLambda(1241707635, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerDialog_androidKt$DatePickerDialog$1$1$1$2$1.1
-                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                /* JADX WARN: Multi-variable type inference failed */
-                                                {
-                                                    super(2);
-                                                }
-
-                                                @Override // kotlin.jvm.functions.Function2
-                                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
-                                                    invoke(composer6, num.intValue());
-                                                    return Unit.INSTANCE;
-                                                }
-
-                                                public final void invoke(Composer composer6, int i13) {
-                                                    ComposerKt.sourceInformation(composer6, "C108@5441L15:DatePickerDialog.android.kt#uh7d8r");
-                                                    if ((i13 & 3) != 2 || !composer6.getSkipping()) {
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(1241707635, i13, -1, "androidx.compose.material3.DatePickerDialog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DatePickerDialog.android.kt:107)");
-                                                        }
-                                                        Function2<Composer, Integer, Unit> function211 = function29;
-                                                        composer6.startReplaceGroup(-779485335);
-                                                        ComposerKt.sourceInformation(composer6, "107@5404L8");
-                                                        if (function211 != null) {
-                                                            function211.invoke(composer6, 0);
-                                                            Unit unit = Unit.INSTANCE;
-                                                        }
-                                                        composer6.endReplaceGroup();
-                                                        function210.invoke(composer6, 0);
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventEnd();
-                                                            return;
-                                                        }
-                                                        return;
-                                                    }
-                                                    composer6.skipToGroupEnd();
-                                                }
-                                            }, composer5, 54), composer5, 438);
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventEnd();
-                                                return;
-                                            }
-                                            return;
-                                        }
-                                        composer5.skipToGroupEnd();
-                                    }
-                                }, composer4, 54), composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                composer4.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                composer4.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                ComposerKt.sourceInformationMarkerEnd(composer4);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                    return;
-                                }
-                                return;
-                            }
-                            composer4.skipToGroupEnd();
-                        }
-                    }, composer3, 54), composer3, 12582918, 104);
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                        return;
-                    }
-                    return;
-                }
-                composer3.skipToGroupEnd();
-            }
-        }, startRestartGroup, 54), startRestartGroup, (i3 & 14) | 3072 | ((i3 >> 15) & 896), 0);
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        dialogProperties3 = dialogProperties2;
-        f3 = f4222222;
-        function23 = function24222222;
-        modifier2 = modifier3222222;
-        composer2 = startRestartGroup;
-        shape2 = shape3222222;
         final DatePickerColors datePickerColors322222 = datePickerColors2;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup == null) {
@@ -2272,7 +825,7 @@ public final class DatePickerDialog_androidKt {
 
     static {
         float f = 8;
-        DialogButtonsPadding = PaddingKt.m839PaddingValuesa9UjIt4$default(0.0f, 0.0f, Dp.m7264constructorimpl(6), Dp.m7264constructorimpl(f), 3, null);
-        DialogButtonsMainAxisSpacing = Dp.m7264constructorimpl(f);
+        DialogButtonsPadding = PaddingKt.m839PaddingValuesa9UjIt4$default(0.0f, 0.0f, Dp.m7995constructorimpl(6), Dp.m7995constructorimpl(f), 3, null);
+        DialogButtonsMainAxisSpacing = Dp.m7995constructorimpl(f);
     }
 }

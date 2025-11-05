@@ -45,19 +45,19 @@ public final class ParagraphKt {
     @Deprecated(message = "Paragraph that takes maximum allowed width is deprecated, pass constraints instead.", replaceWith = @ReplaceWith(expression = "Paragraph(text, style, Constraints(maxWidth = ceil(width).toInt()), density, fontFamilyResolver, spanStyles, placeholders, maxLines, ellipsis)", imports = {"kotlin.math.ceil", "androidx.compose.ui.unit.Constraints"}))
     public static final Paragraph Paragraph(String str, TextStyle textStyle, float f, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<SpanStyle>> list, List<AnnotatedString.Range<Placeholder>> list2, int i, boolean z) {
         TextOverflow.Companion companion = TextOverflow.Companion;
-        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m6990ActualParagraphXGqx6AY(str, textStyle, list, list2, i, z ? companion.m7200getEllipsisgIe3tQ8() : companion.m7199getClipgIe3tQ8(), ConstraintsKt.Constraints$default(0, ceilToInt(f), 0, 0, 13, null), density, resolver);
+        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m7721ActualParagraphXGqx6AY(str, textStyle, list, list2, i, z ? companion.m7931getEllipsisgIe3tQ8() : companion.m7930getClipgIe3tQ8(), ConstraintsKt.Constraints$default(0, ceilToInt(f), 0, 0, 13, null), density, resolver);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Paragraph that takes `ellipsis: Boolean` is deprecated, pass TextOverflow instead.")
     /* renamed from: Paragraph-UdtVg6A  reason: not valid java name */
-    public static final /* synthetic */ Paragraph m6584ParagraphUdtVg6A(String str, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List list, List list2, int i, boolean z) {
+    public static final /* synthetic */ Paragraph m7315ParagraphUdtVg6A(String str, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List list, List list2, int i, boolean z) {
         TextOverflow.Companion companion = TextOverflow.Companion;
-        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m6990ActualParagraphXGqx6AY(str, textStyle, list, list2, i, z ? companion.m7200getEllipsisgIe3tQ8() : companion.m7199getClipgIe3tQ8(), j, density, resolver);
+        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m7721ActualParagraphXGqx6AY(str, textStyle, list, list2, i, z ? companion.m7931getEllipsisgIe3tQ8() : companion.m7930getClipgIe3tQ8(), j, density, resolver);
     }
 
     /* renamed from: Paragraph-Ul8oQg4  reason: not valid java name */
-    public static final Paragraph m6586ParagraphUl8oQg4(String str, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<SpanStyle>> list, List<AnnotatedString.Range<Placeholder>> list2, int i, int i2) {
-        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m6990ActualParagraphXGqx6AY(str, textStyle, list, list2, i, i2, j, density, resolver);
+    public static final Paragraph m7317ParagraphUl8oQg4(String str, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<SpanStyle>> list, List<AnnotatedString.Range<Placeholder>> list2, int i, int i2) {
+        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m7721ActualParagraphXGqx6AY(str, textStyle, list, list2, i, i2, j, density, resolver);
     }
 
     public static /* synthetic */ Paragraph Paragraph$default(ParagraphIntrinsics paragraphIntrinsics, int i, boolean z, float f, int i2, Object obj) {
@@ -72,40 +72,40 @@ public final class ParagraphKt {
 
     @Deprecated(message = "Paragraph that takes maximum allowed width is deprecated, pass constraints instead.", replaceWith = @ReplaceWith(expression = "Paragraph(paragraphIntrinsics, Constraints(maxWidth = ceil(width).toInt()), maxLines, ellipsis)", imports = {"kotlin.math.ceil", "androidx.compose.ui.unit.Constraints"}))
     public static final Paragraph Paragraph(ParagraphIntrinsics paragraphIntrinsics, int i, boolean z, float f) {
-        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m6989ActualParagraph4FmOz70(paragraphIntrinsics, i, z ? TextOverflow.Companion.m7200getEllipsisgIe3tQ8() : TextOverflow.Companion.m7199getClipgIe3tQ8(), ConstraintsKt.Constraints$default(0, ceilToInt(f), 0, 0, 13, null));
+        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m7720ActualParagraph4FmOz70(paragraphIntrinsics, i, z ? TextOverflow.Companion.m7931getEllipsisgIe3tQ8() : TextOverflow.Companion.m7930getClipgIe3tQ8(), ConstraintsKt.Constraints$default(0, ceilToInt(f), 0, 0, 13, null));
     }
 
     /* renamed from: Paragraph-_EkL_-Y$default  reason: not valid java name */
-    public static /* synthetic */ Paragraph m6589Paragraph_EkL_Y$default(ParagraphIntrinsics paragraphIntrinsics, long j, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ Paragraph m7320Paragraph_EkL_Y$default(ParagraphIntrinsics paragraphIntrinsics, long j, int i, boolean z, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             i = Integer.MAX_VALUE;
         }
         if ((i2 & 8) != 0) {
             z = false;
         }
-        return m6588Paragraph_EkL_Y(paragraphIntrinsics, j, i, z);
+        return m7319Paragraph_EkL_Y(paragraphIntrinsics, j, i, z);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Paragraph that takes ellipsis: Boolean is deprecated, pass TextOverflow instead.", replaceWith = @ReplaceWith(expression = "Paragraph(paragraphIntrinsics, constraints, maxLines, if (ellipsis) TextOverflow.Ellipsis else TextOverflow.Clip", imports = {}))
     /* renamed from: Paragraph-_EkL_-Y  reason: not valid java name */
-    public static final /* synthetic */ Paragraph m6588Paragraph_EkL_Y(ParagraphIntrinsics paragraphIntrinsics, long j, int i, boolean z) {
-        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m6989ActualParagraph4FmOz70(paragraphIntrinsics, i, z ? TextOverflow.Companion.m7200getEllipsisgIe3tQ8() : TextOverflow.Companion.m7199getClipgIe3tQ8(), j);
+    public static final /* synthetic */ Paragraph m7319Paragraph_EkL_Y(ParagraphIntrinsics paragraphIntrinsics, long j, int i, boolean z) {
+        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m7720ActualParagraph4FmOz70(paragraphIntrinsics, i, z ? TextOverflow.Companion.m7931getEllipsisgIe3tQ8() : TextOverflow.Companion.m7930getClipgIe3tQ8(), j);
     }
 
     /* renamed from: Paragraph-czeN-Hc$default  reason: not valid java name */
-    public static /* synthetic */ Paragraph m6591ParagraphczeNHc$default(ParagraphIntrinsics paragraphIntrinsics, long j, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ Paragraph m7322ParagraphczeNHc$default(ParagraphIntrinsics paragraphIntrinsics, long j, int i, int i2, int i3, Object obj) {
         if ((i3 & 4) != 0) {
             i = Integer.MAX_VALUE;
         }
         if ((i3 & 8) != 0) {
-            i2 = TextOverflow.Companion.m7199getClipgIe3tQ8();
+            i2 = TextOverflow.Companion.m7930getClipgIe3tQ8();
         }
-        return m6590ParagraphczeNHc(paragraphIntrinsics, j, i, i2);
+        return m7321ParagraphczeNHc(paragraphIntrinsics, j, i, i2);
     }
 
     /* renamed from: Paragraph-czeN-Hc  reason: not valid java name */
-    public static final Paragraph m6590ParagraphczeNHc(ParagraphIntrinsics paragraphIntrinsics, long j, int i, int i2) {
-        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m6989ActualParagraph4FmOz70(paragraphIntrinsics, i, i2, j);
+    public static final Paragraph m7321ParagraphczeNHc(ParagraphIntrinsics paragraphIntrinsics, long j, int i, int i2) {
+        return androidx.compose.ui.text.platform.AndroidParagraph_androidKt.m7720ActualParagraph4FmOz70(paragraphIntrinsics, i, i2, j);
     }
 
     public static final int ceilToInt(float f) {

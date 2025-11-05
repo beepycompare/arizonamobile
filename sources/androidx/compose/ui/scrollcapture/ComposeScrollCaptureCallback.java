@@ -213,7 +213,7 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
     }
 
     private final void drawDebugBackground(Canvas canvas) {
-        canvas.drawColor(ColorKt.m4603toArgb8_81llA(Color.Companion.m4573hslJlNiLsg$default(Color.Companion, Random.Default.nextFloat() * 360.0f, 0.75f, 0.5f, 1.0f, null, 16, null)));
+        canvas.drawColor(ColorKt.m5333toArgb8_81llA(Color.Companion.m5303hslJlNiLsg$default(Color.Companion, Random.Default.nextFloat() * 360.0f, 0.75f, 0.5f, 1.0f, null, 16, null)));
     }
 
     private final void drawDebugOverlay(Canvas canvas) {

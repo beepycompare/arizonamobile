@@ -293,7 +293,7 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         if (highlight != null) {
             drawHighlight(contentDrawScope, highlight, layoutResult);
         }
-        if (TextRange.m6720getCollapsedimpl(visualText.m1446getSelectiond9O1mEE())) {
+        if (TextRange.m7451getCollapsedimpl(visualText.m1446getSelectiond9O1mEE())) {
             ContentDrawScope contentDrawScope2 = contentDrawScope;
             drawText(contentDrawScope2, layoutResult);
             if (visualText.shouldShowSelection()) {
@@ -310,13 +310,13 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
 
     /* renamed from: measureVerticalScroll-3p2s80s  reason: not valid java name */
     private final MeasureResult m1552measureVerticalScroll3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, 0, 0, 0, Integer.MAX_VALUE, 7, null));
-        final int min = Math.min(mo5967measureBRTryo0.getHeight(), Constraints.m7216getMaxHeightimpl(j));
-        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), min, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$$ExternalSyntheticLambda2
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.m7938copyZbe2FdA$default(j, 0, 0, 0, Integer.MAX_VALUE, 7, null));
+        final int min = Math.min(mo6697measureBRTryo0.getHeight(), Constraints.m7947getMaxHeightimpl(j));
+        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), min, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measureVerticalScroll_3p2s80s$lambda$3;
-                measureVerticalScroll_3p2s80s$lambda$3 = TextFieldCoreModifierNode.measureVerticalScroll_3p2s80s$lambda$3(TextFieldCoreModifierNode.this, min, mo5967measureBRTryo0, measureScope, (Placeable.PlacementScope) obj);
+                measureVerticalScroll_3p2s80s$lambda$3 = TextFieldCoreModifierNode.measureVerticalScroll_3p2s80s$lambda$3(TextFieldCoreModifierNode.this, min, mo6697measureBRTryo0, measureScope, (Placeable.PlacementScope) obj);
                 return measureVerticalScroll_3p2s80s$lambda$3;
             }
         }, 4, null);
@@ -331,13 +331,13 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
 
     /* renamed from: measureHorizontalScroll-3p2s80s  reason: not valid java name */
     private final MeasureResult m1551measureHorizontalScroll3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
-        final int min = Math.min(mo5967measureBRTryo0.getWidth(), Constraints.m7217getMaxWidthimpl(j));
-        return MeasureScope.layout$default(measureScope, min, mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.m7938copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
+        final int min = Math.min(mo6697measureBRTryo0.getWidth(), Constraints.m7948getMaxWidthimpl(j));
+        return MeasureScope.layout$default(measureScope, min, mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measureHorizontalScroll_3p2s80s$lambda$4;
-                measureHorizontalScroll_3p2s80s$lambda$4 = TextFieldCoreModifierNode.measureHorizontalScroll_3p2s80s$lambda$4(TextFieldCoreModifierNode.this, min, mo5967measureBRTryo0, measureScope, (Placeable.PlacementScope) obj);
+                measureHorizontalScroll_3p2s80s$lambda$4 = TextFieldCoreModifierNode.measureHorizontalScroll_3p2s80s$lambda$4(TextFieldCoreModifierNode.this, min, mo6697measureBRTryo0, measureScope, (Placeable.PlacementScope) obj);
                 return measureHorizontalScroll_3p2s80s$lambda$4;
             }
         }, 4, null);
@@ -353,17 +353,17 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
     /* renamed from: calculateOffsetToFollow-8ffj60Q  reason: not valid java name */
     private final int m1549calculateOffsetToFollow8ffj60Q(long j, int i, int i2) {
         TextRange textRange = this.previousSelection;
-        if (textRange == null || TextRange.m6721getEndimpl(j) != TextRange.m6721getEndimpl(textRange.m6730unboximpl())) {
-            return TextRange.m6721getEndimpl(j);
+        if (textRange == null || TextRange.m7452getEndimpl(j) != TextRange.m7452getEndimpl(textRange.m7461unboximpl())) {
+            return TextRange.m7452getEndimpl(j);
         }
         TextRange textRange2 = this.previousSelection;
-        if (textRange2 == null || TextRange.m6726getStartimpl(j) != TextRange.m6726getStartimpl(textRange2.m6730unboximpl())) {
-            return TextRange.m6726getStartimpl(j);
+        if (textRange2 == null || TextRange.m7457getStartimpl(j) != TextRange.m7457getStartimpl(textRange2.m7461unboximpl())) {
+            return TextRange.m7457getStartimpl(j);
         }
         if (i2 == this.previousTextLayoutSize && i == this.previousContainerSize) {
             return -1;
         }
-        return TextRange.m6726getStartimpl(j);
+        return TextRange.m7457getStartimpl(j);
     }
 
     /* renamed from: updateScrollState-tIlFzwE  reason: not valid java name */
@@ -396,7 +396,7 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
             int value = this.scrollState.getValue();
             float f2 = value + i;
             float f3 = (bottom <= f2 && (top >= (f = (float) value) || bottom - top <= ((float) i))) ? (i3 >= 0 || bottom - top > ((float) i)) ? 0.0f : top - f : bottom - f2;
-            this.previousSelection = TextRange.m6714boximpl(j2);
+            this.previousSelection = TextRange.m7445boximpl(j2);
             this.previousCursorRect = cursorRectInScroller;
             this.previousContainerSize = i;
             this.previousTextLayoutSize = i2;
@@ -406,35 +406,35 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
 
     /* renamed from: drawSelection-Sb-Bc2M  reason: not valid java name */
     private final void m1550drawSelectionSbBc2M(DrawScope drawScope, long j, TextLayoutResult textLayoutResult) {
-        int m6724getMinimpl = TextRange.m6724getMinimpl(j);
-        int m6723getMaximpl = TextRange.m6723getMaximpl(j);
-        if (m6724getMinimpl != m6723getMaximpl) {
-            DrawScope.m5118drawPathLG529CI$default(drawScope, textLayoutResult.getPathForRange(m6724getMinimpl, m6723getMaximpl), ((TextSelectionColors) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextSelectionColorsKt.getLocalTextSelectionColors())).m1849getBackgroundColor0d7_KjU(), 0.0f, null, null, 0, 60, null);
+        int m7455getMinimpl = TextRange.m7455getMinimpl(j);
+        int m7454getMaximpl = TextRange.m7454getMaximpl(j);
+        if (m7455getMinimpl != m7454getMaximpl) {
+            DrawScope.m5848drawPathLG529CI$default(drawScope, textLayoutResult.getPathForRange(m7455getMinimpl, m7454getMaximpl), ((TextSelectionColors) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextSelectionColorsKt.getLocalTextSelectionColors())).m1849getBackgroundColor0d7_KjU(), 0.0f, null, null, 0, 60, null);
         }
     }
 
     private final void drawHighlight(DrawScope drawScope, Pair<TextHighlightType, TextRange> pair, TextLayoutResult textLayoutResult) {
         int m1459unboximpl = pair.component1().m1459unboximpl();
-        long m6730unboximpl = pair.component2().m6730unboximpl();
-        if (TextRange.m6720getCollapsedimpl(m6730unboximpl)) {
+        long m7461unboximpl = pair.component2().m7461unboximpl();
+        if (TextRange.m7451getCollapsedimpl(m7461unboximpl)) {
             return;
         }
-        Path pathForRange = textLayoutResult.getPathForRange(TextRange.m6724getMinimpl(m6730unboximpl), TextRange.m6723getMaximpl(m6730unboximpl));
+        Path pathForRange = textLayoutResult.getPathForRange(TextRange.m7455getMinimpl(m7461unboximpl), TextRange.m7454getMaximpl(m7461unboximpl));
         if (TextHighlightType.m1456equalsimpl0(m1459unboximpl, TextHighlightType.Companion.m1460getHandwritingDeletePreviewsxJuwY())) {
             Brush brush = textLayoutResult.getLayoutInput().getStyle().getBrush();
             if (brush != null) {
-                DrawScope.m5117drawPathGBMwjPU$default(drawScope, pathForRange, brush, 0.2f, null, null, 0, 56, null);
+                DrawScope.m5847drawPathGBMwjPU$default(drawScope, pathForRange, brush, 0.2f, null, null, 0, 56, null);
                 return;
             }
-            long m6756getColor0d7_KjU = textLayoutResult.getLayoutInput().getStyle().m6756getColor0d7_KjU();
-            if (m6756getColor0d7_KjU == 16) {
-                m6756getColor0d7_KjU = Color.Companion.m4575getBlack0d7_KjU();
+            long m7487getColor0d7_KjU = textLayoutResult.getLayoutInput().getStyle().m7487getColor0d7_KjU();
+            if (m7487getColor0d7_KjU == 16) {
+                m7487getColor0d7_KjU = Color.Companion.m5305getBlack0d7_KjU();
             }
-            long j = m6756getColor0d7_KjU;
-            DrawScope.m5118drawPathLG529CI$default(drawScope, pathForRange, Color.m4548copywmQWz5c$default(j, Color.m4551getAlphaimpl(j) * 0.2f, 0.0f, 0.0f, 0.0f, 14, null), 0.0f, null, null, 0, 60, null);
+            long j = m7487getColor0d7_KjU;
+            DrawScope.m5848drawPathLG529CI$default(drawScope, pathForRange, Color.m5278copywmQWz5c$default(j, Color.m5281getAlphaimpl(j) * 0.2f, 0.0f, 0.0f, 0.0f, 14, null), 0.0f, null, null, 0, 60, null);
             return;
         }
-        DrawScope.m5118drawPathLG529CI$default(drawScope, pathForRange, ((TextSelectionColors) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextSelectionColorsKt.getLocalTextSelectionColors())).m1849getBackgroundColor0d7_KjU(), 0.0f, null, null, 0, 60, null);
+        DrawScope.m5848drawPathLG529CI$default(drawScope, pathForRange, ((TextSelectionColors) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextSelectionColorsKt.getLocalTextSelectionColors())).m1849getBackgroundColor0d7_KjU(), 0.0f, null, null, 0, 60, null);
     }
 
     private final void drawCursor(DrawScope drawScope) {
@@ -442,7 +442,7 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         float cursorAlpha = cursorAnimationState != null ? cursorAnimationState.getCursorAlpha() : 0.0f;
         if (cursorAlpha != 0.0f && getShowCursor()) {
             Rect cursorRect = this.textFieldSelectionState.getCursorRect();
-            DrawScope.m5113drawLine1RTmtNc$default(drawScope, this.cursorBrush, cursorRect.m4339getTopCenterF1C5BW0(), cursorRect.m4332getBottomCenterF1C5BW0(), cursorRect.getRight() - cursorRect.getLeft(), 0, null, cursorAlpha, null, 0, 432, null);
+            DrawScope.m5843drawLine1RTmtNc$default(drawScope, this.cursorBrush, cursorRect.m5069getTopCenterF1C5BW0(), cursorRect.m5062getBottomCenterF1C5BW0(), cursorRect.getRight() - cursorRect.getLeft(), 0, null, cursorAlpha, null, 0, 432, null);
         }
     }
 

@@ -4,7 +4,7 @@ import android.database.Cursor;
 import java.io.Closeable;
 import kotlin.Metadata;
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u0004\u0018\u00010\u0002\u001a\f\u0010\u0000\u001a\u00020\u0001*\u0004\u0018\u00010\u0003¨\u0006\u0004"}, d2 = {"closeSafely", "", "Landroid/database/Cursor;", "Ljava/io/Closeable;", "core-utils_release"}, k = 2, mv = {1, 6, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CloseableUtilsKt {
     public static final void closeSafely(Closeable closeable) {
         if (closeable != null) {

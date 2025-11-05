@@ -8,13 +8,11 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: ModalBottomSheet.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$ModalBottomSheetKt {
     public static final ComposableSingletons$ModalBottomSheetKt INSTANCE = new ComposableSingletons$ModalBottomSheetKt();
-
-    /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f33lambda1 = ComposableLambdaKt.composableLambdaInstance(-1524796689, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt$lambda-1$1
+    private static Function2<Composer, Integer, Unit> lambda$1121996006 = ComposableLambdaKt.composableLambdaInstance(1121996006, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt$lambda$1121996006$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -22,23 +20,23 @@ public final class ComposableSingletons$ModalBottomSheetKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C128@6434L12:ModalBottomSheet.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C133@6887L12:ModalBottomSheet.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1524796689, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda-1.<anonymous> (ModalBottomSheet.kt:128)");
+                ComposerKt.traceEventStart(1121996006, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda$1121996006.<anonymous> (ModalBottomSheet.kt:133)");
             }
-            BottomSheetDefaults.INSTANCE.m1911DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1952DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
 
-    /* renamed from: lambda-2  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f34lambda2 = ComposableLambdaKt.composableLambdaInstance(2066864887, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt$lambda-2$1
+    /* renamed from: lambda$-655173438  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f26lambda$655173438 = ComposableLambdaKt.composableLambdaInstance(-655173438, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt$lambda$-655173438$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -46,28 +44,53 @@ public final class ComposableSingletons$ModalBottomSheetKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C211@9823L12:ModalBottomSheet.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C232@10998L12:ModalBottomSheet.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(2066864887, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda-2.<anonymous> (ModalBottomSheet.kt:211)");
+                ComposerKt.traceEventStart(-655173438, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda$-655173438.<anonymous> (ModalBottomSheet.kt:232)");
             }
-            BottomSheetDefaults.INSTANCE.m1911DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1952DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+    });
+    private static Function2<Composer, Integer, Unit> lambda$1716959002 = ComposableLambdaKt.composableLambdaInstance(1716959002, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt$lambda$1716959002$1
+        @Override // kotlin.jvm.functions.Function2
+        public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
+            invoke(composer, num.intValue());
+            return Unit.INSTANCE;
+        }
+
+        public final void invoke(Composer composer, int i) {
+            ComposerKt.sourceInformation(composer, "C269@12533L12:ModalBottomSheet.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
+                composer.skipToGroupEnd();
+                return;
+            }
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(1716959002, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda$1716959002.<anonymous> (ModalBottomSheet.kt:269)");
+            }
+            BottomSheetDefaults.INSTANCE.m1952DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
 
-    /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2090getLambda1$material3_release() {
-        return f33lambda1;
+    /* renamed from: getLambda$-655173438$material3  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m2166getLambda$655173438$material3() {
+        return f26lambda$655173438;
     }
 
-    /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2091getLambda2$material3_release() {
-        return f34lambda2;
+    public final Function2<Composer, Integer, Unit> getLambda$1121996006$material3() {
+        return lambda$1121996006;
+    }
+
+    public final Function2<Composer, Integer, Unit> getLambda$1716959002$material3() {
+        return lambda$1716959002;
     }
 }

@@ -11,45 +11,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class StampedPathEffectStyle {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Translate = m4903constructorimpl(0);
-    private static final int Rotate = m4903constructorimpl(1);
-    private static final int Morph = m4903constructorimpl(2);
+    private static final int Translate = m5633constructorimpl(0);
+    private static final int Rotate = m5633constructorimpl(1);
+    private static final int Morph = m5633constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StampedPathEffectStyle m4902boximpl(int i) {
+    public static final /* synthetic */ StampedPathEffectStyle m5632boximpl(int i) {
         return new StampedPathEffectStyle(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4903constructorimpl(int i) {
+    public static int m5633constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4904equalsimpl(int i, Object obj) {
-        return (obj instanceof StampedPathEffectStyle) && i == ((StampedPathEffectStyle) obj).m4908unboximpl();
+    public static boolean m5634equalsimpl(int i, Object obj) {
+        return (obj instanceof StampedPathEffectStyle) && i == ((StampedPathEffectStyle) obj).m5638unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4905equalsimpl0(int i, int i2) {
+    public static final boolean m5635equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4906hashCodeimpl(int i) {
+    public static int m5636hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4904equalsimpl(this.value, obj);
+        return m5634equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4906hashCodeimpl(this.value);
+        return m5636hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4908unboximpl() {
+    public final /* synthetic */ int m5638unboximpl() {
         return this.value;
     }
 
@@ -69,27 +69,27 @@ public final class StampedPathEffectStyle {
         }
 
         /* renamed from: getTranslate-Ypspkwk  reason: not valid java name */
-        public final int m4911getTranslateYpspkwk() {
+        public final int m5641getTranslateYpspkwk() {
             return StampedPathEffectStyle.Translate;
         }
 
         /* renamed from: getRotate-Ypspkwk  reason: not valid java name */
-        public final int m4910getRotateYpspkwk() {
+        public final int m5640getRotateYpspkwk() {
             return StampedPathEffectStyle.Rotate;
         }
 
         /* renamed from: getMorph-Ypspkwk  reason: not valid java name */
-        public final int m4909getMorphYpspkwk() {
+        public final int m5639getMorphYpspkwk() {
             return StampedPathEffectStyle.Morph;
         }
     }
 
     public String toString() {
-        return m4907toStringimpl(this.value);
+        return m5637toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4907toStringimpl(int i) {
-        return m4905equalsimpl0(i, Translate) ? "Translate" : m4905equalsimpl0(i, Rotate) ? "Rotate" : m4905equalsimpl0(i, Morph) ? "Morph" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5637toStringimpl(int i) {
+        return m5635equalsimpl0(i, Translate) ? "Translate" : m5635equalsimpl0(i, Rotate) ? "Rotate" : m5635equalsimpl0(i, Morph) ? "Morph" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

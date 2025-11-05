@@ -5,8 +5,8 @@ import android.content.res.Resources;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class ViewUtils {
     private ViewUtils() {
     }
@@ -19,19 +19,37 @@ public class ViewUtils {
             TypedValue typedValue = new TypedValue();
             try {
                 Resources resources = context.getResources();
-                resources.getValue(packageName + ":string/" + substring, typedValue, true);
+                StringBuilder sb = new StringBuilder(String.valueOf(packageName).length() + 8 + String.valueOf(substring).length());
+                sb.append(packageName);
+                sb.append(":string/");
+                sb.append(substring);
+                resources.getValue(sb.toString(), typedValue, true);
             } catch (Resources.NotFoundException unused) {
-                Log.w(str3, "Could not find resource for " + str2 + ": " + attributeValue);
+                StringBuilder sb2 = new StringBuilder(String.valueOf(str2).length() + 30 + attributeValue.length());
+                sb2.append("Could not find resource for ");
+                sb2.append(str2);
+                sb2.append(": ");
+                sb2.append(attributeValue);
+                Log.w(str3, sb2.toString());
             }
             if (typedValue.string != null) {
                 attributeValue = typedValue.string.toString();
             } else {
                 String obj = typedValue.toString();
-                Log.w(str3, "Resource " + str2 + " was not a string: " + obj);
+                StringBuilder sb3 = new StringBuilder(String.valueOf(str2).length() + 28 + obj.length());
+                sb3.append("Resource ");
+                sb3.append(str2);
+                sb3.append(" was not a string: ");
+                sb3.append(obj);
+                Log.w(str3, sb3.toString());
             }
         }
         if (z2 && attributeValue == null) {
-            Log.w(str3, "Required XML attribute \"" + str2 + "\" missing");
+            StringBuilder sb4 = new StringBuilder(String.valueOf(str2).length() + 33);
+            sb4.append("Required XML attribute \"");
+            sb4.append(str2);
+            sb4.append("\" missing");
+            Log.w(str3, sb4.toString());
         }
         return attributeValue;
     }

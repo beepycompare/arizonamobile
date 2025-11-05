@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.video;
 import android.view.Surface;
 import androidx.media3.exoplayer.mediacodec.MediaCodecDecoderException;
 import androidx.media3.exoplayer.mediacodec.MediaCodecInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class MediaCodecVideoDecoderException extends MediaCodecDecoderException {
     public final boolean isSurfaceValid;
     public final int surfaceIdentityHashCode;

@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CmcdData {
     private static final Joiner COMMA_JOINER = Joiner.on(StringUtils.COMMA);
     public static final String OBJECT_TYPE_AUDIO_ONLY = "a";
@@ -52,25 +52,25 @@ public final class CmcdData {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface ObjectType {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface StreamType {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface StreamingFormat {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory {
         private static final Pattern CUSTOM_KEY_NAME_PATTERN = Pattern.compile(".*-.*");
         private final CmcdConfiguration cmcdConfiguration;
@@ -343,7 +343,7 @@ public final class CmcdData {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CmcdObject {
         public final int bitrateKbps;
         public final ImmutableList<String> customDataList;
@@ -351,7 +351,7 @@ public final class CmcdData {
         public final String objectType;
         public final int topBitrateKbps;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class Builder {
             private String objectType;
             private int bitrateKbps = C.RATE_UNSET_INT;
@@ -423,7 +423,7 @@ public final class CmcdData {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CmcdRequest {
         public final long bufferLengthMs;
         public final ImmutableList<String> customDataList;
@@ -433,7 +433,7 @@ public final class CmcdData {
         public final String nextRangeRequest;
         public final boolean startup;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class Builder {
             private String nextObjectRequest;
             private String nextRangeRequest;
@@ -543,7 +543,7 @@ public final class CmcdData {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CmcdSession {
         public static final int VERSION = 1;
         public final String contentId;
@@ -553,7 +553,7 @@ public final class CmcdData {
         public final String streamType;
         public final String streamingFormat;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class Builder {
             private String contentId;
             private String sessionId;
@@ -636,13 +636,13 @@ public final class CmcdData {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CmcdStatus {
         public final boolean bufferStarvation;
         public final ImmutableList<String> customDataList;
         public final int maximumRequestedThroughputKbps;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class Builder {
             private boolean bufferStarvation;
             private int maximumRequestedThroughputKbps = C.RATE_UNSET_INT;

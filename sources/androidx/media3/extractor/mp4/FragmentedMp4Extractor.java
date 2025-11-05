@@ -234,7 +234,7 @@ public class FragmentedMp4Extractor implements Extractor {
         this.reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.mp4.FragmentedMp4Extractor$$ExternalSyntheticLambda3
             @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
             public final void consume(long j, ParsableByteArray parsableByteArray) {
-                FragmentedMp4Extractor.this.m8054x40e97494(j, parsableByteArray);
+                FragmentedMp4Extractor.this.m8785x40e97494(j, parsableByteArray);
             }
         });
         this.chunkIndexMerger = new ChunkIndexMerger();
@@ -243,7 +243,7 @@ public class FragmentedMp4Extractor implements Extractor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-media3-extractor-mp4-FragmentedMp4Extractor  reason: not valid java name */
-    public /* synthetic */ void m8054x40e97494(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m8785x40e97494(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consume(j, parsableByteArray, this.ceaTrackOutputs);
     }
 

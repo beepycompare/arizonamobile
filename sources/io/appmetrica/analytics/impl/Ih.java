@@ -1,58 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
-import org.json.JSONObject;
-/* loaded from: classes4.dex */
-public final class Ih extends AbstractC0463nh {
-    public final Nf b;
-    public final Do c;
-    public final SafePackageManager d;
-    public final TimeProvider e;
+import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
+import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
+/* loaded from: classes3.dex */
+public final class Ih extends C0210e5 {
+    public final String w;
+    public final L6 x;
 
-    public Ih(C0652v5 c0652v5) {
-        this(c0652v5, c0652v5.u(), Na.j().s(), new SafePackageManager(), new SystemTimeProvider());
+    public Ih(Context context, X4 x4, C0639v4 c0639v4, L6 l6, C0356jm c0356jm, AbstractC0159c5 abstractC0159c5, InterfaceC0744z9 interfaceC0744z9) {
+        this(context, x4, new C0360k0(), new TimePassedChecker(), new C0339j5(context, x4, c0639v4, abstractC0159c5, c0356jm, new Dh(l6), C0620ua.k().x().d(), PackageManagerUtils.getAppVersionCodeInt(context), C0620ua.k().l(), interfaceC0744z9), l6, c0639v4);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0463nh
-    public final boolean a(C0478o6 c0478o6) {
-        C0478o6 a2;
-        C0652v5 c0652v5 = this.f1006a;
-        if (this.c.d()) {
-            return false;
-        }
-        if (((Gh) c0652v5.k.a()).e) {
-            a2 = C0478o6.a(c0478o6, Bb.EVENT_TYPE_APP_UPDATE);
-        } else {
-            a2 = C0478o6.a(c0478o6, Bb.EVENT_TYPE_INIT);
-        }
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(c0652v5.f1120a, c0652v5.b.f1017a), ""));
-            Nf nf = this.b;
-            nf.h.a(nf.f1003a);
-            jSONObject.put("preloadInfo", ((Kf) nf.c()).b());
-        } catch (Throwable unused) {
-        }
-        a2.setValue(jSONObject.toString());
-        K9 k9 = c0652v5.n;
-        k9.a(a2, C0157bl.a(k9.c.b(a2), a2.i));
-        Do r7 = this.c;
-        synchronized (r7) {
-            Eo eo = r7.f418a;
-            eo.a(eo.a().put("init_event_done", true));
-        }
-        this.c.a(this.e.currentTimeMillis());
-        return false;
+    @Override // io.appmetrica.analytics.impl.C0210e5, io.appmetrica.analytics.impl.Wa, io.appmetrica.analytics.impl.La
+    public final synchronized void a(C0639v4 c0639v4) {
+        super.a(c0639v4);
+        this.x.a(this.w, c0639v4.i);
     }
 
-    public Ih(C0652v5 c0652v5, Do r2, Nf nf, SafePackageManager safePackageManager, SystemTimeProvider systemTimeProvider) {
-        super(c0652v5);
-        this.c = r2;
-        this.b = nf;
-        this.d = safePackageManager;
-        this.e = systemTimeProvider;
+    public Ih(Context context, X4 x4, C0360k0 c0360k0, TimePassedChecker timePassedChecker, C0339j5 c0339j5, L6 l6, C0639v4 c0639v4) {
+        super(context, x4, c0360k0, timePassedChecker, c0339j5, c0639v4);
+        this.w = x4.b();
+        this.x = l6;
     }
 }

@@ -15,7 +15,7 @@ import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 /* compiled from: SnackbarHost.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001:\u0002\u001b\u001cB\u0005¢\u0006\u0002\u0010\u0002J\u0016\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0086@¢\u0006\u0002\u0010\u0012J6\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00142\b\b\u0002\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0018\u001a\u00020\u0019H\u0086@¢\u0006\u0002\u0010\u001aR/\u0010\u0005\u001a\u0004\u0018\u00010\u00042\b\u0010\u0003\u001a\u0004\u0018\u00010\u00048F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\n\u0010\u000b\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Landroidx/compose/material3/SnackbarHostState;", "", "()V", "<set-?>", "Landroidx/compose/material3/SnackbarData;", "currentSnackbarData", "getCurrentSnackbarData", "()Landroidx/compose/material3/SnackbarData;", "setCurrentSnackbarData", "(Landroidx/compose/material3/SnackbarData;)V", "currentSnackbarData$delegate", "Landroidx/compose/runtime/MutableState;", "mutex", "Lkotlinx/coroutines/sync/Mutex;", "showSnackbar", "Landroidx/compose/material3/SnackbarResult;", "visuals", "Landroidx/compose/material3/SnackbarVisuals;", "(Landroidx/compose/material3/SnackbarVisuals;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "message", "", "actionLabel", "withDismissAction", "", TypedValues.TransitionType.S_DURATION, "Landroidx/compose/material3/SnackbarDuration;", "(Ljava/lang/String;Ljava/lang/String;ZLandroidx/compose/material3/SnackbarDuration;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "SnackbarDataImpl", "SnackbarVisualsImpl", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001:\u0002\u001c\u001dB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J6\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00122\b\b\u0002\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0016\u001a\u00020\u0017H\u0086@¢\u0006\u0002\u0010\u0018J\u0016\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0019\u001a\u00020\u001aH\u0086@¢\u0006\u0002\u0010\u001bR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R/\u0010\b\u001a\u0004\u0018\u00010\u00072\b\u0010\u0006\u001a\u0004\u0018\u00010\u00078F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\r\u0010\u000e\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f¨\u0006\u001e"}, d2 = {"Landroidx/compose/material3/SnackbarHostState;", "", "<init>", "()V", "mutex", "Lkotlinx/coroutines/sync/Mutex;", "<set-?>", "Landroidx/compose/material3/SnackbarData;", "currentSnackbarData", "getCurrentSnackbarData", "()Landroidx/compose/material3/SnackbarData;", "setCurrentSnackbarData", "(Landroidx/compose/material3/SnackbarData;)V", "currentSnackbarData$delegate", "Landroidx/compose/runtime/MutableState;", "showSnackbar", "Landroidx/compose/material3/SnackbarResult;", "message", "", "actionLabel", "withDismissAction", "", TypedValues.TransitionType.S_DURATION, "Landroidx/compose/material3/SnackbarDuration;", "(Ljava/lang/String;Ljava/lang/String;ZLandroidx/compose/material3/SnackbarDuration;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "visuals", "Landroidx/compose/material3/SnackbarVisuals;", "(Landroidx/compose/material3/SnackbarVisuals;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "SnackbarVisualsImpl", "SnackbarDataImpl", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnackbarHostState {
     public static final int $stable = 0;
@@ -56,11 +56,14 @@ public final class SnackbarHostState {
         return showSnackbar(new SnackbarVisualsImpl(str, str2, z, snackbarDuration), continuation);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0062, code lost:
+        if (r9.lock(null, r0) == r1) goto L31;
+     */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00a1 A[Catch: all -> 0x00b4, TRY_LEAVE, TryCatch #0 {all -> 0x00b4, blocks: (B:24:0x0071, B:26:0x00a1), top: B:40:0x0071 }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0093 A[Catch: all -> 0x00a5, TRY_LEAVE, TryCatch #0 {all -> 0x00a5, blocks: (B:23:0x0065, B:25:0x0093), top: B:39:0x0065 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x009b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -69,10 +72,8 @@ public final class SnackbarHostState {
         Object coroutine_suspended;
         int i;
         Mutex mutex;
-        SnackbarHostState snackbarHostState;
         SnackbarVisuals snackbarVisuals2;
         Throwable th;
-        SnackbarHostState snackbarHostState2;
         Object result;
         Mutex mutex2;
         try {
@@ -87,47 +88,39 @@ public final class SnackbarHostState {
                         if (i != 0) {
                             ResultKt.throwOnFailure(obj);
                             mutex = this.mutex;
-                            snackbarHostState$showSnackbar$2.L$0 = this;
-                            snackbarHostState$showSnackbar$2.L$1 = snackbarVisuals;
-                            snackbarHostState$showSnackbar$2.L$2 = mutex;
+                            snackbarHostState$showSnackbar$2.L$0 = snackbarVisuals;
+                            snackbarHostState$showSnackbar$2.L$1 = mutex;
                             snackbarHostState$showSnackbar$2.label = 1;
-                            if (mutex.lock(null, snackbarHostState$showSnackbar$2) != coroutine_suspended) {
-                                snackbarHostState = this;
-                                snackbarVisuals2 = snackbarVisuals;
-                            }
-                            return coroutine_suspended;
+                            snackbarVisuals2 = snackbarVisuals;
                         } else if (i != 1) {
                             if (i == 2) {
-                                SnackbarHostState$showSnackbar$2 snackbarHostState$showSnackbar$22 = (SnackbarHostState$showSnackbar$2) snackbarHostState$showSnackbar$2.L$3;
-                                mutex2 = (Mutex) snackbarHostState$showSnackbar$2.L$2;
-                                SnackbarVisuals snackbarVisuals3 = (SnackbarVisuals) snackbarHostState$showSnackbar$2.L$1;
-                                snackbarHostState2 = (SnackbarHostState) snackbarHostState$showSnackbar$2.L$0;
+                                SnackbarHostState$showSnackbar$2 snackbarHostState$showSnackbar$22 = (SnackbarHostState$showSnackbar$2) snackbarHostState$showSnackbar$2.L$2;
+                                mutex2 = (Mutex) snackbarHostState$showSnackbar$2.L$1;
+                                SnackbarVisuals snackbarVisuals3 = (SnackbarVisuals) snackbarHostState$showSnackbar$2.L$0;
                                 try {
                                     ResultKt.throwOnFailure(obj);
-                                    snackbarHostState2.setCurrentSnackbarData(null);
+                                    setCurrentSnackbarData(null);
                                     mutex2.unlock(null);
                                     return obj;
                                 } catch (Throwable th2) {
                                     th = th2;
-                                    snackbarHostState2.setCurrentSnackbarData(null);
+                                    setCurrentSnackbarData(null);
                                     throw th;
                                 }
                             }
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         } else {
-                            snackbarHostState = (SnackbarHostState) snackbarHostState$showSnackbar$2.L$0;
                             ResultKt.throwOnFailure(obj);
-                            mutex = (Mutex) snackbarHostState$showSnackbar$2.L$2;
-                            snackbarVisuals2 = (SnackbarVisuals) snackbarHostState$showSnackbar$2.L$1;
+                            mutex = (Mutex) snackbarHostState$showSnackbar$2.L$1;
+                            snackbarVisuals2 = (SnackbarVisuals) snackbarHostState$showSnackbar$2.L$0;
                         }
-                        snackbarHostState$showSnackbar$2.L$0 = snackbarHostState;
-                        snackbarHostState$showSnackbar$2.L$1 = snackbarVisuals2;
-                        snackbarHostState$showSnackbar$2.L$2 = mutex;
-                        snackbarHostState$showSnackbar$2.L$3 = snackbarHostState$showSnackbar$2;
+                        snackbarHostState$showSnackbar$2.L$0 = snackbarVisuals2;
+                        snackbarHostState$showSnackbar$2.L$1 = mutex;
+                        snackbarHostState$showSnackbar$2.L$2 = snackbarHostState$showSnackbar$2;
                         snackbarHostState$showSnackbar$2.label = 2;
                         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(snackbarHostState$showSnackbar$2), 1);
                         cancellableContinuationImpl.initCancellability();
-                        snackbarHostState.setCurrentSnackbarData(new SnackbarDataImpl(snackbarVisuals2, cancellableContinuationImpl));
+                        setCurrentSnackbarData(new SnackbarDataImpl(snackbarVisuals2, cancellableContinuationImpl));
                         result = cancellableContinuationImpl.getResult();
                         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
                             DebugProbesKt.probeCoroutineSuspended(snackbarHostState$showSnackbar$2);
@@ -136,22 +129,20 @@ public final class SnackbarHostState {
                             Mutex mutex3 = mutex;
                             obj = result;
                             mutex2 = mutex3;
-                            snackbarHostState2 = snackbarHostState;
-                            snackbarHostState2.setCurrentSnackbarData(null);
+                            setCurrentSnackbarData(null);
                             mutex2.unlock(null);
                             return obj;
                         }
                         return coroutine_suspended;
                     }
                 }
-                snackbarHostState$showSnackbar$2.L$0 = snackbarHostState;
-                snackbarHostState$showSnackbar$2.L$1 = snackbarVisuals2;
-                snackbarHostState$showSnackbar$2.L$2 = mutex;
-                snackbarHostState$showSnackbar$2.L$3 = snackbarHostState$showSnackbar$2;
+                snackbarHostState$showSnackbar$2.L$0 = snackbarVisuals2;
+                snackbarHostState$showSnackbar$2.L$1 = mutex;
+                snackbarHostState$showSnackbar$2.L$2 = snackbarHostState$showSnackbar$2;
                 snackbarHostState$showSnackbar$2.label = 2;
                 CancellableContinuationImpl cancellableContinuationImpl2 = new CancellableContinuationImpl(IntrinsicsKt.intercepted(snackbarHostState$showSnackbar$2), 1);
                 cancellableContinuationImpl2.initCancellability();
-                snackbarHostState.setCurrentSnackbarData(new SnackbarDataImpl(snackbarVisuals2, cancellableContinuationImpl2));
+                setCurrentSnackbarData(new SnackbarDataImpl(snackbarVisuals2, cancellableContinuationImpl2));
                 result = cancellableContinuationImpl2.getResult();
                 if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
                 }
@@ -160,8 +151,7 @@ public final class SnackbarHostState {
                 return coroutine_suspended;
             } catch (Throwable th3) {
                 th = th3;
-                snackbarHostState2 = snackbarHostState;
-                snackbarHostState2.setCurrentSnackbarData(null);
+                setCurrentSnackbarData(null);
                 throw th;
             }
             if (i != 0) {
@@ -178,7 +168,7 @@ public final class SnackbarHostState {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SnackbarHost.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0002\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0002\u0010\tJ\u0013\u0010\u0011\u001a\u00020\u00062\b\u0010\u0012\u001a\u0004\u0018\u00010\u0013H\u0096\u0002J\b\u0010\u0014\u001a\u00020\u0015H\u0016R\u0016\u0010\u0004\u001a\u0004\u0018\u00010\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\u0007\u001a\u00020\bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000bR\u0014\u0010\u0005\u001a\u00020\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u0016"}, d2 = {"Landroidx/compose/material3/SnackbarHostState$SnackbarVisualsImpl;", "Landroidx/compose/material3/SnackbarVisuals;", "message", "", "actionLabel", "withDismissAction", "", TypedValues.TransitionType.S_DURATION, "Landroidx/compose/material3/SnackbarDuration;", "(Ljava/lang/String;Ljava/lang/String;ZLandroidx/compose/material3/SnackbarDuration;)V", "getActionLabel", "()Ljava/lang/String;", "getDuration", "()Landroidx/compose/material3/SnackbarDuration;", "getMessage", "getWithDismissAction", "()Z", "equals", "other", "", "hashCode", "", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0002\u0018\u00002\u00020\u0001B)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\u0013\u0010\u0012\u001a\u00020\u00062\b\u0010\u0013\u001a\u0004\u0018\u00010\u0014H\u0096\u0002J\b\u0010\u0015\u001a\u00020\u0016H\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0016\u0010\u0004\u001a\u0004\u0018\u00010\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\fR\u0014\u0010\u0005\u001a\u00020\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0007\u001a\u00020\bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u0017"}, d2 = {"Landroidx/compose/material3/SnackbarHostState$SnackbarVisualsImpl;", "Landroidx/compose/material3/SnackbarVisuals;", "message", "", "actionLabel", "withDismissAction", "", TypedValues.TransitionType.S_DURATION, "Landroidx/compose/material3/SnackbarDuration;", "<init>", "(Ljava/lang/String;Ljava/lang/String;ZLandroidx/compose/material3/SnackbarDuration;)V", "getMessage", "()Ljava/lang/String;", "getActionLabel", "getWithDismissAction", "()Z", "getDuration", "()Landroidx/compose/material3/SnackbarDuration;", "equals", "other", "", "hashCode", "", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class SnackbarVisualsImpl implements SnackbarVisuals {
         private final String actionLabel;
@@ -233,7 +223,7 @@ public final class SnackbarHostState {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SnackbarHost.kt */
-    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u0001B\u001b\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0002\u0010\u0007J\b\u0010\n\u001a\u00020\u000bH\u0016J\u0013\u0010\f\u001a\u00020\r2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0096\u0002J\b\u0010\u0010\u001a\u00020\u0011H\u0016J\b\u0010\u0012\u001a\u00020\u000bH\u0016R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\u0013"}, d2 = {"Landroidx/compose/material3/SnackbarHostState$SnackbarDataImpl;", "Landroidx/compose/material3/SnackbarData;", "visuals", "Landroidx/compose/material3/SnackbarVisuals;", "continuation", "Lkotlinx/coroutines/CancellableContinuation;", "Landroidx/compose/material3/SnackbarResult;", "(Landroidx/compose/material3/SnackbarVisuals;Lkotlinx/coroutines/CancellableContinuation;)V", "getVisuals", "()Landroidx/compose/material3/SnackbarVisuals;", "dismiss", "", "equals", "", "other", "", "hashCode", "", "performAction", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010\u000b\u001a\u00020\fH\u0016J\b\u0010\r\u001a\u00020\fH\u0016J\u0013\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011H\u0096\u0002J\b\u0010\u0012\u001a\u00020\u0013H\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Landroidx/compose/material3/SnackbarHostState$SnackbarDataImpl;", "Landroidx/compose/material3/SnackbarData;", "visuals", "Landroidx/compose/material3/SnackbarVisuals;", "continuation", "Lkotlinx/coroutines/CancellableContinuation;", "Landroidx/compose/material3/SnackbarResult;", "<init>", "(Landroidx/compose/material3/SnackbarVisuals;Lkotlinx/coroutines/CancellableContinuation;)V", "getVisuals", "()Landroidx/compose/material3/SnackbarVisuals;", "performAction", "", "dismiss", "equals", "", "other", "", "hashCode", "", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class SnackbarDataImpl implements SnackbarData {
         private final CancellableContinuation<SnackbarResult> continuation;
@@ -254,7 +244,7 @@ public final class SnackbarHostState {
         public void performAction() {
             if (this.continuation.isActive()) {
                 Result.Companion companion = Result.Companion;
-                this.continuation.resumeWith(Result.m9106constructorimpl(SnackbarResult.ActionPerformed));
+                this.continuation.resumeWith(Result.m9847constructorimpl(SnackbarResult.ActionPerformed));
             }
         }
 
@@ -262,7 +252,7 @@ public final class SnackbarHostState {
         public void dismiss() {
             if (this.continuation.isActive()) {
                 Result.Companion companion = Result.Companion;
-                this.continuation.resumeWith(Result.m9106constructorimpl(SnackbarResult.Dismissed));
+                this.continuation.resumeWith(Result.m9847constructorimpl(SnackbarResult.Dismissed));
             }
         }
 

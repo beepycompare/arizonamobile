@@ -1,32 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
-/* loaded from: classes4.dex */
-public final class Vn implements zo {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0248f9 f719a;
-
-    public Vn() {
-        this(new C0248f9());
-    }
-
-    @Override // io.appmetrica.analytics.impl.zo
-    public final byte[] a(C0403l9 c0403l9, Gh gh) {
-        byte[] bArr = new byte[0];
-        try {
-            bArr = Base64Utils.decompressBase64GzipAsBytes(c0403l9.b);
-        } catch (Throwable unused) {
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import kotlin.collections.CollectionsKt;
+/* loaded from: classes3.dex */
+public abstract class Vn {
+    public static final Sn a(Throwable th, V v, List list, String str, Boolean bool) {
+        ArrayList arrayList = null;
+        In a2 = th != null ? Jn.a(th, 1, 0) : null;
+        if (list != null) {
+            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                arrayList.add(new Hl((StackTraceElement) it.next()));
+            }
         }
-        byte[] a2 = ((InterfaceC0222e9) this.f719a.f876a.a(c0403l9.o)).a(bArr);
-        return a2 == null ? new byte[0] : a2;
-    }
-
-    public Vn(C0248f9 c0248f9) {
-        this.f719a = c0248f9;
-    }
-
-    public final C0248f9 a() {
-        return this.f719a;
+        return new Sn(a2, v, arrayList, null, null, null, str, bool);
     }
 }

@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     private MediaPeriod.Callback callback;
     private SequenceableLoader compositeSequenceableLoader;
@@ -278,7 +278,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class MergingMediaPeriodTrackSelection extends ForwardingTrackSelection {
         private final TrackGroup trackGroup;
 

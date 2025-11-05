@@ -51,7 +51,7 @@ public final class FontFamilyResolverImpl implements FontFamily.Resolver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object createDefaultTypeface$lambda$0(FontFamilyResolverImpl fontFamilyResolverImpl, TypefaceRequest typefaceRequest) {
-        return fontFamilyResolverImpl.resolve(TypefaceRequest.m6881copye1PVR60$default(typefaceRequest, null, null, 0, 0, null, 30, null)).getValue();
+        return fontFamilyResolverImpl.resolve(TypefaceRequest.m7612copye1PVR60$default(typefaceRequest, null, null, 0, 0, null, 30, null)).getValue();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -96,7 +96,7 @@ public final class FontFamilyResolverImpl implements FontFamily.Resolver {
                 size = fonts.size();
                 for (i2 = 0; i2 < size; i2++) {
                     Font font = fonts.get(i2);
-                    arrayList.add(new TypefaceRequest(this.platformResolveInterceptor.interceptFontFamily(fontFamily), this.platformResolveInterceptor.interceptFontWeight(font.getWeight()), this.platformResolveInterceptor.m6865interceptFontStyleT2F_aPo(font.mo6791getStyle_LCdwA()), FontSynthesis.Companion.m6856getAllGVVA2EU(), this.platformFontLoader.getCacheKey(), null));
+                    arrayList.add(new TypefaceRequest(this.platformResolveInterceptor.interceptFontFamily(fontFamily), this.platformResolveInterceptor.interceptFontWeight(font.getWeight()), this.platformResolveInterceptor.m7596interceptFontStyleT2F_aPo(font.mo7522getStyle_LCdwA()), FontSynthesis.Companion.m7587getAllGVVA2EU(), this.platformFontLoader.getCacheKey(), null));
                 }
                 this.typefaceRequestCache.preWarmCache(arrayList, new Function1() { // from class: androidx.compose.ui.text.font.FontFamilyResolverImpl$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function1
@@ -170,8 +170,8 @@ public final class FontFamilyResolverImpl implements FontFamily.Resolver {
 
     @Override // androidx.compose.ui.text.font.FontFamily.Resolver
     /* renamed from: resolve-DPcqOEQ */
-    public State<Object> mo6811resolveDPcqOEQ(FontFamily fontFamily, FontWeight fontWeight, int i, int i2) {
-        return resolve(new TypefaceRequest(this.platformResolveInterceptor.interceptFontFamily(fontFamily), this.platformResolveInterceptor.interceptFontWeight(fontWeight), this.platformResolveInterceptor.m6865interceptFontStyleT2F_aPo(i), this.platformResolveInterceptor.m6866interceptFontSynthesisMscr08Y(i2), this.platformFontLoader.getCacheKey(), null));
+    public State<Object> mo7542resolveDPcqOEQ(FontFamily fontFamily, FontWeight fontWeight, int i, int i2) {
+        return resolve(new TypefaceRequest(this.platformResolveInterceptor.interceptFontFamily(fontFamily), this.platformResolveInterceptor.interceptFontWeight(fontWeight), this.platformResolveInterceptor.m7596interceptFontStyleT2F_aPo(i), this.platformResolveInterceptor.m7597interceptFontSynthesisMscr08Y(i2), this.platformFontLoader.getCacheKey(), null));
     }
 
     private final State<Object> resolve(final TypefaceRequest typefaceRequest) {

@@ -380,7 +380,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v16.6.3 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v16.6.7 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -469,12 +469,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C248@9508L269,248@9489L288:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C249@9551L269,249@9532L288:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:248)");
+                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:249)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(783987227, true, new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda15
                 @Override // kotlin.jvm.functions.Function2
@@ -493,12 +493,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5$0(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C249@9526L237:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C250@9569L237:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:249)");
+                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:250)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
@@ -517,18 +517,18 @@ public final class MainEntrench extends Hilt_MainEntrench {
             } else {
                 composer.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
-            Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
+            Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C250@9555L8,254@9680L43,252@9585L160:MainEntrench.kt#5ji0rp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C251@9598L8,255@9723L43,253@9628L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
             MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -555,13 +555,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)276@10185L7,277@10242L7,279@10272L48,281@10363L464,281@10330L497,296@10872L10,295@10837L150:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)277@10228L7,278@10285L7,280@10315L48,282@10406L464,282@10373L497,297@10915L10,296@10880L150:MainEntrench.kt#5ji0rp");
         int i2 = i & 1;
         if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:275)");
+                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:276)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
@@ -610,7 +610,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7264constructorimpl(1)), null, startRestartGroup, 48, 4);
+            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7995constructorimpl(1)), null, startRestartGroup, 48, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -849,6 +849,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
         SharedPreferences.Editor edit = sharedPreferences.edit();
         UtilsKt.set_isArizonaType(FlavorUtilKt.isArizona());
+        UtilsKt.set_isDebug(false);
         if (FlavorUtilKt.isArizona()) {
             edit.putBoolean("isArizonaType", true);
         } else {

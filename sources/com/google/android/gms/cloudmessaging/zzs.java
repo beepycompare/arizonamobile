@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzs {
     final int zza;
     final TaskCompletionSource zzb = new TaskCompletionSource();

@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.GoogleApiClient;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zac extends zaf {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zac(zae zaeVar, GoogleApiClient googleApiClient) {

@@ -53,12 +53,12 @@ public final class TransitionKt {
             }
         } : function3;
         String str2 = (i2 & 2) != 0 ? "ColorAnimation" : str;
-        ColorSpace m4553getColorSpaceimpl = Color.m4553getColorSpaceimpl(function32.invoke(transition.getTargetState(), composer, Integer.valueOf((i >> 6) & 112)).m4559unboximpl());
+        ColorSpace m5283getColorSpaceimpl = Color.m5283getColorSpaceimpl(function32.invoke(transition.getTargetState(), composer, Integer.valueOf((i >> 6) & 112)).m5289unboximpl());
         ComposerKt.sourceInformationMarkerStart(composer, -1791410757, "CC(remember):Transition.kt#9igjgp");
-        boolean changed = composer.changed(m4553getColorSpaceimpl);
+        boolean changed = composer.changed(m5283getColorSpaceimpl);
         TwoWayConverter<Color, AnimationVector4D> rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m4553getColorSpaceimpl);
+            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl);
             composer.updateRememberedValue(rememberedValue);
         }
         TwoWayConverter twoWayConverter = (TwoWayConverter) rememberedValue;
@@ -144,12 +144,12 @@ public final class TransitionKt {
         ComposerKt.sourceInformationMarkerStart(composer, -1869105431, "CC(remember):Transition.kt#9igjgp");
         TwoWayConverter<Color, AnimationVector4D> rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m4553getColorSpaceimpl(j2));
+            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m5283getColorSpaceimpl(j2));
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         int i3 = i << 3;
-        State<Color> animateValue = InfiniteTransitionKt.animateValue(infiniteTransition, Color.m4539boximpl(j), Color.m4539boximpl(j2), (TwoWayConverter) rememberedValue, infiniteRepeatableSpec, str2, composer, InfiniteTransition.$stable | (i & 14) | (i & 112) | (i & 896) | (InfiniteRepeatableSpec.$stable << 12) | (57344 & i3) | (i3 & 458752), 0);
+        State<Color> animateValue = InfiniteTransitionKt.animateValue(infiniteTransition, Color.m5269boximpl(j), Color.m5269boximpl(j2), (TwoWayConverter) rememberedValue, infiniteRepeatableSpec, str2, composer, InfiniteTransition.$stable | (i & 14) | (i & 112) | (i & 896) | (InfiniteRepeatableSpec.$stable << 12) | (57344 & i3) | (i3 & 458752), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

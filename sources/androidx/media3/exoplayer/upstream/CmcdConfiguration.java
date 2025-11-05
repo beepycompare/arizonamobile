@@ -11,7 +11,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.UUID;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CmcdConfiguration {
     public static final String CMCD_QUERY_PARAMETER_KEY = "CMCD";
     public static final String KEY_BITRATE = "br";
@@ -47,25 +47,25 @@ public final class CmcdConfiguration {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface CmcdKey {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface DataTransmissionMode {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface HeaderKey {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Factory {
         public static final Factory DEFAULT = new Factory() { // from class: androidx.media3.exoplayer.upstream.CmcdConfiguration$Factory$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.upstream.CmcdConfiguration.Factory
@@ -89,7 +89,7 @@ public final class CmcdConfiguration {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface RequestConfig {
         default int getRequestedMaximumThroughputKbps(int i) {
             return C.RATE_UNSET_INT;

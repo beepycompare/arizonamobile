@@ -5,12 +5,12 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public interface IAccountAccessor extends IInterface {
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-    /* loaded from: classes3.dex */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends com.google.android.gms.internal.common.zzb implements IAccountAccessor {
         public Stub() {
             super("com.google.android.gms.common.internal.IAccountAccessor");
@@ -21,7 +21,7 @@ public interface IAccountAccessor extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-            return queryLocalInterface instanceof IAccountAccessor ? (IAccountAccessor) queryLocalInterface : new zzw(iBinder);
+            return queryLocalInterface instanceof IAccountAccessor ? (IAccountAccessor) queryLocalInterface : new zzt(iBinder);
         }
 
         @Override // com.google.android.gms.internal.common.zzb

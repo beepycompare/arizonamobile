@@ -5,7 +5,7 @@ import com.google.android.gms.ads.appopen.AppOpenAd;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class c extends e {
     public c(b bVar, ClientContext clientContext) {
         super(bVar, clientContext);
@@ -15,7 +15,7 @@ public final class c extends e {
     public final boolean process(Object... objArr) {
         if (ReflectionUtils.isArgumentsOfClasses(objArr, AdValue.class, AppOpenAd.class)) {
             AppOpenAd appOpenAd = (AppOpenAd) objArr[1];
-            this.f210a.getClass();
+            this.f195a.getClass();
             a(b.a((AdValue) objArr[0], ModuleAdType.APP_OPEN, "appOpenAd", appOpenAd.getResponseInfo(), appOpenAd.getAdUnitId()));
             return true;
         }

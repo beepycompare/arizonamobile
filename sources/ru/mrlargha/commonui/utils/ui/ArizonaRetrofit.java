@@ -1,0 +1,100 @@
+package ru.mrlargha.commonui.utils.ui;
+
+import android.app.Activity;
+import android.content.Context;
+import androidx.core.app.NotificationCompat;
+import androidx.exifinterface.media.ExifInterface;
+import com.google.common.net.HttpHeaders;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.CoroutineExceptionHandler;
+import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.SupervisorKt;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import ru.mrlargha.commonui.utils.TokenManagerKt;
+/* compiled from: ArizonaRetrofit.kt */
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007B\u0019\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\b\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\tJ9\u0010\u0013\u001a\u0002H\u0014\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u00182\u000e\b\u0002\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0002\u0010\u0019R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u001a"}, d2 = {"Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "", "targetActivity", "Landroid/content/Context;", "backendID", "", "<init>", "(Landroid/content/Context;I)V", "Landroid/app/Activity;", "(Landroid/app/Activity;I)V", "onError", "Lkotlin/Function0;", "", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "create", ExifInterface.GPS_DIRECTION_TRUE, NotificationCompat.CATEGORY_SERVICE, "Ljava/lang/Class;", "useDebug", "", "(Ljava/lang/Class;ZLkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
+public final class ArizonaRetrofit {
+    private final CoroutineExceptionHandler handler;
+    private Function0<Unit> onError;
+    private final CoroutineScope scope;
+
+    public ArizonaRetrofit(Context targetActivity, int i) {
+        Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
+        this.onError = new Function0() { // from class: ru.mrlargha.commonui.utils.ui.ArizonaRetrofit$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                Unit unit;
+                unit = Unit.INSTANCE;
+                return unit;
+            }
+        };
+        ArizonaRetrofit$special$$inlined$CoroutineExceptionHandler$1 arizonaRetrofit$special$$inlined$CoroutineExceptionHandler$1 = new ArizonaRetrofit$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key, targetActivity, i, this);
+        this.handler = arizonaRetrofit$special$$inlined$CoroutineExceptionHandler$1;
+        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO().plus(SupervisorKt.SupervisorJob((Job) null)).plus(arizonaRetrofit$special$$inlined$CoroutineExceptionHandler$1));
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ArizonaRetrofit(Activity targetActivity, int i) {
+        this(r2, i);
+        Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
+        Context applicationContext = targetActivity.getApplicationContext();
+        Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
+    }
+
+    public final CoroutineScope getScope() {
+        return this.scope;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ Object create$default(ArizonaRetrofit arizonaRetrofit, Class cls, boolean z, Function0 function0, int i, Object obj) {
+        if ((i & 2) != 0) {
+            z = true;
+        }
+        if ((i & 4) != 0) {
+            function0 = new Function0() { // from class: ru.mrlargha.commonui.utils.ui.ArizonaRetrofit$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function0
+                public final Object invoke() {
+                    Unit unit;
+                    unit = Unit.INSTANCE;
+                    return unit;
+                }
+            };
+        }
+        return arizonaRetrofit.create(cls, z, function0);
+    }
+
+    public final <T> T create(Class<T> service, boolean z, Function0<Unit> onError) {
+        Intrinsics.checkNotNullParameter(service, "service");
+        Intrinsics.checkNotNullParameter(onError, "onError");
+        this.onError = onError;
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
+        if (ru.mrlargha.commonui.utils.UtilsKt.isDebug()) {
+            httpLoggingInterceptor.level(HttpLoggingInterceptor.Level.BODY);
+        } else {
+            httpLoggingInterceptor.level(HttpLoggingInterceptor.Level.HEADERS);
+        }
+        return (T) new Retrofit.Builder().baseUrl((ru.mrlargha.commonui.utils.UtilsKt.isDebug() && z) ? "https://dev-api.arizona.games/" : FirebaseConfigHelper.INSTANCE.getServerApiUrl()).client(new OkHttpClient.Builder().addInterceptor(new Interceptor() { // from class: ru.mrlargha.commonui.utils.ui.ArizonaRetrofit$create$$inlined$-addInterceptor$1
+            @Override // okhttp3.Interceptor
+            public final Response intercept(Interceptor.Chain chain) {
+                Intrinsics.checkNotNullParameter(chain, "chain");
+                return chain.proceed(chain.request().newBuilder().addHeader(HttpHeaders.AUTHORIZATION, TokenManagerKt.getToken()).build());
+            }
+        }).addInterceptor(httpLoggingInterceptor).addInterceptor(new DefaultQueryInterceptor()).build()).addConverterFactory(GsonConverterFactory.create()).build().create(service);
+    }
+}

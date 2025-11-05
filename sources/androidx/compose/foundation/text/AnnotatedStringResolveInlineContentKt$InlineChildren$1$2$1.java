@@ -26,10 +26,10 @@ final class AnnotatedStringResolveInlineContentKt$InlineChildren$1$2$1 implement
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            arrayList.add(list.get(i).mo5967measureBRTryo0(j));
+            arrayList.add(list.get(i).mo6697measureBRTryo0(j));
         }
         final ArrayList arrayList2 = arrayList;
-        return MeasureScope.layout$default(measureScope, Constraints.m7217getMaxWidthimpl(j), Constraints.m7216getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.text.AnnotatedStringResolveInlineContentKt$InlineChildren$1$2$1$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, Constraints.m7948getMaxWidthimpl(j), Constraints.m7947getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.text.AnnotatedStringResolveInlineContentKt$InlineChildren$1$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$2;

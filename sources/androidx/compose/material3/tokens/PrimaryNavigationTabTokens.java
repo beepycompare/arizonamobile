@@ -5,7 +5,7 @@ import androidx.compose.foundation.shape.RoundedCornerShapeKt;
 import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
 /* compiled from: PrimaryNavigationTabTokens.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\u0003\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0011\u0010\u0007\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0006R\u0011\u0010\t\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0006R\u0011\u0010\u000b\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0006R\u0011\u0010\r\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u0006R\u0011\u0010\u000f\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0006R\u0019\u0010\u0011\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0016\u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0011\u0010\u001a\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0006R\u0011\u0010\u001c\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0006R\u0011\u0010\u001e\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0006R\u0011\u0010 \u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0006R\u0019\u0010\"\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b#\u0010\u0014R\u0019\u0010$\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b%\u0010\u0014R\u0011\u0010&\u001a\u00020'¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)R\u0019\u0010*\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b+\u0010\u0014R\u0019\u0010,\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b-\u0010\u0014R\u0011\u0010.\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u0006R\u0011\u00100\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0006R\u0011\u00102\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b3\u0010\u0006R\u0011\u00104\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b5\u0010\u0006R\u0011\u00106\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b7\u0010\u0006R\u0011\u00108\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b9\u0010\u0006R\u0011\u0010:\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b;\u0010\u0006R\u0011\u0010<\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b=\u0010\u0006R\u0011\u0010>\u001a\u00020?¢\u0006\b\n\u0000\u001a\u0004\b@\u0010A\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006B"}, d2 = {"Landroidx/compose/material3/tokens/PrimaryNavigationTabTokens;", "", "()V", "ActiveFocusIconColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getActiveFocusIconColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ActiveFocusLabelTextColor", "getActiveFocusLabelTextColor", "ActiveHoverIconColor", "getActiveHoverIconColor", "ActiveHoverLabelTextColor", "getActiveHoverLabelTextColor", "ActiveIconColor", "getActiveIconColor", "ActiveIndicatorColor", "getActiveIndicatorColor", "ActiveIndicatorHeight", "Landroidx/compose/ui/unit/Dp;", "getActiveIndicatorHeight-D9Ej5fM", "()F", "F", "ActiveIndicatorShape", "Landroidx/compose/foundation/shape/RoundedCornerShape;", "getActiveIndicatorShape", "()Landroidx/compose/foundation/shape/RoundedCornerShape;", "ActiveLabelTextColor", "getActiveLabelTextColor", "ActivePressedIconColor", "getActivePressedIconColor", "ActivePressedLabelTextColor", "getActivePressedLabelTextColor", "ContainerColor", "getContainerColor", "ContainerElevation", "getContainerElevation-D9Ej5fM", "ContainerHeight", "getContainerHeight-D9Ej5fM", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "IconAndLabelTextContainerHeight", "getIconAndLabelTextContainerHeight-D9Ej5fM", "IconSize", "getIconSize-D9Ej5fM", "InactiveFocusIconColor", "getInactiveFocusIconColor", "InactiveFocusLabelTextColor", "getInactiveFocusLabelTextColor", "InactiveHoverIconColor", "getInactiveHoverIconColor", "InactiveHoverLabelTextColor", "getInactiveHoverLabelTextColor", "InactiveIconColor", "getInactiveIconColor", "InactiveLabelTextColor", "getInactiveLabelTextColor", "InactivePressedIconColor", "getInactivePressedIconColor", "InactivePressedLabelTextColor", "getInactivePressedLabelTextColor", "LabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b'\n\u0002\u0018\u0002\n\u0002\b\u0003\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\b\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0011\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0007R\u0013\u0010\u0013\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u0014\u0010\u000bR\u0013\u0010\u0015\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u0016\u0010\u000bR\u0011\u0010\u0017\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0011\u0010\u001b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u0007R\u0011\u0010\u001d\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u0007R\u0011\u0010\u001f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u0007R\u0011\u0010!\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u0007R\u0013\u0010#\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b$\u0010\u000bR\u0013\u0010%\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b&\u0010\u000bR\u0011\u0010'\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b(\u0010\u0007R\u0011\u0010)\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b*\u0010\u0007R\u0011\u0010+\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b,\u0010\u0007R\u0011\u0010-\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u0007R\u0011\u0010/\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b0\u0010\u0007R\u0011\u00101\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b2\u0010\u0007R\u0011\u00103\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b4\u0010\u0007R\u0011\u00105\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u0007R\u0011\u00107\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\u0007R\u0011\u00109\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b:\u0010\u0007R\u0011\u0010;\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b<\u0010\u0007R\u0011\u0010=\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b>\u0010\u0007R\u0011\u0010?\u001a\u00020@¢\u0006\b\n\u0000\u001a\u0004\bA\u0010B¨\u0006C"}, d2 = {"Landroidx/compose/material3/tokens/PrimaryNavigationTabTokens;", "", "<init>", "()V", "ActiveIndicatorColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getActiveIndicatorColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ActiveIndicatorHeight", "Landroidx/compose/ui/unit/Dp;", "getActiveIndicatorHeight-D9Ej5fM", "()F", "F", "ActiveIndicatorShape", "Landroidx/compose/foundation/shape/RoundedCornerShape;", "getActiveIndicatorShape", "()Landroidx/compose/foundation/shape/RoundedCornerShape;", "ContainerColor", "getContainerColor", "ContainerElevation", "getContainerElevation-D9Ej5fM", "ContainerHeight", "getContainerHeight-D9Ej5fM", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "ActiveFocusIconColor", "getActiveFocusIconColor", "ActiveHoverIconColor", "getActiveHoverIconColor", "ActiveIconColor", "getActiveIconColor", "ActivePressedIconColor", "getActivePressedIconColor", "IconAndLabelTextContainerHeight", "getIconAndLabelTextContainerHeight-D9Ej5fM", "IconSize", "getIconSize-D9Ej5fM", "InactiveFocusIconColor", "getInactiveFocusIconColor", "InactiveHoverIconColor", "getInactiveHoverIconColor", "InactiveIconColor", "getInactiveIconColor", "InactivePressedIconColor", "getInactivePressedIconColor", "ActiveFocusLabelTextColor", "getActiveFocusLabelTextColor", "ActiveHoverLabelTextColor", "getActiveHoverLabelTextColor", "ActiveLabelTextColor", "getActiveLabelTextColor", "ActivePressedLabelTextColor", "getActivePressedLabelTextColor", "InactiveFocusLabelTextColor", "getInactiveFocusLabelTextColor", "InactiveHoverLabelTextColor", "getInactiveHoverLabelTextColor", "InactiveLabelTextColor", "getInactiveLabelTextColor", "InactivePressedLabelTextColor", "getInactivePressedLabelTextColor", "LabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PrimaryNavigationTabTokens {
     public static final int $stable = 0;
@@ -14,15 +14,15 @@ public final class PrimaryNavigationTabTokens {
     public static final PrimaryNavigationTabTokens INSTANCE = new PrimaryNavigationTabTokens();
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7264constructorimpl((float) 48.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7995constructorimpl((float) 48.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens ActiveFocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ActiveHoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ActiveIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ActivePressedIconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconAndLabelTextContainerHeight = Dp.m7264constructorimpl((float) 64.0d);
-    private static final float IconSize = Dp.m7264constructorimpl((float) 24.0d);
+    private static final float IconAndLabelTextContainerHeight = Dp.m7995constructorimpl((float) 64.0d);
+    private static final float IconSize = Dp.m7995constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens InactiveFocusIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveHoverIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -42,8 +42,8 @@ public final class PrimaryNavigationTabTokens {
 
     static {
         float f = (float) 3.0d;
-        ActiveIndicatorHeight = Dp.m7264constructorimpl(f);
-        ActiveIndicatorShape = RoundedCornerShapeKt.m1207RoundedCornerShape0680j_4(Dp.m7264constructorimpl(f));
+        ActiveIndicatorHeight = Dp.m7995constructorimpl(f);
+        ActiveIndicatorShape = RoundedCornerShapeKt.m1207RoundedCornerShape0680j_4(Dp.m7995constructorimpl(f));
     }
 
     public final ColorSchemeKeyTokens getActiveIndicatorColor() {
@@ -51,7 +51,7 @@ public final class PrimaryNavigationTabTokens {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3579getActiveIndicatorHeightD9Ej5fM() {
+    public final float m4224getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
@@ -64,12 +64,12 @@ public final class PrimaryNavigationTabTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3580getContainerElevationD9Ej5fM() {
+    public final float m4225getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3581getContainerHeightD9Ej5fM() {
+    public final float m4226getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -94,12 +94,12 @@ public final class PrimaryNavigationTabTokens {
     }
 
     /* renamed from: getIconAndLabelTextContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3582getIconAndLabelTextContainerHeightD9Ej5fM() {
+    public final float m4227getIconAndLabelTextContainerHeightD9Ej5fM() {
         return IconAndLabelTextContainerHeight;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3583getIconSizeD9Ej5fM() {
+    public final float m4228getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

@@ -7,11 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 class PreconditionsKt__AssertionsJVMKt {
     /* renamed from: assert  reason: not valid java name */
-    private static final void m9103assert(boolean z) {
+    private static final void m9844assert(boolean z) {
     }
 
     /* renamed from: assert  reason: not valid java name */
-    private static final void m9104assert(boolean z, Function0<? extends Object> lazyMessage) {
+    private static final void m9845assert(boolean z, Function0<? extends Object> lazyMessage) {
         Intrinsics.checkNotNullParameter(lazyMessage, "lazyMessage");
     }
 }

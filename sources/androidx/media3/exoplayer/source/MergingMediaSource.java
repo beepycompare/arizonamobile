@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MergingMediaSource extends CompositeMediaSource<Integer> {
     private static final int PERIOD_COUNT_UNSET = -1;
     private static final MediaItem PLACEHOLDER_MEDIA_ITEM = new MediaItem.Builder().setMediaId("MergingMediaSource").build();
@@ -40,7 +40,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
     private long[][] periodTimeOffsetsUs;
     private final Timeline[] timelines;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class IllegalMergeException extends IOException {
         public static final int REASON_PERIOD_COUNT_MISMATCH = 0;
         public final int reason;
@@ -48,7 +48,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
         @Target({ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public @interface Reason {
         }
 
@@ -273,7 +273,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ClippedTimeline extends ForwardingTimeline {
         private final long[] periodDurationsUs;
         private final long[] windowDurationsUs;
@@ -324,7 +324,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaPeriodAndId {
         private final MediaPeriod mediaPeriod;
         private final MediaSource.MediaPeriodId mediaPeriodId;

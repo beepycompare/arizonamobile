@@ -14,49 +14,49 @@ public interface DropShadowScope extends ShadowScope {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m4103roundToPxR2X_6o(DropShadowScope dropShadowScope, long j) {
+        public static int m4833roundToPxR2X_6o(DropShadowScope dropShadowScope, long j) {
             return DropShadowScope.super.mo422roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m4104roundToPx0680j_4(DropShadowScope dropShadowScope, float f) {
+        public static int m4834roundToPx0680j_4(DropShadowScope dropShadowScope, float f) {
             return DropShadowScope.super.mo423roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m4105toDpGaN1DYA(DropShadowScope dropShadowScope, long j) {
+        public static float m4835toDpGaN1DYA(DropShadowScope dropShadowScope, long j) {
             return DropShadowScope.super.mo424toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m4106toDpu2uoSUM(DropShadowScope dropShadowScope, float f) {
+        public static float m4836toDpu2uoSUM(DropShadowScope dropShadowScope, float f) {
             return DropShadowScope.super.mo425toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m4107toDpu2uoSUM(DropShadowScope dropShadowScope, int i) {
+        public static float m4837toDpu2uoSUM(DropShadowScope dropShadowScope, int i) {
             return DropShadowScope.super.mo426toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m4108toDpSizekrfVVM(DropShadowScope dropShadowScope, long j) {
+        public static long m4838toDpSizekrfVVM(DropShadowScope dropShadowScope, long j) {
             return DropShadowScope.super.mo427toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m4109toPxR2X_6o(DropShadowScope dropShadowScope, long j) {
+        public static float m4839toPxR2X_6o(DropShadowScope dropShadowScope, long j) {
             return DropShadowScope.super.mo428toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m4110toPx0680j_4(DropShadowScope dropShadowScope, float f) {
+        public static float m4840toPx0680j_4(DropShadowScope dropShadowScope, float f) {
             return DropShadowScope.super.mo429toPx0680j_4(f);
         }
 
@@ -67,25 +67,25 @@ public interface DropShadowScope extends ShadowScope {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m4111toSizeXkaWNTQ(DropShadowScope dropShadowScope, long j) {
+        public static long m4841toSizeXkaWNTQ(DropShadowScope dropShadowScope, long j) {
             return DropShadowScope.super.mo430toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m4112toSp0xMU5do(DropShadowScope dropShadowScope, float f) {
+        public static long m4842toSp0xMU5do(DropShadowScope dropShadowScope, float f) {
             return DropShadowScope.super.mo431toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m4113toSpkPz2Gy4(DropShadowScope dropShadowScope, float f) {
+        public static long m4843toSpkPz2Gy4(DropShadowScope dropShadowScope, float f) {
             return DropShadowScope.super.mo432toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m4114toSpkPz2Gy4(DropShadowScope dropShadowScope, int i) {
+        public static long m4844toSpkPz2Gy4(DropShadowScope dropShadowScope, int i) {
             return DropShadowScope.super.mo433toSpkPz2Gy4(i);
         }
     }

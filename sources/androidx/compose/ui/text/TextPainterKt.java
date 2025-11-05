@@ -22,41 +22,41 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class TextPainterKt {
     /* renamed from: drawText-JFhB2K4  reason: not valid java name */
-    public static final void m6705drawTextJFhB2K4(DrawScope drawScope, TextMeasurer textMeasurer, AnnotatedString annotatedString, long j, TextStyle textStyle, int i, boolean z, int i2, List<AnnotatedString.Range<Placeholder>> list, long j2, int i3) {
-        TextLayoutResult m6700measurexDpz5zY$default = TextMeasurer.m6700measurexDpz5zY$default(textMeasurer, annotatedString, textStyle, i, z, i2, list, m6713textLayoutConstraintsv_w8tDc(drawScope, j2, j), drawScope.getLayoutDirection(), drawScope, null, false, 1536, null);
+    public static final void m7436drawTextJFhB2K4(DrawScope drawScope, TextMeasurer textMeasurer, AnnotatedString annotatedString, long j, TextStyle textStyle, int i, boolean z, int i2, List<AnnotatedString.Range<Placeholder>> list, long j2, int i3) {
+        TextLayoutResult m7431measurexDpz5zY$default = TextMeasurer.m7431measurexDpz5zY$default(textMeasurer, annotatedString, textStyle, i, z, i2, list, m7444textLayoutConstraintsv_w8tDc(drawScope, j2, j), drawScope.getLayoutDirection(), drawScope, null, false, 1536, null);
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
+        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
             transform.translate(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
-            clip(transform, m6700measurexDpz5zY$default);
-            m6700measurexDpz5zY$default.getMultiParagraph().m6570paintLG529CI(drawScope.getDrawContext().getCanvas(), (r14 & 2) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : 0L, (r14 & 4) != 0 ? null : null, (r14 & 8) != 0 ? null : null, (r14 & 16) == 0 ? null : null, (r14 & 32) != 0 ? DrawScope.Companion.m5130getDefaultBlendMode0nO6VwU() : i3);
+            clip(transform, m7431measurexDpz5zY$default);
+            m7431measurexDpz5zY$default.getMultiParagraph().m7301paintLG529CI(drawScope.getDrawContext().getCanvas(), (r14 & 2) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : 0L, (r14 & 4) != 0 ? null : null, (r14 & 8) != 0 ? null : null, (r14 & 16) == 0 ? null : null, (r14 & 32) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : i3);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
         }
     }
 
     /* renamed from: drawText-TPWCCtM  reason: not valid java name */
-    public static final void m6709drawTextTPWCCtM(DrawScope drawScope, TextMeasurer textMeasurer, String str, long j, TextStyle textStyle, int i, boolean z, int i2, long j2, int i3) {
-        TextLayoutResult m6700measurexDpz5zY$default = TextMeasurer.m6700measurexDpz5zY$default(textMeasurer, new AnnotatedString(str, null, 2, null), textStyle, i, z, i2, null, m6713textLayoutConstraintsv_w8tDc(drawScope, j2, j), drawScope.getLayoutDirection(), drawScope, null, false, 1568, null);
+    public static final void m7440drawTextTPWCCtM(DrawScope drawScope, TextMeasurer textMeasurer, String str, long j, TextStyle textStyle, int i, boolean z, int i2, long j2, int i3) {
+        TextLayoutResult m7431measurexDpz5zY$default = TextMeasurer.m7431measurexDpz5zY$default(textMeasurer, new AnnotatedString(str, null, 2, null), textStyle, i, z, i2, null, m7444textLayoutConstraintsv_w8tDc(drawScope, j2, j), drawScope.getLayoutDirection(), drawScope, null, false, 1568, null);
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
+        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
             transform.translate(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
-            clip(transform, m6700measurexDpz5zY$default);
-            m6700measurexDpz5zY$default.getMultiParagraph().m6570paintLG529CI(drawScope.getDrawContext().getCanvas(), (r14 & 2) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : 0L, (r14 & 4) != 0 ? null : null, (r14 & 8) != 0 ? null : null, (r14 & 16) == 0 ? null : null, (r14 & 32) != 0 ? DrawScope.Companion.m5130getDefaultBlendMode0nO6VwU() : i3);
+            clip(transform, m7431measurexDpz5zY$default);
+            m7431measurexDpz5zY$default.getMultiParagraph().m7301paintLG529CI(drawScope.getDrawContext().getCanvas(), (r14 & 2) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : 0L, (r14 & 4) != 0 ? null : null, (r14 & 8) != 0 ? null : null, (r14 & 16) == 0 ? null : null, (r14 & 32) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : i3);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
         }
     }
 
     /* renamed from: drawText-d8-rzKo  reason: not valid java name */
-    public static final void m6711drawTextd8rzKo(DrawScope drawScope, TextLayoutResult textLayoutResult, long j, long j2, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+    public static final void m7442drawTextd8rzKo(DrawScope drawScope, TextLayoutResult textLayoutResult, long j, long j2, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
         float alpha;
         int i2;
         Shadow shadow2;
@@ -68,7 +68,7 @@ public final class TextPainterKt {
         TextDecoration textDecoration3 = textDecoration == null ? textLayoutResult.getLayoutInput().getStyle().getTextDecoration() : textDecoration;
         DrawStyle drawStyle3 = drawStyle == null ? textLayoutResult.getLayoutInput().getStyle().getDrawStyle() : drawStyle;
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
+        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
@@ -95,63 +95,63 @@ public final class TextPainterKt {
                     textDecoration2 = textDecoration3;
                     drawStyle2 = drawStyle3;
                 }
-                multiParagraph.m6572painthn5TExg(canvas, brush, alpha, shadow2, textDecoration2, drawStyle2, i2);
+                multiParagraph.m7303painthn5TExg(canvas, brush, alpha, shadow2, textDecoration2, drawStyle2, i2);
             } else {
                 MultiParagraph multiParagraph3 = textLayoutResult.getMultiParagraph();
                 Canvas canvas3 = drawScope.getDrawContext().getCanvas();
                 if (j == 16) {
-                    j = textLayoutResult.getLayoutInput().getStyle().m6756getColor0d7_KjU();
+                    j = textLayoutResult.getLayoutInput().getStyle().m7487getColor0d7_KjU();
                 }
-                multiParagraph3.m6570paintLG529CI(canvas3, TextDrawStyleKt.m7168modulateDxMtmZc(j, f), shadow3, textDecoration3, drawStyle3, i);
+                multiParagraph3.m7301paintLG529CI(canvas3, TextDrawStyleKt.m7899modulateDxMtmZc(j, f), shadow3, textDecoration3, drawStyle3, i);
             }
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
         }
     }
 
     /* renamed from: drawText-LVfH_YU  reason: not valid java name */
-    public static final void m6707drawTextLVfH_YU(DrawScope drawScope, TextLayoutResult textLayoutResult, Brush brush, long j, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+    public static final void m7438drawTextLVfH_YU(DrawScope drawScope, TextLayoutResult textLayoutResult, Brush brush, long j, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
         Shadow shadow2 = shadow == null ? textLayoutResult.getLayoutInput().getStyle().getShadow() : shadow;
         TextDecoration textDecoration2 = textDecoration == null ? textLayoutResult.getLayoutInput().getStyle().getTextDecoration() : textDecoration;
         DrawStyle drawStyle2 = drawStyle == null ? textLayoutResult.getLayoutInput().getStyle().getDrawStyle() : drawStyle;
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
+        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
             transform.translate(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (4294967295L & j)));
             clip(transform, textLayoutResult);
-            textLayoutResult.getMultiParagraph().m6572painthn5TExg(drawScope.getDrawContext().getCanvas(), brush, !Float.isNaN(f) ? f : textLayoutResult.getLayoutInput().getStyle().getAlpha(), shadow2, textDecoration2, drawStyle2, i);
+            textLayoutResult.getMultiParagraph().m7303painthn5TExg(drawScope.getDrawContext().getCanvas(), brush, !Float.isNaN(f) ? f : textLayoutResult.getLayoutInput().getStyle().getAlpha(), shadow2, textDecoration2, drawStyle2, i);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
         }
     }
 
     private static final void clip(DrawTransform drawTransform, TextLayoutResult textLayoutResult) {
-        if (!textLayoutResult.getHasVisualOverflow() || TextOverflow.m7190equalsimpl0(textLayoutResult.getLayoutInput().m6693getOverflowgIe3tQ8(), TextOverflow.Companion.m7203getVisiblegIe3tQ8())) {
+        if (!textLayoutResult.getHasVisualOverflow() || TextOverflow.m7921equalsimpl0(textLayoutResult.getLayoutInput().m7424getOverflowgIe3tQ8(), TextOverflow.Companion.m7934getVisiblegIe3tQ8())) {
             return;
         }
-        DrawTransform.m5185clipRectN_I0leg$default(drawTransform, 0.0f, 0.0f, (int) (textLayoutResult.m6697getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6697getSizeYbymL2g() & 4294967295L), 0, 16, null);
+        DrawTransform.m5915clipRectN_I0leg$default(drawTransform, 0.0f, 0.0f, (int) (textLayoutResult.m7428getSizeYbymL2g() >> 32), (int) (textLayoutResult.m7428getSizeYbymL2g() & 4294967295L), 0, 16, null);
     }
 
     /* renamed from: textLayoutConstraints-v_w8tDc  reason: not valid java name */
-    private static final long m6713textLayoutConstraintsv_w8tDc(DrawScope drawScope, long j, long j2) {
+    private static final long m7444textLayoutConstraintsv_w8tDc(DrawScope drawScope, long j, long j2) {
         int round;
         int i;
         int round2;
         int i2 = (j > InlineClassHelperKt.UnspecifiedPackedFloats ? 1 : (j == InlineClassHelperKt.UnspecifiedPackedFloats ? 0 : -1));
         int i3 = 0;
         if (i2 == 0 || Float.isNaN(Float.intBitsToFloat((int) (j >> 32)))) {
-            round = Math.round((float) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() >> 32)) - Float.intBitsToFloat((int) (j2 >> 32))));
+            round = Math.round((float) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() >> 32)) - Float.intBitsToFloat((int) (j2 >> 32))));
             i = 0;
         } else {
             i = Math.round((float) Math.ceil(Float.intBitsToFloat((int) (j >> 32))));
             round = i;
         }
         if (i2 == 0 || Float.isNaN(Float.intBitsToFloat((int) (j & 4294967295L)))) {
-            round2 = Math.round((float) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L))));
+            round2 = Math.round((float) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L))));
         } else {
             i3 = Math.round((float) Math.ceil(Float.intBitsToFloat((int) (j & 4294967295L))));
             round2 = i3;

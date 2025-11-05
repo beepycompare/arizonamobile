@@ -6,16 +6,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Response {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f1248a;
+    private final boolean f1289a;
     private final int b;
     private final byte[] c;
     private final byte[] d;
     private final Map e;
     private final Throwable f;
+    private final String g;
 
     public Response(Throwable th) {
         this(false, 0, new byte[0], new byte[0], new HashMap(), th);
@@ -41,17 +42,25 @@ public class Response {
         return this.c;
     }
 
+    public String getUrl() {
+        return this.g;
+    }
+
     public boolean isCompleted() {
-        return this.f1248a;
+        return this.f1289a;
     }
 
     public String toString() {
-        return "Response{completed=" + this.f1248a + ", code=" + this.b + ", responseDataLength=" + this.c.length + ", errorDataLength=" + this.d.length + ", headers=" + this.e + ", exception=" + this.f + AbstractJsonLexerKt.END_OBJ;
+        return "Response{completed=" + this.f1289a + ", code=" + this.b + ", responseDataLength=" + this.c.length + ", errorDataLength=" + this.d.length + ", headers=" + this.e + ", exception=" + this.f + ", url=" + this.g + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Response(boolean z, int i, byte[] bArr, byte[] bArr2, Map<String, List<String>> map, Throwable th) {
+        this(z, i, bArr, bArr2, map, th, null);
+    }
+
+    public Response(boolean z, int i, byte[] bArr, byte[] bArr2, Map<String, List<String>> map, Throwable th, String str) {
         Map a2;
-        this.f1248a = z;
+        this.f1289a = z;
         this.b = i;
         this.c = bArr;
         this.d = bArr2;
@@ -62,5 +71,6 @@ public class Response {
         }
         this.e = a2;
         this.f = th;
+        this.g = str;
     }
 }

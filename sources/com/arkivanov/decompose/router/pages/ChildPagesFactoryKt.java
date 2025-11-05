@@ -130,23 +130,23 @@ public final class ChildPagesFactoryKt {
         }, new Function1() { // from class: com.arkivanov.decompose.router.pages.ChildPagesFactoryKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                PagesNavState childPages$lambda$5;
-                childPages$lambda$5 = ChildPagesFactoryKt.childPages$lambda$5(Function1.this, initialPages, pageStatus, (SerializableContainer) obj);
-                return childPages$lambda$5;
+                PagesNavState childPages$lambda$6;
+                childPages$lambda$6 = ChildPagesFactoryKt.childPages$lambda$6(Function1.this, pageStatus, (SerializableContainer) obj);
+                return childPages$lambda$6;
             }
         }, new Function2() { // from class: com.arkivanov.decompose.router.pages.ChildPagesFactoryKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                PagesNavState childPages$lambda$6;
-                childPages$lambda$6 = ChildPagesFactoryKt.childPages$lambda$6(Function2.this, (PagesNavState) obj, (PagesNavigation.Event) obj2);
-                return childPages$lambda$6;
+                PagesNavState childPages$lambda$7;
+                childPages$lambda$7 = ChildPagesFactoryKt.childPages$lambda$7(Function2.this, (PagesNavState) obj, (PagesNavigation.Event) obj2);
+                return childPages$lambda$7;
             }
         }, new Function2() { // from class: com.arkivanov.decompose.router.pages.ChildPagesFactoryKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                ChildPages childPages$lambda$7;
-                childPages$lambda$7 = ChildPagesFactoryKt.childPages$lambda$7((PagesNavState) obj, (List) obj2);
-                return childPages$lambda$7;
+                ChildPages childPages$lambda$8;
+                childPages$lambda$8 = ChildPagesFactoryKt.childPages$lambda$8((PagesNavState) obj, (List) obj2);
+                return childPages$lambda$8;
             }
         }, (r26 & 128) != 0 ? 
         /*  JADX ERROR: Method code generation error
@@ -163,9 +163,8 @@ public final class ChildPagesFactoryKt {
              call: com.arkivanov.decompose.router.pages.ChildPagesFactoryKt$$ExternalSyntheticLambda2.<init>(kotlin.jvm.functions.Function1):void type: CONSTRUCTOR)
               (wrap: kotlin.jvm.functions.Function1 : 0x0045: CONSTRUCTOR  (r10v0 kotlin.jvm.functions.Function1 A[REMOVE]) = 
               (r23v0 'restorePages' kotlin.jvm.functions.Function1<? super com.arkivanov.essenty.statekeeper.SerializableContainer, ? extends com.arkivanov.decompose.router.pages.Pages<? extends C>> A[DONT_INLINE])
-              (r21v0 'initialPages' kotlin.jvm.functions.Function0<? extends com.arkivanov.decompose.router.pages.Pages<? extends C>> A[DONT_INLINE])
               (r25v0 'pageStatus' kotlin.jvm.functions.Function2<? super java.lang.Integer, ? super com.arkivanov.decompose.router.pages.Pages<? extends C>, ? extends com.arkivanov.decompose.router.children.ChildNavState$Status> A[DONT_INLINE])
-             call: com.arkivanov.decompose.router.pages.ChildPagesFactoryKt$$ExternalSyntheticLambda3.<init>(kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function2):void type: CONSTRUCTOR)
+             call: com.arkivanov.decompose.router.pages.ChildPagesFactoryKt$$ExternalSyntheticLambda3.<init>(kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function2):void type: CONSTRUCTOR)
               (wrap: kotlin.jvm.functions.Function2 : 0x004a: CONSTRUCTOR  (r11v0 kotlin.jvm.functions.Function2 A[REMOVE]) = 
               (r25v0 'pageStatus' kotlin.jvm.functions.Function2<? super java.lang.Integer, ? super com.arkivanov.decompose.router.pages.Pages<? extends C>, ? extends com.arkivanov.decompose.router.children.ChildNavState$Status> A[DONT_INLINE])
              call: com.arkivanov.decompose.router.pages.ChildPagesFactoryKt$$ExternalSyntheticLambda4.<init>(kotlin.jvm.functions.Function2):void type: CONSTRUCTOR)
@@ -272,31 +271,31 @@ public final class ChildPagesFactoryKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final PagesNavState childPages$lambda$5(Function1 function1, Function0 function0, Function2 function2, SerializableContainer container) {
+    public static final PagesNavState childPages$lambda$6(Function1 function1, Function2 function2, SerializableContainer container) {
         Intrinsics.checkNotNullParameter(container, "container");
         Pages pages = (Pages) function1.invoke(container);
-        if (pages == null) {
-            pages = (Pages) function0.invoke();
+        if (pages != null) {
+            return new PagesNavState(pages, function2);
         }
-        return new PagesNavState(pages, function2);
+        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final PagesNavState childPages$lambda$6(Function2 function2, PagesNavState state, PagesNavigation.Event event) {
+    public static final PagesNavState childPages$lambda$7(Function2 function2, PagesNavState state, PagesNavigation.Event event) {
         Intrinsics.checkNotNullParameter(state, "state");
         Intrinsics.checkNotNullParameter(event, "event");
         return new PagesNavState((Pages) event.getTransformer().invoke(state.getPages()), function2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ChildPages childPages$lambda$7(PagesNavState state, List children) {
+    public static final ChildPages childPages$lambda$8(PagesNavState state, List children) {
         Intrinsics.checkNotNullParameter(state, "state");
         Intrinsics.checkNotNullParameter(children, "children");
         return new ChildPages(children, state.getPages().getSelectedIndex());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit childPages$lambda$8(PagesNavigation.Event event, PagesNavState newState, PagesNavState oldState) {
+    public static final Unit childPages$lambda$9(PagesNavigation.Event event, PagesNavState newState, PagesNavState oldState) {
         Intrinsics.checkNotNullParameter(event, "event");
         Intrinsics.checkNotNullParameter(newState, "newState");
         Intrinsics.checkNotNullParameter(oldState, "oldState");
@@ -305,7 +304,7 @@ public final class ChildPagesFactoryKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Function0 childPages$lambda$10(boolean z, final PagesNavState state) {
+    public static final Function0 childPages$lambda$11(boolean z, final PagesNavState state) {
         Intrinsics.checkNotNullParameter(state, "state");
         final int selectedIndex = state.getPages().getSelectedIndex();
         if (!z || state.getPages().getItems().isEmpty() || selectedIndex <= 0) {
@@ -314,15 +313,15 @@ public final class ChildPagesFactoryKt {
         return new Function0() { // from class: com.arkivanov.decompose.router.pages.ChildPagesFactoryKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                PagesNavState childPages$lambda$10$lambda$9;
-                childPages$lambda$10$lambda$9 = ChildPagesFactoryKt.childPages$lambda$10$lambda$9(PagesNavState.this, selectedIndex);
-                return childPages$lambda$10$lambda$9;
+                PagesNavState childPages$lambda$11$lambda$10;
+                childPages$lambda$11$lambda$10 = ChildPagesFactoryKt.childPages$lambda$11$lambda$10(PagesNavState.this, selectedIndex);
+                return childPages$lambda$11$lambda$10;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final PagesNavState childPages$lambda$10$lambda$9(PagesNavState pagesNavState, int i) {
+    public static final PagesNavState childPages$lambda$11$lambda$10(PagesNavState pagesNavState, int i) {
         return PagesNavState.copy$default(pagesNavState, Pages.copy$default(pagesNavState.getPages(), null, i - 1, 1, null), null, 2, null);
     }
 

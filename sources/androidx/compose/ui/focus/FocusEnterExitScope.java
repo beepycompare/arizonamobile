@@ -10,7 +10,7 @@ public interface FocusEnterExitScope {
     void cancelFocusChange();
 
     /* renamed from: getRequestedFocusDirection-dhqQ-8s */
-    int mo4180getRequestedFocusDirectiondhqQ8s();
+    int mo4910getRequestedFocusDirectiondhqQ8s();
 
     @Deprecated(message = "Use cancelFocusChange instead", replaceWith = @ReplaceWith(expression = "cancelFocusChange", imports = {}))
     default void cancelFocus() {

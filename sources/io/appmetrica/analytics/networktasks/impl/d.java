@@ -1,15 +1,15 @@
 package io.appmetrica.analytics.networktasks.impl;
 
 import io.appmetrica.analytics.networktasks.internal.NetworkTask;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NetworkTask f1251a;
+    public final NetworkTask f1292a;
     public final String b;
 
     public d(NetworkTask networkTask) {
-        this.f1251a = networkTask;
+        this.f1292a = networkTask;
         this.b = networkTask.description();
     }
 

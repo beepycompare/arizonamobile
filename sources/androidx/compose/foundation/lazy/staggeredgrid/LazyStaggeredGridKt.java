@@ -96,7 +96,7 @@ public final class LazyStaggeredGridKt {
         ScopeUpdateScope endRestartGroup;
         int i15;
         boolean z7;
-        float m7264constructorimpl;
+        float m7995constructorimpl;
         Modifier modifier3;
         PaddingValues paddingValues3;
         boolean z8;
@@ -196,7 +196,7 @@ public final class LazyStaggeredGridKt {
                             if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
                                 startRestartGroup.skipToGroupEnd();
                                 if ((i3 & 64) != 0) {
-                                    m7264constructorimpl = f2;
+                                    m7995constructorimpl = f2;
                                     z8 = z3;
                                     flingBehavior4 = flingBehavior2;
                                     z7 = z4;
@@ -204,7 +204,7 @@ public final class LazyStaggeredGridKt {
                                     i16 = i14 & (-3670017);
                                     paddingValues3 = obj2;
                                 } else {
-                                    m7264constructorimpl = f2;
+                                    m7995constructorimpl = f2;
                                     z8 = z3;
                                     flingBehavior4 = flingBehavior2;
                                     z7 = z4;
@@ -215,7 +215,7 @@ public final class LazyStaggeredGridKt {
                                 modifier3 = obj;
                             } else {
                                 Modifier.Companion companion2 = i17 != 0 ? Modifier.Companion : obj;
-                                PaddingValues m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj2;
+                                PaddingValues m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj2;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
@@ -226,14 +226,14 @@ public final class LazyStaggeredGridKt {
                                     i15 = i14;
                                 }
                                 z7 = i7 == 0 ? z4 : true;
-                                float m7264constructorimpl2 = i9 != 0 ? Dp.m7264constructorimpl(0) : f;
-                                m7264constructorimpl = i11 != 0 ? Dp.m7264constructorimpl(0) : f2;
+                                float m7995constructorimpl2 = i9 != 0 ? Dp.m7995constructorimpl(0) : f;
+                                m7995constructorimpl = i11 != 0 ? Dp.m7995constructorimpl(0) : f2;
                                 modifier3 = companion2;
                                 paddingValues3 = m835PaddingValues0680j_4;
                                 z8 = z3;
                                 flingBehavior4 = flingBehavior2;
                                 i16 = i15;
-                                f5 = m7264constructorimpl2;
+                                f5 = m7995constructorimpl2;
                             }
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
@@ -256,7 +256,7 @@ public final class LazyStaggeredGridKt {
                             int i19 = i16 >> 6;
                             int i20 = i16 >> 12;
                             int i21 = i16;
-                            float f6 = m7264constructorimpl;
+                            float f6 = m7995constructorimpl;
                             LazyLayoutMeasurePolicy m1112rememberStaggeredGridMeasurePolicyqKj4JfE = LazyStaggeredGridMeasurePolicyKt.m1112rememberStaggeredGridMeasurePolicyqKj4JfE(lazyStaggeredGridState, rememberStaggeredGridItemProviderLambda, paddingValues3, z8, orientation, f5, f6, (CoroutineScope) rememberedValue, lazyGridStaggeredGridSlotsProvider, (GraphicsContext) consume, startRestartGroup, ((i16 << 18) & 234881024) | (i19 & 7168) | (i19 & 896) | i18 | ((i16 << 9) & 57344) | (i20 & 458752) | ((i13 << 18) & 3670016));
                             PaddingValues paddingValues4 = paddingValues3;
                             float f7 = f5;

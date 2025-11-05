@@ -2,7 +2,7 @@ package androidx.compose.material3;
 
 import androidx.compose.animation.core.Animatable;
 import androidx.compose.animation.core.AnimationResult;
-import androidx.compose.animation.core.DurationBasedAnimationSpec;
+import androidx.compose.animation.core.SnapSpec;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -14,8 +14,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Switch.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.ThumbNode$measure$1", f = "Switch.kt", i = {}, l = {265}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.ThumbNode$measure$1", f = "Switch.kt", i = {}, l = {272}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class ThumbNode$measure$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ float $size;
@@ -44,6 +44,8 @@ final class ThumbNode$measure$1 extends SuspendLambda implements Function2<Corou
     public final Object invokeSuspend(Object obj) {
         Animatable animatable;
         boolean z;
+        SnapSpec animationSpec;
+        SnapSpec snapSpec;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -52,9 +54,14 @@ final class ThumbNode$measure$1 extends SuspendLambda implements Function2<Corou
             if (animatable != null) {
                 Float boxFloat = Boxing.boxFloat(this.$size);
                 z = this.this$0.isPressed;
-                DurationBasedAnimationSpec durationBasedAnimationSpec = z ? SwitchKt.SnapSpec : SwitchKt.AnimationSpec;
+                if (z) {
+                    snapSpec = SwitchKt.SnapSpec;
+                    animationSpec = snapSpec;
+                } else {
+                    animationSpec = this.this$0.getAnimationSpec();
+                }
                 this.label = 1;
-                obj = Animatable.animateTo$default(animatable, boxFloat, durationBasedAnimationSpec, null, null, this, 12, null);
+                obj = Animatable.animateTo$default(animatable, boxFloat, animationSpec, null, null, this, 12, null);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }

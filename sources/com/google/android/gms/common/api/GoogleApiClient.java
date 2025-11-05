@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class GoogleApiClient {
     public static final String DEFAULT_ACCOUNT = "<<default account>>";
     public static final int SIGN_IN_MODE_OPTIONAL = 2;
@@ -46,7 +46,7 @@ public abstract class GoogleApiClient {
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ConnectionCallbacks extends com.google.android.gms.common.api.internal.ConnectionCallbacks {
         public static final int CAUSE_NETWORK_LOST = 2;
         public static final int CAUSE_SERVICE_DISCONNECTED = 1;
@@ -54,7 +54,7 @@ public abstract class GoogleApiClient {
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnConnectionFailedListener extends com.google.android.gms.common.api.internal.OnConnectionFailedListener {
     }
 
@@ -168,7 +168,7 @@ public abstract class GoogleApiClient {
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private Account zaa;
         private final Set zab;

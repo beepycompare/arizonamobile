@@ -46,7 +46,7 @@ public final class PageFetcherSnapshotState$consumePrependGenerationIdAsFlow$1 e
             ResultKt.throwOnFailure(obj);
             channel = ((PageFetcherSnapshotState) this.this$0).prependGenerationIdCh;
             i = ((PageFetcherSnapshotState) this.this$0).prependGenerationId;
-            channel.mo8140trySendJP2dKIU(Boxing.boxInt(i));
+            channel.mo8871trySendJP2dKIU(Boxing.boxInt(i));
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

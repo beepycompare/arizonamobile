@@ -8,7 +8,7 @@ import com.google.android.gms.common.server.response.FastJsonResponse;
 import java.util.ArrayList;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zal extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zal> CREATOR = new zap();
     final int zaa;

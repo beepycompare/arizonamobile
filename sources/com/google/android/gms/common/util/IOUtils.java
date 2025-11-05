@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class IOUtils {
     private IOUtils() {
     }

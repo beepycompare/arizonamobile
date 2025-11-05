@@ -79,7 +79,7 @@ public final class NotificationsUiState {
         }
 
         public final NotificationsUiState initial(boolean z) {
-            return new NotificationsUiState(z ? R.drawable.bg_arizona : R.drawable.bg_rodina, z);
+            return new NotificationsUiState(z ? R.drawable.arizona_backgournd_home : R.drawable.rodina_backgournd_home, z);
         }
     }
 }

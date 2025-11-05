@@ -1,8 +1,8 @@
 package com.google.android.gms.common;
 
 import java.util.Arrays;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 final class zzk extends zzj {
     private final byte[] zza;
 
@@ -14,7 +14,7 @@ final class zzk extends zzj {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.gms.common.zzj
-    public final byte[] zzf() {
+    public final byte[] zzc() {
         return this.zza;
     }
 }

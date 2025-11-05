@@ -83,7 +83,7 @@ public final class TextFieldDragAndDropNode_androidKt {
                 DragEvent androidDragEvent = DragAndDrop_androidKt.toAndroidDragEvent(dragAndDropEvent);
                 Function1<Offset, Unit> function18 = function14;
                 if (function18 != null) {
-                    function18.invoke(Offset.m4294boximpl(Offset.m4297constructorimpl((Float.floatToRawIntBits(androidDragEvent.getX()) << 32) | (Float.floatToRawIntBits(androidDragEvent.getY()) & 4294967295L))));
+                    function18.invoke(Offset.m5024boximpl(Offset.m5027constructorimpl((Float.floatToRawIntBits(androidDragEvent.getX()) << 32) | (Float.floatToRawIntBits(androidDragEvent.getY()) & 4294967295L))));
                 }
             }
 

@@ -7,7 +7,7 @@ import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface BandwidthMeter {
     void addEventListener(Handler handler, EventListener eventListener);
 
@@ -21,11 +21,11 @@ public interface BandwidthMeter {
 
     void removeEventListener(EventListener eventListener);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface EventListener {
         void onBandwidthSample(int i, long j, long j2);
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class EventDispatcher {
             private final CopyOnWriteArrayList<HandlerAndListener> listeners = new CopyOnWriteArrayList<>();
 
@@ -76,7 +76,7 @@ public interface BandwidthMeter {
             }
 
             /* JADX INFO: Access modifiers changed from: private */
-            /* loaded from: classes2.dex */
+            /* loaded from: classes3.dex */
             public static final class HandlerAndListener {
                 private final Handler handler;
                 private final EventListener listener;

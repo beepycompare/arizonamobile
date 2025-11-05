@@ -1,16 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
-/* loaded from: classes4.dex */
-public final class Qf extends Oa {
-    public Qf(Ni ni) {
-        super(ni);
+import android.text.TextUtils;
+import android.util.Base64;
+/* loaded from: classes3.dex */
+public final class Qf implements vo, D8 {
+    @Override // io.appmetrica.analytics.impl.D8
+    public final int a(N8 n8) {
+        return 2;
     }
 
-    @Override // io.appmetrica.analytics.impl.Oa
-    public final void a(List<AbstractC0463nh> list) {
-        list.add(this.f608a.n);
-        list.add(this.f608a.h);
-        list.add(this.f608a.d);
+    @Override // io.appmetrica.analytics.impl.vo
+    public final byte[] a(S8 s8, C0503ph c0503ph) {
+        if (TextUtils.isEmpty(s8.b)) {
+            return new byte[0];
+        }
+        return Base64.decode(s8.b, 0);
     }
 }

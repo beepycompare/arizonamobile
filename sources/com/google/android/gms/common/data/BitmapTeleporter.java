@@ -19,7 +19,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BitmapTeleporter extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<BitmapTeleporter> CREATOR = new zaa();
     final int zaa;

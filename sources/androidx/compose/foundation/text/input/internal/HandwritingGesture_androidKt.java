@@ -28,29 +28,29 @@ public final class HandwritingGesture_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: adjustHandwritingDeleteGestureRange-72CqOWE  reason: not valid java name */
     public static final long m1514adjustHandwritingDeleteGestureRange72CqOWE(long j, CharSequence charSequence) {
-        int m6726getStartimpl = TextRange.m6726getStartimpl(j);
-        int m6721getEndimpl = TextRange.m6721getEndimpl(j);
-        int codePointBefore = m6726getStartimpl > 0 ? Character.codePointBefore(charSequence, m6726getStartimpl) : 10;
-        int codePointAt = m6721getEndimpl < charSequence.length() ? Character.codePointAt(charSequence, m6721getEndimpl) : 10;
+        int m7457getStartimpl = TextRange.m7457getStartimpl(j);
+        int m7452getEndimpl = TextRange.m7452getEndimpl(j);
+        int codePointBefore = m7457getStartimpl > 0 ? Character.codePointBefore(charSequence, m7457getStartimpl) : 10;
+        int codePointAt = m7452getEndimpl < charSequence.length() ? Character.codePointAt(charSequence, m7452getEndimpl) : 10;
         if (isWhitespaceExceptNewline(codePointBefore) && (isWhitespace(codePointAt) || isPunctuation(codePointAt))) {
             do {
-                m6726getStartimpl -= Character.charCount(codePointBefore);
-                if (m6726getStartimpl == 0) {
+                m7457getStartimpl -= Character.charCount(codePointBefore);
+                if (m7457getStartimpl == 0) {
                     break;
                 }
-                codePointBefore = Character.codePointBefore(charSequence, m6726getStartimpl);
+                codePointBefore = Character.codePointBefore(charSequence, m7457getStartimpl);
             } while (isWhitespaceExceptNewline(codePointBefore));
-            return TextRangeKt.TextRange(m6726getStartimpl, m6721getEndimpl);
+            return TextRangeKt.TextRange(m7457getStartimpl, m7452getEndimpl);
         } else if (isWhitespaceExceptNewline(codePointAt)) {
             if (isWhitespace(codePointBefore) || isPunctuation(codePointBefore)) {
                 do {
-                    m6721getEndimpl += Character.charCount(codePointAt);
-                    if (m6721getEndimpl == charSequence.length()) {
+                    m7452getEndimpl += Character.charCount(codePointAt);
+                    if (m7452getEndimpl == charSequence.length()) {
                         break;
                     }
-                    codePointAt = Character.codePointAt(charSequence, m6721getEndimpl);
+                    codePointAt = Character.codePointAt(charSequence, m7452getEndimpl);
                 } while (isWhitespaceExceptNewline(codePointAt));
-                return TextRangeKt.TextRange(m6726getStartimpl, m6721getEndimpl);
+                return TextRangeKt.TextRange(m7457getStartimpl, m7452getEndimpl);
             }
             return j;
         } else {
@@ -78,7 +78,7 @@ public final class HandwritingGesture_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long toOffset(PointF pointF) {
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(pointF.x) << 32) | (Float.floatToRawIntBits(pointF.y) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(pointF.x) << 32) | (Float.floatToRawIntBits(pointF.y) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -92,11 +92,11 @@ public final class HandwritingGesture_androidKt {
     /* renamed from: getRangeForScreenRects-O048IG0  reason: not valid java name */
     public static final long m1525getRangeForScreenRectsO048IG0(TextLayoutState textLayoutState, Rect rect, Rect rect2, int i, TextInclusionStrategy textInclusionStrategy) {
         long m1523getRangeForScreenRectOH9lIzo = m1523getRangeForScreenRectOH9lIzo(textLayoutState, rect, i, textInclusionStrategy);
-        if (TextRange.m6720getCollapsedimpl(m1523getRangeForScreenRectOH9lIzo)) {
-            return TextRange.Companion.m6731getZerod9O1mEE();
+        if (TextRange.m7451getCollapsedimpl(m1523getRangeForScreenRectOH9lIzo)) {
+            return TextRange.Companion.m7462getZerod9O1mEE();
         }
         long m1523getRangeForScreenRectOH9lIzo2 = m1523getRangeForScreenRectOH9lIzo(textLayoutState, rect2, i, textInclusionStrategy);
-        return TextRange.m6720getCollapsedimpl(m1523getRangeForScreenRectOH9lIzo2) ? TextRange.Companion.m6731getZerod9O1mEE() : m1515enclosurepWDy79M(m1523getRangeForScreenRectOH9lIzo, m1523getRangeForScreenRectOH9lIzo2);
+        return TextRange.m7451getCollapsedimpl(m1523getRangeForScreenRectOH9lIzo2) ? TextRange.Companion.m7462getZerod9O1mEE() : m1515enclosurepWDy79M(m1523getRangeForScreenRectOH9lIzo, m1523getRangeForScreenRectOH9lIzo2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -111,11 +111,11 @@ public final class HandwritingGesture_androidKt {
     /* renamed from: getRangeForScreenRects-O048IG0  reason: not valid java name */
     public static final long m1524getRangeForScreenRectsO048IG0(LegacyTextFieldState legacyTextFieldState, Rect rect, Rect rect2, int i, TextInclusionStrategy textInclusionStrategy) {
         long m1522getRangeForScreenRectOH9lIzo = m1522getRangeForScreenRectOH9lIzo(legacyTextFieldState, rect, i, textInclusionStrategy);
-        if (TextRange.m6720getCollapsedimpl(m1522getRangeForScreenRectOH9lIzo)) {
-            return TextRange.Companion.m6731getZerod9O1mEE();
+        if (TextRange.m7451getCollapsedimpl(m1522getRangeForScreenRectOH9lIzo)) {
+            return TextRange.Companion.m7462getZerod9O1mEE();
         }
         long m1522getRangeForScreenRectOH9lIzo2 = m1522getRangeForScreenRectOH9lIzo(legacyTextFieldState, rect2, i, textInclusionStrategy);
-        return TextRange.m6720getCollapsedimpl(m1522getRangeForScreenRectOH9lIzo2) ? TextRange.Companion.m6731getZerod9O1mEE() : m1515enclosurepWDy79M(m1522getRangeForScreenRectOH9lIzo, m1522getRangeForScreenRectOH9lIzo2);
+        return TextRange.m7451getCollapsedimpl(m1522getRangeForScreenRectOH9lIzo2) ? TextRange.Companion.m7462getZerod9O1mEE() : m1515enclosurepWDy79M(m1522getRangeForScreenRectOH9lIzo, m1522getRangeForScreenRectOH9lIzo2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -170,43 +170,43 @@ public final class HandwritingGesture_androidKt {
     /* renamed from: getRangeForScreenRect-O048IG0  reason: not valid java name */
     private static final long m1521getRangeForScreenRectO048IG0(MultiParagraph multiParagraph, Rect rect, LayoutCoordinates layoutCoordinates, int i, TextInclusionStrategy textInclusionStrategy) {
         if (multiParagraph == null || layoutCoordinates == null) {
-            return TextRange.Companion.m6731getZerod9O1mEE();
+            return TextRange.Companion.m7462getZerod9O1mEE();
         }
-        return multiParagraph.m6568getRangeForRect86BmAI(rect.m4342translatek4lQ0M(layoutCoordinates.mo5981screenToLocalMKHz9U(Offset.Companion.m4321getZeroF1C5BW0())), i, textInclusionStrategy);
+        return multiParagraph.m7299getRangeForRect86BmAI(rect.m5072translatek4lQ0M(layoutCoordinates.mo6711screenToLocalMKHz9U(Offset.Companion.m5051getZeroF1C5BW0())), i, textInclusionStrategy);
     }
 
     /* renamed from: getOffsetForHandwritingGesture-ubNVwUQ  reason: not valid java name */
     private static final int m1519getOffsetForHandwritingGestureubNVwUQ(MultiParagraph multiParagraph, long j, LayoutCoordinates layoutCoordinates, ViewConfiguration viewConfiguration) {
-        long mo5981screenToLocalMKHz9U;
+        long mo6711screenToLocalMKHz9U;
         int m1516getLineForHandwritingGestured4ec7I;
-        if (layoutCoordinates == null || (m1516getLineForHandwritingGestured4ec7I = m1516getLineForHandwritingGestured4ec7I(multiParagraph, (mo5981screenToLocalMKHz9U = layoutCoordinates.mo5981screenToLocalMKHz9U(j)), viewConfiguration)) == -1) {
+        if (layoutCoordinates == null || (m1516getLineForHandwritingGestured4ec7I = m1516getLineForHandwritingGestured4ec7I(multiParagraph, (mo6711screenToLocalMKHz9U = layoutCoordinates.mo6711screenToLocalMKHz9U(j)), viewConfiguration)) == -1) {
             return -1;
         }
-        return multiParagraph.m6567getOffsetForPositionk4lQ0M(Offset.m4299copydBAh8RU$default(mo5981screenToLocalMKHz9U, 0.0f, (multiParagraph.getLineTop(m1516getLineForHandwritingGestured4ec7I) + multiParagraph.getLineBottom(m1516getLineForHandwritingGestured4ec7I)) / 2.0f, 1, null));
+        return multiParagraph.m7298getOffsetForPositionk4lQ0M(Offset.m5029copydBAh8RU$default(mo6711screenToLocalMKHz9U, 0.0f, (multiParagraph.getLineTop(m1516getLineForHandwritingGestured4ec7I) + multiParagraph.getLineBottom(m1516getLineForHandwritingGestured4ec7I)) / 2.0f, 1, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getRangeForRemoveSpaceGesture-5iVPX68  reason: not valid java name */
     public static final long m1520getRangeForRemoveSpaceGesture5iVPX68(TextLayoutResult textLayoutResult, long j, long j2, LayoutCoordinates layoutCoordinates, ViewConfiguration viewConfiguration) {
         if (textLayoutResult == null || layoutCoordinates == null) {
-            return TextRange.Companion.m6731getZerod9O1mEE();
+            return TextRange.Companion.m7462getZerod9O1mEE();
         }
-        long mo5981screenToLocalMKHz9U = layoutCoordinates.mo5981screenToLocalMKHz9U(j);
-        long mo5981screenToLocalMKHz9U2 = layoutCoordinates.mo5981screenToLocalMKHz9U(j2);
-        int m1516getLineForHandwritingGestured4ec7I = m1516getLineForHandwritingGestured4ec7I(textLayoutResult.getMultiParagraph(), mo5981screenToLocalMKHz9U, viewConfiguration);
-        int m1516getLineForHandwritingGestured4ec7I2 = m1516getLineForHandwritingGestured4ec7I(textLayoutResult.getMultiParagraph(), mo5981screenToLocalMKHz9U2, viewConfiguration);
+        long mo6711screenToLocalMKHz9U = layoutCoordinates.mo6711screenToLocalMKHz9U(j);
+        long mo6711screenToLocalMKHz9U2 = layoutCoordinates.mo6711screenToLocalMKHz9U(j2);
+        int m1516getLineForHandwritingGestured4ec7I = m1516getLineForHandwritingGestured4ec7I(textLayoutResult.getMultiParagraph(), mo6711screenToLocalMKHz9U, viewConfiguration);
+        int m1516getLineForHandwritingGestured4ec7I2 = m1516getLineForHandwritingGestured4ec7I(textLayoutResult.getMultiParagraph(), mo6711screenToLocalMKHz9U2, viewConfiguration);
         if (m1516getLineForHandwritingGestured4ec7I != -1) {
             if (m1516getLineForHandwritingGestured4ec7I2 != -1) {
                 m1516getLineForHandwritingGestured4ec7I = Math.min(m1516getLineForHandwritingGestured4ec7I, m1516getLineForHandwritingGestured4ec7I2);
             }
             m1516getLineForHandwritingGestured4ec7I2 = m1516getLineForHandwritingGestured4ec7I;
         } else if (m1516getLineForHandwritingGestured4ec7I2 == -1) {
-            return TextRange.Companion.m6731getZerod9O1mEE();
+            return TextRange.Companion.m7462getZerod9O1mEE();
         }
         float lineTop = (textLayoutResult.getLineTop(m1516getLineForHandwritingGestured4ec7I2) + textLayoutResult.getLineBottom(m1516getLineForHandwritingGestured4ec7I2)) / 2;
-        int i = (int) (mo5981screenToLocalMKHz9U >> 32);
-        int i2 = (int) (mo5981screenToLocalMKHz9U2 >> 32);
-        return textLayoutResult.getMultiParagraph().m6568getRangeForRect86BmAI(new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), lineTop - 0.1f, Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), lineTop + 0.1f), TextGranularity.Companion.m6688getCharacterDRrd7Zo(), TextInclusionStrategy.Companion.getAnyOverlap());
+        int i = (int) (mo6711screenToLocalMKHz9U >> 32);
+        int i2 = (int) (mo6711screenToLocalMKHz9U2 >> 32);
+        return textLayoutResult.getMultiParagraph().m7299getRangeForRect86BmAI(new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), lineTop - 0.1f, Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), lineTop + 0.1f), TextGranularity.Companion.m7419getCharacterDRrd7Zo(), TextInclusionStrategy.Companion.getAnyOverlap());
     }
 
     /* renamed from: getLineForHandwritingGesture-d-4ec7I  reason: not valid java name */
@@ -237,6 +237,6 @@ public final class HandwritingGesture_androidKt {
 
     /* renamed from: enclosure-pWDy79M  reason: not valid java name */
     private static final long m1515enclosurepWDy79M(long j, long j2) {
-        return TextRangeKt.TextRange(Math.min(TextRange.m6726getStartimpl(j), TextRange.m6726getStartimpl(j)), Math.max(TextRange.m6721getEndimpl(j2), TextRange.m6721getEndimpl(j2)));
+        return TextRangeKt.TextRange(Math.min(TextRange.m7457getStartimpl(j), TextRange.m7457getStartimpl(j)), Math.max(TextRange.m7452getEndimpl(j2), TextRange.m7452getEndimpl(j2)));
     }
 }

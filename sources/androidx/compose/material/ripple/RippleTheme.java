@@ -15,7 +15,7 @@ public interface RippleTheme {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "RippleTheme and LocalRippleTheme have been deprecated - they are not compatible with the new ripple implementation using the new Indication APIs that provide notable performance improvements. For a migration guide and background information, please visit developer.android.com")
     /* renamed from: defaultColor-WaAFU9c */
-    long mo1856defaultColorWaAFU9c(Composer composer, int i);
+    long mo1854defaultColorWaAFU9c(Composer composer, int i);
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "RippleTheme and LocalRippleTheme have been deprecated - they are not compatible with the new ripple implementation using the new Indication APIs that provide notable performance improvements. For a migration guide and background information, please visit developer.android.com")
     RippleAlpha rippleAlpha(Composer composer, int i);
@@ -31,15 +31,15 @@ public interface RippleTheme {
 
         @Deprecated(level = DeprecationLevel.WARNING, message = "The default ripple color varies between design system versions: this function technically implements the default used by the material library, but is not used by the material3 library. To remove confusion and link the defaults more strongly to the design system library, these default values have been moved to the material and material3 libraries. For material, use RippleDefaults#rippleColor. For material3, use content color directly.")
         /* renamed from: defaultRippleColor-5vOe2sY  reason: not valid java name */
-        public final long m1870defaultRippleColor5vOe2sY(long j, boolean z) {
-            return (z || ((double) ColorKt.m4601luminance8_81llA(j)) >= 0.5d) ? j : Color.Companion.m4586getWhite0d7_KjU();
+        public final long m1868defaultRippleColor5vOe2sY(long j, boolean z) {
+            return (z || ((double) ColorKt.m5331luminance8_81llA(j)) >= 0.5d) ? j : Color.Companion.m5316getWhite0d7_KjU();
         }
 
         @Deprecated(level = DeprecationLevel.WARNING, message = "The default ripple alpha varies between design system versions: this function technically implements the default used by the material library, but is not used by the material3 library. To remove confusion and link the defaults more strongly to the design system library, these default values have been moved to the material and material3 libraries. For material, use RippleDefaults#rippleAlpha. For material3, use RippleDefaults#RippleAlpha.")
         /* renamed from: defaultRippleAlpha-DxMtmZc  reason: not valid java name */
-        public final RippleAlpha m1869defaultRippleAlphaDxMtmZc(long j, boolean z) {
+        public final RippleAlpha m1867defaultRippleAlphaDxMtmZc(long j, boolean z) {
             if (z) {
-                if (ColorKt.m4601luminance8_81llA(j) > 0.5d) {
+                if (ColorKt.m5331luminance8_81llA(j) > 0.5d) {
                     return RippleThemeKt.access$getLightThemeHighContrastRippleAlpha$p();
                 }
                 return RippleThemeKt.access$getLightThemeLowContrastRippleAlpha$p();

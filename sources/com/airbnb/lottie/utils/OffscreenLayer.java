@@ -157,11 +157,11 @@ public class OffscreenLayer {
             this.composePaint = new LPaint();
         }
         this.composePaint.reset();
-        int ordinal = this.currentStrategy.ordinal();
-        if (ordinal == 0) {
+        int i = AnonymousClass1.$SwitchMap$com$airbnb$lottie$utils$OffscreenLayer$RenderStrategy[this.currentStrategy.ordinal()];
+        if (i == 1) {
             canvas.save();
             return canvas;
-        } else if (ordinal == 1) {
+        } else if (i == 2) {
             this.composePaint.setAlpha(composeOp.alpha);
             this.composePaint.setColorFilter(composeOp.colorFilter);
             if (composeOp.hasBlendMode()) {
@@ -169,7 +169,7 @@ public class OffscreenLayer {
             }
             Utils.saveLayerCompat(canvas, rectF, this.composePaint);
             return canvas;
-        } else if (ordinal == 2) {
+        } else if (i == 3) {
             if (this.clearPaint == null) {
                 LPaint lPaint = new LPaint();
                 this.clearPaint = lPaint;
@@ -197,7 +197,7 @@ public class OffscreenLayer {
             canvas3.scale(f, f2);
             canvas3.translate(-rectF.left, -rectF.top);
             return canvas3;
-        } else if (ordinal == 3) {
+        } else if (i == 4) {
             if (Build.VERSION.SDK_INT < 29) {
                 throw new IllegalStateException("RenderNode not supported but we chose it as render strategy");
             }
@@ -244,17 +244,44 @@ public class OffscreenLayer {
         }
     }
 
+    /* renamed from: com.airbnb.lottie.utils.OffscreenLayer$1  reason: invalid class name */
+    /* loaded from: classes3.dex */
+    static /* synthetic */ class AnonymousClass1 {
+        static final /* synthetic */ int[] $SwitchMap$com$airbnb$lottie$utils$OffscreenLayer$RenderStrategy;
+
+        static {
+            int[] iArr = new int[RenderStrategy.values().length];
+            $SwitchMap$com$airbnb$lottie$utils$OffscreenLayer$RenderStrategy = iArr;
+            try {
+                iArr[RenderStrategy.DIRECT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                $SwitchMap$com$airbnb$lottie$utils$OffscreenLayer$RenderStrategy[RenderStrategy.SAVE_LAYER.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                $SwitchMap$com$airbnb$lottie$utils$OffscreenLayer$RenderStrategy[RenderStrategy.BITMAP.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                $SwitchMap$com$airbnb$lottie$utils$OffscreenLayer$RenderStrategy[RenderStrategy.RENDER_NODE.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+        }
+    }
+
     public void finish() {
         if (this.parentCanvas == null || this.op == null || this.preExistingTransform == null || this.targetRect == null) {
             throw new IllegalStateException("OffscreenBitmap: finish() call without matching start()");
         }
-        int ordinal = this.currentStrategy.ordinal();
-        if (ordinal == 0) {
+        int i = AnonymousClass1.$SwitchMap$com$airbnb$lottie$utils$OffscreenLayer$RenderStrategy[this.currentStrategy.ordinal()];
+        if (i == 1) {
             this.parentCanvas.restore();
-        } else if (ordinal == 1) {
+        } else if (i == 2) {
             this.parentCanvas.restore();
-        } else if (ordinal != 2) {
-            if (ordinal == 3) {
+        } else if (i != 3) {
+            if (i == 4) {
                 if (this.renderNode == null) {
                     throw new IllegalStateException("RenderNode is not ready; should've been initialized at start() time");
                 }

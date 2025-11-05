@@ -18,9 +18,9 @@ public @interface AggregatedRoot {
 
     Class<?> rootAnnotation();
 
-    String rootComponentPackage();
+    String rootComponentPackage() default "";
 
-    String[] rootComponentSimpleNames();
+    String[] rootComponentSimpleNames() default {};
 
     String rootPackage();
 

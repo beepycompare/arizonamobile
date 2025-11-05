@@ -10,7 +10,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.Collection;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TrackGroupArray {
     public static final TrackGroupArray EMPTY = new TrackGroupArray(new TrackGroup[0]);
     private static final String FIELD_TRACK_GROUPS = Util.intToStringMaxRadix(0);

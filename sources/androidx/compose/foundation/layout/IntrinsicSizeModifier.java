@@ -27,10 +27,10 @@ abstract class IntrinsicSizeModifier extends Modifier.Node implements LayoutModi
     public final MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         long mo789calculateContentConstraintsl58MMJ0 = mo789calculateContentConstraintsl58MMJ0(measureScope, measurable, j);
         if (getEnforceIncoming()) {
-            mo789calculateContentConstraintsl58MMJ0 = ConstraintsKt.m7232constrainN9IONVI(j, mo789calculateContentConstraintsl58MMJ0);
+            mo789calculateContentConstraintsl58MMJ0 = ConstraintsKt.m7963constrainN9IONVI(j, mo789calculateContentConstraintsl58MMJ0);
         }
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(mo789calculateContentConstraintsl58MMJ0);
-        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.IntrinsicSizeModifier$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(mo789calculateContentConstraintsl58MMJ0);
+        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.IntrinsicSizeModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
@@ -42,7 +42,7 @@ abstract class IntrinsicSizeModifier extends Modifier.Node implements LayoutModi
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit measure_3p2s80s$lambda$0(Placeable placeable, Placeable.PlacementScope placementScope) {
-        Placeable.PlacementScope.m6033placeRelative70tqf50$default(placementScope, placeable, IntOffset.Companion.m7403getZeronOccac(), 0.0f, 2, null);
+        Placeable.PlacementScope.m6763placeRelative70tqf50$default(placementScope, placeable, IntOffset.Companion.m8134getZeronOccac(), 0.0f, 2, null);
         return Unit.INSTANCE;
     }
 

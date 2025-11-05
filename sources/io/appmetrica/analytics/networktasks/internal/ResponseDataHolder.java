@@ -2,11 +2,11 @@ package io.appmetrica.analytics.networktasks.internal;
 
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ResponseDataHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f1269a;
+    private int f1310a;
     private byte[] b;
     private Map c;
     private final ResponseValidityChecker d;
@@ -16,7 +16,7 @@ public class ResponseDataHolder {
     }
 
     public int getResponseCode() {
-        return this.f1269a;
+        return this.f1310a;
     }
 
     public byte[] getResponseData() {
@@ -28,11 +28,11 @@ public class ResponseDataHolder {
     }
 
     public boolean isValidResponse() {
-        return this.d.isResponseValid(this.f1269a);
+        return this.d.isResponseValid(this.f1310a);
     }
 
     public void setResponseCode(int i) {
-        this.f1269a = i;
+        this.f1310a = i;
     }
 
     public void setResponseData(byte[] bArr) {

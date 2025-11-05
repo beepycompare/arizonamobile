@@ -20,19 +20,19 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.internal._UtilCommonKt;
 import okhttp3.internal._UtilJvmKt;
+import okhttp3.internal.connection.BufferedSocket;
 import okhttp3.internal.http.ExchangeCodec;
 import okhttp3.internal.http.HttpHeaders;
 import okhttp3.internal.http.RequestLine;
 import okhttp3.internal.http.StatusLine;
 import okio.Buffer;
 import okio.BufferedSink;
-import okio.BufferedSource;
 import okio.ForwardingTimeout;
 import okio.Sink;
 import okio.Source;
 import okio.Timeout;
 /* compiled from: Http1ExchangeCodec.kt */
-@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 D2\u00020\u0001:\u0007>?@ABCDB)\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00162\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020\"H\u0016J\u0010\u0010#\u001a\u00020\"2\u0006\u0010\u001e\u001a\u00020\u0016H\u0016J\u0010\u0010$\u001a\u00020 2\u0006\u0010%\u001a\u00020\u0014H\u0016J\u0010\u0010&\u001a\u00020'2\u0006\u0010%\u001a\u00020\u0014H\u0016J\n\u0010(\u001a\u0004\u0018\u00010\u0019H\u0016J\b\u0010)\u001a\u00020\"H\u0016J\b\u0010*\u001a\u00020\"H\u0016J\u0016\u0010+\u001a\u00020\"2\u0006\u0010,\u001a\u00020\u00192\u0006\u0010-\u001a\u00020.J\u0012\u0010/\u001a\u0004\u0018\u0001002\u0006\u00101\u001a\u00020\u0013H\u0016J\b\u00102\u001a\u00020\u001dH\u0002J\b\u00103\u001a\u00020\u001dH\u0002J\u0018\u00104\u001a\u00020'2\u0006\u00105\u001a\u0002062\u0006\u00107\u001a\u00020 H\u0002J\u0010\u00108\u001a\u00020'2\u0006\u00105\u001a\u000206H\u0002J\u0010\u00109\u001a\u00020'2\u0006\u00105\u001a\u000206H\u0002J\u0010\u0010:\u001a\u00020\"2\u0006\u0010;\u001a\u00020<H\u0002J\u000e\u0010=\u001a\u00020\"2\u0006\u0010%\u001a\u00020\u0014R\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0012\u001a\u00020\u0013*\u00020\u00148BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0015R\u0018\u0010\u0012\u001a\u00020\u0013*\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0017R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\u00020\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u0006E"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec;", "Lokhttp3/internal/http/ExchangeCodec;", "client", "Lokhttp3/OkHttpClient;", "carrier", "Lokhttp3/internal/http/ExchangeCodec$Carrier;", "source", "Lokio/BufferedSource;", "sink", "Lokio/BufferedSink;", "<init>", "(Lokhttp3/OkHttpClient;Lokhttp3/internal/http/ExchangeCodec$Carrier;Lokio/BufferedSource;Lokio/BufferedSink;)V", "getCarrier", "()Lokhttp3/internal/http/ExchangeCodec$Carrier;", RemoteConfigConstants.ResponseFieldKey.STATE, "", "headersReader", "Lokhttp3/internal/http1/HeadersReader;", "isChunked", "", "Lokhttp3/Response;", "(Lokhttp3/Response;)Z", "Lokhttp3/Request;", "(Lokhttp3/Request;)Z", "trailers", "Lokhttp3/Headers;", "isResponseComplete", "()Z", "createRequestBody", "Lokio/Sink;", "request", "contentLength", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "writeRequestHeaders", "reportedContentLength", "response", "openResponseBodySource", "Lokio/Source;", "peekTrailers", "flushRequest", "finishRequest", "writeRequest", "headers", "requestLine", "", "readResponseHeaders", "Lokhttp3/Response$Builder;", "expectContinue", "newChunkedSink", "newKnownLengthSink", "newFixedLengthSource", "url", "Lokhttp3/HttpUrl;", "length", "newChunkedSource", "newUnknownLengthSource", "detachTimeout", "timeout", "Lokio/ForwardingTimeout;", "skipConnectBody", "KnownLengthSink", "ChunkedSink", "AbstractSource", "FixedLengthSource", "ChunkedSource", "UnknownLengthSource", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0080\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 D2\u00020\u0001:\u0007>?@ABCDB!\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00162\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020\"H\u0016J\u0010\u0010#\u001a\u00020\"2\u0006\u0010\u001e\u001a\u00020\u0016H\u0016J\u0010\u0010$\u001a\u00020 2\u0006\u0010%\u001a\u00020\u0014H\u0016J\u0010\u0010&\u001a\u00020'2\u0006\u0010%\u001a\u00020\u0014H\u0016J\n\u0010(\u001a\u0004\u0018\u00010\u0019H\u0016J\b\u0010)\u001a\u00020\"H\u0016J\b\u0010*\u001a\u00020\"H\u0016J\u0016\u0010+\u001a\u00020\"2\u0006\u0010,\u001a\u00020\u00192\u0006\u0010-\u001a\u00020.J\u0012\u0010/\u001a\u0004\u0018\u0001002\u0006\u00101\u001a\u00020\u0013H\u0016J\b\u00102\u001a\u00020\u001dH\u0002J\b\u00103\u001a\u00020\u001dH\u0002J\u0018\u00104\u001a\u00020'2\u0006\u00105\u001a\u0002062\u0006\u00107\u001a\u00020 H\u0002J\u0010\u00108\u001a\u00020'2\u0006\u00105\u001a\u000206H\u0002J\u0010\u00109\u001a\u00020'2\u0006\u00105\u001a\u000206H\u0002J\u0010\u0010:\u001a\u00020\"2\u0006\u0010;\u001a\u00020<H\u0002J\u000e\u0010=\u001a\u00020\"2\u0006\u0010%\u001a\u00020\u0014R\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\u0006\u001a\u00020\u0007X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0012\u001a\u00020\u0013*\u00020\u00148BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0015R\u0018\u0010\u0012\u001a\u00020\u0013*\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0017R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\u00020\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u0006E"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec;", "Lokhttp3/internal/http/ExchangeCodec;", "client", "Lokhttp3/OkHttpClient;", "carrier", "Lokhttp3/internal/http/ExchangeCodec$Carrier;", "socket", "Lokhttp3/internal/connection/BufferedSocket;", "<init>", "(Lokhttp3/OkHttpClient;Lokhttp3/internal/http/ExchangeCodec$Carrier;Lokhttp3/internal/connection/BufferedSocket;)V", "getCarrier", "()Lokhttp3/internal/http/ExchangeCodec$Carrier;", "getSocket", "()Lokhttp3/internal/connection/BufferedSocket;", RemoteConfigConstants.ResponseFieldKey.STATE, "", "headersReader", "Lokhttp3/internal/http1/HeadersReader;", "isChunked", "", "Lokhttp3/Response;", "(Lokhttp3/Response;)Z", "Lokhttp3/Request;", "(Lokhttp3/Request;)Z", "trailers", "Lokhttp3/Headers;", "isResponseComplete", "()Z", "createRequestBody", "Lokio/Sink;", "request", "contentLength", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "writeRequestHeaders", "reportedContentLength", "response", "openResponseBodySource", "Lokio/Source;", "peekTrailers", "flushRequest", "finishRequest", "writeRequest", "headers", "requestLine", "", "readResponseHeaders", "Lokhttp3/Response$Builder;", "expectContinue", "newChunkedSink", "newKnownLengthSink", "newFixedLengthSource", "url", "Lokhttp3/HttpUrl;", "length", "newChunkedSource", "newUnknownLengthSource", "detachTimeout", "timeout", "Lokio/ForwardingTimeout;", "skipConnectBody", "KnownLengthSink", "ChunkedSink", "AbstractSource", "FixedLengthSource", "ChunkedSource", "UnknownLengthSource", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Http1ExchangeCodec implements ExchangeCodec {
     private static final long NO_CHUNK_YET = -1;
@@ -46,27 +46,29 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
     private final ExchangeCodec.Carrier carrier;
     private final OkHttpClient client;
     private final HeadersReader headersReader;
-    private final BufferedSink sink;
-    private final BufferedSource source;
+    private final BufferedSocket socket;
     private int state;
     private Headers trailers;
     public static final Companion Companion = new Companion(null);
     private static final Headers TRAILERS_RESPONSE_BODY_TRUNCATED = Headers.Companion.of("OkHttp-Response-Body", "Truncated");
 
-    public Http1ExchangeCodec(OkHttpClient okHttpClient, ExchangeCodec.Carrier carrier, BufferedSource source, BufferedSink sink) {
+    public Http1ExchangeCodec(OkHttpClient okHttpClient, ExchangeCodec.Carrier carrier, BufferedSocket socket) {
         Intrinsics.checkNotNullParameter(carrier, "carrier");
-        Intrinsics.checkNotNullParameter(source, "source");
-        Intrinsics.checkNotNullParameter(sink, "sink");
+        Intrinsics.checkNotNullParameter(socket, "socket");
         this.client = okHttpClient;
         this.carrier = carrier;
-        this.source = source;
-        this.sink = sink;
-        this.headersReader = new HeadersReader(source);
+        this.socket = socket;
+        this.headersReader = new HeadersReader(getSocket().getSource());
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public ExchangeCodec.Carrier getCarrier() {
         return this.carrier;
+    }
+
+    @Override // okhttp3.internal.http.ExchangeCodec
+    public BufferedSocket getSocket() {
+        return this.socket;
     }
 
     private final boolean isChunked(Response response) {
@@ -100,7 +102,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public void cancel() {
-        getCarrier().mo11013cancel();
+        getCarrier().mo11754cancel();
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
@@ -155,12 +157,12 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public void flushRequest() {
-        this.sink.flush();
+        getSocket().getSink().flush();
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public void finishRequest() {
-        this.sink.flush();
+        getSocket().getSink().flush();
     }
 
     public final void writeRequest(Headers headers, String requestLine) {
@@ -169,12 +171,12 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
         if (this.state != 0) {
             throw new IllegalStateException(("state: " + this.state).toString());
         }
-        this.sink.writeUtf8(requestLine).writeUtf8("\r\n");
+        getSocket().getSink().writeUtf8(requestLine).writeUtf8("\r\n");
         int size = headers.size();
         for (int i = 0; i < size; i++) {
-            this.sink.writeUtf8(headers.name(i)).writeUtf8(": ").writeUtf8(headers.value(i)).writeUtf8("\r\n");
+            getSocket().getSink().writeUtf8(headers.name(i)).writeUtf8(": ").writeUtf8(headers.value(i)).writeUtf8("\r\n");
         }
-        this.sink.writeUtf8("\r\n");
+        getSocket().getSink().writeUtf8("\r\n");
         this.state = 1;
     }
 
@@ -275,7 +277,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
         private final ForwardingTimeout timeout;
 
         public KnownLengthSink() {
-            this.timeout = new ForwardingTimeout(Http1ExchangeCodec.this.sink.timeout());
+            this.timeout = new ForwardingTimeout(Http1ExchangeCodec.this.getSocket().getSink().timeout());
         }
 
         @Override // okio.Sink
@@ -290,7 +292,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 throw new IllegalStateException("closed".toString());
             }
             _UtilCommonKt.checkOffsetAndCount(source.size(), 0L, j);
-            Http1ExchangeCodec.this.sink.write(source, j);
+            Http1ExchangeCodec.this.getSocket().getSink().write(source, j);
         }
 
         @Override // okio.Sink, java.io.Flushable
@@ -298,7 +300,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (this.closed) {
                 return;
             }
-            Http1ExchangeCodec.this.sink.flush();
+            Http1ExchangeCodec.this.getSocket().getSink().flush();
         }
 
         @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
@@ -321,7 +323,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
         private final ForwardingTimeout timeout;
 
         public ChunkedSink() {
-            this.timeout = new ForwardingTimeout(Http1ExchangeCodec.this.sink.timeout());
+            this.timeout = new ForwardingTimeout(Http1ExchangeCodec.this.getSocket().getSink().timeout());
         }
 
         @Override // okio.Sink
@@ -338,10 +340,11 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (j == 0) {
                 return;
             }
-            Http1ExchangeCodec.this.sink.writeHexadecimalUnsignedLong(j);
-            Http1ExchangeCodec.this.sink.writeUtf8("\r\n");
-            Http1ExchangeCodec.this.sink.write(source, j);
-            Http1ExchangeCodec.this.sink.writeUtf8("\r\n");
+            BufferedSink sink = Http1ExchangeCodec.this.getSocket().getSink();
+            sink.writeHexadecimalUnsignedLong(j);
+            sink.writeUtf8("\r\n");
+            sink.write(source, j);
+            sink.writeUtf8("\r\n");
         }
 
         @Override // okio.Sink, java.io.Flushable
@@ -349,7 +352,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (this.closed) {
                 return;
             }
-            Http1ExchangeCodec.this.sink.flush();
+            Http1ExchangeCodec.this.getSocket().getSink().flush();
         }
 
         @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
@@ -358,7 +361,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 return;
             }
             this.closed = true;
-            Http1ExchangeCodec.this.sink.writeUtf8("0\r\n\r\n");
+            Http1ExchangeCodec.this.getSocket().getSink().writeUtf8("0\r\n\r\n");
             Http1ExchangeCodec.this.detachTimeout(this.timeout);
             Http1ExchangeCodec.this.state = 3;
         }
@@ -378,7 +381,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             Intrinsics.checkNotNullParameter(url, "url");
             this.this$0 = http1ExchangeCodec;
             this.url = url;
-            this.timeout = new ForwardingTimeout(http1ExchangeCodec.source.timeout());
+            this.timeout = new ForwardingTimeout(http1ExchangeCodec.getSocket().getSource().timeout());
         }
 
         public final HttpUrl getUrl() {
@@ -406,7 +409,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
         public long read(Buffer sink, long j) {
             Intrinsics.checkNotNullParameter(sink, "sink");
             try {
-                return this.this$0.source.read(sink, j);
+                return this.this$0.getSocket().getSource().read(sink, j);
             } catch (IOException e) {
                 this.this$0.getCarrier().noNewExchanges();
                 responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
@@ -545,11 +548,11 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
         private final void readChunkSize() {
             if (this.bytesRemainingInChunk != -1) {
-                this.this$0.source.readUtf8LineStrict();
+                this.this$0.getSocket().getSource().readUtf8LineStrict();
             }
             try {
-                this.bytesRemainingInChunk = this.this$0.source.readHexadecimalUnsignedLong();
-                String obj = StringsKt.trim((CharSequence) this.this$0.source.readUtf8LineStrict()).toString();
+                this.bytesRemainingInChunk = this.this$0.getSocket().getSource().readHexadecimalUnsignedLong();
+                String obj = StringsKt.trim((CharSequence) this.this$0.getSocket().getSource().readUtf8LineStrict()).toString();
                 if (this.bytesRemainingInChunk < 0 || (obj.length() > 0 && !StringsKt.startsWith$default(obj, ";", false, 2, (Object) null))) {
                     throw new ProtocolException("expected chunk size and optional extensions but was \"" + this.bytesRemainingInChunk + obj + '\"');
                 } else if (this.bytesRemainingInChunk == 0) {

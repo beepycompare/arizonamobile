@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class zza extends com.google.android.gms.internal.common.zza implements IFragmentWrapper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zza(IBinder iBinder) {
@@ -13,22 +13,22 @@ public final class zza extends com.google.android.gms.internal.common.zza implem
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final boolean zzA() throws RemoteException {
+    public final void zzA(IObjectWrapper iObjectWrapper) throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final int zzb() throws RemoteException {
+    public final IObjectWrapper zzb() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final int zzc() throws RemoteException {
+    public final Bundle zzc() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final Bundle zzd() throws RemoteException {
+    public final int zzd() throws RemoteException {
         throw null;
     }
 
@@ -38,67 +38,67 @@ public final class zza extends com.google.android.gms.internal.common.zza implem
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final IFragmentWrapper zzf() throws RemoteException {
+    public final IObjectWrapper zzf() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final IObjectWrapper zzg() throws RemoteException {
+    public final boolean zzg() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final IObjectWrapper zzh() throws RemoteException {
+    public final String zzh() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final IObjectWrapper zzi() throws RemoteException {
+    public final IFragmentWrapper zzi() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final String zzj() throws RemoteException {
+    public final int zzj() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final void zzk(IObjectWrapper iObjectWrapper) throws RemoteException {
+    public final boolean zzk() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final void zzl(boolean z) throws RemoteException {
+    public final IObjectWrapper zzl() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final void zzm(boolean z) throws RemoteException {
+    public final boolean zzm() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final void zzn(boolean z) throws RemoteException {
+    public final boolean zzn() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final void zzo(boolean z) throws RemoteException {
+    public final boolean zzo() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final void zzp(Intent intent) throws RemoteException {
+    public final boolean zzp() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final void zzq(Intent intent, int i) throws RemoteException {
+    public final boolean zzq() throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final void zzr(IObjectWrapper iObjectWrapper) throws RemoteException {
+    public final boolean zzr() throws RemoteException {
         throw null;
     }
 
@@ -108,37 +108,37 @@ public final class zza extends com.google.android.gms.internal.common.zza implem
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final boolean zzt() throws RemoteException {
+    public final void zzt(IObjectWrapper iObjectWrapper) throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final boolean zzu() throws RemoteException {
+    public final void zzu(boolean z) throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final boolean zzv() throws RemoteException {
+    public final void zzv(boolean z) throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final boolean zzw() throws RemoteException {
+    public final void zzw(boolean z) throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final boolean zzx() throws RemoteException {
+    public final void zzx(boolean z) throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final boolean zzy() throws RemoteException {
+    public final void zzy(Intent intent) throws RemoteException {
         throw null;
     }
 
     @Override // com.google.android.gms.dynamic.IFragmentWrapper
-    public final boolean zzz() throws RemoteException {
+    public final void zzz(Intent intent, int i) throws RemoteException {
         throw null;
     }
 }

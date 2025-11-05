@@ -74,7 +74,7 @@ public final class RowColumnMeasurePolicyKt {
                     i19 = i23;
                     iArr2 = iArr3;
                     rowColumnMeasurePolicy2 = rowColumnMeasurePolicy;
-                    placeable = measurable.mo5967measureBRTryo0(RowColumnMeasurePolicy.m872createConstraintsxF2OJ5Q$default(rowColumnMeasurePolicy2, 0, valueOf != null ? valueOf.intValue() : 0, i3 != Integer.MAX_VALUE ? i26 < 0 ? 0 : i26 : Integer.MAX_VALUE, valueOf != null ? valueOf.intValue() : i4, false, 16, null));
+                    placeable = measurable.mo6697measureBRTryo0(RowColumnMeasurePolicy.m872createConstraintsxF2OJ5Q$default(rowColumnMeasurePolicy2, 0, valueOf != null ? valueOf.intValue() : 0, i3 != Integer.MAX_VALUE ? i26 < 0 ? 0 : i26 : Integer.MAX_VALUE, valueOf != null ? valueOf.intValue() : i4, false, 16, null));
                 } else {
                     iArr2 = iArr3;
                     i18 = i21;
@@ -147,13 +147,13 @@ public final class RowColumnMeasurePolicyKt {
                                 i15 = i14;
                             }
                             rowColumnMeasurePolicy3 = rowColumnMeasurePolicy;
-                            Placeable mo5967measureBRTryo0 = measurable2.mo5967measureBRTryo0(rowColumnMeasurePolicy3.mo736createConstraintsxF2OJ5Q(i32, i15, max2, valueOf2 == null ? valueOf2.intValue() : i4, true));
-                            int mainAxisSize2 = rowColumnMeasurePolicy3.mainAxisSize(mo5967measureBRTryo0);
-                            int crossAxisSize2 = rowColumnMeasurePolicy3.crossAxisSize(mo5967measureBRTryo0);
+                            Placeable mo6697measureBRTryo0 = measurable2.mo6697measureBRTryo0(rowColumnMeasurePolicy3.mo736createConstraintsxF2OJ5Q(i32, i15, max2, valueOf2 == null ? valueOf2.intValue() : i4, true));
+                            int mainAxisSize2 = rowColumnMeasurePolicy3.mainAxisSize(mo6697measureBRTryo0);
+                            int crossAxisSize2 = rowColumnMeasurePolicy3.crossAxisSize(mo6697measureBRTryo0);
                             iArr4[i30 - i6] = mainAxisSize2;
                             i31 += mainAxisSize2;
                             int max3 = Math.max(i28, crossAxisSize2);
-                            placeableArr[i30] = mo5967measureBRTryo0;
+                            placeableArr[i30] = mo6697measureBRTryo0;
                             i28 = max3;
                             j5 = j6;
                         }
@@ -164,13 +164,13 @@ public final class RowColumnMeasurePolicyKt {
                     if (valueOf2 == null) {
                     }
                     rowColumnMeasurePolicy3 = rowColumnMeasurePolicy;
-                    Placeable mo5967measureBRTryo02 = measurable2.mo5967measureBRTryo0(rowColumnMeasurePolicy3.mo736createConstraintsxF2OJ5Q(i32, i15, max2, valueOf2 == null ? valueOf2.intValue() : i4, true));
-                    int mainAxisSize22 = rowColumnMeasurePolicy3.mainAxisSize(mo5967measureBRTryo02);
-                    int crossAxisSize22 = rowColumnMeasurePolicy3.crossAxisSize(mo5967measureBRTryo02);
+                    Placeable mo6697measureBRTryo02 = measurable2.mo6697measureBRTryo0(rowColumnMeasurePolicy3.mo736createConstraintsxF2OJ5Q(i32, i15, max2, valueOf2 == null ? valueOf2.intValue() : i4, true));
+                    int mainAxisSize22 = rowColumnMeasurePolicy3.mainAxisSize(mo6697measureBRTryo02);
+                    int crossAxisSize22 = rowColumnMeasurePolicy3.crossAxisSize(mo6697measureBRTryo02);
                     iArr4[i30 - i6] = mainAxisSize22;
                     i31 += mainAxisSize22;
                     int max32 = Math.max(i28, crossAxisSize22);
-                    placeableArr[i30] = mo5967measureBRTryo02;
+                    placeableArr[i30] = mo6697measureBRTryo02;
                     i28 = max32;
                     j5 = j6;
                 } else {

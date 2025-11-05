@@ -107,18 +107,18 @@ final class AnchoredDraggableNode$onDragStopped$1 extends SuspendLambda implemen
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, continuation);
-            anonymousClass1.J$0 = ((Velocity) obj).m7511unboximpl();
+            anonymousClass1.J$0 = ((Velocity) obj).m8242unboximpl();
             return anonymousClass1;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Object invoke(Velocity velocity, Continuation<? super Velocity> continuation) {
-            return m451invokesFctU(velocity.m7511unboximpl(), continuation);
+            return m451invokesFctU(velocity.m8242unboximpl(), continuation);
         }
 
         /* renamed from: invoke-sF-c-tU  reason: not valid java name */
         public final Object m451invokesFctU(long j, Continuation<? super Velocity> continuation) {
-            return ((AnonymousClass1) create(Velocity.m7493boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass1) create(Velocity.m8224boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -157,7 +157,7 @@ final class AnchoredDraggableNode$onDragStopped$1 extends SuspendLambda implemen
             if (requireOffset >= anchoredDraggableState3.getAnchors().maxPosition() || requireOffset <= minPosition) {
                 j = this.this$0.m447toVelocityadjELrA(floatValue);
             }
-            return Velocity.m7493boximpl(j);
+            return Velocity.m8224boximpl(j);
         }
     }
 }

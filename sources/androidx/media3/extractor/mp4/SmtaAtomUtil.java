@@ -1,6 +1,5 @@
 package androidx.media3.extractor.mp4;
 
-import androidx.compose.material3.MenuKt;
 import androidx.media3.common.C;
 import androidx.media3.common.Metadata;
 import androidx.media3.common.util.ParsableByteArray;
@@ -57,7 +56,7 @@ public final class SmtaAtomUtil {
             return 240;
         }
         if (i == 13) {
-            return MenuKt.InTransitionDuration;
+            return 120;
         }
         if (i == 21 && parsableByteArray.bytesLeft() >= 8 && parsableByteArray.getPosition() + 8 <= i2) {
             int readInt = parsableByteArray.readInt();

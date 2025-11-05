@@ -46,9 +46,9 @@ public final class TextFieldMagnifierNodeImpl28 extends TextFieldMagnifierNode i
         this.textFieldSelectionState = textFieldSelectionState;
         this.textLayoutState = textLayoutState;
         this.visible = z;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7427boximpl(IntSize.Companion.m7440getZeroYbymL2g()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8158boximpl(IntSize.Companion.m8171getZeroYbymL2g()), null, 2, null);
         this.magnifierSize$delegate = mutableStateOf$default;
-        this.animatable = new Animatable<>(Offset.m4294boximpl(TextFieldMagnifierKt.m1630calculateSelectionMagnifierCenterAndroidhUlJWOE(this.textFieldState, this.textFieldSelectionState, this.textLayoutState, m1632getMagnifierSizeYbymL2g())), SelectionMagnifierKt.getUnspecifiedSafeOffsetVectorConverter(), Offset.m4294boximpl(SelectionMagnifierKt.getOffsetDisplacementThreshold()), null, 8, null);
+        this.animatable = new Animatable<>(Offset.m5024boximpl(TextFieldMagnifierKt.m1630calculateSelectionMagnifierCenterAndroidhUlJWOE(this.textFieldState, this.textFieldSelectionState, this.textLayoutState, m1632getMagnifierSizeYbymL2g())), SelectionMagnifierKt.getUnspecifiedSafeOffsetVectorConverter(), Offset.m5024boximpl(SelectionMagnifierKt.getOffsetDisplacementThreshold()), null, 8, null);
         this.magnifierNode = (MagnifierNode) delegate(new MagnifierNode(new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldMagnifierNodeImpl28$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -69,12 +69,12 @@ public final class TextFieldMagnifierNodeImpl28 extends TextFieldMagnifierNode i
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getMagnifierSize-YbymL2g  reason: not valid java name */
     public final long m1632getMagnifierSizeYbymL2g() {
-        return ((IntSize) this.magnifierSize$delegate.getValue()).m7439unboximpl();
+        return ((IntSize) this.magnifierSize$delegate.getValue()).m8170unboximpl();
     }
 
     /* renamed from: setMagnifierSize-ozmzZPI  reason: not valid java name */
     private final void m1633setMagnifierSizeozmzZPI(long j) {
-        this.magnifierSize$delegate.setValue(IntSize.m7427boximpl(j));
+        this.magnifierSize$delegate.setValue(IntSize.m8158boximpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -85,7 +85,7 @@ public final class TextFieldMagnifierNodeImpl28 extends TextFieldMagnifierNode i
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit magnifierNode$lambda$2(TextFieldMagnifierNodeImpl28 textFieldMagnifierNodeImpl28, DpSize dpSize) {
         Density density = (Density) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldMagnifierNodeImpl28, CompositionLocalsKt.getLocalDensity());
-        textFieldMagnifierNodeImpl28.m1633setMagnifierSizeozmzZPI(IntSize.m7430constructorimpl((density.mo423roundToPx0680j_4(DpSize.m7362getWidthD9Ej5fM(dpSize.m7370unboximpl())) << 32) | (density.mo423roundToPx0680j_4(DpSize.m7360getHeightD9Ej5fM(dpSize.m7370unboximpl())) & 4294967295L)));
+        textFieldMagnifierNodeImpl28.m1633setMagnifierSizeozmzZPI(IntSize.m8161constructorimpl((density.mo423roundToPx0680j_4(DpSize.m8093getWidthD9Ej5fM(dpSize.m8101unboximpl())) << 32) | (density.mo423roundToPx0680j_4(DpSize.m8091getHeightD9Ej5fM(dpSize.m8101unboximpl())) & 4294967295L)));
         return Unit.INSTANCE;
     }
 

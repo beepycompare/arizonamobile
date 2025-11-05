@@ -1,5 +1,6 @@
 package okhttp3.internal.connection;
 
+import androidx.core.app.NotificationCompat;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -22,12 +23,12 @@ import okhttp3.Route;
 import okhttp3.internal._HostnamesCommonKt;
 import okhttp3.internal._UtilJvmKt;
 /* compiled from: RouteSelector.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \"2\u00020\u0001:\u0002!\"B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\t\u0010\u0016\u001a\u00020\tH\u0086\u0002J\t\u0010\u0017\u001a\u00020\u0018H\u0086\u0002J\u001a\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u000eH\u0002J\b\u0010\u001e\u001a\u00020\tH\u0002J\b\u0010\u001f\u001a\u00020\u000eH\u0002J\u0010\u0010 \u001a\u00020\u001a2\u0006\u0010\u001d\u001a\u00020\u000eH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00120\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lokhttp3/internal/connection/RouteSelector;", "", "address", "Lokhttp3/Address;", "routeDatabase", "Lokhttp3/internal/connection/RouteDatabase;", "connectionUser", "Lokhttp3/internal/connection/ConnectionUser;", "fastFallback", "", "<init>", "(Lokhttp3/Address;Lokhttp3/internal/connection/RouteDatabase;Lokhttp3/internal/connection/ConnectionUser;Z)V", "proxies", "", "Ljava/net/Proxy;", "nextProxyIndex", "", "inetSocketAddresses", "Ljava/net/InetSocketAddress;", "postponedRoutes", "", "Lokhttp3/Route;", "hasNext", "next", "Lokhttp3/internal/connection/RouteSelector$Selection;", "resetNextProxy", "", "url", "Lokhttp3/HttpUrl;", "proxy", "hasNextProxy", "nextProxy", "resetNextInetSocketAddress", "Selection", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \"2\u00020\u0001:\u0002!\"B)\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\t\u0010\u0016\u001a\u00020\tH\u0086\u0002J\t\u0010\u0017\u001a\u00020\u0018H\u0086\u0002J\u001a\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u000eH\u0002J\b\u0010\u001e\u001a\u00020\tH\u0002J\b\u0010\u001f\u001a\u00020\u000eH\u0002J\u0010\u0010 \u001a\u00020\u001a2\u0006\u0010\u001d\u001a\u00020\u000eH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00120\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lokhttp3/internal/connection/RouteSelector;", "", "address", "Lokhttp3/Address;", "routeDatabase", "Lokhttp3/internal/connection/RouteDatabase;", NotificationCompat.CATEGORY_CALL, "Lokhttp3/internal/connection/RealCall;", "fastFallback", "", "<init>", "(Lokhttp3/Address;Lokhttp3/internal/connection/RouteDatabase;Lokhttp3/internal/connection/RealCall;Z)V", "proxies", "", "Ljava/net/Proxy;", "nextProxyIndex", "", "inetSocketAddresses", "Ljava/net/InetSocketAddress;", "postponedRoutes", "", "Lokhttp3/Route;", "hasNext", "next", "Lokhttp3/internal/connection/RouteSelector$Selection;", "resetNextProxy", "", "url", "Lokhttp3/HttpUrl;", "proxy", "hasNextProxy", "nextProxy", "resetNextInetSocketAddress", "Selection", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class RouteSelector {
     public static final Companion Companion = new Companion(null);
     private final Address address;
-    private final ConnectionUser connectionUser;
+    private final RealCall call;
     private final boolean fastFallback;
     private List<? extends InetSocketAddress> inetSocketAddresses;
     private int nextProxyIndex;
@@ -35,13 +36,13 @@ public final class RouteSelector {
     private List<? extends Proxy> proxies;
     private final RouteDatabase routeDatabase;
 
-    public RouteSelector(Address address, RouteDatabase routeDatabase, ConnectionUser connectionUser, boolean z) {
+    public RouteSelector(Address address, RouteDatabase routeDatabase, RealCall call, boolean z) {
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(routeDatabase, "routeDatabase");
-        Intrinsics.checkNotNullParameter(connectionUser, "connectionUser");
+        Intrinsics.checkNotNullParameter(call, "call");
         this.address = address;
         this.routeDatabase = routeDatabase;
-        this.connectionUser = connectionUser;
+        this.call = call;
         this.fastFallback = z;
         this.proxies = CollectionsKt.emptyList();
         this.inetSocketAddresses = CollectionsKt.emptyList();
@@ -93,11 +94,10 @@ public final class RouteSelector {
     }
 
     private final void resetNextProxy(HttpUrl httpUrl, Proxy proxy) {
-        this.connectionUser.proxySelectStart(httpUrl);
-        List<Proxy> resetNextProxy$selectProxies = resetNextProxy$selectProxies(proxy, httpUrl, this);
-        this.proxies = resetNextProxy$selectProxies;
+        this.call.getEventListener$okhttp().proxySelectStart(this.call, httpUrl);
+        this.proxies = resetNextProxy$selectProxies(proxy, httpUrl, this);
         this.nextProxyIndex = 0;
-        this.connectionUser.proxySelectEnd(httpUrl, resetNextProxy$selectProxies);
+        this.call.getEventListener$okhttp().proxySelectEnd(this.call, httpUrl, this.proxies);
     }
 
     private final boolean hasNextProxy() {
@@ -144,12 +144,12 @@ public final class RouteSelector {
         if (_HostnamesCommonKt.canParseAsIpAddress(host)) {
             lookup = CollectionsKt.listOf(InetAddress.getByName(host));
         } else {
-            this.connectionUser.dnsStart(host);
+            this.call.getEventListener$okhttp().dnsStart(this.call, host);
             lookup = this.address.dns().lookup(host);
             if (lookup.isEmpty()) {
                 throw new UnknownHostException(this.address.dns() + " returned no addresses for " + host);
             }
-            this.connectionUser.dnsEnd(host, lookup);
+            this.call.getEventListener$okhttp().dnsEnd(this.call, host, lookup);
         }
         if (this.fastFallback) {
             lookup = InetAddressOrderKt.reorderForHappyEyeballs(lookup);

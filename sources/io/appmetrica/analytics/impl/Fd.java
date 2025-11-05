@@ -1,22 +1,53 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
-/* loaded from: classes4.dex */
-public final class Fd extends SafeRunnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Jd f445a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ String c;
-
-    public Fd(Jd jd, int i, String str) {
-        this.f445a = jd;
-        this.b = i;
-        this.c = str;
+/* loaded from: classes3.dex */
+public abstract class Fd extends AbstractC0169cf implements InterfaceC0731yl {
+    public Fd(Oa oa, String str) {
+        super(oa, str);
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
-    public final void runSafety() {
-        Jd.a(this.f445a).a(new C0249fa(this.b, this.c));
+    public final String c(String str, String str2) {
+        return this.f830a.getString(f(str), str2);
+    }
+
+    public final InterfaceC0731yl d(String str, String str2) {
+        return (InterfaceC0731yl) b(f(str), str2);
+    }
+
+    public final boolean e(String str) {
+        return this.f830a.a(f(str));
+    }
+
+    public abstract String f(String str);
+
+    public InterfaceC0731yl g(String str) {
+        return (InterfaceC0731yl) d(f(str));
+    }
+
+    public Fd(Oa oa) {
+        this(oa, null);
+    }
+
+    public final InterfaceC0731yl d(String str, int i) {
+        return (InterfaceC0731yl) b(f(str), i);
+    }
+
+    public final int c(String str, int i) {
+        return this.f830a.getInt(f(str), i);
+    }
+
+    public final InterfaceC0731yl d(String str, long j) {
+        return (InterfaceC0731yl) b(f(str), j);
+    }
+
+    public final InterfaceC0731yl d(String str, boolean z) {
+        return (InterfaceC0731yl) b(f(str), z);
+    }
+
+    public final long c(String str, long j) {
+        return this.f830a.getLong(f(str), j);
+    }
+
+    public final boolean c(String str, boolean z) {
+        return this.f830a.getBoolean(f(str), z);
     }
 }

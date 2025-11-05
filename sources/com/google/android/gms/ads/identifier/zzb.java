@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzb extends Thread {
     final CountDownLatch zza;
     private final WeakReference zzb;

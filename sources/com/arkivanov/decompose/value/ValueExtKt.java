@@ -5,6 +5,7 @@ import com.arizona.launcher.UpdateActivity;
 import com.arkivanov.decompose.Cancellation;
 import com.arkivanov.essenty.lifecycle.Lifecycle;
 import com.arkivanov.essenty.lifecycle.LifecycleExtKt;
+import kotlin.Deprecated;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
@@ -14,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.reflect.KProperty;
 /* compiled from: ValueExt.kt */
-@Metadata(d1 = {"\u00000\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a8\u0010\u0000\u001a\u0002H\u0001\"\b\b\u0000\u0010\u0001*\u00020\u0002*\b\u0012\u0004\u0012\u0002H\u00010\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00022\n\u0010\u0005\u001a\u0006\u0012\u0002\b\u00030\u0006H\u0086\u0002¢\u0006\u0002\u0010\u0007\u001a@\u0010\b\u001a\u00020\t\"\b\b\u0000\u0010\u0001*\u00020\u0002*\b\u0012\u0004\u0012\u0002H\u00010\u00032\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\u0012\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u00020\t0\u000f¨\u0006\u0010"}, d2 = {"getValue", ExifInterface.GPS_DIRECTION_TRUE, "", "Lcom/arkivanov/decompose/value/Value;", "thisRef", "property", "Lkotlin/reflect/KProperty;", "(Lcom/arkivanov/decompose/value/Value;Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;", "subscribe", "", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", UpdateActivity.UPDATE_MODE, "Lcom/arkivanov/decompose/value/ObserveLifecycleMode;", "observer", "Lkotlin/Function1;", "decompose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a8\u0010\u0000\u001a\u0002H\u0001\"\b\b\u0000\u0010\u0001*\u00020\u0002*\b\u0012\u0004\u0012\u0002H\u00010\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00022\n\u0010\u0005\u001a\u0006\u0012\u0002\b\u00030\u0006H\u0087\u0002¢\u0006\u0002\u0010\u0007\u001a@\u0010\b\u001a\u00020\t\"\b\b\u0000\u0010\u0001*\u00020\u0002*\b\u0012\u0004\u0012\u0002H\u00010\u00032\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\u0012\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u00020\t0\u000f¨\u0006\u0010"}, d2 = {"getValue", ExifInterface.GPS_DIRECTION_TRUE, "", "Lcom/arkivanov/decompose/value/Value;", "thisRef", "property", "Lkotlin/reflect/KProperty;", "(Lcom/arkivanov/decompose/value/Value;Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;", "subscribe", "", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", UpdateActivity.UPDATE_MODE, "Lcom/arkivanov/decompose/value/ObserveLifecycleMode;", "observer", "Lkotlin/Function1;", "decompose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ValueExtKt {
 
@@ -42,6 +43,7 @@ public final class ValueExtKt {
         }
     }
 
+    @Deprecated(message = "Using this operator overload is known to be error prone. In particular, it can be accidentally used in Compose to observe the value, which will not work as expected. Instead, you can write: `val stack by fooComponent::stack`. Alternatively, feel free to copy it into your project if you want to continue using it. See: https://github.com/arkivanov/Decompose/issues/871")
     public static final <T> T getValue(Value<? extends T> value, Object obj, KProperty<?> property) {
         Intrinsics.checkNotNullParameter(value, "<this>");
         Intrinsics.checkNotNullParameter(property, "property");

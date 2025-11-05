@@ -1,65 +1,29 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import java.util.ArrayList;
-import kotlin.Lazy;
-import kotlin.LazyKt;
-import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+/* loaded from: classes3.dex */
 public final class Ag {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Hg f351a;
-    public final Za b;
-    public final Sg c;
-    public final Lazy d = LazyKt.lazy(new C0713xg(this));
-    public final Lazy e = LazyKt.lazy(new C0663vg(this));
-    public final Lazy f = LazyKt.lazy(new C0763zg(this));
-    public final ArrayList g = new ArrayList();
-
-    public Ag(Hg hg, Rg rg, Za za, Sg sg) {
-        this.f351a = hg;
-        this.b = za;
-        this.c = sg;
+    public Ag(Va va) {
     }
 
-    public static final InterfaceC0588sg a(Ag ag) {
-        return (InterfaceC0588sg) ag.d.getValue();
-    }
-
-    public static final void a(Ag ag, Jg jg, InterfaceC0588sg interfaceC0588sg) {
-        boolean areEqual;
-        ag.g.add(jg);
-        Sg sg = ag.c;
-        if (jg == null) {
-            sg.getClass();
-        } else {
-            SafePackageManager safePackageManager = sg.b;
-            Context context = sg.f672a;
-            String installerPackageName = safePackageManager.getInstallerPackageName(context, context.getPackageName());
-            int ordinal = jg.d.ordinal();
-            if (ordinal == 1) {
-                areEqual = Intrinsics.areEqual(sg.f, installerPackageName);
-            } else if (ordinal == 2) {
-                areEqual = Intrinsics.areEqual(sg.g, installerPackageName);
+    /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0011  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Va a(Context context, IHandlerExecutor iHandlerExecutor) {
+        C0452ng c0452ng;
+        if (ReflectionUtils.detectClassExists("com.android.installreferrer.api.InstallReferrerClient")) {
+            try {
+                c0452ng = new C0452ng(context, iHandlerExecutor);
+            } catch (Throwable unused) {
             }
-            if (areEqual) {
-                ag.a(jg);
-                return;
-            }
+            return c0452ng != null ? new C0751zg() : c0452ng;
         }
-        interfaceC0588sg.a();
-    }
-
-    public final void a(Jg jg) {
-        Hg hg = this.f351a;
-        synchronized (hg) {
-            hg.b = jg;
-            hg.c = true;
-            hg.d.a(jg);
-            hg.d.d();
-            hg.a(hg.b);
+        c0452ng = null;
+        if (c0452ng != null) {
         }
     }
 }

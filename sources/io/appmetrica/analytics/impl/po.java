@@ -1,19 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceConfiguration;
-import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceProvider;
-/* loaded from: classes4.dex */
-public final class po implements InterfaceC0619tm {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final UtilityServiceProvider f1041a;
-
-    public po(UtilityServiceProvider utilityServiceProvider) {
-        this.f1041a = utilityServiceProvider;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0619tm
-    public final void a(C0494om c0494om) {
-        this.f1041a.updateConfiguration(new UtilityServiceConfiguration(c0494om.v, c0494om.u));
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+/* loaded from: classes3.dex */
+public final class po implements Ra {
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final String a(Context context) {
+        C0458nm c0458nm;
+        try {
+            Um a2 = Tm.a(C0458nm.class);
+            if (a2 != null) {
+                Vm vm = (Vm) a2;
+                ProtobufStateStorage<Object> a3 = vm.a(context, vm.a(context));
+                if (a3 == null || (c0458nm = (C0458nm) a3.read()) == null) {
+                    return null;
+                }
+                return c0458nm.f1028a;
+            }
+            return null;
+        } catch (Throwable unused) {
+            return null;
+        }
     }
 }

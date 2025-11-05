@@ -46,7 +46,7 @@ final class FixedDpInsets implements WindowInsets {
     }
 
     public String toString() {
-        return "Insets(left=" + ((Object) Dp.m7275toStringimpl(this.leftDp)) + ", top=" + ((Object) Dp.m7275toStringimpl(this.topDp)) + ", right=" + ((Object) Dp.m7275toStringimpl(this.rightDp)) + ", bottom=" + ((Object) Dp.m7275toStringimpl(this.bottomDp)) + ')';
+        return "Insets(left=" + ((Object) Dp.m8006toStringimpl(this.leftDp)) + ", top=" + ((Object) Dp.m8006toStringimpl(this.topDp)) + ", right=" + ((Object) Dp.m8006toStringimpl(this.rightDp)) + ", bottom=" + ((Object) Dp.m8006toStringimpl(this.bottomDp)) + ')';
     }
 
     public boolean equals(Object obj) {
@@ -55,12 +55,12 @@ final class FixedDpInsets implements WindowInsets {
         }
         if (obj instanceof FixedDpInsets) {
             FixedDpInsets fixedDpInsets = (FixedDpInsets) obj;
-            return Dp.m7269equalsimpl0(this.leftDp, fixedDpInsets.leftDp) && Dp.m7269equalsimpl0(this.topDp, fixedDpInsets.topDp) && Dp.m7269equalsimpl0(this.rightDp, fixedDpInsets.rightDp) && Dp.m7269equalsimpl0(this.bottomDp, fixedDpInsets.bottomDp);
+            return Dp.m8000equalsimpl0(this.leftDp, fixedDpInsets.leftDp) && Dp.m8000equalsimpl0(this.topDp, fixedDpInsets.topDp) && Dp.m8000equalsimpl0(this.rightDp, fixedDpInsets.rightDp) && Dp.m8000equalsimpl0(this.bottomDp, fixedDpInsets.bottomDp);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Dp.m7270hashCodeimpl(this.leftDp) * 31) + Dp.m7270hashCodeimpl(this.topDp)) * 31) + Dp.m7270hashCodeimpl(this.rightDp)) * 31) + Dp.m7270hashCodeimpl(this.bottomDp);
+        return (((((Dp.m8001hashCodeimpl(this.leftDp) * 31) + Dp.m8001hashCodeimpl(this.topDp)) * 31) + Dp.m8001hashCodeimpl(this.rightDp)) * 31) + Dp.m8001hashCodeimpl(this.bottomDp);
     }
 }

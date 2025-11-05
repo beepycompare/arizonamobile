@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.RowScopeInstance;
 import androidx.compose.foundation.layout.SizeKt;
 import androidx.compose.foundation.layout.SpacerKt;
 import androidx.compose.material3.MaterialTheme;
-import androidx.compose.material3.MenuKt;
 import androidx.compose.material3.TextKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
@@ -24,15 +23,8 @@ import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
-import androidx.compose.ui.text.TextLayoutResult;
-import androidx.compose.ui.text.font.FontFamily;
-import androidx.compose.ui.text.font.FontStyle;
-import androidx.compose.ui.text.font.FontWeight;
-import androidx.compose.ui.text.style.TextAlign;
-import androidx.compose.ui.text.style.TextDecoration;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
-import androidx.media3.extractor.WavUtil;
 import com.miami.game.core.design.system.component.button.DialogButtonKt;
 import com.miami.game.core.design.system.component.dialog_frame.DialogFrameKt;
 import com.miami.game.feature.download.dialog.R;
@@ -111,7 +103,7 @@ public final class ConnectionDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-137565439, i, -1, "com.miami.game.feature.download.dialog.ui.connection.ConnectionDialog.<anonymous> (ConnectionDialog.kt:26)");
             }
-            TextKt.m2814Text4IGK_g("ПОДКЛЮЧИТЬСЯ К СЕРВЕРУ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m3168TextNvy7gAk("ПОДКЛЮЧИТЬСЯ К СЕРВЕРУ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 6, 0, 131070);
             ComposerKt.sourceInformationMarkerStart(composer, 943603438, "CC(remember):ConnectionDialog.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -137,8 +129,8 @@ public final class ConnectionDialogKt {
             final MutableState mutableState3 = (MutableState) rememberedValue3;
             ComposerKt.sourceInformationMarkerEnd(composer);
             float f = 12;
-            SpacerKt.Spacer(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(f)), composer, 6);
-            Modifier m880height3ABfNKs = SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(60));
+            SpacerKt.Spacer(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(f)), composer, 6);
+            Modifier m880height3ABfNKs = SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(60));
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer, 0);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
@@ -156,28 +148,28 @@ public final class ConnectionDialogKt {
             } else {
                 composer.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
-            Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
+            Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -967227730, "C36@1651L75,39@1739L81,42@1833L90:ConnectionDialog.kt#yp5s1q");
-            InputFieldKt.m8967InputFieldrAjV9yQ(mutableState, Dp.m7264constructorimpl(140), R.drawable.input, composer, 54);
-            InputFieldKt.m8967InputFieldrAjV9yQ(mutableState2, Dp.m7264constructorimpl(50), R.drawable.input_port, composer, 54);
-            InputFieldKt.m8967InputFieldrAjV9yQ(mutableState3, Dp.m7264constructorimpl((float) MenuKt.InTransitionDuration), R.drawable.input_password, composer, 54);
+            InputFieldKt.m9707InputFieldrAjV9yQ(mutableState, Dp.m7995constructorimpl(140), R.drawable.input, composer, 54);
+            InputFieldKt.m9707InputFieldrAjV9yQ(mutableState2, Dp.m7995constructorimpl(50), R.drawable.input_port, composer, 54);
+            InputFieldKt.m9707InputFieldrAjV9yQ(mutableState3, Dp.m7995constructorimpl(120), R.drawable.input_password, composer, 54);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            SpacerKt.Spacer(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(f)), composer, 6);
+            SpacerKt.Spacer(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(f)), composer, 6);
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer, 0);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
@@ -195,15 +187,15 @@ public final class ConnectionDialogKt {
             } else {
                 composer.useNode();
             }
-            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer);
-            Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer);
+            Updater.m4604setimpl(m4597constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                m4597constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
             }
-            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 797046465, "C48@2024L41,48@1999L185,54@2223L265,54@2197L416:ConnectionDialog.kt#yp5s1q");
@@ -222,7 +214,7 @@ public final class ConnectionDialogKt {
                 composer.updateRememberedValue(rememberedValue4);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue4, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8962getLambda$751471044$dialogs_release(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue4, ComposableSingletons$ConnectionDialogKt.INSTANCE.m9702getLambda$751471044$dialogs_release(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, 1965380645, "CC(remember):ConnectionDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function1);
             Object rememberedValue5 = composer.rememberedValue();
@@ -238,7 +230,7 @@ public final class ConnectionDialogKt {
                 composer.updateRememberedValue(rememberedValue5);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue5, false, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8961getLambda$1711092251$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue5, false, ComposableSingletons$ConnectionDialogKt.INSTANCE.m9701getLambda$1711092251$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

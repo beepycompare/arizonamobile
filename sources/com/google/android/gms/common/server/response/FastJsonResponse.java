@@ -17,11 +17,11 @@ import java.util.HashMap;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class FastJsonResponse {
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface FieldConverter<I, O> {
         int zaa();
 
@@ -414,7 +414,7 @@ public abstract class FastJsonResponse {
     }
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Field<I, O> extends AbstractSafeParcelable {
         public static final zaj CREATOR = new zaj();
         protected final int zaa;

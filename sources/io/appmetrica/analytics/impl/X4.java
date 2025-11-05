@@ -1,28 +1,68 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class X4 {
+
+import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
+/* loaded from: classes3.dex */
+public class X4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0251fc f737a;
+    public final String f752a;
+    public final String b;
 
-    public X4() {
-        this(Na.j().k());
+    public X4(String str, String str2) {
+        this.f752a = str;
+        this.b = str2;
     }
 
-    public static C0167c5 a(V4 v4) {
-        return new C0167c5(new C0115a5(v4), v4);
+    public final String a() {
+        return ApiKeyUtils.createPartialApiKey(this.b);
     }
 
-    public X4(C0251fc c0251fc) {
-        this.f737a = c0251fc;
+    public final String b() {
+        return this.b;
     }
 
-    public final C0595sn a(V4 v4, Km km) {
-        C0595sn c0595sn = new C0595sn(v4, new C0230eh(km));
-        C0251fc c0251fc = this.f737a;
-        synchronized (c0251fc) {
-            c0251fc.c.add(c0595sn);
+    public final String c() {
+        return this.f752a;
+    }
+
+    public boolean d() {
+        return false;
+    }
+
+    public String e() {
+        return this.f752a + "_" + ApiKeyUtils.createPartialApiKey(this.b);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return c0595sn;
+        if (obj != null && getClass() == obj.getClass()) {
+            X4 x4 = (X4) obj;
+            String str = this.f752a;
+            if (str == null ? x4.f752a != null : !str.equals(x4.f752a)) {
+                return false;
+            }
+            String str2 = this.b;
+            String str3 = x4.b;
+            if (str2 != null) {
+                return str2.equals(str3);
+            }
+            if (str3 == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        String str = this.f752a;
+        int hashCode = (str != null ? str.hashCode() : 0) * 31;
+        String str2 = this.b;
+        return hashCode + (str2 != null ? str2.hashCode() : 0);
+    }
+
+    public String toString() {
+        return this.f752a + "_" + this.b;
     }
 }

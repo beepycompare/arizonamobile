@@ -145,7 +145,7 @@ public final class ClickableTextKt {
                             TextStyle textStyle3 = i6 != 0 ? TextStyle.Companion.getDefault() : obj;
                             boolean z3 = i7 != 0 ? true : z;
                             if (i8 != 0) {
-                                i9 = TextOverflow.Companion.m7199getClipgIe3tQ8();
+                                i9 = TextOverflow.Companion.m7930getClipgIe3tQ8();
                             }
                             if (i10 != 0) {
                                 i14 = Integer.MAX_VALUE;

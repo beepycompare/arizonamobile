@@ -6,7 +6,7 @@ import androidx.media3.extractor.FlacFrameReader;
 import androidx.media3.extractor.FlacStreamMetadata;
 import java.io.IOException;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class FlacBinarySearchSeeker extends BinarySearchSeeker {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FlacBinarySearchSeeker(final FlacStreamMetadata flacStreamMetadata, int i, long j, long j2) {
@@ -19,7 +19,7 @@ final class FlacBinarySearchSeeker extends BinarySearchSeeker {
         Objects.requireNonNull(flacStreamMetadata);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class FlacTimestampSeeker implements BinarySearchSeeker.TimestampSeeker {
         private final FlacStreamMetadata flacStreamMetadata;
         private final int frameStartMarker;

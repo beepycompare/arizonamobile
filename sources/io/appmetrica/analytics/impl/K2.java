@@ -1,61 +1,18 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public abstract class K2 implements Aa {
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-/* loaded from: classes4.dex */
-public final class K2 implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0190d2 fromModel(M2 m2) {
-        C0190d2 c0190d2 = new C0190d2();
-        L2 l2 = m2.f570a;
-        if (l2 != null) {
-            int ordinal = l2.ordinal();
-            if (ordinal == 1) {
-                c0190d2.f835a = 1;
-            } else if (ordinal == 2) {
-                c0190d2.f835a = 2;
-            } else if (ordinal == 3) {
-                c0190d2.f835a = 3;
-            } else if (ordinal == 4) {
-                c0190d2.f835a = 4;
-            } else if (ordinal == 5) {
-                c0190d2.f835a = 5;
-            }
-        }
-        Boolean bool = m2.b;
-        if (bool != null) {
-            if (bool.booleanValue()) {
-                c0190d2.b = 1;
-                return c0190d2;
-            }
-            c0190d2.b = 0;
-        }
-        return c0190d2;
+    /* renamed from: a  reason: collision with root package name */
+    public final int f554a;
+
+    public K2(int i) {
+        this.f554a = i;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final M2 toModel(C0190d2 c0190d2) {
-        L2 l2;
-        int i = c0190d2.f835a;
-        Boolean bool = null;
-        if (i == 1) {
-            l2 = L2.ACTIVE;
-        } else if (i == 2) {
-            l2 = L2.WORKING_SET;
-        } else if (i == 3) {
-            l2 = L2.FREQUENT;
-        } else if (i != 4) {
-            l2 = i != 5 ? null : L2.RESTRICTED;
-        } else {
-            l2 = L2.RARE;
-        }
-        int i2 = c0190d2.b;
-        if (i2 == 0) {
-            bool = Boolean.FALSE;
-        } else if (i2 == 1) {
-            bool = Boolean.TRUE;
-        }
-        return new M2(l2, bool);
+    public final int a() {
+        return this.f554a;
     }
+
+    @Override // io.appmetrica.analytics.impl.Aa
+    public abstract /* synthetic */ On a(Object obj);
 }

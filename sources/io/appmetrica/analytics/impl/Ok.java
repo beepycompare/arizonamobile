@@ -1,13 +1,19 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
+
+import android.content.Context;
+import java.util.Map;
+import kotlin.collections.MapsKt;
+/* loaded from: classes3.dex */
 public final class Ok {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f613a;
-    public final long b;
+    public final Sk f624a;
+    public final Map b;
 
-    public Ok(long j, long j2) {
-        this.f613a = j;
-        this.b = j2;
+    public Ok(Context context, X4 x4) {
+        x4.a();
+        Sk sk = new Sk(context, x4);
+        this.f624a = sk;
+        this.b = MapsKt.toMutableMap(sk.a());
     }
 }

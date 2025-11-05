@@ -8,10 +8,10 @@ import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.text.SubtitleParser;
 import java.io.IOException;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface ChunkExtractor {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Factory {
         ChunkExtractor createProgressiveMediaExtractor(int i, Format format, boolean z, List<Format> list, TrackOutput trackOutput, PlayerId playerId);
 
@@ -32,7 +32,7 @@ public interface ChunkExtractor {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface TrackOutputProvider {
         TrackOutput track(int i, int i2);
     }

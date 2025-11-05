@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public enum ChargeType {
     UNKNOWN(-1),
     NONE(0),
@@ -9,10 +9,10 @@ public enum ChargeType {
     
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f266a;
+    private final int f281a;
 
     ChargeType(int i) {
-        this.f266a = i;
+        this.f281a = i;
     }
 
     public static ChargeType fromId(Integer num) {
@@ -28,6 +28,6 @@ public enum ChargeType {
     }
 
     public int getId() {
-        return this.f266a;
+        return this.f281a;
     }
 }

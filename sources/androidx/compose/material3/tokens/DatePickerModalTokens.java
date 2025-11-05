@@ -3,7 +3,7 @@ package androidx.compose.material3.tokens;
 import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
 /* compiled from: DatePickerModalTokens.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\bK\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\u0007\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\nR\u0019\u0010\f\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\r\u0010\nR\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0019\u0010\u0012\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u0013\u0010\nR\u0019\u0010\u0014\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u0015\u0010\nR\u0011\u0010\u0016\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0011R\u0019\u0010\u0018\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u0019\u0010\nR\u0011\u0010\u001a\u001a\u00020\u001b¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u0011\u0010\u001e\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0006R\u0011\u0010 \u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0006R\u0019\u0010\"\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b#\u0010\nR\u0011\u0010$\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0011R\u0019\u0010&\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b'\u0010\nR\u0011\u0010(\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u0006R\u0019\u0010*\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b+\u0010\nR\u0011\u0010,\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b-\u0010\u0006R\u0011\u0010.\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u0006R\u0019\u00100\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b1\u0010\nR\u0019\u00102\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b3\u0010\nR\u0011\u00104\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b5\u0010\u0006R\u0011\u00106\u001a\u00020\u001b¢\u0006\b\n\u0000\u001a\u0004\b7\u0010\u001dR\u0011\u00108\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b9\u0010\u0006R\u0011\u0010:\u001a\u00020\u001b¢\u0006\b\n\u0000\u001a\u0004\b;\u0010\u001dR\u0011\u0010<\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b=\u0010\u0006R\u0019\u0010>\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b?\u0010\nR\u0011\u0010@\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\bA\u0010\u0011R\u0019\u0010B\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bC\u0010\nR\u0011\u0010D\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\bE\u0010\u0011R\u0019\u0010F\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bG\u0010\nR\u0011\u0010H\u001a\u00020\u001b¢\u0006\b\n\u0000\u001a\u0004\bI\u0010\u001dR\u0011\u0010J\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\bK\u0010\u0006R\u0011\u0010L\u001a\u00020\u001b¢\u0006\b\n\u0000\u001a\u0004\bM\u0010\u001dR\u0011\u0010N\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\bO\u0010\u0006R\u0019\u0010P\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bQ\u0010\nR\u0019\u0010R\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bS\u0010\nR\u0011\u0010T\u001a\u00020\u001b¢\u0006\b\n\u0000\u001a\u0004\bU\u0010\u001dR\u0011\u0010V\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\bW\u0010\u0006R\u0011\u0010X\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\bY\u0010\u0006R\u0019\u0010Z\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b[\u0010\nR\u0011\u0010\\\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b]\u0010\u0011R\u0019\u0010^\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b_\u0010\nR\u0011\u0010`\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\ba\u0010\u0006R\u0011\u0010b\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\bc\u0010\u0006R\u0011\u0010d\u001a\u00020\u001b¢\u0006\b\n\u0000\u001a\u0004\be\u0010\u001d\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006f"}, d2 = {"Landroidx/compose/material3/tokens/DatePickerModalTokens;", "", "()V", "ContainerColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getContainerColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ContainerElevation", "Landroidx/compose/ui/unit/Dp;", "getContainerElevation-D9Ej5fM", "()F", "F", "ContainerHeight", "getContainerHeight-D9Ej5fM", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "ContainerWidth", "getContainerWidth-D9Ej5fM", "DateContainerHeight", "getDateContainerHeight-D9Ej5fM", "DateContainerShape", "getDateContainerShape", "DateContainerWidth", "getDateContainerWidth-D9Ej5fM", "DateLabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getDateLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "DateSelectedContainerColor", "getDateSelectedContainerColor", "DateSelectedLabelTextColor", "getDateSelectedLabelTextColor", "DateStateLayerHeight", "getDateStateLayerHeight-D9Ej5fM", "DateStateLayerShape", "getDateStateLayerShape", "DateStateLayerWidth", "getDateStateLayerWidth-D9Ej5fM", "DateTodayContainerOutlineColor", "getDateTodayContainerOutlineColor", "DateTodayContainerOutlineWidth", "getDateTodayContainerOutlineWidth-D9Ej5fM", "DateTodayLabelTextColor", "getDateTodayLabelTextColor", "DateUnselectedLabelTextColor", "getDateUnselectedLabelTextColor", "HeaderContainerHeight", "getHeaderContainerHeight-D9Ej5fM", "HeaderContainerWidth", "getHeaderContainerWidth-D9Ej5fM", "HeaderHeadlineColor", "getHeaderHeadlineColor", "HeaderHeadlineFont", "getHeaderHeadlineFont", "HeaderSupportingTextColor", "getHeaderSupportingTextColor", "HeaderSupportingTextFont", "getHeaderSupportingTextFont", "RangeSelectionActiveIndicatorContainerColor", "getRangeSelectionActiveIndicatorContainerColor", "RangeSelectionActiveIndicatorContainerHeight", "getRangeSelectionActiveIndicatorContainerHeight-D9Ej5fM", "RangeSelectionActiveIndicatorContainerShape", "getRangeSelectionActiveIndicatorContainerShape", "RangeSelectionContainerElevation", "getRangeSelectionContainerElevation-D9Ej5fM", "RangeSelectionContainerShape", "getRangeSelectionContainerShape", "RangeSelectionHeaderContainerHeight", "getRangeSelectionHeaderContainerHeight-D9Ej5fM", "RangeSelectionHeaderHeadlineFont", "getRangeSelectionHeaderHeadlineFont", "RangeSelectionMonthSubheadColor", "getRangeSelectionMonthSubheadColor", "RangeSelectionMonthSubheadFont", "getRangeSelectionMonthSubheadFont", "SelectionDateInRangeLabelTextColor", "getSelectionDateInRangeLabelTextColor", "SelectionYearContainerHeight", "getSelectionYearContainerHeight-D9Ej5fM", "SelectionYearContainerWidth", "getSelectionYearContainerWidth-D9Ej5fM", "SelectionYearLabelTextFont", "getSelectionYearLabelTextFont", "SelectionYearSelectedContainerColor", "getSelectionYearSelectedContainerColor", "SelectionYearSelectedLabelTextColor", "getSelectionYearSelectedLabelTextColor", "SelectionYearStateLayerHeight", "getSelectionYearStateLayerHeight-D9Ej5fM", "SelectionYearStateLayerShape", "getSelectionYearStateLayerShape", "SelectionYearStateLayerWidth", "getSelectionYearStateLayerWidth-D9Ej5fM", "SelectionYearUnselectedLabelTextColor", "getSelectionYearUnselectedLabelTextColor", "WeekdaysLabelTextColor", "getWeekdaysLabelTextColor", "WeekdaysLabelTextFont", "getWeekdaysLabelTextFont", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\bK\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\b\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\r\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u000e\u0010\u000bR\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0013\u0010\u0013\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u0014\u0010\u000bR\u0013\u0010\u0015\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u0016\u0010\u000bR\u0011\u0010\u0017\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0012R\u0013\u0010\u0019\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u001a\u0010\u000bR\u0011\u0010\u001b\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u0011\u0010\u001f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u0007R\u0011\u0010!\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u0007R\u0013\u0010#\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b$\u0010\u000bR\u0011\u0010%\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\u0012R\u0013\u0010'\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b(\u0010\u000bR\u0011\u0010)\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b*\u0010\u0007R\u0013\u0010+\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b,\u0010\u000bR\u0011\u0010-\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u0007R\u0011\u0010/\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b0\u0010\u0007R\u0013\u00101\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b2\u0010\u000bR\u0013\u00103\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b4\u0010\u000bR\u0011\u00105\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u0007R\u0011\u00107\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\u001eR\u0011\u00109\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b:\u0010\u0007R\u0011\u0010;\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\b<\u0010\u001eR\u0011\u0010=\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b>\u0010\u0007R\u0013\u0010?\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b@\u0010\u000bR\u0011\u0010A\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\bB\u0010\u0012R\u0013\u0010C\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\bD\u0010\u000bR\u0011\u0010E\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\bF\u0010\u0012R\u0011\u0010G\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\bH\u0010\u0007R\u0013\u0010I\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\bJ\u0010\u000bR\u0011\u0010K\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\bL\u0010\u001eR\u0011\u0010M\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\bN\u0010\u0007R\u0011\u0010O\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\bP\u0010\u001eR\u0011\u0010Q\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\bR\u0010\u0007R\u0011\u0010S\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\bT\u0010\u001eR\u0013\u0010U\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\bV\u0010\u000bR\u0013\u0010W\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\bX\u0010\u000bR\u0011\u0010Y\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010\u001eR\u0011\u0010[\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\\\u0010\u0007R\u0011\u0010]\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b^\u0010\u0007R\u0013\u0010_\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b`\u0010\u000bR\u0011\u0010a\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\bb\u0010\u0012R\u0013\u0010c\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\bd\u0010\u000bR\u0011\u0010e\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\bf\u0010\u0007¨\u0006g"}, d2 = {"Landroidx/compose/material3/tokens/DatePickerModalTokens;", "", "<init>", "()V", "ContainerColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getContainerColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ContainerElevation", "Landroidx/compose/ui/unit/Dp;", "getContainerElevation-D9Ej5fM", "()F", "F", "ContainerHeight", "getContainerHeight-D9Ej5fM", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "ContainerWidth", "getContainerWidth-D9Ej5fM", "DateContainerHeight", "getDateContainerHeight-D9Ej5fM", "DateContainerShape", "getDateContainerShape", "DateContainerWidth", "getDateContainerWidth-D9Ej5fM", "DateLabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getDateLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "DateSelectedContainerColor", "getDateSelectedContainerColor", "DateSelectedLabelTextColor", "getDateSelectedLabelTextColor", "DateStateLayerHeight", "getDateStateLayerHeight-D9Ej5fM", "DateStateLayerShape", "getDateStateLayerShape", "DateStateLayerWidth", "getDateStateLayerWidth-D9Ej5fM", "DateTodayContainerOutlineColor", "getDateTodayContainerOutlineColor", "DateTodayContainerOutlineWidth", "getDateTodayContainerOutlineWidth-D9Ej5fM", "DateTodayLabelTextColor", "getDateTodayLabelTextColor", "DateUnselectedLabelTextColor", "getDateUnselectedLabelTextColor", "HeaderContainerHeight", "getHeaderContainerHeight-D9Ej5fM", "HeaderContainerWidth", "getHeaderContainerWidth-D9Ej5fM", "HeaderHeadlineColor", "getHeaderHeadlineColor", "HeaderHeadlineFont", "getHeaderHeadlineFont", "HeaderSupportingTextColor", "getHeaderSupportingTextColor", "HeaderSupportingTextFont", "getHeaderSupportingTextFont", "RangeSelectionActiveIndicatorContainerColor", "getRangeSelectionActiveIndicatorContainerColor", "RangeSelectionActiveIndicatorContainerHeight", "getRangeSelectionActiveIndicatorContainerHeight-D9Ej5fM", "RangeSelectionActiveIndicatorContainerShape", "getRangeSelectionActiveIndicatorContainerShape", "RangeSelectionContainerElevation", "getRangeSelectionContainerElevation-D9Ej5fM", "RangeSelectionContainerShape", "getRangeSelectionContainerShape", "SelectionDateInRangeLabelTextColor", "getSelectionDateInRangeLabelTextColor", "RangeSelectionHeaderContainerHeight", "getRangeSelectionHeaderContainerHeight-D9Ej5fM", "RangeSelectionHeaderHeadlineFont", "getRangeSelectionHeaderHeadlineFont", "RangeSelectionMonthSubheadColor", "getRangeSelectionMonthSubheadColor", "RangeSelectionMonthSubheadFont", "getRangeSelectionMonthSubheadFont", "WeekdaysLabelTextColor", "getWeekdaysLabelTextColor", "WeekdaysLabelTextFont", "getWeekdaysLabelTextFont", "SelectionYearContainerHeight", "getSelectionYearContainerHeight-D9Ej5fM", "SelectionYearContainerWidth", "getSelectionYearContainerWidth-D9Ej5fM", "SelectionYearLabelTextFont", "getSelectionYearLabelTextFont", "SelectionYearSelectedContainerColor", "getSelectionYearSelectedContainerColor", "SelectionYearSelectedLabelTextColor", "getSelectionYearSelectedLabelTextColor", "SelectionYearStateLayerHeight", "getSelectionYearStateLayerHeight-D9Ej5fM", "SelectionYearStateLayerShape", "getSelectionYearStateLayerShape", "SelectionYearStateLayerWidth", "getSelectionYearStateLayerWidth-D9Ej5fM", "SelectionYearUnselectedLabelTextColor", "getSelectionYearUnselectedLabelTextColor", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DatePickerModalTokens {
     public static final int $stable = 0;
@@ -20,8 +20,8 @@ public final class DatePickerModalTokens {
     private static final float SelectionYearStateLayerWidth;
     public static final DatePickerModalTokens INSTANCE = new DatePickerModalTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3297getLevel3D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7264constructorimpl((float) 568.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3891getLevel3D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7995constructorimpl((float) 568.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
     private static final ShapeKeyTokens DateContainerShape = ShapeKeyTokens.CornerFull;
     private static final TypographyKeyTokens DateLabelTextFont = TypographyKeyTokens.BodyLarge;
@@ -29,20 +29,20 @@ public final class DatePickerModalTokens {
     private static final ColorSchemeKeyTokens DateSelectedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ShapeKeyTokens DateStateLayerShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens DateTodayContainerOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float DateTodayContainerOutlineWidth = Dp.m7264constructorimpl((float) 1.0d);
+    private static final float DateTodayContainerOutlineWidth = Dp.m7995constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens DateTodayLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens DateUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float HeaderContainerHeight = Dp.m7264constructorimpl((float) 120.0d);
+    private static final float HeaderContainerHeight = Dp.m7995constructorimpl((float) 120.0d);
     private static final ColorSchemeKeyTokens HeaderHeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderHeadlineFont = TypographyKeyTokens.HeadlineLarge;
     private static final ColorSchemeKeyTokens HeaderSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderSupportingTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens RangeSelectionActiveIndicatorContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ShapeKeyTokens RangeSelectionActiveIndicatorContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float RangeSelectionContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+    private static final float RangeSelectionContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
     private static final ShapeKeyTokens RangeSelectionContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens SelectionDateInRangeLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float RangeSelectionHeaderContainerHeight = Dp.m7264constructorimpl((float) 128.0d);
+    private static final float RangeSelectionHeaderContainerHeight = Dp.m7995constructorimpl((float) 128.0d);
     private static final TypographyKeyTokens RangeSelectionHeaderHeadlineFont = TypographyKeyTokens.TitleLarge;
     private static final ColorSchemeKeyTokens RangeSelectionMonthSubheadColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens RangeSelectionMonthSubheadFont = TypographyKeyTokens.TitleSmall;
@@ -59,20 +59,20 @@ public final class DatePickerModalTokens {
 
     static {
         float f = (float) 360.0d;
-        ContainerWidth = Dp.m7264constructorimpl(f);
+        ContainerWidth = Dp.m7995constructorimpl(f);
         float f2 = (float) 40.0d;
-        DateContainerHeight = Dp.m7264constructorimpl(f2);
-        DateContainerWidth = Dp.m7264constructorimpl(f2);
-        DateStateLayerHeight = Dp.m7264constructorimpl(f2);
-        DateStateLayerWidth = Dp.m7264constructorimpl(f2);
-        HeaderContainerWidth = Dp.m7264constructorimpl(f);
-        RangeSelectionActiveIndicatorContainerHeight = Dp.m7264constructorimpl(f2);
+        DateContainerHeight = Dp.m7995constructorimpl(f2);
+        DateContainerWidth = Dp.m7995constructorimpl(f2);
+        DateStateLayerHeight = Dp.m7995constructorimpl(f2);
+        DateStateLayerWidth = Dp.m7995constructorimpl(f2);
+        HeaderContainerWidth = Dp.m7995constructorimpl(f);
+        RangeSelectionActiveIndicatorContainerHeight = Dp.m7995constructorimpl(f2);
         float f3 = (float) 36.0d;
-        SelectionYearContainerHeight = Dp.m7264constructorimpl(f3);
+        SelectionYearContainerHeight = Dp.m7995constructorimpl(f3);
         float f4 = (float) 72.0d;
-        SelectionYearContainerWidth = Dp.m7264constructorimpl(f4);
-        SelectionYearStateLayerHeight = Dp.m7264constructorimpl(f3);
-        SelectionYearStateLayerWidth = Dp.m7264constructorimpl(f4);
+        SelectionYearContainerWidth = Dp.m7995constructorimpl(f4);
+        SelectionYearStateLayerHeight = Dp.m7995constructorimpl(f3);
+        SelectionYearStateLayerWidth = Dp.m7995constructorimpl(f4);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -80,12 +80,12 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3260getContainerElevationD9Ej5fM() {
+    public final float m3841getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3261getContainerHeightD9Ej5fM() {
+    public final float m3842getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -94,12 +94,12 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3262getContainerWidthD9Ej5fM() {
+    public final float m3843getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getDateContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3263getDateContainerHeightD9Ej5fM() {
+    public final float m3844getDateContainerHeightD9Ej5fM() {
         return DateContainerHeight;
     }
 
@@ -108,7 +108,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getDateContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3264getDateContainerWidthD9Ej5fM() {
+    public final float m3845getDateContainerWidthD9Ej5fM() {
         return DateContainerWidth;
     }
 
@@ -125,7 +125,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getDateStateLayerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3265getDateStateLayerHeightD9Ej5fM() {
+    public final float m3846getDateStateLayerHeightD9Ej5fM() {
         return DateStateLayerHeight;
     }
 
@@ -134,7 +134,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getDateStateLayerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3266getDateStateLayerWidthD9Ej5fM() {
+    public final float m3847getDateStateLayerWidthD9Ej5fM() {
         return DateStateLayerWidth;
     }
 
@@ -143,7 +143,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getDateTodayContainerOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3267getDateTodayContainerOutlineWidthD9Ej5fM() {
+    public final float m3848getDateTodayContainerOutlineWidthD9Ej5fM() {
         return DateTodayContainerOutlineWidth;
     }
 
@@ -156,12 +156,12 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getHeaderContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3268getHeaderContainerHeightD9Ej5fM() {
+    public final float m3849getHeaderContainerHeightD9Ej5fM() {
         return HeaderContainerHeight;
     }
 
     /* renamed from: getHeaderContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3269getHeaderContainerWidthD9Ej5fM() {
+    public final float m3850getHeaderContainerWidthD9Ej5fM() {
         return HeaderContainerWidth;
     }
 
@@ -186,7 +186,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getRangeSelectionActiveIndicatorContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3270getRangeSelectionActiveIndicatorContainerHeightD9Ej5fM() {
+    public final float m3851getRangeSelectionActiveIndicatorContainerHeightD9Ej5fM() {
         return RangeSelectionActiveIndicatorContainerHeight;
     }
 
@@ -195,7 +195,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getRangeSelectionContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3271getRangeSelectionContainerElevationD9Ej5fM() {
+    public final float m3852getRangeSelectionContainerElevationD9Ej5fM() {
         return RangeSelectionContainerElevation;
     }
 
@@ -208,7 +208,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getRangeSelectionHeaderContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3272getRangeSelectionHeaderContainerHeightD9Ej5fM() {
+    public final float m3853getRangeSelectionHeaderContainerHeightD9Ej5fM() {
         return RangeSelectionHeaderContainerHeight;
     }
 
@@ -233,12 +233,12 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getSelectionYearContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3273getSelectionYearContainerHeightD9Ej5fM() {
+    public final float m3854getSelectionYearContainerHeightD9Ej5fM() {
         return SelectionYearContainerHeight;
     }
 
     /* renamed from: getSelectionYearContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3274getSelectionYearContainerWidthD9Ej5fM() {
+    public final float m3855getSelectionYearContainerWidthD9Ej5fM() {
         return SelectionYearContainerWidth;
     }
 
@@ -255,7 +255,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getSelectionYearStateLayerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3275getSelectionYearStateLayerHeightD9Ej5fM() {
+    public final float m3856getSelectionYearStateLayerHeightD9Ej5fM() {
         return SelectionYearStateLayerHeight;
     }
 
@@ -264,7 +264,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getSelectionYearStateLayerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3276getSelectionYearStateLayerWidthD9Ej5fM() {
+    public final float m3857getSelectionYearStateLayerWidthD9Ej5fM() {
         return SelectionYearStateLayerWidth;
     }
 

@@ -1,67 +1,60 @@
 package com.google.android.gms.internal.common;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
-import java.util.List;
-import javax.annotation.CheckForNull;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzaj extends zzak {
-    final transient int zza;
-    final transient int zzb;
-    final /* synthetic */ zzak zzc;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzaj extends zzah {
+    static final zzah zza = new zzaj(new Object[0], 0);
+    final transient Object[] zzb;
+    private final transient int zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzaj(zzak zzakVar, int i, int i2) {
-        this.zzc = zzakVar;
-        this.zza = i;
-        this.zzb = i2;
+    public zzaj(Object[] objArr, int i) {
+        this.zzb = objArr;
+        this.zzc = i;
     }
 
     @Override // java.util.List
     public final Object get(int i) {
-        zzv.zza(i, this.zzb, FirebaseAnalytics.Param.INDEX);
-        return this.zzc.get(i + this.zza);
+        zzr.zzb(i, this.zzc, FirebaseAnalytics.Param.INDEX);
+        return Objects.requireNonNull(this.zzb[i]);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
+        return this.zzc;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.common.zzac
+    public final Object[] zzb() {
         return this.zzb;
     }
 
-    @Override // com.google.android.gms.internal.common.zzak, java.util.List
-    public final /* bridge */ /* synthetic */ List subList(int i, int i2) {
-        return subList(i, i2);
-    }
-
-    @Override // com.google.android.gms.internal.common.zzag
-    final int zzb() {
-        return this.zzc.zzc() + this.zza + this.zzb;
-    }
-
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.common.zzag
+    @Override // com.google.android.gms.internal.common.zzac
     public final int zzc() {
-        return this.zzc.zzc() + this.zza;
+        return 0;
+    }
+
+    @Override // com.google.android.gms.internal.common.zzac
+    final int zzd() {
+        return this.zzc;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.common.zzag
+    @Override // com.google.android.gms.internal.common.zzac
     public final boolean zzf() {
-        return true;
+        return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.common.zzag
-    @CheckForNull
-    public final Object[] zzg() {
-        return this.zzc.zzg();
-    }
-
-    @Override // com.google.android.gms.internal.common.zzak
-    public final zzak zzh(int i, int i2) {
-        zzv.zzc(i, i2, this.zzb);
-        int i3 = this.zza;
-        return this.zzc.subList(i + i3, i2 + i3);
+    @Override // com.google.android.gms.internal.common.zzah, com.google.android.gms.internal.common.zzac
+    final int zzg(Object[] objArr, int i) {
+        Object[] objArr2 = this.zzb;
+        int i2 = this.zzc;
+        System.arraycopy(objArr2, 0, objArr, 0, i2);
+        return i2;
     }
 }

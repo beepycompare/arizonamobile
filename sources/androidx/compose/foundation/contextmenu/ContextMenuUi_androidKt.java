@@ -64,7 +64,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ContextMenuUi_androidKt {
     private static final float DisabledAlpha = 0.38f;
     private static final PopupProperties DefaultPopupProperties = new PopupProperties(true, false, false, false, 14, (DefaultConstructorMarker) null);
-    private static final ContextMenuColors DefaultContextMenuColors = new ContextMenuColors(Color.Companion.m4586getWhite0d7_KjU(), Color.Companion.m4575getBlack0d7_KjU(), Color.Companion.m4575getBlack0d7_KjU(), Color.m4548copywmQWz5c$default(Color.Companion.m4575getBlack0d7_KjU(), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4548copywmQWz5c$default(Color.Companion.m4575getBlack0d7_KjU(), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+    private static final ContextMenuColors DefaultContextMenuColors = new ContextMenuColors(Color.Companion.m5316getWhite0d7_KjU(), Color.Companion.m5305getBlack0d7_KjU(), Color.Companion.m5305getBlack0d7_KjU(), Color.m5278copywmQWz5c$default(Color.Companion.m5305getBlack0d7_KjU(), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m5278copywmQWz5c$default(Color.Companion.m5305getBlack0d7_KjU(), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ContextMenuColumn$lambda$3(ContextMenuColors contextMenuColors, Modifier modifier, Function3 function3, int i, int i2, Composer composer, int i3) {
@@ -416,7 +416,7 @@ public final class ContextMenuUi_androidKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(621449936, i3, -1, "androidx.compose.foundation.contextmenu.ContextMenuColumn (ContextMenuUi.android.kt:158)");
                 }
-                Modifier verticalScroll$default = ScrollKt.verticalScroll$default(PaddingKt.m844paddingVpY3zN4$default(IntrinsicKt.width(BackgroundKt.m267backgroundbw27NRU$default(ShadowKt.m4152shadows4CzXII$default(companion, ContextMenuSpec.INSTANCE.m406getMenuContainerElevationD9Ej5fM(), RoundedCornerShapeKt.m1207RoundedCornerShape0680j_4(ContextMenuSpec.INSTANCE.m396getCornerRadiusD9Ej5fM()), false, 0L, 0L, 28, null), contextMenuColors2.m387getBackgroundColor0d7_KjU(), null, 2, null), IntrinsicSize.Max), 0.0f, ContextMenuSpec.INSTANCE.m407getVerticalPaddingD9Ej5fM(), 1, null), ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), false, null, false, 14, null);
+                Modifier verticalScroll$default = ScrollKt.verticalScroll$default(PaddingKt.m844paddingVpY3zN4$default(IntrinsicKt.width(BackgroundKt.m267backgroundbw27NRU$default(ShadowKt.m4882shadows4CzXII$default(companion, ContextMenuSpec.INSTANCE.m406getMenuContainerElevationD9Ej5fM(), RoundedCornerShapeKt.m1207RoundedCornerShape0680j_4(ContextMenuSpec.INSTANCE.m396getCornerRadiusD9Ej5fM()), false, 0L, 0L, 28, null), contextMenuColors2.m387getBackgroundColor0d7_KjU(), null, 2, null), IntrinsicSize.Max), 0.0f, ContextMenuSpec.INSTANCE.m407getVerticalPaddingD9Ej5fM(), 1, null), ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), false, null, false, 14, null);
                 int i5 = (i3 << 3) & 7168;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
                 MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), startRestartGroup, 0);
@@ -435,15 +435,15 @@ public final class ContextMenuUi_androidKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                    m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                 }
-                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
                 function3.invoke(ColumnScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i5 >> 6) & 112) | 6));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -599,15 +599,15 @@ public final class ContextMenuUi_androidKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                    Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                    Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                        m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                        m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                     }
-                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                     RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1483502740, "C228@8275L299:ContextMenuUi.android.kt#3xeu6s");
@@ -635,19 +635,19 @@ public final class ContextMenuUi_androidKt {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        Composer m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
-                        Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m4597constructorimpl2 = Updater.m4597constructorimpl(startRestartGroup);
+                        Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                            m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+                        if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                            m4597constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                            m4597constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
                         }
-                        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1062316871, "C225@8177L65:ContextMenuUi.android.kt#3xeu6s");
-                        obj2.invoke(Color.m4539boximpl(z ? contextMenuColors2.m390getIconColor0d7_KjU() : contextMenuColors2.m388getDisabledIconColor0d7_KjU()), startRestartGroup, 0);
+                        obj2.invoke(Color.m5269boximpl(z ? contextMenuColors2.m390getIconColor0d7_KjU() : contextMenuColors2.m388getDisabledIconColor0d7_KjU()), startRestartGroup, 0);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         startRestartGroup.endNode();
@@ -763,10 +763,10 @@ public final class ContextMenuUi_androidKt {
     /* renamed from: resolveColor-g2O1Hgs  reason: not valid java name */
     private static final long m416resolveColorg2O1Hgs(Context context, int i, int i2, long j) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i, new int[]{i2});
-        int m4603toArgb8_81llA = ColorKt.m4603toArgb8_81llA(j);
-        int color = obtainStyledAttributes.getColor(0, m4603toArgb8_81llA);
+        int m5333toArgb8_81llA = ColorKt.m5333toArgb8_81llA(j);
+        int color = obtainStyledAttributes.getColor(0, m5333toArgb8_81llA);
         obtainStyledAttributes.recycle();
-        return color == m4603toArgb8_81llA ? j : ColorKt.Color(color);
+        return color == m5333toArgb8_81llA ? j : ColorKt.Color(color);
     }
 
     private static final ColorStateList resolveColorStateList(Context context, int i, int i2) {
@@ -778,15 +778,15 @@ public final class ContextMenuUi_androidKt {
 
     /* renamed from: enabledColor-4WTKRHQ  reason: not valid java name */
     private static final long m415enabledColor4WTKRHQ(ColorStateList colorStateList, long j) {
-        int m4603toArgb8_81llA = ColorKt.m4603toArgb8_81llA(j);
-        Integer valueOf = colorStateList != null ? Integer.valueOf(colorStateList.getColorForState(new int[]{16842910}, m4603toArgb8_81llA)) : null;
-        return (valueOf == null || valueOf.intValue() == m4603toArgb8_81llA) ? j : ColorKt.Color(valueOf.intValue());
+        int m5333toArgb8_81llA = ColorKt.m5333toArgb8_81llA(j);
+        Integer valueOf = colorStateList != null ? Integer.valueOf(colorStateList.getColorForState(new int[]{16842910}, m5333toArgb8_81llA)) : null;
+        return (valueOf == null || valueOf.intValue() == m5333toArgb8_81llA) ? j : ColorKt.Color(valueOf.intValue());
     }
 
     /* renamed from: disabledColor-4WTKRHQ  reason: not valid java name */
     private static final long m414disabledColor4WTKRHQ(ColorStateList colorStateList, long j) {
-        int m4603toArgb8_81llA = ColorKt.m4603toArgb8_81llA(j);
-        Integer valueOf = colorStateList != null ? Integer.valueOf(colorStateList.getColorForState(new int[]{-16842910}, m4603toArgb8_81llA)) : null;
-        return (valueOf == null || valueOf.intValue() == m4603toArgb8_81llA) ? j : ColorKt.Color(valueOf.intValue());
+        int m5333toArgb8_81llA = ColorKt.m5333toArgb8_81llA(j);
+        Integer valueOf = colorStateList != null ? Integer.valueOf(colorStateList.getColorForState(new int[]{-16842910}, m5333toArgb8_81llA)) : null;
+        return (valueOf == null || valueOf.intValue() == m5333toArgb8_81llA) ? j : ColorKt.Color(valueOf.intValue());
     }
 }

@@ -21,26 +21,26 @@ public final class MyersDiffKt {
         IntStack intStack2 = new IntStack(i3 * 4);
         intStack2.pushRange(0, i, 0, i2);
         int i4 = (i3 * 2) + 1;
-        int[] m6098constructorimpl = CenteredArray.m6098constructorimpl(new int[i4]);
-        int[] m6098constructorimpl2 = CenteredArray.m6098constructorimpl(new int[i4]);
-        int[] m6325constructorimpl = Snake.m6325constructorimpl(new int[5]);
+        int[] m6828constructorimpl = CenteredArray.m6828constructorimpl(new int[i4]);
+        int[] m6828constructorimpl2 = CenteredArray.m6828constructorimpl(new int[i4]);
+        int[] m7055constructorimpl = Snake.m7055constructorimpl(new int[5]);
         while (intStack2.isNotEmpty()) {
             int pop = intStack2.pop();
             int pop2 = intStack2.pop();
             int pop3 = intStack2.pop();
             int pop4 = intStack2.pop();
-            int[] iArr = m6325constructorimpl;
-            if (m6217midPointq5eDKzI(pop4, pop3, pop2, pop, diffCallback, m6098constructorimpl, m6098constructorimpl2, m6325constructorimpl)) {
+            int[] iArr = m7055constructorimpl;
+            if (m6947midPointq5eDKzI(pop4, pop3, pop2, pop, diffCallback, m6828constructorimpl, m6828constructorimpl2, m7055constructorimpl)) {
                 char c2 = c;
                 if (Math.min(iArr[2] - iArr[0], iArr[3] - iArr[c]) > 0) {
-                    Snake.m6323addDiagonalToStackimpl(iArr, intStack);
+                    Snake.m7053addDiagonalToStackimpl(iArr, intStack);
                 }
                 intStack2.pushRange(pop4, iArr[0], pop2, iArr[c2]);
                 intStack2.pushRange(iArr[2], pop3, iArr[3], pop);
-                m6325constructorimpl = iArr;
+                m7055constructorimpl = iArr;
                 c = c2;
             } else {
-                m6325constructorimpl = iArr;
+                m7055constructorimpl = iArr;
             }
         }
         intStack.sortDiagonals();
@@ -83,18 +83,18 @@ public final class MyersDiffKt {
     }
 
     /* renamed from: midPoint-q5eDKzI  reason: not valid java name */
-    private static final boolean m6217midPointq5eDKzI(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int[] iArr3) {
+    private static final boolean m6947midPointq5eDKzI(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int[] iArr3) {
         int i5 = i2 - i;
         int i6 = i4 - i3;
         if (i5 >= 1 && i6 >= 1) {
             int i7 = ((i5 + i6) + 1) / 2;
             int[] iArr4 = iArr;
-            CenteredArray.m6104setimpl(iArr4, 1, i);
+            CenteredArray.m6834setimpl(iArr4, 1, i);
             int[] iArr5 = iArr2;
-            CenteredArray.m6104setimpl(iArr5, 1, i2);
+            CenteredArray.m6834setimpl(iArr5, 1, i2);
             int i8 = 0;
             while (i8 < i7) {
-                if (m6216forward4l5_RBY(i, i2, i3, i4, diffCallback, iArr4, iArr5, i8, iArr3) || m6215backward4l5_RBY(i, i2, i3, i4, diffCallback, iArr, iArr2, i8, iArr3)) {
+                if (m6946forward4l5_RBY(i, i2, i3, i4, diffCallback, iArr4, iArr5, i8, iArr3) || m6945backward4l5_RBY(i, i2, i3, i4, diffCallback, iArr, iArr2, i8, iArr3)) {
                     return true;
                 }
                 i8++;
@@ -112,8 +112,8 @@ public final class MyersDiffKt {
     /* JADX WARN: Type inference failed for: r16v4 */
     /* JADX WARN: Type inference failed for: r16v5 */
     /* renamed from: forward-4l5_RBY  reason: not valid java name */
-    private static final boolean m6216forward4l5_RBY(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int i5, int[] iArr3) {
-        int m6101getimpl;
+    private static final boolean m6946forward4l5_RBY(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int i5, int[] iArr3) {
+        int m6831getimpl;
         int i6;
         int i7;
         int i8 = (i2 - i) - (i4 - i3);
@@ -122,15 +122,15 @@ public final class MyersDiffKt {
         int i10 = -i5;
         int i11 = i10;
         while (i11 <= i5) {
-            if (i11 == i10 || (i11 != i5 && CenteredArray.m6101getimpl(iArr, i11 + 1) > CenteredArray.m6101getimpl(iArr, i11 - 1))) {
-                m6101getimpl = CenteredArray.m6101getimpl(iArr, i11 + 1);
-                i6 = m6101getimpl;
+            if (i11 == i10 || (i11 != i5 && CenteredArray.m6831getimpl(iArr, i11 + 1) > CenteredArray.m6831getimpl(iArr, i11 - 1))) {
+                m6831getimpl = CenteredArray.m6831getimpl(iArr, i11 + 1);
+                i6 = m6831getimpl;
             } else {
-                m6101getimpl = CenteredArray.m6101getimpl(iArr, i11 - 1);
-                i6 = m6101getimpl + 1;
+                m6831getimpl = CenteredArray.m6831getimpl(iArr, i11 - 1);
+                i6 = m6831getimpl + 1;
             }
             int i12 = (i3 + (i6 - i)) - i11;
-            int i13 = i12 - ((i5 != 0 ? i9 : 0) & (i6 == m6101getimpl ? i9 : 0));
+            int i13 = i12 - ((i5 != 0 ? i9 : 0) & (i6 == m6831getimpl ? i9 : 0));
             while (i6 < i2 && i12 < i4) {
                 if (!diffCallback.areItemsTheSame(i6, i12)) {
                     break;
@@ -138,7 +138,7 @@ public final class MyersDiffKt {
                 i6++;
                 i12++;
             }
-            CenteredArray.m6104setimpl(iArr, i11, i6);
+            CenteredArray.m6834setimpl(iArr, i11, i6);
             if (z) {
                 int i14 = i8 - i11;
                 i7 = i9;
@@ -146,8 +146,8 @@ public final class MyersDiffKt {
                 if (i14 >= i10 + 1) {
                     i7 = i7;
                     if (i14 <= i5 - 1) {
-                        if (CenteredArray.m6101getimpl(iArr2, i14) <= i6) {
-                            fillSnake(m6101getimpl, i13, i6, i12, false, iArr3);
+                        if (CenteredArray.m6831getimpl(iArr2, i14) <= i6) {
+                            fillSnake(m6831getimpl, i13, i6, i12, false, iArr3);
                             return i7;
                         }
                         i11 += 2;
@@ -164,23 +164,23 @@ public final class MyersDiffKt {
     }
 
     /* renamed from: backward-4l5_RBY  reason: not valid java name */
-    private static final boolean m6215backward4l5_RBY(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int i5, int[] iArr3) {
-        int m6101getimpl;
+    private static final boolean m6945backward4l5_RBY(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int i5, int[] iArr3) {
+        int m6831getimpl;
         int i6;
         int i7;
         int i8 = (i2 - i) - (i4 - i3);
         boolean z = (i8 & 1) == 0;
         int i9 = -i5;
         for (int i10 = i9; i10 <= i5; i10 += 2) {
-            if (i10 == i9 || (i10 != i5 && CenteredArray.m6101getimpl(iArr2, i10 + 1) < CenteredArray.m6101getimpl(iArr2, i10 - 1))) {
-                m6101getimpl = CenteredArray.m6101getimpl(iArr2, i10 + 1);
-                i6 = m6101getimpl;
+            if (i10 == i9 || (i10 != i5 && CenteredArray.m6831getimpl(iArr2, i10 + 1) < CenteredArray.m6831getimpl(iArr2, i10 - 1))) {
+                m6831getimpl = CenteredArray.m6831getimpl(iArr2, i10 + 1);
+                i6 = m6831getimpl;
             } else {
-                m6101getimpl = CenteredArray.m6101getimpl(iArr2, i10 - 1);
-                i6 = m6101getimpl - 1;
+                m6831getimpl = CenteredArray.m6831getimpl(iArr2, i10 - 1);
+                i6 = m6831getimpl - 1;
             }
             int i11 = i4 - ((i2 - i6) - i10);
-            int i12 = ((i5 != 0 ? 1 : 0) & (i6 == m6101getimpl ? 1 : 0)) + i11;
+            int i12 = ((i5 != 0 ? 1 : 0) & (i6 == m6831getimpl ? 1 : 0)) + i11;
             while (i6 > i && i11 > i3) {
                 if (!diffCallback.areItemsTheSame(i6 - 1, i11 - 1)) {
                     break;
@@ -188,10 +188,10 @@ public final class MyersDiffKt {
                 i6--;
                 i11--;
             }
-            CenteredArray.m6104setimpl(iArr2, i10, i6);
+            CenteredArray.m6834setimpl(iArr2, i10, i6);
             if (z && (i7 = i8 - i10) >= i9 && i7 <= i5) {
-                if (CenteredArray.m6101getimpl(iArr, i7) >= i6) {
-                    fillSnake(i6, i11, m6101getimpl, i12, true, iArr3);
+                if (CenteredArray.m6831getimpl(iArr, i7) >= i6) {
+                    fillSnake(i6, i11, m6831getimpl, i12, true, iArr3);
                     return true;
                 }
             }

@@ -1,5 +1,5 @@
 package androidx.media3.extractor;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ForwardingExtractorOutput implements ExtractorOutput {
     private final ExtractorOutput output;
 

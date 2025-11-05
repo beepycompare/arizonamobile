@@ -7,14 +7,14 @@ import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.tasks.TaskCompletionSource;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RegistrationMethods<A extends Api.AnyClient, L> {
     public final RegisterListenerMethod<A, L> register;
     public final UnregisterListenerMethod zaa;
     public final Runnable zab;
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder<A extends Api.AnyClient, L> {
         private RemoteCall zaa;
         private RemoteCall zab;

@@ -16,8 +16,8 @@ public final class LayerSnapshotV21 implements LayerSnapshotImpl {
 
     @Override // androidx.compose.ui.graphics.layer.LayerSnapshotImpl
     public Object toBitmap(GraphicsLayer graphicsLayer, Continuation<? super Bitmap> continuation) {
-        long m5219getSizeYbymL2g = graphicsLayer.m5219getSizeYbymL2g();
-        Bitmap createBitmap = Bitmap.createBitmap((int) (m5219getSizeYbymL2g >> 32), (int) (m5219getSizeYbymL2g & 4294967295L), Bitmap.Config.ARGB_8888);
+        long m5949getSizeYbymL2g = graphicsLayer.m5949getSizeYbymL2g();
+        Bitmap createBitmap = Bitmap.createBitmap((int) (m5949getSizeYbymL2g >> 32), (int) (m5949getSizeYbymL2g & 4294967295L), Bitmap.Config.ARGB_8888);
         graphicsLayer.draw$ui_graphics_release(AndroidCanvas_androidKt.Canvas(new Canvas(createBitmap)), null);
         return createBitmap;
     }

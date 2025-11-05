@@ -1,17 +1,14 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Ve extends C0201dd {
-    public Ve() {
-        super(Ze.UNDEFINED);
-        a(1, Ze.WIFI);
-        a(0, Ze.CELL);
-        a(7, Ze.BLUETOOTH);
-        a(9, Ze.ETHERNET);
-        a(4, Ze.MOBILE_DUN);
-        a(5, Ze.MOBILE_HIPRI);
-        a(2, Ze.MOBILE_MMS);
-        a(3, Ze.MOBILE_SUPL);
-        a(6, Ze.WIMAX);
-        a(17, Ze.VPN);
+/* loaded from: classes3.dex */
+public final class Ve {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0308i f733a;
+    public final Gn b = new Gn(new C0323ie("Error details"));
+    public final Gn c = new Gn(new C0271ge("Error identifier"));
+    public final C0245fe d = new C0245fe("Stacktrace");
+
+    public Ve(C0685x0 c0685x0) {
+        this.f733a = new C0308i(c0685x0);
     }
 }

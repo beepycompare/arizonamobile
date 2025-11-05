@@ -1,17 +1,22 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public abstract class Y4 {
+
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+/* loaded from: classes3.dex */
+public final class Y4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V4 f753a;
+    public final CopyOnWriteArrayList f765a = new CopyOnWriteArrayList();
 
-    public Y4(V4 v4) {
-        this.f753a = v4;
+    public final void a(InterfaceC0415m4 interfaceC0415m4) {
+        this.f765a.add(interfaceC0415m4);
     }
 
-    public final V4 a() {
-        return this.f753a;
+    public final void b(InterfaceC0415m4 interfaceC0415m4) {
+        this.f765a.remove(interfaceC0415m4);
     }
 
-    public abstract boolean a(C0478o6 c0478o6, S4 s4);
+    public final List<InterfaceC0415m4> a() {
+        return this.f765a;
+    }
 }

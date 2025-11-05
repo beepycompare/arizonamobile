@@ -43,13 +43,13 @@ public final class Draggable2DNode extends DragGestureNode {
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStarted-k-4lQ0M */
     public void mo448onDragStartedk4lQ0M(long j) {
-        this.onDragStarted.invoke(Offset.m4294boximpl(j));
+        this.onDragStarted.invoke(Offset.m5024boximpl(j));
     }
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStopped-TH1AsA0 */
     public void mo449onDragStoppedTH1AsA0(long j) {
-        this.onDragStopped.invoke(Velocity.m7493boximpl(j));
+        this.onDragStopped.invoke(Velocity.m8224boximpl(j));
     }
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
@@ -79,6 +79,6 @@ public final class Draggable2DNode extends DragGestureNode {
 
     /* renamed from: reverseIfNeeded-MK-Hz9U  reason: not valid java name */
     private final long m509reverseIfNeededMKHz9U(long j) {
-        return this.reverseDirection ? Offset.m4297constructorimpl(j ^ (-9223372034707292160L)) : j;
+        return this.reverseDirection ? Offset.m5027constructorimpl(j ^ (-9223372034707292160L)) : j;
     }
 }

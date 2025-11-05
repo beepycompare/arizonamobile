@@ -1,19 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.ArrayList;
-import java.util.List;
-import org.json.JSONObject;
-/* loaded from: classes4.dex */
-public final class Ph {
+/* loaded from: classes3.dex */
+public final class Ph implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f628a;
-    public final List b;
-    public final JSONObject c;
+    public final /* synthetic */ C0404li f638a;
 
-    public Ph(ArrayList arrayList, ArrayList arrayList2, JSONObject jSONObject) {
-        this.f628a = arrayList;
-        this.b = arrayList2;
-        this.c = jSONObject;
+    public Ph(C0404li c0404li) {
+        this.f638a = c0404li;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0404li c0404li = this.f638a;
+        C0404li.a(c0404li.f993a, c0404li.d, c0404li.e).resumeSession();
     }
 }

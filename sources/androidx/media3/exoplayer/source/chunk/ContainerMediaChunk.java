@@ -11,7 +11,7 @@ import androidx.media3.exoplayer.source.chunk.ChunkExtractor;
 import androidx.media3.extractor.DefaultExtractorInput;
 import androidx.media3.extractor.TrackOutput;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ContainerMediaChunk extends BaseMediaChunk {
     private final int chunkCount;
     private final ChunkExtractor chunkExtractor;

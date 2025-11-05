@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class FilteringMediaSource extends WrappingMediaSource {
     private final ImmutableSet<Integer> trackTypes;
 
@@ -38,7 +38,7 @@ public class FilteringMediaSource extends WrappingMediaSource {
         super.releasePeriod(((FilteringMediaPeriod) mediaPeriod).mediaPeriod);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class FilteringMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         private MediaPeriod.Callback callback;
         private TrackGroupArray filteredTrackGroups;

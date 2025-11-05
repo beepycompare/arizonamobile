@@ -6,22 +6,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class PluginErrorDetails {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1271a;
+    private final String f1312a;
     private final String b;
     private final ArrayList c;
     private final String d;
     private final String e;
     private final Map f;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f1272a;
+        private String f1313a;
         private String b;
         private List c;
         private String d;
@@ -29,11 +29,11 @@ public class PluginErrorDetails {
         private Map f;
 
         public PluginErrorDetails build() {
-            return new PluginErrorDetails(this.f1272a, this.b, (List) WrapUtils.getOrDefault(this.c, new ArrayList()), this.d, this.e, (Map) WrapUtils.getOrDefault(this.f, new HashMap()), 0);
+            return new PluginErrorDetails(this.f1313a, this.b, (List) WrapUtils.getOrDefault(this.c, new ArrayList()), this.d, this.e, (Map) WrapUtils.getOrDefault(this.f, new HashMap()), 0);
         }
 
         public Builder withExceptionClass(String str) {
-            this.f1272a = str;
+            this.f1313a = str;
             return this;
         }
 
@@ -63,7 +63,7 @@ public class PluginErrorDetails {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Platform {
         public static final String CORDOVA = "cordova";
         public static final String FLUTTER = "flutter";
@@ -78,7 +78,7 @@ public class PluginErrorDetails {
     }
 
     public String getExceptionClass() {
-        return this.f1271a;
+        return this.f1312a;
     }
 
     public String getMessage() {
@@ -102,7 +102,7 @@ public class PluginErrorDetails {
     }
 
     private PluginErrorDetails(String str, String str2, List list, String str3, String str4, Map map) {
-        this.f1271a = str;
+        this.f1312a = str;
         this.b = str2;
         this.c = new ArrayList(list);
         this.d = str3;

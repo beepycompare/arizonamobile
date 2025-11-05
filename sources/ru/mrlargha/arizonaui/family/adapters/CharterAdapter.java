@@ -30,7 +30,7 @@ public final class CharterAdapter extends RecyclerView.Adapter<CharterItemViewHo
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         this.onClick = onClick;
         this.data = new FamilyCharterData("", "", 0, 0, 0, 0, 0);
-        this.items = CollectionsKt.toMutableList(new IntRange(0, 9));
+        this.items = CollectionsKt.toMutableList(new IntRange(0, 10));
         this.estateColor = Color.parseColor("#E0CA4C");
         this.descColor = Color.parseColor("#ABABAB");
     }

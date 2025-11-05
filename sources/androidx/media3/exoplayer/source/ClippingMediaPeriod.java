@@ -15,7 +15,7 @@ import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import java.io.IOException;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     private MediaPeriod.Callback callback;
     private ClippingMediaSource.IllegalClippingException clippingError;
@@ -226,7 +226,7 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
         return j3 != Long.MIN_VALUE ? Math.min(max, j3) : max;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class ClippingSampleStream implements SampleStream {
         public final SampleStream childStream;
         private boolean sentEos;

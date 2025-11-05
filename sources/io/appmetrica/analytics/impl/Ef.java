@@ -1,11 +1,41 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Ef extends AbstractC0506p8 {
-    @Override // io.appmetrica.analytics.impl.AbstractC0506p8
-    public final boolean a(Kf kf, Kf kf2) {
-        if (kf.c) {
-            return !kf2.c || ((Number) this.f1033a.a(kf.e)).intValue() > ((Number) this.f1033a.a(kf2.e)).intValue();
+
+import io.appmetrica.analytics.ecommerce.ECommerceAmount;
+import io.appmetrica.analytics.ecommerce.ECommercePrice;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+/* loaded from: classes3.dex */
+public final class Ef {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Z f459a;
+    public final List b;
+
+    public Ef(ECommercePrice eCommercePrice) {
+        this(new Z(eCommercePrice.getFiat()), a(eCommercePrice.getInternalComponents()));
+    }
+
+    public static LinkedList a(List list) {
+        if (list != null) {
+            LinkedList linkedList = new LinkedList();
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                ECommerceAmount eCommerceAmount = (ECommerceAmount) it.next();
+                linkedList.add(new Z(eCommerceAmount.getAmount(), eCommerceAmount.getUnit()));
+            }
+            return linkedList;
         }
-        return false;
+        return null;
+    }
+
+    public final String toString() {
+        return "PriceWrapper{fiat=" + this.f459a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public Ef(Z z, LinkedList linkedList) {
+        this.f459a = z;
+        this.b = linkedList;
     }
 }

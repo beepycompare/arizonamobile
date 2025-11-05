@@ -95,11 +95,11 @@ public final class ContextMenuState {
             }
 
             public String toString() {
-                return "Open(offset=" + ((Object) Offset.m4313toStringimpl(this.offset)) + ')';
+                return "Open(offset=" + ((Object) Offset.m5043toStringimpl(this.offset)) + ')';
             }
 
             public int hashCode() {
-                return Offset.m4307hashCodeimpl(this.offset);
+                return Offset.m5037hashCodeimpl(this.offset);
             }
 
             public boolean equals(Object obj) {
@@ -107,7 +107,7 @@ public final class ContextMenuState {
                     return true;
                 }
                 if (obj instanceof Open) {
-                    return Offset.m4302equalsimpl0(this.offset, ((Open) obj).offset);
+                    return Offset.m5032equalsimpl0(this.offset, ((Open) obj).offset);
                 }
                 return false;
             }

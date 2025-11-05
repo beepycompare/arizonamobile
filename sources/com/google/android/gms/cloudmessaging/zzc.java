@@ -3,7 +3,7 @@ package com.google.android.gms.cloudmessaging;
 import android.util.Log;
 import java.util.Objects;
 /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzc extends ClassLoader {
     @Override // java.lang.ClassLoader
     protected final Class loadClass(String str, boolean z) throws ClassNotFoundException {

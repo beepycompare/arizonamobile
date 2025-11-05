@@ -40,12 +40,12 @@ public class AndroidSocketAdapter implements SocketAdapter {
     }
 
     @Override // okhttp3.internal.platform.android.SocketAdapter
-    public boolean matchesSocketFactory(SSLSocketFactory sSLSocketFactory) {
+    public /* bridge */ boolean matchesSocketFactory(SSLSocketFactory sSLSocketFactory) {
         return super.matchesSocketFactory(sSLSocketFactory);
     }
 
     @Override // okhttp3.internal.platform.android.SocketAdapter
-    public X509TrustManager trustManager(SSLSocketFactory sSLSocketFactory) {
+    public /* bridge */ X509TrustManager trustManager(SSLSocketFactory sSLSocketFactory) {
         return super.trustManager(sSLSocketFactory);
     }
 

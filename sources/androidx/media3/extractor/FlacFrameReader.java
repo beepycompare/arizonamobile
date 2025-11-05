@@ -4,10 +4,10 @@ import androidx.media3.common.ParserException;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import java.io.IOException;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class FlacFrameReader {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class SampleNumberHolder {
         public long sampleNumber;
     }

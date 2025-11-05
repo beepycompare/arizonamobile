@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.networktasks.internal;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CommonUrlParts {
     public static final String ADV_ID = "adv_id";
     public static final String ANALYTICS_SDK_BUILD_NUMBER = "analytics_sdk_build_number";
@@ -34,12 +34,12 @@ public class CommonUrlParts {
     public static final String YANDEX_ADV_ID = "yandex_adv_id";
     public static final String YANDEX_ADV_ID_LIMIT_TRACKING = "limit_yandex_adv_id_tracking";
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class EncryptedRequestValues {
         public static final String AES_RSA = "1";
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Values {
         public static final String FALSE_INTEGER = "0";
         public static final String TRUE_INTEGER = "1";

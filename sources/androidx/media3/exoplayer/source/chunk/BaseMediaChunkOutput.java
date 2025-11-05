@@ -5,7 +5,7 @@ import androidx.media3.exoplayer.source.SampleQueue;
 import androidx.media3.exoplayer.source.chunk.ChunkExtractor;
 import androidx.media3.extractor.DiscardingTrackOutput;
 import androidx.media3.extractor.TrackOutput;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class BaseMediaChunkOutput implements ChunkExtractor.TrackOutputProvider {
     private static final String TAG = "BaseMediaChunkOutput";
     private final SampleQueue[] sampleQueues;

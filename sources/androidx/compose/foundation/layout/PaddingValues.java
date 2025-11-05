@@ -91,21 +91,21 @@ public interface PaddingValues {
         public boolean equals(Object obj) {
             if (obj instanceof Absolute) {
                 Absolute absolute = (Absolute) obj;
-                return Dp.m7269equalsimpl0(this.left, absolute.left) && Dp.m7269equalsimpl0(this.top, absolute.top) && Dp.m7269equalsimpl0(this.right, absolute.right) && Dp.m7269equalsimpl0(this.bottom, absolute.bottom);
+                return Dp.m8000equalsimpl0(this.left, absolute.left) && Dp.m8000equalsimpl0(this.top, absolute.top) && Dp.m8000equalsimpl0(this.right, absolute.right) && Dp.m8000equalsimpl0(this.bottom, absolute.bottom);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((Dp.m7270hashCodeimpl(this.left) * 31) + Dp.m7270hashCodeimpl(this.top)) * 31) + Dp.m7270hashCodeimpl(this.right)) * 31) + Dp.m7270hashCodeimpl(this.bottom);
+            return (((((Dp.m8001hashCodeimpl(this.left) * 31) + Dp.m8001hashCodeimpl(this.top)) * 31) + Dp.m8001hashCodeimpl(this.right)) * 31) + Dp.m8001hashCodeimpl(this.bottom);
         }
 
         public String toString() {
-            return "PaddingValues.Absolute(left=" + ((Object) Dp.m7275toStringimpl(this.left)) + ", top=" + ((Object) Dp.m7275toStringimpl(this.top)) + ", right=" + ((Object) Dp.m7275toStringimpl(this.right)) + ", bottom=" + ((Object) Dp.m7275toStringimpl(this.bottom)) + ')';
+            return "PaddingValues.Absolute(left=" + ((Object) Dp.m8006toStringimpl(this.left)) + ", top=" + ((Object) Dp.m8006toStringimpl(this.top)) + ", right=" + ((Object) Dp.m8006toStringimpl(this.right)) + ", bottom=" + ((Object) Dp.m8006toStringimpl(this.bottom)) + ')';
         }
 
         public /* synthetic */ Absolute(float f, float f2, float f3, float f4, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? Dp.m7264constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7264constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7264constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7264constructorimpl(0) : f4, null);
+            this((i & 1) != 0 ? Dp.m7995constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7995constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7995constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7995constructorimpl(0) : f4, null);
         }
     }
 

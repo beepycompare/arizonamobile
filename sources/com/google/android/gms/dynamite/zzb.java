@@ -2,14 +2,14 @@ package com.google.android.gms.dynamite;
 
 import android.os.Looper;
 import android.util.Log;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class zzb {
     private static ClassLoader zza;
     private static Thread zzb;
 
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00a1, code lost:
-        if (r1 == null) goto L13;
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00ad, code lost:
+        if (r2 == null) goto L13;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -19,15 +19,14 @@ public final class zzb {
         SecurityException e;
         zza zzaVar;
         ThreadGroup threadGroup;
-        zza zzaVar2;
         synchronized (zzb.class) {
             if (zza == null) {
-                zza zzaVar3 = zzb;
+                zza zzaVar2 = zzb;
                 ClassLoader classLoader2 = null;
-                if (zzaVar3 == null) {
+                if (zzaVar2 == null) {
                     ThreadGroup threadGroup2 = Looper.getMainLooper().getThread().getThreadGroup();
                     if (threadGroup2 == null) {
-                        zzaVar3 = null;
+                        zzaVar2 = null;
                     } else {
                         synchronized (Void.class) {
                             try {
@@ -66,20 +65,24 @@ public final class zzb {
                                 }
                                 if (zzaVar == null) {
                                     try {
-                                        zzaVar2 = new zza(threadGroup, "GmsDynamite");
-                                    } catch (SecurityException e2) {
-                                        e = e2;
-                                    }
-                                    try {
-                                        zzaVar2.setContextClassLoader(null);
-                                        zzaVar2.start();
-                                        zzaVar = zzaVar2;
+                                        zza zzaVar3 = new zza(threadGroup, "GmsDynamite");
+                                        try {
+                                            zzaVar3.setContextClassLoader(null);
+                                            zzaVar3.start();
+                                            zzaVar = zzaVar3;
+                                        } catch (SecurityException e2) {
+                                            e = e2;
+                                            zzaVar = zzaVar3;
+                                            String message = e.getMessage();
+                                            StringBuilder sb = new StringBuilder(String.valueOf(message).length() + 39);
+                                            sb.append("Failed to enumerate thread/threadgroup ");
+                                            sb.append(message);
+                                            Log.w("DynamiteLoaderV2CL", sb.toString());
+                                            zzaVar2 = zzaVar;
+                                            zzb = zzaVar2;
+                                        }
                                     } catch (SecurityException e3) {
                                         e = e3;
-                                        zzaVar = zzaVar2;
-                                        Log.w("DynamiteLoaderV2CL", "Failed to enumerate thread/threadgroup " + e.getMessage());
-                                        zzaVar3 = zzaVar;
-                                        zzb = zzaVar3;
                                     }
                                 }
                             } catch (SecurityException e4) {
@@ -87,15 +90,19 @@ public final class zzb {
                                 zzaVar = null;
                             }
                         }
-                        zzaVar3 = zzaVar;
+                        zzaVar2 = zzaVar;
                     }
-                    zzb = zzaVar3;
+                    zzb = zzaVar2;
                 }
-                synchronized (zzaVar3) {
+                synchronized (zzaVar2) {
                     try {
                         classLoader2 = zzb.getContextClassLoader();
                     } catch (SecurityException e5) {
-                        Log.w("DynamiteLoaderV2CL", "Failed to get thread context classloader " + e5.getMessage());
+                        String message2 = e5.getMessage();
+                        StringBuilder sb2 = new StringBuilder(String.valueOf(message2).length() + 41);
+                        sb2.append("Failed to get thread context classloader ");
+                        sb2.append(message2);
+                        Log.w("DynamiteLoaderV2CL", sb2.toString());
                     }
                 }
                 zza = classLoader2;

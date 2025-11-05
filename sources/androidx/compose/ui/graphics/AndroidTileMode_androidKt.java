@@ -33,22 +33,22 @@ public final class AndroidTileMode_androidKt {
     }
 
     /* renamed from: isSupported-0vamqd0  reason: not valid java name */
-    public static final boolean m4452isSupported0vamqd0(int i) {
-        return Build.VERSION.SDK_INT >= 31 || !TileMode.m4935equalsimpl0(i, TileMode.Companion.m4940getDecal3opZhB0());
+    public static final boolean m5182isSupported0vamqd0(int i) {
+        return Build.VERSION.SDK_INT >= 31 || !TileMode.m5665equalsimpl0(i, TileMode.Companion.m5670getDecal3opZhB0());
     }
 
     /* renamed from: toAndroidTileMode-0vamqd0  reason: not valid java name */
-    public static final Shader.TileMode m4453toAndroidTileMode0vamqd0(int i) {
-        if (TileMode.m4935equalsimpl0(i, TileMode.Companion.m4939getClamp3opZhB0())) {
+    public static final Shader.TileMode m5183toAndroidTileMode0vamqd0(int i) {
+        if (TileMode.m5665equalsimpl0(i, TileMode.Companion.m5669getClamp3opZhB0())) {
             return Shader.TileMode.CLAMP;
         }
-        if (TileMode.m4935equalsimpl0(i, TileMode.Companion.m4942getRepeated3opZhB0())) {
+        if (TileMode.m5665equalsimpl0(i, TileMode.Companion.m5672getRepeated3opZhB0())) {
             return Shader.TileMode.REPEAT;
         }
-        if (TileMode.m4935equalsimpl0(i, TileMode.Companion.m4941getMirror3opZhB0())) {
+        if (TileMode.m5665equalsimpl0(i, TileMode.Companion.m5671getMirror3opZhB0())) {
             return Shader.TileMode.MIRROR;
         }
-        if (TileMode.m4935equalsimpl0(i, TileMode.Companion.m4940getDecal3opZhB0())) {
+        if (TileMode.m5665equalsimpl0(i, TileMode.Companion.m5670getDecal3opZhB0())) {
             if (Build.VERSION.SDK_INT >= 31) {
                 return TileModeVerificationHelper.INSTANCE.getFrameworkTileModeDecal();
             }
@@ -62,15 +62,15 @@ public final class AndroidTileMode_androidKt {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return TileMode.Companion.m4942getRepeated3opZhB0();
+                    return TileMode.Companion.m5672getRepeated3opZhB0();
                 }
                 if (Build.VERSION.SDK_INT >= 31 && tileMode == Shader.TileMode.DECAL) {
-                    return TileModeVerificationHelper.INSTANCE.m4943getComposeTileModeDecal3opZhB0();
+                    return TileModeVerificationHelper.INSTANCE.m5673getComposeTileModeDecal3opZhB0();
                 }
-                return TileMode.Companion.m4939getClamp3opZhB0();
+                return TileMode.Companion.m5669getClamp3opZhB0();
             }
-            return TileMode.Companion.m4941getMirror3opZhB0();
+            return TileMode.Companion.m5671getMirror3opZhB0();
         }
-        return TileMode.Companion.m4939getClamp3opZhB0();
+        return TileMode.Companion.m5669getClamp3opZhB0();
     }
 }

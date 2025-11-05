@@ -10,11 +10,13 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ItemSubInventoryBinding implements ViewBinding {
     public final CardView cvColoredItem;
     public final AppCompatImageView ivActiveItem;
     public final ImageView ivDefaultItem;
+    public final ImageView ivEffectBackground;
+    public final ImageView ivEffectForeground;
     public final ImageView ivItemDefaultImage;
     public final ImageView ivItemImage;
     public final CardView parentItem;
@@ -25,11 +27,13 @@ public final class ItemSubInventoryBinding implements ViewBinding {
     public final View viewCenter;
     public final View viewColored;
 
-    private ItemSubInventoryBinding(CardView rootView, CardView cvColoredItem, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivItemDefaultImage, ImageView ivItemImage, CardView parentItem, TextView tvDescriptionText, TextView tvItemNum, TextView tvTitleText, View viewCenter, View viewColored) {
+    private ItemSubInventoryBinding(CardView rootView, CardView cvColoredItem, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivEffectBackground, ImageView ivEffectForeground, ImageView ivItemDefaultImage, ImageView ivItemImage, CardView parentItem, TextView tvDescriptionText, TextView tvItemNum, TextView tvTitleText, View viewCenter, View viewColored) {
         this.rootView = rootView;
         this.cvColoredItem = cvColoredItem;
         this.ivActiveItem = ivActiveItem;
         this.ivDefaultItem = ivDefaultItem;
+        this.ivEffectBackground = ivEffectBackground;
+        this.ivEffectForeground = ivEffectForeground;
         this.ivItemDefaultImage = ivItemDefaultImage;
         this.ivItemImage = ivItemImage;
         this.parentItem = parentItem;
@@ -69,23 +73,31 @@ public final class ItemSubInventoryBinding implements ViewBinding {
                 i = R.id.ivDefaultItem;
                 ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
                 if (imageView != null) {
-                    i = R.id.ivItemDefaultImage;
+                    i = R.id.iv_effect_background;
                     ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                     if (imageView2 != null) {
-                        i = R.id.ivItemImage;
+                        i = R.id.iv_effect_foreground;
                         ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                         if (imageView3 != null) {
-                            CardView cardView2 = (CardView) rootView;
-                            i = R.id.tvDescriptionText;
-                            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView != null) {
-                                i = R.id.tvItemNum;
-                                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                if (textView2 != null) {
-                                    i = R.id.tvTitleText;
-                                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                    if (textView3 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.viewColored))) != null) {
-                                        return new ItemSubInventoryBinding(cardView2, cardView, appCompatImageView, imageView, imageView2, imageView3, cardView2, textView, textView2, textView3, findChildViewById, findChildViewById2);
+                            i = R.id.ivItemDefaultImage;
+                            ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                            if (imageView4 != null) {
+                                i = R.id.ivItemImage;
+                                ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                if (imageView5 != null) {
+                                    CardView cardView2 = (CardView) rootView;
+                                    i = R.id.tvDescriptionText;
+                                    TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView != null) {
+                                        i = R.id.tvItemNum;
+                                        TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                        if (textView2 != null) {
+                                            i = R.id.tvTitleText;
+                                            TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                            if (textView3 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.viewColored))) != null) {
+                                                return new ItemSubInventoryBinding(cardView2, cardView, appCompatImageView, imageView, imageView2, imageView3, imageView4, imageView5, cardView2, textView, textView2, textView3, findChildViewById, findChildViewById2);
+                                            }
+                                        }
                                     }
                                 }
                             }

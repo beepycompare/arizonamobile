@@ -13,26 +13,26 @@ public final class KeyMapping_androidKt {
         /* renamed from: map-ZmokQxo */
         public KeyCommand mo1268mapZmokQxo(KeyEvent keyEvent) {
             KeyCommand keyCommand = null;
-            if (KeyEvent_androidKt.m5701isShiftPressedZmokQxo(keyEvent) && KeyEvent_androidKt.m5698isAltPressedZmokQxo(keyEvent)) {
-                long m5695getKeyZmokQxo = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
+            if (KeyEvent_androidKt.m6431isShiftPressedZmokQxo(keyEvent) && KeyEvent_androidKt.m6428isAltPressedZmokQxo(keyEvent)) {
+                long m6425getKeyZmokQxo = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
                     keyCommand = KeyCommand.SELECT_LINE_LEFT;
-                } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
+                } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
                     keyCommand = KeyCommand.SELECT_LINE_RIGHT;
-                } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
+                } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
                     keyCommand = KeyCommand.SELECT_HOME;
-                } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
+                } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
                     keyCommand = KeyCommand.SELECT_END;
                 }
-            } else if (KeyEvent_androidKt.m5698isAltPressedZmokQxo(keyEvent)) {
-                long m5695getKeyZmokQxo2 = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
+            } else if (KeyEvent_androidKt.m6428isAltPressedZmokQxo(keyEvent)) {
+                long m6425getKeyZmokQxo2 = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
                     keyCommand = KeyCommand.LINE_LEFT;
-                } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
+                } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
                     keyCommand = KeyCommand.LINE_RIGHT;
-                } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
+                } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
                     keyCommand = KeyCommand.HOME;
-                } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
+                } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
                     keyCommand = KeyCommand.END;
                 }
             }

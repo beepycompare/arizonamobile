@@ -10,23 +10,27 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ItemLavkaTypeBinding implements ViewBinding {
     public final CardView item;
     public final AppCompatImageView ivActiveItem;
     public final ImageView ivDefaultItem;
     public final ImageView ivDollar;
+    public final ImageView ivEffectBackground;
+    public final ImageView ivEffectForeground;
     public final ImageView ivItemImage;
     private final CardView rootView;
     public final TextView tvTitleText;
     public final View viewCenter;
 
-    private ItemLavkaTypeBinding(CardView rootView, CardView item, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivDollar, ImageView ivItemImage, TextView tvTitleText, View viewCenter) {
+    private ItemLavkaTypeBinding(CardView rootView, CardView item, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivDollar, ImageView ivEffectBackground, ImageView ivEffectForeground, ImageView ivItemImage, TextView tvTitleText, View viewCenter) {
         this.rootView = rootView;
         this.item = item;
         this.ivActiveItem = ivActiveItem;
         this.ivDefaultItem = ivDefaultItem;
         this.ivDollar = ivDollar;
+        this.ivEffectBackground = ivEffectBackground;
+        this.ivEffectForeground = ivEffectForeground;
         this.ivItemImage = ivItemImage;
         this.tvTitleText = tvTitleText;
         this.viewCenter = viewCenter;
@@ -61,13 +65,21 @@ public final class ItemLavkaTypeBinding implements ViewBinding {
                 i = R.id.ivDollar;
                 ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                 if (imageView2 != null) {
-                    i = R.id.ivItemImage;
+                    i = R.id.iv_effect_background;
                     ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                     if (imageView3 != null) {
-                        i = R.id.tvTitleText;
-                        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
-                            return new ItemLavkaTypeBinding(cardView, cardView, appCompatImageView, imageView, imageView2, imageView3, textView, findChildViewById);
+                        i = R.id.iv_effect_foreground;
+                        ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                        if (imageView4 != null) {
+                            i = R.id.ivItemImage;
+                            ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                            if (imageView5 != null) {
+                                i = R.id.tvTitleText;
+                                TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
+                                    return new ItemLavkaTypeBinding(cardView, cardView, appCompatImageView, imageView, imageView2, imageView3, imageView4, imageView5, textView, findChildViewById);
+                                }
+                            }
                         }
                     }
                 }

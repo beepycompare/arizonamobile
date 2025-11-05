@@ -1,41 +1,18 @@
 package com.google.android.gms.common.internal;
 
-import android.os.IBinder;
-import android.os.Parcel;
+import android.os.IInterface;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-final class zzad implements IGmsServiceBroker {
-    private final IBinder zza;
+import com.google.android.gms.dynamic.IObjectWrapper;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public interface zzad extends IInterface {
+    boolean zze(com.google.android.gms.common.zzt zztVar, IObjectWrapper iObjectWrapper) throws RemoteException;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzad(IBinder iBinder) {
-        this.zza = iBinder;
-    }
+    com.google.android.gms.common.zzr zzf(com.google.android.gms.common.zzp zzpVar) throws RemoteException;
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.zza;
-    }
+    boolean zzg() throws RemoteException;
 
-    @Override // com.google.android.gms.common.internal.IGmsServiceBroker
-    public final void getService(IGmsCallbacks iGmsCallbacks, GetServiceRequest getServiceRequest) throws RemoteException {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("com.google.android.gms.common.internal.IGmsServiceBroker");
-            obtain.writeStrongBinder(iGmsCallbacks != null ? iGmsCallbacks.asBinder() : null);
-            if (getServiceRequest != null) {
-                obtain.writeInt(1);
-                zzn.zza(getServiceRequest, obtain, 0);
-            } else {
-                obtain.writeInt(0);
-            }
-            this.zza.transact(46, obtain, obtain2, 0);
-            obtain2.readException();
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
-        }
-    }
+    com.google.android.gms.common.zzr zzh(com.google.android.gms.common.zzp zzpVar) throws RemoteException;
+
+    boolean zzi() throws RemoteException;
 }

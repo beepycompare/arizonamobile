@@ -4,7 +4,7 @@ import android.os.Bundle;
 import java.util.List;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface zzlk {
     void zza(String str, String str2, Bundle bundle);
 

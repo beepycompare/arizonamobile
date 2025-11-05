@@ -66,7 +66,7 @@ public final class LazyStaggeredGridMeasurePolicyKt {
                     float beforePadding;
                     float afterPadding;
                     float startPadding;
-                    long m7386constructorimpl;
+                    long m8117constructorimpl;
                     ObservableScopeInvalidator.m1071attachToScopeimpl(LazyStaggeredGridState.this.m1119getMeasurementScopeInvalidatorzYiylxw$foundation_release());
                     boolean z2 = LazyStaggeredGridState.this.getHasLookaheadOccurred$foundation_release() || lazyLayoutMeasureScope.isLookingAhead();
                     CheckScrollableContainerConstraintsKt.m299checkScrollableContainerConstraintsK40F9xA(j, orientation);
@@ -79,18 +79,18 @@ public final class LazyStaggeredGridMeasurePolicyKt {
                     int i3 = lazyLayoutMeasureScope.mo423roundToPx0680j_4(afterPadding);
                     startPadding = LazyStaggeredGridMeasurePolicyKt.startPadding(paddingValues, orientation, lazyLayoutMeasureScope.getLayoutDirection());
                     int i4 = lazyLayoutMeasureScope.mo423roundToPx0680j_4(startPadding);
-                    int m7216getMaxHeightimpl = ((z3 ? Constraints.m7216getMaxHeightimpl(j) : Constraints.m7217getMaxWidthimpl(j)) - i2) - i3;
+                    int m7947getMaxHeightimpl = ((z3 ? Constraints.m7947getMaxHeightimpl(j) : Constraints.m7948getMaxWidthimpl(j)) - i2) - i3;
                     if (z3) {
-                        m7386constructorimpl = IntOffset.m7386constructorimpl((i2 & 4294967295L) | (i4 << 32));
+                        m8117constructorimpl = IntOffset.m8117constructorimpl((i2 & 4294967295L) | (i4 << 32));
                     } else {
-                        m7386constructorimpl = IntOffset.m7386constructorimpl((i2 << 32) | (i4 & 4294967295L));
+                        m8117constructorimpl = IntOffset.m8117constructorimpl((i2 << 32) | (i4 & 4294967295L));
                     }
-                    long j2 = m7386constructorimpl;
+                    long j2 = m8117constructorimpl;
                     PaddingValues paddingValues2 = paddingValues;
-                    int i5 = lazyLayoutMeasureScope.mo423roundToPx0680j_4(Dp.m7264constructorimpl(PaddingKt.calculateStartPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection()) + PaddingKt.calculateEndPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection())));
+                    int i5 = lazyLayoutMeasureScope.mo423roundToPx0680j_4(Dp.m7995constructorimpl(PaddingKt.calculateStartPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection()) + PaddingKt.calculateEndPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection())));
                     PaddingValues paddingValues3 = paddingValues;
-                    int i6 = lazyLayoutMeasureScope.mo423roundToPx0680j_4(Dp.m7264constructorimpl(paddingValues3.mo788calculateTopPaddingD9Ej5fM() + paddingValues3.mo785calculateBottomPaddingD9Ej5fM()));
-                    LazyStaggeredGridMeasureResult m1111measureStaggeredGridC6celF4 = LazyStaggeredGridMeasureKt.m1111measureStaggeredGridC6celF4(lazyLayoutMeasureScope, LazyStaggeredGridState.this, LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(invoke, LazyStaggeredGridState.this.getPinnedItems$foundation_release(), LazyStaggeredGridState.this.getBeyondBoundsInfo$foundation_release()), invoke, mo1091invoke0kLqBqw, Constraints.m7207copyZbe2FdA$default(j, ConstraintsKt.m7234constrainWidthK40F9xA(j, i5), 0, ConstraintsKt.m7233constrainHeightK40F9xA(j, i6), 0, 10, null), z3, z, j2, m7216getMaxHeightimpl, lazyLayoutMeasureScope.mo423roundToPx0680j_4(f), i2, i3, coroutineScope, z2, lazyLayoutMeasureScope.isLookingAhead(), LazyStaggeredGridState.this.getApproachLayoutInfo$foundation_release(), graphicsContext);
+                    int i6 = lazyLayoutMeasureScope.mo423roundToPx0680j_4(Dp.m7995constructorimpl(paddingValues3.mo788calculateTopPaddingD9Ej5fM() + paddingValues3.mo785calculateBottomPaddingD9Ej5fM()));
+                    LazyStaggeredGridMeasureResult m1111measureStaggeredGridC6celF4 = LazyStaggeredGridMeasureKt.m1111measureStaggeredGridC6celF4(lazyLayoutMeasureScope, LazyStaggeredGridState.this, LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(invoke, LazyStaggeredGridState.this.getPinnedItems$foundation_release(), LazyStaggeredGridState.this.getBeyondBoundsInfo$foundation_release()), invoke, mo1091invoke0kLqBqw, Constraints.m7938copyZbe2FdA$default(j, ConstraintsKt.m7965constrainWidthK40F9xA(j, i5), 0, ConstraintsKt.m7964constrainHeightK40F9xA(j, i6), 0, 10, null), z3, z, j2, m7947getMaxHeightimpl, lazyLayoutMeasureScope.mo423roundToPx0680j_4(f), i2, i3, coroutineScope, z2, lazyLayoutMeasureScope.isLookingAhead(), LazyStaggeredGridState.this.getApproachLayoutInfo$foundation_release(), graphicsContext);
                     LazyStaggeredGridState.applyMeasureResult$foundation_release$default(LazyStaggeredGridState.this, m1111measureStaggeredGridC6celF4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
                     return m1111measureStaggeredGridC6celF4;
                 }

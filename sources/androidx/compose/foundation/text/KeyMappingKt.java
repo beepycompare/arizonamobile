@@ -17,113 +17,113 @@ public final class KeyMappingKt {
             @Override // androidx.compose.foundation.text.KeyMapping
             /* renamed from: map-ZmokQxo */
             public KeyCommand mo1268mapZmokQxo(android.view.KeyEvent keyEvent) {
-                if (function1.invoke(KeyEvent.m5678boximpl(keyEvent)).booleanValue() && KeyEvent_androidKt.m5701isShiftPressedZmokQxo(keyEvent)) {
-                    if (Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), MappedKeys.INSTANCE.m1322getZEK5gGoQ())) {
+                if (function1.invoke(KeyEvent.m6408boximpl(keyEvent)).booleanValue() && KeyEvent_androidKt.m6431isShiftPressedZmokQxo(keyEvent)) {
+                    if (Key.m6117equalsimpl0(KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent), MappedKeys.INSTANCE.m1322getZEK5gGoQ())) {
                         return KeyCommand.REDO;
                     }
                     return null;
-                } else if (function1.invoke(KeyEvent.m5678boximpl(keyEvent)).booleanValue()) {
-                    long m5695getKeyZmokQxo = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1300getCEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1311getInsertEK5gGoQ())) {
+                } else if (function1.invoke(KeyEvent.m6408boximpl(keyEvent)).booleanValue()) {
+                    long m6425getKeyZmokQxo = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1300getCEK5gGoQ()) || Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1311getInsertEK5gGoQ())) {
                         return KeyCommand.COPY;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1319getVEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1319getVEK5gGoQ())) {
                         return KeyCommand.PASTE;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1320getXEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1320getXEK5gGoQ())) {
                         return KeyCommand.CUT;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1297getAEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1297getAEK5gGoQ())) {
                         return KeyCommand.SELECT_ALL;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1321getYEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1321getYEK5gGoQ())) {
                         return KeyCommand.REDO;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1322getZEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1322getZEK5gGoQ())) {
                         return KeyCommand.UNDO;
                     }
                     return null;
-                } else if (KeyEvent_androidKt.m5699isCtrlPressedZmokQxo(keyEvent)) {
+                } else if (KeyEvent_androidKt.m6429isCtrlPressedZmokQxo(keyEvent)) {
                     return null;
                 } else {
-                    if (KeyEvent_androidKt.m5701isShiftPressedZmokQxo(keyEvent)) {
-                        long m5695getKeyZmokQxo2 = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
+                    if (KeyEvent_androidKt.m6431isShiftPressedZmokQxo(keyEvent)) {
+                        long m6425getKeyZmokQxo2 = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
                             return KeyCommand.SELECT_LEFT_CHAR;
                         }
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
                             return KeyCommand.SELECT_RIGHT_CHAR;
                         }
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
                             return KeyCommand.SELECT_UP;
                         }
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
                             return KeyCommand.SELECT_DOWN;
                         }
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1316getPageUpEK5gGoQ())) {
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1316getPageUpEK5gGoQ())) {
                             return KeyCommand.SELECT_PAGE_UP;
                         }
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1315getPageDownEK5gGoQ())) {
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1315getPageDownEK5gGoQ())) {
                             return KeyCommand.SELECT_PAGE_DOWN;
                         }
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1313getMoveHomeEK5gGoQ())) {
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1313getMoveHomeEK5gGoQ())) {
                             return KeyCommand.SELECT_LINE_START;
                         }
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1312getMoveEndEK5gGoQ())) {
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1312getMoveEndEK5gGoQ())) {
                             return KeyCommand.SELECT_LINE_END;
                         }
-                        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1311getInsertEK5gGoQ())) {
+                        if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1311getInsertEK5gGoQ())) {
                             return KeyCommand.PASTE;
                         }
                         return null;
                     }
-                    long m5695getKeyZmokQxo3 = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
+                    long m6425getKeyZmokQxo3 = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
                         return KeyCommand.LEFT_CHAR;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
                         return KeyCommand.RIGHT_CHAR;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
                         return KeyCommand.UP;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
                         return KeyCommand.DOWN;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1304getDirectionCenterEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1304getDirectionCenterEK5gGoQ())) {
                         return KeyCommand.CENTER;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1316getPageUpEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1316getPageUpEK5gGoQ())) {
                         return KeyCommand.PAGE_UP;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1315getPageDownEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1315getPageDownEK5gGoQ())) {
                         return KeyCommand.PAGE_DOWN;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1313getMoveHomeEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1313getMoveHomeEK5gGoQ())) {
                         return KeyCommand.LINE_START;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1312getMoveEndEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1312getMoveEndEK5gGoQ())) {
                         return KeyCommand.LINE_END;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1309getEnterEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1314getNumPadEnterEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1309getEnterEK5gGoQ()) || Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1314getNumPadEnterEK5gGoQ())) {
                         return KeyCommand.NEW_LINE;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1299getBackspaceEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1299getBackspaceEK5gGoQ())) {
                         return KeyCommand.DELETE_PREV_CHAR;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1303getDeleteEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1303getDeleteEK5gGoQ())) {
                         return KeyCommand.DELETE_NEXT_CHAR;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1317getPasteEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1317getPasteEK5gGoQ())) {
                         return KeyCommand.PASTE;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1302getCutEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1302getCutEK5gGoQ())) {
                         return KeyCommand.CUT;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1301getCopyEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1301getCopyEK5gGoQ())) {
                         return KeyCommand.COPY;
                     }
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1318getTabEK5gGoQ())) {
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1318getTabEK5gGoQ())) {
                         return KeyCommand.TAB;
                     }
                     return null;
@@ -140,7 +140,7 @@ public final class KeyMappingKt {
         final KeyMapping commonKeyMapping = commonKeyMapping(new PropertyReference1Impl() { // from class: androidx.compose.foundation.text.KeyMappingKt$defaultKeyMapping$1
             @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object get(Object obj) {
-                return Boolean.valueOf(KeyEvent_androidKt.m5699isCtrlPressedZmokQxo(((KeyEvent) obj).m5684unboximpl()));
+                return Boolean.valueOf(KeyEvent_androidKt.m6429isCtrlPressedZmokQxo(((KeyEvent) obj).m6414unboximpl()));
             }
         });
         defaultKeyMapping = new KeyMapping() { // from class: androidx.compose.foundation.text.KeyMappingKt$defaultKeyMapping$2$1
@@ -148,48 +148,48 @@ public final class KeyMappingKt {
             /* renamed from: map-ZmokQxo */
             public KeyCommand mo1268mapZmokQxo(android.view.KeyEvent keyEvent) {
                 KeyCommand keyCommand = null;
-                if (KeyEvent_androidKt.m5701isShiftPressedZmokQxo(keyEvent) && KeyEvent_androidKt.m5699isCtrlPressedZmokQxo(keyEvent)) {
-                    long m5695getKeyZmokQxo = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
+                if (KeyEvent_androidKt.m6431isShiftPressedZmokQxo(keyEvent) && KeyEvent_androidKt.m6429isCtrlPressedZmokQxo(keyEvent)) {
+                    long m6425getKeyZmokQxo = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
                         keyCommand = KeyCommand.SELECT_LEFT_WORD;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
                         keyCommand = KeyCommand.SELECT_RIGHT_WORD;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
                         keyCommand = KeyCommand.SELECT_PREV_PARAGRAPH;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
                         keyCommand = KeyCommand.SELECT_NEXT_PARAGRAPH;
                     }
-                } else if (KeyEvent_androidKt.m5699isCtrlPressedZmokQxo(keyEvent)) {
-                    long m5695getKeyZmokQxo2 = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
+                } else if (KeyEvent_androidKt.m6429isCtrlPressedZmokQxo(keyEvent)) {
+                    long m6425getKeyZmokQxo2 = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1306getDirectionLeftEK5gGoQ())) {
                         keyCommand = KeyCommand.LEFT_WORD;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1307getDirectionRightEK5gGoQ())) {
                         keyCommand = KeyCommand.RIGHT_WORD;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1308getDirectionUpEK5gGoQ())) {
                         keyCommand = KeyCommand.PREV_PARAGRAPH;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1305getDirectionDownEK5gGoQ())) {
                         keyCommand = KeyCommand.NEXT_PARAGRAPH;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1310getHEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1310getHEK5gGoQ())) {
                         keyCommand = KeyCommand.DELETE_PREV_CHAR;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1303getDeleteEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1303getDeleteEK5gGoQ())) {
                         keyCommand = KeyCommand.DELETE_NEXT_WORD;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1299getBackspaceEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1299getBackspaceEK5gGoQ())) {
                         keyCommand = KeyCommand.DELETE_PREV_WORD;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo2, MappedKeys.INSTANCE.m1298getBackslashEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo2, MappedKeys.INSTANCE.m1298getBackslashEK5gGoQ())) {
                         keyCommand = KeyCommand.DESELECT;
                     }
-                } else if (KeyEvent_androidKt.m5701isShiftPressedZmokQxo(keyEvent)) {
-                    long m5695getKeyZmokQxo3 = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1313getMoveHomeEK5gGoQ())) {
+                } else if (KeyEvent_androidKt.m6431isShiftPressedZmokQxo(keyEvent)) {
+                    long m6425getKeyZmokQxo3 = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1313getMoveHomeEK5gGoQ())) {
                         keyCommand = KeyCommand.SELECT_LINE_START;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo3, MappedKeys.INSTANCE.m1312getMoveEndEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo3, MappedKeys.INSTANCE.m1312getMoveEndEK5gGoQ())) {
                         keyCommand = KeyCommand.SELECT_LINE_END;
                     }
-                } else if (KeyEvent_androidKt.m5698isAltPressedZmokQxo(keyEvent)) {
-                    long m5695getKeyZmokQxo4 = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-                    if (Key.m5387equalsimpl0(m5695getKeyZmokQxo4, MappedKeys.INSTANCE.m1299getBackspaceEK5gGoQ())) {
+                } else if (KeyEvent_androidKt.m6428isAltPressedZmokQxo(keyEvent)) {
+                    long m6425getKeyZmokQxo4 = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+                    if (Key.m6117equalsimpl0(m6425getKeyZmokQxo4, MappedKeys.INSTANCE.m1299getBackspaceEK5gGoQ())) {
                         keyCommand = KeyCommand.DELETE_FROM_LINE_START;
-                    } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo4, MappedKeys.INSTANCE.m1303getDeleteEK5gGoQ())) {
+                    } else if (Key.m6117equalsimpl0(m6425getKeyZmokQxo4, MappedKeys.INSTANCE.m1303getDeleteEK5gGoQ())) {
                         keyCommand = KeyCommand.DELETE_TO_LINE_END;
                     }
                 }

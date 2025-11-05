@@ -1,5 +1,5 @@
 package androidx.media3.extractor.flac;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class FlacConstants {
     public static final int MAX_FRAME_HEADER_SIZE = 16;
     public static final int METADATA_BLOCK_HEADER_SIZE = 4;

@@ -3,11 +3,11 @@ package io.appmetrica.analytics.identifiers.impl;
 import android.os.IBinder;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class i extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final i f332a = new i();
+    public static final i f348a = new i();
 
     public i() {
         super(1);

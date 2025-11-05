@@ -283,14 +283,14 @@ public final class DiskLruCache implements Closeable, Flushable, Lockable {
         return Okio.buffer(new FaultHidingSink(this.fileSystem.appendingSink(this.journalFile), new Function1() { // from class: okhttp3.internal.cache.DiskLruCache$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit newJournalWriter$lambda$3;
-                newJournalWriter$lambda$3 = DiskLruCache.newJournalWriter$lambda$3(DiskLruCache.this, (IOException) obj);
-                return newJournalWriter$lambda$3;
+                Unit newJournalWriter$lambda$0;
+                newJournalWriter$lambda$0 = DiskLruCache.newJournalWriter$lambda$0(DiskLruCache.this, (IOException) obj);
+                return newJournalWriter$lambda$0;
             }
         }));
     }
 
-    public static final Unit newJournalWriter$lambda$3(DiskLruCache diskLruCache, IOException it) {
+    public static final Unit newJournalWriter$lambda$0(DiskLruCache diskLruCache, IOException it) {
         Intrinsics.checkNotNullParameter(it, "it");
         DiskLruCache diskLruCache2 = diskLruCache;
         if (!_UtilJvmKt.assertionsEnabled || Thread.holdsLock(diskLruCache2)) {
@@ -850,9 +850,9 @@ public final class DiskLruCache implements Closeable, Flushable, Lockable {
                     return new FaultHidingSink(diskLruCache.getFileSystem$okhttp().sink(this.entry.getDirtyFiles$okhttp().get(i)), new Function1() { // from class: okhttp3.internal.cache.DiskLruCache$Editor$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit newSink$lambda$3$lambda$2;
-                            newSink$lambda$3$lambda$2 = DiskLruCache.Editor.newSink$lambda$3$lambda$2(DiskLruCache.this, this, (IOException) obj);
-                            return newSink$lambda$3$lambda$2;
+                            Unit newSink$lambda$0$0;
+                            newSink$lambda$0$0 = DiskLruCache.Editor.newSink$lambda$0$0(DiskLruCache.this, this, (IOException) obj);
+                            return newSink$lambda$0$0;
                         }
                     });
                 } catch (FileNotFoundException unused) {
@@ -861,7 +861,7 @@ public final class DiskLruCache implements Closeable, Flushable, Lockable {
             }
         }
 
-        public static final Unit newSink$lambda$3$lambda$2(DiskLruCache diskLruCache, Editor editor, IOException it) {
+        public static final Unit newSink$lambda$0$0(DiskLruCache diskLruCache, Editor editor, IOException it) {
             Intrinsics.checkNotNullParameter(it, "it");
             synchronized (diskLruCache) {
                 editor.detach$okhttp();

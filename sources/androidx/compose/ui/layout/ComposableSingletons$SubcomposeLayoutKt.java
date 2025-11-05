@@ -8,7 +8,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: SubcomposeLayout.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class ComposableSingletons$SubcomposeLayoutKt {
     public static final ComposableSingletons$SubcomposeLayoutKt INSTANCE = new ComposableSingletons$SubcomposeLayoutKt();
     private static Function2<Composer, Integer, Unit> lambda$641200809 = ComposableLambdaKt.composableLambdaInstance(641200809, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.layout.ComposableSingletons$SubcomposeLayoutKt$lambda$641200809$1

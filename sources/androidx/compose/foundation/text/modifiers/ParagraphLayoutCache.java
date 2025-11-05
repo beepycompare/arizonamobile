@@ -70,14 +70,14 @@ public final class ParagraphLayoutCache {
         this.minLines = i3;
         this.lastDensity = InlineDensity.Companion.m1684getUnspecifiedL26CHvs();
         long j = 0;
-        this.layoutSize = IntSize.m7430constructorimpl((j & 4294967295L) | (j << 32));
-        this.prevConstraints = Constraints.Companion.m7227fixedJhjzzOo(0, 0);
+        this.layoutSize = IntSize.m8161constructorimpl((j & 4294967295L) | (j << 32));
+        this.prevConstraints = Constraints.Companion.m7958fixedJhjzzOo(0, 0);
         this.cachedIntrinsicHeightInputWidth = -1;
         this.cachedIntrinsicHeight = -1;
     }
 
     public /* synthetic */ ParagraphLayoutCache(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, null);
+        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, null);
     }
 
     public final Density getDensity$foundation_release() {
@@ -149,8 +149,8 @@ public final class ParagraphLayoutCache {
     public final boolean m1721layoutWithConstraintsK40F9xA(long j, LayoutDirection layoutDirection) {
         ParagraphLayoutCache paragraphLayoutCache;
         LayoutDirection layoutDirection2;
-        long m7231constrain4WqzIAM;
-        long m7231constrain4WqzIAM2;
+        long m7962constrain4WqzIAM;
+        long m7962constrain4WqzIAM2;
         m1716recordHistory4ETZmGE(LayoutCacheOperation.Companion.m1692getLayoutWithConstraintsDEKiAbY());
         boolean z = true;
         if (this.minLines > 1) {
@@ -163,11 +163,11 @@ public final class ParagraphLayoutCache {
         }
         boolean z2 = false;
         if (!m1715newLayoutWillBeDifferentK40F9xA(j, layoutDirection2)) {
-            if (!Constraints.m7210equalsimpl0(j, paragraphLayoutCache.prevConstraints)) {
+            if (!Constraints.m7941equalsimpl0(j, paragraphLayoutCache.prevConstraints)) {
                 Paragraph paragraph = paragraphLayoutCache.paragraph;
                 Intrinsics.checkNotNull(paragraph);
-                paragraphLayoutCache.layoutSize = ConstraintsKt.m7231constrain4WqzIAM(j, IntSize.m7430constructorimpl((TextDelegateKt.ceilToIntPx(Math.min(paragraph.getMaxIntrinsicWidth(), paragraph.getWidth())) << 32) | (TextDelegateKt.ceilToIntPx(paragraph.getHeight()) & 4294967295L)));
-                if (TextOverflow.m7190equalsimpl0(paragraphLayoutCache.overflow, TextOverflow.Companion.m7203getVisiblegIe3tQ8()) || (((int) (m7231constrain4WqzIAM2 >> 32)) >= paragraph.getWidth() && ((int) (4294967295L & m7231constrain4WqzIAM2)) >= paragraph.getHeight())) {
+                paragraphLayoutCache.layoutSize = ConstraintsKt.m7962constrain4WqzIAM(j, IntSize.m8161constructorimpl((TextDelegateKt.ceilToIntPx(Math.min(paragraph.getMaxIntrinsicWidth(), paragraph.getWidth())) << 32) | (TextDelegateKt.ceilToIntPx(paragraph.getHeight()) & 4294967295L)));
+                if (TextOverflow.m7921equalsimpl0(paragraphLayoutCache.overflow, TextOverflow.Companion.m7934getVisiblegIe3tQ8()) || (((int) (m7962constrain4WqzIAM2 >> 32)) >= paragraph.getWidth() && ((int) (4294967295L & m7962constrain4WqzIAM2)) >= paragraph.getHeight())) {
                     z = false;
                 }
                 paragraphLayoutCache.didOverflow = z;
@@ -177,8 +177,8 @@ public final class ParagraphLayoutCache {
         }
         Paragraph m1720layoutTextK40F9xA$foundation_release = m1720layoutTextK40F9xA$foundation_release(j, layoutDirection2);
         paragraphLayoutCache.prevConstraints = j;
-        paragraphLayoutCache.layoutSize = ConstraintsKt.m7231constrain4WqzIAM(j, IntSize.m7430constructorimpl((TextDelegateKt.ceilToIntPx(m1720layoutTextK40F9xA$foundation_release.getWidth()) << 32) | (TextDelegateKt.ceilToIntPx(m1720layoutTextK40F9xA$foundation_release.getHeight()) & 4294967295L)));
-        if (!TextOverflow.m7190equalsimpl0(paragraphLayoutCache.overflow, TextOverflow.Companion.m7203getVisiblegIe3tQ8()) && (((int) (m7231constrain4WqzIAM >> 32)) < m1720layoutTextK40F9xA$foundation_release.getWidth() || ((int) (m7231constrain4WqzIAM & 4294967295L)) < m1720layoutTextK40F9xA$foundation_release.getHeight())) {
+        paragraphLayoutCache.layoutSize = ConstraintsKt.m7962constrain4WqzIAM(j, IntSize.m8161constructorimpl((TextDelegateKt.ceilToIntPx(m1720layoutTextK40F9xA$foundation_release.getWidth()) << 32) | (TextDelegateKt.ceilToIntPx(m1720layoutTextK40F9xA$foundation_release.getHeight()) & 4294967295L)));
+        if (!TextOverflow.m7921equalsimpl0(paragraphLayoutCache.overflow, TextOverflow.Companion.m7934getVisiblegIe3tQ8()) && (((int) (m7962constrain4WqzIAM >> 32)) < m1720layoutTextK40F9xA$foundation_release.getWidth() || ((int) (m7962constrain4WqzIAM & 4294967295L)) < m1720layoutTextK40F9xA$foundation_release.getHeight())) {
             z2 = true;
         }
         paragraphLayoutCache.didOverflow = z2;
@@ -220,7 +220,7 @@ public final class ParagraphLayoutCache {
                 paragraphLayoutCache = this;
                 layoutDirection2 = layoutDirection;
             }
-            int coerceAtLeast = RangesKt.coerceAtLeast(TextDelegateKt.ceilToIntPx(m1720layoutTextK40F9xA$foundation_release(Constraints, layoutDirection2).getHeight()), Constraints.m7218getMinHeightimpl(Constraints));
+            int coerceAtLeast = RangesKt.coerceAtLeast(TextDelegateKt.ceilToIntPx(m1720layoutTextK40F9xA$foundation_release(Constraints, layoutDirection2).getHeight()), Constraints.m7949getMinHeightimpl(Constraints));
             paragraphLayoutCache.cachedIntrinsicHeightInputWidth = i;
             paragraphLayoutCache.cachedIntrinsicHeight = coerceAtLeast;
             return coerceAtLeast;
@@ -259,7 +259,7 @@ public final class ParagraphLayoutCache {
     /* renamed from: layoutText-K40F9xA$foundation_release  reason: not valid java name */
     public final Paragraph m1720layoutTextK40F9xA$foundation_release(long j, LayoutDirection layoutDirection) {
         ParagraphIntrinsics layoutDirection2 = setLayoutDirection(layoutDirection);
-        return ParagraphKt.m6590ParagraphczeNHc(layoutDirection2, LayoutUtilsKt.m1696finalConstraintstfFHcEY(j, this.softWrap, this.overflow, layoutDirection2.getMaxIntrinsicWidth()), LayoutUtilsKt.m1697finalMaxLinesxdlQI24(this.softWrap, this.overflow, this.maxLines), this.overflow);
+        return ParagraphKt.m7321ParagraphczeNHc(layoutDirection2, LayoutUtilsKt.m1696finalConstraintstfFHcEY(j, this.softWrap, this.overflow, layoutDirection2.getMaxIntrinsicWidth()), LayoutUtilsKt.m1697finalMaxLinesxdlQI24(this.softWrap, this.overflow, this.maxLines), this.overflow);
     }
 
     /* renamed from: newLayoutWillBeDifferent-K40F9xA  reason: not valid java name */
@@ -269,10 +269,10 @@ public final class ParagraphLayoutCache {
         if (paragraph == null || (paragraphIntrinsics = this.paragraphIntrinsics) == null || paragraphIntrinsics.getHasStaleResolvedFonts() || layoutDirection != this.intrinsicsLayoutDirection) {
             return true;
         }
-        if (Constraints.m7210equalsimpl0(j, this.prevConstraints)) {
+        if (Constraints.m7941equalsimpl0(j, this.prevConstraints)) {
             return false;
         }
-        return Constraints.m7217getMaxWidthimpl(j) != Constraints.m7217getMaxWidthimpl(this.prevConstraints) || Constraints.m7219getMinWidthimpl(j) != Constraints.m7219getMinWidthimpl(this.prevConstraints) || ((float) Constraints.m7216getMaxHeightimpl(j)) < paragraph.getHeight() || paragraph.getDidExceedMaxLines();
+        return Constraints.m7948getMaxWidthimpl(j) != Constraints.m7948getMaxWidthimpl(this.prevConstraints) || Constraints.m7950getMinWidthimpl(j) != Constraints.m7950getMinWidthimpl(this.prevConstraints) || ((float) Constraints.m7947getMaxHeightimpl(j)) < paragraph.getHeight() || paragraph.getDidExceedMaxLines();
     }
 
     private final void markDirty() {
@@ -281,9 +281,9 @@ public final class ParagraphLayoutCache {
         this.intrinsicsLayoutDirection = null;
         this.cachedIntrinsicHeightInputWidth = -1;
         this.cachedIntrinsicHeight = -1;
-        this.prevConstraints = Constraints.Companion.m7227fixedJhjzzOo(0, 0);
+        this.prevConstraints = Constraints.Companion.m7958fixedJhjzzOo(0, 0);
         long j = 0;
-        this.layoutSize = IntSize.m7430constructorimpl((j & 4294967295L) | (j << 32));
+        this.layoutSize = IntSize.m8161constructorimpl((j & 4294967295L) | (j << 32));
         this.didOverflow = false;
     }
 
@@ -297,8 +297,8 @@ public final class ParagraphLayoutCache {
         if (this.paragraph == null || this.paragraphIntrinsics == null) {
             return null;
         }
-        long m7205constructorimpl = Constraints.m7205constructorimpl(this.prevConstraints & ConstraintsKt.MaxDimensionsAndFocusMask);
-        return new TextLayoutResult(new TextLayoutInput(annotatedString, textStyle, CollectionsKt.emptyList(), this.maxLines, this.softWrap, this.overflow, density, layoutDirection, this.fontFamilyResolver, m7205constructorimpl, (DefaultConstructorMarker) null), new MultiParagraph(new MultiParagraphIntrinsics(annotatedString, textStyle, CollectionsKt.emptyList(), density, this.fontFamilyResolver), m7205constructorimpl, this.maxLines, this.overflow, (DefaultConstructorMarker) null), this.layoutSize, null);
+        long m7936constructorimpl = Constraints.m7936constructorimpl(this.prevConstraints & ConstraintsKt.MaxDimensionsAndFocusMask);
+        return new TextLayoutResult(new TextLayoutInput(annotatedString, textStyle, CollectionsKt.emptyList(), this.maxLines, this.softWrap, this.overflow, density, layoutDirection, this.fontFamilyResolver, m7936constructorimpl, (DefaultConstructorMarker) null), new MultiParagraph(new MultiParagraphIntrinsics(annotatedString, textStyle, CollectionsKt.emptyList(), density, this.fontFamilyResolver), m7936constructorimpl, this.maxLines, this.overflow, (DefaultConstructorMarker) null), this.layoutSize, null);
     }
 
     public final int minIntrinsicWidth(LayoutDirection layoutDirection) {

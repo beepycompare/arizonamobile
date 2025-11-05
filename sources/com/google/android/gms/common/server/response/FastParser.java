@@ -20,7 +20,7 @@ import java.util.Stack;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okio.internal.Buffer;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FastParser<T extends FastJsonResponse> {
     private static final char[] zaa = {AbstractJsonLexerKt.UNICODE_ESC, 'l', 'l'};
     private static final char[] zab = {'r', AbstractJsonLexerKt.UNICODE_ESC, 'e'};
@@ -44,7 +44,7 @@ public class FastParser<T extends FastJsonResponse> {
     private final Stack zat = new Stack();
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ParseException extends Exception {
         public ParseException(String str) {
             super(str);

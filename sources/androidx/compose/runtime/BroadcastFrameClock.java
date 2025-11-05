@@ -42,7 +42,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
     public BroadcastFrameClock(Function0<Unit> function0) {
         this.onNewAwaiters = function0;
         this.lock = new Object();
-        this.pendingAwaitersCountUnlocked = AtomicAwaitersCount.m3776constructorimpl();
+        this.pendingAwaitersCountUnlocked = AtomicAwaitersCount.m4506constructorimpl();
         this.awaiters = new MutableObjectList<>(0, 1, null);
         this.spareList = new MutableObjectList<>(0, 1, null);
     }
@@ -91,7 +91,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
 
         public final void resume(long j) {
             CancellableContinuation<? super R> cancellableContinuation;
-            Object m9106constructorimpl;
+            Object m9847constructorimpl;
             Function1<? super Long, ? extends R> function1 = this.onFrame;
             if (function1 == null || (cancellableContinuation = this.continuation) == null) {
                 return;
@@ -99,19 +99,19 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             try {
                 Result.Companion companion = Result.Companion;
                 FrameAwaiter<R> frameAwaiter = this;
-                m9106constructorimpl = Result.m9106constructorimpl(function1.invoke(Long.valueOf(j)));
+                m9847constructorimpl = Result.m9847constructorimpl(function1.invoke(Long.valueOf(j)));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9106constructorimpl = Result.m9106constructorimpl(ResultKt.createFailure(th));
+                m9847constructorimpl = Result.m9847constructorimpl(ResultKt.createFailure(th));
             }
-            cancellableContinuation.resumeWith(m9106constructorimpl);
+            cancellableContinuation.resumeWith(m9847constructorimpl);
         }
 
         public final void resumeWithException(Throwable th) {
             CancellableContinuation<? super R> cancellableContinuation = this.continuation;
             if (cancellableContinuation != null) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m9106constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuation.resumeWith(Result.m9847constructorimpl(ResultKt.createFailure(th)));
             }
         }
     }
@@ -130,7 +130,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             AtomicInt atomicInt = this.pendingAwaitersCountUnlocked;
             do {
                 i = atomicInt.get();
-            } while (!atomicInt.compareAndSet(i, AtomicAwaitersCount.m3787packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
+            } while (!atomicInt.compareAndSet(i, AtomicAwaitersCount.m4517packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
             int size = mutableObjectList.getSize();
             for (i2 = 0; i2 < size; i2++) {
                 mutableObjectList.get(i2).resume(j);
@@ -158,7 +158,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             AtomicInt atomicInt = this.pendingAwaitersCountUnlocked;
             do {
                 i = atomicInt.get();
-            } while (!atomicInt.compareAndSet(i, AtomicAwaitersCount.m3787packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
+            } while (!atomicInt.compareAndSet(i, AtomicAwaitersCount.m4517packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
             Unit unit = Unit.INSTANCE;
         }
     }
@@ -186,56 +186,56 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
         private final AtomicInt value;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ AtomicAwaitersCount m3775boximpl(AtomicInt atomicInt) {
+        public static final /* synthetic */ AtomicAwaitersCount m4505boximpl(AtomicInt atomicInt) {
             return new AtomicAwaitersCount(atomicInt);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        private static AtomicInt m3777constructorimpl(AtomicInt atomicInt) {
+        private static AtomicInt m4507constructorimpl(AtomicInt atomicInt) {
             return atomicInt;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m3779equalsimpl(AtomicInt atomicInt, Object obj) {
-            return (obj instanceof AtomicAwaitersCount) && Intrinsics.areEqual(atomicInt, ((AtomicAwaitersCount) obj).m3790unboximpl());
+        public static boolean m4509equalsimpl(AtomicInt atomicInt, Object obj) {
+            return (obj instanceof AtomicAwaitersCount) && Intrinsics.areEqual(atomicInt, ((AtomicAwaitersCount) obj).m4520unboximpl());
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m3780equalsimpl0(AtomicInt atomicInt, AtomicInt atomicInt2) {
+        public static final boolean m4510equalsimpl0(AtomicInt atomicInt, AtomicInt atomicInt2) {
             return Intrinsics.areEqual(atomicInt, atomicInt2);
         }
 
         /* renamed from: getCount-impl  reason: not valid java name */
-        private static final int m3781getCountimpl(AtomicInt atomicInt, int i) {
+        private static final int m4511getCountimpl(AtomicInt atomicInt, int i) {
             return 134217727 & i;
         }
 
         /* renamed from: getVersion-impl  reason: not valid java name */
-        private static final int m3782getVersionimpl(AtomicInt atomicInt, int i) {
+        private static final int m4512getVersionimpl(AtomicInt atomicInt, int i) {
             return (i >>> 27) & 15;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m3784hashCodeimpl(AtomicInt atomicInt) {
+        public static int m4514hashCodeimpl(AtomicInt atomicInt) {
             return atomicInt.hashCode();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: pack-impl  reason: not valid java name */
-        public static final int m3787packimpl(AtomicInt atomicInt, int i, int i2) {
+        public static final int m4517packimpl(AtomicInt atomicInt, int i, int i2) {
             return ((i & 15) << 27) | (134217727 & i2);
         }
 
         public boolean equals(Object obj) {
-            return m3779equalsimpl(this.value, obj);
+            return m4509equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m3784hashCodeimpl(this.value);
+            return m4514hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ AtomicInt m3790unboximpl() {
+        public final /* synthetic */ AtomicInt m4520unboximpl() {
             return this.value;
         }
 
@@ -244,17 +244,17 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static AtomicInt m3776constructorimpl() {
-            return m3777constructorimpl(new AtomicInt(0));
+        public static AtomicInt m4506constructorimpl() {
+            return m4507constructorimpl(new AtomicInt(0));
         }
 
         /* renamed from: hasAwaiters-impl  reason: not valid java name */
-        public static final boolean m3783hasAwaitersimpl(AtomicInt atomicInt) {
+        public static final boolean m4513hasAwaitersimpl(AtomicInt atomicInt) {
             return (atomicInt.get() & 134217727) > 0;
         }
 
         /* renamed from: update-impl  reason: not valid java name */
-        private static final int m3789updateimpl(AtomicInt atomicInt, Function1<? super Integer, Integer> function1) {
+        private static final int m4519updateimpl(AtomicInt atomicInt, Function1<? super Integer, Integer> function1) {
             int i;
             int intValue;
             do {
@@ -265,11 +265,11 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
         }
 
         public String toString() {
-            return m3788toStringimpl(this.value);
+            return m4518toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m3788toStringimpl(AtomicInt atomicInt) {
+        public static String m4518toStringimpl(AtomicInt atomicInt) {
             int i = atomicInt.get();
             return "AtomicAwaitersCount(version = " + ((i >>> 27) & 15) + ", count = " + (i & 134217727) + ')';
         }
@@ -287,15 +287,15 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
         }
 
         /* renamed from: incrementVersionAndResetCount-impl  reason: not valid java name */
-        public static final void m3786incrementVersionAndResetCountimpl(AtomicInt atomicInt) {
+        public static final void m4516incrementVersionAndResetCountimpl(AtomicInt atomicInt) {
             int i;
             do {
                 i = atomicInt.get();
-            } while (!atomicInt.compareAndSet(i, m3787packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
+            } while (!atomicInt.compareAndSet(i, m4517packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
         }
 
         /* renamed from: incrementCountAndGetVersion-impl  reason: not valid java name */
-        public static final int m3785incrementCountAndGetVersionimpl(AtomicInt atomicInt, Function0<Unit> function0) {
+        public static final int m4515incrementCountAndGetVersionimpl(AtomicInt atomicInt, Function0<Unit> function0) {
             int i;
             int i2;
             do {
@@ -309,7 +309,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
         }
 
         /* renamed from: decrementCount-impl  reason: not valid java name */
-        public static final void m3778decrementCountimpl(AtomicInt atomicInt, int i) {
+        public static final void m4508decrementCountimpl(AtomicInt atomicInt, int i) {
             int i2;
             do {
                 i2 = atomicInt.get();
@@ -368,7 +368,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
                 }
             } else {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9106constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9847constructorimpl(ResultKt.createFailure(th)));
             }
         }
         Object result = cancellableContinuationImpl.getResult();

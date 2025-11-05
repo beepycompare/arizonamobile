@@ -17,8 +17,8 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: SegmentedButton.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.SegmentedButtonKt$interactionCountAsState$1$1", f = "SegmentedButton.kt", i = {}, l = {400}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.SegmentedButtonKt$interactionCountAsState$1$1", f = "SegmentedButton.kt", i = {}, l = {463}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class SegmentedButtonKt$interactionCountAsState$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MutableIntState $interactionCount;
@@ -59,14 +59,12 @@ final class SegmentedButtonKt$interactionCountAsState$1$1 extends SuspendLambda 
                 }
 
                 public final Object emit(Interaction interaction, Continuation<? super Unit> continuation) {
-                    if (interaction instanceof PressInteraction.Press ? true : interaction instanceof FocusInteraction.Focus) {
+                    if ((interaction instanceof PressInteraction.Press) || (interaction instanceof FocusInteraction.Focus)) {
                         MutableIntState mutableIntState2 = MutableIntState.this;
                         mutableIntState2.setIntValue(mutableIntState2.getIntValue() + 1);
-                    } else {
-                        if (interaction instanceof PressInteraction.Release ? true : interaction instanceof FocusInteraction.Unfocus ? true : interaction instanceof PressInteraction.Cancel) {
-                            MutableIntState mutableIntState3 = MutableIntState.this;
-                            mutableIntState3.setIntValue(mutableIntState3.getIntValue() - 1);
-                        }
+                    } else if ((interaction instanceof PressInteraction.Release) || (interaction instanceof FocusInteraction.Unfocus) || (interaction instanceof PressInteraction.Cancel)) {
+                        MutableIntState mutableIntState3 = MutableIntState.this;
+                        mutableIntState3.setIntValue(mutableIntState3.getIntValue() - 1);
                     }
                     return Unit.INSTANCE;
                 }

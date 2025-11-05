@@ -13,7 +13,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.util.ReleasableExecutor;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Loader implements LoaderErrorThrower {
     private static final int ACTION_TYPE_DONT_RETRY = 2;
     private static final int ACTION_TYPE_DONT_RETRY_FATAL = 3;
@@ -28,7 +28,7 @@ public final class Loader implements LoaderErrorThrower {
     public static final LoadErrorAction DONT_RETRY = new LoadErrorAction(2, C.TIME_UNSET);
     public static final LoadErrorAction DONT_RETRY_FATAL = new LoadErrorAction(3, C.TIME_UNSET);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Callback<T extends Loadable> {
         void onLoadCanceled(T t, long j, long j2, boolean z);
 
@@ -40,26 +40,26 @@ public final class Loader implements LoaderErrorThrower {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Loadable {
         void cancelLoad();
 
         void load() throws IOException;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface ReleaseCallback {
         void onLoaderReleased();
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class UnexpectedLoaderException extends IOException {
         public UnexpectedLoaderException(Throwable th) {
             super("Unexpected " + th.getClass().getSimpleName() + (th.getMessage() != null ? ": " + th.getMessage() : ""), th);
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class LoadErrorAction {
         private final long retryDelayMillis;
         private final int type;
@@ -151,7 +151,7 @@ public final class Loader implements LoaderErrorThrower {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class LoadTask<T extends Loadable> extends Handler implements Runnable {
         private static final int MSG_FATAL_ERROR = 4;
         private static final int MSG_FINISH = 2;
@@ -343,7 +343,7 @@ public final class Loader implements LoaderErrorThrower {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ReleaseTask implements Runnable {
         private final ReleaseCallback callback;
 

@@ -10,7 +10,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicLong;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgq {
     private static zzgq zza;
     private final zzic zzb;

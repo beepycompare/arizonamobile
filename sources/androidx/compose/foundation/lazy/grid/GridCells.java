@@ -57,7 +57,7 @@ public interface GridCells {
 
         private Adaptive(float f) {
             this.minSize = f;
-            if (Dp.m7263compareTo0680j_4(f, Dp.m7264constructorimpl((float) 0)) > 0) {
+            if (Dp.m7994compareTo0680j_4(f, Dp.m7995constructorimpl((float) 0)) > 0) {
                 return;
             }
             InlineClassHelperKt.throwIllegalArgumentException("Provided min size should be larger than zero.");
@@ -71,11 +71,11 @@ public interface GridCells {
         }
 
         public int hashCode() {
-            return Dp.m7270hashCodeimpl(this.minSize);
+            return Dp.m8001hashCodeimpl(this.minSize);
         }
 
         public boolean equals(Object obj) {
-            return (obj instanceof Adaptive) && Dp.m7269equalsimpl0(this.minSize, ((Adaptive) obj).minSize);
+            return (obj instanceof Adaptive) && Dp.m8000equalsimpl0(this.minSize, ((Adaptive) obj).minSize);
         }
     }
 
@@ -92,7 +92,7 @@ public interface GridCells {
 
         private FixedSize(float f) {
             this.size = f;
-            if (Dp.m7263compareTo0680j_4(f, Dp.m7264constructorimpl((float) 0)) > 0) {
+            if (Dp.m7994compareTo0680j_4(f, Dp.m7995constructorimpl((float) 0)) > 0) {
                 return;
             }
             InlineClassHelperKt.throwIllegalArgumentException("Provided size should be larger than zero.");
@@ -117,11 +117,11 @@ public interface GridCells {
         }
 
         public int hashCode() {
-            return Dp.m7270hashCodeimpl(this.size);
+            return Dp.m8001hashCodeimpl(this.size);
         }
 
         public boolean equals(Object obj) {
-            return (obj instanceof FixedSize) && Dp.m7269equalsimpl0(this.size, ((FixedSize) obj).size);
+            return (obj instanceof FixedSize) && Dp.m8000equalsimpl0(this.size, ((FixedSize) obj).size);
         }
     }
 }

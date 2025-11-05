@@ -1,20 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
-public final class Ud implements ThreadFactory {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final AtomicInteger f700a = new AtomicInteger(0);
-
-    public static int a() {
-        return f700a.incrementAndGet();
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.FunctionReferenceImpl;
+/* loaded from: classes3.dex */
+public final /* synthetic */ class Ud extends FunctionReferenceImpl implements Function1 {
+    public Ud(Object obj) {
+        super(1, obj, Vd.class, "markCrashCompletedAndDeleteCompletedCrashes", "markCrashCompletedAndDeleteCompletedCrashes(Ljava/lang/String;)V", 0);
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        return new InterruptionSafeThread(runnable, "null-" + f700a.incrementAndGet());
+    @Override // kotlin.jvm.functions.Function1
+    public final Object invoke(Object obj) {
+        Vd vd = (Vd) this.receiver;
+        vd.f732a.markCrashCompleted((String) obj);
+        vd.f732a.deleteCompletedCrashes();
+        return Unit.INSTANCE;
     }
 }

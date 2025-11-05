@@ -1,30 +1,25 @@
 package androidx.compose.material3;
 
 import androidx.compose.animation.CrossfadeKt;
-import androidx.compose.animation.core.AnimationSpecKt;
+import androidx.compose.animation.core.FiniteAnimationSpec;
 import androidx.compose.foundation.layout.Arrangement;
 import androidx.compose.foundation.layout.ColumnKt;
 import androidx.compose.foundation.layout.ColumnScopeInstance;
 import androidx.compose.foundation.layout.PaddingKt;
 import androidx.compose.foundation.layout.PaddingValues;
-import androidx.compose.foundation.lazy.LazyDslKt;
-import androidx.compose.foundation.lazy.LazyItemScope;
-import androidx.compose.foundation.lazy.LazyListScope;
 import androidx.compose.foundation.lazy.LazyListState;
 import androidx.compose.foundation.lazy.LazyListStateKt;
 import androidx.compose.material3.internal.CalendarDate;
 import androidx.compose.material3.internal.CalendarModel;
 import androidx.compose.material3.internal.CalendarModel_androidKt;
 import androidx.compose.material3.internal.CalendarMonth;
-import androidx.compose.material3.internal.Strings;
-import androidx.compose.material3.internal.Strings_androidKt;
 import androidx.compose.material3.tokens.DatePickerModalTokens;
+import androidx.compose.material3.tokens.MotionSchemeKeyTokens;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionLocalMap;
-import androidx.compose.runtime.CompositionScopedCoroutineScopeCanceller;
 import androidx.compose.runtime.EffectsKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
@@ -36,122 +31,129 @@ import androidx.compose.runtime.saveable.Saver;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
-import androidx.compose.ui.geometry.OffsetKt;
+import androidx.compose.ui.focus.FocusRequester;
+import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Size;
-import androidx.compose.ui.geometry.SizeKt;
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope;
 import androidx.compose.ui.graphics.drawscope.DrawScope;
 import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.semantics.CustomAccessibilityAction;
-import androidx.compose.ui.semantics.ScrollAxisRange;
 import androidx.compose.ui.semantics.SemanticsModifierKt;
 import androidx.compose.ui.semantics.SemanticsPropertiesKt;
 import androidx.compose.ui.semantics.SemanticsPropertyReceiver;
-import androidx.compose.ui.text.TextLayoutResult;
-import androidx.compose.ui.text.TextStyle;
-import androidx.compose.ui.text.font.FontFamily;
-import androidx.compose.ui.text.font.FontStyle;
-import androidx.compose.ui.text.font.FontWeight;
-import androidx.compose.ui.text.style.TextAlign;
-import androidx.compose.ui.text.style.TextDecoration;
 import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.unit.IntOffset;
 import androidx.compose.ui.unit.LayoutDirection;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.List;
 import java.util.Locale;
 import kotlin.Metadata;
-import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.EmptyCoroutineContext;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
-import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: DateRangePicker.kt */
-@Metadata(d1 = {"\u0000¼\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001ak\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\u0015\b\u0002\u0010\u0011\u001a\u000f\u0012\u0004\u0012\u00020\n\u0018\u00010\u0012¢\u0006\u0002\b\u00132\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\n\u0018\u00010\u0012¢\u0006\u0002\b\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u0018H\u0007¢\u0006\u0002\u0010\u0019\u001a°\u0001\u0010\u001a\u001a\u00020\n2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001c2\u0006\u0010\u001e\u001a\u00020\u001c2:\u0010\u001f\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b(#\u0012\u0015\u0012\u0013\u0018\u00010\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\n0 2!\u0010%\u001a\u001d\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b('\u0012\u0004\u0012\u00020\n0&2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010,\u001a\u00020-2\u0006\u0010\u0017\u001a\u00020\u0018H\u0003¢\u0006\u0002\u0010.\u001a`\u0010/\u001a\u00020\f2\n\u00100\u001a\u000601j\u0002`22\n\b\u0002\u00103\u001a\u0004\u0018\u00010\u001c2\n\b\u0002\u00104\u001a\u0004\u0018\u00010\u001c2\n\b\u0002\u00105\u001a\u0004\u0018\u00010\u001c2\b\b\u0002\u0010*\u001a\u00020+2\b\b\u0002\u00106\u001a\u0002072\b\b\u0002\u0010,\u001a\u00020-H\u0007ø\u0001\u0000¢\u0006\u0004\b8\u00109\u001a½\u0001\u0010:\u001a\u00020\n2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001c2\u0006\u0010\u001e\u001a\u00020\u001c2\u0006\u0010;\u001a\u0002072:\u0010\u001f\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b(#\u0012\u0015\u0012\u0013\u0018\u00010\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\n0 2!\u0010%\u001a\u001d\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b('\u0012\u0004\u0012\u00020\n0&2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010,\u001a\u00020-2\u0006\u0010\u0017\u001a\u00020\u0018H\u0003ø\u0001\u0000¢\u0006\u0004\b<\u0010=\u001a°\u0001\u0010>\u001a\u00020\n2\u0006\u0010?\u001a\u00020@2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001c2:\u0010\u001f\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b(#\u0012\u0015\u0012\u0013\u0018\u00010\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\n0 2!\u0010%\u001a\u001d\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b('\u0012\u0004\u0012\u00020\n0&2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010,\u001a\u00020-2\u0006\u0010\u0017\u001a\u00020\u0018H\u0003¢\u0006\u0002\u0010A\u001a.\u0010B\u001a\b\u0012\u0004\u0012\u00020D0C2\u0006\u0010\u000b\u001a\u00020@2\u0006\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020HH\u0002\u001aT\u0010J\u001a\u00020\f2\n\b\u0002\u00103\u001a\u0004\u0018\u00010\u001c2\n\b\u0002\u00104\u001a\u0004\u0018\u00010\u001c2\n\b\u0002\u00105\u001a\u0004\u0018\u00010\u001c2\b\b\u0002\u0010*\u001a\u00020+2\b\b\u0002\u00106\u001a\u0002072\b\b\u0002\u0010,\u001a\u00020-H\u0007ø\u0001\u0000¢\u0006\u0004\bK\u0010L\u001ae\u0010M\u001a\u00020\n2\u0006\u0010N\u001a\u00020\u001c2\b\u0010O\u001a\u0004\u0018\u00010\u001c2\b\u0010P\u001a\u0004\u0018\u00010\u001c2:\u0010\u001f\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b(#\u0012\u0015\u0012\u0013\u0018\u00010\u001c¢\u0006\f\b!\u0012\b\b\"\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\n0 H\u0002¢\u0006\u0002\u0010Q\u001a&\u0010R\u001a\u00020\n*\u00020S2\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020WH\u0000ø\u0001\u0000¢\u0006\u0004\bX\u0010Y\"\u0014\u0010\u0000\u001a\u00020\u0001X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0003\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\b\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006Z"}, d2 = {"CalendarMonthSubheadPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "getCalendarMonthSubheadPadding", "()Landroidx/compose/foundation/layout/PaddingValues;", "DateRangePickerHeadlinePadding", "DateRangePickerTitlePadding", "HeaderHeightOffset", "Landroidx/compose/ui/unit/Dp;", "F", "DateRangePicker", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/material3/DateRangePickerState;", "modifier", "Landroidx/compose/ui/Modifier;", "dateFormatter", "Landroidx/compose/material3/DatePickerFormatter;", "title", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "headline", "showModeToggle", "", "colors", "Landroidx/compose/material3/DatePickerColors;", "(Landroidx/compose/material3/DateRangePickerState;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/DatePickerFormatter;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/material3/DatePickerColors;Landroidx/compose/runtime/Composer;II)V", "DateRangePickerContent", "selectedStartDateMillis", "", "selectedEndDateMillis", "displayedMonthMillis", "onDatesSelectionChange", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "startDateMillis", "endDateMillis", "onDisplayedMonthChange", "Lkotlin/Function1;", "monthInMillis", "calendarModel", "Landroidx/compose/material3/internal/CalendarModel;", "yearRange", "Lkotlin/ranges/IntRange;", "selectableDates", "Landroidx/compose/material3/SelectableDates;", "(Ljava/lang/Long;Ljava/lang/Long;JLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroidx/compose/material3/internal/CalendarModel;Lkotlin/ranges/IntRange;Landroidx/compose/material3/DatePickerFormatter;Landroidx/compose/material3/SelectableDates;Landroidx/compose/material3/DatePickerColors;Landroidx/compose/runtime/Composer;I)V", "DateRangePickerState", CommonUrlParts.LOCALE, "Ljava/util/Locale;", "Landroidx/compose/material3/CalendarLocale;", "initialSelectedStartDateMillis", "initialSelectedEndDateMillis", "initialDisplayedMonthMillis", "initialDisplayMode", "Landroidx/compose/material3/DisplayMode;", "DateRangePickerState-HVP43zI", "(Ljava/util/Locale;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;Lkotlin/ranges/IntRange;ILandroidx/compose/material3/SelectableDates;)Landroidx/compose/material3/DateRangePickerState;", "SwitchableDateEntryContent", "displayMode", "SwitchableDateEntryContent-RN-2D1Q", "(Ljava/lang/Long;Ljava/lang/Long;JILkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroidx/compose/material3/internal/CalendarModel;Lkotlin/ranges/IntRange;Landroidx/compose/material3/DatePickerFormatter;Landroidx/compose/material3/SelectableDates;Landroidx/compose/material3/DatePickerColors;Landroidx/compose/runtime/Composer;II)V", "VerticalMonthsList", "lazyListState", "Landroidx/compose/foundation/lazy/LazyListState;", "(Landroidx/compose/foundation/lazy/LazyListState;Ljava/lang/Long;Ljava/lang/Long;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroidx/compose/material3/internal/CalendarModel;Lkotlin/ranges/IntRange;Landroidx/compose/material3/DatePickerFormatter;Landroidx/compose/material3/SelectableDates;Landroidx/compose/material3/DatePickerColors;Landroidx/compose/runtime/Composer;I)V", "customScrollActions", "", "Landroidx/compose/ui/semantics/CustomAccessibilityAction;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "scrollUpLabel", "", "scrollDownLabel", "rememberDateRangePickerState", "rememberDateRangePickerState-IlFM19s", "(Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;Lkotlin/ranges/IntRange;ILandroidx/compose/material3/SelectableDates;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/DateRangePickerState;", "updateDateSelection", "dateInMillis", "currentStartDateMillis", "currentEndDateMillis", "(JLjava/lang/Long;Ljava/lang/Long;Lkotlin/jvm/functions/Function2;)V", "drawRangeBackground", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "selectedRangeInfo", "Landroidx/compose/material3/SelectedRangeInfo;", "color", "Landroidx/compose/ui/graphics/Color;", "drawRangeBackground-mxwnekA", "(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;Landroidx/compose/material3/SelectedRangeInfo;J)V", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Â\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001aw\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\u0015\b\u0002\u0010\n\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000b¢\u0006\u0002\b\f2\u0015\b\u0002\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000b¢\u0006\u0002\b\f2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u0011H\u0007¢\u0006\u0002\u0010\u0012\u001aQ\u0010\u0013\u001a\u00020\u00032\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00152\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00152\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00152\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001dH\u0007¢\u0006\u0004\b\u001e\u0010\u001f\u001a[\u0010 \u001a\u00020\u00032\n\u0010!\u001a\u00060\"j\u0002`#2\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00152\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00152\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00152\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d¢\u0006\u0004\b$\u0010%\u001aÄ\u0001\u0010&\u001a\u00020\u00012\b\u0010'\u001a\u0004\u0018\u00010\u00152\b\u0010(\u001a\u0004\u0018\u00010\u00152\u0006\u0010)\u001a\u00020\u00152\u0006\u0010*\u001a\u00020\u001b2:\u0010+\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0015\u0012\u0013\u0018\u00010\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(0\u0012\u0004\u0012\u00020\u00010,2!\u00101\u001a\u001d\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(3\u0012\u0004\u0012\u00020\u0001022\u0006\u00104\u001a\u0002052\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\b\u001a\u00020\t2\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011H\u0003¢\u0006\u0004\b6\u00107\u001a°\u0001\u00108\u001a\u00020\u00012\b\u0010'\u001a\u0004\u0018\u00010\u00152\b\u0010(\u001a\u0004\u0018\u00010\u00152\u0006\u0010)\u001a\u00020\u00152:\u0010+\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0015\u0012\u0013\u0018\u00010\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(0\u0012\u0004\u0012\u00020\u00010,2!\u00101\u001a\u001d\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(3\u0012\u0004\u0012\u00020\u0001022\u0006\u00104\u001a\u0002052\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\b\u001a\u00020\tH\u0003¢\u0006\u0002\u00109\u001a°\u0001\u0010:\u001a\u00020\u00012\u0006\u0010;\u001a\u00020<2\b\u0010'\u001a\u0004\u0018\u00010\u00152\b\u0010(\u001a\u0004\u0018\u00010\u00152:\u0010+\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0015\u0012\u0013\u0018\u00010\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(0\u0012\u0004\u0012\u00020\u00010,2!\u00101\u001a\u001d\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(3\u0012\u0004\u0012\u00020\u0001022\u0006\u00104\u001a\u0002052\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\b\u001a\u00020\tH\u0003¢\u0006\u0002\u0010=\u001ae\u0010>\u001a\u00020\u00012\u0006\u0010?\u001a\u00020\u00152\b\u0010@\u001a\u0004\u0018\u00010\u00152\b\u0010A\u001a\u0004\u0018\u00010\u00152:\u0010+\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0015\u0012\u0013\u0018\u00010\u0015¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(0\u0012\u0004\u0012\u00020\u00010,H\u0002¢\u0006\u0002\u0010B\u001a#\u0010G\u001a\u00020\u0001*\u00020H2\u0006\u0010I\u001a\u00020J2\u0006\u0010K\u001a\u00020LH\u0000¢\u0006\u0004\bM\u0010N\u001a.\u0010O\u001a\b\u0012\u0004\u0012\u00020Q0P2\u0006\u0010\u0002\u001a\u00020<2\u0006\u0010R\u001a\u00020S2\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020UH\u0002\"\u0014\u0010C\u001a\u00020DX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bE\u0010F\"\u000e\u0010W\u001a\u00020DX\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010X\u001a\u00020DX\u0082\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010Y\u001a\u00020ZX\u0082\u0004¢\u0006\u0004\n\u0002\u0010[¨\u0006\\"}, d2 = {"DateRangePicker", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/material3/DateRangePickerState;", "modifier", "Landroidx/compose/ui/Modifier;", "dateFormatter", "Landroidx/compose/material3/DatePickerFormatter;", "colors", "Landroidx/compose/material3/DatePickerColors;", "title", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "headline", "showModeToggle", "", "focusRequester", "Landroidx/compose/ui/focus/FocusRequester;", "(Landroidx/compose/material3/DateRangePickerState;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/DatePickerFormatter;Landroidx/compose/material3/DatePickerColors;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/ui/focus/FocusRequester;Landroidx/compose/runtime/Composer;II)V", "rememberDateRangePickerState", "initialSelectedStartDateMillis", "", "initialSelectedEndDateMillis", "initialDisplayedMonthMillis", "yearRange", "Lkotlin/ranges/IntRange;", "initialDisplayMode", "Landroidx/compose/material3/DisplayMode;", "selectableDates", "Landroidx/compose/material3/SelectableDates;", "rememberDateRangePickerState-IlFM19s", "(Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;Lkotlin/ranges/IntRange;ILandroidx/compose/material3/SelectableDates;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/DateRangePickerState;", "DateRangePickerState", CommonUrlParts.LOCALE, "Ljava/util/Locale;", "Landroidx/compose/material3/CalendarLocale;", "DateRangePickerState-HVP43zI", "(Ljava/util/Locale;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;Lkotlin/ranges/IntRange;ILandroidx/compose/material3/SelectableDates;)Landroidx/compose/material3/DateRangePickerState;", "SwitchableDateEntryContent", "selectedStartDateMillis", "selectedEndDateMillis", "displayedMonthMillis", "displayMode", "onDatesSelectionChange", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "startDateMillis", "endDateMillis", "onDisplayedMonthChange", "Lkotlin/Function1;", "monthInMillis", "calendarModel", "Landroidx/compose/material3/internal/CalendarModel;", "SwitchableDateEntryContent-eVtQiho", "(Ljava/lang/Long;Ljava/lang/Long;JILkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroidx/compose/material3/internal/CalendarModel;Lkotlin/ranges/IntRange;Landroidx/compose/material3/DatePickerFormatter;Landroidx/compose/material3/SelectableDates;Landroidx/compose/material3/DatePickerColors;Landroidx/compose/ui/focus/FocusRequester;Landroidx/compose/runtime/Composer;II)V", "DateRangePickerContent", "(Ljava/lang/Long;Ljava/lang/Long;JLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroidx/compose/material3/internal/CalendarModel;Lkotlin/ranges/IntRange;Landroidx/compose/material3/DatePickerFormatter;Landroidx/compose/material3/SelectableDates;Landroidx/compose/material3/DatePickerColors;Landroidx/compose/runtime/Composer;I)V", "VerticalMonthsList", "lazyListState", "Landroidx/compose/foundation/lazy/LazyListState;", "(Landroidx/compose/foundation/lazy/LazyListState;Ljava/lang/Long;Ljava/lang/Long;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroidx/compose/material3/internal/CalendarModel;Lkotlin/ranges/IntRange;Landroidx/compose/material3/DatePickerFormatter;Landroidx/compose/material3/SelectableDates;Landroidx/compose/material3/DatePickerColors;Landroidx/compose/runtime/Composer;I)V", "updateDateSelection", "dateInMillis", "currentStartDateMillis", "currentEndDateMillis", "(JLjava/lang/Long;Ljava/lang/Long;Lkotlin/jvm/functions/Function2;)V", "CalendarMonthSubheadPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "getCalendarMonthSubheadPadding", "()Landroidx/compose/foundation/layout/PaddingValues;", "drawRangeBackground", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "selectedRangeInfo", "Landroidx/compose/material3/SelectedRangeInfo;", "color", "Landroidx/compose/ui/graphics/Color;", "drawRangeBackground-mxwnekA", "(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;Landroidx/compose/material3/SelectedRangeInfo;J)V", "customScrollActions", "", "Landroidx/compose/ui/semantics/CustomAccessibilityAction;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "scrollUpLabel", "", "scrollDownLabel", "DateRangePickerTitlePadding", "DateRangePickerHeadlinePadding", "HeaderHeightOffset", "Landroidx/compose/ui/unit/Dp;", "F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DateRangePickerKt {
     private static final PaddingValues DateRangePickerHeadlinePadding;
     private static final PaddingValues DateRangePickerTitlePadding;
-    private static final PaddingValues CalendarMonthSubheadPadding = PaddingKt.m839PaddingValuesa9UjIt4$default(Dp.m7264constructorimpl(24), Dp.m7264constructorimpl(20), 0.0f, Dp.m7264constructorimpl(8), 4, null);
-    private static final float HeaderHeightOffset = Dp.m7264constructorimpl(60);
+    private static final PaddingValues CalendarMonthSubheadPadding = PaddingKt.m839PaddingValuesa9UjIt4$default(Dp.m7995constructorimpl(24), Dp.m7995constructorimpl(20), 0.0f, Dp.m7995constructorimpl(8), 4, null);
+    private static final float HeaderHeightOffset = Dp.m7995constructorimpl(60);
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0155  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0159  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x016f  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0173  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0185  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x018a  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x01a2  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x01c0  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x01e1  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x01f2  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0244  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0254  */
-    /* JADX WARN: Removed duplicated region for block: B:140:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00d2  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00dd  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x00fe  */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit DateRangePicker$lambda$3(DateRangePickerState dateRangePickerState, Modifier modifier, DatePickerFormatter datePickerFormatter, DatePickerColors datePickerColors, Function2 function2, Function2 function22, boolean z, FocusRequester focusRequester, int i, int i2, Composer composer, int i3) {
+        DateRangePicker(dateRangePickerState, modifier, datePickerFormatter, datePickerColors, function2, function22, z, focusRequester, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit DateRangePickerContent$lambda$12(Long l, Long l2, long j, Function2 function2, Function1 function1, CalendarModel calendarModel, IntRange intRange, DatePickerFormatter datePickerFormatter, SelectableDates selectableDates, DatePickerColors datePickerColors, int i, Composer composer, int i2) {
+        DateRangePickerContent(l, l2, j, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SwitchableDateEntryContent_eVtQiho$lambda$9(Long l, Long l2, long j, int i, Function2 function2, Function1 function1, CalendarModel calendarModel, IntRange intRange, DatePickerFormatter datePickerFormatter, SelectableDates selectableDates, DatePickerColors datePickerColors, FocusRequester focusRequester, int i2, int i3, Composer composer, int i4) {
+        m2264SwitchableDateEntryContenteVtQiho(l, l2, j, i, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, focusRequester, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit VerticalMonthsList$lambda$15(LazyListState lazyListState, Long l, Long l2, Function2 function2, Function1 function1, CalendarModel calendarModel, IntRange intRange, DatePickerFormatter datePickerFormatter, SelectableDates selectableDates, DatePickerColors datePickerColors, int i, Composer composer, int i2) {
+        VerticalMonthsList(lazyListState, l, l2, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:154:0x02cd  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x02e1  */
+    /* JADX WARN: Removed duplicated region for block: B:159:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x007f  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x010d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void DateRangePicker(final DateRangePickerState dateRangePickerState, Modifier modifier, DatePickerFormatter datePickerFormatter, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, boolean z, DatePickerColors datePickerColors, Composer composer, final int i, final int i2) {
+    public static final void DateRangePicker(final DateRangePickerState dateRangePickerState, Modifier modifier, DatePickerFormatter datePickerFormatter, DatePickerColors datePickerColors, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, boolean z, FocusRequester focusRequester, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
+        Object obj;
         int i4;
         ComposableLambda composableLambda;
         int i5;
         ComposableLambda composableLambda2;
         int i6;
         boolean z2;
-        DatePickerColors datePickerColors2;
-        final DatePickerFormatter datePickerFormatter2;
         int i7;
-        int i8;
-        boolean z3;
-        final DatePickerColors colors;
-        Function2<? super Composer, ? super Integer, Unit> function23;
-        boolean changed;
-        Object rememberedValue;
         Composer composer2;
-        final DatePickerFormatter datePickerFormatter3;
-        final boolean z4;
+        final DatePickerFormatter datePickerFormatter2;
+        final FocusRequester focusRequester2;
         final Modifier modifier2;
-        final Function2<? super Composer, ? super Integer, Unit> function24;
-        final DatePickerColors datePickerColors3;
+        final DatePickerColors datePickerColors2;
+        final Function2<? super Composer, ? super Integer, Unit> function23;
+        final boolean z3;
         ScopeUpdateScope endRestartGroup;
+        final DatePickerFormatter datePickerFormatter3;
+        final DatePickerColors datePickerColors3;
+        int i8;
+        boolean z4;
         int i9;
+        Function2<? super Composer, ? super Integer, Unit> function24;
+        boolean z5;
+        DatePickerColors datePickerColors4;
+        Modifier modifier3;
         int i10;
-        Composer startRestartGroup = composer.startRestartGroup(650830774);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DateRangePicker)P(5,3,1,6,2,4)95@4412L47,96@4500L185,102@4729L352,112@5169L8,114@5206L15,115@5246L62,132@5955L5,136@6111L1139,116@5313L1937:DateRangePicker.kt#uh7d8r");
+        FocusRequester focusRequester3;
+        CalendarModel createCalendarModel;
+        DatePickerFormatter datePickerFormatter4;
+        ComposableLambda composableLambda3;
+        int i11;
+        int i12;
+        Composer startRestartGroup = composer.startRestartGroup(1969726368);
+        ComposerKt.sourceInformation(startRestartGroup, "C(DateRangePicker)N(state,modifier,dateFormatter,colors,title,headline,showModeToggle,focusRequester)125@5861L207,149@6756L5,153@6912L1186,132@6073L2025:DateRangePicker.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -159,8 +161,8 @@ public final class DateRangePickerKt {
         } else {
             i3 = i;
         }
-        int i11 = i2 & 2;
-        if (i11 != 0) {
+        int i13 = i2 & 2;
+        if (i13 != 0) {
             i3 |= 48;
         } else if ((i & 48) == 0) {
             companion = modifier;
@@ -168,474 +170,250 @@ public final class DateRangePickerKt {
             if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                 if ((i2 & 4) == 0) {
                     if ((i & 512) == 0 ? startRestartGroup.changed(datePickerFormatter) : startRestartGroup.changedInstance(datePickerFormatter)) {
-                        i10 = 256;
-                        i3 |= i10;
+                        i12 = 256;
+                        i3 |= i12;
                     }
                 }
-                i10 = 128;
-                i3 |= i10;
+                i12 = 128;
+                i3 |= i12;
             }
-            i4 = i2 & 8;
+            if ((i & 3072) != 0) {
+                if ((i2 & 8) == 0) {
+                    obj = datePickerColors;
+                    if (startRestartGroup.changed(obj)) {
+                        i11 = 2048;
+                        i3 |= i11;
+                    }
+                } else {
+                    obj = datePickerColors;
+                }
+                i11 = 1024;
+                i3 |= i11;
+            } else {
+                obj = datePickerColors;
+            }
+            i4 = i2 & 16;
             if (i4 == 0) {
-                i3 |= 3072;
-            } else if ((i & 3072) == 0) {
+                i3 |= 24576;
+            } else if ((i & 24576) == 0) {
                 composableLambda = function2;
-                i3 |= startRestartGroup.changedInstance(composableLambda) ? 2048 : 1024;
-                i5 = i2 & 16;
+                i3 |= startRestartGroup.changedInstance(composableLambda) ? 16384 : 8192;
+                i5 = i2 & 32;
                 if (i5 != 0) {
-                    i3 |= 24576;
-                } else if ((i & 24576) == 0) {
+                    i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                } else if ((196608 & i) == 0) {
                     composableLambda2 = function22;
-                    i3 |= startRestartGroup.changedInstance(composableLambda2) ? 16384 : 8192;
-                    i6 = i2 & 32;
+                    i3 |= startRestartGroup.changedInstance(composableLambda2) ? 131072 : 65536;
+                    i6 = i2 & 64;
                     if (i6 == 0) {
-                        i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
-                    } else if ((196608 & i) == 0) {
+                        i3 |= 1572864;
+                    } else if ((1572864 & i) == 0) {
                         z2 = z;
-                        i3 |= startRestartGroup.changed(z2) ? 131072 : 65536;
-                        if ((1572864 & i) == 0) {
-                            if ((i2 & 64) == 0) {
-                                datePickerColors2 = datePickerColors;
-                                if (startRestartGroup.changed(datePickerColors2)) {
-                                    i9 = 1048576;
-                                    i3 |= i9;
-                                }
-                            } else {
-                                datePickerColors2 = datePickerColors;
-                            }
-                            i9 = 524288;
-                            i3 |= i9;
-                        } else {
-                            datePickerColors2 = datePickerColors;
+                        i3 |= startRestartGroup.changed(z2) ? 1048576 : 524288;
+                        i7 = i2 & 128;
+                        if (i7 != 0) {
+                            i3 |= 12582912;
+                        } else if ((i & 12582912) == 0) {
+                            i3 |= startRestartGroup.changed(focusRequester) ? 8388608 : 4194304;
                         }
-                        if ((599187 & i3) == 599186 || !startRestartGroup.getSkipping()) {
+                        if (startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
                             startRestartGroup.startDefaults();
-                            if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                                if (i11 != 0) {
+                            ComposerKt.sourceInformation(startRestartGroup, "102@4878L47,103@4977L8,104@5026L239,111@5309L409,122@5794L29");
+                            if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
+                                if (i13 != 0) {
                                     companion = Modifier.Companion;
                                 }
                                 if ((i2 & 4) != 0) {
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1454781303, "CC(remember):DateRangePicker.kt#9igjgp");
-                                    Object rememberedValue2 = startRestartGroup.rememberedValue();
-                                    if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                                        rememberedValue2 = DatePickerDefaults.dateFormatter$default(DatePickerDefaults.INSTANCE, null, null, null, 7, null);
-                                        startRestartGroup.updateRememberedValue(rememberedValue2);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1173533297, "CC(remember):DateRangePicker.kt#9igjgp");
+                                    Object rememberedValue = startRestartGroup.rememberedValue();
+                                    if (rememberedValue == Composer.Companion.getEmpty()) {
+                                        rememberedValue = DatePickerDefaults.dateFormatter$default(DatePickerDefaults.INSTANCE, null, null, null, 7, null);
+                                        startRestartGroup.updateRememberedValue(rememberedValue);
                                     }
-                                    datePickerFormatter2 = (DatePickerFormatter) rememberedValue2;
+                                    datePickerFormatter3 = (DatePickerFormatter) rememberedValue;
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     i3 &= -897;
                                 } else {
-                                    datePickerFormatter2 = datePickerFormatter;
+                                    datePickerFormatter3 = datePickerFormatter;
+                                }
+                                if ((i2 & 8) != 0) {
+                                    datePickerColors3 = DatePickerDefaults.INSTANCE.colors(startRestartGroup, 6);
+                                    i3 &= -7169;
+                                } else {
+                                    datePickerColors3 = obj;
                                 }
                                 if (i4 != 0) {
-                                    composableLambda = ComposableLambdaKt.rememberComposableLambda(-162164694, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$2
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        {
-                                            super(2);
-                                        }
-
+                                    i8 = i3;
+                                    z4 = true;
+                                    composableLambda = ComposableLambdaKt.rememberComposableLambda(-803011924, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$2
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                             invoke(composer3, num.intValue());
                                             return Unit.INSTANCE;
                                         }
 
-                                        public final void invoke(Composer composer3, int i12) {
+                                        public final void invoke(Composer composer3, int i14) {
                                             PaddingValues paddingValues;
-                                            ComposerKt.sourceInformation(composer3, "C97@4534L145:DateRangePicker.kt#uh7d8r");
-                                            if ((i12 & 3) != 2 || !composer3.getSkipping()) {
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(-162164694, i12, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:97)");
-                                                }
-                                                DateRangePickerDefaults dateRangePickerDefaults = DateRangePickerDefaults.INSTANCE;
-                                                int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                                                paddingValues = DateRangePickerKt.DateRangePickerTitlePadding;
-                                                dateRangePickerDefaults.m2162DateRangePickerTitlehOD91z4(mo2171getDisplayModejFl4v0, PaddingKt.padding(Modifier.Companion, paddingValues), composer3, 432, 0);
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventEnd();
-                                                    return;
-                                                }
+                                            ComposerKt.sourceInformation(composer3, "C105@5060L199:DateRangePicker.kt#uh7d8r");
+                                            if (!composer3.shouldExecute((i14 & 3) != 2, i14 & 1)) {
+                                                composer3.skipToGroupEnd();
                                                 return;
                                             }
-                                            composer3.skipToGroupEnd();
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventStart(-803011924, i14, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:105)");
+                                            }
+                                            DateRangePickerDefaults dateRangePickerDefaults = DateRangePickerDefaults.INSTANCE;
+                                            int mo2272getDisplayModejFl4v0 = DateRangePickerState.this.mo2272getDisplayModejFl4v0();
+                                            paddingValues = DateRangePickerKt.DateRangePickerTitlePadding;
+                                            dateRangePickerDefaults.m2257DateRangePickerTitleFNtVw6o(mo2272getDisplayModejFl4v0, PaddingKt.padding(Modifier.Companion, paddingValues), datePickerColors3.m2207getTitleContentColor0d7_KjU(), composer3, 3120, 0);
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventEnd();
+                                            }
                                         }
                                     }, startRestartGroup, 54);
-                                    i7 = 54;
+                                    i9 = 54;
                                 } else {
-                                    i7 = 54;
+                                    i8 = i3;
+                                    z4 = true;
+                                    i9 = 54;
                                 }
                                 if (i5 != 0) {
-                                    composableLambda2 = ComposableLambdaKt.rememberComposableLambda(-185279404, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$3
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        {
-                                            super(2);
-                                        }
-
+                                    composableLambda2 = ComposableLambdaKt.rememberComposableLambda(-331385278, z4, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$3
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                             invoke(composer3, num.intValue());
                                             return Unit.INSTANCE;
                                         }
 
-                                        public final void invoke(Composer composer3, int i12) {
+                                        public final void invoke(Composer composer3, int i14) {
                                             PaddingValues paddingValues;
-                                            ComposerKt.sourceInformation(composer3, "C103@4763L312:DateRangePicker.kt#uh7d8r");
-                                            if ((i12 & 3) != 2 || !composer3.getSkipping()) {
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(-185279404, i12, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:103)");
-                                                }
-                                                DateRangePickerDefaults dateRangePickerDefaults = DateRangePickerDefaults.INSTANCE;
-                                                Long selectedStartDateMillis = DateRangePickerState.this.getSelectedStartDateMillis();
-                                                Long selectedEndDateMillis = DateRangePickerState.this.getSelectedEndDateMillis();
-                                                int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                                                DatePickerFormatter datePickerFormatter4 = datePickerFormatter2;
-                                                paddingValues = DateRangePickerKt.DateRangePickerHeadlinePadding;
-                                                dateRangePickerDefaults.m2161DateRangePickerHeadlinev84Udv0(selectedStartDateMillis, selectedEndDateMillis, mo2171getDisplayModejFl4v0, datePickerFormatter4, PaddingKt.padding(Modifier.Companion, paddingValues), composer3, 221184, 0);
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventEnd();
-                                                    return;
-                                                }
+                                            ComposerKt.sourceInformation(composer3, "C112@5343L369:DateRangePicker.kt#uh7d8r");
+                                            if (!composer3.shouldExecute((i14 & 3) != 2, i14 & 1)) {
+                                                composer3.skipToGroupEnd();
                                                 return;
                                             }
-                                            composer3.skipToGroupEnd();
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventStart(-331385278, i14, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:112)");
+                                            }
+                                            DateRangePickerDefaults dateRangePickerDefaults = DateRangePickerDefaults.INSTANCE;
+                                            Long selectedStartDateMillis = DateRangePickerState.this.getSelectedStartDateMillis();
+                                            Long selectedEndDateMillis = DateRangePickerState.this.getSelectedEndDateMillis();
+                                            int mo2272getDisplayModejFl4v0 = DateRangePickerState.this.mo2272getDisplayModejFl4v0();
+                                            DatePickerFormatter datePickerFormatter5 = datePickerFormatter3;
+                                            paddingValues = DateRangePickerKt.DateRangePickerHeadlinePadding;
+                                            dateRangePickerDefaults.m2256DateRangePickerHeadlineqS89cEg(selectedStartDateMillis, selectedEndDateMillis, mo2272getDisplayModejFl4v0, datePickerFormatter5, PaddingKt.padding(Modifier.Companion, paddingValues), datePickerColors3.m2200getHeadlineContentColor0d7_KjU(), composer3, 1597440, 0);
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventEnd();
+                                            }
                                         }
-                                    }, startRestartGroup, i7);
+                                    }, startRestartGroup, i9);
                                 }
                                 if (i6 != 0) {
                                     z2 = true;
                                 }
-                                if ((i2 & 64) != 0) {
-                                    i8 = i3 & (-3670017);
-                                    z3 = z2;
-                                    colors = DatePickerDefaults.INSTANCE.colors(startRestartGroup, 6);
-                                    function23 = composableLambda;
-                                    Modifier modifier3 = companion;
-                                    startRestartGroup.endDefaults();
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(650830774, i8, -1, "androidx.compose.material3.DateRangePicker (DateRangePicker.kt:113)");
+                                if (i7 != 0) {
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1173504003, "CC(remember):DateRangePicker.kt#9igjgp");
+                                    Object rememberedValue2 = startRestartGroup.rememberedValue();
+                                    if (rememberedValue2 == Composer.Companion.getEmpty()) {
+                                        rememberedValue2 = new FocusRequester();
+                                        startRestartGroup.updateRememberedValue(rememberedValue2);
                                     }
-                                    Locale defaultLocale = CalendarLocale_androidKt.defaultLocale(startRestartGroup, 0);
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1454754600, "CC(remember):DateRangePicker.kt#9igjgp");
-                                    changed = startRestartGroup.changed(defaultLocale);
-                                    rememberedValue = startRestartGroup.rememberedValue();
-                                    if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
-                                        rememberedValue = CalendarModel_androidKt.createCalendarModel(defaultLocale);
-                                        startRestartGroup.updateRememberedValue(rememberedValue);
-                                    }
-                                    final CalendarModel calendarModel = (CalendarModel) rememberedValue;
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    startRestartGroup.startReplaceGroup(-1454747621);
-                                    ComposerKt.sourceInformation(startRestartGroup, "122@5491L323");
-                                    ComposableLambda rememberComposableLambda = !z3 ? ComposableLambdaKt.rememberComposableLambda(-1490010652, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$4
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        {
-                                            super(2);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                            invoke(composer3, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer3, int i12) {
-                                            ComposerKt.sourceInformation(composer3, "C126@5723L50,123@5513L283:DateRangePicker.kt#uh7d8r");
-                                            if ((i12 & 3) != 2 || !composer3.getSkipping()) {
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(-1490010652, i12, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:123)");
-                                                }
-                                                Modifier padding = PaddingKt.padding(Modifier.Companion, DatePickerKt.getDatePickerModeTogglePadding());
-                                                int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                                                ComposerKt.sourceInformationMarkerStart(composer3, 1752251243, "CC(remember):DateRangePicker.kt#9igjgp");
-                                                boolean changed2 = composer3.changed(DateRangePickerState.this);
-                                                final DateRangePickerState dateRangePickerState2 = DateRangePickerState.this;
-                                                Object rememberedValue3 = composer3.rememberedValue();
-                                                if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue3 = (Function1) new Function1<DisplayMode, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$4$1$1
-                                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                                        {
-                                                            super(1);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function1
-                                                        public /* bridge */ /* synthetic */ Unit invoke(DisplayMode displayMode) {
-                                                            m2169invokevCnGnXg(displayMode.m2188unboximpl());
-                                                            return Unit.INSTANCE;
-                                                        }
-
-                                                        /* renamed from: invoke-vCnGnXg  reason: not valid java name */
-                                                        public final void m2169invokevCnGnXg(int i13) {
-                                                            DateRangePickerState.this.mo2172setDisplayModevCnGnXg(i13);
-                                                        }
-                                                    };
-                                                    composer3.updateRememberedValue(rememberedValue3);
-                                                }
-                                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                DatePickerKt.m2150DisplayModeToggleButtontER2X8s(padding, mo2171getDisplayModejFl4v0, (Function1) rememberedValue3, composer3, 6);
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventEnd();
-                                                    return;
-                                                }
-                                                return;
-                                            }
-                                            composer3.skipToGroupEnd();
-                                        }
-                                    }, startRestartGroup, 54) : null;
-                                    startRestartGroup.endReplaceGroup();
-                                    int i12 = i8 >> 6;
-                                    composer2 = startRestartGroup;
-                                    DatePickerKt.m2146DateEntryContainerau3_HiA(modifier3, function23, composableLambda2, rememberComposableLambda, colors, TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getRangeSelectionHeaderHeadlineFont(), startRestartGroup, 6), Dp.m7264constructorimpl(DatePickerModalTokens.INSTANCE.m3272getRangeSelectionHeaderContainerHeightD9Ej5fM() - HeaderHeightOffset), ComposableLambdaKt.rememberComposableLambda(-57534331, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        {
-                                            super(2);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                            invoke(composer3, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer3, int i13) {
-                                            ComposerKt.sourceInformation(composer3, "C142@6428L467,153@6934L91,137@6121L1123:DateRangePicker.kt#uh7d8r");
-                                            if ((i13 & 3) != 2 || !composer3.getSkipping()) {
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(-57534331, i13, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:137)");
-                                                }
-                                                Long selectedStartDateMillis = DateRangePickerState.this.getSelectedStartDateMillis();
-                                                Long selectedEndDateMillis = DateRangePickerState.this.getSelectedEndDateMillis();
-                                                long displayedMonthMillis = DateRangePickerState.this.getDisplayedMonthMillis();
-                                                int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                                                ComposerKt.sourceInformationMarkerStart(composer3, 1752274220, "CC(remember):DateRangePicker.kt#9igjgp");
-                                                boolean changed2 = composer3.changed(DateRangePickerState.this);
-                                                final DateRangePickerState dateRangePickerState2 = DateRangePickerState.this;
-                                                Object rememberedValue3 = composer3.rememberedValue();
-                                                if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue3 = (Function2) new Function2<Long, Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$1$1
-                                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                                        {
-                                                            super(2);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function2
-                                                        public /* bridge */ /* synthetic */ Unit invoke(Long l, Long l2) {
-                                                            invoke2(l, l2);
-                                                            return Unit.INSTANCE;
-                                                        }
-
-                                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                        public final void invoke2(Long l, Long l2) {
-                                                            try {
-                                                                DateRangePickerState.this.setSelection(l, l2);
-                                                            } catch (IllegalArgumentException unused) {
-                                                            }
-                                                        }
-                                                    };
-                                                    composer3.updateRememberedValue(rememberedValue3);
-                                                }
-                                                Function2 function25 = (Function2) rememberedValue3;
-                                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                ComposerKt.sourceInformationMarkerStart(composer3, 1752290036, "CC(remember):DateRangePicker.kt#9igjgp");
-                                                boolean changed3 = composer3.changed(DateRangePickerState.this);
-                                                final DateRangePickerState dateRangePickerState3 = DateRangePickerState.this;
-                                                Object rememberedValue4 = composer3.rememberedValue();
-                                                if (changed3 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue4 = (Function1) new Function1<Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$2$1
-                                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                                        {
-                                                            super(1);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function1
-                                                        public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                                                            invoke(l.longValue());
-                                                            return Unit.INSTANCE;
-                                                        }
-
-                                                        public final void invoke(long j) {
-                                                            DateRangePickerState.this.setDisplayedMonthMillis(j);
-                                                        }
-                                                    };
-                                                    composer3.updateRememberedValue(rememberedValue4);
-                                                }
-                                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                DateRangePickerKt.m2165SwitchableDateEntryContentRN2D1Q(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2171getDisplayModejFl4v0, function25, (Function1) rememberedValue4, calendarModel, DateRangePickerState.this.getYearRange(), datePickerFormatter2, DateRangePickerState.this.getSelectableDates(), colors, composer3, 0, 0);
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventEnd();
-                                                    return;
-                                                }
-                                                return;
-                                            }
-                                            composer3.skipToGroupEnd();
-                                        }
-                                    }, startRestartGroup, 54), composer2, ((i8 >> 3) & 14) | 14155776 | (i12 & 112) | (i12 & 896) | (i12 & 57344));
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
-                                    datePickerFormatter3 = datePickerFormatter2;
-                                    z4 = z3;
-                                    modifier2 = modifier3;
-                                    function24 = function23;
-                                    datePickerColors3 = colors;
+                                    DatePickerColors datePickerColors5 = datePickerColors3;
+                                    focusRequester3 = (FocusRequester) rememberedValue2;
+                                    z5 = z2;
+                                    datePickerColors4 = datePickerColors5;
+                                    function24 = composableLambda;
+                                    modifier3 = companion;
+                                    i10 = i8;
+                                } else {
+                                    function24 = composableLambda;
+                                    z5 = z2;
+                                    datePickerColors4 = datePickerColors3;
+                                    modifier3 = companion;
+                                    i10 = i8;
+                                    focusRequester3 = focusRequester;
                                 }
                             } else {
                                 startRestartGroup.skipToGroupEnd();
                                 if ((i2 & 4) != 0) {
                                     i3 &= -897;
                                 }
-                                if ((i2 & 64) != 0) {
-                                    i3 &= -3670017;
+                                if ((i2 & 8) != 0) {
+                                    i3 &= -7169;
                                 }
-                                datePickerFormatter2 = datePickerFormatter;
+                                datePickerFormatter3 = datePickerFormatter;
+                                focusRequester3 = focusRequester;
+                                function24 = composableLambda;
+                                modifier3 = companion;
+                                i10 = i3;
+                                z5 = z2;
+                                datePickerColors4 = obj;
                             }
-                            i8 = i3;
-                            function23 = composableLambda;
-                            z3 = z2;
-                            colors = datePickerColors2;
-                            Modifier modifier32 = companion;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventStart(1969726368, i10, -1, "androidx.compose.material3.DateRangePicker (DateRangePicker.kt:123)");
                             }
-                            Locale defaultLocale2 = CalendarLocale_androidKt.defaultLocale(startRestartGroup, 0);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1454754600, "CC(remember):DateRangePicker.kt#9igjgp");
-                            changed = startRestartGroup.changed(defaultLocale2);
-                            rememberedValue = startRestartGroup.rememberedValue();
-                            if (!changed) {
+                            Locale locale = dateRangePickerState.getLocale();
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1173501681, "CC(remember):DateRangePicker.kt#9igjgp");
+                            boolean changed = startRestartGroup.changed(locale);
+                            Object rememberedValue3 = startRestartGroup.rememberedValue();
+                            if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
+                                if (dateRangePickerState instanceof BaseDatePickerStateImpl) {
+                                    createCalendarModel = ((BaseDatePickerStateImpl) dateRangePickerState).getCalendarModel();
+                                } else {
+                                    createCalendarModel = CalendarModel_androidKt.createCalendarModel(dateRangePickerState.getLocale());
+                                }
+                                rememberedValue3 = createCalendarModel;
+                                startRestartGroup.updateRememberedValue(rememberedValue3);
                             }
-                            rememberedValue = CalendarModel_androidKt.createCalendarModel(defaultLocale2);
-                            startRestartGroup.updateRememberedValue(rememberedValue);
-                            final CalendarModel calendarModel2 = (CalendarModel) rememberedValue;
+                            CalendarModel calendarModel = (CalendarModel) rememberedValue3;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            startRestartGroup.startReplaceGroup(-1454747621);
-                            ComposerKt.sourceInformation(startRestartGroup, "122@5491L323");
-                            if (!z3) {
+                            if (z5) {
+                                startRestartGroup.startReplaceGroup(-2018438858);
+                                ComposerKt.sourceInformation(startRestartGroup, "138@6251L364");
+                                datePickerFormatter4 = datePickerFormatter3;
+                                composableLambda3 = ComposableLambdaKt.rememberComposableLambda(1343236786, true, new DateRangePickerKt$DateRangePicker$5(dateRangePickerState, datePickerColors4), startRestartGroup, 54);
+                                startRestartGroup.endReplaceGroup();
+                            } else {
+                                datePickerFormatter4 = datePickerFormatter3;
+                                startRestartGroup.startReplaceGroup(-2018051234);
+                                startRestartGroup.endReplaceGroup();
+                                composableLambda3 = null;
                             }
-                            startRestartGroup.endReplaceGroup();
-                            int i122 = i8 >> 6;
+                            FocusRequester focusRequester4 = focusRequester3;
+                            DatePickerFormatter datePickerFormatter5 = datePickerFormatter4;
+                            int i14 = i10 >> 9;
                             composer2 = startRestartGroup;
-                            DatePickerKt.m2146DateEntryContainerau3_HiA(modifier32, function23, composableLambda2, rememberComposableLambda, colors, TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getRangeSelectionHeaderHeadlineFont(), startRestartGroup, 6), Dp.m7264constructorimpl(DatePickerModalTokens.INSTANCE.m3272getRangeSelectionHeaderContainerHeightD9Ej5fM() - HeaderHeightOffset), ComposableLambdaKt.rememberComposableLambda(-57534331, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                    invoke(composer3, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer3, int i13) {
-                                    ComposerKt.sourceInformation(composer3, "C142@6428L467,153@6934L91,137@6121L1123:DateRangePicker.kt#uh7d8r");
-                                    if ((i13 & 3) != 2 || !composer3.getSkipping()) {
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-57534331, i13, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:137)");
-                                        }
-                                        Long selectedStartDateMillis = DateRangePickerState.this.getSelectedStartDateMillis();
-                                        Long selectedEndDateMillis = DateRangePickerState.this.getSelectedEndDateMillis();
-                                        long displayedMonthMillis = DateRangePickerState.this.getDisplayedMonthMillis();
-                                        int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                                        ComposerKt.sourceInformationMarkerStart(composer3, 1752274220, "CC(remember):DateRangePicker.kt#9igjgp");
-                                        boolean changed2 = composer3.changed(DateRangePickerState.this);
-                                        final DateRangePickerState dateRangePickerState2 = DateRangePickerState.this;
-                                        Object rememberedValue3 = composer3.rememberedValue();
-                                        if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                            rememberedValue3 = (Function2) new Function2<Long, Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$1$1
-                                                /* JADX INFO: Access modifiers changed from: package-private */
-                                                {
-                                                    super(2);
-                                                }
-
-                                                @Override // kotlin.jvm.functions.Function2
-                                                public /* bridge */ /* synthetic */ Unit invoke(Long l, Long l2) {
-                                                    invoke2(l, l2);
-                                                    return Unit.INSTANCE;
-                                                }
-
-                                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                public final void invoke2(Long l, Long l2) {
-                                                    try {
-                                                        DateRangePickerState.this.setSelection(l, l2);
-                                                    } catch (IllegalArgumentException unused) {
-                                                    }
-                                                }
-                                            };
-                                            composer3.updateRememberedValue(rememberedValue3);
-                                        }
-                                        Function2 function25 = (Function2) rememberedValue3;
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        ComposerKt.sourceInformationMarkerStart(composer3, 1752290036, "CC(remember):DateRangePicker.kt#9igjgp");
-                                        boolean changed3 = composer3.changed(DateRangePickerState.this);
-                                        final DateRangePickerState dateRangePickerState3 = DateRangePickerState.this;
-                                        Object rememberedValue4 = composer3.rememberedValue();
-                                        if (changed3 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                            rememberedValue4 = (Function1) new Function1<Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$2$1
-                                                /* JADX INFO: Access modifiers changed from: package-private */
-                                                {
-                                                    super(1);
-                                                }
-
-                                                @Override // kotlin.jvm.functions.Function1
-                                                public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                                                    invoke(l.longValue());
-                                                    return Unit.INSTANCE;
-                                                }
-
-                                                public final void invoke(long j) {
-                                                    DateRangePickerState.this.setDisplayedMonthMillis(j);
-                                                }
-                                            };
-                                            composer3.updateRememberedValue(rememberedValue4);
-                                        }
-                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        DateRangePickerKt.m2165SwitchableDateEntryContentRN2D1Q(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2171getDisplayModejFl4v0, function25, (Function1) rememberedValue4, calendarModel2, DateRangePickerState.this.getYearRange(), datePickerFormatter2, DateRangePickerState.this.getSelectableDates(), colors, composer3, 0, 0);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                            return;
-                                        }
-                                        return;
-                                    }
-                                    composer3.skipToGroupEnd();
-                                }
-                            }, startRestartGroup, 54), composer2, ((i8 >> 3) & 14) | 14155776 | (i122 & 112) | (i122 & 896) | (i122 & 57344));
+                            DatePickerKt.m2229DateEntryContainerau3_HiA(modifier3, function24, composableLambda2, composableLambda3, datePickerColors4, TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getRangeSelectionHeaderHeadlineFont(), startRestartGroup, 6), Dp.m7995constructorimpl(DatePickerModalTokens.INSTANCE.m3853getRangeSelectionHeaderContainerHeightD9Ej5fM() - HeaderHeightOffset), ComposableLambdaKt.rememberComposableLambda(684885105, true, new DateRangePickerKt$DateRangePicker$6(dateRangePickerState, calendarModel, datePickerFormatter4, datePickerColors4, focusRequester4), startRestartGroup, 54), composer2, ((i10 >> 3) & 14) | 14155776 | (i14 & 112) | (i14 & 896) | (57344 & (i10 << 3)));
                             if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventEnd();
                             }
-                            datePickerFormatter3 = datePickerFormatter2;
-                            z4 = z3;
-                            modifier2 = modifier32;
-                            function24 = function23;
-                            datePickerColors3 = colors;
+                            datePickerFormatter2 = datePickerFormatter5;
+                            focusRequester2 = focusRequester4;
+                            z3 = z5;
+                            modifier2 = modifier3;
+                            function23 = function24;
+                            datePickerColors2 = datePickerColors4;
                         } else {
-                            startRestartGroup.skipToGroupEnd();
                             composer2 = startRestartGroup;
+                            composer2.skipToGroupEnd();
+                            datePickerFormatter2 = datePickerFormatter;
+                            focusRequester2 = focusRequester;
                             modifier2 = companion;
-                            function24 = composableLambda;
-                            z4 = z2;
-                            datePickerColors3 = datePickerColors2;
-                            datePickerFormatter3 = datePickerFormatter;
+                            datePickerColors2 = obj;
+                            function23 = composableLambda;
+                            z3 = z2;
                         }
                         final Function2<? super Composer, ? super Integer, Unit> function25 = composableLambda2;
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup != null) {
-                            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$6
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
-                                }
-
+                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DateRangePickerKt$$ExternalSyntheticLambda7
                                 @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                    invoke(composer3, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer3, int i13) {
-                                    DateRangePickerKt.DateRangePicker(DateRangePickerState.this, modifier2, datePickerFormatter3, function24, function25, z4, datePickerColors3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                public final Object invoke(Object obj2, Object obj3) {
+                                    Unit DateRangePicker$lambda$3;
+                                    DateRangePicker$lambda$3 = DateRangePickerKt.DateRangePicker$lambda$3(DateRangePickerState.this, modifier2, datePickerFormatter2, datePickerColors2, function23, function25, z3, focusRequester2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                                    return DateRangePicker$lambda$3;
                                 }
                             });
                             return;
@@ -643,442 +421,46 @@ public final class DateRangePickerKt {
                         return;
                     }
                     z2 = z;
-                    if ((1572864 & i) == 0) {
+                    i7 = i2 & 128;
+                    if (i7 != 0) {
                     }
-                    if ((599187 & i3) == 599186) {
+                    if (startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
                     }
-                    startRestartGroup.startDefaults();
-                    if ((i & 1) != 0) {
-                    }
-                    if (i11 != 0) {
-                    }
-                    if ((i2 & 4) != 0) {
-                    }
-                    if (i4 != 0) {
-                    }
-                    if (i5 != 0) {
-                    }
-                    if (i6 != 0) {
-                    }
-                    if ((i2 & 64) != 0) {
-                    }
-                    i8 = i3;
-                    function23 = composableLambda;
-                    z3 = z2;
-                    colors = datePickerColors2;
-                    Modifier modifier322 = companion;
-                    startRestartGroup.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    Locale defaultLocale22 = CalendarLocale_androidKt.defaultLocale(startRestartGroup, 0);
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1454754600, "CC(remember):DateRangePicker.kt#9igjgp");
-                    changed = startRestartGroup.changed(defaultLocale22);
-                    rememberedValue = startRestartGroup.rememberedValue();
-                    if (!changed) {
-                    }
-                    rememberedValue = CalendarModel_androidKt.createCalendarModel(defaultLocale22);
-                    startRestartGroup.updateRememberedValue(rememberedValue);
-                    final CalendarModel calendarModel22 = (CalendarModel) rememberedValue;
-                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    startRestartGroup.startReplaceGroup(-1454747621);
-                    ComposerKt.sourceInformation(startRestartGroup, "122@5491L323");
-                    if (!z3) {
-                    }
-                    startRestartGroup.endReplaceGroup();
-                    int i1222 = i8 >> 6;
-                    composer2 = startRestartGroup;
-                    DatePickerKt.m2146DateEntryContainerau3_HiA(modifier322, function23, composableLambda2, rememberComposableLambda, colors, TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getRangeSelectionHeaderHeadlineFont(), startRestartGroup, 6), Dp.m7264constructorimpl(DatePickerModalTokens.INSTANCE.m3272getRangeSelectionHeaderContainerHeightD9Ej5fM() - HeaderHeightOffset), ComposableLambdaKt.rememberComposableLambda(-57534331, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(2);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                            invoke(composer3, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        public final void invoke(Composer composer3, int i13) {
-                            ComposerKt.sourceInformation(composer3, "C142@6428L467,153@6934L91,137@6121L1123:DateRangePicker.kt#uh7d8r");
-                            if ((i13 & 3) != 2 || !composer3.getSkipping()) {
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(-57534331, i13, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:137)");
-                                }
-                                Long selectedStartDateMillis = DateRangePickerState.this.getSelectedStartDateMillis();
-                                Long selectedEndDateMillis = DateRangePickerState.this.getSelectedEndDateMillis();
-                                long displayedMonthMillis = DateRangePickerState.this.getDisplayedMonthMillis();
-                                int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                                ComposerKt.sourceInformationMarkerStart(composer3, 1752274220, "CC(remember):DateRangePicker.kt#9igjgp");
-                                boolean changed2 = composer3.changed(DateRangePickerState.this);
-                                final DateRangePickerState dateRangePickerState2 = DateRangePickerState.this;
-                                Object rememberedValue3 = composer3.rememberedValue();
-                                if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                    rememberedValue3 = (Function2) new Function2<Long, Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$1$1
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        {
-                                            super(2);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Long l, Long l2) {
-                                            invoke2(l, l2);
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                        public final void invoke2(Long l, Long l2) {
-                                            try {
-                                                DateRangePickerState.this.setSelection(l, l2);
-                                            } catch (IllegalArgumentException unused) {
-                                            }
-                                        }
-                                    };
-                                    composer3.updateRememberedValue(rememberedValue3);
-                                }
-                                Function2 function252 = (Function2) rememberedValue3;
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                ComposerKt.sourceInformationMarkerStart(composer3, 1752290036, "CC(remember):DateRangePicker.kt#9igjgp");
-                                boolean changed3 = composer3.changed(DateRangePickerState.this);
-                                final DateRangePickerState dateRangePickerState3 = DateRangePickerState.this;
-                                Object rememberedValue4 = composer3.rememberedValue();
-                                if (changed3 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                    rememberedValue4 = (Function1) new Function1<Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$2$1
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        {
-                                            super(1);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function1
-                                        public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                                            invoke(l.longValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(long j) {
-                                            DateRangePickerState.this.setDisplayedMonthMillis(j);
-                                        }
-                                    };
-                                    composer3.updateRememberedValue(rememberedValue4);
-                                }
-                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                DateRangePickerKt.m2165SwitchableDateEntryContentRN2D1Q(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2171getDisplayModejFl4v0, function252, (Function1) rememberedValue4, calendarModel22, DateRangePickerState.this.getYearRange(), datePickerFormatter2, DateRangePickerState.this.getSelectableDates(), colors, composer3, 0, 0);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                    return;
-                                }
-                                return;
-                            }
-                            composer3.skipToGroupEnd();
-                        }
-                    }, startRestartGroup, 54), composer2, ((i8 >> 3) & 14) | 14155776 | (i1222 & 112) | (i1222 & 896) | (i1222 & 57344));
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    datePickerFormatter3 = datePickerFormatter2;
-                    z4 = z3;
-                    modifier2 = modifier322;
-                    function24 = function23;
-                    datePickerColors3 = colors;
-                    final Function2<? super Composer, ? super Integer, Unit> function252 = composableLambda2;
+                    final Function2 function252 = composableLambda2;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
                 }
                 composableLambda2 = function22;
-                i6 = i2 & 32;
+                i6 = i2 & 64;
                 if (i6 == 0) {
                 }
                 z2 = z;
-                if ((1572864 & i) == 0) {
+                i7 = i2 & 128;
+                if (i7 != 0) {
                 }
-                if ((599187 & i3) == 599186) {
+                if (startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i & 1) != 0) {
-                }
-                if (i11 != 0) {
-                }
-                if ((i2 & 4) != 0) {
-                }
-                if (i4 != 0) {
-                }
-                if (i5 != 0) {
-                }
-                if (i6 != 0) {
-                }
-                if ((i2 & 64) != 0) {
-                }
-                i8 = i3;
-                function23 = composableLambda;
-                z3 = z2;
-                colors = datePickerColors2;
-                Modifier modifier3222 = companion;
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                Locale defaultLocale222 = CalendarLocale_androidKt.defaultLocale(startRestartGroup, 0);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1454754600, "CC(remember):DateRangePicker.kt#9igjgp");
-                changed = startRestartGroup.changed(defaultLocale222);
-                rememberedValue = startRestartGroup.rememberedValue();
-                if (!changed) {
-                }
-                rememberedValue = CalendarModel_androidKt.createCalendarModel(defaultLocale222);
-                startRestartGroup.updateRememberedValue(rememberedValue);
-                final CalendarModel calendarModel222 = (CalendarModel) rememberedValue;
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                startRestartGroup.startReplaceGroup(-1454747621);
-                ComposerKt.sourceInformation(startRestartGroup, "122@5491L323");
-                if (!z3) {
-                }
-                startRestartGroup.endReplaceGroup();
-                int i12222 = i8 >> 6;
-                composer2 = startRestartGroup;
-                DatePickerKt.m2146DateEntryContainerau3_HiA(modifier3222, function23, composableLambda2, rememberComposableLambda, colors, TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getRangeSelectionHeaderHeadlineFont(), startRestartGroup, 6), Dp.m7264constructorimpl(DatePickerModalTokens.INSTANCE.m3272getRangeSelectionHeaderContainerHeightD9Ej5fM() - HeaderHeightOffset), ComposableLambdaKt.rememberComposableLambda(-57534331, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                        invoke(composer3, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(Composer composer3, int i13) {
-                        ComposerKt.sourceInformation(composer3, "C142@6428L467,153@6934L91,137@6121L1123:DateRangePicker.kt#uh7d8r");
-                        if ((i13 & 3) != 2 || !composer3.getSkipping()) {
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-57534331, i13, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:137)");
-                            }
-                            Long selectedStartDateMillis = DateRangePickerState.this.getSelectedStartDateMillis();
-                            Long selectedEndDateMillis = DateRangePickerState.this.getSelectedEndDateMillis();
-                            long displayedMonthMillis = DateRangePickerState.this.getDisplayedMonthMillis();
-                            int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                            ComposerKt.sourceInformationMarkerStart(composer3, 1752274220, "CC(remember):DateRangePicker.kt#9igjgp");
-                            boolean changed2 = composer3.changed(DateRangePickerState.this);
-                            final DateRangePickerState dateRangePickerState2 = DateRangePickerState.this;
-                            Object rememberedValue3 = composer3.rememberedValue();
-                            if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                rememberedValue3 = (Function2) new Function2<Long, Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$1$1
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    {
-                                        super(2);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Long l, Long l2) {
-                                        invoke2(l, l2);
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                    public final void invoke2(Long l, Long l2) {
-                                        try {
-                                            DateRangePickerState.this.setSelection(l, l2);
-                                        } catch (IllegalArgumentException unused) {
-                                        }
-                                    }
-                                };
-                                composer3.updateRememberedValue(rememberedValue3);
-                            }
-                            Function2 function2522 = (Function2) rememberedValue3;
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            ComposerKt.sourceInformationMarkerStart(composer3, 1752290036, "CC(remember):DateRangePicker.kt#9igjgp");
-                            boolean changed3 = composer3.changed(DateRangePickerState.this);
-                            final DateRangePickerState dateRangePickerState3 = DateRangePickerState.this;
-                            Object rememberedValue4 = composer3.rememberedValue();
-                            if (changed3 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                rememberedValue4 = (Function1) new Function1<Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$2$1
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    {
-                                        super(1);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function1
-                                    public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                                        invoke(l.longValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(long j) {
-                                        DateRangePickerState.this.setDisplayedMonthMillis(j);
-                                    }
-                                };
-                                composer3.updateRememberedValue(rememberedValue4);
-                            }
-                            ComposerKt.sourceInformationMarkerEnd(composer3);
-                            DateRangePickerKt.m2165SwitchableDateEntryContentRN2D1Q(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2171getDisplayModejFl4v0, function2522, (Function1) rememberedValue4, calendarModel222, DateRangePickerState.this.getYearRange(), datePickerFormatter2, DateRangePickerState.this.getSelectableDates(), colors, composer3, 0, 0);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                                return;
-                            }
-                            return;
-                        }
-                        composer3.skipToGroupEnd();
-                    }
-                }, startRestartGroup, 54), composer2, ((i8 >> 3) & 14) | 14155776 | (i12222 & 112) | (i12222 & 896) | (i12222 & 57344));
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                datePickerFormatter3 = datePickerFormatter2;
-                z4 = z3;
-                modifier2 = modifier3222;
-                function24 = function23;
-                datePickerColors3 = colors;
-                final Function2<? super Composer, ? super Integer, Unit> function2522 = composableLambda2;
+                final Function2 function2522 = composableLambda2;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup != null) {
                 }
             }
             composableLambda = function2;
-            i5 = i2 & 16;
+            i5 = i2 & 32;
             if (i5 != 0) {
             }
             composableLambda2 = function22;
-            i6 = i2 & 32;
+            i6 = i2 & 64;
             if (i6 == 0) {
             }
             z2 = z;
-            if ((1572864 & i) == 0) {
+            i7 = i2 & 128;
+            if (i7 != 0) {
             }
-            if ((599187 & i3) == 599186) {
+            if (startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i & 1) != 0) {
-            }
-            if (i11 != 0) {
-            }
-            if ((i2 & 4) != 0) {
-            }
-            if (i4 != 0) {
-            }
-            if (i5 != 0) {
-            }
-            if (i6 != 0) {
-            }
-            if ((i2 & 64) != 0) {
-            }
-            i8 = i3;
-            function23 = composableLambda;
-            z3 = z2;
-            colors = datePickerColors2;
-            Modifier modifier32222 = companion;
-            startRestartGroup.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            Locale defaultLocale2222 = CalendarLocale_androidKt.defaultLocale(startRestartGroup, 0);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1454754600, "CC(remember):DateRangePicker.kt#9igjgp");
-            changed = startRestartGroup.changed(defaultLocale2222);
-            rememberedValue = startRestartGroup.rememberedValue();
-            if (!changed) {
-            }
-            rememberedValue = CalendarModel_androidKt.createCalendarModel(defaultLocale2222);
-            startRestartGroup.updateRememberedValue(rememberedValue);
-            final CalendarModel calendarModel2222 = (CalendarModel) rememberedValue;
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            startRestartGroup.startReplaceGroup(-1454747621);
-            ComposerKt.sourceInformation(startRestartGroup, "122@5491L323");
-            if (!z3) {
-            }
-            startRestartGroup.endReplaceGroup();
-            int i122222 = i8 >> 6;
-            composer2 = startRestartGroup;
-            DatePickerKt.m2146DateEntryContainerau3_HiA(modifier32222, function23, composableLambda2, rememberComposableLambda, colors, TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getRangeSelectionHeaderHeadlineFont(), startRestartGroup, 6), Dp.m7264constructorimpl(DatePickerModalTokens.INSTANCE.m3272getRangeSelectionHeaderContainerHeightD9Ej5fM() - HeaderHeightOffset), ComposableLambdaKt.rememberComposableLambda(-57534331, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(2);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                    invoke(composer3, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer3, int i13) {
-                    ComposerKt.sourceInformation(composer3, "C142@6428L467,153@6934L91,137@6121L1123:DateRangePicker.kt#uh7d8r");
-                    if ((i13 & 3) != 2 || !composer3.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-57534331, i13, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:137)");
-                        }
-                        Long selectedStartDateMillis = DateRangePickerState.this.getSelectedStartDateMillis();
-                        Long selectedEndDateMillis = DateRangePickerState.this.getSelectedEndDateMillis();
-                        long displayedMonthMillis = DateRangePickerState.this.getDisplayedMonthMillis();
-                        int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                        ComposerKt.sourceInformationMarkerStart(composer3, 1752274220, "CC(remember):DateRangePicker.kt#9igjgp");
-                        boolean changed2 = composer3.changed(DateRangePickerState.this);
-                        final DateRangePickerState dateRangePickerState2 = DateRangePickerState.this;
-                        Object rememberedValue3 = composer3.rememberedValue();
-                        if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                            rememberedValue3 = (Function2) new Function2<Long, Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$1$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Long l, Long l2) {
-                                    invoke2(l, l2);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(Long l, Long l2) {
-                                    try {
-                                        DateRangePickerState.this.setSelection(l, l2);
-                                    } catch (IllegalArgumentException unused) {
-                                    }
-                                }
-                            };
-                            composer3.updateRememberedValue(rememberedValue3);
-                        }
-                        Function2 function25222 = (Function2) rememberedValue3;
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        ComposerKt.sourceInformationMarkerStart(composer3, 1752290036, "CC(remember):DateRangePicker.kt#9igjgp");
-                        boolean changed3 = composer3.changed(DateRangePickerState.this);
-                        final DateRangePickerState dateRangePickerState3 = DateRangePickerState.this;
-                        Object rememberedValue4 = composer3.rememberedValue();
-                        if (changed3 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                            rememberedValue4 = (Function1) new Function1<Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$2$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                {
-                                    super(1);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                                    invoke(l.longValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(long j) {
-                                    DateRangePickerState.this.setDisplayedMonthMillis(j);
-                                }
-                            };
-                            composer3.updateRememberedValue(rememberedValue4);
-                        }
-                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                        DateRangePickerKt.m2165SwitchableDateEntryContentRN2D1Q(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2171getDisplayModejFl4v0, function25222, (Function1) rememberedValue4, calendarModel2222, DateRangePickerState.this.getYearRange(), datePickerFormatter2, DateRangePickerState.this.getSelectableDates(), colors, composer3, 0, 0);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer3.skipToGroupEnd();
-                }
-            }, startRestartGroup, 54), composer2, ((i8 >> 3) & 14) | 14155776 | (i122222 & 112) | (i122222 & 896) | (i122222 & 57344));
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            datePickerFormatter3 = datePickerFormatter2;
-            z4 = z3;
-            modifier2 = modifier32222;
-            function24 = function23;
-            datePickerColors3 = colors;
-            final Function2<? super Composer, ? super Integer, Unit> function25222 = composableLambda2;
+            final Function2 function25222 = composableLambda2;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -1086,197 +468,68 @@ public final class DateRangePickerKt {
         companion = modifier;
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
         }
-        i4 = i2 & 8;
+        if ((i & 3072) != 0) {
+        }
+        i4 = i2 & 16;
         if (i4 == 0) {
         }
         composableLambda = function2;
-        i5 = i2 & 16;
+        i5 = i2 & 32;
         if (i5 != 0) {
         }
         composableLambda2 = function22;
-        i6 = i2 & 32;
+        i6 = i2 & 64;
         if (i6 == 0) {
         }
         z2 = z;
-        if ((1572864 & i) == 0) {
+        i7 = i2 & 128;
+        if (i7 != 0) {
         }
-        if ((599187 & i3) == 599186) {
+        if (startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i & 1) != 0) {
-        }
-        if (i11 != 0) {
-        }
-        if ((i2 & 4) != 0) {
-        }
-        if (i4 != 0) {
-        }
-        if (i5 != 0) {
-        }
-        if (i6 != 0) {
-        }
-        if ((i2 & 64) != 0) {
-        }
-        i8 = i3;
-        function23 = composableLambda;
-        z3 = z2;
-        colors = datePickerColors2;
-        Modifier modifier322222 = companion;
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        Locale defaultLocale22222 = CalendarLocale_androidKt.defaultLocale(startRestartGroup, 0);
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1454754600, "CC(remember):DateRangePicker.kt#9igjgp");
-        changed = startRestartGroup.changed(defaultLocale22222);
-        rememberedValue = startRestartGroup.rememberedValue();
-        if (!changed) {
-        }
-        rememberedValue = CalendarModel_androidKt.createCalendarModel(defaultLocale22222);
-        startRestartGroup.updateRememberedValue(rememberedValue);
-        final CalendarModel calendarModel22222 = (CalendarModel) rememberedValue;
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        startRestartGroup.startReplaceGroup(-1454747621);
-        ComposerKt.sourceInformation(startRestartGroup, "122@5491L323");
-        if (!z3) {
-        }
-        startRestartGroup.endReplaceGroup();
-        int i1222222 = i8 >> 6;
-        composer2 = startRestartGroup;
-        DatePickerKt.m2146DateEntryContainerau3_HiA(modifier322222, function23, composableLambda2, rememberComposableLambda, colors, TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getRangeSelectionHeaderHeadlineFont(), startRestartGroup, 6), Dp.m7264constructorimpl(DatePickerModalTokens.INSTANCE.m3272getRangeSelectionHeaderContainerHeightD9Ej5fM() - HeaderHeightOffset), ComposableLambdaKt.rememberComposableLambda(-57534331, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                invoke(composer3, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Composer composer3, int i13) {
-                ComposerKt.sourceInformation(composer3, "C142@6428L467,153@6934L91,137@6121L1123:DateRangePicker.kt#uh7d8r");
-                if ((i13 & 3) != 2 || !composer3.getSkipping()) {
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(-57534331, i13, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:137)");
-                    }
-                    Long selectedStartDateMillis = DateRangePickerState.this.getSelectedStartDateMillis();
-                    Long selectedEndDateMillis = DateRangePickerState.this.getSelectedEndDateMillis();
-                    long displayedMonthMillis = DateRangePickerState.this.getDisplayedMonthMillis();
-                    int mo2171getDisplayModejFl4v0 = DateRangePickerState.this.mo2171getDisplayModejFl4v0();
-                    ComposerKt.sourceInformationMarkerStart(composer3, 1752274220, "CC(remember):DateRangePicker.kt#9igjgp");
-                    boolean changed2 = composer3.changed(DateRangePickerState.this);
-                    final DateRangePickerState dateRangePickerState2 = DateRangePickerState.this;
-                    Object rememberedValue3 = composer3.rememberedValue();
-                    if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                        rememberedValue3 = (Function2) new Function2<Long, Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$1$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            {
-                                super(2);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ Unit invoke(Long l, Long l2) {
-                                invoke2(l, l2);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(Long l, Long l2) {
-                                try {
-                                    DateRangePickerState.this.setSelection(l, l2);
-                                } catch (IllegalArgumentException unused) {
-                                }
-                            }
-                        };
-                        composer3.updateRememberedValue(rememberedValue3);
-                    }
-                    Function2 function252222 = (Function2) rememberedValue3;
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    ComposerKt.sourceInformationMarkerStart(composer3, 1752290036, "CC(remember):DateRangePicker.kt#9igjgp");
-                    boolean changed3 = composer3.changed(DateRangePickerState.this);
-                    final DateRangePickerState dateRangePickerState3 = DateRangePickerState.this;
-                    Object rememberedValue4 = composer3.rememberedValue();
-                    if (changed3 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                        rememberedValue4 = (Function1) new Function1<Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$2$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                                invoke(l.longValue());
-                                return Unit.INSTANCE;
-                            }
-
-                            public final void invoke(long j) {
-                                DateRangePickerState.this.setDisplayedMonthMillis(j);
-                            }
-                        };
-                        composer3.updateRememberedValue(rememberedValue4);
-                    }
-                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                    DateRangePickerKt.m2165SwitchableDateEntryContentRN2D1Q(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2171getDisplayModejFl4v0, function252222, (Function1) rememberedValue4, calendarModel22222, DateRangePickerState.this.getYearRange(), datePickerFormatter2, DateRangePickerState.this.getSelectableDates(), colors, composer3, 0, 0);
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                        return;
-                    }
-                    return;
-                }
-                composer3.skipToGroupEnd();
-            }
-        }, startRestartGroup, 54), composer2, ((i8 >> 3) & 14) | 14155776 | (i1222222 & 112) | (i1222222 & 896) | (i1222222 & 57344));
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        datePickerFormatter3 = datePickerFormatter2;
-        z4 = z3;
-        modifier2 = modifier322222;
-        function24 = function23;
-        datePickerColors3 = colors;
-        final Function2<? super Composer, ? super Integer, Unit> function252222 = composableLambda2;
+        final Function2 function252222 = composableLambda2;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
         }
     }
 
     /* renamed from: rememberDateRangePickerState-IlFM19s  reason: not valid java name */
-    public static final DateRangePickerState m2168rememberDateRangePickerStateIlFM19s(Long l, Long l2, Long l3, IntRange intRange, int i, SelectableDates selectableDates, Composer composer, int i2, int i3) {
-        ComposerKt.sourceInformationMarkerStart(composer, -2012087461, "C(rememberDateRangePickerState)P(3,2,1,5,0:c#material3.DisplayMode)262@11757L15,*263@11866L475,263@11784L557:DateRangePicker.kt#uh7d8r");
+    public static final DateRangePickerState m2267rememberDateRangePickerStateIlFM19s(Long l, Long l2, Long l3, IntRange intRange, int i, SelectableDates selectableDates, Composer composer, int i2, int i3) {
+        ComposerKt.sourceInformationMarkerStart(composer, -2012087461, "C(rememberDateRangePickerState)N(initialSelectedStartDateMillis,initialSelectedEndDateMillis,initialDisplayedMonthMillis,yearRange,initialDisplayMode:c#material3.DisplayMode,selectableDates)284@12718L15,285@12827L476,285@12745L558:DateRangePicker.kt#uh7d8r");
         final Long l4 = (i3 & 1) != 0 ? null : l;
         final Long l5 = (i3 & 2) != 0 ? null : l2;
         final Long l6 = (i3 & 4) != 0 ? l4 : l3;
         final IntRange yearRange = (i3 & 8) != 0 ? DatePickerDefaults.INSTANCE.getYearRange() : intRange;
-        final int m2190getPickerjFl4v0 = (i3 & 16) != 0 ? DisplayMode.Companion.m2190getPickerjFl4v0() : i;
+        final int m2308getPickerjFl4v0 = (i3 & 16) != 0 ? DisplayMode.Companion.m2308getPickerjFl4v0() : i;
         final SelectableDates allDates = (i3 & 32) != 0 ? DatePickerDefaults.INSTANCE.getAllDates() : selectableDates;
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-2012087461, i2, -1, "androidx.compose.material3.rememberDateRangePickerState (DateRangePicker.kt:261)");
+            ComposerKt.traceEventStart(-2012087461, i2, -1, "androidx.compose.material3.rememberDateRangePickerState (DateRangePicker.kt:283)");
         }
         final Locale defaultLocale = CalendarLocale_androidKt.defaultLocale(composer, 0);
         Object[] objArr = new Object[0];
         Saver<DateRangePickerStateImpl, Object> Saver = DateRangePickerStateImpl.Companion.Saver(allDates, defaultLocale);
-        ComposerKt.sourceInformationMarkerStart(composer, -250595201, "CC(remember):DateRangePicker.kt#9igjgp");
-        boolean changedInstance = ((((i2 & 112) ^ 48) > 32 && composer.changed(l5)) || (i2 & 48) == 32) | ((((i2 & 14) ^ 6) > 4 && composer.changed(l4)) || (i2 & 6) == 4) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(l6)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer.changedInstance(yearRange) | ((((57344 & i2) ^ 24576) > 16384 && composer.changed(m2190getPickerjFl4v0)) || (i2 & 24576) == 16384) | ((((458752 & i2) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(allDates)) || (i2 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072) | composer.changedInstance(defaultLocale);
+        ComposerKt.sourceInformationMarkerStart(composer, -880746409, "CC(remember):DateRangePicker.kt#9igjgp");
+        boolean z = true;
+        boolean changedInstance = ((((i2 & 112) ^ 48) > 32 && composer.changed(l5)) || (i2 & 48) == 32) | ((((i2 & 14) ^ 6) > 4 && composer.changed(l4)) || (i2 & 6) == 4) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(l6)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer.changedInstance(yearRange) | ((((57344 & i2) ^ 24576) > 16384 && composer.changed(m2308getPickerjFl4v0)) || (i2 & 24576) == 16384);
+        if ((((458752 & i2) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) <= 131072 || !composer.changed(allDates)) && (i2 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 131072) {
+            z = false;
+        }
+        boolean changedInstance2 = changedInstance | z | composer.changedInstance(defaultLocale);
         Object rememberedValue = composer.rememberedValue();
-        if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = (Function0) new Function0<DateRangePickerStateImpl>() { // from class: androidx.compose.material3.DateRangePickerKt$rememberDateRangePickerState$1$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+        if (changedInstance2 || rememberedValue == Composer.Companion.getEmpty()) {
+            Object obj = new Function0() { // from class: androidx.compose.material3.DateRangePickerKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function0
-                public final DateRangePickerStateImpl invoke() {
-                    return new DateRangePickerStateImpl(l4, l5, l6, yearRange, m2190getPickerjFl4v0, allDates, defaultLocale, null);
+                public final Object invoke() {
+                    DateRangePickerStateImpl rememberDateRangePickerState_IlFM19s$lambda$5$lambda$4;
+                    rememberDateRangePickerState_IlFM19s$lambda$5$lambda$4 = DateRangePickerKt.rememberDateRangePickerState_IlFM19s$lambda$5$lambda$4(l4, l5, l6, yearRange, m2308getPickerjFl4v0, allDates, defaultLocale);
+                    return rememberDateRangePickerState_IlFM19s$lambda$5$lambda$4;
                 }
             };
-            composer.updateRememberedValue(rememberedValue);
+            composer.updateRememberedValue(obj);
+            rememberedValue = obj;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DateRangePickerStateImpl dateRangePickerStateImpl = (DateRangePickerStateImpl) RememberSaveableKt.m3994rememberSaveable(objArr, Saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
+        DateRangePickerStateImpl dateRangePickerStateImpl = (DateRangePickerStateImpl) RememberSaveableKt.m4725rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         dateRangePickerStateImpl.setSelectableDates(allDates);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -1285,8 +538,13 @@ public final class DateRangePickerKt {
         return dateRangePickerStateImpl;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final DateRangePickerStateImpl rememberDateRangePickerState_IlFM19s$lambda$5$lambda$4(Long l, Long l2, Long l3, IntRange intRange, int i, SelectableDates selectableDates, Locale locale) {
+        return new DateRangePickerStateImpl(l, l2, l3, intRange, i, selectableDates, locale, null);
+    }
+
     /* renamed from: DateRangePickerState-HVP43zI$default  reason: not valid java name */
-    public static /* synthetic */ DateRangePickerState m2164DateRangePickerStateHVP43zI$default(Locale locale, Long l, Long l2, Long l3, IntRange intRange, int i, SelectableDates selectableDates, int i2, Object obj) {
+    public static /* synthetic */ DateRangePickerState m2263DateRangePickerStateHVP43zI$default(Locale locale, Long l, Long l2, Long l3, IntRange intRange, int i, SelectableDates selectableDates, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             l = null;
         }
@@ -1300,33 +558,30 @@ public final class DateRangePickerKt {
             intRange = DatePickerDefaults.INSTANCE.getYearRange();
         }
         if ((i2 & 32) != 0) {
-            i = DisplayMode.Companion.m2190getPickerjFl4v0();
+            i = DisplayMode.Companion.m2308getPickerjFl4v0();
         }
         if ((i2 & 64) != 0) {
             selectableDates = DatePickerDefaults.INSTANCE.getAllDates();
         }
-        return m2163DateRangePickerStateHVP43zI(locale, l, l2, l3, intRange, i, selectableDates);
+        return m2262DateRangePickerStateHVP43zI(locale, l, l2, l3, intRange, i, selectableDates);
     }
 
     /* renamed from: DateRangePickerState-HVP43zI  reason: not valid java name */
-    public static final DateRangePickerState m2163DateRangePickerStateHVP43zI(Locale locale, Long l, Long l2, Long l3, IntRange intRange, int i, SelectableDates selectableDates) {
+    public static final DateRangePickerState m2262DateRangePickerStateHVP43zI(Locale locale, Long l, Long l2, Long l3, IntRange intRange, int i, SelectableDates selectableDates) {
         return new DateRangePickerStateImpl(l, l2, l3, intRange, i, selectableDates, locale, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: SwitchableDateEntryContent-RN-2D1Q  reason: not valid java name */
-    public static final void m2165SwitchableDateEntryContentRN2D1Q(final Long l, final Long l2, final long j, final int i, final Function2<? super Long, ? super Long, Unit> function2, final Function1<? super Long, Unit> function1, final CalendarModel calendarModel, final IntRange intRange, final DatePickerFormatter datePickerFormatter, final SelectableDates selectableDates, final DatePickerColors datePickerColors, Composer composer, final int i2, final int i3) {
+    /* renamed from: SwitchableDateEntryContent-eVtQiho  reason: not valid java name */
+    public static final void m2264SwitchableDateEntryContenteVtQiho(final Long l, final Long l2, final long j, final int i, final Function2<? super Long, ? super Long, Unit> function2, final Function1<? super Long, Unit> function1, final CalendarModel calendarModel, final IntRange intRange, final DatePickerFormatter datePickerFormatter, final SelectableDates selectableDates, final DatePickerColors datePickerColors, final FocusRequester focusRequester, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
-        long j2;
         Object obj2;
         Object obj3;
-        Object obj4;
-        Object obj5;
         int i5;
         Composer composer2;
-        Composer startRestartGroup = composer.startRestartGroup(-532789335);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SwitchableDateEntryContent)P(9,8,4,3:c#material3.DisplayMode,5,6!1,10,2,7)676@30273L1249,668@30045L1477:DateRangePicker.kt#uh7d8r");
+        Composer startRestartGroup = composer.startRestartGroup(621028059);
+        ComposerKt.sourceInformation(startRestartGroup, "C(SwitchableDateEntryContent)N(selectedStartDateMillis,selectedEndDateMillis,displayedMonthMillis,displayMode:c#material3.DisplayMode,onDatesSelectionChange,onDisplayedMonthChange,calendarModel,yearRange,dateFormatter,selectableDates,colors,focusRequester)714@32363L7,716@32422L91,720@32521L1304,712@32259L1566:DateRangePicker.kt#uh7d8r");
         if ((i2 & 6) == 0) {
             i4 = (startRestartGroup.changed(l) ? 4 : 2) | i2;
         } else {
@@ -1339,10 +594,7 @@ public final class DateRangePickerKt {
             obj = l2;
         }
         if ((i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-            j2 = j;
-            i4 |= startRestartGroup.changed(j2) ? 256 : 128;
-        } else {
-            j2 = j;
+            i4 |= startRestartGroup.changed(j) ? 256 : 128;
         }
         if ((i2 & 3072) == 0) {
             i4 |= startRestartGroup.changed(i) ? 2048 : 1024;
@@ -1359,17 +611,11 @@ public final class DateRangePickerKt {
         } else {
             obj3 = function1;
         }
-        if ((1572864 & i2) == 0) {
-            obj4 = calendarModel;
-            i4 |= startRestartGroup.changedInstance(obj4) ? 1048576 : 524288;
-        } else {
-            obj4 = calendarModel;
+        if ((i2 & 1572864) == 0) {
+            i4 |= startRestartGroup.changedInstance(calendarModel) ? 1048576 : 524288;
         }
-        if ((12582912 & i2) == 0) {
-            obj5 = intRange;
-            i4 |= startRestartGroup.changedInstance(obj5) ? 8388608 : 4194304;
-        } else {
-            obj5 = intRange;
+        if ((i2 & 12582912) == 0) {
+            i4 |= startRestartGroup.changedInstance(intRange) ? 8388608 : 4194304;
         }
         if ((i2 & 100663296) == 0) {
             i4 |= (i2 & C.BUFFER_FLAG_FIRST_SAMPLE) == 0 ? startRestartGroup.changed(datePickerFormatter) : startRestartGroup.changedInstance(datePickerFormatter) ? 67108864 : 33554432;
@@ -1382,106 +628,100 @@ public final class DateRangePickerKt {
         } else {
             i5 = i3;
         }
-        if ((i4 & 306783379) != 306783378 || (i5 & 3) != 2 || !startRestartGroup.getSkipping()) {
+        if ((i3 & 48) == 0) {
+            i5 |= startRestartGroup.changed(focusRequester) ? 32 : 16;
+        }
+        int i6 = i5;
+        if (!startRestartGroup.shouldExecute(((i4 & 306783379) == 306783378 && (i6 & 19) == 18) ? false : true, i4 & 1)) {
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-532789335, i4, i5, "androidx.compose.material3.SwitchableDateEntryContent (DateRangePicker.kt:665)");
+                ComposerKt.traceEventStart(621028059, i4, i6, "androidx.compose.material3.SwitchableDateEntryContent (DateRangePicker.kt:708)");
             }
+            FiniteAnimationSpec value = MotionSchemeKt.value(MotionSchemeKeyTokens.FastEffects, startRestartGroup, 6);
+            Modifier.Companion companion = Modifier.Companion;
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -192456874, "CC(remember):DateRangePicker.kt#9igjgp");
+            Object rememberedValue = startRestartGroup.rememberedValue();
+            if (rememberedValue == Composer.Companion.getEmpty()) {
+                rememberedValue = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj4) {
+                        Unit SwitchableDateEntryContent_eVtQiho$lambda$8$lambda$7;
+                        SwitchableDateEntryContent_eVtQiho$lambda$8$lambda$7 = DateRangePickerKt.SwitchableDateEntryContent_eVtQiho$lambda$8$lambda$7((SemanticsPropertyReceiver) obj4);
+                        return SwitchableDateEntryContent_eVtQiho$lambda$8$lambda$7;
+                    }
+                };
+                startRestartGroup.updateRememberedValue(rememberedValue);
+            }
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final Long l3 = obj;
             final Function2<? super Long, ? super Long, Unit> function22 = obj2;
-            final IntRange intRange2 = obj5;
-            final long j3 = j2;
             final Function1<? super Long, Unit> function12 = obj3;
-            final CalendarModel calendarModel2 = obj4;
             composer2 = startRestartGroup;
-            CrossfadeKt.Crossfade(DisplayMode.m2182boximpl(i), SemanticsModifierKt.semantics$default(Modifier.Companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$SwitchableDateEntryContent$1
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    invoke2(semanticsPropertyReceiver);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.setContainer(semanticsPropertyReceiver, true);
-                }
-            }, 1, null), AnimationSpecKt.spring$default(0.0f, 0.0f, null, 7, null), (String) null, ComposableLambdaKt.rememberComposableLambda(-1026642619, true, new Function3<DisplayMode, Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$SwitchableDateEntryContent$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(3);
-                }
-
+            CrossfadeKt.Crossfade(DisplayMode.m2300boximpl(i), SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), value, (String) null, ComposableLambdaKt.rememberComposableLambda(-773828161, true, new Function3<DisplayMode, Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$SwitchableDateEntryContent$2
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(DisplayMode displayMode, Composer composer3, Integer num) {
-                    m2170invokeQujVXRc(displayMode.m2188unboximpl(), composer3, num.intValue());
+                    m2269invokeQujVXRc(displayMode.m2306unboximpl(), composer3, num.intValue());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-QujVXRc  reason: not valid java name */
-                public final void m2170invokeQujVXRc(int i6, Composer composer3, int i7) {
-                    int i8;
-                    ComposerKt.sourceInformation(composer3, "CP(0:c#material3.DisplayMode):DateRangePicker.kt#uh7d8r");
-                    if ((i7 & 6) == 0) {
-                        i8 = i7 | (composer3.changed(i6) ? 4 : 2);
+                public final void m2269invokeQujVXRc(int i7, Composer composer3, int i8) {
+                    int i9;
+                    ComposerKt.sourceInformation(composer3, "CN(mode:c#material3.DisplayMode):DateRangePicker.kt#uh7d8r");
+                    if ((i8 & 6) == 0) {
+                        i9 = i8 | (composer3.changed(i7) ? 4 : 2);
                     } else {
-                        i8 = i7;
+                        i9 = i8;
                     }
-                    if ((i8 & 19) != 18 || !composer3.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-1026642619, i8, -1, "androidx.compose.material3.SwitchableDateEntryContent.<anonymous> (DateRangePicker.kt:677)");
-                        }
-                        if (DisplayMode.m2185equalsimpl0(i6, DisplayMode.Companion.m2190getPickerjFl4v0())) {
-                            composer3.startReplaceGroup(-1871299185);
-                            ComposerKt.sourceInformation(composer3, "679@30355L618");
-                            DateRangePickerKt.DateRangePickerContent(l, l3, j3, function22, function12, calendarModel2, intRange2, datePickerFormatter, selectableDates, datePickerColors, composer3, 0);
-                            composer3.endReplaceGroup();
-                        } else if (DisplayMode.m2185equalsimpl0(i6, DisplayMode.Companion.m2189getInputjFl4v0())) {
-                            composer3.startReplaceGroup(-1871277944);
-                            ComposerKt.sourceInformation(composer3, "692@31023L483");
-                            DateRangeInputKt.DateRangeInputContent(l, l3, function22, calendarModel2, intRange2, datePickerFormatter, selectableDates, datePickerColors, composer3, 0);
-                            composer3.endReplaceGroup();
-                        } else {
-                            composer3.startReplaceGroup(2120399965);
-                            composer3.endReplaceGroup();
-                        }
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
+                    if (!composer3.shouldExecute((i9 & 19) != 18, i9 & 1)) {
+                        composer3.skipToGroupEnd();
                         return;
                     }
-                    composer3.skipToGroupEnd();
+                    if (ComposerKt.isTraceInProgress()) {
+                        ComposerKt.traceEventStart(-773828161, i9, -1, "androidx.compose.material3.SwitchableDateEntryContent.<anonymous> (DateRangePicker.kt:721)");
+                    }
+                    if (DisplayMode.m2303equalsimpl0(i7, DisplayMode.Companion.m2308getPickerjFl4v0())) {
+                        composer3.startReplaceGroup(-619517270);
+                        ComposerKt.sourceInformation(composer3, "723@32603L619");
+                        DateRangePickerKt.DateRangePickerContent(l, l3, j, function22, function12, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, composer3, 0);
+                        composer3.endReplaceGroup();
+                    } else if (DisplayMode.m2303equalsimpl0(i7, DisplayMode.Companion.m2307getInputjFl4v0())) {
+                        composer3.startReplaceGroup(-619495944);
+                        ComposerKt.sourceInformation(composer3, "736@33272L537");
+                        DateRangeInputKt.DateRangeInputContent(l, l3, function22, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, focusRequester, composer3, 0);
+                        composer3.endReplaceGroup();
+                    } else {
+                        composer3.startReplaceGroup(-2023979101);
+                        composer3.endReplaceGroup();
+                    }
+                    if (ComposerKt.isTraceInProgress()) {
+                        ComposerKt.traceEventEnd();
+                    }
                 }
-            }, startRestartGroup, 54), composer2, ((i4 >> 9) & 14) | 24960, 8);
+            }, startRestartGroup, 54), composer2, ((i4 >> 9) & 14) | 24576, 8);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
-            composer2 = startRestartGroup;
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$SwitchableDateEntryContent$3
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DateRangePickerKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                    invoke(composer3, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer3, int i6) {
-                    DateRangePickerKt.m2165SwitchableDateEntryContentRN2D1Q(l, l2, j, i, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
+                public final Object invoke(Object obj4, Object obj5) {
+                    Unit SwitchableDateEntryContent_eVtQiho$lambda$9;
+                    SwitchableDateEntryContent_eVtQiho$lambda$9 = DateRangePickerKt.SwitchableDateEntryContent_eVtQiho$lambda$9(l, l2, j, i, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, focusRequester, i2, i3, (Composer) obj4, ((Integer) obj5).intValue());
+                    return SwitchableDateEntryContent_eVtQiho$lambda$9;
                 }
             });
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SwitchableDateEntryContent_eVtQiho$lambda$8$lambda$7(SemanticsPropertyReceiver semanticsPropertyReceiver) {
+        SemanticsPropertiesKt.setContainer(semanticsPropertyReceiver, true);
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1494,7 +734,7 @@ public final class DateRangePickerKt {
         Object obj;
         DateRangePickerKt$DateRangePickerContent$1$1 dateRangePickerKt$DateRangePickerContent$1$1;
         Composer startRestartGroup = composer.startRestartGroup(-787063721);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DateRangePickerContent)P(8,7,3,4,5!1,9,2,6)722@32197L64,725@32351L309,725@32324L336,733@32666L648:DateRangePicker.kt#uh7d8r");
+        ComposerKt.sourceInformation(startRestartGroup, "C(DateRangePickerContent)N(selectedStartDateMillis,selectedEndDateMillis,displayedMonthMillis,onDatesSelectionChange,onDisplayedMonthChange,calendarModel,yearRange,dateFormatter,selectableDates,colors)767@34501L64,770@34655L309,770@34628L336,778@34970L649:DateRangePicker.kt#uh7d8r");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(l) ? 4 : 2) | i;
         } else {
@@ -1539,14 +779,16 @@ public final class DateRangePickerKt {
         if ((i & 805306368) == 0) {
             i2 |= startRestartGroup.changed(datePickerColors) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
         }
-        if ((i2 & 306783379) != 306783378 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 306783379) != 306783378, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-787063721, i2, -1, "androidx.compose.material3.DateRangePickerContent (DateRangePicker.kt:719)");
+                ComposerKt.traceEventStart(-787063721, i2, -1, "androidx.compose.material3.DateRangePickerContent (DateRangePicker.kt:764)");
             }
             int coerceAtLeast = RangesKt.coerceAtLeast(calendarModel.getMonth(j).indexIn(intRange), 0);
             LazyListState rememberLazyListState = LazyListStateKt.rememberLazyListState(coerceAtLeast, 0, startRestartGroup, 0, 2);
             Integer valueOf = Integer.valueOf(coerceAtLeast);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1097467628, "CC(remember):DateRangePicker.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -453965044, "CC(remember):DateRangePicker.kt#9igjgp");
             boolean changed = startRestartGroup.changed(rememberLazyListState) | startRestartGroup.changed(coerceAtLeast);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -1560,14 +802,14 @@ public final class DateRangePickerKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(valueOf, dateRangePickerKt$DateRangePickerContent$1$1, startRestartGroup, 0);
             Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, DatePickerKt.getDatePickerHorizontalPadding(), 0.0f, 2, obj);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), startRestartGroup, 0);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m844paddingVpY3zN4$default);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -1577,18 +819,18 @@ public final class DateRangePickerKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+            Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -384862393, "C87@4365L9:Column.kt#2w3rfo");
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -384672921, "C89@4556L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 556963099, "C734@32754L31,735@32794L514:DateRangePicker.kt#uh7d8r");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1922743819, "C779@35058L31,780@35098L515:DateRangePicker.kt#uh7d8r");
             DatePickerKt.WeekDays(datePickerColors, calendarModel, startRestartGroup, ((i2 >> 27) & 14) | ((i2 >> 12) & 112));
             VerticalMonthsList(rememberLazyListState, l, l3, function22, function12, calendarModel, intRange, datePickerFormatter, selectableDates2, datePickerColors, startRestartGroup, ((i2 << 3) & 1008) | (i2 & 7168) | (57344 & i2) | (458752 & i2) | (3670016 & i2) | (29360128 & i2) | (234881024 & i2) | (1879048192 & i2));
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1600,42 +842,30 @@ public final class DateRangePickerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePickerContent$3
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DateRangePickerKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i3) {
-                    DateRangePickerKt.DateRangePickerContent(l, l2, j, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj2, Object obj3) {
+                    Unit DateRangePickerContent$lambda$12;
+                    DateRangePickerContent$lambda$12 = DateRangePickerKt.DateRangePickerContent$lambda$12(l, l2, j, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, i, (Composer) obj2, ((Integer) obj3).intValue());
+                    return DateRangePickerContent$lambda$12;
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void VerticalMonthsList(LazyListState lazyListState, final Long l, final Long l2, final Function2<? super Long, ? super Long, Unit> function2, final Function1<? super Long, Unit> function1, final CalendarModel calendarModel, final IntRange intRange, final DatePickerFormatter datePickerFormatter, final SelectableDates selectableDates, final DatePickerColors datePickerColors, Composer composer, final int i) {
+    private static final void VerticalMonthsList(LazyListState lazyListState, final Long l, final Long l2, final Function2<? super Long, ? super Long, Unit> function2, final Function1<? super Long, Unit> function1, final CalendarModel calendarModel, final IntRange intRange, final DatePickerFormatter datePickerFormatter, final SelectableDates selectableDates, final DatePickerColors datePickerColors, Composer composer, final int i) {
         int i2;
         Object obj;
         Object obj2;
         Object obj3;
+        CalendarMonth month;
         DateRangePickerKt$VerticalMonthsList$2$1 dateRangePickerKt$VerticalMonthsList$2$1;
         final LazyListState lazyListState2 = lazyListState;
         Composer startRestartGroup = composer.startRestartGroup(1257365001);
-        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalMonthsList)P(3,8,7,4,5!1,9,2,6)770@34042L158,776@34262L5,776@34269L3748,776@34205L3812,853@38052L228,853@38022L258:DateRangePicker.kt#uh7d8r");
+        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalMonthsList)N(lazyListState,selectedStartDateMillis,selectedEndDateMillis,onDatesSelectionChange,onDisplayedMonthChange,calendarModel,yearRange,dateFormatter,selectableDates,colors)815@36348L159,821@36569L5,821@36576L3838,821@36512L3902,899@40449L229,899@40419L259:DateRangePicker.kt#uh7d8r");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(lazyListState2) ? 4 : 2) | i;
         } else {
@@ -1677,340 +907,28 @@ public final class DateRangePickerKt {
         if ((805306368 & i) == 0) {
             i2 |= startRestartGroup.changed(datePickerColors) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
         }
-        if ((i2 & 306783379) != 306783378 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 306783379) != 306783378, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1257365001, i2, -1, "androidx.compose.material3.VerticalMonthsList (DateRangePicker.kt:767)");
+                ComposerKt.traceEventStart(1257365001, i2, -1, "androidx.compose.material3.VerticalMonthsList (DateRangePicker.kt:812)");
             }
-            final CalendarDate today = calendarModel.getToday();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2140145208, "CC(remember):DateRangePicker.kt#9igjgp");
+            CalendarDate today = calendarModel.getToday();
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1441974088, "CC(remember):DateRangePicker.kt#9igjgp");
             boolean changed = startRestartGroup.changed(intRange);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = calendarModel.getMonth(intRange.getFirst(), 1);
-                startRestartGroup.updateRememberedValue(rememberedValue);
+                month = calendarModel.getMonth(intRange.getFirst(), 1);
+                startRestartGroup.updateRememberedValue(month);
+            } else {
+                month = rememberedValue;
             }
-            final CalendarMonth calendarMonth = (CalendarMonth) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final Long l3 = obj;
-            final Function2<? super Long, ? super Long, Unit> function22 = obj3;
             int i3 = i2;
-            final Long l4 = obj2;
-            TextKt.ProvideTextStyle(TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getDateLabelTextFont(), startRestartGroup, 6), ComposableLambdaKt.rememberComposableLambda(1090773432, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                /* JADX WARN: Multi-variable type inference failed */
-                /* JADX WARN: Type inference failed for: r0v4 */
-                /* JADX WARN: Type inference failed for: r25v0, types: [androidx.compose.runtime.Composer] */
-                public final void invoke(Composer composer2, int i4) {
-                    final List customScrollActions;
-                    ComposerKt.sourceInformation(composer2, "C777@34300L24,778@34366L59,779@34463L55,783@34699L317,808@35694L2317,800@35319L2692:DateRangePicker.kt#uh7d8r");
-                    if ((i4 & 3) != 2 || !composer2.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(1090773432, i4, -1, "androidx.compose.material3.VerticalMonthsList.<anonymous> (DateRangePicker.kt:777)");
-                        }
-                        ComposerKt.sourceInformationMarkerStart(composer2, 773894976, "CC(rememberCoroutineScope)489@20472L144:Effects.kt#9igjgp");
-                        ComposerKt.sourceInformationMarkerStart(composer2, -954363344, "CC(remember):Effects.kt#9igjgp");
-                        Object rememberedValue2 = composer2.rememberedValue();
-                        if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                            CompositionScopedCoroutineScopeCanceller compositionScopedCoroutineScopeCanceller = new CompositionScopedCoroutineScopeCanceller(EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, composer2));
-                            composer2.updateRememberedValue(compositionScopedCoroutineScopeCanceller);
-                            rememberedValue2 = compositionScopedCoroutineScopeCanceller;
-                        }
-                        ComposerKt.sourceInformationMarkerEnd(composer2);
-                        CoroutineScope coroutineScope = ((CompositionScopedCoroutineScopeCanceller) rememberedValue2).getCoroutineScope();
-                        ComposerKt.sourceInformationMarkerEnd(composer2);
-                        Strings.Companion companion = Strings.Companion;
-                        String m3096getString2EP1pXo = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_date_range_picker_scroll_to_previous_month), composer2, 0);
-                        Strings.Companion companion2 = Strings.Companion;
-                        String m3096getString2EP1pXo2 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_date_range_picker_scroll_to_next_month), composer2, 0);
-                        ComposerKt.sourceInformationMarkerStart(composer2, -522190970, "CC(remember):DateRangePicker.kt#9igjgp");
-                        boolean changed2 = composer2.changed(l3) | composer2.changed(l4) | composer2.changed(function22);
-                        final Long l5 = l3;
-                        final Long l6 = l4;
-                        final Function2<Long, Long, Unit> function23 = function22;
-                        Object rememberedValue3 = composer2.rememberedValue();
-                        if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                            rememberedValue3 = (Function1) new Function1<Long, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$onDateSelectionChange$1$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(1);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(Long l7) {
-                                    invoke(l7.longValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(long j) {
-                                    DateRangePickerKt.updateDateSelection(j, l5, l6, function23);
-                                }
-                            };
-                            composer2.updateRememberedValue(rememberedValue3);
-                        }
-                        final Function1 function12 = (Function1) rememberedValue3;
-                        ComposerKt.sourceInformationMarkerEnd(composer2);
-                        customScrollActions = DateRangePickerKt.customScrollActions(lazyListState2, coroutineScope, m3096getString2EP1pXo, m3096getString2EP1pXo2);
-                        Modifier semantics$default = SemanticsModifierKt.semantics$default(Modifier.Companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1.1
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                invoke2(semanticsPropertyReceiver);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                SemanticsPropertiesKt.setVerticalScrollAxisRange(semanticsPropertyReceiver, new ScrollAxisRange(new Function0<Float>() { // from class: androidx.compose.material3.DateRangePickerKt.VerticalMonthsList.1.1.1
-                                    /* JADX WARN: Can't rename method to resolve collision */
-                                    @Override // kotlin.jvm.functions.Function0
-                                    public final Float invoke() {
-                                        return Float.valueOf(0.0f);
-                                    }
-                                }, new Function0<Float>() { // from class: androidx.compose.material3.DateRangePickerKt.VerticalMonthsList.1.1.2
-                                    /* JADX WARN: Can't rename method to resolve collision */
-                                    @Override // kotlin.jvm.functions.Function0
-                                    public final Float invoke() {
-                                        return Float.valueOf(0.0f);
-                                    }
-                                }, false, 4, null));
-                            }
-                        }, 1, null);
-                        LazyListState lazyListState3 = lazyListState2;
-                        ComposerKt.sourceInformationMarkerStart(composer2, -522157130, "CC(remember):DateRangePicker.kt#9igjgp");
-                        boolean changedInstance = composer2.changedInstance(intRange) | composer2.changedInstance(calendarModel) | composer2.changed(calendarMonth) | composer2.changedInstance(datePickerFormatter) | composer2.changedInstance(customScrollActions) | composer2.changed(datePickerColors) | composer2.changed(l3) | composer2.changed(l4) | composer2.changed(function12) | composer2.changed(today) | composer2.changed(selectableDates);
-                        final IntRange intRange2 = intRange;
-                        final CalendarModel calendarModel2 = calendarModel;
-                        final CalendarMonth calendarMonth2 = calendarMonth;
-                        final Long l7 = l3;
-                        final Long l8 = l4;
-                        final CalendarDate calendarDate = today;
-                        final DatePickerFormatter datePickerFormatter2 = datePickerFormatter;
-                        final SelectableDates selectableDates2 = selectableDates;
-                        final DatePickerColors datePickerColors2 = datePickerColors;
-                        Object rememberedValue4 = composer2.rememberedValue();
-                        if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
-                            rememberedValue4 = (Function1) new Function1<LazyListScope, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$2$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(1);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(LazyListScope lazyListScope) {
-                                    invoke2(lazyListScope);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(LazyListScope lazyListScope) {
-                                    int numberOfMonthsInRange = DatePickerKt.numberOfMonthsInRange(IntRange.this);
-                                    final CalendarModel calendarModel3 = calendarModel2;
-                                    final CalendarMonth calendarMonth3 = calendarMonth2;
-                                    final Long l9 = l7;
-                                    final Long l10 = l8;
-                                    final Function1<Long, Unit> function13 = function12;
-                                    final CalendarDate calendarDate2 = calendarDate;
-                                    final DatePickerFormatter datePickerFormatter3 = datePickerFormatter2;
-                                    final SelectableDates selectableDates3 = selectableDates2;
-                                    final DatePickerColors datePickerColors3 = datePickerColors2;
-                                    final List<CustomAccessibilityAction> list = customScrollActions;
-                                    LazyListScope.items$default(lazyListScope, numberOfMonthsInRange, null, null, ComposableLambdaKt.composableLambdaInstance(-1413501381, true, new Function4<LazyItemScope, Integer, Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$2$1.1
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(4);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function4
-                                        public /* bridge */ /* synthetic */ Unit invoke(LazyItemScope lazyItemScope, Integer num, Composer composer3, Integer num2) {
-                                            invoke(lazyItemScope, num.intValue(), composer3, num2.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        /* JADX WARN: Type inference failed for: r1v15 */
-                                        /* JADX WARN: Type inference failed for: r20v0, types: [androidx.compose.runtime.Composer] */
-                                        public final void invoke(LazyItemScope lazyItemScope, int i5, Composer composer3, int i6) {
-                                            int i7;
-                                            SelectedRangeInfo selectedRangeInfo;
-                                            ComposerKt.sourceInformation(composer3, "C811@35861L2126:DateRangePicker.kt#uh7d8r");
-                                            if ((i6 & 6) == 0) {
-                                                i7 = i6 | (composer3.changed(lazyItemScope) ? 4 : 2);
-                                            } else {
-                                                i7 = i6;
-                                            }
-                                            if ((i6 & 48) == 0) {
-                                                i7 |= composer3.changed(i5) ? 32 : 16;
-                                            }
-                                            if ((i7 & 147) != 146 || !composer3.getSkipping()) {
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(-1413501381, i7, -1, "androidx.compose.material3.VerticalMonthsList.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DateRangePicker.kt:810)");
-                                                }
-                                                final CalendarMonth plusMonths = CalendarModel.this.plusMonths(calendarMonth3, i5);
-                                                Modifier fillParentMaxWidth$default = LazyItemScope.fillParentMaxWidth$default(lazyItemScope, Modifier.Companion, 0.0f, 1, null);
-                                                Long l11 = l9;
-                                                Long l12 = l10;
-                                                Function1<Long, Unit> function14 = function13;
-                                                CalendarDate calendarDate3 = calendarDate2;
-                                                final DatePickerFormatter datePickerFormatter4 = datePickerFormatter3;
-                                                SelectableDates selectableDates4 = selectableDates3;
-                                                final DatePickerColors datePickerColors4 = datePickerColors3;
-                                                final List<CustomAccessibilityAction> list2 = list;
-                                                CalendarModel calendarModel4 = CalendarModel.this;
-                                                ComposerKt.sourceInformationMarkerStart(composer3, -483455358, "CC(Column)P(2,3,1)85@4251L61,86@4317L133:Column.kt#2w3rfo");
-                                                MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer3, 0);
-                                                ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                                int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
-                                                CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, fillParentMaxWidth$default);
-                                                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                                ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                                if (!(composer3.getApplier() instanceof Applier)) {
-                                                    ComposablesKt.invalidApplier();
-                                                }
-                                                composer3.startReusableNode();
-                                                if (composer3.getInserting()) {
-                                                    composer3.createNode(constructor);
-                                                } else {
-                                                    composer3.useNode();
-                                                }
-                                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
-                                                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                                }
-                                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                                ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
-                                                ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                                ComposerKt.sourceInformationMarkerStart(composer3, 1460125673, "C812@36002L5,812@36009L623,812@35932L700,838@37423L546:DateRangePicker.kt#uh7d8r");
-                                                TextKt.ProvideTextStyle(TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getRangeSelectionMonthSubheadFont(), composer3, 6), ComposableLambdaKt.rememberComposableLambda(1622100276, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$2$1$1$1$1
-                                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                    {
-                                                        super(2);
-                                                    }
-
-                                                    @Override // kotlin.jvm.functions.Function2
-                                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                        invoke(composer4, num.intValue());
-                                                        return Unit.INSTANCE;
-                                                    }
-
-                                                    public final void invoke(Composer composer4, int i8) {
-                                                        ComposerKt.sourceInformation(composer4, "C817@36237L15,821@36475L45,813@36035L575:DateRangePicker.kt#uh7d8r");
-                                                        if ((i8 & 3) != 2 || !composer4.getSkipping()) {
-                                                            if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventStart(1622100276, i8, -1, "androidx.compose.material3.VerticalMonthsList.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DateRangePicker.kt:813)");
-                                                            }
-                                                            String formatMonthYear = DatePickerFormatter.this.formatMonthYear(Long.valueOf(plusMonths.getStartUtcTimeMillis()), CalendarLocale_androidKt.defaultLocale(composer4, 0));
-                                                            if (formatMonthYear == null) {
-                                                                formatMonthYear = Constants.FILENAME_SEQUENCE_SEPARATOR;
-                                                            }
-                                                            Modifier padding = PaddingKt.padding(Modifier.Companion, DateRangePickerKt.getCalendarMonthSubheadPadding());
-                                                            ComposerKt.sourceInformationMarkerStart(composer4, -77497871, "CC(remember):DateRangePicker.kt#9igjgp");
-                                                            boolean changedInstance2 = composer4.changedInstance(list2);
-                                                            final List<CustomAccessibilityAction> list3 = list2;
-                                                            Object rememberedValue5 = composer4.rememberedValue();
-                                                            if (changedInstance2 || rememberedValue5 == Composer.Companion.getEmpty()) {
-                                                                rememberedValue5 = (Function1) new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$2$1$1$1$1$1$1
-                                                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                                    {
-                                                                        super(1);
-                                                                    }
-
-                                                                    @Override // kotlin.jvm.functions.Function1
-                                                                    public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                                                        invoke2(semanticsPropertyReceiver);
-                                                                        return Unit.INSTANCE;
-                                                                    }
-
-                                                                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                                    public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                                                        SemanticsPropertiesKt.setCustomActions(semanticsPropertyReceiver, list3);
-                                                                    }
-                                                                };
-                                                                composer4.updateRememberedValue(rememberedValue5);
-                                                            }
-                                                            ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                            TextKt.m2814Text4IGK_g(formatMonthYear, SemanticsModifierKt.semantics$default(padding, false, (Function1) rememberedValue5, 1, null), datePickerColors4.m2135getSubheadContentColor0d7_KjU(), 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer4, 0, 0, 131064);
-                                                            if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventEnd();
-                                                                return;
-                                                            }
-                                                            return;
-                                                        }
-                                                        composer4.skipToGroupEnd();
-                                                    }
-                                                }, composer3, 54), composer3, 48);
-                                                composer3.startReplaceGroup(2125334733);
-                                                ComposerKt.sourceInformation(composer3, "827@36822L488");
-                                                if (l11 == null || l12 == null) {
-                                                    selectedRangeInfo = null;
-                                                } else {
-                                                    ComposerKt.sourceInformationMarkerStart(composer3, 2125337741, "CC(remember):DateRangePicker.kt#9igjgp");
-                                                    boolean changed3 = composer3.changed(l11) | composer3.changed(l12);
-                                                    Object rememberedValue5 = composer3.rememberedValue();
-                                                    if (changed3 || rememberedValue5 == Composer.Companion.getEmpty()) {
-                                                        rememberedValue5 = SelectedRangeInfo.Companion.calculateRangeInfo(plusMonths, calendarModel4.getCanonicalDate(l11.longValue()), calendarModel4.getCanonicalDate(l12.longValue()));
-                                                        composer3.updateRememberedValue(rememberedValue5);
-                                                    }
-                                                    selectedRangeInfo = rememberedValue5;
-                                                    ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                }
-                                                composer3.endReplaceGroup();
-                                                DatePickerKt.Month(plusMonths, function14, calendarDate3.getUtcTimeMillis(), l11, l12, selectedRangeInfo, datePickerFormatter4, selectableDates4, datePickerColors4, composer3, 0);
-                                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                composer3.endNode();
-                                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventEnd();
-                                                    return;
-                                                }
-                                                return;
-                                            }
-                                            composer3.skipToGroupEnd();
-                                        }
-                                    }), 6, null);
-                                }
-                            };
-                            composer2.updateRememberedValue(rememberedValue4);
-                        }
-                        ComposerKt.sourceInformationMarkerEnd(composer2);
-                        LazyDslKt.LazyColumn(semantics$default, lazyListState3, null, false, null, null, null, false, rememberedValue4, composer2, 0, 252);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer2.skipToGroupEnd();
-                }
-            }, startRestartGroup, 54), startRestartGroup, 48);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2140016818, "CC(remember):DateRangePicker.kt#9igjgp");
+            TextKt.ProvideTextStyle(TypographyKt.getValue(DatePickerModalTokens.INSTANCE.getDateLabelTextFont(), startRestartGroup, 6), ComposableLambdaKt.rememberComposableLambda(1090773432, true, new DateRangePickerKt$VerticalMonthsList$1(obj, obj2, obj3, lazyListState2, intRange, calendarModel, month, datePickerFormatter, datePickerColors, today, selectableDates), startRestartGroup, 54), startRestartGroup, 48);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1442105390, "CC(remember):DateRangePicker.kt#9igjgp");
             int i4 = i3 & 14;
-            boolean changedInstance = (i4 == 4) | ((57344 & i3) == 16384) | startRestartGroup.changedInstance(calendarModel) | startRestartGroup.changedInstance(intRange);
+            boolean changedInstance = (i4 == 4) | ((i3 & 57344) == 16384) | startRestartGroup.changedInstance(calendarModel) | startRestartGroup.changedInstance(intRange);
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
                 lazyListState2 = lazyListState;
@@ -2025,27 +943,15 @@ public final class DateRangePickerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$3
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DateRangePickerKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i5) {
-                    DateRangePickerKt.VerticalMonthsList(LazyListState.this, l, l2, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj4, Object obj5) {
+                    Unit VerticalMonthsList$lambda$15;
+                    VerticalMonthsList$lambda$15 = DateRangePickerKt.VerticalMonthsList$lambda$15(LazyListState.this, l, l2, function2, function1, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, i, (Composer) obj4, ((Integer) obj5).intValue());
+                    return VerticalMonthsList$lambda$15;
                 }
             });
         }
@@ -2067,195 +973,103 @@ public final class DateRangePickerKt {
     }
 
     /* renamed from: drawRangeBackground-mxwnekA  reason: not valid java name */
-    public static final void m2167drawRangeBackgroundmxwnekA(ContentDrawScope contentDrawScope, SelectedRangeInfo selectedRangeInfo, long j) {
-        float m4374getWidthimpl;
-        float f = contentDrawScope.mo429toPx0680j_4(DatePickerKt.getRecommendedSizeForAccessibility());
+    public static final void m2266drawRangeBackgroundmxwnekA(ContentDrawScope contentDrawScope, SelectedRangeInfo selectedRangeInfo, long j) {
+        float f;
+        float intBitsToFloat;
         float f2 = contentDrawScope.mo429toPx0680j_4(DatePickerKt.getRecommendedSizeForAccessibility());
-        float f3 = contentDrawScope.mo429toPx0680j_4(DatePickerModalTokens.INSTANCE.m3265getDateStateLayerHeightD9Ej5fM());
+        float f3 = contentDrawScope.mo429toPx0680j_4(DatePickerKt.getRecommendedSizeForAccessibility());
         float f4 = 2;
-        float f5 = (f2 - f3) / f4;
+        float f5 = (f3 - contentDrawScope.mo429toPx0680j_4(DatePickerModalTokens.INSTANCE.m3846getDateStateLayerHeightD9Ej5fM())) / f4;
+        char c = ' ';
         float f6 = 7;
-        float m4374getWidthimpl2 = (Size.m4374getWidthimpl(contentDrawScope.mo5128getSizeNHjbRc()) - (f6 * f)) / f6;
-        long m2592getGridStartCoordinatesnOccac = selectedRangeInfo.m2592getGridStartCoordinatesnOccac();
-        int m7392getXimpl = IntOffset.m7392getXimpl(m2592getGridStartCoordinatesnOccac);
-        int m7393getYimpl = IntOffset.m7393getYimpl(m2592getGridStartCoordinatesnOccac);
-        long m2591getGridEndCoordinatesnOccac = selectedRangeInfo.m2591getGridEndCoordinatesnOccac();
-        int m7392getXimpl2 = IntOffset.m7392getXimpl(m2591getGridEndCoordinatesnOccac);
-        int m7393getYimpl2 = IntOffset.m7393getYimpl(m2591getGridEndCoordinatesnOccac);
-        float f7 = f + m4374getWidthimpl2;
-        float f8 = m4374getWidthimpl2 / f4;
-        float f9 = (m7392getXimpl * f7) + (selectedRangeInfo.getFirstIsSelectionStart() ? f / f4 : 0.0f) + f8;
-        float f10 = (m7393getYimpl * f2) + f5;
-        float f11 = m7392getXimpl2 * f7;
+        float intBitsToFloat2 = (Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> 32)) - (f6 * f2)) / f6;
+        long m2879getGridStartCoordinatesnOccac = selectedRangeInfo.m2879getGridStartCoordinatesnOccac();
+        int m8123getXimpl = IntOffset.m8123getXimpl(m2879getGridStartCoordinatesnOccac);
+        int m8124getYimpl = IntOffset.m8124getYimpl(m2879getGridStartCoordinatesnOccac);
+        long m2878getGridEndCoordinatesnOccac = selectedRangeInfo.m2878getGridEndCoordinatesnOccac();
+        int m8123getXimpl2 = IntOffset.m8123getXimpl(m2878getGridEndCoordinatesnOccac);
+        int m8124getYimpl2 = IntOffset.m8124getYimpl(m2878getGridEndCoordinatesnOccac);
+        float f7 = f2 + intBitsToFloat2;
+        float f8 = intBitsToFloat2 / f4;
+        float f9 = (m8123getXimpl * f7) + (selectedRangeInfo.getFirstIsSelectionStart() ? f2 / f4 : 0.0f) + f8;
+        float f10 = (m8124getYimpl * f3) + f5;
+        float f11 = m8123getXimpl2 * f7;
         if (selectedRangeInfo.getLastIsSelectionEnd()) {
-            f /= f4;
+            f2 /= f4;
         }
-        float f12 = f11 + f + f8;
-        float f13 = (m7393getYimpl2 * f2) + f5;
+        float f12 = f11 + f2 + f8;
+        float f13 = (m8124getYimpl2 * f3) + f5;
         boolean z = contentDrawScope.getLayoutDirection() == LayoutDirection.Rtl;
         if (z) {
-            f9 = Size.m4374getWidthimpl(contentDrawScope.mo5128getSizeNHjbRc()) - f9;
-            f12 = Size.m4374getWidthimpl(contentDrawScope.mo5128getSizeNHjbRc()) - f12;
+            f9 = Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> 32)) - f9;
+            f12 = Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> 32)) - f12;
         }
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        long Offset = OffsetKt.Offset(f9, f10);
-        if (m7393getYimpl == m7393getYimpl2) {
-            m4374getWidthimpl = f12 - f9;
+        long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(f9) << 32) | (Float.floatToRawIntBits(f10) & 4294967295L));
+        if (m8124getYimpl == m8124getYimpl2) {
+            intBitsToFloat = f12 - f9;
         } else {
-            m4374getWidthimpl = z ? -f9 : Size.m4374getWidthimpl(contentDrawScope.mo5128getSizeNHjbRc()) - f9;
+            intBitsToFloat = z ? -f9 : Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> 32)) - f9;
         }
-        DrawScope.m5122drawRectnJ9OG0$default(contentDrawScope2, j, Offset, SizeKt.Size(m4374getWidthimpl, f3), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
-        if (m7393getYimpl != m7393getYimpl2) {
-            for (int i = (m7393getYimpl2 - m7393getYimpl) - 1; i > 0; i--) {
-                DrawScope.m5122drawRectnJ9OG0$default(contentDrawScope2, j, OffsetKt.Offset(0.0f, (i * f2) + f10), SizeKt.Size(Size.m4374getWidthimpl(contentDrawScope.mo5128getSizeNHjbRc()), f3), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
+        DrawScope.m5852drawRectnJ9OG0$default(contentDrawScope2, j, m5027constructorimpl, Size.m5095constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 120, null);
+        if (m8124getYimpl != m8124getYimpl2) {
+            int i = (m8124getYimpl2 - m8124getYimpl) - 1;
+            while (i > 0) {
+                char c2 = c;
+                DrawScope.m5852drawRectnJ9OG0$default(contentDrawScope2, j, Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) << c2) | (Float.floatToRawIntBits((i * f3) + f10) & 4294967295L)), Size.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> c2))) << c2) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 120, null);
+                i--;
+                c = c2;
             }
-            long Offset2 = OffsetKt.Offset(contentDrawScope.getLayoutDirection() != LayoutDirection.Ltr ? Size.m4374getWidthimpl(contentDrawScope.mo5128getSizeNHjbRc()) : 0.0f, f13);
+            char c3 = c;
+            long m5027constructorimpl2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(f13) & 4294967295L) | (Float.floatToRawIntBits(contentDrawScope.getLayoutDirection() == LayoutDirection.Ltr ? 0.0f : Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> c3))) << c3));
             if (z) {
-                f12 -= Size.m4374getWidthimpl(contentDrawScope.mo5128getSizeNHjbRc());
+                f12 -= Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> c3));
             }
-            DrawScope.m5122drawRectnJ9OG0$default(contentDrawScope2, j, Offset2, SizeKt.Size(f12, f3), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
+            DrawScope.m5852drawRectnJ9OG0$default(contentDrawScope2, j, m5027constructorimpl2, Size.m5095constructorimpl((Float.floatToRawIntBits(f12) << c3) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 120, null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final List<CustomAccessibilityAction> customScrollActions(final LazyListState lazyListState, final CoroutineScope coroutineScope, String str, String str2) {
-        return CollectionsKt.listOf((Object[]) new CustomAccessibilityAction[]{new CustomAccessibilityAction(str, new Function0<Boolean>() { // from class: androidx.compose.material3.DateRangePickerKt$customScrollActions$scrollUpAction$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        return CollectionsKt.listOf((Object[]) new CustomAccessibilityAction[]{new CustomAccessibilityAction(str, new Function0() { // from class: androidx.compose.material3.DateRangePickerKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
-            public final Boolean invoke() {
-                boolean z;
-                if (LazyListState.this.getCanScrollBackward()) {
-                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(LazyListState.this, null), 3, null);
-                    z = true;
-                } else {
-                    z = false;
-                }
-                return Boolean.valueOf(z);
+            public final Object invoke() {
+                boolean customScrollActions$lambda$16;
+                customScrollActions$lambda$16 = DateRangePickerKt.customScrollActions$lambda$16(LazyListState.this, coroutineScope);
+                return Boolean.valueOf(customScrollActions$lambda$16);
             }
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* compiled from: DateRangePicker.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.material3.DateRangePickerKt$customScrollActions$scrollUpAction$1$1", f = "DateRangePicker.kt", i = {}, l = {1046}, m = "invokeSuspend", n = {}, s = {})
-            /* renamed from: androidx.compose.material3.DateRangePickerKt$customScrollActions$scrollUpAction$1$1  reason: invalid class name */
-            /* loaded from: classes.dex */
-            public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-                final /* synthetic */ LazyListState $state;
-                int label;
-
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                AnonymousClass1(LazyListState lazyListState, Continuation<? super AnonymousClass1> continuation) {
-                    super(2, continuation);
-                    this.$state = lazyListState;
-                }
-
-                @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-                public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    return new AnonymousClass1(this.$state, continuation);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                    return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
-                }
-
-                @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-                public final Object invokeSuspend(Object obj) {
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    int i = this.label;
-                    if (i == 0) {
-                        ResultKt.throwOnFailure(obj);
-                        LazyListState lazyListState = this.$state;
-                        this.label = 1;
-                        if (LazyListState.scrollToItem$default(lazyListState, lazyListState.getFirstVisibleItemIndex() - 1, 0, this, 2, null) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                    } else if (i != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        ResultKt.throwOnFailure(obj);
-                    }
-                    return Unit.INSTANCE;
-                }
-            }
-        }), new CustomAccessibilityAction(str2, new Function0<Boolean>() { // from class: androidx.compose.material3.DateRangePickerKt$customScrollActions$scrollDownAction$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        }), new CustomAccessibilityAction(str2, new Function0() { // from class: androidx.compose.material3.DateRangePickerKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
-            public final Boolean invoke() {
-                boolean z;
-                if (LazyListState.this.getCanScrollForward()) {
-                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(LazyListState.this, null), 3, null);
-                    z = true;
-                } else {
-                    z = false;
-                }
-                return Boolean.valueOf(z);
-            }
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* compiled from: DateRangePicker.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.material3.DateRangePickerKt$customScrollActions$scrollDownAction$1$1", f = "DateRangePicker.kt", i = {}, l = {1054}, m = "invokeSuspend", n = {}, s = {})
-            /* renamed from: androidx.compose.material3.DateRangePickerKt$customScrollActions$scrollDownAction$1$1  reason: invalid class name */
-            /* loaded from: classes.dex */
-            public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-                final /* synthetic */ LazyListState $state;
-                int label;
-
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                AnonymousClass1(LazyListState lazyListState, Continuation<? super AnonymousClass1> continuation) {
-                    super(2, continuation);
-                    this.$state = lazyListState;
-                }
-
-                @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-                public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    return new AnonymousClass1(this.$state, continuation);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                    return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
-                }
-
-                @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-                public final Object invokeSuspend(Object obj) {
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    int i = this.label;
-                    if (i == 0) {
-                        ResultKt.throwOnFailure(obj);
-                        LazyListState lazyListState = this.$state;
-                        this.label = 1;
-                        if (LazyListState.scrollToItem$default(lazyListState, lazyListState.getFirstVisibleItemIndex() + 1, 0, this, 2, null) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                    } else if (i != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        ResultKt.throwOnFailure(obj);
-                    }
-                    return Unit.INSTANCE;
-                }
+            public final Object invoke() {
+                boolean customScrollActions$lambda$17;
+                customScrollActions$lambda$17 = DateRangePickerKt.customScrollActions$lambda$17(LazyListState.this, coroutineScope);
+                return Boolean.valueOf(customScrollActions$lambda$17);
             }
         })});
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean customScrollActions$lambda$16(LazyListState lazyListState, CoroutineScope coroutineScope) {
+        if (lazyListState.getCanScrollBackward()) {
+            BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new DateRangePickerKt$customScrollActions$scrollUpAction$1$1(lazyListState, null), 3, null);
+            return true;
+        }
+        return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean customScrollActions$lambda$17(LazyListState lazyListState, CoroutineScope coroutineScope) {
+        if (lazyListState.getCanScrollForward()) {
+            BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new DateRangePickerKt$customScrollActions$scrollDownAction$1$1(lazyListState, null), 3, null);
+            return true;
+        }
+        return false;
     }
 
     static {
         float f = 64;
         float f2 = 12;
-        DateRangePickerTitlePadding = PaddingKt.m839PaddingValuesa9UjIt4$default(Dp.m7264constructorimpl(f), 0.0f, Dp.m7264constructorimpl(f2), 0.0f, 10, null);
-        DateRangePickerHeadlinePadding = PaddingKt.m839PaddingValuesa9UjIt4$default(Dp.m7264constructorimpl(f), 0.0f, Dp.m7264constructorimpl(f2), Dp.m7264constructorimpl(f2), 2, null);
+        DateRangePickerTitlePadding = PaddingKt.m839PaddingValuesa9UjIt4$default(Dp.m7995constructorimpl(f), 0.0f, Dp.m7995constructorimpl(f2), 0.0f, 10, null);
+        DateRangePickerHeadlinePadding = PaddingKt.m839PaddingValuesa9UjIt4$default(Dp.m7995constructorimpl(f), 0.0f, Dp.m7995constructorimpl(f2), Dp.m7995constructorimpl(f2), 2, null);
     }
 }

@@ -26,7 +26,7 @@ public final class LazyLayoutStickyItemsKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final int getMainAxisOffset(LazyLayoutMeasuredItem lazyLayoutMeasuredItem) {
         long mo971getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo971getOffsetBjo55l4(0);
-        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m7393getYimpl(mo971getOffsetBjo55l4) : IntOffset.m7392getXimpl(mo971getOffsetBjo55l4);
+        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m8124getYimpl(mo971getOffsetBjo55l4) : IntOffset.m8123getXimpl(mo971getOffsetBjo55l4);
     }
 
     public static final <T extends LazyLayoutMeasuredItem> List<T> applyStickyItems(StickyItemsPlacement stickyItemsPlacement, int i, int i2, List<T> list, IntList intList, int i3, int i4, int i5, int i6, Function1<? super Integer, ? extends T> function1) {

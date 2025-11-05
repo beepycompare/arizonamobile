@@ -7,7 +7,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.util.ExceptionHelper;
 import io.reactivex.internal.util.OpenHashSet;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompositeDisposable implements Disposable, DisposableContainer {
     volatile boolean disposed;
     OpenHashSet<Disposable> resources;

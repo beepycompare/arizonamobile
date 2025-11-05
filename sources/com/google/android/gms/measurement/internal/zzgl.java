@@ -15,7 +15,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgl extends zzg {
     private static final String[] zza = {"app_version", "ALTER TABLE messages ADD COLUMN app_version TEXT;", "app_version_int", "ALTER TABLE messages ADD COLUMN app_version_int INTEGER;"};
     private final zzgj zzb;

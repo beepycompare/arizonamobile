@@ -1,6 +1,6 @@
 package com.google.android.gms.common.internal;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class RootTelemetryConfigManager {
     private static RootTelemetryConfigManager zza;
     private static final RootTelemetryConfiguration zzb = new RootTelemetryConfiguration(0, false, false, 0, 0);

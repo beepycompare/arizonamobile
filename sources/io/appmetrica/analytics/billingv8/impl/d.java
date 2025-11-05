@@ -2,21 +2,21 @@ package io.appmetrica.analytics.billingv8.impl;
 
 import com.android.billingclient.api.BillingClient;
 import java.util.LinkedHashSet;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BillingClient f241a;
+    public final BillingClient f254a;
     public final LinkedHashSet b = new LinkedHashSet();
 
     public d(BillingClient billingClient) {
-        this.f241a = billingClient;
+        this.f254a = billingClient;
     }
 
     public final void a(Object obj) {
         this.b.remove(obj);
         if (this.b.size() == 0) {
-            this.f241a.endConnection();
+            this.f254a.endConnection();
         }
     }
 }

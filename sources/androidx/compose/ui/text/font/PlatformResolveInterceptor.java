@@ -13,12 +13,12 @@ public interface PlatformResolveInterceptor {
     }
 
     /* renamed from: interceptFontStyle-T2F_aPo  reason: not valid java name */
-    default int m6865interceptFontStyleT2F_aPo(int i) {
+    default int m7596interceptFontStyleT2F_aPo(int i) {
         return i;
     }
 
     /* renamed from: interceptFontSynthesis-Mscr08Y  reason: not valid java name */
-    default int m6866interceptFontSynthesisMscr08Y(int i) {
+    default int m7597interceptFontSynthesisMscr08Y(int i) {
         return i;
     }
 

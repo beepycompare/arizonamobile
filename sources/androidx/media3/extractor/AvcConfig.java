@@ -6,7 +6,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.container.NalUnitUtil;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class AvcConfig {
     public final int bitdepthChroma;
     public final int bitdepthLuma;

@@ -8,10 +8,10 @@ import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface MediaPeriod extends SequenceableLoader {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Callback extends SequenceableLoader.Callback<MediaPeriod> {
         void onPrepared(MediaPeriod mediaPeriod);
     }

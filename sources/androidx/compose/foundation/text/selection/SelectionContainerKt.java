@@ -232,7 +232,7 @@ public final class SelectionContainerKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final SelectionRegistrarImpl selectionRegistrarImpl = (SelectionRegistrarImpl) RememberSaveableKt.m3995rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
+            final SelectionRegistrarImpl selectionRegistrarImpl = (SelectionRegistrarImpl) RememberSaveableKt.m4725rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1665246276, "CC(remember):SelectionContainer.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -448,13 +448,13 @@ public final class SelectionContainerKt {
                                                 /* JADX INFO: Access modifiers changed from: private */
                                                 public static final Offset invoke$lambda$6$lambda$5$lambda$3$lambda$1(SelectionManager selectionManager) {
                                                     Offset m1796getStartHandlePosition_m7T9E = selectionManager.m1796getStartHandlePosition_m7T9E();
-                                                    return Offset.m4294boximpl(m1796getStartHandlePosition_m7T9E != null ? m1796getStartHandlePosition_m7T9E.m4315unboximpl() : Offset.Companion.m4320getUnspecifiedF1C5BW0());
+                                                    return Offset.m5024boximpl(m1796getStartHandlePosition_m7T9E != null ? m1796getStartHandlePosition_m7T9E.m5045unboximpl() : Offset.Companion.m5050getUnspecifiedF1C5BW0());
                                                 }
 
                                                 /* JADX INFO: Access modifiers changed from: private */
                                                 public static final Offset invoke$lambda$6$lambda$5$lambda$3$lambda$2(SelectionManager selectionManager) {
                                                     Offset m1795getEndHandlePosition_m7T9E = selectionManager.m1795getEndHandlePosition_m7T9E();
-                                                    return Offset.m4294boximpl(m1795getEndHandlePosition_m7T9E != null ? m1795getEndHandlePosition_m7T9E.m4315unboximpl() : Offset.Companion.m4320getUnspecifiedF1C5BW0());
+                                                    return Offset.m5024boximpl(m1795getEndHandlePosition_m7T9E != null ? m1795getEndHandlePosition_m7T9E.m5045unboximpl() : Offset.Companion.m5050getUnspecifiedF1C5BW0());
                                                 }
                                             }
 

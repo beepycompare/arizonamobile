@@ -231,7 +231,7 @@ public final class LazyLayoutPagerKt {
                                 i12 = i7;
                             } else {
                                 int i15 = i6 != 0 ? 0 : i7;
-                                float m7264constructorimpl = i8 != 0 ? Dp.m7264constructorimpl(0) : f;
+                                float m7995constructorimpl = i8 != 0 ? Dp.m7995constructorimpl(0) : f;
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(-572816025, i5, i11, "androidx.compose.foundation.pager.Pager (LazyLayoutPager.kt:102)");
                                 }
@@ -288,9 +288,9 @@ public final class LazyLayoutPagerKt {
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 int i22 = i20 >> 9;
                                 int i23 = i11 << 15;
-                                LazyLayoutMeasurePolicy m1154rememberPagerMeasurePolicy8u0NR3k = PagerMeasurePolicyKt.m1154rememberPagerMeasurePolicy8u0NR3k(rememberPagerItemProviderLambda, pagerState, paddingValues, z, orientation, i21, m7264constructorimpl, pageSize, horizontal, vertical, snapPosition, coroutineScope, (Function0) rememberedValue3, startRestartGroup, (i20 & 65520) | (i22 & 458752) | (i22 & 3670016) | ((i11 << 21) & 29360128) | (i23 & 234881024) | (i23 & 1879048192), i19 & 14);
+                                LazyLayoutMeasurePolicy m1154rememberPagerMeasurePolicy8u0NR3k = PagerMeasurePolicyKt.m1154rememberPagerMeasurePolicy8u0NR3k(rememberPagerItemProviderLambda, pagerState, paddingValues, z, orientation, i21, m7995constructorimpl, pageSize, horizontal, vertical, snapPosition, coroutineScope, (Function0) rememberedValue3, startRestartGroup, (i20 & 65520) | (i22 & 458752) | (i22 & 3670016) | ((i11 << 21) & 29360128) | (i23 & 234881024) | (i23 & 1879048192), i19 & 14);
                                 pagerState2 = pagerState;
-                                float f3 = m7264constructorimpl;
+                                float f3 = m7995constructorimpl;
                                 LazyLayoutSemanticState rememberPagerSemanticState = PagerSemanticsKt.rememberPagerSemanticState(pagerState2, orientation == Orientation.Vertical, startRestartGroup, i18);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720289735, "CC(remember):LazyLayoutPager.kt#9igjgp");
                                 boolean z5 = (i16 == 32) | ((i20 & 458752) == 131072);
@@ -632,11 +632,11 @@ public final class LazyLayoutPagerKt {
                                 this.label = 2;
                                 obj = awaitPointerEventScope2.awaitPointerEvent(PointerEventPass.Initial, this);
                             } else {
-                                this.$state.m1163setUpDownDifferencek4lQ0M$foundation_release(Offset.m4309minusMKHz9U(pointerInputChange.m5839getPositionF1C5BW0(), pointerInputChange2.m5839getPositionF1C5BW0()));
+                                this.$state.m1163setUpDownDifferencek4lQ0M$foundation_release(Offset.m5039minusMKHz9U(pointerInputChange.m6569getPositionF1C5BW0(), pointerInputChange2.m6569getPositionF1C5BW0()));
                                 return Unit.INSTANCE;
                             }
                         }
-                        this.$state.m1163setUpDownDifferencek4lQ0M$foundation_release(Offset.Companion.m4321getZeroF1C5BW0());
+                        this.$state.m1163setUpDownDifferencek4lQ0M$foundation_release(Offset.Companion.m5051getZeroF1C5BW0());
                         awaitPointerEventScope2 = awaitPointerEventScope;
                         pointerInputChange = null;
                         pointerInputChange2 = (PointerInputChange) obj;

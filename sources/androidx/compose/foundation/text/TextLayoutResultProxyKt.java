@@ -24,6 +24,6 @@ public final class TextLayoutResultProxyKt {
         } else {
             bottom = Float.intBitsToFloat(i2) > rect.getBottom() ? rect.getBottom() : Float.intBitsToFloat(i2);
         }
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
     }
 }

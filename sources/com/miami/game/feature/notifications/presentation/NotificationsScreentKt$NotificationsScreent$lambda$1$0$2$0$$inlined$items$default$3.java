@@ -19,11 +19,11 @@ public final class NotificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$i
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ GridItemSpan invoke(LazyGridItemSpanScope lazyGridItemSpanScope, Integer num) {
-        return GridItemSpan.m982boximpl(m9028invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
+        return GridItemSpan.m982boximpl(m9768invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
     }
 
     /* renamed from: invoke-_-orMbw  reason: not valid java name */
-    public final long m9028invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
+    public final long m9768invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
         return ((GridItemSpan) this.$span.invoke(lazyGridItemSpanScope, this.$items.get(i))).m989unboximpl();
     }
 }

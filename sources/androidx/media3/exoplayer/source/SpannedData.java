@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.source;
 import android.util.SparseArray;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class SpannedData<V> {
     private int memoizedReadIndex;
     private final Consumer<V> removeCallback;

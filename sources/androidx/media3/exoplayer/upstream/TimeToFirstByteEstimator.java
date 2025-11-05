@@ -1,7 +1,7 @@
 package androidx.media3.exoplayer.upstream;
 
 import androidx.media3.datasource.DataSpec;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface TimeToFirstByteEstimator {
     long getTimeToFirstByteEstimateUs();
 

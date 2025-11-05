@@ -57,13 +57,13 @@ interface SideCalculator {
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedVelocity-QWom1Mo */
             public long mo876consumedVelocityQWom1Mo(long j, float f) {
-                return VelocityKt.Velocity(Velocity.m7502getXimpl(j) - f, 0.0f);
+                return VelocityKt.Velocity(Velocity.m8233getXimpl(j) - f, 0.0f);
             }
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
             public long mo875consumedOffsetsMKHz9U(long j) {
-                return Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+                return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
             }
         };
         private static final SideCalculator$Companion$TopSideCalculator$1 TopSideCalculator = new SideCalculator() { // from class: androidx.compose.foundation.layout.SideCalculator$Companion$TopSideCalculator$1
@@ -85,13 +85,13 @@ interface SideCalculator {
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedVelocity-QWom1Mo */
             public long mo876consumedVelocityQWom1Mo(long j, float f) {
-                return VelocityKt.Velocity(0.0f, Velocity.m7503getYimpl(j) - f);
+                return VelocityKt.Velocity(0.0f, Velocity.m8234getYimpl(j) - f);
             }
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
             public long mo875consumedOffsetsMKHz9U(long j) {
-                return Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+                return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
             }
         };
         private static final SideCalculator$Companion$RightSideCalculator$1 RightSideCalculator = new SideCalculator() { // from class: androidx.compose.foundation.layout.SideCalculator$Companion$RightSideCalculator$1
@@ -113,13 +113,13 @@ interface SideCalculator {
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedVelocity-QWom1Mo */
             public long mo876consumedVelocityQWom1Mo(long j, float f) {
-                return VelocityKt.Velocity(Velocity.m7502getXimpl(j) + f, 0.0f);
+                return VelocityKt.Velocity(Velocity.m8233getXimpl(j) + f, 0.0f);
             }
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
             public long mo875consumedOffsetsMKHz9U(long j) {
-                return Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+                return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
             }
         };
         private static final SideCalculator$Companion$BottomSideCalculator$1 BottomSideCalculator = new SideCalculator() { // from class: androidx.compose.foundation.layout.SideCalculator$Companion$BottomSideCalculator$1
@@ -141,13 +141,13 @@ interface SideCalculator {
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedVelocity-QWom1Mo */
             public long mo876consumedVelocityQWom1Mo(long j, float f) {
-                return VelocityKt.Velocity(0.0f, Velocity.m7503getYimpl(j) + f);
+                return VelocityKt.Velocity(0.0f, Velocity.m8234getYimpl(j) + f);
             }
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
             public long mo875consumedOffsetsMKHz9U(long j) {
-                return Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+                return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
             }
         };
 

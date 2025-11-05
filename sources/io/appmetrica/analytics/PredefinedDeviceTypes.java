@@ -2,7 +2,7 @@ package io.appmetrica.analytics;
 
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class PredefinedDeviceTypes {
     public static final List<String> ALL_VALUES = Arrays.asList("car", "phone", "tablet", "tv");
     public static final String CAR = "car";

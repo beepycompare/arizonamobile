@@ -22,7 +22,7 @@ final class EmptyFillMeasurePolicy implements MeasurePolicy {
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        return MeasureScope.layout$default(measureScope, Constraints.m7217getMaxWidthimpl(j), Constraints.m7216getMaxHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.spatial.EmptyFillMeasurePolicy$measure$1
+        return MeasureScope.layout$default(measureScope, Constraints.m7948getMaxWidthimpl(j), Constraints.m7947getMaxHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.spatial.EmptyFillMeasurePolicy$measure$1
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(Placeable.PlacementScope placementScope) {
             }

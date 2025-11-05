@@ -1,25 +1,39 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class If implements InterfaceC0491oj {
+
+import androidx.media3.exoplayer.upstream.CmcdData;
+import kotlin.Metadata;
+import kotlin.Unit;
+@Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010\u0003\u001a\u00020\u0002H\u0003J\n\u0010\u0004\u001a\u0004\u0018\u00010\u0002H\u0016R\u0018\u0010\u0006\u001a\u0004\u0018\u00010\u00028\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b\u0004\u0010\u0005¨\u0006\t"}, d2 = {"Lio/appmetrica/analytics/impl/If;", "Lio/appmetrica/analytics/impl/Hf;", "", "b", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Ljava/lang/String;", "mProcessName", "<init>", "()V", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
+/* loaded from: classes3.dex */
+public final class If implements Hf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0612tf f499a;
+    private volatile String f528a;
 
-    public If(C0612tf c0612tf) {
-        this.f499a = c0612tf;
+    private final String b() {
+        try {
+            Class<?> cls = Class.forName("android.app.ActivityThread");
+            Object invoke = cls.getMethod("getProcessName", new Class[0]).invoke(cls.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]), new Object[0]);
+            if (invoke != null) {
+                return (String) invoke;
+            }
+            throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
+        } catch (Throwable th) {
+            throw new RuntimeException(th);
+        }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0491oj
-    public final boolean a() {
-        return this.f499a.i();
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0491oj
-    public final void b() {
-        this.f499a.h().b();
-    }
-
-    public If() {
-        this(Na.j().x());
+    @Override // io.appmetrica.analytics.impl.Hf
+    public String a() {
+        if (this.f528a != null) {
+            return this.f528a;
+        }
+        synchronized (this) {
+            if (this.f528a == null) {
+                this.f528a = b();
+            }
+            Unit unit = Unit.INSTANCE;
+        }
+        return this.f528a;
     }
 }

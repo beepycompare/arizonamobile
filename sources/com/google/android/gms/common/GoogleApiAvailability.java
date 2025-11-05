@@ -47,7 +47,7 @@ import java.util.Arrays;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
 @RestrictedInheritance(allowedOnPath = ".*java.*/com/google/android/gms.*", allowlistAnnotations = {com.google.android.gms.internal.base.zad.class, zae.class}, explanation = "Sub classing of GMS Core's APIs are restricted to GMS Core client libs and testing fakes.", link = "go/gmscore-restrictedinheritance")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GoogleApiAvailability extends GoogleApiAvailabilityLight {
     public static final String GOOGLE_PLAY_SERVICES_PACKAGE = "com.google.android.gms";
     private String zac;

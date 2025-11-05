@@ -8,8 +8,8 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class JsonUtils {
     private static final Pattern zza = Pattern.compile("\\\\.");
     private static final Pattern zzb = Pattern.compile("[\\\\\"/\b\f\n\r\t]");
@@ -108,7 +108,7 @@ public final class JsonUtils {
         if (TextUtils.isEmpty(str)) {
             return str;
         }
-        String zza2 = zze.zza(str);
+        String zza2 = zzf.zza(str);
         Matcher matcher = zza.matcher(zza2);
         StringBuffer stringBuffer = null;
         while (matcher.find()) {

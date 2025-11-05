@@ -137,9 +137,9 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
             TextRange m1445getCompositionMzsxiRA2 = textFieldCharSequence2.m1445getCompositionMzsxiRA();
             if (z) {
                 composeInputMethodManager.restartInput();
-            } else if (TextRange.m6719equalsimpl0(m1446getSelectiond9O1mEE, m1446getSelectiond9O1mEE2) && Intrinsics.areEqual(m1445getCompositionMzsxiRA, m1445getCompositionMzsxiRA2)) {
+            } else if (TextRange.m7450equalsimpl0(m1446getSelectiond9O1mEE, m1446getSelectiond9O1mEE2) && Intrinsics.areEqual(m1445getCompositionMzsxiRA, m1445getCompositionMzsxiRA2)) {
             } else {
-                composeInputMethodManager.updateSelection(TextRange.m6724getMinimpl(m1446getSelectiond9O1mEE2), TextRange.m6723getMaximpl(m1446getSelectiond9O1mEE2), m1445getCompositionMzsxiRA2 != null ? TextRange.m6724getMinimpl(m1445getCompositionMzsxiRA2.m6730unboximpl()) : -1, m1445getCompositionMzsxiRA2 != null ? TextRange.m6723getMaximpl(m1445getCompositionMzsxiRA2.m6730unboximpl()) : -1);
+                composeInputMethodManager.updateSelection(TextRange.m7455getMinimpl(m1446getSelectiond9O1mEE2), TextRange.m7454getMaximpl(m1446getSelectiond9O1mEE2), m1445getCompositionMzsxiRA2 != null ? TextRange.m7455getMinimpl(m1445getCompositionMzsxiRA2.m7461unboximpl()) : -1, m1445getCompositionMzsxiRA2 != null ? TextRange.m7454getMaximpl(m1445getCompositionMzsxiRA2.m7461unboximpl()) : -1);
             }
         }
     }

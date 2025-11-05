@@ -11,7 +11,7 @@ import kotlin.annotation.AnnotationRetention;
 import kotlin.annotation.AnnotationTarget;
 /* compiled from: ExperimentalFileSystem.kt */
 @Target({ElementType.TYPE, ElementType.METHOD})
-@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\b\u0087\u0002\u0018\u00002\u00020\u0001B\u0000¨\u0006\u0002"}, d2 = {"Lokio/ExperimentalFileSystem;", "", "okio"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\b\u0087\u0002\u0018\u00002\u00020\u0001B\u0000¨\u0006\u0002"}, d2 = {"Lokio/ExperimentalFileSystem;", "", "okio"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @Deprecated(level = DeprecationLevel.HIDDEN, message = "This annotation is obsolete and should be removed.")
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY})
 @Retention(RetentionPolicy.SOURCE)

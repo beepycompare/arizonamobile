@@ -2,7 +2,7 @@ package io.appmetrica.analytics.protobuf.nano;
 
 import com.google.common.base.Ascii;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CodedInputByteBufferNano {
     private static final int DEFAULT_RECURSION_LIMIT = 64;
     private static final int DEFAULT_SIZE_LIMIT = 67108864;

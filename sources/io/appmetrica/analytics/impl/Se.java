@@ -1,24 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-/* loaded from: classes4.dex */
-public final class Se implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Dm fromModel(Re re) {
-        Dm dm = new Dm();
-        dm.f416a = re.f656a;
-        dm.b = re.b;
-        return dm;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
+/* loaded from: classes3.dex */
+public final class Se implements Runnable {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ String f684a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ PluginErrorDetails c;
+    public final /* synthetic */ Te d;
+
+    public Se(Te te, String str, String str2, PluginErrorDetails pluginErrorDetails) {
+        this.d = te;
+        this.f684a = str;
+        this.b = str2;
+        this.c = pluginErrorDetails;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        Dm dm = (Dm) obj;
-        return new Re(dm.f416a, dm.b);
-    }
-
-    public final Re a(Dm dm) {
-        return new Re(dm.f416a, dm.b);
+    @Override // java.lang.Runnable
+    public final void run() {
+        ((Ya) this.d.d.get()).getPluginExtension().reportError(this.f684a, this.b, this.c);
     }
 }

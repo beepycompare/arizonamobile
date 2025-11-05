@@ -2,7 +2,6 @@ package androidx.compose.material.ripple;
 
 import androidx.compose.animation.core.Animatable;
 import androidx.compose.animation.core.AnimatableKt;
-import androidx.compose.animation.core.AnimationSpec;
 import androidx.compose.animation.core.AnimationVector1D;
 import androidx.compose.foundation.interaction.DragInteraction;
 import androidx.compose.foundation.interaction.FocusInteraction;
@@ -37,9 +36,7 @@ final class StateLayer {
     }
 
     public final void handleInteraction$material_ripple(Interaction interaction, CoroutineScope coroutineScope) {
-        AnimationSpec outgoingStateLayerAnimationSpecFor;
         float draggedAlpha;
-        AnimationSpec incomingStateLayerAnimationSpecFor;
         if (interaction instanceof HoverInteraction.Enter) {
             this.interactions.add(interaction);
         } else if (interaction instanceof HoverInteraction.Exit) {
@@ -62,8 +59,7 @@ final class StateLayer {
             return;
         }
         if (interaction2 == null) {
-            outgoingStateLayerAnimationSpecFor = RippleKt.outgoingStateLayerAnimationSpecFor(this.currentInteraction);
-            BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new StateLayer$handleInteraction$2(this, outgoingStateLayerAnimationSpecFor, null), 3, null);
+            BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new StateLayer$handleInteraction$2(this, RippleKt.access$outgoingStateLayerAnimationSpecFor(this.currentInteraction), null), 3, null);
         } else {
             RippleAlpha invoke = this.rippleAlpha.invoke();
             if (interaction2 instanceof HoverInteraction.Enter) {
@@ -73,46 +69,45 @@ final class StateLayer {
             } else {
                 draggedAlpha = interaction2 instanceof DragInteraction.Start ? invoke.getDraggedAlpha() : 0.0f;
             }
-            incomingStateLayerAnimationSpecFor = RippleKt.incomingStateLayerAnimationSpecFor(interaction2);
-            BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new StateLayer$handleInteraction$1(this, draggedAlpha, incomingStateLayerAnimationSpecFor, null), 3, null);
+            BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new StateLayer$handleInteraction$1(this, draggedAlpha, RippleKt.access$incomingStateLayerAnimationSpecFor(interaction2), null), 3, null);
         }
         this.currentInteraction = interaction2;
     }
 
     /* renamed from: drawStateLayer-mxwnekA  reason: not valid java name */
-    public final void m1872drawStateLayermxwnekA(DrawScope drawScope, float f, long j) {
+    public final void m1870drawStateLayermxwnekA(DrawScope drawScope, float f, long j) {
         long j2;
         float floatValue = this.animatedAlpha.getValue().floatValue();
         if (floatValue <= 0.0f) {
             return;
         }
-        long m4548copywmQWz5c$default = Color.m4548copywmQWz5c$default(j, floatValue, 0.0f, 0.0f, 0.0f, 14, null);
+        long m5278copywmQWz5c$default = Color.m5278copywmQWz5c$default(j, floatValue, 0.0f, 0.0f, 0.0f, 14, null);
         if (!this.bounded) {
-            DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, m4548copywmQWz5c$default, f, 0L, 0.0f, null, null, 0, 124, null);
+            DrawScope.m5839drawCircleVaOC9Bg$default(drawScope, m5278copywmQWz5c$default, f, 0L, 0.0f, null, null, 0, 124, null);
             return;
         }
-        float m4374getWidthimpl = Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc());
-        float m4371getHeightimpl = Size.m4371getHeightimpl(drawScope.mo5128getSizeNHjbRc());
-        int m4538getIntersectrtfAjoo = ClipOp.Companion.m4538getIntersectrtfAjoo();
+        float m5104getWidthimpl = Size.m5104getWidthimpl(drawScope.mo5858getSizeNHjbRc());
+        float m5101getHeightimpl = Size.m5101getHeightimpl(drawScope.mo5858getSizeNHjbRc());
+        int m5268getIntersectrtfAjoo = ClipOp.Companion.m5268getIntersectrtfAjoo();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
+        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5052clipRectN_I0leg(0.0f, 0.0f, m4374getWidthimpl, m4371getHeightimpl, m4538getIntersectrtfAjoo);
-            j2 = mo5049getSizeNHjbRc;
+            drawContext.getTransform().mo5782clipRectN_I0leg(0.0f, 0.0f, m5104getWidthimpl, m5101getHeightimpl, m5268getIntersectrtfAjoo);
+            j2 = mo5779getSizeNHjbRc;
             try {
-                DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, m4548copywmQWz5c$default, f, 0L, 0.0f, null, null, 0, 124, null);
+                DrawScope.m5839drawCircleVaOC9Bg$default(drawScope, m5278copywmQWz5c$default, f, 0L, 0.0f, null, null, 0, 124, null);
                 drawContext.getCanvas().restore();
-                drawContext.mo5050setSizeuvyYCjk(j2);
+                drawContext.mo5780setSizeuvyYCjk(j2);
             } catch (Throwable th) {
                 th = th;
                 drawContext.getCanvas().restore();
-                drawContext.mo5050setSizeuvyYCjk(j2);
+                drawContext.mo5780setSizeuvyYCjk(j2);
                 throw th;
             }
         } catch (Throwable th2) {
             th = th2;
-            j2 = mo5049getSizeNHjbRc;
+            j2 = mo5779getSizeNHjbRc;
         }
     }
 }

@@ -22,7 +22,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BasePendingResult<R extends Result> extends PendingResult<R> {
     static final ThreadLocal zaa = new zaq();
     public static final /* synthetic */ int zad = 0;
@@ -251,7 +251,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
     }
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class CallbackHandler<R extends Result> extends com.google.android.gms.internal.base.zau {
         public CallbackHandler() {
             super(Looper.getMainLooper());

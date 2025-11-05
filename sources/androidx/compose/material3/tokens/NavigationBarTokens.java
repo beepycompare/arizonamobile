@@ -1,92 +1,30 @@
 package androidx.compose.material3.tokens;
 
 import androidx.compose.ui.unit.Dp;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import kotlin.Metadata;
 /* compiled from: NavigationBarTokens.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b'\n\u0002\u0018\u0002\n\u0002\b\u0003\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0011\u0010\u0007\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0006R\u0011\u0010\t\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0006R\u0011\u0010\u000b\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0006R\u0011\u0010\r\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u0006R\u0011\u0010\u000f\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0006R\u0019\u0010\u0011\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0016\u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0019\u0010\u001a\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u001b\u0010\u0014R\u0011\u0010\u001c\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0006R\u0011\u0010\u001e\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0006R\u0011\u0010 \u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0006R\u0011\u0010\"\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0006R\u0019\u0010$\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b%\u0010\u0014R\u0019\u0010&\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b'\u0010\u0014R\u0011\u0010(\u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u0019R\u0011\u0010*\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0006R\u0019\u0010,\u001a\u00020\u0012ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b-\u0010\u0014R\u0011\u0010.\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u0006R\u0011\u00100\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0006R\u0011\u00102\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b3\u0010\u0006R\u0011\u00104\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b5\u0010\u0006R\u0011\u00106\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b7\u0010\u0006R\u0011\u00108\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b9\u0010\u0006R\u0011\u0010:\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b;\u0010\u0006R\u0011\u0010<\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b=\u0010\u0006R\u0011\u0010>\u001a\u00020?¢\u0006\b\n\u0000\u001a\u0004\b@\u0010A\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006B"}, d2 = {"Landroidx/compose/material3/tokens/NavigationBarTokens;", "", "()V", "ActiveFocusIconColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getActiveFocusIconColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ActiveFocusLabelTextColor", "getActiveFocusLabelTextColor", "ActiveHoverIconColor", "getActiveHoverIconColor", "ActiveHoverLabelTextColor", "getActiveHoverLabelTextColor", "ActiveIconColor", "getActiveIconColor", "ActiveIndicatorColor", "getActiveIndicatorColor", "ActiveIndicatorHeight", "Landroidx/compose/ui/unit/Dp;", "getActiveIndicatorHeight-D9Ej5fM", "()F", "F", "ActiveIndicatorShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getActiveIndicatorShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "ActiveIndicatorWidth", "getActiveIndicatorWidth-D9Ej5fM", "ActiveLabelTextColor", "getActiveLabelTextColor", "ActivePressedIconColor", "getActivePressedIconColor", "ActivePressedLabelTextColor", "getActivePressedLabelTextColor", "ContainerColor", "getContainerColor", "ContainerElevation", "getContainerElevation-D9Ej5fM", "ContainerHeight", "getContainerHeight-D9Ej5fM", "ContainerShape", "getContainerShape", "FocusIndicatorColor", "getFocusIndicatorColor", "IconSize", "getIconSize-D9Ej5fM", "InactiveFocusIconColor", "getInactiveFocusIconColor", "InactiveFocusLabelTextColor", "getInactiveFocusLabelTextColor", "InactiveHoverIconColor", "getInactiveHoverIconColor", "InactiveHoverLabelTextColor", "getInactiveHoverLabelTextColor", "InactiveIconColor", "getInactiveIconColor", "InactiveLabelTextColor", "getInactiveLabelTextColor", "InactivePressedIconColor", "getInactivePressedIconColor", "InactivePressedLabelTextColor", "getInactivePressedLabelTextColor", "LabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\b\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\r\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u000e\u0010\u000bR\u0011\u0010\u000f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0007R\u0011\u0010\u0011\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0007R\u0013\u0010\u0013\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u0014\u0010\u000bR\u0011\u0010\u0015\u001a\u00020\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\u0019\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0007R\u0013\u0010\u001b\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u001c\u0010\u000bR\u0011\u0010\u001d\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u0007R\u0011\u0010\u001f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u0007R\u0011\u0010!\u001a\u00020\u0016¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u0018R\u0013\u0010#\u001a\u00020\t¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b$\u0010\u000bR\u0011\u0010%\u001a\u00020&¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(¨\u0006)"}, d2 = {"Landroidx/compose/material3/tokens/NavigationBarTokens;", "", "<init>", "()V", "ContainerColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getContainerColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ContainerElevation", "Landroidx/compose/ui/unit/Dp;", "getContainerElevation-D9Ej5fM", "()F", "F", "ContainerHeight", "getContainerHeight-D9Ej5fM", "ItemActiveIconColor", "getItemActiveIconColor", "ItemActiveIndicatorColor", "getItemActiveIndicatorColor", "ItemActiveIndicatorIconLabelSpace", "getItemActiveIndicatorIconLabelSpace-D9Ej5fM", "ItemActiveIndicatorShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getItemActiveIndicatorShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "ItemActiveLabelTextColor", "getItemActiveLabelTextColor", "ItemBetweenSpace", "getItemBetweenSpace-D9Ej5fM", "ItemInactiveIconColor", "getItemInactiveIconColor", "ItemInactiveLabelTextColor", "getItemInactiveLabelTextColor", "NavShape", "getNavShape", "TallContainerHeight", "getTallContainerHeight-D9Ej5fM", "LabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class NavigationBarTokens {
     public static final int $stable = 0;
     public static final NavigationBarTokens INSTANCE = new NavigationBarTokens();
-    private static final ColorSchemeKeyTokens ActiveFocusIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final ColorSchemeKeyTokens ActiveFocusLabelTextColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens ActiveHoverIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final ColorSchemeKeyTokens ActiveHoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens ActiveIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float ActiveIndicatorHeight = Dp.m7264constructorimpl((float) 32.0d);
-    private static final ShapeKeyTokens ActiveIndicatorShape = ShapeKeyTokens.CornerFull;
-    private static final float ActiveIndicatorWidth = Dp.m7264constructorimpl((float) 64.0d);
-    private static final ColorSchemeKeyTokens ActiveLabelTextColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens ActivePressedIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final ColorSchemeKeyTokens ActivePressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3296getLevel2D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7264constructorimpl((float) 80.0d);
-    private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
-    private static final float IconSize = Dp.m7264constructorimpl((float) 24.0d);
-    private static final ColorSchemeKeyTokens InactiveFocusIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens InactiveFocusLabelTextColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens InactiveHoverIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens InactiveHoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens InactiveIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final ColorSchemeKeyTokens InactiveLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final ColorSchemeKeyTokens InactivePressedIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens InactivePressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3890getLevel2D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7995constructorimpl((float) 64.0d);
+    private static final ColorSchemeKeyTokens ItemActiveIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
+    private static final ColorSchemeKeyTokens ItemActiveIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
+    private static final float ItemActiveIndicatorIconLabelSpace = Dp.m7995constructorimpl((float) 4.0d);
+    private static final ShapeKeyTokens ItemActiveIndicatorShape = ShapeKeyTokens.CornerFull;
+    private static final ColorSchemeKeyTokens ItemActiveLabelTextColor = ColorSchemeKeyTokens.Secondary;
+    private static final float ItemBetweenSpace = Dp.m7995constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+    private static final ColorSchemeKeyTokens ItemInactiveIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final ColorSchemeKeyTokens ItemInactiveLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final ShapeKeyTokens NavShape = ShapeKeyTokens.CornerNone;
+    private static final float TallContainerHeight = Dp.m7995constructorimpl((float) 80.0d);
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelMedium;
 
     private NavigationBarTokens() {
-    }
-
-    public final ColorSchemeKeyTokens getActiveFocusIconColor() {
-        return ActiveFocusIconColor;
-    }
-
-    public final ColorSchemeKeyTokens getActiveFocusLabelTextColor() {
-        return ActiveFocusLabelTextColor;
-    }
-
-    public final ColorSchemeKeyTokens getActiveHoverIconColor() {
-        return ActiveHoverIconColor;
-    }
-
-    public final ColorSchemeKeyTokens getActiveHoverLabelTextColor() {
-        return ActiveHoverLabelTextColor;
-    }
-
-    public final ColorSchemeKeyTokens getActiveIconColor() {
-        return ActiveIconColor;
-    }
-
-    public final ColorSchemeKeyTokens getActiveIndicatorColor() {
-        return ActiveIndicatorColor;
-    }
-
-    /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3439getActiveIndicatorHeightD9Ej5fM() {
-        return ActiveIndicatorHeight;
-    }
-
-    public final ShapeKeyTokens getActiveIndicatorShape() {
-        return ActiveIndicatorShape;
-    }
-
-    /* renamed from: getActiveIndicatorWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3440getActiveIndicatorWidthD9Ej5fM() {
-        return ActiveIndicatorWidth;
-    }
-
-    public final ColorSchemeKeyTokens getActiveLabelTextColor() {
-        return ActiveLabelTextColor;
-    }
-
-    public final ColorSchemeKeyTokens getActivePressedIconColor() {
-        return ActivePressedIconColor;
-    }
-
-    public final ColorSchemeKeyTokens getActivePressedLabelTextColor() {
-        return ActivePressedLabelTextColor;
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -94,58 +32,56 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3441getContainerElevationD9Ej5fM() {
+    public final float m4066getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3442getContainerHeightD9Ej5fM() {
+    public final float m4067getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
-    public final ShapeKeyTokens getContainerShape() {
-        return ContainerShape;
+    public final ColorSchemeKeyTokens getItemActiveIconColor() {
+        return ItemActiveIconColor;
     }
 
-    public final ColorSchemeKeyTokens getFocusIndicatorColor() {
-        return FocusIndicatorColor;
+    public final ColorSchemeKeyTokens getItemActiveIndicatorColor() {
+        return ItemActiveIndicatorColor;
     }
 
-    /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3443getIconSizeD9Ej5fM() {
-        return IconSize;
+    /* renamed from: getItemActiveIndicatorIconLabelSpace-D9Ej5fM  reason: not valid java name */
+    public final float m4068getItemActiveIndicatorIconLabelSpaceD9Ej5fM() {
+        return ItemActiveIndicatorIconLabelSpace;
     }
 
-    public final ColorSchemeKeyTokens getInactiveFocusIconColor() {
-        return InactiveFocusIconColor;
+    public final ShapeKeyTokens getItemActiveIndicatorShape() {
+        return ItemActiveIndicatorShape;
     }
 
-    public final ColorSchemeKeyTokens getInactiveFocusLabelTextColor() {
-        return InactiveFocusLabelTextColor;
+    public final ColorSchemeKeyTokens getItemActiveLabelTextColor() {
+        return ItemActiveLabelTextColor;
     }
 
-    public final ColorSchemeKeyTokens getInactiveHoverIconColor() {
-        return InactiveHoverIconColor;
+    /* renamed from: getItemBetweenSpace-D9Ej5fM  reason: not valid java name */
+    public final float m4069getItemBetweenSpaceD9Ej5fM() {
+        return ItemBetweenSpace;
     }
 
-    public final ColorSchemeKeyTokens getInactiveHoverLabelTextColor() {
-        return InactiveHoverLabelTextColor;
+    public final ColorSchemeKeyTokens getItemInactiveIconColor() {
+        return ItemInactiveIconColor;
     }
 
-    public final ColorSchemeKeyTokens getInactiveIconColor() {
-        return InactiveIconColor;
+    public final ColorSchemeKeyTokens getItemInactiveLabelTextColor() {
+        return ItemInactiveLabelTextColor;
     }
 
-    public final ColorSchemeKeyTokens getInactiveLabelTextColor() {
-        return InactiveLabelTextColor;
+    public final ShapeKeyTokens getNavShape() {
+        return NavShape;
     }
 
-    public final ColorSchemeKeyTokens getInactivePressedIconColor() {
-        return InactivePressedIconColor;
-    }
-
-    public final ColorSchemeKeyTokens getInactivePressedLabelTextColor() {
-        return InactivePressedLabelTextColor;
+    /* renamed from: getTallContainerHeight-D9Ej5fM  reason: not valid java name */
+    public final float m4070getTallContainerHeightD9Ej5fM() {
+        return TallContainerHeight;
     }
 
     public final TypographyKeyTokens getLabelTextFont() {

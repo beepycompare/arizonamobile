@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.internal.ApiKey;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.ArrayList;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AvailabilityException extends Exception {
     private final ArrayMap zaa;
 

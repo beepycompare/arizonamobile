@@ -264,7 +264,7 @@ public final class FocusFinderCompat {
                 androidx.compose.ui.geometry.Rect composeRect2 = RectHelper_androidKt.toComposeRect(this.bestCandidateRect);
                 androidx.compose.ui.geometry.Rect composeRect3 = RectHelper_androidKt.toComposeRect(rect);
                 FocusDirection focusDirection = FocusInteropUtils_androidKt.toFocusDirection(i);
-                if (TwoDimensionalFocusSearchKt.m4253isBetterCandidateI7lrPNg(composeRect, composeRect2, composeRect3, focusDirection != null ? focusDirection.m4187unboximpl() : FocusDirection.Companion.m4192getNextdhqQ8s())) {
+                if (TwoDimensionalFocusSearchKt.m4983isBetterCandidateI7lrPNg(composeRect, composeRect2, composeRect3, focusDirection != null ? focusDirection.m4917unboximpl() : FocusDirection.Companion.m4922getNextdhqQ8s())) {
                     this.bestCandidateRect.set(this.otherRect);
                     view2 = view3;
                 }

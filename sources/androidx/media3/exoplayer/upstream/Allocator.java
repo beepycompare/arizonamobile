@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer.upstream;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface Allocator {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AllocationNode {
         Allocation getAllocation();
 

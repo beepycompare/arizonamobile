@@ -58,8 +58,8 @@ public final class SocialContentKt {
                 ComposerKt.traceEventStart(-1659282498, i2, -1, "com.miami.game.feature.home.ui.compose.SocialContent (SocialContent.kt:17)");
             }
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
-            Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(-Dp.m7264constructorimpl(24)));
-            Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, Dp.m7264constructorimpl(-Dp.m7264constructorimpl(12)), 0.0f, 2, null);
+            Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7995constructorimpl(-Dp.m7995constructorimpl(24)));
+            Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, Dp.m7995constructorimpl(-Dp.m7995constructorimpl(12)), 0.0f, 2, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(m701spacedBy0680j_4, centerVertically, startRestartGroup, 54);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
@@ -77,15 +77,15 @@ public final class SocialContentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+            Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 578044183, "C24@869L42,23@832L128,29@1006L40,28@969L127,34@1142L40,33@1105L121:SocialContent.kt#dswm0d");
@@ -138,7 +138,7 @@ public final class SocialContentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue3, null, ComposableSingletons$SocialContentKt.INSTANCE.m9015getLambda$2110633905$home_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue3, null, ComposableSingletons$SocialContentKt.INSTANCE.m9755getLambda$2110633905$home_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

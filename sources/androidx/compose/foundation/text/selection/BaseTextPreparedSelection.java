@@ -130,15 +130,15 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
     }
 
     public final int getPrecedingCodePointOrEmojiStartIndex() {
-        return StringHelpers_androidKt.findCodePointOrEmojiStartBefore(this.annotatedString.getText(), TextRange.m6721getEndimpl(this.selection), -1);
+        return StringHelpers_androidKt.findCodePointOrEmojiStartBefore(this.annotatedString.getText(), TextRange.m7452getEndimpl(this.selection), -1);
     }
 
     public final int getPrecedingCharacterIndex() {
-        return StringHelpers_androidKt.findPrecedingBreak(this.annotatedString.getText(), TextRange.m6721getEndimpl(this.selection));
+        return StringHelpers_androidKt.findPrecedingBreak(this.annotatedString.getText(), TextRange.m7452getEndimpl(this.selection));
     }
 
     public final int getNextCharacterIndex() {
-        return StringHelpers_androidKt.findFollowingBreak(this.annotatedString.getText(), TextRange.m6721getEndimpl(this.selection));
+        return StringHelpers_androidKt.findFollowingBreak(this.annotatedString.getText(), TextRange.m7452getEndimpl(this.selection));
     }
 
     public final Integer getNextWordOffset() {
@@ -190,9 +190,9 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
 
     private final int getNextWordOffsetForLayout(TextLayoutResult textLayoutResult, int i) {
         while (i < this.originalText.length()) {
-            long m6698getWordBoundaryjx7JFs = textLayoutResult.m6698getWordBoundaryjx7JFs(charOffset(i));
-            if (TextRange.m6721getEndimpl(m6698getWordBoundaryjx7JFs) > i) {
-                return this.offsetMapping.transformedToOriginal(TextRange.m6721getEndimpl(m6698getWordBoundaryjx7JFs));
+            long m7429getWordBoundaryjx7JFs = textLayoutResult.m7429getWordBoundaryjx7JFs(charOffset(i));
+            if (TextRange.m7452getEndimpl(m7429getWordBoundaryjx7JFs) > i) {
+                return this.offsetMapping.transformedToOriginal(TextRange.m7452getEndimpl(m7429getWordBoundaryjx7JFs));
             }
             i++;
         }
@@ -211,9 +211,9 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
 
     private final int getPrevWordOffset(TextLayoutResult textLayoutResult, int i) {
         while (i > 0) {
-            long m6698getWordBoundaryjx7JFs = textLayoutResult.m6698getWordBoundaryjx7JFs(charOffset(i));
-            if (TextRange.m6726getStartimpl(m6698getWordBoundaryjx7JFs) < i) {
-                return this.offsetMapping.transformedToOriginal(TextRange.m6726getStartimpl(m6698getWordBoundaryjx7JFs));
+            long m7429getWordBoundaryjx7JFs = textLayoutResult.m7429getWordBoundaryjx7JFs(charOffset(i));
+            if (TextRange.m7457getStartimpl(m7429getWordBoundaryjx7JFs) < i) {
+                return this.offsetMapping.transformedToOriginal(TextRange.m7457getStartimpl(m7429getWordBoundaryjx7JFs));
             }
             i--;
         }
@@ -268,19 +268,19 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
         if ((isLtr() && floatValue >= textLayoutResult.getLineRight(lineForOffset)) || (!isLtr() && floatValue <= textLayoutResult.getLineLeft(lineForOffset))) {
             return textLayoutResult.getLineEnd(lineForOffset, true);
         }
-        return this.offsetMapping.transformedToOriginal(textLayoutResult.m6696getOffsetForPositionk4lQ0M(Offset.m4297constructorimpl((Float.floatToRawIntBits(f.floatValue()) << 32) | (Float.floatToRawIntBits(lineBottom) & 4294967295L))));
+        return this.offsetMapping.transformedToOriginal(textLayoutResult.m7427getOffsetForPositionk4lQ0M(Offset.m5027constructorimpl((Float.floatToRawIntBits(f.floatValue()) << 32) | (Float.floatToRawIntBits(lineBottom) & 4294967295L))));
     }
 
     private final int transformedEndOffset() {
-        return this.offsetMapping.originalToTransformed(TextRange.m6721getEndimpl(this.selection));
+        return this.offsetMapping.originalToTransformed(TextRange.m7452getEndimpl(this.selection));
     }
 
     private final int transformedMinOffset() {
-        return this.offsetMapping.originalToTransformed(TextRange.m6724getMinimpl(this.selection));
+        return this.offsetMapping.originalToTransformed(TextRange.m7455getMinimpl(this.selection));
     }
 
     private final int transformedMaxOffset() {
-        return this.offsetMapping.originalToTransformed(TextRange.m6723getMaximpl(this.selection));
+        return this.offsetMapping.originalToTransformed(TextRange.m7454getMaximpl(this.selection));
     }
 
     private final int charOffset(int i) {
@@ -311,7 +311,7 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
     public final T deselect() {
         getState().resetCachedX();
         if (getText$foundation_release().length() > 0) {
-            setCursor(TextRange.m6721getEndimpl(this.selection));
+            setCursor(TextRange.m7452getEndimpl(this.selection));
         }
         Intrinsics.checkNotNull(this, "null cannot be cast to non-null type T of androidx.compose.foundation.text.selection.BaseTextPreparedSelection");
         return this;
@@ -346,13 +346,13 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
     public final T collapseLeftOr(Function1<? super T, Unit> function1) {
         getState().resetCachedX();
         if (getText$foundation_release().length() > 0) {
-            if (TextRange.m6720getCollapsedimpl(this.selection)) {
+            if (TextRange.m7451getCollapsedimpl(this.selection)) {
                 Intrinsics.checkNotNull(this, "null cannot be cast to non-null type T of androidx.compose.foundation.text.selection.BaseTextPreparedSelection");
                 function1.invoke(this);
             } else if (isLtr()) {
-                setCursor(TextRange.m6724getMinimpl(this.selection));
+                setCursor(TextRange.m7455getMinimpl(this.selection));
             } else {
-                setCursor(TextRange.m6723getMaximpl(this.selection));
+                setCursor(TextRange.m7454getMaximpl(this.selection));
             }
         }
         Intrinsics.checkNotNull(this, "null cannot be cast to non-null type T of androidx.compose.foundation.text.selection.BaseTextPreparedSelection");
@@ -362,13 +362,13 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
     public final T collapseRightOr(Function1<? super T, Unit> function1) {
         getState().resetCachedX();
         if (getText$foundation_release().length() > 0) {
-            if (TextRange.m6720getCollapsedimpl(this.selection)) {
+            if (TextRange.m7451getCollapsedimpl(this.selection)) {
                 Intrinsics.checkNotNull(this, "null cannot be cast to non-null type T of androidx.compose.foundation.text.selection.BaseTextPreparedSelection");
                 function1.invoke(this);
             } else if (isLtr()) {
-                setCursor(TextRange.m6723getMaximpl(this.selection));
+                setCursor(TextRange.m7454getMaximpl(this.selection));
             } else {
-                setCursor(TextRange.m6724getMinimpl(this.selection));
+                setCursor(TextRange.m7455getMinimpl(this.selection));
             }
         }
         Intrinsics.checkNotNull(this, "null cannot be cast to non-null type T of androidx.compose.foundation.text.selection.BaseTextPreparedSelection");
@@ -462,8 +462,8 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
     public final T moveCursorPrevByParagraph() {
         getState().resetCachedX();
         if (getText$foundation_release().length() > 0) {
-            int findParagraphStart = StringHelpersKt.findParagraphStart(getText$foundation_release(), TextRange.m6724getMinimpl(this.selection));
-            if (findParagraphStart == TextRange.m6724getMinimpl(this.selection) && findParagraphStart != 0) {
+            int findParagraphStart = StringHelpersKt.findParagraphStart(getText$foundation_release(), TextRange.m7455getMinimpl(this.selection));
+            if (findParagraphStart == TextRange.m7455getMinimpl(this.selection) && findParagraphStart != 0) {
                 findParagraphStart = StringHelpersKt.findParagraphStart(getText$foundation_release(), findParagraphStart - 1);
             }
             setCursor(findParagraphStart);
@@ -475,8 +475,8 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
     public final T moveCursorNextByParagraph() {
         getState().resetCachedX();
         if (getText$foundation_release().length() > 0) {
-            int findParagraphEnd = StringHelpersKt.findParagraphEnd(getText$foundation_release(), TextRange.m6723getMaximpl(this.selection));
-            if (findParagraphEnd == TextRange.m6723getMaximpl(this.selection) && findParagraphEnd != getText$foundation_release().length()) {
+            int findParagraphEnd = StringHelpersKt.findParagraphEnd(getText$foundation_release(), TextRange.m7454getMaximpl(this.selection));
+            if (findParagraphEnd == TextRange.m7454getMaximpl(this.selection) && findParagraphEnd != getText$foundation_release().length()) {
                 findParagraphEnd = StringHelpersKt.findParagraphEnd(getText$foundation_release(), findParagraphEnd + 1);
             }
             setCursor(findParagraphEnd);
@@ -551,7 +551,7 @@ public abstract class BaseTextPreparedSelection<T extends BaseTextPreparedSelect
 
     public final T selectMovement() {
         if (getText$foundation_release().length() > 0) {
-            this.selection = TextRangeKt.TextRange(TextRange.m6726getStartimpl(this.originalSelection), TextRange.m6721getEndimpl(this.selection));
+            this.selection = TextRangeKt.TextRange(TextRange.m7457getStartimpl(this.originalSelection), TextRange.m7452getEndimpl(this.selection));
         }
         Intrinsics.checkNotNull(this, "null cannot be cast to non-null type T of androidx.compose.foundation.text.selection.BaseTextPreparedSelection");
         return this;

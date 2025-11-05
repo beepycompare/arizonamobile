@@ -63,17 +63,17 @@ public final class SelectionHandleInfo {
         }
         if (obj instanceof SelectionHandleInfo) {
             SelectionHandleInfo selectionHandleInfo = (SelectionHandleInfo) obj;
-            return this.handle == selectionHandleInfo.handle && Offset.m4302equalsimpl0(this.position, selectionHandleInfo.position) && this.anchor == selectionHandleInfo.anchor && this.visible == selectionHandleInfo.visible;
+            return this.handle == selectionHandleInfo.handle && Offset.m5032equalsimpl0(this.position, selectionHandleInfo.position) && this.anchor == selectionHandleInfo.anchor && this.visible == selectionHandleInfo.visible;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.handle.hashCode() * 31) + Offset.m4307hashCodeimpl(this.position)) * 31) + this.anchor.hashCode()) * 31) + Boolean.hashCode(this.visible);
+        return (((((this.handle.hashCode() * 31) + Offset.m5037hashCodeimpl(this.position)) * 31) + this.anchor.hashCode()) * 31) + Boolean.hashCode(this.visible);
     }
 
     public String toString() {
-        return "SelectionHandleInfo(handle=" + this.handle + ", position=" + ((Object) Offset.m4313toStringimpl(this.position)) + ", anchor=" + this.anchor + ", visible=" + this.visible + ')';
+        return "SelectionHandleInfo(handle=" + this.handle + ", position=" + ((Object) Offset.m5043toStringimpl(this.position)) + ", anchor=" + this.anchor + ", visible=" + this.visible + ')';
     }
 
     private SelectionHandleInfo(Handle handle, long j, SelectionHandleAnchor selectionHandleAnchor, boolean z) {

@@ -2,25 +2,32 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* loaded from: classes4.dex */
+import java.util.List;
+/* loaded from: classes3.dex */
 public final class B implements Parcelable {
     public static final A CREATOR = new A();
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1293a;
-    public final D b;
+    public final boolean f1334a;
+    public final List b;
+    public final long c;
 
-    public B(boolean z, D d) {
-        this.f1293a = z;
-        this.b = d;
+    public B(boolean z, List list, long j) {
+        this.f1334a = z;
+        this.b = list;
+        this.c = j;
     }
 
-    public final D a() {
-        return this.b;
+    public final long a() {
+        return this.c;
     }
 
     public final boolean b() {
-        return this.f1293a;
+        return this.f1334a;
+    }
+
+    public final List c() {
+        return this.b;
     }
 
     @Override // android.os.Parcelable
@@ -29,22 +36,17 @@ public final class B implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableRemoteScreenshotConfig(enabled=" + this.f1293a + ", config=" + this.b + ')';
+        return "ParcelableContentObserverCaptorConfig(enabled=" + this.f1334a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeByte(this.f1293a ? (byte) 1 : (byte) 0);
-        parcel.writeParcelable(this.b, i);
+        parcel.writeByte(this.f1334a ? (byte) 1 : (byte) 0);
+        parcel.writeStringList(this.b);
+        parcel.writeLong(this.c);
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public B(g0 g0Var) {
-        this(r0, r3 != null ? new D(r3) : null);
-        boolean b = g0Var.b();
-        h0 a2 = g0Var.a();
+    public B(i0 i0Var) {
+        this(i0Var.b(), i0Var.c(), i0Var.a());
     }
 }

@@ -39,15 +39,15 @@ public final class PaddingValuesModifier extends Modifier.Node implements Layout
         float mo787calculateRightPaddingu2uoSUM = this.paddingValues.mo787calculateRightPaddingu2uoSUM(measureScope.getLayoutDirection());
         float mo785calculateBottomPaddingD9Ej5fM = this.paddingValues.mo785calculateBottomPaddingD9Ej5fM();
         float f = 0;
-        if (!((Dp.m7263compareTo0680j_4(mo785calculateBottomPaddingD9Ej5fM, Dp.m7264constructorimpl(f)) >= 0) & (Dp.m7263compareTo0680j_4(mo786calculateLeftPaddingu2uoSUM, Dp.m7264constructorimpl(f)) >= 0) & (Dp.m7263compareTo0680j_4(mo788calculateTopPaddingD9Ej5fM, Dp.m7264constructorimpl(f)) >= 0) & (Dp.m7263compareTo0680j_4(mo787calculateRightPaddingu2uoSUM, Dp.m7264constructorimpl(f)) >= 0))) {
+        if (!((Dp.m7994compareTo0680j_4(mo785calculateBottomPaddingD9Ej5fM, Dp.m7995constructorimpl(f)) >= 0) & (Dp.m7994compareTo0680j_4(mo786calculateLeftPaddingu2uoSUM, Dp.m7995constructorimpl(f)) >= 0) & (Dp.m7994compareTo0680j_4(mo788calculateTopPaddingD9Ej5fM, Dp.m7995constructorimpl(f)) >= 0) & (Dp.m7994compareTo0680j_4(mo787calculateRightPaddingu2uoSUM, Dp.m7995constructorimpl(f)) >= 0))) {
             InlineClassHelperKt.throwIllegalArgumentException("Padding must be non-negative");
         }
         final int i = measureScope.mo423roundToPx0680j_4(mo786calculateLeftPaddingu2uoSUM);
         int i2 = measureScope.mo423roundToPx0680j_4(mo787calculateRightPaddingu2uoSUM) + i;
         final int i3 = measureScope.mo423roundToPx0680j_4(mo788calculateTopPaddingD9Ej5fM);
         int i4 = measureScope.mo423roundToPx0680j_4(mo785calculateBottomPaddingD9Ej5fM) + i3;
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(ConstraintsKt.m7236offsetNN6EwU(j, -i2, -i4));
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7234constrainWidthK40F9xA(j, mo5967measureBRTryo0.getWidth() + i2), ConstraintsKt.m7233constrainHeightK40F9xA(j, mo5967measureBRTryo0.getHeight() + i4), null, new Function1() { // from class: androidx.compose.foundation.layout.PaddingValuesModifier$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(j, -i2, -i4));
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7965constrainWidthK40F9xA(j, mo6697measureBRTryo0.getWidth() + i2), ConstraintsKt.m7964constrainHeightK40F9xA(j, mo6697measureBRTryo0.getHeight() + i4), null, new Function1() { // from class: androidx.compose.foundation.layout.PaddingValuesModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$1;

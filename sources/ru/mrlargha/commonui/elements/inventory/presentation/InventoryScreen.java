@@ -29,31 +29,27 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.IntIterator;
+import kotlin.collections.MapsKt;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
 import kotlin.ranges.IntRange;
+import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineExceptionHandler;
-import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.Job;
-import kotlinx.coroutines.SupervisorKt;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
@@ -98,17 +94,18 @@ import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.RodinaItemTypes;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 /* compiled from: InventoryScreen.kt */
-@Metadata(d1 = {"\u0000Ö\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u001c\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 ª\u00012\u00020\u00012\u00020\u0002:\u0004©\u0001ª\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010U\u001a\u00020VH\u0002J\b\u0010W\u001a\u00020VH\u0002J\u0018\u0010X\u001a\u00020V2\u0006\u0010Y\u001a\u00020\u00062\u0006\u0010Z\u001a\u00020\u0006H\u0002J\u0010\u0010[\u001a\u00020V2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010]\u001a\u00020V2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\b\u0010^\u001a\u00020VH\u0002J\b\u0010_\u001a\u00020VH\u0002J\b\u0010`\u001a\u00020VH\u0002J\b\u0010a\u001a\u00020VH\u0002J\u0010\u0010b\u001a\u00020V2\u0006\u0010\\\u001a\u00020\u0011H\u0002J\b\u0010c\u001a\u00020VH\u0002J\b\u0010d\u001a\u00020VH\u0002J\u0016\u0010e\u001a\u00020V2\f\u0010f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0016\u0010g\u001a\u00020V2\f\u0010f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\b\u0010h\u001a\u00020VH\u0002J\u0018\u0010i\u001a\u00020V2\u0006\u0010j\u001a\u00020k2\u0006\u0010l\u001a\u00020\u0006H\u0002J\b\u0010m\u001a\u00020VH\u0002J\b\u0010n\u001a\u00020VH\u0002J \u0010o\u001a\u00020V2\u0006\u0010p\u001a\u00020\u00062\u0006\u0010q\u001a\u00020\u00062\u0006\u0010r\u001a\u00020\u0006H\u0002J\u0016\u0010s\u001a\u00020V2\f\u0010f\u001a\b\u0012\u0004\u0012\u00020&0\u0010H\u0002J\b\u0010t\u001a\u00020VH\u0002J\b\u0010u\u001a\u00020VH\u0002J\b\u0010v\u001a\u00020VH\u0002J\u0018\u0010w\u001a\u00020V2\u0006\u0010x\u001a\u00020Q2\u0006\u0010Y\u001a\u00020\u0006H\u0016J\u0010\u0010y\u001a\u00020V2\u0006\u0010z\u001a\u00020\u0006H\u0002J\u0010\u0010{\u001a\u00020V2\u0006\u0010z\u001a\u00020\u0006H\u0002J\b\u0010|\u001a\u00020VH\u0002J\b\u0010}\u001a\u00020VH\u0002J\b\u0010~\u001a\u00020VH\u0002J\u0011\u0010\u007f\u001a\u00020V2\u0007\u0010\u0080\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010\u0081\u0001\u001a\u00020V2\u0007\u0010\u0080\u0001\u001a\u00020\u0006H\u0002J\u0017\u0010\u0082\u0001\u001a\u00020V2\f\u0010f\u001a\b\u0012\u0004\u0012\u00020\u00060\u0010H\u0002J\u0017\u0010\u0083\u0001\u001a\u00020V2\f\u0010f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u000f\u0010\u0084\u0001\u001a\u00020V2\u0006\u0010x\u001a\u00020QJ\u0013\u0010\u0085\u0001\u001a\u00020V2\b\u0010\\\u001a\u0004\u0018\u00010\u0011H\u0002J\t\u0010\u0086\u0001\u001a\u00020VH\u0002J\u001a\u0010\u0087\u0001\u001a\t\u0012\u0004\u0012\u00020\u00110\u0088\u00012\b\u0010\u0089\u0001\u001a\u00030\u008a\u0001H\u0002J\u001a\u0010\u008b\u0001\u001a\u00020V2\u0006\u0010\\\u001a\u00020\u00112\u0007\u0010\u008c\u0001\u001a\u000206H\u0002J\u0012\u0010\u008d\u0001\u001a\u00020V2\u0007\u0010\u008c\u0001\u001a\u000206H\u0002J\u0012\u0010\u008e\u0001\u001a\u00020V2\u0007\u0010\u008c\u0001\u001a\u000206H\u0002J\u001a\u0010\u008f\u0001\u001a\u00020V2\u0006\u0010\\\u001a\u00020\u00112\u0007\u0010\u008c\u0001\u001a\u000206H\u0002J\u0012\u0010\u0090\u0001\u001a\u00020V2\u0007\u0010\u008c\u0001\u001a\u000206H\u0002J\u001a\u0010\u0091\u0001\u001a\u00020V2\u0006\u0010\\\u001a\u00020\u00112\u0007\u0010\u008c\u0001\u001a\u000206H\u0002J\u0012\u0010\u0092\u0001\u001a\u00020V2\u0007\u0010\u008c\u0001\u001a\u000206H\u0002J\u0012\u0010\u0093\u0001\u001a\u00020V2\u0007\u0010\u008c\u0001\u001a\u000206H\u0002J\u0013\u0010\u0094\u0001\u001a\u00020V2\b\u0010\u0095\u0001\u001a\u00030\u0096\u0001H\u0002J\t\u0010\u0097\u0001\u001a\u00020VH\u0002J\u001a\u0010\u0098\u0001\u001a\u00020V2\u0006\u0010x\u001a\u00020\u00062\u0007\u0010\u0099\u0001\u001a\u00020\u0006H\u0016J\u001b\u0010\u0098\u0001\u001a\u00020V2\u0006\u0010x\u001a\u00020\u00062\b\u0010\u0099\u0001\u001a\u00030\u009a\u0001H\u0016J&\u0010\u009b\u0001\u001a\u00020V2\u0007\u0010j\u001a\u00030\u009c\u00012\u0007\u0010\u009d\u0001\u001a\u00020Q2\t\b\u0002\u0010\u009e\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010\u009f\u0001\u001a\u00020V2\b\u0010 \u0001\u001a\u00030¡\u0001H\u0002J\u001b\u0010¢\u0001\u001a\u00020V2\u0007\u0010£\u0001\u001a\u00020\u00112\u0007\u0010¤\u0001\u001a\u00020\u0011H\u0002J\t\u0010¥\u0001\u001a\u00020VH\u0002J\u0019\u0010¦\u0001\u001a\u00020V2\u0006\u0010x\u001a\u00020Q2\u0006\u0010Y\u001a\u00020\u0006H\u0002J\u0012\u0010§\u0001\u001a\u00020V2\u0007\u0010¨\u0001\u001a\u000206H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\u00020\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0014\u0010\"\u001a\u00020\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010;\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020=X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\n @*\u0004\u0018\u00010?0?X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010D\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010E\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020HX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010I\u001a\u00020JX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010K\u001a\u00020LX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010O\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010P\u001a\u0004\u0018\u00010QX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010R\u001a\u00020Q8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bS\u0010T¨\u0006«\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "person", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "getSubInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "getAccessoriesInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "getUpgradesInventoryAdapter", "walletInventoryAdapter", "getWalletInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "setItemBackground", "view", "Landroid/view/View;", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "initObservers", "refreshItemVisibility", "onBackendMessage", "data", "getArzWarehouseType", "id", "getRodWarehouseType", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "addAccessPages", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "colorItem", "isColorItem", "changeGuardSubList", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "getUserInfo", "onUpdateData", "value", "", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendGuardData", "fromItem", "toItem", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ò\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 §\u00012\u00020\u00012\u00020\u0002:\u0004¦\u0001§\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010Q\u001a\u00020RH\u0002J\b\u0010S\u001a\u00020RH\u0002J\u0018\u0010T\u001a\u00020R2\u0006\u0010U\u001a\u00020\u00062\u0006\u0010V\u001a\u00020\u0006H\u0002J\u0010\u0010W\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0013H\u0002J\u0010\u0010Y\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0013H\u0002J\b\u0010Z\u001a\u00020RH\u0002J\b\u0010[\u001a\u00020RH\u0002J\b\u0010\\\u001a\u00020RH\u0002J\b\u0010]\u001a\u00020RH\u0002J\u0010\u0010^\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0011H\u0002J\b\u0010_\u001a\u00020RH\u0002J\b\u0010`\u001a\u00020RH\u0002J\u0016\u0010a\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0016\u0010c\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\b\u0010d\u001a\u00020RH\u0002J\u0018\u0010e\u001a\u00020R2\u0006\u0010f\u001a\u00020g2\u0006\u0010h\u001a\u00020\u0006H\u0002J\b\u0010i\u001a\u00020RH\u0002J\b\u0010j\u001a\u00020RH\u0002J \u0010k\u001a\u00020R2\u0006\u0010l\u001a\u00020\u00062\u0006\u0010m\u001a\u00020\u00062\u0006\u0010n\u001a\u00020\u0006H\u0002J\u0016\u0010o\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020&0\u0010H\u0002J\b\u0010p\u001a\u00020RH\u0002J\b\u0010q\u001a\u00020RH\u0002J\b\u0010r\u001a\u00020RH\u0002J\u0018\u0010s\u001a\u00020R2\u0006\u0010t\u001a\u00020u2\u0006\u0010U\u001a\u00020\u0006H\u0016J\u0010\u0010v\u001a\u00020R2\u0006\u0010w\u001a\u00020\u0006H\u0002J\u0010\u0010x\u001a\u00020R2\u0006\u0010w\u001a\u00020\u0006H\u0002J\b\u0010y\u001a\u00020RH\u0002J\b\u0010z\u001a\u00020RH\u0002J\b\u0010{\u001a\u00020RH\u0002J\u0010\u0010|\u001a\u00020R2\u0006\u0010}\u001a\u00020\u0006H\u0002J\u0010\u0010~\u001a\u00020R2\u0006\u0010}\u001a\u00020\u0006H\u0002J\u0016\u0010\u007f\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00060\u0010H\u0002J\u0017\u0010\u0080\u0001\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u000f\u0010\u0081\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020uJ\u0013\u0010\u0082\u0001\u001a\u00020R2\b\u0010X\u001a\u0004\u0018\u00010\u0011H\u0002J\t\u0010\u0083\u0001\u001a\u00020RH\u0002J\u001a\u0010\u0084\u0001\u001a\t\u0012\u0004\u0012\u00020\u00110\u0085\u00012\b\u0010\u0086\u0001\u001a\u00030\u0087\u0001H\u0002J\u001a\u0010\u0088\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u008a\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u008b\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u001a\u0010\u008c\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u008d\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u001a\u0010\u008e\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u008f\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u0090\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0013\u0010\u0091\u0001\u001a\u00020R2\b\u0010\u0092\u0001\u001a\u00030\u0093\u0001H\u0002J\t\u0010\u0094\u0001\u001a\u00020RH\u0002J\u001a\u0010\u0095\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020\u00062\u0007\u0010\u0096\u0001\u001a\u00020\u0006H\u0016J\u001b\u0010\u0095\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020\u00062\b\u0010\u0096\u0001\u001a\u00030\u0097\u0001H\u0016J&\u0010\u0098\u0001\u001a\u00020R2\u0007\u0010f\u001a\u00030\u0099\u00012\u0007\u0010\u009a\u0001\u001a\u00020u2\t\b\u0002\u0010\u009b\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010\u009c\u0001\u001a\u00020R2\b\u0010\u009d\u0001\u001a\u00030\u009e\u0001H\u0002J\u001b\u0010\u009f\u0001\u001a\u00020R2\u0007\u0010 \u0001\u001a\u00020\u00112\u0007\u0010¡\u0001\u001a\u00020\u0011H\u0002J\t\u0010¢\u0001\u001a\u00020RH\u0002J\u0019\u0010£\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020u2\u0006\u0010U\u001a\u00020\u0006H\u0002J\u0012\u0010¤\u0001\u001a\u00020R2\u0007\u0010¥\u0001\u001a\u000206H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\u00020\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0014\u0010\"\u001a\u00020\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010;\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020=X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\n @*\u0004\u0018\u00010?0?X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010D\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010E\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010G\u001a\u00020H¢\u0006\b\n\u0000\u001a\u0004\bI\u0010JR\u0011\u0010K\u001a\u00020L¢\u0006\b\n\u0000\u001a\u0004\bM\u0010NR\u000e\u0010O\u001a\u00020PX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006¨\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "person", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "getSubInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "getAccessoriesInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "getUpgradesInventoryAdapter", "walletInventoryAdapter", "getWalletInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "getApi", "()Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "setItemBackground", "view", "Landroid/view/View;", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "initObservers", "refreshItemVisibility", "onBackendMessage", "data", "", "getArzWarehouseType", "id", "getRodWarehouseType", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "addAccessPages", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "colorItem", "isColorItem", "changeGuardSubList", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "getUserInfo", "onUpdateData", "value", "", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendGuardData", "fromItem", "toItem", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InventoryScreen extends BaseInventory implements InterfaceController {
     public static final Companion Companion = new Companion(null);
     private static boolean isDialogVisible;
-    private final String _token;
     private final UpgradesInventoryAdapter accessoriesInventoryAdapter;
-    private InventoryApi api;
+    private final InventoryApi api;
     private final MainInventoryBinding binding;
     private boolean clickedMenuButtons;
+    private final ArizonaRetrofit client;
     private InventoryItem currentModSkin;
     private InventoryItem currentSkin;
     private int currentWarehouse;
@@ -133,10 +130,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     private List<InventoryItem> mainInventoryList;
     private List<InventoryMenuData> menuItemList;
     private final InventoryPersonSection person;
-    private Retrofit retrofit;
-    private final CoroutineScope scope;
     private InventoryItem selectedInventoryItem;
-    private final int serverId;
     private final SharedPreferences sharedPref;
     private final SubInventoryAdapter subInventoryAdapter;
     private final UpgradesInventoryAdapter upgradesInventoryAdapter;
@@ -235,7 +229,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 return subInventoryAdapter$lambda$2;
             }
         });
-        this.accessoriesInventoryAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda32
+        this.accessoriesInventoryAdapter = new UpgradesInventoryAdapter(UpgradesInventoryAdapter.Companion.Type.ACCESS, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda32
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit accessoriesInventoryAdapter$lambda$0;
@@ -257,7 +251,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 return accessoriesInventoryAdapter$lambda$2;
             }
         });
-        this.upgradesInventoryAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda53
+        this.upgradesInventoryAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda53
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit upgradesInventoryAdapter$lambda$0;
@@ -278,7 +272,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 upgradesInventoryAdapter$lambda$2 = InventoryScreen.upgradesInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
                 return upgradesInventoryAdapter$lambda$2;
             }
-        });
+        }, 1, null);
         RecyclerView rvWalletInventory = bind.personSection.rvWalletInventory;
         Intrinsics.checkNotNullExpressionValue(rvWalletInventory, "rvWalletInventory");
         this.walletInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda1
@@ -307,7 +301,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         this.guardAccessoriesList = new ArrayList();
         this.guardInventoryList = new ArrayList();
         this.guardWeaponList = new ArrayList();
-        this.guardSubInventoryAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda4
+        this.guardSubInventoryAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit guardSubInventoryAdapter$lambda$0;
@@ -328,7 +322,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 guardSubInventoryAdapter$lambda$2 = InventoryScreen.guardSubInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
                 return guardSubInventoryAdapter$lambda$2;
             }
-        });
+        }, 1, null);
         Function1 function12 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -357,7 +351,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         this.vehicleSubList = new ArrayList();
         this.vehicleTechnicalList = new ArrayList();
         this.vehicleVisualList = new ArrayList();
-        this.vehicleAccessoriesAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda12
+        this.vehicleAccessoriesAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit vehicleAccessoriesAdapter$lambda$0;
@@ -378,8 +372,8 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 vehicleAccessoriesAdapter$lambda$2 = InventoryScreen.vehicleAccessoriesAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
                 return vehicleAccessoriesAdapter$lambda$2;
             }
-        });
-        this.vehicleTechAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda15
+        }, 1, null);
+        this.vehicleTechAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit vehicleTechAdapter$lambda$0;
@@ -400,8 +394,8 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 vehicleTechAdapter$lambda$2 = InventoryScreen.vehicleTechAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
                 return vehicleTechAdapter$lambda$2;
             }
-        });
-        this.vehicleVisualAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda18
+        }, 1, null);
+        this.vehicleVisualAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit vehicleVisualAdapter$lambda$0;
@@ -422,7 +416,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 vehicleVisualAdapter$lambda$2 = InventoryScreen.vehicleVisualAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
                 return vehicleVisualAdapter$lambda$2;
             }
-        });
+        }, 1, null);
         this.warehouseList = new ArrayList();
         Function1 function13 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function1
@@ -454,16 +448,14 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         this.sharedPref = sharedPreferences;
         boolean z = sharedPreferences.getBoolean("isArizonaType", false);
         this.isArizonaType = z;
-        InventoryScreen$special$$inlined$CoroutineExceptionHandler$1 inventoryScreen$special$$inlined$CoroutineExceptionHandler$1 = new InventoryScreen$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key, targetActivity, i);
-        this.handler = inventoryScreen$special$$inlined$CoroutineExceptionHandler$1;
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain().plus(SupervisorKt.SupervisorJob((Job) null)).plus(inventoryScreen$special$$inlined$CoroutineExceptionHandler$1));
-        this.serverId = sharedPreferences.getInt("server_id", 0);
-        this._token = sharedPreferences.getString("api_token", "");
+        ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
+        this.client = arizonaRetrofit;
+        this.api = (InventoryApi) ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, 6, null);
+        this.handler = new InventoryScreen$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key, targetActivity, i);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         ImageView btnWallet = bind.personSection.btnWallet;
         Intrinsics.checkNotNullExpressionValue(btnWallet, "btnWallet");
         btnWallet.setVisibility(0);
-        UtilsKt.getItemsName();
         RecyclerView rvSubInventory = bind.personSection.rvSubInventory;
         Intrinsics.checkNotNullExpressionValue(rvSubInventory, "rvSubInventory");
         rvSubInventory.setVisibility(0);
@@ -814,9 +806,12 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final String getToken() {
-        return "Bearer " + this._token;
+    public final ArizonaRetrofit getClient() {
+        return this.client;
+    }
+
+    public final InventoryApi getApi() {
+        return this.api;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -866,23 +861,10 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final void initRetrofit() {
         if (UtilsKt.getItemsName().isEmpty()) {
-            String serverApiUrl = FirebaseConfigHelper.INSTANCE.getServerApiUrl();
-            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
-            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            Retrofit build = new Retrofit.Builder().baseUrl(serverApiUrl).client(new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()).addConverterFactory(GsonConverterFactory.create()).build();
-            Intrinsics.checkNotNullExpressionValue(build, "build(...)");
-            this.retrofit = build;
-            if (build == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("retrofit");
-                build = null;
-            }
-            Object create = build.create(InventoryApi.class);
-            Intrinsics.checkNotNullExpressionValue(create, "create(...)");
-            this.api = (InventoryApi) create;
-            BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getIO(), null, new InventoryScreen$initRetrofit$1(this, null), 2, null);
-            return;
+            BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getIO(), null, new InventoryScreen$initRetrofit$1(this, null), 2, null);
+        } else {
+            SAMPUIElement.notifyClick$default(this, 0, 10, null, 4, null);
         }
-        SAMPUIElement.notifyClick$default(this, 0, 10, null, 4, null);
     }
 
     private final void initClickListeners() {
@@ -1126,6 +1108,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 return;
             case 14:
                 sendRequestToClicks(5, 16384);
+                setVisible(false);
                 return;
             default:
                 return;
@@ -1331,7 +1314,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, 1048574, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, 3145726, null));
         }
         list.addAll(arrayList);
         this.vehicleTechnicalList = list;
@@ -1344,7 +1327,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, 1048574, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, 3145726, null));
         }
         list.addAll(arrayList);
         this.vehicleVisualList = list;
@@ -1559,7 +1542,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 List<InventoryItem> accessoriesList = guardInfo.getAccessoriesList();
                 ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(accessoriesList, 10));
                 for (InventoryItem inventoryItem : accessoriesList) {
-                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, 1, null, null, null, null, 0, null, null, false, false, 2095103, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, 1, null, null, null, null, 0, null, null, false, false, null, 4192255, null));
                 }
                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(arrayList));
             } else {
@@ -1575,10 +1558,24 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void refreshItemVisibility() {
+        Object obj;
+        Iterator<T> it = this.mainInventoryList.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            Integer item = ((InventoryItem) obj).getItem();
+            if (item != null && item.intValue() == 9250) {
+                break;
+            }
+        }
+        Log.i("Inventory", "refreshItemVisibility: " + obj);
         List<InventoryItem> list = this.mainInventoryList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, 2094591, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, 4191743, null));
         }
         List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList);
         this.mainInventoryList = mutableList;
@@ -1586,14 +1583,14 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> subCaseArmorSkinList = getSubCaseArmorSkinList();
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subCaseArmorSkinList, 10));
         for (InventoryItem inventoryItem2 : subCaseArmorSkinList) {
-            arrayList2.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, 2094591, null));
+            arrayList2.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, 4191743, null));
         }
         setSubCaseArmorSkinList(CollectionsKt.toMutableList((Collection) arrayList2));
         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
         List<InventoryItem> subUpgradesList = getSubUpgradesList();
         ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subUpgradesList, 10));
         for (InventoryItem inventoryItem3 : subUpgradesList) {
-            arrayList3.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, 2094591, null));
+            arrayList3.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, 4191743, null));
         }
         setSubUpgradesList(CollectionsKt.toMutableList((Collection) arrayList3));
         getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
@@ -1601,7 +1598,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> walletInventoryList = getWalletInventoryList();
         ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(walletInventoryList, 10));
         for (InventoryItem inventoryItem4 : walletInventoryList) {
-            arrayList4.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, 2094591, null));
+            arrayList4.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, 4191743, null));
         }
         setWalletInventoryList(CollectionsKt.toMutableList((Collection) arrayList4));
         getWalletInventoryAdapter().submitList(CollectionsKt.toList(getWalletInventoryList()));
@@ -1630,14 +1627,12 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> items6;
         List<InventoryItem> items7;
         List<InventoryItem> items8;
-        Object obj2;
         List<InventoryItem> items9;
-        Object obj3;
+        Object obj2;
         List<InventoryItem> items10;
+        Object obj3;
         Object obj4;
         Object obj5;
-        Object obj6;
-        Object obj7;
         int id12;
         int id13;
         int id14;
@@ -1649,6 +1644,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         int id20;
         Intrinsics.checkNotNullParameter(data, "data");
         Log.d("TAG_INVENTORY", "subID: " + i + " ===== data: " + data);
+        Object obj6 = null;
         boolean z = true;
         int i2 = 0;
         try {
@@ -1669,13 +1665,26 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     }
                     CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda11
                         @Override // kotlin.jvm.functions.Function1
-                        public final Object invoke(Object obj8) {
+                        public final Object invoke(Object obj7) {
                             boolean onBackendMessage$lambda$1;
-                            onBackendMessage$lambda$1 = InventoryScreen.onBackendMessage$lambda$1((InventoryItem) obj8);
+                            onBackendMessage$lambda$1 = InventoryScreen.onBackendMessage$lambda$1((InventoryItem) obj7);
                             return Boolean.valueOf(onBackendMessage$lambda$1);
                         }
                     });
                     CollectionsKt.addAll(this.mainInventoryList, editResponseInfo(inventoryResponse));
+                    Iterator<T> it = this.mainInventoryList.iterator();
+                    while (true) {
+                        if (!it.hasNext()) {
+                            break;
+                        }
+                        Object next = it.next();
+                        Integer item = ((InventoryItem) next).getItem();
+                        if (item != null && item.intValue() == 9202) {
+                            obj6 = next;
+                            break;
+                        }
+                    }
+                    Log.d("TAG_INVENTORY", "init mainInventoryList: " + obj6);
                 } else if (type == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
                     if (inventoryResponse.getItems().get(0).getSlot() == 0) {
                         getSubAccessoriesList().clear();
@@ -1700,11 +1709,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                             id13 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
                         }
                         if (type == id13) {
-                            if (this.isArizonaType) {
-                                BaseInventory.setSubCaseArmorSkinList$default(this, editResponseInfo(inventoryResponse), null, 2, null);
-                            } else {
-                                CollectionsKt.addAll(getSubCaseArmorSkinList(), editResponseInfo(inventoryResponse));
-                            }
+                            BaseInventory.setSubCaseArmorSkinList$default(this, editResponseInfo(inventoryResponse), null, 2, null);
                         } else {
                             if (!this.isArizonaType) {
                                 id14 = RodinaBlockType.BLOCK_TYPE_SKIN.getId();
@@ -1712,36 +1717,17 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 id14 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
                             }
                             if (type == id14) {
-                                if (!this.isArizonaType) {
-                                    List<InventoryItem> items11 = inventoryResponse.getItems();
-                                    ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(items11, 10));
-                                    for (InventoryItem inventoryItem : items11) {
-                                        this.currentSkin = inventoryItem;
-                                        arrayList2.add(Unit.INSTANCE);
-                                    }
-                                    ArrayList arrayList3 = arrayList2;
-                                    InventoryItem inventoryItem2 = this.currentModSkin;
-                                    if ((inventoryItem2 != null ? inventoryItem2.getItem() : null) == null) {
-                                        CollectionsKt.addAll(getSubCaseArmorSkinList(), editResponseInfo(inventoryResponse));
-                                        setSubSkinList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                                        if (getSubCaseArmorSkinList().size() >= 3) {
-                                            getSubCaseArmorSkinList().set(1, getSubCaseArmorSkinList().get(2));
-                                            getSubCaseArmorSkinList().set(2, getSubCaseArmorSkinList().get(1));
-                                        }
-                                    }
-                                } else {
-                                    BaseInventory.setSubCaseArmorSkinList$default(this, null, editResponseInfo(inventoryResponse), 1, null);
-                                }
+                                BaseInventory.setSubCaseArmorSkinList$default(this, null, editResponseInfo(inventoryResponse), 1, null);
                             } else if (type == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
-                                List<InventoryItem> items12 = inventoryResponse.getItems();
-                                ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(items12, 10));
-                                for (InventoryItem inventoryItem3 : items12) {
-                                    this.currentModSkin = inventoryItem3;
-                                    arrayList4.add(Unit.INSTANCE);
+                                List<InventoryItem> items11 = inventoryResponse.getItems();
+                                ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(items11, 10));
+                                for (InventoryItem inventoryItem : items11) {
+                                    this.currentModSkin = inventoryItem;
+                                    arrayList2.add(Unit.INSTANCE);
                                 }
-                                ArrayList arrayList5 = arrayList4;
-                                InventoryItem inventoryItem4 = this.currentModSkin;
-                                if ((inventoryItem4 != null ? inventoryItem4.getItem() : null) != null) {
+                                ArrayList arrayList3 = arrayList2;
+                                InventoryItem inventoryItem2 = this.currentModSkin;
+                                if ((inventoryItem2 != null ? inventoryItem2.getItem() : null) != null) {
                                     CollectionsKt.addAll(getSubCaseArmorSkinList(), editResponseInfo(inventoryResponse));
                                     if (getSubCaseArmorSkinList().size() >= 3) {
                                         getSubCaseArmorSkinList().set(1, getSubCaseArmorSkinList().get(2));
@@ -1877,6 +1863,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     addTopBars(skin);
                     this.currentWarehouse = skin.getWarehouseType();
                     addLockedItems();
+                    defaultInventoryScreen();
                     setVisible(true);
                 } else if (!StringsKt.startsWith$default(data, "{\"securities\"", false, 2, (Object) null)) {
                     if (!StringsKt.startsWith$default(data, "{\"skin\"", false, 2, (Object) null) || !StringsKt.contains$default((CharSequence) data, (CharSequence) "oil", false, 2, (Object) null)) {
@@ -1925,46 +1912,46 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     List<GuardInfo> mutableList = CollectionsKt.toMutableList((Collection) ((GuardInfoResponse) fromJson5).getSecurities());
                     this.guardInfoList = mutableList;
                     List<GuardInfo> list = mutableList;
-                    ArrayList arrayList6 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+                    ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
                     for (GuardInfo guardInfo : list) {
-                        ArrayList arrayList7 = new ArrayList();
-                        for (Object obj8 : this.guardAccessoriesList) {
-                            int id21 = ((InventoryItem) obj8).getId();
+                        ArrayList arrayList5 = new ArrayList();
+                        for (Object obj7 : this.guardAccessoriesList) {
+                            int id21 = ((InventoryItem) obj7).getId();
                             Integer id22 = guardInfo.getId();
                             if (id22 != null && id21 == id22.intValue()) {
-                                arrayList7.add(obj8);
+                                arrayList5.add(obj7);
                             }
                         }
-                        List mutableList2 = CollectionsKt.toMutableList((Collection) arrayList7);
-                        ArrayList arrayList8 = new ArrayList();
-                        for (Object obj9 : this.guardInventoryList) {
-                            int id23 = ((InventoryItem) obj9).getId();
+                        List mutableList2 = CollectionsKt.toMutableList((Collection) arrayList5);
+                        ArrayList arrayList6 = new ArrayList();
+                        for (Object obj8 : this.guardInventoryList) {
+                            int id23 = ((InventoryItem) obj8).getId();
                             Integer id24 = guardInfo.getId();
                             if (id24 != null && id23 == id24.intValue()) {
-                                arrayList8.add(obj9);
+                                arrayList6.add(obj8);
                             }
                         }
-                        ArrayList arrayList9 = arrayList8;
-                        Iterator<T> it = this.guardWeaponList.iterator();
+                        ArrayList arrayList7 = arrayList6;
+                        Iterator<T> it2 = this.guardWeaponList.iterator();
                         while (true) {
-                            if (!it.hasNext()) {
-                                obj7 = null;
+                            if (!it2.hasNext()) {
+                                obj5 = null;
                                 break;
                             }
-                            obj7 = it.next();
-                            int id25 = ((InventoryItem) obj7).getId();
+                            obj5 = it2.next();
+                            int id25 = ((InventoryItem) obj5).getId();
                             Integer id26 = guardInfo.getId();
                             if (id26 != null && id25 == id26.intValue()) {
                                 break;
                             }
                         }
-                        InventoryItem inventoryItem5 = (InventoryItem) obj7;
-                        if (inventoryItem5 != null) {
-                            mutableList2.add(inventoryItem5);
+                        InventoryItem inventoryItem3 = (InventoryItem) obj5;
+                        if (inventoryItem3 != null) {
+                            mutableList2.add(inventoryItem3);
                         }
-                        arrayList6.add(GuardInfo.copy$default(guardInfo, null, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryItem5, mutableList2, CollectionsKt.toMutableList((Collection) arrayList9), 16383, null));
+                        arrayList4.add(GuardInfo.copy$default(guardInfo, null, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryItem3, mutableList2, CollectionsKt.toMutableList((Collection) arrayList7), 16383, null));
                     }
-                    List<GuardInfo> mutableList3 = CollectionsKt.toMutableList((Collection) arrayList6);
+                    List<GuardInfo> mutableList3 = CollectionsKt.toMutableList((Collection) arrayList4);
                     this.guardInfoList = mutableList3;
                     guardInfoSetUi(mutableList3);
                 }
@@ -1974,62 +1961,46 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 Intrinsics.checkNotNullExpressionValue(fromJson6, "fromJson(...)");
                 InventoryEditResponse inventoryEditResponse = (InventoryEditResponse) fromJson6;
                 int type2 = inventoryEditResponse.getType();
-                List<InventoryItem> items13 = inventoryEditResponse.getItems();
-                if (items13 != null) {
-                    List<InventoryItem> list2 = items13;
-                    ArrayList arrayList10 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
-                    for (InventoryItem inventoryItem6 : list2) {
-                        int type3 = inventoryEditResponse.getType();
-                        Iterator<T> it2 = UtilsKt.getItemsName().iterator();
-                        while (true) {
-                            if (!it2.hasNext()) {
-                                obj5 = null;
-                                break;
-                            }
-                            obj5 = it2.next();
-                            int id27 = ((ItemsInfo) obj5).getId();
-                            Integer item = inventoryItem6.getItem();
-                            if (item != null && id27 == item.intValue()) {
-                                break;
-                            }
-                        }
-                        ItemsInfo itemsInfo = (ItemsInfo) obj5;
-                        Integer valueOf = itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null;
+                List<InventoryItem> items12 = inventoryEditResponse.getItems();
+                if (items12 != null) {
+                    List<InventoryItem> list2 = items12;
+                    ArrayList arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
+                    for (InventoryItem inventoryItem4 : list2) {
                         Iterator<T> it3 = UtilsKt.getItemsName().iterator();
                         while (true) {
                             if (!it3.hasNext()) {
-                                obj6 = null;
+                                obj4 = null;
                                 break;
                             }
-                            obj6 = it3.next();
-                            int id28 = ((ItemsInfo) obj6).getId();
-                            Integer item2 = inventoryItem6.getItem();
-                            if (item2 != null && id28 == item2.intValue()) {
+                            obj4 = it3.next();
+                            int id27 = ((ItemsInfo) obj4).getId();
+                            Integer item2 = inventoryItem4.getItem();
+                            if (item2 != null && id27 == item2.intValue()) {
                                 break;
                             }
                         }
-                        ItemsInfo itemsInfo2 = (ItemsInfo) obj6;
-                        arrayList10.add(InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type3, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, 1900527, null));
+                        ItemsInfo itemsInfo = (ItemsInfo) obj4;
+                        arrayList8.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null, null, null, null, null, null, null, null, null, null, null, null, inventoryEditResponse.getType(), itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : null, null, false, false, itemsInfo != null ? itemsInfo.getEffect() : null, 1900527, null));
                     }
-                    arrayList = arrayList10;
+                    arrayList = arrayList8;
                 } else {
                     arrayList = null;
                 }
                 InventoryEditResponse inventoryEditResponse2 = new InventoryEditResponse(type2, arrayList, inventoryEditResponse.getMoney());
-                int type4 = inventoryEditResponse2.getType();
-                if (type4 == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
-                    ArrayList<Number> arrayList11 = new ArrayList();
-                    List<InventoryItem> items14 = inventoryEditResponse2.getItems();
-                    if (items14 != null) {
-                        for (InventoryItem inventoryItem7 : items14) {
-                            if (inventoryItem7.getSlot() < this.mainInventoryList.size() && !this.mainInventoryList.isEmpty()) {
+                int type3 = inventoryEditResponse2.getType();
+                if (type3 == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
+                    ArrayList<Number> arrayList9 = new ArrayList();
+                    List<InventoryItem> items13 = inventoryEditResponse2.getItems();
+                    if (items13 != null) {
+                        for (InventoryItem inventoryItem5 : items13) {
+                            if (inventoryItem5.getSlot() < this.mainInventoryList.size() && !this.mainInventoryList.isEmpty()) {
                                 Iterator<InventoryItem> it4 = this.mainInventoryList.iterator();
                                 int i3 = 0;
                                 while (true) {
                                     if (!it4.hasNext()) {
                                         i3 = -1;
                                         break;
-                                    } else if (it4.next().getSlot() == inventoryItem7.getSlot()) {
+                                    } else if (it4.next().getSlot() == inventoryItem5.getSlot()) {
                                         break;
                                     } else {
                                         i3++;
@@ -2038,25 +2009,25 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 Iterator<T> it5 = this.mainInventoryList.iterator();
                                 while (true) {
                                     if (!it5.hasNext()) {
-                                        obj4 = null;
+                                        obj3 = null;
                                         break;
                                     }
-                                    obj4 = it5.next();
-                                    if (((InventoryItem) obj4).getSlot() == inventoryItem7.getSlot()) {
+                                    obj3 = it5.next();
+                                    if (((InventoryItem) obj3).getSlot() == inventoryItem5.getSlot()) {
                                         break;
                                     }
                                 }
-                                InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj4, inventoryItem7);
+                                InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj3, inventoryItem5);
                                 if (i3 >= 0) {
-                                    arrayList11.add(Integer.valueOf(i3));
-                                    if (inventoryItem7.getItem() != null) {
+                                    arrayList9.add(Integer.valueOf(i3));
+                                    if (inventoryItem5.getItem() != null) {
                                         List<InventoryItem> list3 = this.mainInventoryList;
                                         if (updateInventoryItem == null) {
                                             updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
                                         }
                                         list3.set(i3, updateInventoryItem);
                                     } else {
-                                        this.mainInventoryList.set(i3, inventoryItem7);
+                                        this.mainInventoryList.set(i3, inventoryItem5);
                                     }
                                 }
                             }
@@ -2064,12 +2035,12 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         Unit unit = Unit.INSTANCE;
                     }
                     this.mainInventoryAdapter.submitList(CollectionsKt.toList(this.mainInventoryList));
-                    for (Number number : arrayList11) {
+                    for (Number number : arrayList9) {
                         this.mainInventoryAdapter.notifyItemChanged(number.intValue());
                     }
-                    List<InventoryItem> items15 = inventoryEditResponse2.getItems();
-                    updateInfoToDatabase(items15 != null ? items15.get(0) : null);
-                } else if (type4 == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
+                    List<InventoryItem> items14 = inventoryEditResponse2.getItems();
+                    updateInfoToDatabase(items14 != null ? items14.get(0) : null);
+                } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
                     this.person.updateAccessories(inventoryEditResponse2);
                 } else {
                     if (!this.isArizonaType) {
@@ -2077,16 +2048,16 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     } else {
                         id2 = ArizonaBlockType.BLOCK_TYPE_GUN.getId();
                     }
-                    if (type4 == id2) {
+                    if (type3 == id2) {
                         if (!getSubUpgradesList().isEmpty() && (items9 = inventoryEditResponse2.getItems()) != null) {
-                            for (InventoryItem inventoryItem8 : items9) {
+                            for (InventoryItem inventoryItem6 : items9) {
                                 Iterator<InventoryItem> it6 = getSubUpgradesList().iterator();
                                 int i4 = 0;
                                 while (true) {
                                     if (!it6.hasNext()) {
                                         i4 = -1;
                                         break;
-                                    } else if (it6.next().getSlot() == inventoryItem8.getSlot()) {
+                                    } else if (it6.next().getSlot() == inventoryItem6.getSlot()) {
                                         break;
                                     } else {
                                         i4++;
@@ -2095,24 +2066,24 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 Iterator<T> it7 = getSubUpgradesList().iterator();
                                 while (true) {
                                     if (!it7.hasNext()) {
-                                        obj3 = null;
+                                        obj2 = null;
                                         break;
                                     }
-                                    obj3 = it7.next();
-                                    if (((InventoryItem) obj3).getSlot() == inventoryItem8.getSlot()) {
+                                    obj2 = it7.next();
+                                    if (((InventoryItem) obj2).getSlot() == inventoryItem6.getSlot()) {
                                         break;
                                     }
                                 }
-                                InventoryItem updateInventoryItem2 = UtilsKt.updateInventoryItem((InventoryItem) obj3, inventoryItem8);
+                                InventoryItem updateInventoryItem2 = UtilsKt.updateInventoryItem((InventoryItem) obj2, inventoryItem6);
                                 if (i4 >= 0) {
-                                    if (inventoryItem8.getItem() != null) {
+                                    if (inventoryItem6.getItem() != null) {
                                         List<InventoryItem> subUpgradesList = getSubUpgradesList();
                                         if (updateInventoryItem2 == null) {
                                             updateInventoryItem2 = ConstantsKt.getEmptyInventoryItem();
                                         }
                                         subUpgradesList.set(i4, updateInventoryItem2);
                                     } else {
-                                        getSubUpgradesList().set(i4, inventoryItem8);
+                                        getSubUpgradesList().set(i4, inventoryItem6);
                                     }
                                 }
                                 getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
@@ -2125,73 +2096,24 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         } else {
                             id3 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
                         }
-                        if (type4 == id3) {
-                            List<InventoryItem> items16 = inventoryEditResponse2.getItems();
-                            if (items16 != null) {
-                                for (InventoryItem inventoryItem9 : items16) {
-                                    if (!this.isArizonaType) {
-                                        Iterator<InventoryItem> it8 = getSubCaseArmorSkinList().iterator();
-                                        int i5 = 0;
-                                        while (true) {
-                                            if (!it8.hasNext()) {
-                                                i5 = -1;
-                                                break;
-                                            } else if (it8.next().getSlot() == inventoryItem9.getSlot()) {
-                                                break;
-                                            } else {
-                                                i5++;
-                                            }
+                        if (type3 == id3) {
+                            List<InventoryItem> items15 = inventoryEditResponse2.getItems();
+                            if (items15 != null) {
+                                for (InventoryItem inventoryItem7 : items15) {
+                                    Iterator<InventoryItem> it8 = getSubCaseArmorList().iterator();
+                                    int i5 = 0;
+                                    while (true) {
+                                        if (!it8.hasNext()) {
+                                            i5 = -1;
+                                            break;
+                                        } else if (it8.next().getSlot() == inventoryItem7.getSlot()) {
+                                            break;
+                                        } else {
+                                            i5++;
                                         }
-                                        Iterator<T> it9 = getSubCaseArmorSkinList().iterator();
-                                        while (true) {
-                                            if (!it9.hasNext()) {
-                                                obj2 = null;
-                                                break;
-                                            }
-                                            obj2 = it9.next();
-                                            if (((InventoryItem) obj2).getSlot() == inventoryItem9.getSlot()) {
-                                                break;
-                                            }
-                                        }
-                                        InventoryItem updateInventoryItem3 = UtilsKt.updateInventoryItem((InventoryItem) obj2, inventoryItem9);
-                                        if (i5 >= 0) {
-                                            if (inventoryItem9.getItem() != null) {
-                                                List<InventoryItem> subCaseArmorSkinList = getSubCaseArmorSkinList();
-                                                if (updateInventoryItem3 == null) {
-                                                    updateInventoryItem3 = ConstantsKt.getEmptyInventoryItem();
-                                                }
-                                                subCaseArmorSkinList.set(i5, updateInventoryItem3);
-                                            } else {
-                                                getSubCaseArmorSkinList().set(i5, inventoryItem9);
-                                            }
-                                        }
-                                        int i6 = 0;
-                                        for (Object obj10 : getSubCaseArmorList()) {
-                                            int i7 = i6 + 1;
-                                            if (i6 < 0) {
-                                                CollectionsKt.throwIndexOverflow();
-                                            }
-                                            if (inventoryItem9.getSlot() == ((InventoryItem) obj10).getSlot()) {
-                                                getSubCaseArmorList().set(i6, inventoryItem9);
-                                            }
-                                            i6 = i7;
-                                        }
-                                    } else {
-                                        Iterator<InventoryItem> it10 = getSubCaseArmorList().iterator();
-                                        int i8 = 0;
-                                        while (true) {
-                                            if (!it10.hasNext()) {
-                                                i8 = -1;
-                                                break;
-                                            } else if (it10.next().getSlot() == inventoryItem9.getSlot()) {
-                                                break;
-                                            } else {
-                                                i8++;
-                                            }
-                                        }
-                                        getSubCaseArmorList().set(i8, inventoryItem9);
-                                        BaseInventory.setSubCaseArmorSkinList$default(this, getSubCaseArmorList(), null, 2, null);
                                     }
+                                    getSubCaseArmorList().set(i5, inventoryItem7);
+                                    BaseInventory.setSubCaseArmorSkinList$default(this, getSubCaseArmorList(), null, 2, null);
                                     this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                 }
                                 Unit unit3 = Unit.INSTANCE;
@@ -2202,84 +2124,51 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                             } else {
                                 id4 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
                             }
-                            if (type4 == id4) {
-                                List<InventoryItem> items17 = inventoryEditResponse2.getItems();
-                                if (items17 != null) {
-                                    for (InventoryItem inventoryItem10 : items17) {
-                                        if (!this.isArizonaType) {
-                                            this.currentSkin = inventoryItem10;
-                                            if (!getSubCaseArmorSkinList().isEmpty()) {
-                                                Iterator<InventoryItem> it11 = getSubCaseArmorSkinList().iterator();
-                                                int i9 = 0;
-                                                while (true) {
-                                                    if (!it11.hasNext()) {
-                                                        i9 = -1;
-                                                        break;
-                                                    }
-                                                    InventoryItem next = it11.next();
-                                                    if (next.getSlot() == inventoryItem10.getSlot() && (next.getInventoryType() == inventoryEditResponse2.getType() || next.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId())) {
-                                                        break;
-                                                    }
-                                                    i9++;
-                                                }
-                                                if (i9 >= 0) {
-                                                    getSubCaseArmorSkinList().set(i9, inventoryItem10);
-                                                }
-                                                int i10 = 0;
-                                                for (Object obj11 : getSubSkinList()) {
-                                                    int i11 = i10 + 1;
-                                                    if (i10 < 0) {
-                                                        CollectionsKt.throwIndexOverflow();
-                                                    }
-                                                    if (inventoryItem10.getSlot() == ((InventoryItem) obj11).getSlot()) {
-                                                        getSubSkinList().set(i10, inventoryItem10);
-                                                    }
-                                                    i10 = i11;
-                                                }
+                            if (type3 == id4) {
+                                List<InventoryItem> items16 = inventoryEditResponse2.getItems();
+                                if (items16 != null) {
+                                    for (InventoryItem inventoryItem8 : items16) {
+                                        Iterator<InventoryItem> it9 = getSubSkinList().iterator();
+                                        int i6 = 0;
+                                        while (true) {
+                                            if (!it9.hasNext()) {
+                                                i6 = -1;
+                                                break;
+                                            } else if (it9.next().getSlot() == inventoryItem8.getSlot()) {
+                                                break;
+                                            } else {
+                                                i6++;
                                             }
-                                        } else {
-                                            Iterator<InventoryItem> it12 = getSubSkinList().iterator();
-                                            int i12 = 0;
-                                            while (true) {
-                                                if (!it12.hasNext()) {
-                                                    i12 = -1;
-                                                    break;
-                                                } else if (it12.next().getSlot() == inventoryItem10.getSlot()) {
-                                                    break;
-                                                } else {
-                                                    i12++;
-                                                }
-                                            }
-                                            getSubSkinList().set(i12, inventoryItem10);
-                                            BaseInventory.setSubCaseArmorSkinList$default(this, null, getSubSkinList(), 1, null);
                                         }
+                                        getSubSkinList().set(i6, inventoryItem8);
+                                        BaseInventory.setSubCaseArmorSkinList$default(this, null, getSubSkinList(), 1, null);
                                         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                     }
                                     Unit unit4 = Unit.INSTANCE;
                                 }
-                            } else if (type4 == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
-                                List<InventoryItem> items18 = inventoryEditResponse2.getItems();
-                                if (items18 != null) {
-                                    for (InventoryItem inventoryItem11 : items18) {
-                                        this.currentModSkin = inventoryItem11;
-                                        Iterator<InventoryItem> it13 = getSubCaseArmorSkinList().iterator();
-                                        int i13 = 0;
+                            } else if (type3 == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
+                                List<InventoryItem> items17 = inventoryEditResponse2.getItems();
+                                if (items17 != null) {
+                                    for (InventoryItem inventoryItem9 : items17) {
+                                        this.currentModSkin = inventoryItem9;
+                                        Iterator<InventoryItem> it10 = getSubCaseArmorSkinList().iterator();
+                                        int i7 = 0;
                                         while (true) {
-                                            if (!it13.hasNext()) {
-                                                i13 = -1;
+                                            if (!it10.hasNext()) {
+                                                i7 = -1;
                                                 break;
                                             }
-                                            InventoryItem next2 = it13.next();
-                                            if (next2.getSlot() == inventoryItem11.getSlot() && (next2.getInventoryType() == inventoryEditResponse2.getType() || next2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_SKIN.getId())) {
+                                            InventoryItem next2 = it10.next();
+                                            if (next2.getSlot() == inventoryItem9.getSlot() && (next2.getInventoryType() == inventoryEditResponse2.getType() || next2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_SKIN.getId())) {
                                                 break;
                                             }
-                                            i13++;
+                                            i7++;
                                         }
-                                        if (i13 >= 0) {
-                                            getSubCaseArmorSkinList().set(i13, inventoryItem11);
+                                        if (i7 >= 0) {
+                                            getSubCaseArmorSkinList().set(i7, inventoryItem9);
                                         }
                                         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
-                                        getSubInventoryAdapter().notifyItemChanged(i13);
+                                        getSubInventoryAdapter().notifyItemChanged(i7);
                                     }
                                     Unit unit5 = Unit.INSTANCE;
                                 }
@@ -2289,65 +2178,65 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 } else {
                                     id5 = ArizonaBlockType.BLOCK_TYPE_WALLET.getId();
                                 }
-                                if (type4 != id5 && type4 != ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId()) {
+                                if (type3 != id5 && type3 != ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId()) {
                                     if (!this.isArizonaType) {
                                         id6 = RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
                                     } else {
                                         id6 = ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
                                     }
-                                    if (type4 == id6) {
+                                    if (type3 == id6) {
                                         if (!this.guardWeaponList.isEmpty() && (items8 = inventoryEditResponse2.getItems()) != null) {
-                                            for (InventoryItem inventoryItem12 : items8) {
+                                            for (InventoryItem inventoryItem10 : items8) {
                                                 GuardInfo guardInfo2 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                                                 if (guardInfo2 == null) {
                                                     return;
                                                 }
-                                                Iterator<InventoryItem> it14 = guardInfo2.getAccessoriesList().iterator();
-                                                int i14 = 0;
+                                                Iterator<InventoryItem> it11 = guardInfo2.getAccessoriesList().iterator();
+                                                int i8 = 0;
                                                 while (true) {
-                                                    if (!it14.hasNext()) {
-                                                        i14 = -1;
+                                                    if (!it11.hasNext()) {
+                                                        i8 = -1;
                                                         break;
                                                     }
-                                                    InventoryItem next3 = it14.next();
+                                                    InventoryItem next3 = it11.next();
                                                     if (next3.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || next3.getInventoryType() == RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId()) {
                                                         break;
                                                     }
-                                                    i14++;
+                                                    i8++;
                                                 }
-                                                if (i14 >= 0) {
-                                                    guardInfo2.getAccessoriesList().set(i14, inventoryItem12);
+                                                if (i8 >= 0) {
+                                                    guardInfo2.getAccessoriesList().set(i8, inventoryItem10);
                                                 }
                                                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo2.getAccessoriesList()));
-                                                this.guardSubInventoryAdapter.notifyItemChanged(i14);
+                                                this.guardSubInventoryAdapter.notifyItemChanged(i8);
                                             }
                                             Unit unit6 = Unit.INSTANCE;
                                         }
-                                    } else if (type4 == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
+                                    } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
                                         GuardInfo guardInfo3 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                                         if (guardInfo3 == null) {
                                             return;
                                         }
                                         if (!guardInfo3.getAccessoriesList().isEmpty() && (items7 = inventoryEditResponse2.getItems()) != null) {
-                                            for (InventoryItem inventoryItem13 : items7) {
-                                                Iterator<InventoryItem> it15 = guardInfo3.getAccessoriesList().iterator();
-                                                int i15 = 0;
+                                            for (InventoryItem inventoryItem11 : items7) {
+                                                Iterator<InventoryItem> it12 = guardInfo3.getAccessoriesList().iterator();
+                                                int i9 = 0;
                                                 while (true) {
-                                                    if (!it15.hasNext()) {
-                                                        i15 = -1;
+                                                    if (!it12.hasNext()) {
+                                                        i9 = -1;
                                                         break;
                                                     }
-                                                    InventoryItem next4 = it15.next();
-                                                    if (next4.getSlot() == inventoryItem13.getSlot() && next4.getId() == inventoryItem13.getId()) {
+                                                    InventoryItem next4 = it12.next();
+                                                    if (next4.getSlot() == inventoryItem11.getSlot() && next4.getId() == inventoryItem11.getId()) {
                                                         break;
                                                     }
-                                                    i15++;
+                                                    i9++;
                                                 }
-                                                if (i15 >= 0) {
-                                                    guardInfo3.getAccessoriesList().set(i15, inventoryItem13);
+                                                if (i9 >= 0) {
+                                                    guardInfo3.getAccessoriesList().set(i9, inventoryItem11);
                                                 }
                                                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo3.getAccessoriesList()));
-                                                this.guardSubInventoryAdapter.notifyItemChanged(i15);
+                                                this.guardSubInventoryAdapter.notifyItemChanged(i9);
                                             }
                                             Unit unit7 = Unit.INSTANCE;
                                         }
@@ -2357,30 +2246,30 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                         } else {
                                             id7 = ArizonaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
                                         }
-                                        if (type4 == id7) {
+                                        if (type3 == id7) {
                                             GuardInfo guardInfo4 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                                             if (guardInfo4 == null) {
                                                 return;
                                             }
                                             if (!guardInfo4.getInventoryList().isEmpty() && (items6 = inventoryEditResponse2.getItems()) != null) {
-                                                for (InventoryItem inventoryItem14 : items6) {
-                                                    Iterator<InventoryItem> it16 = guardInfo4.getInventoryList().iterator();
-                                                    int i16 = 0;
+                                                for (InventoryItem inventoryItem12 : items6) {
+                                                    Iterator<InventoryItem> it13 = guardInfo4.getInventoryList().iterator();
+                                                    int i10 = 0;
                                                     while (true) {
-                                                        if (!it16.hasNext()) {
-                                                            i16 = -1;
+                                                        if (!it13.hasNext()) {
+                                                            i10 = -1;
                                                             break;
-                                                        } else if (it16.next().getSlot() == inventoryItem14.getSlot()) {
+                                                        } else if (it13.next().getSlot() == inventoryItem12.getSlot()) {
                                                             break;
                                                         } else {
-                                                            i16++;
+                                                            i10++;
                                                         }
                                                     }
-                                                    if (i16 >= 0) {
-                                                        guardInfo4.getInventoryList().set(i16, inventoryItem14);
+                                                    if (i10 >= 0) {
+                                                        guardInfo4.getInventoryList().set(i10, inventoryItem12);
                                                     }
                                                     this.guardInventoryAdapter.submitList(CollectionsKt.toList(guardInfo4.getInventoryList()));
-                                                    this.guardInventoryAdapter.notifyItemChanged(i16);
+                                                    this.guardInventoryAdapter.notifyItemChanged(i10);
                                                 }
                                                 Unit unit8 = Unit.INSTANCE;
                                             }
@@ -2390,26 +2279,26 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                             } else {
                                                 id8 = ArizonaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
                                             }
-                                            if (type4 == id8) {
+                                            if (type3 == id8) {
                                                 if (!this.vehicleVisualList.isEmpty() && (items5 = inventoryEditResponse2.getItems()) != null) {
-                                                    for (InventoryItem inventoryItem15 : items5) {
-                                                        Iterator<InventoryItem> it17 = this.vehicleVisualList.iterator();
-                                                        int i17 = 0;
+                                                    for (InventoryItem inventoryItem13 : items5) {
+                                                        Iterator<InventoryItem> it14 = this.vehicleVisualList.iterator();
+                                                        int i11 = 0;
                                                         while (true) {
-                                                            if (!it17.hasNext()) {
-                                                                i17 = -1;
+                                                            if (!it14.hasNext()) {
+                                                                i11 = -1;
                                                                 break;
-                                                            } else if (it17.next().getSlot() == inventoryItem15.getSlot()) {
+                                                            } else if (it14.next().getSlot() == inventoryItem13.getSlot()) {
                                                                 break;
                                                             } else {
-                                                                i17++;
+                                                                i11++;
                                                             }
                                                         }
-                                                        if (i17 >= 0) {
-                                                            this.vehicleVisualList.set(i17, inventoryItem15);
+                                                        if (i11 >= 0) {
+                                                            this.vehicleVisualList.set(i11, inventoryItem13);
                                                         }
                                                         this.vehicleVisualAdapter.submitList(CollectionsKt.toList(this.vehicleVisualList));
-                                                        this.vehicleVisualAdapter.notifyItemChanged(i17);
+                                                        this.vehicleVisualAdapter.notifyItemChanged(i11);
                                                         this.vehicleVisualAdapter.notifyDataSetChanged();
                                                     }
                                                     Unit unit9 = Unit.INSTANCE;
@@ -2420,26 +2309,26 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                 } else {
                                                     id9 = ArizonaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
                                                 }
-                                                if (type4 == id9) {
+                                                if (type3 == id9) {
                                                     if (!this.vehicleTechnicalList.isEmpty() && (items4 = inventoryEditResponse2.getItems()) != null) {
-                                                        for (InventoryItem inventoryItem16 : items4) {
-                                                            Iterator<InventoryItem> it18 = this.vehicleTechnicalList.iterator();
-                                                            int i18 = 0;
+                                                        for (InventoryItem inventoryItem14 : items4) {
+                                                            Iterator<InventoryItem> it15 = this.vehicleTechnicalList.iterator();
+                                                            int i12 = 0;
                                                             while (true) {
-                                                                if (!it18.hasNext()) {
-                                                                    i18 = -1;
+                                                                if (!it15.hasNext()) {
+                                                                    i12 = -1;
                                                                     break;
-                                                                } else if (it18.next().getSlot() == inventoryItem16.getSlot()) {
+                                                                } else if (it15.next().getSlot() == inventoryItem14.getSlot()) {
                                                                     break;
                                                                 } else {
-                                                                    i18++;
+                                                                    i12++;
                                                                 }
                                                             }
-                                                            if (i18 >= 0) {
-                                                                this.vehicleTechnicalList.set(i18, inventoryItem16);
+                                                            if (i12 >= 0) {
+                                                                this.vehicleTechnicalList.set(i12, inventoryItem14);
                                                             }
                                                             this.vehicleTechAdapter.submitList(CollectionsKt.toList(this.vehicleTechnicalList));
-                                                            this.vehicleTechAdapter.notifyItemChanged(i18);
+                                                            this.vehicleTechAdapter.notifyItemChanged(i12);
                                                             this.vehicleTechAdapter.notifyDataSetChanged();
                                                         }
                                                         Unit unit10 = Unit.INSTANCE;
@@ -2450,50 +2339,50 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                     } else {
                                                         id10 = ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId();
                                                     }
-                                                    if (type4 == id10) {
+                                                    if (type3 == id10) {
                                                         if (!this.vehicleSubList.isEmpty() && (items3 = inventoryEditResponse2.getItems()) != null) {
-                                                            for (InventoryItem inventoryItem17 : items3) {
-                                                                Iterator<InventoryItem> it19 = this.vehicleSubList.iterator();
-                                                                int i19 = 0;
+                                                            for (InventoryItem inventoryItem15 : items3) {
+                                                                Iterator<InventoryItem> it16 = this.vehicleSubList.iterator();
+                                                                int i13 = 0;
                                                                 while (true) {
-                                                                    if (!it19.hasNext()) {
-                                                                        i19 = -1;
+                                                                    if (!it16.hasNext()) {
+                                                                        i13 = -1;
                                                                         break;
                                                                     }
-                                                                    InventoryItem next5 = it19.next();
+                                                                    InventoryItem next5 = it16.next();
                                                                     if (next5.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId() || next5.getInventoryType() == RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
                                                                         break;
                                                                     }
-                                                                    i19++;
+                                                                    i13++;
                                                                 }
-                                                                if (i19 >= 0) {
-                                                                    this.vehicleSubList.set(i19, inventoryItem17);
+                                                                if (i13 >= 0) {
+                                                                    this.vehicleSubList.set(i13, inventoryItem15);
                                                                 }
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i19);
+                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i13);
                                                             }
                                                             Unit unit11 = Unit.INSTANCE;
                                                         }
-                                                    } else if (type4 == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
+                                                    } else if (type3 == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
                                                         if (!this.vehicleSubList.isEmpty() && (items2 = inventoryEditResponse2.getItems()) != null) {
-                                                            for (InventoryItem inventoryItem18 : items2) {
-                                                                Iterator<InventoryItem> it20 = this.vehicleSubList.iterator();
-                                                                int i20 = 0;
+                                                            for (InventoryItem inventoryItem16 : items2) {
+                                                                Iterator<InventoryItem> it17 = this.vehicleSubList.iterator();
+                                                                int i14 = 0;
                                                                 while (true) {
-                                                                    if (!it20.hasNext()) {
-                                                                        i20 = -1;
+                                                                    if (!it17.hasNext()) {
+                                                                        i14 = -1;
                                                                         break;
-                                                                    } else if (it20.next().getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
+                                                                    } else if (it17.next().getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
                                                                         break;
                                                                     } else {
-                                                                        i20++;
+                                                                        i14++;
                                                                     }
                                                                 }
-                                                                if (i20 >= 0) {
-                                                                    this.vehicleSubList.set(i20, inventoryItem18);
+                                                                if (i14 >= 0) {
+                                                                    this.vehicleSubList.set(i14, inventoryItem16);
                                                                 }
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i20);
+                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i14);
                                                             }
                                                             Unit unit12 = Unit.INSTANCE;
                                                         }
@@ -2503,25 +2392,25 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                         } else {
                                                             id11 = RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
                                                         }
-                                                        if (type4 == id11 && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
-                                                            for (InventoryItem inventoryItem19 : items) {
-                                                                Iterator<InventoryItem> it21 = this.vehicleSubList.iterator();
-                                                                int i21 = 0;
+                                                        if (type3 == id11 && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
+                                                            for (InventoryItem inventoryItem17 : items) {
+                                                                Iterator<InventoryItem> it18 = this.vehicleSubList.iterator();
+                                                                int i15 = 0;
                                                                 while (true) {
-                                                                    if (!it21.hasNext()) {
-                                                                        i21 = -1;
+                                                                    if (!it18.hasNext()) {
+                                                                        i15 = -1;
                                                                         break;
                                                                     }
-                                                                    if (it21.next().getInventoryType() == (this.isArizonaType ? ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId() : RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId())) {
+                                                                    if (it18.next().getInventoryType() == (this.isArizonaType ? ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId() : RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId())) {
                                                                         break;
                                                                     }
-                                                                    i21++;
+                                                                    i15++;
                                                                 }
-                                                                if (i21 >= 0) {
-                                                                    this.vehicleSubList.set(i21, inventoryItem19);
+                                                                if (i15 >= 0) {
+                                                                    this.vehicleSubList.set(i15, inventoryItem17);
                                                                 }
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i21);
+                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i15);
                                                             }
                                                             Unit unit13 = Unit.INSTANCE;
                                                         }
@@ -2534,42 +2423,42 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 Log.e("wallet", "onBackendMessage: " + inventoryEditResponse2.getType());
                                 if (!getWalletInventoryList().isEmpty()) {
                                     this.isWalletListVisible = true;
-                                    List<InventoryItem> items19 = inventoryEditResponse2.getItems();
-                                    if (items19 != null) {
-                                        for (InventoryItem inventoryItem20 : items19) {
-                                            Iterator<InventoryItem> it22 = getWalletInventoryList().iterator();
-                                            int i22 = 0;
+                                    List<InventoryItem> items18 = inventoryEditResponse2.getItems();
+                                    if (items18 != null) {
+                                        for (InventoryItem inventoryItem18 : items18) {
+                                            Iterator<InventoryItem> it19 = getWalletInventoryList().iterator();
+                                            int i16 = 0;
                                             while (true) {
-                                                if (!it22.hasNext()) {
-                                                    i22 = -1;
+                                                if (!it19.hasNext()) {
+                                                    i16 = -1;
                                                     break;
-                                                } else if (it22.next().getSlot() == inventoryItem20.getSlot()) {
+                                                } else if (it19.next().getSlot() == inventoryItem18.getSlot()) {
                                                     break;
                                                 } else {
-                                                    i22++;
+                                                    i16++;
                                                 }
                                             }
-                                            Iterator<T> it23 = getWalletInventoryList().iterator();
+                                            Iterator<T> it20 = getWalletInventoryList().iterator();
                                             while (true) {
-                                                if (!it23.hasNext()) {
+                                                if (!it20.hasNext()) {
                                                     obj = null;
                                                     break;
                                                 }
-                                                obj = it23.next();
-                                                if (((InventoryItem) obj).getSlot() == inventoryItem20.getSlot()) {
+                                                obj = it20.next();
+                                                if (((InventoryItem) obj).getSlot() == inventoryItem18.getSlot()) {
                                                     break;
                                                 }
                                             }
-                                            InventoryItem updateInventoryItem4 = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem20);
-                                            if (i22 >= 0) {
-                                                if (inventoryItem20.getItem() != null) {
+                                            InventoryItem updateInventoryItem3 = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem18);
+                                            if (i16 >= 0) {
+                                                if (inventoryItem18.getItem() != null) {
                                                     List<InventoryItem> walletInventoryList = getWalletInventoryList();
-                                                    if (updateInventoryItem4 == null) {
-                                                        updateInventoryItem4 = ConstantsKt.getEmptyInventoryItem();
+                                                    if (updateInventoryItem3 == null) {
+                                                        updateInventoryItem3 = ConstantsKt.getEmptyInventoryItem();
                                                     }
-                                                    walletInventoryList.set(i22, updateInventoryItem4);
+                                                    walletInventoryList.set(i16, updateInventoryItem3);
                                                 } else {
-                                                    getWalletInventoryList().set(i22, inventoryItem20);
+                                                    getWalletInventoryList().set(i16, inventoryItem18);
                                                 }
                                             }
                                         }
@@ -2582,48 +2471,48 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     }
                 }
                 if (this.isArizonaType && ConstantsKt.getArizonaWarehouseIds().contains(Integer.valueOf(inventoryEditResponse2.getType()))) {
-                    List<InventoryItem> items20 = inventoryEditResponse2.getItems();
-                    if (items20 != null) {
-                        for (InventoryItem inventoryItem21 : items20) {
-                            Iterator<InventoryItem> it24 = this.warehouseList.iterator();
-                            int i23 = 0;
+                    List<InventoryItem> items19 = inventoryEditResponse2.getItems();
+                    if (items19 != null) {
+                        for (InventoryItem inventoryItem19 : items19) {
+                            Iterator<InventoryItem> it21 = this.warehouseList.iterator();
+                            int i17 = 0;
                             while (true) {
-                                if (!it24.hasNext()) {
-                                    i23 = -1;
+                                if (!it21.hasNext()) {
+                                    i17 = -1;
                                     break;
-                                } else if (it24.next().getSlot() == inventoryItem21.getSlot()) {
+                                } else if (it21.next().getSlot() == inventoryItem19.getSlot()) {
                                     break;
                                 } else {
-                                    i23++;
+                                    i17++;
                                 }
                             }
-                            if (i23 >= 0) {
-                                this.warehouseList.set(i23, inventoryItem21);
+                            if (i17 >= 0) {
+                                this.warehouseList.set(i17, inventoryItem19);
                             }
                             this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
-                            this.warehouseAdapter.notifyItemChanged(i23);
+                            this.warehouseAdapter.notifyItemChanged(i17);
                         }
                         Unit unit15 = Unit.INSTANCE;
                     }
                 } else if (!this.isArizonaType && ConstantsKt.getRodinaWarehouseIds().contains(Integer.valueOf(inventoryEditResponse2.getType())) && (items10 = inventoryEditResponse2.getItems()) != null) {
-                    for (InventoryItem inventoryItem22 : items10) {
-                        Iterator<InventoryItem> it25 = this.warehouseList.iterator();
-                        int i24 = 0;
+                    for (InventoryItem inventoryItem20 : items10) {
+                        Iterator<InventoryItem> it22 = this.warehouseList.iterator();
+                        int i18 = 0;
                         while (true) {
-                            if (!it25.hasNext()) {
-                                i24 = -1;
+                            if (!it22.hasNext()) {
+                                i18 = -1;
                                 break;
-                            } else if (it25.next().getSlot() == inventoryItem22.getSlot()) {
+                            } else if (it22.next().getSlot() == inventoryItem20.getSlot()) {
                                 break;
                             } else {
-                                i24++;
+                                i18++;
                             }
                         }
-                        if (i24 >= 0) {
-                            this.warehouseList.set(i24, inventoryItem22);
+                        if (i18 >= 0) {
+                            this.warehouseList.set(i18, inventoryItem20);
                         }
                         this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
-                        this.warehouseAdapter.notifyItemChanged(i24);
+                        this.warehouseAdapter.notifyItemChanged(i18);
                     }
                     Unit unit16 = Unit.INSTANCE;
                 }
@@ -2632,18 +2521,18 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 Intrinsics.checkNotNullExpressionValue(fromJson7, "fromJson(...)");
                 ShowDialogInfo showDialogInfo = (ShowDialogInfo) fromJson7;
                 if (this.guardInfoList.isEmpty()) {
-                    InventoryItem inventoryItem23 = this.selectedInventoryItem;
-                    if (inventoryItem23 != null) {
-                        new SelectorDialog(getTargetActivity(), BaseInventory.Companion.getCurrentBackendId(), InventoryItem.copy$default(inventoryItem23, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, 2096895, null), 0);
+                    InventoryItem inventoryItem21 = this.selectedInventoryItem;
+                    if (inventoryItem21 != null) {
+                        new SelectorDialog(getTargetActivity(), BaseInventory.Companion.getCurrentBackendId(), InventoryItem.copy$default(inventoryItem21, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, 4194047, null), 0);
                         return;
                     }
                     return;
                 }
-                InventoryItem inventoryItem24 = this.selectedInventoryItem;
-                if (inventoryItem24 != null) {
+                InventoryItem inventoryItem22 = this.selectedInventoryItem;
+                if (inventoryItem22 != null) {
                     Activity targetActivity = getTargetActivity();
                     int currentBackendId = BaseInventory.Companion.getCurrentBackendId();
-                    InventoryItem copy$default = InventoryItem.copy$default(inventoryItem24, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, 2096895, null);
+                    InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, 4194047, null);
                     GuardInfo guardInfo5 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                     if (guardInfo5 != null && (id = guardInfo5.getId()) != null) {
                         i2 = id.intValue();
@@ -2656,15 +2545,15 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             } else if (i == 6) {
                 Object fromJson8 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) BlockType.class);
                 Intrinsics.checkNotNullExpressionValue(fromJson8, "fromJson(...)");
-                int type5 = ((BlockType) fromJson8).getType();
-                if (type5 == 1) {
+                int type4 = ((BlockType) fromJson8).getType();
+                if (type4 == 1) {
                     RecyclerView rvAccessoriesInventory = this.binding.personSection.rvAccessoriesInventory;
                     Intrinsics.checkNotNullExpressionValue(rvAccessoriesInventory, "rvAccessoriesInventory");
                     if (rvAccessoriesInventory.getVisibility() == 0) {
                         return;
                     }
                     this.binding.personSection.btnAccessories.performClick();
-                } else if (type5 == 2) {
+                } else if (type4 == 2) {
                     RecyclerView rvUpgradesInventory = this.binding.personSection.rvUpgradesInventory;
                     Intrinsics.checkNotNullExpressionValue(rvUpgradesInventory, "rvUpgradesInventory");
                     if (rvUpgradesInventory.getVisibility() == 0) {
@@ -2953,6 +2842,8 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             if (MapperKt.isJsonValid(data)) {
                 BaseInventory.Companion.setAccessPages(((Skin) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) Skin.class)).getAccessPages());
                 this.person.updateSet();
+                setCurrentCaseArmorSkinListArizona();
+                this.person.initSub(CollectionsKt.emptyList());
                 return;
             }
             throw new JsonParseException("Json is not valid");
@@ -2960,7 +2851,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void updateInfoToDatabase(InventoryItem inventoryItem) {
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new InventoryScreen$updateInfoToDatabase$1(inventoryItem, this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), null, null, new InventoryScreen$updateInfoToDatabase$1(inventoryItem, this, null), 3, null);
     }
 
     private final void addLockedItems() {
@@ -2970,54 +2861,30 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, 1048574, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, 3145726, null));
         }
         this.mainInventoryList.addAll(arrayList);
         initObservers();
     }
 
     private final List<InventoryItem> editResponseInfo(InventoryResponse inventoryResponse) {
-        Integer num;
-        Object obj;
-        Object obj2;
+        List<ItemsInfo> itemsName = UtilsKt.getItemsName();
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(itemsName, 10)), 16));
+        for (Object obj : itemsName) {
+            linkedHashMap.put(Integer.valueOf(((ItemsInfo) obj).getId()), obj);
+        }
         List<InventoryItem> items = inventoryResponse.getItems();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
         for (InventoryItem inventoryItem : items) {
+            ItemsInfo itemsInfo = (ItemsInfo) linkedHashMap.get(inventoryItem.getItem());
             int type = inventoryResponse.getType();
-            Iterator<T> it = UtilsKt.getItemsName().iterator();
-            while (true) {
-                num = null;
-                if (!it.hasNext()) {
-                    obj = null;
-                    break;
-                }
-                obj = it.next();
-                int id = ((ItemsInfo) obj).getId();
-                Integer item = inventoryItem.getItem();
-                if (item != null && id == item.intValue()) {
-                    break;
-                }
-            }
-            ItemsInfo itemsInfo = (ItemsInfo) obj;
+            String str = null;
             Integer valueOf = itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null;
-            Iterator<T> it2 = UtilsKt.getItemsName().iterator();
-            while (true) {
-                if (!it2.hasNext()) {
-                    obj2 = null;
-                    break;
-                }
-                obj2 = it2.next();
-                int id2 = ((ItemsInfo) obj2).getId();
-                Integer item2 = inventoryItem.getItem();
-                if (item2 != null && id2 == item2.intValue()) {
-                    break;
-                }
+            Integer valueOf2 = itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : null;
+            if (itemsInfo != null) {
+                str = itemsInfo.getEffect();
             }
-            ItemsInfo itemsInfo2 = (ItemsInfo) obj2;
-            if (itemsInfo2 != null) {
-                num = Integer.valueOf(itemsInfo2.getAcs_slot());
-            }
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type, num, null, false, false, 1900527, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type, valueOf2, null, false, false, str, 1900527, null));
         }
         return arrayList;
     }
@@ -3123,7 +2990,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(accessoriesList, 10));
             for (InventoryItem inventoryItem : accessoriesList) {
                 if (inventoryItem.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || inventoryItem.getInventoryType() == RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId()) {
-                    inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                    inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
                 }
                 arrayList.add(inventoryItem);
             }
@@ -3149,7 +3016,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subUpgradesList, 10));
         for (InventoryItem inventoryItem2 : subUpgradesList) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3164,7 +3031,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             int slot = inventoryItem2.getSlot();
             Integer acsSlot = inventoryItem.getAcsSlot();
             if (acsSlot != null && slot == acsSlot.intValue() && (inventoryItem2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_IMPROV.getId() || inventoryItem2.getInventoryType() == RodinaBlockType.BLOCK_TYPE_IMPROV.getId())) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3176,15 +3043,14 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> subSkinList = getSubSkinList();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subSkinList, 10));
         for (InventoryItem inventoryItem : subSkinList) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null));
         }
         setSubSkinList(CollectionsKt.toMutableList((Collection) arrayList));
-        Log.d("person_section", "initSub: " + getSubSkinList());
         List<InventoryItem> subCaseArmorSkinList = getSubCaseArmorSkinList();
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subCaseArmorSkinList, 10));
         for (InventoryItem inventoryItem2 : subCaseArmorSkinList) {
             if (inventoryItem2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_SKIN.getId() || inventoryItem2.getInventoryType() == RodinaBlockType.BLOCK_TYPE_SKIN.getId()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
             }
             arrayList2.add(inventoryItem2);
         }
@@ -3206,7 +3072,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 }
                 InventoryItem inventoryItem2 = (InventoryItem) obj;
                 if (i == 0) {
-                    inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                    inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
                 }
                 arrayList.add(inventoryItem2);
                 i = i2;
@@ -3224,7 +3090,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     }
                     InventoryItem inventoryItem3 = (InventoryItem) obj2;
                     if (i == 1) {
-                        inventoryItem3 = InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                        inventoryItem3 = InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
                     }
                     arrayList2.add(inventoryItem3);
                     i = i3;
@@ -3242,7 +3108,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         }
                         InventoryItem inventoryItem4 = (InventoryItem) obj3;
                         if (i == 2) {
-                            inventoryItem4 = InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                            inventoryItem4 = InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
                         }
                         arrayList3.add(inventoryItem4);
                         i = i4;
@@ -3272,7 +3138,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3299,7 +3165,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3436,6 +3302,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
     public void setVisible(boolean z) {
         int i;
+        Log.d("Inventory", "setVisible: " + z);
         ConstraintLayout constraintLayout = this.binding.parentLayout;
         if (z) {
             i = 0;

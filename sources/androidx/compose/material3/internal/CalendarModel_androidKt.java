@@ -1,13 +1,17 @@
 package androidx.compose.material3.internal;
 
+import android.icu.text.DateFormat;
+import android.icu.text.DisplayContext;
+import android.icu.util.TimeZone;
 import android.os.Build;
-import android.text.format.DateFormat;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CalendarModel.android.kt */
-@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\u0010\u0000\n\u0000\u001a\u0014\u0010\u0000\u001a\u00020\u00012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004H\u0000\u001a8\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00062\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u00042\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\f0\u000bH\u0000¨\u0006\r"}, d2 = {"createCalendarModel", "Landroidx/compose/material3/internal/CalendarModel;", CommonUrlParts.LOCALE, "Ljava/util/Locale;", "Landroidx/compose/material3/CalendarLocale;", "formatWithSkeleton", "", "utcTimeMillis", "", "skeleton", "cache", "", "", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\u0010\u0000\n\u0000\u001a\u0014\u0010\u0000\u001a\u00020\u00012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004H\u0000\u001a8\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00062\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u00042\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\f0\u000bH\u0000¨\u0006\r"}, d2 = {"createCalendarModel", "Landroidx/compose/material3/internal/CalendarModel;", CommonUrlParts.LOCALE, "Ljava/util/Locale;", "Landroidx/compose/material3/CalendarLocale;", "formatWithSkeleton", "", "utcTimeMillis", "", "skeleton", "cache", "", "", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CalendarModel_androidKt {
     public static final CalendarModel createCalendarModel(Locale locale) {
@@ -20,14 +24,15 @@ public final class CalendarModel_androidKt {
     public static final String formatWithSkeleton(long j, String str, Locale locale, Map<String, Object> map) {
         String str2 = "S:" + str + locale.toLanguageTag();
         Object obj = map.get(str2);
+        Object obj2 = obj;
         if (obj == null) {
-            obj = DateFormat.getBestDateTimePattern(locale, str);
-            map.put(str2, obj);
+            DateFormat instanceForSkeleton = DateFormat.getInstanceForSkeleton(str, locale);
+            instanceForSkeleton.setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
+            instanceForSkeleton.setTimeZone(TimeZone.GMT_ZONE);
+            map.put(str2, instanceForSkeleton);
+            obj2 = instanceForSkeleton;
         }
-        String obj2 = obj.toString();
-        if (Build.VERSION.SDK_INT >= 26) {
-            return CalendarModelImpl.Companion.formatWithPattern(j, obj2, locale, map);
-        }
-        return LegacyCalendarModelImpl.Companion.formatWithPattern(j, obj2, locale, map);
+        Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type android.icu.text.DateFormat");
+        return ((DateFormat) obj2).format(new Date(j));
     }
 }

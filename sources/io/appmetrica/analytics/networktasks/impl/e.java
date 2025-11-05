@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.networktasks.impl;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class e {
     public static /* synthetic */ int a(int i) {
         if (i != 0) {

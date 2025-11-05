@@ -4,8 +4,8 @@ import android.database.AbstractWindowedCursor;
 import android.database.CrossProcessCursor;
 import android.database.Cursor;
 import android.database.CursorWindow;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class CursorWrapper extends android.database.CursorWrapper implements CrossProcessCursor {
     private AbstractWindowedCursor zza;
 
@@ -15,7 +15,9 @@ public class CursorWrapper extends android.database.CursorWrapper implements Cro
             cursor = ((android.database.CursorWrapper) cursor).getWrappedCursor();
         }
         if (!(cursor instanceof AbstractWindowedCursor)) {
-            throw new IllegalArgumentException("Unknown type: ".concat(String.valueOf(cursor.getClass().getName())));
+            String name = cursor.getClass().getName();
+            String.valueOf(name);
+            throw new IllegalArgumentException("Unknown type: ".concat(String.valueOf(name)));
         }
         this.zza = (AbstractWindowedCursor) cursor;
     }

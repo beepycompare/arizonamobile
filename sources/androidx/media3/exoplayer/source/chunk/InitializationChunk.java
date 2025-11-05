@@ -9,7 +9,7 @@ import androidx.media3.exoplayer.source.chunk.ChunkExtractor;
 import androidx.media3.extractor.ChunkIndex;
 import androidx.media3.extractor.DefaultExtractorInput;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class InitializationChunk extends Chunk {
     private final ChunkExtractor chunkExtractor;
     private ChunkIndex chunkIndex;

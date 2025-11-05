@@ -1,25 +1,26 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-/* loaded from: classes4.dex */
-public final class Yh implements E4 {
+import io.appmetrica.analytics.ReporterConfig;
+/* loaded from: classes3.dex */
+public final class Yh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0677w5 f759a;
+    public final /* synthetic */ ReporterConfig f772a;
+    public final /* synthetic */ C0404li b;
 
-    public Yh(InterfaceC0677w5 interfaceC0677w5) {
-        this.f759a = interfaceC0677w5;
+    public Yh(C0404li c0404li, ReporterConfig reporterConfig) {
+        this.b = c0404li;
+        this.f772a = reporterConfig;
     }
 
-    @Override // io.appmetrica.analytics.impl.E4
-    /* renamed from: b */
-    public final Wg a(Context context, B5 b5, C0476o4 c0476o4, N4 n4) {
-        Xg xg;
-        C0477o5 c0477o5 = new C0477o5(c0476o4.b, c0476o4.f1016a);
-        Yg yg = new Yg(this.f759a);
-        synchronized (b5) {
-            xg = (Xg) b5.a(c0477o5, n4, yg, b5.f364a);
-        }
-        return new Wg(context, xg);
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0404li c0404li = this.b;
+        ReporterConfig reporterConfig = this.f772a;
+        C0685x0 c0685x0 = c0404li.f993a;
+        Context context = c0404li.d;
+        c0685x0.getClass();
+        C0660w0.a(context).f().a(reporterConfig);
     }
 }

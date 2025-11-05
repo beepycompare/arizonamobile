@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-appset@@16.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzg extends zza implements IInterface {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzg(IBinder iBinder) {

@@ -42,7 +42,7 @@ public final class ScrollKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ScrollState scrollState = (ScrollState) RememberSaveableKt.m3995rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        ScrollState scrollState = (ScrollState) RememberSaveableKt.m4725rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

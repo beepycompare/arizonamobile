@@ -1,8 +1,8 @@
 package com.google.android.gms.dynamite;
 
 import android.os.Process;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 final class zza extends Thread {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zza(ThreadGroup threadGroup, String str) {

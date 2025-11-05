@@ -1,21 +1,31 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.Intent;
 import android.content.res.Configuration;
-import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
-/* loaded from: classes4.dex */
-public final class A1 extends SafeRunnable {
+import android.os.Bundle;
+/* loaded from: classes3.dex */
+public interface A1 {
+    /* synthetic */ void a(Intent intent);
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Configuration f342a;
-    public final /* synthetic */ K1 b;
+    /* synthetic */ void a(Intent intent, int i);
 
-    public A1(K1 k1, Configuration configuration) {
-        this.b = k1;
-        this.f342a = configuration;
-    }
+    /* synthetic */ void a(Intent intent, int i, int i2);
 
-    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
-    public final void runSafety() {
-        this.b.b.onConfigurationChanged(this.f342a);
-    }
+    void a(InterfaceC0736z1 interfaceC0736z1);
+
+    /* synthetic */ void b(Intent intent);
+
+    /* synthetic */ void c(Intent intent);
+
+    /* synthetic */ void onConfigurationChanged(Configuration configuration);
+
+    /* synthetic */ void onCreate();
+
+    /* synthetic */ void onDestroy();
+
+    void pauseUserSession(Bundle bundle);
+
+    void reportData(int i, Bundle bundle);
+
+    void resumeUserSession(Bundle bundle);
 }

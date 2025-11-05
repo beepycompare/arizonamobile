@@ -152,21 +152,21 @@ public final class SelectionController implements RememberObserver {
             return;
         }
         if (!this.params.getShouldClip()) {
-            DrawScope.m5118drawPathLG529CI$default(drawScope, pathForRange, this.backgroundSelectionColor, 0.0f, null, null, 0, 60, null);
+            DrawScope.m5848drawPathLG529CI$default(drawScope, pathForRange, this.backgroundSelectionColor, 0.0f, null, null, 0, 60, null);
             return;
         }
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L));
-        int m4538getIntersectrtfAjoo = ClipOp.Companion.m4538getIntersectrtfAjoo();
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() & 4294967295L));
+        int m5268getIntersectrtfAjoo = ClipOp.Companion.m5268getIntersectrtfAjoo();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
+        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5052clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m4538getIntersectrtfAjoo);
-            DrawScope.m5118drawPathLG529CI$default(drawScope, pathForRange, this.backgroundSelectionColor, 0.0f, null, null, 0, 60, null);
+            drawContext.getTransform().mo5782clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m5268getIntersectrtfAjoo);
+            DrawScope.m5848drawPathLG529CI$default(drawScope, pathForRange, this.backgroundSelectionColor, 0.0f, null, null, 0, 60, null);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
         }
     }
 }

@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BaseImplementation;
 import com.google.android.gms.common.internal.Preconditions;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zae extends zai {
     protected final BaseImplementation.ApiMethodImpl zaa;
 

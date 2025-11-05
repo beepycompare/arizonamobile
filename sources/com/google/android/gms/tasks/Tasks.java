@@ -13,7 +13,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 /* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Tasks {
     private Tasks() {
     }

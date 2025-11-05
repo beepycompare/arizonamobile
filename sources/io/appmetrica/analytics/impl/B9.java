@@ -1,7 +1,5 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.media3.extractor.ts.TsExtractor;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.InternalNano;
@@ -9,178 +7,78 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class B9 extends MessageNano {
-    public static volatile B9[] n;
+    public static volatile B9[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f367a;
-    public String b;
-    public String c;
-    public int d;
-    public String e;
-    public String f;
-    public boolean g;
-    public int h;
-    public String i;
-    public String j;
-    public int k;
-    public A9[] l;
-    public String m;
+    public boolean f410a;
+    public int b;
+    public int c;
+    public int[] d;
 
     public B9() {
         a();
     }
 
     public static B9[] b() {
-        if (n == null) {
+        if (e == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (n == null) {
-                    n = new B9[0];
+                if (e == null) {
+                    e = new B9[0];
                 }
             }
         }
-        return n;
+        return e;
     }
 
     public final B9 a() {
-        this.f367a = "";
-        this.b = "";
-        this.c = "";
-        this.d = 0;
-        this.e = "";
-        this.f = "";
-        this.g = false;
-        this.h = 0;
-        this.i = "";
-        this.j = "";
-        this.k = 0;
-        this.l = A9.b();
-        this.m = "";
+        this.f410a = false;
+        this.b = 0;
+        this.c = 0;
+        this.d = WireFormatNano.EMPTY_INT_ARRAY;
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f367a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f367a);
+        int computeUInt32Size = CodedOutputByteBufferNano.computeUInt32Size(3, this.c) + CodedOutputByteBufferNano.computeUInt32Size(2, this.b) + CodedOutputByteBufferNano.computeBoolSize(1, this.f410a) + super.computeSerializedSize();
+        int[] iArr = this.d;
+        if (iArr == null || iArr.length <= 0) {
+            return computeUInt32Size;
         }
-        if (!this.b.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
-        }
-        if (!this.c.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(4, this.c);
-        }
-        int i = this.d;
-        if (i != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(5, i);
-        }
-        if (!this.e.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(10, this.e);
-        }
-        if (!this.f.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(15, this.f);
-        }
-        boolean z = this.g;
-        if (z) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(17, z);
-        }
-        int i2 = this.h;
-        if (i2 != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(18, i2);
-        }
-        if (!this.i.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(19, this.i);
-        }
-        if (!this.j.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(21, this.j);
-        }
-        int i3 = this.k;
-        if (i3 != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(22, i3);
-        }
-        A9[] a9Arr = this.l;
-        if (a9Arr != null && a9Arr.length > 0) {
-            int i4 = 0;
-            while (true) {
-                A9[] a9Arr2 = this.l;
-                if (i4 >= a9Arr2.length) {
-                    break;
-                }
-                A9 a9 = a9Arr2[i4];
-                if (a9 != null) {
-                    computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(23, a9);
-                }
-                i4++;
+        int i = 0;
+        int i2 = 0;
+        while (true) {
+            int[] iArr2 = this.d;
+            if (i < iArr2.length) {
+                i2 += CodedOutputByteBufferNano.computeInt32SizeNoTag(iArr2[i]);
+                i++;
+            } else {
+                return computeUInt32Size + i2 + iArr2.length;
             }
         }
-        return !this.m.equals("") ? CodedOutputByteBufferNano.computeStringSize(24, this.m) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f367a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f367a);
-        }
-        if (!this.b.equals("")) {
-            codedOutputByteBufferNano.writeString(2, this.b);
-        }
-        if (!this.c.equals("")) {
-            codedOutputByteBufferNano.writeString(4, this.c);
-        }
-        int i = this.d;
-        if (i != 0) {
-            codedOutputByteBufferNano.writeUInt32(5, i);
-        }
-        if (!this.e.equals("")) {
-            codedOutputByteBufferNano.writeString(10, this.e);
-        }
-        if (!this.f.equals("")) {
-            codedOutputByteBufferNano.writeString(15, this.f);
-        }
-        boolean z = this.g;
-        if (z) {
-            codedOutputByteBufferNano.writeBool(17, z);
-        }
-        int i2 = this.h;
-        if (i2 != 0) {
-            codedOutputByteBufferNano.writeUInt32(18, i2);
-        }
-        if (!this.i.equals("")) {
-            codedOutputByteBufferNano.writeString(19, this.i);
-        }
-        if (!this.j.equals("")) {
-            codedOutputByteBufferNano.writeString(21, this.j);
-        }
-        int i3 = this.k;
-        if (i3 != 0) {
-            codedOutputByteBufferNano.writeUInt32(22, i3);
-        }
-        A9[] a9Arr = this.l;
-        if (a9Arr != null && a9Arr.length > 0) {
-            int i4 = 0;
+        codedOutputByteBufferNano.writeBool(1, this.f410a);
+        codedOutputByteBufferNano.writeUInt32(2, this.b);
+        codedOutputByteBufferNano.writeUInt32(3, this.c);
+        int[] iArr = this.d;
+        if (iArr != null && iArr.length > 0) {
+            int i = 0;
             while (true) {
-                A9[] a9Arr2 = this.l;
-                if (i4 >= a9Arr2.length) {
+                int[] iArr2 = this.d;
+                if (i >= iArr2.length) {
                     break;
                 }
-                A9 a9 = a9Arr2[i4];
-                if (a9 != null) {
-                    codedOutputByteBufferNano.writeMessage(23, a9);
-                }
-                i4++;
+                codedOutputByteBufferNano.writeInt32(4, iArr2[i]);
+                i++;
             }
         }
-        if (!this.m.equals("")) {
-            codedOutputByteBufferNano.writeString(24, this.m);
-        }
         super.writeTo(codedOutputByteBufferNano);
-    }
-
-    public static B9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new B9().mergeFrom(codedInputByteBufferNano);
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
@@ -188,75 +86,63 @@ public final class B9 extends MessageNano {
     public final B9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
         while (true) {
             int readTag = codedInputByteBufferNano.readTag();
-            switch (readTag) {
-                case 0:
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 8) {
+                this.f410a = codedInputByteBufferNano.readBool();
+            } else if (readTag == 16) {
+                this.b = codedInputByteBufferNano.readUInt32();
+            } else if (readTag == 24) {
+                this.c = codedInputByteBufferNano.readUInt32();
+            } else if (readTag == 32) {
+                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 32);
+                int[] iArr = this.d;
+                int length = iArr == null ? 0 : iArr.length;
+                int i = repeatedFieldArrayLength + length;
+                int[] iArr2 = new int[i];
+                if (length != 0) {
+                    System.arraycopy(iArr, 0, iArr2, 0, length);
+                }
+                while (length < i - 1) {
+                    iArr2[length] = codedInputByteBufferNano.readInt32();
+                    codedInputByteBufferNano.readTag();
+                    length++;
+                }
+                iArr2[length] = codedInputByteBufferNano.readInt32();
+                this.d = iArr2;
+            } else if (readTag != 34) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
-                case 10:
-                    this.f367a = codedInputByteBufferNano.readString();
-                    break;
-                case 18:
-                    this.b = codedInputByteBufferNano.readString();
-                    break;
-                case 34:
-                    this.c = codedInputByteBufferNano.readString();
-                    break;
-                case 40:
-                    this.d = codedInputByteBufferNano.readUInt32();
-                    break;
-                case 82:
-                    this.e = codedInputByteBufferNano.readString();
-                    break;
-                case 122:
-                    this.f = codedInputByteBufferNano.readString();
-                    break;
-                case TsExtractor.TS_STREAM_TYPE_DTS_HD /* 136 */:
-                    this.g = codedInputByteBufferNano.readBool();
-                    break;
-                case 144:
-                    this.h = codedInputByteBufferNano.readUInt32();
-                    break;
-                case 154:
-                    this.i = codedInputByteBufferNano.readString();
-                    break;
-                case 170:
-                    this.j = codedInputByteBufferNano.readString();
-                    break;
-                case 176:
-                    this.k = codedInputByteBufferNano.readUInt32();
-                    break;
-                case 186:
-                    int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 186);
-                    A9[] a9Arr = this.l;
-                    int length = a9Arr == null ? 0 : a9Arr.length;
-                    int i = repeatedFieldArrayLength + length;
-                    A9[] a9Arr2 = new A9[i];
-                    if (length != 0) {
-                        System.arraycopy(a9Arr, 0, a9Arr2, 0, length);
-                    }
-                    while (length < i - 1) {
-                        A9 a9 = new A9();
-                        a9Arr2[length] = a9;
-                        codedInputByteBufferNano.readMessage(a9);
-                        codedInputByteBufferNano.readTag();
-                        length++;
-                    }
-                    A9 a92 = new A9();
-                    a9Arr2[length] = a92;
-                    codedInputByteBufferNano.readMessage(a92);
-                    this.l = a9Arr2;
-                    break;
-                case DownloaderService.STATUS_WAITING_TO_RETRY /* 194 */:
-                    this.m = codedInputByteBufferNano.readString();
-                    break;
-                default:
-                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                        break;
-                    } else {
-                        break;
-                    }
+                }
+            } else {
+                int pushLimit = codedInputByteBufferNano.pushLimit(codedInputByteBufferNano.readRawVarint32());
+                int position = codedInputByteBufferNano.getPosition();
+                int i2 = 0;
+                while (codedInputByteBufferNano.getBytesUntilLimit() > 0) {
+                    codedInputByteBufferNano.readInt32();
+                    i2++;
+                }
+                codedInputByteBufferNano.rewindToPosition(position);
+                int[] iArr3 = this.d;
+                int length2 = iArr3 == null ? 0 : iArr3.length;
+                int i3 = i2 + length2;
+                int[] iArr4 = new int[i3];
+                if (length2 != 0) {
+                    System.arraycopy(iArr3, 0, iArr4, 0, length2);
+                }
+                while (length2 < i3) {
+                    iArr4[length2] = codedInputByteBufferNano.readInt32();
+                    length2++;
+                }
+                this.d = iArr4;
+                codedInputByteBufferNano.popLimit(pushLimit);
             }
         }
         return this;
+    }
+
+    public static B9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new B9().mergeFrom(codedInputByteBufferNano);
     }
 
     public static B9 a(byte[] bArr) throws InvalidProtocolBufferNanoException {

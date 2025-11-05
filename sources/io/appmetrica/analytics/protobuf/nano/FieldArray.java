@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.protobuf.nano;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FieldArray implements Cloneable {
     private static final FieldData DELETED = new FieldData();
     private FieldData[] mData;
@@ -202,14 +202,14 @@ public final class FieldArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public final FieldArray m9100clone() {
+    public final FieldArray m9841clone() {
         int size = size();
         FieldArray fieldArray = new FieldArray(size);
         System.arraycopy(this.mFieldNumbers, 0, fieldArray.mFieldNumbers, 0, size);
         for (int i = 0; i < size; i++) {
             FieldData fieldData = this.mData[i];
             if (fieldData != null) {
-                fieldArray.mData[i] = fieldData.m9101clone();
+                fieldArray.mData[i] = fieldData.m9842clone();
             }
         }
         fieldArray.mSize = size;

@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.HashMap;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbn {
     public static final /* synthetic */ int zza = 0;
     private static final ClassLoader zzb = zzbn.class.getClassLoader();

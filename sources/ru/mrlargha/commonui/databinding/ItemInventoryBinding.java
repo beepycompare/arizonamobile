@@ -10,24 +10,28 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ItemInventoryBinding implements ViewBinding {
     public final CardView cvColoredItem;
     public final CardView item;
     public final AppCompatImageView ivActiveItem;
     public final ImageView ivDefaultItem;
+    public final ImageView ivEffectBackground;
+    public final ImageView ivEffectForeground;
     public final ImageView ivItemImage;
     private final CardView rootView;
     public final TextView tvNeedRes;
     public final TextView tvTitleText;
     public final View viewCenter;
 
-    private ItemInventoryBinding(CardView rootView, CardView cvColoredItem, CardView item, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivItemImage, TextView tvNeedRes, TextView tvTitleText, View viewCenter) {
+    private ItemInventoryBinding(CardView rootView, CardView cvColoredItem, CardView item, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivEffectBackground, ImageView ivEffectForeground, ImageView ivItemImage, TextView tvNeedRes, TextView tvTitleText, View viewCenter) {
         this.rootView = rootView;
         this.cvColoredItem = cvColoredItem;
         this.item = item;
         this.ivActiveItem = ivActiveItem;
         this.ivDefaultItem = ivDefaultItem;
+        this.ivEffectBackground = ivEffectBackground;
+        this.ivEffectForeground = ivEffectForeground;
         this.ivItemImage = ivItemImage;
         this.tvNeedRes = tvNeedRes;
         this.tvTitleText = tvTitleText;
@@ -63,16 +67,24 @@ public final class ItemInventoryBinding implements ViewBinding {
                 i = R.id.ivDefaultItem;
                 ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
                 if (imageView != null) {
-                    i = R.id.ivItemImage;
+                    i = R.id.iv_effect_background;
                     ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                     if (imageView2 != null) {
-                        i = R.id.tvNeedRes;
-                        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView != null) {
-                            i = R.id.tvTitleText;
-                            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView2 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
-                                return new ItemInventoryBinding(cardView2, cardView, cardView2, appCompatImageView, imageView, imageView2, textView, textView2, findChildViewById);
+                        i = R.id.iv_effect_foreground;
+                        ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                        if (imageView3 != null) {
+                            i = R.id.ivItemImage;
+                            ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                            if (imageView4 != null) {
+                                i = R.id.tvNeedRes;
+                                TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView != null) {
+                                    i = R.id.tvTitleText;
+                                    TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView2 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
+                                        return new ItemInventoryBinding(cardView2, cardView, cardView2, appCompatImageView, imageView, imageView2, imageView3, imageView4, textView, textView2, findChildViewById);
+                                    }
+                                }
                             }
                         }
                     }

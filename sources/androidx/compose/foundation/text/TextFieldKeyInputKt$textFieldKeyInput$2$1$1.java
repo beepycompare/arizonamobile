@@ -15,7 +15,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-        return m1374invokeZmokQxo(keyEvent.m5684unboximpl());
+        return m1374invokeZmokQxo(keyEvent.m6414unboximpl());
     }
 
     /* renamed from: invoke-ZmokQxo  reason: not valid java name */

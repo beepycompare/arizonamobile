@@ -2,7 +2,7 @@ package com.google.android.gms.common.api.internal;
 
 import com.google.android.gms.common.ConnectionResult;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zaam extends zabg {
     final /* synthetic */ ConnectionResult zaa;
     final /* synthetic */ zaao zab;

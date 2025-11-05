@@ -16,13 +16,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Arrays;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class MappingTrackSelector extends TrackSelector {
     private MappedTrackInfo currentMappedTrackInfo;
 
     protected abstract Pair<RendererConfiguration[], ExoTrackSelection[]> selectTracks(MappedTrackInfo mappedTrackInfo, int[][][] iArr, int[] iArr2, MediaSource.MediaPeriodId mediaPeriodId, Timeline timeline) throws ExoPlaybackException;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MappedTrackInfo {
         public static final int RENDERER_SUPPORT_EXCEEDS_CAPABILITIES_TRACKS = 2;
         public static final int RENDERER_SUPPORT_NO_TRACKS = 0;
@@ -39,7 +39,7 @@ public abstract class MappingTrackSelector extends TrackSelector {
         @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public @interface RendererSupport {
         }
 

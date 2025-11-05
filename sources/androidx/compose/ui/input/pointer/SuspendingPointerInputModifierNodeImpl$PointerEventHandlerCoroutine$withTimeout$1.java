@@ -9,7 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: SuspendingPointerInputFilter.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine", f = "SuspendingPointerInputFilter.kt", i = {0}, l = {890}, m = "withTimeout", n = {"job"}, s = {"L$0"})
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1<T> extends ContinuationImpl {
     Object L$0;
     int label;

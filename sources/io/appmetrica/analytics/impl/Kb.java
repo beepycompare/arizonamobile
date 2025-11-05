@@ -1,64 +1,41 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import io.appmetrica.analytics.AppMetricaConfig;
-import java.lang.Thread;
-import java.util.ArrayList;
-import java.util.Iterator;
-import kotlin.collections.CollectionsKt;
-/* loaded from: classes4.dex */
-public final class Kb {
+/* loaded from: classes3.dex */
+public final class Kb implements InterfaceC0153c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0448n2 f538a = new C0448n2();
-    public final J6 b = new J6();
-    public Fn c;
-    public boolean d;
-    public boolean e;
+    public final InterfaceC0257g0 f559a;
+    public final Fn b = new Fn();
 
-    public final synchronized void a(Context context, AppMetricaConfig appMetricaConfig, InterfaceC0608tb interfaceC0608tb) {
-        if (this.e) {
-            return;
-        }
-        CollectionsKt.addAll(this.b.f512a, new InterfaceC0250fb[]{this.f538a.a(context, appMetricaConfig, interfaceC0608tb)});
-        this.e = true;
+    public Kb(InterfaceC0257g0 interfaceC0257g0) {
+        this.f559a = interfaceC0257g0;
     }
 
-    public final synchronized void b() {
-        if (this.d) {
-            return;
-        }
-        J6 j6 = this.b;
-        ArrayList arrayList = A4.l().i.f1100a;
-        ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList, 10));
-        Iterator it = arrayList.iterator();
-        if (!it.hasNext()) {
-            j6.f512a.addAll(arrayList2);
-            this.d = true;
-            return;
-        }
-        it.next().getClass();
-        throw new ClassCastException();
+    public static final void a(Kb kb, V v) {
+        kb.f559a.a(v);
     }
 
-    public final synchronized void c() {
-        if (this.c != null) {
-            return;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0153c
+    public final void onAppNotResponding() {
+        StackTraceElement[] stackTraceElementArr;
+        Fn fn = this.b;
+        Thread a2 = fn.f480a.a();
+        try {
+            stackTraceElementArr = fn.f480a.b();
+            if (stackTraceElementArr == null) {
+                try {
+                    stackTraceElementArr = a2.getStackTrace();
+                } catch (SecurityException unused) {
+                }
+            }
+        } catch (SecurityException unused2) {
+            stackTraceElementArr = null;
         }
-        W1 w1 = new W1(this.b);
-        this.c = new Fn(w1);
-        En en = new En();
-        en.f433a.add(w1);
-        Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-        if (defaultUncaughtExceptionHandler != null) {
-            en.f433a.add(defaultUncaughtExceptionHandler);
-        }
-        Thread.setDefaultUncaughtExceptionHandler(en);
-    }
-
-    public final synchronized void a() {
-        this.b.f512a.clear();
-        this.d = false;
-        this.e = false;
+        final V v = new V((C0733yn) fn.b.apply(a2, stackTraceElementArr), fn.a(a2, null), fn.c.a());
+        ((G9) C0338j4.l().c.a()).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.Kb$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                Kb.a(Kb.this, v);
+            }
+        });
     }
 }

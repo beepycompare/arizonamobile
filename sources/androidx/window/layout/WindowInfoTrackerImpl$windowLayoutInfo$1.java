@@ -82,7 +82,7 @@ final class WindowInfoTrackerImpl$windowLayoutInfo$1 extends SuspendLambda imple
                 consumer = new Consumer() { // from class: androidx.window.layout.WindowInfoTrackerImpl$windowLayoutInfo$1$$ExternalSyntheticLambda0
                     @Override // androidx.core.util.Consumer
                     public final void accept(Object obj2) {
-                        WindowInfoTrackerImpl$windowLayoutInfo$1.m8318invokeSuspend$lambda0(Channel.this, (WindowLayoutInfo) obj2);
+                        WindowInfoTrackerImpl$windowLayoutInfo$1.m9048invokeSuspend$lambda0(Channel.this, (WindowLayoutInfo) obj2);
                     }
                 };
                 windowBackend2 = this.this$0.windowBackend;
@@ -139,8 +139,8 @@ final class WindowInfoTrackerImpl$windowLayoutInfo$1 extends SuspendLambda imple
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: invokeSuspend$lambda-0  reason: not valid java name */
-    public static final void m8318invokeSuspend$lambda0(Channel channel, WindowLayoutInfo info) {
+    public static final void m9048invokeSuspend$lambda0(Channel channel, WindowLayoutInfo info) {
         Intrinsics.checkNotNullExpressionValue(info, "info");
-        channel.mo8140trySendJP2dKIU(info);
+        channel.mo8871trySendJP2dKIU(info);
     }
 }

@@ -59,16 +59,16 @@ public final class EmbeddingAdapter {
         return new Predicate() { // from class: androidx.window.embedding.EmbeddingAdapter$$ExternalSyntheticLambda2
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean m8310translateActivityPairPredicates$lambda1;
-                m8310translateActivityPairPredicates$lambda1 = EmbeddingAdapter.m8310translateActivityPairPredicates$lambda1(EmbeddingAdapter.this, splitPairFilters, (Pair) obj);
-                return m8310translateActivityPairPredicates$lambda1;
+                boolean m9040translateActivityPairPredicates$lambda1;
+                m9040translateActivityPairPredicates$lambda1 = EmbeddingAdapter.m9040translateActivityPairPredicates$lambda1(EmbeddingAdapter.this, splitPairFilters, (Pair) obj);
+                return m9040translateActivityPairPredicates$lambda1;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: translateActivityPairPredicates$lambda-1  reason: not valid java name */
-    public static final boolean m8310translateActivityPairPredicates$lambda1(EmbeddingAdapter this$0, Set splitPairFilters, Pair pair) {
+    public static final boolean m9040translateActivityPairPredicates$lambda1(EmbeddingAdapter this$0, Set splitPairFilters, Pair pair) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(splitPairFilters, "$splitPairFilters");
         Intrinsics.checkNotNullExpressionValue(pair, "(first, second)");
@@ -91,16 +91,16 @@ public final class EmbeddingAdapter {
         return new Predicate() { // from class: androidx.window.embedding.EmbeddingAdapter$$ExternalSyntheticLambda3
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean m8309translateActivityIntentPredicates$lambda3;
-                m8309translateActivityIntentPredicates$lambda3 = EmbeddingAdapter.m8309translateActivityIntentPredicates$lambda3(EmbeddingAdapter.this, splitPairFilters, (Pair) obj);
-                return m8309translateActivityIntentPredicates$lambda3;
+                boolean m9039translateActivityIntentPredicates$lambda3;
+                m9039translateActivityIntentPredicates$lambda3 = EmbeddingAdapter.m9039translateActivityIntentPredicates$lambda3(EmbeddingAdapter.this, splitPairFilters, (Pair) obj);
+                return m9039translateActivityIntentPredicates$lambda3;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: translateActivityIntentPredicates$lambda-3  reason: not valid java name */
-    public static final boolean m8309translateActivityIntentPredicates$lambda3(EmbeddingAdapter this$0, Set splitPairFilters, Pair pair) {
+    public static final boolean m9039translateActivityIntentPredicates$lambda3(EmbeddingAdapter this$0, Set splitPairFilters, Pair pair) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(splitPairFilters, "$splitPairFilters");
         Intrinsics.checkNotNullExpressionValue(pair, "(first, second)");
@@ -123,16 +123,16 @@ public final class EmbeddingAdapter {
         return new Predicate() { // from class: androidx.window.embedding.EmbeddingAdapter$$ExternalSyntheticLambda1
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean m8313translateParentMetricsPredicate$lambda4;
-                m8313translateParentMetricsPredicate$lambda4 = EmbeddingAdapter.m8313translateParentMetricsPredicate$lambda4(SplitRule.this, (WindowMetrics) obj);
-                return m8313translateParentMetricsPredicate$lambda4;
+                boolean m9043translateParentMetricsPredicate$lambda4;
+                m9043translateParentMetricsPredicate$lambda4 = EmbeddingAdapter.m9043translateParentMetricsPredicate$lambda4(SplitRule.this, (WindowMetrics) obj);
+                return m9043translateParentMetricsPredicate$lambda4;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: translateParentMetricsPredicate$lambda-4  reason: not valid java name */
-    public static final boolean m8313translateParentMetricsPredicate$lambda4(SplitRule splitRule, WindowMetrics windowMetrics) {
+    public static final boolean m9043translateParentMetricsPredicate$lambda4(SplitRule splitRule, WindowMetrics windowMetrics) {
         Intrinsics.checkNotNullParameter(splitRule, "$splitRule");
         Intrinsics.checkNotNullExpressionValue(windowMetrics, "windowMetrics");
         return splitRule.checkParentMetrics(windowMetrics);
@@ -143,16 +143,16 @@ public final class EmbeddingAdapter {
         return new Predicate() { // from class: androidx.window.embedding.EmbeddingAdapter$$ExternalSyntheticLambda4
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean m8311translateActivityPredicates$lambda6;
-                m8311translateActivityPredicates$lambda6 = EmbeddingAdapter.m8311translateActivityPredicates$lambda6(activityFilters, (Activity) obj);
-                return m8311translateActivityPredicates$lambda6;
+                boolean m9041translateActivityPredicates$lambda6;
+                m9041translateActivityPredicates$lambda6 = EmbeddingAdapter.m9041translateActivityPredicates$lambda6(activityFilters, (Activity) obj);
+                return m9041translateActivityPredicates$lambda6;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: translateActivityPredicates$lambda-6  reason: not valid java name */
-    public static final boolean m8311translateActivityPredicates$lambda6(Set activityFilters, Activity activity) {
+    public static final boolean m9041translateActivityPredicates$lambda6(Set activityFilters, Activity activity) {
         Intrinsics.checkNotNullParameter(activityFilters, "$activityFilters");
         Set<ActivityFilter> set = activityFilters;
         if ((set instanceof Collection) && set.isEmpty()) {
@@ -172,16 +172,16 @@ public final class EmbeddingAdapter {
         return new Predicate() { // from class: androidx.window.embedding.EmbeddingAdapter$$ExternalSyntheticLambda0
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean m8312translateIntentPredicates$lambda8;
-                m8312translateIntentPredicates$lambda8 = EmbeddingAdapter.m8312translateIntentPredicates$lambda8(activityFilters, (Intent) obj);
-                return m8312translateIntentPredicates$lambda8;
+                boolean m9042translateIntentPredicates$lambda8;
+                m9042translateIntentPredicates$lambda8 = EmbeddingAdapter.m9042translateIntentPredicates$lambda8(activityFilters, (Intent) obj);
+                return m9042translateIntentPredicates$lambda8;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: translateIntentPredicates$lambda-8  reason: not valid java name */
-    public static final boolean m8312translateIntentPredicates$lambda8(Set activityFilters, Intent intent) {
+    public static final boolean m9042translateIntentPredicates$lambda8(Set activityFilters, Intent intent) {
         Intrinsics.checkNotNullParameter(activityFilters, "$activityFilters");
         Set<ActivityFilter> set = activityFilters;
         if ((set instanceof Collection) && set.isEmpty()) {

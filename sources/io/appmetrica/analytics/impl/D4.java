@@ -1,7 +1,18 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public interface D4 {
-    void a();
 
-    void a(C0478o6 c0478o6, N4 n4);
+import android.os.ResultReceiver;
+/* loaded from: classes3.dex */
+public final class D4 implements InterfaceC0376kg {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ ResultReceiver f436a;
+
+    public D4(ResultReceiver resultReceiver) {
+        this.f436a = resultReceiver;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0376kg
+    public final void a(C0576sg c0576sg) {
+        ResultReceiverC0726yg.a(this.f436a, c0576sg);
+    }
 }

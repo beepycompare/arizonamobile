@@ -42,9 +42,14 @@ public final class UIElementStore {
             Log.d(TAG, "getOrCreate: unable to find view with id: " + elementID + ", creating...");
             T t2 = null;
             for (UIElementFactory uIElementFactory : this.factories) {
-                SAMPUIElement create = uIElementFactory.create(elementID, this.targetActivity);
-                if (create != null) {
-                    t2 = create;
+                try {
+                    SAMPUIElement create = uIElementFactory.create(elementID, this.targetActivity);
+                    if (create != null) {
+                        t2 = create;
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "getOrCreate: unable to create view with id: " + elementID, e);
+                    e.printStackTrace();
                 }
             }
             if (t2 == null) {

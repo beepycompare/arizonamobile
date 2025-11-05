@@ -1,117 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import android.os.Bundle;
-import io.appmetrica.analytics.AdvIdentifiersResult;
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.AppMetricaLibraryAdapterConfig;
-import io.appmetrica.analytics.DeferredDeeplinkListener;
-import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
-import io.appmetrica.analytics.ReporterConfig;
-import io.appmetrica.analytics.StartupParamsCallback;
-import java.util.List;
-import java.util.Map;
-/* loaded from: classes4.dex */
-public final class B0 implements InterfaceC0173cb {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.Z6
-    public final void a(int i, Bundle bundle) {
+import android.content.Context;
+import android.os.Handler;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+/* loaded from: classes3.dex */
+public abstract class B0 {
+    public static I6 a(Handler handler, A0 a0) {
+        return new I6(handler, a0);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void a(Location location) {
+    public static Gf a(Context context, I6 i6) {
+        return new Gf(context, i6);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
+    public static Bi a(Gf gf, Context context, ICommonExecutor iCommonExecutor) {
+        C0486p0 c0486p0 = new C0486p0(context, iCommonExecutor, C0338j4.l().e());
+        return new Bi(c0486p0, new Un(new C0571sb()), new M4(gf), new C0200dk(context, c0486p0));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final void a(DeferredDeeplinkListener deferredDeeplinkListener) {
+    public static Sl a(Context context, Bi bi, C0117af c0117af, Handler handler) {
+        return new Sl(bi, new C0124am(context, c0117af), handler);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
+    public static C0477og a(Bi bi, C0117af c0117af, Handler handler) {
+        return new C0477og(bi, c0117af, handler, c0117af.s());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final void a(ReporterConfig reporterConfig) {
+    public static C0479oi a(Context context, Gf gf, Bi bi, Handler handler, Sl sl) {
+        return new C0479oi(context, gf, bi, handler, sl);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void a(String str) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void a(String str, String str2) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void a(boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final void b(AppMetricaConfig appMetricaConfig) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void b(boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final InterfaceC0558rb c(ReporterConfig reporterConfig) {
-        return new Di();
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void clearAppEnvironment() {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final C0707xa d() {
-        return new C0707xa();
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final String e() {
-        return null;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final Map<String, String> g() {
-        return null;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final AdvIdentifiersResult h() {
-        AdvIdentifiersResult.Details details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
-        return new AdvIdentifiersResult(new AdvIdentifiersResult.AdvId(null, details, "Device user is in locked state"), new AdvIdentifiersResult.AdvId(null, details, "Device user is in locked state"), new AdvIdentifiersResult.AdvId(null, details, "Device user is in locked state"));
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final Jc i() {
-        Xc xc = new Xc();
-        return new Jc(xc, new Y7(xc));
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void putAppEnvironmentValue(String str, String str2) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void setDataSendingEnabled(boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0304hd
-    public final void setUserProfileID(String str) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb
-    public final void a(StartupParamsCallback startupParamsCallback, List<String> list) {
-        startupParamsCallback.onRequestError(StartupParamsCallback.Reason.UNKNOWN, null);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0173cb, io.appmetrica.analytics.impl.InterfaceC0608tb
-    public final InterfaceC0583sb a() {
-        return new Gi();
+    public static C0347jd a(Context context) {
+        return new C0347jd(C0338j4.l().c.a(), C0338j4.l().b(context), "client_modules", new SystemTimeProvider());
     }
 }

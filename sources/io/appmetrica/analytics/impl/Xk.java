@@ -1,37 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
-import java.util.Map;
-/* loaded from: classes4.dex */
+import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import org.json.JSONObject;
+/* loaded from: classes3.dex */
 public final class Xk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f747a;
-    public final Sk b;
-    public final Wk c;
-    public final IBinaryDataHelper d;
+    public final String f759a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final int f;
+    public final int g;
 
-    public Xk(Context context, C0477o5 c0477o5) {
-        c0477o5.a();
-        this.f747a = "session_extras";
-        this.b = new Sk();
-        this.c = new Wk();
-        this.d = C0729y7.a(context).a(c0477o5);
+    public Xk(JSONObject jSONObject) {
+        this.f759a = jSONObject.optString("analyticsSdkVersionName", "");
+        this.b = jSONObject.optString("kitBuildNumber", "");
+        this.c = jSONObject.optString("appVer", "");
+        this.d = jSONObject.optString(RemoteConfigConstants.RequestFieldKey.APP_BUILD, "");
+        this.e = jSONObject.optString("osVer", "");
+        this.f = jSONObject.optInt("osApiLev", -1);
+        this.g = jSONObject.optInt("attribution_id", 0);
     }
 
-    public final Map a() {
-        try {
-            byte[] bArr = this.d.get(this.f747a);
-            if (bArr != null) {
-                if (!(bArr.length == 0)) {
-                    return this.b.toModel(this.c.toState(bArr));
-                }
-            }
-        } catch (Throwable unused) {
-        }
-        Sk sk = this.b;
-        this.c.getClass();
-        return sk.toModel(new Uk());
+    public final String toString() {
+        return "SessionRequestParams(kitVersionName='" + this.f759a + "', kitBuildNumber='" + this.b + "', appVersion='" + this.c + "', appBuild='" + this.d + "', osVersion='" + this.e + "', apiLevel=" + this.f + ", attributionId=" + this.g + ')';
     }
 }

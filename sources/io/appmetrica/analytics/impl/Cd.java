@@ -1,48 +1,90 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleServiceEventHandler;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.jvm.internal.StringCompanionObject;
-/* loaded from: classes4.dex */
-public final class Cd extends AbstractC0463nh {
-    public final ArrayList b;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import io.appmetrica.analytics.internal.IdentifiersResult;
+/* loaded from: classes3.dex */
+public final class Cd {
 
-    public Cd(C0652v5 c0652v5) {
-        super(c0652v5);
-        String b = c0652v5.b().b();
-        b = b == null ? "empty" : b;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-        String.format("[ModulesEventHandler-%s]", Arrays.copyOf(new Object[]{b}, 1));
-        LinkedHashMap a2 = Na.j().n().a(b);
-        ArrayList arrayList = new ArrayList(a2.size());
-        for (Map.Entry entry : a2.entrySet()) {
-            arrayList.add(TuplesKt.to(entry.getValue(), new C0610td(c0652v5, (String) entry.getKey())));
-        }
-        this.b = arrayList;
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f424a;
+    public final Ra b;
+    public final E9 c;
+    public final Ge d;
+    public final ro e;
+    public volatile IdentifiersResult f;
+
+    public Cd(Context context, Ra ra) {
+        this(context, ra, Dd.a(context), new Ge(context), new ro());
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0463nh
-    public final boolean a(C0478o6 c0478o6) {
-        if (this.f1006a.t.c()) {
-            ArrayList arrayList = this.b;
-            if (!(arrayList instanceof Collection) || !arrayList.isEmpty()) {
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    Pair pair = (Pair) it.next();
-                    C0610td c0610td = (C0610td) pair.component2();
-                    if (((ModuleServiceEventHandler) pair.component1()).handle(new C0685wd(c0610td.b, c0610td.f1095a, new C0660vd(c0610td.d, c0610td.c, c0478o6)), c0478o6)) {
-                        return true;
-                    }
-                }
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0089  */
+    /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final IdentifiersResult a() {
+        IdentifiersResult identifiersResult = this.f;
+        if (identifiersResult != null && identifiersResult.status == IdentifierStatus.OK) {
+            ro roVar = this.e;
+            String str = identifiersResult.id;
+            roVar.getClass();
+            if (ro.a(str)) {
+                return identifiersResult;
             }
         }
-        return false;
+        try {
+            E9 e9 = this.c;
+            e9.f456a.lock();
+            e9.b.a();
+            identifiersResult = this.f;
+        } catch (Throwable unused) {
+        }
+        if (identifiersResult != null && identifiersResult.status == IdentifierStatus.OK) {
+            ro roVar2 = this.e;
+            String str2 = identifiersResult.id;
+            roVar2.getClass();
+            if (ro.a(str2)) {
+                E9 e92 = this.c;
+                e92.b.b();
+                e92.f456a.unlock();
+                return identifiersResult == null ? identifiersResult : new IdentifiersResult(null, IdentifierStatus.UNKNOWN, "Uuid must be obtained via async API AppMetrica#requestStartupParams(Context, StartupParamsCallback, List<String>)");
+            }
+        }
+        String a2 = Qa.a(FileUtils.getFileFromSdkStorage(this.d.f491a, "uuid.dat"));
+        this.e.getClass();
+        if (!ro.a(a2)) {
+            a2 = this.d.a(this.b.a(this.f424a));
+        }
+        this.e.getClass();
+        if (ro.a(a2)) {
+            IdentifiersResult identifiersResult2 = new IdentifiersResult(a2, IdentifierStatus.OK, null);
+            try {
+                this.f = identifiersResult2;
+            } catch (Throwable unused2) {
+            }
+            identifiersResult = identifiersResult2;
+        }
+        E9 e922 = this.c;
+        e922.b.b();
+        e922.f456a.unlock();
+        if (identifiersResult == null) {
+        }
+    }
+
+    public Cd(Context context, Ra ra, E9 e9, Ge ge, ro roVar) {
+        this.f424a = context;
+        this.b = ra;
+        this.c = e9;
+        this.d = ge;
+        this.e = roVar;
+        try {
+            e9.a();
+            ge.a();
+            e9.b();
+        } catch (Throwable unused) {
+            this.c.b();
+        }
     }
 }

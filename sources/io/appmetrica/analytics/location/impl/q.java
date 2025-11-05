@@ -10,11 +10,11 @@ import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorPr
 import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class q implements LastKnownLocationExtractorProvider, LocationReceiverProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1217a = "location-passive-provider";
+    public final String f1258a = "location-passive-provider";
     public r b;
 
     public final r a(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
@@ -45,7 +45,7 @@ public final class q implements LastKnownLocationExtractorProvider, LocationRece
 
     @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
     public final String getIdentifier() {
-        return this.f1217a;
+        return this.f1258a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider

@@ -4,7 +4,7 @@ import android.net.Uri;
 import com.google.common.base.Function;
 import javax.annotation.Nullable;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzkg {
     @Nullable
     final Uri zza;

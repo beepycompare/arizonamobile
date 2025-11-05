@@ -36,21 +36,21 @@ public final class BoundsTransformDeferredAnimation {
     private final MutableState animatedValue$delegate;
     private List<LayoutCoordinates> directManipulationParents;
     private boolean isPending;
-    private long targetSize = Size.Companion.m4382getUnspecifiedNHjbRc();
-    private long targetOffset = Offset.Companion.m4320getUnspecifiedF1C5BW0();
-    private long currentPosition = Offset.Companion.m4320getUnspecifiedF1C5BW0();
-    private long currentSize = Size.Companion.m4382getUnspecifiedNHjbRc();
+    private long targetSize = Size.Companion.m5112getUnspecifiedNHjbRc();
+    private long targetOffset = Offset.Companion.m5050getUnspecifiedF1C5BW0();
+    private long currentPosition = Offset.Companion.m5050getUnspecifiedF1C5BW0();
+    private long currentSize = Size.Companion.m5112getUnspecifiedNHjbRc();
 
     public BoundsTransformDeferredAnimation() {
         MutableState mutableStateOf$default;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.animatedValue$delegate = mutableStateOf$default;
-        this.additionalOffset = Offset.Companion.m4321getZeroF1C5BW0();
+        this.additionalOffset = Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     /* renamed from: updateTargetSize-uvyYCjk  reason: not valid java name */
     public final void m91updateTargetSizeuvyYCjk(long j) {
-        if (this.targetSize != InlineClassHelperKt.UnspecifiedPackedFloats && !IntSize.m7433equalsimpl0(IntSizeKt.m7443roundToIntSizeuvyYCjk(j), IntSizeKt.m7443roundToIntSizeuvyYCjk(this.targetSize))) {
+        if (this.targetSize != InlineClassHelperKt.UnspecifiedPackedFloats && !IntSize.m8164equalsimpl0(IntSizeKt.m8174roundToIntSizeuvyYCjk(j), IntSizeKt.m8174roundToIntSizeuvyYCjk(this.targetSize))) {
             this.isPending = true;
         }
         this.targetSize = j;
@@ -61,7 +61,7 @@ public final class BoundsTransformDeferredAnimation {
 
     /* renamed from: updateTargetOffset-k-4lQ0M  reason: not valid java name */
     private final void m87updateTargetOffsetk4lQ0M(long j) {
-        if ((this.targetOffset & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && !IntOffset.m7391equalsimpl0(IntOffsetKt.m7409roundk4lQ0M(j), IntOffsetKt.m7409roundk4lQ0M(this.targetOffset))) {
+        if ((this.targetOffset & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && !IntOffset.m8122equalsimpl0(IntOffsetKt.m8140roundk4lQ0M(j), IntOffsetKt.m8140roundk4lQ0M(this.targetOffset))) {
             this.isPending = true;
         }
         this.targetOffset = j;
@@ -86,7 +86,7 @@ public final class BoundsTransformDeferredAnimation {
         if ((9223372034707292159L & j2) == InlineClassHelperKt.UnspecifiedPackedFloats || j == InlineClassHelperKt.UnspecifiedPackedFloats) {
             return null;
         }
-        return RectKt.m4345Recttz77jQw(j2, j);
+        return RectKt.m5075Recttz77jQw(j2, j);
     }
 
     /* renamed from: updateCurrentBounds-tz77jQw  reason: not valid java name */
@@ -122,7 +122,7 @@ public final class BoundsTransformDeferredAnimation {
         LayoutCoordinates coordinates = placementScope.getCoordinates();
         if (coordinates != null) {
             LayoutCoordinates lookaheadScopeCoordinates = lookaheadScope.getLookaheadScopeCoordinates(placementScope);
-            long m4321getZeroF1C5BW0 = Offset.Companion.m4321getZeroF1C5BW0();
+            long m5051getZeroF1C5BW0 = Offset.Companion.m5051getZeroF1C5BW0();
             if (!z2 && z) {
                 ArrayList arrayList = this.directManipulationParents;
                 if (arrayList == null) {
@@ -134,11 +134,11 @@ public final class BoundsTransformDeferredAnimation {
                     if (layoutCoordinates.getIntroducesMotionFrameOfReference()) {
                         if (arrayList.size() == i) {
                             arrayList.add(layoutCoordinates);
-                            m4321getZeroF1C5BW0 = Offset.m4310plusMKHz9U(m4321getZeroF1C5BW0, LayoutCoordinatesKt.positionInParent(layoutCoordinates));
+                            m5051getZeroF1C5BW0 = Offset.m5040plusMKHz9U(m5051getZeroF1C5BW0, LayoutCoordinatesKt.positionInParent(layoutCoordinates));
                         } else if (!Intrinsics.areEqual(arrayList.get(i), layoutCoordinates)) {
-                            long m4309minusMKHz9U = Offset.m4309minusMKHz9U(m4321getZeroF1C5BW0, LayoutCoordinatesKt.positionInParent(arrayList.get(i)));
+                            long m5039minusMKHz9U = Offset.m5039minusMKHz9U(m5051getZeroF1C5BW0, LayoutCoordinatesKt.positionInParent(arrayList.get(i)));
                             arrayList.set(i, layoutCoordinates);
-                            m4321getZeroF1C5BW0 = Offset.m4310plusMKHz9U(m4309minusMKHz9U, LayoutCoordinatesKt.positionInParent(layoutCoordinates));
+                            m5051getZeroF1C5BW0 = Offset.m5040plusMKHz9U(m5039minusMKHz9U, LayoutCoordinatesKt.positionInParent(layoutCoordinates));
                         }
                         i++;
                     }
@@ -150,7 +150,7 @@ public final class BoundsTransformDeferredAnimation {
                 int size = arrayList.size() - 1;
                 if (i <= size) {
                     while (true) {
-                        m4321getZeroF1C5BW0 = Offset.m4309minusMKHz9U(m4321getZeroF1C5BW0, LayoutCoordinatesKt.positionInParent(arrayList.get(size)));
+                        m5051getZeroF1C5BW0 = Offset.m5039minusMKHz9U(m5051getZeroF1C5BW0, LayoutCoordinatesKt.positionInParent(arrayList.get(size)));
                         arrayList.remove(arrayList.size() - 1);
                         if (size == i) {
                             break;
@@ -160,9 +160,9 @@ public final class BoundsTransformDeferredAnimation {
                 }
                 this.directManipulationParents = arrayList;
             }
-            this.additionalOffset = Offset.m4310plusMKHz9U(this.additionalOffset, m4321getZeroF1C5BW0);
-            m87updateTargetOffsetk4lQ0M(Offset.m4310plusMKHz9U(LookaheadScope.m5996localLookaheadPositionOfauaQtc$default(lookaheadScope, lookaheadScopeCoordinates, coordinates, 0L, z2, 2, null), this.additionalOffset));
-            setAnimatedValue(animate(coroutineScope, boundsTransform).m4342translatek4lQ0M(Offset.m4297constructorimpl(this.additionalOffset ^ (-9223372034707292160L))));
+            this.additionalOffset = Offset.m5040plusMKHz9U(this.additionalOffset, m5051getZeroF1C5BW0);
+            m87updateTargetOffsetk4lQ0M(Offset.m5040plusMKHz9U(LookaheadScope.m6726localLookaheadPositionOfauaQtc$default(lookaheadScope, lookaheadScopeCoordinates, coordinates, 0L, z2, 2, null), this.additionalOffset));
+            setAnimatedValue(animate(coroutineScope, boundsTransform).m5072translatek4lQ0M(Offset.m5027constructorimpl(this.additionalOffset ^ (-9223372034707292160L))));
         }
     }
 
@@ -173,16 +173,16 @@ public final class BoundsTransformDeferredAnimation {
         if ((9223372034707292159L & j) != InlineClassHelperKt.UnspecifiedPackedFloats) {
             long j2 = this.targetSize;
             if (j2 != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                Rect m4345Recttz77jQw = RectKt.m4345Recttz77jQw(j, j2);
+                Rect m5075Recttz77jQw = RectKt.m5075Recttz77jQw(j, j2);
                 Animatable<Rect, AnimationVector4D> animatable = this.animatable;
                 if (animatable == null) {
-                    animatable = new Animatable<>(m4345Recttz77jQw, VectorConvertersKt.getVectorConverter(Rect.Companion), null, null, 12, null);
+                    animatable = new Animatable<>(m5075Recttz77jQw, VectorConvertersKt.getVectorConverter(Rect.Companion), null, null, 12, null);
                 }
                 this.animatable = animatable;
                 if (this.isPending) {
                     this.isPending = false;
                     CoroutineStart coroutineStart = CoroutineStart.UNDISPATCHED;
-                    BoundsTransformDeferredAnimation$animate$1 boundsTransformDeferredAnimation$animate$1 = new BoundsTransformDeferredAnimation$animate$1(animatable, m4345Recttz77jQw, boundsTransform, this, null);
+                    BoundsTransformDeferredAnimation$animate$1 boundsTransformDeferredAnimation$animate$1 = new BoundsTransformDeferredAnimation$animate$1(animatable, m5075Recttz77jQw, boundsTransform, this, null);
                     boundsTransformDeferredAnimation = this;
                     BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, coroutineStart, boundsTransformDeferredAnimation$animate$1, 1, null);
                     Animatable<Rect, AnimationVector4D> animatable2 = boundsTransformDeferredAnimation.animatable;

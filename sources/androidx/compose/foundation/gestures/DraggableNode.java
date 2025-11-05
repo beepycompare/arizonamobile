@@ -106,12 +106,12 @@ public final class DraggableNode extends DragGestureNode {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-AH228Gc  reason: not valid java name */
     public final long m520reverseIfNeededAH228Gc(long j) {
-        return Velocity.m7508timesadjELrA(j, this.reverseDirection ? -1.0f : 1.0f);
+        return Velocity.m8239timesadjELrA(j, this.reverseDirection ? -1.0f : 1.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-MK-Hz9U  reason: not valid java name */
     public final long m521reverseIfNeededMKHz9U(long j) {
-        return Offset.m4312timestuRUvjQ(j, this.reverseDirection ? -1.0f : 1.0f);
+        return Offset.m5042timestuRUvjQ(j, this.reverseDirection ? -1.0f : 1.0f);
     }
 }

@@ -1,23 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import java.util.LinkedList;
-import java.util.List;
-/* loaded from: classes4.dex */
-public final class xo implements yo {
-    @Override // io.appmetrica.analytics.impl.yo
-    public final wo a(List<wo> list) {
-        LinkedList linkedList = new LinkedList();
-        boolean z = true;
-        for (wo woVar : list) {
-            if (!woVar.f1146a) {
-                linkedList.add(woVar.b);
-                z = false;
-            }
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationState;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver;
+import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
+import kotlin.Unit;
+/* loaded from: classes3.dex */
+public final class xo extends SimpleThreadSafeToggle implements ApplicationStateObserver {
+    public xo() {
+        super(false, "[VisibleAppStateOnlyTrackingStatusToggle]");
+        synchronized (this) {
+            a(C0620ua.k().e().registerStickyObserver(this));
+            Unit unit = Unit.INSTANCE;
         }
-        if (z) {
-            return new wo(this, true, "");
-        }
-        return new wo(this, false, TextUtils.join(", ", linkedList));
+    }
+
+    public final void a(ApplicationState applicationState) {
+        updateState(applicationState == ApplicationState.VISIBLE);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver
+    public final synchronized void onApplicationStateChanged(ApplicationState applicationState) {
+        a(applicationState);
     }
 }

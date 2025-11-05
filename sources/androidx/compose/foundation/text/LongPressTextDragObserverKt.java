@@ -58,13 +58,13 @@ public final class LongPressTextDragObserverKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit detectDragGesturesAfterLongPressWithObserver$lambda$3(TextDragObserver textDragObserver, PointerInputChange pointerInputChange, Offset offset) {
-        textDragObserver.mo1348onDragk4lQ0M(offset.m4315unboximpl());
+        textDragObserver.mo1348onDragk4lQ0M(offset.m5045unboximpl());
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit detectDragGesturesAfterLongPressWithObserver$lambda$0(TextDragObserver textDragObserver, Offset offset) {
-        textDragObserver.mo1349onStartk4lQ0M(offset.m4315unboximpl());
+        textDragObserver.mo1349onStartk4lQ0M(offset.m5045unboximpl());
         return Unit.INSTANCE;
     }
 
@@ -127,13 +127,13 @@ public final class LongPressTextDragObserverKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit detectDragGesturesWithObserver$lambda$7(TextDragObserver textDragObserver, PointerInputChange pointerInputChange, Offset offset) {
-        textDragObserver.mo1348onDragk4lQ0M(offset.m4315unboximpl());
+        textDragObserver.mo1348onDragk4lQ0M(offset.m5045unboximpl());
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit detectDragGesturesWithObserver$lambda$4(TextDragObserver textDragObserver, Offset offset) {
-        textDragObserver.mo1349onStartk4lQ0M(offset.m4315unboximpl());
+        textDragObserver.mo1349onStartk4lQ0M(offset.m5045unboximpl());
         return Unit.INSTANCE;
     }
 

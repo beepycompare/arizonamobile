@@ -4,15 +4,15 @@ import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
 import java.util.ArrayList;
 import java.util.Iterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class a implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f209a;
+    public final ArrayList f194a;
 
     public a(b bVar, ClientContext clientContext) {
         ArrayList arrayList = new ArrayList();
-        this.f209a = arrayList;
+        this.f194a = arrayList;
         arrayList.add(new d(bVar, clientContext));
         arrayList.add(new f(bVar, clientContext));
         arrayList.add(new g(bVar, clientContext));
@@ -28,7 +28,7 @@ public final class a implements ModuleAdRevenueProcessor {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
     public final boolean process(Object... objArr) {
-        Iterator it = this.f209a.iterator();
+        Iterator it = this.f194a.iterator();
         while (it.hasNext()) {
             if (((ModuleAdRevenueProcessor) it.next()).process(objArr)) {
                 return true;

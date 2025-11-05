@@ -40,24 +40,24 @@ public final class RoundedParallelogramShape implements Shape {
         float intBitsToFloat = Float.intBitsToFloat((int) (j & 4294967295L)) * this.skewX;
         Path Path = AndroidPath_androidKt.Path();
         Path.reset();
-        long m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
-        long m4297constructorimpl2 = Offset.m4297constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32));
-        long m4297constructorimpl3 = Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i2) - intBitsToFloat) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat(i)) & 4294967295L));
-        long m4297constructorimpl4 = Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i)) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
-        int i3 = (int) (m4297constructorimpl >> 32);
-        int i4 = (int) (m4297constructorimpl & 4294967295L);
+        long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+        long m5027constructorimpl2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32));
+        long m5027constructorimpl3 = Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i2) - intBitsToFloat) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat(i)) & 4294967295L));
+        long m5027constructorimpl4 = Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i)) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+        int i3 = (int) (m5027constructorimpl >> 32);
+        int i4 = (int) (m5027constructorimpl & 4294967295L);
         Path.moveTo(Float.intBitsToFloat(i3) + mo429toPx0680j_4, Float.intBitsToFloat(i4));
-        int i5 = (int) (m4297constructorimpl2 >> 32);
-        int i6 = (int) (m4297constructorimpl2 & 4294967295L);
+        int i5 = (int) (m5027constructorimpl2 >> 32);
+        int i6 = (int) (m5027constructorimpl2 & 4294967295L);
         Path.lineTo(Float.intBitsToFloat(i5) - mo429toPx0680j_4, Float.intBitsToFloat(i6));
         float f = 2 * mo429toPx0680j_4;
         Path.arcTo(new Rect(Float.intBitsToFloat(i5) - f, Float.intBitsToFloat(i6), Float.intBitsToFloat(i5), Float.intBitsToFloat(i6) + f), -90.0f, 90.0f, false);
-        int i7 = (int) (m4297constructorimpl3 >> 32);
-        int i8 = (int) (m4297constructorimpl3 & 4294967295L);
+        int i7 = (int) (m5027constructorimpl3 >> 32);
+        int i8 = (int) (m5027constructorimpl3 & 4294967295L);
         Path.lineTo(Float.intBitsToFloat(i7), Float.intBitsToFloat(i8) - mo429toPx0680j_4);
         Path.arcTo(new Rect(Float.intBitsToFloat(i7) - f, Float.intBitsToFloat(i8) - f, Float.intBitsToFloat(i7), Float.intBitsToFloat(i8)), 0.0f, 90.0f, false);
-        int i9 = (int) (m4297constructorimpl4 >> 32);
-        int i10 = (int) (m4297constructorimpl4 & 4294967295L);
+        int i9 = (int) (m5027constructorimpl4 >> 32);
+        int i10 = (int) (m5027constructorimpl4 & 4294967295L);
         Path.lineTo(Float.intBitsToFloat(i9) + mo429toPx0680j_4, Float.intBitsToFloat(i10));
         Path.arcTo(new Rect(Float.intBitsToFloat(i9), Float.intBitsToFloat(i10) - f, Float.intBitsToFloat(i9) + f, Float.intBitsToFloat(i10)), 90.0f, 90.0f, false);
         Path.lineTo(Float.intBitsToFloat(i3), Float.intBitsToFloat(i4) + mo429toPx0680j_4);
@@ -67,6 +67,6 @@ public final class RoundedParallelogramShape implements Shape {
     }
 
     public /* synthetic */ RoundedParallelogramShape(float f, float f2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7264constructorimpl(8) : f, (i & 2) != 0 ? 0.05f : f2, null);
+        this((i & 1) != 0 ? Dp.m7995constructorimpl(8) : f, (i & 2) != 0 ? 0.05f : f2, null);
     }
 }

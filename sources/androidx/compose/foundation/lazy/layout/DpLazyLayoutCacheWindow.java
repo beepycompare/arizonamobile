@@ -41,13 +41,13 @@ final class DpLazyLayoutCacheWindow implements LazyLayoutCacheWindow {
     }
 
     public int hashCode() {
-        return (Dp.m7270hashCodeimpl(this.ahead) * 31) + Dp.m7270hashCodeimpl(this.behind);
+        return (Dp.m8001hashCodeimpl(this.ahead) * 31) + Dp.m8001hashCodeimpl(this.behind);
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof DpLazyLayoutCacheWindow) {
             DpLazyLayoutCacheWindow dpLazyLayoutCacheWindow = (DpLazyLayoutCacheWindow) obj;
-            if (Dp.m7269equalsimpl0(dpLazyLayoutCacheWindow.ahead, this.ahead) && Dp.m7269equalsimpl0(dpLazyLayoutCacheWindow.behind, this.behind)) {
+            if (Dp.m8000equalsimpl0(dpLazyLayoutCacheWindow.ahead, this.ahead) && Dp.m8000equalsimpl0(dpLazyLayoutCacheWindow.behind, this.behind)) {
                 return true;
             }
         }

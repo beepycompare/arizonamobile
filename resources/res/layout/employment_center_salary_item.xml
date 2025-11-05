@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/item" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp" android:layout_marginBottom="@dimen/_2sdp" android:layout_marginVertical="@dimen/_2sdp">
+    <TextView android:textSize="@dimen/_8sdp" android:textColor="#223144" android:layout_gravity="center" android:id="@+id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Механик" android:layout_weight="1" android:textAllCaps="true" android:fontFamily="@font/heading_now_64_regular"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:paddingLeft="@dimen/_4sdp" android:paddingRight="@dimen/_4sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_4sdp" app:backgroundMainColor="#8dff8d" app:corners="@dimen/_4sdp">
+        <TextView android:textSize="@dimen/_7sdp" android:textColor="#3a693a" android:layout_gravity="center" android:id="@+id/value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+4%" android:fontFamily="@font/heading_now_66_bold"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</LinearLayout>

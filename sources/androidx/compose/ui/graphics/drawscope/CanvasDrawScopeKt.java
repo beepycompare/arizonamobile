@@ -15,38 +15,38 @@ public final class CanvasDrawScopeKt {
         return new DrawTransform() { // from class: androidx.compose.ui.graphics.drawscope.CanvasDrawScopeKt$asDrawTransform$1
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
             /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-            public long mo5054getSizeNHjbRc() {
-                return DrawContext.this.mo5049getSizeNHjbRc();
+            public long mo5784getSizeNHjbRc() {
+                return DrawContext.this.mo5779getSizeNHjbRc();
             }
 
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
             /* renamed from: getCenter-F1C5BW0  reason: not valid java name */
-            public long mo5053getCenterF1C5BW0() {
-                return SizeKt.m4384getCenteruvyYCjk(mo5054getSizeNHjbRc());
+            public long mo5783getCenterF1C5BW0() {
+                return SizeKt.m5114getCenteruvyYCjk(mo5784getSizeNHjbRc());
             }
 
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
             public void inset(float f, float f2, float f3, float f4) {
                 Canvas canvas = DrawContext.this.getCanvas();
                 DrawContext drawContext2 = DrawContext.this;
-                long m4365constructorimpl = Size.m4365constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5054getSizeNHjbRc() & 4294967295L)) - (f4 + f2)) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5054getSizeNHjbRc() >> 32)) - (f3 + f)) << 32));
-                if (!(Float.intBitsToFloat((int) (m4365constructorimpl >> 32)) >= 0.0f && Float.intBitsToFloat((int) (m4365constructorimpl & 4294967295L)) >= 0.0f)) {
+                long m5095constructorimpl = Size.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5784getSizeNHjbRc() & 4294967295L)) - (f4 + f2)) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5784getSizeNHjbRc() >> 32)) - (f3 + f)) << 32));
+                if (!(Float.intBitsToFloat((int) (m5095constructorimpl >> 32)) >= 0.0f && Float.intBitsToFloat((int) (m5095constructorimpl & 4294967295L)) >= 0.0f)) {
                     InlineClassHelperKt.throwIllegalArgumentException("Width and height must be greater than or equal to zero");
                 }
-                drawContext2.mo5050setSizeuvyYCjk(m4365constructorimpl);
+                drawContext2.mo5780setSizeuvyYCjk(m5095constructorimpl);
                 canvas.translate(f, f2);
             }
 
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
             /* renamed from: clipRect-N_I0leg  reason: not valid java name */
-            public void mo5052clipRectN_I0leg(float f, float f2, float f3, float f4, int i) {
-                DrawContext.this.getCanvas().mo4400clipRectN_I0leg(f, f2, f3, f4, i);
+            public void mo5782clipRectN_I0leg(float f, float f2, float f3, float f4, int i) {
+                DrawContext.this.getCanvas().mo5130clipRectN_I0leg(f, f2, f3, f4, i);
             }
 
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
             /* renamed from: clipPath-mtrdD-E  reason: not valid java name */
-            public void mo5051clipPathmtrdDE(Path path, int i) {
-                DrawContext.this.getCanvas().mo4399clipPathmtrdDE(path, i);
+            public void mo5781clipPathmtrdDE(Path path, int i) {
+                DrawContext.this.getCanvas().mo5129clipPathmtrdDE(path, i);
             }
 
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
@@ -56,7 +56,7 @@ public final class CanvasDrawScopeKt {
 
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
             /* renamed from: rotate-Uv8p0NA  reason: not valid java name */
-            public void mo5055rotateUv8p0NA(float f, long j) {
+            public void mo5785rotateUv8p0NA(float f, long j) {
                 Canvas canvas = DrawContext.this.getCanvas();
                 int i = (int) (j >> 32);
                 int i2 = (int) (j & 4294967295L);
@@ -67,7 +67,7 @@ public final class CanvasDrawScopeKt {
 
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
             /* renamed from: scale-0AR0LA0  reason: not valid java name */
-            public void mo5056scale0AR0LA0(float f, float f2, long j) {
+            public void mo5786scale0AR0LA0(float f, float f2, long j) {
                 Canvas canvas = DrawContext.this.getCanvas();
                 int i = (int) (j >> 32);
                 int i2 = (int) (j & 4294967295L);
@@ -78,8 +78,8 @@ public final class CanvasDrawScopeKt {
 
             @Override // androidx.compose.ui.graphics.drawscope.DrawTransform
             /* renamed from: transform-58bKbWc  reason: not valid java name */
-            public void mo5057transform58bKbWc(float[] fArr) {
-                DrawContext.this.getCanvas().mo4401concat58bKbWc(fArr);
+            public void mo5787transform58bKbWc(float[] fArr) {
+                DrawContext.this.getCanvas().mo5131concat58bKbWc(fArr);
             }
         };
     }

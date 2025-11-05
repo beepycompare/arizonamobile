@@ -7,7 +7,7 @@
         </LinearLayout>
         <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" app:layout_constraintEnd_toStartOf="@+id/dop_info" app:layout_constraintStart_toEndOf="@+id/btn_back" app:layout_constraintTop_toTopOf="0">
             <FrameLayout android:id="@+id/roulette" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="7">
-                <ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView android:layout_gravity="center" android:id="@+id/roulette_view" android:layout_width="wrap_content" android:layout_height="match_parent"/>
+                <ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView android:layout_gravity="center" android:id="@+id/roulette_view" android:layout_width="wrap_content" android:layout_height="match_parent"/>
                 <ImageView android:layout_gravity="start|center_vertical" android:layout_width="@dimen/_25sdp" android:layout_height="@dimen/_25sdp" android:src="@drawable/winter_battlepass_roulette_arrow_right" android:scaleType="centerCrop"/>
                 <ImageView android:layout_gravity="end|center_vertical" android:layout_width="@dimen/_25sdp" android:layout_height="@dimen/_25sdp" android:src="@drawable/winter_battlepass_roulette_arrow_left" android:scaleType="fitCenter"/>
             </FrameLayout>

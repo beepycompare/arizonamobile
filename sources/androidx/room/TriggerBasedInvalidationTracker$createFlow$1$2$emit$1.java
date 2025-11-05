@@ -9,7 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InvalidationTracker.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker$createFlow$1$2", f = "InvalidationTracker.kt", i = {0, 1}, l = {246, 255}, m = "emit", n = {"newVersions", "newVersions"}, s = {"L$0", "L$0"})
+@DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker$createFlow$1$2", f = "InvalidationTracker.kt", i = {0, 1}, l = {247, 256}, m = "emit", n = {"newVersions", "newVersions"}, s = {"L$0", "L$0"})
 /* loaded from: classes3.dex */
 public final class TriggerBasedInvalidationTracker$createFlow$1$2$emit$1 extends ContinuationImpl {
     Object L$0;

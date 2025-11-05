@@ -30,18 +30,18 @@ public final class Scrollable2DNode$setScrollSemanticsActions$2 extends SuspendL
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         Scrollable2DNode$setScrollSemanticsActions$2 scrollable2DNode$setScrollSemanticsActions$2 = new Scrollable2DNode$setScrollSemanticsActions$2(this.this$0, continuation);
-        scrollable2DNode$setScrollSemanticsActions$2.J$0 = ((Offset) obj).m4315unboximpl();
+        scrollable2DNode$setScrollSemanticsActions$2.J$0 = ((Offset) obj).m5045unboximpl();
         return scrollable2DNode$setScrollSemanticsActions$2;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Offset offset, Continuation<? super Offset> continuation) {
-        return m573invoke3MmeM6k(offset.m4315unboximpl(), continuation);
+        return m573invoke3MmeM6k(offset.m5045unboximpl(), continuation);
     }
 
     /* renamed from: invoke-3MmeM6k  reason: not valid java name */
     public final Object m573invoke3MmeM6k(long j, Continuation<? super Offset> continuation) {
-        return ((Scrollable2DNode$setScrollSemanticsActions$2) create(Offset.m4294boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+        return ((Scrollable2DNode$setScrollSemanticsActions$2) create(Offset.m5024boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

@@ -21,7 +21,7 @@ import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.extractor.TrackOutput;
 import java.io.IOException;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class SampleQueue implements TrackOutput {
     static final int SAMPLE_CAPACITY_INCREMENT = 1000;
     private static final String TAG = "SampleQueue";
@@ -64,7 +64,7 @@ public class SampleQueue implements TrackOutput {
     private boolean upstreamKeyframeRequired = true;
     private boolean allSamplesAreSyncSamples = true;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface UpstreamFormatChangedListener {
         void onUpstreamFormatChanged(Format format);
     }
@@ -770,7 +770,7 @@ public class SampleQueue implements TrackOutput {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SampleExtrasHolder {
         public TrackOutput.CryptoData cryptoData;
         public long offset;
@@ -781,7 +781,7 @@ public class SampleQueue implements TrackOutput {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SharedSampleMetadata {
         public final DrmSessionManager.DrmSessionReference drmSessionReference;
         public final Format format;

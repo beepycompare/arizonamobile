@@ -148,9 +148,9 @@ public final class SelectionManager {
             }
         });
         this.positionChangeState$delegate = SnapshotStateKt.mutableStateOf(Unit.INSTANCE, SnapshotStateKt.neverEqualPolicy());
-        mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m4294boximpl(Offset.Companion.m4321getZeroF1C5BW0()), null, 2, null);
+        mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5024boximpl(Offset.Companion.m5051getZeroF1C5BW0()), null, 2, null);
         this.dragBeginPosition$delegate = mutableStateOf$default4;
-        mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m4294boximpl(Offset.Companion.m4321getZeroF1C5BW0()), null, 2, null);
+        mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5024boximpl(Offset.Companion.m5051getZeroF1C5BW0()), null, 2, null);
         this.dragTotalDistance$delegate = mutableStateOf$default5;
         mutableStateOf$default6 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.startHandlePosition$delegate = mutableStateOf$default6;
@@ -359,7 +359,7 @@ public final class SelectionManager {
         }), new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.foundation.text.selection.SelectionManager$modifier$5
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                return m1800invokeZmokQxo(keyEvent.m5684unboximpl());
+                return m1800invokeZmokQxo(keyEvent.m6414unboximpl());
             }
 
             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
@@ -435,11 +435,11 @@ public final class SelectionManager {
         if (!getHasFocus() || getSelection() == null) {
             return;
         }
-        Offset m4294boximpl = layoutCoordinates != null ? Offset.m4294boximpl(LayoutCoordinatesKt.positionInWindow(layoutCoordinates)) : null;
-        if (Intrinsics.areEqual(this.previousPosition, m4294boximpl)) {
+        Offset m5024boximpl = layoutCoordinates != null ? Offset.m5024boximpl(LayoutCoordinatesKt.positionInWindow(layoutCoordinates)) : null;
+        if (Intrinsics.areEqual(this.previousPosition, m5024boximpl)) {
             return;
         }
-        this.previousPosition = m4294boximpl;
+        this.previousPosition = m5024boximpl;
         updateHandleOffsets();
         updateSelectionToolbar();
     }
@@ -456,23 +456,23 @@ public final class SelectionManager {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setDragBeginPosition-k-4lQ0M  reason: not valid java name */
     public final void m1787setDragBeginPositionk4lQ0M(long j) {
-        this.dragBeginPosition$delegate.setValue(Offset.m4294boximpl(j));
+        this.dragBeginPosition$delegate.setValue(Offset.m5024boximpl(j));
     }
 
     /* renamed from: getDragBeginPosition-F1C5BW0$foundation_release  reason: not valid java name */
     public final long m1793getDragBeginPositionF1C5BW0$foundation_release() {
-        return ((Offset) this.dragBeginPosition$delegate.getValue()).m4315unboximpl();
+        return ((Offset) this.dragBeginPosition$delegate.getValue()).m5045unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setDragTotalDistance-k-4lQ0M  reason: not valid java name */
     public final void m1788setDragTotalDistancek4lQ0M(long j) {
-        this.dragTotalDistance$delegate.setValue(Offset.m4294boximpl(j));
+        this.dragTotalDistance$delegate.setValue(Offset.m5024boximpl(j));
     }
 
     /* renamed from: getDragTotalDistance-F1C5BW0$foundation_release  reason: not valid java name */
     public final long m1794getDragTotalDistanceF1C5BW0$foundation_release() {
-        return ((Offset) this.dragTotalDistance$delegate.getValue()).m4315unboximpl();
+        return ((Offset) this.dragTotalDistance$delegate.getValue()).m5045unboximpl();
     }
 
     /* renamed from: setStartHandlePosition-_kEHs6E  reason: not valid java name */
@@ -574,18 +574,18 @@ public final class SelectionManager {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit _init_$lambda$11(SelectionManager selectionManager, boolean z, LayoutCoordinates layoutCoordinates, Offset offset, SelectionAdjustment selectionAdjustment) {
         long m1588coerceIn3MmeM6k;
-        long mo5975getSizeYbymL2g = layoutCoordinates.mo5975getSizeYbymL2g();
-        Rect rect = new Rect(0.0f, 0.0f, (int) (mo5975getSizeYbymL2g >> 32), (int) (mo5975getSizeYbymL2g & 4294967295L));
-        if (SelectionManagerKt.m1802containsInclusiveUv8p0NA(rect, offset.m4315unboximpl())) {
-            m1588coerceIn3MmeM6k = offset.m4315unboximpl();
+        long mo6705getSizeYbymL2g = layoutCoordinates.mo6705getSizeYbymL2g();
+        Rect rect = new Rect(0.0f, 0.0f, (int) (mo6705getSizeYbymL2g >> 32), (int) (mo6705getSizeYbymL2g & 4294967295L));
+        if (SelectionManagerKt.m1802containsInclusiveUv8p0NA(rect, offset.m5045unboximpl())) {
+            m1588coerceIn3MmeM6k = offset.m5045unboximpl();
         } else {
-            m1588coerceIn3MmeM6k = TextLayoutStateKt.m1588coerceIn3MmeM6k(offset.m4315unboximpl(), rect);
+            m1588coerceIn3MmeM6k = TextLayoutStateKt.m1588coerceIn3MmeM6k(offset.m5045unboximpl(), rect);
         }
         long m1784convertToContainerCoordinatesR5De75A = selectionManager.m1784convertToContainerCoordinatesR5De75A(layoutCoordinates, m1588coerceIn3MmeM6k);
         if ((9223372034707292159L & m1784convertToContainerCoordinatesR5De75A) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
             selectionManager.setInTouchMode(z);
             selectionManager.m1791startSelection9KIMszo(m1784convertToContainerCoordinatesR5De75A, false, selectionAdjustment);
-            FocusRequester.m4212requestFocus3ESFkO8$default(selectionManager.focusRequester, 0, 1, null);
+            FocusRequester.m4942requestFocus3ESFkO8$default(selectionManager.focusRequester, 0, 1, null);
             selectionManager.setShowToolbar$foundation_release(false);
             selectionManager.isLongPressOrClickSelection = true;
         }
@@ -602,17 +602,17 @@ public final class SelectionManager {
             selectionManager.onSelectionChange.invoke(component1);
         }
         selectionManager.setInTouchMode(z);
-        FocusRequester.m4212requestFocus3ESFkO8$default(selectionManager.focusRequester, 0, 1, null);
+        FocusRequester.m4942requestFocus3ESFkO8$default(selectionManager.focusRequester, 0, 1, null);
         selectionManager.setShowToolbar$foundation_release(false);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean _init_$lambda$13(SelectionManager selectionManager, boolean z, LayoutCoordinates layoutCoordinates, Offset offset, Offset offset2, boolean z2, SelectionAdjustment selectionAdjustment) {
-        long m1784convertToContainerCoordinatesR5De75A = selectionManager.m1784convertToContainerCoordinatesR5De75A(layoutCoordinates, offset.m4315unboximpl());
-        long m1784convertToContainerCoordinatesR5De75A2 = selectionManager.m1784convertToContainerCoordinatesR5De75A(layoutCoordinates, offset2.m4315unboximpl());
+        long m1784convertToContainerCoordinatesR5De75A = selectionManager.m1784convertToContainerCoordinatesR5De75A(layoutCoordinates, offset.m5045unboximpl());
+        long m1784convertToContainerCoordinatesR5De75A2 = selectionManager.m1784convertToContainerCoordinatesR5De75A(layoutCoordinates, offset2.m5045unboximpl());
         selectionManager.setInTouchMode(z);
-        return selectionManager.m1799updateSelectionqNKwrvQ$foundation_release(Offset.m4294boximpl(m1784convertToContainerCoordinatesR5De75A), m1784convertToContainerCoordinatesR5De75A2, z2, selectionAdjustment);
+        return selectionManager.m1799updateSelectionqNKwrvQ$foundation_release(Offset.m5024boximpl(m1784convertToContainerCoordinatesR5De75A), m1784convertToContainerCoordinatesR5De75A2, z2, selectionAdjustment);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -661,10 +661,10 @@ public final class SelectionManager {
             return Unit.INSTANCE;
         }
         AnnotatedString component1 = contextTextAndSelection$foundation_release.component1();
-        long m6730unboximpl = contextTextAndSelection$foundation_release.component2().m6730unboximpl();
+        long m7461unboximpl = contextTextAndSelection$foundation_release.component2().m7461unboximpl();
         PlatformSelectionBehaviors platformSelectionBehaviors = this.platformSelectionBehaviors;
         if (platformSelectionBehaviors != null) {
-            Object mo1745onShowContextMenuSbBc2M = platformSelectionBehaviors.mo1745onShowContextMenuSbBc2M(component1, m6730unboximpl, continuation);
+            Object mo1745onShowContextMenuSbBc2M = platformSelectionBehaviors.mo1745onShowContextMenuSbBc2M(component1, m7461unboximpl, continuation);
             return mo1745onShowContextMenuSbBc2M == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo1745onShowContextMenuSbBc2M : Unit.INSTANCE;
         }
         return Unit.INSTANCE;
@@ -707,7 +707,7 @@ public final class SelectionManager {
                     long selectableId = selectable.getSelectableId();
                     if (z) {
                         objectRef.element = text;
-                        objectRef2.element = TextRange.m6714boximpl(TextRange);
+                        objectRef2.element = TextRange.m7445boximpl(TextRange);
                         longRef.element = selectableId;
                     }
                 } else {
@@ -752,18 +752,18 @@ public final class SelectionManager {
         if (layoutCoordinates2 != null) {
             long mo1739getHandlePositiondBAh8RU = anchorSelectable$foundation_release.mo1739getHandlePositiondBAh8RU(selection, true);
             if ((mo1739getHandlePositiondBAh8RU & 9223372034707292159L) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-                offset = Offset.m4294boximpl(layoutCoordinates.mo5976localPositionOfR5De75A(layoutCoordinates2, mo1739getHandlePositiondBAh8RU));
-                long m4315unboximpl = offset.m4315unboximpl();
+                offset = Offset.m5024boximpl(layoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates2, mo1739getHandlePositiondBAh8RU));
+                long m5045unboximpl = offset.m5045unboximpl();
                 if (getDraggingHandle() != Handle.SelectionStart) {
                 }
                 m1790setStartHandlePosition_kEHs6E(offset);
                 if (layoutCoordinates3 != null) {
                     long mo1739getHandlePositiondBAh8RU2 = anchorSelectable$foundation_release2.mo1739getHandlePositiondBAh8RU(selection, false);
                     if ((9223372034707292159L & mo1739getHandlePositiondBAh8RU2) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-                        Offset m4294boximpl = Offset.m4294boximpl(layoutCoordinates.mo5976localPositionOfR5De75A(layoutCoordinates3, mo1739getHandlePositiondBAh8RU2));
-                        long m4315unboximpl2 = m4294boximpl.m4315unboximpl();
-                        if (getDraggingHandle() == Handle.SelectionEnd || SelectionManagerKt.m1802containsInclusiveUv8p0NA(visibleBounds, m4315unboximpl2)) {
-                            offset2 = m4294boximpl;
+                        Offset m5024boximpl = Offset.m5024boximpl(layoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates3, mo1739getHandlePositiondBAh8RU2));
+                        long m5045unboximpl2 = m5024boximpl.m5045unboximpl();
+                        if (getDraggingHandle() == Handle.SelectionEnd || SelectionManagerKt.m1802containsInclusiveUv8p0NA(visibleBounds, m5045unboximpl2)) {
+                            offset2 = m5024boximpl;
                         }
                     }
                 }
@@ -804,7 +804,7 @@ public final class SelectionManager {
             selection2 = SelectionManagerKt.merge(selection2, selectAllSelection);
         }
         if (isInTouchMode() && !Intrinsics.areEqual(selection2, selection) && (hapticFeedback = this.hapticFeedBack) != null) {
-            hapticFeedback.mo5323performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5340getTextHandleMove5zf0vsI());
+            hapticFeedback.mo6053performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6070getTextHandleMove5zf0vsI());
         }
         return new Pair<>(selection2, mutableLongObjectMapOf);
     }
@@ -917,7 +917,7 @@ public final class SelectionManager {
                     long TextRange = TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset());
                     boolean z = i2 >= i;
                     selectable.getSelectableId();
-                    builder.append(text, TextRange.m6724getMinimpl(TextRange), TextRange.m6723getMaximpl(TextRange));
+                    builder.append(text, TextRange.m7455getMinimpl(TextRange), TextRange.m7454getMaximpl(TextRange));
                     if (!z) {
                         builder.append('\n');
                     }
@@ -963,16 +963,16 @@ public final class SelectionManager {
                         boolean z = i4 >= i;
                         selectable.getSelectableId();
                         if (i2 == -1) {
-                            i2 = TextRange.m6724getMinimpl(TextRange);
-                            builder.append(text, 0, TextRange.m6724getMinimpl(TextRange));
+                            i2 = TextRange.m7455getMinimpl(TextRange);
+                            builder.append(text, 0, TextRange.m7455getMinimpl(TextRange));
                         }
                         pair = pair2;
-                        builder.append(text, TextRange.m6724getMinimpl(TextRange), TextRange.m6723getMaximpl(TextRange));
+                        builder.append(text, TextRange.m7455getMinimpl(TextRange), TextRange.m7454getMaximpl(TextRange));
                         if (!z) {
                             builder.append('\n');
                         } else {
                             i3 = builder.getLength();
-                            builder.append(text, TextRange.m6723getMaximpl(TextRange), text.length());
+                            builder.append(text, TextRange.m7454getMaximpl(TextRange), text.length());
                         }
                     } else {
                         pair = pair2;
@@ -984,7 +984,7 @@ public final class SelectionManager {
                 i2 = -1;
                 i3 = -1;
             }
-            return (i2 == -1 || i3 == -1) ? pair2 : new Pair<>(builder.toAnnotatedString(), TextRange.m6714boximpl(TextRangeKt.TextRange(i2, i3)));
+            return (i2 == -1 || i3 == -1) ? pair2 : new Pair<>(builder.toAnnotatedString(), TextRange.m7445boximpl(TextRangeKt.TextRange(i2, i3)));
         }
         return null;
     }
@@ -1013,7 +1013,7 @@ public final class SelectionManager {
             Selectable selectable = sort.get(i2);
             Selection selection2 = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
             if (selection2 != null) {
-                if (!function4.invoke(Long.valueOf(selectable.getSelectableId()), selectable.getText(), TextRange.m6714boximpl(TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset())), Boolean.valueOf(i2 >= i)).booleanValue()) {
+                if (!function4.invoke(Long.valueOf(selectable.getSelectableId()), selectable.getText(), TextRange.m7445boximpl(TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset())), Boolean.valueOf(i2 >= i)).booleanValue()) {
                     return;
                 }
             }
@@ -1116,8 +1116,8 @@ public final class SelectionManager {
         if (intersect.getRight() - intersect.getLeft() < 0.0f || intersect.getBottom() - intersect.getTop() < 0.0f) {
             return null;
         }
-        Rect m4342translatek4lQ0M = intersect.m4342translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(layoutCoordinates));
-        return Rect.copy$default(m4342translatek4lQ0M, 0.0f, 0.0f, 0.0f, m4342translatek4lQ0M.getBottom() + (SelectionHandlesKt.getHandleHeight() * 4), 7, null);
+        Rect m5072translatek4lQ0M = intersect.m5072translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(layoutCoordinates));
+        return Rect.copy$default(m5072translatek4lQ0M, 0.0f, 0.0f, 0.0f, m5072translatek4lQ0M.getBottom() + (SelectionHandlesKt.getHandleHeight() * 4), 7, null);
     }
 
     public final void onRelease() {
@@ -1129,7 +1129,7 @@ public final class SelectionManager {
             if (!isInTouchMode() || (hapticFeedback = this.hapticFeedBack) == null) {
                 return;
             }
-            hapticFeedback.mo5323performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5340getTextHandleMove5zf0vsI());
+            hapticFeedback.mo6053performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6070getTextHandleMove5zf0vsI());
         }
     }
 
@@ -1141,7 +1141,7 @@ public final class SelectionManager {
                 LayoutCoordinates layoutCoordinates;
                 Offset m1796getStartHandlePosition_m7T9E = z ? this.m1796getStartHandlePosition_m7T9E() : this.m1795getEndHandlePosition_m7T9E();
                 if (m1796getStartHandlePosition_m7T9E != null) {
-                    m1796getStartHandlePosition_m7T9E.m4315unboximpl();
+                    m1796getStartHandlePosition_m7T9E.m5045unboximpl();
                     Selection selection = this.getSelection();
                     if (selection == null) {
                         return;
@@ -1156,7 +1156,7 @@ public final class SelectionManager {
                     }
                     long m1767getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1767getAdjustedCoordinatesk4lQ0M(mo1739getHandlePositiondBAh8RU);
                     SelectionManager selectionManager = this;
-                    selectionManager.m1786setCurrentDragPosition_kEHs6E(Offset.m4294boximpl(selectionManager.requireContainerCoordinates$foundation_release().mo5976localPositionOfR5De75A(layoutCoordinates, m1767getAdjustedCoordinatesk4lQ0M)));
+                    selectionManager.m1786setCurrentDragPosition_kEHs6E(Offset.m5024boximpl(selectionManager.requireContainerCoordinates$foundation_release().mo6706localPositionOfR5De75A(layoutCoordinates, m1767getAdjustedCoordinatesk4lQ0M)));
                     this.setDraggingHandle(z ? Handle.SelectionStart : Handle.SelectionEnd);
                     this.setShowToolbar$foundation_release(false);
                 }
@@ -1181,8 +1181,8 @@ public final class SelectionManager {
                         }
                         long m1767getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1767getAdjustedCoordinatesk4lQ0M(mo1739getHandlePositiondBAh8RU);
                         SelectionManager selectionManager = this;
-                        selectionManager.m1787setDragBeginPositionk4lQ0M(selectionManager.requireContainerCoordinates$foundation_release().mo5976localPositionOfR5De75A(layoutCoordinates, m1767getAdjustedCoordinatesk4lQ0M));
-                        this.m1788setDragTotalDistancek4lQ0M(Offset.Companion.m4321getZeroF1C5BW0());
+                        selectionManager.m1787setDragBeginPositionk4lQ0M(selectionManager.requireContainerCoordinates$foundation_release().mo6706localPositionOfR5De75A(layoutCoordinates, m1767getAdjustedCoordinatesk4lQ0M));
+                        this.m1788setDragTotalDistancek4lQ0M(Offset.Companion.m5051getZeroF1C5BW0());
                         return;
                     }
                     InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Current selectable should have layout coordinates.");
@@ -1199,11 +1199,11 @@ public final class SelectionManager {
                     return;
                 }
                 SelectionManager selectionManager = this;
-                selectionManager.m1788setDragTotalDistancek4lQ0M(Offset.m4310plusMKHz9U(selectionManager.m1794getDragTotalDistanceF1C5BW0$foundation_release(), j));
-                long m4310plusMKHz9U = Offset.m4310plusMKHz9U(this.m1793getDragBeginPositionF1C5BW0$foundation_release(), this.m1794getDragTotalDistanceF1C5BW0$foundation_release());
-                if (this.m1799updateSelectionqNKwrvQ$foundation_release(Offset.m4294boximpl(m4310plusMKHz9U), this.m1793getDragBeginPositionF1C5BW0$foundation_release(), z, SelectionAdjustment.Companion.getCharacterWithWordAccelerate())) {
-                    this.m1787setDragBeginPositionk4lQ0M(m4310plusMKHz9U);
-                    this.m1788setDragTotalDistancek4lQ0M(Offset.Companion.m4321getZeroF1C5BW0());
+                selectionManager.m1788setDragTotalDistancek4lQ0M(Offset.m5040plusMKHz9U(selectionManager.m1794getDragTotalDistanceF1C5BW0$foundation_release(), j));
+                long m5040plusMKHz9U = Offset.m5040plusMKHz9U(this.m1793getDragBeginPositionF1C5BW0$foundation_release(), this.m1794getDragTotalDistanceF1C5BW0$foundation_release());
+                if (this.m1799updateSelectionqNKwrvQ$foundation_release(Offset.m5024boximpl(m5040plusMKHz9U), this.m1793getDragBeginPositionF1C5BW0$foundation_release(), z, SelectionAdjustment.Companion.getCharacterWithWordAccelerate())) {
+                    this.m1787setDragBeginPositionk4lQ0M(m5040plusMKHz9U);
+                    this.m1788setDragTotalDistancek4lQ0M(Offset.Companion.m5051getZeroF1C5BW0());
                 }
             }
 
@@ -1323,15 +1323,15 @@ public final class SelectionManager {
     private final long m1784convertToContainerCoordinatesR5De75A(LayoutCoordinates layoutCoordinates, long j) {
         LayoutCoordinates layoutCoordinates2 = this.containerLayoutCoordinates;
         if (layoutCoordinates2 == null || !layoutCoordinates2.isAttached()) {
-            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
-        return requireContainerCoordinates$foundation_release().mo5976localPositionOfR5De75A(layoutCoordinates, j);
+        return requireContainerCoordinates$foundation_release().mo6706localPositionOfR5De75A(layoutCoordinates, j);
     }
 
     /* renamed from: startSelection-9KIMszo  reason: not valid java name */
     private final void m1791startSelection9KIMszo(long j, boolean z, SelectionAdjustment selectionAdjustment) {
         this.previousSelectionLayout = null;
-        m1798updateSelectionjyLRC_s$foundation_release(j, Offset.Companion.m4320getUnspecifiedF1C5BW0(), z, selectionAdjustment);
+        m1798updateSelectionjyLRC_s$foundation_release(j, Offset.Companion.m5050getUnspecifiedF1C5BW0(), z, selectionAdjustment);
     }
 
     /* renamed from: updateSelection-qNKwrvQ$foundation_release  reason: not valid java name */
@@ -1339,13 +1339,13 @@ public final class SelectionManager {
         if (offset == null) {
             return false;
         }
-        return m1798updateSelectionjyLRC_s$foundation_release(offset.m4315unboximpl(), j, z, selectionAdjustment);
+        return m1798updateSelectionjyLRC_s$foundation_release(offset.m5045unboximpl(), j, z, selectionAdjustment);
     }
 
     /* renamed from: updateSelection-jyLRC_s$foundation_release  reason: not valid java name */
     public final boolean m1798updateSelectionjyLRC_s$foundation_release(long j, long j2, boolean z, SelectionAdjustment selectionAdjustment) {
         setDraggingHandle(z ? Handle.SelectionStart : Handle.SelectionEnd);
-        m1786setCurrentDragPosition_kEHs6E(Offset.m4294boximpl(j));
+        m1786setCurrentDragPosition_kEHs6E(Offset.m5024boximpl(j));
         SelectionLayout m1785getSelectionLayoutWko1d7g = m1785getSelectionLayoutWko1d7g(j, j2, z);
         if (m1785getSelectionLayoutWko1d7g != null && m1785getSelectionLayoutWko1d7g.shouldRecomputeSelection(this.previousSelectionLayout)) {
             Selection adjust = selectionAdjustment.adjust(m1785getSelectionLayoutWko1d7g);
@@ -1385,7 +1385,7 @@ public final class SelectionManager {
     private final void selectionChanged(SelectionLayout selectionLayout, Selection selection) {
         HapticFeedback hapticFeedback;
         if (shouldPerformHaptics$foundation_release() && (hapticFeedback = this.hapticFeedBack) != null) {
-            hapticFeedback.mo5323performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5340getTextHandleMove5zf0vsI());
+            hapticFeedback.mo6053performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6070getTextHandleMove5zf0vsI());
         }
         this.selectionRegistrar.setSubselections(selectionLayout.createSubSelections(selection));
         this.onSelectionChange.invoke(selection);
@@ -1421,10 +1421,10 @@ public final class SelectionManager {
                 Selectable selectable = selectables$foundation_release.get(i);
                 Selection selection = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
                 if (selection != null && (layoutCoordinates = selectable.getLayoutCoordinates()) != null) {
-                    long mo5976localPositionOfR5De75A = layoutCoordinates.mo5976localPositionOfR5De75A(layoutCoordinates2, j);
+                    long mo6706localPositionOfR5De75A = layoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates2, j);
                     TextLayoutResult textLayoutResult = selectable.textLayoutResult();
                     if (textLayoutResult != null) {
-                        m1384isPositionInsideSelectionuaM50fQ = TextLayoutHelperKt.m1384isPositionInsideSelectionuaM50fQ(textLayoutResult, mo5976localPositionOfR5De75A, TextRange.m6714boximpl(selection.m1755toTextRanged9O1mEE()));
+                        m1384isPositionInsideSelectionuaM50fQ = TextLayoutHelperKt.m1384isPositionInsideSelectionuaM50fQ(textLayoutResult, mo6706localPositionOfR5De75A, TextRange.m7445boximpl(selection.m1755toTextRanged9O1mEE()));
                         if (!m1384isPositionInsideSelectionuaM50fQ) {
                             return;
                         }

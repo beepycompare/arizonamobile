@@ -1,114 +1,72 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.collections.MapsKt;
-import kotlin.ranges.RangesKt;
-/* loaded from: classes4.dex */
-public final class S3 implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final W3 fromModel(R3 r3) {
-        W3 w3 = new W3();
-        w3.f722a = a(r3.f650a);
-        int size = r3.b.size();
-        T3[] t3Arr = new T3[size];
-        for (int i = 0; i < size; i++) {
-            t3Arr[i] = a((Q3) r3.b.get(i));
-        }
-        w3.b = t3Arr;
-        return w3;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleRegistry;
+import io.appmetrica.analytics.modulesapi.internal.client.ClientStorageProvider;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientExecutorProvider;
+import io.appmetrica.analytics.modulesapi.internal.client.ProcessDetector;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext;
+import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade;
+/* loaded from: classes3.dex */
+public final class S3 implements O5 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f675a;
+    public final R5 b = new R5(new C0491p5());
+    public final C0364k4 c = new C0364k4(C0338j4.l().b(getContext()));
+    public final C0294hb d = new C0294hb();
+    public final C0460o e = C0338j4.l().a();
+    public final Q3 f = new Q3();
+    public final Xc g = new Xc();
+    public final R3 h = new R3();
+
+    public S3(Context context) {
+        this.f675a = context;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final R3 toModel(W3 w3) {
-        T3 t3 = w3.f722a;
-        if (t3 == null) {
-            t3 = new T3();
-        }
-        Q3 a2 = a(t3);
-        T3[] t3Arr = w3.b;
-        ArrayList arrayList = new ArrayList(t3Arr.length);
-        for (T3 t32 : t3Arr) {
-            arrayList.add(a(t32));
-        }
-        return new R3(a2, arrayList);
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ActivityLifecycleRegistry getActivityLifecycleRegistry() {
+        return this.e;
     }
 
-    public static T3 a(Q3 q3) {
-        V3 v3;
-        T3 t3 = new T3();
-        Map map = q3.f635a;
-        int i = 0;
-        if (map != null) {
-            v3 = new V3();
-            int size = map.size();
-            U3[] u3Arr = new U3[size];
-            for (int i2 = 0; i2 < size; i2++) {
-                u3Arr[i2] = new U3();
-            }
-            v3.f709a = u3Arr;
-            int i3 = 0;
-            for (Map.Entry entry : map.entrySet()) {
-                U3 u3 = v3.f709a[i3];
-                u3.f693a = (String) entry.getKey();
-                u3.b = (String) entry.getValue();
-                i3++;
-            }
-        } else {
-            v3 = null;
-        }
-        t3.f679a = v3;
-        int ordinal = q3.b.ordinal();
-        if (ordinal != 0) {
-            if (ordinal != 1) {
-                i = 2;
-                if (ordinal != 2) {
-                    i = 3;
-                    if (ordinal != 3) {
-                        throw new NoWhenBranchMatchedException();
-                    }
-                }
-            } else {
-                i = 1;
-            }
-        }
-        t3.b = i;
-        return t3;
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ModuleClientActivator getClientActivator() {
+        return this.f;
     }
 
-    public static Q3 a(T3 t3) {
-        LinkedHashMap linkedHashMap;
-        EnumC0531q8 enumC0531q8;
-        V3 v3 = t3.f679a;
-        if (v3 != null) {
-            U3[] u3Arr = v3.f709a;
-            linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(u3Arr.length), 16));
-            for (U3 u3 : u3Arr) {
-                Pair pair = TuplesKt.to(u3.f693a, u3.b);
-                linkedHashMap.put(pair.getFirst(), pair.getSecond());
-            }
-        } else {
-            linkedHashMap = null;
-        }
-        int i = t3.b;
-        if (i == 0) {
-            enumC0531q8 = EnumC0531q8.b;
-        } else if (i == 1) {
-            enumC0531q8 = EnumC0531q8.c;
-        } else if (i == 2) {
-            enumC0531q8 = EnumC0531q8.d;
-        } else if (i != 3) {
-            enumC0531q8 = EnumC0531q8.b;
-        } else {
-            enumC0531q8 = EnumC0531q8.e;
-        }
-        return new Q3(linkedHashMap, enumC0531q8);
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ModuleClientExecutorProvider getClientExecutorProvider() {
+        return this.g;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ClientStorageProvider getClientStorageProvider() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final Context getContext() {
+        return this.f675a;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final InternalClientModuleFacade getInternalClientModuleFacade() {
+        return this.d;
+    }
+
+    @Override // io.appmetrica.analytics.impl.O5, io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final Q5 getModuleAdRevenueContext() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ProcessDetector getProcessDetector() {
+        return this.h;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ModuleAdRevenueContext getModuleAdRevenueContext() {
+        return this.b;
     }
 }

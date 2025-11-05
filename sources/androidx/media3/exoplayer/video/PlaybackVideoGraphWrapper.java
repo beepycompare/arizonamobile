@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     private static final Executor NO_OP_EXECUTOR = new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda1
         @Override // java.util.concurrent.Executor
@@ -80,7 +80,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     private final VideoGraph.Factory videoGraphFactory;
     private Format videoGraphOutputFormat;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         default void onError(VideoFrameProcessingException videoFrameProcessingException) {
         }
@@ -106,7 +106,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     public void onEnded(long j) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private boolean built;
         private Clock clock = Clock.DEFAULT;
@@ -467,7 +467,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             ((HandlerWrapper) Assertions.checkStateNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.this.m8038x92e2e5d9();
+                    PlaybackVideoGraphWrapper.this.m8769x92e2e5d9();
                 }
             });
         }
@@ -475,7 +475,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$flush$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper  reason: not valid java name */
-    public /* synthetic */ void m8038x92e2e5d9() {
+    public /* synthetic */ void m8769x92e2e5d9() {
         this.pendingFlushCount--;
     }
 
@@ -521,7 +521,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class InputVideoSink implements VideoSink, Listener {
         private long inputBufferTimestampAdjustmentUs;
         private Format inputFormat;
@@ -817,14 +817,14 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m8039x167f068a(listener, videoFrameProcessingException);
+                    PlaybackVideoGraphWrapper.InputVideoSink.this.m8770x167f068a(listener, videoFrameProcessingException);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onError$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m8039x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
+        public /* synthetic */ void m8770x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
             listener.onError(new VideoSink.VideoSinkException(videoFrameProcessingException, (Format) Assertions.checkStateNotNull(this.inputFormat)));
         }
 
@@ -834,7 +834,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class DefaultVideoSinkListener implements VideoSink.Listener {
         private DefaultVideoSinkListener() {
         }
@@ -873,7 +873,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class StreamChangeInfo {
         public final int firstFrameReleaseInstruction;
         public final long fromTimestampUs;
@@ -886,7 +886,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class ShiftingTimestampIterator implements TimestampIterator {
         private final long shift;
         private final TimestampIterator timestampIterator;
@@ -919,7 +919,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ReflectiveSingleInputVideoGraphFactory implements VideoGraph.Factory {
         private final VideoFrameProcessor.Factory videoFrameProcessorFactory;
 
@@ -942,7 +942,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class ReflectiveDefaultVideoFrameProcessorFactory implements VideoFrameProcessor.Factory {
         private static final Supplier<Class<?>> DEFAULT_VIDEO_FRAME_PROCESSOR_FACTORY_BUILDER_CLASS = Suppliers.memoize(new Supplier() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$ReflectiveDefaultVideoFrameProcessorFactory$$ExternalSyntheticLambda0
             @Override // com.google.common.base.Supplier

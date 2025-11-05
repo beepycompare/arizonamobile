@@ -6,7 +6,7 @@ import com.google.android.gms.common.data.AbstractDataBuffer;
 import com.google.android.gms.common.data.DataBuffer;
 import java.util.Iterator;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DataBufferResponse<T, R extends AbstractDataBuffer<T> & Result> extends Response<R> implements DataBuffer<T> {
     public DataBufferResponse() {
     }

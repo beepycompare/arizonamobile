@@ -1,8 +1,6 @@
 package com.google.android.gms.common.images;
-
-import androidx.compose.material3.MenuKt;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Size {
     private final int zaa;
     private final int zab;
@@ -55,7 +53,7 @@ public final class Size {
         }
         int indexOf = str.indexOf(42);
         if (indexOf < 0) {
-            indexOf = str.indexOf(MenuKt.InTransitionDuration);
+            indexOf = str.indexOf(120);
         }
         if (indexOf >= 0) {
             try {

@@ -9,9 +9,9 @@ import com.google.android.gms.dynamic.ObjectWrapper;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public abstract class zzj extends com.google.android.gms.common.internal.zzz {
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public abstract class zzj extends com.google.android.gms.common.internal.zzw {
     private final int zza;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -21,7 +21,7 @@ public abstract class zzj extends com.google.android.gms.common.internal.zzz {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public static byte[] zze(String str) {
+    public static byte[] zzf(String str) {
         try {
             return str.getBytes(FilePart.DEFAULT_CHARSET);
         } catch (UnsupportedEncodingException e) {
@@ -31,15 +31,16 @@ public abstract class zzj extends com.google.android.gms.common.internal.zzz {
 
     public final boolean equals(Object obj) {
         IObjectWrapper zzd;
-        if (obj != null && (obj instanceof com.google.android.gms.common.internal.zzaa)) {
+        if (obj instanceof com.google.android.gms.common.internal.zzx) {
             try {
-                com.google.android.gms.common.internal.zzaa zzaaVar = (com.google.android.gms.common.internal.zzaa) obj;
-                if (zzaaVar.zzc() == this.zza && (zzd = zzaaVar.zzd()) != null) {
-                    return Arrays.equals(zzf(), (byte[]) ObjectWrapper.unwrap(zzd));
+                com.google.android.gms.common.internal.zzx zzxVar = (com.google.android.gms.common.internal.zzx) obj;
+                if (zzxVar.zze() == this.zza && (zzd = zzxVar.zzd()) != null) {
+                    return Arrays.equals(zzc(), (byte[]) ObjectWrapper.unwrap(zzd));
                 }
                 return false;
             } catch (RemoteException e) {
                 Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
+                return false;
             }
         }
         return false;
@@ -49,16 +50,16 @@ public abstract class zzj extends com.google.android.gms.common.internal.zzz {
         return this.zza;
     }
 
-    @Override // com.google.android.gms.common.internal.zzaa
-    public final int zzc() {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public abstract byte[] zzc();
+
+    @Override // com.google.android.gms.common.internal.zzx
+    public final IObjectWrapper zzd() {
+        return ObjectWrapper.wrap(zzc());
+    }
+
+    @Override // com.google.android.gms.common.internal.zzx
+    public final int zze() {
         return this.zza;
     }
-
-    @Override // com.google.android.gms.common.internal.zzaa
-    public final IObjectWrapper zzd() {
-        return ObjectWrapper.wrap(zzf());
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract byte[] zzf();
 }

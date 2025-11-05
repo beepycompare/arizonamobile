@@ -1,29 +1,30 @@
 package com.google.android.gms.common.internal;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzv {
-    private final String zza;
-    private final String zzb;
-    private final boolean zzc;
 
-    public zzv(String str, String str2, boolean z, int i, boolean z2) {
-        this.zzb = str;
-        this.zza = str2;
-        this.zzc = z2;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
+import com.google.android.gms.dynamic.IObjectWrapper;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzv extends com.google.android.gms.internal.common.zza implements zzx {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzv(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.common.internal.ICertData");
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final String zza() {
-        return this.zzb;
+    @Override // com.google.android.gms.common.internal.zzx
+    public final IObjectWrapper zzd() throws RemoteException {
+        Parcel zzB = zzB(1, zza());
+        IObjectWrapper asInterface = IObjectWrapper.Stub.asInterface(zzB.readStrongBinder());
+        zzB.recycle();
+        return asInterface;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final String zzb() {
-        return this.zza;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzc() {
-        return this.zzc;
+    @Override // com.google.android.gms.common.internal.zzx
+    public final int zze() throws RemoteException {
+        Parcel zzB = zzB(2, zza());
+        int readInt = zzB.readInt();
+        zzB.recycle();
+        return readInt;
     }
 }

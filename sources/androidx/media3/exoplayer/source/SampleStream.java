@@ -8,7 +8,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface SampleStream {
     public static final int FLAG_OMIT_SAMPLE_DATA = 4;
     public static final int FLAG_PEEK = 1;
@@ -17,14 +17,14 @@ public interface SampleStream {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface ReadDataResult {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface ReadFlags {
     }
 

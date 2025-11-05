@@ -40,7 +40,7 @@ public final class RecalculateWindowInsetsModifierNode extends Modifier.Node imp
     public RecalculateWindowInsetsModifierNode() {
         ValueInsets valueInsets = new ValueInsets(new InsetsValues(0, 0, 0, 0), "reset");
         this.insets = valueInsets;
-        this.oldPosition = IntOffset.Companion.m7403getZeronOccac();
+        this.oldPosition = IntOffset.Companion.m8134getZeronOccac();
         this.providedValues = ModifierLocalModifierNodeKt.modifierLocalMapOf(TuplesKt.to(WindowInsetsPaddingKt.getModifierLocalConsumedWindowInsets(), valueInsets));
     }
 
@@ -66,10 +66,10 @@ public final class RecalculateWindowInsetsModifierNode extends Modifier.Node imp
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, final Measurable measurable, long j) {
-        if (!Constraints.m7215getHasFixedWidthimpl(j) || !Constraints.m7214getHasFixedHeightimpl(j)) {
+        if (!Constraints.m7946getHasFixedWidthimpl(j) || !Constraints.m7945getHasFixedHeightimpl(j)) {
             provide(WindowInsetsPaddingKt.getModifierLocalConsumedWindowInsets(), getCurrent(WindowInsetsPaddingKt.getModifierLocalConsumedWindowInsets()));
-            final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
-            return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.RecalculateWindowInsetsModifierNode$$ExternalSyntheticLambda0
+            final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
+            return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.RecalculateWindowInsetsModifierNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit measure_3p2s80s$lambda$0;
@@ -78,13 +78,13 @@ public final class RecalculateWindowInsetsModifierNode extends Modifier.Node imp
                 }
             }, 4, null);
         }
-        final int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-        final int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
-        return MeasureScope.layout$default(measureScope, m7217getMaxWidthimpl, m7216getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.layout.RecalculateWindowInsetsModifierNode$$ExternalSyntheticLambda1
+        final int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+        final int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+        return MeasureScope.layout$default(measureScope, m7948getMaxWidthimpl, m7947getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.layout.RecalculateWindowInsetsModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$2;
-                measure_3p2s80s$lambda$2 = RecalculateWindowInsetsModifierNode.measure_3p2s80s$lambda$2(RecalculateWindowInsetsModifierNode.this, measurable, m7217getMaxWidthimpl, m7216getMaxHeightimpl, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$2 = RecalculateWindowInsetsModifierNode.measure_3p2s80s$lambda$2(RecalculateWindowInsetsModifierNode.this, measurable, m7948getMaxWidthimpl, m7947getMaxHeightimpl, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$2;
             }
         }, 4, null);
@@ -101,19 +101,19 @@ public final class RecalculateWindowInsetsModifierNode extends Modifier.Node imp
         WindowInsets windowInsets;
         LayoutCoordinates coordinates = placementScope.getCoordinates();
         if (coordinates != null) {
-            recalculateWindowInsetsModifierNode.oldPosition = IntOffsetKt.m7409roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(coordinates));
+            recalculateWindowInsetsModifierNode.oldPosition = IntOffsetKt.m8140roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(coordinates));
         }
         if (coordinates == null) {
             windowInsets = (WindowInsets) recalculateWindowInsetsModifierNode.getCurrent(WindowInsetsPaddingKt.getModifierLocalConsumedWindowInsets());
         } else {
             long positionInRoot = LayoutCoordinatesKt.positionInRoot(coordinates);
-            long mo5975getSizeYbymL2g = coordinates.mo5975getSizeYbymL2g();
-            long mo5978localToRootMKHz9U = coordinates.mo5978localToRootMKHz9U(Offset.m4297constructorimpl((Float.floatToRawIntBits((int) (mo5975getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo5975getSizeYbymL2g >> 32)) << 32)));
-            long mo5975getSizeYbymL2g2 = LayoutCoordinatesKt.findRootCoordinates(coordinates).mo5975getSizeYbymL2g();
+            long mo6705getSizeYbymL2g = coordinates.mo6705getSizeYbymL2g();
+            long mo6708localToRootMKHz9U = coordinates.mo6708localToRootMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits((int) (mo6705getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6705getSizeYbymL2g >> 32)) << 32)));
+            long mo6705getSizeYbymL2g2 = LayoutCoordinatesKt.findRootCoordinates(coordinates).mo6705getSizeYbymL2g();
             int round = Math.round(Float.intBitsToFloat((int) (positionInRoot >> 32)));
             int round2 = Math.round(Float.intBitsToFloat((int) (positionInRoot & 4294967295L)));
-            int round3 = ((int) (mo5975getSizeYbymL2g2 >> 32)) - Math.round(Float.intBitsToFloat((int) (mo5978localToRootMKHz9U >> 32)));
-            int round4 = ((int) (mo5975getSizeYbymL2g2 & 4294967295L)) - Math.round(Float.intBitsToFloat((int) (mo5978localToRootMKHz9U & 4294967295L)));
+            int round3 = ((int) (mo6705getSizeYbymL2g2 >> 32)) - Math.round(Float.intBitsToFloat((int) (mo6708localToRootMKHz9U >> 32)));
+            int round4 = ((int) (mo6705getSizeYbymL2g2 & 4294967295L)) - Math.round(Float.intBitsToFloat((int) (mo6708localToRootMKHz9U & 4294967295L)));
             InsetsValues value$foundation_layout = recalculateWindowInsetsModifierNode.insets.getValue$foundation_layout();
             if (value$foundation_layout.getLeft() != round || value$foundation_layout.getTop() != round2 || value$foundation_layout.getRight() != round3 || value$foundation_layout.getBottom() != round4) {
                 recalculateWindowInsetsModifierNode.insets.setValue$foundation_layout(new InsetsValues(round, round2, round3, round4));
@@ -121,7 +121,7 @@ public final class RecalculateWindowInsetsModifierNode extends Modifier.Node imp
             windowInsets = recalculateWindowInsetsModifierNode.insets;
         }
         recalculateWindowInsetsModifierNode.provide(WindowInsetsPaddingKt.getModifierLocalConsumedWindowInsets(), windowInsets);
-        Placeable.PlacementScope.place$default(placementScope, measurable.mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i, i2)), 0, 0, 0.0f, 4, null);
+        Placeable.PlacementScope.place$default(placementScope, measurable.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(i, i2)), 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 
@@ -147,10 +147,10 @@ public final class RecalculateWindowInsetsModifierNode extends Modifier.Node imp
 
     @Override // androidx.compose.ui.node.GlobalPositionAwareModifierNode
     public void onGloballyPositioned(LayoutCoordinates layoutCoordinates) {
-        long m7409roundk4lQ0M = IntOffsetKt.m7409roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(layoutCoordinates));
-        boolean m7391equalsimpl0 = IntOffset.m7391equalsimpl0(this.oldPosition, m7409roundk4lQ0M);
-        this.oldPosition = m7409roundk4lQ0M;
-        if (m7391equalsimpl0) {
+        long m8140roundk4lQ0M = IntOffsetKt.m8140roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(layoutCoordinates));
+        boolean m8122equalsimpl0 = IntOffset.m8122equalsimpl0(this.oldPosition, m8140roundk4lQ0M);
+        this.oldPosition = m8140roundk4lQ0M;
+        if (m8122equalsimpl0) {
             return;
         }
         LayoutModifierNodeKt.invalidatePlacement(this);

@@ -1,6 +1,7 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public abstract class Sm {
 
-import kotlin.jvm.functions.Function2;
-/* loaded from: classes4.dex */
-public interface Sm extends Function2 {
+    /* renamed from: a  reason: collision with root package name */
+    public static final Tm f690a = new Tm();
 }

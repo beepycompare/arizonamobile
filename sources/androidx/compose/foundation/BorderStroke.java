@@ -37,17 +37,17 @@ public final class BorderStroke {
         }
         if (obj instanceof BorderStroke) {
             BorderStroke borderStroke = (BorderStroke) obj;
-            return Dp.m7269equalsimpl0(this.width, borderStroke.width) && Intrinsics.areEqual(this.brush, borderStroke.brush);
+            return Dp.m8000equalsimpl0(this.width, borderStroke.width) && Intrinsics.areEqual(this.brush, borderStroke.brush);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Dp.m7270hashCodeimpl(this.width) * 31) + this.brush.hashCode();
+        return (Dp.m8001hashCodeimpl(this.width) * 31) + this.brush.hashCode();
     }
 
     public String toString() {
-        return "BorderStroke(width=" + ((Object) Dp.m7275toStringimpl(this.width)) + ", brush=" + this.brush + ')';
+        return "BorderStroke(width=" + ((Object) Dp.m8006toStringimpl(this.width)) + ", brush=" + this.brush + ')';
     }
 
     /* renamed from: copy-D5KLDUw$default  reason: not valid java name */

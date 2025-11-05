@@ -33,7 +33,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Comparator;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultPreloadManager extends BasePreloadManager<Integer, PreloadStatus> {
     private final boolean deprecatedConstructorCalled;
     private final Handler preloadHandler;
@@ -47,7 +47,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
     public static /* synthetic */ void lambda$new$0() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends BasePreloadManager.BuilderBase<Integer, PreloadStatus> {
         private Supplier<BandwidthMeter> bandwidthMeterSupplier;
         private boolean buildCalled;
@@ -193,7 +193,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class PreloadStatus {
         public static final int STAGE_SOURCE_PREPARED = 0;
         public static final int STAGE_SPECIFIED_RANGE_LOADED = 2;
@@ -207,7 +207,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         @Target({ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public @interface Stage {
         }
 
@@ -313,14 +313,14 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultPreloadManager.this.m8010xafd85f69();
+                DefaultPreloadManager.this.m8741xafd85f69();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releaseInternal$1$androidx-media3-exoplayer-source-preload-DefaultPreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8010xafd85f69() {
+    public /* synthetic */ void m8741xafd85f69() {
         this.rendererCapabilitiesList.release();
         if (!this.deprecatedConstructorCalled) {
             this.trackSelector.release();
@@ -328,7 +328,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         this.preloadLooperProvider.releaseLooper();
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class RankingDataComparator implements Comparator<Integer> {
         public int currentPlayingIndex = -1;
 
@@ -338,7 +338,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class SourcePreloadControl implements PreloadMediaSource.PreloadControl {
         private SourcePreloadControl() {
         }

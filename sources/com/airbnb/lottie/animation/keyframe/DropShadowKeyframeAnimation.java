@@ -77,13 +77,7 @@ public class DropShadowKeyframeAnimation implements BaseKeyframeAnimation.Animat
         if (lottieValueCallback == null) {
             this.opacity.setValueCallback(null);
         } else {
-            this.opacity.setValueCallback(new LottieValueCallback<Float>(this) { // from class: com.airbnb.lottie.animation.keyframe.DropShadowKeyframeAnimation.1
-                final /* synthetic */ DropShadowKeyframeAnimation this$0;
-
-                {
-                    this.this$0 = this;
-                }
-
+            this.opacity.setValueCallback(new LottieValueCallback<Float>() { // from class: com.airbnb.lottie.animation.keyframe.DropShadowKeyframeAnimation.1
                 /* JADX WARN: Can't rename method to resolve collision */
                 @Override // com.airbnb.lottie.value.LottieValueCallback
                 public Float getValue(LottieFrameInfo<Float> lottieFrameInfo) {

@@ -69,105 +69,105 @@ public final class SavedStateEncoder extends AbstractEncoder {
 
     private final void checkDiscriminatorCollisions(Bundle bundle, String str) {
         if (this.configuration.getClassDiscriminatorMode() == 1) {
-            boolean m8177containsimpl = SavedStateReader.m8177containsimpl(SavedStateReader.m8176constructorimpl(bundle), "type");
+            boolean m8907containsimpl = SavedStateReader.m8907containsimpl(SavedStateReader.m8906constructorimpl(bundle), "type");
             boolean areEqual = Intrinsics.areEqual(str, "type");
-            if (m8177containsimpl && areEqual) {
-                throw new IllegalArgumentException("SavedStateEncoder for " + SavedStateReader.m8247getStringimpl(SavedStateReader.m8176constructorimpl(bundle), "type") + " has property '" + str + "' that conflicts with the class discriminator. You can rename a property with @SerialName annotation.");
+            if (m8907containsimpl && areEqual) {
+                throw new IllegalArgumentException("SavedStateEncoder for " + SavedStateReader.m8977getStringimpl(SavedStateReader.m8906constructorimpl(bundle), "type") + " has property '" + str + "' that conflicts with the class discriminator. You can rename a property with @SerialName annotation.");
             }
         }
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeBoolean(boolean z) {
-        SavedStateWriter.m8268putBooleanimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, z);
+        SavedStateWriter.m8998putBooleanimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, z);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeByte(byte b) {
-        SavedStateWriter.m8279putIntimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, b);
+        SavedStateWriter.m9009putIntimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, b);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeShort(short s) {
-        SavedStateWriter.m8279putIntimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, s);
+        SavedStateWriter.m9009putIntimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, s);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeInt(int i) {
-        SavedStateWriter.m8279putIntimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, i);
+        SavedStateWriter.m9009putIntimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, i);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeLong(long j) {
-        SavedStateWriter.m8283putLongimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, j);
+        SavedStateWriter.m9013putLongimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, j);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeFloat(float f) {
-        SavedStateWriter.m8277putFloatimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, f);
+        SavedStateWriter.m9007putFloatimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, f);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeDouble(double d) {
-        SavedStateWriter.m8275putDoubleimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, d);
+        SavedStateWriter.m9005putDoubleimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, d);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeChar(char c) {
-        SavedStateWriter.m8270putCharimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, c);
+        SavedStateWriter.m9000putCharimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, c);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeString(String value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        SavedStateWriter.m8295putStringimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, value);
+        SavedStateWriter.m9025putStringimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, value);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeEnum(SerialDescriptor enumDescriptor, int i) {
         Intrinsics.checkNotNullParameter(enumDescriptor, "enumDescriptor");
-        SavedStateWriter.m8279putIntimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, i);
+        SavedStateWriter.m9009putIntimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, i);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeNull() {
-        SavedStateWriter.m8285putNullimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key);
+        SavedStateWriter.m9015putNullimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key);
     }
 
     private final void encodeIntList(List<Integer> list) {
-        SavedStateWriter.m8281putIntListimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, list);
+        SavedStateWriter.m9011putIntListimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, list);
     }
 
     private final void encodeStringList(List<String> list) {
-        SavedStateWriter.m8297putStringListimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, list);
+        SavedStateWriter.m9027putStringListimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, list);
     }
 
     private final void encodeBooleanArray(boolean[] zArr) {
-        SavedStateWriter.m8269putBooleanArrayimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, zArr);
+        SavedStateWriter.m8999putBooleanArrayimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, zArr);
     }
 
     private final void encodeCharArray(char[] cArr) {
-        SavedStateWriter.m8271putCharArrayimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, cArr);
+        SavedStateWriter.m9001putCharArrayimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, cArr);
     }
 
     private final void encodeDoubleArray(double[] dArr) {
-        SavedStateWriter.m8276putDoubleArrayimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, dArr);
+        SavedStateWriter.m9006putDoubleArrayimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, dArr);
     }
 
     private final void encodeFloatArray(float[] fArr) {
-        SavedStateWriter.m8278putFloatArrayimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, fArr);
+        SavedStateWriter.m9008putFloatArrayimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, fArr);
     }
 
     private final void encodeIntArray(int[] iArr) {
-        SavedStateWriter.m8280putIntArrayimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, iArr);
+        SavedStateWriter.m9010putIntArrayimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, iArr);
     }
 
     private final void encodeLongArray(long[] jArr) {
-        SavedStateWriter.m8284putLongArrayimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, jArr);
+        SavedStateWriter.m9014putLongArrayimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, jArr);
     }
 
     private final void encodeStringArray(String[] strArr) {
-        SavedStateWriter.m8296putStringArrayimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, strArr);
+        SavedStateWriter.m9026putStringArrayimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, strArr);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
@@ -189,16 +189,16 @@ public final class SavedStateEncoder extends AbstractEncoder {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m8262constructorimpl(bundleOf);
-        SavedStateWriter.m8289putSavedStateimpl(SavedStateWriter.m8262constructorimpl(this.savedState), this.key, bundleOf);
+        SavedStateWriter.m8992constructorimpl(bundleOf);
+        SavedStateWriter.m9019putSavedStateimpl(SavedStateWriter.m8992constructorimpl(this.savedState), this.key, bundleOf);
         putClassDiscriminatorIfRequired(this.configuration, descriptor, bundleOf);
         return new SavedStateEncoder(bundleOf, this.configuration);
     }
 
     private final void putClassDiscriminatorIfRequired(SavedStateConfiguration savedStateConfiguration, SerialDescriptor serialDescriptor, Bundle bundle) {
-        if (savedStateConfiguration.getClassDiscriminatorMode() == 1 && !SavedStateReader.m8177containsimpl(SavedStateReader.m8176constructorimpl(bundle), "type")) {
+        if (savedStateConfiguration.getClassDiscriminatorMode() == 1 && !SavedStateReader.m8907containsimpl(SavedStateReader.m8906constructorimpl(bundle), "type")) {
             if (Intrinsics.areEqual(serialDescriptor.getKind(), StructureKind.CLASS.INSTANCE) || Intrinsics.areEqual(serialDescriptor.getKind(), StructureKind.OBJECT.INSTANCE)) {
-                SavedStateWriter.m8295putStringimpl(SavedStateWriter.m8262constructorimpl(bundle), "type", serialDescriptor.getSerialName());
+                SavedStateWriter.m9025putStringimpl(SavedStateWriter.m8992constructorimpl(bundle), "type", serialDescriptor.getSerialName());
             }
         }
     }

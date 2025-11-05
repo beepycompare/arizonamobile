@@ -1,27 +1,44 @@
 package androidx.compose.material3.carousel;
 
+import androidx.compose.animation.core.AnimationSpec;
+import androidx.compose.animation.core.SuspendAnimationKt;
+import androidx.compose.foundation.gestures.Orientation;
+import androidx.compose.foundation.gestures.ScrollScope;
+import androidx.compose.foundation.lazy.layout.LazyLayoutScrollScope;
+import androidx.compose.foundation.pager.PagerState;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.saveable.RememberSaveableKt;
 import androidx.compose.runtime.saveable.Saver;
 import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Ref;
+import kotlin.ranges.RangesKt;
 /* compiled from: CarouselState.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a%\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00030\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"rememberCarouselState", "Landroidx/compose/material3/carousel/CarouselState;", "initialItem", "", "itemCount", "Lkotlin/Function0;", "(ILkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/carousel/CarouselState;", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a%\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00030\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001aW\u0010\u000b\u001a\u00020\f*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00032\u0006\u0010\u0011\u001a\u00020\b2\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\b0\u00132\u001d\u0010\u0014\u001a\u0019\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f0\u0015¢\u0006\u0002\b\u0017H\u0082@¢\u0006\u0002\u0010\u0018\u001a\u001c\u0010\u0019\u001a\u00020\b*\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u0003H\u0002\"\u000e\u0010\u0007\u001a\u00020\bX\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\t\u001a\u00020\bX\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\n\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"rememberCarouselState", "Landroidx/compose/material3/carousel/CarouselState;", "initialItem", "", "itemCount", "Lkotlin/Function0;", "(ILkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/carousel/CarouselState;", "MinPageOffset", "", "MaxPageOffset", "MaxPagesForAnimateScroll", "animateScrollToPage", "", "Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "targetPage", "targetPageOffsetToSnappedPosition", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "updateTargetPage", "Lkotlin/Function2;", "Landroidx/compose/foundation/gestures/ScrollScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;Landroidx/compose/foundation/pager/PagerState;IFLandroidx/compose/animation/core/AnimationSpec;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "calculateScrollDistanceTo", "currentPage", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CarouselStateKt {
+    public static final float MaxPageOffset = 0.5f;
+    private static final int MaxPagesForAnimateScroll = 3;
+    public static final float MinPageOffset = -0.5f;
+
     public static final CarouselState rememberCarouselState(final int i, final Function0<Integer> function0, Composer composer, int i2, int i3) {
-        ComposerKt.sourceInformationMarkerStart(composer, -217285684, "C(rememberCarouselState)*103@3725L181,103@3679L227:CarouselState.kt#dcf9yb");
+        ComposerKt.sourceInformationMarkerStart(composer, -217285684, "C(rememberCarouselState)N(initialItem,itemCount)152@5940L182,152@5894L228:CarouselState.kt#dcf9yb");
         boolean z = true;
         if ((i3 & 1) != 0) {
             i = 0;
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-217285684, i2, -1, "androidx.compose.material3.carousel.rememberCarouselState (CarouselState.kt:102)");
+            ComposerKt.traceEventStart(-217285684, i2, -1, "androidx.compose.material3.carousel.rememberCarouselState (CarouselState.kt:151)");
         }
         Object[] objArr = new Object[0];
         Saver<CarouselState, ?> saver = CarouselState.Companion.getSaver();
-        ComposerKt.sourceInformationMarkerStart(composer, -1536566770, "CC(remember):CarouselState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1641861186, "CC(remember):CarouselState.kt#9igjgp");
         boolean z2 = (((i2 & 14) ^ 6) > 4 && composer.changed(i)) || (i2 & 6) == 4;
         if ((((i2 & 112) ^ 48) <= 32 || !composer.changed(function0)) && (i2 & 48) != 32) {
             z = false;
@@ -29,28 +46,66 @@ public final class CarouselStateKt {
         boolean z3 = z2 | z;
         Object rememberedValue = composer.rememberedValue();
         if (z3 || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = (Function0) new Function0<CarouselState>() { // from class: androidx.compose.material3.carousel.CarouselStateKt$rememberCarouselState$1$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+            rememberedValue = new Function0() { // from class: androidx.compose.material3.carousel.CarouselStateKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
-                public final CarouselState invoke() {
-                    return new CarouselState(i, 0.0f, function0);
+                public final Object invoke() {
+                    CarouselState rememberCarouselState$lambda$1$lambda$0;
+                    rememberCarouselState$lambda$1$lambda$0 = CarouselStateKt.rememberCarouselState$lambda$1$lambda$0(i, function0);
+                    return rememberCarouselState$lambda$1$lambda$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        CarouselState carouselState = (CarouselState) RememberSaveableKt.m3994rememberSaveable(objArr, saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
-        carouselState.getItemCountState().setValue(function0);
+        CarouselState carouselState = (CarouselState) RememberSaveableKt.m4725rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        carouselState.getPagerState$material3().getPageCountState().setValue(function0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         return carouselState;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final CarouselState rememberCarouselState$lambda$1$lambda$0(int i, Function0 function0) {
+        return new CarouselState(i, 0.0f, function0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object animateScrollToPage(final LazyLayoutScrollScope lazyLayoutScrollScope, PagerState pagerState, int i, float f, AnimationSpec<Float> animationSpec, Function2<? super ScrollScope, ? super Integer, Unit> function2, Continuation<? super Unit> continuation) {
+        int coerceAtMost;
+        function2.invoke(lazyLayoutScrollScope, Boxing.boxInt(i));
+        boolean z = i > lazyLayoutScrollScope.getFirstVisibleItemIndex();
+        int lastVisibleItemIndex = (lazyLayoutScrollScope.getLastVisibleItemIndex() - lazyLayoutScrollScope.getFirstVisibleItemIndex()) + 1;
+        if (((z && i > lazyLayoutScrollScope.getLastVisibleItemIndex()) || (!z && i < lazyLayoutScrollScope.getFirstVisibleItemIndex())) && Math.abs(i - lazyLayoutScrollScope.getFirstVisibleItemIndex()) >= 3) {
+            if (z) {
+                coerceAtMost = RangesKt.coerceAtLeast(i - lastVisibleItemIndex, lazyLayoutScrollScope.getFirstVisibleItemIndex());
+            } else {
+                coerceAtMost = RangesKt.coerceAtMost(lastVisibleItemIndex + i, lazyLayoutScrollScope.getFirstVisibleItemIndex());
+            }
+            lazyLayoutScrollScope.snapToItem(coerceAtMost, 0);
+        }
+        float calculateScrollDistanceTo = calculateScrollDistanceTo(pagerState, pagerState.getCurrentPage(), i) + f;
+        final Ref.FloatRef floatRef = new Ref.FloatRef();
+        Object animate$default = SuspendAnimationKt.animate$default(0.0f, calculateScrollDistanceTo, 0.0f, animationSpec, new Function2() { // from class: androidx.compose.material3.carousel.CarouselStateKt$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function2
+            public final Object invoke(Object obj, Object obj2) {
+                Unit animateScrollToPage$lambda$3;
+                animateScrollToPage$lambda$3 = CarouselStateKt.animateScrollToPage$lambda$3(Ref.FloatRef.this, lazyLayoutScrollScope, ((Float) obj).floatValue(), ((Float) obj2).floatValue());
+                return animateScrollToPage$lambda$3;
+            }
+        }, continuation, 4, null);
+        return animate$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? animate$default : Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit animateScrollToPage$lambda$3(Ref.FloatRef floatRef, LazyLayoutScrollScope lazyLayoutScrollScope, float f, float f2) {
+        floatRef.element += lazyLayoutScrollScope.scrollBy(f - floatRef.element);
+        return Unit.INSTANCE;
+    }
+
+    private static final float calculateScrollDistanceTo(PagerState pagerState, int i, int i2) {
+        int mo1150getViewportSizeYbymL2g = (int) (pagerState.getLayoutInfo().getOrientation() == Orientation.Horizontal ? pagerState.getLayoutInfo().mo1150getViewportSizeYbymL2g() >> 32 : pagerState.getLayoutInfo().mo1150getViewportSizeYbymL2g() & 4294967295L);
+        return ((i2 - i) * (pagerState.getLayoutInfo().getPageSize() + pagerState.getLayoutInfo().getPageSpacing())) + (pagerState.getLayoutInfo().getSnapPosition().position(mo1150getViewportSizeYbymL2g, pagerState.getLayoutInfo().getPageSize(), pagerState.getLayoutInfo().getBeforeContentPadding(), pagerState.getLayoutInfo().getAfterContentPadding(), i, pagerState.getPageCount()) - pagerState.getLayoutInfo().getSnapPosition().position(mo1150getViewportSizeYbymL2g, pagerState.getLayoutInfo().getPageSize(), pagerState.getLayoutInfo().getBeforeContentPadding(), pagerState.getLayoutInfo().getAfterContentPadding(), i2, pagerState.getPageCount()));
     }
 }

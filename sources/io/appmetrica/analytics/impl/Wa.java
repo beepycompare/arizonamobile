@@ -1,39 +1,13 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public interface Wa extends Ul {
+    @Override // io.appmetrica.analytics.impl.Ul
+    /* synthetic */ void a(Nl nl, C0356jm c0356jm);
 
-import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
-/* loaded from: classes4.dex */
-public final class Wa implements HostRetryInfoProvider {
+    void a(W5 w5);
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0612tf f727a;
-    public final EnumC0486oe b;
+    @Override // io.appmetrica.analytics.impl.Ul
+    /* synthetic */ void a(C0356jm c0356jm);
 
-    public Wa(C0612tf c0612tf, EnumC0486oe enumC0486oe) {
-        this.f727a = c0612tf;
-        this.b = enumC0486oe;
-    }
-
-    public final EnumC0486oe a() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
-    public final long getLastAttemptTimeSeconds() {
-        return this.f727a.a(this.b, 0L);
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
-    public final int getNextSendAttemptNumber() {
-        return this.f727a.a(this.b, 1);
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
-    public final void saveLastAttemptTimeSeconds(long j) {
-        this.f727a.b(this.b, j).b();
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
-    public final void saveNextSendAttemptNumber(int i) {
-        this.f727a.b(this.b, i).b();
-    }
+    void a(C0639v4 c0639v4);
 }

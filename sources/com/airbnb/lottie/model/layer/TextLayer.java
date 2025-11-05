@@ -26,6 +26,7 @@ import com.airbnb.lottie.model.content.TextRangeUnits;
 import com.airbnb.lottie.utils.DropShadow;
 import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.LottieValueCallback;
+import java.text.Bidi;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -33,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 /* loaded from: classes3.dex */
 public class TextLayer extends BaseLayer {
+    private final StringBuilder charStringBuilder;
+    private final List<String> charStrings;
     private final LongSparseArray<String> codePointCache;
     private BaseKeyframeAnimation<Integer, Integer> colorAnimation;
     private BaseKeyframeAnimation<Integer, Integer> colorCallbackAnimation;
@@ -43,6 +46,8 @@ public class TextLayer extends BaseLayer {
     private final Matrix matrix;
     private BaseKeyframeAnimation<Integer, Integer> opacityAnimation;
     private final RectF rectF;
+    private final StringBuilder reorderingStringBuilder;
+    private final StringBuilder reversingStringBuilder;
     private final StringBuilder stringBuilder;
     private BaseKeyframeAnimation<Integer, Integer> strokeColorAnimation;
     private BaseKeyframeAnimation<Integer, Integer> strokeColorCallbackAnimation;
@@ -64,6 +69,9 @@ public class TextLayer extends BaseLayer {
     public TextLayer(LottieDrawable lottieDrawable, Layer layer) {
         super(lottieDrawable, layer);
         this.stringBuilder = new StringBuilder(2);
+        this.charStringBuilder = new StringBuilder(0);
+        this.reorderingStringBuilder = new StringBuilder(0);
+        this.reversingStringBuilder = new StringBuilder(0);
         this.rectF = new RectF();
         this.matrix = new Matrix();
         this.fillPaint = new Paint(1) { // from class: com.airbnb.lottie.model.layer.TextLayer.1
@@ -78,6 +86,7 @@ public class TextLayer extends BaseLayer {
         };
         this.contentsForCharacter = new HashMap();
         this.codePointCache = new LongSparseArray<>();
+        this.charStrings = new ArrayList();
         this.textSubLines = new ArrayList();
         this.textRangeUnits = TextRangeUnits.INDEX;
         this.lottieDrawable = lottieDrawable;
@@ -383,9 +392,13 @@ public class TextLayer extends BaseLayer {
                     i4++;
                     canvas.save();
                     if (textLayer.offsetCanvas(canvas, documentData2, i4, (textLayer.textAnimation == null && textLayer.textSizeCallbackAnimation == null && textLayer.trackingCallbackAnimation == null) ? textSubLine.width : textLayer.fillPaint.measureText(textSubLine.text))) {
+                        String str2 = textSubLine.text;
+                        if (Bidi.requiresBidi(str2.toCharArray(), 0, str2.length())) {
+                            str2 = textLayer.reorderLineVisually(str2);
+                        }
                         f2 = f4;
                         i3 = i5;
-                        textLayer.drawFontTextLine(textSubLine.text, documentData2, canvas, f2, i3, i);
+                        textLayer.drawFontTextLine(str2, documentData2, canvas, f2, i3, i);
                     } else {
                         f2 = f4;
                         i3 = i5;
@@ -475,17 +488,65 @@ public class TextLayer extends BaseLayer {
     }
 
     private void drawFontTextLine(String str, DocumentData documentData, Canvas canvas, float f, int i, int i2) {
+        this.charStrings.clear();
         int i3 = 0;
         while (i3 < str.length()) {
             String codePointToString = codePointToString(str, i3);
-            DocumentData documentData2 = documentData;
-            Canvas canvas2 = canvas;
-            drawCharacterFromFont(codePointToString, documentData2, canvas2, i + i3, i2);
-            canvas2.translate(this.fillPaint.measureText(codePointToString) + f, 0.0f);
+            this.charStrings.add(codePointToString);
             i3 += codePointToString.length();
-            documentData = documentData2;
-            canvas = canvas2;
         }
+        int i4 = 0;
+        while (i4 < this.charStrings.size()) {
+            this.charStringBuilder.setLength(0);
+            this.charStringBuilder.append(this.charStrings.get(i4));
+            int i5 = i4 + 1;
+            while (i5 < this.charStrings.size()) {
+                String str2 = this.charStrings.get(i5);
+                if (isJoiningRightToLeft(str2)) {
+                    this.charStringBuilder.insert(0, str2);
+                    i5++;
+                }
+            }
+            String sb = this.charStringBuilder.toString();
+            DocumentData documentData2 = documentData;
+            drawCharacterFromFont(sb, documentData2, canvas, i + i4, i2);
+            canvas.translate(this.fillPaint.measureText(sb) + f, 0.0f);
+            i4 = i5;
+            documentData = documentData2;
+        }
+    }
+
+    private String reorderLineVisually(String str) {
+        Bidi bidi = new Bidi(str, -2);
+        int runCount = bidi.getRunCount();
+        byte[] bArr = new byte[runCount];
+        Integer[] numArr = new Integer[runCount];
+        for (int i = 0; i < runCount; i++) {
+            bArr[i] = (byte) bidi.getRunLevel(i);
+            numArr[i] = Integer.valueOf(i);
+        }
+        Bidi.reorderVisually(bArr, 0, numArr, 0, runCount);
+        this.reorderingStringBuilder.setLength(0);
+        for (int i2 = 0; i2 < runCount; i2++) {
+            int intValue = numArr[i2].intValue();
+            int runStart = bidi.getRunStart(intValue);
+            int runLimit = bidi.getRunLimit(intValue);
+            int runLevel = bidi.getRunLevel(intValue);
+            String substring = str.substring(runStart, runLimit);
+            if ((runLevel & 1) == 0) {
+                this.reorderingStringBuilder.append(substring);
+            } else {
+                this.reversingStringBuilder.setLength(0);
+                int i3 = 0;
+                while (i3 < substring.length()) {
+                    String codePointToString = codePointToString(substring, i3);
+                    this.reversingStringBuilder.insert(0, codePointToString);
+                    i3 += codePointToString.length();
+                }
+                this.reorderingStringBuilder.append((CharSequence) this.reversingStringBuilder);
+            }
+        }
+        return this.reorderingStringBuilder.toString();
     }
 
     private List<TextSubLine> splitGlyphTextIntoLines(String str, float f, Font font, float f2, float f3, boolean z) {
@@ -646,6 +707,15 @@ public class TextLayer extends BaseLayer {
 
     private boolean isModifier(int i) {
         return Character.getType(i) == 16 || Character.getType(i) == 27 || Character.getType(i) == 6 || Character.getType(i) == 28 || Character.getType(i) == 8 || Character.getType(i) == 19;
+    }
+
+    private boolean isJoiningRightToLeft(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.getDirectionality(str.codePointAt(i)) == 2) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override // com.airbnb.lottie.model.layer.BaseLayer, com.airbnb.lottie.model.KeyPathElement

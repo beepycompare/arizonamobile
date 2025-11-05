@@ -3,6 +3,7 @@ package ru.mrlargha.feature.arizona.cases;
 import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
+import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -37,7 +38,7 @@ import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesPrizeModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {0, 1}, l = {186, 185, 200}, m = "invokeSuspend", n = {"authModel", "authModel"}, s = {"L$0", "L$0"}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {0, 1}, l = {198, DownloaderService.STATUS_QUEUED_FOR_WIFI, 212}, m = "invokeSuspend", n = {"authModel", "authModel"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes6.dex */
 public final class CasesScreen$setCollectors$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -198,6 +199,7 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
             CasesSharedPreference casesSharedPreference2;
             List<CasesModel> component1 = pair.component1();
             final CasesInfoModel component2 = pair.component2();
+            Log.d("Case", "setCollectors: ");
             if (component2 != null) {
                 List<CasesModel> list = component1;
                 if (!(list instanceof Collection) || !list.isEmpty()) {

@@ -1,24 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
-public final class Y7 {
+/* loaded from: classes3.dex */
+public enum Y7 {
+    b("UNDEFINED"),
+    c("APP"),
+    d("SATELLITE"),
+    e("RETAIL");
+    
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0328ib f754a;
-    public String b = "";
+    public final String f767a;
 
-    public Y7(InterfaceC0328ib interfaceC0328ib) {
-        this.f754a = interfaceC0328ib;
-    }
-
-    public final void a(String str, boolean z) {
-        if (str != null) {
-            if ((str.length() > 0 ? str : null) == null || Intrinsics.areEqual(this.b, str)) {
-                return;
-            }
-            this.b = str;
-            this.f754a.a(str, z);
-        }
+    Y7(String str) {
+        this.f767a = str;
     }
 }

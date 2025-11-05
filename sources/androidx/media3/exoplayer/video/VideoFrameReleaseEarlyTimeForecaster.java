@@ -4,7 +4,7 @@ import android.util.Range;
 import androidx.media3.common.C;
 import androidx.media3.common.util.Assertions;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 class VideoFrameReleaseEarlyTimeForecaster {
     private static final float SMOOTHING_FACTOR = 0.2f;
     private double derivativeOfEarlyTime;

@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgz extends zzos {
     public zzgz(zzpg zzpgVar) {
         super(zzpgVar);

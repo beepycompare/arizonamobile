@@ -17,15 +17,15 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SemanticsNodeKt {
     public static final SemanticsNode SemanticsNode(LayoutNode layoutNode, boolean z) {
         NodeChain nodes$ui_release = layoutNode.getNodes$ui_release();
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(8);
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(8);
         SemanticsModifierNode semanticsModifierNode = null;
-        if ((nodes$ui_release.getAggregateChildKindSet() & m6258constructorimpl) != 0) {
+        if ((nodes$ui_release.getAggregateChildKindSet() & m6988constructorimpl) != 0) {
             Modifier.Node head$ui_release = nodes$ui_release.getHead$ui_release();
             loop0: while (true) {
                 if (head$ui_release == null) {
                     break;
                 }
-                if ((head$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                if ((head$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                     Modifier.Node node = head$ui_release;
                     MutableVector mutableVector = null;
                     while (node != null) {
@@ -33,10 +33,10 @@ public final class SemanticsNodeKt {
                             semanticsModifierNode = node;
                             break loop0;
                         }
-                        if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui_release;
@@ -62,7 +62,7 @@ public final class SemanticsNodeKt {
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui_release.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
+                if ((head$ui_release.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
                     break;
                 }
                 head$ui_release = head$ui_release.getChild$ui_release();

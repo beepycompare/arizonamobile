@@ -3,7 +3,7 @@ package androidx.media3.extractor.flv;
 import androidx.media3.common.ParserException;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.TrackOutput;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 abstract class TagPayloadReader {
     protected final TrackOutput output;
 
@@ -13,7 +13,7 @@ abstract class TagPayloadReader {
 
     public abstract void seek();
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class UnsupportedFormatException extends ParserException {
         public UnsupportedFormatException(String str) {
             super(str, null, false, 1);

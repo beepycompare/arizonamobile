@@ -1265,7 +1265,7 @@ public final class BasicTextFieldKt {
                                     }
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     EffectsKt.DisposableEffect(textFieldSelectionState, (Function1) rememberedValue10, startRestartGroup, 0);
-                                    final boolean z20 = (z14 || KeyboardType.m6948equalsimpl0(keyboardOptions4.m1285getKeyboardTypePjHm6EE(), KeyboardType.Companion.m6967getPasswordPjHm6EE()) || KeyboardType.m6948equalsimpl0(keyboardOptions4.m1285getKeyboardTypePjHm6EE(), KeyboardType.Companion.m6966getNumberPasswordPjHm6EE())) ? false : true;
+                                    final boolean z20 = (z14 || KeyboardType.m7679equalsimpl0(keyboardOptions4.m1285getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7698getPasswordPjHm6EE()) || KeyboardType.m7679equalsimpl0(keyboardOptions4.m1285getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7697getNumberPasswordPjHm6EE())) ? false : true;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -204081328, "CC(remember):BasicTextField.kt#9igjgp");
                                     boolean changed5 = startRestartGroup.changed(z20) | startRestartGroup.changedInstance(mutableSharedFlow);
                                     Object rememberedValue11 = startRestartGroup.rememberedValue();
@@ -1302,15 +1302,15 @@ public final class BasicTextFieldKt {
                                     } else {
                                         startRestartGroup.useNode();
                                     }
-                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                                    Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                                    Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                        m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                        m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                     }
-                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1520421984, "C451@24194L3042,451@24144L3092:BasicTextField.kt#423gt5");
@@ -1405,15 +1405,15 @@ public final class BasicTextFieldKt {
                                                     } else {
                                                         composer4.useNode();
                                                     }
-                                                    Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
-                                                    Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                    Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                    Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer4);
+                                                    Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                    Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                    if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                                                        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                                                        m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+                                                    if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                                                        m4597constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                                                        m4597constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
                                                     }
-                                                    Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                    Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                     ComposerKt.sourceInformationMarkerStart(composer4, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                                                     BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                                                     ComposerKt.sourceInformationMarkerStart(composer4, -811364182, "C491@26181L530:BasicTextField.kt#423gt5");
@@ -2035,7 +2035,7 @@ public final class BasicTextFieldKt {
 
     static {
         float f = 40;
-        MinTouchTargetSizeForHandles = DpKt.m7286DpSizeYgX7TsA(Dp.m7264constructorimpl(f), Dp.m7264constructorimpl(f));
+        MinTouchTargetSizeForHandles = DpKt.m8017DpSizeYgX7TsA(Dp.m7995constructorimpl(f), Dp.m7995constructorimpl(f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2351,7 +2351,7 @@ public final class BasicTextFieldKt {
                                     if (i22 != 0) {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         i29 = i6;
-                                        solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
+                                        solidColor = new SolidColor(Color.Companion.m5305getBlack0d7_KjU(), null);
                                     } else {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         i29 = i6;
@@ -2402,10 +2402,10 @@ public final class BasicTextFieldKt {
                                 }
                                 final MutableState mutableState = (MutableState) rememberedValue2;
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                final TextFieldValue m6973copy3r_uNRQ$default = TextFieldValue.m6973copy3r_uNRQ$default(BasicTextField$lambda$38(mutableState), str, 0L, (TextRange) null, 6, (Object) null);
+                                final TextFieldValue m7704copy3r_uNRQ$default = TextFieldValue.m7704copy3r_uNRQ$default(BasicTextField$lambda$38(mutableState), str, 0L, (TextRange) null, 6, (Object) null);
                                 KeyboardActions keyboardActions6 = keyboardActions4;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2015285970, "CC(remember):BasicTextField.kt#9igjgp");
-                                boolean changed = startRestartGroup.changed(m6973copy3r_uNRQ$default);
+                                boolean changed = startRestartGroup.changed(m7704copy3r_uNRQ$default);
                                 Object rememberedValue3 = startRestartGroup.rememberedValue();
                                 if (changed) {
                                     modifier4 = modifier3;
@@ -2455,7 +2455,7 @@ public final class BasicTextFieldKt {
                                 int i41 = i38 << 9;
                                 Modifier modifier5 = modifier4;
                                 composer2 = startRestartGroup;
-                                CoreTextFieldKt.CoreTextField(m6973copy3r_uNRQ$default, (Function1) rememberedValue5, modifier5, textStyle3, visualTransformation3, function15, mutableInteractionSource4, brush3, z14, i40, i39, imeOptions$foundation_release, keyboardActions6, z10, z11, function33, null, composer2, (i6 & 896) | ((i6 >> 6) & 7168) | (57344 & i41) | (458752 & i41) | (3670016 & i41) | (i41 & 29360128), ((i6 >> 15) & 896) | (i6 & 7168) | (i6 & 57344) | (i38 & 458752), 65536);
+                                CoreTextFieldKt.CoreTextField(m7704copy3r_uNRQ$default, (Function1) rememberedValue5, modifier5, textStyle3, visualTransformation3, function15, mutableInteractionSource4, brush3, z14, i40, i39, imeOptions$foundation_release, keyboardActions6, z10, z11, function33, null, composer2, (i6 & 896) | ((i6 >> 6) & 7168) | (57344 & i41) | (458752 & i41) | (3670016 & i41) | (i41 & 29360128), ((i6 >> 15) & 896) | (i6 & 7168) | (i6 & 57344) | (i38 & 458752), 65536);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -2658,7 +2658,7 @@ public final class BasicTextFieldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicTextField$lambda$41$lambda$40(TextFieldValue textFieldValue, MutableState mutableState) {
-        if (!TextRange.m6719equalsimpl0(textFieldValue.m6977getSelectiond9O1mEE(), BasicTextField$lambda$38(mutableState).m6977getSelectiond9O1mEE()) || !Intrinsics.areEqual(textFieldValue.m6976getCompositionMzsxiRA(), BasicTextField$lambda$38(mutableState).m6976getCompositionMzsxiRA())) {
+        if (!TextRange.m7450equalsimpl0(textFieldValue.m7708getSelectiond9O1mEE(), BasicTextField$lambda$38(mutableState).m7708getSelectiond9O1mEE()) || !Intrinsics.areEqual(textFieldValue.m7707getCompositionMzsxiRA(), BasicTextField$lambda$38(mutableState).m7707getCompositionMzsxiRA())) {
             mutableState.setValue(textFieldValue);
         }
         return Unit.INSTANCE;
@@ -2988,7 +2988,7 @@ public final class BasicTextFieldKt {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         z9 = z13;
                                         i29 = i6;
-                                        solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
+                                        solidColor = new SolidColor(Color.Companion.m5305getBlack0d7_KjU(), null);
                                     } else {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         z9 = z13;
@@ -3545,7 +3545,7 @@ public final class BasicTextFieldKt {
                                 }
                                 if (i27 != 0) {
                                     composer2 = startRestartGroup;
-                                    solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
+                                    solidColor = new SolidColor(Color.Companion.m5305getBlack0d7_KjU(), null);
                                     i28 = i24;
                                 } else {
                                     composer2 = startRestartGroup;
@@ -4061,7 +4061,7 @@ public final class BasicTextFieldKt {
                                 }
                                 if (i27 != 0) {
                                     composer2 = startRestartGroup;
-                                    solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
+                                    solidColor = new SolidColor(Color.Companion.m5305getBlack0d7_KjU(), null);
                                     i28 = i24;
                                 } else {
                                     composer2 = startRestartGroup;

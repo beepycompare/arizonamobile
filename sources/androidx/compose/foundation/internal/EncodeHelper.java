@@ -34,54 +34,54 @@ public final class EncodeHelper {
     }
 
     public final void encode(SpanStyle spanStyle) {
-        if (!Color.m4550equalsimpl0(spanStyle.m6667getColor0d7_KjU(), Color.Companion.m4585getUnspecified0d7_KjU())) {
+        if (!Color.m5280equalsimpl0(spanStyle.m7398getColor0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU())) {
             encode((byte) 1);
-            m648encode8_81llA(spanStyle.m6667getColor0d7_KjU());
+            m648encode8_81llA(spanStyle.m7398getColor0d7_KjU());
         }
-        if (!TextUnit.m7455equalsimpl0(spanStyle.m6668getFontSizeXSAIIZE(), TextUnit.Companion.m7469getUnspecifiedXSAIIZE())) {
+        if (!TextUnit.m8186equalsimpl0(spanStyle.m7399getFontSizeXSAIIZE(), TextUnit.Companion.m8200getUnspecifiedXSAIIZE())) {
             encode((byte) 2);
-            m645encodeR2X_6o(spanStyle.m6668getFontSizeXSAIIZE());
+            m645encodeR2X_6o(spanStyle.m7399getFontSizeXSAIIZE());
         }
         FontWeight fontWeight = spanStyle.getFontWeight();
         if (fontWeight != null) {
             encode((byte) 3);
             encode(fontWeight);
         }
-        FontStyle m6669getFontStyle4Lr2A7w = spanStyle.m6669getFontStyle4Lr2A7w();
-        if (m6669getFontStyle4Lr2A7w != null) {
-            int m6842unboximpl = m6669getFontStyle4Lr2A7w.m6842unboximpl();
+        FontStyle m7400getFontStyle4Lr2A7w = spanStyle.m7400getFontStyle4Lr2A7w();
+        if (m7400getFontStyle4Lr2A7w != null) {
+            int m7573unboximpl = m7400getFontStyle4Lr2A7w.m7573unboximpl();
             encode((byte) 4);
-            m650encodenzbMABs(m6842unboximpl);
+            m650encodenzbMABs(m7573unboximpl);
         }
-        FontSynthesis m6670getFontSynthesisZQGJjVo = spanStyle.m6670getFontSynthesisZQGJjVo();
-        if (m6670getFontSynthesisZQGJjVo != null) {
-            int m6855unboximpl = m6670getFontSynthesisZQGJjVo.m6855unboximpl();
+        FontSynthesis m7401getFontSynthesisZQGJjVo = spanStyle.m7401getFontSynthesisZQGJjVo();
+        if (m7401getFontSynthesisZQGJjVo != null) {
+            int m7586unboximpl = m7401getFontSynthesisZQGJjVo.m7586unboximpl();
             encode((byte) 5);
-            m647encode6p3vJLY(m6855unboximpl);
+            m647encode6p3vJLY(m7586unboximpl);
         }
         String fontFeatureSettings = spanStyle.getFontFeatureSettings();
         if (fontFeatureSettings != null) {
             encode((byte) 6);
             encode(fontFeatureSettings);
         }
-        if (!TextUnit.m7455equalsimpl0(spanStyle.m6671getLetterSpacingXSAIIZE(), TextUnit.Companion.m7469getUnspecifiedXSAIIZE())) {
+        if (!TextUnit.m8186equalsimpl0(spanStyle.m7402getLetterSpacingXSAIIZE(), TextUnit.Companion.m8200getUnspecifiedXSAIIZE())) {
             encode((byte) 7);
-            m645encodeR2X_6o(spanStyle.m6671getLetterSpacingXSAIIZE());
+            m645encodeR2X_6o(spanStyle.m7402getLetterSpacingXSAIIZE());
         }
-        BaselineShift m6666getBaselineShift5SSeXJ0 = spanStyle.m6666getBaselineShift5SSeXJ0();
-        if (m6666getBaselineShift5SSeXJ0 != null) {
-            float m7026unboximpl = m6666getBaselineShift5SSeXJ0.m7026unboximpl();
+        BaselineShift m7397getBaselineShift5SSeXJ0 = spanStyle.m7397getBaselineShift5SSeXJ0();
+        if (m7397getBaselineShift5SSeXJ0 != null) {
+            float m7757unboximpl = m7397getBaselineShift5SSeXJ0.m7757unboximpl();
             encode((byte) 8);
-            m646encode4Dl_Bck(m7026unboximpl);
+            m646encode4Dl_Bck(m7757unboximpl);
         }
         TextGeometricTransform textGeometricTransform = spanStyle.getTextGeometricTransform();
         if (textGeometricTransform != null) {
             encode((byte) 9);
             encode(textGeometricTransform);
         }
-        if (!Color.m4550equalsimpl0(spanStyle.m6665getBackground0d7_KjU(), Color.Companion.m4585getUnspecified0d7_KjU())) {
+        if (!Color.m5280equalsimpl0(spanStyle.m7396getBackground0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU())) {
             encode((byte) 10);
-            m648encode8_81llA(spanStyle.m6665getBackground0d7_KjU());
+            m648encode8_81llA(spanStyle.m7396getBackground0d7_KjU());
         }
         TextDecoration textDecoration = spanStyle.getTextDecoration();
         if (textDecoration != null) {
@@ -102,20 +102,20 @@ public final class EncodeHelper {
 
     /* renamed from: encode--R2X_6o  reason: not valid java name */
     public final void m645encodeR2X_6o(long j) {
-        long m7457getTypeUIouoOA = TextUnit.m7457getTypeUIouoOA(j);
+        long m8188getTypeUIouoOA = TextUnit.m8188getTypeUIouoOA(j);
         byte b = 0;
-        if (!TextUnitType.m7486equalsimpl0(m7457getTypeUIouoOA, TextUnitType.Companion.m7492getUnspecifiedUIouoOA())) {
-            if (TextUnitType.m7486equalsimpl0(m7457getTypeUIouoOA, TextUnitType.Companion.m7491getSpUIouoOA())) {
+        if (!TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8223getUnspecifiedUIouoOA())) {
+            if (TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8222getSpUIouoOA())) {
                 b = 1;
-            } else if (TextUnitType.m7486equalsimpl0(m7457getTypeUIouoOA, TextUnitType.Companion.m7490getEmUIouoOA())) {
+            } else if (TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8221getEmUIouoOA())) {
                 b = 2;
             }
         }
         encode(b);
-        if (TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(j), TextUnitType.Companion.m7492getUnspecifiedUIouoOA())) {
+        if (TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(j), TextUnitType.Companion.m8223getUnspecifiedUIouoOA())) {
             return;
         }
-        encode(TextUnit.m7458getValueimpl(j));
+        encode(TextUnit.m8189getValueimpl(j));
     }
 
     public final void encode(FontWeight fontWeight) {
@@ -125,7 +125,7 @@ public final class EncodeHelper {
     /* renamed from: encode-nzbMABs  reason: not valid java name */
     public final void m650encodenzbMABs(int i) {
         byte b = 0;
-        if (!FontStyle.m6839equalsimpl0(i, FontStyle.Companion.m6846getNormal_LCdwA()) && FontStyle.m6839equalsimpl0(i, FontStyle.Companion.m6845getItalic_LCdwA())) {
+        if (!FontStyle.m7570equalsimpl0(i, FontStyle.Companion.m7577getNormal_LCdwA()) && FontStyle.m7570equalsimpl0(i, FontStyle.Companion.m7576getItalic_LCdwA())) {
             b = 1;
         }
         encode(b);
@@ -134,12 +134,12 @@ public final class EncodeHelper {
     /* renamed from: encode-6p3vJLY  reason: not valid java name */
     public final void m647encode6p3vJLY(int i) {
         byte b = 0;
-        if (!FontSynthesis.m6850equalsimpl0(i, FontSynthesis.Companion.m6857getNoneGVVA2EU())) {
-            if (FontSynthesis.m6850equalsimpl0(i, FontSynthesis.Companion.m6856getAllGVVA2EU())) {
+        if (!FontSynthesis.m7581equalsimpl0(i, FontSynthesis.Companion.m7588getNoneGVVA2EU())) {
+            if (FontSynthesis.m7581equalsimpl0(i, FontSynthesis.Companion.m7587getAllGVVA2EU())) {
                 b = 1;
-            } else if (FontSynthesis.m6850equalsimpl0(i, FontSynthesis.Companion.m6859getWeightGVVA2EU())) {
+            } else if (FontSynthesis.m7581equalsimpl0(i, FontSynthesis.Companion.m7590getWeightGVVA2EU())) {
                 b = 2;
-            } else if (FontSynthesis.m6850equalsimpl0(i, FontSynthesis.Companion.m6858getStyleGVVA2EU())) {
+            } else if (FontSynthesis.m7581equalsimpl0(i, FontSynthesis.Companion.m7589getStyleGVVA2EU())) {
                 b = 3;
             }
         }
@@ -161,9 +161,9 @@ public final class EncodeHelper {
     }
 
     public final void encode(Shadow shadow) {
-        m648encode8_81llA(shadow.m4889getColor0d7_KjU());
-        encode(Float.intBitsToFloat((int) (shadow.m4890getOffsetF1C5BW0() >> 32)));
-        encode(Float.intBitsToFloat((int) (shadow.m4890getOffsetF1C5BW0() & 4294967295L)));
+        m648encode8_81llA(shadow.m5619getColor0d7_KjU());
+        encode(Float.intBitsToFloat((int) (shadow.m5620getOffsetF1C5BW0() >> 32)));
+        encode(Float.intBitsToFloat((int) (shadow.m5620getOffsetF1C5BW0() & 4294967295L)));
         encode(shadow.getBlurRadius());
     }
 

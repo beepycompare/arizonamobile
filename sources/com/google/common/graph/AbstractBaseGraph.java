@@ -83,38 +83,38 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
                 return Iterators.unmodifiableIterator(Iterators.concat(Iterators.transform(this.graph.predecessors((BaseGraph<N>) this.node).iterator(), new Function() { // from class: com.google.common.graph.AbstractBaseGraph$2$$ExternalSyntheticLambda0
                     @Override // com.google.common.base.Function
                     public final Object apply(Object obj) {
-                        return AbstractBaseGraph.AnonymousClass2.this.m8808lambda$iterator$0$comgooglecommongraphAbstractBaseGraph$2(obj);
+                        return AbstractBaseGraph.AnonymousClass2.this.m9546lambda$iterator$0$comgooglecommongraphAbstractBaseGraph$2(obj);
                     }
                 }), Iterators.transform(Sets.difference(this.graph.successors((BaseGraph<N>) this.node), ImmutableSet.of(this.node)).iterator(), new Function() { // from class: com.google.common.graph.AbstractBaseGraph$2$$ExternalSyntheticLambda1
                     @Override // com.google.common.base.Function
                     public final Object apply(Object obj) {
-                        return AbstractBaseGraph.AnonymousClass2.this.m8809lambda$iterator$1$comgooglecommongraphAbstractBaseGraph$2(obj);
+                        return AbstractBaseGraph.AnonymousClass2.this.m9547lambda$iterator$1$comgooglecommongraphAbstractBaseGraph$2(obj);
                     }
                 })));
             }
             return Iterators.unmodifiableIterator(Iterators.transform(this.graph.adjacentNodes(this.node).iterator(), new Function() { // from class: com.google.common.graph.AbstractBaseGraph$2$$ExternalSyntheticLambda2
                 @Override // com.google.common.base.Function
                 public final Object apply(Object obj) {
-                    return AbstractBaseGraph.AnonymousClass2.this.m8810lambda$iterator$2$comgooglecommongraphAbstractBaseGraph$2(obj);
+                    return AbstractBaseGraph.AnonymousClass2.this.m9548lambda$iterator$2$comgooglecommongraphAbstractBaseGraph$2(obj);
                 }
             }));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$iterator$0$com-google-common-graph-AbstractBaseGraph$2  reason: not valid java name */
-        public /* synthetic */ EndpointPair m8808lambda$iterator$0$comgooglecommongraphAbstractBaseGraph$2(Object obj) {
+        public /* synthetic */ EndpointPair m9546lambda$iterator$0$comgooglecommongraphAbstractBaseGraph$2(Object obj) {
             return EndpointPair.ordered(obj, this.node);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$iterator$1$com-google-common-graph-AbstractBaseGraph$2  reason: not valid java name */
-        public /* synthetic */ EndpointPair m8809lambda$iterator$1$comgooglecommongraphAbstractBaseGraph$2(Object obj) {
+        public /* synthetic */ EndpointPair m9547lambda$iterator$1$comgooglecommongraphAbstractBaseGraph$2(Object obj) {
             return EndpointPair.ordered(this.node, obj);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$iterator$2$com-google-common-graph-AbstractBaseGraph$2  reason: not valid java name */
-        public /* synthetic */ EndpointPair m8810lambda$iterator$2$comgooglecommongraphAbstractBaseGraph$2(Object obj) {
+        public /* synthetic */ EndpointPair m9548lambda$iterator$2$comgooglecommongraphAbstractBaseGraph$2(Object obj) {
             return EndpointPair.unordered(this.node, obj);
         }
     }
@@ -171,7 +171,7 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
         return InvalidatableSet.of((Set) set, (Supplier<Boolean>) new Supplier() { // from class: com.google.common.graph.AbstractBaseGraph$$ExternalSyntheticLambda2
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return AbstractBaseGraph.this.m8806xbbd68347(node);
+                return AbstractBaseGraph.this.m9544xbbd68347(node);
             }
         }, (Supplier<String>) new Supplier() { // from class: com.google.common.graph.AbstractBaseGraph$$ExternalSyntheticLambda3
             @Override // com.google.common.base.Supplier
@@ -185,7 +185,7 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$nodeInvalidatableSet$0$com-google-common-graph-AbstractBaseGraph  reason: not valid java name */
-    public /* synthetic */ Boolean m8806xbbd68347(Object obj) {
+    public /* synthetic */ Boolean m9544xbbd68347(Object obj) {
         return Boolean.valueOf(nodes().contains(obj));
     }
 
@@ -193,7 +193,7 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
         return InvalidatableSet.of((Set) set, (Supplier<Boolean>) new Supplier() { // from class: com.google.common.graph.AbstractBaseGraph$$ExternalSyntheticLambda0
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return AbstractBaseGraph.this.m8807xe4abd43(nodeU, nodeV);
+                return AbstractBaseGraph.this.m9545xe4abd43(nodeU, nodeV);
             }
         }, (Supplier<String>) new Supplier() { // from class: com.google.common.graph.AbstractBaseGraph$$ExternalSyntheticLambda1
             @Override // com.google.common.base.Supplier
@@ -207,7 +207,7 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$nodePairInvalidatableSet$2$com-google-common-graph-AbstractBaseGraph  reason: not valid java name */
-    public /* synthetic */ Boolean m8807xe4abd43(Object obj, Object obj2) {
+    public /* synthetic */ Boolean m9545xe4abd43(Object obj, Object obj2) {
         return Boolean.valueOf(nodes().contains(obj) && nodes().contains(obj2));
     }
 }

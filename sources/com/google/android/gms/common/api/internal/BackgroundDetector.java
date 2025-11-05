@@ -10,8 +10,8 @@ import com.google.android.gms.common.util.ProcessUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class BackgroundDetector implements Application.ActivityLifecycleCallbacks, ComponentCallbacks2 {
     private static final BackgroundDetector zza = new BackgroundDetector();
     private final AtomicBoolean zzb = new AtomicBoolean();
@@ -19,8 +19,8 @@ public final class BackgroundDetector implements Application.ActivityLifecycleCa
     private final ArrayList zzd = new ArrayList();
     private boolean zze = false;
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-    /* loaded from: classes3.dex */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* loaded from: classes4.dex */
     public interface BackgroundStateChangeListener {
         void onBackgroundStateChanged(boolean z);
     }
@@ -119,13 +119,14 @@ public final class BackgroundDetector implements Application.ActivityLifecycleCa
     }
 
     public boolean readCurrentStateIfPossible(boolean z) {
-        if (!this.zzc.get()) {
+        AtomicBoolean atomicBoolean = this.zzc;
+        if (!atomicBoolean.get()) {
             if (ProcessUtils.zza()) {
                 return z;
             }
             ActivityManager.RunningAppProcessInfo runningAppProcessInfo = new ActivityManager.RunningAppProcessInfo();
             ActivityManager.getMyMemoryState(runningAppProcessInfo);
-            if (!this.zzc.getAndSet(true) && runningAppProcessInfo.importance > 100) {
+            if (!atomicBoolean.getAndSet(true) && runningAppProcessInfo.importance > 100) {
                 this.zzb.set(true);
             }
         }

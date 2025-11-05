@@ -9,7 +9,7 @@ import androidx.media3.datasource.TransferListener;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class IcyDataSource implements DataSource {
     private int bytesUntilMetadata;
     private final Listener listener;
@@ -17,7 +17,7 @@ final class IcyDataSource implements DataSource {
     private final byte[] metadataLengthByteHolder;
     private final DataSource upstream;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onIcyMetadata(ParsableByteArray parsableByteArray);
     }

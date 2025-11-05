@@ -26,7 +26,7 @@ public final class TouchSlopDetector {
     }
 
     public /* synthetic */ TouchSlopDetector(Orientation orientation, long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : orientation, (i & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j, null);
+        this((i & 1) != 0 ? null : orientation, (i & 2) != 0 ? Offset.Companion.m5051getZeroF1C5BW0() : j, null);
     }
 
     /* renamed from: mainAxis-k-4lQ0M  reason: not valid java name */
@@ -42,34 +42,34 @@ public final class TouchSlopDetector {
     /* renamed from: addPointerInputChange-dBAh8RU  reason: not valid java name */
     public final long m609addPointerInputChangedBAh8RU(PointerInputChange pointerInputChange, float f) {
         float abs;
-        long m4310plusMKHz9U = Offset.m4310plusMKHz9U(this.totalPositionChange, Offset.m4309minusMKHz9U(pointerInputChange.m5839getPositionF1C5BW0(), pointerInputChange.m5840getPreviousPositionF1C5BW0()));
-        this.totalPositionChange = m4310plusMKHz9U;
+        long m5040plusMKHz9U = Offset.m5040plusMKHz9U(this.totalPositionChange, Offset.m5039minusMKHz9U(pointerInputChange.m6569getPositionF1C5BW0(), pointerInputChange.m6570getPreviousPositionF1C5BW0()));
+        this.totalPositionChange = m5040plusMKHz9U;
         if (this.orientation == null) {
-            abs = Offset.m4303getDistanceimpl(m4310plusMKHz9U);
+            abs = Offset.m5033getDistanceimpl(m5040plusMKHz9U);
         } else {
-            abs = Math.abs(m611mainAxisk4lQ0M(m4310plusMKHz9U));
+            abs = Math.abs(m611mainAxisk4lQ0M(m5040plusMKHz9U));
         }
         if (abs >= f) {
             return m608calculatePostSlopOffsettuRUvjQ(f);
         }
-        return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5050getUnspecifiedF1C5BW0();
     }
 
     public final void reset() {
-        this.totalPositionChange = Offset.Companion.m4321getZeroF1C5BW0();
+        this.totalPositionChange = Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     /* renamed from: calculatePostSlopOffset-tuRUvjQ  reason: not valid java name */
     private final long m608calculatePostSlopOffsettuRUvjQ(float f) {
         if (this.orientation == null) {
             long j = this.totalPositionChange;
-            return Offset.m4309minusMKHz9U(this.totalPositionChange, Offset.m4312timestuRUvjQ(Offset.m4300divtuRUvjQ(j, Offset.m4303getDistanceimpl(j)), f));
+            return Offset.m5039minusMKHz9U(this.totalPositionChange, Offset.m5042timestuRUvjQ(Offset.m5030divtuRUvjQ(j, Offset.m5033getDistanceimpl(j)), f));
         }
         float m611mainAxisk4lQ0M = m611mainAxisk4lQ0M(this.totalPositionChange) - (Math.signum(m611mainAxisk4lQ0M(this.totalPositionChange)) * f);
         float m610crossAxisk4lQ0M = m610crossAxisk4lQ0M(this.totalPositionChange);
         if (this.orientation == Orientation.Horizontal) {
-            return Offset.m4297constructorimpl((Float.floatToRawIntBits(m611mainAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m610crossAxisk4lQ0M) & 4294967295L));
+            return Offset.m5027constructorimpl((Float.floatToRawIntBits(m611mainAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m610crossAxisk4lQ0M) & 4294967295L));
         }
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(m610crossAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m611mainAxisk4lQ0M) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(m610crossAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m611mainAxisk4lQ0M) & 4294967295L));
     }
 }

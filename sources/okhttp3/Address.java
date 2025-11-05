@@ -17,7 +17,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.HttpUrl;
 import okhttp3.internal._UtilJvmKt;
 /* compiled from: Address.kt */
-@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000b\n\u0002\b\u0007\u0018\u00002\u00020\u0001B{\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\b\u0010\n\u001a\u0004\u0018\u00010\u000b\u0012\b\u0010\f\u001a\u0004\u0018\u00010\r\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\b\u0010\u0012\u001a\u0004\u0018\u00010\u0013\u0012\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015\u0012\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u0015\u0012\u0006\u0010\u0019\u001a\u00020\u001a¢\u0006\u0004\b\u001b\u0010\u001cJ\r\u0010%\u001a\u00020&H\u0007¢\u0006\u0002\b)J\r\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\b*J\r\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0002\b+J\r\u0010\u0010\u001a\u00020\u0011H\u0007¢\u0006\u0002\b,J\u0013\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0007¢\u0006\u0002\b-J\u0013\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u0015H\u0007¢\u0006\u0002\b.J\r\u0010\u0019\u001a\u00020\u001aH\u0007¢\u0006\u0002\b/J\u000f\u0010\u0012\u001a\u0004\u0018\u00010\u0013H\u0007¢\u0006\u0002\b0J\u000f\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0007¢\u0006\u0002\b1J\u000f\u0010\f\u001a\u0004\u0018\u00010\rH\u0007¢\u0006\u0002\b2J\u000f\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0007¢\u0006\u0002\b3J\u0013\u00104\u001a\u0002052\b\u00106\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u00107\u001a\u00020\u0005H\u0016J\u0015\u00108\u001a\u0002052\u0006\u00109\u001a\u00020\u0000H\u0000¢\u0006\u0002\b:J\b\u0010;\u001a\u00020\u0003H\u0016R\u0013\u0010\u0006\u001a\u00020\u00078G¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u001dR\u0013\u0010\b\u001a\u00020\t8G¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u001eR\u0015\u0010\n\u001a\u0004\u0018\u00010\u000b8G¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u001fR\u0015\u0010\f\u001a\u0004\u0018\u00010\r8G¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010 R\u0015\u0010\u000e\u001a\u0004\u0018\u00010\u000f8G¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010!R\u0013\u0010\u0010\u001a\u00020\u00118G¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\"R\u0015\u0010\u0012\u001a\u0004\u0018\u00010\u00138G¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010#R\u0013\u0010\u0019\u001a\u00020\u001a8G¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010$R\u0013\u0010%\u001a\u00020&8G¢\u0006\b\n\u0000\u001a\u0004\b%\u0010'R\u0019\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u00158G¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010(R\u0019\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u00158G¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010(¨\u0006<"}, d2 = {"Lokhttp3/Address;", "", "uriHost", "", "uriPort", "", "dns", "Lokhttp3/Dns;", "socketFactory", "Ljavax/net/SocketFactory;", "sslSocketFactory", "Ljavax/net/ssl/SSLSocketFactory;", "hostnameVerifier", "Ljavax/net/ssl/HostnameVerifier;", "certificatePinner", "Lokhttp3/CertificatePinner;", "proxyAuthenticator", "Lokhttp3/Authenticator;", "proxy", "Ljava/net/Proxy;", "protocols", "", "Lokhttp3/Protocol;", "connectionSpecs", "Lokhttp3/ConnectionSpec;", "proxySelector", "Ljava/net/ProxySelector;", "<init>", "(Ljava/lang/String;ILokhttp3/Dns;Ljavax/net/SocketFactory;Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/HostnameVerifier;Lokhttp3/CertificatePinner;Lokhttp3/Authenticator;Ljava/net/Proxy;Ljava/util/List;Ljava/util/List;Ljava/net/ProxySelector;)V", "()Lokhttp3/Dns;", "()Ljavax/net/SocketFactory;", "()Ljavax/net/ssl/SSLSocketFactory;", "()Ljavax/net/ssl/HostnameVerifier;", "()Lokhttp3/CertificatePinner;", "()Lokhttp3/Authenticator;", "()Ljava/net/Proxy;", "()Ljava/net/ProxySelector;", "url", "Lokhttp3/HttpUrl;", "()Lokhttp3/HttpUrl;", "()Ljava/util/List;", "-deprecated_url", "-deprecated_dns", "-deprecated_socketFactory", "-deprecated_proxyAuthenticator", "-deprecated_protocols", "-deprecated_connectionSpecs", "-deprecated_proxySelector", "-deprecated_proxy", "-deprecated_sslSocketFactory", "-deprecated_hostnameVerifier", "-deprecated_certificatePinner", "equals", "", "other", "hashCode", "equalsNonHost", "that", "equalsNonHost$okhttp", "toString", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000b\n\u0002\b\u0007\u0018\u00002\u00020\u0001B{\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\b\u0010\n\u001a\u0004\u0018\u00010\u000b\u0012\b\u0010\f\u001a\u0004\u0018\u00010\r\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\b\u0010\u0012\u001a\u0004\u0018\u00010\u0013\u0012\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015\u0012\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u0015\u0012\u0006\u0010\u0019\u001a\u00020\u001a¢\u0006\u0004\b\u001b\u0010\u001cJ\r\u0010%\u001a\u00020&H\u0007¢\u0006\u0002\b)J\r\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\b*J\r\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0002\b+J\r\u0010\u0010\u001a\u00020\u0011H\u0007¢\u0006\u0002\b,J\u0013\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0007¢\u0006\u0002\b-J\u0013\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u0015H\u0007¢\u0006\u0002\b.J\r\u0010\u0019\u001a\u00020\u001aH\u0007¢\u0006\u0002\b/J\u000f\u0010\u0012\u001a\u0004\u0018\u00010\u0013H\u0007¢\u0006\u0002\b0J\u000f\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0007¢\u0006\u0002\b1J\u000f\u0010\f\u001a\u0004\u0018\u00010\rH\u0007¢\u0006\u0002\b2J\u000f\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0007¢\u0006\u0002\b3J\u0013\u00104\u001a\u0002052\b\u00106\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u00107\u001a\u00020\u0005H\u0016J\u0015\u00108\u001a\u0002052\u0006\u00109\u001a\u00020\u0000H\u0000¢\u0006\u0002\b:J\b\u0010;\u001a\u00020\u0003H\u0016R\u0013\u0010\u0006\u001a\u00020\u00078\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u001dR\u0013\u0010\b\u001a\u00020\t8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u001eR\u0015\u0010\n\u001a\u0004\u0018\u00010\u000b8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u001fR\u0015\u0010\f\u001a\u0004\u0018\u00010\r8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010 R\u0015\u0010\u000e\u001a\u0004\u0018\u00010\u000f8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010!R\u0013\u0010\u0010\u001a\u00020\u00118\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\"R\u0015\u0010\u0012\u001a\u0004\u0018\u00010\u00138\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010#R\u0013\u0010\u0019\u001a\u00020\u001a8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010$R\u0013\u0010%\u001a\u00020&8\u0007¢\u0006\b\n\u0000\u001a\u0004\b%\u0010'R\u0019\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u00158\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010(R\u0019\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u00158\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010(¨\u0006<"}, d2 = {"Lokhttp3/Address;", "", "uriHost", "", "uriPort", "", "dns", "Lokhttp3/Dns;", "socketFactory", "Ljavax/net/SocketFactory;", "sslSocketFactory", "Ljavax/net/ssl/SSLSocketFactory;", "hostnameVerifier", "Ljavax/net/ssl/HostnameVerifier;", "certificatePinner", "Lokhttp3/CertificatePinner;", "proxyAuthenticator", "Lokhttp3/Authenticator;", "proxy", "Ljava/net/Proxy;", "protocols", "", "Lokhttp3/Protocol;", "connectionSpecs", "Lokhttp3/ConnectionSpec;", "proxySelector", "Ljava/net/ProxySelector;", "<init>", "(Ljava/lang/String;ILokhttp3/Dns;Ljavax/net/SocketFactory;Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/HostnameVerifier;Lokhttp3/CertificatePinner;Lokhttp3/Authenticator;Ljava/net/Proxy;Ljava/util/List;Ljava/util/List;Ljava/net/ProxySelector;)V", "()Lokhttp3/Dns;", "()Ljavax/net/SocketFactory;", "()Ljavax/net/ssl/SSLSocketFactory;", "()Ljavax/net/ssl/HostnameVerifier;", "()Lokhttp3/CertificatePinner;", "()Lokhttp3/Authenticator;", "()Ljava/net/Proxy;", "()Ljava/net/ProxySelector;", "url", "Lokhttp3/HttpUrl;", "()Lokhttp3/HttpUrl;", "()Ljava/util/List;", "-deprecated_url", "-deprecated_dns", "-deprecated_socketFactory", "-deprecated_proxyAuthenticator", "-deprecated_protocols", "-deprecated_connectionSpecs", "-deprecated_proxySelector", "-deprecated_proxy", "-deprecated_sslSocketFactory", "-deprecated_hostnameVerifier", "-deprecated_certificatePinner", "equals", "", "other", "hashCode", "equalsNonHost", "that", "equalsNonHost$okhttp", "toString", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Address {
     private final CertificatePinner certificatePinner;
@@ -99,67 +99,67 @@ public final class Address {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "url", imports = {}))
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final HttpUrl m10876deprecated_url() {
+    public final HttpUrl m11617deprecated_url() {
         return this.url;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "dns", imports = {}))
     /* renamed from: -deprecated_dns  reason: not valid java name */
-    public final Dns m10868deprecated_dns() {
+    public final Dns m11609deprecated_dns() {
         return this.dns;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "socketFactory", imports = {}))
     /* renamed from: -deprecated_socketFactory  reason: not valid java name */
-    public final SocketFactory m10874deprecated_socketFactory() {
+    public final SocketFactory m11615deprecated_socketFactory() {
         return this.socketFactory;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxyAuthenticator", imports = {}))
     /* renamed from: -deprecated_proxyAuthenticator  reason: not valid java name */
-    public final Authenticator m10872deprecated_proxyAuthenticator() {
+    public final Authenticator m11613deprecated_proxyAuthenticator() {
         return this.proxyAuthenticator;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "protocols", imports = {}))
     /* renamed from: -deprecated_protocols  reason: not valid java name */
-    public final List<Protocol> m10870deprecated_protocols() {
+    public final List<Protocol> m11611deprecated_protocols() {
         return this.protocols;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "connectionSpecs", imports = {}))
     /* renamed from: -deprecated_connectionSpecs  reason: not valid java name */
-    public final List<ConnectionSpec> m10867deprecated_connectionSpecs() {
+    public final List<ConnectionSpec> m11608deprecated_connectionSpecs() {
         return this.connectionSpecs;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxySelector", imports = {}))
     /* renamed from: -deprecated_proxySelector  reason: not valid java name */
-    public final ProxySelector m10873deprecated_proxySelector() {
+    public final ProxySelector m11614deprecated_proxySelector() {
         return this.proxySelector;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxy", imports = {}))
     /* renamed from: -deprecated_proxy  reason: not valid java name */
-    public final Proxy m10871deprecated_proxy() {
+    public final Proxy m11612deprecated_proxy() {
         return this.proxy;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sslSocketFactory", imports = {}))
     /* renamed from: -deprecated_sslSocketFactory  reason: not valid java name */
-    public final SSLSocketFactory m10875deprecated_sslSocketFactory() {
+    public final SSLSocketFactory m11616deprecated_sslSocketFactory() {
         return this.sslSocketFactory;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "hostnameVerifier", imports = {}))
     /* renamed from: -deprecated_hostnameVerifier  reason: not valid java name */
-    public final HostnameVerifier m10869deprecated_hostnameVerifier() {
+    public final HostnameVerifier m11610deprecated_hostnameVerifier() {
         return this.hostnameVerifier;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "certificatePinner", imports = {}))
     /* renamed from: -deprecated_certificatePinner  reason: not valid java name */
-    public final CertificatePinner m10866deprecated_certificatePinner() {
+    public final CertificatePinner m11607deprecated_certificatePinner() {
         return this.certificatePinner;
     }
 

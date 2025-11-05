@@ -7,8 +7,8 @@ import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class LifecycleCallback {
     protected final LifecycleFragment mLifecycleFragment;
 
@@ -57,11 +57,11 @@ public class LifecycleCallback {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static LifecycleFragment getFragment(LifecycleActivity lifecycleActivity) {
-        if (lifecycleActivity.zzd()) {
-            return zzd.zza(lifecycleActivity.zzb());
+        if (lifecycleActivity.zza()) {
+            return zzd.zza(lifecycleActivity.zzd());
         }
-        if (lifecycleActivity.zzc()) {
-            return zza.zza(lifecycleActivity.zza());
+        if (lifecycleActivity.zzb()) {
+            return zza.zza(lifecycleActivity.zzc());
         }
         throw new IllegalArgumentException("Can't get fragment for unexpected activity.");
     }

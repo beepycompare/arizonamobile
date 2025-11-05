@@ -63,16 +63,16 @@ public final class ParentSizeNode extends Modifier.Node implements LayoutModifie
         int round = (state == null || state.getValue().intValue() == Integer.MAX_VALUE) ? Integer.MAX_VALUE : Math.round(state.getValue().floatValue() * this.fraction);
         State<Integer> state2 = this.heightState;
         int round2 = (state2 == null || state2.getValue().intValue() == Integer.MAX_VALUE) ? Integer.MAX_VALUE : Math.round(state2.getValue().floatValue() * this.fraction);
-        int m7219getMinWidthimpl = round != Integer.MAX_VALUE ? round : Constraints.m7219getMinWidthimpl(j);
-        int m7218getMinHeightimpl = round2 != Integer.MAX_VALUE ? round2 : Constraints.m7218getMinHeightimpl(j);
+        int m7950getMinWidthimpl = round != Integer.MAX_VALUE ? round : Constraints.m7950getMinWidthimpl(j);
+        int m7949getMinHeightimpl = round2 != Integer.MAX_VALUE ? round2 : Constraints.m7949getMinHeightimpl(j);
         if (round == Integer.MAX_VALUE) {
-            round = Constraints.m7217getMaxWidthimpl(j);
+            round = Constraints.m7948getMaxWidthimpl(j);
         }
         if (round2 == Integer.MAX_VALUE) {
-            round2 = Constraints.m7216getMaxHeightimpl(j);
+            round2 = Constraints.m7947getMaxHeightimpl(j);
         }
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(ConstraintsKt.Constraints(m7219getMinWidthimpl, round, m7218getMinHeightimpl, round2));
-        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.ParentSizeNode$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(ConstraintsKt.Constraints(m7950getMinWidthimpl, round, m7949getMinHeightimpl, round2));
+        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.ParentSizeNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$2;

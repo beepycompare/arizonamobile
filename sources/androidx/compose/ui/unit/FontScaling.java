@@ -18,13 +18,13 @@ public interface FontScaling {
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m7376toSp0xMU5do(FontScaling fontScaling, float f) {
+        public static long m8107toSp0xMU5do(FontScaling fontScaling, float f) {
             return FontScaling.super.mo431toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m7375toDpGaN1DYA(FontScaling fontScaling, long j) {
+        public static float m8106toDpGaN1DYA(FontScaling fontScaling, long j) {
             return FontScaling.super.mo424toDpGaN1DYA(j);
         }
     }
@@ -40,14 +40,14 @@ public interface FontScaling {
 
     /* renamed from: toDp-GaN1DYA */
     default float mo424toDpGaN1DYA(long j) {
-        if (!TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(j), TextUnitType.Companion.m7491getSpUIouoOA())) {
+        if (!TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(j), TextUnitType.Companion.m8222getSpUIouoOA())) {
             InlineClassHelperKt.throwIllegalStateException("Only Sp can convert to Px");
         }
         if (!FontScaleConverterFactory.INSTANCE.isNonLinearFontScalingActive(getFontScale())) {
-            return Dp.m7264constructorimpl(TextUnit.m7458getValueimpl(j) * getFontScale());
+            return Dp.m7995constructorimpl(TextUnit.m8189getValueimpl(j) * getFontScale());
         }
         FontScaleConverter forScale = FontScaleConverterFactory.INSTANCE.forScale(getFontScale());
-        float m7458getValueimpl = TextUnit.m7458getValueimpl(j);
-        return forScale == null ? Dp.m7264constructorimpl(m7458getValueimpl * getFontScale()) : Dp.m7264constructorimpl(forScale.convertSpToDp(m7458getValueimpl));
+        float m8189getValueimpl = TextUnit.m8189getValueimpl(j);
+        return forScale == null ? Dp.m7995constructorimpl(m8189getValueimpl * getFontScale()) : Dp.m7995constructorimpl(forScale.convertSpToDp(m8189getValueimpl));
     }
 }

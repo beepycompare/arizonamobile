@@ -1,11 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-/* loaded from: classes4.dex */
-public final class Ha extends AbstractC0264g {
-    public static final String g = "foreground";
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
+/* loaded from: classes3.dex */
+public interface Ha extends SimpleAdvertisingIdGetter, InterfaceC0483om {
+    AdvertisingIdsHolder a();
 
-    public Ha(C0652v5 c0652v5, C0131al c0131al, C0234el c0234el, C0414lk c0414lk, SystemTimeProvider systemTimeProvider) {
-        super(c0652v5, c0131al, c0234el, Zk.a(EnumC0260fl.FOREGROUND).a(), c0414lk, systemTimeProvider);
-    }
+    AdvertisingIdsHolder a(Li li);
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0483om
+    /* synthetic */ void a(C0356jm c0356jm);
+
+    void b(boolean z);
+
+    void c(boolean z);
+
+    AdvertisingIdsHolder getIdentifiers();
+
+    void init();
 }

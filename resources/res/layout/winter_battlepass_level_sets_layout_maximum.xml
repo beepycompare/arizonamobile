@@ -9,7 +9,7 @@
         </LinearLayout>
         <LinearLayout android:gravity="center" android:layout_gravity="center" android:id="@+id/buttonReturn" android:background="@drawable/background_az_battlepass_type_task_enabled" android:paddingLeft="@dimen/_18sdp" android:paddingTop="@dimen/_7sdp" android:paddingRight="@dimen/_18sdp" android:paddingBottom="@dimen/_7sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_22sdp" android:paddingHorizontal="@dimen/_18sdp" android:paddingVertical="@dimen/_7sdp">
             <ImageView android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/battlepass_alert_ic_3"/>
-            <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/battlepass_text" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_8sdp" android:text="Вернуться на главную" android:fontFamily="@font/heading_now_64_regular"/>
+            <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/black" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_8sdp" android:text="Вернуться на главную" android:fontFamily="@font/heading_now_64_regular"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

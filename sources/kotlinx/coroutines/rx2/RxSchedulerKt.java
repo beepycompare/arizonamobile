@@ -34,7 +34,7 @@ public final class RxSchedulerKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Since 1.4.2, binary compatibility with earlier versions")
     /* renamed from: asCoroutineDispatcher  reason: collision with other method in class */
-    public static final /* synthetic */ SchedulerCoroutineDispatcher m10716asCoroutineDispatcher(Scheduler scheduler) {
+    public static final /* synthetic */ SchedulerCoroutineDispatcher m11457asCoroutineDispatcher(Scheduler scheduler) {
         return new SchedulerCoroutineDispatcher(scheduler);
     }
 

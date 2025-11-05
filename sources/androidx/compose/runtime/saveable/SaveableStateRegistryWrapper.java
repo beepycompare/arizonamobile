@@ -98,9 +98,9 @@ public final class SaveableStateRegistryWrapper implements SaveableStateRegistry
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m8262constructorimpl(bundleOf);
+        SavedStateWriter.m8992constructorimpl(bundleOf);
         saveableStateRegistryWrapper.controller.performSave(bundleOf);
-        if (SavedStateReader.m8254isEmptyimpl(SavedStateReader.m8176constructorimpl(bundleOf))) {
+        if (SavedStateReader.m8984isEmptyimpl(SavedStateReader.m8906constructorimpl(bundleOf))) {
             return null;
         }
         return bundleOf;

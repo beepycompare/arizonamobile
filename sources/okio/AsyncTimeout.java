@@ -2,8 +2,8 @@ package okio;
 
 import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.exifinterface.media.ExifInterface;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.facebook.widget.FacebookDialog;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -16,10 +16,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AsyncTimeout.kt */
-@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0016\u0018\u0000 \u001f2\u00020\u0001:\u0002\u001e\u001fB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\t\u001a\u00020\nJ\u0006\u0010\u000b\u001a\u00020\fJ\b\u0010\r\u001a\u00020\nH\u0016J\u0010\u0010\u000e\u001a\u00020\b2\u0006\u0010\u000f\u001a\u00020\bH\u0002J\b\u0010\u0010\u001a\u00020\nH\u0014J\u000e\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u0012J\u000e\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0013\u001a\u00020\u0014J%\u0010\u0015\u001a\u0002H\u0016\"\u0004\b\u0000\u0010\u00162\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u0002H\u00160\u0018H\u0086\bø\u0001\u0000¢\u0006\u0002\u0010\u0019J\u0012\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001bH\u0001J\u0012\u0010\u001d\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001bH\u0014R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006 "}, d2 = {"Lokio/AsyncTimeout;", "Lokio/Timeout;", "<init>", "()V", RemoteConfigConstants.ResponseFieldKey.STATE, "", "next", "timeoutAt", "", "enter", "", "exit", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "remainingNanos", "now", "timedOut", "sink", "Lokio/Sink;", "source", "Lokio/Source;", "withTimeout", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "access$newTimeoutException", "Ljava/io/IOException;", "cause", "newTimeoutException", "Watchdog", "Companion", "okio"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0016\u0018\u0000  2\u00020\u0001:\u0002\u001f B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\t\u001a\u00020\nJ\u0006\u0010\u000b\u001a\u00020\fJ\b\u0010\r\u001a\u00020\nH\u0016J\u0015\u0010\u000e\u001a\u00020\b2\u0006\u0010\u000f\u001a\u00020\bH\u0000¢\u0006\u0002\b\u0010J\b\u0010\u0011\u001a\u00020\nH\u0014J\u000e\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0012\u001a\u00020\u0013J\u000e\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0014\u001a\u00020\u0015J%\u0010\u0016\u001a\u0002H\u0017\"\u0004\b\u0000\u0010\u00172\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u0002H\u00170\u0019H\u0086\bø\u0001\u0000¢\u0006\u0002\u0010\u001aJ\u0012\u0010\u001b\u001a\u00020\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001cH\u0001J\u0012\u0010\u001e\u001a\u00020\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001cH\u0014R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0006\u001a\u00020\u00058\u0000@\u0000X\u0081\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006!"}, d2 = {"Lokio/AsyncTimeout;", "Lokio/Timeout;", "<init>", "()V", RemoteConfigConstants.ResponseFieldKey.STATE, "", FirebaseAnalytics.Param.INDEX, "timeoutAt", "", "enter", "", "exit", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "remainingNanos", "now", "remainingNanos$okio", "timedOut", "sink", "Lokio/Sink;", "source", "Lokio/Source;", "withTimeout", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "access$newTimeoutException", "Ljava/io/IOException;", "cause", "newTimeoutException", "Watchdog", "Companion", "okio"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public class AsyncTimeout extends Timeout {
-    private static final Companion Companion = new Companion(null);
     private static final long IDLE_TIMEOUT_MILLIS;
     private static final long IDLE_TIMEOUT_NANOS;
     private static final int STATE_CANCELED = 3;
@@ -28,11 +27,13 @@ public class AsyncTimeout extends Timeout {
     private static final int STATE_TIMED_OUT = 2;
     private static final int TIMEOUT_WRITE_SIZE = 65536;
     private static final Condition condition;
-    private static AsyncTimeout head;
+    private static AsyncTimeout idleSentinel;
     private static final ReentrantLock lock;
-    private AsyncTimeout next;
+    public int index = -1;
     private int state;
     private long timeoutAt;
+    private static final Companion Companion = new Companion(null);
+    private static final PriorityQueue queue = new PriorityQueue();
 
     protected void timedOut() {
     }
@@ -65,7 +66,7 @@ public class AsyncTimeout extends Timeout {
             if (i != 1) {
                 return i == 2;
             }
-            Companion.removeFromQueue(this);
+            queue.remove(this);
             return false;
         } finally {
             reentrantLock.unlock();
@@ -79,7 +80,7 @@ public class AsyncTimeout extends Timeout {
         reentrantLock.lock();
         try {
             if (this.state == 1) {
-                Companion.removeFromQueue(this);
+                queue.remove(this);
                 this.state = 3;
             }
             Unit unit = Unit.INSTANCE;
@@ -88,8 +89,7 @@ public class AsyncTimeout extends Timeout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final long remainingNanos(long j) {
+    public final long remainingNanos$okio(long j) {
         return this.timeoutAt - j;
     }
 
@@ -293,7 +293,7 @@ public class AsyncTimeout extends Timeout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: AsyncTimeout.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\u0005H\u0016¨\u0006\u0006"}, d2 = {"Lokio/AsyncTimeout$Watchdog;", "Ljava/lang/Thread;", "<init>", "()V", "run", "", "okio"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\u0005H\u0016¨\u0006\u0006"}, d2 = {"Lokio/AsyncTimeout$Watchdog;", "Ljava/lang/Thread;", "<init>", "()V", "run", "", "okio"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Watchdog extends Thread {
         public Watchdog() {
@@ -312,9 +312,8 @@ public class AsyncTimeout extends Timeout {
                     awaitTimeout = AsyncTimeout.Companion.awaitTimeout();
                 } catch (InterruptedException unused) {
                 }
-                if (awaitTimeout == AsyncTimeout.head) {
-                    Companion unused2 = AsyncTimeout.Companion;
-                    AsyncTimeout.head = null;
+                if (awaitTimeout == AsyncTimeout.Companion.getIdleSentinel()) {
+                    AsyncTimeout.Companion.setIdleSentinel(null);
                     lock.unlock();
                     return;
                 }
@@ -329,7 +328,7 @@ public class AsyncTimeout extends Timeout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: AsyncTimeout.kt */
-    @Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u00162\u0006\u0010\u001a\u001a\u00020\u000f2\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\u0010\u0010\u001d\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0016H\u0002J\b\u0010\u001e\u001a\u0004\u0018\u00010\u0016R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lokio/AsyncTimeout$Companion;", "", "<init>", "()V", "lock", "Ljava/util/concurrent/locks/ReentrantLock;", "getLock", "()Ljava/util/concurrent/locks/ReentrantLock;", "condition", "Ljava/util/concurrent/locks/Condition;", "getCondition", "()Ljava/util/concurrent/locks/Condition;", "TIMEOUT_WRITE_SIZE", "", "IDLE_TIMEOUT_MILLIS", "", "IDLE_TIMEOUT_NANOS", "STATE_IDLE", "STATE_IN_QUEUE", "STATE_TIMED_OUT", "STATE_CANCELED", TtmlNode.TAG_HEAD, "Lokio/AsyncTimeout;", "insertIntoQueue", "", "node", "timeoutNanos", "hasDeadline", "", "removeFromQueue", "awaitTimeout", "okio"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\t2\u0006\u0010\"\u001a\u00020\u00192\u0006\u0010#\u001a\u00020$H\u0002J\b\u0010%\u001a\u0004\u0018\u00010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u001c\u0010\b\u001a\u0004\u0018\u00010\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\u0012\u001a\u00020\u0013¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0017X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0017X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0017X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0017X\u0082T¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"Lokio/AsyncTimeout$Companion;", "", "<init>", "()V", "queue", "Lokio/PriorityQueue;", "getQueue", "()Lokio/PriorityQueue;", "idleSentinel", "Lokio/AsyncTimeout;", "getIdleSentinel", "()Lokio/AsyncTimeout;", "setIdleSentinel", "(Lokio/AsyncTimeout;)V", "lock", "Ljava/util/concurrent/locks/ReentrantLock;", "getLock", "()Ljava/util/concurrent/locks/ReentrantLock;", "condition", "Ljava/util/concurrent/locks/Condition;", "getCondition", "()Ljava/util/concurrent/locks/Condition;", "TIMEOUT_WRITE_SIZE", "", "IDLE_TIMEOUT_MILLIS", "", "IDLE_TIMEOUT_NANOS", "STATE_IDLE", "STATE_IN_QUEUE", "STATE_TIMED_OUT", "STATE_CANCELED", "insertIntoQueue", "", "node", "timeoutNanos", "hasDeadline", "", "awaitTimeout", "okio"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -337,6 +336,18 @@ public class AsyncTimeout extends Timeout {
         }
 
         private Companion() {
+        }
+
+        public final PriorityQueue getQueue() {
+            return AsyncTimeout.queue;
+        }
+
+        public final AsyncTimeout getIdleSentinel() {
+            return AsyncTimeout.idleSentinel;
+        }
+
+        public final void setIdleSentinel(AsyncTimeout asyncTimeout) {
+            AsyncTimeout.idleSentinel = asyncTimeout;
         }
 
         public final ReentrantLock getLock() {
@@ -349,77 +360,45 @@ public class AsyncTimeout extends Timeout {
 
         /* JADX INFO: Access modifiers changed from: private */
         public final void insertIntoQueue(AsyncTimeout asyncTimeout, long j, boolean z) {
-            if (AsyncTimeout.head == null) {
-                AsyncTimeout.head = new AsyncTimeout();
+            if (getIdleSentinel() == null) {
+                setIdleSentinel(new AsyncTimeout());
                 new Watchdog().start();
             }
             long nanoTime = System.nanoTime();
             int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
             if (i != 0 && z) {
-                asyncTimeout.timeoutAt = Math.min(j, asyncTimeout.deadlineNanoTime() - nanoTime) + nanoTime;
+                asyncTimeout.timeoutAt = nanoTime + Math.min(j, asyncTimeout.deadlineNanoTime() - nanoTime);
             } else if (i != 0) {
-                asyncTimeout.timeoutAt = j + nanoTime;
+                asyncTimeout.timeoutAt = nanoTime + j;
             } else if (z) {
                 asyncTimeout.timeoutAt = asyncTimeout.deadlineNanoTime();
             } else {
                 throw new AssertionError();
             }
-            long remainingNanos = asyncTimeout.remainingNanos(nanoTime);
-            AsyncTimeout asyncTimeout2 = AsyncTimeout.head;
-            Intrinsics.checkNotNull(asyncTimeout2);
-            while (asyncTimeout2.next != null) {
-                AsyncTimeout asyncTimeout3 = asyncTimeout2.next;
-                Intrinsics.checkNotNull(asyncTimeout3);
-                if (remainingNanos < asyncTimeout3.remainingNanos(nanoTime)) {
-                    break;
-                }
-                asyncTimeout2 = asyncTimeout2.next;
-                Intrinsics.checkNotNull(asyncTimeout2);
-            }
-            asyncTimeout.next = asyncTimeout2.next;
-            asyncTimeout2.next = asyncTimeout;
-            if (asyncTimeout2 == AsyncTimeout.head) {
+            getQueue().add(asyncTimeout);
+            if (asyncTimeout.index == 1) {
                 getCondition().signal();
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void removeFromQueue(AsyncTimeout asyncTimeout) {
-            for (AsyncTimeout asyncTimeout2 = AsyncTimeout.head; asyncTimeout2 != null; asyncTimeout2 = asyncTimeout2.next) {
-                if (asyncTimeout2.next == asyncTimeout) {
-                    asyncTimeout2.next = asyncTimeout.next;
-                    asyncTimeout.next = null;
-                    return;
-                }
-            }
-            throw new IllegalStateException("node was not found in the queue".toString());
-        }
-
         public final AsyncTimeout awaitTimeout() throws InterruptedException {
-            AsyncTimeout asyncTimeout = AsyncTimeout.head;
-            Intrinsics.checkNotNull(asyncTimeout);
-            AsyncTimeout asyncTimeout2 = asyncTimeout.next;
-            if (asyncTimeout2 != null) {
-                long remainingNanos = asyncTimeout2.remainingNanos(System.nanoTime());
-                if (remainingNanos <= 0) {
-                    AsyncTimeout asyncTimeout3 = AsyncTimeout.head;
-                    Intrinsics.checkNotNull(asyncTimeout3);
-                    asyncTimeout3.next = asyncTimeout2.next;
-                    asyncTimeout2.next = null;
-                    asyncTimeout2.state = 2;
-                    return asyncTimeout2;
+            AsyncTimeout first = getQueue().first();
+            if (first == null) {
+                long nanoTime = System.nanoTime();
+                getCondition().await(AsyncTimeout.IDLE_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS);
+                if (getQueue().first() != null || System.nanoTime() - nanoTime < AsyncTimeout.IDLE_TIMEOUT_NANOS) {
+                    return null;
                 }
-                getCondition().await(remainingNanos, TimeUnit.NANOSECONDS);
+                return getIdleSentinel();
+            }
+            long remainingNanos$okio = first.remainingNanos$okio(System.nanoTime());
+            if (remainingNanos$okio > 0) {
+                getCondition().await(remainingNanos$okio, TimeUnit.NANOSECONDS);
                 return null;
             }
-            long nanoTime = System.nanoTime();
-            getCondition().await(AsyncTimeout.IDLE_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS);
-            AsyncTimeout asyncTimeout4 = AsyncTimeout.head;
-            Intrinsics.checkNotNull(asyncTimeout4);
-            if (asyncTimeout4.next != null || System.nanoTime() - nanoTime < AsyncTimeout.IDLE_TIMEOUT_NANOS) {
-                return null;
-            }
-            return AsyncTimeout.head;
+            getQueue().remove(first);
+            first.state = 2;
+            return first;
         }
     }
 

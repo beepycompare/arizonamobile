@@ -89,12 +89,12 @@ public final class PaddingNode extends Modifier.Node implements LayoutModifierNo
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         int i = measureScope.mo423roundToPx0680j_4(this.start) + measureScope.mo423roundToPx0680j_4(this.end);
         int i2 = measureScope.mo423roundToPx0680j_4(this.top) + measureScope.mo423roundToPx0680j_4(this.bottom);
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(ConstraintsKt.m7236offsetNN6EwU(j, -i, -i2));
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7234constrainWidthK40F9xA(j, mo5967measureBRTryo0.getWidth() + i), ConstraintsKt.m7233constrainHeightK40F9xA(j, mo5967measureBRTryo0.getHeight() + i2), null, new Function1() { // from class: androidx.compose.foundation.layout.PaddingNode$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(j, -i, -i2));
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7965constrainWidthK40F9xA(j, mo6697measureBRTryo0.getWidth() + i), ConstraintsKt.m7964constrainHeightK40F9xA(j, mo6697measureBRTryo0.getHeight() + i2), null, new Function1() { // from class: androidx.compose.foundation.layout.PaddingNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = PaddingNode.measure_3p2s80s$lambda$0(PaddingNode.this, mo5967measureBRTryo0, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$0 = PaddingNode.measure_3p2s80s$lambda$0(PaddingNode.this, mo6697measureBRTryo0, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$0;
             }
         }, 4, null);
@@ -111,6 +111,6 @@ public final class PaddingNode extends Modifier.Node implements LayoutModifierNo
     }
 
     public /* synthetic */ PaddingNode(float f, float f2, float f3, float f4, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7264constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7264constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7264constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7264constructorimpl(0) : f4, z, null);
+        this((i & 1) != 0 ? Dp.m7995constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7995constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7995constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7995constructorimpl(0) : f4, z, null);
     }
 }

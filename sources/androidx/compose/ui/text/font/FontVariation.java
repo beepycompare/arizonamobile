@@ -179,14 +179,14 @@ public final class FontVariation {
         }
 
         /* renamed from: getValue-XSAIIZE  reason: not valid java name */
-        public final long m6863getValueXSAIIZE() {
+        public final long m7594getValueXSAIIZE() {
             return this.value;
         }
 
         @Override // androidx.compose.ui.text.font.FontVariation.Setting
         public float toVariationValue(Density density) {
             if (density != null) {
-                return TextUnit.m7458getValueimpl(this.value) * density.getFontScale();
+                return TextUnit.m8189getValueimpl(this.value) * density.getFontScale();
             }
             InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("density must not be null");
             throw new KotlinNothingValueException();
@@ -203,17 +203,17 @@ public final class FontVariation {
             }
             if (obj instanceof SettingTextUnit) {
                 SettingTextUnit settingTextUnit = (SettingTextUnit) obj;
-                return Intrinsics.areEqual(getAxisName(), settingTextUnit.getAxisName()) && TextUnit.m7455equalsimpl0(this.value, settingTextUnit.value);
+                return Intrinsics.areEqual(getAxisName(), settingTextUnit.getAxisName()) && TextUnit.m8186equalsimpl0(this.value, settingTextUnit.value);
             }
             return false;
         }
 
         public int hashCode() {
-            return (getAxisName().hashCode() * 31) + TextUnit.m7459hashCodeimpl(this.value);
+            return (getAxisName().hashCode() * 31) + TextUnit.m8190hashCodeimpl(this.value);
         }
 
         public String toString() {
-            return "FontVariation.Setting(axisName='" + getAxisName() + "', value=" + ((Object) TextUnit.m7465toStringimpl(this.value)) + ')';
+            return "FontVariation.Setting(axisName='" + getAxisName() + "', value=" + ((Object) TextUnit.m8196toStringimpl(this.value)) + ')';
         }
     }
 
@@ -289,8 +289,8 @@ public final class FontVariation {
     }
 
     /* renamed from: opticalSizing--R2X_6o  reason: not valid java name */
-    public final Setting m6862opticalSizingR2X_6o(long j) {
-        if (!TextUnit.m7461isSpimpl(j)) {
+    public final Setting m7593opticalSizingR2X_6o(long j) {
+        if (!TextUnit.m8192isSpimpl(j)) {
             InlineClassHelperKt.throwIllegalArgumentException("'opsz' must be provided in sp units");
         }
         return new SettingTextUnit("opsz", j, null);
@@ -337,7 +337,7 @@ public final class FontVariation {
     }
 
     /* renamed from: Settings-6EWAqTQ  reason: not valid java name */
-    public final Settings m6861Settings6EWAqTQ(FontWeight fontWeight, int i, Setting... settingArr) {
+    public final Settings m7592Settings6EWAqTQ(FontWeight fontWeight, int i, Setting... settingArr) {
         SpreadBuilder spreadBuilder = new SpreadBuilder(3);
         spreadBuilder.add(weight(fontWeight.getWeight()));
         spreadBuilder.add(italic(i));

@@ -11,47 +11,47 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class PathOperation {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Difference = m4847constructorimpl(0);
-    private static final int Intersect = m4847constructorimpl(1);
-    private static final int Union = m4847constructorimpl(2);
-    private static final int Xor = m4847constructorimpl(3);
-    private static final int ReverseDifference = m4847constructorimpl(4);
+    private static final int Difference = m5577constructorimpl(0);
+    private static final int Intersect = m5577constructorimpl(1);
+    private static final int Union = m5577constructorimpl(2);
+    private static final int Xor = m5577constructorimpl(3);
+    private static final int ReverseDifference = m5577constructorimpl(4);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PathOperation m4846boximpl(int i) {
+    public static final /* synthetic */ PathOperation m5576boximpl(int i) {
         return new PathOperation(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4847constructorimpl(int i) {
+    public static int m5577constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4848equalsimpl(int i, Object obj) {
-        return (obj instanceof PathOperation) && i == ((PathOperation) obj).m4852unboximpl();
+    public static boolean m5578equalsimpl(int i, Object obj) {
+        return (obj instanceof PathOperation) && i == ((PathOperation) obj).m5582unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4849equalsimpl0(int i, int i2) {
+    public static final boolean m5579equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4850hashCodeimpl(int i) {
+    public static int m5580hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4848equalsimpl(this.value, obj);
+        return m5578equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4850hashCodeimpl(this.value);
+        return m5580hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4852unboximpl() {
+    public final /* synthetic */ int m5582unboximpl() {
         return this.value;
     }
 
@@ -67,27 +67,27 @@ public final class PathOperation {
         }
 
         /* renamed from: getDifference-b3I0S0c  reason: not valid java name */
-        public final int m4853getDifferenceb3I0S0c() {
+        public final int m5583getDifferenceb3I0S0c() {
             return PathOperation.Difference;
         }
 
         /* renamed from: getIntersect-b3I0S0c  reason: not valid java name */
-        public final int m4854getIntersectb3I0S0c() {
+        public final int m5584getIntersectb3I0S0c() {
             return PathOperation.Intersect;
         }
 
         /* renamed from: getUnion-b3I0S0c  reason: not valid java name */
-        public final int m4856getUnionb3I0S0c() {
+        public final int m5586getUnionb3I0S0c() {
             return PathOperation.Union;
         }
 
         /* renamed from: getXor-b3I0S0c  reason: not valid java name */
-        public final int m4857getXorb3I0S0c() {
+        public final int m5587getXorb3I0S0c() {
             return PathOperation.Xor;
         }
 
         /* renamed from: getReverseDifference-b3I0S0c  reason: not valid java name */
-        public final int m4855getReverseDifferenceb3I0S0c() {
+        public final int m5585getReverseDifferenceb3I0S0c() {
             return PathOperation.ReverseDifference;
         }
     }
@@ -97,11 +97,11 @@ public final class PathOperation {
     }
 
     public String toString() {
-        return m4851toStringimpl(this.value);
+        return m5581toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4851toStringimpl(int i) {
-        return m4849equalsimpl0(i, Difference) ? "Difference" : m4849equalsimpl0(i, Intersect) ? "Intersect" : m4849equalsimpl0(i, Union) ? "Union" : m4849equalsimpl0(i, Xor) ? "Xor" : m4849equalsimpl0(i, ReverseDifference) ? "ReverseDifference" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5581toStringimpl(int i) {
+        return m5579equalsimpl0(i, Difference) ? "Difference" : m5579equalsimpl0(i, Intersect) ? "Intersect" : m5579equalsimpl0(i, Union) ? "Union" : m5579equalsimpl0(i, Xor) ? "Xor" : m5579equalsimpl0(i, ReverseDifference) ? "ReverseDifference" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

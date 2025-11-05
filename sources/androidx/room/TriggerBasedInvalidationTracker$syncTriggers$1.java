@@ -7,12 +7,10 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InvalidationTracker.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker", f = "InvalidationTracker.kt", i = {0, 0, 0}, l = {306}, m = "syncTriggers$room_runtime", n = {"$this$ifNotClosed$iv", "this_$iv", "syncState$iv"}, s = {"L$0", "L$1", "L$2"})
+@DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker", f = "InvalidationTracker.kt", i = {0}, l = {306}, m = "syncTriggers$room_runtime", n = {"$this$ifNotClosed$iv"}, s = {"L$0"})
 /* loaded from: classes3.dex */
 public final class TriggerBasedInvalidationTracker$syncTriggers$1 extends ContinuationImpl {
     Object L$0;
-    Object L$1;
-    Object L$2;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ TriggerBasedInvalidationTracker this$0;

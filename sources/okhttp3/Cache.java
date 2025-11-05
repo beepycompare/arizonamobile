@@ -266,7 +266,7 @@ public final class Cache implements Closeable, Flushable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "directory", imports = {}))
     /* renamed from: -deprecated_directory  reason: not valid java name */
-    public final File m10877deprecated_directory() {
+    public final File m11618deprecated_directory() {
         return this.cache.getDirectory().toFile();
     }
 
@@ -572,10 +572,6 @@ public final class Cache implements Closeable, Flushable {
         private final String contentType;
         private final DiskLruCache.Snapshot snapshot;
 
-        public final DiskLruCache.Snapshot getSnapshot() {
-            return this.snapshot;
-        }
-
         public CacheResponseBody(DiskLruCache.Snapshot snapshot, String str, String str2) {
             Intrinsics.checkNotNullParameter(snapshot, "snapshot");
             this.snapshot = snapshot;
@@ -588,6 +584,10 @@ public final class Cache implements Closeable, Flushable {
                     super.close();
                 }
             });
+        }
+
+        public final DiskLruCache.Snapshot getSnapshot() {
+            return this.snapshot;
         }
 
         @Override // okhttp3.ResponseBody

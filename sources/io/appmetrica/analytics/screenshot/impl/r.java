@@ -1,23 +1,26 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
-import kotlin.jvm.internal.Lambda;
-/* loaded from: classes4.dex */
-public final class r extends Lambda implements Function0 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0790u f1332a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(C0790u c0790u) {
-        super(0);
-        this.f1332a = c0790u;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import kotlin.collections.ArraysKt;
+/* loaded from: classes3.dex */
+public final class r implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final O fromModel(C0774p c0774p) {
+        O o = new O();
+        o.f1344a = c0774p.f1374a;
+        Object[] array = c0774p.b.toArray(new String[0]);
+        if (array != null) {
+            o.c = (String[]) array;
+            o.b = c0774p.c;
+            return o;
+        }
+        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
     }
 
-    @Override // kotlin.jvm.functions.Function0
-    public final Object invoke() {
-        ((C0791v) this.f1332a.b).a("ContentObserverScreenshotCaptor");
-        return Unit.INSTANCE;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0774p toModel(O o) {
+        return new C0774p(o.f1344a, ArraysKt.toList(o.c), o.b);
     }
 }

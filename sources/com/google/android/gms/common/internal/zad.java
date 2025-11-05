@@ -3,7 +3,7 @@ package com.google.android.gms.common.internal;
 import android.app.Activity;
 import android.content.Intent;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zad extends zag {
     final /* synthetic */ Intent zaa;
     final /* synthetic */ Activity zab;

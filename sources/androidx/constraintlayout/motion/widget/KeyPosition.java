@@ -445,7 +445,7 @@ public class KeyPosition extends KeyPositionBase {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo7747clone() {
+    public Key mo8478clone() {
         return new KeyPosition().copy(this);
     }
 }

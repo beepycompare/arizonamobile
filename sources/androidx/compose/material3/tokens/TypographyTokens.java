@@ -4,26 +4,41 @@ import androidx.compose.ui.text.TextStyle;
 import androidx.compose.ui.text.font.GenericFontFamily;
 import kotlin.Metadata;
 /* compiled from: TypographyTokens.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u001f\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0011\u0010\u0007\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0006R\u0011\u0010\t\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0006R\u0011\u0010\u000b\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0006R\u0011\u0010\r\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u0006R\u0011\u0010\u000f\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0006R\u0011\u0010\u0011\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0006R\u0011\u0010\u0013\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0006R\u0011\u0010\u0015\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0006R\u0011\u0010\u0017\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0006R\u0011\u0010\u0019\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0006R\u0011\u0010\u001b\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u0006R\u0011\u0010\u001d\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u0006R\u0011\u0010\u001f\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u0006R\u0011\u0010!\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u0006¨\u0006#"}, d2 = {"Landroidx/compose/material3/tokens/TypographyTokens;", "", "()V", "BodyLarge", "Landroidx/compose/ui/text/TextStyle;", "getBodyLarge", "()Landroidx/compose/ui/text/TextStyle;", "BodyMedium", "getBodyMedium", "BodySmall", "getBodySmall", "DisplayLarge", "getDisplayLarge", "DisplayMedium", "getDisplayMedium", "DisplaySmall", "getDisplaySmall", "HeadlineLarge", "getHeadlineLarge", "HeadlineMedium", "getHeadlineMedium", "HeadlineSmall", "getHeadlineSmall", "LabelLarge", "getLabelLarge", "LabelMedium", "getLabelMedium", "LabelSmall", "getLabelSmall", "TitleLarge", "getTitleLarge", "TitleMedium", "getTitleMedium", "TitleSmall", "getTitleSmall", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b=\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0011\u0010\n\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0007R\u0011\u0010\f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u0007R\u0011\u0010\u000e\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0007R\u0011\u0010\u0010\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0007R\u0011\u0010\u0012\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0007R\u0011\u0010\u0014\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0007R\u0011\u0010\u0016\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0007R\u0011\u0010\u0018\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0007R\u0011\u0010\u001a\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0007R\u0011\u0010\u001c\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0007R\u0011\u0010\u001e\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0007R\u0011\u0010 \u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0007R\u0011\u0010\"\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0007R\u0011\u0010$\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0007R\u0011\u0010&\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u0007R\u0011\u0010(\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u0007R\u0011\u0010*\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0007R\u0011\u0010,\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b-\u0010\u0007R\u0011\u0010.\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u0007R\u0011\u00100\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0007R\u0011\u00102\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b3\u0010\u0007R\u0011\u00104\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b5\u0010\u0007R\u0011\u00106\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b7\u0010\u0007R\u0011\u00108\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b9\u0010\u0007R\u0011\u0010:\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b;\u0010\u0007R\u0011\u0010<\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b=\u0010\u0007R\u0011\u0010>\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b?\u0010\u0007R\u0011\u0010@\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\bA\u0010\u0007¨\u0006B"}, d2 = {"Landroidx/compose/material3/tokens/TypographyTokens;", "", "<init>", "()V", "BodyLarge", "Landroidx/compose/ui/text/TextStyle;", "getBodyLarge", "()Landroidx/compose/ui/text/TextStyle;", "BodyMedium", "getBodyMedium", "BodySmall", "getBodySmall", "DisplayLarge", "getDisplayLarge", "DisplayMedium", "getDisplayMedium", "DisplaySmall", "getDisplaySmall", "HeadlineLarge", "getHeadlineLarge", "HeadlineMedium", "getHeadlineMedium", "HeadlineSmall", "getHeadlineSmall", "LabelLarge", "getLabelLarge", "LabelMedium", "getLabelMedium", "LabelSmall", "getLabelSmall", "TitleLarge", "getTitleLarge", "TitleMedium", "getTitleMedium", "TitleSmall", "getTitleSmall", "BodyLargeEmphasized", "getBodyLargeEmphasized", "BodyMediumEmphasized", "getBodyMediumEmphasized", "BodySmallEmphasized", "getBodySmallEmphasized", "DisplayLargeEmphasized", "getDisplayLargeEmphasized", "DisplayMediumEmphasized", "getDisplayMediumEmphasized", "DisplaySmallEmphasized", "getDisplaySmallEmphasized", "HeadlineLargeEmphasized", "getHeadlineLargeEmphasized", "HeadlineMediumEmphasized", "getHeadlineMediumEmphasized", "HeadlineSmallEmphasized", "getHeadlineSmallEmphasized", "LabelLargeEmphasized", "getLabelLargeEmphasized", "LabelMediumEmphasized", "getLabelMediumEmphasized", "LabelSmallEmphasized", "getLabelSmallEmphasized", "TitleLargeEmphasized", "getTitleLargeEmphasized", "TitleMediumEmphasized", "getTitleMediumEmphasized", "TitleSmallEmphasized", "getTitleSmallEmphasized", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TypographyTokens {
     public static final int $stable = 0;
     private static final TextStyle BodyLarge;
+    private static final TextStyle BodyLargeEmphasized;
     private static final TextStyle BodyMedium;
+    private static final TextStyle BodyMediumEmphasized;
     private static final TextStyle BodySmall;
+    private static final TextStyle BodySmallEmphasized;
     private static final TextStyle DisplayLarge;
+    private static final TextStyle DisplayLargeEmphasized;
     private static final TextStyle DisplayMedium;
+    private static final TextStyle DisplayMediumEmphasized;
     private static final TextStyle DisplaySmall;
+    private static final TextStyle DisplaySmallEmphasized;
     private static final TextStyle HeadlineLarge;
+    private static final TextStyle HeadlineLargeEmphasized;
     private static final TextStyle HeadlineMedium;
+    private static final TextStyle HeadlineMediumEmphasized;
     private static final TextStyle HeadlineSmall;
+    private static final TextStyle HeadlineSmallEmphasized;
     public static final TypographyTokens INSTANCE = new TypographyTokens();
     private static final TextStyle LabelLarge;
+    private static final TextStyle LabelLargeEmphasized;
     private static final TextStyle LabelMedium;
+    private static final TextStyle LabelMediumEmphasized;
     private static final TextStyle LabelSmall;
+    private static final TextStyle LabelSmallEmphasized;
     private static final TextStyle TitleLarge;
+    private static final TextStyle TitleLargeEmphasized;
     private static final TextStyle TitleMedium;
+    private static final TextStyle TitleMediumEmphasized;
     private static final TextStyle TitleSmall;
+    private static final TextStyle TitleSmallEmphasized;
 
     private TypographyTokens() {
     }
@@ -35,49 +50,94 @@ public final class TypographyTokens {
     static {
         TextStyle defaultTextStyle = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily bodyLargeFont = TypeScaleTokens.INSTANCE.getBodyLargeFont();
-        BodyLarge = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle, 0L, TypeScaleTokens.INSTANCE.m3693getBodyLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodyLargeWeight(), null, null, bodyLargeFont, null, TypeScaleTokens.INSTANCE.m3694getBodyLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3692getBodyLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        BodyLarge = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle, 0L, TypeScaleTokens.INSTANCE.m4363getBodyLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodyLargeWeight(), null, null, bodyLargeFont, null, TypeScaleTokens.INSTANCE.m4364getBodyLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4362getBodyLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle2 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily bodyMediumFont = TypeScaleTokens.INSTANCE.getBodyMediumFont();
-        BodyMedium = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle2, 0L, TypeScaleTokens.INSTANCE.m3696getBodyMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodyMediumWeight(), null, null, bodyMediumFont, null, TypeScaleTokens.INSTANCE.m3697getBodyMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3695getBodyMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        BodyMedium = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle2, 0L, TypeScaleTokens.INSTANCE.m4369getBodyMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodyMediumWeight(), null, null, bodyMediumFont, null, TypeScaleTokens.INSTANCE.m4370getBodyMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4368getBodyMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle3 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily bodySmallFont = TypeScaleTokens.INSTANCE.getBodySmallFont();
-        BodySmall = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle3, 0L, TypeScaleTokens.INSTANCE.m3699getBodySmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodySmallWeight(), null, null, bodySmallFont, null, TypeScaleTokens.INSTANCE.m3700getBodySmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3698getBodySmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        BodySmall = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle3, 0L, TypeScaleTokens.INSTANCE.m4375getBodySmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodySmallWeight(), null, null, bodySmallFont, null, TypeScaleTokens.INSTANCE.m4376getBodySmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4374getBodySmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle4 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily displayLargeFont = TypeScaleTokens.INSTANCE.getDisplayLargeFont();
-        DisplayLarge = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle4, 0L, TypeScaleTokens.INSTANCE.m3702getDisplayLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplayLargeWeight(), null, null, displayLargeFont, null, TypeScaleTokens.INSTANCE.m3703getDisplayLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3701getDisplayLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        DisplayLarge = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle4, 0L, TypeScaleTokens.INSTANCE.m4381getDisplayLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplayLargeWeight(), null, null, displayLargeFont, null, TypeScaleTokens.INSTANCE.m4382getDisplayLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4380getDisplayLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle5 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily displayMediumFont = TypeScaleTokens.INSTANCE.getDisplayMediumFont();
-        DisplayMedium = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle5, 0L, TypeScaleTokens.INSTANCE.m3705getDisplayMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplayMediumWeight(), null, null, displayMediumFont, null, TypeScaleTokens.INSTANCE.m3706getDisplayMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3704getDisplayMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        DisplayMedium = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle5, 0L, TypeScaleTokens.INSTANCE.m4387getDisplayMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplayMediumWeight(), null, null, displayMediumFont, null, TypeScaleTokens.INSTANCE.m4388getDisplayMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4386getDisplayMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle6 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily displaySmallFont = TypeScaleTokens.INSTANCE.getDisplaySmallFont();
-        DisplaySmall = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle6, 0L, TypeScaleTokens.INSTANCE.m3708getDisplaySmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplaySmallWeight(), null, null, displaySmallFont, null, TypeScaleTokens.INSTANCE.m3709getDisplaySmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3707getDisplaySmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        DisplaySmall = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle6, 0L, TypeScaleTokens.INSTANCE.m4393getDisplaySmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplaySmallWeight(), null, null, displaySmallFont, null, TypeScaleTokens.INSTANCE.m4394getDisplaySmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4392getDisplaySmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle7 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily headlineLargeFont = TypeScaleTokens.INSTANCE.getHeadlineLargeFont();
-        HeadlineLarge = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle7, 0L, TypeScaleTokens.INSTANCE.m3711getHeadlineLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineLargeWeight(), null, null, headlineLargeFont, null, TypeScaleTokens.INSTANCE.m3712getHeadlineLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3710getHeadlineLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        HeadlineLarge = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle7, 0L, TypeScaleTokens.INSTANCE.m4399getHeadlineLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineLargeWeight(), null, null, headlineLargeFont, null, TypeScaleTokens.INSTANCE.m4400getHeadlineLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4398getHeadlineLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle8 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily headlineMediumFont = TypeScaleTokens.INSTANCE.getHeadlineMediumFont();
-        HeadlineMedium = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle8, 0L, TypeScaleTokens.INSTANCE.m3714getHeadlineMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineMediumWeight(), null, null, headlineMediumFont, null, TypeScaleTokens.INSTANCE.m3715getHeadlineMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3713getHeadlineMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        HeadlineMedium = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle8, 0L, TypeScaleTokens.INSTANCE.m4405getHeadlineMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineMediumWeight(), null, null, headlineMediumFont, null, TypeScaleTokens.INSTANCE.m4406getHeadlineMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4404getHeadlineMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle9 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily headlineSmallFont = TypeScaleTokens.INSTANCE.getHeadlineSmallFont();
-        HeadlineSmall = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle9, 0L, TypeScaleTokens.INSTANCE.m3717getHeadlineSmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineSmallWeight(), null, null, headlineSmallFont, null, TypeScaleTokens.INSTANCE.m3718getHeadlineSmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3716getHeadlineSmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        HeadlineSmall = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle9, 0L, TypeScaleTokens.INSTANCE.m4411getHeadlineSmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineSmallWeight(), null, null, headlineSmallFont, null, TypeScaleTokens.INSTANCE.m4412getHeadlineSmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4410getHeadlineSmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle10 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily labelLargeFont = TypeScaleTokens.INSTANCE.getLabelLargeFont();
-        LabelLarge = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle10, 0L, TypeScaleTokens.INSTANCE.m3720getLabelLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelLargeWeight(), null, null, labelLargeFont, null, TypeScaleTokens.INSTANCE.m3721getLabelLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3719getLabelLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        LabelLarge = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle10, 0L, TypeScaleTokens.INSTANCE.m4417getLabelLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelLargeWeight(), null, null, labelLargeFont, null, TypeScaleTokens.INSTANCE.m4418getLabelLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4416getLabelLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle11 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily labelMediumFont = TypeScaleTokens.INSTANCE.getLabelMediumFont();
-        LabelMedium = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle11, 0L, TypeScaleTokens.INSTANCE.m3723getLabelMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelMediumWeight(), null, null, labelMediumFont, null, TypeScaleTokens.INSTANCE.m3724getLabelMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3722getLabelMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        LabelMedium = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle11, 0L, TypeScaleTokens.INSTANCE.m4423getLabelMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelMediumWeight(), null, null, labelMediumFont, null, TypeScaleTokens.INSTANCE.m4424getLabelMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4422getLabelMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle12 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily labelSmallFont = TypeScaleTokens.INSTANCE.getLabelSmallFont();
-        LabelSmall = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle12, 0L, TypeScaleTokens.INSTANCE.m3726getLabelSmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelSmallWeight(), null, null, labelSmallFont, null, TypeScaleTokens.INSTANCE.m3727getLabelSmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3725getLabelSmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        LabelSmall = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle12, 0L, TypeScaleTokens.INSTANCE.m4429getLabelSmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelSmallWeight(), null, null, labelSmallFont, null, TypeScaleTokens.INSTANCE.m4430getLabelSmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4428getLabelSmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle13 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily titleLargeFont = TypeScaleTokens.INSTANCE.getTitleLargeFont();
-        TitleLarge = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle13, 0L, TypeScaleTokens.INSTANCE.m3729getTitleLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleLargeWeight(), null, null, titleLargeFont, null, TypeScaleTokens.INSTANCE.m3730getTitleLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3728getTitleLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TitleLarge = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle13, 0L, TypeScaleTokens.INSTANCE.m4435getTitleLargeSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleLargeWeight(), null, null, titleLargeFont, null, TypeScaleTokens.INSTANCE.m4436getTitleLargeTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4434getTitleLargeLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle14 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily titleMediumFont = TypeScaleTokens.INSTANCE.getTitleMediumFont();
-        TitleMedium = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle14, 0L, TypeScaleTokens.INSTANCE.m3732getTitleMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleMediumWeight(), null, null, titleMediumFont, null, TypeScaleTokens.INSTANCE.m3733getTitleMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3731getTitleMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TitleMedium = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle14, 0L, TypeScaleTokens.INSTANCE.m4441getTitleMediumSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleMediumWeight(), null, null, titleMediumFont, null, TypeScaleTokens.INSTANCE.m4442getTitleMediumTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4440getTitleMediumLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
         TextStyle defaultTextStyle15 = TypographyTokensKt.getDefaultTextStyle();
         GenericFontFamily titleSmallFont = TypeScaleTokens.INSTANCE.getTitleSmallFont();
-        TitleSmall = TextStyle.m6739copyp1EtxEg$default(defaultTextStyle15, 0L, TypeScaleTokens.INSTANCE.m3735getTitleSmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleSmallWeight(), null, null, titleSmallFont, null, TypeScaleTokens.INSTANCE.m3736getTitleSmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m3734getTitleSmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TitleSmall = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle15, 0L, TypeScaleTokens.INSTANCE.m4447getTitleSmallSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleSmallWeight(), null, null, titleSmallFont, null, TypeScaleTokens.INSTANCE.m4448getTitleSmallTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4446getTitleSmallLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle16 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily bodyLargeEmphasizedFont = TypeScaleTokens.INSTANCE.getBodyLargeEmphasizedFont();
+        BodyLargeEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle16, 0L, TypeScaleTokens.INSTANCE.m4360getBodyLargeEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodyLargeEmphasizedWeight(), null, null, bodyLargeEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4361getBodyLargeEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4359getBodyLargeEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle17 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily bodyMediumEmphasizedFont = TypeScaleTokens.INSTANCE.getBodyMediumEmphasizedFont();
+        BodyMediumEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle17, 0L, TypeScaleTokens.INSTANCE.m4366getBodyMediumEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodyMediumEmphasizedWeight(), null, null, bodyMediumEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4367getBodyMediumEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4365getBodyMediumEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle18 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily bodySmallEmphasizedFont = TypeScaleTokens.INSTANCE.getBodySmallEmphasizedFont();
+        BodySmallEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle18, 0L, TypeScaleTokens.INSTANCE.m4372getBodySmallEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getBodySmallEmphasizedWeight(), null, null, bodySmallEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4373getBodySmallEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4371getBodySmallEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle19 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily displayLargeEmphasizedFont = TypeScaleTokens.INSTANCE.getDisplayLargeEmphasizedFont();
+        DisplayLargeEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle19, 0L, TypeScaleTokens.INSTANCE.m4378getDisplayLargeEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplayLargeEmphasizedWeight(), null, null, displayLargeEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4379getDisplayLargeEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4377getDisplayLargeEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle20 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily displayMediumEmphasizedFont = TypeScaleTokens.INSTANCE.getDisplayMediumEmphasizedFont();
+        DisplayMediumEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle20, 0L, TypeScaleTokens.INSTANCE.m4384getDisplayMediumEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplayMediumEmphasizedWeight(), null, null, displayMediumEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4385getDisplayMediumEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4383getDisplayMediumEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle21 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily displaySmallEmphasizedFont = TypeScaleTokens.INSTANCE.getDisplaySmallEmphasizedFont();
+        DisplaySmallEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle21, 0L, TypeScaleTokens.INSTANCE.m4390getDisplaySmallEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getDisplaySmallEmphasizedWeight(), null, null, displaySmallEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4391getDisplaySmallEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4389getDisplaySmallEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle22 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily headlineLargeEmphasizedFont = TypeScaleTokens.INSTANCE.getHeadlineLargeEmphasizedFont();
+        HeadlineLargeEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle22, 0L, TypeScaleTokens.INSTANCE.m4396getHeadlineLargeEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineLargeEmphasizedWeight(), null, null, headlineLargeEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4397getHeadlineLargeEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4395getHeadlineLargeEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle23 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily headlineMediumEmphasizedFont = TypeScaleTokens.INSTANCE.getHeadlineMediumEmphasizedFont();
+        HeadlineMediumEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle23, 0L, TypeScaleTokens.INSTANCE.m4402getHeadlineMediumEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineMediumEmphasizedWeight(), null, null, headlineMediumEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4403getHeadlineMediumEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4401getHeadlineMediumEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle24 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily headlineSmallEmphasizedFont = TypeScaleTokens.INSTANCE.getHeadlineSmallEmphasizedFont();
+        HeadlineSmallEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle24, 0L, TypeScaleTokens.INSTANCE.m4408getHeadlineSmallEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getHeadlineSmallEmphasizedWeight(), null, null, headlineSmallEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4409getHeadlineSmallEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4407getHeadlineSmallEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle25 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily labelLargeEmphasizedFont = TypeScaleTokens.INSTANCE.getLabelLargeEmphasizedFont();
+        LabelLargeEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle25, 0L, TypeScaleTokens.INSTANCE.m4414getLabelLargeEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelLargeEmphasizedWeight(), null, null, labelLargeEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4415getLabelLargeEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4413getLabelLargeEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle26 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily labelMediumEmphasizedFont = TypeScaleTokens.INSTANCE.getLabelMediumEmphasizedFont();
+        LabelMediumEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle26, 0L, TypeScaleTokens.INSTANCE.m4420getLabelMediumEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelMediumEmphasizedWeight(), null, null, labelMediumEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4421getLabelMediumEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4419getLabelMediumEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle27 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily labelSmallEmphasizedFont = TypeScaleTokens.INSTANCE.getLabelSmallEmphasizedFont();
+        LabelSmallEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle27, 0L, TypeScaleTokens.INSTANCE.m4426getLabelSmallEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getLabelSmallEmphasizedWeight(), null, null, labelSmallEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4427getLabelSmallEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4425getLabelSmallEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle28 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily titleLargeEmphasizedFont = TypeScaleTokens.INSTANCE.getTitleLargeEmphasizedFont();
+        TitleLargeEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle28, 0L, TypeScaleTokens.INSTANCE.m4432getTitleLargeEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleLargeEmphasizedWeight(), null, null, titleLargeEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4433getTitleLargeEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4431getTitleLargeEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle29 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily titleMediumEmphasizedFont = TypeScaleTokens.INSTANCE.getTitleMediumEmphasizedFont();
+        TitleMediumEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle29, 0L, TypeScaleTokens.INSTANCE.m4438getTitleMediumEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleMediumEmphasizedWeight(), null, null, titleMediumEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4439getTitleMediumEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4437getTitleMediumEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
+        TextStyle defaultTextStyle30 = TypographyTokensKt.getDefaultTextStyle();
+        GenericFontFamily titleSmallEmphasizedFont = TypeScaleTokens.INSTANCE.getTitleSmallEmphasizedFont();
+        TitleSmallEmphasized = TextStyle.m7470copyp1EtxEg$default(defaultTextStyle30, 0L, TypeScaleTokens.INSTANCE.m4444getTitleSmallEmphasizedSizeXSAIIZE(), TypeScaleTokens.INSTANCE.getTitleSmallEmphasizedWeight(), null, null, titleSmallEmphasizedFont, null, TypeScaleTokens.INSTANCE.m4445getTitleSmallEmphasizedTrackingXSAIIZE(), null, null, null, 0L, null, null, null, 0, 0, TypeScaleTokens.INSTANCE.m4443getTitleSmallEmphasizedLineHeightXSAIIZE(), null, null, null, 0, 0, null, 16645977, null);
     }
 
     public final TextStyle getBodyMedium() {
@@ -134,5 +194,65 @@ public final class TypographyTokens {
 
     public final TextStyle getTitleSmall() {
         return TitleSmall;
+    }
+
+    public final TextStyle getBodyLargeEmphasized() {
+        return BodyLargeEmphasized;
+    }
+
+    public final TextStyle getBodyMediumEmphasized() {
+        return BodyMediumEmphasized;
+    }
+
+    public final TextStyle getBodySmallEmphasized() {
+        return BodySmallEmphasized;
+    }
+
+    public final TextStyle getDisplayLargeEmphasized() {
+        return DisplayLargeEmphasized;
+    }
+
+    public final TextStyle getDisplayMediumEmphasized() {
+        return DisplayMediumEmphasized;
+    }
+
+    public final TextStyle getDisplaySmallEmphasized() {
+        return DisplaySmallEmphasized;
+    }
+
+    public final TextStyle getHeadlineLargeEmphasized() {
+        return HeadlineLargeEmphasized;
+    }
+
+    public final TextStyle getHeadlineMediumEmphasized() {
+        return HeadlineMediumEmphasized;
+    }
+
+    public final TextStyle getHeadlineSmallEmphasized() {
+        return HeadlineSmallEmphasized;
+    }
+
+    public final TextStyle getLabelLargeEmphasized() {
+        return LabelLargeEmphasized;
+    }
+
+    public final TextStyle getLabelMediumEmphasized() {
+        return LabelMediumEmphasized;
+    }
+
+    public final TextStyle getLabelSmallEmphasized() {
+        return LabelSmallEmphasized;
+    }
+
+    public final TextStyle getTitleLargeEmphasized() {
+        return TitleLargeEmphasized;
+    }
+
+    public final TextStyle getTitleMediumEmphasized() {
+        return TitleMediumEmphasized;
+    }
+
+    public final TextStyle getTitleSmallEmphasized() {
+        return TitleSmallEmphasized;
     }
 }

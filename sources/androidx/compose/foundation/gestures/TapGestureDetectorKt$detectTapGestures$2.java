@@ -5,7 +5,6 @@ import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerInputChange;
 import androidx.compose.ui.input.pointer.PointerInputScope;
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
@@ -84,7 +83,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TapGestureDetector.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1", f = "TapGestureDetector.kt", i = {0, 1, 1, 2, 2, 2, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6, 7}, l = {105, AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID, 119, 122, 149, 167, 169, 180}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "resetJob", "$this$awaitEachGesture", "down", "resetJob", "resetJob", "$this$awaitEachGesture", "upOrCancel", "cancelOrReleaseJob", "resetJob", "upOrCancel", "$this$awaitEachGesture", "resetJob", "upOrCancel", "secondDown", "resetJob"}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0"})
+    @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1", f = "TapGestureDetector.kt", i = {0, 1, 1, 2, 2, 2, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6, 7}, l = {105, 116, 119, 122, 149, 167, 169, 180}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "resetJob", "$this$awaitEachGesture", "down", "resetJob", "resetJob", "$this$awaitEachGesture", "upOrCancel", "cancelOrReleaseJob", "resetJob", "upOrCancel", "$this$awaitEachGesture", "resetJob", "upOrCancel", "secondDown", "resetJob"}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0"})
     /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -220,7 +219,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                                     if (this.$onDoubleTap == null) {
                                         Function1<Offset, Unit> function1 = this.$onTap;
                                         if (function1 != null) {
-                                            function1.invoke(Offset.m4294boximpl(pointerInputChange2.m5839getPositionF1C5BW0()));
+                                            function1.invoke(Offset.m5024boximpl(pointerInputChange2.m6569getPositionF1C5BW0()));
                                         }
                                     } else {
                                         this.L$0 = awaitPointerEventScope2;
@@ -237,7 +236,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                                             if (pointerInputChange4 != null) {
                                                 Function1<Offset, Unit> function12 = this.$onTap;
                                                 if (function12 != null) {
-                                                    function12.invoke(Offset.m4294boximpl(pointerInputChange3.m5839getPositionF1C5BW0()));
+                                                    function12.invoke(Offset.m5024boximpl(pointerInputChange3.m6569getPositionF1C5BW0()));
                                                 }
                                             } else {
                                                 CoroutineScope coroutineScope2 = this.$$this$coroutineScope;
@@ -261,12 +260,12 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                                                         if (pointerInputChange7 != null) {
                                                             pointerInputChange7.consume();
                                                             TapGestureDetectorKt.launchAwaitingReset$default(this.$$this$coroutineScope, job5, null, new AnonymousClass7(this.$pressScope, null), 2, null);
-                                                            this.$onDoubleTap.invoke(Offset.m4294boximpl(pointerInputChange7.m5839getPositionF1C5BW0()));
+                                                            this.$onDoubleTap.invoke(Offset.m5024boximpl(pointerInputChange7.m6569getPositionF1C5BW0()));
                                                         } else {
                                                             TapGestureDetectorKt.launchAwaitingReset$default(this.$$this$coroutineScope, job5, null, new AnonymousClass8(this.$pressScope, null), 2, null);
                                                             Function1<Offset, Unit> function13 = this.$onTap;
                                                             if (function13 != null) {
-                                                                function13.invoke(Offset.m4294boximpl(pointerInputChange6.m5839getPositionF1C5BW0()));
+                                                                function13.invoke(Offset.m5024boximpl(pointerInputChange6.m6569getPositionF1C5BW0()));
                                                             }
                                                         }
                                                     }
@@ -294,7 +293,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                                                             if (pointerInputChange7 != null) {
                                                             }
                                                         } else {
-                                                            this.$onLongPress.invoke(Offset.m4294boximpl(pointerInputChange4.m5839getPositionF1C5BW0()));
+                                                            this.$onLongPress.invoke(Offset.m5024boximpl(pointerInputChange4.m6569getPositionF1C5BW0()));
                                                             this.L$0 = launch$default2;
                                                             this.L$1 = null;
                                                             this.L$2 = null;
@@ -369,7 +368,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                         }
                         return Unit.INSTANCE;
                     }
-                    this.$onLongPress.invoke(Offset.m4294boximpl(pointerInputChange.m5839getPositionF1C5BW0()));
+                    this.$onLongPress.invoke(Offset.m5024boximpl(pointerInputChange.m6569getPositionF1C5BW0()));
                     this.L$0 = launch$default;
                     this.L$1 = null;
                     this.L$2 = null;
@@ -466,9 +465,9 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                     ResultKt.throwOnFailure(obj);
                     Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> function3 = this.$onPress;
                     PressGestureScopeImpl pressGestureScopeImpl = this.$pressScope;
-                    Offset m4294boximpl = Offset.m4294boximpl(this.$down.m5839getPositionF1C5BW0());
+                    Offset m5024boximpl = Offset.m5024boximpl(this.$down.m6569getPositionF1C5BW0());
                     this.label = 1;
-                    if (function3.invoke(pressGestureScopeImpl, m4294boximpl, this) == coroutine_suspended) {
+                    if (function3.invoke(pressGestureScopeImpl, m5024boximpl, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {
@@ -693,9 +692,9 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                     ResultKt.throwOnFailure(obj);
                     Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> function3 = this.$onPress;
                     PressGestureScopeImpl pressGestureScopeImpl = this.$pressScope;
-                    Offset m4294boximpl = Offset.m4294boximpl(this.$secondDown.m5839getPositionF1C5BW0());
+                    Offset m5024boximpl = Offset.m5024boximpl(this.$secondDown.m6569getPositionF1C5BW0());
                     this.label = 1;
-                    if (function3.invoke(pressGestureScopeImpl, m4294boximpl, this) == coroutine_suspended) {
+                    if (function3.invoke(pressGestureScopeImpl, m5024boximpl, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {

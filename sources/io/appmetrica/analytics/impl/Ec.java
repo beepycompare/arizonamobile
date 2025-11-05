@@ -1,8 +1,107 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Ec implements S9 {
-    @Override // io.appmetrica.analytics.impl.S9
-    public final R9 a(V9 v9, C0375k7 c0375k7, C0437mh c0437mh, M4 m4, C0477o5 c0477o5, C0538qf c0538qf) {
-        return new Dc(v9, c0375k7, c0437mh, m4, c0477o5, c0538qf);
+
+import android.app.Activity;
+import android.location.Location;
+import io.appmetrica.analytics.AdRevenue;
+import io.appmetrica.analytics.AnrListener;
+import io.appmetrica.analytics.ExternalAttribution;
+import io.appmetrica.analytics.ModuleEvent;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import java.util.ArrayList;
+import java.util.List;
+/* loaded from: classes3.dex */
+public final class Ec extends C0429mi implements Pa {
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void a(Activity activity) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
+    public final void a(Location location) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void a(AnrListener anrListener) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void a(ExternalAttribution externalAttribution) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void a(Io io2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void a(EnumC0435n enumC0435n) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
+    public final void a(String str) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
+    public final void a(String str, String str2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void a(String str, boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
+    public final void a(boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
+    public final void a(boolean z, boolean z2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void b(Activity activity) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Ka
+    public final void b(String str) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Ka
+    public final void b(String str, String str2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Ka
+    public final boolean b() {
+        return false;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void c() {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void c(String str) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final List<String> f() {
+        return new ArrayList();
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0429mi, io.appmetrica.analytics.IModuleReporter
+    public final void reportAdRevenue(AdRevenue adRevenue, boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0429mi, io.appmetrica.analytics.IModuleReporter
+    public final void reportEvent(ModuleEvent moduleEvent) {
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
     }
 }

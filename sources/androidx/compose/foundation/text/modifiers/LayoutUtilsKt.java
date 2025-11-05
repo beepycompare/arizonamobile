@@ -11,13 +11,13 @@ import kotlin.ranges.RangesKt;
 public final class LayoutUtilsKt {
     /* renamed from: finalConstraints-tfFHcEY  reason: not valid java name */
     public static final long m1696finalConstraintstfFHcEY(long j, boolean z, int i, float f) {
-        return Constraints.Companion.m7226fitPrioritizingWidthZbe2FdA(0, m1698finalMaxWidthtfFHcEY(j, z, i, f), 0, Constraints.m7216getMaxHeightimpl(j));
+        return Constraints.Companion.m7957fitPrioritizingWidthZbe2FdA(0, m1698finalMaxWidthtfFHcEY(j, z, i, f), 0, Constraints.m7947getMaxHeightimpl(j));
     }
 
     /* renamed from: finalMaxWidth-tfFHcEY  reason: not valid java name */
     public static final int m1698finalMaxWidthtfFHcEY(long j, boolean z, int i, float f) {
-        int m7217getMaxWidthimpl = ((z || m1699isEllipsisMW5ApA(i)) && Constraints.m7213getHasBoundedWidthimpl(j)) ? Constraints.m7217getMaxWidthimpl(j) : Integer.MAX_VALUE;
-        return Constraints.m7219getMinWidthimpl(j) == m7217getMaxWidthimpl ? m7217getMaxWidthimpl : RangesKt.coerceIn(TextDelegateKt.ceilToIntPx(f), Constraints.m7219getMinWidthimpl(j), m7217getMaxWidthimpl);
+        int m7948getMaxWidthimpl = ((z || m1699isEllipsisMW5ApA(i)) && Constraints.m7944getHasBoundedWidthimpl(j)) ? Constraints.m7948getMaxWidthimpl(j) : Integer.MAX_VALUE;
+        return Constraints.m7950getMinWidthimpl(j) == m7948getMaxWidthimpl ? m7948getMaxWidthimpl : RangesKt.coerceIn(TextDelegateKt.ceilToIntPx(f), Constraints.m7950getMinWidthimpl(j), m7948getMaxWidthimpl);
     }
 
     /* renamed from: finalMaxLines-xdlQI24  reason: not valid java name */
@@ -30,6 +30,6 @@ public final class LayoutUtilsKt {
 
     /* renamed from: isEllipsis-MW5-ApA  reason: not valid java name */
     public static final boolean m1699isEllipsisMW5ApA(int i) {
-        return TextOverflow.m7190equalsimpl0(i, TextOverflow.Companion.m7200getEllipsisgIe3tQ8()) || TextOverflow.m7190equalsimpl0(i, TextOverflow.Companion.m7202getStartEllipsisgIe3tQ8()) || TextOverflow.m7190equalsimpl0(i, TextOverflow.Companion.m7201getMiddleEllipsisgIe3tQ8());
+        return TextOverflow.m7921equalsimpl0(i, TextOverflow.Companion.m7931getEllipsisgIe3tQ8()) || TextOverflow.m7921equalsimpl0(i, TextOverflow.Companion.m7933getStartEllipsisgIe3tQ8()) || TextOverflow.m7921equalsimpl0(i, TextOverflow.Companion.m7932getMiddleEllipsisgIe3tQ8());
     }
 }

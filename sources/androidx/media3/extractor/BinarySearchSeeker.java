@@ -5,7 +5,7 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
 import java.io.IOException;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class BinarySearchSeeker {
     private static final long MAX_SKIP_BYTES = 262144;
     private final int minimumSearchRange;
@@ -13,7 +13,7 @@ public abstract class BinarySearchSeeker {
     protected SeekOperationParams seekOperationParams;
     protected final TimestampSeeker timestampSeeker;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class DefaultSeekTimestampConverter implements SeekTimestampConverter {
         @Override // androidx.media3.extractor.BinarySearchSeeker.SeekTimestampConverter
         public long timeUsToTargetTime(long j) {
@@ -22,13 +22,13 @@ public abstract class BinarySearchSeeker {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface SeekTimestampConverter {
         long timeUsToTargetTime(long j);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface TimestampSeeker {
         default void onSeekFinished() {
         }
@@ -123,7 +123,7 @@ public abstract class BinarySearchSeeker {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class SeekOperationParams {
         private final long approxBytesPerFrame;
         private long ceilingBytePosition;
@@ -197,7 +197,7 @@ public abstract class BinarySearchSeeker {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class TimestampSearchResult {
         public static final TimestampSearchResult NO_TIMESTAMP_IN_RANGE_RESULT = new TimestampSearchResult(-3, C.TIME_UNSET, -1);
         public static final int TYPE_NO_TIMESTAMP = -3;
@@ -227,7 +227,7 @@ public abstract class BinarySearchSeeker {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class BinarySearchSeekMap implements SeekMap {
         private final long approxBytesPerFrame;
         private final long ceilingBytePosition;

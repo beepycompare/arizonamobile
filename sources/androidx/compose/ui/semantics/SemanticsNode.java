@@ -114,9 +114,9 @@ public final class SemanticsNode {
     }
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    public final long m6487getSizeYbymL2g() {
+    public final long m7217getSizeYbymL2g() {
         NodeCoordinator findCoordinatorToGetBounds$ui_release = findCoordinatorToGetBounds$ui_release();
-        return findCoordinatorToGetBounds$ui_release != null ? findCoordinatorToGetBounds$ui_release.mo5975getSizeYbymL2g() : IntSize.Companion.m7440getZeroYbymL2g();
+        return findCoordinatorToGetBounds$ui_release != null ? findCoordinatorToGetBounds$ui_release.mo6705getSizeYbymL2g() : IntSize.Companion.m8171getZeroYbymL2g();
     }
 
     public final Rect getBoundsInRoot() {
@@ -134,7 +134,7 @@ public final class SemanticsNode {
     }
 
     /* renamed from: getPositionInRoot-F1C5BW0  reason: not valid java name */
-    public final long m6484getPositionInRootF1C5BW0() {
+    public final long m7214getPositionInRootF1C5BW0() {
         NodeCoordinator findCoordinatorToGetBounds$ui_release = findCoordinatorToGetBounds$ui_release();
         if (findCoordinatorToGetBounds$ui_release != null) {
             if (!findCoordinatorToGetBounds$ui_release.isAttached()) {
@@ -144,7 +144,7 @@ public final class SemanticsNode {
                 return LayoutCoordinatesKt.positionInRoot(findCoordinatorToGetBounds$ui_release);
             }
         }
-        return Offset.Companion.m4321getZeroF1C5BW0();
+        return Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     public final Rect getBoundsInWindow() {
@@ -162,7 +162,7 @@ public final class SemanticsNode {
     }
 
     /* renamed from: getPositionInWindow-F1C5BW0  reason: not valid java name */
-    public final long m6485getPositionInWindowF1C5BW0() {
+    public final long m7215getPositionInWindowF1C5BW0() {
         NodeCoordinator findCoordinatorToGetBounds$ui_release = findCoordinatorToGetBounds$ui_release();
         if (findCoordinatorToGetBounds$ui_release != null) {
             if (!findCoordinatorToGetBounds$ui_release.isAttached()) {
@@ -172,11 +172,11 @@ public final class SemanticsNode {
                 return LayoutCoordinatesKt.positionInWindow(findCoordinatorToGetBounds$ui_release);
             }
         }
-        return Offset.Companion.m4321getZeroF1C5BW0();
+        return Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     /* renamed from: getPositionOnScreen-F1C5BW0  reason: not valid java name */
-    public final long m6486getPositionOnScreenF1C5BW0() {
+    public final long m7216getPositionOnScreenF1C5BW0() {
         NodeCoordinator findCoordinatorToGetBounds$ui_release = findCoordinatorToGetBounds$ui_release();
         if (findCoordinatorToGetBounds$ui_release != null) {
             if (!findCoordinatorToGetBounds$ui_release.isAttached()) {
@@ -186,7 +186,7 @@ public final class SemanticsNode {
                 return LayoutCoordinatesKt.positionOnScreen(findCoordinatorToGetBounds$ui_release);
             }
         }
-        return Offset.Companion.m4321getZeroF1C5BW0();
+        return Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     public final Rect getBoundsInParent$ui_release() {
@@ -210,10 +210,10 @@ public final class SemanticsNode {
             return Rect.Companion.getZero();
         }
         NodeChain nodes$ui_release = parent.layoutNode.getNodes$ui_release();
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(8);
-        if ((nodes$ui_release.getAggregateChildKindSet() & m6258constructorimpl) != 0) {
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(8);
+        if ((nodes$ui_release.getAggregateChildKindSet() & m6988constructorimpl) != 0) {
             loop0: for (Modifier.Node head$ui_release = nodes$ui_release.getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
-                if ((head$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                if ((head$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                     node = head$ui_release;
                     MutableVector mutableVector = null;
                     while (node != null) {
@@ -221,10 +221,10 @@ public final class SemanticsNode {
                             if (((SemanticsModifierNode) node).isImportantForBounds()) {
                                 break loop0;
                             }
-                        } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui_release;
@@ -250,18 +250,18 @@ public final class SemanticsNode {
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui_release.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
+                if ((head$ui_release.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
                     break;
                 }
             }
         }
         node = null;
         SemanticsModifierNode semanticsModifierNode = (SemanticsModifierNode) node;
-        NodeCoordinator m6112requireCoordinator64DMado = semanticsModifierNode != null ? DelegatableNodeKt.m6112requireCoordinator64DMado(semanticsModifierNode, NodeKind.m6258constructorimpl(8)) : null;
-        if (m6112requireCoordinator64DMado == null) {
+        NodeCoordinator m6842requireCoordinator64DMado = semanticsModifierNode != null ? DelegatableNodeKt.m6842requireCoordinator64DMado(semanticsModifierNode, NodeKind.m6988constructorimpl(8)) : null;
+        if (m6842requireCoordinator64DMado == null) {
             return parent.boundsInImportantForBoundsAncestor(layoutCoordinates);
         }
-        return LayoutCoordinates.localBoundingBoxOf$default(m6112requireCoordinator64DMado, layoutCoordinates, false, 2, null);
+        return LayoutCoordinates.localBoundingBoxOf$default(m6842requireCoordinator64DMado, layoutCoordinates, false, 2, null);
     }
 
     public final boolean isTransparent$ui_release() {
@@ -340,7 +340,7 @@ public final class SemanticsNode {
         for (int i = 0; i < size; i++) {
             LayoutNode layoutNode2 = layoutNodeArr[i];
             if (layoutNode2.isAttached() && (z || !layoutNode2.isDeactivated())) {
-                if (layoutNode2.getNodes$ui_release().m6219hasH91voCI$ui_release(NodeKind.m6258constructorimpl(8))) {
+                if (layoutNode2.getNodes$ui_release().m6949hasH91voCI$ui_release(NodeKind.m6988constructorimpl(8))) {
                     list.add(SemanticsNodeKt.SemanticsNode(layoutNode2, this.mergingEnabled));
                 } else {
                     fillOneLayerOfSemanticsWrappers(layoutNode2, list, z);
@@ -408,7 +408,7 @@ public final class SemanticsNode {
                 if (layoutNode == null) {
                     layoutNode = null;
                     break;
-                } else if (layoutNode.getNodes$ui_release().m6219hasH91voCI$ui_release(NodeKind.m6258constructorimpl(8))) {
+                } else if (layoutNode.getNodes$ui_release().m6949hasH91voCI$ui_release(NodeKind.m6988constructorimpl(8))) {
                     break;
                 } else {
                     layoutNode = layoutNode.getParent$ui_release();
@@ -438,10 +438,10 @@ public final class SemanticsNode {
     }
 
     public final NodeCoordinator findCoordinatorToGetBounds$ui_release() {
-        NodeCoordinator m6112requireCoordinator64DMado;
+        NodeCoordinator m6842requireCoordinator64DMado;
         if (!this.isFake) {
             SemanticsModifierNode findSemanticsModifierNodeToGetBounds = findSemanticsModifierNodeToGetBounds();
-            return (findSemanticsModifierNodeToGetBounds == null || (m6112requireCoordinator64DMado = DelegatableNodeKt.m6112requireCoordinator64DMado(findSemanticsModifierNodeToGetBounds, NodeKind.m6258constructorimpl(8))) == null) ? this.layoutNode.getInnerCoordinator$ui_release() : m6112requireCoordinator64DMado;
+            return (findSemanticsModifierNodeToGetBounds == null || (m6842requireCoordinator64DMado = DelegatableNodeKt.m6842requireCoordinator64DMado(findSemanticsModifierNodeToGetBounds, NodeKind.m6988constructorimpl(8))) == null) ? this.layoutNode.getInnerCoordinator$ui_release() : m6842requireCoordinator64DMado;
         }
         SemanticsNode parent = getParent();
         if (parent != null) {
@@ -456,11 +456,11 @@ public final class SemanticsNode {
         SemanticsModifierNode semanticsModifierNode = null;
         if (this.unmergedConfig.isMergingSemanticsOfDescendants()) {
             NodeChain nodes$ui_release = this.layoutNode.getNodes$ui_release();
-            int m6258constructorimpl = NodeKind.m6258constructorimpl(8);
-            if ((nodes$ui_release.getAggregateChildKindSet() & m6258constructorimpl) != 0) {
+            int m6988constructorimpl = NodeKind.m6988constructorimpl(8);
+            if ((nodes$ui_release.getAggregateChildKindSet() & m6988constructorimpl) != 0) {
                 node = null;
                 for (Modifier.Node head$ui_release = nodes$ui_release.getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
-                    if ((head$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                    if ((head$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                         Modifier.Node node2 = head$ui_release;
                         MutableVector mutableVector = null;
                         while (node2 != null) {
@@ -474,10 +474,10 @@ public final class SemanticsNode {
                                         node = semanticsModifierNode2;
                                     }
                                 }
-                            } else if ((node2.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node2).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node2 = delegate$ui_release;
@@ -503,7 +503,7 @@ public final class SemanticsNode {
                             node2 = DelegatableNodeKt.pop(mutableVector);
                         }
                     }
-                    if ((head$ui_release.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
+                    if ((head$ui_release.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
                         break;
                     }
                 }
@@ -512,10 +512,10 @@ public final class SemanticsNode {
             return semanticsModifierNode;
         }
         NodeChain nodes$ui_release2 = this.layoutNode.getNodes$ui_release();
-        int m6258constructorimpl2 = NodeKind.m6258constructorimpl(8);
-        if ((nodes$ui_release2.getAggregateChildKindSet() & m6258constructorimpl2) != 0) {
+        int m6988constructorimpl2 = NodeKind.m6988constructorimpl(8);
+        if ((nodes$ui_release2.getAggregateChildKindSet() & m6988constructorimpl2) != 0) {
             loop3: for (Modifier.Node head$ui_release2 = nodes$ui_release2.getHead$ui_release(); head$ui_release2 != null; head$ui_release2 = head$ui_release2.getChild$ui_release()) {
-                if ((head$ui_release2.getKindSet$ui_release() & m6258constructorimpl2) != 0) {
+                if ((head$ui_release2.getKindSet$ui_release() & m6988constructorimpl2) != 0) {
                     node = head$ui_release2;
                     MutableVector mutableVector2 = null;
                     while (node != null) {
@@ -523,10 +523,10 @@ public final class SemanticsNode {
                             if (((SemanticsModifierNode) node).isImportantForBounds()) {
                                 semanticsModifierNode = node;
                             }
-                        } else if ((node.getKindSet$ui_release() & m6258constructorimpl2) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui_release() & m6988constructorimpl2) != 0 && (node instanceof DelegatingNode)) {
                             int i2 = 0;
                             for (Modifier.Node delegate$ui_release2 = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release2 != null; delegate$ui_release2 = delegate$ui_release2.getChild$ui_release()) {
-                                if ((delegate$ui_release2.getKindSet$ui_release() & m6258constructorimpl2) != 0) {
+                                if ((delegate$ui_release2.getKindSet$ui_release() & m6988constructorimpl2) != 0) {
                                     i2++;
                                     if (i2 == 1) {
                                         node = delegate$ui_release2;
@@ -552,7 +552,7 @@ public final class SemanticsNode {
                         node = DelegatableNodeKt.pop(mutableVector2);
                     }
                 }
-                if ((head$ui_release2.getAggregateChildKindSet$ui_release() & m6258constructorimpl2) == 0) {
+                if ((head$ui_release2.getAggregateChildKindSet$ui_release() & m6988constructorimpl2) == 0) {
                     break;
                 }
             }
@@ -563,7 +563,7 @@ public final class SemanticsNode {
     private final void emitFakeNodes(List<SemanticsNode> list) {
         final Role access$getRole = SemanticsNodeKt.access$getRole(this);
         if (access$getRole != null && this.unmergedConfig.isMergingSemanticsOfDescendants() && !list.isEmpty()) {
-            list.add(m6483fakeSemanticsNodeypyhhiA(access$getRole, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.ui.semantics.SemanticsNode$emitFakeNodes$fakeNode$1
+            list.add(m7213fakeSemanticsNodeypyhhiA(access$getRole, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.ui.semantics.SemanticsNode$emitFakeNodes$fakeNode$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(1);
@@ -577,7 +577,7 @@ public final class SemanticsNode {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.this.m6473unboximpl());
+                    SemanticsPropertiesKt.m7223setRolekuIjeqM(semanticsPropertyReceiver, Role.this.m7203unboximpl());
                 }
             }));
         }
@@ -585,7 +585,7 @@ public final class SemanticsNode {
             List list2 = (List) SemanticsConfigurationKt.getOrNull(this.unmergedConfig, SemanticsProperties.INSTANCE.getContentDescription());
             final String str = list2 != null ? (String) CollectionsKt.firstOrNull((List<? extends Object>) list2) : null;
             if (str != null) {
-                list.add(0, m6483fakeSemanticsNodeypyhhiA(null, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.ui.semantics.SemanticsNode$emitFakeNodes$fakeNode$2
+                list.add(0, m7213fakeSemanticsNodeypyhhiA(null, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.ui.semantics.SemanticsNode$emitFakeNodes$fakeNode$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -608,7 +608,7 @@ public final class SemanticsNode {
     }
 
     /* renamed from: fakeSemanticsNode-ypyhhiA  reason: not valid java name */
-    private final SemanticsNode m6483fakeSemanticsNodeypyhhiA(Role role, Function1<? super SemanticsPropertyReceiver, Unit> function1) {
+    private final SemanticsNode m7213fakeSemanticsNodeypyhhiA(Role role, Function1<? super SemanticsPropertyReceiver, Unit> function1) {
         SemanticsConfiguration semanticsConfiguration = new SemanticsConfiguration();
         semanticsConfiguration.setMergingSemanticsOfDescendants(false);
         semanticsConfiguration.setClearingSemantics(false);

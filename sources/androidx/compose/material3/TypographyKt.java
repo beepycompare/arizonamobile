@@ -10,19 +10,20 @@ import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.functions.Function0;
 /* compiled from: Typography.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a\u0014\u0010\n\u001a\u00020\u0006*\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0007H\u0002\"\u001a\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0018\u0010\u0005\u001a\u00020\u0006*\u00020\u00078AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\t¨\u0006\u000b"}, d2 = {"LocalTypography", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/compose/material3/Typography;", "getLocalTypography", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "value", "Landroidx/compose/ui/text/TextStyle;", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getValue", "(Landroidx/compose/material3/tokens/TypographyKeyTokens;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/text/TextStyle;", "fromToken", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0014\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0000\"\u0018\u0010\u0003\u001a\u00020\u0001*\u00020\u00048AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006\"\u001a\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00020\bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"fromToken", "Landroidx/compose/ui/text/TextStyle;", "Landroidx/compose/material3/Typography;", "value", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getValue", "(Landroidx/compose/material3/tokens/TypographyKeyTokens;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/text/TextStyle;", "LocalTypography", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "getLocalTypography", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TypographyKt {
-    private static final ProvidableCompositionLocal<Typography> LocalTypography = CompositionLocalKt.staticCompositionLocalOf(new Function0<Typography>() { // from class: androidx.compose.material3.TypographyKt$LocalTypography$1
-        /* JADX WARN: Can't rename method to resolve collision */
+    private static final ProvidableCompositionLocal<Typography> LocalTypography = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.material3.TypographyKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
-        public final Typography invoke() {
-            return new Typography(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 32767, null);
+        public final Object invoke() {
+            Typography LocalTypography$lambda$0;
+            LocalTypography$lambda$0 = TypographyKt.LocalTypography$lambda$0();
+            return LocalTypography$lambda$0;
         }
     });
 
     /* compiled from: Typography.kt */
-    @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -89,11 +90,71 @@ public final class TypographyKt {
                 iArr[TypographyKeyTokens.LabelSmall.ordinal()] = 15;
             } catch (NoSuchFieldError unused15) {
             }
+            try {
+                iArr[TypographyKeyTokens.DisplayLargeEmphasized.ordinal()] = 16;
+            } catch (NoSuchFieldError unused16) {
+            }
+            try {
+                iArr[TypographyKeyTokens.DisplayMediumEmphasized.ordinal()] = 17;
+            } catch (NoSuchFieldError unused17) {
+            }
+            try {
+                iArr[TypographyKeyTokens.DisplaySmallEmphasized.ordinal()] = 18;
+            } catch (NoSuchFieldError unused18) {
+            }
+            try {
+                iArr[TypographyKeyTokens.HeadlineLargeEmphasized.ordinal()] = 19;
+            } catch (NoSuchFieldError unused19) {
+            }
+            try {
+                iArr[TypographyKeyTokens.HeadlineMediumEmphasized.ordinal()] = 20;
+            } catch (NoSuchFieldError unused20) {
+            }
+            try {
+                iArr[TypographyKeyTokens.HeadlineSmallEmphasized.ordinal()] = 21;
+            } catch (NoSuchFieldError unused21) {
+            }
+            try {
+                iArr[TypographyKeyTokens.TitleLargeEmphasized.ordinal()] = 22;
+            } catch (NoSuchFieldError unused22) {
+            }
+            try {
+                iArr[TypographyKeyTokens.TitleMediumEmphasized.ordinal()] = 23;
+            } catch (NoSuchFieldError unused23) {
+            }
+            try {
+                iArr[TypographyKeyTokens.TitleSmallEmphasized.ordinal()] = 24;
+            } catch (NoSuchFieldError unused24) {
+            }
+            try {
+                iArr[TypographyKeyTokens.BodyLargeEmphasized.ordinal()] = 25;
+            } catch (NoSuchFieldError unused25) {
+            }
+            try {
+                iArr[TypographyKeyTokens.BodyMediumEmphasized.ordinal()] = 26;
+            } catch (NoSuchFieldError unused26) {
+            }
+            try {
+                iArr[TypographyKeyTokens.BodySmallEmphasized.ordinal()] = 27;
+            } catch (NoSuchFieldError unused27) {
+            }
+            try {
+                iArr[TypographyKeyTokens.LabelLargeEmphasized.ordinal()] = 28;
+            } catch (NoSuchFieldError unused28) {
+            }
+            try {
+                iArr[TypographyKeyTokens.LabelMediumEmphasized.ordinal()] = 29;
+            } catch (NoSuchFieldError unused29) {
+            }
+            try {
+                iArr[TypographyKeyTokens.LabelSmallEmphasized.ordinal()] = 30;
+            } catch (NoSuchFieldError unused30) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
-    private static final TextStyle fromToken(Typography typography, TypographyKeyTokens typographyKeyTokens) {
+    public static final TextStyle fromToken(Typography typography, TypographyKeyTokens typographyKeyTokens) {
         switch (WhenMappings.$EnumSwitchMapping$0[typographyKeyTokens.ordinal()]) {
             case 1:
                 return typography.getDisplayLarge();
@@ -125,15 +186,45 @@ public final class TypographyKt {
                 return typography.getLabelMedium();
             case 15:
                 return typography.getLabelSmall();
+            case 16:
+                return typography.getDisplayLargeEmphasized$material3();
+            case 17:
+                return typography.getDisplayMediumEmphasized$material3();
+            case 18:
+                return typography.getDisplaySmallEmphasized$material3();
+            case 19:
+                return typography.getHeadlineLargeEmphasized$material3();
+            case 20:
+                return typography.getHeadlineMediumEmphasized$material3();
+            case 21:
+                return typography.getHeadlineSmallEmphasized$material3();
+            case 22:
+                return typography.getTitleLargeEmphasized$material3();
+            case 23:
+                return typography.getTitleMediumEmphasized$material3();
+            case 24:
+                return typography.getTitleSmallEmphasized$material3();
+            case 25:
+                return typography.getBodyLargeEmphasized$material3();
+            case 26:
+                return typography.getBodyMediumEmphasized$material3();
+            case 27:
+                return typography.getBodySmallEmphasized$material3();
+            case 28:
+                return typography.getLabelLargeEmphasized$material3();
+            case 29:
+                return typography.getLabelMediumEmphasized$material3();
+            case 30:
+                return typography.getLabelSmallEmphasized$material3();
             default:
                 throw new NoWhenBranchMatchedException();
         }
     }
 
     public static final TextStyle getValue(TypographyKeyTokens typographyKeyTokens, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1049072145, "C209@10713L10:Typography.kt#uh7d8r");
+        ComposerKt.sourceInformationMarkerStart(composer, -1049072145, "C(<get-value>)524@28934L10:Typography.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1049072145, i, -1, "androidx.compose.material3.<get-value> (Typography.kt:209)");
+            ComposerKt.traceEventStart(-1049072145, i, -1, "androidx.compose.material3.<get-value> (Typography.kt:524)");
         }
         TextStyle fromToken = fromToken(MaterialTheme.INSTANCE.getTypography(composer, 6), typographyKeyTokens);
         if (ComposerKt.isTraceInProgress()) {
@@ -141,6 +232,11 @@ public final class TypographyKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         return fromToken;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Typography LocalTypography$lambda$0() {
+        return new Typography(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 32767, null);
     }
 
     public static final ProvidableCompositionLocal<Typography> getLocalTypography() {

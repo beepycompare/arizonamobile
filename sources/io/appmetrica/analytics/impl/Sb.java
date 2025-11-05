@@ -1,301 +1,144 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
-import java.io.Closeable;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-/* loaded from: classes4.dex */
-public final class Sb implements InterfaceC0302hb, Closeable {
+import android.content.Context;
+import android.location.Location;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
+import io.appmetrica.analytics.locationapi.internal.CacheArguments;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory;
+import io.appmetrica.analytics.locationapi.internal.LocationClient;
+import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
+import io.appmetrica.analytics.locationapi.internal.LocationFilter;
+import io.appmetrica.analytics.locationapi.internal.LocationProvider;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSourcesServiceController;
+/* loaded from: classes3.dex */
+public final class Sb implements Rb, InterfaceC0483om, LocationProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f670a = new HashMap();
-    public final HashMap b = new HashMap();
-    public final String c = "preferences";
-    public final Rb d;
-    public volatile boolean e;
-    public final X6 f;
+    public final Context f681a;
+    public final Wb b;
+    public final LocationClient c;
+    public final C0706xl d;
+    public final Ck e;
+    public final LastKnownLocationExtractorProviderFactory f;
+    public final LocationReceiverProviderFactory g;
 
-    public Sb(X6 x6) {
-        this.f = x6;
-        Rb rb = new Rb(this, String.format(Locale.US, "IAA-DW-%s", Integer.valueOf(Ud.a())));
-        this.d = rb;
-        rb.start();
+    public Sb(Context context, Wb wb, LocationClient locationClient) {
+        this.f681a = context;
+        this.b = wb;
+        this.c = locationClient;
+        C0140bc c0140bc = new C0140bc();
+        this.d = new C0706xl(new C0516q5(c0140bc, C0620ua.k().p().getAskForPermissionStrategy()));
+        this.e = C0620ua.k().p();
+        ((Zb) wb).a(c0140bc, true);
+        ((Zb) wb).a(locationClient, true);
+        this.f = locationClient.getLastKnownExtractorProviderFactory();
+        this.g = locationClient.getLocationReceiverProviderFactory();
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0081 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0029 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r8v10, types: [java.lang.Long] */
-    /* JADX WARN: Type inference failed for: r8v11, types: [java.lang.Float] */
-    /* JADX WARN: Type inference failed for: r8v5, types: [java.lang.Boolean] */
-    /* JADX WARN: Type inference failed for: r8v6, types: [java.lang.Boolean] */
-    /* JADX WARN: Type inference failed for: r8v9, types: [java.lang.Integer] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void a(Sb sb) {
-        SQLiteDatabase sQLiteDatabase;
-        String str;
-        sb.getClass();
-        Cursor cursor = null;
-        try {
-            sQLiteDatabase = sb.f.a();
-            if (sQLiteDatabase != null) {
-                try {
-                    Cursor query = sQLiteDatabase.query(sb.c, new String[]{"key", "value", "type"}, null, null, null, null, null);
-                    while (query.moveToNext()) {
-                        try {
-                            String string = query.getString(query.getColumnIndexOrThrow("key"));
-                            String string2 = query.getString(query.getColumnIndexOrThrow("value"));
-                            int i = query.getInt(query.getColumnIndexOrThrow("type"));
-                            if (!TextUtils.isEmpty(string)) {
-                                if (i != 1) {
-                                    if (i == 2) {
-                                        str = ParseUtils.parseInt(string2);
-                                    } else if (i != 3) {
-                                        str = string2;
-                                        if (i != 4) {
-                                            if (i == 5) {
-                                                str = ParseUtils.parseFloat(string2);
-                                            }
-                                            str = null;
-                                        }
-                                    } else {
-                                        str = ParseUtils.parseLong(string2);
-                                    }
-                                    if (str == null) {
-                                        sb.f670a.put(string, str);
-                                    }
-                                } else {
-                                    if ("true".equals(string2)) {
-                                        str = Boolean.TRUE;
-                                    } else {
-                                        if ("false".equals(string2)) {
-                                            str = Boolean.FALSE;
-                                        }
-                                        str = null;
-                                    }
-                                    if (str == null) {
-                                    }
-                                }
-                            }
-                        } catch (Throwable unused) {
-                        }
-                    }
-                    cursor = query;
-                } catch (Throwable unused2) {
-                }
-            }
-        } catch (Throwable unused3) {
-            sQLiteDatabase = null;
-        }
-        ro.a(cursor);
-        sb.f.a(sQLiteDatabase);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final void b() {
-        synchronized (this.d) {
-            this.d.notifyAll();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0483om
+    public final void a(C0356jm c0356jm) {
+        C0389l3 c0389l3 = c0356jm.x;
+        if (c0389l3 != null) {
+            long j = c0389l3.f982a;
+            this.c.updateCacheArguments(new CacheArguments(j, 2 * j));
         }
     }
 
-    public final void c() {
-        if (this.e) {
-            return;
+    public final C0706xl b() {
+        return this.d;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final LastKnownLocationExtractorProviderFactory getLastKnownExtractorProviderFactory() {
+        return this.f;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final LocationReceiverProviderFactory getLocationReceiverProviderFactory() {
+        return this.g;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final PermissionExtractor getPermissionExtractor() {
+        return this.d;
+    }
+
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
+    public final Location getSystemLocation() {
+        return this.c.getSystemLocation();
+    }
+
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
+    public final Location getUserLocation() {
+        return this.c.getUserLocation();
+    }
+
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void init() {
+        this.c.init(this.f681a, this.d, C0620ua.H.d.c(), this.e.e());
+        ModuleLocationSourcesServiceController f = this.e.f();
+        if (f != null) {
+            f.init();
+        } else {
+            LocationClient locationClient = this.c;
+            locationClient.registerSystemLocationSource(locationClient.getLastKnownExtractorProviderFactory().getGplLastKnownLocationExtractorProvider());
+            LocationClient locationClient2 = this.c;
+            locationClient2.registerSystemLocationSource(locationClient2.getLastKnownExtractorProviderFactory().getNetworkLastKnownLocationExtractorProvider());
         }
-        try {
-            this.f670a.wait();
-        } catch (InterruptedException unused) {
-        }
+        ((Zb) this.b).a(this.e.g());
+        C0620ua.H.u.a(this);
     }
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        if (this.d.isRunning()) {
-            this.d.stopRunning();
-        }
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerControllerObserver(LocationControllerObserver locationControllerObserver) {
+        ((Zb) this.b).a(locationControllerObserver, true);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final boolean getBoolean(String str, boolean z) {
-        Object b = b(str);
-        return b instanceof Boolean ? ((Boolean) b).booleanValue() : z;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
+        this.c.registerSystemLocationSource(lastKnownLocationExtractorProvider);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final int getInt(String str, int i) {
-        Object b = b(str);
-        return b instanceof Integer ? ((Integer) b).intValue() : i;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void unregisterSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
+        this.c.unregisterSystemLocationSource(lastKnownLocationExtractorProvider);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final long getLong(String str, long j) {
-        Object b = b(str);
-        return b instanceof Long ? ((Long) b).longValue() : j;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void updateLocationFilter(LocationFilter locationFilter) {
+        this.c.updateLocationFilter(locationFilter);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final String getString(String str, String str2) {
-        Object b = b(str);
-        return b instanceof String ? (String) b : str2;
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void b(Object obj) {
+        ((Zb) this.b).a(obj);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb remove(String str) {
-        synchronized (this.f670a) {
-            c();
-            this.f670a.remove(str);
-        }
-        synchronized (this.d) {
-            this.b.put(str, this);
-            this.d.notifyAll();
-        }
-        return this;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerSource(LocationReceiverProvider locationReceiverProvider) {
+        this.c.registerSystemLocationSource(locationReceiverProvider);
     }
 
-    public final Object b(String str) {
-        Object obj;
-        synchronized (this.f670a) {
-            c();
-            obj = this.f670a.get(str);
-        }
-        return obj;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void unregisterSource(LocationReceiverProvider locationReceiverProvider) {
+        this.c.unregisterSystemLocationSource(locationReceiverProvider);
     }
 
-    public static void a(Sb sb, HashMap hashMap) {
-        SQLiteDatabase sQLiteDatabase;
-        sb.getClass();
-        int size = hashMap.size();
-        ContentValues[] contentValuesArr = new ContentValues[size];
-        int i = 0;
-        for (Map.Entry entry : hashMap.entrySet()) {
-            ContentValues contentValues = new ContentValues();
-            Object value = entry.getValue();
-            contentValues.put("key", (String) entry.getKey());
-            if (value == sb) {
-                contentValues.putNull("value");
-            } else if (value instanceof String) {
-                contentValues.put("value", (String) value);
-                contentValues.put("type", (Integer) 4);
-            } else if (value instanceof Long) {
-                contentValues.put("value", (Long) value);
-                contentValues.put("type", (Integer) 3);
-            } else if (value instanceof Integer) {
-                contentValues.put("value", (Integer) value);
-                contentValues.put("type", (Integer) 2);
-            } else if (value instanceof Boolean) {
-                contentValues.put("value", String.valueOf(((Boolean) value).booleanValue()));
-                contentValues.put("type", (Integer) 1);
-            } else if (value instanceof Float) {
-                contentValues.put("value", (Float) value);
-                contentValues.put("type", (Integer) 5);
-            }
-            contentValuesArr[i] = contentValues;
-            i++;
-        }
-        SQLiteDatabase sQLiteDatabase2 = null;
-        try {
-            sQLiteDatabase = sb.f.a();
-            if (sQLiteDatabase != null) {
-                try {
-                    sQLiteDatabase.beginTransaction();
-                    for (int i2 = 0; i2 < size; i2++) {
-                        ContentValues contentValues2 = contentValuesArr[i2];
-                        if (contentValues2.getAsString("value") == null) {
-                            sQLiteDatabase.delete(sb.c, "key = ?", new String[]{contentValues2.getAsString("key")});
-                        } else {
-                            sQLiteDatabase.insertWithOnConflict(sb.c, null, contentValues2, 5);
-                        }
-                    }
-                    sQLiteDatabase.setTransactionSuccessful();
-                } catch (Throwable unused) {
-                    sQLiteDatabase2 = sQLiteDatabase;
-                    if (sQLiteDatabase2 != null) {
-                        try {
-                            sQLiteDatabase2.endTransaction();
-                        } catch (Throwable unused2) {
-                        }
-                    }
-                    sQLiteDatabase = sQLiteDatabase2;
-                    sb.f.a(sQLiteDatabase);
-                }
-            }
-            if (sQLiteDatabase != null) {
-                try {
-                    sQLiteDatabase.endTransaction();
-                } catch (Throwable unused3) {
-                }
-            }
-        } catch (Throwable unused4) {
-        }
-        sb.f.a(sQLiteDatabase);
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void a(Object obj) {
+        ((Zb) this.b).b(obj);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final synchronized InterfaceC0302hb a(String str, String str2) {
-        a(str, (Object) str2);
-        return this;
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void a(boolean z) {
+        ((Zb) this.b).a(z);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb a(String str, long j) {
-        a(str, Long.valueOf(j));
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final synchronized InterfaceC0302hb a(int i, String str) {
-        a(str, Integer.valueOf(i));
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb a(String str, boolean z) {
-        a(str, Boolean.valueOf(z));
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb a(String str, float f) {
-        a(str, Float.valueOf(f));
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final boolean a(String str) {
-        boolean containsKey;
-        synchronized (this.f670a) {
-            c();
-            containsKey = this.f670a.containsKey(str);
-        }
-        return containsKey;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final Set a() {
-        HashSet hashSet;
-        synchronized (this.f670a) {
-            hashSet = new HashSet(this.f670a.keySet());
-        }
-        return hashSet;
-    }
-
-    public final void a(String str, Object obj) {
-        synchronized (this.f670a) {
-            c();
-            this.f670a.put(str, obj);
-        }
-        synchronized (this.d) {
-            this.b.put(str, obj);
-            this.d.notifyAll();
-        }
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void a(Location location) {
+        this.c.updateUserLocation(location);
     }
 }

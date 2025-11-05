@@ -64,7 +64,7 @@ public final class PopulateViewStructure_androidKt {
         List list;
         Integer valueOf;
         boolean z3;
-        String m6449toLegacyClassNameV4PA4sw;
+        String m7179toLegacyClassNameV4PA4sw;
         String[] contentHints;
         String[] contentHints2;
         MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui_release;
@@ -294,7 +294,7 @@ public final class PopulateViewStructure_androidKt {
                     autofillApi26Helper.setCheckable(viewStructure, true);
                     autofillApi26Helper.setChecked(viewStructure, toggleableState == ToggleableState.On);
                 } else if (bool != null) {
-                    if (!(role == null ? false : Role.m6470equalsimpl0(role.m6473unboximpl(), Role.Companion.m6481getTabo7Vup1c()))) {
+                    if (!(role == null ? false : Role.m7200equalsimpl0(role.m7203unboximpl(), Role.Companion.m7211getTabo7Vup1c()))) {
                         autofillApi26Helper.setCheckable(viewStructure, true);
                         autofillApi26Helper.setChecked(viewStructure, bool.booleanValue());
                     }
@@ -312,8 +312,8 @@ public final class PopulateViewStructure_androidKt {
                     autofillApi26Helper.setText(viewStructure, str3);
                     autofillApi26Helper.setClassName(viewStructure, AndroidComposeViewAccessibilityDelegateCompat.TextClassName);
                 }
-                if (semanticsInfo.getChildrenInfo().isEmpty() && role != null && (m6449toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m6449toLegacyClassNameV4PA4sw(role.m6473unboximpl())) != null) {
-                    autofillApi26Helper.setClassName(viewStructure, m6449toLegacyClassNameV4PA4sw);
+                if (semanticsInfo.getChildrenInfo().isEmpty() && role != null && (m7179toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m7179toLegacyClassNameV4PA4sw(role.m7203unboximpl())) != null) {
+                    autofillApi26Helper.setClassName(viewStructure, m7179toLegacyClassNameV4PA4sw);
                 }
                 if (z) {
                     return;
@@ -377,7 +377,7 @@ public final class PopulateViewStructure_androidKt {
         if (list != null) {
         }
         if (semanticsInfo.getChildrenInfo().isEmpty()) {
-            autofillApi26Helper.setClassName(viewStructure, m6449toLegacyClassNameV4PA4sw);
+            autofillApi26Helper.setClassName(viewStructure, m7179toLegacyClassNameV4PA4sw);
         }
         if (z) {
         }

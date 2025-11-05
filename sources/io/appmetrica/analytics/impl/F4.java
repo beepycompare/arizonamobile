@@ -1,21 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
-/* loaded from: classes4.dex */
-public abstract /* synthetic */ class F4 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f438a;
-
-    static {
-        int[] iArr = new int[CounterConfigurationReporterType.values().length];
-        iArr[CounterConfigurationReporterType.COMMUTATION.ordinal()] = 1;
-        iArr[CounterConfigurationReporterType.SELF_DIAGNOSTIC_MAIN.ordinal()] = 2;
-        iArr[CounterConfigurationReporterType.SELF_DIAGNOSTIC_MANUAL.ordinal()] = 3;
-        iArr[CounterConfigurationReporterType.MANUAL.ordinal()] = 4;
-        iArr[CounterConfigurationReporterType.SELF_SDK.ordinal()] = 5;
-        iArr[CounterConfigurationReporterType.MAIN.ordinal()] = 6;
-        iArr[CounterConfigurationReporterType.CRASH.ordinal()] = 7;
-        f438a = iArr;
+import android.content.Context;
+/* loaded from: classes3.dex */
+public final class F4 implements U7 {
+    @Override // io.appmetrica.analytics.impl.U7
+    /* renamed from: b */
+    public final E4 a(Context context, X4 x4, C0664w4 c0664w4) {
+        return new E4(context, Kl.f563a, x4, c0664w4, C0620ua.H.u());
     }
 }

@@ -1,18 +1,14 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AdRevenue;
-/* loaded from: classes4.dex */
-public final class Wj implements InterfaceC0534qb {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f730a;
-
-    public Wj(AdRevenue adRevenue) {
-        this.f730a = adRevenue;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+/* loaded from: classes3.dex */
+public final class Wj extends AbstractC0403lh {
+    public Wj(L6 l6) {
+        super(l6);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0534qb
-    public final void a(InterfaceC0558rb interfaceC0558rb) {
-        interfaceC0558rb.reportAdRevenue(this.f730a);
+    @Override // io.appmetrica.analytics.impl.AbstractC0403lh, io.appmetrica.analytics.impl.InterfaceC0428mh
+    public final boolean a(Boolean bool) {
+        return !this.f992a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
     }
 }

@@ -1,9 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
-public abstract /* synthetic */ class G {
-    public static /* synthetic */ String a(int i) {
-        return i != 1 ? i != 2 ? i != 3 ? i != 4 ? AbstractJsonLexerKt.NULL : "UNKNOWN" : "FORBIDDEN_BY_REMOTE_CONFIG" : "FORBIDDEN_BY_CLIENT_CONFIG" : "ALLOWED";
+import kotlin.jvm.internal.Intrinsics;
+/* loaded from: classes3.dex */
+public final class G {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final int f482a;
+    public final int b;
+    public final int c;
+
+    public G(int i, int i2, int i3) {
+        this.f482a = i;
+        this.b = i2;
+        this.c = i3;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (Intrinsics.areEqual(G.class, obj != null ? obj.getClass() : null)) {
+            if (obj != null) {
+                G g = (G) obj;
+                return this.f482a == g.f482a && this.b == g.b && this.c == g.c;
+            }
+            throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.impl.id.AdvIdGetterController.CanTrackIdentifiers");
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int a2 = Q7.a(this.b);
+        return Q7.a(this.c) + ((a2 + (Q7.a(this.f482a) * 31)) * 31);
+    }
+
+    public final String toString() {
+        return "CanTrackIdentifiers(canTrackGaid=" + H.a(this.f482a) + ", canTrackHoaid=" + H.a(this.b) + ", canTrackYandexAdvId=" + H.a(this.c) + ')';
     }
 }

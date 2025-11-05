@@ -324,15 +324,15 @@ public final class AndroidDialog_androidKt {
                         int i5 = 0;
                         int i6 = 0;
                         for (int i7 = 0; i7 < size; i7++) {
-                            Placeable mo5967measureBRTryo0 = list.get(i7).mo5967measureBRTryo0(j);
-                            i5 = Math.max(i5, mo5967measureBRTryo0.getWidth());
-                            i6 = Math.max(i6, mo5967measureBRTryo0.getHeight());
-                            arrayList.add(mo5967measureBRTryo0);
+                            Placeable mo6697measureBRTryo0 = list.get(i7).mo6697measureBRTryo0(j);
+                            i5 = Math.max(i5, mo6697measureBRTryo0.getWidth());
+                            i6 = Math.max(i6, mo6697measureBRTryo0.getHeight());
+                            arrayList.add(mo6697measureBRTryo0);
                         }
                         final ArrayList arrayList2 = arrayList;
                         if (list.isEmpty()) {
-                            i5 = Constraints.m7219getMinWidthimpl(j);
-                            i6 = Constraints.m7218getMinHeightimpl(j);
+                            i5 = Constraints.m7950getMinWidthimpl(j);
+                            i6 = Constraints.m7949getMinHeightimpl(j);
                         }
                         return MeasureScope.layout$default(measureScope, i5, i6, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$DialogLayout$1$1.1
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -379,15 +379,15 @@ public final class AndroidDialog_androidKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             function2.invoke(startRestartGroup, Integer.valueOf((i6 >> 6) & 14));
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

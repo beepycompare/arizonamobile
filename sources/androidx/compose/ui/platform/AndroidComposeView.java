@@ -316,7 +316,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         super(context);
         Modifier.Companion companion;
         AndroidAutofillManager androidAutofillManager;
-        this.lastDownPointerPosition = Offset.Companion.m4320getUnspecifiedF1C5BW0();
+        this.lastDownPointerPosition = Offset.Companion.m5050getUnspecifiedF1C5BW0();
         this.superclassInitComplete = true;
         this.sharedDrawScope = new LayoutNodeDrawScope(null, 1, null);
         this.density$delegate = SnapshotStateKt.mutableStateOf(AndroidDensity_androidKt.Density(context), SnapshotStateKt.referentialEqualityPolicy());
@@ -366,22 +366,22 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                return m6370invokeZmokQxo(keyEvent.m5684unboximpl());
+                return m7100invokeZmokQxo(keyEvent.m6414unboximpl());
             }
 
             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-            public final Boolean m6370invokeZmokQxo(android.view.KeyEvent keyEvent) {
+            public final Boolean m7100invokeZmokQxo(android.view.KeyEvent keyEvent) {
                 View findNextNonChildView;
-                final FocusDirection m4197toFocusDirectionZmokQxo = FocusInteropUtils_androidKt.m4197toFocusDirectionZmokQxo(keyEvent);
-                if (m4197toFocusDirectionZmokQxo == null || !KeyEventType.m5688equalsimpl0(KeyEvent_androidKt.m5696getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5692getKeyDownCS__XNY())) {
+                final FocusDirection m4927toFocusDirectionZmokQxo = FocusInteropUtils_androidKt.m4927toFocusDirectionZmokQxo(keyEvent);
+                if (m4927toFocusDirectionZmokQxo == null || !KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6422getKeyDownCS__XNY())) {
                     return false;
                 }
-                Integer m4196toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4196toAndroidFocusDirection3ESFkO8(m4197toFocusDirectionZmokQxo.m4187unboximpl());
-                if (ComposeUiFlags.isViewFocusFixEnabled && AndroidComposeView.this.hasFocus() && m4196toAndroidFocusDirection3ESFkO8 != null && AndroidComposeView.this.mo4246moveFocusInChildren3ESFkO8(m4197toFocusDirectionZmokQxo.m4187unboximpl())) {
+                Integer m4926toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4926toAndroidFocusDirection3ESFkO8(m4927toFocusDirectionZmokQxo.m4917unboximpl());
+                if (ComposeUiFlags.isViewFocusFixEnabled && AndroidComposeView.this.hasFocus() && m4926toAndroidFocusDirection3ESFkO8 != null && AndroidComposeView.this.mo4976moveFocusInChildren3ESFkO8(m4927toFocusDirectionZmokQxo.m4917unboximpl())) {
                     return true;
                 }
                 Rect embeddedViewFocusRect = AndroidComposeView.this.getEmbeddedViewFocusRect();
-                Boolean mo4203focusSearchULY8qGw = AndroidComposeView.this.getFocusOwner().mo4203focusSearchULY8qGw(m4197toFocusDirectionZmokQxo.m4187unboximpl(), embeddedViewFocusRect, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$keyInputModifier$1$focusWasMovedOrCancelled$1
+                Boolean mo4933focusSearchULY8qGw = AndroidComposeView.this.getFocusOwner().mo4933focusSearchULY8qGw(m4927toFocusDirectionZmokQxo.m4917unboximpl(), embeddedViewFocusRect, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$keyInputModifier$1$focusWasMovedOrCancelled$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     {
                         super(1);
@@ -389,17 +389,17 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
                     @Override // kotlin.jvm.functions.Function1
                     public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                        return Boolean.valueOf(focusTargetNode.mo4216requestFocus3ESFkO8(FocusDirection.this.m4187unboximpl()));
+                        return Boolean.valueOf(focusTargetNode.mo4946requestFocus3ESFkO8(FocusDirection.this.m4917unboximpl()));
                     }
                 });
-                if (mo4203focusSearchULY8qGw != null ? mo4203focusSearchULY8qGw.booleanValue() : true) {
+                if (mo4933focusSearchULY8qGw != null ? mo4933focusSearchULY8qGw.booleanValue() : true) {
                     return true;
                 }
-                if (!FocusOwnerImplKt.m4209is1dFocusSearch3ESFkO8(m4197toFocusDirectionZmokQxo.m4187unboximpl())) {
+                if (!FocusOwnerImplKt.m4939is1dFocusSearch3ESFkO8(m4927toFocusDirectionZmokQxo.m4917unboximpl())) {
                     return false;
                 }
-                if (m4196toAndroidFocusDirection3ESFkO8 != null) {
-                    findNextNonChildView = AndroidComposeView.this.findNextNonChildView(m4196toAndroidFocusDirection3ESFkO8.intValue());
+                if (m4926toAndroidFocusDirection3ESFkO8 != null) {
+                    findNextNonChildView = AndroidComposeView.this.findNextNonChildView(m4926toAndroidFocusDirection3ESFkO8.intValue());
                     if (Intrinsics.areEqual(findNextNonChildView, AndroidComposeView.this)) {
                         findNextNonChildView = null;
                     }
@@ -413,25 +413,25 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                         ViewGroup viewGroup = (ViewGroup) rootView;
                         viewGroup.offsetDescendantRectToMyCoords(AndroidComposeView.this, androidRect);
                         viewGroup.offsetRectIntoDescendantCoords(findNextNonChildView, androidRect);
-                        if (FocusInteropUtils_androidKt.requestInteropFocus(findNextNonChildView, m4196toAndroidFocusDirection3ESFkO8, androidRect)) {
+                        if (FocusInteropUtils_androidKt.requestInteropFocus(findNextNonChildView, m4926toAndroidFocusDirection3ESFkO8, androidRect)) {
                             return true;
                         }
                     }
                 }
-                if (!AndroidComposeView.this.getFocusOwner().mo4200clearFocusI7lrPNg(false, true, false, m4197toFocusDirectionZmokQxo.m4187unboximpl())) {
+                if (!AndroidComposeView.this.getFocusOwner().mo4930clearFocusI7lrPNg(false, true, false, m4927toFocusDirectionZmokQxo.m4917unboximpl())) {
                     return true;
                 }
-                Boolean mo4203focusSearchULY8qGw2 = AndroidComposeView.this.getFocusOwner().mo4203focusSearchULY8qGw(m4197toFocusDirectionZmokQxo.m4187unboximpl(), null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$keyInputModifier$1.1
+                Boolean mo4933focusSearchULY8qGw2 = AndroidComposeView.this.getFocusOwner().mo4933focusSearchULY8qGw(m4927toFocusDirectionZmokQxo.m4917unboximpl(), null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$keyInputModifier$1.1
                     {
                         super(1);
                     }
 
                     @Override // kotlin.jvm.functions.Function1
                     public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                        return Boolean.valueOf(focusTargetNode.mo4216requestFocus3ESFkO8(FocusDirection.this.m4187unboximpl()));
+                        return Boolean.valueOf(focusTargetNode.mo4946requestFocus3ESFkO8(FocusDirection.this.m4917unboximpl()));
                     }
                 });
-                return Boolean.valueOf(mo4203focusSearchULY8qGw2 != null ? mo4203focusSearchULY8qGw2.booleanValue() : true);
+                return Boolean.valueOf(mo4933focusSearchULY8qGw2 != null ? mo4933focusSearchULY8qGw2.booleanValue() : true);
             }
         });
         this.keyInputModifier = onKeyEvent;
@@ -499,14 +499,14 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         this.snapshotObserver = new OwnerSnapshotObserver(new AndroidComposeView$snapshotObserver$1(this));
         this.measureAndLayoutDelegate = new MeasureAndLayoutDelegate(getRoot());
         long j = Integer.MAX_VALUE;
-        this.globalPosition = IntOffset.m7386constructorimpl((j & 4294967295L) | (j << 32));
+        this.globalPosition = IntOffset.m8117constructorimpl((j & 4294967295L) | (j << 32));
         this.tmpPositionArray = new int[]{0, 0};
-        float[] m4791constructorimpl$default = Matrix.m4791constructorimpl$default(null, 1, null);
-        this.tmpMatrix = m4791constructorimpl$default;
-        this.viewToWindowMatrix = Matrix.m4791constructorimpl$default(null, 1, null);
-        this.windowToViewMatrix = Matrix.m4791constructorimpl$default(null, 1, null);
+        float[] m5521constructorimpl$default = Matrix.m5521constructorimpl$default(null, 1, null);
+        this.tmpMatrix = m5521constructorimpl$default;
+        this.viewToWindowMatrix = Matrix.m5521constructorimpl$default(null, 1, null);
+        this.windowToViewMatrix = Matrix.m5521constructorimpl$default(null, 1, null);
         this.lastMatrixRecalculationAnimationTime = -1L;
-        this.windowPosition = Offset.Companion.m4319getInfiniteF1C5BW0();
+        this.windowPosition = Offset.Companion.m5049getInfiniteF1C5BW0();
         this.isRenderNodeCompatible = true;
         this._viewTreeOwners$delegate = SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.viewTreeOwners$delegate = SnapshotStateKt.derivedStateOf(new Function0<ViewTreeOwners>() { // from class: androidx.compose.ui.platform.AndroidComposeView$viewTreeOwners$2
@@ -544,7 +544,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         TextInputServiceAndroid textInputServiceAndroid = new TextInputServiceAndroid(getView(), this);
         this.legacyTextInputServiceAndroid = textInputServiceAndroid;
         this.textInputService = new TextInputService(AndroidComposeView_androidKt.getPlatformTextInputServiceInterceptor().invoke(textInputServiceAndroid));
-        this.textInputSessionMutex = SessionMutex.m4042constructorimpl();
+        this.textInputSessionMutex = SessionMutex.m4772constructorimpl();
         this.softwareKeyboardController = new DelegatingSoftwareKeyboardController(getTextInputService());
         this.fontLoader = new AndroidFontResourceLoader(context);
         this.fontFamilyResolver$delegate = SnapshotStateKt.mutableStateOf(FontFamilyResolver_androidKt.createFontFamilyResolver(context), SnapshotStateKt.referentialEqualityPolicy());
@@ -553,7 +553,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         this.layoutDirection$delegate = SnapshotStateKt.mutableStateOf$default(layoutDirection == null ? LayoutDirection.Ltr : layoutDirection, null, 2, null);
         AndroidComposeView androidComposeView2 = this;
         this.hapticFeedBack = new PlatformHapticFeedback(androidComposeView2);
-        this._inputModeManager = new InputModeManagerImpl(isInTouchMode() ? InputMode.Companion.m5365getTouchaOaMEAU() : InputMode.Companion.m5364getKeyboardaOaMEAU(), new Function1<InputMode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$_inputModeManager$1
+        this._inputModeManager = new InputModeManagerImpl(isInTouchMode() ? InputMode.Companion.m6095getTouchaOaMEAU() : InputMode.Companion.m6094getKeyboardaOaMEAU(), new Function1<InputMode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$_inputModeManager$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -561,16 +561,16 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(InputMode inputMode) {
-                return m6368invokeiuPiT84(inputMode.m5363unboximpl());
+                return m7098invokeiuPiT84(inputMode.m6093unboximpl());
             }
 
             /* renamed from: invoke-iuPiT84  reason: not valid java name */
-            public final Boolean m6368invokeiuPiT84(int i) {
+            public final Boolean m7098invokeiuPiT84(int i) {
                 boolean requestFocusFromTouch;
-                if (InputMode.m5360equalsimpl0(i, InputMode.Companion.m5365getTouchaOaMEAU())) {
+                if (InputMode.m6090equalsimpl0(i, InputMode.Companion.m6095getTouchaOaMEAU())) {
                     requestFocusFromTouch = AndroidComposeView.this.isInTouchMode();
                 } else {
-                    requestFocusFromTouch = InputMode.m5360equalsimpl0(i, InputMode.Companion.m5364getKeyboardaOaMEAU()) ? AndroidComposeView.this.isInTouchMode() ? AndroidComposeView.this.requestFocusFromTouch() : true : false;
+                    requestFocusFromTouch = InputMode.m6090equalsimpl0(i, InputMode.Companion.m6094getKeyboardaOaMEAU()) ? AndroidComposeView.this.isInTouchMode() ? AndroidComposeView.this.requestFocusFromTouch() : true : false;
                 }
                 return Boolean.valueOf(requestFocusFromTouch);
             }
@@ -640,7 +640,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                 }
             }
         };
-        this.matrixToWindow = Build.VERSION.SDK_INT < 29 ? new CalculateMatrixToWindowApi21(m4791constructorimpl$default, null) : new CalculateMatrixToWindowApi29();
+        this.matrixToWindow = Build.VERSION.SDK_INT < 29 ? new CalculateMatrixToWindowApi21(m5521constructorimpl$default, null) : new CalculateMatrixToWindowApi29();
         addOnAttachStateChangeListener(this.contentCaptureManager);
         setWillNotDraw(false);
         setFocusable(true);
@@ -737,7 +737,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             ((SuspendingPointerInputModifierNode) head$ui_release).resetPointerInputHandler();
         }
         Modifier.Node node = head$ui_release;
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(16);
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(16);
         if (!node.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -750,9 +750,9 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui_release() & m6258constructorimpl) != 0) {
+            if ((node2.getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0) {
                 for (Modifier.Node node3 = node2; node3 != null; node3 = node3.getChild$ui_release()) {
-                    if ((node3.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                    if ((node3.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                         Modifier.Node node4 = node3;
                         MutableVector mutableVector2 = null;
                         while (node4 != null) {
@@ -761,10 +761,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                                 if (pointerInputModifierNode instanceof SuspendingPointerInputModifierNode) {
                                     ((SuspendingPointerInputModifierNode) pointerInputModifierNode).resetPointerInputHandler();
                                 }
-                            } else if ((node4.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node4 instanceof DelegatingNode)) {
+                            } else if ((node4.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node4 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node4).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node4 = delegate$ui_release;
@@ -808,18 +808,18 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // androidx.compose.ui.focus.PlatformFocusOwner
     /* renamed from: moveFocusInChildren-3ESFkO8 */
-    public boolean mo4246moveFocusInChildren3ESFkO8(int i) {
+    public boolean mo4976moveFocusInChildren3ESFkO8(int i) {
         AndroidViewsHandler androidViewsHandler;
         View findNextFocusFromRect;
         if (!ComposeUiFlags.isViewFocusFixEnabled) {
-            if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4189getEnterdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4190getExitdhqQ8s())) {
+            if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4919getEnterdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4920getExitdhqQ8s())) {
                 return false;
             }
-            Integer m4196toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4196toAndroidFocusDirection3ESFkO8(i);
-            if (m4196toAndroidFocusDirection3ESFkO8 == null) {
+            Integer m4926toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4926toAndroidFocusDirection3ESFkO8(i);
+            if (m4926toAndroidFocusDirection3ESFkO8 == null) {
                 throw new IllegalStateException("Invalid focus direction".toString());
             }
-            int intValue = m4196toAndroidFocusDirection3ESFkO8.intValue();
+            int intValue = m4926toAndroidFocusDirection3ESFkO8.intValue();
             Rect embeddedViewFocusRect = getEmbeddedViewFocusRect();
             r2 = embeddedViewFocusRect != null ? RectHelper_androidKt.toAndroidRect(embeddedViewFocusRect) : null;
             FocusFinderCompat companion = FocusFinderCompat.Companion.getInstance();
@@ -832,14 +832,14 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                 return FocusInteropUtils_androidKt.requestInteropFocus(findNextFocusFromRect, Integer.valueOf(intValue), r2);
             }
             return false;
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4189getEnterdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4190getExitdhqQ8s()) || !hasFocus() || (androidViewsHandler = this._androidViewsHandler) == null) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4919getEnterdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4920getExitdhqQ8s()) || !hasFocus() || (androidViewsHandler = this._androidViewsHandler) == null) {
             return false;
         } else {
-            Integer m4196toAndroidFocusDirection3ESFkO82 = FocusInteropUtils_androidKt.m4196toAndroidFocusDirection3ESFkO8(i);
-            if (m4196toAndroidFocusDirection3ESFkO82 == null) {
+            Integer m4926toAndroidFocusDirection3ESFkO82 = FocusInteropUtils_androidKt.m4926toAndroidFocusDirection3ESFkO8(i);
+            if (m4926toAndroidFocusDirection3ESFkO82 == null) {
                 throw new IllegalStateException("Invalid focus direction".toString());
             }
-            int intValue2 = m4196toAndroidFocusDirection3ESFkO82.intValue();
+            int intValue2 = m4926toAndroidFocusDirection3ESFkO82.intValue();
             View rootView = getRootView();
             Intrinsics.checkNotNull(rootView, "null cannot be cast to non-null type android.view.ViewGroup");
             ViewGroup viewGroup = (ViewGroup) rootView;
@@ -848,7 +848,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                 throw new IllegalStateException("view hasFocus but root can't find it".toString());
             }
             View findNextFocus = FocusFinderCompat.Companion.getInstance().findNextFocus(viewGroup, findFocus, intValue2);
-            if (!FocusOwnerImplKt.m4209is1dFocusSearch3ESFkO8(i) || !androidViewsHandler.hasFocus()) {
+            if (!FocusOwnerImplKt.m4939is1dFocusSearch3ESFkO8(i) || !androidViewsHandler.hasFocus()) {
                 Rect embeddedViewFocusRect2 = getEmbeddedViewFocusRect();
                 r2 = embeddedViewFocusRect2 != null ? RectHelper_androidKt.toAndroidRect(embeddedViewFocusRect2) : null;
                 if (findNextFocus != null && r2 != null) {
@@ -1056,7 +1056,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void touchModeChangeListener$lambda$8(AndroidComposeView androidComposeView, boolean z) {
-        androidComposeView._inputModeManager.m5368setInputModeiuPiT84(z ? InputMode.Companion.m5365getTouchaOaMEAU() : InputMode.Companion.m5364getKeyboardaOaMEAU());
+        androidComposeView._inputModeManager.m6098setInputModeiuPiT84(z ? InputMode.Companion.m6095getTouchaOaMEAU() : InputMode.Companion.m6094getKeyboardaOaMEAU());
     }
 
     @Override // androidx.compose.ui.node.Owner, androidx.compose.ui.node.RootForTest
@@ -1093,7 +1093,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     androidComposeView$textInputSession$1.label = 1;
-                    if (SessionMutex.m4049withSessionCancellingPreviousimpl(this.textInputSessionMutex, new Function1<CoroutineScope, AndroidPlatformTextInputSession>() { // from class: androidx.compose.ui.platform.AndroidComposeView$textInputSession$2
+                    if (SessionMutex.m4779withSessionCancellingPreviousimpl(this.textInputSessionMutex, new Function1<CoroutineScope, AndroidPlatformTextInputSession>() { // from class: androidx.compose.ui.platform.AndroidComposeView$textInputSession$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         {
                             super(1);
@@ -1182,7 +1182,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         if (motionEvent.getActionMasked() != 10) {
             throw new IllegalStateException("The ACTION_HOVER_EXIT event was not cleared.".toString());
         }
-        androidComposeView.m6365sendMotionEvent8iAsVTc(motionEvent);
+        androidComposeView.m7095sendMotionEvent8iAsVTc(motionEvent);
     }
 
     @Override // android.view.View
@@ -1193,7 +1193,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             rect.top = Math.round(embeddedViewFocusRect.getTop());
             rect.right = Math.round(embeddedViewFocusRect.getRight());
             rect.bottom = Math.round(embeddedViewFocusRect.getBottom());
-        } else if (!Intrinsics.areEqual((Object) getFocusOwner().mo4203focusSearchULY8qGw(FocusDirection.Companion.m4188getDowndhqQ8s(), null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$getFocusedRect$1
+        } else if (!Intrinsics.areEqual((Object) getFocusOwner().mo4933focusSearchULY8qGw(FocusDirection.Companion.m4918getDowndhqQ8s(), null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$getFocusedRect$1
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(FocusTargetNode focusTargetNode) {
                 return true;
@@ -1254,9 +1254,9 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             calculateBoundingRectRelativeTo = FocusInteropUtils_androidKt.calculateBoundingRectRelativeTo(view, this);
         }
         FocusDirection focusDirection = FocusInteropUtils_androidKt.toFocusDirection(i);
-        int m4187unboximpl = focusDirection != null ? focusDirection.m4187unboximpl() : FocusDirection.Companion.m4188getDowndhqQ8s();
+        int m4917unboximpl = focusDirection != null ? focusDirection.m4917unboximpl() : FocusDirection.Companion.m4918getDowndhqQ8s();
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        if (getFocusOwner().mo4203focusSearchULY8qGw(m4187unboximpl, calculateBoundingRectRelativeTo, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$focusSearch$searchResult$1
+        if (getFocusOwner().mo4933focusSearchULY8qGw(m4917unboximpl, calculateBoundingRectRelativeTo, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$focusSearch$searchResult$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -1276,11 +1276,11 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             } else if (findNextFocus == null) {
                 return this;
             } else {
-                if (FocusOwnerImplKt.m4209is1dFocusSearch3ESFkO8(m4187unboximpl)) {
+                if (FocusOwnerImplKt.m4939is1dFocusSearch3ESFkO8(m4917unboximpl)) {
                     return super.focusSearch(view, i);
                 }
                 AndroidComposeView androidComposeView = this;
-                if (TwoDimensionalFocusSearchKt.m4253isBetterCandidateI7lrPNg(FocusTraversalKt.focusRect((FocusTargetNode) objectRef.element), FocusInteropUtils_androidKt.calculateBoundingRectRelativeTo(findNextFocus, androidComposeView), calculateBoundingRectRelativeTo, m4187unboximpl)) {
+                if (TwoDimensionalFocusSearchKt.m4983isBetterCandidateI7lrPNg(FocusTraversalKt.focusRect((FocusTargetNode) objectRef.element), FocusInteropUtils_androidKt.calculateBoundingRectRelativeTo(findNextFocus, androidComposeView), calculateBoundingRectRelativeTo, m4917unboximpl)) {
                     return androidComposeView;
                 }
             }
@@ -1300,8 +1300,8 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                 return super.requestFocus(i, rect);
             }
             FocusDirection focusDirection = FocusInteropUtils_androidKt.toFocusDirection(i);
-            final int m4187unboximpl = focusDirection != null ? focusDirection.m4187unboximpl() : FocusDirection.Companion.m4189getEnterdhqQ8s();
-            return Intrinsics.areEqual((Object) getFocusOwner().mo4203focusSearchULY8qGw(m4187unboximpl, rect != null ? RectHelper_androidKt.toComposeRect(rect) : null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$1
+            final int m4917unboximpl = focusDirection != null ? focusDirection.m4917unboximpl() : FocusDirection.Companion.m4919getEnterdhqQ8s();
+            return Intrinsics.areEqual((Object) getFocusOwner().mo4933focusSearchULY8qGw(m4917unboximpl, rect != null ? RectHelper_androidKt.toComposeRect(rect) : null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1310,7 +1310,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
                 @Override // kotlin.jvm.functions.Function1
                 public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                    return Boolean.valueOf(focusTargetNode.mo4216requestFocus3ESFkO8(m4187unboximpl));
+                    return Boolean.valueOf(focusTargetNode.mo4946requestFocus3ESFkO8(m4917unboximpl));
                 }
             }), (Object) true);
         } else if (isFocused()) {
@@ -1320,12 +1320,12 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                 return false;
             }
             FocusDirection focusDirection2 = FocusInteropUtils_androidKt.toFocusDirection(i);
-            final int m4187unboximpl2 = focusDirection2 != null ? focusDirection2.m4187unboximpl() : FocusDirection.Companion.m4189getEnterdhqQ8s();
-            if (hasFocus() && mo4246moveFocusInChildren3ESFkO8(m4187unboximpl2)) {
+            final int m4917unboximpl2 = focusDirection2 != null ? focusDirection2.m4917unboximpl() : FocusDirection.Companion.m4919getEnterdhqQ8s();
+            if (hasFocus() && mo4976moveFocusInChildren3ESFkO8(m4917unboximpl2)) {
                 return true;
             }
             final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-            Boolean mo4203focusSearchULY8qGw = getFocusOwner().mo4203focusSearchULY8qGw(m4187unboximpl2, rect != null ? RectHelper_androidKt.toComposeRect(rect) : null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$focusSearchResult$1
+            Boolean mo4933focusSearchULY8qGw = getFocusOwner().mo4933focusSearchULY8qGw(m4917unboximpl2, rect != null ? RectHelper_androidKt.toComposeRect(rect) : null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$focusSearchResult$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1335,19 +1335,19 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                 @Override // kotlin.jvm.functions.Function1
                 public final Boolean invoke(FocusTargetNode focusTargetNode) {
                     Ref.BooleanRef.this.element = true;
-                    return Boolean.valueOf(focusTargetNode.mo4216requestFocus3ESFkO8(m4187unboximpl2));
+                    return Boolean.valueOf(focusTargetNode.mo4946requestFocus3ESFkO8(m4917unboximpl2));
                 }
             });
-            if (mo4203focusSearchULY8qGw == null) {
+            if (mo4933focusSearchULY8qGw == null) {
                 return false;
             }
-            if (mo4203focusSearchULY8qGw.booleanValue()) {
+            if (mo4933focusSearchULY8qGw.booleanValue()) {
                 return true;
             }
             if (booleanRef.element) {
                 return false;
             }
-            if ((rect != null && !hasFocus() && Intrinsics.areEqual((Object) getFocusOwner().mo4203focusSearchULY8qGw(m4187unboximpl2, null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$altFocus$1
+            if ((rect != null && !hasFocus() && Intrinsics.areEqual((Object) getFocusOwner().mo4933focusSearchULY8qGw(m4917unboximpl2, null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$altFocus$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1356,7 +1356,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
                 @Override // kotlin.jvm.functions.Function1
                 public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                    return Boolean.valueOf(focusTargetNode.mo4216requestFocus3ESFkO8(m4187unboximpl2));
+                    return Boolean.valueOf(focusTargetNode.mo4946requestFocus3ESFkO8(m4917unboximpl2));
                 }
             }), (Object) true)) || (findNextNonChildView = findNextNonChildView(i)) == null || findNextNonChildView == this) {
                 return true;
@@ -1370,12 +1370,12 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // androidx.compose.ui.focus.PlatformFocusOwner
     /* renamed from: requestOwnerFocus-7o62pno */
-    public boolean mo4247requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect) {
-        Integer m4196toAndroidFocusDirection3ESFkO8;
+    public boolean mo4977requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect) {
+        Integer m4926toAndroidFocusDirection3ESFkO8;
         if (isFocused() || hasFocus()) {
             return true;
         }
-        return super.requestFocus((focusDirection == null || (m4196toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4196toAndroidFocusDirection3ESFkO8(focusDirection.m4187unboximpl())) == null) ? TsExtractor.TS_STREAM_TYPE_HDMV_DTS : m4196toAndroidFocusDirection3ESFkO8.intValue(), rect != null ? RectHelper_androidKt.toAndroidRect(rect) : null);
+        return super.requestFocus((focusDirection == null || (m4926toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4926toAndroidFocusDirection3ESFkO8(focusDirection.m4917unboximpl())) == null) ? TsExtractor.TS_STREAM_TYPE_HDMV_DTS : m4926toAndroidFocusDirection3ESFkO8.intValue(), rect != null ? RectHelper_androidKt.toAndroidRect(rect) : null);
     }
 
     @Override // androidx.compose.ui.focus.PlatformFocusOwner
@@ -1415,8 +1415,8 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // androidx.compose.ui.node.RootForTest
     /* renamed from: sendKeyEvent-ZmokQxo */
-    public boolean mo6322sendKeyEventZmokQxo(android.view.KeyEvent keyEvent) {
-        return getFocusOwner().mo4201dispatchInterceptedSoftKeyboardEventZmokQxo(keyEvent) || FocusOwner.m4199dispatchKeyEventYhN2O0w$default(getFocusOwner(), keyEvent, null, 2, null);
+    public boolean mo7052sendKeyEventZmokQxo(android.view.KeyEvent keyEvent) {
+        return getFocusOwner().mo4931dispatchInterceptedSoftKeyboardEventZmokQxo(keyEvent) || FocusOwner.m4929dispatchKeyEventYhN2O0w$default(getFocusOwner(), keyEvent, null, 2, null);
     }
 
     @Override // androidx.compose.ui.node.RootForTest
@@ -1427,10 +1427,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchKeyEvent(final android.view.KeyEvent keyEvent) {
         if (isFocused()) {
-            this._windowInfo.m6422setKeyboardModifiers5xRPYO0(PointerKeyboardModifiers.m5901constructorimpl(keyEvent.getMetaState()));
-            return FocusOwner.m4199dispatchKeyEventYhN2O0w$default(getFocusOwner(), KeyEvent.m5679constructorimpl(keyEvent), null, 2, null) || super.dispatchKeyEvent(keyEvent);
+            this._windowInfo.m7152setKeyboardModifiers5xRPYO0(PointerKeyboardModifiers.m6631constructorimpl(keyEvent.getMetaState()));
+            return FocusOwner.m4929dispatchKeyEventYhN2O0w$default(getFocusOwner(), KeyEvent.m6409constructorimpl(keyEvent), null, 2, null) || super.dispatchKeyEvent(keyEvent);
         }
-        return getFocusOwner().mo4202dispatchKeyEventYhN2O0w(KeyEvent.m5679constructorimpl(keyEvent), new Function0<Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$dispatchKeyEvent$1
+        return getFocusOwner().mo4932dispatchKeyEventYhN2O0w(KeyEvent.m6409constructorimpl(keyEvent), new Function0<Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$dispatchKeyEvent$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -1449,7 +1449,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchKeyEventPreIme(android.view.KeyEvent keyEvent) {
-        return (isFocused() && getFocusOwner().mo4201dispatchInterceptedSoftKeyboardEventZmokQxo(KeyEvent.m5679constructorimpl(keyEvent))) || super.dispatchKeyEventPreIme(keyEvent);
+        return (isFocused() && getFocusOwner().mo4931dispatchInterceptedSoftKeyboardEventZmokQxo(KeyEvent.m6409constructorimpl(keyEvent))) || super.dispatchKeyEventPreIme(keyEvent);
     }
 
     @Override // androidx.compose.ui.node.RootForTest
@@ -1538,7 +1538,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: startDrag-12SF9DM  reason: not valid java name */
-    public final boolean m6366startDrag12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1) {
+    public final boolean m7096startDrag12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1) {
         Resources resources = getContext().getResources();
         return AndroidComposeViewStartDragAndDropN.INSTANCE.startDragAndDrop(this, dragAndDropTransferData, new ComposeDragShadowBuilder(DensityKt.Density(resources.getDisplayMetrics().density, resources.getConfiguration().fontScale), j, function1, null));
     }
@@ -1633,7 +1633,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                     if (parent$ui_release == null) {
                         parent$ui_release = null;
                         break;
-                    } else if (parent$ui_release.getNodes$ui_release().m6219hasH91voCI$ui_release(NodeKind.m6258constructorimpl(8))) {
+                    } else if (parent$ui_release.getNodes$ui_release().m6949hasH91voCI$ui_release(NodeKind.m6988constructorimpl(8))) {
                         break;
                     } else {
                         parent$ui_release = parent$ui_release.getParent$ui_release();
@@ -1749,10 +1749,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // androidx.compose.ui.node.Owner
     /* renamed from: measureAndLayout-0kLqBqw */
-    public void mo6321measureAndLayout0kLqBqw(LayoutNode layoutNode, long j) {
+    public void mo7051measureAndLayout0kLqBqw(LayoutNode layoutNode, long j) {
         Trace.beginSection("AndroidOwner:measureAndLayout");
         try {
-            this.measureAndLayoutDelegate.m6206measureAndLayout0kLqBqw(layoutNode, j);
+            this.measureAndLayoutDelegate.m6936measureAndLayout0kLqBqw(layoutNode, j);
             if (!this.measureAndLayoutDelegate.getHasPendingMeasureOrLayout()) {
                 MeasureAndLayoutDelegate.dispatchOnPositionedCallbacks$default(this.measureAndLayoutDelegate, false, 1, null);
                 dispatchPendingInteropLayoutCallbacks();
@@ -1824,23 +1824,23 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             if (!isAttachedToWindow()) {
                 invalidateLayoutNodeMeasurement(getRoot());
             }
-            long m6362convertMeasureSpecI7RO_PI = m6362convertMeasureSpecI7RO_PI(i);
-            long m6362convertMeasureSpecI7RO_PI2 = m6362convertMeasureSpecI7RO_PI(i2);
-            long m7225fitPrioritizingHeightZbe2FdA = Constraints.Companion.m7225fitPrioritizingHeightZbe2FdA((int) ULong.m9285constructorimpl(m6362convertMeasureSpecI7RO_PI >>> 32), (int) ULong.m9285constructorimpl(m6362convertMeasureSpecI7RO_PI & 4294967295L), (int) ULong.m9285constructorimpl(m6362convertMeasureSpecI7RO_PI2 >>> 32), (int) ULong.m9285constructorimpl(4294967295L & m6362convertMeasureSpecI7RO_PI2));
+            long m7092convertMeasureSpecI7RO_PI = m7092convertMeasureSpecI7RO_PI(i);
+            long m7092convertMeasureSpecI7RO_PI2 = m7092convertMeasureSpecI7RO_PI(i2);
+            long m7956fitPrioritizingHeightZbe2FdA = Constraints.Companion.m7956fitPrioritizingHeightZbe2FdA((int) ULong.m10026constructorimpl(m7092convertMeasureSpecI7RO_PI >>> 32), (int) ULong.m10026constructorimpl(m7092convertMeasureSpecI7RO_PI & 4294967295L), (int) ULong.m10026constructorimpl(m7092convertMeasureSpecI7RO_PI2 >>> 32), (int) ULong.m10026constructorimpl(4294967295L & m7092convertMeasureSpecI7RO_PI2));
             Constraints constraints = this.onMeasureConstraints;
             boolean z = false;
             if (constraints == null) {
-                this.onMeasureConstraints = Constraints.m7204boximpl(m7225fitPrioritizingHeightZbe2FdA);
+                this.onMeasureConstraints = Constraints.m7935boximpl(m7956fitPrioritizingHeightZbe2FdA);
                 this.wasMeasuredWithMultipleConstraints = false;
             } else {
                 if (constraints != null) {
-                    z = Constraints.m7210equalsimpl0(constraints.m7223unboximpl(), m7225fitPrioritizingHeightZbe2FdA);
+                    z = Constraints.m7941equalsimpl0(constraints.m7954unboximpl(), m7956fitPrioritizingHeightZbe2FdA);
                 }
                 if (!z) {
                     this.wasMeasuredWithMultipleConstraints = true;
                 }
             }
-            this.measureAndLayoutDelegate.m6207updateRootConstraintsBRTryo0(m7225fitPrioritizingHeightZbe2FdA);
+            this.measureAndLayoutDelegate.m6937updateRootConstraintsBRTryo0(m7956fitPrioritizingHeightZbe2FdA);
             this.measureAndLayoutDelegate.measureOnly();
             setMeasuredDimension(getRoot().getWidth(), getRoot().getHeight());
             if (this._androidViewsHandler != null) {
@@ -1853,34 +1853,34 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
     }
 
     /* renamed from: component1-VKZWuLQ  reason: not valid java name */
-    private final int m6360component1VKZWuLQ(long j) {
-        return (int) ULong.m9285constructorimpl(j >>> 32);
+    private final int m7090component1VKZWuLQ(long j) {
+        return (int) ULong.m10026constructorimpl(j >>> 32);
     }
 
     /* renamed from: component2-VKZWuLQ  reason: not valid java name */
-    private final int m6361component2VKZWuLQ(long j) {
-        return (int) ULong.m9285constructorimpl(j & 4294967295L);
+    private final int m7091component2VKZWuLQ(long j) {
+        return (int) ULong.m10026constructorimpl(j & 4294967295L);
     }
 
     /* renamed from: pack-ZIaKswc  reason: not valid java name */
-    private final long m6364packZIaKswc(int i, int i2) {
-        return ULong.m9285constructorimpl(ULong.m9285constructorimpl(i2) | ULong.m9285constructorimpl(ULong.m9285constructorimpl(i) << 32));
+    private final long m7094packZIaKswc(int i, int i2) {
+        return ULong.m10026constructorimpl(ULong.m10026constructorimpl(i2) | ULong.m10026constructorimpl(ULong.m10026constructorimpl(i) << 32));
     }
 
     /* renamed from: convertMeasureSpec-I7RO_PI  reason: not valid java name */
-    private final long m6362convertMeasureSpecI7RO_PI(int i) {
+    private final long m7092convertMeasureSpecI7RO_PI(int i) {
         int mode = View.MeasureSpec.getMode(i);
         int size = View.MeasureSpec.getSize(i);
         if (mode != Integer.MIN_VALUE) {
             if (mode != 0) {
                 if (mode == 1073741824) {
-                    return m6364packZIaKswc(size, size);
+                    return m7094packZIaKswc(size, size);
                 }
                 throw new IllegalStateException();
             }
-            return m6364packZIaKswc(0, Integer.MAX_VALUE);
+            return m7094packZIaKswc(0, Integer.MAX_VALUE);
         }
-        return m6364packZIaKswc(0, size);
+        return m7094packZIaKswc(0, size);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -1898,14 +1898,14 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
     public final void updatePositionCacheAndDispatch() {
         getLocationOnScreen(this.tmpPositionArray);
         long j = this.globalPosition;
-        int m7392getXimpl = IntOffset.m7392getXimpl(j);
-        int m7393getYimpl = IntOffset.m7393getYimpl(j);
+        int m8123getXimpl = IntOffset.m8123getXimpl(j);
+        int m8124getYimpl = IntOffset.m8124getYimpl(j);
         int[] iArr = this.tmpPositionArray;
         boolean z = false;
         int i = iArr[0];
-        if (m7392getXimpl != i || m7393getYimpl != iArr[1] || this.lastMatrixRecalculationAnimationTime < 0) {
-            this.globalPosition = IntOffset.m7386constructorimpl((i << 32) | (iArr[1] & 4294967295L));
-            if (m7392getXimpl != Integer.MAX_VALUE && m7393getYimpl != Integer.MAX_VALUE) {
+        if (m8123getXimpl != i || m8124getYimpl != iArr[1] || this.lastMatrixRecalculationAnimationTime < 0) {
+            this.globalPosition = IntOffset.m8117constructorimpl((i << 32) | (iArr[1] & 4294967295L));
+            if (m8123getXimpl != Integer.MAX_VALUE && m8124getYimpl != Integer.MAX_VALUE) {
                 getRoot().getLayoutDelegate$ui_release().getMeasurePassDelegate$ui_release().notifyChildrenUsingCoordinatesWhilePlacing();
                 z = true;
             }
@@ -1916,7 +1916,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             view = getRootView();
             this._rootView = view;
         }
-        getRectManager().m6496updateOffsetsgTq6Wqs(this.globalPosition, IntOffsetKt.m7409roundk4lQ0M(this.windowPosition), this.viewToWindowMatrix, view.getWidth(), view.getHeight());
+        getRectManager().m7227updateOffsetsgTq6Wqs(this.globalPosition, IntOffsetKt.m8140roundk4lQ0M(this.windowPosition), this.viewToWindowMatrix, view.getWidth(), view.getHeight());
         this.measureAndLayoutDelegate.dispatchOnPositionedCallbacks(z);
         if (ComposeUiFlags.isRectTrackingEnabled) {
             getRectManager().dispatchCallbacks();
@@ -2158,11 +2158,11 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ IntSize invoke() {
-                return IntSize.m7427boximpl(m6371invokeYbymL2g());
+                return IntSize.m8158boximpl(m7101invokeYbymL2g());
             }
 
             /* renamed from: invoke-YbymL2g  reason: not valid java name */
-            public final long m6371invokeYbymL2g() {
+            public final long m7101invokeYbymL2g() {
                 return AndroidWindowInfo_androidKt.calculateWindowSize(AndroidComposeView.this);
             }
         });
@@ -2197,7 +2197,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             }
             this.onViewTreeOwnersAvailable = null;
         }
-        this._inputModeManager.m5368setInputModeiuPiT84(isInTouchMode() ? InputMode.Companion.m5365getTouchaOaMEAU() : InputMode.Companion.m5364getKeyboardaOaMEAU());
+        this._inputModeManager.m6098setInputModeiuPiT84(isInTouchMode() ? InputMode.Companion.m6095getTouchaOaMEAU() : InputMode.Companion.m6094getKeyboardaOaMEAU());
         ViewTreeOwners viewTreeOwners3 = getViewTreeOwners();
         if (viewTreeOwners3 != null && (lifecycleOwner2 = viewTreeOwners3.getLifecycleOwner()) != null) {
             lifecycle2 = lifecycleOwner2.getLifecycle();
@@ -2329,14 +2329,14 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             if (motionEvent.isFromSource(4194304)) {
                 return handleRotaryEvent(motionEvent);
             }
-            return (m6363handleMotionEvent8iAsVTc(motionEvent) & 1) != 0;
+            return (m7093handleMotionEvent8iAsVTc(motionEvent) & 1) != 0;
         }
         if (motionEvent.isFromSource(2)) {
             motionEvent2 = motionEvent;
         } else {
             float x = motionEvent.getX();
             motionEvent2 = motionEvent;
-            if (getFocusOwner().dispatchIndirectTouchEvent(new AndroidIndirectTouchEvent(Offset.m4297constructorimpl((Float.floatToRawIntBits(motionEvent.getY()) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)), motionEvent.getEventTime(), AndroidIndirectTouchEvent_androidKt.convertActionToIndirectTouchEventType(motionEvent.getActionMasked()), motionEvent2, null), new Function0<Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$dispatchGenericMotionEvent$handled$1
+            if (getFocusOwner().dispatchIndirectTouchEvent(new AndroidIndirectTouchEvent(Offset.m5027constructorimpl((Float.floatToRawIntBits(motionEvent.getY()) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)), motionEvent.getEventTime(), AndroidIndirectTouchEvent_androidKt.convertActionToIndirectTouchEventType(motionEvent.getActionMasked()), motionEvent2, null), new Function0<Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$dispatchGenericMotionEvent$handled$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -2372,11 +2372,11 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         if (isBadMotionEvent(motionEvent) || !isAttachedToWindow() || (motionEvent.getActionMasked() == 2 && !isPositionChanged(motionEvent))) {
             return false;
         }
-        int m6363handleMotionEvent8iAsVTc = m6363handleMotionEvent8iAsVTc(motionEvent);
-        if ((m6363handleMotionEvent8iAsVTc & 2) != 0) {
+        int m7093handleMotionEvent8iAsVTc = m7093handleMotionEvent8iAsVTc(motionEvent);
+        if ((m7093handleMotionEvent8iAsVTc & 2) != 0) {
             getParent().requestDisallowInterceptTouchEvent(true);
         }
-        return (m6363handleMotionEvent8iAsVTc & 1) != 0;
+        return (m7093handleMotionEvent8iAsVTc & 1) != 0;
     }
 
     private final boolean handleRotaryEvent(final MotionEvent motionEvent) {
@@ -2416,7 +2416,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final int m6363handleMotionEvent8iAsVTc(MotionEvent motionEvent) {
+    private final int m7093handleMotionEvent8iAsVTc(MotionEvent motionEvent) {
         MotionEvent motionEvent2;
         AndroidComposeView androidComposeView;
         int i;
@@ -2481,10 +2481,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                                     }
                                 }
                                 androidComposeView.previousMotionEvent = MotionEvent.obtainNoHistory(motionEvent);
-                                int m6365sendMotionEvent8iAsVTc = m6365sendMotionEvent8iAsVTc(motionEvent);
+                                int m7095sendMotionEvent8iAsVTc = m7095sendMotionEvent8iAsVTc(motionEvent);
                                 Trace.endSection();
                                 androidComposeView.forceUseMatrixCache = false;
-                                return m6365sendMotionEvent8iAsVTc;
+                                return m7095sendMotionEvent8iAsVTc;
                             }
                         }
                     } catch (Throwable th) {
@@ -2529,10 +2529,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
                     }
                 }
                 androidComposeView.previousMotionEvent = MotionEvent.obtainNoHistory(motionEvent);
-                int m6365sendMotionEvent8iAsVTc2 = m6365sendMotionEvent8iAsVTc(motionEvent);
+                int m7095sendMotionEvent8iAsVTc2 = m7095sendMotionEvent8iAsVTc(motionEvent);
                 Trace.endSection();
                 androidComposeView.forceUseMatrixCache = false;
-                return m6365sendMotionEvent8iAsVTc2;
+                return m7095sendMotionEvent8iAsVTc2;
             } catch (Throwable th2) {
                 th = th2;
             }
@@ -2552,11 +2552,11 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
     }
 
     /* renamed from: sendMotionEvent-8iAsVTc  reason: not valid java name */
-    private final int m6365sendMotionEvent8iAsVTc(MotionEvent motionEvent) {
+    private final int m7095sendMotionEvent8iAsVTc(MotionEvent motionEvent) {
         PointerInputEventData pointerInputEventData;
         if (this.keyboardModifiersRequireUpdate) {
             this.keyboardModifiersRequireUpdate = false;
-            this._windowInfo.m6422setKeyboardModifiers5xRPYO0(PointerKeyboardModifiers.m5901constructorimpl(motionEvent.getMetaState()));
+            this._windowInfo.m7152setKeyboardModifiers5xRPYO0(PointerKeyboardModifiers.m6631constructorimpl(motionEvent.getMetaState()));
         }
         AndroidComposeView androidComposeView = this;
         PointerInputEvent convertToPointerInputEvent$ui_release = this.motionEventAdapter.convertToPointerInputEvent$ui_release(motionEvent, androidComposeView);
@@ -2579,16 +2579,16 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             pointerInputEventData = null;
             PointerInputEventData pointerInputEventData2 = pointerInputEventData;
             if (pointerInputEventData2 != null) {
-                this.lastDownPointerPosition = pointerInputEventData2.m5855getPositionF1C5BW0();
+                this.lastDownPointerPosition = pointerInputEventData2.m6585getPositionF1C5BW0();
             }
-            int m5860processBIzXfog = this.pointerInputEventProcessor.m5860processBIzXfog(convertToPointerInputEvent$ui_release, androidComposeView, isInBounds(motionEvent));
+            int m6590processBIzXfog = this.pointerInputEventProcessor.m6590processBIzXfog(convertToPointerInputEvent$ui_release, androidComposeView, isInBounds(motionEvent));
             convertToPointerInputEvent$ui_release.setMotionEvent(null);
             int actionMasked = motionEvent.getActionMasked();
-            if ((actionMasked == 0 || actionMasked == 5) && (m5860processBIzXfog & 1) == 0) {
+            if ((actionMasked == 0 || actionMasked == 5) && (m6590processBIzXfog & 1) == 0) {
                 this.motionEventAdapter.endStream(motionEvent.getPointerId(motionEvent.getActionIndex()));
-                return m5860processBIzXfog;
+                return m6590processBIzXfog;
             }
-            return m5860processBIzXfog;
+            return m6590processBIzXfog;
         }
         this.pointerInputEventProcessor.processCancel();
         return PointerInputEventProcessorKt.ProcessResult(false, false, false);
@@ -2631,27 +2631,27 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             MotionEvent.PointerCoords pointerCoords = pointerCoordsArr[i5];
             motionEvent.getPointerCoords(i6, pointerCoords);
             float f = pointerCoords.x;
-            long mo5919localToScreenMKHz9U = mo5919localToScreenMKHz9U(Offset.m4297constructorimpl((Float.floatToRawIntBits(pointerCoords.y) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)));
-            pointerCoords.x = Float.intBitsToFloat((int) (mo5919localToScreenMKHz9U >> 32));
-            pointerCoords.y = Float.intBitsToFloat((int) (mo5919localToScreenMKHz9U & 4294967295L));
+            long mo6649localToScreenMKHz9U = mo6649localToScreenMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits(pointerCoords.y) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)));
+            pointerCoords.x = Float.intBitsToFloat((int) (mo6649localToScreenMKHz9U >> 32));
+            pointerCoords.y = Float.intBitsToFloat((int) (mo6649localToScreenMKHz9U & 4294967295L));
             i5++;
         }
         MotionEvent obtain = MotionEvent.obtain(motionEvent.getDownTime() == motionEvent.getEventTime() ? j : motionEvent.getDownTime(), j, i, pointerCount, pointerPropertiesArr, pointerCoordsArr, motionEvent.getMetaState(), z ? 0 : motionEvent.getButtonState(), motionEvent.getXPrecision(), motionEvent.getYPrecision(), motionEvent.getDeviceId(), motionEvent.getEdgeFlags(), motionEvent.getSource(), motionEvent.getFlags());
         AndroidComposeView androidComposeView = this;
         PointerInputEvent convertToPointerInputEvent$ui_release = this.motionEventAdapter.convertToPointerInputEvent$ui_release(obtain, androidComposeView);
         Intrinsics.checkNotNull(convertToPointerInputEvent$ui_release);
-        this.pointerInputEventProcessor.m5860processBIzXfog(convertToPointerInputEvent$ui_release, androidComposeView, true);
+        this.pointerInputEventProcessor.m6590processBIzXfog(convertToPointerInputEvent$ui_release, androidComposeView, true);
         obtain.recycle();
     }
 
     @Override // android.view.View
     public boolean canScrollHorizontally(int i) {
-        return this.composeAccessibilityDelegate.m6376canScroll0AR0LA0$ui_release(false, i, this.lastDownPointerPosition);
+        return this.composeAccessibilityDelegate.m7106canScroll0AR0LA0$ui_release(false, i, this.lastDownPointerPosition);
     }
 
     @Override // android.view.View
     public boolean canScrollVertically(int i) {
-        return this.composeAccessibilityDelegate.m6376canScroll0AR0LA0$ui_release(true, i, this.lastDownPointerPosition);
+        return this.composeAccessibilityDelegate.m7106canScroll0AR0LA0$ui_release(true, i, this.lastDownPointerPosition);
     }
 
     private final boolean isInBounds(MotionEvent motionEvent) {
@@ -2662,25 +2662,25 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // androidx.compose.ui.input.pointer.PositionCalculator
     /* renamed from: localToScreen-MK-Hz9U */
-    public long mo5919localToScreenMKHz9U(long j) {
+    public long mo6649localToScreenMKHz9U(long j) {
         recalculateWindowPosition();
-        long m4797mapMKHz9U = Matrix.m4797mapMKHz9U(this.viewToWindowMatrix, j);
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4797mapMKHz9U & 4294967295L)) + Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4797mapMKHz9U >> 32)) + Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32));
+        long m5527mapMKHz9U = Matrix.m5527mapMKHz9U(this.viewToWindowMatrix, j);
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (m5527mapMKHz9U & 4294967295L)) + Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (m5527mapMKHz9U >> 32)) + Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32));
     }
 
     @Override // androidx.compose.ui.input.pointer.MatrixPositionCalculator
     /* renamed from: localToScreen-58bKbWc */
-    public void mo5768localToScreen58bKbWc(float[] fArr) {
+    public void mo6498localToScreen58bKbWc(float[] fArr) {
         recalculateWindowPosition();
-        Matrix.m4810timesAssign58bKbWc(fArr, this.viewToWindowMatrix);
-        AndroidComposeView_androidKt.m6378access$preTranslatecG2Xzmc(fArr, Float.intBitsToFloat((int) (this.windowPosition >> 32)), Float.intBitsToFloat((int) (this.windowPosition & 4294967295L)), this.tmpMatrix);
+        Matrix.m5540timesAssign58bKbWc(fArr, this.viewToWindowMatrix);
+        AndroidComposeView_androidKt.m7108access$preTranslatecG2Xzmc(fArr, Float.intBitsToFloat((int) (this.windowPosition >> 32)), Float.intBitsToFloat((int) (this.windowPosition & 4294967295L)), this.tmpMatrix);
     }
 
     @Override // androidx.compose.ui.input.pointer.PositionCalculator
     /* renamed from: screenToLocal-MK-Hz9U */
-    public long mo5920screenToLocalMKHz9U(long j) {
+    public long mo6650screenToLocalMKHz9U(long j) {
         recalculateWindowPosition();
-        return Matrix.m4797mapMKHz9U(this.windowToViewMatrix, Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))))));
+        return Matrix.m5527mapMKHz9U(this.windowToViewMatrix, Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))))));
     }
 
     private final void recalculateWindowPosition() {
@@ -2701,7 +2701,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             int[] iArr = this.tmpPositionArray;
             androidComposeView.getLocationInWindow(iArr);
             int[] iArr2 = this.tmpPositionArray;
-            this.windowPosition = Offset.m4297constructorimpl((Float.floatToRawIntBits(iArr[0] - iArr2[0]) << 32) | (Float.floatToRawIntBits(iArr[1] - iArr2[1]) & 4294967295L));
+            this.windowPosition = Offset.m5027constructorimpl((Float.floatToRawIntBits(iArr[0] - iArr2[0]) << 32) | (Float.floatToRawIntBits(iArr[1] - iArr2[1]) & 4294967295L));
         }
     }
 
@@ -2711,25 +2711,25 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
         float[] fArr = this.viewToWindowMatrix;
         float x = motionEvent.getX();
         float y = motionEvent.getY();
-        long m4797mapMKHz9U = Matrix.m4797mapMKHz9U(fArr, Offset.m4297constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)));
-        this.windowPosition = Offset.m4297constructorimpl((Float.floatToRawIntBits(motionEvent.getRawX() - Float.intBitsToFloat((int) (m4797mapMKHz9U >> 32))) << 32) | (Float.floatToRawIntBits(motionEvent.getRawY() - Float.intBitsToFloat((int) (m4797mapMKHz9U & 4294967295L))) & 4294967295L));
+        long m5527mapMKHz9U = Matrix.m5527mapMKHz9U(fArr, Offset.m5027constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)));
+        this.windowPosition = Offset.m5027constructorimpl((Float.floatToRawIntBits(motionEvent.getRawX() - Float.intBitsToFloat((int) (m5527mapMKHz9U >> 32))) << 32) | (Float.floatToRawIntBits(motionEvent.getRawY() - Float.intBitsToFloat((int) (m5527mapMKHz9U & 4294967295L))) & 4294967295L));
     }
 
     private final void recalculateWindowViewTransforms() {
-        this.matrixToWindow.mo6382calculateMatrixToWindowEL8BTi8(this, this.viewToWindowMatrix);
-        InvertMatrixKt.m6414invertToJiSxe2E(this.viewToWindowMatrix, this.windowToViewMatrix);
+        this.matrixToWindow.mo7112calculateMatrixToWindowEL8BTi8(this, this.viewToWindowMatrix);
+        InvertMatrixKt.m7144invertToJiSxe2E(this.viewToWindowMatrix, this.windowToViewMatrix);
     }
 
     private final void updateWindowMetrics() {
         MutableState access$get_containerSize$p = LazyWindowInfo.access$get_containerSize$p(this._windowInfo);
         if (access$get_containerSize$p != null) {
-            access$get_containerSize$p.setValue(IntSize.m7427boximpl(AndroidWindowInfo_androidKt.calculateWindowSize(this)));
+            access$get_containerSize$p.setValue(IntSize.m8158boximpl(AndroidWindowInfo_androidKt.calculateWindowSize(this)));
         }
     }
 
     @Override // android.view.View
     public boolean onCheckIsTextEditor() {
-        AndroidPlatformTextInputSession androidPlatformTextInputSession = (AndroidPlatformTextInputSession) SessionMutex.m4046getCurrentSessionimpl(this.textInputSessionMutex);
+        AndroidPlatformTextInputSession androidPlatformTextInputSession = (AndroidPlatformTextInputSession) SessionMutex.m4776getCurrentSessionimpl(this.textInputSessionMutex);
         if (androidPlatformTextInputSession == null) {
             return this.legacyTextInputServiceAndroid.isEditorFocused();
         }
@@ -2738,7 +2738,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // android.view.View
     public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        AndroidPlatformTextInputSession androidPlatformTextInputSession = (AndroidPlatformTextInputSession) SessionMutex.m4046getCurrentSessionimpl(this.textInputSessionMutex);
+        AndroidPlatformTextInputSession androidPlatformTextInputSession = (AndroidPlatformTextInputSession) SessionMutex.m4776getCurrentSessionimpl(this.textInputSessionMutex);
         if (androidPlatformTextInputSession == null) {
             return this.legacyTextInputServiceAndroid.createInputConnection(editorInfo);
         }
@@ -2747,16 +2747,16 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // androidx.compose.ui.node.Owner
     /* renamed from: calculateLocalPosition-MK-Hz9U */
-    public long mo6318calculateLocalPositionMKHz9U(long j) {
+    public long mo7048calculateLocalPositionMKHz9U(long j) {
         recalculateWindowPosition();
-        return Matrix.m4797mapMKHz9U(this.windowToViewMatrix, j);
+        return Matrix.m5527mapMKHz9U(this.windowToViewMatrix, j);
     }
 
     @Override // androidx.compose.ui.node.Owner
     /* renamed from: calculatePositionInWindow-MK-Hz9U */
-    public long mo6319calculatePositionInWindowMKHz9U(long j) {
+    public long mo7049calculatePositionInWindowMKHz9U(long j) {
         recalculateWindowPosition();
-        return Matrix.m4797mapMKHz9U(this.viewToWindowMatrix, j);
+        return Matrix.m5527mapMKHz9U(this.viewToWindowMatrix, j);
     }
 
     @Override // android.view.View
@@ -2812,7 +2812,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
             } else if (!isPositionChanged(motionEvent)) {
                 return false;
             }
-            if ((m6363handleMotionEvent8iAsVTc(motionEvent) & 1) != 0) {
+            if ((m7093handleMotionEvent8iAsVTc(motionEvent) & 1) != 0) {
                 return true;
             }
         }
@@ -2982,7 +2982,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, Platfo
 
     @Override // androidx.compose.ui.node.Owner
     /* renamed from: dispatchOnScrollChanged-k-4lQ0M */
-    public void mo6320dispatchOnScrollChangedk4lQ0M(long j) {
+    public void mo7050dispatchOnScrollChangedk4lQ0M(long j) {
         Companion.dispatchOnScrollChanged(getViewTreeObserver());
     }
 

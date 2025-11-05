@@ -1,26 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.HandlerThread;
-import io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread;
-/* loaded from: classes4.dex */
-public final class Cb extends HandlerThread implements IInterruptionSafeThread {
-
-    /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f389a;
-
-    public Cb(String str) {
-        super(str);
-        this.f389a = true;
+import android.content.Context;
+import android.location.LocationListener;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
+/* loaded from: classes3.dex */
+public final class Cb implements LastKnownLocationExtractorProvider {
+    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider
+    public final LastKnownLocationExtractor getExtractor(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
+        return new Db();
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
-    public final synchronized boolean isRunning() {
-        return this.f389a;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
-    public final synchronized void stopRunning() {
-        this.f389a = false;
-        interrupt();
+    @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
+    public final String getIdentifier() {
+        return "Last known extractor stub";
     }
 }

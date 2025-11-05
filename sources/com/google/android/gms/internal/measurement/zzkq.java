@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.measurement;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum zzkq implements zzmj {
     PURPOSE_RESTRICTION_NOT_ALLOWED(0),
     PURPOSE_RESTRICTION_REQUIRE_CONSENT(1),

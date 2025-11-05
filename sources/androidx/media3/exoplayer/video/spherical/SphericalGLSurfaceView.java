@@ -23,7 +23,7 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SphericalGLSurfaceView extends GLSurfaceView {
     private static final int FIELD_OF_VIEW_DEGREES = 90;
     private static final float PX_PER_DEGREES = 25.0f;
@@ -43,7 +43,7 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
     private boolean useSensorRotation;
     private final CopyOnWriteArrayList<VideoSurfaceListener> videoSurfaceListeners;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface VideoSurfaceListener {
         void onVideoSurfaceCreated(Surface surface);
 
@@ -123,14 +123,14 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.video.spherical.SphericalGLSurfaceView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SphericalGLSurfaceView.this.m8051x99583d2c();
+                SphericalGLSurfaceView.this.m8782x99583d2c();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onDetachedFromWindow$0$androidx-media3-exoplayer-video-spherical-SphericalGLSurfaceView  reason: not valid java name */
-    public /* synthetic */ void m8051x99583d2c() {
+    public /* synthetic */ void m8782x99583d2c() {
         Surface surface = this.surface;
         if (surface != null) {
             Iterator<VideoSurfaceListener> it = this.videoSurfaceListeners.iterator();
@@ -162,14 +162,14 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.video.spherical.SphericalGLSurfaceView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SphericalGLSurfaceView.this.m8052x24c550f4(surfaceTexture);
+                SphericalGLSurfaceView.this.m8783x24c550f4(surfaceTexture);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSurfaceTextureAvailable$1$androidx-media3-exoplayer-video-spherical-SphericalGLSurfaceView  reason: not valid java name */
-    public /* synthetic */ void m8052x24c550f4(SurfaceTexture surfaceTexture) {
+    public /* synthetic */ void m8783x24c550f4(SurfaceTexture surfaceTexture) {
         SurfaceTexture surfaceTexture2 = this.surfaceTexture;
         Surface surface = this.surface;
         Surface surface2 = new Surface(surfaceTexture);
@@ -191,7 +191,7 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     final class Renderer implements GLSurfaceView.Renderer, TouchTracker.Listener, OrientationListener.Listener {
         private final float[] deviceOrientationMatrix;
         private float deviceRoll;

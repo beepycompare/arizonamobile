@@ -10,8 +10,8 @@ import android.os.Binder;
 import android.os.Process;
 import androidx.core.util.Pair;
 import com.google.android.gms.common.util.PlatformVersion;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class PackageManagerWrapper {
     protected final Context zza;
 
@@ -37,8 +37,9 @@ public class PackageManagerWrapper {
     }
 
     public Pair<CharSequence, Drawable> getApplicationLabelAndIcon(String str) throws PackageManager.NameNotFoundException {
-        ApplicationInfo applicationInfo = this.zza.getPackageManager().getApplicationInfo(str, 0);
-        return Pair.create(this.zza.getPackageManager().getApplicationLabel(applicationInfo), this.zza.getPackageManager().getApplicationIcon(applicationInfo));
+        Context context = this.zza;
+        ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(str, 0);
+        return Pair.create(context.getPackageManager().getApplicationLabel(applicationInfo), context.getPackageManager().getApplicationIcon(applicationInfo));
     }
 
     public PackageInfo getPackageInfo(String str, int i) throws PackageManager.NameNotFoundException {
@@ -50,14 +51,18 @@ public class PackageManagerWrapper {
     }
 
     public boolean isCallerInstantApp() {
-        String nameForUid;
         if (Binder.getCallingUid() == Process.myUid()) {
             return InstantApps.isInstantApp(this.zza);
         }
-        if (!PlatformVersion.isAtLeastO() || (nameForUid = this.zza.getPackageManager().getNameForUid(Binder.getCallingUid())) == null) {
+        if (PlatformVersion.isAtLeastO()) {
+            Context context = this.zza;
+            String nameForUid = context.getPackageManager().getNameForUid(Binder.getCallingUid());
+            if (nameForUid != null) {
+                return context.getPackageManager().isInstantApp(nameForUid);
+            }
             return false;
         }
-        return this.zza.getPackageManager().isInstantApp(nameForUid);
+        return false;
     }
 
     public final boolean zza(int i, String str) {

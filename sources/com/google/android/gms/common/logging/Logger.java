@@ -5,8 +5,8 @@ import com.google.android.gms.common.internal.GmsLogger;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Locale;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class Logger {
     private final String zza;
     private final String zzb;

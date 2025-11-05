@@ -11,7 +11,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import com.google.common.primitives.SignedBytes;
 import java.nio.ByteBuffer;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Ac4Util {
     public static final int AC40_SYNCWORD = 44096;
     public static final int AC41_SYNCWORD = 44097;
@@ -74,7 +74,7 @@ public final class Ac4Util {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class SyncFrameInfo {
         public final int bitstreamVersion;
         public final int channelCount;
@@ -554,7 +554,7 @@ public final class Ac4Util {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Ac4Presentation {
         public int channelMode;
         public boolean hasBackChannels;

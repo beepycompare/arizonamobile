@@ -1,74 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-/* loaded from: classes4.dex */
-public final class Fm extends MessageNano {
-    public static volatile Fm[] b;
+import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+/* loaded from: classes3.dex */
+public final class Fm {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f451a;
+    public final Context f479a;
+    public final String b;
+    public final C0202dm c;
+    public final Jl d;
+    public final C0408lm e;
+    public final C4 f;
+    public final C0330im g;
+    public final S7 h;
+    public final SystemTimeProvider i;
+    public final H3 j;
+    public final K3 k;
+    public final Ml l;
+    public final Cd m;
+    public final ro n;
 
-    public Fm() {
-        a();
-    }
-
-    public static Fm[] b() {
-        if (b == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (b == null) {
-                    b = new Fm[0];
-                }
-            }
-        }
-        return b;
-    }
-
-    public final Fm a() {
-        this.f451a = 18000000L;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeInt64Size(1, this.f451a) + super.computeSerializedSize();
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt64(1, this.f451a);
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final Fm mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag != 8) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.f451a = codedInputByteBufferNano.readInt64();
-            }
-        }
-        return this;
-    }
-
-    public static Fm b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Fm().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Fm a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Fm) MessageNano.mergeFrom(new Fm(), bArr);
+    public Fm(Context context, String str, C0202dm c0202dm, Jl jl) {
+        this.f479a = context;
+        this.b = str;
+        this.c = c0202dm;
+        this.d = jl;
+        C0408lm B = C0620ua.k().B();
+        this.e = B;
+        C0356jm b = B.b();
+        this.f = new C4(str);
+        this.g = new C0330im(context);
+        this.h = new S7();
+        this.i = new SystemTimeProvider();
+        this.j = C0620ua.k().f();
+        this.k = new K3();
+        this.l = new Ml(new C0227em(context, str), b, c0202dm);
+        this.m = C0620ua.k().q();
+        this.n = new ro();
     }
 }

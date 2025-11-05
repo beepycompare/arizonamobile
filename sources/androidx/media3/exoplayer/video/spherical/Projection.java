@@ -6,7 +6,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class Projection {
     public static final int DRAW_MODE_TRIANGLES = 0;
     public static final int DRAW_MODE_TRIANGLES_FAN = 2;
@@ -21,7 +21,7 @@ final class Projection {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface DrawMode {
     }
 
@@ -113,7 +113,7 @@ final class Projection {
         this.singleMesh = mesh == mesh2;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SubMesh {
         public static final int VIDEO_TEXTURE_ID = 0;
         public final int mode;
@@ -134,7 +134,7 @@ final class Projection {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Mesh {
         private final SubMesh[] subMeshes;
 

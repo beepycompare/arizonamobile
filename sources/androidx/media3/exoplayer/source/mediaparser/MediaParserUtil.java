@@ -5,7 +5,7 @@ import android.media.MediaParser;
 import android.media.metrics.LogSessionId;
 import androidx.media3.common.Format;
 import androidx.media3.exoplayer.analytics.PlayerId;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaParserUtil {
     public static final String PARAMETER_EAGERLY_EXPOSE_TRACK_TYPE = "android.media.mediaparser.eagerlyExposeTrackType";
     public static final String PARAMETER_EXPOSE_CAPTION_FORMATS = "android.media.mediaParser.exposeCaptionFormats";
@@ -32,7 +32,7 @@ public final class MediaParserUtil {
         Api31.setLogSessionIdOnMediaParser(mediaParser, playerId);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class Api31 {
         private Api31() {
         }

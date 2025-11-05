@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 @Inherited
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public @interface zad {
 }

@@ -116,8 +116,8 @@ public final class LazyGridSnapLayoutInfoProviderKt {
 
     public static final int offsetOnMainAxis(LazyGridItemInfo lazyGridItemInfo, Orientation orientation) {
         if (orientation == Orientation.Vertical) {
-            return IntOffset.m7393getYimpl(lazyGridItemInfo.mo1000getOffsetnOccac());
+            return IntOffset.m8124getYimpl(lazyGridItemInfo.mo1000getOffsetnOccac());
         }
-        return IntOffset.m7392getXimpl(lazyGridItemInfo.mo1000getOffsetnOccac());
+        return IntOffset.m8123getXimpl(lazyGridItemInfo.mo1000getOffsetnOccac());
     }
 }

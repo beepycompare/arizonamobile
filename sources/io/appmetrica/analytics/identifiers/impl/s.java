@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.identifiers.impl;
 
 import android.os.IBinder;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class s implements u {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IBinder f339a;
+    public final IBinder f355a;
 
     public s(IBinder iBinder) {
-        this.f339a = iBinder;
+        this.f355a = iBinder;
     }
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f339a;
+        return this.f355a;
     }
 }

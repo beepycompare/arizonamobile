@@ -169,7 +169,7 @@ public final class InventoryViewPagerRVAdapter extends RecyclerView.Adapter<Recy
 
     public final UpgradesInventoryAdapter clone(UpgradesInventoryAdapter upgradesInventoryAdapter) {
         Intrinsics.checkNotNullParameter(upgradesInventoryAdapter, "<this>");
-        return new UpgradesInventoryAdapter(upgradesInventoryAdapter.getOnItemDropped(), upgradesInventoryAdapter.getContext(), upgradesInventoryAdapter.getOnLongClicked(), upgradesInventoryAdapter.getOnItemClicked());
+        return new UpgradesInventoryAdapter(upgradesInventoryAdapter.getType(), upgradesInventoryAdapter.getOnItemDropped(), upgradesInventoryAdapter.getContext(), upgradesInventoryAdapter.getOnLongClicked(), upgradesInventoryAdapter.getOnItemClicked());
     }
 
     public final SubInventoryAdapter clone(SubInventoryAdapter subInventoryAdapter) {

@@ -3,7 +3,6 @@ package com.miami.game.feature.download.dialog.ui.common;
 import androidx.compose.foundation.ImageKt;
 import androidx.compose.foundation.layout.SizeKt;
 import androidx.compose.material3.MaterialTheme;
-import androidx.compose.material3.MenuKt;
 import androidx.compose.material3.TextKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
@@ -14,18 +13,11 @@ import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.ColorFilter;
 import androidx.compose.ui.layout.ContentScale;
 import androidx.compose.ui.res.PainterResources_androidKt;
-import androidx.compose.ui.text.TextLayoutResult;
-import androidx.compose.ui.text.font.FontFamily;
-import androidx.compose.ui.text.font.FontStyle;
-import androidx.compose.ui.text.font.FontWeight;
-import androidx.compose.ui.text.style.TextAlign;
-import androidx.compose.ui.text.style.TextDecoration;
 import androidx.compose.ui.unit.Dp;
 import com.miami.game.core.drawable.resources.R;
 import com.miami.game.ui.theme.TypeKt;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Component.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0002¨\u0006\u0003"}, d2 = {"AlertLabelDialog", "", "(Landroidx/compose/runtime/Composer;I)V", "dialogs_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
@@ -48,9 +40,9 @@ public final class ComponentKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1152776580, i, -1, "com.miami.game.feature.download.dialog.ui.common.AlertLabelDialog (Component.kt:14)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_check_files_error, startRestartGroup, 0), (String) null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(60)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, 432, (int) MenuKt.InTransitionDuration);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_check_files_error, startRestartGroup, 0), (String) null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(60)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, 432, 120);
             composer2 = startRestartGroup;
-            TextKt.m2814Text4IGK_g("ПРЕДУПРЕЖДЕНИЕ", (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2031getPrimary0d7_KjU(), TypeKt.m9061dpToSp8Feqmps(Dp.m7264constructorimpl(40), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodyMedium(), composer2, 6, 0, 65522);
+            TextKt.m3168TextNvy7gAk("ПРЕДУПРЕЖДЕНИЕ", null, MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2102getPrimary0d7_KjU(), null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(40), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodyMedium(), composer2, 6, 0, 131050);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

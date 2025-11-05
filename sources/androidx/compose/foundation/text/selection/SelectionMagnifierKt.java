@@ -43,9 +43,9 @@ public final class SelectionMagnifierKt {
     });
 
     static {
-        long m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(0.01f) << 32) | (Float.floatToRawIntBits(0.01f) & 4294967295L));
-        OffsetDisplacementThreshold = m4297constructorimpl;
-        MagnifierSpringSpec = new SpringSpec<>(0.0f, 0.0f, Offset.m4294boximpl(m4297constructorimpl), 3, null);
+        long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(0.01f) << 32) | (Float.floatToRawIntBits(0.01f) & 4294967295L));
+        OffsetDisplacementThreshold = m5027constructorimpl;
+        MagnifierSpringSpec = new SpringSpec<>(0.0f, 0.0f, Offset.m5024boximpl(m5027constructorimpl), 3, null);
     }
 
     public static final TwoWayConverter<Offset, AnimationVector2D> getUnspecifiedSafeOffsetVectorConverter() {
@@ -54,15 +54,15 @@ public final class SelectionMagnifierKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AnimationVector2D UnspecifiedSafeOffsetVectorConverter$lambda$0(Offset offset) {
-        if ((offset.m4315unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            return new AnimationVector2D(Float.intBitsToFloat((int) (offset.m4315unboximpl() >> 32)), Float.intBitsToFloat((int) (offset.m4315unboximpl() & 4294967295L)));
+        if ((offset.m5045unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            return new AnimationVector2D(Float.intBitsToFloat((int) (offset.m5045unboximpl() >> 32)), Float.intBitsToFloat((int) (offset.m5045unboximpl() & 4294967295L)));
         }
         return UnspecifiedAnimationVector2D;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset UnspecifiedSafeOffsetVectorConverter$lambda$1(AnimationVector2D animationVector2D) {
-        return Offset.m4294boximpl(Offset.m4297constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
+        return Offset.m5024boximpl(Offset.m5027constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
     }
 
     public static final long getOffsetDisplacementThreshold() {
@@ -94,7 +94,7 @@ public final class SelectionMagnifierKt {
         ComposerKt.sourceInformationMarkerStart(composer, 1215129663, "CC(remember):SelectionMagnifier.kt#9igjgp");
         Object rememberedValue2 = composer.rememberedValue();
         if (rememberedValue2 == Composer.Companion.getEmpty()) {
-            Object animatable = new Animatable(Offset.m4294boximpl(rememberAnimatedMagnifierPosition$lambda$3(state)), UnspecifiedSafeOffsetVectorConverter, Offset.m4294boximpl(OffsetDisplacementThreshold), null, 8, null);
+            Object animatable = new Animatable(Offset.m5024boximpl(rememberAnimatedMagnifierPosition$lambda$3(state)), UnspecifiedSafeOffsetVectorConverter, Offset.m5024boximpl(OffsetDisplacementThreshold), null, 8, null);
             composer.updateRememberedValue(animatable);
             rememberedValue2 = animatable;
         }
@@ -120,6 +120,6 @@ public final class SelectionMagnifierKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long rememberAnimatedMagnifierPosition$lambda$3(State<Offset> state) {
-        return state.getValue().m4315unboximpl();
+        return state.getValue().m5045unboximpl();
     }
 }

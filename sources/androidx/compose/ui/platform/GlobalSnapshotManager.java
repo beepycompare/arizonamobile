@@ -43,7 +43,7 @@ public final class GlobalSnapshotManager {
                     AtomicBoolean atomicBoolean;
                     atomicBoolean = GlobalSnapshotManager.sent;
                     if (atomicBoolean.compareAndSet(false, true)) {
-                        Channel$default.mo8140trySendJP2dKIU(Unit.INSTANCE);
+                        Channel$default.mo8871trySendJP2dKIU(Unit.INSTANCE);
                     }
                 }
             });

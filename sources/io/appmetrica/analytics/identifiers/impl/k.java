@@ -1,9 +1,9 @@
 package io.appmetrica.analytics.identifiers.impl;
 
 import android.content.Intent;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Intent f334a = new Intent("com.uodis.opendevice.OPENIDS_SERVICE").setPackage("com.huawei.hwid");
+    public static final Intent f350a = new Intent("com.uodis.opendevice.OPENIDS_SERVICE").setPackage("com.huawei.hwid");
 }

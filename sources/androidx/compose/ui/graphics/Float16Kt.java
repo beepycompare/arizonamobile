@@ -74,19 +74,19 @@ public final class Float16Kt {
     }
 
     /* renamed from: min-AoSsdG0  reason: not valid java name */
-    public static final short m4697minAoSsdG0(short s, short s2) {
-        if (Float16.m4669isNaNimpl(s) || Float16.m4669isNaNimpl(s2)) {
-            return Float16.Companion.m4691getNaNslo4al4();
+    public static final short m5427minAoSsdG0(short s, short s2) {
+        if (Float16.m5399isNaNimpl(s) || Float16.m5399isNaNimpl(s2)) {
+            return Float16.Companion.m5421getNaNslo4al4();
         }
-        return Float16.m4656compareTo41bOqos(s, s2) <= 0 ? s : s2;
+        return Float16.m5386compareTo41bOqos(s, s2) <= 0 ? s : s2;
     }
 
     /* renamed from: max-AoSsdG0  reason: not valid java name */
-    public static final short m4696maxAoSsdG0(short s, short s2) {
-        if (Float16.m4669isNaNimpl(s) || Float16.m4669isNaNimpl(s2)) {
-            return Float16.Companion.m4691getNaNslo4al4();
+    public static final short m5426maxAoSsdG0(short s, short s2) {
+        if (Float16.m5399isNaNimpl(s) || Float16.m5399isNaNimpl(s2)) {
+            return Float16.Companion.m5421getNaNslo4al4();
         }
-        return Float16.m4656compareTo41bOqos(s, s2) >= 0 ? s : s2;
+        return Float16.m5386compareTo41bOqos(s, s2) >= 0 ? s : s2;
     }
 
     public static final float halfToFloat(short s) {

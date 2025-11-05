@@ -53,7 +53,7 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
         int size2 = fonts.size();
         for (int i = 0; i < size2; i++) {
             Font font = fonts.get(i);
-            if (FontLoadingStrategy.m6826equalsimpl0(font.mo6783getLoadingStrategyPKNRLFQ(), FontLoadingStrategy.Companion.m6831getBlockingPKNRLFQ())) {
+            if (FontLoadingStrategy.m7557equalsimpl0(font.mo7514getLoadingStrategyPKNRLFQ(), FontLoadingStrategy.Companion.m7562getBlockingPKNRLFQ())) {
                 arrayList3.add(font);
             }
         }
@@ -63,7 +63,7 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
             int size3 = list.size();
             for (int i2 = 0; i2 < size3; i2++) {
                 Pair<FontWeight, FontStyle> pair = list.get(i2);
-                arrayList5.add((Font) CollectionsKt.firstOrNull((List<? extends Object>) this.fontMatcher$1.m6835matchFontRetOiIg(arrayList4, pair.component1(), pair.component2().m6842unboximpl())));
+                arrayList5.add((Font) CollectionsKt.firstOrNull((List<? extends Object>) this.fontMatcher$1.m7566matchFontRetOiIg(arrayList4, pair.component1(), pair.component2().m7573unboximpl())));
             }
             List fastFilterNotNull = ListUtilsKt.fastFilterNotNull(arrayList5);
             if (fastFilterNotNull != null) {
@@ -141,14 +141,14 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
 
     @Override // androidx.compose.ui.text.platform.AndroidTypeface
     /* renamed from: getNativeTypeface-PYhJU0U */
-    public Typeface mo6982getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
-        Font font = (Font) CollectionsKt.firstOrNull((List<? extends Object>) this.fontMatcher$1.m6835matchFontRetOiIg(new ArrayList(this.loadedTypefaces.keySet()), fontWeight, i));
+    public Typeface mo7713getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
+        Font font = (Font) CollectionsKt.firstOrNull((List<? extends Object>) this.fontMatcher$1.m7566matchFontRetOiIg(new ArrayList(this.loadedTypefaces.keySet()), fontWeight, i));
         if (font != null) {
             Typeface typeface = this.loadedTypefaces.get(font);
             if (typeface != null) {
-                Object m6860synthesizeTypefaceFxwP2eA = FontSynthesis_androidKt.m6860synthesizeTypefaceFxwP2eA(i2, typeface, font, fontWeight, i);
-                Intrinsics.checkNotNull(m6860synthesizeTypefaceFxwP2eA, "null cannot be cast to non-null type android.graphics.Typeface");
-                return (Typeface) m6860synthesizeTypefaceFxwP2eA;
+                Object m7591synthesizeTypefaceFxwP2eA = FontSynthesis_androidKt.m7591synthesizeTypefaceFxwP2eA(i2, typeface, font, fontWeight, i);
+                Intrinsics.checkNotNull(m7591synthesizeTypefaceFxwP2eA, "null cannot be cast to non-null type android.graphics.Typeface");
+                return (Typeface) m7591synthesizeTypefaceFxwP2eA;
             }
             InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Could not load typeface");
             throw new KotlinNothingValueException();

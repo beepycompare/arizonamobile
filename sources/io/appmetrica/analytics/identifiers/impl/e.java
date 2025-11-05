@@ -5,16 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class e implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Intent f330a;
+    public final Intent f346a;
     public IBinder b;
     public final Object c = new Object();
 
     public e(Intent intent, String str) {
-        this.f330a = intent;
+        this.f346a = intent;
         String.format("[AdvServiceConnection-%s]", str);
     }
 

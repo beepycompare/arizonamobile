@@ -35,7 +35,7 @@ public final class NeedResourcesViewHolder extends RecyclerView.ViewHolder {
         Intrinsics.checkNotNullExpressionValue(viewCenter, "viewCenter");
         viewCenter.setVisibility(itemVal.getAmountHave() >= itemVal.getAmountNeed() ? 8 : 0);
         itemInventoryBinding.tvTitleText.setText(itemVal.getAmountHave() + "/" + itemVal.getAmountNeed());
-        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", itemVal.getItem(), null, 4, null);
+        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", itemVal.getItem(), (String) null, 4, (Object) null);
         if (iconFromArchive$default != null) {
             ImageView ivItemImage = itemInventoryBinding.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");

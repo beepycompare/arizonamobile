@@ -7,8 +7,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import androidx.appcompat.R;
 import androidx.core.view.ViewCompat;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-class AppCompatBackgroundHelper {
+public class AppCompatBackgroundHelper {
     private TintInfo mBackgroundTint;
     private TintInfo mInternalBackgroundTint;
     private TintInfo mTmpInfo;

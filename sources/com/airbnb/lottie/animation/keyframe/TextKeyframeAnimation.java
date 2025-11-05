@@ -30,13 +30,7 @@ public class TextKeyframeAnimation extends KeyframeAnimation<DocumentData> {
     public void setStringValueCallback(final LottieValueCallback<String> lottieValueCallback) {
         final LottieFrameInfo lottieFrameInfo = new LottieFrameInfo();
         final DocumentData documentData = new DocumentData();
-        super.setValueCallback(new LottieValueCallback<DocumentData>(this) { // from class: com.airbnb.lottie.animation.keyframe.TextKeyframeAnimation.1
-            final /* synthetic */ TextKeyframeAnimation this$0;
-
-            {
-                this.this$0 = this;
-            }
-
+        super.setValueCallback(new LottieValueCallback<DocumentData>() { // from class: com.airbnb.lottie.animation.keyframe.TextKeyframeAnimation.1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.airbnb.lottie.value.LottieValueCallback
             public DocumentData getValue(LottieFrameInfo<DocumentData> lottieFrameInfo2) {

@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class zzb extends Binder implements IInterface {
     @Override // android.os.IInterface
     public final IBinder asBinder() {

@@ -8,7 +8,7 @@ import androidx.media3.container.NalUnitUtil;
 import androidx.media3.extractor.AvcConfig;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.flv.TagPayloadReader;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class VideoTagPayloadReader extends TagPayloadReader {
     private static final int AVC_PACKET_TYPE_AVC_NALU = 1;
     private static final int AVC_PACKET_TYPE_SEQUENCE_HEADER = 0;

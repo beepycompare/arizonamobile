@@ -13,7 +13,7 @@ public final class ComposableSingletons$Wrapper_androidKt {
     public static final ComposableSingletons$Wrapper_androidKt INSTANCE = new ComposableSingletons$Wrapper_androidKt();
 
     /* renamed from: lambda$-1759434350  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f56lambda$1759434350 = ComposableLambdaKt.composableLambdaInstance(-1759434350, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.platform.ComposableSingletons$Wrapper_androidKt$lambda$-1759434350$1
+    private static Function2<Composer, Integer, Unit> f41lambda$1759434350 = ComposableLambdaKt.composableLambdaInstance(-1759434350, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.platform.ComposableSingletons$Wrapper_androidKt$lambda$-1759434350$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -36,7 +36,7 @@ public final class ComposableSingletons$Wrapper_androidKt {
     });
 
     /* renamed from: getLambda$-1759434350$ui_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m6386getLambda$1759434350$ui_release() {
-        return f56lambda$1759434350;
+    public final Function2<Composer, Integer, Unit> m7116getLambda$1759434350$ui_release() {
+        return f41lambda$1759434350;
     }
 }

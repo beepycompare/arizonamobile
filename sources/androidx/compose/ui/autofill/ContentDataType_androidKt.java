@@ -7,11 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class ContentDataType_androidKt {
     public static final ContentDataType ContentDataType(int i) {
-        return AndroidContentDataType.m4051boximpl(AndroidContentDataType.m4052constructorimpl(i));
+        return AndroidContentDataType.m4781boximpl(AndroidContentDataType.m4782constructorimpl(i));
     }
 
     public static final int getDataType(ContentDataType contentDataType) {
         Intrinsics.checkNotNull(contentDataType, "null cannot be cast to non-null type androidx.compose.ui.autofill.AndroidContentDataType");
-        return ((AndroidContentDataType) contentDataType).m4057unboximpl();
+        return ((AndroidContentDataType) contentDataType).m4787unboximpl();
     }
 }

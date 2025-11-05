@@ -1,7 +1,7 @@
 package io.reactivex.exceptions;
 
 import io.reactivex.internal.util.ExceptionHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Exceptions {
     private Exceptions() {
         throw new IllegalStateException("No instances!");

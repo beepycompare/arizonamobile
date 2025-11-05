@@ -45,7 +45,7 @@ public final class IntRect {
     }
 
     /* renamed from: getSize-YbymL2g$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7411getSizeYbymL2g$annotations() {
+    public static /* synthetic */ void m8142getSizeYbymL2g$annotations() {
     }
 
     public static /* synthetic */ void getTop$annotations() {
@@ -143,9 +143,9 @@ public final class IntRect {
     }
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    public final long m7419getSizeYbymL2g() {
+    public final long m8150getSizeYbymL2g() {
         int width = getWidth();
-        return IntSize.m7430constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m8161constructorimpl((getHeight() & 4294967295L) | (width << 32));
     }
 
     public final boolean isEmpty() {
@@ -153,8 +153,8 @@ public final class IntRect {
     }
 
     /* renamed from: translate--gyyYBs  reason: not valid java name */
-    public final IntRect m7423translategyyYBs(long j) {
-        return new IntRect(this.left + IntOffset.m7392getXimpl(j), this.top + IntOffset.m7393getYimpl(j), this.right + IntOffset.m7392getXimpl(j), this.bottom + IntOffset.m7393getYimpl(j));
+    public final IntRect m8154translategyyYBs(long j) {
+        return new IntRect(this.left + IntOffset.m8123getXimpl(j), this.top + IntOffset.m8124getYimpl(j), this.right + IntOffset.m8123getXimpl(j), this.bottom + IntOffset.m8124getYimpl(j));
     }
 
     public final IntRect translate(int i, int i2) {
@@ -186,62 +186,62 @@ public final class IntRect {
     }
 
     /* renamed from: getTopLeft-nOcc-ac  reason: not valid java name */
-    public final long m7421getTopLeftnOccac() {
+    public final long m8152getTopLeftnOccac() {
         int i = this.left;
-        return IntOffset.m7386constructorimpl((this.top & 4294967295L) | (i << 32));
+        return IntOffset.m8117constructorimpl((this.top & 4294967295L) | (i << 32));
     }
 
     /* renamed from: getTopCenter-nOcc-ac  reason: not valid java name */
-    public final long m7420getTopCenternOccac() {
+    public final long m8151getTopCenternOccac() {
         int width = this.left + (getWidth() / 2);
-        return IntOffset.m7386constructorimpl((this.top & 4294967295L) | (width << 32));
+        return IntOffset.m8117constructorimpl((this.top & 4294967295L) | (width << 32));
     }
 
     /* renamed from: getTopRight-nOcc-ac  reason: not valid java name */
-    public final long m7422getTopRightnOccac() {
+    public final long m8153getTopRightnOccac() {
         int i = this.right;
-        return IntOffset.m7386constructorimpl((this.top & 4294967295L) | (i << 32));
+        return IntOffset.m8117constructorimpl((this.top & 4294967295L) | (i << 32));
     }
 
     /* renamed from: getCenterLeft-nOcc-ac  reason: not valid java name */
-    public final long m7417getCenterLeftnOccac() {
+    public final long m8148getCenterLeftnOccac() {
         int i = this.left;
-        return IntOffset.m7386constructorimpl(((this.top + (getHeight() / 2)) & 4294967295L) | (i << 32));
+        return IntOffset.m8117constructorimpl(((this.top + (getHeight() / 2)) & 4294967295L) | (i << 32));
     }
 
     /* renamed from: getCenter-nOcc-ac  reason: not valid java name */
-    public final long m7416getCenternOccac() {
+    public final long m8147getCenternOccac() {
         int width = this.left + (getWidth() / 2);
-        return IntOffset.m7386constructorimpl(((this.top + (getHeight() / 2)) & 4294967295L) | (width << 32));
+        return IntOffset.m8117constructorimpl(((this.top + (getHeight() / 2)) & 4294967295L) | (width << 32));
     }
 
     /* renamed from: getCenterRight-nOcc-ac  reason: not valid java name */
-    public final long m7418getCenterRightnOccac() {
+    public final long m8149getCenterRightnOccac() {
         int i = this.right;
-        return IntOffset.m7386constructorimpl(((this.top + (getHeight() / 2)) & 4294967295L) | (i << 32));
+        return IntOffset.m8117constructorimpl(((this.top + (getHeight() / 2)) & 4294967295L) | (i << 32));
     }
 
     /* renamed from: getBottomLeft-nOcc-ac  reason: not valid java name */
-    public final long m7414getBottomLeftnOccac() {
+    public final long m8145getBottomLeftnOccac() {
         int i = this.left;
-        return IntOffset.m7386constructorimpl((this.bottom & 4294967295L) | (i << 32));
+        return IntOffset.m8117constructorimpl((this.bottom & 4294967295L) | (i << 32));
     }
 
     /* renamed from: getBottomCenter-nOcc-ac  reason: not valid java name */
-    public final long m7413getBottomCenternOccac() {
+    public final long m8144getBottomCenternOccac() {
         int width = this.left + (getWidth() / 2);
-        return IntOffset.m7386constructorimpl((this.bottom & 4294967295L) | (width << 32));
+        return IntOffset.m8117constructorimpl((this.bottom & 4294967295L) | (width << 32));
     }
 
     /* renamed from: getBottomRight-nOcc-ac  reason: not valid java name */
-    public final long m7415getBottomRightnOccac() {
+    public final long m8146getBottomRightnOccac() {
         int i = this.right;
-        return IntOffset.m7386constructorimpl((this.bottom & 4294967295L) | (i << 32));
+        return IntOffset.m8117constructorimpl((this.bottom & 4294967295L) | (i << 32));
     }
 
     /* renamed from: contains--gyyYBs  reason: not valid java name */
-    public final boolean m7412containsgyyYBs(long j) {
-        return IntOffset.m7392getXimpl(j) >= this.left && IntOffset.m7392getXimpl(j) < this.right && IntOffset.m7393getYimpl(j) >= this.top && IntOffset.m7393getYimpl(j) < this.bottom;
+    public final boolean m8143containsgyyYBs(long j) {
+        return IntOffset.m8123getXimpl(j) >= this.left && IntOffset.m8123getXimpl(j) < this.right && IntOffset.m8124getYimpl(j) >= this.top && IntOffset.m8124getYimpl(j) < this.bottom;
     }
 
     public String toString() {

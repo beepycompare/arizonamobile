@@ -1,26 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-/* loaded from: classes4.dex */
+import android.content.Context;
+import io.appmetrica.analytics.IReporter;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+/* loaded from: classes3.dex */
 public final class L5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PublicLogger f553a;
+    public final C0460o f569a;
+    public final IReporter b;
+    public Context c;
+    public final K5 d;
 
-    public L5(String str) {
-        this.f553a = LoggerStorage.getOrCreatePublicLogger(str);
+    public L5(C0460o c0460o) {
+        this(c0460o, 0);
     }
 
-    public final int a(int i) {
-        if (i < 100) {
-            this.f553a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be greater than or equal to 100, but was: " + i + ". Default value (100) will be used", new Object[0]);
-            return 100;
-        } else if (i > 10000) {
-            this.f553a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be less than or equal to 10000, but was: " + i + ". Default value (10000) will be used", new Object[0]);
-            return 10000;
-        } else {
-            return i;
+    public final synchronized void a(Context context) {
+        if (this.c == null) {
+            Context applicationContext = context.getApplicationContext();
+            this.f569a.a(applicationContext);
+            this.f569a.registerListener(this.d, ActivityEvent.RESUMED, ActivityEvent.PAUSED);
+            this.c = applicationContext;
         }
+    }
+
+    public L5(C0460o c0460o, IReporter iReporter) {
+        this.f569a = c0460o;
+        this.b = iReporter;
+        this.d = new K5(this);
+    }
+
+    public /* synthetic */ L5(C0460o c0460o, int i) {
+        this(c0460o, AbstractC0661w1.a());
+    }
+
+    public final synchronized Context a() {
+        return this.c;
     }
 }

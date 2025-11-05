@@ -6,17 +6,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class Objects {
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-    /* loaded from: classes3.dex */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* loaded from: classes4.dex */
     public static final class ToStringHelper {
         private final List zza;
         private final Object zzb;
 
-        /* synthetic */ ToStringHelper(Object obj, zzai zzaiVar) {
+        /* synthetic */ ToStringHelper(Object obj, byte[] bArr) {
             Preconditions.checkNotNull(obj);
             this.zzb = obj;
             this.zza = new ArrayList();
@@ -24,8 +24,13 @@ public final class Objects {
 
         public ToStringHelper add(String str, Object obj) {
             Preconditions.checkNotNull(str);
+            int length = str.length();
             String valueOf = String.valueOf(obj);
-            this.zza.add(str + "=" + valueOf);
+            StringBuilder sb = new StringBuilder(length + 1 + String.valueOf(valueOf).length());
+            sb.append(str);
+            sb.append("=");
+            sb.append(valueOf);
+            this.zza.add(sb.toString());
             return this;
         }
 
@@ -33,9 +38,10 @@ public final class Objects {
             StringBuilder sb = new StringBuilder(100);
             sb.append(this.zzb.getClass().getSimpleName());
             sb.append(AbstractJsonLexerKt.BEGIN_OBJ);
-            int size = this.zza.size();
+            List list = this.zza;
+            int size = list.size();
             for (int i = 0; i < size; i++) {
-                sb.append((String) this.zza.get(i));
+                sb.append((String) list.get(i));
                 if (i < size - 1) {
                     sb.append(", ");
                 }

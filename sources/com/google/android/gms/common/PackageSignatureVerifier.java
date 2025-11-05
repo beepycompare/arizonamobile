@@ -1,61 +1,77 @@
 package com.google.android.gms.common;
 
 import android.content.Context;
+import android.os.RemoteException;
+import android.os.StrictMode;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+import com.google.android.gms.common.signatureverification.SignatureVerificationConfigurationProvider;
+import com.google.android.gms.dynamite.DynamiteModule;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class PackageSignatureVerifier {
-    static volatile zzab zza;
-    private static zzac zzb;
+    static volatile zzac zza;
+    private static zzad zzb;
 
-    private static zzac zza(Context context) {
-        zzac zzacVar;
+    private static synchronized zzad zza(Context context) {
+        zzad zzadVar;
         synchronized (PackageSignatureVerifier.class) {
             if (zzb == null) {
-                zzb = new zzac(context);
+                zzb = new zzad(context);
             }
-            zzacVar = zzb;
+            zzadVar = zzb;
         }
-        return zzacVar;
+        return zzadVar;
     }
 
     public PackageVerificationResult queryPackageSignatureVerified(Context context, String str) {
-        PackageVerificationResult packageVerificationResult;
-        String str2;
-        PackageVerificationResult packageVerificationResult2;
         boolean honorsDebugCertificates = GooglePlayServicesUtilLight.honorsDebugCertificates(context);
         zza(context);
-        if (zzn.zzf()) {
-            String concat = String.valueOf(str).concat(true != honorsDebugCertificates ? "-0" : "-1");
-            if (zza != null) {
-                str2 = zza.zza;
-                if (str2.equals(concat)) {
-                    packageVerificationResult2 = zza.zzb;
-                    return packageVerificationResult2;
+        int i = zzo.zzh;
+        StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
+        try {
+            try {
+                zzo.zzb();
+                if (zzo.zzg.zzi()) {
+                    SignatureVerificationConfigurationProvider.zza().zza();
+                    String.valueOf(str);
+                    String concat = String.valueOf(str).concat(true != honorsDebugCertificates ? "-0" : "-1");
+                    if (zza == null || !zza.zza().equals(concat)) {
+                        str.isEmpty();
+                        zza(context);
+                        zzv zzvVar = new zzv(null);
+                        zzvVar.zza(str);
+                        zzvVar.zzb(honorsDebugCertificates);
+                        zzvVar.zzc(false);
+                        zzy zzc = zzo.zzc(zzvVar.zzd());
+                        if (zzc.zza) {
+                            PackageVerificationResult zzd = PackageVerificationResult.zzd(str, zzc.zzd, null);
+                            zza = new zzac(concat, zzd);
+                            return zzd;
+                        }
+                        String str2 = zzc.zzb;
+                        Preconditions.checkNotNull(str2);
+                        return PackageVerificationResult.zza(str, str2, zzc.zzc, null);
+                    }
+                    return zza.zzb();
                 }
+            } finally {
+                StrictMode.setThreadPolicy(allowThreadDiskReads);
             }
-            zza(context);
-            zzw zzc = zzn.zzc(str, honorsDebugCertificates, false, false);
-            if (!zzc.zza) {
-                Preconditions.checkNotNull(zzc.zzb);
-                return PackageVerificationResult.zza(str, zzc.zzb, zzc.zzc);
-            }
-            zza = new zzab(concat, PackageVerificationResult.zzd(str, zzc.zzd));
-            packageVerificationResult = zza.zzb;
-            return packageVerificationResult;
+        } catch (RemoteException | DynamiteModule.LoadingException e) {
+            Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
         }
-        throw new zzad();
+        throw new zzae();
     }
 
     public PackageVerificationResult queryPackageSignatureVerifiedWithRetry(Context context, String str) {
         try {
             PackageVerificationResult queryPackageSignatureVerified = queryPackageSignatureVerified(context, str);
-            queryPackageSignatureVerified.zzb();
+            queryPackageSignatureVerified.zzc();
             return queryPackageSignatureVerified;
         } catch (SecurityException e) {
             PackageVerificationResult queryPackageSignatureVerified2 = queryPackageSignatureVerified(context, str);
-            if (queryPackageSignatureVerified2.zzc()) {
+            if (queryPackageSignatureVerified2.zzb()) {
                 Log.e("PkgSignatureVerifier", "Got flaky result during package signature verification", e);
             }
             return queryPackageSignatureVerified2;

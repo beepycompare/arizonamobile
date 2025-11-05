@@ -24,11 +24,11 @@ public final class TextLayoutStateKt {
                         coreNodeCoordinates = null;
                     }
                     if (coreNodeCoordinates != null) {
-                        offset = Offset.m4294boximpl(coreNodeCoordinates.mo5976localPositionOfR5De75A(textLayoutNodeCoordinates, j));
+                        offset = Offset.m5024boximpl(coreNodeCoordinates.mo6706localPositionOfR5De75A(textLayoutNodeCoordinates, j));
                     }
                 }
                 if (offset != null) {
-                    return offset.m4315unboximpl();
+                    return offset.m5045unboximpl();
                 }
             }
         }
@@ -42,12 +42,12 @@ public final class TextLayoutStateKt {
         if (textLayoutNodeCoordinates != null) {
             LayoutCoordinates decoratorNodeCoordinates = textLayoutState.getDecoratorNodeCoordinates();
             if (decoratorNodeCoordinates != null) {
-                offset = Offset.m4294boximpl((textLayoutNodeCoordinates.isAttached() && decoratorNodeCoordinates.isAttached()) ? textLayoutNodeCoordinates.mo5976localPositionOfR5De75A(decoratorNodeCoordinates, j) : j);
+                offset = Offset.m5024boximpl((textLayoutNodeCoordinates.isAttached() && decoratorNodeCoordinates.isAttached()) ? textLayoutNodeCoordinates.mo6706localPositionOfR5De75A(decoratorNodeCoordinates, j) : j);
             } else {
                 offset = null;
             }
             if (offset != null) {
-                return offset.m4315unboximpl();
+                return offset.m5045unboximpl();
             }
         }
         return j;
@@ -56,7 +56,7 @@ public final class TextLayoutStateKt {
     /* renamed from: fromWindowToDecoration-Uv8p0NA  reason: not valid java name */
     public static final long m1591fromWindowToDecorationUv8p0NA(TextLayoutState textLayoutState, long j) {
         LayoutCoordinates decoratorNodeCoordinates = textLayoutState.getDecoratorNodeCoordinates();
-        return (decoratorNodeCoordinates == null || !decoratorNodeCoordinates.isAttached()) ? j : decoratorNodeCoordinates.mo5984windowToLocalMKHz9U(j);
+        return (decoratorNodeCoordinates == null || !decoratorNodeCoordinates.isAttached()) ? j : decoratorNodeCoordinates.mo6714windowToLocalMKHz9U(j);
     }
 
     /* renamed from: coerceIn-3MmeM6k  reason: not valid java name */
@@ -75,6 +75,6 @@ public final class TextLayoutStateKt {
         } else {
             bottom = Float.intBitsToFloat(i2) > rect.getBottom() ? rect.getBottom() : Float.intBitsToFloat(i2);
         }
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
     }
 }

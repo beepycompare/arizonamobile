@@ -4,46 +4,58 @@ import androidx.compose.foundation.MutatePriority;
 import androidx.compose.foundation.MutatorMutex;
 import androidx.compose.foundation.gestures.DragScope;
 import androidx.compose.foundation.gestures.DraggableState;
+import androidx.compose.foundation.gestures.Orientation;
+import androidx.compose.material3.SliderState;
 import androidx.compose.runtime.MutableFloatState;
 import androidx.compose.runtime.MutableIntState;
 import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.PrimitiveSnapshotStateKt;
 import androidx.compose.runtime.SnapshotIntStateKt;
 import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
-import androidx.compose.ui.geometry.Offset;
+import androidx.compose.runtime.saveable.ListSaverKt;
+import androidx.compose.runtime.saveable.Saver;
+import androidx.compose.runtime.saveable.SaverScope;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.ClosedFloatingPointRange;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* compiled from: Slider.kt */
-@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0014\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\b\u0007\u0018\u00002\u00020\u0001B;\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0004\u001a\u00020\u0005\u0012\u0010\b\u0002\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007\u0012\u000e\b\u0002\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\n¢\u0006\u0002\u0010\u000bJ\u0010\u0010R\u001a\u00020\b2\u0006\u0010S\u001a\u00020\u0003H\u0016J?\u0010T\u001a\u00020\b2\u0006\u0010U\u001a\u00020V2'\u0010W\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0Y\u0012\u0006\u0012\u0004\u0018\u00010Z0X¢\u0006\u0002\b[H\u0096@¢\u0006\u0002\u0010\\J\u001a\u0010]\u001a\u00020\b2\u0006\u0010^\u001a\u00020_H\u0000ø\u0001\u0000¢\u0006\u0004\b`\u0010aJ \u0010b\u001a\u00020\u00032\u0006\u0010c\u001a\u00020\u00032\u0006\u0010d\u001a\u00020\u00032\u0006\u0010e\u001a\u00020\u0003H\u0002J \u0010f\u001a\u00020\u00032\u0006\u0010c\u001a\u00020\u00032\u0006\u0010d\u001a\u00020\u00032\u0006\u0010g\u001a\u00020\u0003H\u0002J\u001d\u0010h\u001a\u00020\b2\u0006\u0010i\u001a\u00020\u00032\u0006\u0010j\u001a\u00020\u0005H\u0000¢\u0006\u0002\bkR\u0014\u0010\f\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000eR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R+\u0010\u0016\u001a\u00020\u00152\u0006\u0010\u0014\u001a\u00020\u00158@@BX\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\u001b\u0010\u001c\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001d\u001a\u00020\u0015X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u0018\"\u0004\b\u001f\u0010\u001aR(\u0010 \u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\b\u0018\u00010!X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\"\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b&\u0010\u0013\"\u0004\b'\u0010(R+\u0010)\u001a\u00020\u00032\u0006\u0010\u0014\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b-\u0010.\u001a\u0004\b*\u0010\u000e\"\u0004\b+\u0010,R+\u0010/\u001a\u00020\u00032\u0006\u0010\u0014\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b2\u0010.\u001a\u0004\b0\u0010\u000e\"\u0004\b1\u0010,R\u000e\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b5\u00106R+\u00107\u001a\u00020\u00032\u0006\u0010\u0014\u001a\u00020\u00038@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b:\u0010.\u001a\u0004\b8\u0010\u000e\"\u0004\b9\u0010,R\u0014\u0010;\u001a\u00020<X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b=\u0010>R+\u0010?\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u00058B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bC\u0010D\u001a\u0004\b@\u00106\"\u0004\bA\u0010BR+\u0010E\u001a\u00020\u00032\u0006\u0010\u0014\u001a\u00020\u00038@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\bH\u0010.\u001a\u0004\bF\u0010\u000e\"\u0004\bG\u0010,R$\u0010\u0002\u001a\u00020\u00032\u0006\u0010I\u001a\u00020\u00038F@FX\u0086\u000e¢\u0006\f\u001a\u0004\bJ\u0010\u000e\"\u0004\bK\u0010,R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\n¢\u0006\b\n\u0000\u001a\u0004\bL\u0010MR+\u0010N\u001a\u00020\u00032\u0006\u0010\u0014\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bQ\u0010.\u001a\u0004\bO\u0010\u000e\"\u0004\bP\u0010,\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006l"}, d2 = {"Landroidx/compose/material3/SliderState;", "Landroidx/compose/foundation/gestures/DraggableState;", "value", "", "steps", "", "onValueChangeFinished", "Lkotlin/Function0;", "", "valueRange", "Lkotlin/ranges/ClosedFloatingPointRange;", "(FILkotlin/jvm/functions/Function0;Lkotlin/ranges/ClosedFloatingPointRange;)V", "coercedValueAsFraction", "getCoercedValueAsFraction$material3_release", "()F", "dragScope", "Landroidx/compose/foundation/gestures/DragScope;", "gestureEndAction", "getGestureEndAction$material3_release", "()Lkotlin/jvm/functions/Function0;", "<set-?>", "", "isDragging", "isDragging$material3_release", "()Z", "setDragging", "(Z)V", "isDragging$delegate", "Landroidx/compose/runtime/MutableState;", "isRtl", "isRtl$material3_release", "setRtl$material3_release", "onValueChange", "Lkotlin/Function1;", "getOnValueChange$material3_release", "()Lkotlin/jvm/functions/Function1;", "setOnValueChange$material3_release", "(Lkotlin/jvm/functions/Function1;)V", "getOnValueChangeFinished", "setOnValueChangeFinished", "(Lkotlin/jvm/functions/Function0;)V", "pressOffset", "getPressOffset", "setPressOffset", "(F)V", "pressOffset$delegate", "Landroidx/compose/runtime/MutableFloatState;", "rawOffset", "getRawOffset", "setRawOffset", "rawOffset$delegate", "scrollMutex", "Landroidx/compose/foundation/MutatorMutex;", "getSteps", "()I", "thumbWidth", "getThumbWidth$material3_release", "setThumbWidth$material3_release", "thumbWidth$delegate", "tickFractions", "", "getTickFractions$material3_release", "()[F", "totalWidth", "getTotalWidth", "setTotalWidth", "(I)V", "totalWidth$delegate", "Landroidx/compose/runtime/MutableIntState;", "trackHeight", "getTrackHeight$material3_release", "setTrackHeight$material3_release", "trackHeight$delegate", "newVal", "getValue", "setValue", "getValueRange", "()Lkotlin/ranges/ClosedFloatingPointRange;", "valueState", "getValueState", "setValueState", "valueState$delegate", "dispatchRawDelta", "delta", "drag", "dragPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onPress", "pos", "Landroidx/compose/ui/geometry/Offset;", "onPress-k-4lQ0M$material3_release", "(J)V", "scaleToOffset", "minPx", "maxPx", "userValue", "scaleToUserValue", TypedValues.CycleType.S_WAVE_OFFSET, "updateDimensions", "newTrackHeight", "newTotalWidth", "updateDimensions$material3_release", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0014\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\b\b\u0007\u0018\u0000 |2\u00020\u0001:\u0001|B=\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0004\u001a\u00020\u0005\u0012\u0010\b\u0002\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007\u0012\u000e\b\u0002\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\n¢\u0006\u0004\b\u000b\u0010\fJ\u0010\u0010 \u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u0003H\u0002J?\u0010!\u001a\u00020\b2\u0006\u0010\"\u001a\u00020#2'\u0010$\u001a#\b\u0001\u0012\u0004\u0012\u00020&\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0'\u0012\u0006\u0012\u0004\u0018\u00010(0%¢\u0006\u0002\b)H\u0096@¢\u0006\u0002\u0010*J\u0010\u0010+\u001a\u00020\b2\u0006\u0010,\u001a\u00020\u0003H\u0016J\u001d\u0010`\u001a\u00020\b2\u0006\u0010a\u001a\u00020\u00052\u0006\u0010b\u001a\u00020\u0005H\u0000¢\u0006\u0002\bcJ\u0017\u0010f\u001a\u00020\b2\u0006\u0010g\u001a\u00020hH\u0000¢\u0006\u0004\bi\u0010jJ \u0010v\u001a\u00020\u00032\u0006\u0010w\u001a\u00020\u00032\u0006\u0010x\u001a\u00020\u00032\u0006\u0010y\u001a\u00020\u0003H\u0002J \u0010z\u001a\u00020\u00032\u0006\u0010w\u001a\u00020\u00032\u0006\u0010x\u001a\u00020\u00032\u0006\u0010{\u001a\u00020\u0003H\u0002R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\"\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\n¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R+\u0010\u0016\u001a\u00020\u00032\u0006\u0010\u0015\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u001b\u0010\u001c\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR$\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u00038F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u001e\u0010\u0018\"\u0004\b\u001f\u0010\u001aR(\u0010-\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\b\u0018\u00010.X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b/\u00100\"\u0004\b1\u00102R\u001c\u00103\u001a\u0002048GX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u00105\"\u0004\b6\u00107R\u0014\u00108\u001a\u000209X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b:\u0010;R+\u0010<\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00058B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b@\u0010A\u001a\u0004\b=\u0010\u000e\"\u0004\b>\u0010?R+\u0010B\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00058B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bE\u0010A\u001a\u0004\bC\u0010\u000e\"\u0004\bD\u0010?R\u001a\u0010F\u001a\u000204X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bG\u00105\"\u0004\bH\u00107R+\u0010I\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00058@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\bL\u0010A\u001a\u0004\bJ\u0010\u000e\"\u0004\bK\u0010?R+\u0010M\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00058@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\bP\u0010A\u001a\u0004\bN\u0010\u000e\"\u0004\bO\u0010?R\u001a\u0010Q\u001a\u00020RX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bS\u0010T\"\u0004\bU\u0010VR\u001a\u0010W\u001a\u000204X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bX\u00105\"\u0004\bY\u00107R\u0011\u0010Z\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b[\u0010\u0018R+\u0010\\\u001a\u0002042\u0006\u0010\u0015\u001a\u0002048F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b^\u0010_\u001a\u0004\b\\\u00105\"\u0004\b]\u00107R\u001a\u0010d\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\be\u0010\u0010R+\u0010k\u001a\u00020\u00032\u0006\u0010\u0015\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bn\u0010\u001c\u001a\u0004\bl\u0010\u0018\"\u0004\bm\u0010\u001aR+\u0010o\u001a\u00020\u00032\u0006\u0010\u0015\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\br\u0010\u001c\u001a\u0004\bp\u0010\u0018\"\u0004\bq\u0010\u001aR\u000e\u0010s\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010t\u001a\u00020uX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006}"}, d2 = {"Landroidx/compose/material3/SliderState;", "Landroidx/compose/foundation/gestures/DraggableState;", "value", "", "steps", "", "onValueChangeFinished", "Lkotlin/Function0;", "", "valueRange", "Lkotlin/ranges/ClosedFloatingPointRange;", "<init>", "(FILkotlin/jvm/functions/Function0;Lkotlin/ranges/ClosedFloatingPointRange;)V", "getSteps", "()I", "getOnValueChangeFinished", "()Lkotlin/jvm/functions/Function0;", "setOnValueChangeFinished", "(Lkotlin/jvm/functions/Function0;)V", "getValueRange", "()Lkotlin/ranges/ClosedFloatingPointRange;", "<set-?>", "valueState", "getValueState", "()F", "setValueState", "(F)V", "valueState$delegate", "Landroidx/compose/runtime/MutableFloatState;", "newVal", "getValue", "setValue", "calculateSnappedValue", "drag", "dragPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Landroidx/compose/foundation/gestures/DragScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchRawDelta", "delta", "onValueChange", "Lkotlin/Function1;", "getOnValueChange", "()Lkotlin/jvm/functions/Function1;", "setOnValueChange", "(Lkotlin/jvm/functions/Function1;)V", "shouldAutoSnap", "", "()Z", "setShouldAutoSnap", "(Z)V", "tickFractions", "", "getTickFractions$material3", "()[F", "totalWidth", "getTotalWidth", "setTotalWidth", "(I)V", "totalWidth$delegate", "Landroidx/compose/runtime/MutableIntState;", "totalHeight", "getTotalHeight", "setTotalHeight", "totalHeight$delegate", "isRtl", "isRtl$material3", "setRtl$material3", "thumbWidth", "getThumbWidth$material3", "setThumbWidth$material3", "thumbWidth$delegate", "thumbHeight", "getThumbHeight$material3", "setThumbHeight$material3", "thumbHeight$delegate", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "getOrientation$material3", "()Landroidx/compose/foundation/gestures/Orientation;", "setOrientation$material3", "(Landroidx/compose/foundation/gestures/Orientation;)V", "reverseVerticalDirection", "getReverseVerticalDirection$material3", "setReverseVerticalDirection$material3", "coercedValueAsFraction", "getCoercedValueAsFraction", "isDragging", "setDragging", "isDragging$delegate", "Landroidx/compose/runtime/MutableState;", "updateDimensions", "newTotalWidth", "newTotalHeight", "updateDimensions$material3", "gestureEndAction", "getGestureEndAction$material3", "onPress", "pos", "Landroidx/compose/ui/geometry/Offset;", "onPress-k-4lQ0M$material3", "(J)V", "rawOffset", "getRawOffset", "setRawOffset", "rawOffset$delegate", "pressOffset", "getPressOffset", "setPressOffset", "pressOffset$delegate", "dragScope", "scrollMutex", "Landroidx/compose/foundation/MutatorMutex;", "scaleToUserValue", "minPx", "maxPx", TypedValues.CycleType.S_WAVE_OFFSET, "scaleToOffset", "userValue", "Companion", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SliderState implements DraggableState {
-    public static final int $stable = 8;
     private final DragScope dragScope;
     private final Function0<Unit> gestureEndAction;
     private final MutableState isDragging$delegate;
     private boolean isRtl;
     private Function1<? super Float, Unit> onValueChange;
     private Function0<Unit> onValueChangeFinished;
+    private Orientation orientation;
     private final MutableFloatState pressOffset$delegate;
     private final MutableFloatState rawOffset$delegate;
+    private boolean reverseVerticalDirection;
     private final MutatorMutex scrollMutex;
+    private boolean shouldAutoSnap;
     private final int steps;
-    private final MutableFloatState thumbWidth$delegate;
+    private final MutableIntState thumbHeight$delegate;
+    private final MutableIntState thumbWidth$delegate;
     private final float[] tickFractions;
+    private final MutableIntState totalHeight$delegate;
     private final MutableIntState totalWidth$delegate;
-    private final MutableFloatState trackHeight$delegate;
     private final ClosedFloatingPointRange<Float> valueRange;
     private final MutableFloatState valueState$delegate;
+    public static final Companion Companion = new Companion(null);
+    public static final int $stable = 8;
 
     public SliderState() {
         this(0.0f, 0, null, null, 15, null);
@@ -56,32 +68,22 @@ public final class SliderState implements DraggableState {
         this.onValueChangeFinished = function0;
         this.valueRange = closedFloatingPointRange;
         this.valueState$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(f);
+        this.shouldAutoSnap = true;
         stepsToTickFractions = SliderKt.stepsToTickFractions(i);
         this.tickFractions = stepsToTickFractions;
         this.totalWidth$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
-        this.trackHeight$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
-        this.thumbWidth$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
+        this.totalHeight$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
+        this.thumbWidth$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
+        this.thumbHeight$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
+        this.orientation = Orientation.Horizontal;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.isDragging$delegate = mutableStateOf$default;
-        this.gestureEndAction = new Function0<Unit>() { // from class: androidx.compose.material3.SliderState$gestureEndAction$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        this.gestureEndAction = new Function0() { // from class: androidx.compose.material3.SliderState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                Function0<Unit> onValueChangeFinished;
-                if (SliderState.this.isDragging$material3_release() || (onValueChangeFinished = SliderState.this.getOnValueChangeFinished()) == null) {
-                    return;
-                }
-                onValueChangeFinished.invoke();
+            public final Object invoke() {
+                Unit gestureEndAction$lambda$1;
+                gestureEndAction$lambda$1 = SliderState.gestureEndAction$lambda$1(SliderState.this);
+                return gestureEndAction$lambda$1;
             }
         };
         this.rawOffset$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(scaleToOffset(0.0f, 0.0f, f));
@@ -124,13 +126,20 @@ public final class SliderState implements DraggableState {
     }
 
     public final void setValue(float f) {
-        float snapValueToTick;
-        snapValueToTick = SliderKt.snapValueToTick(RangesKt.coerceIn(f, this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue()), this.tickFractions, this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue());
-        setValueState(snapValueToTick);
+        if (this.shouldAutoSnap) {
+            f = calculateSnappedValue(f);
+        }
+        setValueState(f);
     }
 
     public final float getValue() {
         return getValueState();
+    }
+
+    private final float calculateSnappedValue(float f) {
+        float snapValueToTick;
+        snapValueToTick = SliderKt.snapValueToTick(RangesKt.coerceIn(f, this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue()), this.tickFractions, this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue());
+        return snapValueToTick;
     }
 
     @Override // androidx.compose.foundation.gestures.DraggableState
@@ -141,10 +150,16 @@ public final class SliderState implements DraggableState {
 
     @Override // androidx.compose.foundation.gestures.DraggableState
     public void dispatchRawDelta(float f) {
+        float max;
+        float min;
         float snapValueToTick;
-        float f2 = 2;
-        float max = Math.max(getTotalWidth() - (getThumbWidth$material3_release() / f2), 0.0f);
-        float min = Math.min(getThumbWidth$material3_release() / f2, max);
+        if (this.orientation == Orientation.Vertical) {
+            max = Math.max(getTotalHeight() - (getThumbHeight$material3() / 2.0f), 0.0f);
+            min = Math.min(getThumbHeight$material3() / 2.0f, max);
+        } else {
+            max = Math.max(getTotalWidth() - (getThumbWidth$material3() / 2.0f), 0.0f);
+            min = Math.min(getThumbWidth$material3() / 2.0f, max);
+        }
         setRawOffset(getRawOffset() + f + getPressOffset());
         setPressOffset(0.0f);
         snapValueToTick = SliderKt.snapValueToTick(getRawOffset(), this.tickFractions, min, max);
@@ -160,15 +175,23 @@ public final class SliderState implements DraggableState {
         }
     }
 
-    public final Function1<Float, Unit> getOnValueChange$material3_release() {
+    public final Function1<Float, Unit> getOnValueChange() {
         return this.onValueChange;
     }
 
-    public final void setOnValueChange$material3_release(Function1<? super Float, Unit> function1) {
+    public final void setOnValueChange(Function1<? super Float, Unit> function1) {
         this.onValueChange = function1;
     }
 
-    public final float[] getTickFractions$material3_release() {
+    public final void setShouldAutoSnap(boolean z) {
+        this.shouldAutoSnap = z;
+    }
+
+    public final boolean shouldAutoSnap() {
+        return this.shouldAutoSnap;
+    }
+
+    public final float[] getTickFractions$material3() {
         return this.tickFractions;
     }
 
@@ -180,31 +203,55 @@ public final class SliderState implements DraggableState {
         this.totalWidth$delegate.setIntValue(i);
     }
 
-    public final boolean isRtl$material3_release() {
+    private final int getTotalHeight() {
+        return this.totalHeight$delegate.getIntValue();
+    }
+
+    private final void setTotalHeight(int i) {
+        this.totalHeight$delegate.setIntValue(i);
+    }
+
+    public final boolean isRtl$material3() {
         return this.isRtl;
     }
 
-    public final void setRtl$material3_release(boolean z) {
+    public final void setRtl$material3(boolean z) {
         this.isRtl = z;
     }
 
-    public final float getTrackHeight$material3_release() {
-        return this.trackHeight$delegate.getFloatValue();
+    public final int getThumbWidth$material3() {
+        return this.thumbWidth$delegate.getIntValue();
     }
 
-    public final void setTrackHeight$material3_release(float f) {
-        this.trackHeight$delegate.setFloatValue(f);
+    public final void setThumbWidth$material3(int i) {
+        this.thumbWidth$delegate.setIntValue(i);
     }
 
-    public final float getThumbWidth$material3_release() {
-        return this.thumbWidth$delegate.getFloatValue();
+    public final int getThumbHeight$material3() {
+        return this.thumbHeight$delegate.getIntValue();
     }
 
-    public final void setThumbWidth$material3_release(float f) {
-        this.thumbWidth$delegate.setFloatValue(f);
+    public final void setThumbHeight$material3(int i) {
+        this.thumbHeight$delegate.setIntValue(i);
     }
 
-    public final float getCoercedValueAsFraction$material3_release() {
+    public final Orientation getOrientation$material3() {
+        return this.orientation;
+    }
+
+    public final void setOrientation$material3(Orientation orientation) {
+        this.orientation = orientation;
+    }
+
+    public final boolean getReverseVerticalDirection$material3() {
+        return this.reverseVerticalDirection;
+    }
+
+    public final void setReverseVerticalDirection$material3(boolean z) {
+        this.reverseVerticalDirection = z;
+    }
+
+    public final float getCoercedValueAsFraction() {
         float calcFraction;
         calcFraction = SliderKt.calcFraction(this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue(), RangesKt.coerceIn(getValue(), this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue()));
         return calcFraction;
@@ -215,22 +262,49 @@ public final class SliderState implements DraggableState {
         this.isDragging$delegate.setValue(Boolean.valueOf(z));
     }
 
-    public final boolean isDragging$material3_release() {
+    public final boolean isDragging() {
         return ((Boolean) this.isDragging$delegate.getValue()).booleanValue();
     }
 
-    public final void updateDimensions$material3_release(float f, int i) {
-        setTrackHeight$material3_release(f);
+    public final void updateDimensions$material3(int i, int i2) {
         setTotalWidth(i);
+        setTotalHeight(i2);
     }
 
-    public final Function0<Unit> getGestureEndAction$material3_release() {
+    public final Function0<Unit> getGestureEndAction$material3() {
         return this.gestureEndAction;
     }
 
-    /* renamed from: onPress-k-4lQ0M$material3_release  reason: not valid java name */
-    public final void m2646onPressk4lQ0M$material3_release(long j) {
-        setPressOffset((this.isRtl ? getTotalWidth() - Offset.m4305getXimpl(j) : Offset.m4305getXimpl(j)) - getRawOffset());
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit gestureEndAction$lambda$1(SliderState sliderState) {
+        Function0<Unit> function0;
+        if (!sliderState.isDragging() && (function0 = sliderState.onValueChangeFinished) != null) {
+            function0.invoke();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* renamed from: onPress-k-4lQ0M$material3  reason: not valid java name */
+    public final void m2976onPressk4lQ0M$material3(long j) {
+        float intBitsToFloat;
+        float totalWidth;
+        float intBitsToFloat2;
+        if (this.orientation == Orientation.Vertical) {
+            if (this.reverseVerticalDirection) {
+                totalWidth = getTotalHeight();
+                intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
+                intBitsToFloat = totalWidth - intBitsToFloat2;
+            } else {
+                intBitsToFloat = Float.intBitsToFloat((int) (j & 4294967295L));
+            }
+        } else if (this.isRtl) {
+            totalWidth = getTotalWidth();
+            intBitsToFloat2 = Float.intBitsToFloat((int) (j >> 32));
+            intBitsToFloat = totalWidth - intBitsToFloat2;
+        } else {
+            intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
+        }
+        setPressOffset(intBitsToFloat - getRawOffset());
     }
 
     private final float getRawOffset() {
@@ -259,5 +333,50 @@ public final class SliderState implements DraggableState {
         float scale;
         scale = SliderKt.scale(this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue(), f3, f, f2);
         return scale;
+    }
+
+    /* compiled from: Slider.kt */
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J.\u0010\u0004\u001a\f\u0012\u0004\u0012\u00020\u0006\u0012\u0002\b\u00030\u00052\u000e\u0010\u0007\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\b2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¨\u0006\r"}, d2 = {"Landroidx/compose/material3/SliderState$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/material3/SliderState;", "onValueChangeFinished", "Lkotlin/Function0;", "", "valueRange", "Lkotlin/ranges/ClosedFloatingPointRange;", "", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        public final Saver<SliderState, ?> Saver(final Function0<Unit> function0, final ClosedFloatingPointRange<Float> closedFloatingPointRange) {
+            return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.SliderState$Companion$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    List Saver$lambda$0;
+                    Saver$lambda$0 = SliderState.Companion.Saver$lambda$0((SaverScope) obj, (SliderState) obj2);
+                    return Saver$lambda$0;
+                }
+            }, new Function1() { // from class: androidx.compose.material3.SliderState$Companion$$ExternalSyntheticLambda1
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    SliderState Saver$lambda$1;
+                    Saver$lambda$1 = SliderState.Companion.Saver$lambda$1(Function0.this, closedFloatingPointRange, (List) obj);
+                    return Saver$lambda$1;
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final List Saver$lambda$0(SaverScope saverScope, SliderState sliderState) {
+            return CollectionsKt.listOf(Float.valueOf(sliderState.getValue()), Integer.valueOf(sliderState.getSteps()));
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final SliderState Saver$lambda$1(Function0 function0, ClosedFloatingPointRange closedFloatingPointRange, List list) {
+            Object obj = list.get(0);
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Float");
+            float floatValue = ((Float) obj).floatValue();
+            Object obj2 = list.get(1);
+            Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.Int");
+            return new SliderState(floatValue, ((Integer) obj2).intValue(), function0, closedFloatingPointRange);
+        }
     }
 }

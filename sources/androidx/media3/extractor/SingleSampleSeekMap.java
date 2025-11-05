@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
 import androidx.media3.extractor.SeekMap;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class SingleSampleSeekMap implements SeekMap {
     private final long durationUs;
     private final long startPosition;

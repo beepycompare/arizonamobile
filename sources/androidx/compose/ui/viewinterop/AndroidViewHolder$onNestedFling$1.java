@@ -60,21 +60,21 @@ final class AndroidViewHolder$onNestedFling$1 extends SuspendLambda implements F
             if (!this.$consumed) {
                 nestedScrollDispatcher2 = this.this$0.dispatcher;
                 this.label = 1;
-                obj = nestedScrollDispatcher2.m5713dispatchPostFlingRZ2iAVY(Velocity.Companion.m7513getZero9UxMQ8M(), this.$viewVelocity, this);
+                obj = nestedScrollDispatcher2.m6443dispatchPostFlingRZ2iAVY(Velocity.Companion.m8244getZero9UxMQ8M(), this.$viewVelocity, this);
             } else {
                 nestedScrollDispatcher = this.this$0.dispatcher;
                 this.label = 2;
-                obj = nestedScrollDispatcher.m5713dispatchPostFlingRZ2iAVY(this.$viewVelocity, Velocity.Companion.m7513getZero9UxMQ8M(), this);
+                obj = nestedScrollDispatcher.m6443dispatchPostFlingRZ2iAVY(this.$viewVelocity, Velocity.Companion.m8244getZero9UxMQ8M(), this);
             }
             return coroutine_suspended;
         } else if (i == 1) {
             ResultKt.throwOnFailure(obj);
-            ((Velocity) obj).m7511unboximpl();
+            ((Velocity) obj).m8242unboximpl();
         } else if (i != 2) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
-            ((Velocity) obj).m7511unboximpl();
+            ((Velocity) obj).m8242unboximpl();
         }
         return Unit.INSTANCE;
     }

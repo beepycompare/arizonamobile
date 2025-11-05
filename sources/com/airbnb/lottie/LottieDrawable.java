@@ -56,6 +56,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
     private static final List<String> ALLOWED_REDUCED_MOTION_MARKERS;
     public static final int INFINITE = -1;
     private static final float MAX_DELTA_MS_ASYNC_SET_PROGRESS = 50.0f;
+    private static final long MAX_SOFTWARE_BITMAP_PIXELS = 50000000;
     public static final int RESTART = 1;
     public static final int REVERSE = 2;
     private static final boolean invalidateSelfOnMainThread;
@@ -145,7 +146,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8479lambda$new$0$comairbnblottieLottieDrawable(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9209lambda$new$0$comairbnblottieLottieDrawable(ValueAnimator valueAnimator) {
         if (getAsyncUpdatesEnabled()) {
             invalidateSelf();
             return;
@@ -158,7 +159,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8481lambda$new$2$comairbnblottieLottieDrawable() {
+    public /* synthetic */ void m9211lambda$new$2$comairbnblottieLottieDrawable() {
         CompositionLayer compositionLayer = this.compositionLayer;
         if (compositionLayer == null) {
             return;
@@ -172,7 +173,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
                     this.invalidateSelfRunnable = new Runnable() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda8
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LottieDrawable.this.m8480lambda$new$1$comairbnblottieLottieDrawable();
+                            LottieDrawable.this.m9210lambda$new$1$comairbnblottieLottieDrawable();
                         }
                     };
                 }
@@ -188,7 +189,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8480lambda$new$1$comairbnblottieLottieDrawable() {
+    public /* synthetic */ void m9210lambda$new$1$comairbnblottieLottieDrawable() {
         Drawable.Callback callback = getCallback();
         if (callback != null) {
             callback.invalidateDrawable(this);
@@ -216,7 +217,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
         ValueAnimator.AnimatorUpdateListener animatorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda13
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                LottieDrawable.this.m8479lambda$new$0$comairbnblottieLottieDrawable(valueAnimator);
+                LottieDrawable.this.m9209lambda$new$0$comairbnblottieLottieDrawable(valueAnimator);
             }
         };
         this.progressUpdateListener = animatorUpdateListener;
@@ -224,7 +225,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
         this.updateProgressRunnable = new Runnable() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                LottieDrawable.this.m8481lambda$new$2$comairbnblottieLottieDrawable();
+                LottieDrawable.this.m9211lambda$new$2$comairbnblottieLottieDrawable();
             }
         };
         this.lastDrawnProgress = -3.4028235E38f;
@@ -633,7 +634,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda15
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition) {
-                    LottieDrawable.this.m8482lambda$playAnimation$3$comairbnblottieLottieDrawable(lottieComposition);
+                    LottieDrawable.this.m9212lambda$playAnimation$3$comairbnblottieLottieDrawable(lottieComposition);
                 }
             });
             return;
@@ -665,7 +666,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$playAnimation$3$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8482lambda$playAnimation$3$comairbnblottieLottieDrawable(LottieComposition lottieComposition) {
+    public /* synthetic */ void m9212lambda$playAnimation$3$comairbnblottieLottieDrawable(LottieComposition lottieComposition) {
         playAnimation();
     }
 
@@ -694,7 +695,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda9
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition) {
-                    LottieDrawable.this.m8483lambda$resumeAnimation$4$comairbnblottieLottieDrawable(lottieComposition);
+                    LottieDrawable.this.m9213lambda$resumeAnimation$4$comairbnblottieLottieDrawable(lottieComposition);
                 }
             });
             return;
@@ -721,7 +722,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$resumeAnimation$4$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8483lambda$resumeAnimation$4$comairbnblottieLottieDrawable(LottieComposition lottieComposition) {
+    public /* synthetic */ void m9213lambda$resumeAnimation$4$comairbnblottieLottieDrawable(LottieComposition lottieComposition) {
         resumeAnimation();
     }
 
@@ -730,7 +731,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda5
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition) {
-                    LottieDrawable.this.m8492lambda$setMinFrame$5$comairbnblottieLottieDrawable(i, lottieComposition);
+                    LottieDrawable.this.m9222lambda$setMinFrame$5$comairbnblottieLottieDrawable(i, lottieComposition);
                 }
             });
         } else {
@@ -740,7 +741,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMinFrame$5$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8492lambda$setMinFrame$5$comairbnblottieLottieDrawable(int i, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9222lambda$setMinFrame$5$comairbnblottieLottieDrawable(int i, LottieComposition lottieComposition) {
         setMinFrame(i);
     }
 
@@ -754,7 +755,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda16
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition2) {
-                    LottieDrawable.this.m8494lambda$setMinProgress$6$comairbnblottieLottieDrawable(f, lottieComposition2);
+                    LottieDrawable.this.m9224lambda$setMinProgress$6$comairbnblottieLottieDrawable(f, lottieComposition2);
                 }
             });
         } else {
@@ -764,7 +765,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMinProgress$6$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8494lambda$setMinProgress$6$comairbnblottieLottieDrawable(float f, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9224lambda$setMinProgress$6$comairbnblottieLottieDrawable(float f, LottieComposition lottieComposition) {
         setMinProgress(f);
     }
 
@@ -773,7 +774,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda4
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition) {
-                    LottieDrawable.this.m8486lambda$setMaxFrame$7$comairbnblottieLottieDrawable(i, lottieComposition);
+                    LottieDrawable.this.m9216lambda$setMaxFrame$7$comairbnblottieLottieDrawable(i, lottieComposition);
                 }
             });
         } else {
@@ -783,7 +784,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMaxFrame$7$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8486lambda$setMaxFrame$7$comairbnblottieLottieDrawable(int i, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9216lambda$setMaxFrame$7$comairbnblottieLottieDrawable(int i, LottieComposition lottieComposition) {
         setMaxFrame(i);
     }
 
@@ -797,7 +798,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda7
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition2) {
-                    LottieDrawable.this.m8487lambda$setMaxProgress$8$comairbnblottieLottieDrawable(f, lottieComposition2);
+                    LottieDrawable.this.m9217lambda$setMaxProgress$8$comairbnblottieLottieDrawable(f, lottieComposition2);
                 }
             });
         } else {
@@ -807,7 +808,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMaxProgress$8$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8487lambda$setMaxProgress$8$comairbnblottieLottieDrawable(float f, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9217lambda$setMaxProgress$8$comairbnblottieLottieDrawable(float f, LottieComposition lottieComposition) {
         setMaxProgress(f);
     }
 
@@ -817,7 +818,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda12
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition2) {
-                    LottieDrawable.this.m8493lambda$setMinFrame$9$comairbnblottieLottieDrawable(str, lottieComposition2);
+                    LottieDrawable.this.m9223lambda$setMinFrame$9$comairbnblottieLottieDrawable(str, lottieComposition2);
                 }
             });
             return;
@@ -831,7 +832,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMinFrame$9$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8493lambda$setMinFrame$9$comairbnblottieLottieDrawable(String str, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9223lambda$setMinFrame$9$comairbnblottieLottieDrawable(String str, LottieComposition lottieComposition) {
         setMinFrame(str);
     }
 
@@ -841,7 +842,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda11
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition2) {
-                    LottieDrawable.this.m8485lambda$setMaxFrame$10$comairbnblottieLottieDrawable(str, lottieComposition2);
+                    LottieDrawable.this.m9215lambda$setMaxFrame$10$comairbnblottieLottieDrawable(str, lottieComposition2);
                 }
             });
             return;
@@ -855,7 +856,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMaxFrame$10$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8485lambda$setMaxFrame$10$comairbnblottieLottieDrawable(String str, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9215lambda$setMaxFrame$10$comairbnblottieLottieDrawable(String str, LottieComposition lottieComposition) {
         setMaxFrame(str);
     }
 
@@ -865,7 +866,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda0
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition2) {
-                    LottieDrawable.this.m8488lambda$setMinAndMaxFrame$11$comairbnblottieLottieDrawable(str, lottieComposition2);
+                    LottieDrawable.this.m9218lambda$setMinAndMaxFrame$11$comairbnblottieLottieDrawable(str, lottieComposition2);
                 }
             });
             return;
@@ -880,7 +881,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMinAndMaxFrame$11$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8488lambda$setMinAndMaxFrame$11$comairbnblottieLottieDrawable(String str, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9218lambda$setMinAndMaxFrame$11$comairbnblottieLottieDrawable(String str, LottieComposition lottieComposition) {
         setMinAndMaxFrame(str);
     }
 
@@ -890,7 +891,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda10
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition2) {
-                    LottieDrawable.this.m8489lambda$setMinAndMaxFrame$12$comairbnblottieLottieDrawable(str, str2, z, lottieComposition2);
+                    LottieDrawable.this.m9219lambda$setMinAndMaxFrame$12$comairbnblottieLottieDrawable(str, str2, z, lottieComposition2);
                 }
             });
             return;
@@ -909,7 +910,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMinAndMaxFrame$12$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8489lambda$setMinAndMaxFrame$12$comairbnblottieLottieDrawable(String str, String str2, boolean z, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9219lambda$setMinAndMaxFrame$12$comairbnblottieLottieDrawable(String str, String str2, boolean z, LottieComposition lottieComposition) {
         setMinAndMaxFrame(str, str2, z);
     }
 
@@ -918,7 +919,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda3
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition) {
-                    LottieDrawable.this.m8490lambda$setMinAndMaxFrame$13$comairbnblottieLottieDrawable(i, i2, lottieComposition);
+                    LottieDrawable.this.m9220lambda$setMinAndMaxFrame$13$comairbnblottieLottieDrawable(i, i2, lottieComposition);
                 }
             });
         } else {
@@ -928,7 +929,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMinAndMaxFrame$13$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8490lambda$setMinAndMaxFrame$13$comairbnblottieLottieDrawable(int i, int i2, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9220lambda$setMinAndMaxFrame$13$comairbnblottieLottieDrawable(int i, int i2, LottieComposition lottieComposition) {
         setMinAndMaxFrame(i, i2);
     }
 
@@ -938,7 +939,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda2
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition2) {
-                    LottieDrawable.this.m8491lambda$setMinAndMaxProgress$14$comairbnblottieLottieDrawable(f, f2, lottieComposition2);
+                    LottieDrawable.this.m9221lambda$setMinAndMaxProgress$14$comairbnblottieLottieDrawable(f, f2, lottieComposition2);
                 }
             });
         } else {
@@ -948,7 +949,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMinAndMaxProgress$14$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8491lambda$setMinAndMaxProgress$14$comairbnblottieLottieDrawable(float f, float f2, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9221lambda$setMinAndMaxProgress$14$comairbnblottieLottieDrawable(float f, float f2, LottieComposition lottieComposition) {
         setMinAndMaxProgress(f, f2);
     }
 
@@ -1002,7 +1003,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda1
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition) {
-                    LottieDrawable.this.m8484lambda$setFrame$15$comairbnblottieLottieDrawable(i, lottieComposition);
+                    LottieDrawable.this.m9214lambda$setFrame$15$comairbnblottieLottieDrawable(i, lottieComposition);
                 }
             });
         } else {
@@ -1012,7 +1013,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setFrame$15$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8484lambda$setFrame$15$comairbnblottieLottieDrawable(int i, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9214lambda$setFrame$15$comairbnblottieLottieDrawable(int i, LottieComposition lottieComposition) {
         setFrame(i);
     }
 
@@ -1025,7 +1026,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda17
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition) {
-                    LottieDrawable.this.m8495lambda$setProgress$16$comairbnblottieLottieDrawable(f, lottieComposition);
+                    LottieDrawable.this.m9225lambda$setProgress$16$comairbnblottieLottieDrawable(f, lottieComposition);
                 }
             });
             return;
@@ -1041,7 +1042,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setProgress$16$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8495lambda$setProgress$16$comairbnblottieLottieDrawable(float f, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9225lambda$setProgress$16$comairbnblottieLottieDrawable(float f, LottieComposition lottieComposition) {
         setProgress(f);
     }
 
@@ -1202,7 +1203,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             this.lazyCompositionTasks.add(new LazyCompositionTask() { // from class: com.airbnb.lottie.LottieDrawable$$ExternalSyntheticLambda6
                 @Override // com.airbnb.lottie.LottieDrawable.LazyCompositionTask
                 public final void run(LottieComposition lottieComposition) {
-                    LottieDrawable.this.m8478lambda$addValueCallback$17$comairbnblottieLottieDrawable(keyPath, t, lottieValueCallback, lottieComposition);
+                    LottieDrawable.this.m9208lambda$addValueCallback$17$comairbnblottieLottieDrawable(keyPath, t, lottieValueCallback, lottieComposition);
                 }
             });
             return;
@@ -1229,18 +1230,12 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addValueCallback$17$com-airbnb-lottie-LottieDrawable  reason: not valid java name */
-    public /* synthetic */ void m8478lambda$addValueCallback$17$comairbnblottieLottieDrawable(KeyPath keyPath, Object obj, LottieValueCallback lottieValueCallback, LottieComposition lottieComposition) {
+    public /* synthetic */ void m9208lambda$addValueCallback$17$comairbnblottieLottieDrawable(KeyPath keyPath, Object obj, LottieValueCallback lottieValueCallback, LottieComposition lottieComposition) {
         addValueCallback(keyPath, (KeyPath) obj, (LottieValueCallback<KeyPath>) lottieValueCallback);
     }
 
     public <T> void addValueCallback(KeyPath keyPath, T t, final SimpleLottieValueCallback<T> simpleLottieValueCallback) {
-        addValueCallback(keyPath, (KeyPath) t, (LottieValueCallback<KeyPath>) new LottieValueCallback<T>(this) { // from class: com.airbnb.lottie.LottieDrawable.1
-            final /* synthetic */ LottieDrawable this$0;
-
-            {
-                this.this$0 = this;
-            }
-
+        addValueCallback(keyPath, (KeyPath) t, (LottieValueCallback<KeyPath>) new LottieValueCallback<T>() { // from class: com.airbnb.lottie.LottieDrawable.1
             @Override // com.airbnb.lottie.value.LottieValueCallback
             public T getValue(LottieFrameInfo<T> lottieFrameInfo) {
                 return (T) simpleLottieValueCallback.getValue(lottieFrameInfo);
@@ -1443,9 +1438,19 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
         if (!ignoreCanvasClipBounds()) {
             this.softwareRenderingTransformedBounds.intersect(this.canvasClipBounds.left, this.canvasClipBounds.top, this.canvasClipBounds.right, this.canvasClipBounds.bottom);
         }
+        if (!isFiniteRect(this.softwareRenderingTransformedBounds)) {
+            Logger.warning("Skipping software rendering: transformed bounds contain non-finite values.");
+            return;
+        }
         int ceil = (int) Math.ceil(this.softwareRenderingTransformedBounds.width());
         int ceil2 = (int) Math.ceil(this.softwareRenderingTransformedBounds.height());
         if (ceil <= 0 || ceil2 <= 0) {
+            Logger.warning("Skipping software rendering: transformed bounds have negative values.");
+            return;
+        }
+        long j = ceil * ceil2;
+        if (j > MAX_SOFTWARE_BITMAP_PIXELS) {
+            Logger.warning("Skipping software rendering: bitmap request exceeds safe pixel count (" + j + ")");
             return;
         }
         ensureSoftwareRenderingBitmap(ceil, ceil2);
@@ -1507,6 +1512,14 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
     private void convertRect(Rect rect, RectF rectF) {
         rectF.set(rect.left, rect.top, rect.right, rect.bottom);
+    }
+
+    private static boolean isFiniteRect(RectF rectF) {
+        return isFinite(rectF.left) && isFinite(rectF.top) && isFinite(rectF.right) && isFinite(rectF.bottom);
+    }
+
+    private static boolean isFinite(float f) {
+        return (Float.isNaN(f) || Float.isInfinite(f)) ? false : true;
     }
 
     private void scaleRect(RectF rectF, float f, float f2) {

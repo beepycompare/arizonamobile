@@ -430,18 +430,18 @@ public final class ClickableKt {
 
     /* renamed from: isPress-ZmokQxo */
     public static final boolean m321isPressZmokQxo(KeyEvent keyEvent) {
-        return KeyEventType.m5688equalsimpl0(KeyEvent_androidKt.m5696getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5692getKeyDownCS__XNY()) && m320isEnterZmokQxo(keyEvent);
+        return KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6422getKeyDownCS__XNY()) && m320isEnterZmokQxo(keyEvent);
     }
 
     /* renamed from: isClick-ZmokQxo */
     public static final boolean m319isClickZmokQxo(KeyEvent keyEvent) {
-        return KeyEventType.m5688equalsimpl0(KeyEvent_androidKt.m5696getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5693getKeyUpCS__XNY()) && m320isEnterZmokQxo(keyEvent);
+        return KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6423getKeyUpCS__XNY()) && m320isEnterZmokQxo(keyEvent);
     }
 
     /* renamed from: isEnter-ZmokQxo */
     private static final boolean m320isEnterZmokQxo(KeyEvent keyEvent) {
-        long m5695getKeyZmokQxo = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
-        return Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5459getDirectionCenterEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5473getEnterEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5565getNumPadEnterEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5611getSpacebarEK5gGoQ());
+        long m6425getKeyZmokQxo = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
+        return Key.m6117equalsimpl0(m6425getKeyZmokQxo, Key.Companion.m6189getDirectionCenterEK5gGoQ()) || Key.m6117equalsimpl0(m6425getKeyZmokQxo, Key.Companion.m6203getEnterEK5gGoQ()) || Key.m6117equalsimpl0(m6425getKeyZmokQxo, Key.Companion.m6295getNumPadEnterEK5gGoQ()) || Key.m6117equalsimpl0(m6425getKeyZmokQxo, Key.Companion.m6341getSpacebarEK5gGoQ());
     }
 
     public static final boolean hasScrollableContainer(TraversableNode traversableNode) {

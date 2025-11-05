@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaParserExtractorAdapter implements ProgressiveMediaExtractor {
     @Deprecated
     public static final ProgressiveMediaExtractor.Factory FACTORY = new ProgressiveMediaExtractor.Factory() { // from class: androidx.media3.exoplayer.source.MediaParserExtractorAdapter$$ExternalSyntheticLambda0
@@ -36,7 +36,7 @@ public final class MediaParserExtractorAdapter implements ProgressiveMediaExtrac
         return new MediaParserExtractorAdapter(playerId, ImmutableMap.of());
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory implements ProgressiveMediaExtractor.Factory {
         private static final Map<String, Object> parameters = new HashMap();
 

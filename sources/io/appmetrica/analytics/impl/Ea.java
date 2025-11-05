@@ -1,42 +1,33 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer;
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceEntryPoint;
-/* loaded from: classes4.dex */
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.json.JSONObject;
+/* loaded from: classes3.dex */
 public final class Ea {
-    public static final Ea d = new Ea();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Od f427a = new Od();
-    public final ServiceComponentsInitializer b = AbstractC0592sk.a();
-    public boolean c = false;
+    public static final HashSet f457a;
 
-    public final void a(Context context) {
-        Na.a(context);
-        this.b.onCreate(context);
-        this.f427a.getClass();
-        for (String str : Na.F.s.a()) {
-            ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
-            Object loadAndInstantiateClassWithDefaultConstructor = ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor(str, ModuleServiceEntryPoint.class);
-            if (loadAndInstantiateClassWithDefaultConstructor != null) {
-                Na.F.o().a((ModuleServiceEntryPoint) loadAndInstantiateClassWithDefaultConstructor);
-            }
-        }
-        new Dk(Na.j().B().b()).a(context);
-        Na.F.p().a();
+    static {
+        HashSet hashSet = new HashSet();
+        f457a = hashSet;
+        hashSet.add("get_ad");
+        hashSet.add("report");
+        hashSet.add("report_ad");
+        hashSet.add("startup");
+        hashSet.add("diagnostic");
     }
 
-    public final void b(Context context) {
-        if (this.c) {
-            return;
-        }
-        synchronized (this) {
-            if (!this.c) {
-                a(context);
-                this.c = true;
+    public static ArrayList a(JSONObject jSONObject, String str) {
+        try {
+            JSONObject optJSONObject = jSONObject.optJSONObject(str);
+            if (optJSONObject != null) {
+                return AbstractC0447nb.a(optJSONObject.getJSONArray("urls"));
             }
+            return null;
+        } catch (Throwable unused) {
+            return null;
         }
     }
 }

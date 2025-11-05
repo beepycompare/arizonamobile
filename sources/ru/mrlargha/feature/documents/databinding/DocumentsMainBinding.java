@@ -36,9 +36,12 @@ public final class DocumentsMainBinding implements ViewBinding {
     public final LinearLayout table3;
     public final LinearLayout table4;
     public final LinearLayout table5;
+    public final TextView tvArmyWrit;
+    public final TextView tvLaw;
+    public final TextView tvYearsState;
     public final TextView yearsCitizen;
 
-    private DocumentsMainBinding(ConstraintLayout constraintLayout, ImageView imageView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, LinearLayout linearLayout, TextView textView7, TextView textView8, TextView textView9, LinearLayout linearLayout2, TextView textView10, ImageView imageView2, TextView textView11, TextView textView12, TextView textView13, TextView textView14, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, LinearLayout linearLayout7, TextView textView15) {
+    private DocumentsMainBinding(ConstraintLayout constraintLayout, ImageView imageView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, LinearLayout linearLayout, TextView textView7, TextView textView8, TextView textView9, LinearLayout linearLayout2, TextView textView10, ImageView imageView2, TextView textView11, TextView textView12, TextView textView13, TextView textView14, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, LinearLayout linearLayout7, TextView textView15, TextView textView16, TextView textView17, TextView textView18) {
         this.rootView = constraintLayout;
         this.alertNot = imageView;
         this.armyWrit = textView;
@@ -63,7 +66,10 @@ public final class DocumentsMainBinding implements ViewBinding {
         this.table3 = linearLayout5;
         this.table4 = linearLayout6;
         this.table5 = linearLayout7;
-        this.yearsCitizen = textView15;
+        this.tvArmyWrit = textView15;
+        this.tvLaw = textView16;
+        this.tvYearsState = textView17;
+        this.yearsCitizen = textView18;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -153,10 +159,22 @@ public final class DocumentsMainBinding implements ViewBinding {
                                                                                                 i = R.id.table5;
                                                                                                 LinearLayout linearLayout7 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                                                                                 if (linearLayout7 != null) {
-                                                                                                    i = R.id.years_citizen;
+                                                                                                    i = R.id.tv_army_writ;
                                                                                                     TextView textView15 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                                     if (textView15 != null) {
-                                                                                                        return new DocumentsMainBinding((ConstraintLayout) view, imageView, textView, textView2, textView3, textView4, textView5, textView6, linearLayout, textView7, textView8, textView9, linearLayout2, textView10, imageView2, textView11, textView12, textView13, textView14, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, textView15);
+                                                                                                        i = R.id.tv_law;
+                                                                                                        TextView textView16 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                        if (textView16 != null) {
+                                                                                                            i = R.id.tv_years_state;
+                                                                                                            TextView textView17 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                            if (textView17 != null) {
+                                                                                                                i = R.id.years_citizen;
+                                                                                                                TextView textView18 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                if (textView18 != null) {
+                                                                                                                    return new DocumentsMainBinding((ConstraintLayout) view, imageView, textView, textView2, textView3, textView4, textView5, textView6, linearLayout, textView7, textView8, textView9, linearLayout2, textView10, imageView2, textView11, textView12, textView13, textView14, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, textView15, textView16, textView17, textView18);
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
                                                                                                     }
                                                                                                 }
                                                                                             }

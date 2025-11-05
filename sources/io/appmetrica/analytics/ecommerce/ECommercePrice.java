@@ -2,19 +2,19 @@ package io.appmetrica.analytics.ecommerce;
 
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ECommercePrice {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ECommerceAmount f317a;
+    private final ECommerceAmount f333a;
     private List b;
 
     public ECommercePrice(ECommerceAmount eCommerceAmount) {
-        this.f317a = eCommerceAmount;
+        this.f333a = eCommerceAmount;
     }
 
     public ECommerceAmount getFiat() {
-        return this.f317a;
+        return this.f333a;
     }
 
     public List<ECommerceAmount> getInternalComponents() {
@@ -27,6 +27,6 @@ public class ECommercePrice {
     }
 
     public String toString() {
-        return "ECommercePrice{fiat=" + this.f317a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "ECommercePrice{fiat=" + this.f333a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

@@ -2,31 +2,25 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class D implements Parcelable {
     public static final C CREATOR = new C();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0793x f1294a;
+    public final boolean f1335a;
     public final F b;
-    public final C0795z c;
 
-    public D(C0793x c0793x, F f, C0795z c0795z) {
-        this.f1294a = c0793x;
+    public D(boolean z, F f) {
+        this.f1335a = z;
         this.b = f;
-        this.c = c0795z;
     }
 
-    public final C0793x a() {
-        return this.f1294a;
-    }
-
-    public final C0795z b() {
-        return this.c;
-    }
-
-    public final F c() {
+    public final F a() {
         return this.b;
+    }
+
+    public final boolean b() {
+        return this.f1335a;
     }
 
     @Override // android.os.Parcelable
@@ -35,26 +29,22 @@ public final class D implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1294a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
+        return "ParcelableRemoteScreenshotConfig(enabled=" + this.f1335a + ", config=" + this.b + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f1294a, i);
+        parcel.writeByte(this.f1335a ? (byte) 1 : (byte) 0);
         parcel.writeParcelable(this.b, i);
-        parcel.writeParcelable(this.c, i);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public D(h0 h0Var) {
-        this(r2, r3, r5 != null ? new C0795z(r5) : null);
-        e0 a2 = h0Var.a();
-        C0793x c0793x = a2 != null ? new C0793x(a2) : null;
-        i0 c = h0Var.c();
-        F f = c != null ? new F(c) : null;
-        f0 b = h0Var.b();
+    public D(j0 j0Var) {
+        this(r0, r3 != null ? new F(r3) : null);
+        boolean b = j0Var.b();
+        k0 a2 = j0Var.a();
     }
 }

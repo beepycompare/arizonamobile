@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Extension<M extends ExtendableMessageNano<M>, T> {
     public static final int TYPE_BOOL = 8;
     public static final int TYPE_BYTES = 12;
@@ -30,7 +30,7 @@ public class Extension<M extends ExtendableMessageNano<M>, T> {
     public final int tag;
     protected final int type;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class PrimitiveExtension<M extends ExtendableMessageNano<M>, T> extends Extension<M, T> {
         private final int nonPackedTag;
         private final int packedTag;

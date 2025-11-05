@@ -55,17 +55,17 @@ public final class AnimationData {
         }
         if (obj instanceof AnimationData) {
             AnimationData animationData = (AnimationData) obj;
-            return Float.compare(this.zoom, animationData.zoom) == 0 && Offset.m4302equalsimpl0(this.offset, animationData.offset) && Float.compare(this.degrees, animationData.degrees) == 0;
+            return Float.compare(this.zoom, animationData.zoom) == 0 && Offset.m5032equalsimpl0(this.offset, animationData.offset) && Float.compare(this.degrees, animationData.degrees) == 0;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Float.hashCode(this.zoom) * 31) + Offset.m4307hashCodeimpl(this.offset)) * 31) + Float.hashCode(this.degrees);
+        return (((Float.hashCode(this.zoom) * 31) + Offset.m5037hashCodeimpl(this.offset)) * 31) + Float.hashCode(this.degrees);
     }
 
     public String toString() {
-        return "AnimationData(zoom=" + this.zoom + ", offset=" + ((Object) Offset.m4313toStringimpl(this.offset)) + ", degrees=" + this.degrees + ')';
+        return "AnimationData(zoom=" + this.zoom + ", offset=" + ((Object) Offset.m5043toStringimpl(this.offset)) + ", degrees=" + this.degrees + ')';
     }
 
     private AnimationData(float f, long j, float f2) {

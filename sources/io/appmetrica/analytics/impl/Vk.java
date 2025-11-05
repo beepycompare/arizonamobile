@@ -1,93 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-import java.util.Arrays;
-/* loaded from: classes4.dex */
-public final class Vk extends MessageNano {
-    public static volatile Vk[] c;
+import okhttp3.internal.connection.RealConnection;
+/* loaded from: classes3.dex */
+public final class Vk {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f717a;
-    public byte[] b;
+    public final zo f736a;
 
-    public Vk() {
-        a();
+    public Vk(zo zoVar) {
+        this.f736a = zoVar;
     }
 
-    public static Vk[] b() {
-        if (c == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new Vk[0];
-                }
-            }
+    public final long a() {
+        long optLong;
+        zo zoVar = this.f736a;
+        synchronized (zoVar) {
+            optLong = zoVar.f1238a.a().optLong("session_id", -1L);
         }
-        return c;
-    }
-
-    public final Vk a() {
-        byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f717a = bArr;
-        this.b = bArr;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f717a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f717a);
+        long j = RealConnection.IDLE_CONNECTION_HEALTHY_NS;
+        if (optLong >= RealConnection.IDLE_CONNECTION_HEALTHY_NS) {
+            j = 1 + optLong;
         }
-        return !Arrays.equals(this.b, bArr2) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f717a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f717a);
-        }
-        if (!Arrays.equals(this.b, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(2, this.b);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final Vk mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f717a = codedInputByteBufferNano.readBytes();
-            } else if (readTag != 18) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.b = codedInputByteBufferNano.readBytes();
-            }
-        }
-        return this;
-    }
-
-    public static Vk b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Vk().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Vk a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Vk) MessageNano.mergeFrom(new Vk(), bArr);
+        this.f736a.c(j);
+        return j;
     }
 }

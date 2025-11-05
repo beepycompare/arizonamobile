@@ -13,25 +13,27 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: TabRow.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.TabIndicatorOffsetNode$measure$3", f = "TabRow.kt", i = {}, l = {917}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.TabIndicatorOffsetNode$measure$3", f = "TabRow.kt", i = {}, l = {731}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class TabIndicatorOffsetNode$measure$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ float $indicatorOffset;
     final /* synthetic */ Animatable<Dp, AnimationVector1D> $offsetAnim;
     int label;
+    final /* synthetic */ TabIndicatorOffsetNode this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public TabIndicatorOffsetNode$measure$3(Animatable<Dp, AnimationVector1D> animatable, float f, Continuation<? super TabIndicatorOffsetNode$measure$3> continuation) {
+    public TabIndicatorOffsetNode$measure$3(Animatable<Dp, AnimationVector1D> animatable, float f, TabIndicatorOffsetNode tabIndicatorOffsetNode, Continuation<? super TabIndicatorOffsetNode$measure$3> continuation) {
         super(2, continuation);
         this.$offsetAnim = animatable;
         this.$indicatorOffset = f;
+        this.this$0 = tabIndicatorOffsetNode;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new TabIndicatorOffsetNode$measure$3(this.$offsetAnim, this.$indicatorOffset, continuation);
+        return new TabIndicatorOffsetNode$measure$3(this.$offsetAnim, this.$indicatorOffset, this.this$0, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -46,7 +48,7 @@ final class TabIndicatorOffsetNode$measure$3 extends SuspendLambda implements Fu
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            if (Animatable.animateTo$default(this.$offsetAnim, Dp.m7262boximpl(this.$indicatorOffset), TabRowKt.access$getTabRowIndicatorSpec$p(), null, null, this, 12, null) == coroutine_suspended) {
+            if (Animatable.animateTo$default(this.$offsetAnim, Dp.m7993boximpl(this.$indicatorOffset), this.this$0.getAnimationSpec(), null, null, this, 12, null) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

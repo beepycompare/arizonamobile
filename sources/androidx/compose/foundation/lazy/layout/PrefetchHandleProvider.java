@@ -130,7 +130,7 @@ public final class PrefetchHandleProvider {
             this.prefetchMetrics = prefetchMetrics;
             this.priorityPrefetchScheduler = priorityPrefetchScheduler;
             this.onItemPremeasured = function1;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m10576markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m11317markNowz9LOYto();
         }
 
         @Override // androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState.PrefetchResultScope
@@ -140,7 +140,7 @@ public final class PrefetchHandleProvider {
 
         private HandleAndRequestImpl(PrefetchHandleProvider prefetchHandleProvider, int i, long j, PrefetchMetrics prefetchMetrics, PriorityPrefetchScheduler priorityPrefetchScheduler, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
             this(i, prefetchMetrics, priorityPrefetchScheduler, function1);
-            this.premeasureConstraints = Constraints.m7204boximpl(j);
+            this.premeasureConstraints = Constraints.m7935boximpl(j);
         }
 
         private final boolean isComposed() {
@@ -175,7 +175,7 @@ public final class PrefetchHandleProvider {
         /* renamed from: getSize-YEO4UFw */
         public long mo1062getSizeYEO4UFw(int i) {
             SubcomposeLayoutState.PrecomposedSlotHandle precomposedSlotHandle = this.precomposeHandle;
-            return precomposedSlotHandle != null ? precomposedSlotHandle.mo5993getSizeYEO4UFw(i) : IntSize.Companion.m7440getZeroYbymL2g();
+            return precomposedSlotHandle != null ? precomposedSlotHandle.mo6723getSizeYEO4UFw(i) : IntSize.Companion.m8171getZeroYbymL2g();
         }
 
         private final boolean shouldExecute(long j, long j2) {
@@ -187,18 +187,18 @@ public final class PrefetchHandleProvider {
 
         private final void resetAvailableTimeTo(long j) {
             this.availableTimeNanos = j;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m10576markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m11317markNowz9LOYto();
             this.elapsedTimeNanos = 0L;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
         private final void updateElapsedAndAvailableTime() {
-            long m10576markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m10576markNowz9LOYto();
-            long m10476getInWholeNanosecondsimpl = Duration.m10476getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m10587minus6eNON_k(m10576markNowz9LOYto, this.startTime));
-            this.elapsedTimeNanos = m10476getInWholeNanosecondsimpl;
-            long j = this.availableTimeNanos - m10476getInWholeNanosecondsimpl;
+            long m11317markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11317markNowz9LOYto();
+            long m11217getInWholeNanosecondsimpl = Duration.m11217getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m11328minus6eNON_k(m11317markNowz9LOYto, this.startTime));
+            this.elapsedTimeNanos = m11217getInWholeNanosecondsimpl;
+            long j = this.availableTimeNanos - m11217getInWholeNanosecondsimpl;
             this.availableTimeNanos = j;
-            this.startTime = m10576markNowz9LOYto;
+            this.startTime = m11317markNowz9LOYto;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
@@ -324,7 +324,7 @@ public final class PrefetchHandleProvider {
                         }
                         Trace.beginSection("compose:lazy:prefetch:measure");
                         try {
-                            m1083performMeasureBRTryo0(constraints.m7223unboximpl());
+                            m1083performMeasureBRTryo0(constraints.m7954unboximpl());
                             Unit unit5 = Unit.INSTANCE;
                             Trace.endSection();
                             updateElapsedAndAvailableTime();
@@ -421,7 +421,7 @@ public final class PrefetchHandleProvider {
             if (precomposedSlotHandle != null) {
                 int placeablesCount = precomposedSlotHandle.getPlaceablesCount();
                 for (int i = 0; i < placeablesCount; i++) {
-                    precomposedSlotHandle.mo5994premeasure0kLqBqw(i, j);
+                    precomposedSlotHandle.mo6724premeasure0kLqBqw(i, j);
                 }
                 return;
             }

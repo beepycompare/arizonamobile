@@ -994,7 +994,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
                 this.materialButtonHelper.setCornerSizeChangeListener(new MaterialShapeDrawable.OnCornerSizeChangeListener() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda0
                     @Override // com.google.android.material.shape.MaterialShapeDrawable.OnCornerSizeChangeListener
                     public final void onCornerSizeChange(float f) {
-                        MaterialButton.this.m8696x61790e35(f);
+                        MaterialButton.this.m9434x61790e35(f);
                     }
                 });
             } else {
@@ -1003,7 +1003,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
             post(new Runnable() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MaterialButton.this.m8697xa5042bf6();
+                    MaterialButton.this.m9435xa5042bf6();
                 }
             });
         }
@@ -1011,8 +1011,8 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOpticalCenterEnabled$0$com-google-android-material-button-MaterialButton  reason: not valid java name */
-    public /* synthetic */ void m8696x61790e35(float f) {
-        int i = (int) (f * OPTICAL_CENTER_RATIO);
+    public /* synthetic */ void m9434x61790e35(float f) {
+        int i = (int) (f * 0.11f);
         if (this.opticalCenterShift != i) {
             this.opticalCenterShift = i;
             updatePaddingsAndSizeForWidthAnimation();
@@ -1022,7 +1022,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOpticalCenterEnabled$1$com-google-android-material-button-MaterialButton  reason: not valid java name */
-    public /* synthetic */ void m8697xa5042bf6() {
+    public /* synthetic */ void m9435xa5042bf6() {
         this.opticalCenterShift = getOpticalCenterShift();
         updatePaddingsAndSizeForWidthAnimation();
         invalidate();
@@ -1042,7 +1042,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     private int getOpticalCenterShift() {
         MaterialShapeDrawable materialShapeDrawable;
         if (this.opticalCenterEnabled && this.isInHorizontalButtonGroup && (materialShapeDrawable = this.materialButtonHelper.getMaterialShapeDrawable()) != null) {
-            return (int) (materialShapeDrawable.getCornerSizeDiffX() * OPTICAL_CENTER_RATIO);
+            return (int) (materialShapeDrawable.getCornerSizeDiffX() * 0.11f);
         }
         return 0;
     }

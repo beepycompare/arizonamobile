@@ -46,7 +46,7 @@ public final class AndroidPathMeasure implements PathMeasure {
 
     @Override // androidx.compose.ui.graphics.PathMeasure
     /* renamed from: getPosition-tuRUvjQ  reason: not valid java name */
-    public long mo4445getPositiontuRUvjQ(float f) {
+    public long mo5175getPositiontuRUvjQ(float f) {
         if (this.positionArray == null) {
             this.positionArray = new float[2];
         }
@@ -60,14 +60,14 @@ public final class AndroidPathMeasure implements PathMeasure {
             float[] fArr2 = this.positionArray;
             Intrinsics.checkNotNull(fArr2);
             float f3 = fArr2[1];
-            return Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L));
+            return Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L));
         }
-        return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5050getUnspecifiedF1C5BW0();
     }
 
     @Override // androidx.compose.ui.graphics.PathMeasure
     /* renamed from: getTangent-tuRUvjQ  reason: not valid java name */
-    public long mo4446getTangenttuRUvjQ(float f) {
+    public long mo5176getTangenttuRUvjQ(float f) {
         if (this.positionArray == null) {
             this.positionArray = new float[2];
         }
@@ -81,8 +81,8 @@ public final class AndroidPathMeasure implements PathMeasure {
             float[] fArr2 = this.tangentArray;
             Intrinsics.checkNotNull(fArr2);
             float f3 = fArr2[1];
-            return Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L));
+            return Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L));
         }
-        return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5050getUnspecifiedF1C5BW0();
     }
 }

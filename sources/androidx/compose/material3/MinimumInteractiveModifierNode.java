@@ -1,6 +1,7 @@
 package androidx.compose.material3;
 
 import androidx.compose.ui.Modifier;
+import androidx.compose.ui.layout.AlignmentLine;
 import androidx.compose.ui.layout.Measurable;
 import androidx.compose.ui.layout.MeasureResult;
 import androidx.compose.ui.layout.MeasureScope;
@@ -9,56 +10,77 @@ import androidx.compose.ui.node.CompositionLocalConsumerModifierNode;
 import androidx.compose.ui.node.CompositionLocalConsumerModifierNodeKt;
 import androidx.compose.ui.node.LayoutModifierNode;
 import androidx.compose.ui.unit.Dp;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import kotlin.Metadata;
 import kotlin.Unit;
+import kotlin.collections.MapsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.math.MathKt;
 import kotlin.ranges.RangesKt;
 /* compiled from: InteractiveComponentSize.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0005¢\u0006\u0002\u0010\u0004J&\u0010\u0005\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016ø\u0001\u0000¢\u0006\u0004\b\f\u0010\r\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u000e"}, d2 = {"Landroidx/compose/material3/MinimumInteractiveModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "()V", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J#\u0010\n\u001a\u00020\u000b*\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016¢\u0006\u0004\b\u0011\u0010\u0012J\u0018\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\t2\u0006\u0010\u0016\u001a\u00020\u0017H\u0002J\u0014\u0010\u0018\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007H\u0002R\u001c\u0010\u0006\u001a\u0010\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0018\u00010\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0019"}, d2 = {"Landroidx/compose/material3/MinimumInteractiveModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "<init>", "()V", "alignmentLinesCache", "", "Landroidx/compose/ui/layout/AlignmentLine;", "", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "updateAlignmentLines", "", "sizePx", "placeable", "Landroidx/compose/ui/layout/Placeable;", "getAlignmentLinesCache", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class MinimumInteractiveModifierNode extends Modifier.Node implements CompositionLocalConsumerModifierNode, LayoutModifierNode {
-    public static final int $stable = 0;
+    public static final int $stable = 8;
+    private Map<AlignmentLine, Integer> alignmentLinesCache;
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        int width;
-        int height;
+        final int width;
+        final int height;
         float f = 0;
-        float m7264constructorimpl = Dp.m7264constructorimpl(RangesKt.coerceAtLeast(((Dp) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize())).m7278unboximpl(), Dp.m7264constructorimpl(f)));
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
-        boolean z = isAttached() && !Float.isNaN(m7264constructorimpl) && Dp.m7263compareTo0680j_4(m7264constructorimpl, Dp.m7264constructorimpl(f)) > 0;
-        int i = Float.isNaN(m7264constructorimpl) ? 0 : measureScope.mo423roundToPx0680j_4(m7264constructorimpl);
+        float m7995constructorimpl = Dp.m7995constructorimpl(RangesKt.coerceAtLeast(((Dp) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize())).m8009unboximpl(), Dp.m7995constructorimpl(f)));
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
+        boolean z = isAttached() && !Float.isNaN(m7995constructorimpl) && Dp.m7994compareTo0680j_4(m7995constructorimpl, Dp.m7995constructorimpl(f)) > 0;
+        int i = Float.isNaN(m7995constructorimpl) ? 0 : measureScope.mo423roundToPx0680j_4(m7995constructorimpl);
         if (z) {
-            width = Math.max(mo5967measureBRTryo0.getWidth(), i);
+            width = Math.max(mo6697measureBRTryo0.getWidth(), i);
         } else {
-            width = mo5967measureBRTryo0.getWidth();
+            width = mo6697measureBRTryo0.getWidth();
         }
-        final int i2 = width;
         if (z) {
-            height = Math.max(mo5967measureBRTryo0.getHeight(), i);
+            height = Math.max(mo6697measureBRTryo0.getHeight(), i);
         } else {
-            height = mo5967measureBRTryo0.getHeight();
+            height = mo6697measureBRTryo0.getHeight();
         }
-        final int i3 = height;
-        return MeasureScope.layout$default(measureScope, i2, i3, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.MinimumInteractiveModifierNode$measure$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        if (z) {
+            updateAlignmentLines(i, mo6697measureBRTryo0);
+        }
+        Map<AlignmentLine, Integer> map = this.alignmentLinesCache;
+        if (map == null) {
+            map = MapsKt.emptyMap();
+        }
+        return measureScope.layout(width, height, map, new Function1() { // from class: androidx.compose.material3.MinimumInteractiveModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
+            public final Object invoke(Object obj) {
+                Unit measure_3p2s80s$lambda$0;
+                measure_3p2s80s$lambda$0 = MinimumInteractiveModifierNode.measure_3p2s80s$lambda$0(width, mo6697measureBRTryo0, height, (Placeable.PlacementScope) obj);
+                return measure_3p2s80s$lambda$0;
             }
+        });
+    }
 
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable.PlacementScope.place$default(placementScope, mo5967measureBRTryo0, MathKt.roundToInt((i2 - mo5967measureBRTryo0.getWidth()) / 2.0f), MathKt.roundToInt((i3 - mo5967measureBRTryo0.getHeight()) / 2.0f), 0.0f, 4, null);
-            }
-        }, 4, null);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measure_3p2s80s$lambda$0(int i, Placeable placeable, int i2, Placeable.PlacementScope placementScope) {
+        Placeable.PlacementScope.place$default(placementScope, placeable, MathKt.roundToInt((i - placeable.getWidth()) / 2.0f), MathKt.roundToInt((i2 - placeable.getHeight()) / 2.0f), 0.0f, 4, null);
+        return Unit.INSTANCE;
+    }
+
+    private final void updateAlignmentLines(int i, Placeable placeable) {
+        Map<AlignmentLine, Integer> alignmentLinesCache = getAlignmentLinesCache();
+        alignmentLinesCache.put(InteractiveComponentSizeKt.getMinimumInteractiveLeftAlignmentLine(), Integer.valueOf(RangesKt.coerceAtLeast(Math.round((i - placeable.getWidth()) / 2.0f), 0)));
+        alignmentLinesCache.put(InteractiveComponentSizeKt.getMinimumInteractiveTopAlignmentLine(), Integer.valueOf(RangesKt.coerceAtLeast(Math.round((i - placeable.getHeight()) / 2.0f), 0)));
+    }
+
+    private final Map<AlignmentLine, Integer> getAlignmentLinesCache() {
+        Map<AlignmentLine, Integer> map = this.alignmentLinesCache;
+        if (map == null) {
+            LinkedHashMap linkedHashMap = new LinkedHashMap(2);
+            this.alignmentLinesCache = linkedHashMap;
+            return linkedHashMap;
+        }
+        return map;
     }
 }

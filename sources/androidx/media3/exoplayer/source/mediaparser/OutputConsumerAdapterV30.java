@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsumer {
     private static final String MEDIA_FORMAT_KEY_CHUNK_INDEX_DURATIONS = "chunk-index-long-us-durations";
     private static final String MEDIA_FORMAT_KEY_CHUNK_INDEX_OFFSETS = "chunk-index-long-offsets";
@@ -522,7 +522,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class SeekMapAdapter implements SeekMap {
         private final MediaParser.SeekMap adaptedSeekMap;
 
@@ -555,7 +555,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class DataReaderAdapter implements DataReader {
         public MediaParser.InputReader input;
 

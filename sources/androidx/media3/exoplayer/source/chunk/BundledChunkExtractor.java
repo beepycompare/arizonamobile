@@ -28,7 +28,7 @@ import androidx.media3.extractor.text.SubtitleParser;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtractor {
     @Deprecated
     public static final Factory FACTORY = new Factory();
@@ -43,7 +43,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     private SeekMap seekMap;
     private ChunkExtractor.TrackOutputProvider trackOutputProvider;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory implements ChunkExtractor.Factory {
         private int codecsToParseWithinGopSampleDependencies;
         private boolean parseSubtitlesDuringExtraction;
@@ -183,7 +183,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         this.seekMap = seekMap;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class BindingTrackOutput implements TrackOutput {
         private long endTimeUs;
         private final DiscardingTrackOutput fakeTrackOutput = new DiscardingTrackOutput();

@@ -10,19 +10,19 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class HudElementCasesTimerBinding implements ViewBinding {
     public final FrameLayout casesTimer;
-    public final ImageView ic;
+    public final ImageView image;
     public final CustomCardView main;
     private final FrameLayout rootView;
     public final TextView timer;
     public final TextView topText;
 
-    private HudElementCasesTimerBinding(FrameLayout rootView, FrameLayout casesTimer, ImageView ic, CustomCardView main, TextView timer, TextView topText) {
+    private HudElementCasesTimerBinding(FrameLayout rootView, FrameLayout casesTimer, ImageView image, CustomCardView main, TextView timer, TextView topText) {
         this.rootView = rootView;
         this.casesTimer = casesTimer;
-        this.ic = ic;
+        this.image = image;
         this.main = main;
         this.timer = timer;
         this.topText = topText;
@@ -47,7 +47,7 @@ public final class HudElementCasesTimerBinding implements ViewBinding {
 
     public static HudElementCasesTimerBinding bind(View rootView) {
         FrameLayout frameLayout = (FrameLayout) rootView;
-        int i = R.id.ic;
+        int i = R.id.image;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
         if (imageView != null) {
             i = R.id.main;

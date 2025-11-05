@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.source;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultCompositeSequenceableLoaderFactory implements CompositeSequenceableLoaderFactory {
     @Override // androidx.media3.exoplayer.source.CompositeSequenceableLoaderFactory
     public SequenceableLoader empty() {

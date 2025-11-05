@@ -12,7 +12,7 @@ import androidx.media3.exoplayer.source.MediaSourceEventListener;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseMediaSource implements MediaSource {
     private Looper looper;
     private PlayerId playerId;

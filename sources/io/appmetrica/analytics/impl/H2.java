@@ -1,23 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.Intent;
-/* loaded from: classes4.dex */
-public final class H2 implements Runnable {
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+/* loaded from: classes3.dex */
+public final class H2 extends AbstractC0256g {
+    public static final String g = "background";
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f470a;
-    public final /* synthetic */ Intent b;
-    public final /* synthetic */ I2 c;
-
-    public H2(I2 i2, Context context, Intent intent) {
-        this.c = i2;
-        this.f470a = context;
-        this.b = intent;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        this.c.f487a.consume(this.f470a, this.b);
+    public H2(C0210e5 c0210e5, Vk vk, Zk zk, Vj vj, SystemTimeProvider systemTimeProvider) {
+        super(c0210e5, vk, zk, Uk.a(EnumC0123al.BACKGROUND).b().a(), vj, systemTimeProvider);
     }
 }

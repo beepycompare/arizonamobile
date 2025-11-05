@@ -10,12 +10,12 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamite.DynamiteModule;
+import com.google.android.gms.internal.common.zzh;
 import com.google.android.gms.internal.common.zzi;
 import com.google.android.gms.internal.common.zzj;
-import com.google.android.gms.internal.common.zzl;
 import java.lang.reflect.Method;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class ProviderInstaller {
     public static final String PROVIDER_NAME = "GmsCore_OpenSSL";
     private static final GoogleApiAvailabilityLight zza = GoogleApiAvailabilityLight.getInstance();
@@ -23,8 +23,8 @@ public class ProviderInstaller {
     private static Method zzc = null;
     private static boolean zzd = false;
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-    /* loaded from: classes3.dex */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* loaded from: classes4.dex */
     public interface ProviderInstallListener {
         void onProviderInstallFailed(int i, Intent intent);
 
@@ -32,6 +32,7 @@ public class ProviderInstaller {
     }
 
     public static void installIfNeeded(Context context) throws GooglePlayServicesRepairableException, GooglePlayServicesNotAvailableException {
+        String str;
         Context context2;
         Preconditions.checkNotNull(context, "Context must not be null");
         zza.verifyGooglePlayServicesIsAvailable(context, 11925000);
@@ -42,7 +43,9 @@ public class ProviderInstaller {
                 try {
                     context2 = DynamiteModule.load(context, DynamiteModule.PREFER_HIGHEST_OR_LOCAL_VERSION_NO_FORCE_STAGING, "com.google.android.gms.providerinstaller.dynamite").getModuleContext();
                 } catch (DynamiteModule.LoadingException e) {
-                    Log.w("ProviderInstaller", "Failed to load providerinstaller module: ".concat(String.valueOf(e.getMessage())));
+                    String message = e.getMessage();
+                    String.valueOf(message);
+                    Log.w("ProviderInstaller", str.concat(String.valueOf(message)));
                     context2 = null;
                 }
                 if (context2 != null) {
@@ -56,7 +59,7 @@ public class ProviderInstaller {
                 zzd = true;
                 if (!z) {
                     try {
-                        zzl.zzb("com.google.android.gms.common.security.ProviderInstallerImpl", "reportRequestStats2", remoteContext.getClassLoader(), zzj.zzb(Context.class, context), zzi.zza(uptimeMillis), zzi.zza(SystemClock.uptimeMillis()));
+                        zzj.zzb("com.google.android.gms.common.security.ProviderInstallerImpl", "reportRequestStats2", remoteContext.getClassLoader(), zzi.zzb(Context.class, context), zzh.zza(uptimeMillis), zzh.zza(SystemClock.uptimeMillis()));
                     } catch (Exception e2) {
                         Log.w("ProviderInstaller", "Failed to report request stats: ".concat(e2.toString()));
                     }
@@ -88,7 +91,9 @@ public class ProviderInstaller {
         } catch (Exception e) {
             Throwable cause = e.getCause();
             if (Log.isLoggable("ProviderInstaller", 6)) {
-                Log.e("ProviderInstaller", "Failed to install provider: ".concat(String.valueOf(cause == null ? e.toString() : cause.toString())));
+                String exc = cause == null ? e.toString() : cause.toString();
+                String.valueOf(exc);
+                Log.e("ProviderInstaller", "Failed to install provider: ".concat(String.valueOf(exc)));
             }
             throw new GooglePlayServicesNotAvailableException(8);
         }

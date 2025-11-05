@@ -5,16 +5,16 @@ import android.location.LocationListener;
 import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
 import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class v implements LastKnownLocationExtractorProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1220a;
+    public final String f1261a;
     public final s b;
     public final String c;
 
     public v(String str, s sVar, String str2) {
-        this.f1220a = str;
+        this.f1261a = str;
         this.b = sVar;
         this.c = str2;
     }
@@ -22,7 +22,7 @@ public final class v implements LastKnownLocationExtractorProvider {
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider
     /* renamed from: a */
     public final u getExtractor(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
-        return new u(context, this.b.a(permissionExtractor), locationListener, this.f1220a);
+        return new u(context, this.b.a(permissionExtractor), locationListener, this.f1261a);
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.Identifiable

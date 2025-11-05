@@ -7,49 +7,49 @@ import io.appmetrica.analytics.billinginterface.internal.update.UpdatePolicy;
 import java.util.concurrent.Executor;
 import kotlin.Metadata;
 @Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\n\u0018\u00002\u00020\u0001J\b\u0010\u0003\u001a\u00020\u0002H\u0016J\b\u0010\u0005\u001a\u00020\u0004H\u0016J\b\u0010\u0007\u001a\u00020\u0006H\u0016J\b\u0010\t\u001a\u00020\bH\u0016J\b\u0010\n\u001a\u00020\bH\u0016¨\u0006\u000b"}, d2 = {"io/appmetrica/analytics/billingv8/internal/BillingLibraryMonitor$updateBilling$1", "Lio/appmetrica/analytics/billinginterface/internal/library/UtilsProvider;", "Lio/appmetrica/analytics/billinginterface/internal/storage/BillingInfoManager;", "getBillingInfoManager", "Lio/appmetrica/analytics/billinginterface/internal/update/UpdatePolicy;", "getUpdatePolicy", "Lio/appmetrica/analytics/billinginterface/internal/storage/BillingInfoSender;", "getBillingInfoSender", "Ljava/util/concurrent/Executor;", "getUiExecutor", "getWorkerExecutor", "billing-v8_release"}, k = 1, mv = {1, 6, 0})
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class BillingLibraryMonitor$updateBilling$1 implements UtilsProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ BillingLibraryMonitor f251a;
+    final /* synthetic */ BillingLibraryMonitor f264a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BillingLibraryMonitor$updateBilling$1(BillingLibraryMonitor billingLibraryMonitor) {
-        this.f251a = billingLibraryMonitor;
+        this.f264a = billingLibraryMonitor;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public BillingInfoManager getBillingInfoManager() {
         BillingInfoManager billingInfoManager;
-        billingInfoManager = this.f251a.e;
+        billingInfoManager = this.f264a.e;
         return billingInfoManager;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public BillingInfoSender getBillingInfoSender() {
         BillingInfoSender billingInfoSender;
-        billingInfoSender = this.f251a.d;
+        billingInfoSender = this.f264a.d;
         return billingInfoSender;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public Executor getUiExecutor() {
         Executor executor;
-        executor = this.f251a.c;
+        executor = this.f264a.c;
         return executor;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public UpdatePolicy getUpdatePolicy() {
         UpdatePolicy updatePolicy;
-        updatePolicy = this.f251a.f;
+        updatePolicy = this.f264a.f;
         return updatePolicy;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public Executor getWorkerExecutor() {
         Executor executor;
-        executor = this.f251a.b;
+        executor = this.f264a.b;
         return executor;
     }
 }

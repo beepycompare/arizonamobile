@@ -38,14 +38,14 @@ public final class ComposableSingletons$SelectServerScreenKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit lambda_22973248$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C165@6538L73,164@6515L224:SelectServerScreen.kt#2ojkxh");
+        ComposerKt.sourceInformation(composer, "C181@7139L73,180@7116L224:SelectServerScreen.kt#2ojkxh");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(22973248, i, -1, "com.miami.game.feature.select.server.ui.compose.ComposableSingletons$SelectServerScreenKt.lambda$22973248.<anonymous> (SelectServerScreen.kt:164)");
+                ComposerKt.traceEventStart(22973248, i, -1, "com.miami.game.feature.select.server.ui.compose.ComposableSingletons$SelectServerScreenKt.lambda$22973248.<anonymous> (SelectServerScreen.kt:180)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_next, composer, 0), (String) null, SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(100)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_next, composer, 0), (String) null, SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(100)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

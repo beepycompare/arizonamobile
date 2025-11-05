@@ -1,17 +1,11 @@
 package io.appmetrica.analytics.impl;
-
-import android.util.SparseArray;
-/* loaded from: classes4.dex */
-public abstract class Un {
+/* loaded from: classes3.dex */
+public final class Un {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SparseArray f705a;
+    public final C0571sb f724a;
 
-    static {
-        SparseArray sparseArray = new SparseArray();
-        f705a = sparseArray;
-        sparseArray.put(0, "String");
-        sparseArray.put(1, "Number");
-        sparseArray.put(2, "Counter");
+    public Un(C0571sb c0571sb) {
+        this.f724a = c0571sb;
     }
 }

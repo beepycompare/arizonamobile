@@ -6,7 +6,7 @@ import androidx.compose.runtime.ComposerKt;
 import androidx.compose.ui.graphics.Color;
 import kotlin.Metadata;
 /* compiled from: RadioButton.kt */
-@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\bÇ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\r\u0010\b\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\tJ:\u0010\b\u001a\u00020\u00042\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u000b2\b\b\u0002\u0010\u000e\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\b\u000f\u0010\u0010R\u0018\u0010\u0003\u001a\u00020\u0004*\u00020\u00058@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0011"}, d2 = {"Landroidx/compose/material3/RadioButtonDefaults;", "", "()V", "defaultRadioButtonColors", "Landroidx/compose/material3/RadioButtonColors;", "Landroidx/compose/material3/ColorScheme;", "getDefaultRadioButtonColors$material3_release", "(Landroidx/compose/material3/ColorScheme;)Landroidx/compose/material3/RadioButtonColors;", "colors", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/RadioButtonColors;", "selectedColor", "Landroidx/compose/ui/graphics/Color;", "unselectedColor", "disabledSelectedColor", "disabledUnselectedColor", "colors-ro_MJ88", "(JJJJLandroidx/compose/runtime/Composer;II)Landroidx/compose/material3/RadioButtonColors;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\r\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006J7\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\b2\b\b\u0002\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\bH\u0007¢\u0006\u0004\b\f\u0010\rR\u0018\u0010\u000e\u001a\u00020\u0005*\u00020\u000f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u0012"}, d2 = {"Landroidx/compose/material3/RadioButtonDefaults;", "", "<init>", "()V", "colors", "Landroidx/compose/material3/RadioButtonColors;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/RadioButtonColors;", "selectedColor", "Landroidx/compose/ui/graphics/Color;", "unselectedColor", "disabledSelectedColor", "disabledUnselectedColor", "colors-ro_MJ88", "(JJJJLandroidx/compose/runtime/Composer;II)Landroidx/compose/material3/RadioButtonColors;", "defaultRadioButtonColors", "Landroidx/compose/material3/ColorScheme;", "getDefaultRadioButtonColors$material3", "(Landroidx/compose/material3/ColorScheme;)Landroidx/compose/material3/RadioButtonColors;", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class RadioButtonDefaults {
     public static final int $stable = 0;
@@ -16,43 +16,43 @@ public final class RadioButtonDefaults {
     }
 
     public final RadioButtonColors colors(Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1191566130, "C(colors)140@5777L11:RadioButton.kt#uh7d8r");
+        ComposerKt.sourceInformationMarkerStart(composer, -1191566130, "C(colors)135@5709L11:RadioButton.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1191566130, i, -1, "androidx.compose.material3.RadioButtonDefaults.colors (RadioButton.kt:140)");
+            ComposerKt.traceEventStart(-1191566130, i, -1, "androidx.compose.material3.RadioButtonDefaults.colors (RadioButton.kt:135)");
         }
-        RadioButtonColors defaultRadioButtonColors$material3_release = getDefaultRadioButtonColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6));
+        RadioButtonColors defaultRadioButtonColors$material3 = getDefaultRadioButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return defaultRadioButtonColors$material3_release;
+        return defaultRadioButtonColors$material3;
     }
 
     /* renamed from: colors-ro_MJ88  reason: not valid java name */
-    public final RadioButtonColors m2515colorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, -351083046, "C(colors)P(2:c#ui.graphics.Color,3:c#ui.graphics.Color,0:c#ui.graphics.Color,1:c#ui.graphics.Color)160@6748L11:RadioButton.kt#uh7d8r");
-        long m4585getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
-        long m4585getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j2;
-        long m4585getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3;
-        long m4585getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
+    public final RadioButtonColors m2768colorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+        ComposerKt.sourceInformationMarkerStart(composer, -351083046, "C(colors)N(selectedColor:c#ui.graphics.Color,unselectedColor:c#ui.graphics.Color,disabledSelectedColor:c#ui.graphics.Color,disabledUnselectedColor:c#ui.graphics.Color)155@6681L11:RadioButton.kt#uh7d8r");
+        long m5315getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j;
+        long m5315getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j2;
+        long m5315getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j3;
+        long m5315getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-351083046, i, -1, "androidx.compose.material3.RadioButtonDefaults.colors (RadioButton.kt:160)");
+            ComposerKt.traceEventStart(-351083046, i, -1, "androidx.compose.material3.RadioButtonDefaults.colors (RadioButton.kt:155)");
         }
-        RadioButtonColors m2510copyjRlVdoo = getDefaultRadioButtonColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2510copyjRlVdoo(m4585getUnspecified0d7_KjU, m4585getUnspecified0d7_KjU2, m4585getUnspecified0d7_KjU3, m4585getUnspecified0d7_KjU4);
+        RadioButtonColors m2763copyjRlVdoo = getDefaultRadioButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2763copyjRlVdoo(m5315getUnspecified0d7_KjU, m5315getUnspecified0d7_KjU2, m5315getUnspecified0d7_KjU3, m5315getUnspecified0d7_KjU4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2510copyjRlVdoo;
+        return m2763copyjRlVdoo;
     }
 
-    public final RadioButtonColors getDefaultRadioButtonColors$material3_release(ColorScheme colorScheme) {
-        RadioButtonColors defaultRadioButtonColorsCached$material3_release = colorScheme.getDefaultRadioButtonColorsCached$material3_release();
-        if (defaultRadioButtonColorsCached$material3_release == null) {
-            RadioButtonColors radioButtonColors = new RadioButtonColors(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getSelectedIconColor()), ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getUnselectedIconColor()), Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getDisabledSelectedIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getDisabledUnselectedIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
-            colorScheme.setDefaultRadioButtonColorsCached$material3_release(radioButtonColors);
+    public final RadioButtonColors getDefaultRadioButtonColors$material3(ColorScheme colorScheme) {
+        RadioButtonColors defaultRadioButtonColorsCached$material3 = colorScheme.getDefaultRadioButtonColorsCached$material3();
+        if (defaultRadioButtonColorsCached$material3 == null) {
+            RadioButtonColors radioButtonColors = new RadioButtonColors(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getSelectedIconColor()), ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getUnselectedIconColor()), Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getDisabledSelectedIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getDisabledUnselectedIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            colorScheme.setDefaultRadioButtonColorsCached$material3(radioButtonColors);
             return radioButtonColors;
         }
-        return defaultRadioButtonColorsCached$material3_release;
+        return defaultRadioButtonColorsCached$material3;
     }
 }

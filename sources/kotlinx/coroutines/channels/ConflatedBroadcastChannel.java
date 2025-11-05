@@ -41,8 +41,8 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public void mo10706invokeOnClose(Function1<? super Throwable, Unit> function1) {
-        this.broadcast.mo10706invokeOnClose(function1);
+    public void mo11447invokeOnClose(Function1<? super Throwable, Unit> function1) {
+        this.broadcast.mo11447invokeOnClose(function1);
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel
@@ -68,8 +68,8 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
-    public Object mo8140trySendJP2dKIU(E e) {
-        return this.broadcast.mo8140trySendJP2dKIU(e);
+    public Object mo8871trySendJP2dKIU(E e) {
+        return this.broadcast.mo8871trySendJP2dKIU(e);
     }
 
     private ConflatedBroadcastChannel(BroadcastChannelImpl<E> broadcastChannelImpl) {
@@ -82,7 +82,7 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
 
     public ConflatedBroadcastChannel(E e) {
         this();
-        mo8140trySendJP2dKIU(e);
+        mo8871trySendJP2dKIU(e);
     }
 
     public final E getValue() {

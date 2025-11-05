@@ -5,14 +5,14 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.concurrent.HandlerExecutor;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ListenerHolder<L> {
     private final Executor zaa;
     private volatile Object zab;
     private volatile ListenerKey zac;
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ListenerKey<L> {
         private final Object zaa;
         private final String zab;
@@ -45,7 +45,7 @@ public final class ListenerHolder<L> {
     }
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Notifier<L> {
         void notifyListener(L l);
 

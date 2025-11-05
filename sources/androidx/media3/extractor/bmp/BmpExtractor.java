@@ -7,7 +7,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SingleSampleExtractor;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class BmpExtractor implements Extractor {
     private static final int BMP_FILE_SIGNATURE = 16973;
     private static final int BMP_FILE_SIGNATURE_LENGTH = 2;

@@ -657,7 +657,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1953972046, i3, -1, "androidx.compose.animation.core.animateDp.<anonymous> (Transition.kt:1977)");
                 }
-                SpringSpec<Dp> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Dp.m7262boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Dp.Companion)), 3, null);
+                SpringSpec<Dp> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Dp.m7993boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Dp.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -739,7 +739,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1662821959, i3, -1, "androidx.compose.animation.core.animateOffset.<anonymous> (Transition.kt:2007)");
                 }
-                SpringSpec<Offset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Offset.m4294boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion)), 3, null);
+                SpringSpec<Offset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Offset.m5024boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -821,7 +821,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(493329511, i3, -1, "androidx.compose.animation.core.animateSize.<anonymous> (Transition.kt:2037)");
                 }
-                SpringSpec<Size> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Size.m4362boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Size.Companion)), 3, null);
+                SpringSpec<Size> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Size.m5092boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Size.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -904,7 +904,7 @@ public final class TransitionKt {
                     ComposerKt.traceEventStart(-428458074, i3, -1, "androidx.compose.animation.core.animateIntOffset.<anonymous> (Transition.kt:2070)");
                 }
                 long j = 1;
-                SpringSpec<IntOffset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7383boximpl(IntOffset.m7386constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
+                SpringSpec<IntOffset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m8114boximpl(IntOffset.m8117constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -1069,7 +1069,7 @@ public final class TransitionKt {
                     ComposerKt.traceEventStart(811932052, i3, -1, "androidx.compose.animation.core.animateIntSize.<anonymous> (Transition.kt:2132)");
                 }
                 long j = 1;
-                SpringSpec<IntSize> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m7427boximpl(IntSize.m7430constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
+                SpringSpec<IntSize> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m8158boximpl(IntSize.m8161constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

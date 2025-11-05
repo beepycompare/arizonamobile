@@ -9,8 +9,8 @@ import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class ConnectionResult extends AbstractSafeParcelable {
     public static final int API_DISABLED = 23;
     public static final int API_DISABLED_FOR_CONNECTION = 24;
@@ -43,7 +43,7 @@ public final class ConnectionResult extends AbstractSafeParcelable {
     private final PendingIntent zzc;
     private final String zzd;
     public static final ConnectionResult RESULT_SUCCESS = new ConnectionResult(0);
-    public static final Parcelable.Creator<ConnectionResult> CREATOR = new zzb();
+    public static final Parcelable.Creator<ConnectionResult> CREATOR = new zza();
 
     public ConnectionResult(int i) {
         this(i, null, null);
@@ -121,7 +121,11 @@ public final class ConnectionResult extends AbstractSafeParcelable {
                             case 25:
                                 return "API_INSTALL_REQUIRED";
                             default:
-                                return "UNKNOWN_ERROR_CODE(" + i + ")";
+                                StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 20);
+                                sb.append("UNKNOWN_ERROR_CODE(");
+                                sb.append(i);
+                                sb.append(")");
+                                return sb.toString();
                         }
                 }
             }

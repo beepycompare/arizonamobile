@@ -1,6 +1,7 @@
 package ru.mrlargha.feature.arizona.cases.data.remote;
 
 import com.google.common.net.HttpHeaders;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
@@ -35,7 +36,7 @@ public final class CasesRetrofitClient {
         Unit unit = Unit.INSTANCE;
         OkHttpClient build = addInterceptor.addInterceptor(httpLoggingInterceptor).build();
         this.client = build;
-        Retrofit build2 = new Retrofit.Builder().baseUrl("https://server-api.arizona.games/").addConverterFactory(GsonConverterFactory.create()).client(build).build();
+        Retrofit build2 = new Retrofit.Builder().baseUrl(FirebaseConfigHelper.INSTANCE.getServerApiUrl()).addConverterFactory(GsonConverterFactory.create()).client(build).build();
         Intrinsics.checkNotNullExpressionValue(build2, "build(...)");
         this.retrofit = build2;
         this.casesApiService = (CasesApiService) build2.create(CasesApiService.class);

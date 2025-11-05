@@ -187,7 +187,7 @@ public final class SettingsUiState {
 
         public final SettingsUiState initial(boolean z, boolean z2, String version) {
             Intrinsics.checkNotNullParameter(version, "version");
-            return new SettingsUiState(z ? R.drawable.bg_arizona : R.drawable.bg_rodina, null, z ? "https://vk.com/agm_workshop" : "https://vk.com/rgm_workshop", z ? "https://arizona-rp.com/document/policy" : "https://rodina-rp.com/policy", false, null, z2, version, 50, null);
+            return new SettingsUiState(z ? R.drawable.arizona_backgournd_home : R.drawable.rodina_backgournd_home, null, z ? "https://vk.com/agm_workshop" : "https://vk.com/rgm_workshop", z ? "https://arizona-rp.com/document/policy" : "https://rodina-rp.com/policy", false, null, z2, version, 50, null);
         }
     }
 }

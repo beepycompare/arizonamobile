@@ -1,29 +1,19 @@
 package io.appmetrica.analytics.screenshot.impl;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class X {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1310a;
-    public final long b;
+    public final C0764f f1350a;
+    public final b0 b;
+    public final C0775q c;
 
-    public X(boolean z, long j) {
-        this.f1310a = z;
-        this.b = j;
+    public X(C0764f c0764f, b0 b0Var, C0775q c0775q) {
+        this.f1350a = c0764f;
+        this.b = b0Var;
+        this.c = c0775q;
     }
 
-    public final long a() {
-        return this.b;
-    }
-
-    public final boolean b() {
-        return this.f1310a;
-    }
-
-    public final String toString() {
-        return "ServiceCaptorConfig(enabled=" + this.f1310a + ", delaySeconds=" + this.b + ')';
-    }
-
-    public X() {
-        this(new M().f1302a, new M().b);
+    public /* synthetic */ X() {
+        this(new C0764f(), new b0(), new C0775q());
     }
 }

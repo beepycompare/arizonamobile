@@ -2,6 +2,8 @@ package okio.internal;
 
 import com.facebook.widget.FacebookDialog;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.concurrent.atomic.AtomicInteger;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -14,7 +16,7 @@ import okio.Sink;
 import okio.Socket;
 import okio.Source;
 /* compiled from: DefaultSocket.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001:\u0002\u0016\u0017B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u0012\u001a\u00020\u0013H\u0016J\b\u0010\u0014\u001a\u00020\u0015H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\u00020\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u00020\u000fX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u0018"}, d2 = {"Lokio/internal/DefaultSocket;", "Lokio/Socket;", "socket", "Ljava/net/Socket;", "<init>", "(Ljava/net/Socket;)V", "getSocket", "()Ljava/net/Socket;", "closeBits", "Ljava/util/concurrent/atomic/AtomicInteger;", "source", "Lokio/Source;", "getSource", "()Lokio/Source;", "sink", "Lokio/Sink;", "getSink", "()Lokio/Sink;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "toString", "", "SocketSink", "SocketSource", "okio"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001:\u0002\u0016\u0017B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u0012\u001a\u00020\u0013H\u0016J\b\u0010\u0014\u001a\u00020\u0015H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\u00020\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u00020\u000fX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u0018"}, d2 = {"Lokio/internal/DefaultSocket;", "Lokio/Socket;", "socket", "Ljava/net/Socket;", "<init>", "(Ljava/net/Socket;)V", "getSocket", "()Ljava/net/Socket;", "closeBits", "Ljava/util/concurrent/atomic/AtomicInteger;", "source", "Lokio/Source;", "getSource", "()Lokio/Source;", "sink", "Lokio/Sink;", "getSink", "()Lokio/Sink;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "toString", "", "SocketSink", "SocketSource", "okio"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DefaultSocket implements Socket {
     private AtomicInteger closeBits;
@@ -56,12 +58,14 @@ public final class DefaultSocket implements Socket {
     }
 
     /* compiled from: DefaultSocket.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\b\u0010\f\u001a\u00020\u0007H\u0016J\b\u0010\r\u001a\u00020\u0007H\u0016J\b\u0010\u0004\u001a\u00020\u0005H\u0016J\b\u0010\u000e\u001a\u00020\u000fH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lokio/internal/DefaultSocket$SocketSink;", "Lokio/Sink;", "<init>", "(Lokio/internal/DefaultSocket;)V", "timeout", "Lokio/internal/SocketAsyncTimeout;", "write", "", "source", "Lokio/Buffer;", "byteCount", "", "flush", "close", "toString", "", "okio"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0016J\b\u0010\u000f\u001a\u00020\nH\u0016J\b\u0010\u0010\u001a\u00020\nH\u0016J\b\u0010\u0007\u001a\u00020\bH\u0016J\b\u0010\u0011\u001a\u00020\u0012H\u0016R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lokio/internal/DefaultSocket$SocketSink;", "Lokio/Sink;", "<init>", "(Lokio/internal/DefaultSocket;)V", "outputStream", "Ljava/io/OutputStream;", "kotlin.jvm.PlatformType", "timeout", "Lokio/internal/SocketAsyncTimeout;", "write", "", "source", "Lokio/Buffer;", "byteCount", "", "flush", "close", "toString", "", "okio"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class SocketSink implements Sink {
+        private final OutputStream outputStream;
         private final SocketAsyncTimeout timeout;
 
         public SocketSink() {
+            this.outputStream = DefaultSocket.this.getSocket().getOutputStream();
             this.timeout = new SocketAsyncTimeout(DefaultSocket.this.getSocket());
         }
 
@@ -75,11 +79,10 @@ public final class DefaultSocket implements Socket {
                 Intrinsics.checkNotNull(segment);
                 int min = (int) Math.min(j, segment.limit - segment.pos);
                 SocketAsyncTimeout socketAsyncTimeout = this.timeout;
-                DefaultSocket defaultSocket = DefaultSocket.this;
                 socketAsyncTimeout.enter();
                 try {
                     try {
-                        defaultSocket.getSocket().getOutputStream().write(segment.data, segment.pos, min);
+                        this.outputStream.write(segment.data, segment.pos, min);
                         Unit unit = Unit.INSTANCE;
                         if (!socketAsyncTimeout.exit()) {
                             segment.pos += min;
@@ -110,10 +113,9 @@ public final class DefaultSocket implements Socket {
         @Override // okio.Sink, java.io.Flushable
         public void flush() {
             SocketAsyncTimeout socketAsyncTimeout = this.timeout;
-            DefaultSocket defaultSocket = DefaultSocket.this;
             socketAsyncTimeout.enter();
             try {
-                defaultSocket.getSocket().getOutputStream().flush();
+                this.outputStream.flush();
                 Unit unit = Unit.INSTANCE;
                 if (socketAsyncTimeout.exit()) {
                     throw socketAsyncTimeout.access$newTimeoutException(null);
@@ -139,8 +141,12 @@ public final class DefaultSocket implements Socket {
                 if (bitsOrZero != 0) {
                     if (bitsOrZero != 3) {
                         if (!defaultSocket.getSocket().isClosed() && !defaultSocket.getSocket().isOutputShutdown()) {
-                            defaultSocket.getSocket().getOutputStream().flush();
-                            defaultSocket.getSocket().shutdownOutput();
+                            this.outputStream.flush();
+                            try {
+                                defaultSocket.getSocket().shutdownOutput();
+                            } catch (UnsupportedOperationException unused) {
+                                this.outputStream.close();
+                            }
                         }
                         return;
                     }
@@ -172,12 +178,14 @@ public final class DefaultSocket implements Socket {
     }
 
     /* compiled from: DefaultSocket.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u0007H\u0016J\b\u0010\u000b\u001a\u00020\fH\u0016J\b\u0010\u0004\u001a\u00020\u0005H\u0016J\b\u0010\r\u001a\u00020\u000eH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lokio/internal/DefaultSocket$SocketSource;", "Lokio/Source;", "<init>", "(Lokio/internal/DefaultSocket;)V", "timeout", "Lokio/internal/SocketAsyncTimeout;", "read", "", "sink", "Lokio/Buffer;", "byteCount", "close", "", "toString", "", "okio"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\nH\u0016J\b\u0010\u000e\u001a\u00020\u000fH\u0016J\b\u0010\u0007\u001a\u00020\bH\u0016J\b\u0010\u0010\u001a\u00020\u0011H\u0016R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lokio/internal/DefaultSocket$SocketSource;", "Lokio/Source;", "<init>", "(Lokio/internal/DefaultSocket;)V", "inputStream", "Ljava/io/InputStream;", "kotlin.jvm.PlatformType", "timeout", "Lokio/internal/SocketAsyncTimeout;", "read", "", "sink", "Lokio/Buffer;", "byteCount", "close", "", "toString", "", "okio"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class SocketSource implements Source {
+        private final InputStream inputStream;
         private final SocketAsyncTimeout timeout;
 
         public SocketSource() {
+            this.inputStream = DefaultSocket.this.getSocket().getInputStream();
             this.timeout = new SocketAsyncTimeout(DefaultSocket.this.getSocket());
         }
 
@@ -196,10 +204,9 @@ public final class DefaultSocket implements Socket {
             int min = (int) Math.min(j, 8192 - writableSegment$okio.limit);
             try {
                 SocketAsyncTimeout socketAsyncTimeout = this.timeout;
-                DefaultSocket defaultSocket = DefaultSocket.this;
                 socketAsyncTimeout.enter();
                 try {
-                    int read = defaultSocket.getSocket().getInputStream().read(writableSegment$okio.data, writableSegment$okio.limit, min);
+                    int read = this.inputStream.read(writableSegment$okio.data, writableSegment$okio.limit, min);
                     if (socketAsyncTimeout.exit()) {
                         throw socketAsyncTimeout.access$newTimeoutException(null);
                     }
@@ -238,13 +245,17 @@ public final class DefaultSocket implements Socket {
             try {
                 int bitsOrZero = _AtomicKt.setBitsOrZero(defaultSocket.closeBits, 2);
                 if (bitsOrZero != 0) {
-                    if (bitsOrZero != 3) {
-                        if (!defaultSocket.getSocket().isClosed() && !defaultSocket.getSocket().isInputShutdown()) {
-                            defaultSocket.getSocket().shutdownInput();
-                        }
+                    if (bitsOrZero == 3) {
+                        defaultSocket.getSocket().close();
+                    } else if (defaultSocket.getSocket().isClosed() || defaultSocket.getSocket().isInputShutdown()) {
                         return;
+                    } else {
+                        try {
+                            defaultSocket.getSocket().shutdownInput();
+                        } catch (UnsupportedOperationException unused) {
+                            this.inputStream.close();
+                        }
                     }
-                    defaultSocket.getSocket().close();
                     Unit unit = Unit.INSTANCE;
                     if (socketAsyncTimeout.exit()) {
                         throw socketAsyncTimeout.access$newTimeoutException(null);

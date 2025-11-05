@@ -1,11 +1,23 @@
 package com.google.android.gms.common;
-
-import android.content.Context;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 final class zzac {
+    private final String zza;
+    private final PackageVerificationResult zzb;
+
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzac(Context context) {
-        zzn.zze(context);
+    public zzac(String str, PackageVerificationResult packageVerificationResult) {
+        this.zza = str;
+        this.zzb = packageVerificationResult;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ String zza() {
+        return this.zza;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ PackageVerificationResult zzb() {
+        return this.zzb;
     }
 }

@@ -102,14 +102,14 @@ public class CrashlyticsCore {
         return this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8849x16e6f122(settingsProvider);
+                CrashlyticsCore.this.m9587x16e6f122(settingsProvider);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: doBackgroundInitialization */
-    public void m8850x1097325b(SettingsProvider settingsProvider) {
+    public void m9588x1097325b(SettingsProvider settingsProvider) {
         CrashlyticsWorkers.checkBackgroundThread();
         markInitializationStarted();
         try {
@@ -156,21 +156,21 @@ public class CrashlyticsCore {
     }
 
     public static String getVersion() {
-        return "20.0.2";
+        return "20.0.3";
     }
 
     public void logException(final Throwable th, final Map<String, String> map) {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8853xa7aaa7c5(th, map);
+                CrashlyticsCore.this.m9591xa7aaa7c5(th, map);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logException$1$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ void m8853xa7aaa7c5(Throwable th, Map map) {
+    public /* synthetic */ void m9591xa7aaa7c5(Throwable th, Map map) {
         this.controller.writeNonFatalException(Thread.currentThread(), th, map);
     }
 
@@ -179,31 +179,31 @@ public class CrashlyticsCore {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8852xc4d7d9c6(currentTimeMillis, str);
+                CrashlyticsCore.this.m9590xc4d7d9c6(currentTimeMillis, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$log$2$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ void m8851x771861c5(long j, String str) {
+    public /* synthetic */ void m9589x771861c5(long j, String str) {
         this.controller.writeToLog(j, str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$log$3$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ void m8852xc4d7d9c6(final long j, final String str) {
+    public /* synthetic */ void m9590xc4d7d9c6(final long j, final String str) {
         this.crashlyticsWorkers.diskWrite.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8851x771861c5(j, str);
+                CrashlyticsCore.this.m9589x771861c5(j, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setUserId$4$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ void m8858xff792c8b(String str) {
+    public /* synthetic */ void m9596xff792c8b(String str) {
         this.controller.setUserId(str);
     }
 
@@ -211,14 +211,14 @@ public class CrashlyticsCore {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8858xff792c8b(str);
+                CrashlyticsCore.this.m9596xff792c8b(str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setCustomKey$5$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ void m8855xd965350a(String str, String str2) {
+    public /* synthetic */ void m9593xd965350a(String str, String str2) {
         this.controller.setCustomKey(str, str2);
     }
 
@@ -226,7 +226,7 @@ public class CrashlyticsCore {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8855xd965350a(str, str2);
+                CrashlyticsCore.this.m9593xd965350a(str, str2);
             }
         });
     }
@@ -238,20 +238,20 @@ public class CrashlyticsCore {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8856x42c2b50c(map);
+                CrashlyticsCore.this.m9594x42c2b50c(map);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setCustomKeys$6$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ void m8856x42c2b50c(Map map) {
+    public /* synthetic */ void m9594x42c2b50c(Map map) {
         this.controller.setCustomKeys(map);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setInternalKey$7$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ void m8857xed193680(String str, String str2) {
+    public /* synthetic */ void m9595xed193680(String str, String str2) {
         this.controller.setInternalKey(str, str2);
     }
 
@@ -259,7 +259,7 @@ public class CrashlyticsCore {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8857xed193680(str, str2);
+                CrashlyticsCore.this.m9595xed193680(str, str2);
             }
         });
     }
@@ -270,14 +270,14 @@ public class CrashlyticsCore {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8854xae266e96(th);
+                CrashlyticsCore.this.m9592xae266e96(th);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logFatalException$8$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ void m8854xae266e96(Throwable th) {
+    public /* synthetic */ void m9592xae266e96(Throwable th) {
         this.controller.setInternalKey(ON_DEMAND_RECORDED_KEY, Integer.toString(this.onDemandCounter.getRecordedOnDemandExceptions()));
         this.controller.setInternalKey(ON_DEMAND_DROPPED_KEY, Integer.toString(this.onDemandCounter.getDroppedOnDemandExceptions()));
         this.controller.logFatalException(Thread.currentThread(), th);
@@ -291,7 +291,7 @@ public class CrashlyticsCore {
         Future<?> submit = this.crashlyticsWorkers.common.getExecutor().submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsCore.this.m8850x1097325b(settingsProvider);
+                CrashlyticsCore.this.m9588x1097325b(settingsProvider);
             }
         });
         Logger.getLogger().d("Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.");
@@ -334,7 +334,7 @@ public class CrashlyticsCore {
             this.didCrashOnPreviousExecution = Boolean.TRUE.equals((Boolean) this.crashlyticsWorkers.common.getExecutor().submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore$$ExternalSyntheticLambda10
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
-                    return CrashlyticsCore.this.m8848xf5be8161();
+                    return CrashlyticsCore.this.m9586xf5be8161();
                 }
             }).get(3L, TimeUnit.SECONDS));
         } catch (Exception unused) {
@@ -344,7 +344,7 @@ public class CrashlyticsCore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$checkForPreviousCrash$10$com-google-firebase-crashlytics-internal-common-CrashlyticsCore  reason: not valid java name */
-    public /* synthetic */ Boolean m8848xf5be8161() throws Exception {
+    public /* synthetic */ Boolean m9586xf5be8161() throws Exception {
         return Boolean.valueOf(this.controller.didCrashOnPreviousExecution());
     }
 

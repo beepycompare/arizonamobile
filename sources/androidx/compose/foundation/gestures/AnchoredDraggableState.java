@@ -6,6 +6,7 @@ import androidx.compose.foundation.MutatePriority;
 import androidx.compose.foundation.MutatorMutex;
 import androidx.compose.foundation.gestures.AnchoredDraggableState;
 import androidx.compose.foundation.internal.InlineClassHelperKt;
+import androidx.compose.material3.internal.DraggableAnchorsKt;
 import androidx.compose.runtime.MutableFloatState;
 import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.PrimitiveSnapshotStateKt;
@@ -129,7 +130,7 @@ public final class AnchoredDraggableState<T> {
         trySnapTo(t);
     }
 
-    @Deprecated(level = DeprecationLevel.WARNING, message = "confirmValueChange is deprecated without replacement. Rather than relying on a callback to veto state changes, the anchor set should not include disallowed anchors. See androidx.compose.foundation.samples.AnchoredDraggableDynamicAnchorsSample for an example of using dynamic anchors over confirmValueChange.")
+    @Deprecated(level = DeprecationLevel.WARNING, message = DraggableAnchorsKt.ConfirmValueChangeDeprecated)
     public AnchoredDraggableState(T t, Function1<? super T, Boolean> function1) {
         this(t);
         this.confirmValueChange = function1;
@@ -146,7 +147,7 @@ public final class AnchoredDraggableState<T> {
         } : function1);
     }
 
-    @Deprecated(level = DeprecationLevel.WARNING, message = "confirmValueChange is deprecated without replacement. Rather than relying on a callback to veto state changes, the anchor set should not include disallowed anchors. See androidx.compose.foundation.samples.AnchoredDraggableDynamicAnchorsSample for an example of using dynamic anchors over confirmValueChange.")
+    @Deprecated(level = DeprecationLevel.WARNING, message = DraggableAnchorsKt.ConfirmValueChangeDeprecated)
     public AnchoredDraggableState(T t, DraggableAnchors<T> draggableAnchors, Function1<? super T, Boolean> function1) {
         this(t, function1);
         setAnchors(draggableAnchors);
@@ -541,7 +542,7 @@ public final class AnchoredDraggableState<T> {
             return companion.Saver(function1);
         }
 
-        @Deprecated(level = DeprecationLevel.WARNING, message = "confirmValueChange is deprecated without replacement. Rather than relying on a callback to veto state changes, the anchor set should not include disallowed anchors. See androidx.compose.foundation.samples.AnchoredDraggableDynamicAnchorsSample for an example of using dynamic anchors over confirmValueChange.")
+        @Deprecated(level = DeprecationLevel.WARNING, message = DraggableAnchorsKt.ConfirmValueChangeDeprecated)
         public final <T> Saver<AnchoredDraggableState<T>, T> Saver(final Function1<? super T, Boolean> function1) {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2

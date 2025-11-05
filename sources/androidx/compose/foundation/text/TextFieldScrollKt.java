@@ -56,8 +56,8 @@ public final class TextFieldScrollKt {
     public static final Modifier defaultTextFieldScroll(Modifier modifier, TextFieldScrollerPosition textFieldScrollerPosition, TextFieldValue textFieldValue, VisualTransformation visualTransformation, Function0<TextLayoutResultProxy> function0) {
         VerticalScrollLayoutModifier verticalScrollLayoutModifier;
         Orientation orientation = textFieldScrollerPosition.getOrientation();
-        int m1378getOffsetToFollow5zctL8 = textFieldScrollerPosition.m1378getOffsetToFollow5zctL8(textFieldValue.m6977getSelectiond9O1mEE());
-        textFieldScrollerPosition.m1380setPreviousSelection5zctL8(textFieldValue.m6977getSelectiond9O1mEE());
+        int m1378getOffsetToFollow5zctL8 = textFieldScrollerPosition.m1378getOffsetToFollow5zctL8(textFieldValue.m7708getSelectiond9O1mEE());
+        textFieldScrollerPosition.m1380setPreviousSelection5zctL8(textFieldValue.m7708getSelectiond9O1mEE());
         TransformedText filterWithValidation = ValidatingOffsetMappingKt.filterWithValidation(visualTransformation, textFieldValue.getAnnotatedString());
         int i = WhenMappings.$EnumSwitchMapping$0[orientation.ordinal()];
         if (i == 1) {

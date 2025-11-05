@@ -8,11 +8,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class RequestDataHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private NetworkTask.Method f1268a = NetworkTask.Method.GET;
+    private NetworkTask.Method f1309a = NetworkTask.Method.GET;
     private final HashMap b = new HashMap();
     private byte[] c = null;
     private Long d;
@@ -28,7 +28,7 @@ public class RequestDataHolder {
     }
 
     public NetworkTask.Method getMethod() {
-        return this.f1268a;
+        return this.f1309a;
     }
 
     public byte[] getPostData() {
@@ -48,7 +48,7 @@ public class RequestDataHolder {
     }
 
     public void setPostData(byte[] bArr) {
-        this.f1268a = NetworkTask.Method.POST;
+        this.f1309a = NetworkTask.Method.POST;
         this.c = bArr;
     }
 }

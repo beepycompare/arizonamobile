@@ -1,21 +1,24 @@
 package androidx.compose.material3;
 
+import androidx.compose.foundation.gestures.AnchoredDraggableDefaults;
+import androidx.compose.foundation.gestures.AnchoredDraggableKt;
+import androidx.compose.foundation.gestures.AnchoredDraggableState;
+import androidx.compose.foundation.gestures.DraggableAnchorsConfig;
 import androidx.compose.foundation.gestures.Orientation;
+import androidx.compose.foundation.gestures.TargetedFlingBehavior;
 import androidx.compose.foundation.layout.Arrangement;
 import androidx.compose.foundation.layout.BoxKt;
 import androidx.compose.foundation.layout.BoxScopeInstance;
 import androidx.compose.foundation.layout.RowKt;
 import androidx.compose.foundation.layout.RowScope;
 import androidx.compose.foundation.layout.RowScopeInstance;
-import androidx.compose.material3.internal.AnchoredDraggableKt;
-import androidx.compose.material3.internal.AnchoredDraggableState;
-import androidx.compose.material3.internal.DraggableAnchors;
-import androidx.compose.material3.internal.DraggableAnchorsConfig;
+import androidx.compose.material3.internal.DraggableAnchorsKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionLocalMap;
+import androidx.compose.runtime.EffectsKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.Updater;
@@ -31,13 +34,15 @@ import androidx.compose.ui.unit.Constraints;
 import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.unit.IntSize;
-import androidx.compose.ui.unit.LayoutDirection;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import kotlin.Deprecated;
+import kotlin.DeprecationLevel;
 import kotlin.Metadata;
 import kotlin.Pair;
+import kotlin.ReplaceWith;
 import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -46,65 +51,62 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwipeToDismissBox.kt */
-@Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\u001ay\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u001c\u0010\u0007\u001a\u0018\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\n¢\u0006\u0002\b\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000f2\b\b\u0002\u0010\u0011\u001a\u00020\u000f2\u001c\u0010\u0012\u001a\u0018\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\n¢\u0006\u0002\b\u000bH\u0007¢\u0006\u0002\u0010\u0013\u001aR\u0010\u0014\u001a\u00020\u00062\b\b\u0002\u0010\u0015\u001a\u00020\u00162\u0014\b\u0002\u0010\u0017\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u000f0\b2#\b\u0002\u0010\u0018\u001a\u001d\u0012\u0013\u0012\u00110\u0019¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001c\u0012\u0004\u0012\u00020\u00190\bH\u0007¢\u0006\u0002\u0010\u001d\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002¨\u0006\u001e"}, d2 = {"DismissVelocityThreshold", "Landroidx/compose/ui/unit/Dp;", "F", "SwipeToDismissBox", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/material3/SwipeToDismissBoxState;", "backgroundContent", "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/RowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "modifier", "Landroidx/compose/ui/Modifier;", "enableDismissFromStartToEnd", "", "enableDismissFromEndToStart", "gesturesEnabled", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/material3/SwipeToDismissBoxState;Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;ZZZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "rememberSwipeToDismissBoxState", "initialValue", "Landroidx/compose/material3/SwipeToDismissBoxValue;", "confirmValueChange", "positionalThreshold", "", "Lkotlin/ParameterName;", "name", "totalDistance", "(Landroidx/compose/material3/SwipeToDismissBoxValue;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SwipeToDismissBoxState;", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a<\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032#\b\u0002\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\u00060\u0005H\u0007¢\u0006\u0002\u0010\n\u001aR\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0014\b\u0002\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f0\u00052#\b\u0002\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\u00060\u0005H\u0007¢\u0006\u0002\u0010\r\u001a\u008f\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00012\u001c\u0010\u0011\u001a\u0018\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u000f0\u0005¢\u0006\u0002\b\u0013¢\u0006\u0002\b\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u00162\b\b\u0002\u0010\u0017\u001a\u00020\f2\b\b\u0002\u0010\u0018\u001a\u00020\f2\b\b\u0002\u0010\u0019\u001a\u00020\f2\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u000f0\u00052\u001c\u0010\u001b\u001a\u0018\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u000f0\u0005¢\u0006\u0002\b\u0013¢\u0006\u0002\b\u0014H\u0007¢\u0006\u0002\u0010\u001c\u001ay\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00012\u001c\u0010\u0011\u001a\u0018\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u000f0\u0005¢\u0006\u0002\b\u0013¢\u0006\u0002\b\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u00162\b\b\u0002\u0010\u0017\u001a\u00020\f2\b\b\u0002\u0010\u0018\u001a\u00020\f2\b\b\u0002\u0010\u0019\u001a\u00020\f2\u001c\u0010\u001b\u001a\u0018\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u000f0\u0005¢\u0006\u0002\b\u0013¢\u0006\u0002\b\u0014H\u0007¢\u0006\u0002\u0010\u001d\"\u0010\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010 ¨\u0006!"}, d2 = {"rememberSwipeToDismissBoxState", "Landroidx/compose/material3/SwipeToDismissBoxState;", "initialValue", "Landroidx/compose/material3/SwipeToDismissBoxValue;", "positionalThreshold", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "totalDistance", "(Landroidx/compose/material3/SwipeToDismissBoxValue;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SwipeToDismissBoxState;", "confirmValueChange", "", "(Landroidx/compose/material3/SwipeToDismissBoxValue;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SwipeToDismissBoxState;", "SwipeToDismissBox", "", RemoteConfigConstants.ResponseFieldKey.STATE, "backgroundContent", "Landroidx/compose/foundation/layout/RowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "modifier", "Landroidx/compose/ui/Modifier;", "enableDismissFromStartToEnd", "enableDismissFromEndToStart", "gesturesEnabled", "onDismiss", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/material3/SwipeToDismissBoxState;Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;ZZZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/material3/SwipeToDismissBoxState;Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;ZZZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "DismissVelocityThreshold", "Landroidx/compose/ui/unit/Dp;", "F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SwipeToDismissBoxKt {
-    private static final float DismissVelocityThreshold = Dp.m7264constructorimpl(125);
+    private static final float DismissVelocityThreshold = Dp.m7995constructorimpl(125);
 
-    public static final /* synthetic */ float access$getDismissVelocityThreshold$p() {
-        return DismissVelocityThreshold;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SwipeToDismissBox$lambda$13(SwipeToDismissBoxState swipeToDismissBoxState, Function3 function3, Modifier modifier, boolean z, boolean z2, boolean z3, Function1 function1, Function3 function32, int i, int i2, Composer composer, int i3) {
+        SwipeToDismissBox(swipeToDismissBoxState, function3, modifier, z, z2, z3, function1, function32, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v11 */
-    /* JADX WARN: Type inference failed for: r13v0, types: [androidx.compose.runtime.Composer] */
-    public static final SwipeToDismissBoxState rememberSwipeToDismissBoxState(final SwipeToDismissBoxValue swipeToDismissBoxValue, final Function1<? super SwipeToDismissBoxValue, Boolean> function1, final Function1<? super Float, Float> function12, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, -246335487, "C(rememberSwipeToDismissBoxState)P(1)185@7607L19,187@7687L7,195@7929L102,188@7706L325:SwipeToDismissBox.kt#uh7d8r");
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SwipeToDismissBox$lambda$16(SwipeToDismissBoxState swipeToDismissBoxState, Function3 function3, Modifier modifier, boolean z, boolean z2, boolean z3, Function3 function32, int i, int i2, Composer composer, int i3) {
+        SwipeToDismissBox(swipeToDismissBoxState, function3, modifier, z, z2, z3, function32, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean rememberSwipeToDismissBoxState$lambda$3$lambda$2(SwipeToDismissBoxValue swipeToDismissBoxValue) {
+        return true;
+    }
+
+    public static final SwipeToDismissBoxState rememberSwipeToDismissBoxState(final SwipeToDismissBoxValue swipeToDismissBoxValue, final Function1<? super Float, Float> function1, Composer composer, int i, int i2) {
+        ComposerKt.sourceInformationMarkerStart(composer, -470572556, "C(rememberSwipeToDismissBoxState)N(initialValue,positionalThreshold)242@9960L19,246@10132L73,244@10020L185:SwipeToDismissBox.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             swipeToDismissBoxValue = SwipeToDismissBoxValue.Settled;
         }
         if ((i2 & 2) != 0) {
-            function1 = new Function1<SwipeToDismissBoxValue, Boolean>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$rememberSwipeToDismissBoxState$1
-                @Override // kotlin.jvm.functions.Function1
-                public final Boolean invoke(SwipeToDismissBoxValue swipeToDismissBoxValue2) {
-                    return true;
-                }
-            };
-        }
-        if ((i2 & 4) != 0) {
-            function12 = SwipeToDismissBoxDefaults.INSTANCE.getPositionalThreshold(composer, 6);
+            function1 = SwipeToDismissBoxDefaults.INSTANCE.getPositionalThreshold(composer, 6);
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-246335487, i, -1, "androidx.compose.material3.rememberSwipeToDismissBoxState (SwipeToDismissBox.kt:186)");
+            ComposerKt.traceEventStart(-470572556, i, -1, "androidx.compose.material3.rememberSwipeToDismissBoxState (SwipeToDismissBox.kt:243)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-        Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
-        ComposerKt.sourceInformationMarkerEnd(composer);
-        final Density density = (Density) consume;
         Object[] objArr = new Object[0];
-        Saver<SwipeToDismissBoxState, SwipeToDismissBoxValue> Saver = SwipeToDismissBoxState.Companion.Saver(function1, function12, density);
-        ComposerKt.sourceInformationMarkerStart(composer, -1333458863, "CC(remember):SwipeToDismissBox.kt#9igjgp");
-        boolean changed = (((6 ^ (i & 14)) > 4 && composer.changed(swipeToDismissBoxValue)) || (i & 6) == 4) | composer.changed(density) | ((((i & 112) ^ 48) > 32 && composer.changed(function1)) || (i & 48) == 32) | ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(function12)) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
+        Saver<SwipeToDismissBoxState, SwipeToDismissBoxValue> Saver = SwipeToDismissBoxState.Companion.Saver(function1);
+        ComposerKt.sourceInformationMarkerStart(composer, -1248647747, "CC(remember):SwipeToDismissBox.kt#9igjgp");
+        boolean z = true;
+        boolean z2 = ((6 ^ (i & 14)) > 4 && composer.changed(swipeToDismissBoxValue.ordinal())) || (i & 6) == 4;
+        if ((((i & 112) ^ 48) <= 32 || !composer.changed(function1)) && (i & 48) != 32) {
+            z = false;
+        }
+        boolean z3 = z2 | z;
         Object rememberedValue = composer.rememberedValue();
-        if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = (Function0) new Function0<SwipeToDismissBoxState>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$rememberSwipeToDismissBoxState$2$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+        if (z3 || rememberedValue == Composer.Companion.getEmpty()) {
+            rememberedValue = new Function0() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function0
-                public final SwipeToDismissBoxState invoke() {
-                    return new SwipeToDismissBoxState(SwipeToDismissBoxValue.this, density, function1, function12);
+                public final Object invoke() {
+                    SwipeToDismissBoxState rememberSwipeToDismissBoxState$lambda$1$lambda$0;
+                    rememberSwipeToDismissBoxState$lambda$1$lambda$0 = SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$1$lambda$0(SwipeToDismissBoxValue.this, function1);
+                    return rememberSwipeToDismissBoxState$lambda$1$lambda$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m3994rememberSaveable(objArr, Saver, (String) null, (Function0<? extends Object>) rememberedValue, (Composer) composer, 0, 4);
+        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m4725rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -112,75 +114,130 @@ public final class SwipeToDismissBoxKt {
         return swipeToDismissBoxState;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:204:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x00ec  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x00f8  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x00fe  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x0187  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0193  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x0197  */
-    /* JADX WARN: Removed duplicated region for block: B:283:0x01bc  */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x024e  */
-    /* JADX WARN: Removed duplicated region for block: B:292:0x0252  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0277  */
-    /* JADX WARN: Removed duplicated region for block: B:300:0x02da  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x02dc  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x02ea  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x02ec  */
-    /* JADX WARN: Removed duplicated region for block: B:308:0x02f3  */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x02fd  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x035c  */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x0368  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x036c  */
-    /* JADX WARN: Removed duplicated region for block: B:324:0x0391  */
-    /* JADX WARN: Removed duplicated region for block: B:329:0x03f4  */
-    /* JADX WARN: Removed duplicated region for block: B:333:0x0403  */
-    /* JADX WARN: Removed duplicated region for block: B:335:? A[RETURN, SYNTHETIC] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final SwipeToDismissBoxState rememberSwipeToDismissBoxState$lambda$1$lambda$0(SwipeToDismissBoxValue swipeToDismissBoxValue, Function1 function1) {
+        return new SwipeToDismissBoxState(swipeToDismissBoxValue, function1);
+    }
+
+    @Deprecated(level = DeprecationLevel.WARNING, message = DraggableAnchorsKt.ConfirmValueChangeDeprecated, replaceWith = @ReplaceWith(expression = "rememberSwipeToDismissBoxState(initialValue, positionalThreshold)", imports = {}))
+    public static final SwipeToDismissBoxState rememberSwipeToDismissBoxState(final SwipeToDismissBoxValue swipeToDismissBoxValue, final Function1<? super SwipeToDismissBoxValue, Boolean> function1, final Function1<? super Float, Float> function12, Composer composer, int i, int i2) {
+        ComposerKt.sourceInformationMarkerStart(composer, -246335487, "C(rememberSwipeToDismissBoxState)N(initialValue,confirmValueChange,positionalThreshold)270@11214L8,272@11317L19,274@11397L7,282@11663L102,275@11416L349:SwipeToDismissBox.kt#uh7d8r");
+        if ((i2 & 1) != 0) {
+            swipeToDismissBoxValue = SwipeToDismissBoxValue.Settled;
+        }
+        if ((i2 & 2) != 0) {
+            ComposerKt.sourceInformationMarkerStart(composer, -505188695, "CC(remember):SwipeToDismissBox.kt#9igjgp");
+            Object rememberedValue = composer.rememberedValue();
+            if (rememberedValue == Composer.Companion.getEmpty()) {
+                rememberedValue = new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        boolean rememberSwipeToDismissBoxState$lambda$3$lambda$2;
+                        rememberSwipeToDismissBoxState$lambda$3$lambda$2 = SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$3$lambda$2((SwipeToDismissBoxValue) obj);
+                        return Boolean.valueOf(rememberSwipeToDismissBoxState$lambda$3$lambda$2);
+                    }
+                };
+                composer.updateRememberedValue(rememberedValue);
+            }
+            function1 = (Function1) rememberedValue;
+            ComposerKt.sourceInformationMarkerEnd(composer);
+        }
+        if ((i2 & 4) != 0) {
+            function12 = SwipeToDismissBoxDefaults.INSTANCE.getPositionalThreshold(composer, 6);
+        }
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-246335487, i, -1, "androidx.compose.material3.rememberSwipeToDismissBoxState (SwipeToDismissBox.kt:273)");
+        }
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+        Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        final Density density = (Density) consume;
+        Object[] objArr = new Object[0];
+        Saver<SwipeToDismissBoxState, SwipeToDismissBoxValue> Saver = SwipeToDismissBoxState.Companion.Saver(function1, function12, density);
+        ComposerKt.sourceInformationMarkerStart(composer, -505174233, "CC(remember):SwipeToDismissBox.kt#9igjgp");
+        boolean z = true;
+        boolean changed = ((((i & 14) ^ 6) > 4 && composer.changed(swipeToDismissBoxValue.ordinal())) || (i & 6) == 4) | composer.changed(density) | ((((i & 112) ^ 48) > 32 && composer.changed(function1)) || (i & 48) == 32);
+        if ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(function12)) && (i & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
+            z = false;
+        }
+        boolean z2 = changed | z;
+        Object rememberedValue2 = composer.rememberedValue();
+        if (z2 || rememberedValue2 == Composer.Companion.getEmpty()) {
+            rememberedValue2 = new Function0() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda1
+                @Override // kotlin.jvm.functions.Function0
+                public final Object invoke() {
+                    SwipeToDismissBoxState rememberSwipeToDismissBoxState$lambda$5$lambda$4;
+                    rememberSwipeToDismissBoxState$lambda$5$lambda$4 = SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$5$lambda$4(SwipeToDismissBoxValue.this, density, function1, function12);
+                    return rememberSwipeToDismissBoxState$lambda$5$lambda$4;
+                }
+            };
+            composer.updateRememberedValue(rememberedValue2);
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m4725rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue2, composer, 0);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        return swipeToDismissBoxState;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final SwipeToDismissBoxState rememberSwipeToDismissBoxState$lambda$5$lambda$4(SwipeToDismissBoxValue swipeToDismissBoxValue, Density density, Function1 function1, Function1 function12) {
+        return new SwipeToDismissBoxState(swipeToDismissBoxValue, density, function1, function12);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SwipeToDismissBox$lambda$7$lambda$6(SwipeToDismissBoxValue swipeToDismissBoxValue) {
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:185:0x049f  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x04ae  */
+    /* JADX WARN: Removed duplicated region for block: B:190:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0108  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void SwipeToDismissBox(final SwipeToDismissBoxState swipeToDismissBoxState, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, boolean z, boolean z2, boolean z3, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function32, Composer composer, final int i, final int i2) {
+    public static final void SwipeToDismissBox(final SwipeToDismissBoxState swipeToDismissBoxState, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, boolean z, boolean z2, boolean z3, Function1<? super SwipeToDismissBoxValue, Unit> function1, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function32, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
-        final boolean z4;
+        boolean z4;
         int i5;
-        final boolean z5;
+        boolean z5;
         int i6;
         boolean z6;
+        int i7;
+        int i8;
+        final Modifier modifier2;
         final boolean z7;
-        int currentCompositeKeyHash;
-        Composer m3867constructorimpl;
-        int currentCompositeKeyHash2;
-        Composer m3867constructorimpl2;
-        boolean changed;
-        Object rememberedValue;
-        int currentCompositeKeyHash3;
-        Composer m3867constructorimpl3;
         final boolean z8;
+        final boolean z9;
+        final Function1<? super SwipeToDismissBoxValue, Unit> function12;
         ScopeUpdateScope endRestartGroup;
-        Composer startRestartGroup = composer.startRestartGroup(-402577235);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SwipeToDismissBox)P(6!1,5,3,2,4)225@9211L7,227@9247L1205:SwipeToDismissBox.kt#uh7d8r");
+        Function1<? super SwipeToDismissBoxValue, Unit> function13;
+        boolean z10;
+        boolean z11;
+        TargetedFlingBehavior targetedFlingBehavior;
+        Composer startRestartGroup = composer.startRestartGroup(-741495334);
+        ComposerKt.sourceInformation(startRestartGroup, "C(SwipeToDismissBox)N(state,backgroundContent,modifier,enableDismissFromStartToEnd,enableDismissFromEndToStart,gesturesEnabled,onDismiss,content)311@13044L2,314@13102L1524,350@14677L200,350@14631L246:SwipeToDismissBox.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
-            i3 = (startRestartGroup.changed(swipeToDismissBoxState) ? 4 : 2) | i;
+            i3 = (startRestartGroup.changedInstance(swipeToDismissBoxState) ? 4 : 2) | i;
         } else {
             i3 = i;
         }
@@ -189,8 +246,8 @@ public final class SwipeToDismissBoxKt {
         } else if ((i & 48) == 0) {
             i3 |= startRestartGroup.changedInstance(function3) ? 32 : 16;
         }
-        int i7 = i2 & 4;
-        if (i7 != 0) {
+        int i9 = i2 & 4;
+        if (i9 != 0) {
             i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             obj = modifier;
@@ -217,402 +274,247 @@ public final class SwipeToDismissBoxKt {
                             i3 |= startRestartGroup.changed(z6) ? 131072 : 65536;
                         }
                     }
-                    if ((i2 & 64) == 0) {
+                    i7 = i2 & 64;
+                    if (i7 == 0) {
                         i3 |= 1572864;
                     } else if ((i & 1572864) == 0) {
-                        i3 |= startRestartGroup.changedInstance(function32) ? 1048576 : 524288;
+                        i3 |= startRestartGroup.changedInstance(function1) ? 1048576 : 524288;
                     }
-                    if ((i3 & 599187) == 599186 || !startRestartGroup.getSkipping()) {
-                        Modifier.Companion companion = i7 == 0 ? Modifier.Companion : obj;
-                        if (i4 != 0) {
-                            z4 = true;
+                    if ((i2 & 128) != 0) {
+                        if ((12582912 & i) == 0) {
+                            i8 = startRestartGroup.changedInstance(function32) ? 8388608 : 4194304;
                         }
-                        if (i5 != 0) {
-                            z5 = true;
-                        }
-                        if (i6 != 0) {
-                            z6 = true;
-                        }
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-402577235, i3, -1, "androidx.compose.material3.SwipeToDismissBox (SwipeToDismissBox.kt:224)");
-                        }
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                        Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        z7 = consume != LayoutDirection.Rtl;
-                        Modifier anchoredDraggable$default = AnchoredDraggableKt.anchoredDraggable$default(companion, swipeToDismissBoxState.getAnchoredDraggableState$material3_release(), Orientation.Horizontal, !z6 && swipeToDismissBoxState.getCurrentValue() == SwipeToDismissBoxValue.Settled, false, null, 24, null);
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                        MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                        currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-                        CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, anchoredDraggable$default);
-                        Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                        boolean z9 = z6;
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                        if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                            ComposablesKt.invalidApplier();
-                        }
-                        startRestartGroup.startReusableNode();
-                        if (!startRestartGroup.getInserting()) {
-                            startRestartGroup.createNode(constructor);
+                        if (!startRestartGroup.shouldExecute((4793491 & i3) != 4793490, i3 & 1)) {
+                            startRestartGroup.skipToGroupEnd();
+                            modifier2 = obj;
+                            z7 = z6;
+                            z8 = z4;
+                            z9 = z5;
+                            function12 = function1;
                         } else {
-                            startRestartGroup.useNode();
-                        }
-                        m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                        }
-                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -586717200, "C235@9549L71,239@9784L652,236@9629L817:SwipeToDismissBox.kt#uh7d8r");
-                        Modifier matchParentSize = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
-                        int i8 = (i3 << 6) & 7168;
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
-                        MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                        currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-                        CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, matchParentSize);
-                        Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                        if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                            ComposablesKt.invalidApplier();
-                        }
-                        startRestartGroup.startReusableNode();
-                        if (!startRestartGroup.getInserting()) {
-                            startRestartGroup.createNode(constructor2);
-                        } else {
-                            startRestartGroup.useNode();
-                        }
-                        m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
-                        Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
-                        }
-                        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
-                        function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i8 >> 6) & 112) | 6));
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        startRestartGroup.endNode();
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier.Companion companion2 = Modifier.Companion;
-                        AnchoredDraggableState<SwipeToDismissBoxValue> anchoredDraggableState$material3_release = swipeToDismissBoxState.getAnchoredDraggableState$material3_release();
-                        Orientation orientation = Orientation.Horizontal;
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396722910, "CC(remember):SwipeToDismissBox.kt#9igjgp");
-                        changed = startRestartGroup.changed(z7) | ((i3 & 7168) != 2048) | ((57344 & i3) != 16384) | ((i3 & 14) != 4);
-                        rememberedValue = startRestartGroup.rememberedValue();
-                        if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
-                            rememberedValue = (Function2) new Function2<IntSize, Constraints, Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue>>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$1$1$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue> invoke(IntSize intSize, Constraints constraints) {
-                                    return m2673invokeGpV2Q24(intSize.m7439unboximpl(), constraints.m7223unboximpl());
-                                }
-
-                                /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                                public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2673invokeGpV2Q24(long j, long j2) {
-                                    final float m7435getWidthimpl = IntSize.m7435getWidthimpl(j);
-                                    final boolean z10 = z4;
-                                    final boolean z11 = z7;
-                                    final boolean z12 = z5;
-                                    return TuplesKt.to(AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SwipeToDismissBoxValue>, Unit>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$1$1$1.1
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        {
-                                            super(1);
-                                        }
-
+                            Modifier.Companion companion = i9 != 0 ? Modifier.Companion : obj;
+                            final boolean z12 = i4 != 0 ? true : z4;
+                            final boolean z13 = i5 != 0 ? true : z5;
+                            if (i6 != 0) {
+                                z6 = true;
+                            }
+                            if (i7 != 0) {
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 387566236, "CC(remember):SwipeToDismissBox.kt#9igjgp");
+                                Object rememberedValue = startRestartGroup.rememberedValue();
+                                if (rememberedValue == Composer.Companion.getEmpty()) {
+                                    rememberedValue = new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda4
                                         @Override // kotlin.jvm.functions.Function1
-                                        public /* bridge */ /* synthetic */ Unit invoke(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
-                                            invoke2(draggableAnchorsConfig);
-                                            return Unit.INSTANCE;
+                                        public final Object invoke(Object obj2) {
+                                            Unit SwipeToDismissBox$lambda$7$lambda$6;
+                                            SwipeToDismissBox$lambda$7$lambda$6 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$7$lambda$6((SwipeToDismissBoxValue) obj2);
+                                            return SwipeToDismissBox$lambda$7$lambda$6;
                                         }
-
-                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                        public final void invoke2(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
-                                            draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
-                                            if (z10) {
-                                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z11 ? -m7435getWidthimpl : m7435getWidthimpl);
-                                            }
-                                            if (z12) {
-                                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z11 ? m7435getWidthimpl : -m7435getWidthimpl);
-                                            }
-                                        }
-                                    }), SwipeToDismissBoxState.this.getTargetValue());
+                                    };
+                                    startRestartGroup.updateRememberedValue(rememberedValue);
                                 }
-                            };
-                            startRestartGroup.updateRememberedValue(rememberedValue);
-                        }
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier draggableAnchors = AnchoredDraggableKt.draggableAnchors(companion2, anchoredDraggableState$material3_release, orientation, (Function2) rememberedValue);
-                        int i9 = (i3 >> 9) & 7168;
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
-                        MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                        currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-                        CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(startRestartGroup, draggableAnchors);
-                        Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                        if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                            ComposablesKt.invalidApplier();
-                        }
-                        startRestartGroup.startReusableNode();
-                        if (!startRestartGroup.getInserting()) {
-                            startRestartGroup.createNode(constructor3);
-                        } else {
-                            startRestartGroup.useNode();
-                        }
-                        m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
-                        Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
-                        }
-                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
-                        function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i9 >> 6) & 112) | 6));
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        startRestartGroup.endNode();
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        startRestartGroup.endNode();
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                        }
-                        z8 = z9;
-                        obj = companion;
-                    } else {
-                        startRestartGroup.skipToGroupEnd();
-                        z8 = z6;
-                    }
-                    final boolean z10 = z4;
-                    final boolean z11 = z5;
-                    endRestartGroup = startRestartGroup.endRestartGroup();
-                    if (endRestartGroup == null) {
-                        final Modifier modifier2 = obj;
-                        endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$2
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            /* JADX WARN: Multi-variable type inference failed */
-                            {
-                                super(2);
+                                function13 = (Function1) rememberedValue;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            } else {
+                                function13 = function1;
                             }
-
-                            @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                                invoke(composer2, num.intValue());
-                                return Unit.INSTANCE;
+                            if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventStart(-741495334, i3, -1, "androidx.compose.material3.SwipeToDismissBox (SwipeToDismissBox.kt:313)");
                             }
-
-                            public final void invoke(Composer composer2, int i10) {
-                                SwipeToDismissBoxKt.SwipeToDismissBox(SwipeToDismissBoxState.this, function3, modifier2, z10, z11, z8, function32, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                            AnchoredDraggableState<SwipeToDismissBoxValue> anchoredDraggableState$material3 = swipeToDismissBoxState.getAnchoredDraggableState$material3();
+                            Orientation orientation = Orientation.Horizontal;
+                            boolean z14 = z6 && swipeToDismissBoxState.getSettledValue() == SwipeToDismissBoxValue.Settled;
+                            if (swipeToDismissBoxState.getUseFlingBehavior$material3()) {
+                                startRestartGroup.startReplaceGroup(387581105);
+                                ComposerKt.sourceInformation(startRestartGroup, "322@13503L183");
+                                z10 = z6;
+                                z11 = true;
+                                targetedFlingBehavior = AnchoredDraggableDefaults.INSTANCE.flingBehavior(swipeToDismissBoxState.getAnchoredDraggableState$material3(), swipeToDismissBoxState.getPositionalThreshold$material3(), null, startRestartGroup, AnchoredDraggableDefaults.$stable << 9, 4);
+                                startRestartGroup.endReplaceGroup();
+                            } else {
+                                z10 = z6;
+                                z11 = true;
+                                startRestartGroup.startReplaceGroup(-869685853);
+                                startRestartGroup.endReplaceGroup();
+                                targetedFlingBehavior = null;
                             }
-                        });
+                            Modifier anchoredDraggable$default = AnchoredDraggableKt.anchoredDraggable$default(companion, anchoredDraggableState$material3, orientation, z14, null, null, targetedFlingBehavior, 24, null);
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
+                            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), z11);
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+                            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
+                            CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, anchoredDraggable$default);
+                            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                            if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                                ComposablesKt.invalidApplier();
+                            }
+                            startRestartGroup.startReusableNode();
+                            if (startRestartGroup.getInserting()) {
+                                startRestartGroup.createNode(constructor);
+                            } else {
+                                startRestartGroup.useNode();
+                            }
+                            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
+                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            }
+                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1704030332, "C330@13789L71,334@14026L583,331@13869L751:SwipeToDismissBox.kt#uh7d8r");
+                            Modifier matchParentSize = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
+                            int i10 = (i3 << 6) & 7168;
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
+                            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+                            int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
+                            CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
+                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, matchParentSize);
+                            Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                            if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                                ComposablesKt.invalidApplier();
+                            }
+                            startRestartGroup.startReusableNode();
+                            if (startRestartGroup.getInserting()) {
+                                startRestartGroup.createNode(constructor2);
+                            } else {
+                                startRestartGroup.useNode();
+                            }
+                            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(startRestartGroup);
+                            Updater.m4604setimpl(m4597constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
+                            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            }
+                            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
+                            function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i10 >> 6) & 112) | 6));
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            startRestartGroup.endNode();
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            Modifier.Companion companion2 = Modifier.Companion;
+                            AnchoredDraggableState<SwipeToDismissBoxValue> anchoredDraggableState$material32 = swipeToDismissBoxState.getAnchoredDraggableState$material3();
+                            Orientation orientation2 = Orientation.Horizontal;
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -609150713, "CC(remember):SwipeToDismissBox.kt#9igjgp");
+                            boolean changedInstance = ((57344 & i3) == 16384) | ((i3 & 7168) == 2048) | startRestartGroup.changedInstance(swipeToDismissBoxState);
+                            Object rememberedValue2 = startRestartGroup.rememberedValue();
+                            if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+                                rememberedValue2 = new Function2() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda5
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj2, Object obj3) {
+                                        Pair SwipeToDismissBox$lambda$11$lambda$10$lambda$9;
+                                        SwipeToDismissBox$lambda$11$lambda$10$lambda$9 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$11$lambda$10$lambda$9(SwipeToDismissBoxState.this, z12, z13, (IntSize) obj2, (Constraints) obj3);
+                                        return SwipeToDismissBox$lambda$11$lambda$10$lambda$9;
+                                    }
+                                };
+                                startRestartGroup.updateRememberedValue(rememberedValue2);
+                            }
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            Modifier draggableAnchorsV2 = DraggableAnchorsKt.draggableAnchorsV2(companion2, anchoredDraggableState$material32, orientation2, (Function2) rememberedValue2);
+                            int i11 = (i3 >> 12) & 7168;
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
+                            MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+                            int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
+                            CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
+                            Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(startRestartGroup, draggableAnchorsV2);
+                            Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                            if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                                ComposablesKt.invalidApplier();
+                            }
+                            startRestartGroup.startReusableNode();
+                            if (startRestartGroup.getInserting()) {
+                                startRestartGroup.createNode(constructor3);
+                            } else {
+                                startRestartGroup.useNode();
+                            }
+                            Composer m4597constructorimpl3 = Updater.m4597constructorimpl(startRestartGroup);
+                            Updater.m4604setimpl(m4597constructorimpl3, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4604setimpl(m4597constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
+                            if (m4597constructorimpl3.getInserting() || !Intrinsics.areEqual(m4597constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                m4597constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                m4597constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                            }
+                            Updater.m4604setimpl(m4597constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
+                            function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i11 >> 6) & 112) | 6));
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            startRestartGroup.endNode();
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            startRestartGroup.endNode();
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            SwipeToDismissBoxValue settledValue = swipeToDismissBoxState.getSettledValue();
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 387618690, "CC(remember):SwipeToDismissBox.kt#9igjgp");
+                            boolean changedInstance2 = startRestartGroup.changedInstance(swipeToDismissBoxState) | ((3670016 & i3) == 1048576);
+                            SwipeToDismissBoxKt$SwipeToDismissBox$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
+                            if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
+                                rememberedValue3 = new SwipeToDismissBoxKt$SwipeToDismissBox$3$1(swipeToDismissBoxState, function13, null);
+                                startRestartGroup.updateRememberedValue(rememberedValue3);
+                            }
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            EffectsKt.LaunchedEffect(settledValue, function13, (Function2) rememberedValue3, startRestartGroup, (i3 >> 15) & 112);
+                            if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventEnd();
+                            }
+                            z9 = z13;
+                            function12 = function13;
+                            modifier2 = companion;
+                            z7 = z10;
+                            z8 = z12;
+                        }
+                        endRestartGroup = startRestartGroup.endRestartGroup();
+                        if (endRestartGroup != null) {
+                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda6
+                                @Override // kotlin.jvm.functions.Function2
+                                public final Object invoke(Object obj2, Object obj3) {
+                                    Unit SwipeToDismissBox$lambda$13;
+                                    SwipeToDismissBox$lambda$13 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$13(SwipeToDismissBoxState.this, function3, modifier2, z8, z9, z7, function12, function32, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                                    return SwipeToDismissBox$lambda$13;
+                                }
+                            });
+                            return;
+                        }
                         return;
                     }
-                    return;
+                    i8 = 12582912;
+                    i3 |= i8;
+                    if (!startRestartGroup.shouldExecute((4793491 & i3) != 4793490, i3 & 1)) {
+                    }
+                    endRestartGroup = startRestartGroup.endRestartGroup();
+                    if (endRestartGroup != null) {
+                    }
                 }
                 z5 = z2;
                 i6 = i2 & 32;
                 if (i6 == 0) {
                 }
-                if ((i2 & 64) == 0) {
-                }
-                if ((i3 & 599187) == 599186) {
-                }
+                i7 = i2 & 64;
                 if (i7 == 0) {
                 }
-                if (i4 != 0) {
+                if ((i2 & 128) != 0) {
                 }
-                if (i5 != 0) {
+                i3 |= i8;
+                if (!startRestartGroup.shouldExecute((4793491 & i3) != 4793490, i3 & 1)) {
                 }
-                if (i6 != 0) {
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                if (consume2 != LayoutDirection.Rtl) {
-                }
-                Modifier anchoredDraggable$default2 = AnchoredDraggableKt.anchoredDraggable$default(companion, swipeToDismissBoxState.getAnchoredDraggableState$material3_release(), Orientation.Horizontal, !z6 && swipeToDismissBoxState.getCurrentValue() == SwipeToDismissBoxValue.Settled, false, null, 24, null);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-                CompositionLocalMap currentCompositionLocalMap4 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(startRestartGroup, anchoredDraggable$default2);
-                Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
-                boolean z92 = z6;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                }
-                startRestartGroup.startReusableNode();
-                if (!startRestartGroup.getInserting()) {
-                }
-                m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3867constructorimpl.getInserting()) {
-                }
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash4);
-                Updater.m3874setimpl(m3867constructorimpl, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -586717200, "C235@9549L71,239@9784L652,236@9629L817:SwipeToDismissBox.kt#uh7d8r");
-                Modifier matchParentSize2 = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
-                int i82 = (i3 << 6) & 7168;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-                CompositionLocalMap currentCompositionLocalMap22 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier22 = ComposedModifierKt.materializeModifier(startRestartGroup, matchParentSize2);
-                Function0<ComposeUiNode> constructor22 = ComposeUiNode.Companion.getConstructor();
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                }
-                startRestartGroup.startReusableNode();
-                if (!startRestartGroup.getInserting()) {
-                }
-                m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
-                Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3867constructorimpl2.getInserting()) {
-                }
-                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
-                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
-                function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i82 >> 6) & 112) | 6));
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                startRestartGroup.endNode();
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Modifier.Companion companion22 = Modifier.Companion;
-                AnchoredDraggableState<SwipeToDismissBoxValue> anchoredDraggableState$material3_release2 = swipeToDismissBoxState.getAnchoredDraggableState$material3_release();
-                Orientation orientation2 = Orientation.Horizontal;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396722910, "CC(remember):SwipeToDismissBox.kt#9igjgp");
-                changed = startRestartGroup.changed(z7) | ((i3 & 7168) != 2048) | ((57344 & i3) != 16384) | ((i3 & 14) != 4);
-                rememberedValue = startRestartGroup.rememberedValue();
-                if (!changed) {
-                }
-                rememberedValue = (Function2) new Function2<IntSize, Constraints, Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue>>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$1$1$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue> invoke(IntSize intSize, Constraints constraints) {
-                        return m2673invokeGpV2Q24(intSize.m7439unboximpl(), constraints.m7223unboximpl());
-                    }
-
-                    /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                    public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2673invokeGpV2Q24(long j, long j2) {
-                        final float m7435getWidthimpl = IntSize.m7435getWidthimpl(j);
-                        final boolean z102 = z4;
-                        final boolean z112 = z7;
-                        final boolean z12 = z5;
-                        return TuplesKt.to(AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SwipeToDismissBoxValue>, Unit>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$1$1$1.1
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
-                                invoke2(draggableAnchorsConfig);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
-                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
-                                if (z102) {
-                                    draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z112 ? -m7435getWidthimpl : m7435getWidthimpl);
-                                }
-                                if (z12) {
-                                    draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z112 ? m7435getWidthimpl : -m7435getWidthimpl);
-                                }
-                            }
-                        }), SwipeToDismissBoxState.this.getTargetValue());
-                    }
-                };
-                startRestartGroup.updateRememberedValue(rememberedValue);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Modifier draggableAnchors2 = AnchoredDraggableKt.draggableAnchors(companion22, anchoredDraggableState$material3_release2, orientation2, (Function2) rememberedValue);
-                int i92 = (i3 >> 9) & 7168;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy22 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-                CompositionLocalMap currentCompositionLocalMap32 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier32 = ComposedModifierKt.materializeModifier(startRestartGroup, draggableAnchors2);
-                Function0<ComposeUiNode> constructor32 = ComposeUiNode.Companion.getConstructor();
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                }
-                startRestartGroup.startReusableNode();
-                if (!startRestartGroup.getInserting()) {
-                }
-                m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
-                Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash32 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3867constructorimpl3.getInserting()) {
-                }
-                m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
-                Updater.m3874setimpl(m3867constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
-                function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i92 >> 6) & 112) | 6));
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                startRestartGroup.endNode();
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                startRestartGroup.endNode();
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                z8 = z92;
-                obj = companion;
-                final boolean z102 = z4;
-                final boolean z112 = z5;
                 endRestartGroup = startRestartGroup.endRestartGroup();
-                if (endRestartGroup == null) {
+                if (endRestartGroup != null) {
                 }
             }
             z4 = z;
@@ -623,180 +525,16 @@ public final class SwipeToDismissBoxKt {
             i6 = i2 & 32;
             if (i6 == 0) {
             }
-            if ((i2 & 64) == 0) {
-            }
-            if ((i3 & 599187) == 599186) {
-            }
+            i7 = i2 & 64;
             if (i7 == 0) {
             }
-            if (i4 != 0) {
+            if ((i2 & 128) != 0) {
             }
-            if (i5 != 0) {
+            i3 |= i8;
+            if (!startRestartGroup.shouldExecute((4793491 & i3) != 4793490, i3 & 1)) {
             }
-            if (i6 != 0) {
-            }
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-            Object consume22 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            if (consume22 != LayoutDirection.Rtl) {
-            }
-            Modifier anchoredDraggable$default22 = AnchoredDraggableKt.anchoredDraggable$default(companion, swipeToDismissBoxState.getAnchoredDraggableState$material3_release(), Orientation.Horizontal, !z6 && swipeToDismissBoxState.getCurrentValue() == SwipeToDismissBoxValue.Settled, false, null, 24, null);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-            MeasurePolicy maybeCachedBoxMeasurePolicy22 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-            currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-            CompositionLocalMap currentCompositionLocalMap42 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier42 = ComposedModifierKt.materializeModifier(startRestartGroup, anchoredDraggable$default22);
-            Function0<ComposeUiNode> constructor42 = ComposeUiNode.Companion.getConstructor();
-            boolean z922 = z6;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-            if (!(startRestartGroup.getApplier() instanceof Applier)) {
-            }
-            startRestartGroup.startReusableNode();
-            if (!startRestartGroup.getInserting()) {
-            }
-            m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap42, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash42 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3867constructorimpl.getInserting()) {
-            }
-            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash42);
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier42, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -586717200, "C235@9549L71,239@9784L652,236@9629L817:SwipeToDismissBox.kt#uh7d8r");
-            Modifier matchParentSize22 = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
-            int i822 = (i3 << 6) & 7168;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy32 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-            currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-            CompositionLocalMap currentCompositionLocalMap222 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier222 = ComposedModifierKt.materializeModifier(startRestartGroup, matchParentSize22);
-            Function0<ComposeUiNode> constructor222 = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-            if (!(startRestartGroup.getApplier() instanceof Applier)) {
-            }
-            startRestartGroup.startReusableNode();
-            if (!startRestartGroup.getInserting()) {
-            }
-            m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy32, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3867constructorimpl2.getInserting()) {
-            }
-            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash222);
-            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
-            function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i822 >> 6) & 112) | 6));
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            startRestartGroup.endNode();
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier.Companion companion222 = Modifier.Companion;
-            AnchoredDraggableState<SwipeToDismissBoxValue> anchoredDraggableState$material3_release22 = swipeToDismissBoxState.getAnchoredDraggableState$material3_release();
-            Orientation orientation22 = Orientation.Horizontal;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396722910, "CC(remember):SwipeToDismissBox.kt#9igjgp");
-            changed = startRestartGroup.changed(z7) | ((i3 & 7168) != 2048) | ((57344 & i3) != 16384) | ((i3 & 14) != 4);
-            rememberedValue = startRestartGroup.rememberedValue();
-            if (!changed) {
-            }
-            rememberedValue = (Function2) new Function2<IntSize, Constraints, Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue>>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$1$1$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(2);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue> invoke(IntSize intSize, Constraints constraints) {
-                    return m2673invokeGpV2Q24(intSize.m7439unboximpl(), constraints.m7223unboximpl());
-                }
-
-                /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2673invokeGpV2Q24(long j, long j2) {
-                    final float m7435getWidthimpl = IntSize.m7435getWidthimpl(j);
-                    final boolean z1022 = z4;
-                    final boolean z1122 = z7;
-                    final boolean z12 = z5;
-                    return TuplesKt.to(AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SwipeToDismissBoxValue>, Unit>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$1$1$1.1
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(1);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
-                            invoke2(draggableAnchorsConfig);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
-                            draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
-                            if (z1022) {
-                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z1122 ? -m7435getWidthimpl : m7435getWidthimpl);
-                            }
-                            if (z12) {
-                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z1122 ? m7435getWidthimpl : -m7435getWidthimpl);
-                            }
-                        }
-                    }), SwipeToDismissBoxState.this.getTargetValue());
-                }
-            };
-            startRestartGroup.updateRememberedValue(rememberedValue);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier draggableAnchors22 = AnchoredDraggableKt.draggableAnchors(companion222, anchoredDraggableState$material3_release22, orientation22, (Function2) rememberedValue);
-            int i922 = (i3 >> 9) & 7168;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy222 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-            currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-            CompositionLocalMap currentCompositionLocalMap322 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier322 = ComposedModifierKt.materializeModifier(startRestartGroup, draggableAnchors22);
-            Function0<ComposeUiNode> constructor322 = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-            if (!(startRestartGroup.getApplier() instanceof Applier)) {
-            }
-            startRestartGroup.startReusableNode();
-            if (!startRestartGroup.getInserting()) {
-            }
-            m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap322, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash322 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3867constructorimpl3.getInserting()) {
-            }
-            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash322);
-            Updater.m3874setimpl(m3867constructorimpl3, materializeModifier322, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
-            function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i922 >> 6) & 112) | 6));
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            startRestartGroup.endNode();
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            startRestartGroup.endNode();
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            z8 = z922;
-            obj = companion;
-            final boolean z1022 = z4;
-            final boolean z1122 = z5;
             endRestartGroup = startRestartGroup.endRestartGroup();
-            if (endRestartGroup == null) {
+            if (endRestartGroup != null) {
             }
         }
         obj = modifier;
@@ -811,180 +549,240 @@ public final class SwipeToDismissBoxKt {
         i6 = i2 & 32;
         if (i6 == 0) {
         }
-        if ((i2 & 64) == 0) {
-        }
-        if ((i3 & 599187) == 599186) {
-        }
+        i7 = i2 & 64;
         if (i7 == 0) {
         }
-        if (i4 != 0) {
+        if ((i2 & 128) != 0) {
         }
+        i3 |= i8;
+        if (!startRestartGroup.shouldExecute((4793491 & i3) != 4793490, i3 & 1)) {
+        }
+        endRestartGroup = startRestartGroup.endRestartGroup();
+        if (endRestartGroup != null) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Pair SwipeToDismissBox$lambda$11$lambda$10$lambda$9(SwipeToDismissBoxState swipeToDismissBoxState, final boolean z, final boolean z2, final IntSize intSize, Constraints constraints) {
+        return TuplesKt.to(AnchoredDraggableKt.DraggableAnchors(new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda7
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8;
+                SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8(IntSize.this, z, z2, (DraggableAnchorsConfig) obj);
+                return SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8;
+            }
+        }), swipeToDismissBoxState.getTargetValue());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8(IntSize intSize, boolean z, boolean z2, DraggableAnchorsConfig draggableAnchorsConfig) {
+        float m8170unboximpl = (int) (intSize.m8170unboximpl() >> 32);
+        draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
+        if (z) {
+            draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, m8170unboximpl);
+        }
+        if (z2) {
+            draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, -m8170unboximpl);
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:112:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00ee  */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use updated signature with onDismissed parameter.")
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final /* synthetic */ void SwipeToDismissBox(final SwipeToDismissBoxState swipeToDismissBoxState, final Function3 function3, Modifier modifier, boolean z, boolean z2, boolean z3, final Function3 function32, Composer composer, final int i, final int i2) {
+        SwipeToDismissBoxState swipeToDismissBoxState2;
+        int i3;
+        Function3 function33;
+        Object obj;
+        int i4;
+        boolean z4;
+        int i5;
+        int i6;
+        Composer composer2;
+        final boolean z5;
+        final Modifier modifier2;
+        final boolean z6;
+        final boolean z7;
+        ScopeUpdateScope endRestartGroup;
+        Composer startRestartGroup = composer.startRestartGroup(-1807005299);
+        ComposerKt.sourceInformation(startRestartGroup, "C(SwipeToDismissBox)N(state,backgroundContent,modifier,enableDismissFromStartToEnd,enableDismissFromEndToStart,gesturesEnabled,content)388@16066L2,381@15751L351:SwipeToDismissBox.kt#uh7d8r");
+        if ((i2 & 1) != 0) {
+            i3 = i | 6;
+            swipeToDismissBoxState2 = swipeToDismissBoxState;
+        } else {
+            swipeToDismissBoxState2 = swipeToDismissBoxState;
+            if ((i & 6) == 0) {
+                i3 = (startRestartGroup.changedInstance(swipeToDismissBoxState2) ? 4 : 2) | i;
+            } else {
+                i3 = i;
+            }
+        }
+        if ((i2 & 2) != 0) {
+            i3 |= 48;
+            function33 = function3;
+        } else {
+            function33 = function3;
+            if ((i & 48) == 0) {
+                i3 |= startRestartGroup.changedInstance(function33) ? 32 : 16;
+            }
+        }
+        int i7 = i2 & 4;
+        if (i7 != 0) {
+            i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+        } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            obj = modifier;
+            i3 |= startRestartGroup.changed(obj) ? 256 : 128;
+            i4 = i2 & 8;
+            if (i4 == 0) {
+                i3 |= 3072;
+            } else if ((i & 3072) == 0) {
+                z4 = z;
+                i3 |= startRestartGroup.changed(z4) ? 2048 : 1024;
+                i5 = i2 & 16;
+                if (i5 != 0) {
+                    i3 |= 24576;
+                } else if ((i & 24576) == 0) {
+                    i3 |= startRestartGroup.changed(z2) ? 16384 : 8192;
+                    i6 = i2 & 32;
+                    if (i6 == 0) {
+                        i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                    } else if ((196608 & i) == 0) {
+                        i3 |= startRestartGroup.changed(z3) ? 131072 : 65536;
+                        if ((i2 & 64) != 0) {
+                            i3 |= 1572864;
+                        } else if ((i & 1572864) == 0) {
+                            i3 |= startRestartGroup.changedInstance(function32) ? 1048576 : 524288;
+                            if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
+                                composer2 = startRestartGroup;
+                                composer2.skipToGroupEnd();
+                                z5 = z2;
+                                modifier2 = obj;
+                                z6 = z4;
+                                z7 = z3;
+                            } else {
+                                Modifier.Companion companion = i7 != 0 ? Modifier.Companion : obj;
+                                boolean z8 = i4 != 0 ? true : z4;
+                                boolean z9 = i5 != 0 ? true : z2;
+                                boolean z10 = i6 != 0 ? true : z3;
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(-1807005299, i3, -1, "androidx.compose.material3.SwipeToDismissBox (SwipeToDismissBox.kt:381)");
+                                }
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1365277681, "CC(remember):SwipeToDismissBox.kt#9igjgp");
+                                Object rememberedValue = startRestartGroup.rememberedValue();
+                                if (rememberedValue == Composer.Companion.getEmpty()) {
+                                    rememberedValue = new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda2
+                                        @Override // kotlin.jvm.functions.Function1
+                                        public final Object invoke(Object obj2) {
+                                            Unit SwipeToDismissBox$lambda$15$lambda$14;
+                                            SwipeToDismissBox$lambda$15$lambda$14 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$15$lambda$14((SwipeToDismissBoxValue) obj2);
+                                            return SwipeToDismissBox$lambda$15$lambda$14;
+                                        }
+                                    };
+                                    startRestartGroup.updateRememberedValue(rememberedValue);
+                                }
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                composer2 = startRestartGroup;
+                                SwipeToDismissBox(swipeToDismissBoxState2, function33, companion, z8, z9, z10, (Function1) rememberedValue, function32, composer2, (i3 & 14) | 1572864 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | ((i3 << 3) & 29360128), 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventEnd();
+                                }
+                                modifier2 = companion;
+                                z6 = z8;
+                                z5 = z9;
+                                z7 = z10;
+                            }
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda3
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj2, Object obj3) {
+                                        Unit SwipeToDismissBox$lambda$16;
+                                        SwipeToDismissBox$lambda$16 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$16(SwipeToDismissBoxState.this, function3, modifier2, z6, z5, z7, function32, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                                        return SwipeToDismissBox$lambda$16;
+                                    }
+                                });
+                                return;
+                            }
+                            return;
+                        }
+                        if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
+                        }
+                        endRestartGroup = composer2.endRestartGroup();
+                        if (endRestartGroup == null) {
+                        }
+                    }
+                    if ((i2 & 64) != 0) {
+                    }
+                    if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
+                    }
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup == null) {
+                    }
+                }
+                i6 = i2 & 32;
+                if (i6 == 0) {
+                }
+                if ((i2 & 64) != 0) {
+                }
+                if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
+                }
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup == null) {
+                }
+            }
+            z4 = z;
+            i5 = i2 & 16;
+            if (i5 != 0) {
+            }
+            i6 = i2 & 32;
+            if (i6 == 0) {
+            }
+            if ((i2 & 64) != 0) {
+            }
+            if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
+            }
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup == null) {
+            }
+        }
+        obj = modifier;
+        i4 = i2 & 8;
+        if (i4 == 0) {
+        }
+        z4 = z;
+        i5 = i2 & 16;
         if (i5 != 0) {
         }
-        if (i6 != 0) {
+        i6 = i2 & 32;
+        if (i6 == 0) {
         }
-        if (ComposerKt.isTraceInProgress()) {
+        if ((i2 & 64) != 0) {
         }
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-        Object consume222 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        if (consume222 != LayoutDirection.Rtl) {
+        if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
         }
-        Modifier anchoredDraggable$default222 = AnchoredDraggableKt.anchoredDraggable$default(companion, swipeToDismissBoxState.getAnchoredDraggableState$material3_release(), Orientation.Horizontal, !z6 && swipeToDismissBoxState.getCurrentValue() == SwipeToDismissBoxValue.Settled, false, null, 24, null);
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-        MeasurePolicy maybeCachedBoxMeasurePolicy222 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-        currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-        CompositionLocalMap currentCompositionLocalMap422 = startRestartGroup.getCurrentCompositionLocalMap();
-        Modifier materializeModifier422 = ComposedModifierKt.materializeModifier(startRestartGroup, anchoredDraggable$default222);
-        Function0<ComposeUiNode> constructor422 = ComposeUiNode.Companion.getConstructor();
-        boolean z9222 = z6;
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-        if (!(startRestartGroup.getApplier() instanceof Applier)) {
-        }
-        startRestartGroup.startReusableNode();
-        if (!startRestartGroup.getInserting()) {
-        }
-        m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap422, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash422 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3867constructorimpl.getInserting()) {
-        }
-        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash422);
-        Updater.m3874setimpl(m3867constructorimpl, materializeModifier422, ComposeUiNode.Companion.getSetModifier());
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -586717200, "C235@9549L71,239@9784L652,236@9629L817:SwipeToDismissBox.kt#uh7d8r");
-        Modifier matchParentSize222 = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
-        int i8222 = (i3 << 6) & 7168;
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
-        MeasurePolicy rowMeasurePolicy322 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-        currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-        CompositionLocalMap currentCompositionLocalMap2222 = startRestartGroup.getCurrentCompositionLocalMap();
-        Modifier materializeModifier2222 = ComposedModifierKt.materializeModifier(startRestartGroup, matchParentSize222);
-        Function0<ComposeUiNode> constructor2222 = ComposeUiNode.Companion.getConstructor();
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-        if (!(startRestartGroup.getApplier() instanceof Applier)) {
-        }
-        startRestartGroup.startReusableNode();
-        if (!startRestartGroup.getInserting()) {
-        }
-        m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
-        Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy322, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3867constructorimpl2.getInserting()) {
-        }
-        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-        m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2222);
-        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2222, ComposeUiNode.Companion.getSetModifier());
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
-        function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i8222 >> 6) & 112) | 6));
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        startRestartGroup.endNode();
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        Modifier.Companion companion2222 = Modifier.Companion;
-        AnchoredDraggableState<SwipeToDismissBoxValue> anchoredDraggableState$material3_release222 = swipeToDismissBoxState.getAnchoredDraggableState$material3_release();
-        Orientation orientation222 = Orientation.Horizontal;
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396722910, "CC(remember):SwipeToDismissBox.kt#9igjgp");
-        changed = startRestartGroup.changed(z7) | ((i3 & 7168) != 2048) | ((57344 & i3) != 16384) | ((i3 & 14) != 4);
-        rememberedValue = startRestartGroup.rememberedValue();
-        if (!changed) {
-        }
-        rememberedValue = (Function2) new Function2<IntSize, Constraints, Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue>>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$1$1$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue> invoke(IntSize intSize, Constraints constraints) {
-                return m2673invokeGpV2Q24(intSize.m7439unboximpl(), constraints.m7223unboximpl());
-            }
-
-            /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-            public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2673invokeGpV2Q24(long j, long j2) {
-                final float m7435getWidthimpl = IntSize.m7435getWidthimpl(j);
-                final boolean z10222 = z4;
-                final boolean z11222 = z7;
-                final boolean z12 = z5;
-                return TuplesKt.to(AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SwipeToDismissBoxValue>, Unit>() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$SwipeToDismissBox$1$1$1.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(1);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
-                        invoke2(draggableAnchorsConfig);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
-                        draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
-                        if (z10222) {
-                            draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z11222 ? -m7435getWidthimpl : m7435getWidthimpl);
-                        }
-                        if (z12) {
-                            draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z11222 ? m7435getWidthimpl : -m7435getWidthimpl);
-                        }
-                    }
-                }), SwipeToDismissBoxState.this.getTargetValue());
-            }
-        };
-        startRestartGroup.updateRememberedValue(rememberedValue);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        Modifier draggableAnchors222 = AnchoredDraggableKt.draggableAnchors(companion2222, anchoredDraggableState$material3_release222, orientation222, (Function2) rememberedValue);
-        int i9222 = (i3 >> 9) & 7168;
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
-        MeasurePolicy rowMeasurePolicy2222 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-        currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-        CompositionLocalMap currentCompositionLocalMap3222 = startRestartGroup.getCurrentCompositionLocalMap();
-        Modifier materializeModifier3222 = ComposedModifierKt.materializeModifier(startRestartGroup, draggableAnchors222);
-        Function0<ComposeUiNode> constructor3222 = ComposeUiNode.Companion.getConstructor();
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-        if (!(startRestartGroup.getApplier() instanceof Applier)) {
-        }
-        startRestartGroup.startReusableNode();
-        if (!startRestartGroup.getInserting()) {
-        }
-        m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
-        Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy2222, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3867constructorimpl3.getInserting()) {
-        }
-        m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-        m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3222);
-        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3222, ComposeUiNode.Companion.getSetModifier());
-        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
-        function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i9222 >> 6) & 112) | 6));
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        startRestartGroup.endNode();
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        startRestartGroup.endNode();
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        z8 = z9222;
-        obj = companion;
-        final boolean z10222 = z4;
-        final boolean z11222 = z5;
-        endRestartGroup = startRestartGroup.endRestartGroup();
+        endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup == null) {
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SwipeToDismissBox$lambda$15$lambda$14(SwipeToDismissBoxValue swipeToDismissBoxValue) {
+        return Unit.INSTANCE;
     }
 }

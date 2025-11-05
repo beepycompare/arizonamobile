@@ -92,7 +92,7 @@ final class SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1 e
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, PointerInputChange pointerInputChange, Offset offset) {
         pointerInputChange.consume();
-        longRef.element = offset.m4315unboximpl();
+        longRef.element = offset.m5045unboximpl();
         return Unit.INSTANCE;
     }
 }

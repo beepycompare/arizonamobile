@@ -117,7 +117,7 @@ public final class PlayerControlViewLayoutManager {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PlayerControlViewLayoutManager.this.m8071lambda$new$0$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
+                PlayerControlViewLayoutManager.this.m8802lambda$new$0$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager.1
@@ -147,7 +147,7 @@ public final class PlayerControlViewLayoutManager {
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PlayerControlViewLayoutManager.this.m8072lambda$new$1$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
+                PlayerControlViewLayoutManager.this.m8803lambda$new$1$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
             }
         });
         ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager.2
@@ -264,7 +264,7 @@ public final class PlayerControlViewLayoutManager {
         ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PlayerControlViewLayoutManager.this.m8073lambda$new$2$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
+                PlayerControlViewLayoutManager.this.m8804lambda$new$2$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
             }
         });
         ofFloat3.addListener(new AnimatorListenerAdapter() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager.8
@@ -290,7 +290,7 @@ public final class PlayerControlViewLayoutManager {
         ofFloat4.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda7
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PlayerControlViewLayoutManager.this.m8074lambda$new$3$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
+                PlayerControlViewLayoutManager.this.m8805lambda$new$3$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
             }
         });
         ofFloat4.addListener(new AnimatorListenerAdapter() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager.9
@@ -312,7 +312,7 @@ public final class PlayerControlViewLayoutManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-PlayerControlViewLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m8071lambda$new$0$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8802lambda$new$0$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         View view = this.controlsBackground;
         if (view != null) {
@@ -330,7 +330,7 @@ public final class PlayerControlViewLayoutManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$androidx-media3-ui-PlayerControlViewLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m8072lambda$new$1$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8803lambda$new$1$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         View view = this.controlsBackground;
         if (view != null) {
@@ -348,13 +348,13 @@ public final class PlayerControlViewLayoutManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-media3-ui-PlayerControlViewLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m8073lambda$new$2$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8804lambda$new$2$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
         animateOverflow(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$3$androidx-media3-ui-PlayerControlViewLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m8074lambda$new$3$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8805lambda$new$3$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
         animateOverflow(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 

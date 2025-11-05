@@ -53,7 +53,7 @@ public final class ScrollableNode$setScrollSemanticsActions$1$1 extends SuspendL
             float f2 = this.$y;
             long floatToRawIntBits = Float.floatToRawIntBits(f);
             this.label = 1;
-            m575semanticsScrollByd4ec7I = ScrollableKt.m575semanticsScrollByd4ec7I(scrollingLogic, Offset.m4297constructorimpl((floatToRawIntBits << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), this);
+            m575semanticsScrollByd4ec7I = ScrollableKt.m575semanticsScrollByd4ec7I(scrollingLogic, Offset.m5027constructorimpl((floatToRawIntBits << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), this);
             if (m575semanticsScrollByd4ec7I == coroutine_suspended) {
                 return coroutine_suspended;
             }

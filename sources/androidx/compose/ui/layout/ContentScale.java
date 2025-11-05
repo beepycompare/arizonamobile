@@ -3,70 +3,70 @@ package androidx.compose.ui.layout;
 import kotlin.Metadata;
 /* compiled from: ContentScale.kt */
 @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\bg\u0018\u0000 \t2\u00020\u0001:\u0001\tJ\u001f\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H&¢\u0006\u0004\b\u0007\u0010\bø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\nÀ\u0006\u0001"}, d2 = {"Landroidx/compose/ui/layout/ContentScale;", "", "computeScaleFactor", "Landroidx/compose/ui/layout/ScaleFactor;", "srcSize", "Landroidx/compose/ui/geometry/Size;", "dstSize", "computeScaleFactor-H7hwNQA", "(JJ)J", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface ContentScale {
     public static final Companion Companion = Companion.$$INSTANCE;
 
     /* renamed from: computeScaleFactor-H7hwNQA  reason: not valid java name */
-    long mo5960computeScaleFactorH7hwNQA(long j, long j2);
+    long mo6690computeScaleFactorH7hwNQA(long j, long j2);
 
     /* compiled from: ContentScale.kt */
     @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\n\u0010\u0003\u001a\u0004\b\u000b\u0010\bR\u001c\u0010\f\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\r\u0010\u0003\u001a\u0004\b\u000e\u0010\bR\u001c\u0010\u000f\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0010\u0010\u0003\u001a\u0004\b\u0011\u0010\bR\u001c\u0010\u0012\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0013\u0010\u0003\u001a\u0004\b\u0014\u0010\bR\u001c\u0010\u0015\u001a\u00020\u00168\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0017\u0010\u0003\u001a\u0004\b\u0018\u0010\u0019R\u001c\u0010\u001a\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u001b\u0010\u0003\u001a\u0004\b\u001c\u0010\b¨\u0006\u001d"}, d2 = {"Landroidx/compose/ui/layout/ContentScale$Companion;", "", "<init>", "()V", "Crop", "Landroidx/compose/ui/layout/ContentScale;", "getCrop$annotations", "getCrop", "()Landroidx/compose/ui/layout/ContentScale;", "Fit", "getFit$annotations", "getFit", "FillHeight", "getFillHeight$annotations", "getFillHeight", "FillWidth", "getFillWidth$annotations", "getFillWidth", "Inside", "getInside$annotations", "getInside", "None", "Landroidx/compose/ui/layout/FixedScale;", "getNone$annotations", "getNone", "()Landroidx/compose/ui/layout/FixedScale;", "FillBounds", "getFillBounds$annotations", "getFillBounds", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
         private static final ContentScale Crop = new ContentScale() { // from class: androidx.compose.ui.layout.ContentScale$Companion$Crop$1
             @Override // androidx.compose.ui.layout.ContentScale
             /* renamed from: computeScaleFactor-H7hwNQA */
-            public long mo5960computeScaleFactorH7hwNQA(long j, long j2) {
-                float m5964computeFillMaxDimensioniLBOSCw;
-                m5964computeFillMaxDimensioniLBOSCw = ContentScaleKt.m5964computeFillMaxDimensioniLBOSCw(j, j2);
-                return ScaleFactor.m6051constructorimpl((Float.floatToRawIntBits(m5964computeFillMaxDimensioniLBOSCw) << 32) | (4294967295L & Float.floatToRawIntBits(m5964computeFillMaxDimensioniLBOSCw)));
+            public long mo6690computeScaleFactorH7hwNQA(long j, long j2) {
+                float m6694computeFillMaxDimensioniLBOSCw;
+                m6694computeFillMaxDimensioniLBOSCw = ContentScaleKt.m6694computeFillMaxDimensioniLBOSCw(j, j2);
+                return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(m6694computeFillMaxDimensioniLBOSCw) << 32) | (4294967295L & Float.floatToRawIntBits(m6694computeFillMaxDimensioniLBOSCw)));
             }
         };
         private static final ContentScale Fit = new ContentScale() { // from class: androidx.compose.ui.layout.ContentScale$Companion$Fit$1
             @Override // androidx.compose.ui.layout.ContentScale
             /* renamed from: computeScaleFactor-H7hwNQA */
-            public long mo5960computeScaleFactorH7hwNQA(long j, long j2) {
-                float m5965computeFillMinDimensioniLBOSCw;
-                m5965computeFillMinDimensioniLBOSCw = ContentScaleKt.m5965computeFillMinDimensioniLBOSCw(j, j2);
-                return ScaleFactor.m6051constructorimpl((Float.floatToRawIntBits(m5965computeFillMinDimensioniLBOSCw) << 32) | (4294967295L & Float.floatToRawIntBits(m5965computeFillMinDimensioniLBOSCw)));
+            public long mo6690computeScaleFactorH7hwNQA(long j, long j2) {
+                float m6695computeFillMinDimensioniLBOSCw;
+                m6695computeFillMinDimensioniLBOSCw = ContentScaleKt.m6695computeFillMinDimensioniLBOSCw(j, j2);
+                return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(m6695computeFillMinDimensioniLBOSCw) << 32) | (4294967295L & Float.floatToRawIntBits(m6695computeFillMinDimensioniLBOSCw)));
             }
         };
         private static final ContentScale FillHeight = new ContentScale() { // from class: androidx.compose.ui.layout.ContentScale$Companion$FillHeight$1
             @Override // androidx.compose.ui.layout.ContentScale
             /* renamed from: computeScaleFactor-H7hwNQA */
-            public long mo5960computeScaleFactorH7hwNQA(long j, long j2) {
+            public long mo6690computeScaleFactorH7hwNQA(long j, long j2) {
                 float intBitsToFloat = Float.intBitsToFloat((int) (j2 & 4294967295L)) / Float.intBitsToFloat((int) (j & 4294967295L));
-                return ScaleFactor.m6051constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
+                return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
             }
         };
         private static final ContentScale FillWidth = new ContentScale() { // from class: androidx.compose.ui.layout.ContentScale$Companion$FillWidth$1
             @Override // androidx.compose.ui.layout.ContentScale
             /* renamed from: computeScaleFactor-H7hwNQA */
-            public long mo5960computeScaleFactorH7hwNQA(long j, long j2) {
+            public long mo6690computeScaleFactorH7hwNQA(long j, long j2) {
                 float intBitsToFloat = Float.intBitsToFloat((int) (j2 >> 32)) / Float.intBitsToFloat((int) (j >> 32));
-                return ScaleFactor.m6051constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
+                return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
             }
         };
         private static final ContentScale Inside = new ContentScale() { // from class: androidx.compose.ui.layout.ContentScale$Companion$Inside$1
             @Override // androidx.compose.ui.layout.ContentScale
             /* renamed from: computeScaleFactor-H7hwNQA */
-            public long mo5960computeScaleFactorH7hwNQA(long j, long j2) {
-                float m5965computeFillMinDimensioniLBOSCw;
+            public long mo6690computeScaleFactorH7hwNQA(long j, long j2) {
+                float m6695computeFillMinDimensioniLBOSCw;
                 if (Float.intBitsToFloat((int) (j >> 32)) > Float.intBitsToFloat((int) (j2 >> 32)) || Float.intBitsToFloat((int) (j & 4294967295L)) > Float.intBitsToFloat((int) (j2 & 4294967295L))) {
-                    m5965computeFillMinDimensioniLBOSCw = ContentScaleKt.m5965computeFillMinDimensioniLBOSCw(j, j2);
-                    return ScaleFactor.m6051constructorimpl((Float.floatToRawIntBits(m5965computeFillMinDimensioniLBOSCw) << 32) | (Float.floatToRawIntBits(m5965computeFillMinDimensioniLBOSCw) & 4294967295L));
+                    m6695computeFillMinDimensioniLBOSCw = ContentScaleKt.m6695computeFillMinDimensioniLBOSCw(j, j2);
+                    return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(m6695computeFillMinDimensioniLBOSCw) << 32) | (Float.floatToRawIntBits(m6695computeFillMinDimensioniLBOSCw) & 4294967295L));
                 }
-                return ScaleFactor.m6051constructorimpl((Float.floatToRawIntBits(1.0f) << 32) | (Float.floatToRawIntBits(1.0f) & 4294967295L));
+                return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(1.0f) << 32) | (Float.floatToRawIntBits(1.0f) & 4294967295L));
             }
         };
         private static final FixedScale None = new FixedScale(1.0f);
         private static final ContentScale FillBounds = new ContentScale() { // from class: androidx.compose.ui.layout.ContentScale$Companion$FillBounds$1
             @Override // androidx.compose.ui.layout.ContentScale
             /* renamed from: computeScaleFactor-H7hwNQA */
-            public long mo5960computeScaleFactorH7hwNQA(long j, long j2) {
-                return ScaleFactor.m6051constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j2 >> 32)) / Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j2 & 4294967295L)) / Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L));
+            public long mo6690computeScaleFactorH7hwNQA(long j, long j2) {
+                return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j2 >> 32)) / Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j2 & 4294967295L)) / Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L));
             }
         };
 

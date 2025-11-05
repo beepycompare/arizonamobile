@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.source.chunk;
 
 import androidx.media3.datasource.DataSpec;
 import java.util.NoSuchElementException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface MediaChunkIterator {
     public static final MediaChunkIterator EMPTY = new MediaChunkIterator() { // from class: androidx.media3.exoplayer.source.chunk.MediaChunkIterator.1
         @Override // androidx.media3.exoplayer.source.chunk.MediaChunkIterator

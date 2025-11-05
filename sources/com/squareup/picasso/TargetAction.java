@@ -3,8 +3,9 @@ package com.squareup.picasso;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import com.squareup.picasso.Picasso;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-final class TargetAction extends Action<Target> {
+public final class TargetAction extends Action<Target> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public TargetAction(Picasso picasso, Target target, Request request, int i, int i2, Drawable drawable, String str, Object obj, int i3) {
         super(picasso, target, request, i, i2, i3, drawable, str, obj, false);

@@ -13,30 +13,30 @@ import kotlin.collections.ArraysKt;
 public final class UArraysKt___UArraysJvmKt$asList$1 extends AbstractList<UInt> implements RandomAccess {
 
     /* renamed from: $$v$c$kotlin-UIntArray$-$this$asList$0  reason: not valid java name */
-    final /* synthetic */ int[] f85$$v$c$kotlinUIntArray$$this$asList$0;
+    final /* synthetic */ int[] f70$$v$c$kotlinUIntArray$$this$asList$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public UArraysKt___UArraysJvmKt$asList$1(int[] iArr) {
-        this.f85$$v$c$kotlinUIntArray$$this$asList$0 = iArr;
+        this.f70$$v$c$kotlinUIntArray$$this$asList$0 = iArr;
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.List
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof UInt) {
-            return m9623containsWZ4Q5Ns(((UInt) obj).m9258unboximpl());
+            return m10364containsWZ4Q5Ns(((UInt) obj).m9999unboximpl());
         }
         return false;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public /* bridge */ /* synthetic */ Object get(int i) {
-        return UInt.m9200boximpl(m9624getpVg5ArA(i));
+        return UInt.m9941boximpl(m10365getpVg5ArA(i));
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int indexOf(Object obj) {
         if (obj instanceof UInt) {
-            return m9625indexOfWZ4Q5Ns(((UInt) obj).m9258unboximpl());
+            return m10366indexOfWZ4Q5Ns(((UInt) obj).m9999unboximpl());
         }
         return -1;
     }
@@ -44,38 +44,38 @@ public final class UArraysKt___UArraysJvmKt$asList$1 extends AbstractList<UInt> 
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int lastIndexOf(Object obj) {
         if (obj instanceof UInt) {
-            return m9626lastIndexOfWZ4Q5Ns(((UInt) obj).m9258unboximpl());
+            return m10367lastIndexOfWZ4Q5Ns(((UInt) obj).m9999unboximpl());
         }
         return -1;
     }
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return UIntArray.m9267getSizeimpl(this.f85$$v$c$kotlinUIntArray$$this$asList$0);
+        return UIntArray.m10008getSizeimpl(this.f70$$v$c$kotlinUIntArray$$this$asList$0);
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return UIntArray.m9269isEmptyimpl(this.f85$$v$c$kotlinUIntArray$$this$asList$0);
+        return UIntArray.m10010isEmptyimpl(this.f70$$v$c$kotlinUIntArray$$this$asList$0);
     }
 
     /* renamed from: contains-WZ4Q5Ns  reason: not valid java name */
-    public boolean m9623containsWZ4Q5Ns(int i) {
-        return UIntArray.m9262containsWZ4Q5Ns(this.f85$$v$c$kotlinUIntArray$$this$asList$0, i);
+    public boolean m10364containsWZ4Q5Ns(int i) {
+        return UIntArray.m10003containsWZ4Q5Ns(this.f70$$v$c$kotlinUIntArray$$this$asList$0, i);
     }
 
     /* renamed from: get-pVg5ArA  reason: not valid java name */
-    public int m9624getpVg5ArA(int i) {
-        return UIntArray.m9266getpVg5ArA(this.f85$$v$c$kotlinUIntArray$$this$asList$0, i);
+    public int m10365getpVg5ArA(int i) {
+        return UIntArray.m10007getpVg5ArA(this.f70$$v$c$kotlinUIntArray$$this$asList$0, i);
     }
 
     /* renamed from: indexOf-WZ4Q5Ns  reason: not valid java name */
-    public int m9625indexOfWZ4Q5Ns(int i) {
-        return ArraysKt.indexOf(this.f85$$v$c$kotlinUIntArray$$this$asList$0, i);
+    public int m10366indexOfWZ4Q5Ns(int i) {
+        return ArraysKt.indexOf(this.f70$$v$c$kotlinUIntArray$$this$asList$0, i);
     }
 
     /* renamed from: lastIndexOf-WZ4Q5Ns  reason: not valid java name */
-    public int m9626lastIndexOfWZ4Q5Ns(int i) {
-        return ArraysKt.lastIndexOf(this.f85$$v$c$kotlinUIntArray$$this$asList$0, i);
+    public int m10367lastIndexOfWZ4Q5Ns(int i) {
+        return ArraysKt.lastIndexOf(this.f70$$v$c$kotlinUIntArray$$this$asList$0, i);
     }
 }

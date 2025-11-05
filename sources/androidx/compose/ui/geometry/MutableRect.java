@@ -106,64 +106,64 @@ public final class MutableRect {
     }
 
     /* renamed from: getTopLeft-F1C5BW0  reason: not valid java name */
-    public final long m4288getTopLeftF1C5BW0() {
+    public final long m5018getTopLeftF1C5BW0() {
         float f = this.left;
         float f2 = this.top;
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: getTopCenter-F1C5BW0  reason: not valid java name */
-    public final long m4287getTopCenterF1C5BW0() {
+    public final long m5017getTopCenterF1C5BW0() {
         float right = this.left + ((getRight() - getLeft()) / 2.0f);
         float f = this.top;
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
     }
 
     /* renamed from: getTopRight-F1C5BW0  reason: not valid java name */
-    public final long m4289getTopRightF1C5BW0() {
+    public final long m5019getTopRightF1C5BW0() {
         float f = this.right;
         float f2 = this.top;
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: getCenterLeft-F1C5BW0  reason: not valid java name */
-    public final long m4284getCenterLeftF1C5BW0() {
+    public final long m5014getCenterLeftF1C5BW0() {
         float f = this.left;
         float bottom = this.top + ((getBottom() - getTop()) / 2.0f);
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: getCenter-F1C5BW0  reason: not valid java name */
-    public final long m4283getCenterF1C5BW0() {
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(this.top + ((getBottom() - getTop()) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(this.left + ((getRight() - getLeft()) / 2.0f)) << 32));
+    public final long m5013getCenterF1C5BW0() {
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(this.top + ((getBottom() - getTop()) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(this.left + ((getRight() - getLeft()) / 2.0f)) << 32));
     }
 
     /* renamed from: getCenterRight-F1C5BW0  reason: not valid java name */
-    public final long m4285getCenterRightF1C5BW0() {
+    public final long m5015getCenterRightF1C5BW0() {
         float f = this.right;
         float bottom = this.top + ((getBottom() - getTop()) / 2.0f);
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: getBottomLeft-F1C5BW0  reason: not valid java name */
-    public final long m4281getBottomLeftF1C5BW0() {
+    public final long m5011getBottomLeftF1C5BW0() {
         float f = this.left;
         float f2 = this.bottom;
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: getBottomCenter-F1C5BW0  reason: not valid java name */
-    public final long m4280getBottomCenterF1C5BW0() {
+    public final long m5010getBottomCenterF1C5BW0() {
         float right = this.left + ((getRight() - getLeft()) / 2.0f);
         float f = this.bottom;
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
     }
 
     /* renamed from: getBottomRight-F1C5BW0  reason: not valid java name */
-    public final long m4282getBottomRightF1C5BW0() {
+    public final long m5012getBottomRightF1C5BW0() {
         float f = this.right;
         float f2 = this.bottom;
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     public final void set(float f, float f2, float f3, float f4) {
@@ -178,14 +178,14 @@ public final class MutableRect {
     }
 
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    public final long m4286getSizeNHjbRc() {
+    public final long m5016getSizeNHjbRc() {
         float right = getRight() - getLeft();
         float bottom = getBottom() - getTop();
-        return Size.m4365constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
+        return Size.m5095constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
     }
 
     /* renamed from: translate-k-4lQ0M  reason: not valid java name */
-    public final void m4290translatek4lQ0M(long j) {
+    public final void m5020translatek4lQ0M(long j) {
         translate(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 
@@ -198,7 +198,7 @@ public final class MutableRect {
     }
 
     /* renamed from: contains-k-4lQ0M  reason: not valid java name */
-    public final boolean m4279containsk4lQ0M(long j) {
+    public final boolean m5009containsk4lQ0M(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
         return (intBitsToFloat >= this.left) & (intBitsToFloat < this.right) & (intBitsToFloat2 >= this.top) & (intBitsToFloat2 < this.bottom);

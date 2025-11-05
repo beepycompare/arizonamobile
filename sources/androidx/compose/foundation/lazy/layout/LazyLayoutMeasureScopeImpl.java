@@ -122,7 +122,7 @@ public final class LazyLayoutMeasureScopeImpl implements LazyLayoutMeasureScope,
         int size = subcompose.size();
         ArrayList arrayList = new ArrayList(size);
         for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(subcompose.get(i2).mo5967measureBRTryo0(j));
+            arrayList.add(subcompose.get(i2).mo6697measureBRTryo0(j));
         }
         ArrayList arrayList2 = arrayList;
         this.placeablesCache.set(i, arrayList2);

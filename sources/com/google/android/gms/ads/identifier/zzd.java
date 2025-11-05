@@ -15,7 +15,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicLong;
 /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzd {
     private static volatile zzd zza;
     private static final Object zzb = new Object();
@@ -46,7 +46,7 @@ public final class zzd {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x003e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x003d, code lost:
         if ((r3 - r18.zze.get()) > com.google.android.gms.ads.identifier.zzd.zzc.toMillis()) goto L7;
      */
     /*

@@ -76,7 +76,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     }
 
     public /* synthetic */ TextStringSimpleNode(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3, ColorProducer colorProducer, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, (i4 & 128) != 0 ? null : colorProducer, null);
+        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, (i4 & 128) != 0 ? null : colorProducer, null);
     }
 
     private TextStringSimpleNode(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3, ColorProducer colorProducer) {
@@ -154,7 +154,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             this.fontFamilyResolver = resolver;
             z2 = true;
         }
-        if (TextOverflow.m7190equalsimpl0(this.overflow, i3)) {
+        if (TextOverflow.m7921equalsimpl0(this.overflow, i3)) {
             return z2;
         }
         this.overflow = i3;
@@ -364,7 +364,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
         ParagraphLayoutCache layoutCache = textStringSimpleNode.getLayoutCache();
         TextStyle textStyle = textStringSimpleNode.style;
         ColorProducer colorProducer = textStringSimpleNode.overrideColor;
-        TextLayoutResult slowCreateTextLayoutResultOrNull = layoutCache.slowCreateTextLayoutResultOrNull(TextStyle.m6746mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2181invoke0d7_KjU() : Color.Companion.m4585getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null));
+        TextLayoutResult slowCreateTextLayoutResultOrNull = layoutCache.slowCreateTextLayoutResultOrNull(TextStyle.m7477mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2299invoke0d7_KjU() : Color.Companion.m5315getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null));
         if (slowCreateTextLayoutResultOrNull != null) {
             list.add(slowCreateTextLayoutResultOrNull);
         } else {
@@ -429,7 +429,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             }
             int i = (int) (m1719getLayoutSizeYbymL2g$foundation_release >> 32);
             int i2 = (int) (m1719getLayoutSizeYbymL2g$foundation_release & 4294967295L);
-            final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.Companion.m7226fitPrioritizingWidthZbe2FdA(i, i, i2, i2));
+            final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.Companion.m7957fitPrioritizingWidthZbe2FdA(i, i, i2, i2));
             Map<AlignmentLine, Integer> map = this.baselineCache;
             Intrinsics.checkNotNull(map);
             return measureScope.layout(i, i2, map, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextStringSimpleNode$$ExternalSyntheticLambda4
@@ -484,7 +484,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             boolean didOverflow$foundation_release = layoutCacheOrSubstitute.getDidOverflow$foundation_release();
             if (didOverflow$foundation_release) {
                 canvas.save();
-                Canvas.m4521clipRectN_I0leg$default(canvas, 0.0f, 0.0f, (int) (layoutCacheOrSubstitute.m1719getLayoutSizeYbymL2g$foundation_release() >> 32), (int) (layoutCacheOrSubstitute.m1719getLayoutSizeYbymL2g$foundation_release() & 4294967295L), 0, 16, null);
+                Canvas.m5251clipRectN_I0leg$default(canvas, 0.0f, 0.0f, (int) (layoutCacheOrSubstitute.m1719getLayoutSizeYbymL2g$foundation_release() >> 32), (int) (layoutCacheOrSubstitute.m1719getLayoutSizeYbymL2g$foundation_release() & 4294967295L), 0, 16, null);
             }
             try {
                 TextDecoration textDecoration = this.style.getTextDecoration();
@@ -504,18 +504,18 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
                 DrawStyle drawStyle2 = drawStyle;
                 Brush brush = this.style.getBrush();
                 if (brush != null) {
-                    Paragraph.m6577painthn5TExg$default(paragraph$foundation_release, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
+                    Paragraph.m7308painthn5TExg$default(paragraph$foundation_release, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
                 } else {
                     ColorProducer colorProducer = this.overrideColor;
-                    long mo2181invoke0d7_KjU = colorProducer != null ? colorProducer.mo2181invoke0d7_KjU() : Color.Companion.m4585getUnspecified0d7_KjU();
-                    if (mo2181invoke0d7_KjU == 16) {
-                        if (this.style.m6756getColor0d7_KjU() != 16) {
-                            mo2181invoke0d7_KjU = this.style.m6756getColor0d7_KjU();
+                    long mo2299invoke0d7_KjU = colorProducer != null ? colorProducer.mo2299invoke0d7_KjU() : Color.Companion.m5315getUnspecified0d7_KjU();
+                    if (mo2299invoke0d7_KjU == 16) {
+                        if (this.style.m7487getColor0d7_KjU() != 16) {
+                            mo2299invoke0d7_KjU = this.style.m7487getColor0d7_KjU();
                         } else {
-                            mo2181invoke0d7_KjU = Color.Companion.m4575getBlack0d7_KjU();
+                            mo2299invoke0d7_KjU = Color.Companion.m5305getBlack0d7_KjU();
                         }
                     }
-                    Paragraph.m6575paintLG529CI$default(paragraph$foundation_release, canvas, mo2181invoke0d7_KjU, shadow2, textDecoration2, drawStyle2, 0, 32, null);
+                    Paragraph.m7306paintLG529CI$default(paragraph$foundation_release, canvas, mo2299invoke0d7_KjU, shadow2, textDecoration2, drawStyle2, 0, 32, null);
                 }
             } finally {
                 if (didOverflow$foundation_release) {

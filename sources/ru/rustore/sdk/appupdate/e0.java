@@ -13,12 +13,12 @@ public final class e0 {
     public static volatile e0 i;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1385a;
+    public final Context f1428a;
     public final Map<String, Object> b;
     public final Lazy c = LazyKt.lazy(new d());
     public final Lazy d = LazyKt.lazy(new c());
     public final Lazy e = LazyKt.lazy(new e());
-    public final Lazy f = LazyKt.lazy(b.f1386a);
+    public final Lazy f = LazyKt.lazy(b.f1429a);
     public final Lazy g = LazyKt.lazy(new f());
     public final Lazy h = LazyKt.lazy(new g());
 
@@ -27,42 +27,42 @@ public final class e0 {
     }
 
     /* loaded from: classes6.dex */
-    public static final class b extends Lambda implements Function0<C0806j> {
+    public static final class b extends Lambda implements Function0<C0794j> {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final b f1386a = new b();
+        public static final b f1429a = new b();
 
         public b() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
-        public final C0806j invoke() {
-            return new C0806j();
+        public final C0794j invoke() {
+            return new C0794j();
         }
     }
 
     /* loaded from: classes6.dex */
-    public static final class c extends Lambda implements Function0<C0810n> {
+    public static final class c extends Lambda implements Function0<C0798n> {
         public c() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
-        public final C0810n invoke() {
-            return new C0810n((C0806j) e0.this.f.getValue(), (MetricsClient) e0.this.g.getValue());
+        public final C0798n invoke() {
+            return new C0798n((C0794j) e0.this.f.getValue(), (MetricsClient) e0.this.g.getValue());
         }
     }
 
     /* loaded from: classes6.dex */
-    public static final class d extends Lambda implements Function0<C0801e> {
+    public static final class d extends Lambda implements Function0<C0789e> {
         public d() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
-        public final C0801e invoke() {
-            return new C0801e((C0810n) e0.this.d.getValue(), (a0) e0.this.h.getValue(), (L) e0.this.e.getValue(), AnalyticsEventProvider.INSTANCE, e0.this.f1385a);
+        public final C0789e invoke() {
+            return new C0789e((C0798n) e0.this.d.getValue(), (a0) e0.this.h.getValue(), (L) e0.this.e.getValue(), AnalyticsEventProvider.INSTANCE, e0.this.f1428a);
         }
     }
 
@@ -74,7 +74,7 @@ public final class e0 {
 
         @Override // kotlin.jvm.functions.Function0
         public final L invoke() {
-            return new L(new K(e0.this.f1385a));
+            return new L(new K(e0.this.f1428a));
         }
     }
 
@@ -86,7 +86,7 @@ public final class e0 {
 
         @Override // kotlin.jvm.functions.Function0
         public final MetricsClient invoke() {
-            return MetricsClient.Companion.getInstance(e0.this.f1385a);
+            return MetricsClient.Companion.getInstance(e0.this.f1428a);
         }
     }
 
@@ -103,7 +103,7 @@ public final class e0 {
     }
 
     public e0(Context context, Map map) {
-        this.f1385a = context;
+        this.f1428a = context;
         this.b = map;
     }
 }

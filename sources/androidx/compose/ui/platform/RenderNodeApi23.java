@@ -53,7 +53,7 @@ public final class RenderNodeApi23 implements DeviceRenderNode {
         this.ownerView = androidComposeView;
         RenderNode create = RenderNode.create("Compose", androidComposeView);
         this.renderNode = create;
-        this.internalCompositingStrategy = CompositingStrategy.Companion.m4639getAutoNrFUSI();
+        this.internalCompositingStrategy = CompositingStrategy.Companion.m5369getAutoNrFUSI();
         if (needToValidateAccess) {
             create.setScaleX(create.getScaleX());
             create.setScaleY(create.getScaleY());
@@ -82,7 +82,7 @@ public final class RenderNodeApi23 implements DeviceRenderNode {
         if (testFailCreateRenderNode) {
             throw new NoClassDefFoundError();
         }
-        this.blendMode = BlendMode.Companion.m4490getSrcOver0nO6VwU();
+        this.blendMode = BlendMode.Companion.m5220getSrcOver0nO6VwU();
     }
 
     public final AndroidComposeView getOwnerView() {
@@ -312,15 +312,15 @@ public final class RenderNodeApi23 implements DeviceRenderNode {
 
     @Override // androidx.compose.ui.platform.DeviceRenderNode
     /* renamed from: getBlendMode-0nO6VwU */
-    public int mo6393getBlendMode0nO6VwU() {
+    public int mo7123getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
     @Override // androidx.compose.ui.platform.DeviceRenderNode
     /* renamed from: setBlendMode-s9anfk8 */
-    public void mo6395setBlendModes9anfk8(int i) {
+    public void mo7125setBlendModes9anfk8(int i) {
         this.blendMode = i;
-        obtainLayerPaint().mo4425setBlendModes9anfk8(i);
+        obtainLayerPaint().mo5155setBlendModes9anfk8(i);
         updateLayerProperties();
     }
 
@@ -338,31 +338,31 @@ public final class RenderNodeApi23 implements DeviceRenderNode {
 
     @Override // androidx.compose.ui.platform.DeviceRenderNode
     /* renamed from: getCompositingStrategy--NrFUSI */
-    public int mo6394getCompositingStrategyNrFUSI() {
+    public int mo7124getCompositingStrategyNrFUSI() {
         return this.internalCompositingStrategy;
     }
 
     @Override // androidx.compose.ui.platform.DeviceRenderNode
     /* renamed from: setCompositingStrategy-aDBOjCE */
-    public void mo6396setCompositingStrategyaDBOjCE(int i) {
+    public void mo7126setCompositingStrategyaDBOjCE(int i) {
         this.internalCompositingStrategy = i;
         updateLayerProperties();
     }
 
     private final void updateLayerProperties() {
         if (requiresCompositingLayer()) {
-            m6447applyCompositingStrategyQu9p0E8(this.renderNode, CompositingStrategy.Companion.m4641getOffscreenNrFUSI());
+            m7177applyCompositingStrategyQu9p0E8(this.renderNode, CompositingStrategy.Companion.m5371getOffscreenNrFUSI());
         } else {
-            m6447applyCompositingStrategyQu9p0E8(this.renderNode, this.internalCompositingStrategy);
+            m7177applyCompositingStrategyQu9p0E8(this.renderNode, this.internalCompositingStrategy);
         }
     }
 
     private final boolean requiresCompositingLayer() {
-        return CompositingStrategy.m4635equalsimpl0(mo6394getCompositingStrategyNrFUSI(), CompositingStrategy.Companion.m4641getOffscreenNrFUSI()) || requiresLayerPaint();
+        return CompositingStrategy.m5365equalsimpl0(mo7124getCompositingStrategyNrFUSI(), CompositingStrategy.Companion.m5371getOffscreenNrFUSI()) || requiresLayerPaint();
     }
 
     private final boolean requiresLayerPaint() {
-        return (BlendMode.m4459equalsimpl0(mo6393getBlendMode0nO6VwU(), BlendMode.Companion.m4490getSrcOver0nO6VwU()) && getColorFilter() == null) ? false : true;
+        return (BlendMode.m5189equalsimpl0(mo7123getBlendMode0nO6VwU(), BlendMode.Companion.m5220getSrcOver0nO6VwU()) && getColorFilter() == null) ? false : true;
     }
 
     private final Paint obtainLayerPaint() {
@@ -376,13 +376,13 @@ public final class RenderNodeApi23 implements DeviceRenderNode {
     }
 
     /* renamed from: applyCompositingStrategy-Qu9p0E8  reason: not valid java name */
-    private final void m6447applyCompositingStrategyQu9p0E8(RenderNode renderNode, int i) {
-        if (CompositingStrategy.m4635equalsimpl0(i, CompositingStrategy.Companion.m4641getOffscreenNrFUSI())) {
+    private final void m7177applyCompositingStrategyQu9p0E8(RenderNode renderNode, int i) {
+        if (CompositingStrategy.m5365equalsimpl0(i, CompositingStrategy.Companion.m5371getOffscreenNrFUSI())) {
             renderNode.setLayerType(2);
             Paint paint = this.layerPaint;
             renderNode.setLayerPaint(paint != null ? paint.asFrameworkPaint() : null);
             renderNode.setHasOverlappingRendering(true);
-        } else if (CompositingStrategy.m4635equalsimpl0(i, CompositingStrategy.Companion.m4640getModulateAlphaNrFUSI())) {
+        } else if (CompositingStrategy.m5365equalsimpl0(i, CompositingStrategy.Companion.m5370getModulateAlphaNrFUSI())) {
             renderNode.setLayerType(0);
             renderNode.setHasOverlappingRendering(false);
         } else {
@@ -392,7 +392,7 @@ public final class RenderNodeApi23 implements DeviceRenderNode {
     }
 
     public final int getLayerType$ui_release() {
-        return CompositingStrategy.m4635equalsimpl0(this.internalCompositingStrategy, CompositingStrategy.Companion.m4641getOffscreenNrFUSI()) ? 2 : 0;
+        return CompositingStrategy.m5365equalsimpl0(this.internalCompositingStrategy, CompositingStrategy.Companion.m5371getOffscreenNrFUSI()) ? 2 : 0;
     }
 
     public final boolean hasOverlappingRendering$ui_release() {
@@ -440,7 +440,7 @@ public final class RenderNodeApi23 implements DeviceRenderNode {
         AndroidCanvas androidCanvas = canvasHolder.getAndroidCanvas();
         if (path != null) {
             androidCanvas.save();
-            Canvas.m4520clipPathmtrdDE$default(androidCanvas, path, 0, 2, null);
+            Canvas.m5250clipPathmtrdDE$default(androidCanvas, path, 0, 2, null);
         }
         function1.invoke(androidCanvas);
         if (path != null) {
@@ -473,7 +473,7 @@ public final class RenderNodeApi23 implements DeviceRenderNode {
 
     @Override // androidx.compose.ui.platform.DeviceRenderNode
     public DeviceRenderNodeData dumpRenderNodeData() {
-        return new DeviceRenderNodeData(0L, 0, 0, 0, 0, 0, 0, this.renderNode.getScaleX(), this.renderNode.getScaleY(), this.renderNode.getTranslationX(), this.renderNode.getTranslationY(), this.renderNode.getElevation(), getAmbientShadowColor(), getSpotShadowColor(), this.renderNode.getRotation(), this.renderNode.getRotationX(), this.renderNode.getRotationY(), this.renderNode.getCameraDistance(), this.renderNode.getPivotX(), this.renderNode.getPivotY(), this.renderNode.getClipToOutline(), getClipToBounds(), this.renderNode.getAlpha(), getRenderEffect(), mo6393getBlendMode0nO6VwU(), getColorFilter(), this.internalCompositingStrategy, null);
+        return new DeviceRenderNodeData(0L, 0, 0, 0, 0, 0, 0, this.renderNode.getScaleX(), this.renderNode.getScaleY(), this.renderNode.getTranslationX(), this.renderNode.getTranslationY(), this.renderNode.getElevation(), getAmbientShadowColor(), getSpotShadowColor(), this.renderNode.getRotation(), this.renderNode.getRotationX(), this.renderNode.getRotationY(), this.renderNode.getCameraDistance(), this.renderNode.getPivotX(), this.renderNode.getPivotY(), this.renderNode.getClipToOutline(), getClipToBounds(), this.renderNode.getAlpha(), getRenderEffect(), mo7123getBlendMode0nO6VwU(), getColorFilter(), this.internalCompositingStrategy, null);
     }
 
     @Override // androidx.compose.ui.platform.DeviceRenderNode

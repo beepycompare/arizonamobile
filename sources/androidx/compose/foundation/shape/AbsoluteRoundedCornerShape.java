@@ -21,9 +21,9 @@ public final class AbsoluteRoundedCornerShape extends CornerBasedShape {
     /* renamed from: createOutline-LjSzlW0 */
     public Outline mo1190createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection) {
         if (f + f2 + f3 + f4 == 0.0f) {
-            return new Outline.Rectangle(SizeKt.m4395toRectuvyYCjk(j));
+            return new Outline.Rectangle(SizeKt.m5125toRectuvyYCjk(j));
         }
-        return new Outline.Rounded(RoundRectKt.m4357RoundRectZAM2FJo(SizeKt.m4395toRectuvyYCjk(j), CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f3) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L)), CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f4) & 4294967295L) | (Float.floatToRawIntBits(f4) << 32))));
+        return new Outline.Rounded(RoundRectKt.m5087RoundRectZAM2FJo(SizeKt.m5125toRectuvyYCjk(j), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f3) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L)), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f4) & 4294967295L) | (Float.floatToRawIntBits(f4) << 32))));
     }
 
     @Override // androidx.compose.foundation.shape.CornerBasedShape
@@ -52,6 +52,6 @@ public final class AbsoluteRoundedCornerShape extends CornerBasedShape {
 
     /* renamed from: toRadius-Bz7bX_o  reason: not valid java name */
     private final long m1194toRadiusBz7bX_o(float f) {
-        return CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        return CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
     }
 }

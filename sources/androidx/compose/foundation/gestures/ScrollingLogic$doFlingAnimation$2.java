@@ -78,7 +78,7 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
                         throw new FlingCancellationException();
                     }
                     ScrollingLogic scrollingLogic4 = ScrollingLogic.this;
-                    return scrollingLogic4.reverseIfNeeded(scrollingLogic4.m593toFloatk4lQ0M(nestedScrollScope.mo534scrollByWithOverscrollOzD1aCk(scrollingLogic4.m591reverseIfNeededMKHz9U(scrollingLogic4.m594toOffsettuRUvjQ(f)), NestedScrollSource.Companion.m5731getSideEffectWNlRxjI())));
+                    return scrollingLogic4.reverseIfNeeded(scrollingLogic4.m593toFloatk4lQ0M(nestedScrollScope.mo534scrollByWithOverscrollOzD1aCk(scrollingLogic4.m591reverseIfNeededMKHz9U(scrollingLogic4.m594toOffsettuRUvjQ(f)), NestedScrollSource.Companion.m6461getSideEffectWNlRxjI())));
                 }
             };
             scrollingLogic = this.this$0;

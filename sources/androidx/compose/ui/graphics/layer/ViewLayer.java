@@ -138,19 +138,19 @@ public final class ViewLayer extends View {
         CanvasDrawScope canvasDrawScope = this.canvasDrawScope;
         Density density = this.density;
         LayoutDirection layoutDirection = this.layoutDirection;
-        long m4365constructorimpl = Size.m4365constructorimpl((Float.floatToRawIntBits(getHeight()) & 4294967295L) | (Float.floatToRawIntBits(getWidth()) << 32));
+        long m5095constructorimpl = Size.m5095constructorimpl((Float.floatToRawIntBits(getHeight()) & 4294967295L) | (Float.floatToRawIntBits(getWidth()) << 32));
         GraphicsLayer graphicsLayer = this.parentLayer;
         Function1<? super DrawScope, Unit> function1 = this.drawBlock;
         Density density2 = canvasDrawScope.getDrawContext().getDensity();
         LayoutDirection layoutDirection2 = canvasDrawScope.getDrawContext().getLayoutDirection();
         androidx.compose.ui.graphics.Canvas canvas2 = canvasDrawScope.getDrawContext().getCanvas();
-        long mo5049getSizeNHjbRc = canvasDrawScope.getDrawContext().mo5049getSizeNHjbRc();
+        long mo5779getSizeNHjbRc = canvasDrawScope.getDrawContext().mo5779getSizeNHjbRc();
         GraphicsLayer graphicsLayer2 = canvasDrawScope.getDrawContext().getGraphicsLayer();
         DrawContext drawContext = canvasDrawScope.getDrawContext();
         drawContext.setDensity(density);
         drawContext.setLayoutDirection(layoutDirection);
         drawContext.setCanvas(androidCanvas);
-        drawContext.mo5050setSizeuvyYCjk(m4365constructorimpl);
+        drawContext.mo5780setSizeuvyYCjk(m5095constructorimpl);
         drawContext.setGraphicsLayer(graphicsLayer);
         androidCanvas.save();
         try {
@@ -160,7 +160,7 @@ public final class ViewLayer extends View {
             drawContext2.setDensity(density2);
             drawContext2.setLayoutDirection(layoutDirection2);
             drawContext2.setCanvas(canvas2);
-            drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext2.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
             drawContext2.setGraphicsLayer(graphicsLayer2);
             canvasHolder.getAndroidCanvas().setInternalCanvas(internalCanvas);
             this.isInvalidated = false;
@@ -170,7 +170,7 @@ public final class ViewLayer extends View {
             drawContext3.setDensity(density2);
             drawContext3.setLayoutDirection(layoutDirection2);
             drawContext3.setCanvas(canvas2);
-            drawContext3.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext3.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
             drawContext3.setGraphicsLayer(graphicsLayer2);
             throw th;
         }

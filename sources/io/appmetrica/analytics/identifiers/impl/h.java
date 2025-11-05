@@ -5,7 +5,7 @@ import com.adjust.sdk.Constants;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class h implements b {
     @Override // io.appmetrica.analytics.identifiers.impl.b
     public final c a(Context context) {

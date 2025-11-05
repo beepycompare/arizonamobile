@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ModuleAvailabilityResponse extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ModuleAvailabilityResponse> CREATOR = new zaa();
     private final boolean zaa;
@@ -15,7 +15,7 @@ public class ModuleAvailabilityResponse extends AbstractSafeParcelable {
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
     @Retention(RetentionPolicy.CLASS)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface AvailabilityStatus {
         public static final int STATUS_ALREADY_AVAILABLE = 0;
         public static final int STATUS_READY_TO_DOWNLOAD = 1;

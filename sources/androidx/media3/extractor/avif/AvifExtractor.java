@@ -8,7 +8,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SingleSampleExtractor;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AvifExtractor implements Extractor {
     private static final int AVIF_FILE_SIGNATURE_PART_1 = 1718909296;
     private static final int AVIF_FILE_SIGNATURE_PART_2 = 1635150182;

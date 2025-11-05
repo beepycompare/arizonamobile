@@ -14,11 +14,11 @@ public final class CasesBgType {
     private static final /* synthetic */ CasesBgType[] $VALUES;
     private final String bgName;
     private final int resId;
-    public static final CasesBgType GREEN = new CasesBgType("GREEN", 0, CasesSameCasesAdapter.TOP, R.drawable.cases_can_win_item_green_bg);
-    public static final CasesBgType RED = new CasesBgType("RED", 1, CasesSameCasesAdapter.NEW, R.drawable.cases_can_win_item_red_bg);
-    public static final CasesBgType GOLD = new CasesBgType("GOLD", 2, "gold", R.drawable.cases_can_win_item_gold_bg);
-    public static final CasesBgType PURPLE = new CasesBgType("PURPLE", 3, "purple", R.drawable.cases_can_win_item_purple_bg);
-    public static final CasesBgType NONE = new CasesBgType("NONE", 4, "none", R.drawable.cases_can_win_item_default_bg);
+    public static final CasesBgType GREEN = new CasesBgType("GREEN", 0, CasesSameCasesAdapter.TOP, R.drawable.arizona_cases_can_win_item_green_bg);
+    public static final CasesBgType RED = new CasesBgType("RED", 1, CasesSameCasesAdapter.NEW, R.drawable.arizona_cases_can_win_item_red_bg);
+    public static final CasesBgType GOLD = new CasesBgType("GOLD", 2, "gold", R.drawable.arizona_cases_can_win_item_gold_bg);
+    public static final CasesBgType PURPLE = new CasesBgType("PURPLE", 3, "purple", R.drawable.arizona_cases_can_win_item_purple_bg);
+    public static final CasesBgType NONE = new CasesBgType("NONE", 4, "none", R.drawable.arizona_cases_can_win_item_default_bg);
 
     private static final /* synthetic */ CasesBgType[] $values() {
         return new CasesBgType[]{GREEN, RED, GOLD, PURPLE, NONE};

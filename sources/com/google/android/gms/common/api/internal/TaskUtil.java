@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TaskUtil {
     public static void setResultOrApiException(Status status, TaskCompletionSource<Void> taskCompletionSource) {
         setResultOrApiException(status, null, taskCompletionSource);

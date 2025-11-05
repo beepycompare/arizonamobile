@@ -1,43 +1,32 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class E7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Long f424a;
-    public final EnumC0260fl b;
-    public final Long c;
-    public final Bb d;
-    public final Long e;
-    public final Long f;
-    public final D7 g;
+    public final long f454a;
+    public final int b;
 
-    public E7(Long l, EnumC0260fl enumC0260fl, Long l2, Bb bb, Long l3, Long l4, D7 d7) {
-        this.f424a = l;
-        this.b = enumC0260fl;
-        this.c = l2;
-        this.d = bb;
-        this.e = l3;
-        this.f = l4;
-        this.g = d7;
+    public E7(int i, long j) {
+        this.f454a = j;
+        this.b = i;
     }
 
-    public final D7 a() {
-        return this.g;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof E7) {
+            E7 e7 = (E7) obj;
+            return this.f454a == e7.f454a && this.b == e7.b;
+        }
+        return false;
     }
 
-    public final Long b() {
-        return this.e;
+    public final int hashCode() {
+        return Integer.hashCode(this.b) + (Long.hashCode(this.f454a) * 31);
     }
 
-    public final Long c() {
-        return this.c;
-    }
-
-    public final Long d() {
-        return this.f;
-    }
-
-    public final Bb e() {
-        return this.d;
+    public final String toString() {
+        return "DecimalProtoModel(mantissa=" + this.f454a + ", exponent=" + this.b + ')';
     }
 }

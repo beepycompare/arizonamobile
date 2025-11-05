@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.locationapi.internal;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface ILastKnownUpdater {
     void updateLastKnown();
 }

@@ -1,22 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.BuildConfig;
-import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
-/* loaded from: classes4.dex */
-public abstract class Bj {
-    public static void a(String str, Object... objArr) {
-        ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format(str, objArr), new Object[0]);
+import io.appmetrica.analytics.Revenue;
+/* loaded from: classes3.dex */
+public final class Bj implements Xa {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ Revenue f415a;
+
+    public Bj(Revenue revenue) {
+        this.f415a = revenue;
     }
 
-    public static String a() {
-        StringBuilder sb = new StringBuilder(BuildConfig.SDK_BUILD_FLAVOR);
-        if (!TextUtils.isEmpty("binary")) {
-            sb.append("_binary");
-        }
-        if (!TextUtils.isEmpty("")) {
-            sb.append("_");
-        }
-        return sb.toString();
+    @Override // io.appmetrica.analytics.impl.Xa
+    public final void a(Ya ya) {
+        ya.reportRevenue(this.f415a);
     }
 }

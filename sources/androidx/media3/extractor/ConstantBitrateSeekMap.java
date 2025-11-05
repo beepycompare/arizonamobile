@@ -2,7 +2,7 @@ package androidx.media3.extractor;
 
 import androidx.media3.common.C;
 import androidx.media3.extractor.SeekMap;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ConstantBitrateSeekMap implements SeekMap {
     private final boolean allowSeeksIfLengthUnknown;
     private final int bitrate;

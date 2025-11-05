@@ -1,14 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-/* loaded from: classes4.dex */
-public final class Uh extends Ch {
-    public Uh(C0195d7 c0195d7) {
-        super(c0195d7);
+import io.appmetrica.analytics.AdRevenue;
+/* loaded from: classes3.dex */
+public final class Uh implements Runnable {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ AdRevenue f720a;
+    public final /* synthetic */ C0404li b;
+
+    public Uh(C0404li c0404li, AdRevenue adRevenue) {
+        this.b = c0404li;
+        this.f720a = adRevenue;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ch, io.appmetrica.analytics.impl.Dh
-    public final boolean a(Boolean bool) {
-        return !this.f392a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0404li c0404li = this.b;
+        C0404li.a(c0404li.f993a, c0404li.d, c0404li.e).reportAdRevenue(this.f720a);
     }
 }

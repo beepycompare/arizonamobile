@@ -84,18 +84,18 @@ final class MarqueeModifierElement extends ModifierNodeElement<MarqueeModifierNo
         }
         if (obj instanceof MarqueeModifierElement) {
             MarqueeModifierElement marqueeModifierElement = (MarqueeModifierElement) obj;
-            return this.iterations == marqueeModifierElement.iterations && MarqueeAnimationMode.m352equalsimpl0(this.animationMode, marqueeModifierElement.animationMode) && this.delayMillis == marqueeModifierElement.delayMillis && this.initialDelayMillis == marqueeModifierElement.initialDelayMillis && Intrinsics.areEqual(this.spacing, marqueeModifierElement.spacing) && Dp.m7269equalsimpl0(this.velocity, marqueeModifierElement.velocity);
+            return this.iterations == marqueeModifierElement.iterations && MarqueeAnimationMode.m352equalsimpl0(this.animationMode, marqueeModifierElement.animationMode) && this.delayMillis == marqueeModifierElement.delayMillis && this.initialDelayMillis == marqueeModifierElement.initialDelayMillis && Intrinsics.areEqual(this.spacing, marqueeModifierElement.spacing) && Dp.m8000equalsimpl0(this.velocity, marqueeModifierElement.velocity);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((((Integer.hashCode(this.iterations) * 31) + MarqueeAnimationMode.m353hashCodeimpl(this.animationMode)) * 31) + Integer.hashCode(this.delayMillis)) * 31) + Integer.hashCode(this.initialDelayMillis)) * 31) + this.spacing.hashCode()) * 31) + Dp.m7270hashCodeimpl(this.velocity);
+        return (((((((((Integer.hashCode(this.iterations) * 31) + MarqueeAnimationMode.m353hashCodeimpl(this.animationMode)) * 31) + Integer.hashCode(this.delayMillis)) * 31) + Integer.hashCode(this.initialDelayMillis)) * 31) + this.spacing.hashCode()) * 31) + Dp.m8001hashCodeimpl(this.velocity);
     }
 
     public String toString() {
-        return "MarqueeModifierElement(iterations=" + this.iterations + ", animationMode=" + ((Object) MarqueeAnimationMode.m354toStringimpl(this.animationMode)) + ", delayMillis=" + this.delayMillis + ", initialDelayMillis=" + this.initialDelayMillis + ", spacing=" + this.spacing + ", velocity=" + ((Object) Dp.m7275toStringimpl(this.velocity)) + ')';
+        return "MarqueeModifierElement(iterations=" + this.iterations + ", animationMode=" + ((Object) MarqueeAnimationMode.m354toStringimpl(this.animationMode)) + ", delayMillis=" + this.delayMillis + ", initialDelayMillis=" + this.initialDelayMillis + ", spacing=" + this.spacing + ", velocity=" + ((Object) Dp.m8006toStringimpl(this.velocity)) + ')';
     }
 
     private MarqueeModifierElement(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
@@ -126,6 +126,6 @@ final class MarqueeModifierElement extends ModifierNodeElement<MarqueeModifierNo
         inspectorInfo.getProperties().set("delayMillis", Integer.valueOf(this.delayMillis));
         inspectorInfo.getProperties().set("initialDelayMillis", Integer.valueOf(this.initialDelayMillis));
         inspectorInfo.getProperties().set("spacing", this.spacing);
-        inspectorInfo.getProperties().set("velocity", Dp.m7262boximpl(this.velocity));
+        inspectorInfo.getProperties().set("velocity", Dp.m7993boximpl(this.velocity));
     }
 }

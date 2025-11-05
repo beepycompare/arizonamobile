@@ -1,36 +1,20 @@
 package com.google.android.gms.common;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzc implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        long j = -1;
-        int i = 0;
-        String str = null;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            int fieldId = SafeParcelReader.getFieldId(readHeader);
-            if (fieldId == 1) {
-                str = SafeParcelReader.createString(parcel, readHeader);
-            } else if (fieldId == 2) {
-                i = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 3) {
-                j = SafeParcelReader.readLong(parcel, readHeader);
-            } else {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzc {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static int zza(int i) {
+        int[] iArr = {1, 2, 3};
+        for (int i2 = 0; i2 < 3; i2++) {
+            int i3 = iArr[i2];
+            int i4 = i3 - 1;
+            if (i3 == 0) {
+                throw null;
+            }
+            if (i4 == i) {
+                return i3;
             }
         }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new Feature(str, i, j);
-    }
-
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new Feature[i];
+        return 1;
     }
 }

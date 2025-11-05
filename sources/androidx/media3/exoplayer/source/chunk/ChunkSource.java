@@ -5,7 +5,7 @@ import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import java.io.IOException;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface ChunkSource {
     long getAdjustedSeekPositionUs(long j, SeekParameters seekParameters);
 

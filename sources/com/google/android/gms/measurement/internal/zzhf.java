@@ -5,7 +5,7 @@ import android.util.Pair;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzhf {
     final String zza;
     final /* synthetic */ zzhh zzb;

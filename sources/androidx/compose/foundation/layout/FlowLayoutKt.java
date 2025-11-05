@@ -280,15 +280,15 @@ public final class FlowLayoutKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                            Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                             }
-                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -834,15 +834,15 @@ public final class FlowLayoutKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                            Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                             }
-                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1499,9 +1499,9 @@ public final class FlowLayoutKt {
         if (RowColumnImplKt.getWeight(RowColumnImplKt.getRowColumnParentData(measurable2)) == 0.0f) {
             RowColumnParentData rowColumnParentData = RowColumnImplKt.getRowColumnParentData(measurable2);
             if (((rowColumnParentData == null || (flowLayoutData = rowColumnParentData.getFlowLayoutData()) == null) ? null : Float.valueOf(flowLayoutData.getFillCrossAxisFraction())) == null) {
-                Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
-                function1.invoke(mo5967measureBRTryo0);
-                return IntIntPair.m36constructorimpl(flowLineMeasurePolicy.mainAxisSize(mo5967measureBRTryo0), flowLineMeasurePolicy.crossAxisSize(mo5967measureBRTryo0));
+                Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
+                function1.invoke(mo6697measureBRTryo0);
+                return IntIntPair.m36constructorimpl(flowLineMeasurePolicy.mainAxisSize(mo6697measureBRTryo0), flowLineMeasurePolicy.crossAxisSize(mo6697measureBRTryo0));
             }
         }
         int mainAxisMin = mainAxisMin(measurable2, flowLineMeasurePolicy.isHorizontal(), Integer.MAX_VALUE);
@@ -1518,10 +1518,10 @@ public final class FlowLayoutKt {
         Arrangement.Horizontal horizontalArrangement = flowLineMeasurePolicy.getHorizontalArrangement();
         if (isHorizontal) {
             int i6 = i2 + (measureScope.mo423roundToPx0680j_4(verticalArrangement.mo708getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
-            int m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j);
-            i3 = Constraints.m7216getMaxHeightimpl(j);
-            if (i6 < m7218getMinHeightimpl) {
-                i6 = m7218getMinHeightimpl;
+            int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+            i3 = Constraints.m7947getMaxHeightimpl(j);
+            if (i6 < m7949getMinHeightimpl) {
+                i6 = m7949getMinHeightimpl;
             }
             if (i6 <= i3) {
                 i3 = i6;
@@ -1529,28 +1529,28 @@ public final class FlowLayoutKt {
             verticalArrangement.arrange(measureScope, i3, iArr, iArr2);
         } else {
             int i7 = i2 + (measureScope.mo423roundToPx0680j_4(horizontalArrangement.mo708getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
-            int m7218getMinHeightimpl2 = Constraints.m7218getMinHeightimpl(j);
-            int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
-            if (i7 < m7218getMinHeightimpl2) {
-                i7 = m7218getMinHeightimpl2;
+            int m7949getMinHeightimpl2 = Constraints.m7949getMinHeightimpl(j);
+            int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+            if (i7 < m7949getMinHeightimpl2) {
+                i7 = m7949getMinHeightimpl2;
             }
-            int i8 = i7 > m7216getMaxHeightimpl ? m7216getMaxHeightimpl : i7;
+            int i8 = i7 > m7947getMaxHeightimpl ? m7947getMaxHeightimpl : i7;
             horizontalArrangement.arrange(measureScope, i8, iArr, measureScope.getLayoutDirection(), iArr2);
             i3 = i8;
         }
-        int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-        if (i < m7219getMinWidthimpl) {
-            i = m7219getMinWidthimpl;
+        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+        if (i < m7950getMinWidthimpl) {
+            i = m7950getMinWidthimpl;
         }
-        if (i <= m7217getMaxWidthimpl) {
-            m7217getMaxWidthimpl = i;
+        if (i <= m7948getMaxWidthimpl) {
+            m7948getMaxWidthimpl = i;
         }
         if (isHorizontal) {
-            i5 = m7217getMaxWidthimpl;
+            i5 = m7948getMaxWidthimpl;
             i4 = i3;
         } else {
-            i4 = m7217getMaxWidthimpl;
+            i4 = m7948getMaxWidthimpl;
             i5 = i3;
         }
         return MeasureScope.layout$default(measureScope, i5, i4, null, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda2
@@ -1685,17 +1685,17 @@ public final class FlowLayoutKt {
         MeasureScope measureScope3 = measureScope;
         Iterator<? extends Measurable> it2 = it;
         MutableVector mutableVector = new MutableVector(new MeasureResult[16], 0);
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-        int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-        int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
         MutableIntObjectMap mutableIntObjectMapOf = IntObjectMapKt.mutableIntObjectMapOf();
         ArrayList arrayList = new ArrayList();
         int ceil = (int) Math.ceil(measureScope3.mo429toPx0680j_4(f));
         int ceil2 = (int) Math.ceil(measureScope3.mo429toPx0680j_4(f2));
-        long m806constructorimpl = OrientationIndependentConstraints.m806constructorimpl(0, m7217getMaxWidthimpl, 0, m7216getMaxHeightimpl);
+        long m806constructorimpl = OrientationIndependentConstraints.m806constructorimpl(0, m7948getMaxWidthimpl, 0, m7947getMaxHeightimpl);
         long m821toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m821toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m810copyyUG9Ft0$default(m806constructorimpl, 0, 0, 0, 0, 14, null), flowLineMeasurePolicy.isHorizontal() ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        FlowLineInfo flowLineInfo = it2 instanceof ContextualFlowItemIterator ? new FlowLineInfo(0, 0, measureScope3.mo426toDpu2uoSUM(m7217getMaxWidthimpl), measureScope3.mo426toDpu2uoSUM(m7216getMaxHeightimpl), null) : null;
+        FlowLineInfo flowLineInfo = it2 instanceof ContextualFlowItemIterator ? new FlowLineInfo(0, 0, measureScope3.mo426toDpu2uoSUM(m7948getMaxWidthimpl), measureScope3.mo426toDpu2uoSUM(m7947getMaxHeightimpl), null) : null;
         Measurable safeNext = !it2.hasNext() ? null : safeNext(it2, flowLineInfo);
         IntIntPair m33boximpl2 = safeNext != null ? IntIntPair.m33boximpl(m760measureAndCacherqJ1uqs(safeNext, flowLineMeasurePolicy, m821toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
@@ -1713,19 +1713,19 @@ public final class FlowLayoutKt {
         MutableIntList mutableIntList5 = new MutableIntList(0, 1, null);
         MutableIntSet mutableIntSetOf = IntSetKt.mutableIntSetOf();
         FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i, flowLayoutOverflowState, j, i2, ceil, ceil2, null);
-        FlowLayoutBuildingBlocks.WrapInfo m754getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m754getWrapInfoOpUlnko(it2.hasNext(), 0, IntIntPair.m36constructorimpl(m7217getMaxWidthimpl, m7216getMaxHeightimpl), m33boximpl2, 0, 0, 0, false, false);
+        FlowLayoutBuildingBlocks.WrapInfo m754getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m754getWrapInfoOpUlnko(it2.hasNext(), 0, IntIntPair.m36constructorimpl(m7948getMaxWidthimpl, m7947getMaxHeightimpl), m33boximpl2, 0, 0, 0, false, false);
         if (m754getWrapInfoOpUlnko.isLastItemInContainer()) {
-            wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m754getWrapInfoOpUlnko, m33boximpl2 != null, -1, 0, m7217getMaxWidthimpl, 0);
-            i3 = m7217getMaxWidthimpl;
+            wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m754getWrapInfoOpUlnko, m33boximpl2 != null, -1, 0, m7948getMaxWidthimpl, 0);
+            i3 = m7948getMaxWidthimpl;
         } else {
-            i3 = m7217getMaxWidthimpl;
+            i3 = m7948getMaxWidthimpl;
             wrapEllipsisInfo = null;
         }
         FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo3 = wrapEllipsisInfo;
         MutableIntList mutableIntList6 = mutableIntList4;
         int i12 = i3;
         FlowLayoutBuildingBlocks.WrapInfo wrapInfo = m754getWrapInfoOpUlnko;
-        int i13 = m7219getMinWidthimpl;
+        int i13 = m7950getMinWidthimpl;
         int i14 = 0;
         int i15 = 0;
         int i16 = 0;
@@ -1733,7 +1733,7 @@ public final class FlowLayoutKt {
         int i17 = 0;
         int i18 = 0;
         MutableIntSet mutableIntSet = mutableIntSetOf;
-        int i19 = m7216getMaxHeightimpl;
+        int i19 = m7947getMaxHeightimpl;
         Measurable measurable2 = measurable;
         int i20 = 0;
         while (!wrapInfo.isLastItemInContainer() && measurable2 != null) {
@@ -1823,7 +1823,7 @@ public final class FlowLayoutKt {
                 if (z2) {
                     mutableIntSet2.plusAssign(i30);
                 }
-                int i32 = (m7216getMaxHeightimpl - i31) - ceil2;
+                int i32 = (m7947getMaxHeightimpl - i31) - ceil2;
                 mutableIntSet = mutableIntSet2;
                 mutableIntList2 = mutableIntList6;
                 mutableIntList2.add(i24);
@@ -1899,14 +1899,14 @@ public final class FlowLayoutKt {
             int i39 = iArr5[i37];
             int i40 = mutableIntList8.get(i37);
             if (!mutableIntSet3.contains(i37)) {
-                i40 = Constraints.m7216getMaxHeightimpl(m806constructorimpl) == Integer.MAX_VALUE ? Integer.MAX_VALUE : Constraints.m7216getMaxHeightimpl(m806constructorimpl) - i38;
+                i40 = Constraints.m7947getMaxHeightimpl(m806constructorimpl) == Integer.MAX_VALUE ? Integer.MAX_VALUE : Constraints.m7947getMaxHeightimpl(m806constructorimpl) - i38;
             }
             int i41 = i35;
             MutableIntSet mutableIntSet4 = mutableIntSet3;
             int[] iArr6 = iArr3;
             Placeable[] placeableArr2 = placeableArr;
             MutableIntList mutableIntList11 = mutableIntList8;
-            MeasureResult measure = RowColumnMeasurePolicyKt.measure(flowLineMeasurePolicy, i13, Constraints.m7218getMinHeightimpl(m806constructorimpl), Constraints.m7217getMaxWidthimpl(m806constructorimpl), i40, ceil, measureScope3, arrayList, placeableArr2, i36, i39, iArr6, i37);
+            MeasureResult measure = RowColumnMeasurePolicyKt.measure(flowLineMeasurePolicy, i13, Constraints.m7949getMinHeightimpl(m806constructorimpl), Constraints.m7948getMaxWidthimpl(m806constructorimpl), i40, ceil, measureScope3, arrayList, placeableArr2, i36, i39, iArr6, i37);
             if (flowLineMeasurePolicy.isHorizontal()) {
                 height = measure.getWidth();
                 width = measure.getHeight();

@@ -14,8 +14,8 @@ import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: AnchoredDraggable.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00052\u0006\u0010\u0006\u001a\u0002H\u0002H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/material3/internal/AnchoredDragScope;", "anchors", "Landroidx/compose/material3/internal/DraggableAnchors;", "latestTarget"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.internal.AnchoredDraggableKt$animateTo$2", f = "AnchoredDraggable.kt", i = {}, l = {685}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00052\u0006\u0010\u0006\u001a\u0002H\u0002H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/material3/internal/AnchoredDragScope;", "anchors", "Landroidx/compose/material3/internal/DraggableAnchors;", "latestTarget"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.internal.AnchoredDraggableKt$animateTo$2", f = "AnchoredDraggable.kt", i = {}, l = {682}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class AnchoredDraggableKt$animateTo$2<T> extends SuspendLambda implements Function4<AnchoredDragScope, DraggableAnchors<T>, T, Continuation<? super Unit>, Object> {
     final /* synthetic */ AnchoredDraggableState<T> $this_animateTo;
@@ -62,21 +62,12 @@ final class AnchoredDraggableKt$animateTo$2<T> extends SuspendLambda implements 
                 this.L$0 = null;
                 this.L$1 = null;
                 this.label = 1;
-                if (SuspendAnimationKt.animate(floatRef.element, positionOf, this.$velocity, this.$this_animateTo.getAnimationSpec(), new Function2<Float, Float, Unit>() { // from class: androidx.compose.material3.internal.AnchoredDraggableKt$animateTo$2.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(2);
-                    }
-
+                if (SuspendAnimationKt.animate(floatRef.element, positionOf, this.$velocity, this.$this_animateTo.getAnimationSpec().invoke(), new Function2() { // from class: androidx.compose.material3.internal.AnchoredDraggableKt$animateTo$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Float f, Float f2) {
-                        invoke(f.floatValue(), f2.floatValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(float f, float f2) {
-                        AnchoredDragScope.this.dragTo(f, f2);
-                        floatRef.element = f;
+                    public final Object invoke(Object obj2, Object obj3) {
+                        Unit invokeSuspend$lambda$0;
+                        invokeSuspend$lambda$0 = AnchoredDraggableKt$animateTo$2.invokeSuspend$lambda$0(AnchoredDragScope.this, floatRef, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
+                        return invokeSuspend$lambda$0;
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -87,6 +78,13 @@ final class AnchoredDraggableKt$animateTo$2<T> extends SuspendLambda implements 
         } else {
             ResultKt.throwOnFailure(obj);
         }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(AnchoredDragScope anchoredDragScope, Ref.FloatRef floatRef, float f, float f2) {
+        anchoredDragScope.dragTo(f, f2);
+        floatRef.element = f;
         return Unit.INSTANCE;
     }
 }

@@ -1,17 +1,23 @@
 package com.google.android.gms.internal.common;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzg {
-    private static final zzd zza;
-    private static volatile zzd zzb;
 
-    static {
-        zze zzeVar = new zze(null);
-        zza = zzeVar;
-        zzb = zzeVar;
+import android.os.Handler;
+import android.os.Looper;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public class zzg extends Handler {
+    private final Looper zza;
+
+    public zzg() {
+        this.zza = Looper.getMainLooper();
     }
 
-    public static zzd zza() {
-        return zzb;
+    public zzg(Looper looper) {
+        super(looper);
+        this.zza = Looper.getMainLooper();
+    }
+
+    public zzg(Looper looper, Handler.Callback callback) {
+        super(looper, callback);
+        this.zza = Looper.getMainLooper();
     }
 }

@@ -25,7 +25,7 @@ public class FragmentTransitionSupport extends FragmentTransitionImpl {
     @Override // androidx.fragment.app.FragmentTransitionImpl
     public Object cloneTransition(Object obj) {
         if (obj != null) {
-            return ((Transition) obj).mo8306clone();
+            return ((Transition) obj).mo9036clone();
         }
         return null;
     }

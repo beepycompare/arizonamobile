@@ -48,6 +48,6 @@ final class AnimationDataConverter implements TwoWayConverter<AnimationData, Ani
         float v1 = animationVector4D.getV1();
         float v2 = animationVector4D.getV2();
         float v3 = animationVector4D.getV3();
-        return new AnimationData(v1, Offset.m4297constructorimpl((Float.floatToRawIntBits(v3) & 4294967295L) | (Float.floatToRawIntBits(v2) << 32)), animationVector4D.getV4(), null);
+        return new AnimationData(v1, Offset.m5027constructorimpl((Float.floatToRawIntBits(v3) & 4294967295L) | (Float.floatToRawIntBits(v2) << 32)), animationVector4D.getV4(), null);
     }
 }

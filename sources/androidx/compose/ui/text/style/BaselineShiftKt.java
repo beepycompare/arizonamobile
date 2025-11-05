@@ -8,7 +8,7 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class BaselineShiftKt {
     /* renamed from: lerp-jWV1Mfo  reason: not valid java name */
-    public static final float m7033lerpjWV1Mfo(float f, float f2, float f3) {
-        return BaselineShift.m7021constructorimpl(MathHelpersKt.lerp(f, f2, f3));
+    public static final float m7764lerpjWV1Mfo(float f, float f2, float f3) {
+        return BaselineShift.m7752constructorimpl(MathHelpersKt.lerp(f, f2, f3));
     }
 }

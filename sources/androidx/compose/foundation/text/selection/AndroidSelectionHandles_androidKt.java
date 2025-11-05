@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.RowScopeInstance;
 import androidx.compose.foundation.layout.SizeKt;
 import androidx.compose.foundation.layout.SpacerKt;
 import androidx.compose.foundation.text.Handle;
-import androidx.compose.material3.MenuKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
@@ -134,7 +133,7 @@ public final class AndroidSelectionHandles_androidKt {
             startRestartGroup.startDefaults();
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 16) != 0) {
-                    j2 = DpSize.Companion.m7371getUnspecifiedMYxV2XQ();
+                    j2 = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
                     i3 &= -57345;
                 }
                 startRestartGroup.endDefaults();
@@ -210,7 +209,7 @@ public final class AndroidSelectionHandles_androidKt {
                                 } else {
                                     left = Arrangement.Absolute.INSTANCE.getLeft();
                                 }
-                                Modifier m890requiredSizeInqDBjuR0$default = SizeKt.m890requiredSizeInqDBjuR0$default(this.$semanticsModifier, DpSize.m7362getWidthD9Ej5fM(this.$minTouchTargetSize), DpSize.m7360getHeightD9Ej5fM(this.$minTouchTargetSize), 0.0f, 0.0f, 12, null);
+                                Modifier m890requiredSizeInqDBjuR0$default = SizeKt.m890requiredSizeInqDBjuR0$default(this.$semanticsModifier, DpSize.m8093getWidthD9Ej5fM(this.$minTouchTargetSize), DpSize.m8091getHeightD9Ej5fM(this.$minTouchTargetSize), 0.0f, 0.0f, 12, null);
                                 final OffsetProvider offsetProvider = this.$offsetProvider;
                                 boolean z = this.$isLeft;
                                 ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
@@ -230,15 +229,15 @@ public final class AndroidSelectionHandles_androidKt {
                                 } else {
                                     composer.useNode();
                                 }
-                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
-                                Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
+                                Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                    m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                 }
-                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer, -1665345997, "C106@4633L40,104@4529L208:AndroidSelectionHandles.android.kt#eksfi3");
@@ -410,7 +409,7 @@ public final class AndroidSelectionHandles_androidKt {
                 Canvas canvas = HandleImageCache.INSTANCE.getCanvas();
                 CanvasDrawScope canvasDrawScope = HandleImageCache.INSTANCE.getCanvasDrawScope();
                 if (imageBitmap == null || canvas == null || ceil > imageBitmap.getWidth() || ceil > imageBitmap.getHeight()) {
-                    imageBitmap = ImageBitmapKt.m4786ImageBitmapx__hDU$default(ceil, ceil, ImageBitmapConfig.Companion.m4780getAlpha8_sVssgQ(), false, null, 24, null);
+                    imageBitmap = ImageBitmapKt.m5516ImageBitmapx__hDU$default(ceil, ceil, ImageBitmapConfig.Companion.m5510getAlpha8_sVssgQ(), false, null, 24, null);
                     HandleImageCache.INSTANCE.setImageBitmap(imageBitmap);
                     canvas = CanvasKt.Canvas(imageBitmap);
                     HandleImageCache.INSTANCE.setCanvas(canvas);
@@ -423,28 +422,28 @@ public final class AndroidSelectionHandles_androidKt {
                 }
                 CanvasDrawScope canvasDrawScope2 = canvasDrawScope;
                 LayoutDirection layoutDirection = cacheDrawScope.getLayoutDirection();
-                long m4365constructorimpl = Size.m4365constructorimpl((Float.floatToRawIntBits(imageBitmap2.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(imageBitmap2.getWidth()) << 32));
+                long m5095constructorimpl = Size.m5095constructorimpl((Float.floatToRawIntBits(imageBitmap2.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(imageBitmap2.getWidth()) << 32));
                 CanvasDrawScope.DrawParams drawParams = canvasDrawScope2.getDrawParams();
                 Density component1 = drawParams.component1();
                 LayoutDirection component2 = drawParams.component2();
                 Canvas component3 = drawParams.component3();
-                long m5045component4NHjbRc = drawParams.m5045component4NHjbRc();
+                long m5775component4NHjbRc = drawParams.m5775component4NHjbRc();
                 CanvasDrawScope.DrawParams drawParams2 = canvasDrawScope2.getDrawParams();
                 drawParams2.setDensity(cacheDrawScope);
                 drawParams2.setLayoutDirection(layoutDirection);
                 drawParams2.setCanvas(canvas2);
-                drawParams2.m5048setSizeuvyYCjk(m4365constructorimpl);
+                drawParams2.m5778setSizeuvyYCjk(m5095constructorimpl);
                 canvas2.save();
                 CanvasDrawScope canvasDrawScope3 = canvasDrawScope2;
-                DrawScope.m5122drawRectnJ9OG0$default(canvasDrawScope3, Color.Companion.m4575getBlack0d7_KjU(), 0L, canvasDrawScope3.mo5128getSizeNHjbRc(), 0.0f, null, null, BlendMode.Companion.m4463getClear0nO6VwU(), 58, null);
-                DrawScope.m5122drawRectnJ9OG0$default(canvasDrawScope3, ColorKt.Color(4278190080L), Offset.Companion.m4321getZeroF1C5BW0(), Size.m4365constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
-                DrawScope.m5109drawCircleVaOC9Bg$default(canvasDrawScope3, ColorKt.Color(4278190080L), f, Offset.m4297constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
+                DrawScope.m5852drawRectnJ9OG0$default(canvasDrawScope3, Color.Companion.m5305getBlack0d7_KjU(), 0L, canvasDrawScope3.mo5858getSizeNHjbRc(), 0.0f, null, null, BlendMode.Companion.m5193getClear0nO6VwU(), 58, null);
+                DrawScope.m5852drawRectnJ9OG0$default(canvasDrawScope3, ColorKt.Color(4278190080L), Offset.Companion.m5051getZeroF1C5BW0(), Size.m5095constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 120, null);
+                DrawScope.m5839drawCircleVaOC9Bg$default(canvasDrawScope3, ColorKt.Color(4278190080L), f, Offset.m5027constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)), 0.0f, null, null, 0, 120, null);
                 canvas2.restore();
                 CanvasDrawScope.DrawParams drawParams3 = canvasDrawScope2.getDrawParams();
                 drawParams3.setDensity(component1);
                 drawParams3.setLayoutDirection(component2);
                 drawParams3.setCanvas(component3);
-                drawParams3.m5048setSizeuvyYCjk(m5045component4NHjbRc);
+                drawParams3.m5778setSizeuvyYCjk(m5775component4NHjbRc);
                 return imageBitmap2;
             }
 

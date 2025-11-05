@@ -3,11 +3,11 @@ package io.appmetrica.analytics.ecommerce;
 import java.util.List;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ECommerceProduct {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f318a;
+    private final String f334a;
     private String b;
     private List c;
     private Map d;
@@ -16,7 +16,7 @@ public class ECommerceProduct {
     private List g;
 
     public ECommerceProduct(String str) {
-        this.f318a = str;
+        this.f334a = str;
     }
 
     public ECommercePrice getActualPrice() {
@@ -44,7 +44,7 @@ public class ECommerceProduct {
     }
 
     public String getSku() {
-        return this.f318a;
+        return this.f334a;
     }
 
     public ECommerceProduct setActualPrice(ECommercePrice eCommercePrice) {
@@ -78,6 +78,6 @@ public class ECommerceProduct {
     }
 
     public String toString() {
-        return "ECommerceProduct{sku='" + this.f318a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceProduct{sku='" + this.f334a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
     }
 }

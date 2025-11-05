@@ -1,14 +1,11 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Jh extends AbstractC0463nh {
-    public Jh(C0652v5 c0652v5) {
-        super(c0652v5);
-    }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0463nh
-    public final boolean a(C0478o6 c0478o6) {
-        K9 k9 = this.f1006a.n;
-        k9.a(c0478o6, C0157bl.a(k9.c.b(c0478o6), c0478o6.i));
-        return false;
+import android.content.Context;
+/* loaded from: classes3.dex */
+public final class Jh implements InterfaceC0236f5 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0236f5
+    /* renamed from: b */
+    public final Ih a(Context context, X4 x4, C0639v4 c0639v4, Em em) {
+        return new Ih(context, x4, c0639v4, C0620ua.H.h(), em.e(), new Kg(em), new W4());
     }
 }

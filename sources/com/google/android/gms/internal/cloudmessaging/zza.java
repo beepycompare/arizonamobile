@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cloudmessaging;
 
 import android.os.Build;
 /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zza {
     public static final int zza;
 

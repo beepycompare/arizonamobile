@@ -12,7 +12,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.card.MaterialCardView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class LayoutCraftSuccessBinding implements ViewBinding {
     public final Button btnAcceptCraft;
     public final MaterialCardView cvSuccessCraft;

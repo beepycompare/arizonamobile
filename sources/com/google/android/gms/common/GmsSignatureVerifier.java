@@ -1,27 +1,27 @@
 package com.google.android.gms.common;
 
-import com.google.android.gms.internal.common.zzak;
+import com.google.android.gms.internal.common.zzah;
 import java.util.HashMap;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class GmsSignatureVerifier {
-    private static final zzaa zza;
-    private static final zzaa zzb;
+    private static final zzab zza;
+    private static final zzab zzb;
     private static final HashMap zzc;
 
     static {
-        zzy zzyVar = new zzy();
-        zzyVar.zzd("com.google.android.gms");
-        zzyVar.zza(204200000L);
-        zzyVar.zzc(zzak.zzn(zzn.zzd.zzf(), zzn.zzb.zzf()));
-        zzyVar.zzb(zzak.zzn(zzn.zzc.zzf(), zzn.zza.zzf()));
-        zza = zzyVar.zze();
-        zzy zzyVar2 = new zzy();
-        zzyVar2.zzd("com.android.vending");
-        zzyVar2.zza(82240000L);
-        zzyVar2.zzc(zzak.zzm(zzn.zzd.zzf()));
-        zzyVar2.zzb(zzak.zzm(zzn.zzc.zzf()));
-        zzb = zzyVar2.zze();
+        zzaa zzaaVar = new zzaa();
+        zzaaVar.zza("com.google.android.gms");
+        zzaaVar.zzb(204200000L);
+        zzaaVar.zzc(zzah.zzm(zzo.zzf.zzc(), zzo.zzd.zzc(), zzo.zzb.zzc()));
+        zzaaVar.zzd(zzah.zzm(zzo.zze.zzc(), zzo.zzc.zzc(), zzo.zza.zzc()));
+        zza = zzaaVar.zze();
+        zzaa zzaaVar2 = new zzaa();
+        zzaaVar2.zza("com.android.vending");
+        zzaaVar2.zzb(82240000L);
+        zzaaVar2.zzc(zzah.zzk(zzo.zzf.zzc()));
+        zzaaVar2.zzd(zzah.zzl(zzo.zze.zzc(), zzo.zzc.zzc()));
+        zzb = zzaaVar2.zze();
         zzc = new HashMap();
     }
 }

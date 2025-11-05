@@ -41,28 +41,28 @@ public final class TouchBoundsExpansionKt {
         if (!z) {
             InlineClassHelperKt.throwIllegalArgumentException("Bottom must be in the range of 0 .. 32767");
         }
-        return TouchBoundsExpansion.m6342constructorimpl(TouchBoundsExpansion.Companion.pack$ui_release(i, i2, i3, i4, true));
+        return TouchBoundsExpansion.m7072constructorimpl(TouchBoundsExpansion.Companion.pack$ui_release(i, i2, i3, i4, true));
     }
 
     /* renamed from: DpTouchBoundsExpansion-a9UjIt4 */
-    public static final DpTouchBoundsExpansion m6356DpTouchBoundsExpansiona9UjIt4(float f, float f2, float f3, float f4) {
+    public static final DpTouchBoundsExpansion m7086DpTouchBoundsExpansiona9UjIt4(float f, float f2, float f3, float f4) {
         return new DpTouchBoundsExpansion(f, f2, f3, f4, true, null);
     }
 
     /* renamed from: DpTouchBoundsExpansion-a9UjIt4$default */
-    public static /* synthetic */ DpTouchBoundsExpansion m6357DpTouchBoundsExpansiona9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ DpTouchBoundsExpansion m7087DpTouchBoundsExpansiona9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7264constructorimpl(0);
+            f = Dp.m7995constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7264constructorimpl(0);
+            f2 = Dp.m7995constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7264constructorimpl(0);
+            f3 = Dp.m7995constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7264constructorimpl(0);
+            f4 = Dp.m7995constructorimpl(0);
         }
-        return m6356DpTouchBoundsExpansiona9UjIt4(f, f2, f3, f4);
+        return m7086DpTouchBoundsExpansiona9UjIt4(f, f2, f3, f4);
     }
 }

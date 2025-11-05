@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.text;
 import androidx.media3.extractor.text.SimpleSubtitleDecoder;
 import androidx.media3.extractor.text.Subtitle;
 import androidx.media3.extractor.text.SubtitleParser;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class DelegatingSubtitleDecoder extends SimpleSubtitleDecoder {
     private final SubtitleParser subtitleParser;
 

@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ClientIdentity extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ClientIdentity> CREATOR = new zaa();
     public final String packageName;

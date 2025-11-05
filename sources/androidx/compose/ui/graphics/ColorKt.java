@@ -8,7 +8,7 @@ import androidx.compose.ui.graphics.colorspace.Rgb;
 import androidx.compose.ui.util.MathHelpersKt;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import io.appmetrica.analytics.impl.O2;
+import io.appmetrica.analytics.impl.H2;
 import kotlin.Metadata;
 import kotlin.ULong;
 import kotlin.jvm.functions.Function0;
@@ -16,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.ws.WebSocketProtocol;
 import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
 /* compiled from: Color.kt */
-@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0013\n\u0002\u0010\u0014\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a9\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\rH\u0007¢\u0006\u0002\u0010\u000e\u001a9\u0010\u000f\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\rH\u0001¢\u0006\u0002\u0010\u000e\u001a\u0017\u0010\u0005\u001a\u00020\u00062\b\b\u0001\u0010\u0010\u001a\u00020\u0011H\u0007¢\u0006\u0002\u0010\u0012\u001a\u0015\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u0013H\u0007¢\u0006\u0002\u0010\u0014\u001a5\u0010\u0005\u001a\u00020\u00062\b\b\u0001\u0010\u0007\u001a\u00020\u00112\b\b\u0001\u0010\t\u001a\u00020\u00112\b\b\u0001\u0010\n\u001a\u00020\u00112\b\b\u0003\u0010\u000b\u001a\u00020\u0011H\u0007¢\u0006\u0002\u0010\u0015\u001a)\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00062\b\b\u0001\u0010\u0019\u001a\u00020\bH\u0007¢\u0006\u0004\b\u001a\u0010\u001b\u001a\u001b\u0010\u001c\u001a\u00020\u0006*\u00020\u00062\u0006\u0010\u001d\u001a\u00020\u0006H\u0007¢\u0006\u0004\b\u001e\u0010\u001f\u001a1\u0010 \u001a\u00020\b2\u0006\u0010!\u001a\u00020\b2\u0006\u0010\"\u001a\u00020\b2\u0006\u0010#\u001a\u00020\b2\u0006\u0010$\u001a\u00020\b2\u0006\u0010%\u001a\u00020\bH\u0082\b\u001a\u0013\u0010&\u001a\u00020'*\u00020\u0006H\u0003¢\u0006\u0004\b(\u0010)\u001a\u0013\u0010*\u001a\u00020\b*\u00020\u0006H\u0007¢\u0006\u0004\b+\u0010,\u001a\u0013\u0010-\u001a\u00020\u0011*\u00020\u0006H\u0007¢\u0006\u0004\b.\u0010/\u001a\"\u00109\u001a\u00020\u0006*\u00020\u00062\f\u0010:\u001a\b\u0012\u0004\u0012\u00020\u00060;H\u0086\b¢\u0006\u0004\b<\u0010=\"\u0018\u0010\u0000\u001a\u00020\u00018\u0000X\u0081T¢\u0006\n\n\u0002\u0010\u0004\u0012\u0004\b\u0002\u0010\u0003\"\u001f\u00100\u001a\u000201*\u00020\u00068Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b2\u00103\u001a\u0004\b4\u00105\"\u001f\u00106\u001a\u000201*\u00020\u00068Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b7\u00103\u001a\u0004\b8\u00105¨\u0006>"}, d2 = {"UnspecifiedColor", "Lkotlin/ULong;", "getUnspecifiedColor$annotations", "()V", "J", "Color", "Landroidx/compose/ui/graphics/Color;", CasesSameCasesAdapter.NEW, "", CasesSameCasesAdapter.TOP, "blue", "alpha", "colorSpace", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J", "UncheckedColor", "color", "", "(I)J", "", "(J)J", "(IIII)J", "lerp", TtmlNode.START, "stop", "fraction", "lerp-jxsXWHM", "(JJF)J", "compositeOver", O2.g, "compositeOver--OWjLjI", "(JJ)J", "compositeComponent", "fgC", "bgC", "fgA", "bgA", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "getComponents", "", "getComponents-8_81llA", "(J)[F", "luminance", "luminance-8_81llA", "(J)F", "toArgb", "toArgb-8_81llA", "(J)I", "isSpecified", "", "isSpecified-8_81llA$annotations", "(J)V", "isSpecified-8_81llA", "(J)Z", "isUnspecified", "isUnspecified-8_81llA$annotations", "isUnspecified-8_81llA", "takeOrElse", "block", "Lkotlin/Function0;", "takeOrElse-DxMtmZc", "(JLkotlin/jvm/functions/Function0;)J", "ui-graphics_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0013\n\u0002\u0010\u0014\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a9\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\rH\u0007¢\u0006\u0002\u0010\u000e\u001a9\u0010\u000f\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\rH\u0001¢\u0006\u0002\u0010\u000e\u001a\u0017\u0010\u0005\u001a\u00020\u00062\b\b\u0001\u0010\u0010\u001a\u00020\u0011H\u0007¢\u0006\u0002\u0010\u0012\u001a\u0015\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u0013H\u0007¢\u0006\u0002\u0010\u0014\u001a5\u0010\u0005\u001a\u00020\u00062\b\b\u0001\u0010\u0007\u001a\u00020\u00112\b\b\u0001\u0010\t\u001a\u00020\u00112\b\b\u0001\u0010\n\u001a\u00020\u00112\b\b\u0003\u0010\u000b\u001a\u00020\u0011H\u0007¢\u0006\u0002\u0010\u0015\u001a)\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00062\b\b\u0001\u0010\u0019\u001a\u00020\bH\u0007¢\u0006\u0004\b\u001a\u0010\u001b\u001a\u001b\u0010\u001c\u001a\u00020\u0006*\u00020\u00062\u0006\u0010\u001d\u001a\u00020\u0006H\u0007¢\u0006\u0004\b\u001e\u0010\u001f\u001a1\u0010 \u001a\u00020\b2\u0006\u0010!\u001a\u00020\b2\u0006\u0010\"\u001a\u00020\b2\u0006\u0010#\u001a\u00020\b2\u0006\u0010$\u001a\u00020\b2\u0006\u0010%\u001a\u00020\bH\u0082\b\u001a\u0013\u0010&\u001a\u00020'*\u00020\u0006H\u0003¢\u0006\u0004\b(\u0010)\u001a\u0013\u0010*\u001a\u00020\b*\u00020\u0006H\u0007¢\u0006\u0004\b+\u0010,\u001a\u0013\u0010-\u001a\u00020\u0011*\u00020\u0006H\u0007¢\u0006\u0004\b.\u0010/\u001a\"\u00109\u001a\u00020\u0006*\u00020\u00062\f\u0010:\u001a\b\u0012\u0004\u0012\u00020\u00060;H\u0086\b¢\u0006\u0004\b<\u0010=\"\u0018\u0010\u0000\u001a\u00020\u00018\u0000X\u0081T¢\u0006\n\n\u0002\u0010\u0004\u0012\u0004\b\u0002\u0010\u0003\"\u001f\u00100\u001a\u000201*\u00020\u00068Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b2\u00103\u001a\u0004\b4\u00105\"\u001f\u00106\u001a\u000201*\u00020\u00068Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b7\u00103\u001a\u0004\b8\u00105¨\u0006>"}, d2 = {"UnspecifiedColor", "Lkotlin/ULong;", "getUnspecifiedColor$annotations", "()V", "J", "Color", "Landroidx/compose/ui/graphics/Color;", CasesSameCasesAdapter.NEW, "", CasesSameCasesAdapter.TOP, "blue", "alpha", "colorSpace", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J", "UncheckedColor", "color", "", "(I)J", "", "(J)J", "(IIII)J", "lerp", TtmlNode.START, "stop", "fraction", "lerp-jxsXWHM", "(JJF)J", "compositeOver", H2.g, "compositeOver--OWjLjI", "(JJ)J", "compositeComponent", "fgC", "bgC", "fgA", "bgA", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "getComponents", "", "getComponents-8_81llA", "(J)[F", "luminance", "luminance-8_81llA", "(J)F", "toArgb", "toArgb-8_81llA", "(J)I", "isSpecified", "", "isSpecified-8_81llA$annotations", "(J)V", "isSpecified-8_81llA", "(J)Z", "isUnspecified", "isUnspecified-8_81llA$annotations", "isUnspecified-8_81llA", "takeOrElse", "block", "Lkotlin/Function0;", "takeOrElse-DxMtmZc", "(JLkotlin/jvm/functions/Function0;)J", "ui-graphics_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ColorKt {
     public static final long UnspecifiedColor = 16;
@@ -32,21 +32,21 @@ public final class ColorKt {
     }
 
     /* renamed from: isSpecified-8_81llA  reason: not valid java name */
-    public static final boolean m4596isSpecified8_81llA(long j) {
+    public static final boolean m5326isSpecified8_81llA(long j) {
         return j != 16;
     }
 
     /* renamed from: isSpecified-8_81llA$annotations  reason: not valid java name */
-    public static /* synthetic */ void m4597isSpecified8_81llA$annotations(long j) {
+    public static /* synthetic */ void m5327isSpecified8_81llA$annotations(long j) {
     }
 
     /* renamed from: isUnspecified-8_81llA  reason: not valid java name */
-    public static final boolean m4598isUnspecified8_81llA(long j) {
+    public static final boolean m5328isUnspecified8_81llA(long j) {
         return j == 16;
     }
 
     /* renamed from: isUnspecified-8_81llA$annotations  reason: not valid java name */
-    public static /* synthetic */ void m4599isUnspecified8_81llA$annotations(long j) {
+    public static /* synthetic */ void m5329isUnspecified8_81llA$annotations(long j) {
     }
 
     public static /* synthetic */ long Color$default(float f, float f2, float f3, float f4, ColorSpace colorSpace, int i, Object obj) {
@@ -104,7 +104,7 @@ public final class ColorKt {
                 f8 = 1.0f;
             }
             int i13 = i12 | (((int) ((f8 * 255.0f) + 0.5f)) << 8);
-            return Color.m4545constructorimpl(ULong.m9285constructorimpl(ULong.m9285constructorimpl(i13 | ((int) ((((f3 >= 0.0f ? f3 : 0.0f) <= 1.0f ? f5 : 1.0f) * 255.0f) + 0.5f))) << 32));
+            return Color.m5275constructorimpl(ULong.m10026constructorimpl(ULong.m10026constructorimpl(i13 | ((int) ((((f3 >= 0.0f ? f3 : 0.0f) <= 1.0f ? f5 : 1.0f) * 255.0f) + 0.5f))) << 32));
         }
         if (!(colorSpace.getComponentCount() == 3)) {
             InlineClassHelperKt.throwIllegalArgumentException("Color only works with ColorSpaces with 3 components");
@@ -187,7 +187,7 @@ public final class ColorKt {
                                         int i24 = i22 >> 13;
                                         if ((floatToRawIntBits3 & 4096) != 0) {
                                             i10 = (((i23 << 10) | i24) + 1) | (i21 << 15);
-                                            return Color.m4545constructorimpl(ULong.m9285constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
+                                            return Color.m5275constructorimpl(ULong.m10026constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
                                         }
                                         i9 = i24;
                                         r8 = i23;
@@ -204,7 +204,7 @@ public final class ColorKt {
                                 i10 = i9 | (i21 << 15) | (r8 << 10);
                                 if (f4 >= 0.0f) {
                                 }
-                                return Color.m4545constructorimpl(ULong.m9285constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
+                                return Color.m5275constructorimpl(ULong.m10026constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
                             }
                             i6 = i20;
                         } else if (i5 >= -10) {
@@ -236,7 +236,7 @@ public final class ColorKt {
                     i10 = i9 | (i212 << 15) | (r8 << 10);
                     if (f4 >= 0.0f) {
                     }
-                    return Color.m4545constructorimpl(ULong.m9285constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s22 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
+                    return Color.m5275constructorimpl(ULong.m10026constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s22 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
                 }
                 i2 = i17;
             } else if (i >= -10) {
@@ -282,7 +282,7 @@ public final class ColorKt {
         i10 = i9 | (i2122 << 15) | (r8 << 10);
         if (f4 >= 0.0f) {
         }
-        return Color.m4545constructorimpl(ULong.m9285constructorimpl((id$ui_graphics_release & 63) | ((s3 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s222 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
+        return Color.m5275constructorimpl(ULong.m10026constructorimpl((id$ui_graphics_release & 63) | ((s3 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s222 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
     }
 
     public static /* synthetic */ long UncheckedColor$default(float f, float f2, float f3, float f4, ColorSpace colorSpace, int i, Object obj) {
@@ -313,7 +313,7 @@ public final class ColorKt {
         int i8;
         int i9;
         if (colorSpace.isSrgb()) {
-            return Color.m4545constructorimpl(ULong.m9285constructorimpl(ULong.m9285constructorimpl((((((int) ((f4 * 255.0f) + 0.5f)) << 24) | (((int) ((f * 255.0f) + 0.5f)) << 16)) | (((int) ((f2 * 255.0f) + 0.5f)) << 8)) | ((int) ((255.0f * f3) + 0.5f))) << 32));
+            return Color.m5275constructorimpl(ULong.m10026constructorimpl(ULong.m10026constructorimpl((((((int) ((f4 * 255.0f) + 0.5f)) << 24) | (((int) ((f * 255.0f) + 0.5f)) << 16)) | (((int) ((f2 * 255.0f) + 0.5f)) << 8)) | ((int) ((255.0f * f3) + 0.5f))) << 32));
         }
         int floatToRawIntBits = Float.floatToRawIntBits(f);
         int i10 = floatToRawIntBits >>> 31;
@@ -365,7 +365,7 @@ public final class ColorKt {
                                             i14 = i20 >> 13;
                                             if ((floatToRawIntBits3 & 4096) != 0) {
                                                 i9 = (((i21 << 10) | i14) + 1) | (i19 << 15);
-                                                return Color.m4545constructorimpl(ULong.m9285constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
+                                                return Color.m5275constructorimpl(ULong.m10026constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
                                             }
                                             i13 = i21;
                                         } else if (i21 >= -10) {
@@ -381,7 +381,7 @@ public final class ColorKt {
                                     }
                                 }
                                 i9 = (i19 << 15) | (i13 << 10) | i14;
-                                return Color.m4545constructorimpl(ULong.m9285constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
+                                return Color.m5275constructorimpl(ULong.m10026constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
                             }
                             i6 = i18;
                         } else if (i5 >= -10) {
@@ -405,7 +405,7 @@ public final class ColorKt {
                     if (i8 == 255) {
                     }
                     i9 = (i192 << 15) | (i13 << 10) | i14;
-                    return Color.m4545constructorimpl(ULong.m9285constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s22 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
+                    return Color.m5275constructorimpl(ULong.m10026constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s22 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
                 }
                 i2 = i15;
             } else if (i >= -10) {
@@ -437,15 +437,15 @@ public final class ColorKt {
         if (i8 == 255) {
         }
         i9 = (i1922 << 15) | (i13 << 10) | i14;
-        return Color.m4545constructorimpl(ULong.m9285constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s3 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s222 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
+        return Color.m5275constructorimpl(ULong.m10026constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s3 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s222 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
     }
 
     public static final long Color(int i) {
-        return Color.m4545constructorimpl(ULong.m9285constructorimpl(ULong.m9285constructorimpl(i) << 32));
+        return Color.m5275constructorimpl(ULong.m10026constructorimpl(ULong.m10026constructorimpl(i) << 32));
     }
 
     public static final long Color(long j) {
-        return Color.m4545constructorimpl(ULong.m9285constructorimpl(j << 32));
+        return Color.m5275constructorimpl(ULong.m10026constructorimpl(j << 32));
     }
 
     public static /* synthetic */ long Color$default(int i, int i2, int i3, int i4, int i5, Object obj) {
@@ -460,52 +460,52 @@ public final class ColorKt {
     }
 
     /* renamed from: lerp-jxsXWHM  reason: not valid java name */
-    public static final long m4600lerpjxsXWHM(long j, long j2, float f) {
+    public static final long m5330lerpjxsXWHM(long j, long j2, float f) {
         ColorSpace oklab = ColorSpaces.INSTANCE.getOklab();
-        long m4546convertvNxB06k = Color.m4546convertvNxB06k(j, oklab);
-        long m4546convertvNxB06k2 = Color.m4546convertvNxB06k(j2, oklab);
-        float m4551getAlphaimpl = Color.m4551getAlphaimpl(m4546convertvNxB06k);
-        float m4555getRedimpl = Color.m4555getRedimpl(m4546convertvNxB06k);
-        float m4554getGreenimpl = Color.m4554getGreenimpl(m4546convertvNxB06k);
-        float m4552getBlueimpl = Color.m4552getBlueimpl(m4546convertvNxB06k);
-        float m4551getAlphaimpl2 = Color.m4551getAlphaimpl(m4546convertvNxB06k2);
-        float m4555getRedimpl2 = Color.m4555getRedimpl(m4546convertvNxB06k2);
-        float m4554getGreenimpl2 = Color.m4554getGreenimpl(m4546convertvNxB06k2);
-        float m4552getBlueimpl2 = Color.m4552getBlueimpl(m4546convertvNxB06k2);
+        long m5276convertvNxB06k = Color.m5276convertvNxB06k(j, oklab);
+        long m5276convertvNxB06k2 = Color.m5276convertvNxB06k(j2, oklab);
+        float m5281getAlphaimpl = Color.m5281getAlphaimpl(m5276convertvNxB06k);
+        float m5285getRedimpl = Color.m5285getRedimpl(m5276convertvNxB06k);
+        float m5284getGreenimpl = Color.m5284getGreenimpl(m5276convertvNxB06k);
+        float m5282getBlueimpl = Color.m5282getBlueimpl(m5276convertvNxB06k);
+        float m5281getAlphaimpl2 = Color.m5281getAlphaimpl(m5276convertvNxB06k2);
+        float m5285getRedimpl2 = Color.m5285getRedimpl(m5276convertvNxB06k2);
+        float m5284getGreenimpl2 = Color.m5284getGreenimpl(m5276convertvNxB06k2);
+        float m5282getBlueimpl2 = Color.m5282getBlueimpl(m5276convertvNxB06k2);
         if (f < 0.0f) {
             f = 0.0f;
         }
         if (f > 1.0f) {
             f = 1.0f;
         }
-        return Color.m4546convertvNxB06k(UncheckedColor(MathHelpersKt.lerp(m4555getRedimpl, m4555getRedimpl2, f), MathHelpersKt.lerp(m4554getGreenimpl, m4554getGreenimpl2, f), MathHelpersKt.lerp(m4552getBlueimpl, m4552getBlueimpl2, f), MathHelpersKt.lerp(m4551getAlphaimpl, m4551getAlphaimpl2, f), oklab), Color.m4553getColorSpaceimpl(j2));
+        return Color.m5276convertvNxB06k(UncheckedColor(MathHelpersKt.lerp(m5285getRedimpl, m5285getRedimpl2, f), MathHelpersKt.lerp(m5284getGreenimpl, m5284getGreenimpl2, f), MathHelpersKt.lerp(m5282getBlueimpl, m5282getBlueimpl2, f), MathHelpersKt.lerp(m5281getAlphaimpl, m5281getAlphaimpl2, f), oklab), Color.m5283getColorSpaceimpl(j2));
     }
 
     /* renamed from: compositeOver--OWjLjI  reason: not valid java name */
-    public static final long m4594compositeOverOWjLjI(long j, long j2) {
-        long m4546convertvNxB06k = Color.m4546convertvNxB06k(j, Color.m4553getColorSpaceimpl(j2));
-        float m4551getAlphaimpl = Color.m4551getAlphaimpl(j2);
-        float m4551getAlphaimpl2 = Color.m4551getAlphaimpl(m4546convertvNxB06k);
-        float f = 1.0f - m4551getAlphaimpl2;
-        float f2 = (m4551getAlphaimpl * f) + m4551getAlphaimpl2;
+    public static final long m5324compositeOverOWjLjI(long j, long j2) {
+        long m5276convertvNxB06k = Color.m5276convertvNxB06k(j, Color.m5283getColorSpaceimpl(j2));
+        float m5281getAlphaimpl = Color.m5281getAlphaimpl(j2);
+        float m5281getAlphaimpl2 = Color.m5281getAlphaimpl(m5276convertvNxB06k);
+        float f = 1.0f - m5281getAlphaimpl2;
+        float f2 = (m5281getAlphaimpl * f) + m5281getAlphaimpl2;
         int i = (f2 > 0.0f ? 1 : (f2 == 0.0f ? 0 : -1));
-        return UncheckedColor(i == 0 ? 0.0f : ((Color.m4555getRedimpl(m4546convertvNxB06k) * m4551getAlphaimpl2) + ((Color.m4555getRedimpl(j2) * m4551getAlphaimpl) * f)) / f2, i == 0 ? 0.0f : ((Color.m4554getGreenimpl(m4546convertvNxB06k) * m4551getAlphaimpl2) + ((Color.m4554getGreenimpl(j2) * m4551getAlphaimpl) * f)) / f2, i != 0 ? ((Color.m4552getBlueimpl(m4546convertvNxB06k) * m4551getAlphaimpl2) + ((Color.m4552getBlueimpl(j2) * m4551getAlphaimpl) * f)) / f2 : 0.0f, f2, Color.m4553getColorSpaceimpl(j2));
+        return UncheckedColor(i == 0 ? 0.0f : ((Color.m5285getRedimpl(m5276convertvNxB06k) * m5281getAlphaimpl2) + ((Color.m5285getRedimpl(j2) * m5281getAlphaimpl) * f)) / f2, i == 0 ? 0.0f : ((Color.m5284getGreenimpl(m5276convertvNxB06k) * m5281getAlphaimpl2) + ((Color.m5284getGreenimpl(j2) * m5281getAlphaimpl) * f)) / f2, i != 0 ? ((Color.m5282getBlueimpl(m5276convertvNxB06k) * m5281getAlphaimpl2) + ((Color.m5282getBlueimpl(j2) * m5281getAlphaimpl) * f)) / f2 : 0.0f, f2, Color.m5283getColorSpaceimpl(j2));
     }
 
     /* renamed from: getComponents-8_81llA  reason: not valid java name */
-    private static final float[] m4595getComponents8_81llA(long j) {
-        return new float[]{Color.m4555getRedimpl(j), Color.m4554getGreenimpl(j), Color.m4552getBlueimpl(j), Color.m4551getAlphaimpl(j)};
+    private static final float[] m5325getComponents8_81llA(long j) {
+        return new float[]{Color.m5285getRedimpl(j), Color.m5284getGreenimpl(j), Color.m5282getBlueimpl(j), Color.m5281getAlphaimpl(j)};
     }
 
     /* renamed from: luminance-8_81llA  reason: not valid java name */
-    public static final float m4601luminance8_81llA(long j) {
-        ColorSpace m4553getColorSpaceimpl = Color.m4553getColorSpaceimpl(j);
-        if (!ColorModel.m4974equalsimpl0(m4553getColorSpaceimpl.m4983getModelxdoWZVw(), ColorModel.Companion.m4981getRgbxdoWZVw())) {
-            InlineClassHelperKt.throwIllegalArgumentException("The specified color must be encoded in an RGB color space. The supplied color space is " + ((Object) ColorModel.m4977toStringimpl(m4553getColorSpaceimpl.m4983getModelxdoWZVw())));
+    public static final float m5331luminance8_81llA(long j) {
+        ColorSpace m5283getColorSpaceimpl = Color.m5283getColorSpaceimpl(j);
+        if (!ColorModel.m5704equalsimpl0(m5283getColorSpaceimpl.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw())) {
+            InlineClassHelperKt.throwIllegalArgumentException("The specified color must be encoded in an RGB color space. The supplied color space is " + ((Object) ColorModel.m5707toStringimpl(m5283getColorSpaceimpl.m5713getModelxdoWZVw())));
         }
-        Intrinsics.checkNotNull(m4553getColorSpaceimpl, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb");
-        DoubleFunction eotfFunc$ui_graphics_release = ((Rgb) m4553getColorSpaceimpl).getEotfFunc$ui_graphics_release();
-        float invoke = (float) ((eotfFunc$ui_graphics_release.invoke(Color.m4555getRedimpl(j)) * 0.2126d) + (eotfFunc$ui_graphics_release.invoke(Color.m4554getGreenimpl(j)) * 0.7152d) + (eotfFunc$ui_graphics_release.invoke(Color.m4552getBlueimpl(j)) * 0.0722d));
+        Intrinsics.checkNotNull(m5283getColorSpaceimpl, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb");
+        DoubleFunction eotfFunc$ui_graphics_release = ((Rgb) m5283getColorSpaceimpl).getEotfFunc$ui_graphics_release();
+        float invoke = (float) ((eotfFunc$ui_graphics_release.invoke(Color.m5285getRedimpl(j)) * 0.2126d) + (eotfFunc$ui_graphics_release.invoke(Color.m5284getGreenimpl(j)) * 0.7152d) + (eotfFunc$ui_graphics_release.invoke(Color.m5282getBlueimpl(j)) * 0.0722d));
         if (invoke < 0.0f) {
             invoke = 0.0f;
         }
@@ -516,12 +516,12 @@ public final class ColorKt {
     }
 
     /* renamed from: toArgb-8_81llA  reason: not valid java name */
-    public static final int m4603toArgb8_81llA(long j) {
-        return (int) ULong.m9285constructorimpl(Color.m4546convertvNxB06k(j, ColorSpaces.INSTANCE.getSrgb()) >>> 32);
+    public static final int m5333toArgb8_81llA(long j) {
+        return (int) ULong.m10026constructorimpl(Color.m5276convertvNxB06k(j, ColorSpaces.INSTANCE.getSrgb()) >>> 32);
     }
 
     /* renamed from: takeOrElse-DxMtmZc  reason: not valid java name */
-    public static final long m4602takeOrElseDxMtmZc(long j, Function0<Color> function0) {
-        return j != 16 ? j : function0.invoke().m4559unboximpl();
+    public static final long m5332takeOrElseDxMtmZc(long j, Function0<Color> function0) {
+        return j != 16 ? j : function0.invoke().m5289unboximpl();
     }
 }

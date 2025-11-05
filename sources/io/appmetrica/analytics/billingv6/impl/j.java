@@ -12,21 +12,21 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class j extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ k f233a;
+    public final /* synthetic */ k f246a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ List c;
 
     public j(k kVar, BillingResult billingResult, List list) {
-        this.f233a = kVar;
+        this.f246a = kVar;
         this.b = billingResult;
         this.c = list;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0198 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x019a A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:95:0x007f A[SYNTHETIC] */
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     /*
@@ -39,7 +39,7 @@ public final class j extends SafeRunnable {
         String originalJson;
         ProductType productType2;
         String originalJson2;
-        k kVar = this.f233a;
+        k kVar = this.f246a;
         BillingResult billingResult = this.b;
         List<Purchase> list = this.c;
         kVar.getClass();
@@ -102,11 +102,11 @@ public final class j extends SafeRunnable {
                 if (productInfo2 == null) {
                 }
             }
-            kVar.f234a.getBillingInfoSender().sendInfo(arrayList);
+            kVar.f247a.getBillingInfoSender().sendInfo(arrayList);
             kVar.b.invoke();
             kVar.f.onUpdateFinished();
         }
-        k kVar2 = this.f233a;
+        k kVar2 = this.f246a;
         kVar2.e.a(kVar2);
     }
 }

@@ -4,7 +4,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.internal.IAccountAccessor;
 import java.util.Set;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface zacs {
     void zae(ConnectionResult connectionResult);
 

@@ -15,7 +15,6 @@ import androidx.compose.foundation.text.BasicTextFieldKt;
 import androidx.compose.foundation.text.BasicTextKt;
 import androidx.compose.foundation.text.KeyboardActions;
 import androidx.compose.foundation.text.KeyboardOptions;
-import androidx.compose.material3.MenuKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
@@ -214,17 +213,17 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
         String str = constraintWidget.stringId;
         Integer[] numArr = this.lastMeasures.get(str);
         boolean z2 = true;
-        obtainConstraints(measure.horizontalBehavior, measure.horizontalDimension, constraintWidget.mMatchConstraintDefaultWidth, measure.measureStrategy, (numArr != null ? numArr[1].intValue() : 0) == constraintWidget.getHeight(), constraintWidget.isResolvedHorizontally(), Constraints.m7217getMaxWidthimpl(this.state.m7731getRootIncomingConstraintsmsEJaDk()), this.widthConstraintsHolder);
-        obtainConstraints(measure.verticalBehavior, measure.verticalDimension, constraintWidget.mMatchConstraintDefaultHeight, measure.measureStrategy, (numArr != null ? numArr[0].intValue() : 0) == constraintWidget.getWidth(), constraintWidget.isResolvedVertically(), Constraints.m7216getMaxHeightimpl(this.state.m7731getRootIncomingConstraintsmsEJaDk()), this.heightConstraintsHolder);
+        obtainConstraints(measure.horizontalBehavior, measure.horizontalDimension, constraintWidget.mMatchConstraintDefaultWidth, measure.measureStrategy, (numArr != null ? numArr[1].intValue() : 0) == constraintWidget.getHeight(), constraintWidget.isResolvedHorizontally(), Constraints.m7948getMaxWidthimpl(this.state.m8462getRootIncomingConstraintsmsEJaDk()), this.widthConstraintsHolder);
+        obtainConstraints(measure.verticalBehavior, measure.verticalDimension, constraintWidget.mMatchConstraintDefaultHeight, measure.measureStrategy, (numArr != null ? numArr[0].intValue() : 0) == constraintWidget.getWidth(), constraintWidget.isResolvedVertically(), Constraints.m7947getMaxHeightimpl(this.state.m8462getRootIncomingConstraintsmsEJaDk()), this.heightConstraintsHolder);
         int[] iArr = this.widthConstraintsHolder;
         int i = iArr[0];
         int i2 = iArr[1];
         int[] iArr2 = this.heightConstraintsHolder;
         long Constraints = ConstraintsKt.Constraints(i, i2, iArr2[0], iArr2[1]);
         if (measure.measureStrategy == BasicMeasure.Measure.TRY_GIVEN_DIMENSIONS || measure.measureStrategy == BasicMeasure.Measure.USE_GIVEN_DIMENSIONS || measure.horizontalBehavior != ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT || constraintWidget.mMatchConstraintDefaultWidth != 0 || measure.verticalBehavior != ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT || constraintWidget.mMatchConstraintDefaultHeight != 0) {
-            long m7659measureWidgetyQShABA = m7659measureWidgetyQShABA(constraintWidget, Constraints);
+            long m8390measureWidgetyQShABA = m8390measureWidgetyQShABA(constraintWidget, Constraints);
             constraintWidget.setMeasureRequested(false);
-            Integer valueOf = Integer.valueOf(IntIntPair.m40getFirstimpl(m7659measureWidgetyQShABA));
+            Integer valueOf = Integer.valueOf(IntIntPair.m40getFirstimpl(m8390measureWidgetyQShABA));
             Integer valueOf2 = Integer.valueOf(constraintWidget.mMatchConstraintMinWidth);
             if (valueOf2.intValue() <= 0) {
                 valueOf2 = null;
@@ -235,7 +234,7 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
                 valueOf3 = null;
             }
             int intValue = ((Number) RangesKt.coerceIn(valueOf, num, valueOf3)).intValue();
-            Integer valueOf4 = Integer.valueOf(IntIntPair.m41getSecondimpl(m7659measureWidgetyQShABA));
+            Integer valueOf4 = Integer.valueOf(IntIntPair.m41getSecondimpl(m8390measureWidgetyQShABA));
             Integer valueOf5 = Integer.valueOf(constraintWidget.mMatchConstraintMinHeight);
             if (valueOf5.intValue() <= 0) {
                 valueOf5 = null;
@@ -243,18 +242,18 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
             Integer num2 = valueOf5;
             Integer valueOf6 = Integer.valueOf(constraintWidget.mMatchConstraintMaxHeight);
             int intValue2 = ((Number) RangesKt.coerceIn(valueOf4, num2, valueOf6.intValue() > 0 ? valueOf6 : null)).intValue();
-            if (intValue != IntIntPair.m40getFirstimpl(m7659measureWidgetyQShABA)) {
-                Constraints = ConstraintsKt.Constraints(intValue, intValue, Constraints.m7218getMinHeightimpl(Constraints), Constraints.m7216getMaxHeightimpl(Constraints));
+            if (intValue != IntIntPair.m40getFirstimpl(m8390measureWidgetyQShABA)) {
+                Constraints = ConstraintsKt.Constraints(intValue, intValue, Constraints.m7949getMinHeightimpl(Constraints), Constraints.m7947getMaxHeightimpl(Constraints));
                 z = true;
             } else {
                 z = false;
             }
-            if (intValue2 != IntIntPair.m41getSecondimpl(m7659measureWidgetyQShABA)) {
-                Constraints = ConstraintsKt.Constraints(Constraints.m7219getMinWidthimpl(Constraints), Constraints.m7217getMaxWidthimpl(Constraints), intValue2, intValue2);
+            if (intValue2 != IntIntPair.m41getSecondimpl(m8390measureWidgetyQShABA)) {
+                Constraints = ConstraintsKt.Constraints(Constraints.m7950getMinWidthimpl(Constraints), Constraints.m7948getMaxWidthimpl(Constraints), intValue2, intValue2);
                 z = true;
             }
             if (z) {
-                m7659measureWidgetyQShABA(constraintWidget, Constraints);
+                m8390measureWidgetyQShABA(constraintWidget, Constraints);
                 constraintWidget.setMeasureRequested(false);
             }
         }
@@ -372,29 +371,29 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
     }
 
     /* renamed from: performMeasure-2eBlSMk  reason: not valid java name */
-    public final long m7661performMeasure2eBlSMk(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, List<? extends Measurable> list, int i) {
+    public final long m8392performMeasure2eBlSMk(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, List<? extends Measurable> list, int i) {
         androidx.constraintlayout.core.state.Dimension min;
         androidx.constraintlayout.core.state.Dimension min2;
         if (list.isEmpty()) {
-            return IntSizeKt.IntSize(Constraints.m7219getMinWidthimpl(j), Constraints.m7218getMinHeightimpl(j));
+            return IntSizeKt.IntSize(Constraints.m7950getMinWidthimpl(j), Constraints.m7949getMinHeightimpl(j));
         }
         State state = this.state;
-        if (Constraints.m7215getHasFixedWidthimpl(j)) {
-            min = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m7217getMaxWidthimpl(j));
+        if (Constraints.m7946getHasFixedWidthimpl(j)) {
+            min = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m7948getMaxWidthimpl(j));
         } else {
-            min = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m7219getMinWidthimpl(j));
+            min = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m7950getMinWidthimpl(j));
         }
         state.width(min);
         State state2 = this.state;
-        if (Constraints.m7214getHasFixedHeightimpl(j)) {
-            min2 = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m7216getMaxHeightimpl(j));
+        if (Constraints.m7945getHasFixedHeightimpl(j)) {
+            min2 = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m7947getMaxHeightimpl(j));
         } else {
-            min2 = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m7218getMinHeightimpl(j));
+            min2 = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m7949getMinHeightimpl(j));
         }
         state2.height(min2);
         this.state.mParent.getWidth().apply(this.state, this.root, 0);
         this.state.mParent.getHeight().apply(this.state, this.root, 1);
-        this.state.m7732setRootIncomingConstraintsBRTryo0(j);
+        this.state.m8463setRootIncomingConstraintsBRTryo0(j);
         this.state.setRtl(layoutDirection == LayoutDirection.Rtl);
         resetMeasureState$constraintlayout_compose_release();
         if (constraintSet.isDirty(list)) {
@@ -405,7 +404,7 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
         } else {
             ConstraintLayoutKt.buildMapping(this.state, list);
         }
-        m7660applyRootSizeBRTryo0(j);
+        m8391applyRootSizeBRTryo0(j);
         this.root.updateHierarchy();
         this.root.setOptimizationLevel(i);
         ConstraintWidgetContainer constraintWidgetContainer = this.root;
@@ -420,9 +419,9 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
     }
 
     /* renamed from: applyRootSize-BRTryo0  reason: not valid java name */
-    protected final void m7660applyRootSizeBRTryo0(long j) {
-        this.root.setWidth(Constraints.m7217getMaxWidthimpl(j));
-        this.root.setHeight(Constraints.m7216getMaxHeightimpl(j));
+    protected final void m8391applyRootSizeBRTryo0(long j) {
+        this.root.setWidth(Constraints.m7948getMaxWidthimpl(j));
+        this.root.setHeight(Constraints.m7947getMaxHeightimpl(j));
         this.forcedScaleFactor = Float.NaN;
         LayoutInformationReceiver layoutInformationReceiver = this.layoutInformationReceiver;
         if (layoutInformationReceiver != null && (layoutInformationReceiver == null || layoutInformationReceiver.getForcedWidth() != Integer.MIN_VALUE)) {
@@ -510,10 +509,10 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
             }
             if (!this.frameCache.containsKey(measurable2)) {
                 placementScope2 = placementScope;
-                ConstraintLayoutKt.m7605placeWithFrameTransformKtjjmr4$default(placementScope2, measurable2.mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(placeable.getWidth(), placeable.getHeight())), widgetFrame, 0L, 4, null);
+                ConstraintLayoutKt.m8336placeWithFrameTransformKtjjmr4$default(placementScope2, measurable2.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(placeable.getWidth(), placeable.getHeight())), widgetFrame, 0L, 4, null);
             } else {
                 placementScope2 = placementScope;
-                ConstraintLayoutKt.m7605placeWithFrameTransformKtjjmr4$default(placementScope2, placeable, widgetFrame, 0L, 4, null);
+                ConstraintLayoutKt.m8336placeWithFrameTransformKtjjmr4$default(placementScope2, placeable, widgetFrame, 0L, 4, null);
             }
             i++;
             placementScope = placementScope2;
@@ -522,29 +521,29 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: measureWidget-yQShABA  reason: not valid java name */
-    private final long m7659measureWidgetyQShABA(ConstraintWidget constraintWidget, long j) {
+    private final long m8390measureWidgetyQShABA(ConstraintWidget constraintWidget, long j) {
         int i;
         Object companionWidget = constraintWidget.getCompanionWidget();
         String str = constraintWidget.stringId;
         int i2 = 0;
         if (constraintWidget instanceof VirtualLayout) {
-            if (Constraints.m7215getHasFixedWidthimpl(j)) {
+            if (Constraints.m7946getHasFixedWidthimpl(j)) {
                 i = 1073741824;
             } else {
-                i = Constraints.m7213getHasBoundedWidthimpl(j) ? Integer.MIN_VALUE : 0;
+                i = Constraints.m7944getHasBoundedWidthimpl(j) ? Integer.MIN_VALUE : 0;
             }
-            if (Constraints.m7214getHasFixedHeightimpl(j)) {
+            if (Constraints.m7945getHasFixedHeightimpl(j)) {
                 i2 = 1073741824;
-            } else if (Constraints.m7212getHasBoundedHeightimpl(j)) {
+            } else if (Constraints.m7943getHasBoundedHeightimpl(j)) {
                 i2 = Integer.MIN_VALUE;
             }
             VirtualLayout virtualLayout = (VirtualLayout) constraintWidget;
-            virtualLayout.measure(i, Constraints.m7217getMaxWidthimpl(j), i2, Constraints.m7216getMaxHeightimpl(j));
+            virtualLayout.measure(i, Constraints.m7948getMaxWidthimpl(j), i2, Constraints.m7947getMaxHeightimpl(j));
             return IntIntPair.m36constructorimpl(virtualLayout.getMeasuredWidth(), virtualLayout.getMeasuredHeight());
         } else if (companionWidget instanceof Measurable) {
-            Placeable mo5967measureBRTryo0 = ((Measurable) companionWidget).mo5967measureBRTryo0(j);
-            this.placeables.put(companionWidget, mo5967measureBRTryo0);
-            return IntIntPair.m36constructorimpl(mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight());
+            Placeable mo6697measureBRTryo0 = ((Measurable) companionWidget).mo6697measureBRTryo0(j);
+            this.placeables.put(companionWidget, mo6697measureBRTryo0);
+            return IntIntPair.m36constructorimpl(mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight());
         } else {
             Log.w("CCL", "Nothing to measure for widget: " + str);
             return IntIntPair.m36constructorimpl(0, 0);
@@ -628,40 +627,40 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
     public final void drawDebugBounds(DrawScope drawScope, float f) {
         float layoutCurrentWidth = getLayoutCurrentWidth() * f;
         float layoutCurrentHeight = getLayoutCurrentHeight() * f;
-        float m4374getWidthimpl = (Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc()) - layoutCurrentWidth) / 2.0f;
-        float m4371getHeightimpl = (Size.m4371getHeightimpl(drawScope.mo5128getSizeNHjbRc()) - layoutCurrentHeight) / 2.0f;
-        long m4586getWhite0d7_KjU = Color.Companion.m4586getWhite0d7_KjU();
-        float f2 = m4374getWidthimpl + layoutCurrentWidth;
-        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m4586getWhite0d7_KjU, OffsetKt.Offset(m4374getWidthimpl, m4371getHeightimpl), OffsetKt.Offset(f2, m4371getHeightimpl), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        float f3 = m4371getHeightimpl + layoutCurrentHeight;
-        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m4586getWhite0d7_KjU, OffsetKt.Offset(f2, m4371getHeightimpl), OffsetKt.Offset(f2, f3), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m4586getWhite0d7_KjU, OffsetKt.Offset(f2, f3), OffsetKt.Offset(m4374getWidthimpl, f3), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m4586getWhite0d7_KjU, OffsetKt.Offset(m4374getWidthimpl, f3), OffsetKt.Offset(m4374getWidthimpl, m4371getHeightimpl), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        float m5104getWidthimpl = (Size.m5104getWidthimpl(drawScope.mo5858getSizeNHjbRc()) - layoutCurrentWidth) / 2.0f;
+        float m5101getHeightimpl = (Size.m5101getHeightimpl(drawScope.mo5858getSizeNHjbRc()) - layoutCurrentHeight) / 2.0f;
+        long m5316getWhite0d7_KjU = Color.Companion.m5316getWhite0d7_KjU();
+        float f2 = m5104getWidthimpl + layoutCurrentWidth;
+        DrawScope.m5844drawLineNGM6Ib0$default(drawScope, m5316getWhite0d7_KjU, OffsetKt.Offset(m5104getWidthimpl, m5101getHeightimpl), OffsetKt.Offset(f2, m5101getHeightimpl), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        float f3 = m5101getHeightimpl + layoutCurrentHeight;
+        DrawScope.m5844drawLineNGM6Ib0$default(drawScope, m5316getWhite0d7_KjU, OffsetKt.Offset(f2, m5101getHeightimpl), OffsetKt.Offset(f2, f3), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        DrawScope.m5844drawLineNGM6Ib0$default(drawScope, m5316getWhite0d7_KjU, OffsetKt.Offset(f2, f3), OffsetKt.Offset(m5104getWidthimpl, f3), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        DrawScope.m5844drawLineNGM6Ib0$default(drawScope, m5316getWhite0d7_KjU, OffsetKt.Offset(m5104getWidthimpl, f3), OffsetKt.Offset(m5104getWidthimpl, m5101getHeightimpl), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
         float f4 = 1;
-        float f5 = m4374getWidthimpl + f4;
-        float f6 = m4371getHeightimpl + f4;
-        long m4575getBlack0d7_KjU = Color.Companion.m4575getBlack0d7_KjU();
+        float f5 = m5104getWidthimpl + f4;
+        float f6 = m5101getHeightimpl + f4;
+        long m5305getBlack0d7_KjU = Color.Companion.m5305getBlack0d7_KjU();
         float f7 = f5 + layoutCurrentWidth;
-        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m4575getBlack0d7_KjU, OffsetKt.Offset(f5, f6), OffsetKt.Offset(f7, f6), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        DrawScope.m5844drawLineNGM6Ib0$default(drawScope, m5305getBlack0d7_KjU, OffsetKt.Offset(f5, f6), OffsetKt.Offset(f7, f6), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
         float f8 = layoutCurrentHeight + f6;
-        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m4575getBlack0d7_KjU, OffsetKt.Offset(f7, f6), OffsetKt.Offset(f7, f8), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m4575getBlack0d7_KjU, OffsetKt.Offset(f7, f8), OffsetKt.Offset(f5, f8), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
-        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m4575getBlack0d7_KjU, OffsetKt.Offset(f5, f8), OffsetKt.Offset(f5, f6), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        DrawScope.m5844drawLineNGM6Ib0$default(drawScope, m5305getBlack0d7_KjU, OffsetKt.Offset(f7, f6), OffsetKt.Offset(f7, f8), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        DrawScope.m5844drawLineNGM6Ib0$default(drawScope, m5305getBlack0d7_KjU, OffsetKt.Offset(f7, f8), OffsetKt.Offset(f5, f8), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
+        DrawScope.m5844drawLineNGM6Ib0$default(drawScope, m5305getBlack0d7_KjU, OffsetKt.Offset(f5, f8), OffsetKt.Offset(f5, f6), 0.0f, 0, null, 0.0f, null, 0, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null);
     }
 
     /* renamed from: getColor-wrIjXm8$default  reason: not valid java name */
-    static /* synthetic */ long m7658getColorwrIjXm8$default(Measurer measurer, String str, long j, int i, Object obj) {
+    static /* synthetic */ long m8389getColorwrIjXm8$default(Measurer measurer, String str, long j, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                j = Color.Companion.m4575getBlack0d7_KjU();
+                j = Color.Companion.m5305getBlack0d7_KjU();
             }
-            return measurer.m7657getColorwrIjXm8(str, j);
+            return measurer.m8388getColorwrIjXm8(str, j);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: getColor-wrIjXm8");
     }
 
     /* renamed from: getColor-wrIjXm8  reason: not valid java name */
-    private final long m7657getColorwrIjXm8(String str, long j) {
+    private final long m8388getColorwrIjXm8(String str, long j) {
         if (str != null && StringsKt.startsWith$default((CharSequence) str, '#', false, 2, (Object) null)) {
             String substring = str.substring(1);
             Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String).substring(startIndex)");
@@ -678,11 +677,11 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
 
     private final TextStyle getTextStyle(HashMap<String, String> hashMap) {
         String str = hashMap.get("size");
-        long m7469getUnspecifiedXSAIIZE = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
+        long m8200getUnspecifiedXSAIIZE = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
         if (str != null) {
-            m7469getUnspecifiedXSAIIZE = TextUnitKt.getSp(Float.parseFloat(str));
+            m8200getUnspecifiedXSAIIZE = TextUnitKt.getSp(Float.parseFloat(str));
         }
-        return new TextStyle(m7658getColorwrIjXm8$default(this, hashMap.get("color"), 0L, 2, null), m7469getUnspecifiedXSAIIZE, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777212, (DefaultConstructorMarker) null);
+        return new TextStyle(m8389getColorwrIjXm8$default(this, hashMap.get("color"), 0L, 2, null), m8200getUnspecifiedXSAIIZE, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777212, (DefaultConstructorMarker) null);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -738,7 +737,7 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
                                     startRestartGroup.startReplaceGroup(-208561607);
                                     ComposerKt.sourceInformation(startRestartGroup, "2139@85017L418");
                                     String str = designElement.getParams().get("text");
-                                    BasicTextKt.m1244BasicTextVhcvRP8(str != null ? str : "text", PaddingKt.m842padding3ABfNKs(BackgroundKt.m267backgroundbw27NRU$default(ClipKt.clip(LayoutIdKt.layoutId(Modifier.Companion, id), RoundedCornerShapeKt.RoundedCornerShape(20)), m7657getColorwrIjXm8(designElement.getParams().get(TtmlNode.ATTR_TTS_BACKGROUND_COLOR), Color.Companion.m4581getLightGray0d7_KjU()), null, 2, null), Dp.m7264constructorimpl(8)), getTextStyle(designElement.getParams()), (Function1) null, 0, false, 0, 0, (ColorProducer) null, startRestartGroup, 0, (int) TypedValues.PositionType.TYPE_PERCENT_HEIGHT);
+                                    BasicTextKt.m1244BasicTextVhcvRP8(str != null ? str : "text", PaddingKt.m842padding3ABfNKs(BackgroundKt.m267backgroundbw27NRU$default(ClipKt.clip(LayoutIdKt.layoutId(Modifier.Companion, id), RoundedCornerShapeKt.RoundedCornerShape(20)), m8388getColorwrIjXm8(designElement.getParams().get(TtmlNode.ATTR_TTS_BACKGROUND_COLOR), Color.Companion.m5311getLightGray0d7_KjU()), null, 2, null), Dp.m7995constructorimpl(8)), getTextStyle(designElement.getParams()), (Function1) null, 0, false, 0, 0, (ColorProducer) null, startRestartGroup, 0, (int) TypedValues.PositionType.TYPE_PERCENT_HEIGHT);
                                     startRestartGroup.endReplaceGroup();
                                     break;
                                 }
@@ -791,7 +790,7 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
                                     ComposerKt.sourceInformation(startRestartGroup, "2153@85712L343");
                                     String str3 = designElement.getParams().get("text");
                                     String str4 = str3 != null ? str3 : "";
-                                    Modifier m267backgroundbw27NRU$default = BackgroundKt.m267backgroundbw27NRU$default(LayoutIdKt.layoutId(Modifier.Companion, id), m7657getColorwrIjXm8(designElement.getParams().get(TtmlNode.ATTR_TTS_BACKGROUND_COLOR), Color.Companion.m4581getLightGray0d7_KjU()), null, 2, null);
+                                    Modifier m267backgroundbw27NRU$default = BackgroundKt.m267backgroundbw27NRU$default(LayoutIdKt.layoutId(Modifier.Companion, id), m8388getColorwrIjXm8(designElement.getParams().get(TtmlNode.ATTR_TTS_BACKGROUND_COLOR), Color.Companion.m5311getLightGray0d7_KjU()), null, 2, null);
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                     MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), z);
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3208L23,82@3359L411:Layout.kt#80mrfh");
@@ -809,19 +808,19 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
                                     } else {
                                         startRestartGroup.useNode();
                                     }
-                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                                    Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                                    Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1238768549, "C2154@85808L221:ConstraintLayout.kt#fysre8");
-                                    BasicTextKt.m1244BasicTextVhcvRP8(str4, PaddingKt.m842padding3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(8)), getTextStyle(designElement.getParams()), (Function1) null, 0, false, 0, 0, (ColorProducer) null, startRestartGroup, 48, (int) TypedValues.PositionType.TYPE_PERCENT_HEIGHT);
+                                    BasicTextKt.m1244BasicTextVhcvRP8(str4, PaddingKt.m842padding3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(8)), getTextStyle(designElement.getParams()), (Function1) null, 0, false, 0, 0, (ColorProducer) null, startRestartGroup, 48, (int) TypedValues.PositionType.TYPE_PERCENT_HEIGHT);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     startRestartGroup.endNode();
@@ -859,7 +858,7 @@ public class Measurer implements BasicMeasure.Measurer, DesignInfoProvider {
                                     startRestartGroup.startReplaceGroup(-206572957);
                                     ComposerKt.sourceInformation(startRestartGroup, "2180@86937L56,2178@86830L259");
                                     Composer composer3 = startRestartGroup;
-                                    ImageKt.Image(PainterResources_androidKt.painterResource(17301567, startRestartGroup, 6), "Placeholder Image", LayoutIdKt.layoutId(Modifier.Companion, id), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer3, 48, (int) MenuKt.InTransitionDuration);
+                                    ImageKt.Image(PainterResources_androidKt.painterResource(17301567, startRestartGroup, 6), "Placeholder Image", LayoutIdKt.layoutId(Modifier.Companion, id), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer3, 48, 120);
                                     startRestartGroup = composer3;
                                     startRestartGroup.endReplaceGroup();
                                     i3 = i9;

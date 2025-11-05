@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class SampleDataQueue {
     private static final int INITIAL_SCRATCH_SIZE = 32;
     private final int allocationLength;
@@ -258,7 +258,7 @@ public class SampleDataQueue {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class AllocationNode implements Allocator.AllocationNode {
         public Allocation allocation;
         public long endPosition;

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AdaptiveTrackSelection extends BaseTrackSelection {
     public static final float DEFAULT_BANDWIDTH_FRACTION = 0.7f;
     public static final float DEFAULT_BUFFERED_FRACTION_TO_LIVE_EDGE_FOR_QUALITY_INCREASE = 0.75f;
@@ -59,7 +59,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         return null;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Factory implements ExoTrackSelection.Factory {
         private final float bandwidthFraction;
         private final float bufferedFractionToLiveEdgeForQualityIncrease;
@@ -437,7 +437,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class AdaptationCheckpoint {
         public final long allocatedBandwidth;
         public final long totalBandwidth;

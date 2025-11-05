@@ -5,7 +5,7 @@ import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: SegmentedButton.kt */
-@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u001c\n\u0002\u0010\u000b\n\u0002\b\u000e\n\u0002\u0010\b\n\u0000\b\u0007\u0018\u00002\u00020\u0001Be\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0003\u0012\u0006\u0010\f\u001a\u00020\u0003\u0012\u0006\u0010\r\u001a\u00020\u0003\u0012\u0006\u0010\u000e\u001a\u00020\u0003¢\u0006\u0002\u0010\u000fJ%\u0010\u001e\u001a\u00020\u00032\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020 H\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b\"\u0010#J%\u0010$\u001a\u00020\u00032\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020 H\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b%\u0010#J%\u0010&\u001a\u00020\u00032\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010'\u001a\u00020 H\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b(\u0010#J\u0088\u0001\u0010)\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u0003ø\u0001\u0000¢\u0006\u0004\b*\u0010+J\u0013\u0010,\u001a\u00020 2\b\u0010-\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010.\u001a\u00020/H\u0016R\u0019\u0010\u0005\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0010\u0010\u0011R\u0019\u0010\u0002\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0013\u0010\u0011R\u0019\u0010\u0004\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0014\u0010\u0011R\u0019\u0010\u000b\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0015\u0010\u0011R\u0019\u0010\t\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0016\u0010\u0011R\u0019\u0010\n\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0017\u0010\u0011R\u0019\u0010\u000e\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0018\u0010\u0011R\u0019\u0010\f\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0019\u0010\u0011R\u0019\u0010\r\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u001a\u0010\u0011R\u0019\u0010\b\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u001b\u0010\u0011R\u0019\u0010\u0006\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u001c\u0010\u0011R\u0019\u0010\u0007\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u001d\u0010\u0011\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u00060"}, d2 = {"Landroidx/compose/material3/SegmentedButtonColors;", "", "activeContainerColor", "Landroidx/compose/ui/graphics/Color;", "activeContentColor", "activeBorderColor", "inactiveContainerColor", "inactiveContentColor", "inactiveBorderColor", "disabledActiveContainerColor", "disabledActiveContentColor", "disabledActiveBorderColor", "disabledInactiveContainerColor", "disabledInactiveContentColor", "disabledInactiveBorderColor", "(JJJJJJJJJJJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getActiveBorderColor-0d7_KjU", "()J", "J", "getActiveContainerColor-0d7_KjU", "getActiveContentColor-0d7_KjU", "getDisabledActiveBorderColor-0d7_KjU", "getDisabledActiveContainerColor-0d7_KjU", "getDisabledActiveContentColor-0d7_KjU", "getDisabledInactiveBorderColor-0d7_KjU", "getDisabledInactiveContainerColor-0d7_KjU", "getDisabledInactiveContentColor-0d7_KjU", "getInactiveBorderColor-0d7_KjU", "getInactiveContainerColor-0d7_KjU", "getInactiveContentColor-0d7_KjU", "borderColor", "enabled", "", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, "borderColor-WaAFU9c$material3_release", "(ZZ)J", "containerColor", "containerColor-WaAFU9c$material3_release", "contentColor", "checked", "contentColor-WaAFU9c$material3_release", "copy", "copy-2qZNXz8", "(JJJJJJJJJJJJ)Landroidx/compose/material3/SegmentedButtonColors;", "equals", "other", "hashCode", "", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b \n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0010\b\n\u0000\b\u0007\u0018\u00002\u00020\u0001Bg\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0003\u0012\u0006\u0010\f\u001a\u00020\u0003\u0012\u0006\u0010\r\u001a\u00020\u0003\u0012\u0006\u0010\u000e\u001a\u00020\u0003¢\u0006\u0004\b\u000f\u0010\u0010J\u0085\u0001\u0010\u001f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\u0003¢\u0006\u0004\b \u0010!J\u001f\u0010\"\u001a\u00020\u00032\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0001¢\u0006\u0004\b&\u0010'J\u001f\u0010(\u001a\u00020\u00032\u0006\u0010#\u001a\u00020$2\u0006\u0010)\u001a\u00020$H\u0001¢\u0006\u0004\b*\u0010'J\u001f\u0010+\u001a\u00020\u00032\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0001¢\u0006\u0004\b,\u0010'J\u0013\u0010-\u001a\u00020$2\b\u0010.\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010/\u001a\u000200H\u0016R\u0013\u0010\u0002\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0011\u0010\u0012R\u0013\u0010\u0004\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0014\u0010\u0012R\u0013\u0010\u0005\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0015\u0010\u0012R\u0013\u0010\u0006\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0016\u0010\u0012R\u0013\u0010\u0007\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0017\u0010\u0012R\u0013\u0010\b\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0018\u0010\u0012R\u0013\u0010\t\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0019\u0010\u0012R\u0013\u0010\n\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u001a\u0010\u0012R\u0013\u0010\u000b\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u001b\u0010\u0012R\u0013\u0010\f\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u001c\u0010\u0012R\u0013\u0010\r\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u001d\u0010\u0012R\u0013\u0010\u000e\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u001e\u0010\u0012¨\u00061"}, d2 = {"Landroidx/compose/material3/SegmentedButtonColors;", "", "activeContainerColor", "Landroidx/compose/ui/graphics/Color;", "activeContentColor", "activeBorderColor", "inactiveContainerColor", "inactiveContentColor", "inactiveBorderColor", "disabledActiveContainerColor", "disabledActiveContentColor", "disabledActiveBorderColor", "disabledInactiveContainerColor", "disabledInactiveContentColor", "disabledInactiveBorderColor", "<init>", "(JJJJJJJJJJJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getActiveContainerColor-0d7_KjU", "()J", "J", "getActiveContentColor-0d7_KjU", "getActiveBorderColor-0d7_KjU", "getInactiveContainerColor-0d7_KjU", "getInactiveContentColor-0d7_KjU", "getInactiveBorderColor-0d7_KjU", "getDisabledActiveContainerColor-0d7_KjU", "getDisabledActiveContentColor-0d7_KjU", "getDisabledActiveBorderColor-0d7_KjU", "getDisabledInactiveContainerColor-0d7_KjU", "getDisabledInactiveContentColor-0d7_KjU", "getDisabledInactiveBorderColor-0d7_KjU", "copy", "copy-2qZNXz8", "(JJJJJJJJJJJJ)Landroidx/compose/material3/SegmentedButtonColors;", "borderColor", "enabled", "", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, "borderColor-WaAFU9c$material3", "(ZZ)J", "contentColor", "checked", "contentColor-WaAFU9c$material3", "containerColor", "containerColor-WaAFU9c$material3", "equals", "other", "hashCode", "", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SegmentedButtonColors {
     public static final int $stable = 0;
@@ -42,67 +42,67 @@ public final class SegmentedButtonColors {
     }
 
     /* renamed from: getActiveContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2560getActiveContainerColor0d7_KjU() {
+    public final long m2843getActiveContainerColor0d7_KjU() {
         return this.activeContainerColor;
     }
 
     /* renamed from: getActiveContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2561getActiveContentColor0d7_KjU() {
+    public final long m2844getActiveContentColor0d7_KjU() {
         return this.activeContentColor;
     }
 
     /* renamed from: getActiveBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2559getActiveBorderColor0d7_KjU() {
+    public final long m2842getActiveBorderColor0d7_KjU() {
         return this.activeBorderColor;
     }
 
     /* renamed from: getInactiveContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2569getInactiveContainerColor0d7_KjU() {
+    public final long m2852getInactiveContainerColor0d7_KjU() {
         return this.inactiveContainerColor;
     }
 
     /* renamed from: getInactiveContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2570getInactiveContentColor0d7_KjU() {
+    public final long m2853getInactiveContentColor0d7_KjU() {
         return this.inactiveContentColor;
     }
 
     /* renamed from: getInactiveBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2568getInactiveBorderColor0d7_KjU() {
+    public final long m2851getInactiveBorderColor0d7_KjU() {
         return this.inactiveBorderColor;
     }
 
     /* renamed from: getDisabledActiveContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2563getDisabledActiveContainerColor0d7_KjU() {
+    public final long m2846getDisabledActiveContainerColor0d7_KjU() {
         return this.disabledActiveContainerColor;
     }
 
     /* renamed from: getDisabledActiveContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2564getDisabledActiveContentColor0d7_KjU() {
+    public final long m2847getDisabledActiveContentColor0d7_KjU() {
         return this.disabledActiveContentColor;
     }
 
     /* renamed from: getDisabledActiveBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2562getDisabledActiveBorderColor0d7_KjU() {
+    public final long m2845getDisabledActiveBorderColor0d7_KjU() {
         return this.disabledActiveBorderColor;
     }
 
     /* renamed from: getDisabledInactiveContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2566getDisabledInactiveContainerColor0d7_KjU() {
+    public final long m2849getDisabledInactiveContainerColor0d7_KjU() {
         return this.disabledInactiveContainerColor;
     }
 
     /* renamed from: getDisabledInactiveContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2567getDisabledInactiveContentColor0d7_KjU() {
+    public final long m2850getDisabledInactiveContentColor0d7_KjU() {
         return this.disabledInactiveContentColor;
     }
 
     /* renamed from: getDisabledInactiveBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2565getDisabledInactiveBorderColor0d7_KjU() {
+    public final long m2848getDisabledInactiveBorderColor0d7_KjU() {
         return this.disabledInactiveBorderColor;
     }
 
     /* renamed from: copy-2qZNXz8$default  reason: not valid java name */
-    public static /* synthetic */ SegmentedButtonColors m2554copy2qZNXz8$default(SegmentedButtonColors segmentedButtonColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, int i, Object obj) {
+    public static /* synthetic */ SegmentedButtonColors m2837copy2qZNXz8$default(SegmentedButtonColors segmentedButtonColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, int i, Object obj) {
         long j13;
         long j14;
         long j15 = (i & 1) != 0 ? segmentedButtonColors.activeContainerColor : j;
@@ -124,16 +124,16 @@ public final class SegmentedButtonColors {
             j13 = j12;
             j14 = j26;
         }
-        return segmentedButtonColors.m2558copy2qZNXz8(j22, j16, j17, j18, j19, j20, j21, j23, j24, j25, j14, j13);
+        return segmentedButtonColors.m2841copy2qZNXz8(j22, j16, j17, j18, j19, j20, j21, j23, j24, j25, j14, j13);
     }
 
     /* renamed from: copy-2qZNXz8  reason: not valid java name */
-    public final SegmentedButtonColors m2558copy2qZNXz8(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12) {
+    public final SegmentedButtonColors m2841copy2qZNXz8(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12) {
         return new SegmentedButtonColors(j != 16 ? j : this.activeContainerColor, j2 != 16 ? j2 : this.activeContentColor, j3 != 16 ? j3 : this.activeBorderColor, j4 != 16 ? j4 : this.inactiveContainerColor, j5 != 16 ? j5 : this.inactiveContentColor, j6 != 16 ? j6 : this.inactiveBorderColor, j7 != 16 ? j7 : this.disabledActiveContainerColor, j8 != 16 ? j8 : this.disabledActiveContentColor, j9 != 16 ? j9 : this.disabledActiveBorderColor, j10 != 16 ? j10 : this.disabledInactiveContainerColor, j11 != 16 ? j11 : this.disabledInactiveContentColor, j12 != 16 ? j12 : this.disabledInactiveBorderColor, null);
     }
 
-    /* renamed from: borderColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2555borderColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    /* renamed from: borderColor-WaAFU9c$material3  reason: not valid java name */
+    public final long m2838borderColorWaAFU9c$material3(boolean z, boolean z2) {
         if (z && z2) {
             return this.activeBorderColor;
         }
@@ -146,8 +146,8 @@ public final class SegmentedButtonColors {
         return this.inactiveBorderColor;
     }
 
-    /* renamed from: contentColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2557contentColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    /* renamed from: contentColor-WaAFU9c$material3  reason: not valid java name */
+    public final long m2840contentColorWaAFU9c$material3(boolean z, boolean z2) {
         if (z && z2) {
             return this.activeContentColor;
         }
@@ -160,8 +160,8 @@ public final class SegmentedButtonColors {
         return this.inactiveContentColor;
     }
 
-    /* renamed from: containerColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2556containerColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    /* renamed from: containerColor-WaAFU9c$material3  reason: not valid java name */
+    public final long m2839containerColorWaAFU9c$material3(boolean z, boolean z2) {
         if (z && z2) {
             return this.activeContainerColor;
         }
@@ -180,12 +180,12 @@ public final class SegmentedButtonColors {
         }
         if (obj != null && getClass() == obj.getClass()) {
             SegmentedButtonColors segmentedButtonColors = (SegmentedButtonColors) obj;
-            return Color.m4550equalsimpl0(this.activeBorderColor, segmentedButtonColors.activeBorderColor) && Color.m4550equalsimpl0(this.activeContentColor, segmentedButtonColors.activeContentColor) && Color.m4550equalsimpl0(this.activeContainerColor, segmentedButtonColors.activeContainerColor) && Color.m4550equalsimpl0(this.inactiveBorderColor, segmentedButtonColors.inactiveBorderColor) && Color.m4550equalsimpl0(this.inactiveContentColor, segmentedButtonColors.inactiveContentColor) && Color.m4550equalsimpl0(this.inactiveContainerColor, segmentedButtonColors.inactiveContainerColor) && Color.m4550equalsimpl0(this.disabledActiveBorderColor, segmentedButtonColors.disabledActiveBorderColor) && Color.m4550equalsimpl0(this.disabledActiveContentColor, segmentedButtonColors.disabledActiveContentColor) && Color.m4550equalsimpl0(this.disabledActiveContainerColor, segmentedButtonColors.disabledActiveContainerColor) && Color.m4550equalsimpl0(this.disabledInactiveBorderColor, segmentedButtonColors.disabledInactiveBorderColor) && Color.m4550equalsimpl0(this.disabledInactiveContentColor, segmentedButtonColors.disabledInactiveContentColor) && Color.m4550equalsimpl0(this.disabledInactiveContainerColor, segmentedButtonColors.disabledInactiveContainerColor);
+            return Color.m5280equalsimpl0(this.activeBorderColor, segmentedButtonColors.activeBorderColor) && Color.m5280equalsimpl0(this.activeContentColor, segmentedButtonColors.activeContentColor) && Color.m5280equalsimpl0(this.activeContainerColor, segmentedButtonColors.activeContainerColor) && Color.m5280equalsimpl0(this.inactiveBorderColor, segmentedButtonColors.inactiveBorderColor) && Color.m5280equalsimpl0(this.inactiveContentColor, segmentedButtonColors.inactiveContentColor) && Color.m5280equalsimpl0(this.inactiveContainerColor, segmentedButtonColors.inactiveContainerColor) && Color.m5280equalsimpl0(this.disabledActiveBorderColor, segmentedButtonColors.disabledActiveBorderColor) && Color.m5280equalsimpl0(this.disabledActiveContentColor, segmentedButtonColors.disabledActiveContentColor) && Color.m5280equalsimpl0(this.disabledActiveContainerColor, segmentedButtonColors.disabledActiveContainerColor) && Color.m5280equalsimpl0(this.disabledInactiveBorderColor, segmentedButtonColors.disabledInactiveBorderColor) && Color.m5280equalsimpl0(this.disabledInactiveContentColor, segmentedButtonColors.disabledInactiveContentColor) && Color.m5280equalsimpl0(this.disabledInactiveContainerColor, segmentedButtonColors.disabledInactiveContainerColor);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((Color.m4556hashCodeimpl(this.activeBorderColor) * 31) + Color.m4556hashCodeimpl(this.activeContentColor)) * 31) + Color.m4556hashCodeimpl(this.activeContainerColor)) * 31) + Color.m4556hashCodeimpl(this.inactiveBorderColor)) * 31) + Color.m4556hashCodeimpl(this.inactiveContentColor)) * 31) + Color.m4556hashCodeimpl(this.inactiveContainerColor)) * 31) + Color.m4556hashCodeimpl(this.disabledActiveBorderColor)) * 31) + Color.m4556hashCodeimpl(this.disabledActiveContentColor)) * 31) + Color.m4556hashCodeimpl(this.disabledActiveContainerColor)) * 31) + Color.m4556hashCodeimpl(this.disabledInactiveBorderColor)) * 31) + Color.m4556hashCodeimpl(this.disabledInactiveContentColor)) * 31) + Color.m4556hashCodeimpl(this.disabledInactiveContainerColor);
+        return (((((((((((((((((((((Color.m5286hashCodeimpl(this.activeBorderColor) * 31) + Color.m5286hashCodeimpl(this.activeContentColor)) * 31) + Color.m5286hashCodeimpl(this.activeContainerColor)) * 31) + Color.m5286hashCodeimpl(this.inactiveBorderColor)) * 31) + Color.m5286hashCodeimpl(this.inactiveContentColor)) * 31) + Color.m5286hashCodeimpl(this.inactiveContainerColor)) * 31) + Color.m5286hashCodeimpl(this.disabledActiveBorderColor)) * 31) + Color.m5286hashCodeimpl(this.disabledActiveContentColor)) * 31) + Color.m5286hashCodeimpl(this.disabledActiveContainerColor)) * 31) + Color.m5286hashCodeimpl(this.disabledInactiveBorderColor)) * 31) + Color.m5286hashCodeimpl(this.disabledInactiveContentColor)) * 31) + Color.m5286hashCodeimpl(this.disabledInactiveContainerColor);
     }
 }

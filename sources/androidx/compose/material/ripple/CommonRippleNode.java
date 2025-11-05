@@ -30,7 +30,7 @@ public final class CommonRippleNode extends RippleNode {
 
     @Override // androidx.compose.material.ripple.RippleNode
     /* renamed from: addRipple-12SF9DM */
-    public void mo1853addRipple12SF9DM(PressInteraction.Press press, long j, float f) {
+    public void mo1851addRipple12SF9DM(PressInteraction.Press press, long j, float f) {
         MutableScatterMap<PressInteraction.Press, RippleAnimation> mutableScatterMap = this.ripples;
         Object[] objArr = mutableScatterMap.keys;
         Object[] objArr2 = mutableScatterMap.values;
@@ -60,7 +60,7 @@ public final class CommonRippleNode extends RippleNode {
                 i++;
             }
         }
-        RippleAnimation rippleAnimation = new RippleAnimation(getBounded() ? Offset.m4294boximpl(press.m638getPressPositionF1C5BW0()) : null, f, getBounded(), null);
+        RippleAnimation rippleAnimation = new RippleAnimation(getBounded() ? Offset.m5024boximpl(press.m638getPressPositionF1C5BW0()) : null, f, getBounded(), null);
         this.ripples.set(press, rippleAnimation);
         BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new CommonRippleNode$addRipple$2(rippleAnimation, this, press, null), 3, null);
         DrawModifierNodeKt.invalidateDraw(this);
@@ -109,7 +109,7 @@ public final class CommonRippleNode extends RippleNode {
                         i2 = i6;
                         i3 = i5;
                         f2 = pressedAlpha;
-                        ((RippleAnimation) objArr2[i8]).m1857draw4WTKRHQ(drawScope, Color.m4548copywmQWz5c$default(m1867getRippleColor0d7_KjU(), pressedAlpha, 0.0f, 0.0f, 0.0f, 14, null));
+                        ((RippleAnimation) objArr2[i8]).m1855draw4WTKRHQ(drawScope, Color.m5278copywmQWz5c$default(m1865getRippleColor0d7_KjU(), pressedAlpha, 0.0f, 0.0f, 0.0f, 14, null));
                     } else {
                         i = i7;
                         i2 = i6;

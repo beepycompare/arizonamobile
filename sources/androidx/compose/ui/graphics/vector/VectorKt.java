@@ -31,11 +31,11 @@ public final class VectorKt {
     public static final float DefaultTrimPathOffset = 0.0f;
     public static final float DefaultTrimPathStart = 0.0f;
     private static final List<PathNode> EmptyPath = CollectionsKt.emptyList();
-    private static final int DefaultStrokeLineCap = StrokeCap.Companion.m4919getButtKaPHkGw();
-    private static final int DefaultStrokeLineJoin = StrokeJoin.Companion.m4930getMiterLxFBmk8();
-    private static final int DefaultTintBlendMode = BlendMode.Companion.m4488getSrcIn0nO6VwU();
-    private static final long DefaultTintColor = Color.Companion.m4584getTransparent0d7_KjU();
-    private static final int DefaultFillType = PathFillType.Companion.m4844getNonZeroRgk1Os();
+    private static final int DefaultStrokeLineCap = StrokeCap.Companion.m5649getButtKaPHkGw();
+    private static final int DefaultStrokeLineJoin = StrokeJoin.Companion.m5660getMiterLxFBmk8();
+    private static final int DefaultTintBlendMode = BlendMode.Companion.m5218getSrcIn0nO6VwU();
+    private static final long DefaultTintColor = Color.Companion.m5314getTransparent0d7_KjU();
+    private static final int DefaultFillType = PathFillType.Companion.m5574getNonZeroRgk1Os();
 
     public static final List<PathNode> getEmptyPath() {
         return EmptyPath;
@@ -75,13 +75,13 @@ public final class VectorKt {
     }
 
     /* renamed from: rgbEqual--OWjLjI  reason: not valid java name */
-    public static final boolean m5302rgbEqualOWjLjI(long j, long j2) {
-        return Color.m4555getRedimpl(j) == Color.m4555getRedimpl(j2) && Color.m4554getGreenimpl(j) == Color.m4554getGreenimpl(j2) && Color.m4552getBlueimpl(j) == Color.m4552getBlueimpl(j2);
+    public static final boolean m6032rgbEqualOWjLjI(long j, long j2) {
+        return Color.m5285getRedimpl(j) == Color.m5285getRedimpl(j2) && Color.m5284getGreenimpl(j) == Color.m5284getGreenimpl(j2) && Color.m5282getBlueimpl(j) == Color.m5282getBlueimpl(j2);
     }
 
     /* renamed from: toOpaque-8_81llA  reason: not valid java name */
-    public static final long m5303toOpaque8_81llA(long j) {
-        return Color.m4551getAlphaimpl(j) == 1.0f ? j : Color.m4548copywmQWz5c$default(j, 1.0f, 0.0f, 0.0f, 0.0f, 14, null);
+    public static final long m6033toOpaque8_81llA(long j) {
+        return Color.m5281getAlphaimpl(j) == 1.0f ? j : Color.m5278copywmQWz5c$default(j, 1.0f, 0.0f, 0.0f, 0.0f, 14, null);
     }
 
     public static final boolean tintableWithAlphaMask(ColorFilter colorFilter) {
@@ -89,6 +89,6 @@ public final class VectorKt {
             return colorFilter == null;
         }
         BlendModeColorFilter blendModeColorFilter = (BlendModeColorFilter) colorFilter;
-        return BlendMode.m4459equalsimpl0(blendModeColorFilter.m4492getBlendMode0nO6VwU(), BlendMode.Companion.m4488getSrcIn0nO6VwU()) || BlendMode.m4459equalsimpl0(blendModeColorFilter.m4492getBlendMode0nO6VwU(), BlendMode.Companion.m4490getSrcOver0nO6VwU());
+        return BlendMode.m5189equalsimpl0(blendModeColorFilter.m5222getBlendMode0nO6VwU(), BlendMode.Companion.m5218getSrcIn0nO6VwU()) || BlendMode.m5189equalsimpl0(blendModeColorFilter.m5222getBlendMode0nO6VwU(), BlendMode.Companion.m5220getSrcOver0nO6VwU());
     }
 }

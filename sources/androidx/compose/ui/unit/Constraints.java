@@ -17,39 +17,39 @@ public final class Constraints {
     private final long value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Constraints m7204boximpl(long j) {
+    public static final /* synthetic */ Constraints m7935boximpl(long j) {
         return new Constraints(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m7205constructorimpl(long j) {
+    public static long m7936constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7209equalsimpl(long j, Object obj) {
-        return (obj instanceof Constraints) && j == ((Constraints) obj).m7223unboximpl();
+    public static boolean m7940equalsimpl(long j, Object obj) {
+        return (obj instanceof Constraints) && j == ((Constraints) obj).m7954unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7210equalsimpl0(long j, long j2) {
+    public static final boolean m7941equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getFocusIndex-impl  reason: not valid java name */
-    private static final int m7211getFocusIndeximpl(long j) {
+    private static final int m7942getFocusIndeximpl(long j) {
         return (int) (j & 3);
     }
 
     /* renamed from: getHasBoundedHeight-impl  reason: not valid java name */
-    public static final boolean m7212getHasBoundedHeightimpl(long j) {
+    public static final boolean m7943getHasBoundedHeightimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         return (((int) (j >> (i2 + 46))) & ((1 << (18 - i2)) - 1)) != 0;
     }
 
     /* renamed from: getHasBoundedWidth-impl  reason: not valid java name */
-    public static final boolean m7213getHasBoundedWidthimpl(long j) {
+    public static final boolean m7944getHasBoundedWidthimpl(long j) {
         int i = (int) (3 & j);
         return (((int) (j >> 33)) & ((1 << ((((i & 1) << 1) + (((i & 2) >> 1) * 3)) + 13)) - 1)) != 0;
     }
@@ -58,7 +58,7 @@ public final class Constraints {
     }
 
     /* renamed from: getHasFixedHeight-impl  reason: not valid java name */
-    public static final boolean m7214getHasFixedHeightimpl(long j) {
+    public static final boolean m7945getHasFixedHeightimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         int i3 = (1 << (18 - i2)) - 1;
@@ -71,7 +71,7 @@ public final class Constraints {
     }
 
     /* renamed from: getHasFixedWidth-impl  reason: not valid java name */
-    public static final boolean m7215getHasFixedWidthimpl(long j) {
+    public static final boolean m7946getHasFixedWidthimpl(long j) {
         int i = (int) (3 & j);
         int i2 = (1 << ((((i & 1) << 1) + (((i & 2) >> 1) * 3)) + 13)) - 1;
         int i3 = ((int) (j >> 2)) & i2;
@@ -80,7 +80,7 @@ public final class Constraints {
     }
 
     /* renamed from: getMaxHeight-impl  reason: not valid java name */
-    public static final int m7216getMaxHeightimpl(long j) {
+    public static final int m7947getMaxHeightimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         int i3 = ((int) (j >> (i2 + 46))) & ((1 << (18 - i2)) - 1);
@@ -91,7 +91,7 @@ public final class Constraints {
     }
 
     /* renamed from: getMaxWidth-impl  reason: not valid java name */
-    public static final int m7217getMaxWidthimpl(long j) {
+    public static final int m7948getMaxWidthimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((int) (j >> 33)) & ((1 << ((((i & 1) << 1) + (((i & 2) >> 1) * 3)) + 13)) - 1);
         if (i2 == 0) {
@@ -101,14 +101,14 @@ public final class Constraints {
     }
 
     /* renamed from: getMinHeight-impl  reason: not valid java name */
-    public static final int m7218getMinHeightimpl(long j) {
+    public static final int m7949getMinHeightimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         return ((int) (j >> (i2 + 15))) & ((1 << (18 - i2)) - 1);
     }
 
     /* renamed from: getMinWidth-impl  reason: not valid java name */
-    public static final int m7219getMinWidthimpl(long j) {
+    public static final int m7950getMinWidthimpl(long j) {
         int i = (int) (3 & j);
         return ((int) (j >> 2)) & ((1 << ((((i & 1) << 1) + (((i & 2) >> 1) * 3)) + 13)) - 1);
     }
@@ -117,7 +117,7 @@ public final class Constraints {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7220hashCodeimpl(long j) {
+    public static int m7951hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
@@ -125,22 +125,22 @@ public final class Constraints {
     }
 
     /* renamed from: isZero-impl  reason: not valid java name */
-    public static final boolean m7221isZeroimpl(long j) {
+    public static final boolean m7952isZeroimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         return ((((int) (j >> 33)) & ((1 << (i2 + 13)) - 1)) - 1 == 0) | ((((int) (j >> (i2 + 46))) & ((1 << (18 - i2)) - 1)) - 1 == 0);
     }
 
     public boolean equals(Object obj) {
-        return m7209equalsimpl(this.value, obj);
+        return m7940equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7220hashCodeimpl(this.value);
+        return m7951hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m7223unboximpl() {
+    public final /* synthetic */ long m7954unboximpl() {
         return this.value;
     }
 
@@ -149,27 +149,27 @@ public final class Constraints {
     }
 
     /* renamed from: copy-Zbe2FdA$default  reason: not valid java name */
-    public static /* synthetic */ long m7207copyZbe2FdA$default(long j, int i, int i2, int i3, int i4, int i5, Object obj) {
+    public static /* synthetic */ long m7938copyZbe2FdA$default(long j, int i, int i2, int i3, int i4, int i5, Object obj) {
         if ((i5 & 1) != 0) {
-            i = m7219getMinWidthimpl(j);
+            i = m7950getMinWidthimpl(j);
         }
         int i6 = i;
         if ((i5 & 2) != 0) {
-            i2 = m7217getMaxWidthimpl(j);
+            i2 = m7948getMaxWidthimpl(j);
         }
         int i7 = i2;
         if ((i5 & 4) != 0) {
-            i3 = m7218getMinHeightimpl(j);
+            i3 = m7949getMinHeightimpl(j);
         }
         int i8 = i3;
         if ((i5 & 8) != 0) {
-            i4 = m7216getMaxHeightimpl(j);
+            i4 = m7947getMaxHeightimpl(j);
         }
-        return m7206copyZbe2FdA(j, i6, i7, i8, i4);
+        return m7937copyZbe2FdA(j, i6, i7, i8, i4);
     }
 
     /* renamed from: copy-Zbe2FdA  reason: not valid java name */
-    public static final long m7206copyZbe2FdA(long j, int i, int i2, int i3, int i4) {
+    public static final long m7937copyZbe2FdA(long j, int i, int i2, int i3, int i4) {
         if (!(i2 >= i && i4 >= i3 && i >= 0 && i3 >= 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("maxWidth must be >= than minWidth,\nmaxHeight must be >= than minHeight,\nminWidth and minHeight must be >= 0");
         }
@@ -177,24 +177,24 @@ public final class Constraints {
     }
 
     /* renamed from: copyMaxDimensions-msEJaDk  reason: not valid java name */
-    public static final long m7208copyMaxDimensionsmsEJaDk(long j) {
-        return m7205constructorimpl(j & ConstraintsKt.MaxDimensionsAndFocusMask);
+    public static final long m7939copyMaxDimensionsmsEJaDk(long j) {
+        return m7936constructorimpl(j & ConstraintsKt.MaxDimensionsAndFocusMask);
     }
 
     public String toString() {
-        return m7222toStringimpl(this.value);
+        return m7953toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7222toStringimpl(long j) {
-        int m7217getMaxWidthimpl = m7217getMaxWidthimpl(j);
+    public static String m7953toStringimpl(long j) {
+        int m7948getMaxWidthimpl = m7948getMaxWidthimpl(j);
         String str = "Infinity";
-        String valueOf = m7217getMaxWidthimpl == Integer.MAX_VALUE ? "Infinity" : String.valueOf(m7217getMaxWidthimpl);
-        int m7216getMaxHeightimpl = m7216getMaxHeightimpl(j);
-        if (m7216getMaxHeightimpl != Integer.MAX_VALUE) {
-            str = String.valueOf(m7216getMaxHeightimpl);
+        String valueOf = m7948getMaxWidthimpl == Integer.MAX_VALUE ? "Infinity" : String.valueOf(m7948getMaxWidthimpl);
+        int m7947getMaxHeightimpl = m7947getMaxHeightimpl(j);
+        if (m7947getMaxHeightimpl != Integer.MAX_VALUE) {
+            str = String.valueOf(m7947getMaxHeightimpl);
         }
-        return "Constraints(minWidth = " + m7219getMinWidthimpl(j) + ", maxWidth = " + valueOf + ", minHeight = " + m7218getMinHeightimpl(j) + ", maxHeight = " + str + ')';
+        return "Constraints(minWidth = " + m7950getMinWidthimpl(j) + ", maxWidth = " + valueOf + ", minHeight = " + m7949getMinHeightimpl(j) + ", maxHeight = " + str + ')';
     }
 
     /* compiled from: Constraints.kt */
@@ -209,7 +209,7 @@ public final class Constraints {
         }
 
         /* renamed from: fixed-JhjzzOo  reason: not valid java name */
-        public final long m7227fixedJhjzzOo(int i, int i2) {
+        public final long m7958fixedJhjzzOo(int i, int i2) {
             if (!((i2 >= 0) & (i >= 0))) {
                 InlineClassHelperKt.throwIllegalArgumentException("width and height must be >= 0");
             }
@@ -217,7 +217,7 @@ public final class Constraints {
         }
 
         /* renamed from: fixedWidth-OenEA2s  reason: not valid java name */
-        public final long m7229fixedWidthOenEA2s(int i) {
+        public final long m7960fixedWidthOenEA2s(int i) {
             if (!(i >= 0)) {
                 InlineClassHelperKt.throwIllegalArgumentException("width must be >= 0");
             }
@@ -225,7 +225,7 @@ public final class Constraints {
         }
 
         /* renamed from: fixedHeight-OenEA2s  reason: not valid java name */
-        public final long m7228fixedHeightOenEA2s(int i) {
+        public final long m7959fixedHeightOenEA2s(int i) {
             if (!(i >= 0)) {
                 InlineClassHelperKt.throwIllegalArgumentException("height must be >= 0");
             }
@@ -233,24 +233,24 @@ public final class Constraints {
         }
 
         /* renamed from: restrictConstraints-xF2OJ5Q$default  reason: not valid java name */
-        public static /* synthetic */ long m7224restrictConstraintsxF2OJ5Q$default(Companion companion, int i, int i2, int i3, int i4, boolean z, int i5, Object obj) {
+        public static /* synthetic */ long m7955restrictConstraintsxF2OJ5Q$default(Companion companion, int i, int i2, int i3, int i4, boolean z, int i5, Object obj) {
             if ((i5 & 16) != 0) {
                 z = true;
             }
-            return companion.m7230restrictConstraintsxF2OJ5Q(i, i2, i3, i4, z);
+            return companion.m7961restrictConstraintsxF2OJ5Q(i, i2, i3, i4, z);
         }
 
         @Deprecated(message = "Replace with fitPrioritizingWidth", replaceWith = @ReplaceWith(expression = "Constraints.fitPrioritizingWidth(minWidth, maxWidth, minHeight, maxHeight)", imports = {}))
         /* renamed from: restrictConstraints-xF2OJ5Q  reason: not valid java name */
-        public final long m7230restrictConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
+        public final long m7961restrictConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
             if (z) {
-                return m7226fitPrioritizingWidthZbe2FdA(i, i2, i3, i4);
+                return m7957fitPrioritizingWidthZbe2FdA(i, i2, i3, i4);
             }
-            return m7225fitPrioritizingHeightZbe2FdA(i, i2, i3, i4);
+            return m7956fitPrioritizingHeightZbe2FdA(i, i2, i3, i4);
         }
 
         /* renamed from: fitPrioritizingWidth-Zbe2FdA  reason: not valid java name */
-        public final long m7226fitPrioritizingWidthZbe2FdA(int i, int i2, int i3, int i4) {
+        public final long m7957fitPrioritizingWidthZbe2FdA(int i, int i2, int i3, int i4) {
             int i5 = 262142;
             int min = Math.min(i, 262142);
             int min2 = i2 == Integer.MAX_VALUE ? Integer.MAX_VALUE : Math.min(i2, 262142);
@@ -271,7 +271,7 @@ public final class Constraints {
         }
 
         /* renamed from: fitPrioritizingHeight-Zbe2FdA  reason: not valid java name */
-        public final long m7225fitPrioritizingHeightZbe2FdA(int i, int i2, int i3, int i4) {
+        public final long m7956fitPrioritizingHeightZbe2FdA(int i, int i2, int i3, int i4) {
             int i5 = 262142;
             int min = Math.min(i3, 262142);
             int min2 = i4 == Integer.MAX_VALUE ? Integer.MAX_VALUE : Math.min(i4, 262142);

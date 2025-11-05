@@ -1,25 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.fragment.app.FragmentTransaction;
-/* loaded from: classes4.dex */
-public final class Oc implements Gg {
+import android.location.Location;
+/* loaded from: classes3.dex */
+public interface Oc {
+    void a(Location location);
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Pc f610a;
+    void a(String str);
 
-    public Oc(Pc pc) {
-        this.f610a = pc;
-    }
+    void a(String str, String str2);
 
-    @Override // io.appmetrica.analytics.impl.Gg
-    public final void a(Jg jg) {
-        if (jg == null) {
-            return;
-        }
-        C0478o6 c0478o6 = new C0478o6("", "", 0);
-        c0478o6.setValueBytes(jg.a());
-        Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        c0478o6.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
-        this.f610a.a(c0478o6);
-    }
+    void a(boolean z);
+
+    void a(boolean z, boolean z2);
+
+    void clearAppEnvironment();
+
+    void putAppEnvironmentValue(String str, String str2);
+
+    void setDataSendingEnabled(boolean z);
+
+    void setUserProfileID(String str);
 }

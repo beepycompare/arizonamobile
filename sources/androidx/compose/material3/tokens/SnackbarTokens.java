@@ -3,7 +3,7 @@ package androidx.compose.material3.tokens;
 import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
 /* compiled from: SnackbarTokens.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0015\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0011\u0010\u0007\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0006R\u0011\u0010\t\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0006R\u0011\u0010\u000b\u001a\u00020\f¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u000f\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0006R\u0011\u0010\u0011\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0006R\u0019\u0010\u0013\u001a\u00020\u0014ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\u0018\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0011\u0010\u001c\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0006R\u0011\u0010\u001e\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0006R\u0011\u0010 \u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0006R\u0019\u0010\"\u001a\u00020\u0014ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b#\u0010\u0016R\u0011\u0010$\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0006R\u0019\u0010&\u001a\u00020\u0014ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b'\u0010\u0016R\u0011\u0010(\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u0006R\u0011\u0010*\u001a\u00020\f¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u000eR\u0019\u0010,\u001a\u00020\u0014ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b-\u0010\u0016\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006."}, d2 = {"Landroidx/compose/material3/tokens/SnackbarTokens;", "", "()V", "ActionFocusLabelTextColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getActionFocusLabelTextColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ActionHoverLabelTextColor", "getActionHoverLabelTextColor", "ActionLabelTextColor", "getActionLabelTextColor", "ActionLabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getActionLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "ActionPressedLabelTextColor", "getActionPressedLabelTextColor", "ContainerColor", "getContainerColor", "ContainerElevation", "Landroidx/compose/ui/unit/Dp;", "getContainerElevation-D9Ej5fM", "()F", "F", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "FocusIconColor", "getFocusIconColor", "HoverIconColor", "getHoverIconColor", "IconColor", "getIconColor", "IconSize", "getIconSize-D9Ej5fM", "PressedIconColor", "getPressedIconColor", "SingleLineContainerHeight", "getSingleLineContainerHeight-D9Ej5fM", "SupportingTextColor", "getSupportingTextColor", "SupportingTextFont", "getSupportingTextFont", "TwoLinesContainerHeight", "getTwoLinesContainerHeight-D9Ej5fM", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0015\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0011\u0010\n\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0007R\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0010\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0007R\u0011\u0010\u0012\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0007R\u0013\u0010\u0014\u001a\u00020\u0015¢\u0006\n\n\u0002\u0010\u0018\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\u0019\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u0011\u0010\u001d\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u0007R\u0011\u0010\u001f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u0007R\u0011\u0010!\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u0007R\u0011\u0010#\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\u0007R\u0013\u0010%\u001a\u00020\u0015¢\u0006\n\n\u0002\u0010\u0018\u001a\u0004\b&\u0010\u0017R\u0011\u0010'\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b(\u0010\u0007R\u0011\u0010)\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b*\u0010\u000fR\u0013\u0010+\u001a\u00020\u0015¢\u0006\n\n\u0002\u0010\u0018\u001a\u0004\b,\u0010\u0017R\u0013\u0010-\u001a\u00020\u0015¢\u0006\n\n\u0002\u0010\u0018\u001a\u0004\b.\u0010\u0017¨\u0006/"}, d2 = {"Landroidx/compose/material3/tokens/SnackbarTokens;", "", "<init>", "()V", "ActionFocusLabelTextColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getActionFocusLabelTextColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ActionHoverLabelTextColor", "getActionHoverLabelTextColor", "ActionLabelTextColor", "getActionLabelTextColor", "ActionLabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getActionLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "ActionPressedLabelTextColor", "getActionPressedLabelTextColor", "ContainerColor", "getContainerColor", "ContainerElevation", "Landroidx/compose/ui/unit/Dp;", "getContainerElevation-D9Ej5fM", "()F", "F", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "IconColor", "getIconColor", "FocusIconColor", "getFocusIconColor", "HoverIconColor", "getHoverIconColor", "PressedIconColor", "getPressedIconColor", "IconSize", "getIconSize-D9Ej5fM", "SupportingTextColor", "getSupportingTextColor", "SupportingTextFont", "getSupportingTextFont", "SingleLineContainerHeight", "getSingleLineContainerHeight-D9Ej5fM", "TwoLinesContainerHeight", "getTwoLinesContainerHeight-D9Ej5fM", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnackbarTokens {
     public static final int $stable = 0;
@@ -14,17 +14,17 @@ public final class SnackbarTokens {
     private static final TypographyKeyTokens ActionLabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens ActionPressedLabelTextColor = ColorSchemeKeyTokens.InversePrimary;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.InverseSurface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3297getLevel3D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3891getLevel3D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraSmall;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.InverseOnSurface;
-    private static final float IconSize = Dp.m7264constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7995constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens SupportingTextColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final TypographyKeyTokens SupportingTextFont = TypographyKeyTokens.BodyMedium;
-    private static final float SingleLineContainerHeight = Dp.m7264constructorimpl((float) 48.0d);
-    private static final float TwoLinesContainerHeight = Dp.m7264constructorimpl((float) 68.0d);
+    private static final float SingleLineContainerHeight = Dp.m7995constructorimpl((float) 48.0d);
+    private static final float TwoLinesContainerHeight = Dp.m7995constructorimpl((float) 68.0d);
 
     private SnackbarTokens() {
     }
@@ -54,7 +54,7 @@ public final class SnackbarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3623getContainerElevationD9Ej5fM() {
+    public final float m4271getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -79,7 +79,7 @@ public final class SnackbarTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3624getIconSizeD9Ej5fM() {
+    public final float m4272getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -92,12 +92,12 @@ public final class SnackbarTokens {
     }
 
     /* renamed from: getSingleLineContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3625getSingleLineContainerHeightD9Ej5fM() {
+    public final float m4273getSingleLineContainerHeightD9Ej5fM() {
         return SingleLineContainerHeight;
     }
 
     /* renamed from: getTwoLinesContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3626getTwoLinesContainerHeightD9Ej5fM() {
+    public final float m4274getTwoLinesContainerHeightD9Ej5fM() {
         return TwoLinesContainerHeight;
     }
 }

@@ -1,15 +1,13 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public enum Ig {
-    b("unknown"),
-    c("gpl"),
-    d("hms-content-provider");
-    
+/* loaded from: classes3.dex */
+public final class Ig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f500a;
+    public final String f529a;
+    public final Sn b;
 
-    Ig(String str) {
-        this.f500a = str;
+    public Ig(String str, Sn sn) {
+        this.f529a = str;
+        this.b = sn;
     }
 }

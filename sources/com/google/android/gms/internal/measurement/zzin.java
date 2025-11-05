@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.measurement;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum zzin implements zzmj {
     CLIENT_UPLOAD_ELIGIBILITY_UNKNOWN(0),
     CLIENT_UPLOAD_ELIGIBLE(1),

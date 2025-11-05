@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.measurement;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum zzkp implements zzmj {
     IAB_TCF_PURPOSE_UNKNOWN(0),
     IAB_TCF_PURPOSE_STORE_AND_ACCESS_INFORMATION_ON_A_DEVICE(1),

@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzna extends zzku implements RandomAccess, zzmn, zznt {
     private static final long[] zza;
     private static final zzna zzb;

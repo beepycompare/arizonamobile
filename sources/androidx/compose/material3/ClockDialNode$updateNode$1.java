@@ -1,5 +1,6 @@
 package androidx.compose.material3;
 
+import androidx.compose.animation.core.AnimationSpec;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -10,23 +11,25 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: TimePicker.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.ClockDialNode$updateNode$1", f = "TimePicker.kt", i = {}, l = {1503}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.ClockDialNode$updateNode$1", f = "TimePicker.kt", i = {}, l = {1581}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class ClockDialNode$updateNode$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final /* synthetic */ AnimationSpec<Float> $animationSpec;
     final /* synthetic */ AnalogTimePickerState $state;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ClockDialNode$updateNode$1(AnalogTimePickerState analogTimePickerState, Continuation<? super ClockDialNode$updateNode$1> continuation) {
+    public ClockDialNode$updateNode$1(AnalogTimePickerState analogTimePickerState, AnimationSpec<Float> animationSpec, Continuation<? super ClockDialNode$updateNode$1> continuation) {
         super(2, continuation);
         this.$state = analogTimePickerState;
+        this.$animationSpec = animationSpec;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new ClockDialNode$updateNode$1(this.$state, continuation);
+        return new ClockDialNode$updateNode$1(this.$state, this.$animationSpec, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -41,7 +44,7 @@ final class ClockDialNode$updateNode$1 extends SuspendLambda implements Function
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            if (this.$state.animateToCurrent(this) == coroutine_suspended) {
+            if (this.$state.animateToCurrent(this.$animationSpec, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

@@ -1,5 +1,7 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
+
+import android.os.Bundle;
+/* loaded from: classes3.dex */
 public interface H6 {
-    boolean a(Throwable th);
+    void a(int i, Bundle bundle);
 }

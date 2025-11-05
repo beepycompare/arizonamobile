@@ -14,8 +14,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AnchoredDraggable.kt */
-@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.internal.AnchoredDraggableState$anchoredDrag$2", f = "AnchoredDraggable.kt", i = {}, l = {521}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.internal.AnchoredDraggableState$anchoredDrag$2", f = "AnchoredDraggable.kt", i = {}, l = {518}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class AnchoredDraggableState$anchoredDrag$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ Function3<AnchoredDragScope, DraggableAnchors<T>, Continuation<? super Unit>, Object> $block;
@@ -44,8 +44,8 @@ public final class AnchoredDraggableState$anchoredDrag$2 extends SuspendLambda i
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX INFO: Add missing generic type declarations: [T] */
     /* compiled from: AnchoredDraggable.kt */
-    @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "latestAnchors", "Landroidx/compose/material3/internal/DraggableAnchors;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.material3.internal.AnchoredDraggableState$anchoredDrag$2$2", f = "AnchoredDraggable.kt", i = {}, l = {522}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0004H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "latestAnchors", "Landroidx/compose/material3/internal/DraggableAnchors;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.material3.internal.AnchoredDraggableState$anchoredDrag$2$2", f = "AnchoredDraggable.kt", i = {}, l = {519}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.material3.internal.AnchoredDraggableState$anchoredDrag$2$2  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass2<T> extends SuspendLambda implements Function2<DraggableAnchors<T>, Continuation<? super Unit>, Object> {
@@ -109,15 +109,12 @@ public final class AnchoredDraggableState$anchoredDrag$2 extends SuspendLambda i
             ResultKt.throwOnFailure(obj);
             final AnchoredDraggableState<T> anchoredDraggableState = this.this$0;
             this.label = 1;
-            restartable = AnchoredDraggableKt.restartable(new Function0<DraggableAnchors<T>>() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$anchoredDrag$2.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
+            restartable = AnchoredDraggableKt.restartable(new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$anchoredDrag$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
-                public final DraggableAnchors<T> invoke() {
-                    return anchoredDraggableState.getAnchors();
+                public final Object invoke() {
+                    DraggableAnchors anchors;
+                    anchors = AnchoredDraggableState.this.getAnchors();
+                    return anchors;
                 }
             }, new AnonymousClass2(this.$block, this.this$0, null), this);
             if (restartable == coroutine_suspended) {

@@ -1,12 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import java.security.MessageDigest;
-/* loaded from: classes4.dex */
-public abstract class Cj {
-    public static byte[] a(String str) {
-        MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-        messageDigest.reset();
-        messageDigest.update(str.getBytes("UTF-8"));
-        return messageDigest.digest();
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+/* loaded from: classes3.dex */
+public final class Cj implements Xa {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ ECommerceEvent f428a;
+
+    public Cj(ECommerceEvent eCommerceEvent) {
+        this.f428a = eCommerceEvent;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Xa
+    public final void a(Ya ya) {
+        ya.reportECommerce(this.f428a);
     }
 }

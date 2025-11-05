@@ -85,7 +85,7 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
     public void mo1480onImeActionKlQnJC8(int i) {
         Function1<ImeAction, Unit> function1 = this.$onImeAction;
         if (function1 != null) {
-            function1.invoke(ImeAction.m6892boximpl(i));
+            function1.invoke(ImeAction.m7623boximpl(i));
         }
     }
 

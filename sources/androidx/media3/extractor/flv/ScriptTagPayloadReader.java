@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class ScriptTagPayloadReader extends TagPayloadReader {
     private static final int AMF_TYPE_BOOLEAN = 1;
     private static final int AMF_TYPE_DATE = 11;

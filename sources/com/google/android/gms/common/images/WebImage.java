@@ -10,7 +10,7 @@ import java.util.Locale;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WebImage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<WebImage> CREATOR = new zah();
     final int zaa;

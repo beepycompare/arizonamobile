@@ -11,7 +11,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.HashMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class b {
     public static ModuleAdRevenue a(AdValue adValue, ModuleAdType moduleAdType, String str, ResponseInfo responseInfo, String str2) {
         AdapterResponseInfo loadedAdapterResponseInfo;

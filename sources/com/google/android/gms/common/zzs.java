@@ -1,68 +1,42 @@
 package com.google.android.gms.common;
 
-import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.RemoteException;
-import android.util.Log;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import com.google.android.gms.dynamic.IObjectWrapper;
-import com.google.android.gms.dynamic.ObjectWrapper;
-import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzs extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<zzs> CREATOR = new zzt();
-    private final String zza;
-    @Nullable
-    private final zzj zzb;
-    private final boolean zzc;
-    private final boolean zzd;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzs(String str, @Nullable IBinder iBinder, boolean z, boolean z2) {
-        this.zza = str;
-        zzk zzkVar = null;
-        if (iBinder != null) {
-            try {
-                IObjectWrapper zzd = com.google.android.gms.common.internal.zzz.zzg(iBinder).zzd();
-                byte[] bArr = zzd == null ? null : (byte[]) ObjectWrapper.unwrap(zzd);
-                if (bArr != null) {
-                    zzkVar = new zzk(bArr);
-                } else {
-                    Log.e("GoogleCertificatesQuery", "Could not unwrap certificate");
-                }
-            } catch (RemoteException e) {
-                Log.e("GoogleCertificatesQuery", "Could not unwrap certificate", e);
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzs implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        long j = -1;
+        boolean z = false;
+        int i = 0;
+        int i2 = 0;
+        String str = null;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            int fieldId = SafeParcelReader.getFieldId(readHeader);
+            if (fieldId == 1) {
+                z = SafeParcelReader.readBoolean(parcel, readHeader);
+            } else if (fieldId == 2) {
+                str = SafeParcelReader.createString(parcel, readHeader);
+            } else if (fieldId == 3) {
+                i = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 4) {
+                i2 = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 5) {
+                j = SafeParcelReader.readLong(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
-        this.zzb = zzkVar;
-        this.zzc = z;
-        this.zzd = z2;
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zzr(z, str, i, i2, j);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzs(String str, @Nullable zzj zzjVar, boolean z, boolean z2) {
-        this.zza = str;
-        this.zzb = zzjVar;
-        this.zzc = z;
-        this.zzd = z2;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        String str = this.zza;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 1, str, false);
-        zzj zzjVar = this.zzb;
-        if (zzjVar == null) {
-            Log.w("GoogleCertificatesQuery", "certificate binder is null");
-            zzjVar = null;
-        }
-        SafeParcelWriter.writeIBinder(parcel, 2, zzjVar, false);
-        SafeParcelWriter.writeBoolean(parcel, 3, this.zzc);
-        SafeParcelWriter.writeBoolean(parcel, 4, this.zzd);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zzr[i];
     }
 }

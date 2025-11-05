@@ -10,6 +10,7 @@ import androidx.sqlite.db.SupportSQLiteQuery;
 import androidx.sqlite.driver.SupportSQLiteStatement;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -20,7 +21,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: SupportSQLiteStatement.android.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b0\u0018\u0000 \u00132\u00020\u0001:\u0004\u0013\u0014\u0015\u0016B\u0019\b\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0011\u001a\u00020\u0012H\u0004R\u0014\u0010\u0002\u001a\u00020\u0003X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0014\u0010\u0004\u001a\u00020\u0005X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\rX\u0084\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\u000e\"\u0004\b\u000f\u0010\u0010\u0082\u0001\u0003\u0017\u0018\u0019¨\u0006\u001a"}, d2 = {"Landroidx/sqlite/driver/SupportSQLiteStatement;", "Landroidx/sqlite/SQLiteStatement;", "db", "Landroidx/sqlite/db/SupportSQLiteDatabase;", "sql", "", "<init>", "(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)V", "getDb", "()Landroidx/sqlite/db/SupportSQLiteDatabase;", "getSql", "()Ljava/lang/String;", "isClosed", "", "()Z", "setClosed", "(Z)V", "throwIfClosed", "", "Companion", "TransactionSQLiteStatement", "RowSQLiteStatement", "OtherSQLiteStatement", "Landroidx/sqlite/driver/SupportSQLiteStatement$OtherSQLiteStatement;", "Landroidx/sqlite/driver/SupportSQLiteStatement$RowSQLiteStatement;", "Landroidx/sqlite/driver/SupportSQLiteStatement$TransactionSQLiteStatement;", "sqlite-framework"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b0\u0018\u0000 \u00132\u00020\u0001:\u0005\u0013\u0014\u0015\u0016\u0017B\u0019\b\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0011\u001a\u00020\u0012H\u0004R\u0014\u0010\u0002\u001a\u00020\u0003X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0014\u0010\u0004\u001a\u00020\u0005X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\rX\u0084\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\u000e\"\u0004\b\u000f\u0010\u0010\u0082\u0001\u0004\u0018\u0019\u001a\u001b¨\u0006\u001c"}, d2 = {"Landroidx/sqlite/driver/SupportSQLiteStatement;", "Landroidx/sqlite/SQLiteStatement;", "db", "Landroidx/sqlite/db/SupportSQLiteDatabase;", "sql", "", "<init>", "(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)V", "getDb", "()Landroidx/sqlite/db/SupportSQLiteDatabase;", "getSql", "()Ljava/lang/String;", "isClosed", "", "()Z", "setClosed", "(Z)V", "throwIfClosed", "", "Companion", "TransactionSQLiteStatement", "JournalModeSetStatement", "RowSQLiteStatement", "OtherSQLiteStatement", "Landroidx/sqlite/driver/SupportSQLiteStatement$JournalModeSetStatement;", "Landroidx/sqlite/driver/SupportSQLiteStatement$OtherSQLiteStatement;", "Landroidx/sqlite/driver/SupportSQLiteStatement$RowSQLiteStatement;", "Landroidx/sqlite/driver/SupportSQLiteStatement$TransactionSQLiteStatement;", "sqlite-framework"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public abstract class SupportSQLiteStatement implements SQLiteStatement {
     public static final Companion Companion = new Companion(null);
@@ -62,7 +63,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
     }
 
     /* compiled from: SupportSQLiteStatement.android.kt */
-    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0001\u0014B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tJ\u001a\u0010\n\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\tH\u0002J\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\f\u001a\u00020\tH\u0002J\u0017\u0010\u000f\u001a\u0004\u0018\u00010\t2\u0006\u0010\b\u001a\u00020\tH\u0001¢\u0006\u0002\b\u0010J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\tH\u0002¨\u0006\u0015"}, d2 = {"Landroidx/sqlite/driver/SupportSQLiteStatement$Companion;", "", "<init>", "()V", "create", "Landroidx/sqlite/driver/SupportSQLiteStatement;", "db", "Landroidx/sqlite/db/SupportSQLiteDatabase;", "sql", "", "getTransactionOperation", "Landroidx/sqlite/driver/SupportSQLiteStatement$Companion$TransactionOperation;", "prefix", "isRowStatement", "", "getStatementPrefix", "getStatementPrefix$sqlite_framework", "getStatementPrefixIndex", "", CmcdData.STREAMING_FORMAT_SS, "TransactionOperation", "sqlite-framework"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0002\u0016\u0017B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tJ\u001a\u0010\n\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\tH\u0002J\u001a\u0010\r\u001a\u0004\u0018\u00010\u000e2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\tH\u0002J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\f\u001a\u00020\tH\u0002J\u0017\u0010\u0011\u001a\u0004\u0018\u00010\t2\u0006\u0010\b\u001a\u00020\tH\u0001¢\u0006\u0002\b\u0012J\u0010\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\tH\u0002¨\u0006\u0018"}, d2 = {"Landroidx/sqlite/driver/SupportSQLiteStatement$Companion;", "", "<init>", "()V", "create", "Landroidx/sqlite/driver/SupportSQLiteStatement;", "db", "Landroidx/sqlite/db/SupportSQLiteDatabase;", "sql", "", "getTransactionOperation", "Landroidx/sqlite/driver/SupportSQLiteStatement$Companion$TransactionOperation;", "prefix", "getSpecialOperation", "Landroidx/sqlite/driver/SupportSQLiteStatement$Companion$SpecialOperation;", "isRowStatement", "", "getStatementPrefix", "getStatementPrefix$sqlite_framework", "getStatementPrefixIndex", "", CmcdData.STREAMING_FORMAT_SS, "TransactionOperation", "SpecialOperation", "sqlite-framework"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -84,6 +85,9 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
             TransactionOperation transactionOperation = getTransactionOperation(statementPrefix$sqlite_framework, upperCase);
             if (transactionOperation != null) {
                 return new TransactionSQLiteStatement(db, sql, transactionOperation);
+            }
+            if (getSpecialOperation(statementPrefix$sqlite_framework, upperCase) instanceof SpecialOperation.JournalModeOperation) {
+                return new JournalModeSetStatement(db, sql, new RowSQLiteStatement(db, sql));
             }
             if (isRowStatement(statementPrefix$sqlite_framework)) {
                 return new RowSQLiteStatement(db, sql);
@@ -129,6 +133,15 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
                 default:
                     return null;
             }
+        }
+
+        private final SpecialOperation getSpecialOperation(String str, String str2) {
+            if (Intrinsics.areEqual(str, "PRA")) {
+                String lowerCase = str2.toLowerCase(Locale.ROOT);
+                Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
+                return StringsKt.contains$default((CharSequence) StringsKt.substringAfter(lowerCase, "journal_mode", ""), (CharSequence) "=", false, 2, (Object) null) ? SpecialOperation.JournalModeOperation.INSTANCE : null;
+            }
+            return null;
         }
 
         private final boolean isRowStatement(String str) {
@@ -228,6 +241,30 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
                 $ENTRIES = EnumEntriesKt.enumEntries($values);
             }
         }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* compiled from: SupportSQLiteStatement.android.kt */
+        @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b2\u0018\u00002\u00020\u0001:\u0001\u0004B\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003\u0082\u0001\u0001\u0005¨\u0006\u0006"}, d2 = {"Landroidx/sqlite/driver/SupportSQLiteStatement$Companion$SpecialOperation;", "", "<init>", "()V", "JournalModeOperation", "Landroidx/sqlite/driver/SupportSQLiteStatement$Companion$SpecialOperation$JournalModeOperation;", "sqlite-framework"}, k = 1, mv = {2, 1, 0}, xi = 48)
+        /* loaded from: classes3.dex */
+        public static abstract class SpecialOperation {
+            public /* synthetic */ SpecialOperation(DefaultConstructorMarker defaultConstructorMarker) {
+                this();
+            }
+
+            /* compiled from: SupportSQLiteStatement.android.kt */
+            @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Landroidx/sqlite/driver/SupportSQLiteStatement$Companion$SpecialOperation$JournalModeOperation;", "Landroidx/sqlite/driver/SupportSQLiteStatement$Companion$SpecialOperation;", "<init>", "()V", "sqlite-framework"}, k = 1, mv = {2, 1, 0}, xi = 48)
+            /* loaded from: classes3.dex */
+            public static final class JournalModeOperation extends SpecialOperation {
+                public static final JournalModeOperation INSTANCE = new JournalModeOperation();
+
+                private JournalModeOperation() {
+                    super(null);
+                }
+            }
+
+            private SpecialOperation() {
+            }
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -284,7 +321,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo8162bindBlob(int i, byte[] value) {
+        public void mo8892bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             SQLite.throwSQLiteException(25, "column index out of range");
@@ -293,7 +330,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo8163bindDouble(int i, double d) {
+        public void mo8893bindDouble(int i, double d) {
             throwIfClosed();
             SQLite.throwSQLiteException(25, "column index out of range");
             throw new KotlinNothingValueException();
@@ -301,7 +338,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo8164bindLong(int i, long j) {
+        public void mo8894bindLong(int i, long j) {
             throwIfClosed();
             SQLite.throwSQLiteException(25, "column index out of range");
             throw new KotlinNothingValueException();
@@ -309,7 +346,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo8166bindText(int i, String value) {
+        public void mo8896bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             SQLite.throwSQLiteException(25, "column index out of range");
@@ -318,7 +355,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo8165bindNull(int i) {
+        public void mo8895bindNull(int i) {
             throwIfClosed();
             SQLite.throwSQLiteException(25, "column index out of range");
             throw new KotlinNothingValueException();
@@ -410,13 +447,164 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo8167clearBindings() {
+        public void mo8897clearBindings() {
             throwIfClosed();
         }
 
         @Override // androidx.sqlite.SQLiteStatement, java.lang.AutoCloseable
         public void close() {
             setClosed(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: SupportSQLiteStatement.android.kt */
+    @Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\t\n\u0002\u0010 \n\u0002\b\t\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0001¢\u0006\u0004\b\b\u0010\tJ\b\u0010\n\u001a\u00020\u000bH\u0016J\u001b\u0010\f\u001a\u00020\r2\b\b\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0096\u0001J\u001b\u0010\u0012\u001a\u00020\r2\b\b\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000bH\u0096\u0001J\u001b\u0010\u0013\u001a\u00020\r2\b\b\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0014H\u0096\u0001J\u001b\u0010\u0015\u001a\u00020\r2\b\b\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0016H\u0096\u0001J\u001b\u0010\u0017\u001a\u00020\r2\b\b\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000fH\u0096\u0001J\u001b\u0010\u0018\u001a\u00020\r2\b\b\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0019H\u0096\u0001J\u0013\u0010\u001a\u001a\u00020\r2\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u001b\u0010\u001b\u001a\u00020\r2\b\b\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0006H\u0096\u0001J\t\u0010\u001c\u001a\u00020\rH\u0096\u0001J\t\u0010\u001d\u001a\u00020\rH\u0096\u0001J\u0013\u0010\u001e\u001a\u00020\u00112\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u0013\u0010\u001f\u001a\u00020\u000b2\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\t\u0010 \u001a\u00020\u000fH\u0096\u0001J\u0013\u0010!\u001a\u00020\u00062\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u000f\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00060#H\u0096\u0001J\u0013\u0010$\u001a\u00020\u000f2\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u0013\u0010%\u001a\u00020\u00142\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u0013\u0010&\u001a\u00020\u00162\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u0013\u0010'\u001a\u00020\u000f2\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u0013\u0010(\u001a\u00020\u00192\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u0013\u0010)\u001a\u00020\u00062\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\u0013\u0010*\u001a\u00020\u000b2\b\b\u0001\u0010\u000e\u001a\u00020\u000fH\u0096\u0001J\t\u0010+\u001a\u00020\rH\u0096\u0001R\u000e\u0010\u0007\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006,"}, d2 = {"Landroidx/sqlite/driver/SupportSQLiteStatement$JournalModeSetStatement;", "Landroidx/sqlite/driver/SupportSQLiteStatement;", "Landroidx/sqlite/SQLiteStatement;", "db", "Landroidx/sqlite/db/SupportSQLiteDatabase;", "sql", "", "delegate", "<init>", "(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;Landroidx/sqlite/driver/SupportSQLiteStatement;)V", "step", "", "bindBlob", "", FirebaseAnalytics.Param.INDEX, "", "value", "", "bindBoolean", "bindDouble", "", "bindFloat", "", "bindInt", "bindLong", "", "bindNull", "bindText", "clearBindings", "close", "getBlob", "getBoolean", "getColumnCount", "getColumnName", "getColumnNames", "", "getColumnType", "getDouble", "getFloat", "getInt", "getLong", "getText", "isNull", "reset", "sqlite-framework"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    /* loaded from: classes3.dex */
+    public static final class JournalModeSetStatement extends SupportSQLiteStatement implements SQLiteStatement {
+        private final SupportSQLiteStatement delegate;
+
+        @Override // androidx.sqlite.SQLiteStatement
+        /* renamed from: bindBlob */
+        public void mo8892bindBlob(int i, byte[] value) {
+            Intrinsics.checkNotNullParameter(value, "value");
+            this.delegate.mo8892bindBlob(i, value);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public void bindBoolean(int i, boolean z) {
+            this.delegate.bindBoolean(i, z);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        /* renamed from: bindDouble */
+        public void mo8893bindDouble(int i, double d) {
+            this.delegate.mo8893bindDouble(i, d);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public void bindFloat(int i, float f) {
+            this.delegate.bindFloat(i, f);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public void bindInt(int i, int i2) {
+            this.delegate.bindInt(i, i2);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        /* renamed from: bindLong */
+        public void mo8894bindLong(int i, long j) {
+            this.delegate.mo8894bindLong(i, j);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        /* renamed from: bindNull */
+        public void mo8895bindNull(int i) {
+            this.delegate.mo8895bindNull(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        /* renamed from: bindText */
+        public void mo8896bindText(int i, String value) {
+            Intrinsics.checkNotNullParameter(value, "value");
+            this.delegate.mo8896bindText(i, value);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        /* renamed from: clearBindings */
+        public void mo8897clearBindings() {
+            this.delegate.mo8897clearBindings();
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement, java.lang.AutoCloseable
+        public void close() {
+            this.delegate.close();
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public byte[] getBlob(int i) {
+            return this.delegate.getBlob(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public boolean getBoolean(int i) {
+            return this.delegate.getBoolean(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public int getColumnCount() {
+            return this.delegate.getColumnCount();
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public String getColumnName(int i) {
+            return this.delegate.getColumnName(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public List<String> getColumnNames() {
+            return this.delegate.getColumnNames();
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public int getColumnType(int i) {
+            return this.delegate.getColumnType(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public double getDouble(int i) {
+            return this.delegate.getDouble(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public float getFloat(int i) {
+            return this.delegate.getFloat(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public int getInt(int i) {
+            return this.delegate.getInt(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public long getLong(int i) {
+            return this.delegate.getLong(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public String getText(int i) {
+            return this.delegate.getText(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public boolean isNull(int i) {
+            return this.delegate.isNull(i);
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public void reset() {
+            this.delegate.reset();
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public JournalModeSetStatement(SupportSQLiteDatabase db, String sql, SupportSQLiteStatement delegate) {
+            super(db, sql, null);
+            Intrinsics.checkNotNullParameter(db, "db");
+            Intrinsics.checkNotNullParameter(sql, "sql");
+            Intrinsics.checkNotNullParameter(delegate, "delegate");
+            this.delegate = delegate;
+        }
+
+        @Override // androidx.sqlite.SQLiteStatement
+        public boolean step() {
+            boolean step = this.delegate.step();
+            if (StringsKt.equals(getText(0), "wal", true)) {
+                getDb().enableWriteAheadLogging();
+                return step;
+            }
+            getDb().disableWriteAheadLogging();
+            return step;
         }
     }
 
@@ -447,7 +635,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo8162bindBlob(int i, byte[] value) {
+        public void mo8892bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             ensureCapacity(4, i);
@@ -457,7 +645,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo8163bindDouble(int i, double d) {
+        public void mo8893bindDouble(int i, double d) {
             throwIfClosed();
             ensureCapacity(2, i);
             this.bindingTypes[i] = 2;
@@ -466,7 +654,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo8164bindLong(int i, long j) {
+        public void mo8894bindLong(int i, long j) {
             throwIfClosed();
             ensureCapacity(1, i);
             this.bindingTypes[i] = 1;
@@ -475,7 +663,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo8166bindText(int i, String value) {
+        public void mo8896bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             ensureCapacity(3, i);
@@ -485,7 +673,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo8165bindNull(int i) {
+        public void mo8895bindNull(int i) {
             throwIfClosed();
             ensureCapacity(5, i);
             this.bindingTypes[i] = 5;
@@ -595,7 +783,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo8167clearBindings() {
+        public void mo8897clearBindings() {
             throwIfClosed();
             this.bindingTypes = new int[0];
             this.longBindings = new long[0];
@@ -607,7 +795,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
         @Override // androidx.sqlite.SQLiteStatement, java.lang.AutoCloseable
         public void close() {
             if (!isClosed()) {
-                mo8167clearBindings();
+                mo8897clearBindings();
                 reset();
             }
             setClosed(true);
@@ -776,7 +964,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo8162bindBlob(int i, byte[] value) {
+        public void mo8892bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             this.delegate.bindBlob(i, value);
@@ -784,21 +972,21 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo8163bindDouble(int i, double d) {
+        public void mo8893bindDouble(int i, double d) {
             throwIfClosed();
             this.delegate.bindDouble(i, d);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo8164bindLong(int i, long j) {
+        public void mo8894bindLong(int i, long j) {
             throwIfClosed();
             this.delegate.bindLong(i, j);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo8166bindText(int i, String value) {
+        public void mo8896bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             this.delegate.bindString(i, value);
@@ -806,7 +994,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo8165bindNull(int i) {
+        public void mo8895bindNull(int i) {
             throwIfClosed();
             this.delegate.bindNull(i);
         }
@@ -880,7 +1068,7 @@ public abstract class SupportSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo8167clearBindings() {
+        public void mo8897clearBindings() {
             throwIfClosed();
             this.delegate.clearBindings();
         }

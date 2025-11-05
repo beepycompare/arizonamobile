@@ -6,7 +6,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.media3.exoplayer.video.spherical.OrientationListener;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class TouchTracker extends GestureDetector.SimpleOnGestureListener implements View.OnTouchListener, OrientationListener.Listener {
     static final float MAX_PITCH_DEGREES = 45.0f;
     private final GestureDetector gestureDetector;
@@ -16,7 +16,7 @@ final class TouchTracker extends GestureDetector.SimpleOnGestureListener impleme
     private final PointF accumulatedTouchOffsetDegrees = new PointF();
     private volatile float roll = 3.1415927f;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onScrollChange(PointF pointF);
 

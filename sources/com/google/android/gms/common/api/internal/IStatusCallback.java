@@ -6,11 +6,11 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface IStatusCallback extends IInterface {
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends com.google.android.gms.internal.base.zab implements IStatusCallback {
         public Stub() {
             super("com.google.android.gms.common.api.internal.IStatusCallback");

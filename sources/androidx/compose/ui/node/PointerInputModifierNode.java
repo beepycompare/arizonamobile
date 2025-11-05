@@ -31,6 +31,6 @@ public interface PointerInputModifierNode extends DelegatableNode {
 
     /* renamed from: getTouchBoundsExpansion-RZrCHBk */
     default long mo1431getTouchBoundsExpansionRZrCHBk() {
-        return TouchBoundsExpansion.Companion.m6355getNoneRZrCHBk();
+        return TouchBoundsExpansion.Companion.m7085getNoneRZrCHBk();
     }
 }

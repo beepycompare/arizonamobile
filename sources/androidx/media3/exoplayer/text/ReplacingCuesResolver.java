@@ -7,7 +7,7 @@ import androidx.media3.extractor.text.CuesWithTiming;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import java.util.ArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class ReplacingCuesResolver implements CuesResolver {
     private final ArrayList<CuesWithTiming> cuesWithTimingList = new ArrayList<>();
 

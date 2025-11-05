@@ -3,7 +3,7 @@ package androidx.compose.material3.tokens;
 import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
 /* compiled from: SliderTokens.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\bW\n\u0002\u0018\u0002\n\u0002\b\u0003\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0014\u0010\u0003\u001a\u00020\u0004X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\u0007\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\t\u0010\u0006R\u0019\u0010\u000b\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\f\u0010\u0006R\u0019\u0010\r\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u000e\u0010\u0006R\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0019\u0010\u0013\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0014\u0010\u0006R\u0019\u0010\u0015\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0016\u0010\u0006R\u0011\u0010\u0017\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0019\u0010\u001b\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u001c\u0010\u0006R\u0011\u0010\u001d\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u0012R\u0011\u0010\u001f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u0012R\u0011\u0010!\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u001aR\u0014\u0010#\u001a\u00020\u0004X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\u0006R\u0011\u0010%\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\u001aR\u0014\u0010'\u001a\u00020\u0004X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b(\u0010\u0006R\u0019\u0010)\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b*\u0010\u0006R\u0011\u0010+\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b,\u0010\u001aR\u0014\u0010-\u001a\u00020\u0004X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u0006R\u0011\u0010/\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b0\u0010\u001aR\u0011\u00101\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b2\u0010\u001aR\u0019\u00103\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b4\u0010\u0006R\u0011\u00105\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u001aR\u0011\u00107\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\u001aR\u0011\u00109\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b:\u0010\u001aR\u0019\u0010;\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b<\u0010\u0006R\u0011\u0010=\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b>\u0010\u0012R\u0019\u0010?\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b@\u0010\u0006R\u0011\u0010A\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bB\u0010\u001aR\u0019\u0010C\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\bD\u0010\u0006R\u0011\u0010E\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bF\u0010\u001aR\u0014\u0010G\u001a\u00020\u0004X\u0086D¢\u0006\b\n\u0000\u001a\u0004\bH\u0010\u0006R\u0011\u0010I\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bJ\u0010\u001aR\u0019\u0010K\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\bL\u0010\u0006R\u0011\u0010M\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\bN\u0010\u0012R\u0011\u0010O\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bP\u0010\u001aR\u0011\u0010Q\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bR\u0010\u001aR\u0011\u0010S\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bT\u0010\u001aR\u0011\u0010U\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bV\u0010\u001aR\u0019\u0010W\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\bX\u0010\u0006R\u0011\u0010Y\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010\u001aR\u0011\u0010[\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b\\\u0010\u001aR\u0011\u0010]\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b^\u0010\u001aR\u0011\u0010_\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b`\u0010\u001aR\u0011\u0010a\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bb\u0010\u001aR\u0011\u0010c\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\bd\u0010\u0012R\u0019\u0010e\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\bf\u0010\u0006R\u0019\u0010g\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\bh\u0010\u0006R\u0019\u0010i\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\bj\u0010\u0006R\u0011\u0010k\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bl\u0010\u001aR\u0011\u0010m\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\bn\u0010\u001aR\u0011\u0010o\u001a\u00020p¢\u0006\b\n\u0000\u001a\u0004\bq\u0010r\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006s"}, d2 = {"Landroidx/compose/material3/tokens/SliderTokens;", "", "()V", "ActiveContainerOpacity", "", "getActiveContainerOpacity", "()F", "ActiveHandleHeight", "Landroidx/compose/ui/unit/Dp;", "getActiveHandleHeight-D9Ej5fM", "F", "ActiveHandleLeadingSpace", "getActiveHandleLeadingSpace-D9Ej5fM", "ActiveHandlePadding", "getActiveHandlePadding-D9Ej5fM", "ActiveHandleShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getActiveHandleShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "ActiveHandleTrailingSpace", "getActiveHandleTrailingSpace-D9Ej5fM", "ActiveHandleWidth", "getActiveHandleWidth-D9Ej5fM", "ActiveTrackColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getActiveTrackColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ActiveTrackHeight", "getActiveTrackHeight-D9Ej5fM", "ActiveTrackShape", "getActiveTrackShape", "ActiveTrackShapeLeading", "getActiveTrackShapeLeading", "DisabledActiveTrackColor", "getDisabledActiveTrackColor", "DisabledActiveTrackOpacity", "getDisabledActiveTrackOpacity", "DisabledHandleColor", "getDisabledHandleColor", "DisabledHandleOpacity", "getDisabledHandleOpacity", "DisabledHandleWidth", "getDisabledHandleWidth-D9Ej5fM", "DisabledInactiveTrackColor", "getDisabledInactiveTrackColor", "DisabledInactiveTrackOpacity", "getDisabledInactiveTrackOpacity", "DisabledStopColor", "getDisabledStopColor", "FocusActiveTrackColor", "getFocusActiveTrackColor", "FocusHandleWidth", "getFocusHandleWidth-D9Ej5fM", "FocusInactiveTrackColor", "getFocusInactiveTrackColor", "FocusStopColor", "getFocusStopColor", "HandleColor", "getHandleColor", "HandleHeight", "getHandleHeight-D9Ej5fM", "HandleShape", "getHandleShape", "HandleWidth", "getHandleWidth-D9Ej5fM", "HoverHandleColor", "getHoverHandleColor", "HoverHandleWidth", "getHoverHandleWidth-D9Ej5fM", "HoverStopColor", "getHoverStopColor", "InactiveContainerOpacity", "getInactiveContainerOpacity", "InactiveTrackColor", "getInactiveTrackColor", "InactiveTrackHeight", "getInactiveTrackHeight-D9Ej5fM", "InactiveTrackShape", "getInactiveTrackShape", "LabelContainerColor", "getLabelContainerColor", "LabelTextColor", "getLabelTextColor", "PressedActiveTrackColor", "getPressedActiveTrackColor", "PressedHandleColor", "getPressedHandleColor", "PressedHandleWidth", "getPressedHandleWidth-D9Ej5fM", "PressedInactiveTrackColor", "getPressedInactiveTrackColor", "PressedStopColor", "getPressedStopColor", "SliderActiveHandleColor", "getSliderActiveHandleColor", "StopIndicatorColor", "getStopIndicatorColor", "StopIndicatorColorSelected", "getStopIndicatorColorSelected", "StopIndicatorShape", "getStopIndicatorShape", "StopIndicatorSize", "getStopIndicatorSize-D9Ej5fM", "StopIndicatorTrailingSpace", "getStopIndicatorTrailingSpace-D9Ej5fM", "ValueIndicatorActiveBottomSpace", "getValueIndicatorActiveBottomSpace-D9Ej5fM", "ValueIndicatorContainerColor", "getValueIndicatorContainerColor", "ValueIndicatorLabelTextColor", "getValueIndicatorLabelTextColor", "ValueIndicatorLabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getValueIndicatorLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\bW\n\u0002\u0018\u0002\n\u0002\b\u0003\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0014\u0010\u0004\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\b\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\f\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\r\u0010\u0007R\u0013\u0010\u000e\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u000f\u0010\u0007R\u0011\u0010\u0010\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0013\u0010\u0014\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u0015\u0010\u0007R\u0013\u0010\u0016\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u0017\u0010\u0007R\u0011\u0010\u0018\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0013\u0010\u001c\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u001d\u0010\u0007R\u0011\u0010\u001e\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0013R\u0011\u0010 \u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0013R\u0011\u0010\"\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u001bR\u0014\u0010$\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0007R\u0011\u0010&\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001bR\u0014\u0010(\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u0007R\u0013\u0010*\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b+\u0010\u0007R\u0011\u0010,\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b-\u0010\u001bR\u0014\u0010.\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u0007R\u0011\u00100\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u001bR\u0011\u00102\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b3\u0010\u001bR\u0013\u00104\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b5\u0010\u0007R\u0011\u00106\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b7\u0010\u001bR\u0011\u00108\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b9\u0010\u001bR\u0011\u0010:\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b;\u0010\u001bR\u0013\u0010<\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b=\u0010\u0007R\u0011\u0010>\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b?\u0010\u0013R\u0013\u0010@\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bA\u0010\u0007R\u0011\u0010B\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bC\u0010\u001bR\u0013\u0010D\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bE\u0010\u0007R\u0011\u0010F\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bG\u0010\u001bR\u0014\u0010H\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\bI\u0010\u0007R\u0011\u0010J\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bK\u0010\u001bR\u0013\u0010L\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bM\u0010\u0007R\u0011\u0010N\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\bO\u0010\u0013R\u0011\u0010P\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bQ\u0010\u001bR\u0011\u0010R\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bS\u0010\u001bR\u0011\u0010T\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bU\u0010\u001bR\u0011\u0010V\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bW\u0010\u001bR\u0013\u0010X\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bY\u0010\u0007R\u0011\u0010Z\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b[\u0010\u001bR\u0011\u0010\\\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b]\u0010\u001bR\u0011\u0010^\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b_\u0010\u001bR\u0011\u0010`\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\ba\u0010\u001bR\u0011\u0010b\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bc\u0010\u001bR\u0011\u0010d\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\be\u0010\u0013R\u0013\u0010f\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bg\u0010\u0007R\u0013\u0010h\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bi\u0010\u0007R\u0013\u0010j\u001a\u00020\t¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\bk\u0010\u0007R\u0011\u0010l\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bm\u0010\u001bR\u0011\u0010n\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\bo\u0010\u001bR\u0011\u0010p\u001a\u00020q¢\u0006\b\n\u0000\u001a\u0004\br\u0010s¨\u0006t"}, d2 = {"Landroidx/compose/material3/tokens/SliderTokens;", "", "<init>", "()V", "ActiveContainerOpacity", "", "getActiveContainerOpacity", "()F", "ActiveHandleHeight", "Landroidx/compose/ui/unit/Dp;", "getActiveHandleHeight-D9Ej5fM", "F", "ActiveHandleLeadingSpace", "getActiveHandleLeadingSpace-D9Ej5fM", "ActiveHandlePadding", "getActiveHandlePadding-D9Ej5fM", "ActiveHandleShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getActiveHandleShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "ActiveHandleTrailingSpace", "getActiveHandleTrailingSpace-D9Ej5fM", "ActiveHandleWidth", "getActiveHandleWidth-D9Ej5fM", "ActiveTrackColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getActiveTrackColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "ActiveTrackHeight", "getActiveTrackHeight-D9Ej5fM", "ActiveTrackShape", "getActiveTrackShape", "ActiveTrackShapeLeading", "getActiveTrackShapeLeading", "DisabledActiveTrackColor", "getDisabledActiveTrackColor", "DisabledActiveTrackOpacity", "getDisabledActiveTrackOpacity", "DisabledHandleColor", "getDisabledHandleColor", "DisabledHandleOpacity", "getDisabledHandleOpacity", "DisabledHandleWidth", "getDisabledHandleWidth-D9Ej5fM", "DisabledInactiveTrackColor", "getDisabledInactiveTrackColor", "DisabledInactiveTrackOpacity", "getDisabledInactiveTrackOpacity", "DisabledStopColor", "getDisabledStopColor", "FocusActiveTrackColor", "getFocusActiveTrackColor", "FocusHandleWidth", "getFocusHandleWidth-D9Ej5fM", "FocusInactiveTrackColor", "getFocusInactiveTrackColor", "FocusStopColor", "getFocusStopColor", "HandleColor", "getHandleColor", "HandleHeight", "getHandleHeight-D9Ej5fM", "HandleShape", "getHandleShape", "HandleWidth", "getHandleWidth-D9Ej5fM", "HoverHandleColor", "getHoverHandleColor", "HoverHandleWidth", "getHoverHandleWidth-D9Ej5fM", "HoverStopColor", "getHoverStopColor", "InactiveContainerOpacity", "getInactiveContainerOpacity", "InactiveTrackColor", "getInactiveTrackColor", "InactiveTrackHeight", "getInactiveTrackHeight-D9Ej5fM", "InactiveTrackShape", "getInactiveTrackShape", "LabelContainerColor", "getLabelContainerColor", "LabelTextColor", "getLabelTextColor", "PressedActiveTrackColor", "getPressedActiveTrackColor", "PressedHandleColor", "getPressedHandleColor", "PressedHandleWidth", "getPressedHandleWidth-D9Ej5fM", "PressedInactiveTrackColor", "getPressedInactiveTrackColor", "PressedStopColor", "getPressedStopColor", "SliderActiveHandleColor", "getSliderActiveHandleColor", "StopIndicatorColor", "getStopIndicatorColor", "StopIndicatorColorSelected", "getStopIndicatorColorSelected", "StopIndicatorShape", "getStopIndicatorShape", "StopIndicatorSize", "getStopIndicatorSize-D9Ej5fM", "StopIndicatorTrailingSpace", "getStopIndicatorTrailingSpace-D9Ej5fM", "ValueIndicatorActiveBottomSpace", "getValueIndicatorActiveBottomSpace-D9Ej5fM", "ValueIndicatorContainerColor", "getValueIndicatorContainerColor", "ValueIndicatorLabelTextColor", "getValueIndicatorLabelTextColor", "ValueIndicatorLabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getValueIndicatorLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SliderTokens {
     public static final int $stable = 0;
@@ -55,7 +55,7 @@ public final class SliderTokens {
     private static final ColorSchemeKeyTokens StopIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens StopIndicatorColorSelected = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ShapeKeyTokens StopIndicatorShape = ShapeKeyTokens.CornerFull;
-    private static final float ValueIndicatorActiveBottomSpace = Dp.m7264constructorimpl((float) 12.0d);
+    private static final float ValueIndicatorActiveBottomSpace = Dp.m7995constructorimpl((float) 12.0d);
     private static final ColorSchemeKeyTokens ValueIndicatorContainerColor = ColorSchemeKeyTokens.InverseSurface;
     private static final ColorSchemeKeyTokens ValueIndicatorLabelTextColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final TypographyKeyTokens ValueIndicatorLabelTextFont = TypographyKeyTokens.LabelLarge;
@@ -65,25 +65,25 @@ public final class SliderTokens {
 
     static {
         float f = (float) 44.0d;
-        ActiveHandleHeight = Dp.m7264constructorimpl(f);
+        ActiveHandleHeight = Dp.m7995constructorimpl(f);
         float f2 = (float) 6.0d;
-        ActiveHandleLeadingSpace = Dp.m7264constructorimpl(f2);
-        ActiveHandlePadding = Dp.m7264constructorimpl(f2);
-        ActiveHandleTrailingSpace = Dp.m7264constructorimpl(f2);
+        ActiveHandleLeadingSpace = Dp.m7995constructorimpl(f2);
+        ActiveHandlePadding = Dp.m7995constructorimpl(f2);
+        ActiveHandleTrailingSpace = Dp.m7995constructorimpl(f2);
         float f3 = (float) 4.0d;
-        ActiveHandleWidth = Dp.m7264constructorimpl(f3);
+        ActiveHandleWidth = Dp.m7995constructorimpl(f3);
         float f4 = (float) 16.0d;
-        ActiveTrackHeight = Dp.m7264constructorimpl(f4);
-        DisabledHandleWidth = Dp.m7264constructorimpl(f3);
+        ActiveTrackHeight = Dp.m7995constructorimpl(f4);
+        DisabledHandleWidth = Dp.m7995constructorimpl(f3);
         float f5 = (float) 2.0d;
-        FocusHandleWidth = Dp.m7264constructorimpl(f5);
-        HandleHeight = Dp.m7264constructorimpl(f);
-        HandleWidth = Dp.m7264constructorimpl(f3);
-        HoverHandleWidth = Dp.m7264constructorimpl(f3);
-        InactiveTrackHeight = Dp.m7264constructorimpl(f4);
-        PressedHandleWidth = Dp.m7264constructorimpl(f5);
-        StopIndicatorSize = Dp.m7264constructorimpl(f3);
-        StopIndicatorTrailingSpace = Dp.m7264constructorimpl(f2);
+        FocusHandleWidth = Dp.m7995constructorimpl(f5);
+        HandleHeight = Dp.m7995constructorimpl(f);
+        HandleWidth = Dp.m7995constructorimpl(f3);
+        HoverHandleWidth = Dp.m7995constructorimpl(f3);
+        InactiveTrackHeight = Dp.m7995constructorimpl(f4);
+        PressedHandleWidth = Dp.m7995constructorimpl(f5);
+        StopIndicatorSize = Dp.m7995constructorimpl(f3);
+        StopIndicatorTrailingSpace = Dp.m7995constructorimpl(f2);
     }
 
     public final float getActiveContainerOpacity() {
@@ -91,17 +91,17 @@ public final class SliderTokens {
     }
 
     /* renamed from: getActiveHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3607getActiveHandleHeightD9Ej5fM() {
+    public final float m4246getActiveHandleHeightD9Ej5fM() {
         return ActiveHandleHeight;
     }
 
     /* renamed from: getActiveHandleLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3608getActiveHandleLeadingSpaceD9Ej5fM() {
+    public final float m4247getActiveHandleLeadingSpaceD9Ej5fM() {
         return ActiveHandleLeadingSpace;
     }
 
     /* renamed from: getActiveHandlePadding-D9Ej5fM  reason: not valid java name */
-    public final float m3609getActiveHandlePaddingD9Ej5fM() {
+    public final float m4248getActiveHandlePaddingD9Ej5fM() {
         return ActiveHandlePadding;
     }
 
@@ -110,12 +110,12 @@ public final class SliderTokens {
     }
 
     /* renamed from: getActiveHandleTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3610getActiveHandleTrailingSpaceD9Ej5fM() {
+    public final float m4249getActiveHandleTrailingSpaceD9Ej5fM() {
         return ActiveHandleTrailingSpace;
     }
 
     /* renamed from: getActiveHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3611getActiveHandleWidthD9Ej5fM() {
+    public final float m4250getActiveHandleWidthD9Ej5fM() {
         return ActiveHandleWidth;
     }
 
@@ -124,7 +124,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getActiveTrackHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3612getActiveTrackHeightD9Ej5fM() {
+    public final float m4251getActiveTrackHeightD9Ej5fM() {
         return ActiveTrackHeight;
     }
 
@@ -153,7 +153,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getDisabledHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3613getDisabledHandleWidthD9Ej5fM() {
+    public final float m4252getDisabledHandleWidthD9Ej5fM() {
         return DisabledHandleWidth;
     }
 
@@ -174,7 +174,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getFocusHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3614getFocusHandleWidthD9Ej5fM() {
+    public final float m4253getFocusHandleWidthD9Ej5fM() {
         return FocusHandleWidth;
     }
 
@@ -191,7 +191,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3615getHandleHeightD9Ej5fM() {
+    public final float m4254getHandleHeightD9Ej5fM() {
         return HandleHeight;
     }
 
@@ -200,7 +200,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3616getHandleWidthD9Ej5fM() {
+    public final float m4255getHandleWidthD9Ej5fM() {
         return HandleWidth;
     }
 
@@ -209,7 +209,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getHoverHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3617getHoverHandleWidthD9Ej5fM() {
+    public final float m4256getHoverHandleWidthD9Ej5fM() {
         return HoverHandleWidth;
     }
 
@@ -226,7 +226,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getInactiveTrackHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3618getInactiveTrackHeightD9Ej5fM() {
+    public final float m4257getInactiveTrackHeightD9Ej5fM() {
         return InactiveTrackHeight;
     }
 
@@ -251,7 +251,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getPressedHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3619getPressedHandleWidthD9Ej5fM() {
+    public final float m4258getPressedHandleWidthD9Ej5fM() {
         return PressedHandleWidth;
     }
 
@@ -280,17 +280,17 @@ public final class SliderTokens {
     }
 
     /* renamed from: getStopIndicatorSize-D9Ej5fM  reason: not valid java name */
-    public final float m3620getStopIndicatorSizeD9Ej5fM() {
+    public final float m4259getStopIndicatorSizeD9Ej5fM() {
         return StopIndicatorSize;
     }
 
     /* renamed from: getStopIndicatorTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3621getStopIndicatorTrailingSpaceD9Ej5fM() {
+    public final float m4260getStopIndicatorTrailingSpaceD9Ej5fM() {
         return StopIndicatorTrailingSpace;
     }
 
     /* renamed from: getValueIndicatorActiveBottomSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3622getValueIndicatorActiveBottomSpaceD9Ej5fM() {
+    public final float m4261getValueIndicatorActiveBottomSpaceD9Ej5fM() {
         return ValueIndicatorActiveBottomSpace;
     }
 

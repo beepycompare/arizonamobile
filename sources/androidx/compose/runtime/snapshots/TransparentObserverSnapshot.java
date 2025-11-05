@@ -133,8 +133,8 @@ public final class TransparentObserverSnapshot extends Snapshot {
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: recordModified$runtime */
-    public void mo4006recordModified$runtime(StateObject stateObject) {
-        getCurrentSnapshot().mo4006recordModified$runtime(stateObject);
+    public void mo4736recordModified$runtime(StateObject stateObject) {
+        getCurrentSnapshot().mo4736recordModified$runtime(stateObject);
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
@@ -155,14 +155,14 @@ public final class TransparentObserverSnapshot extends Snapshot {
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedActivated$runtime */
-    public Void mo4004nestedActivated$runtime(Snapshot snapshot) {
+    public Void mo4734nestedActivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedDeactivated$runtime */
-    public Void mo4005nestedDeactivated$runtime(Snapshot snapshot) {
+    public Void mo4735nestedDeactivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }

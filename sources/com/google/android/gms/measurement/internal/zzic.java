@@ -35,7 +35,7 @@ import org.checkerframework.dataflow.qual.SideEffectFree;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzic implements zzjg {
     private static volatile zzic zzb;
     private volatile Boolean zzA;

@@ -182,7 +182,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                                         Object obj = objArr[(i << 3) + i3];
                                         if (obj instanceof StateObjectImpl) {
                                             ReaderKind.Companion companion = ReaderKind.Companion;
-                                            if (!((StateObjectImpl) obj).m4025isReadInh_f27i8$runtime(ReaderKind.m4008constructorimpl(1))) {
+                                            if (!((StateObjectImpl) obj).m4755isReadInh_f27i8$runtime(ReaderKind.m4738constructorimpl(1))) {
                                             }
                                         }
                                         mutableScatterSet.add(obj);
@@ -203,7 +203,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                     for (Object obj2 : set) {
                         if (obj2 instanceof StateObjectImpl) {
                             ReaderKind.Companion companion2 = ReaderKind.Companion;
-                            if (!((StateObjectImpl) obj2).m4025isReadInh_f27i8$runtime(ReaderKind.m4008constructorimpl(1))) {
+                            if (!((StateObjectImpl) obj2).m4755isReadInh_f27i8$runtime(ReaderKind.m4738constructorimpl(1))) {
                             }
                         }
                         mutableScatterSet.add(obj2);
@@ -216,7 +216,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
         }
         if (cancellableContinuation != null) {
             Result.Companion companion3 = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m9847constructorimpl(Unit.INSTANCE));
         }
         return Unit.INSTANCE;
     }

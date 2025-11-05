@@ -6,8 +6,8 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class ComplianceOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ComplianceOptions> CREATOR;
     public static final ComplianceOptions zza;
@@ -16,8 +16,8 @@ public final class ComplianceOptions extends AbstractSafeParcelable {
     private final int zzd;
     private final boolean zze;
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-    /* loaded from: classes3.dex */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private int zza = -1;
         private int zzb = -1;
@@ -97,7 +97,24 @@ public final class ComplianceOptions extends AbstractSafeParcelable {
     }
 
     public final String toString() {
-        return "ComplianceOptions{callerProductId=" + this.zzb + ", dataOwnerProductId=" + this.zzc + ", processingReason=" + this.zzd + ", isUserData=" + this.zze + "}";
+        int i = this.zzb;
+        int length = String.valueOf(i).length();
+        int i2 = this.zzc;
+        int length2 = String.valueOf(i2).length();
+        int i3 = this.zzd;
+        int length3 = String.valueOf(i3).length();
+        boolean z = this.zze;
+        StringBuilder sb = new StringBuilder(length + 55 + length2 + 19 + length3 + 13 + String.valueOf(z).length() + 1);
+        sb.append("ComplianceOptions{callerProductId=");
+        sb.append(i);
+        sb.append(", dataOwnerProductId=");
+        sb.append(i2);
+        sb.append(", processingReason=");
+        sb.append(i3);
+        sb.append(", isUserData=");
+        sb.append(z);
+        sb.append("}");
+        return sb.toString();
     }
 
     @Override // android.os.Parcelable

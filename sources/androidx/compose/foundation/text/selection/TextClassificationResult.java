@@ -56,17 +56,17 @@ public final class TextClassificationResult {
         }
         if (obj instanceof TextClassificationResult) {
             TextClassificationResult textClassificationResult = (TextClassificationResult) obj;
-            return Intrinsics.areEqual(this.text, textClassificationResult.text) && TextRange.m6719equalsimpl0(this.selection, textClassificationResult.selection) && Intrinsics.areEqual(this.textClassification, textClassificationResult.textClassification);
+            return Intrinsics.areEqual(this.text, textClassificationResult.text) && TextRange.m7450equalsimpl0(this.selection, textClassificationResult.selection) && Intrinsics.areEqual(this.textClassification, textClassificationResult.textClassification);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.text.hashCode() * 31) + TextRange.m6727hashCodeimpl(this.selection)) * 31) + this.textClassification.hashCode();
+        return (((this.text.hashCode() * 31) + TextRange.m7458hashCodeimpl(this.selection)) * 31) + this.textClassification.hashCode();
     }
 
     public String toString() {
-        return "TextClassificationResult(text=" + ((Object) this.text) + ", selection=" + ((Object) TextRange.m6729toStringimpl(this.selection)) + ", textClassification=" + this.textClassification + ')';
+        return "TextClassificationResult(text=" + ((Object) this.text) + ", selection=" + ((Object) TextRange.m7460toStringimpl(this.selection)) + ", textClassification=" + this.textClassification + ')';
     }
 
     private TextClassificationResult(CharSequence charSequence, long j, TextClassification textClassification) {

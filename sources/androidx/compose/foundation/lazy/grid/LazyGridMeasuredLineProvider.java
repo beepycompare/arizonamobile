@@ -43,9 +43,9 @@ public abstract class LazyGridMeasuredLineProvider {
         }
         int coerceAtLeast = RangesKt.coerceAtLeast(i3, 0);
         if (this.isVertical) {
-            return Constraints.Companion.m7229fixedWidthOenEA2s(coerceAtLeast);
+            return Constraints.Companion.m7960fixedWidthOenEA2s(coerceAtLeast);
         }
-        return Constraints.Companion.m7228fixedHeightOenEA2s(coerceAtLeast);
+        return Constraints.Companion.m7959fixedHeightOenEA2s(coerceAtLeast);
     }
 
     public final int spanOf(int i) {

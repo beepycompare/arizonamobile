@@ -70,7 +70,7 @@ public interface LazyListLayoutInfo {
 
     /* renamed from: getViewportSize-YbymL2g  reason: not valid java name */
     default long mo962getViewportSizeYbymL2g() {
-        return IntSize.Companion.m7440getZeroYbymL2g();
+        return IntSize.Companion.m8171getZeroYbymL2g();
     }
 
     default Orientation getOrientation() {

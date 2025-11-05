@@ -11,7 +11,7 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes2.dex */
 public final class DpKt {
     /* renamed from: getCenter-EaSLcWc$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7291getCenterEaSLcWc$annotations(long j) {
+    public static /* synthetic */ void m8022getCenterEaSLcWc$annotations(long j) {
     }
 
     public static /* synthetic */ void getDp$annotations(double d) {
@@ -33,185 +33,185 @@ public final class DpKt {
     }
 
     /* renamed from: isFinite-0680j_4$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7293isFinite0680j_4$annotations(float f) {
+    public static /* synthetic */ void m8024isFinite0680j_4$annotations(float f) {
     }
 
     /* renamed from: isSpecified-0680j_4$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7295isSpecified0680j_4$annotations(float f) {
+    public static /* synthetic */ void m8026isSpecified0680j_4$annotations(float f) {
     }
 
     /* renamed from: isSpecified-EaSLcWc  reason: not valid java name */
-    public static final boolean m7296isSpecifiedEaSLcWc(long j) {
+    public static final boolean m8027isSpecifiedEaSLcWc(long j) {
         return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isSpecified-EaSLcWc$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7297isSpecifiedEaSLcWc$annotations(long j) {
+    public static /* synthetic */ void m8028isSpecifiedEaSLcWc$annotations(long j) {
     }
 
     /* renamed from: isSpecified-jo-Fl9I  reason: not valid java name */
-    public static final boolean m7298isSpecifiedjoFl9I(long j) {
+    public static final boolean m8029isSpecifiedjoFl9I(long j) {
         return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isSpecified-jo-Fl9I$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7299isSpecifiedjoFl9I$annotations(long j) {
+    public static /* synthetic */ void m8030isSpecifiedjoFl9I$annotations(long j) {
     }
 
     /* renamed from: isUnspecified-0680j_4$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7301isUnspecified0680j_4$annotations(float f) {
+    public static /* synthetic */ void m8032isUnspecified0680j_4$annotations(float f) {
     }
 
     /* renamed from: isUnspecified-EaSLcWc  reason: not valid java name */
-    public static final boolean m7302isUnspecifiedEaSLcWc(long j) {
+    public static final boolean m8033isUnspecifiedEaSLcWc(long j) {
         return j == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isUnspecified-EaSLcWc$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7303isUnspecifiedEaSLcWc$annotations(long j) {
+    public static /* synthetic */ void m8034isUnspecifiedEaSLcWc$annotations(long j) {
     }
 
     /* renamed from: isUnspecified-jo-Fl9I  reason: not valid java name */
-    public static final boolean m7304isUnspecifiedjoFl9I(long j) {
+    public static final boolean m8035isUnspecifiedjoFl9I(long j) {
         return j == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isUnspecified-jo-Fl9I$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7305isUnspecifiedjoFl9I$annotations(long j) {
+    public static /* synthetic */ void m8036isUnspecifiedjoFl9I$annotations(long j) {
     }
 
     /* renamed from: isSpecified-0680j_4  reason: not valid java name */
-    public static final boolean m7294isSpecified0680j_4(float f) {
+    public static final boolean m8025isSpecified0680j_4(float f) {
         return !Float.isNaN(f);
     }
 
     /* renamed from: isUnspecified-0680j_4  reason: not valid java name */
-    public static final boolean m7300isUnspecified0680j_4(float f) {
+    public static final boolean m8031isUnspecified0680j_4(float f) {
         return Float.isNaN(f);
     }
 
     public static final float getDp(int i) {
-        return Dp.m7264constructorimpl(i);
+        return Dp.m7995constructorimpl(i);
     }
 
     public static final float getDp(double d) {
-        return Dp.m7264constructorimpl((float) d);
+        return Dp.m7995constructorimpl((float) d);
     }
 
     public static final float getDp(float f) {
-        return Dp.m7264constructorimpl(f);
+        return Dp.m7995constructorimpl(f);
     }
 
     /* renamed from: times-3ABfNKs  reason: not valid java name */
-    public static final float m7315times3ABfNKs(float f, float f2) {
-        return Dp.m7264constructorimpl(f * f2);
+    public static final float m8046times3ABfNKs(float f, float f2) {
+        return Dp.m7995constructorimpl(f * f2);
     }
 
     /* renamed from: times-3ABfNKs  reason: not valid java name */
-    public static final float m7314times3ABfNKs(double d, float f) {
-        return Dp.m7264constructorimpl(((float) d) * f);
+    public static final float m8045times3ABfNKs(double d, float f) {
+        return Dp.m7995constructorimpl(((float) d) * f);
     }
 
     /* renamed from: times-3ABfNKs  reason: not valid java name */
-    public static final float m7316times3ABfNKs(int i, float f) {
-        return Dp.m7264constructorimpl(i * f);
+    public static final float m8047times3ABfNKs(int i, float f) {
+        return Dp.m7995constructorimpl(i * f);
     }
 
     /* renamed from: min-YgX7TsA  reason: not valid java name */
-    public static final float m7310minYgX7TsA(float f, float f2) {
-        return Dp.m7264constructorimpl(Math.min(f, f2));
+    public static final float m8041minYgX7TsA(float f, float f2) {
+        return Dp.m7995constructorimpl(Math.min(f, f2));
     }
 
     /* renamed from: max-YgX7TsA  reason: not valid java name */
-    public static final float m7309maxYgX7TsA(float f, float f2) {
-        return Dp.m7264constructorimpl(Math.max(f, f2));
+    public static final float m8040maxYgX7TsA(float f, float f2) {
+        return Dp.m7995constructorimpl(Math.max(f, f2));
     }
 
     /* renamed from: coerceIn-2z7ARbQ  reason: not valid java name */
-    public static final float m7289coerceIn2z7ARbQ(float f, float f2, float f3) {
-        return Dp.m7264constructorimpl(RangesKt.coerceIn(f, f2, f3));
+    public static final float m8020coerceIn2z7ARbQ(float f, float f2, float f3) {
+        return Dp.m7995constructorimpl(RangesKt.coerceIn(f, f2, f3));
     }
 
     /* renamed from: coerceAtLeast-YgX7TsA  reason: not valid java name */
-    public static final float m7287coerceAtLeastYgX7TsA(float f, float f2) {
-        return Dp.m7264constructorimpl(RangesKt.coerceAtLeast(f, f2));
+    public static final float m8018coerceAtLeastYgX7TsA(float f, float f2) {
+        return Dp.m7995constructorimpl(RangesKt.coerceAtLeast(f, f2));
     }
 
     /* renamed from: coerceAtMost-YgX7TsA  reason: not valid java name */
-    public static final float m7288coerceAtMostYgX7TsA(float f, float f2) {
-        return Dp.m7264constructorimpl(RangesKt.coerceAtMost(f, f2));
+    public static final float m8019coerceAtMostYgX7TsA(float f, float f2) {
+        return Dp.m7995constructorimpl(RangesKt.coerceAtMost(f, f2));
     }
 
     /* renamed from: lerp-Md-fbLM  reason: not valid java name */
-    public static final float m7307lerpMdfbLM(float f, float f2, float f3) {
-        return Dp.m7264constructorimpl(MathHelpersKt.lerp(f, f2, f3));
+    public static final float m8038lerpMdfbLM(float f, float f2, float f3) {
+        return Dp.m7995constructorimpl(MathHelpersKt.lerp(f, f2, f3));
     }
 
     /* renamed from: takeOrElse-gVKV90s  reason: not valid java name */
-    public static final long m7312takeOrElsegVKV90s(long j, Function0<DpOffset> function0) {
-        return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m7333unboximpl();
+    public static final long m8043takeOrElsegVKV90s(long j, Function0<DpOffset> function0) {
+        return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m8064unboximpl();
     }
 
     /* renamed from: lerp-xhh869w  reason: not valid java name */
-    public static final long m7308lerpxhh869w(long j, long j2, float f) {
-        return DpOffset.m7320constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(DpOffset.m7325getXD9Ej5fM(j), DpOffset.m7325getXD9Ej5fM(j2), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(DpOffset.m7327getYD9Ej5fM(j), DpOffset.m7327getYD9Ej5fM(j2), f)) & 4294967295L));
+    public static final long m8039lerpxhh869w(long j, long j2, float f) {
+        return DpOffset.m8051constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(DpOffset.m8056getXD9Ej5fM(j), DpOffset.m8056getXD9Ej5fM(j2), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(DpOffset.m8058getYD9Ej5fM(j), DpOffset.m8058getYD9Ej5fM(j2), f)) & 4294967295L));
     }
 
     /* renamed from: takeOrElse-itqla9I  reason: not valid java name */
-    public static final long m7313takeOrElseitqla9I(long j, Function0<DpSize> function0) {
-        return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m7370unboximpl();
+    public static final long m8044takeOrElseitqla9I(long j, Function0<DpSize> function0) {
+        return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m8101unboximpl();
     }
 
     /* renamed from: getCenter-EaSLcWc  reason: not valid java name */
-    public static final long m7290getCenterEaSLcWc(long j) {
-        float m7264constructorimpl = Dp.m7264constructorimpl(DpSize.m7362getWidthD9Ej5fM(j) / 2.0f);
-        return DpOffset.m7320constructorimpl((Float.floatToRawIntBits(Dp.m7264constructorimpl(DpSize.m7360getHeightD9Ej5fM(j) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(m7264constructorimpl) << 32));
+    public static final long m8021getCenterEaSLcWc(long j) {
+        float m7995constructorimpl = Dp.m7995constructorimpl(DpSize.m8093getWidthD9Ej5fM(j) / 2.0f);
+        return DpOffset.m8051constructorimpl((Float.floatToRawIntBits(Dp.m7995constructorimpl(DpSize.m8091getHeightD9Ej5fM(j) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(m7995constructorimpl) << 32));
     }
 
     /* renamed from: times-6HolHcs  reason: not valid java name */
-    public static final long m7318times6HolHcs(int i, long j) {
-        return DpSize.m7368timesGh9hcWk(j, i);
+    public static final long m8049times6HolHcs(int i, long j) {
+        return DpSize.m8099timesGh9hcWk(j, i);
     }
 
     /* renamed from: times-6HolHcs  reason: not valid java name */
-    public static final long m7317times6HolHcs(float f, long j) {
-        return DpSize.m7367timesGh9hcWk(j, f);
+    public static final long m8048times6HolHcs(float f, long j) {
+        return DpSize.m8098timesGh9hcWk(j, f);
     }
 
     /* renamed from: lerp-IDex15A  reason: not valid java name */
-    public static final long m7306lerpIDex15A(long j, long j2, float f) {
-        return DpSize.m7353constructorimpl((Float.floatToRawIntBits(m7307lerpMdfbLM(DpSize.m7362getWidthD9Ej5fM(j), DpSize.m7362getWidthD9Ej5fM(j2), f)) << 32) | (Float.floatToRawIntBits(m7307lerpMdfbLM(DpSize.m7360getHeightD9Ej5fM(j), DpSize.m7360getHeightD9Ej5fM(j2), f)) & 4294967295L));
+    public static final long m8037lerpIDex15A(long j, long j2, float f) {
+        return DpSize.m8084constructorimpl((Float.floatToRawIntBits(m8038lerpMdfbLM(DpSize.m8093getWidthD9Ej5fM(j), DpSize.m8093getWidthD9Ej5fM(j2), f)) << 32) | (Float.floatToRawIntBits(m8038lerpMdfbLM(DpSize.m8091getHeightD9Ej5fM(j), DpSize.m8091getHeightD9Ej5fM(j2), f)) & 4294967295L));
     }
 
     public static final float getWidth(DpRect dpRect) {
-        return Dp.m7264constructorimpl(dpRect.m7348getRightD9Ej5fM() - dpRect.m7347getLeftD9Ej5fM());
+        return Dp.m7995constructorimpl(dpRect.m8079getRightD9Ej5fM() - dpRect.m8078getLeftD9Ej5fM());
     }
 
     public static final float getHeight(DpRect dpRect) {
-        return Dp.m7264constructorimpl(dpRect.m7346getBottomD9Ej5fM() - dpRect.m7349getTopD9Ej5fM());
+        return Dp.m7995constructorimpl(dpRect.m8077getBottomD9Ej5fM() - dpRect.m8080getTopD9Ej5fM());
     }
 
     /* renamed from: takeOrElse-D5KLDUw  reason: not valid java name */
-    public static final float m7311takeOrElseD5KLDUw(float f, Function0<Dp> function0) {
-        return !Float.isNaN(f) ? f : function0.invoke().m7278unboximpl();
+    public static final float m8042takeOrElseD5KLDUw(float f, Function0<Dp> function0) {
+        return !Float.isNaN(f) ? f : function0.invoke().m8009unboximpl();
     }
 
     /* renamed from: isFinite-0680j_4  reason: not valid java name */
-    public static final boolean m7292isFinite0680j_4(float f) {
+    public static final boolean m8023isFinite0680j_4(float f) {
         return (Float.floatToRawIntBits(f) & Integer.MAX_VALUE) < 2139095040;
     }
 
     /* renamed from: DpOffset-YgX7TsA  reason: not valid java name */
-    public static final long m7285DpOffsetYgX7TsA(float f, float f2) {
-        return DpOffset.m7320constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+    public static final long m8016DpOffsetYgX7TsA(float f, float f2) {
+        return DpOffset.m8051constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: DpSize-YgX7TsA  reason: not valid java name */
-    public static final long m7286DpSizeYgX7TsA(float f, float f2) {
-        return DpSize.m7353constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+    public static final long m8017DpSizeYgX7TsA(float f, float f2) {
+        return DpSize.m8084constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     public static final long getSize(DpRect dpRect) {
-        return m7286DpSizeYgX7TsA(Dp.m7264constructorimpl(dpRect.m7348getRightD9Ej5fM() - dpRect.m7347getLeftD9Ej5fM()), Dp.m7264constructorimpl(dpRect.m7346getBottomD9Ej5fM() - dpRect.m7349getTopD9Ej5fM()));
+        return m8017DpSizeYgX7TsA(Dp.m7995constructorimpl(dpRect.m8079getRightD9Ej5fM() - dpRect.m8078getLeftD9Ej5fM()), Dp.m7995constructorimpl(dpRect.m8077getBottomD9Ej5fM() - dpRect.m8080getTopD9Ej5fM()));
     }
 }

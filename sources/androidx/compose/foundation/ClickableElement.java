@@ -78,6 +78,6 @@ final class ClickableElement extends ModifierNodeElement<ClickableNode> {
         String str = this.onClickLabel;
         int hashCode3 = (hashCode2 + (str != null ? str.hashCode() : 0)) * 31;
         Role role = this.role;
-        return ((hashCode3 + (role != null ? Role.m6471hashCodeimpl(role.m6473unboximpl()) : 0)) * 31) + this.onClick.hashCode();
+        return ((hashCode3 + (role != null ? Role.m7201hashCodeimpl(role.m7203unboximpl()) : 0)) * 31) + this.onClick.hashCode();
     }
 }

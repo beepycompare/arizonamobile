@@ -253,14 +253,7 @@ final class CollectCollectors {
                 jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.common.collect.CollectCollectors.lambda$toImmutableMultiset$3(com.google.common.collect.Multiset, com.google.common.collect.Multiset):com.google.common.collect.Multiset
                 	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
                 	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-                Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-                	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-                	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-                	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
-                	... 1 more
+                Caused by: java.lang.NullPointerException
                 */
             @Override // java.util.function.BiFunction
             public final java.lang.Object apply(java.lang.Object r1, java.lang.Object r2) {
@@ -316,14 +309,7 @@ final class CollectCollectors {
                 jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.common.collect.CollectCollectors.lambda$toMultiset$6(com.google.common.collect.Multiset, com.google.common.collect.Multiset):com.google.common.collect.Multiset
                 	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
                 	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-                Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-                	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-                	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-                	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
-                	... 1 more
+                Caused by: java.lang.NullPointerException
                 */
             @Override // java.util.function.BiFunction
             public final java.lang.Object apply(java.lang.Object r1, java.lang.Object r2) {
@@ -753,14 +739,7 @@ final class CollectCollectors {
                 jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.common.collect.CollectCollectors.lambda$toMultimap$25(com.google.common.collect.Multimap, com.google.common.collect.Multimap):com.google.common.collect.Multimap
                 	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
                 	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-                Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-                	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-                	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-                	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
-                	... 1 more
+                Caused by: java.lang.NullPointerException
                 */
             @Override // java.util.function.BiFunction
             public final java.lang.Object apply(java.lang.Object r1, java.lang.Object r2) {
@@ -809,14 +788,7 @@ final class CollectCollectors {
                 jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.common.collect.CollectCollectors.lambda$flatteningToMultimap$27(com.google.common.collect.Multimap, com.google.common.collect.Multimap):com.google.common.collect.Multimap
                 	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
                 	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-                Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-                	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-                	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-                	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-                	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
-                	... 1 more
+                Caused by: java.lang.NullPointerException
                 */
             @Override // java.util.function.BiFunction
             public final java.lang.Object apply(java.lang.Object r1, java.lang.Object r2) {

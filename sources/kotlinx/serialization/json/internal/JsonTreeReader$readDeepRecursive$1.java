@@ -1,6 +1,5 @@
 package kotlinx.serialization.json.internal;
 
-import io.appmetrica.analytics.BuildConfig;
 import kotlin.DeepRecursiveScope;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -16,7 +15,7 @@ import kotlinx.serialization.json.JsonPrimitive;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JsonTreeReader.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u00022\u0006\u0010\u0004\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lkotlinx/serialization/json/JsonElement;", "Lkotlin/DeepRecursiveScope;", "", "it"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.serialization.json.internal.JsonTreeReader$readDeepRecursive$1", f = "JsonTreeReader.kt", i = {}, l = {BuildConfig.API_LEVEL}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "kotlinx.serialization.json.internal.JsonTreeReader$readDeepRecursive$1", f = "JsonTreeReader.kt", i = {}, l = {115}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class JsonTreeReader$readDeepRecursive$1 extends RestrictedSuspendLambda implements Function3<DeepRecursiveScope<Unit, JsonElement>, Unit, Continuation<? super JsonElement>, Object> {
     private /* synthetic */ Object L$0;

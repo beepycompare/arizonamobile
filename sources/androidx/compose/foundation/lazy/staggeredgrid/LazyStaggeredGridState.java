@@ -427,7 +427,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
     }
 
     public final void snapToItemInternal$foundation_release(int i, int i2, boolean z) {
-        int m7392getXimpl;
+        int m8123getXimpl;
         boolean z2 = (this.scrollPosition.getIndex() == i && this.scrollPosition.getScrollOffset() == i2) ? false : true;
         if (z2) {
             this.itemAnimator.reset();
@@ -436,11 +436,11 @@ public final class LazyStaggeredGridState implements ScrollableState {
         LazyStaggeredGridItemInfo findVisibleItem = LazyStaggeredGridMeasureResultKt.findVisibleItem(value, i);
         if (findVisibleItem != null && z2) {
             if (value.getOrientation() == Orientation.Vertical) {
-                m7392getXimpl = IntOffset.m7393getYimpl(findVisibleItem.mo1098getOffsetnOccac());
+                m8123getXimpl = IntOffset.m8124getYimpl(findVisibleItem.mo1098getOffsetnOccac());
             } else {
-                m7392getXimpl = IntOffset.m7392getXimpl(findVisibleItem.mo1098getOffsetnOccac());
+                m8123getXimpl = IntOffset.m8123getXimpl(findVisibleItem.mo1098getOffsetnOccac());
             }
-            int i3 = m7392getXimpl + i2;
+            int i3 = m8123getXimpl + i2;
             int length = value.getFirstVisibleItemScrollOffsets().length;
             int[] iArr = new int[length];
             for (int i4 = 0; i4 < length; i4++) {
@@ -481,7 +481,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
         int index;
         int findPreviousItemIndex;
         int i;
-        long m7228fixedHeightOenEA2s;
+        long m7959fixedHeightOenEA2s;
         if (!this.prefetchingEnabled || lazyStaggeredGridMeasureResult.getVisibleItemsInfo().isEmpty()) {
             return;
         }
@@ -522,11 +522,11 @@ public final class LazyStaggeredGridState implements ScrollableState {
                     i = (slots.getPositions()[i7] + slots.getSizes()[i7]) - i6;
                 }
                 if (lazyStaggeredGridMeasureResult.getOrientation() == Orientation.Vertical) {
-                    m7228fixedHeightOenEA2s = Constraints.Companion.m7229fixedWidthOenEA2s(i);
+                    m7959fixedHeightOenEA2s = Constraints.Companion.m7960fixedWidthOenEA2s(i);
                 } else {
-                    m7228fixedHeightOenEA2s = Constraints.Companion.m7228fixedHeightOenEA2s(i);
+                    m7959fixedHeightOenEA2s = Constraints.Companion.m7959fixedHeightOenEA2s(i);
                 }
-                this.currentItemPrefetchHandles.put(Integer.valueOf(i3), LazyLayoutPrefetchState.m1057schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, i3, m7228fixedHeightOenEA2s, null, 4, null));
+                this.currentItemPrefetchHandles.put(Integer.valueOf(i3), LazyLayoutPrefetchState.m1057schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, i3, m7959fixedHeightOenEA2s, null, 4, null));
             }
             i2++;
             index = i3;

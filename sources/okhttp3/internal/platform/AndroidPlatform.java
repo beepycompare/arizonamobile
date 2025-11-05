@@ -181,7 +181,7 @@ public final class AndroidPlatform extends Platform implements ContextAwarePlatf
     @Override // okhttp3.internal.platform.Platform
     public List<String> getHandshakeServerNames(SSLSocket sslSocket) {
         Intrinsics.checkNotNullParameter(sslSocket, "sslSocket");
-        return super.getHandshakeServerNames(sslSocket);
+        return Build.VERSION.SDK_INT <= 24 ? CollectionsKt.emptyList() : super.getHandshakeServerNames(sslSocket);
     }
 
     @Override // okhttp3.internal.platform.Platform

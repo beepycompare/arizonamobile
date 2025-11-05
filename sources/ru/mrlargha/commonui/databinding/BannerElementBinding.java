@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BannerElementBinding implements ViewBinding {
     public final CardView banner;
     public final ImageView bgImg;

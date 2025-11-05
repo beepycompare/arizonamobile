@@ -16,8 +16,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Chip.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.ChipElevation$animateElevation$2$1", f = "Chip.kt", i = {}, l = {2241, 2243}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.ChipElevation$animateElevation$2$1", f = "Chip.kt", i = {}, l = {2423, 2425}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class ChipElevation$animateElevation$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Animatable<Dp, AnimationVector1D> $animatable;
@@ -49,10 +49,10 @@ public final class ChipElevation$animateElevation$2$1 extends SuspendLambda impl
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0047, code lost:
-        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m7262boximpl(r6.$target), r6) == r0) goto L18;
+        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m7993boximpl(r6.$target), r6) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x005f, code lost:
-        if (androidx.compose.material3.internal.ElevationKt.m3022animateElevationrAjV9yQ(r6.$animatable, r6.$target, r7, r6.$interaction, r6) == r0) goto L18;
+        if (androidx.compose.material3.internal.ElevationKt.m3525animateElevationrAjV9yQ(r6.$animatable, r6.$target, r7, r6.$interaction, r6) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0061, code lost:
         return r0;
@@ -67,7 +67,7 @@ public final class ChipElevation$animateElevation$2$1 extends SuspendLambda impl
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (!Dp.m7269equalsimpl0(this.$animatable.getTargetValue().m7278unboximpl(), this.$target)) {
+            if (!Dp.m8000equalsimpl0(this.$animatable.getTargetValue().m8009unboximpl(), this.$target)) {
                 if (this.$enabled) {
                     animateElevation$lambda$2 = ChipElevation.animateElevation$lambda$2(this.$lastInteraction$delegate);
                     this.label = 2;

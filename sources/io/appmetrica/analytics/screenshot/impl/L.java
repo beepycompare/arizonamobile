@@ -1,145 +1,133 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-/* loaded from: classes4.dex */
-public final class L extends MessageNano {
-    public static volatile L[] d;
+import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
+import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import io.appmetrica.analytics.coreutils.internal.parsing.RemoteConfigJsonUtils;
+import java.util.ArrayList;
+import java.util.Iterator;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.IntIterator;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.ranges.IntRange;
+import kotlin.ranges.RangesKt;
+import org.json.JSONArray;
+import org.json.JSONObject;
+/* loaded from: classes3.dex */
+public final class L implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f1301a;
-    public long b;
-    public String[] c;
+    public final Y f1341a;
+    public final X b;
 
     public L() {
-        a();
+        this(null, null, 3, null);
     }
 
-    public static L[] b() {
-        if (d == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new L[0];
-                }
-            }
-        }
-        return d;
+    public final J b(JSONObject jSONObject) {
+        return (J) JsonParser.DefaultImpls.parseOrNull(this, jSONObject);
     }
 
-    public final L a() {
-        this.f1301a = true;
-        this.b = 5L;
-        this.c = WireFormatNano.EMPTY_STRING_ARRAY;
-        this.cachedSize = -1;
-        return this;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
+    public final Object parseOrNull(JSONObject jSONObject) {
+        return (J) JsonParser.DefaultImpls.parseOrNull(this, jSONObject);
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        boolean z = this.f1301a;
-        if (!z) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(1, z);
-        }
-        long j = this.b;
-        if (j != 5) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(2, j);
-        }
-        String[] strArr = this.c;
-        if (strArr == null || strArr.length <= 0) {
-            return computeSerializedSize;
-        }
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
-        while (true) {
-            String[] strArr2 = this.c;
-            if (i >= strArr2.length) {
-                return computeSerializedSize + i2 + i3;
-            }
-            String str = strArr2[i];
-            if (str != null) {
-                i3++;
-                i2 = CodedOutputByteBufferNano.computeStringSizeNoTag(str) + i2;
-            }
-            i++;
-        }
+    public L(Y y, X x) {
+        this.f1341a = y;
+        this.b = x;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        boolean z = this.f1301a;
-        if (!z) {
-            codedOutputByteBufferNano.writeBool(1, z);
-        }
-        long j = this.b;
-        if (j != 5) {
-            codedOutputByteBufferNano.writeInt64(2, j);
-        }
-        String[] strArr = this.c;
-        if (strArr != null && strArr.length > 0) {
-            int i = 0;
-            while (true) {
-                String[] strArr2 = this.c;
-                if (i >= strArr2.length) {
-                    break;
-                }
-                String str = strArr2[i];
-                if (str != null) {
-                    codedOutputByteBufferNano.writeString(3, str);
-                }
-                i++;
-            }
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
     /* renamed from: a */
-    public final L mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f1301a = codedInputByteBufferNano.readBool();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readInt64();
-            } else if (readTag != 26) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
+    public final J parse(JSONObject jSONObject) {
+        N n;
+        P p;
+        Q q;
+        boolean z = AbstractC0773o.f1373a;
+        boolean extractFeature = RemoteConfigJsonUtils.extractFeature(jSONObject, "screenshot", AbstractC0773o.f1373a);
+        Y y = this.f1341a;
+        X x = this.b;
+        x.getClass();
+        JSONObject optJSONObject = jSONObject.optJSONObject("screenshot");
+        if (optJSONObject == null) {
+            q = new Q();
+            q.f1346a = new N();
+            q.b = new P();
+            O o = new O();
+            o.c = AbstractC0773o.b;
+            q.c = o;
+        } else {
+            Q q2 = new Q();
+            x.f1350a.getClass();
+            JSONObject optJSONObject2 = optJSONObject.optJSONObject("api_captor_config");
+            O o2 = null;
+            if (optJSONObject2 == null) {
+                n = null;
             } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 26);
-                String[] strArr = this.c;
-                int length = strArr == null ? 0 : strArr.length;
-                int i = repeatedFieldArrayLength + length;
-                String[] strArr2 = new String[i];
-                if (length != 0) {
-                    System.arraycopy(strArr, 0, strArr2, 0, length);
+                n = new N();
+                Boolean optBooleanOrNull = JsonUtils.optBooleanOrNull(optJSONObject2, "enabled");
+                if (optBooleanOrNull != null) {
+                    n.f1343a = optBooleanOrNull.booleanValue();
                 }
-                while (length < i - 1) {
-                    strArr2[length] = codedInputByteBufferNano.readString();
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                strArr2[length] = codedInputByteBufferNano.readString();
-                this.c = strArr2;
             }
+            if (n != null) {
+                q2.f1346a = n;
+            }
+            x.b.getClass();
+            JSONObject optJSONObject3 = optJSONObject.optJSONObject("service_captor_config");
+            if (optJSONObject3 == null) {
+                p = null;
+            } else {
+                p = new P();
+                Boolean optBooleanOrNull2 = JsonUtils.optBooleanOrNull(optJSONObject3, "enabled");
+                if (optBooleanOrNull2 != null) {
+                    p.f1345a = optBooleanOrNull2.booleanValue();
+                }
+                Long optLongOrNull = JsonUtils.optLongOrNull(optJSONObject3, "delay_seconds");
+                if (optLongOrNull != null) {
+                    p.b = optLongOrNull.longValue();
+                }
+            }
+            if (p != null) {
+                q2.b = p;
+            }
+            x.c.getClass();
+            JSONObject optJSONObject4 = optJSONObject.optJSONObject("content_observer_captor_config");
+            if (optJSONObject4 != null) {
+                o2 = new O();
+                Boolean optBooleanOrNull3 = JsonUtils.optBooleanOrNull(optJSONObject4, "enabled");
+                if (optBooleanOrNull3 != null) {
+                    o2.f1344a = optBooleanOrNull3.booleanValue();
+                }
+                JSONArray optJSONArray = optJSONObject4.optJSONArray("media_store_column_names");
+                if (optJSONArray != null) {
+                    IntRange until = RangesKt.until(0, optJSONArray.length());
+                    ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(until, 10));
+                    Iterator<Integer> it = until.iterator();
+                    while (it.hasNext()) {
+                        arrayList.add(optJSONArray.getString(((IntIterator) it).nextInt()));
+                    }
+                    Object[] array = arrayList.toArray(new String[0]);
+                    if (array != null) {
+                        o2.c = (String[]) array;
+                    } else {
+                        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
+                    }
+                }
+                Long optLongOrNull2 = JsonUtils.optLongOrNull(optJSONObject4, "detect_window_seconds");
+                if (optLongOrNull2 != null) {
+                    o2.b = optLongOrNull2.longValue();
+                }
+            }
+            if (o2 != null) {
+                q2.c = o2;
+            }
+            q = q2;
         }
-        return this;
+        return new J(extractFeature, y.toModel(q));
     }
 
-    public static L b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new L().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static L a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (L) MessageNano.mergeFrom(new L(), bArr);
+    public /* synthetic */ L(Y y, X x, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? new Y(null, null, null, 7, null) : y, (i & 2) != 0 ? new X() : x);
     }
 }

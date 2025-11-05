@@ -40,13 +40,13 @@ public final class Magnifier_androidKt {
             f = Float.NaN;
         }
         if ((i & 16) != 0) {
-            j = DpSize.Companion.m7371getUnspecifiedMYxV2XQ();
+            j = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
         }
         if ((i & 32) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 64) != 0) {
-            f3 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f3 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 128) != 0) {
             z = true;
@@ -74,13 +74,13 @@ public final class Magnifier_androidKt {
             z = false;
         }
         if ((i & 32) != 0) {
-            j = DpSize.Companion.m7371getUnspecifiedMYxV2XQ();
+            j = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
         }
         if ((i & 64) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 128) != 0) {
-            f3 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f3 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 256) != 0) {
             z2 = true;

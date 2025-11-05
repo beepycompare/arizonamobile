@@ -33,15 +33,15 @@ final class DefaultPagerNestedScrollConnection implements NestedScrollConnection
     /* renamed from: consumeOnOrientation-QWom1Mo  reason: not valid java name */
     public final long m1134consumeOnOrientationQWom1Mo(long j, Orientation orientation) {
         if (orientation == Orientation.Vertical) {
-            return Velocity.m7498copyOhffZ5M$default(j, 0.0f, 0.0f, 2, null);
+            return Velocity.m8229copyOhffZ5M$default(j, 0.0f, 0.0f, 2, null);
         }
-        return Velocity.m7498copyOhffZ5M$default(j, 0.0f, 0.0f, 1, null);
+        return Velocity.m8229copyOhffZ5M$default(j, 0.0f, 0.0f, 1, null);
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreScroll-OzD1aCk */
     public long mo928onPreScrollOzD1aCk(long j, int i) {
-        if (NestedScrollSource.m5720equalsimpl0(i, NestedScrollSource.Companion.m5732getUserInputWNlRxjI()) && Math.abs(this.state.getCurrentPageOffsetFraction()) > 1.0E-6d) {
+        if (NestedScrollSource.m6450equalsimpl0(i, NestedScrollSource.Companion.m6462getUserInputWNlRxjI()) && Math.abs(this.state.getCurrentPageOffsetFraction()) > 1.0E-6d) {
             float currentPageOffsetFraction = this.state.getCurrentPageOffsetFraction() * this.state.getPageSize$foundation_release();
             float pageSize = ((this.state.getLayoutInfo().getPageSize() + this.state.getLayoutInfo().getPageSpacing()) * (-Math.signum(this.state.getCurrentPageOffsetFraction()))) + currentPageOffsetFraction;
             if (this.state.getCurrentPageOffsetFraction() > 0.0f) {
@@ -53,24 +53,24 @@ final class DefaultPagerNestedScrollConnection implements NestedScrollConnection
             if (this.orientation != Orientation.Vertical) {
                 f = Float.intBitsToFloat((int) (j & 4294967295L));
             }
-            return Offset.m4298copydBAh8RU(j, intBitsToFloat, f);
+            return Offset.m5028copydBAh8RU(j, intBitsToFloat, f);
         }
-        return Offset.Companion.m4321getZeroF1C5BW0();
+        return Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostScroll-DzOQY0M */
     public long mo577onPostScrollDzOQY0M(long j, long j2, int i) {
-        if (NestedScrollSource.m5720equalsimpl0(i, NestedScrollSource.Companion.m5731getSideEffectWNlRxjI()) && m1133mainAxisk4lQ0M(j2) != 0.0f) {
+        if (NestedScrollSource.m6450equalsimpl0(i, NestedScrollSource.Companion.m6461getSideEffectWNlRxjI()) && m1133mainAxisk4lQ0M(j2) != 0.0f) {
             throw new CancellationException("Scroll cancelled");
         }
-        return Offset.Companion.m4321getZeroF1C5BW0();
+        return Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostFling-RZ2iAVY */
     public Object mo576onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
-        return Velocity.m7493boximpl(m1134consumeOnOrientationQWom1Mo(j2, this.orientation));
+        return Velocity.m8224boximpl(m1134consumeOnOrientationQWom1Mo(j2, this.orientation));
     }
 
     /* renamed from: mainAxis-k-4lQ0M  reason: not valid java name */

@@ -93,20 +93,20 @@ public final class PaddingValuesImpl implements PaddingValues {
     public boolean equals(Object obj) {
         if (obj instanceof PaddingValuesImpl) {
             PaddingValuesImpl paddingValuesImpl = (PaddingValuesImpl) obj;
-            return Dp.m7269equalsimpl0(this.start, paddingValuesImpl.start) && Dp.m7269equalsimpl0(this.top, paddingValuesImpl.top) && Dp.m7269equalsimpl0(this.end, paddingValuesImpl.end) && Dp.m7269equalsimpl0(this.bottom, paddingValuesImpl.bottom);
+            return Dp.m8000equalsimpl0(this.start, paddingValuesImpl.start) && Dp.m8000equalsimpl0(this.top, paddingValuesImpl.top) && Dp.m8000equalsimpl0(this.end, paddingValuesImpl.end) && Dp.m8000equalsimpl0(this.bottom, paddingValuesImpl.bottom);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Dp.m7270hashCodeimpl(this.start) * 31) + Dp.m7270hashCodeimpl(this.top)) * 31) + Dp.m7270hashCodeimpl(this.end)) * 31) + Dp.m7270hashCodeimpl(this.bottom);
+        return (((((Dp.m8001hashCodeimpl(this.start) * 31) + Dp.m8001hashCodeimpl(this.top)) * 31) + Dp.m8001hashCodeimpl(this.end)) * 31) + Dp.m8001hashCodeimpl(this.bottom);
     }
 
     public String toString() {
-        return "PaddingValues(start=" + ((Object) Dp.m7275toStringimpl(this.start)) + ", top=" + ((Object) Dp.m7275toStringimpl(this.top)) + ", end=" + ((Object) Dp.m7275toStringimpl(this.end)) + ", bottom=" + ((Object) Dp.m7275toStringimpl(this.bottom)) + ')';
+        return "PaddingValues(start=" + ((Object) Dp.m8006toStringimpl(this.start)) + ", top=" + ((Object) Dp.m8006toStringimpl(this.top)) + ", end=" + ((Object) Dp.m8006toStringimpl(this.end)) + ", bottom=" + ((Object) Dp.m8006toStringimpl(this.bottom)) + ')';
     }
 
     public /* synthetic */ PaddingValuesImpl(float f, float f2, float f3, float f4, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7264constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7264constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7264constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7264constructorimpl(0) : f4, null);
+        this((i & 1) != 0 ? Dp.m7995constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7995constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7995constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7995constructorimpl(0) : f4, null);
     }
 }

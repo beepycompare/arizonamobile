@@ -38,6 +38,6 @@ public final class LazyLayoutKt$sam$androidx_compose_foundation_lazy_layout_Lazy
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasurePolicy
     /* renamed from: measure-0kLqBqw */
     public final /* synthetic */ MeasureResult mo959measure0kLqBqw(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j) {
-        return (MeasureResult) this.function.invoke(lazyLayoutMeasureScope, Constraints.m7204boximpl(j));
+        return (MeasureResult) this.function.invoke(lazyLayoutMeasureScope, Constraints.m7935boximpl(j));
     }
 }

@@ -10,10 +10,10 @@ import androidx.media3.exoplayer.source.chunk.MediaChunk;
 import androidx.media3.exoplayer.source.chunk.MediaChunkIterator;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface ExoTrackSelection extends TrackSelection {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Factory {
         ExoTrackSelection[] createTrackSelections(Definition[] definitionArr, BandwidthMeter bandwidthMeter, MediaSource.MediaPeriodId mediaPeriodId, Timeline timeline);
     }
@@ -59,7 +59,7 @@ public interface ExoTrackSelection extends TrackSelection {
 
     void updateSelectedTrack(long j, long j2, long j3, List<? extends MediaChunk> list, MediaChunkIterator[] mediaChunkIteratorArr);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Definition {
         private static final String TAG = "ETSDefinition";
         public final TrackGroup group;

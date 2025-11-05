@@ -1,30 +1,31 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public abstract class V2 {
+
+import android.content.Context;
+import android.content.Intent;
+import io.appmetrica.analytics.coreapi.internal.backport.BiConsumer;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import java.util.Iterator;
+/* loaded from: classes3.dex */
+public final class V2 implements BiConsumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zf f708a;
-    public final InterfaceC0224eb b;
+    public final /* synthetic */ W2 f727a;
 
-    public V2(Zf zf, InterfaceC0224eb interfaceC0224eb) {
-        this.f708a = zf;
-        this.b = interfaceC0224eb;
+    public V2(W2 w2) {
+        this.f727a = w2;
     }
 
-    public final boolean a(C0478o6 c0478o6, U2 u2) {
-        for (Object obj : ((C0656v9) this.f708a.a(c0478o6.d)).f1123a) {
-            if (u2.a(obj, c0478o6)) {
-                return true;
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.BiConsumer
+    public final void consume(Object obj, Object obj2) {
+        Context context = (Context) obj;
+        Intent intent = (Intent) obj2;
+        synchronized (this.f727a) {
+            W2 w2 = this.f727a;
+            w2.b = intent;
+            Iterator it = w2.f740a.iterator();
+            while (it.hasNext()) {
+                ((Consumer) it.next()).consume(intent);
             }
         }
-        return false;
-    }
-
-    public final Zf b() {
-        return this.f708a;
-    }
-
-    public final InterfaceC0224eb a() {
-        return this.b;
     }
 }

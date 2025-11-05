@@ -30,26 +30,26 @@ public final class RulerAlignmentKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult fitInside$lambda$2(final RectRulers rectRulers, MeasureScope measureScope, final Measurable measurable, Constraints constraints) {
-        if (Constraints.m7213getHasBoundedWidthimpl(constraints.m7223unboximpl()) && Constraints.m7212getHasBoundedHeightimpl(constraints.m7223unboximpl())) {
-            final int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(constraints.m7223unboximpl());
-            final int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(constraints.m7223unboximpl());
-            return MeasureScope.layout$default(measureScope, m7217getMaxWidthimpl, m7216getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.layout.RulerAlignmentKt$$ExternalSyntheticLambda0
+        if (Constraints.m7944getHasBoundedWidthimpl(constraints.m7954unboximpl()) && Constraints.m7943getHasBoundedHeightimpl(constraints.m7954unboximpl())) {
+            final int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(constraints.m7954unboximpl());
+            final int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(constraints.m7954unboximpl());
+            return MeasureScope.layout$default(measureScope, m7948getMaxWidthimpl, m7947getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.layout.RulerAlignmentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit fitInside$lambda$2$lambda$0;
-                    fitInside$lambda$2$lambda$0 = RulerAlignmentKt.fitInside$lambda$2$lambda$0(RectRulers.this, m7217getMaxWidthimpl, m7216getMaxHeightimpl, measurable, (Placeable.PlacementScope) obj);
+                    fitInside$lambda$2$lambda$0 = RulerAlignmentKt.fitInside$lambda$2$lambda$0(RectRulers.this, m7948getMaxWidthimpl, m7947getMaxHeightimpl, measurable, (Placeable.PlacementScope) obj);
                     return fitInside$lambda$2$lambda$0;
                 }
             }, 4, null);
         }
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(constraints.m7223unboximpl());
-        final int width = mo5967measureBRTryo0.getWidth();
-        final int height = mo5967measureBRTryo0.getHeight();
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(constraints.m7954unboximpl());
+        final int width = mo6697measureBRTryo0.getWidth();
+        final int height = mo6697measureBRTryo0.getHeight();
         return MeasureScope.layout$default(measureScope, width, height, null, new Function1() { // from class: androidx.compose.foundation.layout.RulerAlignmentKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit fitInside$lambda$2$lambda$1;
-                fitInside$lambda$2$lambda$1 = RulerAlignmentKt.fitInside$lambda$2$lambda$1(RectRulers.this, width, height, mo5967measureBRTryo0, (Placeable.PlacementScope) obj);
+                fitInside$lambda$2$lambda$1 = RulerAlignmentKt.fitInside$lambda$2$lambda$1(RectRulers.this, width, height, mo6697measureBRTryo0, (Placeable.PlacementScope) obj);
                 return fitInside$lambda$2$lambda$1;
             }
         }, 4, null);
@@ -79,7 +79,7 @@ public final class RulerAlignmentKt {
         if (i5 <= i2) {
             i2 = i5;
         }
-        Placeable.PlacementScope.place$default(placementScope, measurable.mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i - i3, i2 - i4)), i3, i4, 0.0f, 4, null);
+        Placeable.PlacementScope.place$default(placementScope, measurable.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(i - i3, i2 - i4)), i3, i4, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 
@@ -128,14 +128,14 @@ public final class RulerAlignmentKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult fitOutside$lambda$5(final RectRulers rectRulers, MeasureScope measureScope, final Measurable measurable, Constraints constraints) {
-        if (Constraints.m7213getHasBoundedWidthimpl(constraints.m7223unboximpl()) && Constraints.m7212getHasBoundedHeightimpl(constraints.m7223unboximpl())) {
-            final int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(constraints.m7223unboximpl());
-            final int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(constraints.m7223unboximpl());
-            return MeasureScope.layout$default(measureScope, m7217getMaxWidthimpl, m7216getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.layout.RulerAlignmentKt$$ExternalSyntheticLambda2
+        if (Constraints.m7944getHasBoundedWidthimpl(constraints.m7954unboximpl()) && Constraints.m7943getHasBoundedHeightimpl(constraints.m7954unboximpl())) {
+            final int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(constraints.m7954unboximpl());
+            final int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(constraints.m7954unboximpl());
+            return MeasureScope.layout$default(measureScope, m7948getMaxWidthimpl, m7947getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.layout.RulerAlignmentKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit fitOutside$lambda$5$lambda$3;
-                    fitOutside$lambda$5$lambda$3 = RulerAlignmentKt.fitOutside$lambda$5$lambda$3(RectRulers.this, m7217getMaxWidthimpl, m7216getMaxHeightimpl, measurable, (Placeable.PlacementScope) obj);
+                    fitOutside$lambda$5$lambda$3 = RulerAlignmentKt.fitOutside$lambda$5$lambda$3(RectRulers.this, m7948getMaxWidthimpl, m7947getMaxHeightimpl, measurable, (Placeable.PlacementScope) obj);
                     return fitOutside$lambda$5$lambda$3;
                 }
             }, 4, null);
@@ -175,20 +175,20 @@ public final class RulerAlignmentKt {
                 i3 = 0;
                 i4 = i3;
             }
-            Placeable.PlacementScope.place$default(placementScope, measurable.mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i, i2)), i3, i4, 0.0f, 4, null);
+            Placeable.PlacementScope.place$default(placementScope, measurable.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(i, i2)), i3, i4, 0.0f, 4, null);
             return Unit.INSTANCE;
         } else {
             i2 = roundToInt2;
         }
         i3 = 0;
         i4 = i3;
-        Placeable.PlacementScope.place$default(placementScope, measurable.mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i, i2)), i3, i4, 0.0f, 4, null);
+        Placeable.PlacementScope.place$default(placementScope, measurable.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(i, i2)), i3, i4, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit fitOutside$lambda$5$lambda$4(Measurable measurable, Placeable.PlacementScope placementScope) {
-        Placeable.PlacementScope.place$default(placementScope, measurable.mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(0, 0)), 0, 0, 0.0f, 4, null);
+        Placeable.PlacementScope.place$default(placementScope, measurable.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(0, 0)), 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 }

@@ -1,6 +1,5 @@
 package androidx.room;
 
-import androidx.room.ObservedTableStates;
 import androidx.room.concurrent.CloseBarrier;
 import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
@@ -10,13 +9,11 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.locks.ReentrantLock;
 import kotlin.Metadata;
 import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.TuplesKt;
 import kotlin.Unit;
-import kotlin.collections.ArraysKt;
 import kotlin.collections.MapsKt;
 import kotlin.collections.SetsKt;
 import kotlin.coroutines.Continuation;
@@ -208,82 +205,37 @@ public final class TriggerBasedInvalidationTracker {
         return this.observedTableStates.onObserverRemoved$room_runtime(tableIds);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00e5 A[Catch: all -> 0x003c, TRY_LEAVE, TryCatch #3 {all -> 0x003c, blocks: (B:12:0x0037, B:47:0x00dc, B:50:0x00e5, B:57:0x0112, B:51:0x00ec, B:53:0x00f2, B:55:0x00fc, B:56:0x0110), top: B:73:0x0037 }] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object syncTriggers$room_runtime(Continuation<? super Unit> continuation) {
         TriggerBasedInvalidationTracker$syncTriggers$1 triggerBasedInvalidationTracker$syncTriggers$1;
-        Object obj;
         int i;
-        CloseBarrier closeBarrier$room_runtime;
         CloseBarrier closeBarrier;
-        ObservedTableStates observedTableStates;
-        ObservedTableStates.SyncState syncState;
-        boolean z;
-        ObservedTableStates.ObserveOp observeOp;
+        Throwable th;
         if (continuation instanceof TriggerBasedInvalidationTracker$syncTriggers$1) {
             triggerBasedInvalidationTracker$syncTriggers$1 = (TriggerBasedInvalidationTracker$syncTriggers$1) continuation;
             if ((triggerBasedInvalidationTracker$syncTriggers$1.label & Integer.MIN_VALUE) != 0) {
                 triggerBasedInvalidationTracker$syncTriggers$1.label -= Integer.MIN_VALUE;
-                obj = triggerBasedInvalidationTracker$syncTriggers$1.result;
+                Object obj = triggerBasedInvalidationTracker$syncTriggers$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = triggerBasedInvalidationTracker$syncTriggers$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    closeBarrier$room_runtime = this.database.getCloseBarrier$room_runtime();
+                    CloseBarrier closeBarrier$room_runtime = this.database.getCloseBarrier$room_runtime();
                     if (closeBarrier$room_runtime.block$room_runtime()) {
                         try {
-                            ObservedTableStates observedTableStates2 = this.observedTableStates;
-                            ReentrantLock reentrantLock = observedTableStates2.lock;
-                            reentrantLock.lock();
-                            if (observedTableStates2.needsSync) {
-                                int i2 = observedTableStates2.version;
-                                boolean[] zArr = new boolean[observedTableStates2.tableObserversCount.length];
-                                int length = observedTableStates2.tableObserversCount.length;
-                                ObservedTableStates.ObserveOp[] observeOpArr = new ObservedTableStates.ObserveOp[length];
-                                int i3 = 0;
-                                boolean z2 = false;
-                                while (i3 < length) {
-                                    boolean z3 = observedTableStates2.tableObserversCount[i3] > 0;
-                                    if (z3 != observedTableStates2.tableObservedState[i3]) {
-                                        zArr[i3] = z3;
-                                        observeOp = z3 ? ObservedTableStates.ObserveOp.ADD : ObservedTableStates.ObserveOp.REMOVE;
-                                        z = true;
-                                    } else {
-                                        z = z2;
-                                        observeOp = ObservedTableStates.ObserveOp.NO_OP;
-                                    }
-                                    observeOpArr[i3] = observeOp;
-                                    i3++;
-                                    z2 = z;
-                                }
-                                if (z2) {
-                                    ObservedTableStates.SyncState syncState2 = new ObservedTableStates.SyncState(i2, observeOpArr, zArr);
-                                    reentrantLock.unlock();
-                                    ObservedTableStates.ObserveOp[] ops = syncState2.getOps();
-                                    triggerBasedInvalidationTracker$syncTriggers$1.L$0 = closeBarrier$room_runtime;
-                                    triggerBasedInvalidationTracker$syncTriggers$1.L$1 = observedTableStates2;
-                                    triggerBasedInvalidationTracker$syncTriggers$1.L$2 = syncState2;
-                                    triggerBasedInvalidationTracker$syncTriggers$1.label = 1;
-                                    Object useConnection = this.database.useConnection(false, new TriggerBasedInvalidationTracker$syncTriggers$2$1$1(ops, this, null), triggerBasedInvalidationTracker$syncTriggers$1);
-                                    if (useConnection == coroutine_suspended) {
-                                        return coroutine_suspended;
-                                    }
-                                    observedTableStates = observedTableStates2;
-                                    obj = useConnection;
-                                    closeBarrier = closeBarrier$room_runtime;
-                                    syncState = syncState2;
-                                }
+                            triggerBasedInvalidationTracker$syncTriggers$1.L$0 = closeBarrier$room_runtime;
+                            triggerBasedInvalidationTracker$syncTriggers$1.label = 1;
+                            if (this.database.useConnection(false, new TriggerBasedInvalidationTracker$syncTriggers$2$1(this, null), triggerBasedInvalidationTracker$syncTriggers$1) == coroutine_suspended) {
+                                return coroutine_suspended;
                             }
-                            reentrantLock.unlock();
-                            closeBarrier$room_runtime.unblock$room_runtime();
-                        } catch (Throwable th) {
-                            th = th;
                             closeBarrier = closeBarrier$room_runtime;
+                        } catch (Throwable th2) {
+                            closeBarrier = closeBarrier$room_runtime;
+                            th = th2;
                             closeBarrier.unblock$room_runtime();
                             throw th;
                         }
@@ -292,42 +244,26 @@ public final class TriggerBasedInvalidationTracker {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    syncState = (ObservedTableStates.SyncState) triggerBasedInvalidationTracker$syncTriggers$1.L$2;
-                    observedTableStates = (ObservedTableStates) triggerBasedInvalidationTracker$syncTriggers$1.L$1;
                     closeBarrier = (CloseBarrier) triggerBasedInvalidationTracker$syncTriggers$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
+                    } catch (Throwable th3) {
+                        th = th3;
                         closeBarrier.unblock$room_runtime();
                         throw th;
                     }
                 }
-                if (!((Boolean) obj).booleanValue()) {
-                    ReentrantLock reentrantLock2 = observedTableStates.lock;
-                    reentrantLock2.lock();
-                    if (observedTableStates.needsSync && syncState.getVersion() == observedTableStates.version) {
-                        ArraysKt.copyInto$default(syncState.getNewStates(), observedTableStates.tableObservedState, 0, 0, 0, 14, (Object) null);
-                        observedTableStates.needsSync = false;
-                    }
-                    Unit unit = Unit.INSTANCE;
-                    reentrantLock2.unlock();
-                }
-                closeBarrier$room_runtime = closeBarrier;
-                closeBarrier$room_runtime.unblock$room_runtime();
+                closeBarrier.unblock$room_runtime();
                 return Unit.INSTANCE;
             }
         }
         triggerBasedInvalidationTracker$syncTriggers$1 = new TriggerBasedInvalidationTracker$syncTriggers$1(this, continuation);
-        obj = triggerBasedInvalidationTracker$syncTriggers$1.result;
+        Object obj2 = triggerBasedInvalidationTracker$syncTriggers$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = triggerBasedInvalidationTracker$syncTriggers$1.label;
         if (i != 0) {
         }
-        if (!((Boolean) obj).booleanValue()) {
-        }
-        closeBarrier$room_runtime = closeBarrier;
-        closeBarrier$room_runtime.unblock$room_runtime();
+        closeBarrier.unblock$room_runtime();
         return Unit.INSTANCE;
     }
 
@@ -748,9 +684,9 @@ public final class TriggerBasedInvalidationTracker {
                     Function1 function1 = new Function1() { // from class: androidx.room.TriggerBasedInvalidationTracker$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Set checkInvalidatedTables$lambda$15;
-                            checkInvalidatedTables$lambda$15 = TriggerBasedInvalidationTracker.checkInvalidatedTables$lambda$15((SQLiteStatement) obj2);
-                            return checkInvalidatedTables$lambda$15;
+                            Set checkInvalidatedTables$lambda$14;
+                            checkInvalidatedTables$lambda$14 = TriggerBasedInvalidationTracker.checkInvalidatedTables$lambda$14((SQLiteStatement) obj2);
+                            return checkInvalidatedTables$lambda$14;
                         }
                     };
                     triggerBasedInvalidationTracker$checkInvalidatedTables$1.L$0 = pooledConnection;
@@ -791,7 +727,7 @@ public final class TriggerBasedInvalidationTracker {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Set checkInvalidatedTables$lambda$15(SQLiteStatement statement) {
+    public static final Set checkInvalidatedTables$lambda$14(SQLiteStatement statement) {
         Intrinsics.checkNotNullParameter(statement, "statement");
         Set createSetBuilder = SetsKt.createSetBuilder();
         while (statement.step()) {

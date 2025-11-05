@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zziq implements Callable {
     final /* synthetic */ zzr zza;
     final /* synthetic */ zzjd zzb;

@@ -12,8 +12,8 @@ public final class BlendModeColorFilterHelper {
     }
 
     /* renamed from: BlendModeColorFilter-xETnrds  reason: not valid java name */
-    public final android.graphics.BlendModeColorFilter m4494BlendModeColorFilterxETnrds(long j, int i) {
-        return new android.graphics.BlendModeColorFilter(ColorKt.m4603toArgb8_81llA(j), AndroidBlendMode_androidKt.m4397toAndroidBlendModes9anfk8(i));
+    public final android.graphics.BlendModeColorFilter m5224BlendModeColorFilterxETnrds(long j, int i) {
+        return new android.graphics.BlendModeColorFilter(ColorKt.m5333toArgb8_81llA(j), AndroidBlendMode_androidKt.m5127toAndroidBlendModes9anfk8(i));
     }
 
     public final BlendModeColorFilter createBlendModeColorFilter(android.graphics.BlendModeColorFilter blendModeColorFilter) {

@@ -1,21 +1,31 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
-/* loaded from: classes4.dex */
-public final class Hi implements yo {
+import android.content.Context;
+/* loaded from: classes3.dex */
+public abstract class Hi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f482a;
+    protected final Context f509a;
+    public final String b;
+    public final String c;
 
-    public Hi(Map<String, ?> map) {
-        this.f482a = map;
+    public Hi(Context context, String str, String str2) {
+        this.f509a = context;
+        this.b = str;
+        this.c = str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.yo
-    public final wo a(String str) {
-        if (this.f482a.containsKey(str)) {
-            return new wo(this, false, String.format("Failed to activate AppMetrica with provided apiKey ApiKey %s has already been used by another reporter.", str));
+    public final Object a() {
+        int identifier = this.f509a.getResources().getIdentifier(this.b, this.c, this.f509a.getPackageName());
+        if (identifier != 0) {
+            try {
+                return a(identifier);
+            } catch (Throwable unused) {
+                return null;
+            }
         }
-        return new wo(this, true, "");
+        return null;
     }
+
+    public abstract Object a(int i);
 }

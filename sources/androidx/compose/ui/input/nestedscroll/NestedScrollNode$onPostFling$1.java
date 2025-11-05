@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: NestedScrollNode.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollNode", f = "NestedScrollNode.kt", i = {0, 0, 1}, l = {122, 127}, m = "onPostFling-RZ2iAVY", n = {"consumed", "available", "selfConsumed"}, s = {"J$0", "J$1", "J$0"})
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class NestedScrollNode$onPostFling$1 extends ContinuationImpl {
     long J$0;
     long J$1;

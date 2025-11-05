@@ -27,7 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, SequenceableLoader, Loader.Callback<Chunk>, Loader.ReleaseCallback {
     private static final String TAG = "ChunkSampleStream";
     private final SequenceableLoader.Callback<ChunkSampleStream<T>> callback;
@@ -56,7 +56,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     private final List<BaseMediaChunk> readOnlyMediaChunks;
     private ReleaseCallback<T> releaseCallback;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface ReleaseCallback<T extends ChunkSource> {
         void onSampleStreamReleased(ChunkSampleStream<T> chunkSampleStream);
     }
@@ -633,7 +633,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class EmbeddedSampleStream implements SampleStream {
         private final int index;
         private boolean notifiedDownstreamFormat;

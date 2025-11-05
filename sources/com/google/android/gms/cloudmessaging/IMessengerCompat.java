@@ -7,13 +7,13 @@ import android.os.Message;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 interface IMessengerCompat extends IInterface {
     public static final String DESCRIPTOR = "com.google.android.gms.iid.IMessengerCompat";
     public static final int TRANSACTION_SEND = 1;
 
     /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Impl extends Binder implements IMessengerCompat {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -32,7 +32,7 @@ interface IMessengerCompat extends IInterface {
     }
 
     /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Proxy implements IMessengerCompat {
         private final IBinder zza;
 

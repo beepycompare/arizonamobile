@@ -5,7 +5,7 @@ import androidx.media3.common.util.Util;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayDeque;
 import java.util.Deque;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class SlidingWeightedAverageBandwidthStatistic implements BandwidthStatistic {
     public static final int DEFAULT_MAX_SAMPLES_COUNT = 10;
     private double bitrateWeightProductSum;
@@ -14,12 +14,12 @@ public class SlidingWeightedAverageBandwidthStatistic implements BandwidthStatis
     private final ArrayDeque<Sample> samples;
     private double weightSum;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface SampleEvictionFunction {
         boolean shouldEvictSample(Deque<Sample> deque);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Sample {
         public final long bitrate;
         public final long timeAddedMs;

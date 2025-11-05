@@ -179,7 +179,7 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
             z = contentInViewNode.reverseDirection;
             float f2 = z ? 1.0f : -1.0f;
             scrollingLogic = contentInViewNode.scrollingLogic;
-            float m593toFloatk4lQ0M = f2 * scrollingLogic.m593toFloatk4lQ0M(scrollingLogic.m591reverseIfNeededMKHz9U(nestedScrollScope.mo533scrollByOzD1aCk(scrollingLogic.m591reverseIfNeededMKHz9U(scrollingLogic.m594toOffsettuRUvjQ(f2 * f)), NestedScrollSource.Companion.m5732getUserInputWNlRxjI())));
+            float m593toFloatk4lQ0M = f2 * scrollingLogic.m593toFloatk4lQ0M(scrollingLogic.m591reverseIfNeededMKHz9U(nestedScrollScope.mo533scrollByOzD1aCk(scrollingLogic.m591reverseIfNeededMKHz9U(scrollingLogic.m594toOffsettuRUvjQ(f2 * f)), NestedScrollSource.Companion.m6462getUserInputWNlRxjI())));
             if (Math.abs(m593toFloatk4lQ0M) < Math.abs(f)) {
                 JobKt__JobKt.cancel$default(job, "Scroll animation cancelled because scroll was not consumed (" + m593toFloatk4lQ0M + " < " + f + ')', null, 2, null);
             }
@@ -214,7 +214,7 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                 }
                 Unit unit = Unit.INSTANCE;
                 Result.Companion companion = Result.Companion;
-                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9106constructorimpl(unit));
+                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9847constructorimpl(unit));
                 contentInViewNode = contentInViewNode2;
             }
             z2 = contentInViewNode2.trackingFocusedChild;

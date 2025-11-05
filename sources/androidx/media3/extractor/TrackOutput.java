@@ -10,7 +10,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Arrays;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface TrackOutput {
     public static final int SAMPLE_DATA_PART_ENCRYPTION = 1;
     public static final int SAMPLE_DATA_PART_MAIN = 0;
@@ -19,7 +19,7 @@ public interface TrackOutput {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface SampleDataPart {
     }
 
@@ -34,7 +34,7 @@ public interface TrackOutput {
 
     void sampleMetadata(long j, int i, int i2, int i3, CryptoData cryptoData);
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class CryptoData {
         public final int clearBlocks;
         public final int cryptoMode;

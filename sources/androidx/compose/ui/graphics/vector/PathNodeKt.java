@@ -2,9 +2,7 @@ package androidx.compose.ui.graphics.vector;
 
 import androidx.compose.ui.graphics.vector.PathNode;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import io.appmetrica.analytics.BuildConfig;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -145,14 +143,14 @@ public final class PathNodeKt {
                     i2 += 4;
                 }
                 return;
-            case BuildConfig.API_LEVEL /* 115 */:
+            case 's':
                 int i18 = i - 4;
                 while (i2 <= i18) {
                     arrayList.add(new PathNode.RelativeReflectiveCurveTo(fArr[i2], fArr[i2 + 1], fArr[i2 + 2], fArr[i2 + 3]));
                     i2 += 4;
                 }
                 return;
-            case AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID /* 116 */:
+            case 't':
                 int i19 = i - 2;
                 while (i2 <= i19) {
                     arrayList.add(new PathNode.RelativeReflectiveQuadTo(fArr[i2], fArr[i2 + 1]));

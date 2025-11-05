@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class LoadEventInfo {
     private static final AtomicLong idSource = new AtomicLong();
     public final long bytesLoaded;

@@ -28,7 +28,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfb {
     private static volatile zzfb zzc;
     protected final ExecutorService zzb;

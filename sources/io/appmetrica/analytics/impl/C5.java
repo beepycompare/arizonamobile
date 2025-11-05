@@ -1,20 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Lambda;
-/* loaded from: classes4.dex */
-public final class C5 extends Lambda implements Function1 {
+import com.adjust.sdk.Constants;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+/* loaded from: classes3.dex */
+public abstract class C5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C5 f384a = new C5();
+    public static final Map f421a;
 
-    public C5() {
-        super(1);
-    }
-
-    @Override // kotlin.jvm.functions.Function1
-    public final Object invoke(Object obj) {
-        return ((IExecutionPolicy) obj).description();
+    static {
+        HashMap hashMap = new HashMap();
+        hashMap.put(Constants.REFERRER_API_GOOGLE, AdTrackingInfo.Provider.GOOGLE);
+        hashMap.put("huawei", AdTrackingInfo.Provider.HMS);
+        hashMap.put("yandex", AdTrackingInfo.Provider.YANDEX);
+        f421a = Collections.unmodifiableMap(hashMap);
     }
 }

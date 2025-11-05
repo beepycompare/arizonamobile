@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BlueprintPipeThreeBinding implements ViewBinding {
     public final ImageView ivDrawing;
     private final ConstraintLayout rootView;

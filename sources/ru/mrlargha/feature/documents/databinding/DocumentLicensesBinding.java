@@ -13,10 +13,13 @@ import ru.mrlargha.feature.documents.R;
 /* loaded from: classes6.dex */
 public final class DocumentLicensesBinding implements ViewBinding {
     public final TextView advocate;
+    public final LinearLayout advocateContainer;
     public final TextView advocateTitle;
     public final TextView auto;
+    public final LinearLayout autoContainer;
     public final TextView autoTitle;
     public final TextView boat;
+    public final LinearLayout boatContainer;
     public final TextView boatTitle;
     public final TextView containerDescription;
     public final TextView dipl;
@@ -38,43 +41,60 @@ public final class DocumentLicensesBinding implements ViewBinding {
     public final ImageView documentsIcShave;
     public final ImageView documentsIcTax;
     public final ImageView documentsIcTaxi;
+    public final ImageView documentsIcTrolleybus;
     public final TextView fish;
+    public final LinearLayout fishContainer;
     public final TextView fishTitle;
     public final TextView flight;
+    public final LinearLayout flightContainer;
     public final TextView flightTitle;
     public final TextView gun;
+    public final LinearLayout gunContainer;
     public final TextView gunTitle;
     public final TextView hunt;
+    public final LinearLayout huntContainer;
     public final TextView huntTitle;
     public final TextView mech;
+    public final LinearLayout mechContainer;
     public final TextView mechTitle;
     public final TextView miner;
+    public final LinearLayout minerContainer;
     public final TextView minerTitle;
     public final TextView moto;
+    public final LinearLayout motoContainer;
     public final TextView motoTitle;
     private final ConstraintLayout rootView;
     public final TextView shave;
+    public final LinearLayout shaveContainer;
     public final TextView shaveTitle;
     public final LinearLayout table1;
     public final LinearLayout table2;
     public final LinearLayout table3;
     public final TextView tax;
+    public final LinearLayout taxContainer;
     public final TextView taxTitle;
     public final TextView taxi;
+    public final LinearLayout taxiContainer;
     public final TextView taxiTitle;
+    public final TextView trolleybus;
+    public final LinearLayout trolleybusContainer;
+    public final TextView trolleybusTitle;
 
-    private DocumentLicensesBinding(ConstraintLayout constraintLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView9, TextView textView10, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, ImageView imageView11, ImageView imageView12, ImageView imageView13, ImageView imageView14, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, TextView textView16, TextView textView17, TextView textView18, TextView textView19, TextView textView20, TextView textView21, TextView textView22, TextView textView23, TextView textView24, TextView textView25, TextView textView26, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, TextView textView27, TextView textView28, TextView textView29, TextView textView30) {
+    private DocumentLicensesBinding(ConstraintLayout constraintLayout, TextView textView, LinearLayout linearLayout, TextView textView2, TextView textView3, LinearLayout linearLayout2, TextView textView4, TextView textView5, LinearLayout linearLayout3, TextView textView6, TextView textView7, TextView textView8, LinearLayout linearLayout4, LinearLayout linearLayout5, TextView textView9, TextView textView10, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, ImageView imageView11, ImageView imageView12, ImageView imageView13, ImageView imageView14, ImageView imageView15, TextView textView11, LinearLayout linearLayout6, TextView textView12, TextView textView13, LinearLayout linearLayout7, TextView textView14, TextView textView15, LinearLayout linearLayout8, TextView textView16, TextView textView17, LinearLayout linearLayout9, TextView textView18, TextView textView19, LinearLayout linearLayout10, TextView textView20, TextView textView21, LinearLayout linearLayout11, TextView textView22, TextView textView23, LinearLayout linearLayout12, TextView textView24, TextView textView25, LinearLayout linearLayout13, TextView textView26, LinearLayout linearLayout14, LinearLayout linearLayout15, LinearLayout linearLayout16, TextView textView27, LinearLayout linearLayout17, TextView textView28, TextView textView29, LinearLayout linearLayout18, TextView textView30, TextView textView31, LinearLayout linearLayout19, TextView textView32) {
         this.rootView = constraintLayout;
         this.advocate = textView;
+        this.advocateContainer = linearLayout;
         this.advocateTitle = textView2;
         this.auto = textView3;
+        this.autoContainer = linearLayout2;
         this.autoTitle = textView4;
         this.boat = textView5;
+        this.boatContainer = linearLayout3;
         this.boatTitle = textView6;
         this.containerDescription = textView7;
         this.dipl = textView8;
-        this.diplContainerColumn = linearLayout;
-        this.diplContainerTop = linearLayout2;
+        this.diplContainerColumn = linearLayout4;
+        this.diplContainerTop = linearLayout5;
         this.diplTitle = textView9;
         this.diplTop = textView10;
         this.documentsIcAdvocate = imageView;
@@ -91,29 +111,43 @@ public final class DocumentLicensesBinding implements ViewBinding {
         this.documentsIcShave = imageView12;
         this.documentsIcTax = imageView13;
         this.documentsIcTaxi = imageView14;
+        this.documentsIcTrolleybus = imageView15;
         this.fish = textView11;
+        this.fishContainer = linearLayout6;
         this.fishTitle = textView12;
         this.flight = textView13;
+        this.flightContainer = linearLayout7;
         this.flightTitle = textView14;
         this.gun = textView15;
+        this.gunContainer = linearLayout8;
         this.gunTitle = textView16;
         this.hunt = textView17;
+        this.huntContainer = linearLayout9;
         this.huntTitle = textView18;
         this.mech = textView19;
+        this.mechContainer = linearLayout10;
         this.mechTitle = textView20;
         this.miner = textView21;
+        this.minerContainer = linearLayout11;
         this.minerTitle = textView22;
         this.moto = textView23;
+        this.motoContainer = linearLayout12;
         this.motoTitle = textView24;
         this.shave = textView25;
+        this.shaveContainer = linearLayout13;
         this.shaveTitle = textView26;
-        this.table1 = linearLayout3;
-        this.table2 = linearLayout4;
-        this.table3 = linearLayout5;
+        this.table1 = linearLayout14;
+        this.table2 = linearLayout15;
+        this.table3 = linearLayout16;
         this.tax = textView27;
+        this.taxContainer = linearLayout17;
         this.taxTitle = textView28;
         this.taxi = textView29;
+        this.taxiContainer = linearLayout18;
         this.taxiTitle = textView30;
+        this.trolleybus = textView31;
+        this.trolleybusContainer = linearLayout19;
+        this.trolleybusTitle = textView32;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -137,151 +171,219 @@ public final class DocumentLicensesBinding implements ViewBinding {
         int i = R.id.advocate;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = R.id.advocate_title;
-            TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
-            if (textView2 != null) {
-                i = R.id.auto;
-                TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
-                if (textView3 != null) {
-                    i = R.id.auto_title;
-                    TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
-                    if (textView4 != null) {
-                        i = R.id.boat;
-                        TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
-                        if (textView5 != null) {
-                            i = R.id.boat_title;
-                            TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
-                            if (textView6 != null) {
-                                i = R.id.container_description;
-                                TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
-                                if (textView7 != null) {
-                                    i = R.id.dipl;
-                                    TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
-                                    if (textView8 != null) {
-                                        i = R.id.dipl_container_column;
-                                        LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                        if (linearLayout != null) {
-                                            i = R.id.dipl_container_top;
-                                            LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                            if (linearLayout2 != null) {
-                                                i = R.id.dipl_title;
-                                                TextView textView9 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                if (textView9 != null) {
-                                                    i = R.id.dipl_top;
-                                                    TextView textView10 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                    if (textView10 != null) {
-                                                        i = R.id.documents_ic_advocate;
-                                                        ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                        if (imageView != null) {
-                                                            i = R.id.documents_ic_auto;
-                                                            ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                            if (imageView2 != null) {
-                                                                i = R.id.documents_ic_boat;
-                                                                ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                if (imageView3 != null) {
-                                                                    i = R.id.documents_ic_dipl;
-                                                                    ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                    if (imageView4 != null) {
-                                                                        i = R.id.documents_ic_fish;
-                                                                        ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                        if (imageView5 != null) {
-                                                                            i = R.id.documents_ic_flight;
-                                                                            ImageView imageView6 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                            if (imageView6 != null) {
-                                                                                i = R.id.documents_ic_gun;
-                                                                                ImageView imageView7 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                if (imageView7 != null) {
-                                                                                    i = R.id.documents_ic_hunt;
-                                                                                    ImageView imageView8 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                    if (imageView8 != null) {
-                                                                                        i = R.id.documents_ic_mech;
-                                                                                        ImageView imageView9 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                        if (imageView9 != null) {
-                                                                                            i = R.id.documents_ic_miner;
-                                                                                            ImageView imageView10 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                            if (imageView10 != null) {
-                                                                                                i = R.id.documents_ic_moto;
-                                                                                                ImageView imageView11 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                                if (imageView11 != null) {
-                                                                                                    i = R.id.documents_ic_shave;
-                                                                                                    ImageView imageView12 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                                    if (imageView12 != null) {
-                                                                                                        i = R.id.documents_ic_tax;
-                                                                                                        ImageView imageView13 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                                        if (imageView13 != null) {
-                                                                                                            i = R.id.documents_ic_taxi;
-                                                                                                            ImageView imageView14 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                                            if (imageView14 != null) {
-                                                                                                                i = R.id.fish;
-                                                                                                                TextView textView11 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                if (textView11 != null) {
-                                                                                                                    i = R.id.fish_title;
-                                                                                                                    TextView textView12 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                    if (textView12 != null) {
-                                                                                                                        i = R.id.flight;
-                                                                                                                        TextView textView13 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                        if (textView13 != null) {
-                                                                                                                            i = R.id.flight_title;
-                                                                                                                            TextView textView14 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                            if (textView14 != null) {
-                                                                                                                                i = R.id.gun;
-                                                                                                                                TextView textView15 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                if (textView15 != null) {
-                                                                                                                                    i = R.id.gun_title;
-                                                                                                                                    TextView textView16 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                    if (textView16 != null) {
-                                                                                                                                        i = R.id.hunt;
-                                                                                                                                        TextView textView17 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                        if (textView17 != null) {
-                                                                                                                                            i = R.id.hunt_title;
-                                                                                                                                            TextView textView18 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                            if (textView18 != null) {
-                                                                                                                                                i = R.id.mech;
-                                                                                                                                                TextView textView19 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                if (textView19 != null) {
-                                                                                                                                                    i = R.id.mech_title;
-                                                                                                                                                    TextView textView20 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                    if (textView20 != null) {
-                                                                                                                                                        i = R.id.miner;
-                                                                                                                                                        TextView textView21 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                        if (textView21 != null) {
-                                                                                                                                                            i = R.id.miner_title;
-                                                                                                                                                            TextView textView22 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                            if (textView22 != null) {
-                                                                                                                                                                i = R.id.moto;
-                                                                                                                                                                TextView textView23 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                if (textView23 != null) {
-                                                                                                                                                                    i = R.id.moto_title;
-                                                                                                                                                                    TextView textView24 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                    if (textView24 != null) {
-                                                                                                                                                                        i = R.id.shave;
-                                                                                                                                                                        TextView textView25 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                        if (textView25 != null) {
-                                                                                                                                                                            i = R.id.shave_title;
-                                                                                                                                                                            TextView textView26 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                            if (textView26 != null) {
-                                                                                                                                                                                i = R.id.table1;
-                                                                                                                                                                                LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                                if (linearLayout3 != null) {
-                                                                                                                                                                                    i = R.id.table2;
-                                                                                                                                                                                    LinearLayout linearLayout4 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                                    if (linearLayout4 != null) {
-                                                                                                                                                                                        i = R.id.table3;
-                                                                                                                                                                                        LinearLayout linearLayout5 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                                        if (linearLayout5 != null) {
-                                                                                                                                                                                            i = R.id.tax;
-                                                                                                                                                                                            TextView textView27 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                                            if (textView27 != null) {
-                                                                                                                                                                                                i = R.id.tax_title;
-                                                                                                                                                                                                TextView textView28 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                                                if (textView28 != null) {
-                                                                                                                                                                                                    i = R.id.taxi;
-                                                                                                                                                                                                    TextView textView29 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                                                    if (textView29 != null) {
-                                                                                                                                                                                                        i = R.id.taxi_title;
-                                                                                                                                                                                                        TextView textView30 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                                                                                        if (textView30 != null) {
-                                                                                                                                                                                                            return new DocumentLicensesBinding((ConstraintLayout) view, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, linearLayout, linearLayout2, textView9, textView10, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, textView23, textView24, textView25, textView26, linearLayout3, linearLayout4, linearLayout5, textView27, textView28, textView29, textView30);
+            i = R.id.advocate_container;
+            LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
+            if (linearLayout != null) {
+                i = R.id.advocate_title;
+                TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
+                if (textView2 != null) {
+                    i = R.id.auto;
+                    TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
+                    if (textView3 != null) {
+                        i = R.id.auto_container;
+                        LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                        if (linearLayout2 != null) {
+                            i = R.id.auto_title;
+                            TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
+                            if (textView4 != null) {
+                                i = R.id.boat;
+                                TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
+                                if (textView5 != null) {
+                                    i = R.id.boat_container;
+                                    LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                    if (linearLayout3 != null) {
+                                        i = R.id.boat_title;
+                                        TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
+                                        if (textView6 != null) {
+                                            i = R.id.container_description;
+                                            TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
+                                            if (textView7 != null) {
+                                                i = R.id.dipl;
+                                                TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                if (textView8 != null) {
+                                                    i = R.id.dipl_container_column;
+                                                    LinearLayout linearLayout4 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                    if (linearLayout4 != null) {
+                                                        i = R.id.dipl_container_top;
+                                                        LinearLayout linearLayout5 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                        if (linearLayout5 != null) {
+                                                            i = R.id.dipl_title;
+                                                            TextView textView9 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                            if (textView9 != null) {
+                                                                i = R.id.dipl_top;
+                                                                TextView textView10 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                if (textView10 != null) {
+                                                                    i = R.id.documents_ic_advocate;
+                                                                    ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                    if (imageView != null) {
+                                                                        i = R.id.documents_ic_auto;
+                                                                        ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                        if (imageView2 != null) {
+                                                                            i = R.id.documents_ic_boat;
+                                                                            ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                            if (imageView3 != null) {
+                                                                                i = R.id.documents_ic_dipl;
+                                                                                ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                if (imageView4 != null) {
+                                                                                    i = R.id.documents_ic_fish;
+                                                                                    ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                    if (imageView5 != null) {
+                                                                                        i = R.id.documents_ic_flight;
+                                                                                        ImageView imageView6 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                        if (imageView6 != null) {
+                                                                                            i = R.id.documents_ic_gun;
+                                                                                            ImageView imageView7 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                            if (imageView7 != null) {
+                                                                                                i = R.id.documents_ic_hunt;
+                                                                                                ImageView imageView8 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                if (imageView8 != null) {
+                                                                                                    i = R.id.documents_ic_mech;
+                                                                                                    ImageView imageView9 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                    if (imageView9 != null) {
+                                                                                                        i = R.id.documents_ic_miner;
+                                                                                                        ImageView imageView10 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                        if (imageView10 != null) {
+                                                                                                            i = R.id.documents_ic_moto;
+                                                                                                            ImageView imageView11 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                            if (imageView11 != null) {
+                                                                                                                i = R.id.documents_ic_shave;
+                                                                                                                ImageView imageView12 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                                if (imageView12 != null) {
+                                                                                                                    i = R.id.documents_ic_tax;
+                                                                                                                    ImageView imageView13 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                                    if (imageView13 != null) {
+                                                                                                                        i = R.id.documents_ic_taxi;
+                                                                                                                        ImageView imageView14 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                                        if (imageView14 != null) {
+                                                                                                                            i = R.id.documents_ic_trolleybus;
+                                                                                                                            ImageView imageView15 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                                            if (imageView15 != null) {
+                                                                                                                                i = R.id.fish;
+                                                                                                                                TextView textView11 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                if (textView11 != null) {
+                                                                                                                                    i = R.id.fish_container;
+                                                                                                                                    LinearLayout linearLayout6 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                    if (linearLayout6 != null) {
+                                                                                                                                        i = R.id.fish_title;
+                                                                                                                                        TextView textView12 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                        if (textView12 != null) {
+                                                                                                                                            i = R.id.flight;
+                                                                                                                                            TextView textView13 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                            if (textView13 != null) {
+                                                                                                                                                i = R.id.flight_container;
+                                                                                                                                                LinearLayout linearLayout7 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                if (linearLayout7 != null) {
+                                                                                                                                                    i = R.id.flight_title;
+                                                                                                                                                    TextView textView14 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                    if (textView14 != null) {
+                                                                                                                                                        i = R.id.gun;
+                                                                                                                                                        TextView textView15 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                        if (textView15 != null) {
+                                                                                                                                                            i = R.id.gun_container;
+                                                                                                                                                            LinearLayout linearLayout8 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                            if (linearLayout8 != null) {
+                                                                                                                                                                i = R.id.gun_title;
+                                                                                                                                                                TextView textView16 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                if (textView16 != null) {
+                                                                                                                                                                    i = R.id.hunt;
+                                                                                                                                                                    TextView textView17 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                    if (textView17 != null) {
+                                                                                                                                                                        i = R.id.hunt_container;
+                                                                                                                                                                        LinearLayout linearLayout9 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                        if (linearLayout9 != null) {
+                                                                                                                                                                            i = R.id.hunt_title;
+                                                                                                                                                                            TextView textView18 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                            if (textView18 != null) {
+                                                                                                                                                                                i = R.id.mech;
+                                                                                                                                                                                TextView textView19 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                if (textView19 != null) {
+                                                                                                                                                                                    i = R.id.mech_container;
+                                                                                                                                                                                    LinearLayout linearLayout10 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                    if (linearLayout10 != null) {
+                                                                                                                                                                                        i = R.id.mech_title;
+                                                                                                                                                                                        TextView textView20 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                        if (textView20 != null) {
+                                                                                                                                                                                            i = R.id.miner;
+                                                                                                                                                                                            TextView textView21 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                            if (textView21 != null) {
+                                                                                                                                                                                                i = R.id.miner_container;
+                                                                                                                                                                                                LinearLayout linearLayout11 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                if (linearLayout11 != null) {
+                                                                                                                                                                                                    i = R.id.miner_title;
+                                                                                                                                                                                                    TextView textView22 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                    if (textView22 != null) {
+                                                                                                                                                                                                        i = R.id.moto;
+                                                                                                                                                                                                        TextView textView23 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                        if (textView23 != null) {
+                                                                                                                                                                                                            i = R.id.moto_container;
+                                                                                                                                                                                                            LinearLayout linearLayout12 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                            if (linearLayout12 != null) {
+                                                                                                                                                                                                                i = R.id.moto_title;
+                                                                                                                                                                                                                TextView textView24 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                if (textView24 != null) {
+                                                                                                                                                                                                                    i = R.id.shave;
+                                                                                                                                                                                                                    TextView textView25 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                    if (textView25 != null) {
+                                                                                                                                                                                                                        i = R.id.shave_container;
+                                                                                                                                                                                                                        LinearLayout linearLayout13 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                        if (linearLayout13 != null) {
+                                                                                                                                                                                                                            i = R.id.shave_title;
+                                                                                                                                                                                                                            TextView textView26 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                            if (textView26 != null) {
+                                                                                                                                                                                                                                i = R.id.table1;
+                                                                                                                                                                                                                                LinearLayout linearLayout14 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                if (linearLayout14 != null) {
+                                                                                                                                                                                                                                    i = R.id.table2;
+                                                                                                                                                                                                                                    LinearLayout linearLayout15 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                    if (linearLayout15 != null) {
+                                                                                                                                                                                                                                        i = R.id.table3;
+                                                                                                                                                                                                                                        LinearLayout linearLayout16 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                        if (linearLayout16 != null) {
+                                                                                                                                                                                                                                            i = R.id.tax;
+                                                                                                                                                                                                                                            TextView textView27 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                            if (textView27 != null) {
+                                                                                                                                                                                                                                                i = R.id.tax_container;
+                                                                                                                                                                                                                                                LinearLayout linearLayout17 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                                if (linearLayout17 != null) {
+                                                                                                                                                                                                                                                    i = R.id.tax_title;
+                                                                                                                                                                                                                                                    TextView textView28 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                                    if (textView28 != null) {
+                                                                                                                                                                                                                                                        i = R.id.taxi;
+                                                                                                                                                                                                                                                        TextView textView29 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                                        if (textView29 != null) {
+                                                                                                                                                                                                                                                            i = R.id.taxi_container;
+                                                                                                                                                                                                                                                            LinearLayout linearLayout18 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                                            if (linearLayout18 != null) {
+                                                                                                                                                                                                                                                                i = R.id.taxi_title;
+                                                                                                                                                                                                                                                                TextView textView30 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                                                if (textView30 != null) {
+                                                                                                                                                                                                                                                                    i = R.id.trolleybus;
+                                                                                                                                                                                                                                                                    TextView textView31 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                                                    if (textView31 != null) {
+                                                                                                                                                                                                                                                                        i = R.id.trolleybus_container;
+                                                                                                                                                                                                                                                                        LinearLayout linearLayout19 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                                                        if (linearLayout19 != null) {
+                                                                                                                                                                                                                                                                            i = R.id.trolleybus_title;
+                                                                                                                                                                                                                                                                            TextView textView32 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                                                                                                                            if (textView32 != null) {
+                                                                                                                                                                                                                                                                                return new DocumentLicensesBinding((ConstraintLayout) view, textView, linearLayout, textView2, textView3, linearLayout2, textView4, textView5, linearLayout3, textView6, textView7, textView8, linearLayout4, linearLayout5, textView9, textView10, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, imageView15, textView11, linearLayout6, textView12, textView13, linearLayout7, textView14, textView15, linearLayout8, textView16, textView17, linearLayout9, textView18, textView19, linearLayout10, textView20, textView21, linearLayout11, textView22, textView23, linearLayout12, textView24, textView25, linearLayout13, textView26, linearLayout14, linearLayout15, linearLayout16, textView27, linearLayout17, textView28, textView29, linearLayout18, textView30, textView31, linearLayout19, textView32);
+                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
                                                                                                                                                                                                         }
                                                                                                                                                                                                     }
                                                                                                                                                                                                 }

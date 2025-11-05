@@ -725,47 +725,46 @@ public final class Http2Stream implements Lockable, Socket {
         @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             Http2Stream http2Stream = Http2Stream.this;
-            if (!_UtilJvmKt.assertionsEnabled || !Thread.holdsLock(http2Stream)) {
-                Http2Stream http2Stream2 = Http2Stream.this;
-                synchronized (http2Stream2) {
-                    if (this.closed) {
-                        return;
-                    }
-                    boolean z = http2Stream2.getErrorCode$okhttp() == null;
-                    Unit unit = Unit.INSTANCE;
-                    if (!Http2Stream.this.getSink().finished) {
-                        boolean z2 = this.sendBuffer.size() > 0;
-                        if (this.trailers != null) {
-                            while (this.sendBuffer.size() > 0) {
-                                emitFrame(false);
-                            }
-                            Http2Connection connection = Http2Stream.this.getConnection();
-                            int id = Http2Stream.this.getId();
-                            Headers headers = this.trailers;
-                            Intrinsics.checkNotNull(headers);
-                            connection.writeHeaders$okhttp(id, z, _UtilJvmKt.toHeaderList(headers));
-                        } else if (z2) {
-                            while (this.sendBuffer.size() > 0) {
-                                emitFrame(true);
-                            }
-                        } else if (z) {
-                            Http2Stream.this.getConnection().writeData(Http2Stream.this.getId(), true, null, 0L);
-                        }
-                    }
-                    Http2Stream http2Stream3 = Http2Stream.this;
-                    synchronized (http2Stream3) {
-                        this.closed = true;
-                        Http2Stream http2Stream4 = http2Stream3;
-                        Intrinsics.checkNotNull(http2Stream4, "null cannot be cast to non-null type java.lang.Object");
-                        http2Stream4.notifyAll();
-                        Unit unit2 = Unit.INSTANCE;
-                    }
-                    Http2Stream.this.getConnection().flush();
-                    Http2Stream.this.cancelStreamIfNecessary$okhttp();
+            if (_UtilJvmKt.assertionsEnabled && Thread.holdsLock(http2Stream)) {
+                throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST NOT hold lock on " + http2Stream);
+            }
+            Http2Stream http2Stream2 = Http2Stream.this;
+            synchronized (http2Stream2) {
+                if (this.closed) {
                     return;
                 }
+                boolean z = http2Stream2.getErrorCode$okhttp() == null;
+                Unit unit = Unit.INSTANCE;
+                if (!Http2Stream.this.getSink().finished) {
+                    boolean z2 = this.sendBuffer.size() > 0;
+                    if (this.trailers != null) {
+                        while (this.sendBuffer.size() > 0) {
+                            emitFrame(false);
+                        }
+                        Http2Connection connection = Http2Stream.this.getConnection();
+                        int id = Http2Stream.this.getId();
+                        Headers headers = this.trailers;
+                        Intrinsics.checkNotNull(headers);
+                        connection.writeHeaders$okhttp(id, z, _UtilJvmKt.toHeaderList(headers));
+                    } else if (z2) {
+                        while (this.sendBuffer.size() > 0) {
+                            emitFrame(true);
+                        }
+                    } else if (z) {
+                        Http2Stream.this.getConnection().writeData(Http2Stream.this.getId(), true, null, 0L);
+                    }
+                }
+                Http2Stream http2Stream3 = Http2Stream.this;
+                synchronized (http2Stream3) {
+                    this.closed = true;
+                    Http2Stream http2Stream4 = http2Stream3;
+                    Intrinsics.checkNotNull(http2Stream4, "null cannot be cast to non-null type java.lang.Object");
+                    http2Stream4.notifyAll();
+                    Unit unit2 = Unit.INSTANCE;
+                }
+                Http2Stream.this.getConnection().flush();
+                Http2Stream.this.cancelStreamIfNecessary$okhttp();
             }
-            throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST NOT hold lock on " + http2Stream);
         }
     }
 

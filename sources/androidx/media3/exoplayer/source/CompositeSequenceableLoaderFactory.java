@@ -1,7 +1,7 @@
 package androidx.media3.exoplayer.source;
 
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface CompositeSequenceableLoaderFactory {
     SequenceableLoader create(List<? extends SequenceableLoader> list, List<List<Integer>> list2);
 

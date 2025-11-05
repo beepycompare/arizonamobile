@@ -34,7 +34,7 @@ final class WrappedOverscrollEffect implements OverscrollEffect {
         if (this.eventHandlingEnabled) {
             return this.innerOverscrollEffect.mo246applyToScrollRhakbz0(j, i, function1);
         }
-        return function1.invoke(Offset.m4294boximpl(j)).m4315unboximpl();
+        return function1.invoke(Offset.m5024boximpl(j)).m5045unboximpl();
     }
 
     @Override // androidx.compose.foundation.OverscrollEffect
@@ -44,7 +44,7 @@ final class WrappedOverscrollEffect implements OverscrollEffect {
             Object mo245applyToFlingBMRW4eQ = this.innerOverscrollEffect.mo245applyToFlingBMRW4eQ(j, function2, continuation);
             return mo245applyToFlingBMRW4eQ == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo245applyToFlingBMRW4eQ : Unit.INSTANCE;
         }
-        Object invoke = function2.invoke(Velocity.m7493boximpl(j), continuation);
+        Object invoke = function2.invoke(Velocity.m8224boximpl(j), continuation);
         return invoke == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? invoke : Unit.INSTANCE;
     }
 

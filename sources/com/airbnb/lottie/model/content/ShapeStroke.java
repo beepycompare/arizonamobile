@@ -30,14 +30,52 @@ public class ShapeStroke implements ContentModel {
         UNKNOWN;
 
         public Paint.Cap toPaintCap() {
-            int ordinal = ordinal();
-            if (ordinal != 0) {
-                if (ordinal == 1) {
+            int i = AnonymousClass1.$SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineCapType[ordinal()];
+            if (i != 1) {
+                if (i == 2) {
                     return Paint.Cap.ROUND;
                 }
                 return Paint.Cap.SQUARE;
             }
             return Paint.Cap.BUTT;
+        }
+    }
+
+    /* renamed from: com.airbnb.lottie.model.content.ShapeStroke$1  reason: invalid class name */
+    /* loaded from: classes3.dex */
+    static /* synthetic */ class AnonymousClass1 {
+        static final /* synthetic */ int[] $SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineCapType;
+        static final /* synthetic */ int[] $SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineJoinType;
+
+        static {
+            int[] iArr = new int[LineJoinType.values().length];
+            $SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineJoinType = iArr;
+            try {
+                iArr[LineJoinType.BEVEL.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                $SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineJoinType[LineJoinType.MITER.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                $SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineJoinType[LineJoinType.ROUND.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            int[] iArr2 = new int[LineCapType.values().length];
+            $SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineCapType = iArr2;
+            try {
+                iArr2[LineCapType.BUTT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                $SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineCapType[LineCapType.ROUND.ordinal()] = 2;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                $SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineCapType[LineCapType.UNKNOWN.ordinal()] = 3;
+            } catch (NoSuchFieldError unused6) {
+            }
         }
     }
 
@@ -48,17 +86,17 @@ public class ShapeStroke implements ContentModel {
         BEVEL;
 
         public Paint.Join toPaintJoin() {
-            int ordinal = ordinal();
-            if (ordinal != 0) {
-                if (ordinal != 1) {
-                    if (ordinal != 2) {
+            int i = AnonymousClass1.$SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineJoinType[ordinal()];
+            if (i != 1) {
+                if (i != 2) {
+                    if (i != 3) {
                         return null;
                     }
-                    return Paint.Join.BEVEL;
+                    return Paint.Join.ROUND;
                 }
-                return Paint.Join.ROUND;
+                return Paint.Join.MITER;
             }
-            return Paint.Join.MITER;
+            return Paint.Join.BEVEL;
         }
     }
 

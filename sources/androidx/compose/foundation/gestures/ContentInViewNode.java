@@ -42,7 +42,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
     private final boolean shouldAutoInvalidate;
     private boolean trackingFocusedChild;
     private final BringIntoViewRequestPriorityQueue bringIntoViewRequests = new BringIntoViewRequestPriorityQueue();
-    private long viewportSize = IntSize.Companion.m7440getZeroYbymL2g();
+    private long viewportSize = IntSize.Companion.m8171getZeroYbymL2g();
 
     /* compiled from: ContentInViewNode.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -83,7 +83,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
 
     @Override // androidx.compose.foundation.relocation.BringIntoViewResponder
     public Rect calculateRectForParent(Rect rect) {
-        if (IntSize.m7433equalsimpl0(this.viewportSize, IntSize.Companion.m7440getZeroYbymL2g())) {
+        if (IntSize.m8164equalsimpl0(this.viewportSize, IntSize.Companion.m8171getZeroYbymL2g())) {
             InlineClassHelperKt.throwIllegalStateException("Expected BringIntoViewRequester to not be used before parents are placed.");
         }
         return m464computeDestinationO0kMr_c(rect, this.viewportSize);
@@ -163,7 +163,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
 
     /* JADX INFO: Access modifiers changed from: private */
     public final float calculateScrollDelta(BringIntoViewSpec bringIntoViewSpec) {
-        if (IntSize.m7433equalsimpl0(this.viewportSize, IntSize.Companion.m7440getZeroYbymL2g())) {
+        if (IntSize.m8164equalsimpl0(this.viewportSize, IntSize.Companion.m8171getZeroYbymL2g())) {
             return 0.0f;
         }
         Rect findBringIntoViewRequest = findBringIntoViewRequest();
@@ -173,15 +173,15 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
                 return 0.0f;
             }
         }
-        long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(this.viewportSize);
+        long m8178toSizeozmzZPI = IntSizeKt.m8178toSizeozmzZPI(this.viewportSize);
         int i = WhenMappings.$EnumSwitchMapping$0[this.orientation.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 throw new NoWhenBranchMatchedException();
             }
-            return bringIntoViewSpec.calculateScrollDistance(findBringIntoViewRequest.getLeft(), findBringIntoViewRequest.getRight() - findBringIntoViewRequest.getLeft(), Float.intBitsToFloat((int) (m7447toSizeozmzZPI >> 32)));
+            return bringIntoViewSpec.calculateScrollDistance(findBringIntoViewRequest.getLeft(), findBringIntoViewRequest.getRight() - findBringIntoViewRequest.getLeft(), Float.intBitsToFloat((int) (m8178toSizeozmzZPI >> 32)));
         }
-        return bringIntoViewSpec.calculateScrollDistance(findBringIntoViewRequest.getTop(), findBringIntoViewRequest.getBottom() - findBringIntoViewRequest.getTop(), Float.intBitsToFloat((int) (m7447toSizeozmzZPI & 4294967295L)));
+        return bringIntoViewSpec.calculateScrollDistance(findBringIntoViewRequest.getTop(), findBringIntoViewRequest.getBottom() - findBringIntoViewRequest.getTop(), Float.intBitsToFloat((int) (m8178toSizeozmzZPI & 4294967295L)));
     }
 
     private final Rect findBringIntoViewRequest() {
@@ -196,7 +196,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
                 }
                 Rect invoke = ((Request) objArr[size]).getCurrentBounds().invoke();
                 if (invoke != null) {
-                    if (m463compareToiLBOSCw(invoke.m4338getSizeNHjbRc(), IntSizeKt.m7447toSizeozmzZPI(this.viewportSize)) <= 0) {
+                    if (m463compareToiLBOSCw(invoke.m5068getSizeNHjbRc(), IntSizeKt.m8178toSizeozmzZPI(this.viewportSize)) <= 0) {
                         rect = invoke;
                     } else if (rect == null) {
                         return invoke;
@@ -210,7 +210,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
 
     /* renamed from: computeDestination-O0kMr_c  reason: not valid java name */
     private final Rect m464computeDestinationO0kMr_c(Rect rect, long j) {
-        return rect.m4342translatek4lQ0M(Offset.m4297constructorimpl(m467relocationOffsetBMxPBkI(rect, j) ^ (-9223372034707292160L)));
+        return rect.m5072translatek4lQ0M(Offset.m5027constructorimpl(m467relocationOffsetBMxPBkI(rect, j) ^ (-9223372034707292160L)));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -230,15 +230,15 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
 
     /* renamed from: relocationOffset-BMxPBkI  reason: not valid java name */
     private final long m467relocationOffsetBMxPBkI(Rect rect, long j) {
-        long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(j);
+        long m8178toSizeozmzZPI = IntSizeKt.m8178toSizeozmzZPI(j);
         int i = WhenMappings.$EnumSwitchMapping$0[this.orientation.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 throw new NoWhenBranchMatchedException();
             }
-            return Offset.m4297constructorimpl((Float.floatToRawIntBits(requireBringIntoViewSpec().calculateScrollDistance(rect.getLeft(), rect.getRight() - rect.getLeft(), Float.intBitsToFloat((int) (m7447toSizeozmzZPI >> 32)))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+            return Offset.m5027constructorimpl((Float.floatToRawIntBits(requireBringIntoViewSpec().calculateScrollDistance(rect.getLeft(), rect.getRight() - rect.getLeft(), Float.intBitsToFloat((int) (m8178toSizeozmzZPI >> 32)))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
         }
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(requireBringIntoViewSpec().calculateScrollDistance(rect.getTop(), rect.getBottom() - rect.getTop(), Float.intBitsToFloat((int) (m7447toSizeozmzZPI & 4294967295L)))) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(requireBringIntoViewSpec().calculateScrollDistance(rect.getTop(), rect.getBottom() - rect.getTop(), Float.intBitsToFloat((int) (m8178toSizeozmzZPI & 4294967295L)))) & 4294967295L));
     }
 
     /* renamed from: compareTo-TemP2vQ  reason: not valid java name */

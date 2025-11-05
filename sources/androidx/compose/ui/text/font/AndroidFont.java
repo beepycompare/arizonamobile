@@ -42,7 +42,7 @@ public abstract class AndroidFont implements Font {
 
     @Override // androidx.compose.ui.text.font.Font
     /* renamed from: getLoadingStrategy-PKNRLFQ  reason: not valid java name */
-    public final int mo6783getLoadingStrategyPKNRLFQ() {
+    public final int mo7514getLoadingStrategyPKNRLFQ() {
         return this.loadingStrategy;
     }
 

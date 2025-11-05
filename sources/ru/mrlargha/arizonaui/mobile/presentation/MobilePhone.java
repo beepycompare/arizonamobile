@@ -37,43 +37,49 @@ import org.json.JSONObject;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import ru.mrlargha.arizonaui.R;
-import ru.mrlargha.arizonaui.databinding.MobilePhoneBinding;
-import ru.mrlargha.arizonaui.mobile.domain.enums.MobilePhonePage;
-import ru.mrlargha.arizonaui.mobile.domain.enums.MobilePhoneScreenIds;
-import ru.mrlargha.arizonaui.mobile.domain.enums.UberPriority;
-import ru.mrlargha.arizonaui.mobile.domain.obj.CallStatus;
-import ru.mrlargha.arizonaui.mobile.domain.obj.CatchAppInfo;
-import ru.mrlargha.arizonaui.mobile.domain.obj.ChangeArtistNameRadioRequest;
-import ru.mrlargha.arizonaui.mobile.domain.obj.DriverInfo;
-import ru.mrlargha.arizonaui.mobile.domain.obj.MobilePhoneAvailableCar;
-import ru.mrlargha.arizonaui.mobile.domain.obj.MobilePhoneDriverOrder;
-import ru.mrlargha.arizonaui.mobile.domain.obj.MobilePhoneDriverWorkInfo;
-import ru.mrlargha.arizonaui.mobile.domain.obj.MobilePhoneRentInfo;
-import ru.mrlargha.arizonaui.mobile.domain.obj.UserNumber;
-import ru.mrlargha.arizonaui.mobile.presentation.page.call.CallReceive;
-import ru.mrlargha.arizonaui.mobile.presentation.page.call.CallTalk;
-import ru.mrlargha.arizonaui.mobile.presentation.page.carsharing.CarSharingCars;
-import ru.mrlargha.arizonaui.mobile.presentation.page.carsharing.CarSharingMain;
-import ru.mrlargha.arizonaui.mobile.presentation.page.carsharing.CarSharingRented;
-import ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp;
-import ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrder;
-import ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrders;
-import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger;
-import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat;
-import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.MessengerRetrofitClient;
-import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.obj.ContactApiResponse;
-import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.obj.ContactModel;
-import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage;
-import ru.mrlargha.arizonaui.mobile.presentation.page.uber.UberOrder;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.ConverterKt;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.feature.mobile.R;
+import ru.mrlargha.feature.mobile.databinding.MobilePhoneBinding;
+import ru.mrlargha.feature.mobile.domain.enums.MobilePhonePage;
+import ru.mrlargha.feature.mobile.domain.enums.MobilePhoneScreenIds;
+import ru.mrlargha.feature.mobile.domain.enums.UberPriority;
+import ru.mrlargha.feature.mobile.domain.obj.CallStatus;
+import ru.mrlargha.feature.mobile.domain.obj.CatchAppInfo;
+import ru.mrlargha.feature.mobile.domain.obj.ChangeArtistNameRadioRequest;
+import ru.mrlargha.feature.mobile.domain.obj.DriverInfo;
+import ru.mrlargha.feature.mobile.domain.obj.MobilePhoneAvailableCar;
+import ru.mrlargha.feature.mobile.domain.obj.MobilePhoneDriverOrder;
+import ru.mrlargha.feature.mobile.domain.obj.MobilePhoneDriverWorkInfo;
+import ru.mrlargha.feature.mobile.domain.obj.MobilePhoneRentInfo;
+import ru.mrlargha.feature.mobile.domain.obj.UserNumber;
+import ru.mrlargha.feature.mobile.presentation.HistoryManager;
+import ru.mrlargha.feature.mobile.presentation.MobileController;
+import ru.mrlargha.feature.mobile.presentation.MobilePage;
+import ru.mrlargha.feature.mobile.presentation.MobilePhoneGetSubIds;
+import ru.mrlargha.feature.mobile.presentation.page.call.CallReceive;
+import ru.mrlargha.feature.mobile.presentation.page.call.CallTalk;
+import ru.mrlargha.feature.mobile.presentation.page.carsharing.CarSharingCars;
+import ru.mrlargha.feature.mobile.presentation.page.carsharing.CarSharingMain;
+import ru.mrlargha.feature.mobile.presentation.page.carsharing.CarSharingRented;
+import ru.mrlargha.feature.mobile.presentation.page.catch_app.CatchApp;
+import ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrder;
+import ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders;
+import ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger;
+import ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat;
+import ru.mrlargha.feature.mobile.presentation.page.messenger.api.MessengerRetrofitClient;
+import ru.mrlargha.feature.mobile.presentation.page.messenger.api.obj.ContactApiResponse;
+import ru.mrlargha.feature.mobile.presentation.page.messenger.api.obj.ContactModel;
+import ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage;
+import ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage;
+import ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage;
+import ru.mrlargha.feature.mobile.presentation.page.uber.UberOrder;
 /* compiled from: MobilePhone.kt */
-@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b/\u0018\u00002\u00020\u00012\u00020\u0002:\u0001{B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0016J\b\u0010!\u001a\u00020\nH\u0002J\b\u0010\"\u001a\u00020\nH\u0002J\b\u0010#\u001a\u00020\nH\u0002J\u0010\u0010$\u001a\u00020\n2\u0006\u0010%\u001a\u00020\u0013H\u0002J\u0010\u0010&\u001a\u00020\n2\u0006\u0010'\u001a\u00020\u0013H\u0002J\u0010\u0010(\u001a\u00020\n2\u0006\u0010)\u001a\u00020\u0013H\u0002J\u0006\u0010*\u001a\u00020\u0013J\u0006\u0010+\u001a\u00020\u0013J\u0010\u0010,\u001a\u00020\n2\u0006\u0010-\u001a\u00020\u0013H\u0002J\u0010\u0010.\u001a\u00020\n2\u0006\u0010/\u001a\u00020\u0013H\u0002J\u0010\u00100\u001a\u00020\n2\u0006\u00101\u001a\u00020\u0013H\u0002J\u0010\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\u0013H\u0002J\u0010\u00104\u001a\u00020\n2\u0006\u00105\u001a\u00020\u0013H\u0002J\b\u00106\u001a\u00020\nH\u0002J\u0010\u00107\u001a\u00020\n2\u0006\u00103\u001a\u00020\u0013H\u0002J\u0010\u00108\u001a\u00020\n2\u0006\u00109\u001a\u00020\u0013H\u0002J\b\u0010:\u001a\u00020\nH\u0002J\b\u0010;\u001a\u00020\nH\u0002J\u0006\u0010=\u001a\u00020>J\u0006\u0010?\u001a\u00020\u0004J\u0006\u0010@\u001a\u00020\u0017J\u000e\u0010G\u001a\u00020\n2\u0006\u0010H\u001a\u00020DJ\u0016\u0010I\u001a\u0012\u0012\u0004\u0012\u00020D0Cj\b\u0012\u0004\u0012\u00020D`EJ\u000e\u0010N\u001a\u00020\n2\u0006\u0010O\u001a\u00020\u0013J\u000e\u0010P\u001a\u00020\n2\u0006\u0010<\u001a\u00020\u0006J\u000e\u0010Q\u001a\u00020\n2\u0006\u0010R\u001a\u00020\u0006J\u000e\u0010S\u001a\u00020\n2\u0006\u0010T\u001a\u00020\u0006J\u0006\u0010U\u001a\u00020\u0006J\u000e\u0010V\u001a\u00020\n2\u0006\u0010W\u001a\u00020\u0013J\u0010\u0010X\u001a\u00020\n2\u0006\u0010Y\u001a\u00020\u0013H\u0002J\u0010\u0010Z\u001a\u00020\n2\u0006\u0010\u001d\u001a\u00020\u0013H\u0002J\u0010\u0010[\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010]\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010^\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010_\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\b\u0010`\u001a\u00020\nH\u0002J\u0010\u0010a\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010b\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010c\u001a\u00020\u00132\u0006\u0010R\u001a\u00020\u0006H\u0002J\u0006\u0010d\u001a\u00020\nJ\u0018\u0010e\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u00132\u0006\u0010f\u001a\u00020\u0006H\u0016J\u0010\u0010g\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010h\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010i\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010j\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010k\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010l\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010m\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010n\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010o\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010p\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010q\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010r\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010s\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010t\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010u\u001a\u00020\n2\u0006\u0010v\u001a\u00020\u0006H\u0002J\u0010\u0010w\u001a\u00020\n2\u0006\u0010x\u001a\u00020\u0006H\u0002J\b\u0010y\u001a\u00020\nH\u0016J\b\u0010z\u001a\u00020\nH\u0016R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u001a*\u0004\u0018\u00010\u00190\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00060\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u001d\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001eR\u000e\u0010\u001f\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010<\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001eR\u000e\u0010A\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010B\u001a\u0012\u0012\u0004\u0012\u00020D0Cj\b\u0012\u0004\u0012\u00020D`EX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010F\u001a\u0004\u0018\u00010DX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010J\u001a\b\u0012\u0004\u0012\u00020\u00060\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R&\u0010K\u001a\u001a\u0012\u0004\u0012\u00020\u0013\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060M0LX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006|"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "Lru/mrlargha/arizonaui/mobile/presentation/MobileController;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "activity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "setVisibility", "", "visible", "", "phoneIsOpen", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", "timer", "Landroid/os/CountDownTimer;", "phoneModel", "", "mobilePhone", "Landroidx/constraintlayout/widget/ConstraintLayout;", "mobilePhoneBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneBinding;", "sharedPreferencesMessengerToken", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "pageBg", "", "callStatus", "Ljava/lang/Integer;", "callCompanionName", "callCompanionNumber", "renderTaxiSearch", "closeOrder", "sendOrderStatus", "sendPriority", "priority", "sendDriverInfo", "driverInfo", "sendTaxiStatus", NotificationCompat.CATEGORY_STATUS, "getCompanionName", "getCompanionNumber", "setCompanionName", "name", "setCompanionNumber", "number", "setWorkingButton", "workingButton", "setWorkingInfo", "workInfo", "addWorkingList", "workList", "clearTaxiOrders", "renderDriverOrder", "setGreenButtonText", "text", "clearDriverOrders", "closeDriverMenu", "backgroundId", "getBackground", "Landroid/graphics/drawable/Drawable;", "getContext", "getBinding", "arizonaMobilBalance", "availableCars", "Ljava/util/ArrayList;", "Lru/mrlargha/arizonaui/mobile/domain/obj/MobilePhoneAvailableCar;", "Lkotlin/collections/ArrayList;", "currentCar", "setAvailableCar", "car", "getAvailableCars", "cases", "phoneCaseSize", "", "Lkotlin/Pair;", "setServerName", "serverName", "setScreenBackgroundId", "setCaseId", "caseId", "setArizonaMobilBalance", "balance", "getArizonaMobilBalance", "setRentedInfo", "rentInfo", "addAvailableCars", "cars", "setCallStatus", "playTrackFromServer", "data", "initFavourite", "addToFavourite", "removeFromFavourite", "openSpotify", "changeArtistNameRadio", "setCatchAppInfo", "phoneCaseIdentifier", "closePhone", "onBackendMessage", "subId", "openMessengerChat", "updateDialog", "newMessage", "callContactStatus", "removeMessageStatus", "notifyContactStatus", "clearMessagesStatus", "pinContactStatus", "blockContactStatus", "addContactStatus", "removeContactStatus", "sendMessageSuccess", "setMessengerToken", "contactSettingsUpdate", "showScreenByID", "id", "sendRequest", "position", "renderPage", "removePage", "Spawner", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b1\u0018\u00002\u00020\u00012\u00020\u0002:\u0001}B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0016J\b\u0010!\u001a\u00020\nH\u0002J\b\u0010\"\u001a\u00020\nH\u0002J\b\u0010#\u001a\u00020\nH\u0002J\u0010\u0010$\u001a\u00020\n2\u0006\u0010%\u001a\u00020\u0013H\u0002J\u0010\u0010&\u001a\u00020\n2\u0006\u0010'\u001a\u00020\u0013H\u0002J\u0010\u0010(\u001a\u00020\n2\u0006\u0010)\u001a\u00020\u0013H\u0002J\u0006\u0010*\u001a\u00020\u0013J\u0006\u0010+\u001a\u00020\u0013J\u0010\u0010,\u001a\u00020\n2\u0006\u0010-\u001a\u00020\u0013H\u0002J\u0010\u0010.\u001a\u00020\n2\u0006\u0010/\u001a\u00020\u0013H\u0002J\u0010\u00100\u001a\u00020\n2\u0006\u00101\u001a\u00020\u0013H\u0002J\u0010\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\u0013H\u0002J\u0010\u00104\u001a\u00020\n2\u0006\u00105\u001a\u00020\u0013H\u0002J\b\u00106\u001a\u00020\nH\u0002J\u0010\u00107\u001a\u00020\n2\u0006\u00103\u001a\u00020\u0013H\u0002J\u0010\u00108\u001a\u00020\n2\u0006\u00109\u001a\u00020\u0013H\u0002J\b\u0010:\u001a\u00020\nH\u0002J\b\u0010;\u001a\u00020\nH\u0002J\u0006\u0010=\u001a\u00020>J\u0006\u0010?\u001a\u00020\u0004J\u0006\u0010@\u001a\u00020\u0017J\u000e\u0010G\u001a\u00020\n2\u0006\u0010H\u001a\u00020DJ\u0016\u0010I\u001a\u0012\u0012\u0004\u0012\u00020D0Cj\b\u0012\u0004\u0012\u00020D`EJ\u000e\u0010N\u001a\u00020\n2\u0006\u0010O\u001a\u00020\u0013J\u000e\u0010P\u001a\u00020\n2\u0006\u0010<\u001a\u00020\u0006J\u000e\u0010Q\u001a\u00020\n2\u0006\u0010R\u001a\u00020\u0006J\u000e\u0010S\u001a\u00020\n2\u0006\u0010T\u001a\u00020\u0006J\u0006\u0010U\u001a\u00020\u0006J\u000e\u0010V\u001a\u00020\n2\u0006\u0010W\u001a\u00020\u0013J\u0010\u0010X\u001a\u00020\n2\u0006\u0010Y\u001a\u00020\u0013H\u0002J\u0010\u0010Z\u001a\u00020\n2\u0006\u0010\u001d\u001a\u00020\u0013H\u0002J\u0010\u0010[\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010]\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010^\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010_\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\b\u0010`\u001a\u00020\nH\u0002J\u0010\u0010a\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010b\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010c\u001a\u00020\u00132\u0006\u0010R\u001a\u00020\u0006H\u0002J\u0006\u0010d\u001a\u00020\nJ\u0018\u0010e\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u00132\u0006\u0010f\u001a\u00020\u0006H\u0016J\u0018\u0010g\u001a\u00020\n2\u0006\u0010f\u001a\u00020\u00062\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010h\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010i\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010j\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010k\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010l\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010m\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010n\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010o\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010p\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010q\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010r\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010s\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010t\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010u\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010v\u001a\u00020\n2\u0006\u0010\\\u001a\u00020\u0013H\u0002J\u0010\u0010w\u001a\u00020\n2\u0006\u0010x\u001a\u00020\u0006H\u0002J\u0010\u0010y\u001a\u00020\n2\u0006\u0010z\u001a\u00020\u0006H\u0002J\b\u0010{\u001a\u00020\nH\u0016J\b\u0010|\u001a\u00020\nH\u0016R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u001a*\u0004\u0018\u00010\u00190\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00060\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u001d\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001eR\u000e\u0010\u001f\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010<\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001eR\u000e\u0010A\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010B\u001a\u0012\u0012\u0004\u0012\u00020D0Cj\b\u0012\u0004\u0012\u00020D`EX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010F\u001a\u0004\u0018\u00010DX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010J\u001a\b\u0012\u0004\u0012\u00020\u00060\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R&\u0010K\u001a\u001a\u0012\u0004\u0012\u00020\u0013\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060M0LX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006~"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "activity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "setVisibility", "", "visible", "", "phoneIsOpen", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", "timer", "Landroid/os/CountDownTimer;", "phoneModel", "", "mobilePhone", "Landroidx/constraintlayout/widget/ConstraintLayout;", "mobilePhoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sharedPreferencesMessengerToken", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "pageBg", "", "callStatus", "Ljava/lang/Integer;", "callCompanionName", "callCompanionNumber", "renderTaxiSearch", "closeOrder", "sendOrderStatus", "sendPriority", "priority", "sendDriverInfo", "driverInfo", "sendTaxiStatus", NotificationCompat.CATEGORY_STATUS, "getCompanionName", "getCompanionNumber", "setCompanionName", "name", "setCompanionNumber", "number", "setWorkingButton", "workingButton", "setWorkingInfo", "workInfo", "addWorkingList", "workList", "clearTaxiOrders", "renderDriverOrder", "setGreenButtonText", "text", "clearDriverOrders", "closeDriverMenu", "backgroundId", "getBackground", "Landroid/graphics/drawable/Drawable;", "getContext", "getBinding", "arizonaMobilBalance", "availableCars", "Ljava/util/ArrayList;", "Lru/mrlargha/feature/mobile/domain/obj/MobilePhoneAvailableCar;", "Lkotlin/collections/ArrayList;", "currentCar", "setAvailableCar", "car", "getAvailableCars", "cases", "phoneCaseSize", "", "Lkotlin/Pair;", "setServerName", "serverName", "setScreenBackgroundId", "setCaseId", "caseId", "setArizonaMobilBalance", "balance", "getArizonaMobilBalance", "setRentedInfo", "rentInfo", "addAvailableCars", "cars", "setCallStatus", "playTrackFromServer", "data", "initFavourite", "addToFavourite", "removeFromFavourite", "openSpotify", "changeArtistNameRadio", "setCatchAppInfo", "phoneCaseIdentifier", "closePhone", "onBackendMessage", "subId", "initArizonaRentRealEstate", "rentUpdate", "openMessengerChat", "updateDialog", "newMessage", "callContactStatus", "removeMessageStatus", "notifyContactStatus", "clearMessagesStatus", "pinContactStatus", "blockContactStatus", "addContactStatus", "removeContactStatus", "sendMessageSuccess", "setMessengerToken", "contactSettingsUpdate", "showScreenByID", "id", "sendRequest", "position", "renderPage", "removePage", "Spawner", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class MobilePhone extends SAMPUIElement implements MobileController {
     private final Activity activity;
@@ -103,7 +109,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     public static final void _init_$lambda$3(View view) {
     }
 
-    @Override // ru.mrlargha.arizonaui.mobile.presentation.MobileController
+    @Override // ru.mrlargha.feature.mobile.presentation.MobileController
     public void renderPage() {
     }
 
@@ -132,7 +138,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         this.phoneCaseSize = MapsKt.mapOf(TuplesKt.to(Constants.REFERRER_API_XIAOMI, new Pair(174, 300)), TuplesKt.to("huawei", new Pair(174, 300)), TuplesKt.to(Constants.REFERRER_API_GOOGLE, new Pair(174, 300)), TuplesKt.to(Constants.REFERRER_API_SAMSUNG, new Pair(174, 300)), TuplesKt.to("iphone", new Pair(174, 300)));
         addViewToConstraintLayout(constraintLayout, -1, -1);
         setVisibility(false);
-        Animation loadAnimation = AnimationUtils.loadAnimation(activity, R.anim.slide);
+        Animation loadAnimation = AnimationUtils.loadAnimation(activity, R.anim.slide_up_vertical);
         constraintLayout.startAnimation(loadAnimation);
         constraintLayout.startAnimation(loadAnimation);
         HistoryManager.Companion.putPage(MobilePhonePage.MOBILE_PHONE_PAGE.getId(), this);
@@ -258,7 +264,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     private final void sendPriority(String str) {
         if (this.phoneIsOpen) {
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.UBER_ORDER.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.uber.UberOrder");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.uber.UberOrder");
             ((UberOrder) orCreatePage).sendPriority(UberPriority.Companion.fromInt(Integer.parseInt(str)));
         }
     }
@@ -267,7 +273,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         if (this.phoneIsOpen) {
             try {
                 MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.UBER_ORDER.getId());
-                Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.uber.UberOrder");
+                Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.uber.UberOrder");
                 ((UberOrder) orCreatePage).sendDriverInfo((DriverInfo) MapperKt.toModel(str, DriverInfo.class));
             } catch (Exception unused) {
                 System.out.println((Object) "Не удалось распарсить информацию о водителе");
@@ -279,7 +285,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         if (this.phoneIsOpen) {
             Log.d("uber", "openUberOrder");
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.UBER_ORDER.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.uber.UberOrder");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.uber.UberOrder");
             ((UberOrder) orCreatePage).updateStatus(str);
         }
     }
@@ -297,11 +303,11 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         Integer num = this.callStatus;
         if (num != null && num.intValue() == 0) {
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.CALL_TALK_PAGE.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.call.CallTalk");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.call.CallTalk");
             ((CallTalk) orCreatePage).setCompanionName(str);
         } else if (num != null && num.intValue() == 1) {
             MobileController orCreatePage2 = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.CALL_RECEIVE_PAGE.getId());
-            Intrinsics.checkNotNull(orCreatePage2, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.call.CallReceive");
+            Intrinsics.checkNotNull(orCreatePage2, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.call.CallReceive");
             ((CallReceive) orCreatePage2).setCompanionName(str);
         }
     }
@@ -311,18 +317,18 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         Integer num = this.callStatus;
         if (num != null && num.intValue() == 0) {
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.CALL_TALK_PAGE.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.call.CallTalk");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.call.CallTalk");
             ((CallTalk) orCreatePage).setCompanionNumber(str);
         } else if (num != null && num.intValue() == 1) {
             MobileController orCreatePage2 = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.CALL_RECEIVE_PAGE.getId());
-            Intrinsics.checkNotNull(orCreatePage2, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.call.CallReceive");
+            Intrinsics.checkNotNull(orCreatePage2, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.call.CallReceive");
             ((CallReceive) orCreatePage2).setCompanionNumber(str);
         }
     }
 
     private final void setWorkingButton(String str) {
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.DRIVER_ORDERS.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrders");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders");
         ((DriverOrders) orCreatePage).setWorkingButton(str);
     }
 
@@ -338,7 +344,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
                 pageIfExist2.removePage();
             }
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.DRIVER_ORDERS.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrders");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders");
             ((DriverOrders) orCreatePage).setWorkingInfo(mobilePhoneDriverWorkInfo);
         } catch (Exception unused) {
             System.out.println((Object) "Ошибка при парсинге информации о заказе");
@@ -353,7 +359,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
                 pageIfExist.removePage();
             }
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.DRIVER_ORDERS.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrders");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders");
             ((DriverOrders) orCreatePage).addOrders(listModel);
         } catch (Exception unused) {
             System.out.println((Object) "Ошибка при парсинге информации о заказе");
@@ -367,7 +373,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
                 pageIfExist.removePage();
             }
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.DRIVER_ORDERS.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrders");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders");
             ((DriverOrders) orCreatePage).clearOrders();
         } catch (Exception unused) {
             System.out.println((Object) "Ошибка при удалении заказов");
@@ -390,7 +396,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
                 pageIfExist3.removePage();
             }
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.DRIVER_ORDER.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrder");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrder");
             ((DriverOrder) orCreatePage).updateOrderInfo(mobilePhoneDriverOrder);
         } catch (Exception unused) {
             System.out.println((Object) "Ошибка при парсинге информации о заказе");
@@ -399,7 +405,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     private final void setGreenButtonText(String str) {
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.DRIVER_ORDER.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrder");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrder");
         ((DriverOrder) orCreatePage).setGreenButtonText(str);
     }
 
@@ -413,7 +419,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
             pageIfExist2.removePage();
         }
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.DRIVER_ORDERS.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.driver.DriverOrders");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders");
         DriverOrders driverOrders = (DriverOrders) orCreatePage;
     }
 
@@ -482,7 +488,10 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x006f, code lost:
-        if (r3.intValue() == ru.mrlargha.arizonaui.mobile.domain.enums.MobilePhonePage.MESSENGER_CHAT.getId()) goto L25;
+        if (r3.intValue() == ru.mrlargha.feature.mobile.domain.enums.MobilePhonePage.MESSENGER_CHAT.getId()) goto L30;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x00a7, code lost:
+        if (r3.intValue() == ru.mrlargha.feature.mobile.domain.enums.MobilePhonePage.DRIVER_ORDERS.getId()) goto L29;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -508,14 +517,20 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
                     HistoryManager.Companion.removeViewsPage(MobilePhonePage.MESSENGER_CHAT.getId());
                     HistoryManager.Companion.getOrCreatePage(0);
                     if (history.intValue() != MobilePhonePage.DRIVER_ORDER.getId()) {
-                        if (history.intValue() != MobilePhonePage.DRIVER_ORDERS.getId()) {
+                    }
+                    HistoryManager.Companion.clearAllHistory();
+                    HistoryManager.Companion.removeViewsPage(MobilePhonePage.DRIVER_ORDER.getId());
+                    HistoryManager.Companion.removeViewsPage(MobilePhonePage.DRIVER_ORDERS.getId());
+                    HistoryManager.Companion.getOrCreatePage(0);
+                    if (history.intValue() != MobilePhonePage.ARIZONA_RENT_ADD.getId()) {
+                        if (history.intValue() != MobilePhonePage.ARIZONA_RENT.getId()) {
                             HistoryManager.Companion.previousPage();
                             return;
                         }
                     }
                     HistoryManager.Companion.clearAllHistory();
-                    HistoryManager.Companion.removeViewsPage(MobilePhonePage.DRIVER_ORDER.getId());
-                    HistoryManager.Companion.removeViewsPage(MobilePhonePage.DRIVER_ORDERS.getId());
+                    HistoryManager.Companion.removeViewsPage(MobilePhonePage.ARIZONA_RENT_ADD.getId());
+                    HistoryManager.Companion.removeViewsPage(MobilePhonePage.ARIZONA_RENT.getId());
                     HistoryManager.Companion.getOrCreatePage(0);
                 }
             }
@@ -592,7 +607,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     public final void setArizonaMobilBalance(int i) {
         this.arizonaMobilBalance = i;
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONAMOBIL_MAIN.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.carsharing.CarSharingMain");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.carsharing.CarSharingMain");
         ((CarSharingMain) orCreatePage).addBalance(i);
     }
 
@@ -621,7 +636,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
                 }
                 HistoryManager.Companion.clearHistoryByKey(MobilePhonePage.ARIZONAMOBIL_MAIN.getId());
                 MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONAMOBIL_RENTED.getId());
-                Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.carsharing.CarSharingRented");
+                Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.carsharing.CarSharingRented");
                 ((CarSharingRented) orCreatePage).setRentInfo(mobilePhoneRentInfo);
             }
         } catch (Exception unused) {
@@ -633,7 +648,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         try {
             List listModel = MapperKt.toListModel(str, MobilePhoneAvailableCar.class);
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONAMOBIL_CARS.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.carsharing.CarSharingCars");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.carsharing.CarSharingCars");
             this.availableCars.addAll(listModel);
             ((CarSharingCars) orCreatePage).addCars(this.availableCars);
         } catch (Exception unused) {
@@ -686,7 +701,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
                     pageIfExist6.removePage();
                 }
                 MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.CALL_TALK_PAGE.getId());
-                Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.call.CallTalk");
+                Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.call.CallTalk");
                 CallTalk callTalk = (CallTalk) orCreatePage;
             } else if (callStatus.getStatus() == 0) {
                 this.callStatus = null;
@@ -716,7 +731,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     private final void playTrackFromServer(String str) {
         List split$default = StringsKt.split$default((CharSequence) str, new String[]{StringUtils.COMMA}, false, 0, 6, (Object) null);
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.SPOTIFY_PAGE.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage");
         SpotifyPage spotifyPage = (SpotifyPage) orCreatePage;
         if (split$default.size() == 2) {
             spotifyPage.addPlayedTrack(Integer.parseInt((String) split$default.get(0)), Integer.parseInt((String) split$default.get(1)));
@@ -730,7 +745,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         List split$default;
         try {
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.SPOTIFY_PAGE.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage");
             SpotifyPage spotifyPage = (SpotifyPage) orCreatePage;
             String removeSurrounding = StringsKt.removeSurrounding(str, (CharSequence) "[", (CharSequence) "]");
             if (removeSurrounding.length() <= 0) {
@@ -755,7 +770,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     private final void addToFavourite(String str) {
         try {
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.SPOTIFY_PAGE.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage");
             ((SpotifyPage) orCreatePage).addToFavourite(Integer.parseInt(str));
         } catch (RuntimeException unused) {
             Log.d("MobilePhone", "error from server, favourite (not int)");
@@ -765,7 +780,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     private final void removeFromFavourite(String str) {
         try {
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.SPOTIFY_PAGE.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage");
             ((SpotifyPage) orCreatePage).removeFromFavourite(Integer.parseInt(str));
         } catch (RuntimeException unused) {
             Log.d("MobilePhone", "error from server, favourite (not int)");
@@ -784,7 +799,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         try {
             List<ChangeArtistNameRadioRequest> listModel = MapperKt.toListModel(str, ChangeArtistNameRadioRequest.class);
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.SPOTIFY_PAGE.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage");
             ((SpotifyPage) orCreatePage).changeArtistNameRadio(listModel);
         } catch (Exception unused) {
             System.out.println((Object) "Не удалось распарсить информацию о ChangeArtistNameRadioRequest");
@@ -800,7 +815,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
             }
             HistoryManager.Companion.getOrCreatePage(MobilePhonePage.CATCH_APP.getId()).renderPage();
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.CATCH_APP.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.catch_app.CatchApp");
             ((CatchApp) orCreatePage).setCatchAppInfo(catchAppInfo);
         } catch (Exception unused) {
             System.out.println((Object) "Не удалось распарсить информацию о CatchAppInfo");
@@ -837,149 +852,116 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessage(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        switch (i) {
-            case 0:
-                setServerName(data);
-                return;
-            case 1:
-                setScreenBackgroundId(Integer.parseInt(data));
-                return;
-            case 2:
-                setCaseId(Integer.parseInt(data) - 1);
-                return;
-            case 3:
-                addAvailableCars(data);
-                return;
-            case 4:
-                setRentedInfo(data);
-                return;
-            case 5:
-            case 6:
-            case 7:
-            case 29:
-            default:
-                return;
-            case 8:
-                setArizonaMobilBalance(Integer.parseInt(data));
-                return;
-            case 9:
-                setCallStatus(data);
-                return;
-            case 10:
-                setCompanionName(data);
-                return;
-            case 11:
-                setCompanionNumber(data);
-                return;
-            case 12:
-                renderTaxiSearch();
-                return;
-            case 13:
-                sendTaxiStatus(data);
-                return;
-            case 14:
-                sendDriverInfo(data);
-                return;
-            case 15:
-                closeOrder();
-                return;
-            case 16:
-                sendOrderStatus();
-                return;
-            case 17:
-                sendPriority(data);
-                return;
-            case 18:
-                setWorkingButton(data);
-                return;
-            case 19:
-                setWorkingInfo(data);
-                return;
-            case 20:
-                addWorkingList(data);
-                return;
-            case 21:
-                renderDriverOrder(data);
-                return;
-            case 22:
-                setGreenButtonText(data);
-                return;
-            case 23:
-                clearDriverOrders();
-                return;
-            case 24:
-                closeDriverMenu();
-                return;
-            case 25:
-                initFavourite(data);
-                return;
-            case 26:
-                addToFavourite(data);
-                return;
-            case 27:
-                removeFromFavourite(data);
-                return;
-            case 28:
-                playTrackFromServer(data);
-                return;
-            case 30:
-                openSpotify();
-                return;
-            case 31:
-                changeArtistNameRadio(data);
-                return;
-            case 32:
-                setCatchAppInfo(data);
-                return;
-            case 33:
-                showScreenByID(Integer.parseInt(data));
-                return;
-            case 34:
-                clearTaxiOrders();
-                return;
-            case 35:
-                setMessengerToken(data);
-                return;
-            case 36:
-                sendMessageSuccess(data);
-                return;
-            case 37:
-                removeContactStatus(data);
-                return;
-            case 38:
-                addContactStatus(data);
-                return;
-            case 39:
-                blockContactStatus(data);
-                return;
-            case 40:
-                pinContactStatus(data);
-                return;
-            case 41:
-                clearMessagesStatus(data);
-                return;
-            case 42:
-                notifyContactStatus(data);
-                return;
-            case 43:
-                removeMessageStatus(data);
-                return;
-            case 44:
-                contactSettingsUpdate(data);
-                return;
-            case 45:
-                callContactStatus(data);
-                return;
-            case 46:
-                newMessage(data);
-                return;
-            case 47:
-                updateDialog(data);
-                return;
-            case 48:
-                openMessengerChat(data);
-                return;
+        if (i == 0) {
+            setServerName(data);
+        } else if (i == 1) {
+            setScreenBackgroundId(Integer.parseInt(data));
+        } else if (i == 2) {
+            setCaseId(Integer.parseInt(data) - 1);
+        } else if (i == 3) {
+            addAvailableCars(data);
+        } else if (i == 4) {
+            setRentedInfo(data);
+        } else if (i == 8) {
+            setArizonaMobilBalance(Integer.parseInt(data));
+        } else if (i == 9) {
+            setCallStatus(data);
+        } else if (i == 10) {
+            setCompanionName(data);
+        } else if (i == 11) {
+            setCompanionNumber(data);
+        } else if (i == 12) {
+            renderTaxiSearch();
+        } else if (i == 13) {
+            sendTaxiStatus(data);
+        } else if (i == 14) {
+            sendDriverInfo(data);
+        } else if (i == 15) {
+            closeOrder();
+        } else if (i == 16) {
+            sendOrderStatus();
+        } else if (i == 17) {
+            sendPriority(data);
+        } else if (i == 18) {
+            setWorkingButton(data);
+        } else if (i == 19) {
+            setWorkingInfo(data);
+        } else if (i == 20) {
+            addWorkingList(data);
+        } else if (i == 21) {
+            renderDriverOrder(data);
+        } else if (i == 22) {
+            setGreenButtonText(data);
+        } else if (i == 23) {
+            clearDriverOrders();
+        } else if (i == 24) {
+            closeDriverMenu();
+        } else if (i == 25) {
+            initFavourite(data);
+        } else if (i == 26) {
+            addToFavourite(data);
+        } else if (i == 27) {
+            removeFromFavourite(data);
+        } else if (i == 28) {
+            playTrackFromServer(data);
+        } else if (i == 30) {
+            openSpotify();
+        } else if (i == 31) {
+            changeArtistNameRadio(data);
+        } else if (i == 32) {
+            setCatchAppInfo(data);
+        } else if (i == 33) {
+            showScreenByID(Integer.parseInt(data));
+        } else if (i == 34) {
+            clearTaxiOrders();
+        } else if (i == 35) {
+            setMessengerToken(data);
+        } else if (i == 36) {
+            sendMessageSuccess(data);
+        } else if (i == 37) {
+            removeContactStatus(data);
+        } else if (i == 38) {
+            addContactStatus(data);
+        } else if (i == 39) {
+            blockContactStatus(data);
+        } else if (i == 40) {
+            pinContactStatus(data);
+        } else if (i == 41) {
+            clearMessagesStatus(data);
+        } else if (i == 42) {
+            notifyContactStatus(data);
+        } else if (i == 43) {
+            removeMessageStatus(data);
+        } else if (i == 44) {
+            contactSettingsUpdate(data);
+        } else if (i == 45) {
+            callContactStatus(data);
+        } else if (i == 46) {
+            newMessage(data);
+        } else if (i == 47) {
+            updateDialog(data);
+        } else if (i == 48) {
+            openMessengerChat(data);
+        } else if (i == MobilePhoneGetSubIds.RENT_REAL_ESTATE_LIST.getSubId()) {
+            initArizonaRentRealEstate(i, data);
+        } else if (i == MobilePhoneGetSubIds.RENT_UPDATE.getSubId()) {
+            rentUpdate(data);
         }
+    }
+
+    private final void initArizonaRentRealEstate(int i, String str) {
+        MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONA_RENT_ADD.getId());
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage");
+        ((ArizonaRentAddPage) orCreatePage).sendEvent(MobilePhoneGetSubIds.RENT_REAL_ESTATE_LIST, str);
+        MobileController orCreatePage2 = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONA_RENT.getId());
+        Intrinsics.checkNotNull(orCreatePage2, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage");
+        ((ArizonaRentPage) orCreatePage2).sendEvent(MobilePhoneGetSubIds.RENT_REAL_ESTATE_LIST, str);
+    }
+
+    private final void rentUpdate(String str) {
+        MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONA_RENT.getId());
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage");
+        ((ArizonaRentPage) orCreatePage).sendEvent(MobilePhoneGetSubIds.RENT_UPDATE, str);
     }
 
     private final void openMessengerChat(String str) {
@@ -1057,7 +1039,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     private final void callContactStatus(String str) {
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_CHAT.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat");
         MessengerChat messengerChat = (MessengerChat) orCreatePage;
         JSONObject jSONObject = new JSONObject(str);
         if (jSONObject.has(NotificationCompat.CATEGORY_STATUS)) {
@@ -1071,7 +1053,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     private final void removeMessageStatus(String str) {
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_CHAT.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat");
         MessengerChat messengerChat = (MessengerChat) orCreatePage;
         JSONObject jSONObject = new JSONObject(str);
         if (jSONObject.has(NotificationCompat.CATEGORY_STATUS)) {
@@ -1085,7 +1067,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     private final void notifyContactStatus(String str) {
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_CHAT.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat");
         MessengerChat messengerChat = (MessengerChat) orCreatePage;
         JSONObject jSONObject = new JSONObject(str);
         if (jSONObject.has(NotificationCompat.CATEGORY_STATUS)) {
@@ -1099,7 +1081,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     private final void clearMessagesStatus(String str) {
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_CHAT.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat");
         MessengerChat messengerChat = (MessengerChat) orCreatePage;
         JSONObject jSONObject = new JSONObject(str);
         if (jSONObject.has(NotificationCompat.CATEGORY_STATUS)) {
@@ -1113,7 +1095,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     private final void pinContactStatus(String str) {
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_CHAT.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat");
         MessengerChat messengerChat = (MessengerChat) orCreatePage;
         JSONObject jSONObject = new JSONObject(str);
         if (jSONObject.has(NotificationCompat.CATEGORY_STATUS)) {
@@ -1127,7 +1109,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     private final void blockContactStatus(String str) {
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_CHAT.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat");
         MessengerChat messengerChat = (MessengerChat) orCreatePage;
         JSONObject jSONObject = new JSONObject(str);
         if (jSONObject.has(NotificationCompat.CATEGORY_STATUS) && jSONObject.getBoolean(NotificationCompat.CATEGORY_STATUS)) {
@@ -1141,7 +1123,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         Messenger messenger = pageIfExist instanceof Messenger ? (Messenger) pageIfExist : null;
         if (messenger == null) {
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_CHAT.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat");
             messengerChat = (MessengerChat) orCreatePage;
         }
         JSONObject jSONObject = new JSONObject(str);
@@ -1161,7 +1143,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         Messenger messenger = pageIfExist instanceof Messenger ? (Messenger) pageIfExist : null;
         if (messenger == null) {
             MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_CHAT.getId());
-            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat");
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat");
             messengerChat = (MessengerChat) orCreatePage;
         }
         JSONObject jSONObject = new JSONObject(str);
@@ -1206,7 +1188,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
             }
         }
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_APP.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger");
         Messenger messenger = (Messenger) orCreatePage;
         MobileController pageIfExist = HistoryManager.Companion.getPageIfExist(MobilePhonePage.MESSENGER_CHAT.getId());
         MessengerChat messengerChat = pageIfExist instanceof MessengerChat ? (MessengerChat) pageIfExist : null;
@@ -1228,7 +1210,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     private final void contactSettingsUpdate(String str) {
         MapperKt.toModel(str, ContactModel.class);
         MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MESSENGER_APP.getId());
-        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger");
+        Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger");
         ((Messenger) orCreatePage).contactSettingsUpdate();
     }
 
@@ -1328,6 +1310,24 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
             sendRequest(34);
         } else if (i == MobilePhoneScreenIds.MENU_ID_PHONE_STORAGE.getId()) {
             sendRequest(35);
+        } else if (i == MobilePhoneScreenIds.MENU_ID_ARIZONA_RENT.getId()) {
+            MobileController pageIfExist5 = HistoryManager.Companion.getPageIfExist(MobilePhonePage.MAIN_PAGE.getId());
+            if (pageIfExist5 != null) {
+                pageIfExist5.removePage();
+            }
+            MobileController orCreatePage = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONA_RENT_ADD.getId());
+            Intrinsics.checkNotNull(orCreatePage, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.MobilePage");
+            ((MobilePage) orCreatePage).hidePage();
+            HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONA_RENT.getId()).renderPage();
+        } else if (i == MobilePhoneScreenIds.MENU_ID_ARIZONA_RENT_ADD.getId()) {
+            MobileController pageIfExist6 = HistoryManager.Companion.getPageIfExist(MobilePhonePage.MAIN_PAGE.getId());
+            if (pageIfExist6 != null) {
+                pageIfExist6.removePage();
+            }
+            MobileController orCreatePage2 = HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONA_RENT.getId());
+            Intrinsics.checkNotNull(orCreatePage2, "null cannot be cast to non-null type ru.mrlargha.feature.mobile.presentation.MobilePage");
+            ((MobilePage) orCreatePage2).hidePage();
+            HistoryManager.Companion.getOrCreatePage(MobilePhonePage.ARIZONA_RENT_ADD.getId()).renderPage();
         }
     }
 
@@ -1336,7 +1336,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     }
 
     /* compiled from: MobilePhone.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.ARIZONA_MOBILE_PHONE);
@@ -1353,7 +1353,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         }
     }
 
-    @Override // ru.mrlargha.arizonaui.mobile.presentation.MobileController
+    @Override // ru.mrlargha.feature.mobile.presentation.MobileController
     public void removePage() {
         this.mobilePhone.removeAllViews();
     }

@@ -2,32 +2,22 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 import io.appmetrica.analytics.coreapi.internal.backport.Provider;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult;
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-/* loaded from: classes4.dex */
-public final class M implements J {
+/* loaded from: classes3.dex */
+public final class M implements Provider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final J f568a;
+    public final /* synthetic */ Context f582a;
+    public final /* synthetic */ Li b;
+    public final /* synthetic */ N c;
 
-    public M(J j) {
-        this.f568a = j;
+    public M(N n, Context context, Li li) {
+        this.c = n;
+        this.f582a = context;
+        this.b = li;
     }
 
-    @Override // io.appmetrica.analytics.impl.J
-    public final AdTrackingInfoResult a(Context context) {
-        return a(new K(this, context));
-    }
-
-    @Override // io.appmetrica.analytics.impl.J
-    public final AdTrackingInfoResult a(Context context, InterfaceC0181cj interfaceC0181cj) {
-        return a(new L(this, context, interfaceC0181cj));
-    }
-
-    public static AdTrackingInfoResult a(Provider provider) {
-        AdTrackingInfoResult adTrackingInfoResult = (AdTrackingInfoResult) provider.get();
-        AdTrackingInfo adTrackingInfo = adTrackingInfoResult.mAdTrackingInfo;
-        return (adTrackingInfo == null || !"00000000-0000-0000-0000-000000000000".equals(adTrackingInfo.advId)) ? adTrackingInfoResult : new AdTrackingInfoResult(null, IdentifierStatus.INVALID_ADV_ID, "AdvId is invalid: 00000000-0000-0000-0000-000000000000");
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Provider
+    public final Object get() {
+        return this.c.f598a.a(this.f582a, this.b);
     }
 }

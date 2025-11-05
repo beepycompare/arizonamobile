@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import java.io.IOException;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PreloadMediaPeriod implements MediaPeriod {
     private MediaPeriod.Callback callback;
     public final MediaPeriod mediaPeriod;
@@ -215,7 +215,7 @@ public final class PreloadMediaPeriod implements MediaPeriod {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class PreloadTrackSelectionHolder {
         public final boolean[] mayRetainStreamFlags;
         public final ExoTrackSelection[] selections;

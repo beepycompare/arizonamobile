@@ -1,7 +1,6 @@
 package androidx.compose.material3;
 
-import androidx.compose.material.icons.Icons;
-import androidx.compose.material.icons.filled.CloseKt;
+import androidx.compose.material3.internal.Icons;
 import androidx.compose.material3.internal.Strings;
 import androidx.compose.material3.internal.Strings_androidKt;
 import androidx.compose.runtime.Composer;
@@ -13,13 +12,11 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Snackbar.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$SnackbarKt {
     public static final ComposableSingletons$SnackbarKt INSTANCE = new ComposableSingletons$SnackbarKt();
-
-    /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f45lambda1 = ComposableLambdaKt.composableLambdaInstance(-505750804, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarKt$lambda-1$1
+    private static Function2<Composer, Integer, Unit> lambda$984817901 = ComposableLambdaKt.composableLambdaInstance(984817901, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarKt$lambda$984817901$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -27,26 +24,24 @@ public final class ComposableSingletons$SnackbarKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C233@10795L34,231@10692L164:Snackbar.kt#uh7d8r");
-            if ((i & 3) != 2 || !composer.getSkipping()) {
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-505750804, i, -1, "androidx.compose.material3.ComposableSingletons$SnackbarKt.lambda-1.<anonymous> (Snackbar.kt:231)");
-                }
-                ImageVector close = CloseKt.getClose(Icons.Filled.INSTANCE);
-                Strings.Companion companion = Strings.Companion;
-                IconKt.m2271Iconww6aTOc(close, Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_snackbar_dismiss), composer, 0), (Modifier) null, 0L, composer, 0, 12);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                    return;
-                }
+            ComposerKt.sourceInformation(composer, "C228@10648L34,226@10545L164:Snackbar.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
+                composer.skipToGroupEnd();
                 return;
             }
-            composer.skipToGroupEnd();
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(984817901, i, -1, "androidx.compose.material3.ComposableSingletons$SnackbarKt.lambda$984817901.<anonymous> (Snackbar.kt:226)");
+            }
+            ImageVector close$material3 = Icons.Filled.INSTANCE.getClose$material3();
+            Strings.Companion companion = Strings.Companion;
+            IconKt.m2462Iconww6aTOc(close$material3, Strings_androidKt.m3610getString2EP1pXo(Strings.m3531constructorimpl(R.string.m3c_snackbar_dismiss), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
         }
     });
 
-    /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2102getLambda1$material3_release() {
-        return f45lambda1;
+    public final Function2<Composer, Integer, Unit> getLambda$984817901$material3() {
+        return lambda$984817901;
     }
 }

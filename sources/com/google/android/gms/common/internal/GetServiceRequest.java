@@ -9,10 +9,10 @@ import com.google.android.gms.common.Feature;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.IAccountAccessor;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class GetServiceRequest extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<GetServiceRequest> CREATOR = new zzn();
+    public static final Parcelable.Creator<GetServiceRequest> CREATOR = new zzm();
     static final Scope[] zza = new Scope[0];
     static final Feature[] zzb = new Feature[0];
     final int zzc;
@@ -82,6 +82,6 @@ public class GetServiceRequest extends AbstractSafeParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        zzn.zza(this, parcel, i);
+        zzm.zza(this, parcel, i);
     }
 }

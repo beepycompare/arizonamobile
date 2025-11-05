@@ -20,29 +20,29 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class AndroidParagraphIntrinsics_androidKt {
     /* renamed from: resolveTextDirectionHeuristics-HklW4sA$default  reason: not valid java name */
-    public static /* synthetic */ int m6988resolveTextDirectionHeuristicsHklW4sA$default(int i, LocaleList localeList, int i2, Object obj) {
+    public static /* synthetic */ int m7719resolveTextDirectionHeuristicsHklW4sA$default(int i, LocaleList localeList, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             localeList = null;
         }
-        return m6987resolveTextDirectionHeuristicsHklW4sA(i, localeList);
+        return m7718resolveTextDirectionHeuristicsHklW4sA(i, localeList);
     }
 
     /* renamed from: resolveTextDirectionHeuristics-HklW4sA  reason: not valid java name */
-    public static final int m6987resolveTextDirectionHeuristicsHklW4sA(int i, LocaleList localeList) {
+    public static final int m7718resolveTextDirectionHeuristicsHklW4sA(int i, LocaleList localeList) {
         Locale locale;
-        if (TextDirection.m7158equalsimpl0(i, TextDirection.Companion.m7163getContentOrLtrs_7Xco())) {
+        if (TextDirection.m7889equalsimpl0(i, TextDirection.Companion.m7894getContentOrLtrs_7Xco())) {
             return 2;
         }
-        if (TextDirection.m7158equalsimpl0(i, TextDirection.Companion.m7164getContentOrRtls_7Xco())) {
+        if (TextDirection.m7889equalsimpl0(i, TextDirection.Companion.m7895getContentOrRtls_7Xco())) {
             return 3;
         }
-        if (TextDirection.m7158equalsimpl0(i, TextDirection.Companion.m7165getLtrs_7Xco())) {
+        if (TextDirection.m7889equalsimpl0(i, TextDirection.Companion.m7896getLtrs_7Xco())) {
             return 0;
         }
-        if (TextDirection.m7158equalsimpl0(i, TextDirection.Companion.m7166getRtls_7Xco())) {
+        if (TextDirection.m7889equalsimpl0(i, TextDirection.Companion.m7897getRtls_7Xco())) {
             return 1;
         }
-        if (TextDirection.m7158equalsimpl0(i, TextDirection.Companion.m7162getContents_7Xco()) || TextDirection.m7158equalsimpl0(i, TextDirection.Companion.m7167getUnspecifieds_7Xco())) {
+        if (TextDirection.m7889equalsimpl0(i, TextDirection.Companion.m7893getContents_7Xco()) || TextDirection.m7889equalsimpl0(i, TextDirection.Companion.m7898getUnspecifieds_7Xco())) {
             if (localeList == null || (locale = localeList.get(0).getPlatformLocale()) == null) {
                 locale = Locale.getDefault();
             }
@@ -60,7 +60,7 @@ public final class AndroidParagraphIntrinsics_androidKt {
     public static final boolean getHasEmojiCompat(TextStyle textStyle) {
         PlatformParagraphStyle paragraphStyle;
         PlatformTextStyle platformStyle = textStyle.getPlatformStyle();
-        EmojiSupportMatch m6553boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m6553boximpl(paragraphStyle.m6635getEmojiSupportMatch_3YsG6Y());
-        return !(m6553boximpl == null ? false : EmojiSupportMatch.m6556equalsimpl0(m6553boximpl.m6559unboximpl(), EmojiSupportMatch.Companion.m6562getNone_3YsG6Y()));
+        EmojiSupportMatch m7284boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m7284boximpl(paragraphStyle.m7366getEmojiSupportMatch_3YsG6Y());
+        return !(m7284boximpl == null ? false : EmojiSupportMatch.m7287equalsimpl0(m7284boximpl.m7290unboximpl(), EmojiSupportMatch.Companion.m7293getNone_3YsG6Y()));
     }
 }

@@ -9,7 +9,6 @@ import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.common.util.XmlPullParserUtil;
 import androidx.media3.exoplayer.upstream.CmcdData;
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import androidx.media3.extractor.text.CuesWithTiming;
 import androidx.media3.extractor.text.LegacySubtitleUtil;
 import androidx.media3.extractor.text.Subtitle;
@@ -1059,7 +1058,7 @@ public final class TtmlParser implements SubtitleParser {
                     }
                     c = 65535;
                     break;
-                case AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID /* 116 */:
+                case 116:
                     if (str2.equals("t")) {
                         c = 3;
                         break;

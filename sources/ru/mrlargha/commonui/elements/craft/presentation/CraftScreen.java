@@ -626,7 +626,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
                         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
                         parentLayout.setVisibility(0);
                         this.binding.successLayout.ivBgCraftResult.setImageResource(R.drawable.bg_success_green);
-                        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", this.currentItem, null, 4, null);
+                        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", this.currentItem, (String) null, 4, (Object) null);
                         if (iconFromArchive$default != null) {
                             ImageView ivItemIcon = this.binding.ivItemIcon;
                             Intrinsics.checkNotNullExpressionValue(ivItemIcon, "ivItemIcon");
@@ -860,7 +860,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void editCraftItemUi(CraftItem craftItem) {
-        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", craftItem.getItem(), null, 4, null);
+        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", craftItem.getItem(), (String) null, 4, (Object) null);
         if (iconFromArchive$default != null) {
             ImageView ivItemIcon = this.binding.ivItemIcon;
             Intrinsics.checkNotNullExpressionValue(ivItemIcon, "ivItemIcon");

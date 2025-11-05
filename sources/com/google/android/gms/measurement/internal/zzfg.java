@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import com.google.android.gms.internal.measurement.zzqp;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final /* synthetic */ class zzfg implements zzbn {
     static final /* synthetic */ zzfg zza = new zzfg();
 

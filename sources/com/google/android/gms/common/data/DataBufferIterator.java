@@ -4,7 +4,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DataBufferIterator<T> implements Iterator<T> {
     protected final DataBuffer zaa;
     protected int zab = -1;

@@ -58,6 +58,7 @@ import ru.mrlargha.feature.common_factory.CommonElementsFactory;
 /* loaded from: classes3.dex */
 public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener, CommandBinder.BinderListener, IBackendNotifier, IAutocompleteStateProvider, ArizonaSnackbar.SnackBarListener, Hud.HudListener, ItemScene {
     private static final String TAG = "GTASAMainClass";
+    private boolean _isSimple;
     SharedPreferences settings;
     public SettingsRepository settingsRepository;
     private final UIElementStore uiElementStore;
@@ -117,9 +118,13 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     public native void Cef3DSetBackground(String txd, String texture, int x, int y, int width, int height);
 
+    public native void Cef3DSetDirty(int model, boolean isSimple, byte dirty);
+
     public native void Cef3DSetVehicleColors(int model, byte main, byte second);
 
     public native void Cef3DSetVehicleComponent(int model, int component, boolean isSimple, boolean remove);
+
+    public native void Cef3DSetVehicleWear(int model, byte wear);
 
     public native void Cef3DSetupScene(int x, int y, int width, int height, int frameRate, byte red, byte green, byte blue);
 
@@ -139,15 +144,21 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         this.uiElementStore = uIElementStore;
         uIElementStore.addFactory(new CommonElementsFactory());
         try {
-            uIElementStore.addFactory((UIElementFactory) Class.forName("ru.mrlargha.arizonaui.ArizonaUIElementFactory").newInstance());
+            if (UtilsKt.isArizonaType()) {
+                uIElementStore.addFactory((UIElementFactory) Class.forName("ru.mrlargha.arizonaui.ArizonaUIElementFactory").newInstance());
+            }
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException unused) {
             Log.i(TAG, "Unable to create ArizonaUIElement factory, maybe this is Rodina build");
         }
         try {
-            this.uiElementStore.addFactory((UIElementFactory) Class.forName("ru.mrlargha.rodina_ui.RodinaUIElementsFactory").newInstance());
+            if (!UtilsKt.isArizonaType()) {
+                Log.i(TAG, "Unable to create ArizonaUIElement factory, maybe this is Rodina build");
+                this.uiElementStore.addFactory((UIElementFactory) Class.forName("ru.mrlargha.rodina_ui.RodinaUIElementsFactory").newInstance());
+            }
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException unused2) {
             Log.i(TAG, "Unable to create RodinaUIElementsFactory factory, maybe this is Arizona build");
         }
+        this._isSimple = false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -356,8 +367,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
             boolean z = defaultSharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, false);
             boolean z2 = defaultSharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, true);
             String string = defaultSharedPreferences.getString("token", "");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v16.6.3\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, z, "(release) 2.1 - v16.6.3", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v16.6.7\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, z, "(release) 2.1 - v16.6.7", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);
@@ -1337,18 +1348,16 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
-    public void setCarModel(int id, String bg) {
+    public void setCarModel(int id, boolean isSimple, String bg, int mainColor, int secondColor, String bgPath, int wear, boolean isCar) {
+        this._isSimple = isSimple;
         Cef3DRemoveModels();
-        Log.d("setCarModel", "1: $id");
-        Cef3DAddModel(id, false);
-        Log.d("setCarModel", "2: $id");
-        Cef3DSetBackground("hud", bg, 0, 0, 512, 512);
-        Cef3DRotateModel(id, false, 45.0f, 0.0f, 45.0f);
-        Log.d("setCarModel", "3: $id");
-        Cef3DScaleModel(id, false, 1.5f);
-        Log.d("setCarModel", "4: $id");
-        Cef3DSetVehicleColors(id, (byte) 1, (byte) 0);
-        Log.d("setCarModel", "5: $id");
+        Cef3DAddModel(id, isSimple);
+        if (isCar) {
+            Cef3DSetVehicleWear(id, (byte) wear);
+            Cef3DSetVehicleColors(id, (byte) mainColor, (byte) secondColor);
+        }
+        Cef3DSetDirty(id, isSimple, (byte) 0);
+        Cef3DSetBackground(bgPath, bg, 0, 0, 512, 512);
     }
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
@@ -1358,17 +1367,17 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void rotateModel(int id, float x, float y, float z) {
-        Cef3DRotateModel(id, false, x, y, z);
+        Cef3DRotateModel(id, this._isSimple, x, y, z);
     }
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void scaleModel(int id, float scale) {
-        Cef3DScaleModel(id, false, scale);
+        Cef3DScaleModel(id, this._isSimple, scale);
     }
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
-    public void setCarModule(int id, int module) {
-        Cef3DSetVehicleComponent(id, module, false, false);
+    public void setCarModule(int id, int module, boolean isSimple) {
+        Cef3DSetVehicleComponent(id, module, isSimple, false);
     }
 
     public void exitGame() {

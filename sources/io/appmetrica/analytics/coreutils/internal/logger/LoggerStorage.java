@@ -4,11 +4,11 @@ import android.text.TextUtils;
 import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.util.HashMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class LoggerStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap f289a = new HashMap();
+    private static HashMap f305a = new HashMap();
     private static final Object b = new Object();
     private static volatile PublicLogger c = PublicLogger.getAnonymousInstance();
 
@@ -26,13 +26,13 @@ public abstract class LoggerStorage {
         if (TextUtils.isEmpty(str)) {
             return PublicLogger.getAnonymousInstance();
         }
-        PublicLogger publicLogger2 = (PublicLogger) f289a.get(str);
+        PublicLogger publicLogger2 = (PublicLogger) f305a.get(str);
         if (publicLogger2 == null) {
             synchronized (b) {
-                publicLogger = (PublicLogger) f289a.get(str);
+                publicLogger = (PublicLogger) f305a.get(str);
                 if (publicLogger == null) {
                     publicLogger = new PublicLogger(ApiKeyUtils.createPartialApiKey(str));
-                    f289a.put(str, publicLogger);
+                    f305a.put(str, publicLogger);
                 }
             }
             return publicLogger;
@@ -41,7 +41,7 @@ public abstract class LoggerStorage {
     }
 
     public static void unsetPublicLoggers() {
-        f289a = new HashMap();
+        f305a = new HashMap();
         c = PublicLogger.getAnonymousInstance();
     }
 }

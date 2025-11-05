@@ -7,8 +7,8 @@ import android.os.RemoteException;
 import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.internal.BaseGmsClient;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class zzf extends zza {
     public final IBinder zze;
     final /* synthetic */ BaseGmsClient zzf;
@@ -16,43 +16,38 @@ public final class zzf extends zza {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public zzf(BaseGmsClient baseGmsClient, int i, IBinder iBinder, Bundle bundle) {
         super(baseGmsClient, i, bundle);
+        java.util.Objects.requireNonNull(baseGmsClient);
         this.zzf = baseGmsClient;
         this.zze = iBinder;
     }
 
     @Override // com.google.android.gms.common.internal.zza
-    protected final void zzb(ConnectionResult connectionResult) {
-        if (this.zzf.zzx != null) {
-            this.zzf.zzx.onConnectionFailed(connectionResult);
-        }
-        this.zzf.onConnectionFailed(connectionResult);
-    }
-
-    @Override // com.google.android.gms.common.internal.zza
-    protected final boolean zzd() {
-        BaseGmsClient.BaseConnectionCallbacks baseConnectionCallbacks;
-        BaseGmsClient.BaseConnectionCallbacks baseConnectionCallbacks2;
+    protected final boolean zza() {
         try {
             IBinder iBinder = this.zze;
             Preconditions.checkNotNull(iBinder);
             IBinder iBinder2 = iBinder;
             String interfaceDescriptor = iBinder.getInterfaceDescriptor();
-            if (!this.zzf.getServiceDescriptor().equals(interfaceDescriptor)) {
-                String serviceDescriptor = this.zzf.getServiceDescriptor();
-                Log.w("GmsClient", "service descriptor mismatch: " + serviceDescriptor + " vs. " + interfaceDescriptor);
-                return false;
-            }
-            IInterface createServiceInterface = this.zzf.createServiceInterface(this.zze);
-            if (createServiceInterface == null || !(BaseGmsClient.zzn(this.zzf, 2, 4, createServiceInterface) || BaseGmsClient.zzn(this.zzf, 3, 4, createServiceInterface))) {
-                return false;
-            }
-            this.zzf.zzC = null;
             BaseGmsClient baseGmsClient = this.zzf;
+            if (!baseGmsClient.getServiceDescriptor().equals(interfaceDescriptor)) {
+                String serviceDescriptor = baseGmsClient.getServiceDescriptor();
+                StringBuilder sb = new StringBuilder(String.valueOf(serviceDescriptor).length() + 34 + String.valueOf(interfaceDescriptor).length());
+                sb.append("service descriptor mismatch: ");
+                sb.append(serviceDescriptor);
+                sb.append(" vs. ");
+                sb.append(interfaceDescriptor);
+                Log.w("GmsClient", sb.toString());
+                return false;
+            }
+            IInterface createServiceInterface = baseGmsClient.createServiceInterface(this.zze);
+            if (createServiceInterface == null || !(baseGmsClient.zze(2, 4, createServiceInterface) || baseGmsClient.zze(3, 4, createServiceInterface))) {
+                return false;
+            }
+            baseGmsClient.zzn(null);
+            BaseGmsClient.BaseConnectionCallbacks zzk = baseGmsClient.zzk();
             Bundle connectionHint = baseGmsClient.getConnectionHint();
-            baseConnectionCallbacks = baseGmsClient.zzw;
-            if (baseConnectionCallbacks != null) {
-                baseConnectionCallbacks2 = this.zzf.zzw;
-                baseConnectionCallbacks2.onConnected(connectionHint);
+            if (zzk != null) {
+                baseGmsClient.zzk().onConnected(connectionHint);
                 return true;
             }
             return true;
@@ -60,5 +55,14 @@ public final class zzf extends zza {
             Log.w("GmsClient", "service probably died");
             return false;
         }
+    }
+
+    @Override // com.google.android.gms.common.internal.zza
+    protected final void zzb(ConnectionResult connectionResult) {
+        BaseGmsClient baseGmsClient = this.zzf;
+        if (baseGmsClient.zzl() != null) {
+            baseGmsClient.zzl().onConnectionFailed(connectionResult);
+        }
+        baseGmsClient.onConnectionFailed(connectionResult);
     }
 }

@@ -1,21 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import com.adjust.sdk.Constants;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-/* loaded from: classes4.dex */
-public abstract class U5 {
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+/* loaded from: classes3.dex */
+public class U5 extends BaseRequestConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map f695a;
+    public String f717a;
+    public String b;
+    public C0356jm c;
 
-    static {
-        HashMap hashMap = new HashMap();
-        hashMap.put(Constants.REFERRER_API_GOOGLE, AdTrackingInfo.Provider.GOOGLE);
-        hashMap.put("huawei", AdTrackingInfo.Provider.HMS);
-        hashMap.put("yandex", AdTrackingInfo.Provider.YANDEX);
-        f695a = Collections.unmodifiableMap(hashMap);
+    public final String b() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
+    public String toString() {
+        return "CoreRequestConfig{mAppDebuggable='" + this.f717a + "', mAppSystem='" + this.b + "', startupState=" + this.c + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public final String a() {
+        return this.f717a;
     }
 }

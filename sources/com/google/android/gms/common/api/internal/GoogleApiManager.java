@@ -37,7 +37,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.initialization.qual.NotOnlyInitialized;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GoogleApiManager implements Handler.Callback {
     public static final Status zaa = new Status(4, "Sign-out occurred while this API call was in progress.");
     private static final Status zab = new Status(4, "The user must be signed in to make this API call.");

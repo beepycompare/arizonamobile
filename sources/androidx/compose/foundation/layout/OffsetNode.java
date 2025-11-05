@@ -67,7 +67,7 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
 
     /* renamed from: update-Md-fbLM  reason: not valid java name */
     public final void m803updateMdfbLM(float f, float f2, boolean z) {
-        if (!Dp.m7269equalsimpl0(this.x, f) || !Dp.m7269equalsimpl0(this.y, f2) || this.rtlAware != z) {
+        if (!Dp.m8000equalsimpl0(this.x, f) || !Dp.m8000equalsimpl0(this.y, f2) || this.rtlAware != z) {
             LayoutModifierNodeKt.invalidatePlacement(this);
         }
         this.x = f;
@@ -78,12 +78,12 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetNode$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = OffsetNode.measure_3p2s80s$lambda$0(OffsetNode.this, mo5967measureBRTryo0, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$0 = OffsetNode.measure_3p2s80s$lambda$0(OffsetNode.this, mo6697measureBRTryo0, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$0;
             }
         }, 4, null);

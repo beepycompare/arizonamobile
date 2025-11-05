@@ -14,7 +14,7 @@ public final class ComposableSingletons$DialogNavigatorKt {
     public static final ComposableSingletons$DialogNavigatorKt INSTANCE = new ComposableSingletons$DialogNavigatorKt();
 
     /* renamed from: lambda$-1092249270  reason: not valid java name */
-    private static Function3<NavBackStackEntry, Composer, Integer, Unit> f58lambda$1092249270 = ComposableLambdaKt.composableLambdaInstance(-1092249270, false, new Function3<NavBackStackEntry, Composer, Integer, Unit>() { // from class: androidx.navigation.compose.ComposableSingletons$DialogNavigatorKt$lambda$-1092249270$1
+    private static Function3<NavBackStackEntry, Composer, Integer, Unit> f43lambda$1092249270 = ComposableLambdaKt.composableLambdaInstance(-1092249270, false, new Function3<NavBackStackEntry, Composer, Integer, Unit>() { // from class: androidx.navigation.compose.ComposableSingletons$DialogNavigatorKt$lambda$-1092249270$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(NavBackStackEntry navBackStackEntry, Composer composer, Integer num) {
             invoke(navBackStackEntry, composer, num.intValue());
@@ -33,7 +33,7 @@ public final class ComposableSingletons$DialogNavigatorKt {
     });
 
     /* renamed from: getLambda$-1092249270$navigation_compose_release  reason: not valid java name */
-    public final Function3<NavBackStackEntry, Composer, Integer, Unit> m8095getLambda$1092249270$navigation_compose_release() {
-        return f58lambda$1092249270;
+    public final Function3<NavBackStackEntry, Composer, Integer, Unit> m8826getLambda$1092249270$navigation_compose_release() {
+        return f43lambda$1092249270;
     }
 }

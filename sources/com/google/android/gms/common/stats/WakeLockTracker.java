@@ -3,9 +3,9 @@ package com.google.android.gms.common.stats;
 import android.content.Context;
 import android.content.Intent;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WakeLockTracker {
     private static final WakeLockTracker zza = new WakeLockTracker();
 

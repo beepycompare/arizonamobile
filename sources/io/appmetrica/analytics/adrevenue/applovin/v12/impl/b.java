@@ -22,15 +22,15 @@ import kotlin.collections.ArraysKt;
 import kotlin.collections.MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class b implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f211a;
+    public final a f196a;
     public final ClientContext b;
 
     public b(a aVar, ClientContext clientContext) {
-        this.f211a = aVar;
+        this.f196a = aVar;
         this.b = clientContext;
     }
 
@@ -50,7 +50,7 @@ public final class b implements ModuleAdRevenueProcessor {
                 Object orNull2 = ArraysKt.getOrNull(objArr, 1);
                 if (orNull2 != null) {
                     AppLovinSdk appLovinSdk = (AppLovinSdk) orNull2;
-                    this.f211a.getClass();
+                    this.f196a.getClass();
                     MaxAdFormat format = maxAd.getFormat();
                     if (format == null) {
                         moduleAdType = null;

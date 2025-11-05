@@ -77,8 +77,8 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierNode$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
@@ -149,18 +149,18 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
 
     /* renamed from: isForward-4vf7U8o  reason: not valid java name */
     private final boolean m1023isForward4vf7U8o(int i) {
-        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5956getBeforehoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6686getBeforehoxUOeE())) {
             return false;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5955getAfterhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6685getAfterhoxUOeE())) {
             return true;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5954getAbovehoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6684getAbovehoxUOeE())) {
             return this.reverseLayout;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5957getBelowhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6687getBelowhoxUOeE())) {
             return !this.reverseLayout;
-        } else if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5958getLefthoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6688getLefthoxUOeE())) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[DelegatableNodeKt.requireLayoutDirection(this).ordinal()];
             if (i2 != 1) {
                 if (i2 == 2) {
@@ -169,7 +169,7 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
                 throw new NoWhenBranchMatchedException();
             }
             return this.reverseLayout;
-        } else if (!BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5959getRighthoxUOeE())) {
+        } else if (!BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6689getRighthoxUOeE())) {
             LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();
             throw new KotlinNothingValueException();
         } else {
@@ -207,11 +207,11 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
 
     /* renamed from: isOppositeToOrientation-4vf7U8o  reason: not valid java name */
     private final boolean m1024isOppositeToOrientation4vf7U8o(int i) {
-        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5954getAbovehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5957getBelowhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6684getAbovehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6687getBelowhoxUOeE())) {
             return this.orientation == Orientation.Horizontal;
-        } else if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5958getLefthoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5959getRighthoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6688getLefthoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6689getRighthoxUOeE())) {
             return this.orientation == Orientation.Vertical;
-        } else if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5956getBeforehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5955getAfterhoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6686getBeforehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6680equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6685getAfterhoxUOeE())) {
             return false;
         } else {
             LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();

@@ -7,7 +7,7 @@ import android.view.View;
 import com.google.android.gms.dynamic.ObjectWrapper;
 import com.google.android.gms.dynamic.RemoteCreator;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zaz extends RemoteCreator {
     private static final zaz zaa = new zaz();
 

@@ -8,10 +8,10 @@ import com.google.android.gms.common.R;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.StringResourceValueReader;
-import com.google.android.gms.common.internal.zzah;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
+import com.google.android.gms.common.internal.zzae;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GoogleServices {
     private static final Object zza = new Object();
     private static GoogleServices zzb;
@@ -32,14 +32,14 @@ public final class GoogleServices {
             this.zzf = false;
         }
         this.zze = r2;
-        String zzb2 = zzah.zzb(context);
-        zzb2 = zzb2 == null ? new StringResourceValueReader(context).getString("google_app_id") : zzb2;
-        if (TextUtils.isEmpty(zzb2)) {
+        String zza2 = zzae.zza(context);
+        zza2 = zza2 == null ? new StringResourceValueReader(context).getString("google_app_id") : zza2;
+        if (TextUtils.isEmpty(zza2)) {
             this.zzd = new Status(10, "Missing google app id value from from string resources with name google_app_id.");
             this.zzc = null;
             return;
         }
-        this.zzc = zzb2;
+        this.zzc = zza2;
         this.zzd = Status.RESULT_SUCCESS;
     }
 
@@ -48,17 +48,6 @@ public final class GoogleServices {
         this.zzd = Status.RESULT_SUCCESS;
         this.zze = z;
         this.zzf = !z;
-    }
-
-    private static GoogleServices checkInitialized(String str) {
-        GoogleServices googleServices;
-        synchronized (zza) {
-            googleServices = zzb;
-            if (googleServices == null) {
-                throw new IllegalStateException("Initialize must be called before " + str + ".");
-            }
-        }
-        return googleServices;
     }
 
     static void clearInstanceForTest() {
@@ -97,8 +86,26 @@ public final class GoogleServices {
         if (str2 == null || str2.equals(str)) {
             return Status.RESULT_SUCCESS;
         }
-        String str3 = this.zzc;
-        return new Status(10, "Initialize was called with two different Google App IDs.  Only the first app ID will be used: '" + str3 + "'.");
+        StringBuilder sb = new StringBuilder(str2.length() + 97);
+        sb.append("Initialize was called with two different Google App IDs.  Only the first app ID will be used: '");
+        sb.append(str2);
+        sb.append("'.");
+        return new Status(10, sb.toString());
+    }
+
+    private static GoogleServices checkInitialized(String str) {
+        GoogleServices googleServices;
+        synchronized (zza) {
+            googleServices = zzb;
+            if (googleServices == null) {
+                StringBuilder sb = new StringBuilder(String.valueOf(str).length() + 34);
+                sb.append("Initialize must be called before ");
+                sb.append(str);
+                sb.append(".");
+                throw new IllegalStateException(sb.toString());
+            }
+        }
+        return googleServices;
     }
 
     public static Status initialize(Context context, String str, boolean z) {

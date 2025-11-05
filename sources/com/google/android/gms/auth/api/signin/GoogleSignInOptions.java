@@ -29,7 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GoogleSignInOptions extends AbstractSafeParcelable implements Api.ApiOptions.Optional, ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInOptions> CREATOR;
     public static final GoogleSignInOptions DEFAULT_GAMES_SIGN_IN;
@@ -53,7 +53,7 @@ public class GoogleSignInOptions extends AbstractSafeParcelable implements Api.A
     private Map zaq;
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private Set zaa;
         private boolean zab;

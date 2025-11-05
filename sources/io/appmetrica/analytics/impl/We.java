@@ -1,20 +1,9 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public final class We {
 
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-/* loaded from: classes4.dex */
-public final class We extends C0201dd {
-    public We() {
-        super(Ze.UNDEFINED);
-        a(1, Ze.WIFI);
-        a(0, Ze.CELL);
-        a(3, Ze.ETHERNET);
-        a(2, Ze.BLUETOOTH);
-        a(4, Ze.VPN);
-        if (AndroidUtils.isApiAchieved(27)) {
-            a(6, Ze.LOWPAN);
-        }
-        if (AndroidUtils.isApiAchieved(26)) {
-            a(5, Ze.WIFI_AWARE);
-        }
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public final Gn f743a = new Gn(new C0323ie("Error details"));
+    public final Gn b = new Gn(new C0271ge("Error identifier"));
+    public final C0245fe c = new C0245fe("Stacktrace");
 }

@@ -138,134 +138,134 @@ public final class AndroidBlendMode_androidKt {
     }
 
     /* renamed from: isSupported-s9anfk8  reason: not valid java name */
-    public static final boolean m4396isSupporteds9anfk8(int i) {
-        return Build.VERSION.SDK_INT >= 29 || BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4490getSrcOver0nO6VwU()) || m4398toPorterDuffModes9anfk8(i) != PorterDuff.Mode.SRC_OVER;
+    public static final boolean m5126isSupporteds9anfk8(int i) {
+        return Build.VERSION.SDK_INT >= 29 || BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5220getSrcOver0nO6VwU()) || m5128toPorterDuffModes9anfk8(i) != PorterDuff.Mode.SRC_OVER;
     }
 
     /* renamed from: toPorterDuffMode-s9anfk8  reason: not valid java name */
-    public static final PorterDuff.Mode m4398toPorterDuffModes9anfk8(int i) {
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4463getClear0nO6VwU())) {
+    public static final PorterDuff.Mode m5128toPorterDuffModes9anfk8(int i) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5193getClear0nO6VwU())) {
             return PorterDuff.Mode.CLEAR;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4486getSrc0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5216getSrc0nO6VwU())) {
             return PorterDuff.Mode.SRC;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4469getDst0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5199getDst0nO6VwU())) {
             return PorterDuff.Mode.DST;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4490getSrcOver0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5220getSrcOver0nO6VwU())) {
             return PorterDuff.Mode.SRC_OVER;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4473getDstOver0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5203getDstOver0nO6VwU())) {
             return PorterDuff.Mode.DST_OVER;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4488getSrcIn0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5218getSrcIn0nO6VwU())) {
             return PorterDuff.Mode.SRC_IN;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4471getDstIn0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5201getDstIn0nO6VwU())) {
             return PorterDuff.Mode.DST_IN;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4489getSrcOut0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5219getSrcOut0nO6VwU())) {
             return PorterDuff.Mode.SRC_OUT;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4472getDstOut0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5202getDstOut0nO6VwU())) {
             return PorterDuff.Mode.DST_OUT;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4487getSrcAtop0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5217getSrcAtop0nO6VwU())) {
             return PorterDuff.Mode.SRC_ATOP;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4470getDstAtop0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5200getDstAtop0nO6VwU())) {
             return PorterDuff.Mode.DST_ATOP;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4491getXor0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5221getXor0nO6VwU())) {
             return PorterDuff.Mode.XOR;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4482getPlus0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5212getPlus0nO6VwU())) {
             return PorterDuff.Mode.ADD;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4484getScreen0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5214getScreen0nO6VwU())) {
             return PorterDuff.Mode.SCREEN;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4481getOverlay0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5211getOverlay0nO6VwU())) {
             return PorterDuff.Mode.OVERLAY;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4467getDarken0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5197getDarken0nO6VwU())) {
             return PorterDuff.Mode.DARKEN;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4477getLighten0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5207getLighten0nO6VwU())) {
             return PorterDuff.Mode.LIGHTEN;
         }
-        if (BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4479getModulate0nO6VwU())) {
+        if (BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5209getModulate0nO6VwU())) {
             return PorterDuff.Mode.MULTIPLY;
         }
         return PorterDuff.Mode.SRC_OVER;
     }
 
     /* renamed from: toAndroidBlendMode-s9anfk8  reason: not valid java name */
-    public static final android.graphics.BlendMode m4397toAndroidBlendModes9anfk8(int i) {
-        return BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4463getClear0nO6VwU()) ? android.graphics.BlendMode.CLEAR : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4486getSrc0nO6VwU()) ? android.graphics.BlendMode.SRC : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4469getDst0nO6VwU()) ? android.graphics.BlendMode.DST : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4490getSrcOver0nO6VwU()) ? android.graphics.BlendMode.SRC_OVER : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4473getDstOver0nO6VwU()) ? android.graphics.BlendMode.DST_OVER : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4488getSrcIn0nO6VwU()) ? android.graphics.BlendMode.SRC_IN : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4471getDstIn0nO6VwU()) ? android.graphics.BlendMode.DST_IN : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4489getSrcOut0nO6VwU()) ? android.graphics.BlendMode.SRC_OUT : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4472getDstOut0nO6VwU()) ? android.graphics.BlendMode.DST_OUT : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4487getSrcAtop0nO6VwU()) ? android.graphics.BlendMode.SRC_ATOP : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4470getDstAtop0nO6VwU()) ? android.graphics.BlendMode.DST_ATOP : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4491getXor0nO6VwU()) ? android.graphics.BlendMode.XOR : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4482getPlus0nO6VwU()) ? android.graphics.BlendMode.PLUS : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4479getModulate0nO6VwU()) ? android.graphics.BlendMode.MODULATE : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4484getScreen0nO6VwU()) ? android.graphics.BlendMode.SCREEN : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4481getOverlay0nO6VwU()) ? android.graphics.BlendMode.OVERLAY : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4467getDarken0nO6VwU()) ? android.graphics.BlendMode.DARKEN : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4477getLighten0nO6VwU()) ? android.graphics.BlendMode.LIGHTEN : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4466getColorDodge0nO6VwU()) ? android.graphics.BlendMode.COLOR_DODGE : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4465getColorBurn0nO6VwU()) ? android.graphics.BlendMode.COLOR_BURN : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4475getHardlight0nO6VwU()) ? android.graphics.BlendMode.HARD_LIGHT : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4485getSoftlight0nO6VwU()) ? android.graphics.BlendMode.SOFT_LIGHT : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4468getDifference0nO6VwU()) ? android.graphics.BlendMode.DIFFERENCE : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4474getExclusion0nO6VwU()) ? android.graphics.BlendMode.EXCLUSION : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4480getMultiply0nO6VwU()) ? android.graphics.BlendMode.MULTIPLY : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4476getHue0nO6VwU()) ? android.graphics.BlendMode.HUE : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4483getSaturation0nO6VwU()) ? android.graphics.BlendMode.SATURATION : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4464getColor0nO6VwU()) ? android.graphics.BlendMode.COLOR : BlendMode.m4459equalsimpl0(i, BlendMode.Companion.m4478getLuminosity0nO6VwU()) ? android.graphics.BlendMode.LUMINOSITY : android.graphics.BlendMode.SRC_OVER;
+    public static final android.graphics.BlendMode m5127toAndroidBlendModes9anfk8(int i) {
+        return BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5193getClear0nO6VwU()) ? android.graphics.BlendMode.CLEAR : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5216getSrc0nO6VwU()) ? android.graphics.BlendMode.SRC : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5199getDst0nO6VwU()) ? android.graphics.BlendMode.DST : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5220getSrcOver0nO6VwU()) ? android.graphics.BlendMode.SRC_OVER : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5203getDstOver0nO6VwU()) ? android.graphics.BlendMode.DST_OVER : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5218getSrcIn0nO6VwU()) ? android.graphics.BlendMode.SRC_IN : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5201getDstIn0nO6VwU()) ? android.graphics.BlendMode.DST_IN : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5219getSrcOut0nO6VwU()) ? android.graphics.BlendMode.SRC_OUT : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5202getDstOut0nO6VwU()) ? android.graphics.BlendMode.DST_OUT : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5217getSrcAtop0nO6VwU()) ? android.graphics.BlendMode.SRC_ATOP : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5200getDstAtop0nO6VwU()) ? android.graphics.BlendMode.DST_ATOP : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5221getXor0nO6VwU()) ? android.graphics.BlendMode.XOR : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5212getPlus0nO6VwU()) ? android.graphics.BlendMode.PLUS : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5209getModulate0nO6VwU()) ? android.graphics.BlendMode.MODULATE : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5214getScreen0nO6VwU()) ? android.graphics.BlendMode.SCREEN : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5211getOverlay0nO6VwU()) ? android.graphics.BlendMode.OVERLAY : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5197getDarken0nO6VwU()) ? android.graphics.BlendMode.DARKEN : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5207getLighten0nO6VwU()) ? android.graphics.BlendMode.LIGHTEN : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5196getColorDodge0nO6VwU()) ? android.graphics.BlendMode.COLOR_DODGE : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5195getColorBurn0nO6VwU()) ? android.graphics.BlendMode.COLOR_BURN : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5205getHardlight0nO6VwU()) ? android.graphics.BlendMode.HARD_LIGHT : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5215getSoftlight0nO6VwU()) ? android.graphics.BlendMode.SOFT_LIGHT : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5198getDifference0nO6VwU()) ? android.graphics.BlendMode.DIFFERENCE : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5204getExclusion0nO6VwU()) ? android.graphics.BlendMode.EXCLUSION : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5210getMultiply0nO6VwU()) ? android.graphics.BlendMode.MULTIPLY : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5206getHue0nO6VwU()) ? android.graphics.BlendMode.HUE : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5213getSaturation0nO6VwU()) ? android.graphics.BlendMode.SATURATION : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5194getColor0nO6VwU()) ? android.graphics.BlendMode.COLOR : BlendMode.m5189equalsimpl0(i, BlendMode.Companion.m5208getLuminosity0nO6VwU()) ? android.graphics.BlendMode.LUMINOSITY : android.graphics.BlendMode.SRC_OVER;
     }
 
     public static final int toComposeBlendMode(android.graphics.BlendMode blendMode) {
         switch (WhenMappings.$EnumSwitchMapping$0[blendMode.ordinal()]) {
             case 1:
-                return BlendMode.Companion.m4463getClear0nO6VwU();
+                return BlendMode.Companion.m5193getClear0nO6VwU();
             case 2:
-                return BlendMode.Companion.m4486getSrc0nO6VwU();
+                return BlendMode.Companion.m5216getSrc0nO6VwU();
             case 3:
-                return BlendMode.Companion.m4469getDst0nO6VwU();
+                return BlendMode.Companion.m5199getDst0nO6VwU();
             case 4:
-                return BlendMode.Companion.m4490getSrcOver0nO6VwU();
+                return BlendMode.Companion.m5220getSrcOver0nO6VwU();
             case 5:
-                return BlendMode.Companion.m4473getDstOver0nO6VwU();
+                return BlendMode.Companion.m5203getDstOver0nO6VwU();
             case 6:
-                return BlendMode.Companion.m4488getSrcIn0nO6VwU();
+                return BlendMode.Companion.m5218getSrcIn0nO6VwU();
             case 7:
-                return BlendMode.Companion.m4471getDstIn0nO6VwU();
+                return BlendMode.Companion.m5201getDstIn0nO6VwU();
             case 8:
-                return BlendMode.Companion.m4489getSrcOut0nO6VwU();
+                return BlendMode.Companion.m5219getSrcOut0nO6VwU();
             case 9:
-                return BlendMode.Companion.m4472getDstOut0nO6VwU();
+                return BlendMode.Companion.m5202getDstOut0nO6VwU();
             case 10:
-                return BlendMode.Companion.m4487getSrcAtop0nO6VwU();
+                return BlendMode.Companion.m5217getSrcAtop0nO6VwU();
             case 11:
-                return BlendMode.Companion.m4470getDstAtop0nO6VwU();
+                return BlendMode.Companion.m5200getDstAtop0nO6VwU();
             case 12:
-                return BlendMode.Companion.m4491getXor0nO6VwU();
+                return BlendMode.Companion.m5221getXor0nO6VwU();
             case 13:
-                return BlendMode.Companion.m4482getPlus0nO6VwU();
+                return BlendMode.Companion.m5212getPlus0nO6VwU();
             case 14:
-                return BlendMode.Companion.m4479getModulate0nO6VwU();
+                return BlendMode.Companion.m5209getModulate0nO6VwU();
             case 15:
-                return BlendMode.Companion.m4484getScreen0nO6VwU();
+                return BlendMode.Companion.m5214getScreen0nO6VwU();
             case 16:
-                return BlendMode.Companion.m4481getOverlay0nO6VwU();
+                return BlendMode.Companion.m5211getOverlay0nO6VwU();
             case 17:
-                return BlendMode.Companion.m4467getDarken0nO6VwU();
+                return BlendMode.Companion.m5197getDarken0nO6VwU();
             case 18:
-                return BlendMode.Companion.m4477getLighten0nO6VwU();
+                return BlendMode.Companion.m5207getLighten0nO6VwU();
             case 19:
-                return BlendMode.Companion.m4466getColorDodge0nO6VwU();
+                return BlendMode.Companion.m5196getColorDodge0nO6VwU();
             case 20:
-                return BlendMode.Companion.m4465getColorBurn0nO6VwU();
+                return BlendMode.Companion.m5195getColorBurn0nO6VwU();
             case 21:
-                return BlendMode.Companion.m4475getHardlight0nO6VwU();
+                return BlendMode.Companion.m5205getHardlight0nO6VwU();
             case 22:
-                return BlendMode.Companion.m4485getSoftlight0nO6VwU();
+                return BlendMode.Companion.m5215getSoftlight0nO6VwU();
             case 23:
-                return BlendMode.Companion.m4468getDifference0nO6VwU();
+                return BlendMode.Companion.m5198getDifference0nO6VwU();
             case 24:
-                return BlendMode.Companion.m4474getExclusion0nO6VwU();
+                return BlendMode.Companion.m5204getExclusion0nO6VwU();
             case 25:
-                return BlendMode.Companion.m4480getMultiply0nO6VwU();
+                return BlendMode.Companion.m5210getMultiply0nO6VwU();
             case 26:
-                return BlendMode.Companion.m4476getHue0nO6VwU();
+                return BlendMode.Companion.m5206getHue0nO6VwU();
             case 27:
-                return BlendMode.Companion.m4483getSaturation0nO6VwU();
+                return BlendMode.Companion.m5213getSaturation0nO6VwU();
             case 28:
-                return BlendMode.Companion.m4464getColor0nO6VwU();
+                return BlendMode.Companion.m5194getColor0nO6VwU();
             case 29:
-                return BlendMode.Companion.m4478getLuminosity0nO6VwU();
+                return BlendMode.Companion.m5208getLuminosity0nO6VwU();
             default:
                 throw new NoWhenBranchMatchedException();
         }

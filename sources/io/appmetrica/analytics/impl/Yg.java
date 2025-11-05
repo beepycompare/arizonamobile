@@ -1,23 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-/* loaded from: classes4.dex */
-public final class Yg implements InterfaceC0428m8 {
+import io.appmetrica.analytics.IReporter;
+import java.util.HashMap;
+/* loaded from: classes3.dex */
+public final class Yg extends Wg {
+    public final IReporter b;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0677w5 f758a;
-
-    public Yg(InterfaceC0677w5 interfaceC0677w5) {
-        this.f758a = interfaceC0677w5;
+    public Yg(C0210e5 c0210e5, IReporter iReporter) {
+        super(c0210e5);
+        this.b = iReporter;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0428m8
-    /* renamed from: b */
-    public final Xg a(Context context, C0477o5 c0477o5, N4 n4) {
-        return new Xg(context, c0477o5, n4, this.f758a, new C0503p5(), Ql.a());
-    }
-
-    public final InterfaceC0677w5 a() {
-        return this.f758a;
+    @Override // io.appmetrica.analytics.impl.Wg
+    public final boolean a(W5 w5) {
+        Nc nc = (Nc) Nc.c.get(w5.d);
+        HashMap hashMap = new HashMap();
+        hashMap.put("type", nc.f605a);
+        hashMap.put("delivery_method", nc.b);
+        this.b.reportEvent("crash_saved", hashMap);
+        return false;
     }
 }

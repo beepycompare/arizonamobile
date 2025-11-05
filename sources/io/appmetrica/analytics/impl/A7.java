@@ -1,17 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class A7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0298h7 f347a;
-    public final ArrayList b;
+    public final Long f392a;
+    public final EnumC0123al b;
+    public final String c;
+    public final C0742z7 d;
 
-    public A7() {
-        ArrayList arrayList = new ArrayList();
-        this.b = arrayList;
-        this.f347a = new C0324i7(new C0427m7());
-        arrayList.add(new C0324i7(new Ee()));
+    public A7(Long l, EnumC0123al enumC0123al, String str, C0742z7 c0742z7) {
+        this.f392a = l;
+        this.b = enumC0123al;
+        this.c = str;
+        this.d = c0742z7;
     }
 }

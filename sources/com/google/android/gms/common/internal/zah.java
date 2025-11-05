@@ -4,7 +4,7 @@ import android.os.Bundle;
 import com.google.android.gms.common.api.internal.ConnectionCallbacks;
 import com.google.android.gms.common.internal.BaseGmsClient;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zah implements BaseGmsClient.BaseConnectionCallbacks {
     final /* synthetic */ ConnectionCallbacks zaa;
 

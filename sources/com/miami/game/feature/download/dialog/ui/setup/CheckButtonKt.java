@@ -4,7 +4,6 @@ import androidx.compose.foundation.ImageKt;
 import androidx.compose.foundation.layout.BoxKt;
 import androidx.compose.foundation.layout.BoxScopeInstance;
 import androidx.compose.foundation.layout.SizeKt;
-import androidx.compose.material3.MenuKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
@@ -53,7 +52,7 @@ public final class CheckButtonKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-2120433779, i2, -1, "com.miami.game.feature.download.dialog.ui.setup.CheckButton (CheckButton.kt:15)");
             }
-            Modifier m899width3ABfNKs = SizeKt.m899width3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl((float) MenuKt.InTransitionDuration));
+            Modifier m899width3ABfNKs = SizeKt.m899width3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(120));
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
@@ -72,19 +71,19 @@ public final class CheckButtonKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1277460566, "C20@818L22,19@789L199:CheckButton.kt#18sjrx");
-            ImageKt.Image(PainterResources_androidKt.painterResource(z ? R.drawable.accept_button_active : R.drawable.accept_button_not_active, startRestartGroup, 0), (String) null, SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(60)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(z ? R.drawable.accept_button_active : R.drawable.accept_button_not_active, startRestartGroup, 0), (String) null, SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(60)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

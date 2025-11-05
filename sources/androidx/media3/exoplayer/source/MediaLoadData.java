@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaLoadData {
     public final int dataType;
     public final long mediaEndTimeMs;

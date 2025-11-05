@@ -395,6 +395,11 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
                 dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
                 dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_welcom_item_bg);
                 dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#201E3D"));
+            } else {
+                dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_rewerd_item_get_bg);
+                dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#569647"));
             }
         }
     }

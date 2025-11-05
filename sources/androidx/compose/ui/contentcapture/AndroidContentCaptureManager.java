@@ -466,13 +466,13 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void notifySubtreeStateChangeIfNeeded() {
-        this.boundsUpdateChannel.mo8140trySendJP2dKIU(Unit.INSTANCE);
+        this.boundsUpdateChannel.mo8871trySendJP2dKIU(Unit.INSTANCE);
     }
 
     private final ViewStructureCompat toViewStructure(SemanticsNode semanticsNode, int i) {
         AutofillIdCompat autofillId;
         AutofillId autofillId2;
-        String m6449toLegacyClassNameV4PA4sw;
+        String m7179toLegacyClassNameV4PA4sw;
         ContentCaptureSessionCompat contentCaptureSessionCompat = this.contentCaptureSession;
         if (contentCaptureSessionCompat == null || Build.VERSION.SDK_INT < 29 || (autofillId = ViewCompatShims.getAutofillId(this.view)) == null) {
             return null;
@@ -523,13 +523,13 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             newVirtualViewStructure.setContentDescription(ListUtilsKt.fastJoinToString$default(list2, "\n", null, null, 0, null, null, 62, null));
         }
         Role role = (Role) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getRole());
-        if (role != null && (m6449toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m6449toLegacyClassNameV4PA4sw(role.m6473unboximpl())) != null) {
-            newVirtualViewStructure.setClassName(m6449toLegacyClassNameV4PA4sw);
+        if (role != null && (m7179toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m7179toLegacyClassNameV4PA4sw(role.m7203unboximpl())) != null) {
+            newVirtualViewStructure.setClassName(m7179toLegacyClassNameV4PA4sw);
         }
         TextLayoutResult textLayoutResult = SemanticsUtils_androidKt.getTextLayoutResult(unmergedConfig$ui_release);
         if (textLayoutResult != null) {
             TextLayoutInput layoutInput = textLayoutResult.getLayoutInput();
-            newVirtualViewStructure.setTextStyle(TextUnit.m7458getValueimpl(layoutInput.getStyle().m6757getFontSizeXSAIIZE()) * layoutInput.getDensity().getDensity() * layoutInput.getDensity().getFontScale(), 0, 0, 0);
+            newVirtualViewStructure.setTextStyle(TextUnit.m8189getValueimpl(layoutInput.getStyle().m7488getFontSizeXSAIIZE()) * layoutInput.getDensity().getDensity() * layoutInput.getDensity().getFontScale(), 0, 0, 0);
         }
         Rect boundsInParent$ui_release = semanticsNode.getBoundsInParent$ui_release();
         newVirtualViewStructure.setDimens((int) boundsInParent$ui_release.getLeft(), (int) boundsInParent$ui_release.getTop(), 0, 0, (int) (boundsInParent$ui_release.getRight() - boundsInParent$ui_release.getLeft()), (int) (boundsInParent$ui_release.getBottom() - boundsInParent$ui_release.getTop()));

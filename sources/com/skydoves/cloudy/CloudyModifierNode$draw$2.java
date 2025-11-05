@@ -7,7 +7,6 @@ import androidx.compose.ui.graphics.drawscope.ContentDrawScope;
 import androidx.compose.ui.graphics.drawscope.DrawScope;
 import androidx.compose.ui.graphics.layer.GraphicsLayer;
 import androidx.compose.ui.node.DelegatableNodeKt;
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.skydoves.cloudy.CloudyState;
 import com.skydoves.cloudy.internals.render.RenderScriptToolkitKt;
@@ -24,7 +23,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: CloudyModifierNode.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.skydoves.cloudy.CloudyModifierNode$draw$2", f = "CloudyModifierNode.kt", i = {0}, l = {AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID, TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
+@DebugMetadata(c = "com.skydoves.cloudy.CloudyModifierNode$draw$2", f = "CloudyModifierNode.kt", i = {0}, l = {116, TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
 /* loaded from: classes4.dex */
 final class CloudyModifierNode$draw$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ GraphicsLayer $graphicsLayer;
@@ -97,7 +96,7 @@ final class CloudyModifierNode$draw$2 extends SuspendLambda implements Function2
                     ResultKt.throwOnFailure(obj);
                     Bitmap bitmap = (Bitmap) obj;
                     if (bitmap != null) {
-                        DrawScope.m5112drawImagegbVJVH8$default(this.$this_draw, AndroidImageBitmap_androidKt.asImageBitmap(bitmap), 0L, 0.0f, null, null, 0, 62, null);
+                        DrawScope.m5842drawImagegbVJVH8$default(this.$this_draw, AndroidImageBitmap_androidKt.asImageBitmap(bitmap), 0L, 0.0f, null, null, 0, 62, null);
                         function12 = this.this$0.onStateChanged;
                         function12.invoke(new CloudyState.Success(bitmap));
                         DelegatableNodeKt.requireGraphicsContext(this.this$0).releaseGraphicsLayer(this.$graphicsLayer);

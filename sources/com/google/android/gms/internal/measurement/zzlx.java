@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.measurement;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum zzlx {
     DOUBLE(0, 1, zzms.DOUBLE),
     FLOAT(1, 1, zzms.FLOAT),

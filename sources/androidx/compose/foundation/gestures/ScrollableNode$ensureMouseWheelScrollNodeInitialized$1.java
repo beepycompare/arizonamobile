@@ -19,7 +19,7 @@ public /* synthetic */ class ScrollableNode$ensureMouseWheelScrollNodeInitialize
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Velocity velocity, Continuation<? super Unit> continuation) {
-        return m579invokesFctU(velocity.m7511unboximpl(), continuation);
+        return m579invokesFctU(velocity.m8242unboximpl(), continuation);
     }
 
     /* renamed from: invoke-sF-c-tU  reason: not valid java name */

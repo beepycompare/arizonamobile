@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.upstream.Loader;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class Chunk implements Loader.Loadable {
     protected final StatsDataSource dataSource;
     public final DataSpec dataSpec;

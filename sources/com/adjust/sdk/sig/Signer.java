@@ -4,33 +4,37 @@ import android.content.Context;
 import android.os.Build;
 import android.util.Log;
 import androidx.media3.exoplayer.upstream.CmcdData;
+import com.adjust.sdk.AdjustConfig;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
+import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 /* loaded from: classes3.dex */
 public class Signer {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f184a = false;
+    public boolean f169a = false;
     public d b;
     public a c;
     public c d;
 
     public static String getVersion() {
-        return "3.47.0";
+        return "3.61.0";
     }
 
     public final synchronized void a() {
-        if (this.f184a) {
+        if (this.f169a) {
             return;
         }
         this.b = new d();
         this.d = new c(Build.VERSION.SDK_INT);
         this.c = new NativeLibHelper();
-        this.f184a = true;
+        this.f169a = true;
     }
 
     public synchronized void onResume() {
@@ -38,7 +42,7 @@ public class Signer {
         d dVar = this.b;
         a aVar = this.c;
         dVar.getClass();
-        if (!d.f186a) {
+        if (!d.f171a) {
             ((NativeLibHelper) aVar).a();
         }
     }
@@ -59,6 +63,11 @@ public class Signer {
         a aVar = this.c;
         dVar.getClass();
         if (map != null && map.size() != 0 && map2 != null && map3 != null) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(AppUpdateInfo.Factory.UPDATED_FORMAT);
+            boolean equals = AdjustConfig.ENVIRONMENT_SANDBOX.equals(map.get("environment"));
+            if (equals) {
+                Log.v("SignerInstance", "SDKv5 Signing all the parameters begin: " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
+            }
             HashMap hashMap = new HashMap();
             d.a(map.keySet(), map, hashMap);
             String str = map2.get("activity_kind");
@@ -74,6 +83,9 @@ public class Signer {
             }
             d.a(map.keySet(), map, map3);
             d.a(new HashSet(Arrays.asList("network_payload", "endpoint")), map2, map3);
+            if (equals) {
+                Log.v("SignerInstance", "SDKv5 Signing all the parameters end  : " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
+            }
         }
         Log.e("SignerInstance", "sign: One or more parameters are null");
     }

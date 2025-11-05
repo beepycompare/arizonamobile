@@ -1,31 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import org.json.JSONObject;
-/* loaded from: classes4.dex */
-public final class Fb extends JSONObject {
-    public Fb() {
+import io.appmetrica.analytics.networktasks.internal.ConfigProvider;
+import kotlin.Lazy;
+import kotlin.LazyKt;
+/* loaded from: classes3.dex */
+public final class Fb implements ConfigProvider {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0210e5 f475a;
+    public final Lazy b = LazyKt.lazy(new Eb(this));
+
+    public Fb(C0210e5 c0210e5) {
+        this.f475a = c0210e5;
     }
 
-    public final Long a(String str) {
-        try {
-            return Long.valueOf(getLong(str));
-        } catch (Throwable unused) {
-            return null;
-        }
-    }
-
-    public Fb(String str) {
-        super(str);
-    }
-
-    public final String b(String str) {
-        if (has(str)) {
-            try {
-                return getString(str);
-            } catch (Throwable unused) {
-                return "";
-            }
-        }
-        return "";
+    @Override // io.appmetrica.analytics.networktasks.internal.ConfigProvider
+    /* renamed from: a */
+    public final C0503ph getConfig() {
+        return (C0503ph) this.b.getValue();
     }
 }

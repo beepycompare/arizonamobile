@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.source;
 
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.FormatHolder;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class EmptySampleStream implements SampleStream {
     @Override // androidx.media3.exoplayer.source.SampleStream
     public boolean isReady() {

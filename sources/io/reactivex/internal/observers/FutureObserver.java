@@ -15,7 +15,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FutureObserver<T> extends CountDownLatch implements Observer<T>, Future<T>, Disposable {
     Throwable error;
     final AtomicReference<Disposable> upstream;

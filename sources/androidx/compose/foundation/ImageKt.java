@@ -62,7 +62,7 @@ public final class ImageKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-2123228673, i, -1, "androidx.compose.foundation.Image (Image.kt:98)");
         }
-        m333Image5hnEew(imageBitmap, str, companion, center, fit, f2, colorFilter2, FilterQuality.Companion.m4650getLowfv9h1I(), composer, i & 4194302, 0);
+        m333Image5hnEew(imageBitmap, str, companion, center, fit, f2, colorFilter2, FilterQuality.Companion.m5380getLowfv9h1I(), composer, i & 4194302, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -77,7 +77,7 @@ public final class ImageKt {
         ContentScale fit = (i3 & 16) != 0 ? ContentScale.Companion.getFit() : contentScale;
         float f2 = (i3 & 32) != 0 ? 1.0f : f;
         ColorFilter colorFilter2 = (i3 & 64) != 0 ? null : colorFilter;
-        int m5131getDefaultFilterQualityfv9h1I = (i3 & 128) != 0 ? DrawScope.Companion.m5131getDefaultFilterQualityfv9h1I() : i;
+        int m5861getDefaultFilterQualityfv9h1I = (i3 & 128) != 0 ? DrawScope.Companion.m5861getDefaultFilterQualityfv9h1I() : i;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1396260732, i2, -1, "androidx.compose.foundation.Image (Image.kt:156)");
         }
@@ -85,7 +85,7 @@ public final class ImageKt {
         boolean changed = composer.changed(imageBitmap);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = BitmapPainterKt.m5251BitmapPainterQZhYCtY$default(imageBitmap, 0L, 0L, m5131getDefaultFilterQualityfv9h1I, 6, null);
+            rememberedValue = BitmapPainterKt.m5981BitmapPainterQZhYCtY$default(imageBitmap, 0L, 0L, m5861getDefaultFilterQualityfv9h1I, 6, null);
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -287,14 +287,14 @@ public final class ImageKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                            Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                             }
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -395,7 +395,7 @@ public final class ImageKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Image$lambda$2$lambda$1(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
-        SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6478getImageo7Vup1c());
+        SemanticsPropertiesKt.m7223setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7208getImageo7Vup1c());
         return Unit.INSTANCE;
     }
 }

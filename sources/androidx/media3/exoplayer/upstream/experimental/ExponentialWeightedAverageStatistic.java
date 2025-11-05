@@ -1,5 +1,5 @@
 package androidx.media3.exoplayer.upstream.experimental;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ExponentialWeightedAverageStatistic implements BandwidthStatistic {
     public static final double DEFAULT_SMOOTHING_FACTOR = 0.9999d;
     private long bitrateEstimate;

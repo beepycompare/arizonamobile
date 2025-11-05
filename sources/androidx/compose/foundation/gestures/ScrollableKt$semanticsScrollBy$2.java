@@ -75,7 +75,7 @@ public final class ScrollableKt$semanticsScrollBy$2 extends SuspendLambda implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, ScrollingLogic scrollingLogic, NestedScrollScope nestedScrollScope, float f, float f2) {
-        floatRef.element += scrollingLogic.reverseIfNeeded(scrollingLogic.m593toFloatk4lQ0M(nestedScrollScope.mo533scrollByOzD1aCk(scrollingLogic.m594toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f - floatRef.element)), NestedScrollSource.Companion.m5732getUserInputWNlRxjI())));
+        floatRef.element += scrollingLogic.reverseIfNeeded(scrollingLogic.m593toFloatk4lQ0M(nestedScrollScope.mo533scrollByOzD1aCk(scrollingLogic.m594toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f - floatRef.element)), NestedScrollSource.Companion.m6462getUserInputWNlRxjI())));
         return Unit.INSTANCE;
     }
 }

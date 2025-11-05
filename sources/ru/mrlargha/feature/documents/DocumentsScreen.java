@@ -8,12 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -31,6 +34,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.documents.data.ArmyInfo;
 import ru.mrlargha.feature.documents.data.Demorgan;
 import ru.mrlargha.feature.documents.data.DocumentsBites;
@@ -44,6 +48,7 @@ import ru.mrlargha.feature.documents.data.PremiumLevel;
 import ru.mrlargha.feature.documents.data.PropertyInfo;
 import ru.mrlargha.feature.documents.data.PropertyItem;
 import ru.mrlargha.feature.documents.data.TransportInfo;
+import ru.mrlargha.feature.documents.data.TransportItem;
 import ru.mrlargha.feature.documents.data.VipInfo;
 import ru.mrlargha.feature.documents.data.VipStatus;
 import ru.mrlargha.feature.documents.databinding.DocumentLicensesBinding;
@@ -52,7 +57,7 @@ import ru.mrlargha.feature.documents.databinding.DocumentsHealthBinding;
 import ru.mrlargha.feature.documents.databinding.DocumentsLayoutBinding;
 import ru.mrlargha.feature.documents.databinding.DocumentsMainBinding;
 /* compiled from: DocumentScreen.kt */
-@Metadata(d1 = {"\u0000²\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0002KLB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u0005H\u0016J\u0010\u0010!\u001a\u00020\u001d2\u0006\u0010\"\u001a\u00020#H\u0016J\u0010\u0010$\u001a\u00020\u001d2\u0006\u0010%\u001a\u00020\u0005H\u0002J\u0016\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00050'2\u0006\u0010(\u001a\u00020\u0005H\u0002J\b\u0010)\u001a\u00020\u001dH\u0002J\b\u0010*\u001a\u00020\u001dH\u0002J\u0010\u0010+\u001a\u00020\u001d2\u0006\u0010,\u001a\u00020-H\u0002J\u0010\u0010.\u001a\u00020\u001d2\u0006\u0010/\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020\u001d2\u0006\u00102\u001a\u000203H\u0002J(\u00104\u001a\u00020\u001d2\u0006\u00105\u001a\u00020#2\u0006\u00106\u001a\u0002072\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u000209H\u0002J\u0010\u0010;\u001a\u00020\u001d2\u0006\u0010<\u001a\u00020\u0005H\u0002J\u0010\u0010=\u001a\u00020\u001d2\u0006\u0010<\u001a\u00020\u0005H\u0002J\u0010\u0010>\u001a\u00020\u001d2\u0006\u0010/\u001a\u00020?H\u0002J\u0010\u0010@\u001a\u00020\u001d2\u0006\u0010/\u001a\u00020AH\u0002J\b\u0010B\u001a\u00020\u001dH\u0002J\u0010\u0010C\u001a\u00020\u001d2\u0006\u0010/\u001a\u00020DH\u0002J\b\u0010E\u001a\u00020\u001dH\u0002J\u0010\u0010F\u001a\u00020\u001d2\u0006\u0010/\u001a\u00020GH\u0002J\b\u0010H\u001a\u00020\u001dH\u0002J\u0010\u0010I\u001a\u00020\u001d2\u0006\u0010/\u001a\u00020JH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/documents/databinding/DocumentsLayoutBinding;", "isShowingDocs", "emptyPhoto", "propertyResidentalAdapter", "Lru/mrlargha/feature/documents/PropertyAdapter;", "propertyComercialAdapter", "vipLevelAdapter", "Lru/mrlargha/feature/documents/VipLevelAdapter;", "vipTypeAdapter", "Lru/mrlargha/feature/documents/VipTypeAdapter;", "transportAdapter", "Lru/mrlargha/feature/documents/TransportAdapter;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundIdNavigation", "soundIdOther", "onBackendMessage", "", "data", "", "subId", "setVisibility", "visible", "", "setTabsVisibility", "bites", "intToBitArrayMSB", "", "number", "setNavigation", "setAdapters", "navigateTo", "nav", "Lru/mrlargha/feature/documents/DocumentsScreen$Navigation;", "setMainInfo", "info", "Lru/mrlargha/feature/documents/data/InfoItemMain;", "setLicensesInfo", "licenseInfo", "Lru/mrlargha/feature/documents/data/LicenseInfo;", "setLicensesItem", "isRight", "document", "Landroid/widget/ImageView;", "title", "Landroid/widget/TextView;", "item", "showDocs", "int", "dipLicense", "setHealthInfo", "Lru/mrlargha/feature/documents/data/HealthInfo;", "setArmyInfo", "Lru/mrlargha/feature/documents/data/ArmyInfo;", "clearPropertyInfo", "setPropertyInfo", "Lru/mrlargha/feature/documents/data/PropertyInfo;", "clearVipInfo", "setVipInfo", "Lru/mrlargha/feature/documents/data/VipInfo;", "clearTransportInfo", "setTransportInfo", "Lru/mrlargha/feature/documents/data/TransportInfo;", "Navigation", "Spawner", "documents_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0002OPB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u0005H\u0016J\b\u0010!\u001a\u00020\u001dH\u0002J\u0010\u0010\"\u001a\u00020\u001d2\u0006\u0010#\u001a\u00020$H\u0016J\u0010\u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u0016\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00050(2\u0006\u0010)\u001a\u00020\u0005H\u0002J\b\u0010*\u001a\u00020\u001dH\u0002J\b\u0010+\u001a\u00020\u001dH\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020\u001d2\u0006\u00100\u001a\u000201H\u0002J\u0010\u00102\u001a\u00020\u001d2\u0006\u00103\u001a\u000204H\u0002J8\u00105\u001a\u00020\u001d2\u0006\u00106\u001a\u00020$2\u0006\u00107\u001a\u00020$2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020;2\u0006\u0010=\u001a\u00020>H\u0002J\u0010\u0010?\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010A\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010B\u001a\u00020\u001d2\u0006\u00100\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020\u001d2\u0006\u00100\u001a\u00020EH\u0002J\b\u0010F\u001a\u00020\u001dH\u0002J\u0010\u0010G\u001a\u00020\u001d2\u0006\u00100\u001a\u00020HH\u0002J\b\u0010I\u001a\u00020\u001dH\u0002J\u0010\u0010J\u001a\u00020\u001d2\u0006\u00100\u001a\u00020KH\u0002J\b\u0010L\u001a\u00020\u001dH\u0002J\u0010\u0010M\u001a\u00020\u001d2\u0006\u00100\u001a\u00020NH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Q"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/documents/databinding/DocumentsLayoutBinding;", "isShowingDocs", "emptyPhoto", "propertyResidentalAdapter", "Lru/mrlargha/feature/documents/PropertyAdapter;", "propertyComercialAdapter", "vipLevelAdapter", "Lru/mrlargha/feature/documents/VipLevelAdapter;", "vipTypeAdapter", "Lru/mrlargha/feature/documents/VipTypeAdapter;", "transportAdapter", "Lru/mrlargha/feature/documents/TransportAdapter;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundIdNavigation", "soundIdOther", "onBackendMessage", "", "data", "", "subId", "setBgRes", "setVisibility", "visible", "", "setTabsVisibility", "bites", "intToBitArrayMSB", "", "number", "setNavigation", "setAdapters", "navigateTo", "nav", "Lru/mrlargha/feature/documents/DocumentsScreen$Navigation;", "setMainInfo", "info", "Lru/mrlargha/feature/documents/data/InfoItemMain;", "setLicensesInfo", "licenseInfo", "Lru/mrlargha/feature/documents/data/LicenseInfo;", "setLicensesItem", "isRight", "isHasLicenses", "document", "Landroid/widget/ImageView;", "title", "Landroid/widget/TextView;", "item", TtmlNode.RUBY_CONTAINER, "Landroid/view/View;", "showDocs", "int", "dipLicense", "setHealthInfo", "Lru/mrlargha/feature/documents/data/HealthInfo;", "setArmyInfo", "Lru/mrlargha/feature/documents/data/ArmyInfo;", "clearPropertyInfo", "setPropertyInfo", "Lru/mrlargha/feature/documents/data/PropertyInfo;", "clearVipInfo", "setVipInfo", "Lru/mrlargha/feature/documents/data/VipInfo;", "clearTransportInfo", "setTransportInfo", "Lru/mrlargha/feature/documents/data/TransportInfo;", "Navigation", "Spawner", "documents_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DocumentsScreen extends SAMPUIElement {
     private final DocumentsLayoutBinding binding;
@@ -155,6 +160,7 @@ public final class DocumentsScreen extends SAMPUIElement {
         Activity activity = targetActivity;
         this.soundIdNavigation = build.load(activity, ru.mrlargha.arizonaui.R.raw.documents_nav_buttons, 1);
         this.soundIdOther = build.load(activity, ru.mrlargha.arizonaui.R.raw.documents_other_buttons, 1);
+        setBgRes();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -281,6 +287,55 @@ public final class DocumentsScreen extends SAMPUIElement {
             getNotifier().setUIElementVisible(getBackendID(), false);
             SAMPUIElement.notifyClick$default(this, 0, 0, null, 4, null);
         }
+    }
+
+    private final void setBgRes() {
+        DocumentsLayoutBinding documentsLayoutBinding = this.binding;
+        if (UtilsKt.isArizonaType()) {
+            return;
+        }
+        documentsLayoutBinding.army.getRoot().setBackgroundResource(R.drawable.document_army_rodina_bg);
+        documentsLayoutBinding.health.getRoot().setBackgroundResource(R.drawable.document_health_rodina_bg);
+        documentsLayoutBinding.licenses.getRoot().setBackgroundResource(R.drawable.document_licenses_rodina_bg);
+        documentsLayoutBinding.main.getRoot().setBackgroundResource(R.drawable.document_main_rodina_bg);
+        documentsLayoutBinding.property.getRoot().setBackgroundResource(R.drawable.document_property_rodina_bg);
+        documentsLayoutBinding.transport.getRoot().setBackgroundResource(R.drawable.document_transport_rodina_bg);
+        documentsLayoutBinding.vip.getRoot().setBackgroundResource(R.drawable.document_vip_rodina_bg);
+        TextView info = documentsLayoutBinding.army.info;
+        Intrinsics.checkNotNullExpressionValue(info, "info");
+        info.setVisibility(8);
+        ImageView infoIc = documentsLayoutBinding.army.infoIc;
+        Intrinsics.checkNotNullExpressionValue(infoIc, "infoIc");
+        infoIc.setVisibility(8);
+        LinearLayout reviewContainer = documentsLayoutBinding.health.reviewContainer;
+        Intrinsics.checkNotNullExpressionValue(reviewContainer, "reviewContainer");
+        reviewContainer.setVisibility(8);
+        TextView desc = documentsLayoutBinding.health.desc;
+        Intrinsics.checkNotNullExpressionValue(desc, "desc");
+        desc.setVisibility(8);
+        documentsLayoutBinding.licenses.boatTitle.setText("Лицензия на водный транспорт");
+        documentsLayoutBinding.main.tvYearsState.setText("Лет в округе");
+        TextView tvLaw = documentsLayoutBinding.main.tvLaw;
+        Intrinsics.checkNotNullExpressionValue(tvLaw, "tvLaw");
+        tvLaw.setVisibility(8);
+        TextView lawAbiding = documentsLayoutBinding.main.lawAbiding;
+        Intrinsics.checkNotNullExpressionValue(lawAbiding, "lawAbiding");
+        lawAbiding.setVisibility(8);
+        TextView tvArmyWrit = documentsLayoutBinding.main.tvArmyWrit;
+        Intrinsics.checkNotNullExpressionValue(tvArmyWrit, "tvArmyWrit");
+        tvArmyWrit.setVisibility(8);
+        TextView armyWrit = documentsLayoutBinding.main.armyWrit;
+        Intrinsics.checkNotNullExpressionValue(armyWrit, "armyWrit");
+        armyWrit.setVisibility(8);
+        TextView insurance = documentsLayoutBinding.health.insurance;
+        Intrinsics.checkNotNullExpressionValue(insurance, "insurance");
+        insurance.setVisibility(8);
+        TextView tvInsurance = documentsLayoutBinding.health.tvInsurance;
+        Intrinsics.checkNotNullExpressionValue(tvInsurance, "tvInsurance");
+        tvInsurance.setVisibility(8);
+        TextView tvDrugs = documentsLayoutBinding.health.tvDrugs;
+        Intrinsics.checkNotNullExpressionValue(tvDrugs, "tvDrugs");
+        tvDrugs.setVisibility(8);
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -549,33 +604,60 @@ public final class DocumentsScreen extends SAMPUIElement {
         Object obj6;
         Object obj7;
         Object obj8;
-        List<LicenseItem> list;
-        Object obj9;
-        Object obj10;
         String str;
-        Object obj11;
+        Object obj9;
         String str2;
-        Object obj12;
+        Object obj10;
+        Object obj11;
         String str3;
         String str4;
+        Object obj12;
+        String str5;
+        String str6;
         Object obj13;
         Object obj14;
-        String str5;
+        String str7;
+        String str8;
         Object obj15;
+        String str9;
         Object obj16;
         Object obj17;
+        boolean z;
         Object obj18;
         Object obj19;
+        boolean z2;
         Object obj20;
+        boolean z3;
         Object obj21;
+        boolean z4;
         Object obj22;
+        boolean z5;
         Object obj23;
+        boolean z6;
         Object obj24;
+        boolean z7;
         Object obj25;
+        boolean z8;
+        String str10;
         Object obj26;
+        boolean z9;
         Object obj27;
+        boolean z10;
         Object obj28;
         Object obj29;
+        boolean z11;
+        String str11;
+        Object obj30;
+        boolean z12;
+        String str12;
+        Object obj31;
+        boolean z13;
+        String str13;
+        Object obj32;
+        boolean z14;
+        Object obj33;
+        Object obj34;
+        boolean z15;
         String date_text;
         String date_text2;
         String date_text3;
@@ -590,11 +672,12 @@ public final class DocumentsScreen extends SAMPUIElement {
         String date_text12;
         String date_text13;
         String date_text14;
+        String date_text15;
         DocumentsLayoutBinding documentsLayoutBinding = this.binding;
         List<LicenseItem> info = licenseInfo.getInfo();
         TextView textView = documentsLayoutBinding.licenses.auto;
-        List<LicenseItem> list2 = info;
-        Iterator<T> it = list2.iterator();
+        List<LicenseItem> list = info;
+        Iterator<T> it = list.iterator();
         while (true) {
             if (!it.hasNext()) {
                 obj = null;
@@ -606,10 +689,10 @@ public final class DocumentsScreen extends SAMPUIElement {
             }
         }
         LicenseItem licenseItem = (LicenseItem) obj;
-        String str6 = "";
-        textView.setText((licenseItem == null || (date_text14 = licenseItem.getDate_text()) == null) ? "" : date_text14);
+        String str14 = "";
+        textView.setText((licenseItem == null || (date_text15 = licenseItem.getDate_text()) == null) ? "" : date_text15);
         TextView textView2 = documentsLayoutBinding.licenses.moto;
-        Iterator<T> it2 = list2.iterator();
+        Iterator<T> it2 = list.iterator();
         while (true) {
             if (!it2.hasNext()) {
                 obj2 = null;
@@ -621,9 +704,9 @@ public final class DocumentsScreen extends SAMPUIElement {
             }
         }
         LicenseItem licenseItem2 = (LicenseItem) obj2;
-        textView2.setText((licenseItem2 == null || (date_text13 = licenseItem2.getDate_text()) == null) ? "" : date_text13);
+        textView2.setText((licenseItem2 == null || (date_text14 = licenseItem2.getDate_text()) == null) ? "" : date_text14);
         TextView textView3 = documentsLayoutBinding.licenses.flight;
-        Iterator<T> it3 = list2.iterator();
+        Iterator<T> it3 = list.iterator();
         while (true) {
             if (!it3.hasNext()) {
                 obj3 = null;
@@ -635,9 +718,9 @@ public final class DocumentsScreen extends SAMPUIElement {
             }
         }
         LicenseItem licenseItem3 = (LicenseItem) obj3;
-        textView3.setText((licenseItem3 == null || (date_text12 = licenseItem3.getDate_text()) == null) ? "" : date_text12);
+        textView3.setText((licenseItem3 == null || (date_text13 = licenseItem3.getDate_text()) == null) ? "" : date_text13);
         TextView textView4 = documentsLayoutBinding.licenses.boat;
-        Iterator<T> it4 = list2.iterator();
+        Iterator<T> it4 = list.iterator();
         while (true) {
             if (!it4.hasNext()) {
                 obj4 = null;
@@ -649,9 +732,9 @@ public final class DocumentsScreen extends SAMPUIElement {
             }
         }
         LicenseItem licenseItem4 = (LicenseItem) obj4;
-        textView4.setText((licenseItem4 == null || (date_text11 = licenseItem4.getDate_text()) == null) ? "" : date_text11);
+        textView4.setText((licenseItem4 == null || (date_text12 = licenseItem4.getDate_text()) == null) ? "" : date_text12);
         TextView textView5 = documentsLayoutBinding.licenses.gun;
-        Iterator<T> it5 = list2.iterator();
+        Iterator<T> it5 = list.iterator();
         while (true) {
             if (!it5.hasNext()) {
                 obj5 = null;
@@ -663,9 +746,9 @@ public final class DocumentsScreen extends SAMPUIElement {
             }
         }
         LicenseItem licenseItem5 = (LicenseItem) obj5;
-        textView5.setText((licenseItem5 == null || (date_text10 = licenseItem5.getDate_text()) == null) ? "" : date_text10);
+        textView5.setText((licenseItem5 == null || (date_text11 = licenseItem5.getDate_text()) == null) ? "" : date_text11);
         TextView textView6 = documentsLayoutBinding.licenses.fish;
-        Iterator<T> it6 = list2.iterator();
+        Iterator<T> it6 = list.iterator();
         while (true) {
             if (!it6.hasNext()) {
                 obj6 = null;
@@ -677,9 +760,9 @@ public final class DocumentsScreen extends SAMPUIElement {
             }
         }
         LicenseItem licenseItem6 = (LicenseItem) obj6;
-        textView6.setText((licenseItem6 == null || (date_text9 = licenseItem6.getDate_text()) == null) ? "" : date_text9);
+        textView6.setText((licenseItem6 == null || (date_text10 = licenseItem6.getDate_text()) == null) ? "" : date_text10);
         TextView textView7 = documentsLayoutBinding.licenses.hunt;
-        Iterator<T> it7 = list2.iterator();
+        Iterator<T> it7 = list.iterator();
         while (true) {
             if (!it7.hasNext()) {
                 obj7 = null;
@@ -691,9 +774,9 @@ public final class DocumentsScreen extends SAMPUIElement {
             }
         }
         LicenseItem licenseItem7 = (LicenseItem) obj7;
-        textView7.setText((licenseItem7 == null || (date_text8 = licenseItem7.getDate_text()) == null) ? "" : date_text8);
+        textView7.setText((licenseItem7 == null || (date_text9 = licenseItem7.getDate_text()) == null) ? "" : date_text9);
         TextView textView8 = documentsLayoutBinding.licenses.shave;
-        Iterator<T> it8 = list2.iterator();
+        Iterator<T> it8 = list.iterator();
         while (true) {
             if (!it8.hasNext()) {
                 obj8 = null;
@@ -705,199 +788,198 @@ public final class DocumentsScreen extends SAMPUIElement {
             }
         }
         LicenseItem licenseItem8 = (LicenseItem) obj8;
-        textView8.setText((licenseItem8 == null || (date_text7 = licenseItem8.getDate_text()) == null) ? "" : date_text7);
+        textView8.setText((licenseItem8 == null || (date_text8 = licenseItem8.getDate_text()) == null) ? "" : date_text8);
         TextView textView9 = documentsLayoutBinding.licenses.taxi;
-        Iterator<T> it9 = list2.iterator();
+        Iterator<T> it9 = list.iterator();
         while (true) {
+            str = "taxi";
             if (!it9.hasNext()) {
-                list = list2;
                 obj9 = null;
                 break;
             }
             obj9 = it9.next();
-            list = list2;
             if (Intrinsics.areEqual(((LicenseItem) obj9).getLicense(), "taxi")) {
                 break;
             }
-            list2 = list;
         }
         LicenseItem licenseItem9 = (LicenseItem) obj9;
-        textView9.setText((licenseItem9 == null || (date_text6 = licenseItem9.getDate_text()) == null) ? "" : date_text6);
+        textView9.setText((licenseItem9 == null || (date_text7 = licenseItem9.getDate_text()) == null) ? "" : date_text7);
         TextView textView10 = documentsLayoutBinding.licenses.mech;
-        Iterator it10 = list.iterator();
+        Iterator<T> it10 = list.iterator();
         while (true) {
             if (!it10.hasNext()) {
+                str2 = str14;
                 obj10 = null;
                 break;
             }
             obj10 = it10.next();
-            Iterator it11 = it10;
+            str2 = str14;
             if (Intrinsics.areEqual(((LicenseItem) obj10).getLicense(), "mechanic")) {
                 break;
             }
-            it10 = it11;
+            str14 = str2;
         }
         LicenseItem licenseItem10 = (LicenseItem) obj10;
-        textView10.setText((licenseItem10 == null || (date_text5 = licenseItem10.getDate_text()) == null) ? "" : date_text5);
+        textView10.setText((licenseItem10 == null || (date_text6 = licenseItem10.getDate_text()) == null) ? str2 : date_text6);
         TextView textView11 = documentsLayoutBinding.licenses.advocate;
-        Iterator it12 = list.iterator();
+        Iterator it11 = list.iterator();
         while (true) {
-            Iterator it13 = it12;
-            if (!it12.hasNext()) {
-                str = str6;
+            if (!it11.hasNext()) {
                 obj11 = null;
                 break;
             }
-            obj11 = it13.next();
-            str = str6;
+            obj11 = it11.next();
+            Iterator it12 = it11;
             if (Intrinsics.areEqual(((LicenseItem) obj11).getLicense(), "lawyer")) {
                 break;
             }
-            it12 = it13;
-            str6 = str;
+            it11 = it12;
         }
         LicenseItem licenseItem11 = (LicenseItem) obj11;
-        textView11.setText((licenseItem11 == null || (date_text4 = licenseItem11.getDate_text()) == null) ? str : date_text4);
+        textView11.setText((licenseItem11 == null || (date_text5 = licenseItem11.getDate_text()) == null) ? str2 : date_text5);
         TextView textView12 = documentsLayoutBinding.licenses.tax;
-        Iterator it14 = list.iterator();
+        Iterator it13 = list.iterator();
         while (true) {
-            boolean hasNext = it14.hasNext();
-            Iterator it15 = it14;
-            str2 = "taxman";
-            if (!hasNext) {
+            str3 = str;
+            str4 = "taxman";
+            if (!it13.hasNext()) {
                 obj12 = null;
                 break;
             }
-            Object next = it15.next();
-            if (Intrinsics.areEqual(((LicenseItem) next).getLicense(), "taxman")) {
-                obj12 = next;
+            obj12 = it13.next();
+            Iterator it14 = it13;
+            if (Intrinsics.areEqual(((LicenseItem) obj12).getLicense(), "taxman")) {
                 break;
             }
-            it14 = it15;
+            str = str3;
+            it13 = it14;
         }
         LicenseItem licenseItem12 = (LicenseItem) obj12;
-        textView12.setText((licenseItem12 == null || (date_text3 = licenseItem12.getDate_text()) == null) ? str : date_text3);
+        textView12.setText((licenseItem12 == null || (date_text4 = licenseItem12.getDate_text()) == null) ? str2 : date_text4);
         TextView textView13 = documentsLayoutBinding.licenses.dipl;
-        Iterator it16 = list.iterator();
+        Iterator it15 = list.iterator();
         while (true) {
-            boolean hasNext2 = it16.hasNext();
-            Iterator it17 = it16;
-            str3 = "diplomat";
-            if (!hasNext2) {
-                str4 = str2;
+            str5 = str4;
+            str6 = "diplomat";
+            if (!it15.hasNext()) {
                 obj13 = null;
                 break;
             }
-            obj13 = it17.next();
-            str4 = str2;
+            obj13 = it15.next();
+            Iterator it16 = it15;
             if (Intrinsics.areEqual(((LicenseItem) obj13).getLicense(), "diplomat")) {
                 break;
             }
-            it16 = it17;
-            str2 = str4;
+            str4 = str5;
+            it15 = it16;
         }
         LicenseItem licenseItem13 = (LicenseItem) obj13;
-        textView13.setText((licenseItem13 == null || (r4 = licenseItem13.getDate_text()) == null) ? "Отсутствует" : "Отсутствует");
+        textView13.setText((licenseItem13 == null || (r1 = licenseItem13.getDate_text()) == null) ? "Отсутствует" : "Отсутствует");
         TextView textView14 = documentsLayoutBinding.licenses.diplTop;
-        Iterator it18 = list.iterator();
+        Iterator it17 = list.iterator();
         while (true) {
-            if (!it18.hasNext()) {
+            if (!it17.hasNext()) {
                 obj14 = null;
                 break;
             }
-            obj14 = it18.next();
-            Iterator it19 = it18;
+            obj14 = it17.next();
+            Iterator it18 = it17;
             if (Intrinsics.areEqual(((LicenseItem) obj14).getLicense(), "diplomat")) {
                 break;
             }
-            it18 = it19;
+            it17 = it18;
         }
         LicenseItem licenseItem14 = (LicenseItem) obj14;
-        textView14.setText((licenseItem14 == null || (date_text2 = licenseItem14.getDate_text()) == null) ? str : date_text2);
+        textView14.setText((licenseItem14 == null || (date_text3 = licenseItem14.getDate_text()) == null) ? str2 : date_text3);
         TextView textView15 = documentsLayoutBinding.licenses.miner;
-        Iterator it20 = list.iterator();
+        Iterator it19 = list.iterator();
         while (true) {
-            Iterator it21 = it20;
-            if (!it20.hasNext()) {
-                str5 = str3;
+            str7 = str6;
+            str8 = "resource";
+            if (!it19.hasNext()) {
                 obj15 = null;
                 break;
             }
-            obj15 = it21.next();
-            str5 = str3;
+            obj15 = it19.next();
+            Iterator it20 = it19;
             if (Intrinsics.areEqual(((LicenseItem) obj15).getLicense(), "resource")) {
                 break;
             }
-            it20 = it21;
-            str3 = str5;
+            str6 = str7;
+            it19 = it20;
         }
         LicenseItem licenseItem15 = (LicenseItem) obj15;
-        textView15.setText((licenseItem15 == null || (date_text = licenseItem15.getDate_text()) == null) ? str : date_text);
-        DocumentLicensesBinding documentLicensesBinding = documentsLayoutBinding.licenses;
-        Iterator it22 = list.iterator();
+        textView15.setText((licenseItem15 == null || (date_text2 = licenseItem15.getDate_text()) == null) ? str2 : date_text2);
+        TextView textView16 = documentsLayoutBinding.licenses.trolleybus;
+        Iterator it21 = list.iterator();
         while (true) {
-            if (!it22.hasNext()) {
+            str9 = str8;
+            if (!it21.hasNext()) {
                 obj16 = null;
                 break;
             }
-            obj16 = it22.next();
-            Iterator it23 = it22;
-            if (Intrinsics.areEqual(((LicenseItem) obj16).getLicense(), "car")) {
+            obj16 = it21.next();
+            Iterator it22 = it21;
+            if (Intrinsics.areEqual(((LicenseItem) obj16).getLicense(), "railway")) {
                 break;
             }
-            it22 = it23;
+            str8 = str9;
+            it21 = it22;
         }
         LicenseItem licenseItem16 = (LicenseItem) obj16;
-        boolean z = (licenseItem16 != null ? licenseItem16.getAvailable() : 0) == 1;
-        ImageView documentsIcAuto = documentLicensesBinding.documentsIcAuto;
-        Intrinsics.checkNotNullExpressionValue(documentsIcAuto, "documentsIcAuto");
-        TextView autoTitle = documentLicensesBinding.autoTitle;
-        Object obj30 = "resource";
-        Intrinsics.checkNotNullExpressionValue(autoTitle, "autoTitle");
-        TextView auto = documentLicensesBinding.auto;
-        Object obj31 = "lawyer";
-        Intrinsics.checkNotNullExpressionValue(auto, "auto");
-        setLicensesItem(z, documentsIcAuto, autoTitle, auto);
-        Iterator<T> it24 = list.iterator();
+        textView16.setText((licenseItem16 == null || (date_text = licenseItem16.getDate_text()) == null) ? str2 : date_text);
+        DocumentLicensesBinding documentLicensesBinding = documentsLayoutBinding.licenses;
+        Iterator it23 = list.iterator();
         while (true) {
-            if (!it24.hasNext()) {
+            if (!it23.hasNext()) {
                 obj17 = null;
                 break;
             }
-            obj17 = it24.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj17).getLicense(), "bike")) {
+            obj17 = it23.next();
+            Iterator it24 = it23;
+            if (Intrinsics.areEqual(((LicenseItem) obj17).getLicense(), "car")) {
                 break;
             }
+            it23 = it24;
         }
         LicenseItem licenseItem17 = (LicenseItem) obj17;
-        boolean z2 = (licenseItem17 != null ? licenseItem17.getAvailable() : 0) == 1;
-        ImageView documentsIcMoto = documentLicensesBinding.documentsIcMoto;
-        Intrinsics.checkNotNullExpressionValue(documentsIcMoto, "documentsIcMoto");
-        TextView motoTitle = documentLicensesBinding.motoTitle;
-        Intrinsics.checkNotNullExpressionValue(motoTitle, "motoTitle");
-        TextView moto = documentLicensesBinding.moto;
-        Intrinsics.checkNotNullExpressionValue(moto, "moto");
-        setLicensesItem(z2, documentsIcMoto, motoTitle, moto);
-        Iterator<T> it25 = list.iterator();
-        while (true) {
-            if (!it25.hasNext()) {
-                obj18 = null;
-                break;
-            }
-            obj18 = it25.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj18).getLicense(), "fly")) {
-                break;
+        boolean z16 = false;
+        if ((licenseItem17 != null ? licenseItem17.getAvailable() : 0) == 1) {
+            z = false;
+            z16 = true;
+        } else {
+            z = false;
+        }
+        boolean z17 = list instanceof Collection;
+        if (z17 && list.isEmpty()) {
+            obj18 = "lawyer";
+        } else {
+            Iterator<T> it25 = list.iterator();
+            while (true) {
+                if (!it25.hasNext()) {
+                    obj18 = "lawyer";
+                    z = false;
+                    break;
+                } else if (Intrinsics.areEqual(((LicenseItem) it25.next()).getLicense(), "car")) {
+                    obj18 = "lawyer";
+                    z = true;
+                    break;
+                }
             }
         }
-        LicenseItem licenseItem18 = (LicenseItem) obj18;
-        boolean z3 = (licenseItem18 != null ? licenseItem18.getAvailable() : 0) == 1;
-        ImageView documentsIcFlight = documentLicensesBinding.documentsIcFlight;
-        Intrinsics.checkNotNullExpressionValue(documentsIcFlight, "documentsIcFlight");
-        TextView flightTitle = documentLicensesBinding.flightTitle;
-        Intrinsics.checkNotNullExpressionValue(flightTitle, "flightTitle");
-        TextView flight = documentLicensesBinding.flight;
-        Intrinsics.checkNotNullExpressionValue(flight, "flight");
-        setLicensesItem(z3, documentsIcFlight, flightTitle, flight);
+        ImageView documentsIcAuto = documentLicensesBinding.documentsIcAuto;
+        boolean z18 = z16;
+        Intrinsics.checkNotNullExpressionValue(documentsIcAuto, "documentsIcAuto");
+        Object obj35 = obj18;
+        TextView autoTitle = documentLicensesBinding.autoTitle;
+        Intrinsics.checkNotNullExpressionValue(autoTitle, "autoTitle");
+        TextView auto = documentLicensesBinding.auto;
+        Intrinsics.checkNotNullExpressionValue(auto, "auto");
+        LinearLayout autoContainer = documentLicensesBinding.autoContainer;
+        Intrinsics.checkNotNullExpressionValue(autoContainer, "autoContainer");
+        Object obj36 = "railway";
+        Object obj37 = obj35;
+        setLicensesItem(z18, z, documentsIcAuto, autoTitle, auto, autoContainer);
         Iterator<T> it26 = list.iterator();
         while (true) {
             if (!it26.hasNext()) {
@@ -905,19 +987,30 @@ public final class DocumentsScreen extends SAMPUIElement {
                 break;
             }
             obj19 = it26.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj19).getLicense(), "boat")) {
+            if (Intrinsics.areEqual(((LicenseItem) obj19).getLicense(), "bike")) {
                 break;
             }
         }
-        LicenseItem licenseItem19 = (LicenseItem) obj19;
-        boolean z4 = (licenseItem19 != null ? licenseItem19.getAvailable() : 0) == 1;
-        ImageView documentsIcBoat = documentLicensesBinding.documentsIcBoat;
-        Intrinsics.checkNotNullExpressionValue(documentsIcBoat, "documentsIcBoat");
-        TextView boatTitle = documentLicensesBinding.boatTitle;
-        Intrinsics.checkNotNullExpressionValue(boatTitle, "boatTitle");
-        TextView boat = documentLicensesBinding.boat;
-        Intrinsics.checkNotNullExpressionValue(boat, "boat");
-        setLicensesItem(z4, documentsIcBoat, boatTitle, boat);
+        LicenseItem licenseItem18 = (LicenseItem) obj19;
+        boolean z19 = (licenseItem18 != null ? licenseItem18.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem19 : list) {
+                if (Intrinsics.areEqual(licenseItem19.getLicense(), "bike")) {
+                    z2 = true;
+                    break;
+                }
+            }
+        }
+        z2 = false;
+        ImageView documentsIcMoto = documentLicensesBinding.documentsIcMoto;
+        Intrinsics.checkNotNullExpressionValue(documentsIcMoto, "documentsIcMoto");
+        TextView motoTitle = documentLicensesBinding.motoTitle;
+        Intrinsics.checkNotNullExpressionValue(motoTitle, "motoTitle");
+        TextView moto = documentLicensesBinding.moto;
+        Intrinsics.checkNotNullExpressionValue(moto, "moto");
+        LinearLayout motoContainer = documentLicensesBinding.motoContainer;
+        Intrinsics.checkNotNullExpressionValue(motoContainer, "motoContainer");
+        setLicensesItem(z19, z2, documentsIcMoto, motoTitle, moto, motoContainer);
         Iterator<T> it27 = list.iterator();
         while (true) {
             if (!it27.hasNext()) {
@@ -925,19 +1018,30 @@ public final class DocumentsScreen extends SAMPUIElement {
                 break;
             }
             obj20 = it27.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj20).getLicense(), "gun")) {
+            if (Intrinsics.areEqual(((LicenseItem) obj20).getLicense(), "fly")) {
                 break;
             }
         }
         LicenseItem licenseItem20 = (LicenseItem) obj20;
-        boolean z5 = (licenseItem20 != null ? licenseItem20.getAvailable() : 0) == 1;
-        ImageView documentsIcGun = documentLicensesBinding.documentsIcGun;
-        Intrinsics.checkNotNullExpressionValue(documentsIcGun, "documentsIcGun");
-        TextView gunTitle = documentLicensesBinding.gunTitle;
-        Intrinsics.checkNotNullExpressionValue(gunTitle, "gunTitle");
-        TextView gun = documentLicensesBinding.gun;
-        Intrinsics.checkNotNullExpressionValue(gun, "gun");
-        setLicensesItem(z5, documentsIcGun, gunTitle, gun);
+        boolean z20 = (licenseItem20 != null ? licenseItem20.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem21 : list) {
+                if (Intrinsics.areEqual(licenseItem21.getLicense(), "fly")) {
+                    z3 = true;
+                    break;
+                }
+            }
+        }
+        z3 = false;
+        ImageView documentsIcFlight = documentLicensesBinding.documentsIcFlight;
+        Intrinsics.checkNotNullExpressionValue(documentsIcFlight, "documentsIcFlight");
+        TextView flightTitle = documentLicensesBinding.flightTitle;
+        Intrinsics.checkNotNullExpressionValue(flightTitle, "flightTitle");
+        TextView flight = documentLicensesBinding.flight;
+        Intrinsics.checkNotNullExpressionValue(flight, "flight");
+        LinearLayout flightContainer = documentLicensesBinding.flightContainer;
+        Intrinsics.checkNotNullExpressionValue(flightContainer, "flightContainer");
+        setLicensesItem(z20, z3, documentsIcFlight, flightTitle, flight, flightContainer);
         Iterator<T> it28 = list.iterator();
         while (true) {
             if (!it28.hasNext()) {
@@ -945,19 +1049,30 @@ public final class DocumentsScreen extends SAMPUIElement {
                 break;
             }
             obj21 = it28.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj21).getLicense(), "fish")) {
+            if (Intrinsics.areEqual(((LicenseItem) obj21).getLicense(), "boat")) {
                 break;
             }
         }
-        LicenseItem licenseItem21 = (LicenseItem) obj21;
-        boolean z6 = (licenseItem21 != null ? licenseItem21.getAvailable() : 0) == 1;
-        ImageView documentsIcFish = documentLicensesBinding.documentsIcFish;
-        Intrinsics.checkNotNullExpressionValue(documentsIcFish, "documentsIcFish");
-        TextView fishTitle = documentLicensesBinding.fishTitle;
-        Intrinsics.checkNotNullExpressionValue(fishTitle, "fishTitle");
-        TextView fish = documentLicensesBinding.fish;
-        Intrinsics.checkNotNullExpressionValue(fish, "fish");
-        setLicensesItem(z6, documentsIcFish, fishTitle, fish);
+        LicenseItem licenseItem22 = (LicenseItem) obj21;
+        boolean z21 = (licenseItem22 != null ? licenseItem22.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem23 : list) {
+                if (Intrinsics.areEqual(licenseItem23.getLicense(), "boat")) {
+                    z4 = true;
+                    break;
+                }
+            }
+        }
+        z4 = false;
+        ImageView documentsIcBoat = documentLicensesBinding.documentsIcBoat;
+        Intrinsics.checkNotNullExpressionValue(documentsIcBoat, "documentsIcBoat");
+        TextView boatTitle = documentLicensesBinding.boatTitle;
+        Intrinsics.checkNotNullExpressionValue(boatTitle, "boatTitle");
+        TextView boat = documentLicensesBinding.boat;
+        Intrinsics.checkNotNullExpressionValue(boat, "boat");
+        LinearLayout boatContainer = documentLicensesBinding.boatContainer;
+        Intrinsics.checkNotNullExpressionValue(boatContainer, "boatContainer");
+        setLicensesItem(z21, z4, documentsIcBoat, boatTitle, boat, boatContainer);
         Iterator<T> it29 = list.iterator();
         while (true) {
             if (!it29.hasNext()) {
@@ -965,19 +1080,30 @@ public final class DocumentsScreen extends SAMPUIElement {
                 break;
             }
             obj22 = it29.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj22).getLicense(), "hunter")) {
+            if (Intrinsics.areEqual(((LicenseItem) obj22).getLicense(), "gun")) {
                 break;
             }
         }
-        LicenseItem licenseItem22 = (LicenseItem) obj22;
-        boolean z7 = (licenseItem22 != null ? licenseItem22.getAvailable() : 0) == 1;
-        ImageView documentsIcHunt = documentLicensesBinding.documentsIcHunt;
-        Intrinsics.checkNotNullExpressionValue(documentsIcHunt, "documentsIcHunt");
-        TextView huntTitle = documentLicensesBinding.huntTitle;
-        Intrinsics.checkNotNullExpressionValue(huntTitle, "huntTitle");
-        TextView hunt = documentLicensesBinding.hunt;
-        Intrinsics.checkNotNullExpressionValue(hunt, "hunt");
-        setLicensesItem(z7, documentsIcHunt, huntTitle, hunt);
+        LicenseItem licenseItem24 = (LicenseItem) obj22;
+        boolean z22 = (licenseItem24 != null ? licenseItem24.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem25 : list) {
+                if (Intrinsics.areEqual(licenseItem25.getLicense(), "gun")) {
+                    z5 = true;
+                    break;
+                }
+            }
+        }
+        z5 = false;
+        ImageView documentsIcGun = documentLicensesBinding.documentsIcGun;
+        Intrinsics.checkNotNullExpressionValue(documentsIcGun, "documentsIcGun");
+        TextView gunTitle = documentLicensesBinding.gunTitle;
+        Intrinsics.checkNotNullExpressionValue(gunTitle, "gunTitle");
+        TextView gun = documentLicensesBinding.gun;
+        Intrinsics.checkNotNullExpressionValue(gun, "gun");
+        LinearLayout gunContainer = documentLicensesBinding.gunContainer;
+        Intrinsics.checkNotNullExpressionValue(gunContainer, "gunContainer");
+        setLicensesItem(z22, z5, documentsIcGun, gunTitle, gun, gunContainer);
         Iterator<T> it30 = list.iterator();
         while (true) {
             if (!it30.hasNext()) {
@@ -985,19 +1111,30 @@ public final class DocumentsScreen extends SAMPUIElement {
                 break;
             }
             obj23 = it30.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj23).getLicense(), "hitch")) {
+            if (Intrinsics.areEqual(((LicenseItem) obj23).getLicense(), "fish")) {
                 break;
             }
         }
-        LicenseItem licenseItem23 = (LicenseItem) obj23;
-        boolean z8 = (licenseItem23 != null ? licenseItem23.getAvailable() : 0) == 1;
-        ImageView documentsIcShave = documentLicensesBinding.documentsIcShave;
-        Intrinsics.checkNotNullExpressionValue(documentsIcShave, "documentsIcShave");
-        TextView shaveTitle = documentLicensesBinding.shaveTitle;
-        Intrinsics.checkNotNullExpressionValue(shaveTitle, "shaveTitle");
-        TextView shave = documentLicensesBinding.shave;
-        Intrinsics.checkNotNullExpressionValue(shave, "shave");
-        setLicensesItem(z8, documentsIcShave, shaveTitle, shave);
+        LicenseItem licenseItem26 = (LicenseItem) obj23;
+        boolean z23 = (licenseItem26 != null ? licenseItem26.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem27 : list) {
+                if (Intrinsics.areEqual(licenseItem27.getLicense(), "fish")) {
+                    z6 = true;
+                    break;
+                }
+            }
+        }
+        z6 = false;
+        ImageView documentsIcFish = documentLicensesBinding.documentsIcFish;
+        Intrinsics.checkNotNullExpressionValue(documentsIcFish, "documentsIcFish");
+        TextView fishTitle = documentLicensesBinding.fishTitle;
+        Intrinsics.checkNotNullExpressionValue(fishTitle, "fishTitle");
+        TextView fish = documentLicensesBinding.fish;
+        Intrinsics.checkNotNullExpressionValue(fish, "fish");
+        LinearLayout fishContainer = documentLicensesBinding.fishContainer;
+        Intrinsics.checkNotNullExpressionValue(fishContainer, "fishContainer");
+        setLicensesItem(z23, z6, documentsIcFish, fishTitle, fish, fishContainer);
         Iterator<T> it31 = list.iterator();
         while (true) {
             if (!it31.hasNext()) {
@@ -1005,19 +1142,30 @@ public final class DocumentsScreen extends SAMPUIElement {
                 break;
             }
             obj24 = it31.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj24).getLicense(), "taxi")) {
+            if (Intrinsics.areEqual(((LicenseItem) obj24).getLicense(), "hunter")) {
                 break;
             }
         }
-        LicenseItem licenseItem24 = (LicenseItem) obj24;
-        boolean z9 = (licenseItem24 != null ? licenseItem24.getAvailable() : 0) == 1;
-        ImageView documentsIcTaxi = documentLicensesBinding.documentsIcTaxi;
-        Intrinsics.checkNotNullExpressionValue(documentsIcTaxi, "documentsIcTaxi");
-        TextView taxiTitle = documentLicensesBinding.taxiTitle;
-        Intrinsics.checkNotNullExpressionValue(taxiTitle, "taxiTitle");
-        TextView taxi = documentLicensesBinding.taxi;
-        Intrinsics.checkNotNullExpressionValue(taxi, "taxi");
-        setLicensesItem(z9, documentsIcTaxi, taxiTitle, taxi);
+        LicenseItem licenseItem28 = (LicenseItem) obj24;
+        boolean z24 = (licenseItem28 != null ? licenseItem28.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem29 : list) {
+                if (Intrinsics.areEqual(licenseItem29.getLicense(), "hunter")) {
+                    z7 = true;
+                    break;
+                }
+            }
+        }
+        z7 = false;
+        ImageView documentsIcHunt = documentLicensesBinding.documentsIcHunt;
+        Intrinsics.checkNotNullExpressionValue(documentsIcHunt, "documentsIcHunt");
+        TextView huntTitle = documentLicensesBinding.huntTitle;
+        Intrinsics.checkNotNullExpressionValue(huntTitle, "huntTitle");
+        TextView hunt = documentLicensesBinding.hunt;
+        Intrinsics.checkNotNullExpressionValue(hunt, "hunt");
+        LinearLayout huntContainer = documentLicensesBinding.huntContainer;
+        Intrinsics.checkNotNullExpressionValue(huntContainer, "huntContainer");
+        setLicensesItem(z24, z7, documentsIcHunt, huntTitle, hunt, huntContainer);
         Iterator<T> it32 = list.iterator();
         while (true) {
             if (!it32.hasNext()) {
@@ -1025,41 +1173,64 @@ public final class DocumentsScreen extends SAMPUIElement {
                 break;
             }
             obj25 = it32.next();
-            if (Intrinsics.areEqual(((LicenseItem) obj25).getLicense(), "mechanic")) {
+            if (Intrinsics.areEqual(((LicenseItem) obj25).getLicense(), "hitch")) {
                 break;
             }
         }
-        LicenseItem licenseItem25 = (LicenseItem) obj25;
-        boolean z10 = (licenseItem25 != null ? licenseItem25.getAvailable() : 0) == 1;
-        ImageView documentsIcMech = documentLicensesBinding.documentsIcMech;
-        Intrinsics.checkNotNullExpressionValue(documentsIcMech, "documentsIcMech");
-        TextView mechTitle = documentLicensesBinding.mechTitle;
-        Intrinsics.checkNotNullExpressionValue(mechTitle, "mechTitle");
-        TextView mech = documentLicensesBinding.mech;
-        Intrinsics.checkNotNullExpressionValue(mech, "mech");
-        setLicensesItem(z10, documentsIcMech, mechTitle, mech);
+        LicenseItem licenseItem30 = (LicenseItem) obj25;
+        boolean z25 = (licenseItem30 != null ? licenseItem30.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem31 : list) {
+                if (Intrinsics.areEqual(licenseItem31.getLicense(), "hitch")) {
+                    z8 = true;
+                    break;
+                }
+            }
+        }
+        z8 = false;
+        ImageView documentsIcShave = documentLicensesBinding.documentsIcShave;
+        Intrinsics.checkNotNullExpressionValue(documentsIcShave, "documentsIcShave");
+        TextView shaveTitle = documentLicensesBinding.shaveTitle;
+        Intrinsics.checkNotNullExpressionValue(shaveTitle, "shaveTitle");
+        TextView shave = documentLicensesBinding.shave;
+        Intrinsics.checkNotNullExpressionValue(shave, "shave");
+        LinearLayout shaveContainer = documentLicensesBinding.shaveContainer;
+        Intrinsics.checkNotNullExpressionValue(shaveContainer, "shaveContainer");
+        setLicensesItem(z25, z8, documentsIcShave, shaveTitle, shave, shaveContainer);
         Iterator<T> it33 = list.iterator();
         while (true) {
             if (!it33.hasNext()) {
+                str10 = str3;
                 obj26 = null;
                 break;
             }
             obj26 = it33.next();
-            Object obj32 = obj31;
-            if (Intrinsics.areEqual(((LicenseItem) obj26).getLicense(), obj32)) {
+            str10 = str3;
+            if (Intrinsics.areEqual(((LicenseItem) obj26).getLicense(), str10)) {
                 break;
             }
-            obj31 = obj32;
+            str3 = str10;
         }
-        LicenseItem licenseItem26 = (LicenseItem) obj26;
-        boolean z11 = (licenseItem26 != null ? licenseItem26.getAvailable() : 0) == 1;
-        ImageView documentsIcAdvocate = documentLicensesBinding.documentsIcAdvocate;
-        Intrinsics.checkNotNullExpressionValue(documentsIcAdvocate, "documentsIcAdvocate");
-        TextView advocateTitle = documentLicensesBinding.advocateTitle;
-        Intrinsics.checkNotNullExpressionValue(advocateTitle, "advocateTitle");
-        TextView advocate = documentLicensesBinding.advocate;
-        Intrinsics.checkNotNullExpressionValue(advocate, "advocate");
-        setLicensesItem(z11, documentsIcAdvocate, advocateTitle, advocate);
+        LicenseItem licenseItem32 = (LicenseItem) obj26;
+        boolean z26 = (licenseItem32 != null ? licenseItem32.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem33 : list) {
+                if (Intrinsics.areEqual(licenseItem33.getLicense(), str10)) {
+                    z9 = true;
+                    break;
+                }
+            }
+        }
+        z9 = false;
+        ImageView documentsIcTaxi = documentLicensesBinding.documentsIcTaxi;
+        Intrinsics.checkNotNullExpressionValue(documentsIcTaxi, "documentsIcTaxi");
+        TextView taxiTitle = documentLicensesBinding.taxiTitle;
+        Intrinsics.checkNotNullExpressionValue(taxiTitle, "taxiTitle");
+        TextView textView17 = documentLicensesBinding.taxi;
+        Intrinsics.checkNotNullExpressionValue(textView17, str10);
+        LinearLayout taxiContainer = documentLicensesBinding.taxiContainer;
+        Intrinsics.checkNotNullExpressionValue(taxiContainer, "taxiContainer");
+        setLicensesItem(z26, z9, documentsIcTaxi, taxiTitle, textView17, taxiContainer);
         Iterator<T> it34 = list.iterator();
         while (true) {
             if (!it34.hasNext()) {
@@ -1067,78 +1238,207 @@ public final class DocumentsScreen extends SAMPUIElement {
                 break;
             }
             obj27 = it34.next();
-            String str7 = str4;
-            if (Intrinsics.areEqual(((LicenseItem) obj27).getLicense(), str7)) {
+            if (Intrinsics.areEqual(((LicenseItem) obj27).getLicense(), "mechanic")) {
                 break;
             }
-            str4 = str7;
         }
-        LicenseItem licenseItem27 = (LicenseItem) obj27;
-        boolean z12 = (licenseItem27 != null ? licenseItem27.getAvailable() : 0) == 1;
+        LicenseItem licenseItem34 = (LicenseItem) obj27;
+        boolean z27 = (licenseItem34 != null ? licenseItem34.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem35 : list) {
+                if (Intrinsics.areEqual(licenseItem35.getLicense(), "mechanic")) {
+                    z10 = true;
+                    break;
+                }
+            }
+        }
+        z10 = false;
+        ImageView documentsIcMech = documentLicensesBinding.documentsIcMech;
+        Intrinsics.checkNotNullExpressionValue(documentsIcMech, "documentsIcMech");
+        TextView mechTitle = documentLicensesBinding.mechTitle;
+        Intrinsics.checkNotNullExpressionValue(mechTitle, "mechTitle");
+        TextView mech = documentLicensesBinding.mech;
+        Intrinsics.checkNotNullExpressionValue(mech, "mech");
+        LinearLayout mechContainer = documentLicensesBinding.mechContainer;
+        Intrinsics.checkNotNullExpressionValue(mechContainer, "mechContainer");
+        setLicensesItem(z27, z10, documentsIcMech, mechTitle, mech, mechContainer);
+        Iterator<T> it35 = list.iterator();
+        while (true) {
+            if (!it35.hasNext()) {
+                obj28 = obj37;
+                obj29 = null;
+                break;
+            }
+            obj29 = it35.next();
+            obj28 = obj37;
+            if (Intrinsics.areEqual(((LicenseItem) obj29).getLicense(), obj28)) {
+                break;
+            }
+            obj37 = obj28;
+        }
+        LicenseItem licenseItem36 = (LicenseItem) obj29;
+        boolean z28 = (licenseItem36 != null ? licenseItem36.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem37 : list) {
+                if (Intrinsics.areEqual(licenseItem37.getLicense(), obj28)) {
+                    z11 = true;
+                    break;
+                }
+            }
+        }
+        z11 = false;
+        ImageView documentsIcAdvocate = documentLicensesBinding.documentsIcAdvocate;
+        Intrinsics.checkNotNullExpressionValue(documentsIcAdvocate, "documentsIcAdvocate");
+        TextView advocateTitle = documentLicensesBinding.advocateTitle;
+        Intrinsics.checkNotNullExpressionValue(advocateTitle, "advocateTitle");
+        TextView advocate = documentLicensesBinding.advocate;
+        Intrinsics.checkNotNullExpressionValue(advocate, "advocate");
+        LinearLayout advocateContainer = documentLicensesBinding.advocateContainer;
+        Intrinsics.checkNotNullExpressionValue(advocateContainer, "advocateContainer");
+        setLicensesItem(z28, z11, documentsIcAdvocate, advocateTitle, advocate, advocateContainer);
+        Iterator<T> it36 = list.iterator();
+        while (true) {
+            if (!it36.hasNext()) {
+                str11 = str5;
+                obj30 = null;
+                break;
+            }
+            obj30 = it36.next();
+            str11 = str5;
+            if (Intrinsics.areEqual(((LicenseItem) obj30).getLicense(), str11)) {
+                break;
+            }
+            str5 = str11;
+        }
+        LicenseItem licenseItem38 = (LicenseItem) obj30;
+        boolean z29 = (licenseItem38 != null ? licenseItem38.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem39 : list) {
+                if (Intrinsics.areEqual(licenseItem39.getLicense(), str11)) {
+                    z12 = true;
+                    break;
+                }
+            }
+        }
+        z12 = false;
         ImageView documentsIcTax = documentLicensesBinding.documentsIcTax;
         Intrinsics.checkNotNullExpressionValue(documentsIcTax, "documentsIcTax");
         TextView taxTitle = documentLicensesBinding.taxTitle;
         Intrinsics.checkNotNullExpressionValue(taxTitle, "taxTitle");
         TextView tax = documentLicensesBinding.tax;
         Intrinsics.checkNotNullExpressionValue(tax, "tax");
-        setLicensesItem(z12, documentsIcTax, taxTitle, tax);
-        Iterator<T> it35 = list.iterator();
+        LinearLayout taxContainer = documentLicensesBinding.taxContainer;
+        Intrinsics.checkNotNullExpressionValue(taxContainer, "taxContainer");
+        setLicensesItem(z29, z12, documentsIcTax, taxTitle, tax, taxContainer);
+        Iterator<T> it37 = list.iterator();
         while (true) {
-            if (!it35.hasNext()) {
-                obj28 = null;
+            if (!it37.hasNext()) {
+                str12 = str7;
+                obj31 = null;
                 break;
             }
-            obj28 = it35.next();
-            String str8 = str5;
-            if (Intrinsics.areEqual(((LicenseItem) obj28).getLicense(), str8)) {
+            obj31 = it37.next();
+            str12 = str7;
+            if (Intrinsics.areEqual(((LicenseItem) obj31).getLicense(), str12)) {
                 break;
             }
-            str5 = str8;
+            str7 = str12;
         }
-        LicenseItem licenseItem28 = (LicenseItem) obj28;
-        boolean z13 = (licenseItem28 != null ? licenseItem28.getAvailable() : 0) == 1;
+        LicenseItem licenseItem40 = (LicenseItem) obj31;
+        boolean z30 = (licenseItem40 != null ? licenseItem40.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem41 : list) {
+                if (Intrinsics.areEqual(licenseItem41.getLicense(), str12)) {
+                    z13 = true;
+                    break;
+                }
+            }
+        }
+        z13 = false;
         ImageView documentsIcDipl = documentLicensesBinding.documentsIcDipl;
         Intrinsics.checkNotNullExpressionValue(documentsIcDipl, "documentsIcDipl");
         TextView diplTitle = documentLicensesBinding.diplTitle;
         Intrinsics.checkNotNullExpressionValue(diplTitle, "diplTitle");
         TextView dipl = documentLicensesBinding.dipl;
         Intrinsics.checkNotNullExpressionValue(dipl, "dipl");
-        setLicensesItem(z13, documentsIcDipl, diplTitle, dipl);
-        Iterator<T> it36 = list.iterator();
+        LinearLayout diplContainerColumn = documentLicensesBinding.diplContainerColumn;
+        Intrinsics.checkNotNullExpressionValue(diplContainerColumn, "diplContainerColumn");
+        setLicensesItem(z30, z13, documentsIcDipl, diplTitle, dipl, diplContainerColumn);
+        Iterator<T> it38 = list.iterator();
         while (true) {
-            if (!it36.hasNext()) {
-                obj29 = null;
+            if (!it38.hasNext()) {
+                str13 = str9;
+                obj32 = null;
                 break;
             }
-            Object next2 = it36.next();
-            Object obj33 = obj30;
-            if (Intrinsics.areEqual(((LicenseItem) next2).getLicense(), obj33)) {
-                obj29 = next2;
+            obj32 = it38.next();
+            str13 = str9;
+            if (Intrinsics.areEqual(((LicenseItem) obj32).getLicense(), str13)) {
                 break;
             }
-            obj30 = obj33;
+            str9 = str13;
         }
-        LicenseItem licenseItem29 = (LicenseItem) obj29;
-        boolean z14 = (licenseItem29 != null ? licenseItem29.getAvailable() : 0) == 1;
+        LicenseItem licenseItem42 = (LicenseItem) obj32;
+        boolean z31 = (licenseItem42 != null ? licenseItem42.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem43 : list) {
+                if (Intrinsics.areEqual(licenseItem43.getLicense(), str13)) {
+                    z14 = true;
+                    break;
+                }
+            }
+        }
+        z14 = false;
         ImageView documentsIcMiner = documentLicensesBinding.documentsIcMiner;
         Intrinsics.checkNotNullExpressionValue(documentsIcMiner, "documentsIcMiner");
         TextView minerTitle = documentLicensesBinding.minerTitle;
         Intrinsics.checkNotNullExpressionValue(minerTitle, "minerTitle");
         TextView miner = documentLicensesBinding.miner;
         Intrinsics.checkNotNullExpressionValue(miner, "miner");
-        setLicensesItem(z14, documentsIcMiner, minerTitle, miner);
-    }
-
-    private final void setLicensesItem(boolean z, ImageView imageView, TextView textView, TextView textView2) {
-        if (z) {
-            imageView.setImageAlpha(255);
-            textView.setTextColor(Color.parseColor("#2E5356"));
-            textView2.setBackgroundResource(R.drawable.documents_licenses_text_bg);
+        LinearLayout minerContainer = documentLicensesBinding.minerContainer;
+        Intrinsics.checkNotNullExpressionValue(minerContainer, "minerContainer");
+        setLicensesItem(z31, z14, documentsIcMiner, minerTitle, miner, minerContainer);
+        Iterator<T> it39 = list.iterator();
+        while (true) {
+            if (!it39.hasNext()) {
+                obj33 = obj36;
+                obj34 = null;
+                break;
+            }
+            Object next = it39.next();
+            obj33 = obj36;
+            if (Intrinsics.areEqual(((LicenseItem) next).getLicense(), obj33)) {
+                obj34 = next;
+                break;
+            }
+            obj36 = obj33;
+        }
+        LicenseItem licenseItem44 = (LicenseItem) obj34;
+        boolean z32 = (licenseItem44 != null ? licenseItem44.getAvailable() : 0) == 1;
+        if (!z17 || !list.isEmpty()) {
+            for (LicenseItem licenseItem45 : list) {
+                if (Intrinsics.areEqual(licenseItem45.getLicense(), obj33)) {
+                    z15 = true;
+                    break;
+                }
+            }
+        }
+        z15 = false;
+        ImageView documentsIcTrolleybus = documentLicensesBinding.documentsIcTrolleybus;
+        Intrinsics.checkNotNullExpressionValue(documentsIcTrolleybus, "documentsIcTrolleybus");
+        TextView trolleybusTitle = documentLicensesBinding.trolleybusTitle;
+        Intrinsics.checkNotNullExpressionValue(trolleybusTitle, "trolleybusTitle");
+        TextView trolleybus = documentLicensesBinding.trolleybus;
+        Intrinsics.checkNotNullExpressionValue(trolleybus, "trolleybus");
+        LinearLayout trolleybusContainer = documentLicensesBinding.trolleybusContainer;
+        Intrinsics.checkNotNullExpressionValue(trolleybusContainer, "trolleybusContainer");
+        setLicensesItem(z32, z15, documentsIcTrolleybus, trolleybusTitle, trolleybus, trolleybusContainer);
+        if (UtilsKt.isArizonaType()) {
             return;
         }
-        imageView.setImageAlpha(51);
-        textView.setTextColor(Color.parseColor("#2E535633"));
-        textView2.setBackgroundResource(R.drawable.documents_licenses_text_bg_empty);
+        TextView containerDescription = documentsLayoutBinding.licenses.containerDescription;
+        Intrinsics.checkNotNullExpressionValue(containerDescription, "containerDescription");
+        containerDescription.setVisibility(0);
     }
 
     private final void showDocs(int i) {
@@ -1150,13 +1450,17 @@ public final class DocumentsScreen extends SAMPUIElement {
             DocumentLicensesBinding documentLicensesBinding = documentsLayoutBinding.licenses;
             documentsLayoutBinding.licenses.containerDescription.setVisibility(0);
             DocumentsHealthBinding documentsHealthBinding = documentsLayoutBinding.health;
-            documentsHealthBinding.reviewContainer.setVisibility(0);
-            documentsHealthBinding.desc.setVisibility(0);
+            if (UtilsKt.isArizonaType()) {
+                documentsHealthBinding.reviewContainer.setVisibility(0);
+                documentsHealthBinding.desc.setVisibility(0);
+            }
             documentsHealthBinding.gpsButton.setVisibility(0);
             documentsHealthBinding.descText.setText("У вас нет мед.карты. Вы можете оформить ее в любой больнице штата. Используйте кнопку ниже, чтобы отметить на GPS ближайшую больницу.");
             DocumentsArmyBinding documentsArmyBinding = documentsLayoutBinding.army;
-            documentsArmyBinding.info.setVisibility(0);
-            documentsArmyBinding.infoIc.setVisibility(0);
+            if (UtilsKt.isArizonaType()) {
+                documentsArmyBinding.info.setVisibility(0);
+                documentsArmyBinding.infoIc.setVisibility(0);
+            }
             documentsArmyBinding.emptyDescText.setText("У вас нет военного билета. Его можно получить при прохождении военной службы в Армии LS, SF или Тюрьме строгого режима, а также купить в донат-меню.");
             return;
         }
@@ -1443,10 +1747,11 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     private final void setTransportInfo(TransportInfo transportInfo) {
-        if (transportInfo.getNot() == 1 || transportInfo.getVehicles().isEmpty()) {
+        List<TransportItem> vehicles;
+        if (transportInfo.getNot() == 1 || (vehicles = transportInfo.getVehicles()) == null || vehicles.isEmpty()) {
             return;
         }
-        this.transportAdapter.addElements(transportInfo.getVehicles());
+        this.transportAdapter.addElements(vehicles);
         DocumentsLayoutBinding documentsLayoutBinding = this.binding;
         documentsLayoutBinding.transport.transportRecycleView.setVisibility(0);
         documentsLayoutBinding.transport.transportEmpty.setVisibility(8);
@@ -1510,5 +1815,18 @@ public final class DocumentsScreen extends SAMPUIElement {
         public Set<UIElementID> getCorrectIds() {
             return this.correctIds;
         }
+    }
+
+    private final void setLicensesItem(boolean z, boolean z2, ImageView imageView, TextView textView, TextView textView2, View view) {
+        view.setVisibility(z2 ? 0 : 8);
+        if (z) {
+            imageView.setImageAlpha(255);
+            textView.setTextColor(Color.parseColor("#2E5356"));
+            textView2.setBackgroundResource(R.drawable.documents_licenses_text_bg);
+            return;
+        }
+        imageView.setImageAlpha(51);
+        textView.setTextColor(Color.parseColor("#2E535633"));
+        textView2.setBackgroundResource(R.drawable.documents_licenses_text_bg_empty);
     }
 }

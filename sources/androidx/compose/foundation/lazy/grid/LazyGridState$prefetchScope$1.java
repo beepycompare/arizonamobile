@@ -57,9 +57,9 @@ public final class LazyGridState$prefetchScope$1 implements LazyGridPrefetchScop
                     Pair<Integer, Constraints> pair = invoke.get(i2);
                     LazyLayoutPrefetchState prefetchState$foundation_release = lazyGridState.getPrefetchState$foundation_release();
                     int intValue = pair.getFirst().intValue();
-                    long m7223unboximpl = pair.getSecond().m7223unboximpl();
+                    long m7954unboximpl = pair.getSecond().m7954unboximpl();
                     z = lazyGridState.executeRequestsInHighPriorityMode;
-                    arrayList.add(prefetchState$foundation_release.m1060schedulePrecompositionAndPremeasure_EkL_Y$foundation_release(intValue, m7223unboximpl, z, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridState$prefetchScope$1$$ExternalSyntheticLambda0
+                    arrayList.add(prefetchState$foundation_release.m1060schedulePrecompositionAndPremeasure_EkL_Y$foundation_release(intValue, m7954unboximpl, z, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridState$prefetchScope$1$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
                             Unit scheduleLinePrefetch$lambda$4$lambda$3$lambda$2$lambda$1;

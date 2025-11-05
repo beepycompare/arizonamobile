@@ -28,7 +28,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Locale;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class EventLogger implements AnalyticsListener {
     private static final String DEFAULT_TAG = "EventLogger";
     private static final int MAX_TIMELINE_ITEM_LINES = 3;

@@ -35,7 +35,7 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
     private Function1<? super DrawScope, Unit> drawDragDecoration;
     private PointerInputModifierNode inputModifierNode;
     private Function1<? super Offset, DragAndDropTransferData> transferData;
-    private long size = IntSize.Companion.m7440getZeroYbymL2g();
+    private long size = IntSize.Companion.m8171getZeroYbymL2g();
     private final DragAndDropSourceModifierNode dragAndDropModifierNode = (DragAndDropSourceModifierNode) delegate(DragAndDropNodeKt.DragAndDropSourceModifierNode(new Function2() { // from class: androidx.compose.foundation.draganddrop.DragAndDropSourceNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
@@ -79,7 +79,7 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
     public static final Unit dragAndDropModifierNode$lambda$0(DragAndDropSourceNode dragAndDropSourceNode, DragAndDropStartTransferScope dragAndDropStartTransferScope, Offset offset) {
         DragAndDropTransferData invoke = dragAndDropSourceNode.transferData.invoke(offset);
         if (invoke != null) {
-            dragAndDropStartTransferScope.mo4059startDragAndDropTransfer12SF9DM(invoke, IntSizeKt.m7447toSizeozmzZPI(dragAndDropSourceNode.size), dragAndDropSourceNode.drawDragDecoration);
+            dragAndDropStartTransferScope.mo4789startDragAndDropTransfer12SF9DM(invoke, IntSizeKt.m8178toSizeozmzZPI(dragAndDropSourceNode.size), dragAndDropSourceNode.drawDragDecoration);
         }
         return Unit.INSTANCE;
     }
@@ -226,7 +226,7 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
                     public void mo421requestDragAndDropTransferk4lQ0M(long j) {
                         DragAndDropSourceModifierNode dragAndDropSourceModifierNode;
                         dragAndDropSourceModifierNode = this.this$0.dragAndDropModifierNode;
-                        dragAndDropSourceModifierNode.mo4062requestDragAndDropTransferk4lQ0M(j);
+                        dragAndDropSourceModifierNode.mo4792requestDragAndDropTransferk4lQ0M(j);
                     }
                 }
 

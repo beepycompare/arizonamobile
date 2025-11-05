@@ -31,7 +31,7 @@ public abstract class LazyLayoutMeasuredItemProvider<T extends LazyLayoutMeasure
         int size = compose.size();
         ArrayList arrayList = new ArrayList(size);
         for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(compose.get(i2).mo5967measureBRTryo0(j));
+            arrayList.add(compose.get(i2).mo6697measureBRTryo0(j));
         }
         ArrayList arrayList2 = arrayList;
         this.placeablesCache.set(i, arrayList2);

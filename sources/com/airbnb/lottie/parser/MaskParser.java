@@ -8,7 +8,6 @@ import com.airbnb.lottie.model.content.Mask;
 import com.airbnb.lottie.parser.moshi.JsonReader;
 import com.airbnb.lottie.utils.Logger;
 import com.arizona.launcher.UpdateActivity;
-import io.appmetrica.analytics.BuildConfig;
 import java.io.IOException;
 /* loaded from: classes3.dex */
 class MaskParser {
@@ -102,7 +101,7 @@ class MaskParser {
                             }
                             c = 65535;
                             break;
-                        case BuildConfig.API_LEVEL /* 115 */:
+                        case 115:
                             break;
                         default:
                             c = 65535;

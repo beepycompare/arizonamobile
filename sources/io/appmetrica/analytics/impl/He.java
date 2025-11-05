@@ -1,35 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
-public abstract class He {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f478a = -1;
-    public final int b = 0;
-    public final int c = 1;
-
-    public final int a(Boolean bool) {
-        if (bool == null) {
-            return this.f478a;
-        }
-        if (Intrinsics.areEqual(bool, Boolean.FALSE)) {
-            return this.b;
-        }
-        if (Intrinsics.areEqual(bool, Boolean.TRUE)) {
-            return this.c;
-        }
-        throw new NoWhenBranchMatchedException();
-    }
-
-    public final Boolean a(int i) {
-        if (i == this.b) {
-            return Boolean.FALSE;
-        }
-        if (i == this.c) {
-            return Boolean.TRUE;
-        }
-        return null;
+import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
+/* loaded from: classes3.dex */
+public final class He extends Kc {
+    public He(NetworkType networkType) {
+        super(networkType);
+        a(1, NetworkType.WIFI);
+        a(0, NetworkType.CELL);
+        a(7, NetworkType.BLUETOOTH);
+        a(9, NetworkType.ETHERNET);
+        a(4, NetworkType.MOBILE_DUN);
+        a(5, NetworkType.MOBILE_HIPRI);
+        a(2, NetworkType.MOBILE_MMS);
+        a(3, NetworkType.MOBILE_SUPL);
+        a(6, NetworkType.WIMAX);
+        a(17, NetworkType.VPN);
     }
 }

@@ -1,23 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-/* loaded from: classes4.dex */
-public final class Mc extends AbstractC0238f {
-    public Mc(Context context, Xg xg) {
-        super(context, xg);
+import java.util.HashMap;
+/* loaded from: classes3.dex */
+public final class Mc extends HashMap {
+
+    /* renamed from: a  reason: collision with root package name */
+    public int f590a;
+
+    public Mc() {
+        this.f590a = 0;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0238f
-    public final void b(C0478o6 c0478o6, N4 n4) {
-        boolean booleanValue = ((Boolean) WrapUtils.getOrDefault(n4.b.b, Boolean.FALSE)).booleanValue();
-        InterfaceC0380kc l = Na.F.l();
-        l.a(booleanValue);
-        l.a(n4.b.c);
-        Boolean bool = n4.b.n;
-        if (bool != null) {
-            Na.F.b().b(bool.booleanValue());
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    /* renamed from: a */
+    public final String put(String str, String str2) {
+        if (!containsKey(str)) {
+            if (str2 != null) {
+                this.f590a = str2.length() + str.length() + this.f590a;
+                return (String) super.put(str, str2);
+            }
+            return null;
         }
-        this.b.a(c0478o6, n4);
+        if (str2 == null) {
+            if (containsKey(str)) {
+                String str3 = (String) get(str);
+                this.f590a -= str.length() + (str3 != null ? str3.length() : 0);
+            }
+            return (String) super.remove(str);
+        }
+        String str4 = (String) get(str);
+        this.f590a = (str2.length() - (str4 != null ? str4.length() : 0)) + this.f590a;
+        return (String) super.put(str, str2);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        if (containsKey(obj)) {
+            String str = (String) get(obj);
+            this.f590a -= ((String) obj).length() + (str == null ? 0 : str.length());
+        }
+        return (String) super.remove(obj);
+    }
+
+    public Mc(String str) {
+        super(AbstractC0447nb.d(str));
+        this.f590a = 0;
+        for (String str2 : keySet()) {
+            String str3 = (String) get(str2);
+            this.f590a = str2.length() + (str3 == null ? 0 : str3.length()) + this.f590a;
+        }
     }
 }

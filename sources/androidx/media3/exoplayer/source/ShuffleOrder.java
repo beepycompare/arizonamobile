@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.source;
 
 import java.util.Arrays;
 import java.util.Random;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface ShuffleOrder {
     ShuffleOrder cloneAndClear();
 
@@ -24,7 +24,7 @@ public interface ShuffleOrder {
 
     int getPreviousIndex(int i);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class DefaultShuffleOrder implements ShuffleOrder {
         private final int[] indexInShuffled;
         private final Random random;
@@ -182,7 +182,7 @@ public interface ShuffleOrder {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class UnshuffledShuffleOrder implements ShuffleOrder {
         private final int length;
 

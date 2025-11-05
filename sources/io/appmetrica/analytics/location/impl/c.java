@@ -7,14 +7,14 @@ import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
 import io.appmetrica.analytics.coreutils.internal.permission.SinglePermissionStrategy;
 import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
 import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class c implements LastKnownLocationExtractorProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1206a;
+    public final String f1247a;
 
     public c(String str) {
-        this.f1206a = str;
+        this.f1247a = str;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider
@@ -24,6 +24,6 @@ public final class c implements LastKnownLocationExtractorProvider {
 
     @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
     public final String getIdentifier() {
-        return this.f1206a;
+        return this.f1247a;
     }
 }

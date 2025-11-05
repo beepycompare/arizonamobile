@@ -12,7 +12,6 @@ import android.os.Message;
 import android.util.Pair;
 import android.view.Display;
 import android.view.Surface;
-import androidx.compose.material3.MenuKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
 import androidx.media3.common.Effect;
@@ -47,13 +46,11 @@ import androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper;
 import androidx.media3.exoplayer.video.VideoFrameReleaseControl;
 import androidx.media3.exoplayer.video.VideoRendererEventListener;
 import androidx.media3.exoplayer.video.VideoSink;
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.google.android.gms.common.Scopes;
 import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
-import io.appmetrica.analytics.BuildConfig;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -62,7 +59,8 @@ import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.internal.ws.WebSocketProtocol;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+import ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage;
+/* loaded from: classes3.dex */
 public class MediaCodecVideoRenderer extends MediaCodecRenderer implements VideoFrameReleaseControl.FrameTimingEvaluator {
     private static final int HEVC_MAX_INPUT_SIZE_THRESHOLD = 2097152;
     private static final float INITIAL_FORMAT_MAX_INPUT_SIZE_SCALE_FACTOR = 1.5f;
@@ -146,7 +144,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         return true;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private long allowedJoiningTimeMs;
         private boolean buildCalled;
@@ -406,7 +404,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api26 {
         private Api26() {
         }
@@ -1754,7 +1752,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CodecMaxValues {
         public final int height;
         public final int inputSize;
@@ -2995,12 +2993,12 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case 'C':
                             case 'D':
                             case 'E':
-                            case 'F':
+                            case ArizonaRentAddPage.MAX_CHAR_COUNT /* 70 */:
                             case TsExtractor.TS_SYNC_BYTE /* 71 */:
                             case 'H':
                             case 'I':
                             case 'J':
-                            case 'K':
+                            case MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT /* 75 */:
                             case 'L':
                             case 'M':
                             case MdtaMetadataEntry.TYPE_INDICATOR_UNSIGNED_INT64 /* 78 */:
@@ -3040,12 +3038,12 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case 'p':
                             case 'q':
                             case 'r':
-                            case BuildConfig.API_LEVEL /* 115 */:
-                            case AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID /* 116 */:
+                            case 's':
+                            case 't':
                             case 'u':
                             case 'v':
                             case 'w':
-                            case MenuKt.InTransitionDuration /* 120 */:
+                            case 'x':
                             case 'y':
                             case 'z':
                             case '{':
@@ -3082,7 +3080,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class OnFrameRenderedListenerV23 implements MediaCodecAdapter.OnFrameRenderedListener, Handler.Callback {
         private static final int HANDLE_FRAME_RENDERED = 0;
         private final Handler handler;

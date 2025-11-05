@@ -8,7 +8,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.util.Arrays;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DefaultExtractorInput implements ExtractorInput {
     private static final int PEEK_MAX_FREE_SPACE = 524288;
     private static final int PEEK_MIN_FREE_SPACE_AFTER_RESIZE = 65536;

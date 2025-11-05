@@ -48,17 +48,17 @@ public final class AnimateBoundsModifierKt {
 
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Constraints invoke(IntSize intSize, Constraints constraints) {
-                return Constraints.m7204boximpl(m48invoke2pbfIzA(intSize.m7439unboximpl(), constraints.m7223unboximpl()));
+                return Constraints.m7935boximpl(m48invoke2pbfIzA(intSize.m8170unboximpl(), constraints.m7954unboximpl()));
             }
         }, z)).then(modifier2).then(new BoundsAnimationElement(lookaheadScope, boundsTransform, new Function2<IntSize, Constraints, Constraints>() { // from class: androidx.compose.animation.AnimateBoundsModifierKt$animateBounds$2
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Constraints invoke(IntSize intSize, Constraints constraints) {
-                return Constraints.m7204boximpl(m49invoke2pbfIzA(intSize.m7439unboximpl(), constraints.m7223unboximpl()));
+                return Constraints.m7935boximpl(m49invoke2pbfIzA(intSize.m8170unboximpl(), constraints.m7954unboximpl()));
             }
 
             /* renamed from: invoke-2pbfIzA  reason: not valid java name */
             public final long m49invoke2pbfIzA(long j, long j2) {
-                return Constraints.Companion.m7227fixedJhjzzOo((int) (j >> 32), (int) (j & 4294967295L));
+                return Constraints.Companion.m7958fixedJhjzzOo((int) (j >> 32), (int) (j & 4294967295L));
             }
         }, z));
     }

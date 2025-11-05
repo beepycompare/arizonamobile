@@ -5,7 +5,7 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
-import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
+import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SuspendAnimation.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)

@@ -2,38 +2,58 @@ package com.google.android.gms.common;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzr implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        boolean z = false;
-        int i = 0;
-        String str = null;
-        int i2 = 0;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            int fieldId = SafeParcelReader.getFieldId(readHeader);
-            if (fieldId == 1) {
-                z = SafeParcelReader.readBoolean(parcel, readHeader);
-            } else if (fieldId == 2) {
-                str = SafeParcelReader.createString(parcel, readHeader);
-            } else if (fieldId == 3) {
-                i2 = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 4) {
-                i = SafeParcelReader.readInt(parcel, readHeader);
-            } else {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzq(z, str, i2, i);
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import javax.annotation.Nullable;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzr extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zzr> CREATOR = new zzs();
+    private final boolean zza;
+    @Nullable
+    private final String zzb;
+    private final int zzc;
+    private final int zzd;
+    private final long zze;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzr(boolean z, String str, int i, int i2, long j) {
+        this.zza = z;
+        this.zzb = str;
+        this.zzc = zzz.zza(i) - 1;
+        this.zzd = zzc.zza(i2) - 1;
+        this.zze = j;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new zzq[i];
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeBoolean(parcel, 1, this.zza);
+        SafeParcelWriter.writeString(parcel, 2, this.zzb, false);
+        SafeParcelWriter.writeInt(parcel, 3, this.zzc);
+        SafeParcelWriter.writeInt(parcel, 4, this.zzd);
+        SafeParcelWriter.writeLong(parcel, 5, this.zze);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public final boolean zza() {
+        return this.zza;
+    }
+
+    @Nullable
+    public final String zzb() {
+        return this.zzb;
+    }
+
+    public final long zzc() {
+        return this.zze;
+    }
+
+    public final int zzd() {
+        return zzz.zza(this.zzc);
+    }
+
+    public final int zze() {
+        return zzc.zza(this.zzd);
     }
 }

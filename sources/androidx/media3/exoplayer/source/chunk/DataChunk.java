@@ -8,7 +8,7 @@ import androidx.media3.datasource.DataSourceUtil;
 import androidx.media3.datasource.DataSpec;
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class DataChunk extends Chunk {
     private static final int READ_GRANULARITY = 16384;
     private byte[] data;

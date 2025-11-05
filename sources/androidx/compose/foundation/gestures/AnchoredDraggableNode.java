@@ -224,7 +224,7 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
         if (this.orientation != Orientation.Vertical) {
             f = 0.0f;
         }
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -240,7 +240,7 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toFloat-TH1AsA0  reason: not valid java name */
     public final float m444toFloatTH1AsA0(long j) {
-        return this.orientation == Orientation.Vertical ? Velocity.m7503getYimpl(j) : Velocity.m7502getXimpl(j);
+        return this.orientation == Orientation.Vertical ? Velocity.m8234getYimpl(j) : Velocity.m8233getXimpl(j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -252,12 +252,12 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-AH228Gc  reason: not valid java name */
     public final long m442reverseIfNeededAH228Gc(long j) {
-        return Velocity.m7508timesadjELrA(j, isReverseDirection() ? -1.0f : 1.0f);
+        return Velocity.m8239timesadjELrA(j, isReverseDirection() ? -1.0f : 1.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-MK-Hz9U  reason: not valid java name */
     public final long m443reverseIfNeededMKHz9U(long j) {
-        return Offset.m4312timestuRUvjQ(j, isReverseDirection() ? -1.0f : 1.0f);
+        return Offset.m5042timestuRUvjQ(j, isReverseDirection() ? -1.0f : 1.0f);
     }
 }

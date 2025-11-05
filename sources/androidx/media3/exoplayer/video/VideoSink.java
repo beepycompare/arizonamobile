@@ -14,7 +14,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface VideoSink {
     public static final int INPUT_TYPE_BITMAP = 2;
     public static final int INPUT_TYPE_SURFACE = 1;
@@ -25,18 +25,18 @@ public interface VideoSink {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface FirstFrameReleaseInstruction {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface InputType {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         public static final Listener NO_OP = new Listener() { // from class: androidx.media3.exoplayer.video.VideoSink.Listener.1
         };
@@ -57,7 +57,7 @@ public interface VideoSink {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface VideoFrameHandler {
         void render(long j);
 
@@ -116,7 +116,7 @@ public interface VideoSink {
 
     void stopRendering();
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class VideoSinkException extends Exception {
         public final Format format;
 

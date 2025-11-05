@@ -176,11 +176,11 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
                 if (parentLayoutCoordinates == null || !parentLayoutCoordinates.isAttached()) {
                     parentLayoutCoordinates = null;
                 }
-                return Boolean.valueOf((parentLayoutCoordinates == null || PopupLayout.this.m7519getPopupContentSizebOM6tXw() == null) ? false : true);
+                return Boolean.valueOf((parentLayoutCoordinates == null || PopupLayout.this.m8250getPopupContentSizebOM6tXw() == null) ? false : true);
             }
         });
-        float m7264constructorimpl = Dp.m7264constructorimpl(8);
-        this.maxSupportedElevation = m7264constructorimpl;
+        float m7995constructorimpl = Dp.m7995constructorimpl(8);
+        this.maxSupportedElevation = m7995constructorimpl;
         this.previousWindowVisibleFrame = new Rect();
         this.snapshotStateObserver = new SnapshotStateObserver(new PopupLayout$snapshotStateObserver$1(this));
         setId(16908290);
@@ -190,7 +190,7 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
         ViewTreeSavedStateRegistryOwner.set(popupLayout, ViewTreeSavedStateRegistryOwner.get(view));
         setTag(R.id.compose_view_saveable_id_tag, "Popup:" + uuid);
         setClipChildren(false);
-        setElevation(density.mo429toPx0680j_4(m7264constructorimpl));
+        setElevation(density.mo429toPx0680j_4(m7995constructorimpl));
         setOutlineProvider(new ViewOutlineProvider() { // from class: androidx.compose.ui.window.PopupLayout.2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view2, Outline outline) {
@@ -198,7 +198,7 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
                 outline.setAlpha(0.0f);
             }
         });
-        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$AndroidPopup_androidKt.INSTANCE.m7518getLambda$1131826196$ui_release(), null, 2, null);
+        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$AndroidPopup_androidKt.INSTANCE.m8249getLambda$1131826196$ui_release(), null, 2, null);
         this.content$delegate = mutableStateOf$default3;
         this.locationOnScreen = new int[2];
     }
@@ -224,12 +224,12 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
     }
 
     /* renamed from: getPopupContentSize-bOM6tXw  reason: not valid java name */
-    public final IntSize m7519getPopupContentSizebOM6tXw() {
+    public final IntSize m8250getPopupContentSizebOM6tXw() {
         return (IntSize) this.popupContentSize$delegate.getValue();
     }
 
     /* renamed from: setPopupContentSize-fhxjrPA  reason: not valid java name */
-    public final void m7520setPopupContentSizefhxjrPA(IntSize intSize) {
+    public final void m8251setPopupContentSizefhxjrPA(IntSize intSize) {
         this.popupContentSize$delegate.setValue(intSize);
     }
 
@@ -445,28 +445,28 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
             if (parentLayoutCoordinates == null) {
                 return;
             }
-            long mo5975getSizeYbymL2g = parentLayoutCoordinates.mo5975getSizeYbymL2g();
+            long mo6705getSizeYbymL2g = parentLayoutCoordinates.mo6705getSizeYbymL2g();
             long positionInWindow = LayoutCoordinatesKt.positionInWindow(parentLayoutCoordinates);
-            IntRect m7425IntRectVbeCjmY = IntRectKt.m7425IntRectVbeCjmY(IntOffset.m7386constructorimpl((Math.round(Float.intBitsToFloat((int) (positionInWindow >> 32))) << 32) | (4294967295L & Math.round(Float.intBitsToFloat((int) (positionInWindow & 4294967295L))))), mo5975getSizeYbymL2g);
-            if (Intrinsics.areEqual(m7425IntRectVbeCjmY, this.parentBounds)) {
+            IntRect m8156IntRectVbeCjmY = IntRectKt.m8156IntRectVbeCjmY(IntOffset.m8117constructorimpl((Math.round(Float.intBitsToFloat((int) (positionInWindow >> 32))) << 32) | (4294967295L & Math.round(Float.intBitsToFloat((int) (positionInWindow & 4294967295L))))), mo6705getSizeYbymL2g);
+            if (Intrinsics.areEqual(m8156IntRectVbeCjmY, this.parentBounds)) {
                 return;
             }
-            this.parentBounds = m7425IntRectVbeCjmY;
+            this.parentBounds = m8156IntRectVbeCjmY;
             updatePosition();
         }
     }
 
     public final void updatePosition() {
-        IntSize m7519getPopupContentSizebOM6tXw;
+        IntSize m8250getPopupContentSizebOM6tXw;
         final IntRect intRect = this.parentBounds;
-        if (intRect == null || (m7519getPopupContentSizebOM6tXw = m7519getPopupContentSizebOM6tXw()) == null) {
+        if (intRect == null || (m8250getPopupContentSizebOM6tXw = m8250getPopupContentSizebOM6tXw()) == null) {
             return;
         }
-        final long m7439unboximpl = m7519getPopupContentSizebOM6tXw.m7439unboximpl();
+        final long m8170unboximpl = m8250getPopupContentSizebOM6tXw.m8170unboximpl();
         IntRect visibleDisplayBounds = getVisibleDisplayBounds();
-        final long m7430constructorimpl = IntSize.m7430constructorimpl((visibleDisplayBounds.getWidth() << 32) | (visibleDisplayBounds.getHeight() & 4294967295L));
+        final long m8161constructorimpl = IntSize.m8161constructorimpl((visibleDisplayBounds.getWidth() << 32) | (visibleDisplayBounds.getHeight() & 4294967295L));
         final Ref.LongRef longRef = new Ref.LongRef();
-        longRef.element = IntOffset.Companion.m7403getZeronOccac();
+        longRef.element = IntOffset.Companion.m8134getZeronOccac();
         this.snapshotStateObserver.observeReads(this, onCommitAffectingPopupPosition, new Function0<Unit>() { // from class: androidx.compose.ui.window.PopupLayout$updatePosition$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -482,13 +482,13 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                Ref.LongRef.this.element = this.getPositionProvider().mo393calculatePositionllwVHH4(intRect, m7430constructorimpl, this.getParentLayoutDirection(), m7439unboximpl);
+                Ref.LongRef.this.element = this.getPositionProvider().mo393calculatePositionllwVHH4(intRect, m8161constructorimpl, this.getParentLayoutDirection(), m8170unboximpl);
             }
         });
-        this.params.x = IntOffset.m7392getXimpl(longRef.element);
-        this.params.y = IntOffset.m7393getYimpl(longRef.element);
+        this.params.x = IntOffset.m8123getXimpl(longRef.element);
+        this.params.y = IntOffset.m8124getYimpl(longRef.element);
         if (this.properties.getExcludeFromSystemGesture()) {
-            this.popupLayoutHelper.setGestureExclusionRects(this, (int) (m7430constructorimpl >> 32), (int) (m7430constructorimpl & 4294967295L));
+            this.popupLayoutHelper.setGestureExclusionRects(this, (int) (m8161constructorimpl >> 32), (int) (m8161constructorimpl & 4294967295L));
         }
         this.popupLayoutHelper.updateViewLayout(this.windowManager, this, this.params);
     }

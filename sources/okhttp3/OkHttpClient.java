@@ -38,7 +38,7 @@ import okhttp3.internal.tls.CertificateChainCleaner;
 import okhttp3.internal.tls.OkHostnameVerifier;
 import okhttp3.internal.ws.RealWebSocket;
 /* compiled from: OkHttpClient.kt */
-@Metadata(d1 = {"\u0000ú\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u001e\b\u0016\u0018\u0000 \u0083\u00012\u00020\u00012\u00020\u0002:\u0004\u0082\u0001\u0083\u0001B\u0011\b\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006B\t\b\u0016¢\u0006\u0004\b\u0005\u0010\u0007J\u000e\u0010Y\u001a\u00020Z2\u0006\u0010[\u001a\u00020\\J\b\u0010]\u001a\u00020^H\u0002J\u0010\u0010_\u001a\u00020`2\u0006\u0010a\u001a\u00020bH\u0016J\u0018\u0010c\u001a\u00020d2\u0006\u0010a\u001a\u00020b2\u0006\u0010e\u001a\u00020fH\u0016J\b\u0010g\u001a\u00020\u0004H\u0016J\r\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0002\bhJ\r\u0010V\u001a\u00020WH\u0007¢\u0006\u0002\biJ\u0013\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fH\u0007¢\u0006\u0002\bjJ\u0013\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\r0\fH\u0007¢\u0006\u0002\bkJ\r\u0010\u0010\u001a\u00020\u0011H\u0007¢\u0006\u0002\blJ\r\u0010\u0013\u001a\u00020\u0014H\u0007¢\u0006\u0002\bmJ\r\u0010\u0017\u001a\u00020\u0018H\u0007¢\u0006\u0002\bnJ\r\u0010\u001a\u001a\u00020\u0014H\u0007¢\u0006\u0002\boJ\r\u0010\u001b\u001a\u00020\u0014H\u0007¢\u0006\u0002\bpJ\r\u0010\u001c\u001a\u00020\u001dH\u0007¢\u0006\u0002\bqJ\u000f\u0010\u001f\u001a\u0004\u0018\u00010 H\u0007¢\u0006\u0002\brJ\r\u0010\"\u001a\u00020#H\u0007¢\u0006\u0002\bsJ\u000f\u0010%\u001a\u0004\u0018\u00010&H\u0007¢\u0006\u0002\btJ\r\u0010(\u001a\u00020)H\u0007¢\u0006\u0002\buJ\r\u0010+\u001a\u00020\u0018H\u0007¢\u0006\u0002\bvJ\r\u0010,\u001a\u00020-H\u0007¢\u0006\u0002\bwJ\r\u00101\u001a\u000200H\u0007¢\u0006\u0002\bxJ\u0013\u00106\u001a\b\u0012\u0004\u0012\u0002070\fH\u0007¢\u0006\u0002\byJ\u0013\u00108\u001a\b\u0012\u0004\u0012\u0002090\fH\u0007¢\u0006\u0002\bzJ\r\u0010:\u001a\u00020;H\u0007¢\u0006\u0002\b{J\r\u0010=\u001a\u00020>H\u0007¢\u0006\u0002\b|J\r\u0010C\u001a\u00020DH\u0007¢\u0006\u0002\b}J\r\u0010F\u001a\u00020DH\u0007¢\u0006\u0002\b~J\r\u0010G\u001a\u00020DH\u0007¢\u0006\u0002\b\u007fJ\u000e\u0010H\u001a\u00020DH\u0007¢\u0006\u0003\b\u0080\u0001J\u000e\u0010I\u001a\u00020DH\u0007¢\u0006\u0003\b\u0081\u0001R\u0013\u0010\b\u001a\u00020\t8G¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\nR\u0019\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f8G¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u000eR\u0019\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\r0\f8G¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0013\u0010\u0010\u001a\u00020\u00118G¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0012R\u0013\u0010\u0013\u001a\u00020\u00148G¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0015R\u0013\u0010\u0016\u001a\u00020\u00148G¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0015R\u0013\u0010\u0017\u001a\u00020\u00188G¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0019R\u0013\u0010\u001a\u001a\u00020\u00148G¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0015R\u0013\u0010\u001b\u001a\u00020\u00148G¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0015R\u0013\u0010\u001c\u001a\u00020\u001d8G¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001eR\u0015\u0010\u001f\u001a\u0004\u0018\u00010 8G¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010!R\u0013\u0010\"\u001a\u00020#8G¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010$R\u0015\u0010%\u001a\u0004\u0018\u00010&8G¢\u0006\b\n\u0000\u001a\u0004\b%\u0010'R\u0013\u0010(\u001a\u00020)8G¢\u0006\b\n\u0000\u001a\u0004\b(\u0010*R\u0013\u0010+\u001a\u00020\u00188G¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0019R\u0013\u0010,\u001a\u00020-8G¢\u0006\b\n\u0000\u001a\u0004\b,\u0010.R\u0010\u0010/\u001a\u0004\u0018\u000100X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00101\u001a\u0002008G¢\u0006\u0006\u001a\u0004\b1\u00102R\u0015\u00103\u001a\u0004\u0018\u0001048G¢\u0006\b\n\u0000\u001a\u0004\b3\u00105R\u0019\u00106\u001a\b\u0012\u0004\u0012\u0002070\f8G¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u000eR\u0019\u00108\u001a\b\u0012\u0004\u0012\u0002090\f8G¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\u000eR\u0013\u0010:\u001a\u00020;8G¢\u0006\b\n\u0000\u001a\u0004\b:\u0010<R\u0013\u0010=\u001a\u00020>8G¢\u0006\b\n\u0000\u001a\u0004\b=\u0010?R\u0015\u0010@\u001a\u0004\u0018\u00010A8G¢\u0006\b\n\u0000\u001a\u0004\b@\u0010BR\u0013\u0010C\u001a\u00020D8G¢\u0006\b\n\u0000\u001a\u0004\bC\u0010ER\u0013\u0010F\u001a\u00020D8G¢\u0006\b\n\u0000\u001a\u0004\bF\u0010ER\u0013\u0010G\u001a\u00020D8G¢\u0006\b\n\u0000\u001a\u0004\bG\u0010ER\u0013\u0010H\u001a\u00020D8G¢\u0006\b\n\u0000\u001a\u0004\bH\u0010ER\u0013\u0010I\u001a\u00020D8G¢\u0006\b\n\u0000\u001a\u0004\bI\u0010ER\u0013\u0010J\u001a\u00020D8G¢\u0006\b\n\u0000\u001a\u0004\bJ\u0010ER\u0013\u0010K\u001a\u00020L8G¢\u0006\b\n\u0000\u001a\u0004\bK\u0010MR\u0014\u0010N\u001a\u00020OX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bP\u0010QR\u0014\u0010R\u001a\u00020SX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bT\u0010UR\u0013\u0010V\u001a\u00020W8G¢\u0006\b\n\u0000\u001a\u0004\bV\u0010X¨\u0006\u0084\u0001"}, d2 = {"Lokhttp3/OkHttpClient;", "Lokhttp3/Call$Factory;", "Lokhttp3/WebSocket$Factory;", "builder", "Lokhttp3/OkHttpClient$Builder;", "<init>", "(Lokhttp3/OkHttpClient$Builder;)V", "()V", "dispatcher", "Lokhttp3/Dispatcher;", "()Lokhttp3/Dispatcher;", "interceptors", "", "Lokhttp3/Interceptor;", "()Ljava/util/List;", "networkInterceptors", "eventListenerFactory", "Lokhttp3/EventListener$Factory;", "()Lokhttp3/EventListener$Factory;", "retryOnConnectionFailure", "", "()Z", "fastFallback", "authenticator", "Lokhttp3/Authenticator;", "()Lokhttp3/Authenticator;", "followRedirects", "followSslRedirects", "cookieJar", "Lokhttp3/CookieJar;", "()Lokhttp3/CookieJar;", "cache", "Lokhttp3/Cache;", "()Lokhttp3/Cache;", "dns", "Lokhttp3/Dns;", "()Lokhttp3/Dns;", "proxy", "Ljava/net/Proxy;", "()Ljava/net/Proxy;", "proxySelector", "Ljava/net/ProxySelector;", "()Ljava/net/ProxySelector;", "proxyAuthenticator", "socketFactory", "Ljavax/net/SocketFactory;", "()Ljavax/net/SocketFactory;", "sslSocketFactoryOrNull", "Ljavax/net/ssl/SSLSocketFactory;", "sslSocketFactory", "()Ljavax/net/ssl/SSLSocketFactory;", "x509TrustManager", "Ljavax/net/ssl/X509TrustManager;", "()Ljavax/net/ssl/X509TrustManager;", "connectionSpecs", "Lokhttp3/ConnectionSpec;", "protocols", "Lokhttp3/Protocol;", "hostnameVerifier", "Ljavax/net/ssl/HostnameVerifier;", "()Ljavax/net/ssl/HostnameVerifier;", "certificatePinner", "Lokhttp3/CertificatePinner;", "()Lokhttp3/CertificatePinner;", "certificateChainCleaner", "Lokhttp3/internal/tls/CertificateChainCleaner;", "()Lokhttp3/internal/tls/CertificateChainCleaner;", "callTimeoutMillis", "", "()I", "connectTimeoutMillis", "readTimeoutMillis", "writeTimeoutMillis", "pingIntervalMillis", "webSocketCloseTimeout", "minWebSocketMessageToCompress", "", "()J", "routeDatabase", "Lokhttp3/internal/connection/RouteDatabase;", "getRouteDatabase$okhttp", "()Lokhttp3/internal/connection/RouteDatabase;", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "getTaskRunner$okhttp", "()Lokhttp3/internal/concurrent/TaskRunner;", "connectionPool", "Lokhttp3/ConnectionPool;", "()Lokhttp3/ConnectionPool;", "address", "Lokhttp3/Address;", "url", "Lokhttp3/HttpUrl;", "verifyClientState", "", "newCall", "Lokhttp3/Call;", "request", "Lokhttp3/Request;", "newWebSocket", "Lokhttp3/WebSocket;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lokhttp3/WebSocketListener;", "newBuilder", "-deprecated_dispatcher", "-deprecated_connectionPool", "-deprecated_interceptors", "-deprecated_networkInterceptors", "-deprecated_eventListenerFactory", "-deprecated_retryOnConnectionFailure", "-deprecated_authenticator", "-deprecated_followRedirects", "-deprecated_followSslRedirects", "-deprecated_cookieJar", "-deprecated_cache", "-deprecated_dns", "-deprecated_proxy", "-deprecated_proxySelector", "-deprecated_proxyAuthenticator", "-deprecated_socketFactory", "-deprecated_sslSocketFactory", "-deprecated_connectionSpecs", "-deprecated_protocols", "-deprecated_hostnameVerifier", "-deprecated_certificatePinner", "-deprecated_callTimeoutMillis", "-deprecated_connectTimeoutMillis", "-deprecated_readTimeoutMillis", "-deprecated_writeTimeoutMillis", "-deprecated_pingIntervalMillis", "Builder", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ú\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u001e\b\u0016\u0018\u0000 \u0083\u00012\u00020\u00012\u00020\u0002:\u0004\u0082\u0001\u0083\u0001B\u0011\b\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006B\t\b\u0016¢\u0006\u0004\b\u0005\u0010\u0007J\u000e\u0010Y\u001a\u00020Z2\u0006\u0010[\u001a\u00020\\J\b\u0010]\u001a\u00020^H\u0002J\u0010\u0010_\u001a\u00020`2\u0006\u0010a\u001a\u00020bH\u0016J\u0018\u0010c\u001a\u00020d2\u0006\u0010a\u001a\u00020b2\u0006\u0010e\u001a\u00020fH\u0016J\b\u0010g\u001a\u00020\u0004H\u0016J\r\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0002\bhJ\r\u0010V\u001a\u00020WH\u0007¢\u0006\u0002\biJ\u0013\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fH\u0007¢\u0006\u0002\bjJ\u0013\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\r0\fH\u0007¢\u0006\u0002\bkJ\r\u0010\u0010\u001a\u00020\u0011H\u0007¢\u0006\u0002\blJ\r\u0010\u0013\u001a\u00020\u0014H\u0007¢\u0006\u0002\bmJ\r\u0010\u0017\u001a\u00020\u0018H\u0007¢\u0006\u0002\bnJ\r\u0010\u001a\u001a\u00020\u0014H\u0007¢\u0006\u0002\boJ\r\u0010\u001b\u001a\u00020\u0014H\u0007¢\u0006\u0002\bpJ\r\u0010\u001c\u001a\u00020\u001dH\u0007¢\u0006\u0002\bqJ\u000f\u0010\u001f\u001a\u0004\u0018\u00010 H\u0007¢\u0006\u0002\brJ\r\u0010\"\u001a\u00020#H\u0007¢\u0006\u0002\bsJ\u000f\u0010%\u001a\u0004\u0018\u00010&H\u0007¢\u0006\u0002\btJ\r\u0010(\u001a\u00020)H\u0007¢\u0006\u0002\buJ\r\u0010+\u001a\u00020\u0018H\u0007¢\u0006\u0002\bvJ\r\u0010,\u001a\u00020-H\u0007¢\u0006\u0002\bwJ\r\u00101\u001a\u000200H\u0007¢\u0006\u0002\bxJ\u0013\u00106\u001a\b\u0012\u0004\u0012\u0002070\fH\u0007¢\u0006\u0002\byJ\u0013\u00108\u001a\b\u0012\u0004\u0012\u0002090\fH\u0007¢\u0006\u0002\bzJ\r\u0010:\u001a\u00020;H\u0007¢\u0006\u0002\b{J\r\u0010=\u001a\u00020>H\u0007¢\u0006\u0002\b|J\r\u0010C\u001a\u00020DH\u0007¢\u0006\u0002\b}J\r\u0010F\u001a\u00020DH\u0007¢\u0006\u0002\b~J\r\u0010G\u001a\u00020DH\u0007¢\u0006\u0002\b\u007fJ\u000e\u0010H\u001a\u00020DH\u0007¢\u0006\u0003\b\u0080\u0001J\u000e\u0010I\u001a\u00020DH\u0007¢\u0006\u0003\b\u0081\u0001R\u0013\u0010\b\u001a\u00020\t8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\nR\u0019\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u000eR\u0019\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\r0\f8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0013\u0010\u0010\u001a\u00020\u00118\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0012R\u0013\u0010\u0013\u001a\u00020\u00148\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0015R\u0013\u0010\u0016\u001a\u00020\u00148\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0015R\u0013\u0010\u0017\u001a\u00020\u00188\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0019R\u0013\u0010\u001a\u001a\u00020\u00148\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0015R\u0013\u0010\u001b\u001a\u00020\u00148\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0015R\u0013\u0010\u001c\u001a\u00020\u001d8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001eR\u0015\u0010\u001f\u001a\u0004\u0018\u00010 8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010!R\u0013\u0010\"\u001a\u00020#8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010$R\u0015\u0010%\u001a\u0004\u0018\u00010&8\u0007¢\u0006\b\n\u0000\u001a\u0004\b%\u0010'R\u0013\u0010(\u001a\u00020)8\u0007¢\u0006\b\n\u0000\u001a\u0004\b(\u0010*R\u0013\u0010+\u001a\u00020\u00188\u0007¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0019R\u0013\u0010,\u001a\u00020-8\u0007¢\u0006\b\n\u0000\u001a\u0004\b,\u0010.R\u0010\u0010/\u001a\u0004\u0018\u000100X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00101\u001a\u0002008G¢\u0006\u0006\u001a\u0004\b1\u00102R\u0015\u00103\u001a\u0004\u0018\u0001048\u0007¢\u0006\b\n\u0000\u001a\u0004\b3\u00105R\u0019\u00106\u001a\b\u0012\u0004\u0012\u0002070\f8\u0007¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u000eR\u0019\u00108\u001a\b\u0012\u0004\u0012\u0002090\f8\u0007¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\u000eR\u0013\u0010:\u001a\u00020;8\u0007¢\u0006\b\n\u0000\u001a\u0004\b:\u0010<R\u0013\u0010=\u001a\u00020>8\u0007¢\u0006\b\n\u0000\u001a\u0004\b=\u0010?R\u0015\u0010@\u001a\u0004\u0018\u00010A8\u0007¢\u0006\b\n\u0000\u001a\u0004\b@\u0010BR\u0013\u0010C\u001a\u00020D8\u0007¢\u0006\b\n\u0000\u001a\u0004\bC\u0010ER\u0013\u0010F\u001a\u00020D8\u0007¢\u0006\b\n\u0000\u001a\u0004\bF\u0010ER\u0013\u0010G\u001a\u00020D8\u0007¢\u0006\b\n\u0000\u001a\u0004\bG\u0010ER\u0013\u0010H\u001a\u00020D8\u0007¢\u0006\b\n\u0000\u001a\u0004\bH\u0010ER\u0013\u0010I\u001a\u00020D8\u0007¢\u0006\b\n\u0000\u001a\u0004\bI\u0010ER\u0013\u0010J\u001a\u00020D8\u0007¢\u0006\b\n\u0000\u001a\u0004\bJ\u0010ER\u0013\u0010K\u001a\u00020L8\u0007¢\u0006\b\n\u0000\u001a\u0004\bK\u0010MR\u0014\u0010N\u001a\u00020OX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bP\u0010QR\u0014\u0010R\u001a\u00020SX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bT\u0010UR\u0013\u0010V\u001a\u00020W8\u0007¢\u0006\b\n\u0000\u001a\u0004\bV\u0010X¨\u0006\u0084\u0001"}, d2 = {"Lokhttp3/OkHttpClient;", "Lokhttp3/Call$Factory;", "Lokhttp3/WebSocket$Factory;", "builder", "Lokhttp3/OkHttpClient$Builder;", "<init>", "(Lokhttp3/OkHttpClient$Builder;)V", "()V", "dispatcher", "Lokhttp3/Dispatcher;", "()Lokhttp3/Dispatcher;", "interceptors", "", "Lokhttp3/Interceptor;", "()Ljava/util/List;", "networkInterceptors", "eventListenerFactory", "Lokhttp3/EventListener$Factory;", "()Lokhttp3/EventListener$Factory;", "retryOnConnectionFailure", "", "()Z", "fastFallback", "authenticator", "Lokhttp3/Authenticator;", "()Lokhttp3/Authenticator;", "followRedirects", "followSslRedirects", "cookieJar", "Lokhttp3/CookieJar;", "()Lokhttp3/CookieJar;", "cache", "Lokhttp3/Cache;", "()Lokhttp3/Cache;", "dns", "Lokhttp3/Dns;", "()Lokhttp3/Dns;", "proxy", "Ljava/net/Proxy;", "()Ljava/net/Proxy;", "proxySelector", "Ljava/net/ProxySelector;", "()Ljava/net/ProxySelector;", "proxyAuthenticator", "socketFactory", "Ljavax/net/SocketFactory;", "()Ljavax/net/SocketFactory;", "sslSocketFactoryOrNull", "Ljavax/net/ssl/SSLSocketFactory;", "sslSocketFactory", "()Ljavax/net/ssl/SSLSocketFactory;", "x509TrustManager", "Ljavax/net/ssl/X509TrustManager;", "()Ljavax/net/ssl/X509TrustManager;", "connectionSpecs", "Lokhttp3/ConnectionSpec;", "protocols", "Lokhttp3/Protocol;", "hostnameVerifier", "Ljavax/net/ssl/HostnameVerifier;", "()Ljavax/net/ssl/HostnameVerifier;", "certificatePinner", "Lokhttp3/CertificatePinner;", "()Lokhttp3/CertificatePinner;", "certificateChainCleaner", "Lokhttp3/internal/tls/CertificateChainCleaner;", "()Lokhttp3/internal/tls/CertificateChainCleaner;", "callTimeoutMillis", "", "()I", "connectTimeoutMillis", "readTimeoutMillis", "writeTimeoutMillis", "pingIntervalMillis", "webSocketCloseTimeout", "minWebSocketMessageToCompress", "", "()J", "routeDatabase", "Lokhttp3/internal/connection/RouteDatabase;", "getRouteDatabase$okhttp", "()Lokhttp3/internal/connection/RouteDatabase;", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "getTaskRunner$okhttp", "()Lokhttp3/internal/concurrent/TaskRunner;", "connectionPool", "Lokhttp3/ConnectionPool;", "()Lokhttp3/ConnectionPool;", "address", "Lokhttp3/Address;", "url", "Lokhttp3/HttpUrl;", "verifyClientState", "", "newCall", "Lokhttp3/Call;", "request", "Lokhttp3/Request;", "newWebSocket", "Lokhttp3/WebSocket;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lokhttp3/WebSocketListener;", "newBuilder", "-deprecated_dispatcher", "-deprecated_connectionPool", "-deprecated_interceptors", "-deprecated_networkInterceptors", "-deprecated_eventListenerFactory", "-deprecated_retryOnConnectionFailure", "-deprecated_authenticator", "-deprecated_followRedirects", "-deprecated_followSslRedirects", "-deprecated_cookieJar", "-deprecated_cache", "-deprecated_dns", "-deprecated_proxy", "-deprecated_proxySelector", "-deprecated_proxyAuthenticator", "-deprecated_socketFactory", "-deprecated_sslSocketFactory", "-deprecated_connectionSpecs", "-deprecated_protocols", "-deprecated_hostnameVerifier", "-deprecated_certificatePinner", "-deprecated_callTimeoutMillis", "-deprecated_connectTimeoutMillis", "-deprecated_readTimeoutMillis", "-deprecated_writeTimeoutMillis", "-deprecated_pingIntervalMillis", "Builder", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public class OkHttpClient implements Call.Factory, WebSocket.Factory {
     private final Authenticator authenticator;
@@ -80,16 +80,13 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
 
     public OkHttpClient(Builder builder) {
         NullProxySelector proxySelector$okhttp;
-        List<ConnectionSpec> list;
         Intrinsics.checkNotNullParameter(builder, "builder");
         this.dispatcher = builder.getDispatcher$okhttp();
         this.interceptors = _UtilJvmKt.toImmutableList(builder.getInterceptors$okhttp());
         this.networkInterceptors = _UtilJvmKt.toImmutableList(builder.getNetworkInterceptors$okhttp());
         this.eventListenerFactory = builder.getEventListenerFactory$okhttp();
-        boolean retryOnConnectionFailure$okhttp = builder.getRetryOnConnectionFailure$okhttp();
-        this.retryOnConnectionFailure = retryOnConnectionFailure$okhttp;
-        boolean fastFallback$okhttp = builder.getFastFallback$okhttp();
-        this.fastFallback = fastFallback$okhttp;
+        this.retryOnConnectionFailure = builder.getRetryOnConnectionFailure$okhttp();
+        this.fastFallback = builder.getFastFallback$okhttp();
         this.authenticator = builder.getAuthenticator$okhttp();
         this.followRedirects = builder.getFollowRedirects$okhttp();
         this.followSslRedirects = builder.getFollowSslRedirects$okhttp();
@@ -113,34 +110,25 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         this.protocols = builder.getProtocols$okhttp();
         this.hostnameVerifier = builder.getHostnameVerifier$okhttp();
         this.callTimeoutMillis = builder.getCallTimeout$okhttp();
-        int connectTimeout$okhttp = builder.getConnectTimeout$okhttp();
-        this.connectTimeoutMillis = connectTimeout$okhttp;
-        int readTimeout$okhttp = builder.getReadTimeout$okhttp();
-        this.readTimeoutMillis = readTimeout$okhttp;
-        int writeTimeout$okhttp = builder.getWriteTimeout$okhttp();
-        this.writeTimeoutMillis = writeTimeout$okhttp;
-        int pingInterval$okhttp = builder.getPingInterval$okhttp();
-        this.pingIntervalMillis = pingInterval$okhttp;
+        this.connectTimeoutMillis = builder.getConnectTimeout$okhttp();
+        this.readTimeoutMillis = builder.getReadTimeout$okhttp();
+        this.writeTimeoutMillis = builder.getWriteTimeout$okhttp();
+        this.pingIntervalMillis = builder.getPingInterval$okhttp();
         this.webSocketCloseTimeout = builder.getWebSocketCloseTimeout$okhttp();
         this.minWebSocketMessageToCompress = builder.getMinWebSocketMessageToCompress$okhttp();
         RouteDatabase routeDatabase$okhttp = builder.getRouteDatabase$okhttp();
-        routeDatabase$okhttp = routeDatabase$okhttp == null ? new RouteDatabase() : routeDatabase$okhttp;
-        this.routeDatabase = routeDatabase$okhttp;
+        this.routeDatabase = routeDatabase$okhttp == null ? new RouteDatabase() : routeDatabase$okhttp;
         TaskRunner taskRunner$okhttp = builder.getTaskRunner$okhttp();
         this.taskRunner = taskRunner$okhttp == null ? TaskRunner.INSTANCE : taskRunner$okhttp;
         ConnectionPool connectionPool$okhttp = builder.getConnectionPool$okhttp();
         if (connectionPool$okhttp == null) {
-            list = connectionSpecs$okhttp;
-            ConnectionPool connectionPool = new ConnectionPool(0, 0L, null, null, null, readTimeout$okhttp, writeTimeout$okhttp, connectTimeout$okhttp, readTimeout$okhttp, pingInterval$okhttp, retryOnConnectionFailure$okhttp, fastFallback$okhttp, routeDatabase$okhttp, 31, null);
-            builder.setConnectionPool$okhttp(connectionPool);
-            connectionPool$okhttp = connectionPool;
-        } else {
-            list = connectionSpecs$okhttp;
+            connectionPool$okhttp = new ConnectionPool();
+            builder.setConnectionPool$okhttp(connectionPool$okhttp);
         }
         this.connectionPool = connectionPool$okhttp;
-        List<ConnectionSpec> list2 = list;
-        if (!(list2 instanceof Collection) || !list2.isEmpty()) {
-            for (ConnectionSpec connectionSpec : list2) {
+        List<ConnectionSpec> list = connectionSpecs$okhttp;
+        if (!(list instanceof Collection) || !list.isEmpty()) {
+            for (ConnectionSpec connectionSpec : list) {
                 if (connectionSpec.isTls()) {
                     if (builder.getSslSocketFactoryOrNull$okhttp() != null) {
                         this.sslSocketFactoryOrNull = builder.getSslSocketFactoryOrNull$okhttp();
@@ -150,22 +138,14 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
                         X509TrustManager x509TrustManagerOrNull$okhttp = builder.getX509TrustManagerOrNull$okhttp();
                         Intrinsics.checkNotNull(x509TrustManagerOrNull$okhttp);
                         this.x509TrustManager = x509TrustManagerOrNull$okhttp;
-                        CertificatePinner certificatePinner$okhttp = builder.getCertificatePinner$okhttp();
-                        Intrinsics.checkNotNull(certificateChainCleaner$okhttp);
-                        this.certificatePinner = certificatePinner$okhttp.withCertificateChainCleaner$okhttp(certificateChainCleaner$okhttp);
+                        this.certificatePinner = builder.getCertificatePinner$okhttp().withCertificateChainCleaner$okhttp(certificateChainCleaner$okhttp);
                     } else {
                         X509TrustManager platformTrustManager = Platform.Companion.get().platformTrustManager();
                         this.x509TrustManager = platformTrustManager;
-                        Platform platform = Platform.Companion.get();
-                        Intrinsics.checkNotNull(platformTrustManager);
-                        this.sslSocketFactoryOrNull = platform.newSslSocketFactory(platformTrustManager);
-                        CertificateChainCleaner.Companion companion = CertificateChainCleaner.Companion;
-                        Intrinsics.checkNotNull(platformTrustManager);
-                        CertificateChainCleaner certificateChainCleaner = companion.get(platformTrustManager);
+                        this.sslSocketFactoryOrNull = Platform.Companion.get().newSslSocketFactory(platformTrustManager);
+                        CertificateChainCleaner certificateChainCleaner = CertificateChainCleaner.Companion.get(platformTrustManager);
                         this.certificateChainCleaner = certificateChainCleaner;
-                        CertificatePinner certificatePinner$okhttp2 = builder.getCertificatePinner$okhttp();
-                        Intrinsics.checkNotNull(certificateChainCleaner);
-                        this.certificatePinner = certificatePinner$okhttp2.withCertificateChainCleaner$okhttp(certificateChainCleaner);
+                        this.certificatePinner = builder.getCertificatePinner$okhttp().withCertificateChainCleaner$okhttp(certificateChainCleaner);
                     }
                     verifyClientState();
                 }
@@ -399,157 +379,157 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "dispatcher", imports = {}))
     /* renamed from: -deprecated_dispatcher  reason: not valid java name */
-    public final Dispatcher m10962deprecated_dispatcher() {
+    public final Dispatcher m11703deprecated_dispatcher() {
         return this.dispatcher;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "connectionPool", imports = {}))
     /* renamed from: -deprecated_connectionPool  reason: not valid java name */
-    public final ConnectionPool m10959deprecated_connectionPool() {
+    public final ConnectionPool m11700deprecated_connectionPool() {
         return this.connectionPool;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "interceptors", imports = {}))
     /* renamed from: -deprecated_interceptors  reason: not valid java name */
-    public final List<Interceptor> m10968deprecated_interceptors() {
+    public final List<Interceptor> m11709deprecated_interceptors() {
         return this.interceptors;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "networkInterceptors", imports = {}))
     /* renamed from: -deprecated_networkInterceptors  reason: not valid java name */
-    public final List<Interceptor> m10969deprecated_networkInterceptors() {
+    public final List<Interceptor> m11710deprecated_networkInterceptors() {
         return this.networkInterceptors;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "eventListenerFactory", imports = {}))
     /* renamed from: -deprecated_eventListenerFactory  reason: not valid java name */
-    public final EventListener.Factory m10964deprecated_eventListenerFactory() {
+    public final EventListener.Factory m11705deprecated_eventListenerFactory() {
         return this.eventListenerFactory;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "retryOnConnectionFailure", imports = {}))
     /* renamed from: -deprecated_retryOnConnectionFailure  reason: not valid java name */
-    public final boolean m10976deprecated_retryOnConnectionFailure() {
+    public final boolean m11717deprecated_retryOnConnectionFailure() {
         return this.retryOnConnectionFailure;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "authenticator", imports = {}))
     /* renamed from: -deprecated_authenticator  reason: not valid java name */
-    public final Authenticator m10954deprecated_authenticator() {
+    public final Authenticator m11695deprecated_authenticator() {
         return this.authenticator;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "followRedirects", imports = {}))
     /* renamed from: -deprecated_followRedirects  reason: not valid java name */
-    public final boolean m10965deprecated_followRedirects() {
+    public final boolean m11706deprecated_followRedirects() {
         return this.followRedirects;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "followSslRedirects", imports = {}))
     /* renamed from: -deprecated_followSslRedirects  reason: not valid java name */
-    public final boolean m10966deprecated_followSslRedirects() {
+    public final boolean m11707deprecated_followSslRedirects() {
         return this.followSslRedirects;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cookieJar", imports = {}))
     /* renamed from: -deprecated_cookieJar  reason: not valid java name */
-    public final CookieJar m10961deprecated_cookieJar() {
+    public final CookieJar m11702deprecated_cookieJar() {
         return this.cookieJar;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cache", imports = {}))
     /* renamed from: -deprecated_cache  reason: not valid java name */
-    public final Cache m10955deprecated_cache() {
+    public final Cache m11696deprecated_cache() {
         return this.cache;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "dns", imports = {}))
     /* renamed from: -deprecated_dns  reason: not valid java name */
-    public final Dns m10963deprecated_dns() {
+    public final Dns m11704deprecated_dns() {
         return this.dns;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxy", imports = {}))
     /* renamed from: -deprecated_proxy  reason: not valid java name */
-    public final Proxy m10972deprecated_proxy() {
+    public final Proxy m11713deprecated_proxy() {
         return this.proxy;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxySelector", imports = {}))
     /* renamed from: -deprecated_proxySelector  reason: not valid java name */
-    public final ProxySelector m10974deprecated_proxySelector() {
+    public final ProxySelector m11715deprecated_proxySelector() {
         return this.proxySelector;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxyAuthenticator", imports = {}))
     /* renamed from: -deprecated_proxyAuthenticator  reason: not valid java name */
-    public final Authenticator m10973deprecated_proxyAuthenticator() {
+    public final Authenticator m11714deprecated_proxyAuthenticator() {
         return this.proxyAuthenticator;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "socketFactory", imports = {}))
     /* renamed from: -deprecated_socketFactory  reason: not valid java name */
-    public final SocketFactory m10977deprecated_socketFactory() {
+    public final SocketFactory m11718deprecated_socketFactory() {
         return this.socketFactory;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sslSocketFactory", imports = {}))
     /* renamed from: -deprecated_sslSocketFactory  reason: not valid java name */
-    public final SSLSocketFactory m10978deprecated_sslSocketFactory() {
+    public final SSLSocketFactory m11719deprecated_sslSocketFactory() {
         return sslSocketFactory();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "connectionSpecs", imports = {}))
     /* renamed from: -deprecated_connectionSpecs  reason: not valid java name */
-    public final List<ConnectionSpec> m10960deprecated_connectionSpecs() {
+    public final List<ConnectionSpec> m11701deprecated_connectionSpecs() {
         return this.connectionSpecs;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "protocols", imports = {}))
     /* renamed from: -deprecated_protocols  reason: not valid java name */
-    public final List<Protocol> m10971deprecated_protocols() {
+    public final List<Protocol> m11712deprecated_protocols() {
         return this.protocols;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "hostnameVerifier", imports = {}))
     /* renamed from: -deprecated_hostnameVerifier  reason: not valid java name */
-    public final HostnameVerifier m10967deprecated_hostnameVerifier() {
+    public final HostnameVerifier m11708deprecated_hostnameVerifier() {
         return this.hostnameVerifier;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "certificatePinner", imports = {}))
     /* renamed from: -deprecated_certificatePinner  reason: not valid java name */
-    public final CertificatePinner m10957deprecated_certificatePinner() {
+    public final CertificatePinner m11698deprecated_certificatePinner() {
         return this.certificatePinner;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "callTimeoutMillis", imports = {}))
     /* renamed from: -deprecated_callTimeoutMillis  reason: not valid java name */
-    public final int m10956deprecated_callTimeoutMillis() {
+    public final int m11697deprecated_callTimeoutMillis() {
         return this.callTimeoutMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "connectTimeoutMillis", imports = {}))
     /* renamed from: -deprecated_connectTimeoutMillis  reason: not valid java name */
-    public final int m10958deprecated_connectTimeoutMillis() {
+    public final int m11699deprecated_connectTimeoutMillis() {
         return this.connectTimeoutMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "readTimeoutMillis", imports = {}))
     /* renamed from: -deprecated_readTimeoutMillis  reason: not valid java name */
-    public final int m10975deprecated_readTimeoutMillis() {
+    public final int m11716deprecated_readTimeoutMillis() {
         return this.readTimeoutMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "writeTimeoutMillis", imports = {}))
     /* renamed from: -deprecated_writeTimeoutMillis  reason: not valid java name */
-    public final int m10979deprecated_writeTimeoutMillis() {
+    public final int m11720deprecated_writeTimeoutMillis() {
         return this.writeTimeoutMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "pingIntervalMillis", imports = {}))
     /* renamed from: -deprecated_pingIntervalMillis  reason: not valid java name */
-    public final int m10970deprecated_pingIntervalMillis() {
+    public final int m11711deprecated_pingIntervalMillis() {
         return this.pingIntervalMillis;
     }
 
@@ -947,7 +927,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: -addInterceptor  reason: not valid java name */
-        public final Builder m10980addInterceptor(final Function1<? super Interceptor.Chain, Response> block) {
+        public final Builder m11721addInterceptor(final Function1<? super Interceptor.Chain, Response> block) {
             Intrinsics.checkNotNullParameter(block, "block");
             return addInterceptor(new Interceptor() { // from class: okhttp3.OkHttpClient$Builder$addInterceptor$2
                 @Override // okhttp3.Interceptor
@@ -969,7 +949,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: -addNetworkInterceptor  reason: not valid java name */
-        public final Builder m10981addNetworkInterceptor(final Function1<? super Interceptor.Chain, Response> block) {
+        public final Builder m11722addNetworkInterceptor(final Function1<? super Interceptor.Chain, Response> block) {
             Intrinsics.checkNotNullParameter(block, "block");
             return addNetworkInterceptor(new Interceptor() { // from class: okhttp3.OkHttpClient$Builder$addNetworkInterceptor$2
                 @Override // okhttp3.Interceptor
@@ -1179,8 +1159,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: callTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10982callTimeoutLRDsOJo(long j) {
-            this.callTimeout = _UtilJvmKt.m11010checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m11723callTimeoutLRDsOJo(long j) {
+            this.callTimeout = _UtilJvmKt.m11753checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1197,8 +1177,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: connectTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10983connectTimeoutLRDsOJo(long j) {
-            this.connectTimeout = _UtilJvmKt.m11010checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m11724connectTimeoutLRDsOJo(long j) {
+            this.connectTimeout = _UtilJvmKt.m11753checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1215,8 +1195,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: readTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10985readTimeoutLRDsOJo(long j) {
-            this.readTimeout = _UtilJvmKt.m11010checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m11726readTimeoutLRDsOJo(long j) {
+            this.readTimeout = _UtilJvmKt.m11753checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1233,8 +1213,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: writeTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10987writeTimeoutLRDsOJo(long j) {
-            this.writeTimeout = _UtilJvmKt.m11010checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m11728writeTimeoutLRDsOJo(long j) {
+            this.writeTimeout = _UtilJvmKt.m11753checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1251,8 +1231,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: pingInterval-LRDsOJo  reason: not valid java name */
-        public final Builder m10984pingIntervalLRDsOJo(long j) {
-            this.pingInterval = _UtilJvmKt.m11010checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m11725pingIntervalLRDsOJo(long j) {
+            this.pingInterval = _UtilJvmKt.m11753checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1269,8 +1249,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: webSocketCloseTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10986webSocketCloseTimeoutLRDsOJo(long j) {
-            this.webSocketCloseTimeout = _UtilJvmKt.m11010checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m11727webSocketCloseTimeoutLRDsOJo(long j) {
+            this.webSocketCloseTimeout = _UtilJvmKt.m11753checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 

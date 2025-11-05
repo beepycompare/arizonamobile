@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.video;
 
 import androidx.media3.common.C;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class FixedFrameRateEstimator {
     public static final int CONSECUTIVE_MATCHING_FRAME_DURATIONS_FOR_SYNC = 15;
     static final long MAX_MATCHING_FRAME_DIFFERENCE_NS = 1000000;
@@ -68,7 +68,7 @@ final class FixedFrameRateEstimator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Matcher {
         private long firstFrameDurationNs;
         private long firstFramePresentationTimeNs;

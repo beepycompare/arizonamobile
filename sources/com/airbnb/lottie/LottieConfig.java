@@ -44,13 +44,7 @@ public class LottieConfig {
             if (this.cacheProvider != null) {
                 throw new IllegalStateException("There is already a cache provider!");
             }
-            this.cacheProvider = new LottieNetworkCacheProvider(this) { // from class: com.airbnb.lottie.LottieConfig.Builder.1
-                final /* synthetic */ Builder this$0;
-
-                {
-                    this.this$0 = this;
-                }
-
+            this.cacheProvider = new LottieNetworkCacheProvider() { // from class: com.airbnb.lottie.LottieConfig.Builder.1
                 @Override // com.airbnb.lottie.network.LottieNetworkCacheProvider
                 public File getCacheDir() {
                     if (!file.isDirectory()) {
@@ -66,13 +60,7 @@ public class LottieConfig {
             if (this.cacheProvider != null) {
                 throw new IllegalStateException("There is already a cache provider!");
             }
-            this.cacheProvider = new LottieNetworkCacheProvider(this) { // from class: com.airbnb.lottie.LottieConfig.Builder.2
-                final /* synthetic */ Builder this$0;
-
-                {
-                    this.this$0 = this;
-                }
-
+            this.cacheProvider = new LottieNetworkCacheProvider() { // from class: com.airbnb.lottie.LottieConfig.Builder.2
                 @Override // com.airbnb.lottie.network.LottieNetworkCacheProvider
                 public File getCacheDir() {
                     File cacheDir = lottieNetworkCacheProvider.getCacheDir();

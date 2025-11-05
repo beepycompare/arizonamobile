@@ -10,45 +10,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextUnitType {
     private final long type;
     public static final Companion Companion = new Companion(null);
-    private static final long Unspecified = m7484constructorimpl(0);
-    private static final long Sp = m7484constructorimpl(4294967296L);
-    private static final long Em = m7484constructorimpl(8589934592L);
+    private static final long Unspecified = m8215constructorimpl(0);
+    private static final long Sp = m8215constructorimpl(4294967296L);
+    private static final long Em = m8215constructorimpl(8589934592L);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextUnitType m7483boximpl(long j) {
+    public static final /* synthetic */ TextUnitType m8214boximpl(long j) {
         return new TextUnitType(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m7484constructorimpl(long j) {
+    public static long m8215constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7485equalsimpl(long j, Object obj) {
-        return (obj instanceof TextUnitType) && j == ((TextUnitType) obj).m7489unboximpl();
+    public static boolean m8216equalsimpl(long j, Object obj) {
+        return (obj instanceof TextUnitType) && j == ((TextUnitType) obj).m8220unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7486equalsimpl0(long j, long j2) {
+    public static final boolean m8217equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7487hashCodeimpl(long j) {
+    public static int m8218hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m7485equalsimpl(this.type, obj);
+        return m8216equalsimpl(this.type, obj);
     }
 
     public int hashCode() {
-        return m7487hashCodeimpl(this.type);
+        return m8218hashCodeimpl(this.type);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m7489unboximpl() {
+    public final /* synthetic */ long m8220unboximpl() {
         return this.type;
     }
 
@@ -57,12 +57,12 @@ public final class TextUnitType {
     }
 
     public String toString() {
-        return m7488toStringimpl(this.type);
+        return m8219toStringimpl(this.type);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7488toStringimpl(long j) {
-        return m7486equalsimpl0(j, Unspecified) ? "Unspecified" : m7486equalsimpl0(j, Sp) ? "Sp" : m7486equalsimpl0(j, Em) ? "Em" : "Invalid";
+    public static String m8219toStringimpl(long j) {
+        return m8217equalsimpl0(j, Unspecified) ? "Unspecified" : m8217equalsimpl0(j, Sp) ? "Sp" : m8217equalsimpl0(j, Em) ? "Em" : "Invalid";
     }
 
     /* compiled from: TextUnit.kt */
@@ -77,17 +77,17 @@ public final class TextUnitType {
         }
 
         /* renamed from: getUnspecified-UIouoOA  reason: not valid java name */
-        public final long m7492getUnspecifiedUIouoOA() {
+        public final long m8223getUnspecifiedUIouoOA() {
             return TextUnitType.Unspecified;
         }
 
         /* renamed from: getSp-UIouoOA  reason: not valid java name */
-        public final long m7491getSpUIouoOA() {
+        public final long m8222getSpUIouoOA() {
             return TextUnitType.Sp;
         }
 
         /* renamed from: getEm-UIouoOA  reason: not valid java name */
-        public final long m7490getEmUIouoOA() {
+        public final long m8221getEmUIouoOA() {
             return TextUnitType.Em;
         }
     }

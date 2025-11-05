@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ModuleInstallStatusUpdate extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ModuleInstallStatusUpdate> CREATOR = new zae();
     private final int zaa;
@@ -20,7 +20,7 @@ public class ModuleInstallStatusUpdate extends AbstractSafeParcelable {
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
     @Retention(RetentionPolicy.CLASS)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface InstallState {
         public static final int STATE_CANCELED = 3;
         public static final int STATE_COMPLETED = 4;
@@ -33,7 +33,7 @@ public class ModuleInstallStatusUpdate extends AbstractSafeParcelable {
     }
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ProgressInfo {
         private final long zaa;
         private final long zab;

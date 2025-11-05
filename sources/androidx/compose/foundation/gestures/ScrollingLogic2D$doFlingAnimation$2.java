@@ -75,8 +75,8 @@ public final class ScrollingLogic2D$doFlingAnimation$2 extends SuspendLambda imp
                     } else {
                         m601shouldCancelFlingk4lQ0M = ScrollingLogic2D.this.m601shouldCancelFlingk4lQ0M(doFlingAnimation_QWom1Mo$toDecomposedOffset);
                     }
-                    if (Offset.m4302equalsimpl0(doFlingAnimation_QWom1Mo$toDecomposedOffset, Offset.Companion.m4321getZeroF1C5BW0()) || !m601shouldCancelFlingk4lQ0M) {
-                        doFlingAnimation_QWom1Mo$toMagnitudeFloat = ScrollingLogic2D.doFlingAnimation_QWom1Mo$toMagnitudeFloat(nestedScrollScope.mo534scrollByWithOverscrollOzD1aCk(doFlingAnimation_QWom1Mo$toDecomposedOffset, NestedScrollSource.Companion.m5731getSideEffectWNlRxjI()));
+                    if (Offset.m5032equalsimpl0(doFlingAnimation_QWom1Mo$toDecomposedOffset, Offset.Companion.m5051getZeroF1C5BW0()) || !m601shouldCancelFlingk4lQ0M) {
+                        doFlingAnimation_QWom1Mo$toMagnitudeFloat = ScrollingLogic2D.doFlingAnimation_QWom1Mo$toMagnitudeFloat(nestedScrollScope.mo534scrollByWithOverscrollOzD1aCk(doFlingAnimation_QWom1Mo$toDecomposedOffset, NestedScrollSource.Companion.m6461getSideEffectWNlRxjI()));
                         return doFlingAnimation_QWom1Mo$toMagnitudeFloat;
                     }
                     throw new FlingCancellationException();

@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class RoundRect {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final RoundRect Zero = RoundRectKt.m4359RoundRectgG7oq9Y(0.0f, 0.0f, 0.0f, 0.0f, CornerRadius.Companion.m4277getZerokKHJgLs());
+    private static final RoundRect Zero = RoundRectKt.m5089RoundRectgG7oq9Y(0.0f, 0.0f, 0.0f, 0.0f, CornerRadius.Companion.m5007getZerokKHJgLs());
     private RoundRect _scaledRadiiRect;
     private final float bottom;
     private final long bottomLeftCornerRadius;
@@ -26,7 +26,7 @@ public final class RoundRect {
     }
 
     /* renamed from: copy-MDFrsts$default  reason: not valid java name */
-    public static /* synthetic */ RoundRect m4346copyMDFrsts$default(RoundRect roundRect, float f, float f2, float f3, float f4, long j, long j2, long j3, long j4, int i, Object obj) {
+    public static /* synthetic */ RoundRect m5076copyMDFrsts$default(RoundRect roundRect, float f, float f2, float f3, float f4, long j, long j2, long j3, long j4, int i, Object obj) {
         if ((i & 1) != 0) {
             f = roundRect.left;
         }
@@ -55,7 +55,7 @@ public final class RoundRect {
         long j6 = j3;
         long j7 = j2;
         long j8 = j;
-        return roundRect.m4352copyMDFrsts(f, f2, f3, f4, j8, j7, j6, j5);
+        return roundRect.m5082copyMDFrsts(f, f2, f3, f4, j8, j7, j6, j5);
     }
 
     public static final RoundRect getZero() {
@@ -79,27 +79,27 @@ public final class RoundRect {
     }
 
     /* renamed from: component5-kKHJgLs  reason: not valid java name */
-    public final long m4347component5kKHJgLs() {
+    public final long m5077component5kKHJgLs() {
         return this.topLeftCornerRadius;
     }
 
     /* renamed from: component6-kKHJgLs  reason: not valid java name */
-    public final long m4348component6kKHJgLs() {
+    public final long m5078component6kKHJgLs() {
         return this.topRightCornerRadius;
     }
 
     /* renamed from: component7-kKHJgLs  reason: not valid java name */
-    public final long m4349component7kKHJgLs() {
+    public final long m5079component7kKHJgLs() {
         return this.bottomRightCornerRadius;
     }
 
     /* renamed from: component8-kKHJgLs  reason: not valid java name */
-    public final long m4350component8kKHJgLs() {
+    public final long m5080component8kKHJgLs() {
         return this.bottomLeftCornerRadius;
     }
 
     /* renamed from: copy-MDFrsts  reason: not valid java name */
-    public final RoundRect m4352copyMDFrsts(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4) {
+    public final RoundRect m5082copyMDFrsts(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4) {
         return new RoundRect(f, f2, f3, f4, j, j2, j3, j4, null);
     }
 
@@ -109,13 +109,13 @@ public final class RoundRect {
         }
         if (obj instanceof RoundRect) {
             RoundRect roundRect = (RoundRect) obj;
-            return Float.compare(this.left, roundRect.left) == 0 && Float.compare(this.top, roundRect.top) == 0 && Float.compare(this.right, roundRect.right) == 0 && Float.compare(this.bottom, roundRect.bottom) == 0 && CornerRadius.m4264equalsimpl0(this.topLeftCornerRadius, roundRect.topLeftCornerRadius) && CornerRadius.m4264equalsimpl0(this.topRightCornerRadius, roundRect.topRightCornerRadius) && CornerRadius.m4264equalsimpl0(this.bottomRightCornerRadius, roundRect.bottomRightCornerRadius) && CornerRadius.m4264equalsimpl0(this.bottomLeftCornerRadius, roundRect.bottomLeftCornerRadius);
+            return Float.compare(this.left, roundRect.left) == 0 && Float.compare(this.top, roundRect.top) == 0 && Float.compare(this.right, roundRect.right) == 0 && Float.compare(this.bottom, roundRect.bottom) == 0 && CornerRadius.m4994equalsimpl0(this.topLeftCornerRadius, roundRect.topLeftCornerRadius) && CornerRadius.m4994equalsimpl0(this.topRightCornerRadius, roundRect.topRightCornerRadius) && CornerRadius.m4994equalsimpl0(this.bottomRightCornerRadius, roundRect.bottomRightCornerRadius) && CornerRadius.m4994equalsimpl0(this.bottomLeftCornerRadius, roundRect.bottomLeftCornerRadius);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((Float.hashCode(this.left) * 31) + Float.hashCode(this.top)) * 31) + Float.hashCode(this.right)) * 31) + Float.hashCode(this.bottom)) * 31) + CornerRadius.m4267hashCodeimpl(this.topLeftCornerRadius)) * 31) + CornerRadius.m4267hashCodeimpl(this.topRightCornerRadius)) * 31) + CornerRadius.m4267hashCodeimpl(this.bottomRightCornerRadius)) * 31) + CornerRadius.m4267hashCodeimpl(this.bottomLeftCornerRadius);
+        return (((((((((((((Float.hashCode(this.left) * 31) + Float.hashCode(this.top)) * 31) + Float.hashCode(this.right)) * 31) + Float.hashCode(this.bottom)) * 31) + CornerRadius.m4997hashCodeimpl(this.topLeftCornerRadius)) * 31) + CornerRadius.m4997hashCodeimpl(this.topRightCornerRadius)) * 31) + CornerRadius.m4997hashCodeimpl(this.bottomRightCornerRadius)) * 31) + CornerRadius.m4997hashCodeimpl(this.bottomLeftCornerRadius);
     }
 
     private RoundRect(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4) {
@@ -146,26 +146,26 @@ public final class RoundRect {
     }
 
     public /* synthetic */ RoundRect(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(f, f2, f3, f4, (i & 16) != 0 ? CornerRadius.Companion.m4277getZerokKHJgLs() : j, (i & 32) != 0 ? CornerRadius.Companion.m4277getZerokKHJgLs() : j2, (i & 64) != 0 ? CornerRadius.Companion.m4277getZerokKHJgLs() : j3, (i & 128) != 0 ? CornerRadius.Companion.m4277getZerokKHJgLs() : j4, null);
+        this(f, f2, f3, f4, (i & 16) != 0 ? CornerRadius.Companion.m5007getZerokKHJgLs() : j, (i & 32) != 0 ? CornerRadius.Companion.m5007getZerokKHJgLs() : j2, (i & 64) != 0 ? CornerRadius.Companion.m5007getZerokKHJgLs() : j3, (i & 128) != 0 ? CornerRadius.Companion.m5007getZerokKHJgLs() : j4, null);
     }
 
     /* renamed from: getTopLeftCornerRadius-kKHJgLs  reason: not valid java name */
-    public final long m4355getTopLeftCornerRadiuskKHJgLs() {
+    public final long m5085getTopLeftCornerRadiuskKHJgLs() {
         return this.topLeftCornerRadius;
     }
 
     /* renamed from: getTopRightCornerRadius-kKHJgLs  reason: not valid java name */
-    public final long m4356getTopRightCornerRadiuskKHJgLs() {
+    public final long m5086getTopRightCornerRadiuskKHJgLs() {
         return this.topRightCornerRadius;
     }
 
     /* renamed from: getBottomRightCornerRadius-kKHJgLs  reason: not valid java name */
-    public final long m4354getBottomRightCornerRadiuskKHJgLs() {
+    public final long m5084getBottomRightCornerRadiuskKHJgLs() {
         return this.bottomRightCornerRadius;
     }
 
     /* renamed from: getBottomLeftCornerRadius-kKHJgLs  reason: not valid java name */
-    public final long m4353getBottomLeftCornerRadiuskKHJgLs() {
+    public final long m5083getBottomLeftCornerRadiuskKHJgLs() {
         return this.bottomLeftCornerRadius;
     }
 
@@ -181,7 +181,7 @@ public final class RoundRect {
         RoundRect roundRect = this._scaledRadiiRect;
         if (roundRect == null) {
             float minRadius = minRadius(minRadius(minRadius(minRadius(1.0f, Float.intBitsToFloat((int) (this.bottomLeftCornerRadius & 4294967295L)), Float.intBitsToFloat((int) (this.topLeftCornerRadius & 4294967295L)), getHeight()), Float.intBitsToFloat((int) (this.topLeftCornerRadius >> 32)), Float.intBitsToFloat((int) (this.topRightCornerRadius >> 32)), getWidth()), Float.intBitsToFloat((int) (this.topRightCornerRadius & 4294967295L)), Float.intBitsToFloat((int) (this.bottomRightCornerRadius & 4294967295L)), getHeight()), Float.intBitsToFloat((int) (this.bottomRightCornerRadius >> 32)), Float.intBitsToFloat((int) (this.bottomLeftCornerRadius >> 32)), getWidth());
-            RoundRect roundRect2 = new RoundRect(this.left * minRadius, this.top * minRadius, this.right * minRadius, this.bottom * minRadius, CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topLeftCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topLeftCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topRightCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topRightCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomRightCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomRightCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomLeftCornerRadius >> 32)) * minRadius) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomLeftCornerRadius & 4294967295L)) * minRadius) & 4294967295L)), null);
+            RoundRect roundRect2 = new RoundRect(this.left * minRadius, this.top * minRadius, this.right * minRadius, this.bottom * minRadius, CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topLeftCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topLeftCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topRightCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topRightCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomRightCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomRightCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomLeftCornerRadius >> 32)) * minRadius) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomLeftCornerRadius & 4294967295L)) * minRadius) & 4294967295L)), null);
             this._scaledRadiiRect = roundRect2;
             return roundRect2;
         }
@@ -201,10 +201,10 @@ public final class RoundRect {
         long j3 = this.bottomRightCornerRadius;
         long j4 = this.bottomLeftCornerRadius;
         String str = GeometryUtilsKt.toStringAsFixed(this.left, 1) + ", " + GeometryUtilsKt.toStringAsFixed(this.top, 1) + ", " + GeometryUtilsKt.toStringAsFixed(this.right, 1) + ", " + GeometryUtilsKt.toStringAsFixed(this.bottom, 1);
-        if (CornerRadius.m4264equalsimpl0(j, j2) && CornerRadius.m4264equalsimpl0(j2, j3) && CornerRadius.m4264equalsimpl0(j3, j4)) {
+        if (CornerRadius.m4994equalsimpl0(j, j2) && CornerRadius.m4994equalsimpl0(j2, j3) && CornerRadius.m4994equalsimpl0(j3, j4)) {
             return Float.intBitsToFloat((int) (j >> 32)) == Float.intBitsToFloat((int) (j & 4294967295L)) ? "RoundRect(rect=" + str + ", radius=" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat(i), 1) + ')' : "RoundRect(rect=" + str + ", x=" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat(i), 1) + ", y=" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat(i2), 1) + ')';
         }
-        return "RoundRect(rect=" + str + ", topLeft=" + ((Object) CornerRadius.m4273toStringimpl(j)) + ", topRight=" + ((Object) CornerRadius.m4273toStringimpl(j2)) + ", bottomRight=" + ((Object) CornerRadius.m4273toStringimpl(j3)) + ", bottomLeft=" + ((Object) CornerRadius.m4273toStringimpl(j4)) + ')';
+        return "RoundRect(rect=" + str + ", topLeft=" + ((Object) CornerRadius.m5003toStringimpl(j)) + ", topRight=" + ((Object) CornerRadius.m5003toStringimpl(j2)) + ", bottomRight=" + ((Object) CornerRadius.m5003toStringimpl(j3)) + ", bottomLeft=" + ((Object) CornerRadius.m5003toStringimpl(j4)) + ')';
     }
 
     /* compiled from: RoundRect.kt */
@@ -228,7 +228,7 @@ public final class RoundRect {
     }
 
     /* renamed from: contains-k-4lQ0M  reason: not valid java name */
-    public final boolean m4351containsk4lQ0M(long j) {
+    public final boolean m5081containsk4lQ0M(long j) {
         float intBitsToFloat;
         float intBitsToFloat2;
         float intBitsToFloat3;

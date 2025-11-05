@@ -38,7 +38,7 @@ public final class Shadow {
         this.offset = j;
         this.blendMode = i;
         if (brush instanceof SolidColor) {
-            this.color = ((SolidColor) brush).m4901getValue0d7_KjU();
+            this.color = ((SolidColor) brush).m5631getValue0d7_KjU();
             this.brush = null;
         } else {
             this.color = j2;
@@ -48,27 +48,27 @@ public final class Shadow {
     }
 
     /* renamed from: getRadius-D9Ej5fM  reason: not valid java name */
-    public final float m5274getRadiusD9Ej5fM() {
+    public final float m6004getRadiusD9Ej5fM() {
         return this.radius;
     }
 
     /* renamed from: getSpread-D9Ej5fM  reason: not valid java name */
-    public final float m5275getSpreadD9Ej5fM() {
+    public final float m6005getSpreadD9Ej5fM() {
         return this.spread;
     }
 
     /* renamed from: getOffset-RKDOV3M  reason: not valid java name */
-    public final long m5273getOffsetRKDOV3M() {
+    public final long m6003getOffsetRKDOV3M() {
         return this.offset;
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m5271getBlendMode0nO6VwU() {
+    public final int m6001getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m5272getColor0d7_KjU() {
+    public final long m6002getColor0d7_KjU() {
         return this.color;
     }
 
@@ -81,15 +81,15 @@ public final class Shadow {
     }
 
     private Shadow(float f, Brush brush, float f2, long j, float f3, int i) {
-        this(f, f2, j, Color.Companion.m4575getBlack0d7_KjU(), brush, f3, i);
+        this(f, f2, j, Color.Companion.m5305getBlack0d7_KjU(), brush, f3, i);
     }
 
     public /* synthetic */ Shadow(float f, long j, float f2, long j2, float f3, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(f, (i2 & 2) != 0 ? Color.Companion.m4575getBlack0d7_KjU() : j, (i2 & 4) != 0 ? Dp.m7264constructorimpl(0) : f2, (i2 & 8) != 0 ? DpOffset.Companion.m7335getZeroRKDOV3M() : j2, (i2 & 16) != 0 ? 1.0f : f3, (i2 & 32) != 0 ? DrawScope.Companion.m5130getDefaultBlendMode0nO6VwU() : i, (DefaultConstructorMarker) null);
+        this(f, (i2 & 2) != 0 ? Color.Companion.m5305getBlack0d7_KjU() : j, (i2 & 4) != 0 ? Dp.m7995constructorimpl(0) : f2, (i2 & 8) != 0 ? DpOffset.Companion.m8066getZeroRKDOV3M() : j2, (i2 & 16) != 0 ? 1.0f : f3, (i2 & 32) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : i, (DefaultConstructorMarker) null);
     }
 
     private Shadow(float f, long j, float f2, long j2, float f3, int i) {
-        this(f, f2, j2, j == 16 ? Color.Companion.m4575getBlack0d7_KjU() : j, (Brush) null, f3, i);
+        this(f, f2, j2, j == 16 ? Color.Companion.m5305getBlack0d7_KjU() : j, (Brush) null, f3, i);
     }
 
     public boolean equals(Object obj) {
@@ -98,26 +98,26 @@ public final class Shadow {
         }
         if (obj instanceof Shadow) {
             Shadow shadow = (Shadow) obj;
-            return Dp.m7269equalsimpl0(this.radius, shadow.radius) && Dp.m7269equalsimpl0(this.spread, shadow.spread) && DpOffset.m7324equalsimpl0(this.offset, shadow.offset) && this.alpha == shadow.alpha && BlendMode.m4459equalsimpl0(this.blendMode, shadow.blendMode) && Color.m4550equalsimpl0(this.color, shadow.color) && Intrinsics.areEqual(this.brush, shadow.brush);
+            return Dp.m8000equalsimpl0(this.radius, shadow.radius) && Dp.m8000equalsimpl0(this.spread, shadow.spread) && DpOffset.m8055equalsimpl0(this.offset, shadow.offset) && this.alpha == shadow.alpha && BlendMode.m5189equalsimpl0(this.blendMode, shadow.blendMode) && Color.m5280equalsimpl0(this.color, shadow.color) && Intrinsics.areEqual(this.brush, shadow.brush);
         }
         return false;
     }
 
     public int hashCode() {
-        int m7270hashCodeimpl = ((((((((((Dp.m7270hashCodeimpl(this.radius) * 31) + Dp.m7270hashCodeimpl(this.spread)) * 31) + DpOffset.m7329hashCodeimpl(this.offset)) * 31) + Float.hashCode(this.alpha)) * 31) + BlendMode.m4460hashCodeimpl(this.blendMode)) * 31) + Color.m4556hashCodeimpl(this.color)) * 31;
+        int m8001hashCodeimpl = ((((((((((Dp.m8001hashCodeimpl(this.radius) * 31) + Dp.m8001hashCodeimpl(this.spread)) * 31) + DpOffset.m8060hashCodeimpl(this.offset)) * 31) + Float.hashCode(this.alpha)) * 31) + BlendMode.m5190hashCodeimpl(this.blendMode)) * 31) + Color.m5286hashCodeimpl(this.color)) * 31;
         Brush brush = this.brush;
-        return m7270hashCodeimpl + (brush != null ? brush.hashCode() : 0);
+        return m8001hashCodeimpl + (brush != null ? brush.hashCode() : 0);
     }
 
     public String toString() {
-        return "ShadowParams(radius=" + ((Object) Dp.m7275toStringimpl(this.radius)) + ", spread=" + ((Object) Dp.m7275toStringimpl(this.spread)) + ", offset=" + ((Object) DpOffset.m7332toStringimpl(this.offset)) + ", alpha=" + this.alpha + ", blendMode=" + ((Object) BlendMode.m4461toStringimpl(this.blendMode)) + ", color=" + ((Object) Color.m4557toStringimpl(this.color)) + ", brush=" + this.brush + ')';
+        return "ShadowParams(radius=" + ((Object) Dp.m8006toStringimpl(this.radius)) + ", spread=" + ((Object) Dp.m8006toStringimpl(this.spread)) + ", offset=" + ((Object) DpOffset.m8063toStringimpl(this.offset)) + ", alpha=" + this.alpha + ", blendMode=" + ((Object) BlendMode.m5191toStringimpl(this.blendMode)) + ", color=" + ((Object) Color.m5287toStringimpl(this.color)) + ", brush=" + this.brush + ')';
     }
 
     public final Shadow copyWithoutOffset$ui_graphics_release() {
-        return new Shadow(this.radius, this.spread, DpOffset.Companion.m7335getZeroRKDOV3M(), this.color, this.brush, this.alpha, this.blendMode);
+        return new Shadow(this.radius, this.spread, DpOffset.Companion.m8066getZeroRKDOV3M(), this.color, this.brush, this.alpha, this.blendMode);
     }
 
     public /* synthetic */ Shadow(float f, Brush brush, float f2, long j, float f3, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(f, brush, (i2 & 4) != 0 ? Dp.m7264constructorimpl(0) : f2, (i2 & 8) != 0 ? DpOffset.Companion.m7335getZeroRKDOV3M() : j, (i2 & 16) != 0 ? 1.0f : f3, (i2 & 32) != 0 ? DrawScope.Companion.m5130getDefaultBlendMode0nO6VwU() : i, (DefaultConstructorMarker) null);
+        this(f, brush, (i2 & 4) != 0 ? Dp.m7995constructorimpl(0) : f2, (i2 & 8) != 0 ? DpOffset.Companion.m8066getZeroRKDOV3M() : j, (i2 & 16) != 0 ? 1.0f : f3, (i2 & 32) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : i, (DefaultConstructorMarker) null);
     }
 }

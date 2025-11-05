@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.time.Duration;
 import okhttp3.internal._CacheControlCommonKt;
 /* compiled from: CacheControl.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010\u000e\n\u0002\b\u0016\u0018\u0000 &2\u00020\u0001:\u0002%&Bs\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0006\u0012\u0006\u0010\f\u001a\u00020\u0006\u0012\u0006\u0010\r\u001a\u00020\u0003\u0012\u0006\u0010\u000e\u001a\u00020\u0003\u0012\u0006\u0010\u000f\u001a\u00020\u0003\u0012\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\r\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001aJ\r\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001bJ\r\u0010\u0005\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001cJ\r\u0010\u0007\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001dJ\r\u0010\n\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001eJ\r\u0010\u000b\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001fJ\r\u0010\f\u001a\u00020\u0006H\u0007¢\u0006\u0002\b J\r\u0010\r\u001a\u00020\u0003H\u0007¢\u0006\u0002\b!J\r\u0010\u000e\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\"J\r\u0010\u000f\u001a\u00020\u0003H\u0007¢\u0006\u0002\b#J\b\u0010$\u001a\u00020\u0011H\u0016R\u0013\u0010\u0002\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0014R\u0013\u0010\u0004\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u0014R\u0013\u0010\u0005\u001a\u00020\u00068G¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0015R\u0013\u0010\u0007\u001a\u00020\u00068G¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\u0015R\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0014R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0014R\u0013\u0010\n\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0014R\u0013\u0010\u000b\u001a\u00020\u00068G¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0015R\u0013\u0010\f\u001a\u00020\u00068G¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0015R\u0013\u0010\r\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u0014R\u0013\u0010\u000e\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u0014R\u0013\u0010\u000f\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0014R\u001c\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019¨\u0006'"}, d2 = {"Lokhttp3/CacheControl;", "", "noCache", "", "noStore", "maxAgeSeconds", "", "sMaxAgeSeconds", "isPrivate", "isPublic", "mustRevalidate", "maxStaleSeconds", "minFreshSeconds", "onlyIfCached", "noTransform", "immutable", "headerValue", "", "<init>", "(ZZIIZZZIIZZZLjava/lang/String;)V", "()Z", "()I", "getHeaderValue$okhttp", "()Ljava/lang/String;", "setHeaderValue$okhttp", "(Ljava/lang/String;)V", "-deprecated_noCache", "-deprecated_noStore", "-deprecated_maxAgeSeconds", "-deprecated_sMaxAgeSeconds", "-deprecated_mustRevalidate", "-deprecated_maxStaleSeconds", "-deprecated_minFreshSeconds", "-deprecated_onlyIfCached", "-deprecated_noTransform", "-deprecated_immutable", "toString", "Builder", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010\u000e\n\u0002\b\u0016\u0018\u0000 &2\u00020\u0001:\u0002%&Bs\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0006\u0012\u0006\u0010\f\u001a\u00020\u0006\u0012\u0006\u0010\r\u001a\u00020\u0003\u0012\u0006\u0010\u000e\u001a\u00020\u0003\u0012\u0006\u0010\u000f\u001a\u00020\u0003\u0012\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\r\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001aJ\r\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001bJ\r\u0010\u0005\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001cJ\r\u0010\u0007\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001dJ\r\u0010\n\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001eJ\r\u0010\u000b\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001fJ\r\u0010\f\u001a\u00020\u0006H\u0007¢\u0006\u0002\b J\r\u0010\r\u001a\u00020\u0003H\u0007¢\u0006\u0002\b!J\r\u0010\u000e\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\"J\r\u0010\u000f\u001a\u00020\u0003H\u0007¢\u0006\u0002\b#J\b\u0010$\u001a\u00020\u0011H\u0016R\u0013\u0010\u0002\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0014R\u0013\u0010\u0004\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u0014R\u0013\u0010\u0005\u001a\u00020\u00068\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0015R\u0013\u0010\u0007\u001a\u00020\u00068\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\u0015R\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0014R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0014R\u0013\u0010\n\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0014R\u0013\u0010\u000b\u001a\u00020\u00068\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0015R\u0013\u0010\f\u001a\u00020\u00068\u0007¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0015R\u0013\u0010\r\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u0014R\u0013\u0010\u000e\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u0014R\u0013\u0010\u000f\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0014R\u001c\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019¨\u0006'"}, d2 = {"Lokhttp3/CacheControl;", "", "noCache", "", "noStore", "maxAgeSeconds", "", "sMaxAgeSeconds", "isPrivate", "isPublic", "mustRevalidate", "maxStaleSeconds", "minFreshSeconds", "onlyIfCached", "noTransform", "immutable", "headerValue", "", "<init>", "(ZZIIZZZIIZZZLjava/lang/String;)V", "()Z", "()I", "getHeaderValue$okhttp", "()Ljava/lang/String;", "setHeaderValue$okhttp", "(Ljava/lang/String;)V", "-deprecated_noCache", "-deprecated_noStore", "-deprecated_maxAgeSeconds", "-deprecated_sMaxAgeSeconds", "-deprecated_mustRevalidate", "-deprecated_maxStaleSeconds", "-deprecated_minFreshSeconds", "-deprecated_onlyIfCached", "-deprecated_noTransform", "-deprecated_immutable", "toString", "Builder", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class CacheControl {
     public static final Companion Companion;
@@ -110,61 +110,61 @@ public final class CacheControl {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noCache", imports = {}))
     /* renamed from: -deprecated_noCache  reason: not valid java name */
-    public final boolean m10883deprecated_noCache() {
+    public final boolean m11624deprecated_noCache() {
         return this.noCache;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noStore", imports = {}))
     /* renamed from: -deprecated_noStore  reason: not valid java name */
-    public final boolean m10884deprecated_noStore() {
+    public final boolean m11625deprecated_noStore() {
         return this.noStore;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "maxAgeSeconds", imports = {}))
     /* renamed from: -deprecated_maxAgeSeconds  reason: not valid java name */
-    public final int m10879deprecated_maxAgeSeconds() {
+    public final int m11620deprecated_maxAgeSeconds() {
         return this.maxAgeSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sMaxAgeSeconds", imports = {}))
     /* renamed from: -deprecated_sMaxAgeSeconds  reason: not valid java name */
-    public final int m10887deprecated_sMaxAgeSeconds() {
+    public final int m11628deprecated_sMaxAgeSeconds() {
         return this.sMaxAgeSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "mustRevalidate", imports = {}))
     /* renamed from: -deprecated_mustRevalidate  reason: not valid java name */
-    public final boolean m10882deprecated_mustRevalidate() {
+    public final boolean m11623deprecated_mustRevalidate() {
         return this.mustRevalidate;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "maxStaleSeconds", imports = {}))
     /* renamed from: -deprecated_maxStaleSeconds  reason: not valid java name */
-    public final int m10880deprecated_maxStaleSeconds() {
+    public final int m11621deprecated_maxStaleSeconds() {
         return this.maxStaleSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "minFreshSeconds", imports = {}))
     /* renamed from: -deprecated_minFreshSeconds  reason: not valid java name */
-    public final int m10881deprecated_minFreshSeconds() {
+    public final int m11622deprecated_minFreshSeconds() {
         return this.minFreshSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "onlyIfCached", imports = {}))
     /* renamed from: -deprecated_onlyIfCached  reason: not valid java name */
-    public final boolean m10886deprecated_onlyIfCached() {
+    public final boolean m11627deprecated_onlyIfCached() {
         return this.onlyIfCached;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noTransform", imports = {}))
     /* renamed from: -deprecated_noTransform  reason: not valid java name */
-    public final boolean m10885deprecated_noTransform() {
+    public final boolean m11626deprecated_noTransform() {
         return this.noTransform;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "immutable", imports = {}))
     /* renamed from: -deprecated_immutable  reason: not valid java name */
-    public final boolean m10878deprecated_immutable() {
+    public final boolean m11619deprecated_immutable() {
         return this.immutable;
     }
 
@@ -270,32 +270,32 @@ public final class CacheControl {
         }
 
         /* renamed from: maxAge-LRDsOJo  reason: not valid java name */
-        public final Builder m10888maxAgeLRDsOJo(long j) {
-            long m10477getInWholeSecondsimpl = Duration.m10477getInWholeSecondsimpl(j);
-            if (m10477getInWholeSecondsimpl < 0) {
-                throw new IllegalArgumentException(("maxAge < 0: " + m10477getInWholeSecondsimpl).toString());
+        public final Builder m11629maxAgeLRDsOJo(long j) {
+            long m11218getInWholeSecondsimpl = Duration.m11218getInWholeSecondsimpl(j);
+            if (m11218getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("maxAge < 0: " + m11218getInWholeSecondsimpl).toString());
             }
-            this.maxAgeSeconds = _CacheControlCommonKt.commonClampToInt(m10477getInWholeSecondsimpl);
+            this.maxAgeSeconds = _CacheControlCommonKt.commonClampToInt(m11218getInWholeSecondsimpl);
             return this;
         }
 
         /* renamed from: maxStale-LRDsOJo  reason: not valid java name */
-        public final Builder m10889maxStaleLRDsOJo(long j) {
-            long m10477getInWholeSecondsimpl = Duration.m10477getInWholeSecondsimpl(j);
-            if (m10477getInWholeSecondsimpl < 0) {
-                throw new IllegalArgumentException(("maxStale < 0: " + m10477getInWholeSecondsimpl).toString());
+        public final Builder m11630maxStaleLRDsOJo(long j) {
+            long m11218getInWholeSecondsimpl = Duration.m11218getInWholeSecondsimpl(j);
+            if (m11218getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("maxStale < 0: " + m11218getInWholeSecondsimpl).toString());
             }
-            this.maxStaleSeconds = _CacheControlCommonKt.commonClampToInt(m10477getInWholeSecondsimpl);
+            this.maxStaleSeconds = _CacheControlCommonKt.commonClampToInt(m11218getInWholeSecondsimpl);
             return this;
         }
 
         /* renamed from: minFresh-LRDsOJo  reason: not valid java name */
-        public final Builder m10890minFreshLRDsOJo(long j) {
-            long m10477getInWholeSecondsimpl = Duration.m10477getInWholeSecondsimpl(j);
-            if (m10477getInWholeSecondsimpl < 0) {
-                throw new IllegalArgumentException(("minFresh < 0: " + m10477getInWholeSecondsimpl).toString());
+        public final Builder m11631minFreshLRDsOJo(long j) {
+            long m11218getInWholeSecondsimpl = Duration.m11218getInWholeSecondsimpl(j);
+            if (m11218getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("minFresh < 0: " + m11218getInWholeSecondsimpl).toString());
             }
-            this.minFreshSeconds = _CacheControlCommonKt.commonClampToInt(m10477getInWholeSecondsimpl);
+            this.minFreshSeconds = _CacheControlCommonKt.commonClampToInt(m11218getInWholeSecondsimpl);
             return this;
         }
 

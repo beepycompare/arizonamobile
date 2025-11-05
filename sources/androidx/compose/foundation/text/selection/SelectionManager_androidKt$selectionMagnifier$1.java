@@ -47,7 +47,7 @@ public final class SelectionManager_androidKt$selectionMagnifier$1 implements Fu
         ComposerKt.sourceInformationMarkerStart(composer, -1608414511, "CC(remember):SelectionManager.android.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7427boximpl(IntSize.Companion.m7440getZeroYbymL2g()), null, 2, null);
+            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8158boximpl(IntSize.Companion.m8171getZeroYbymL2g()), null, 2, null);
             composer.updateRememberedValue(rememberedValue);
         }
         final MutableState mutableState = (MutableState) rememberedValue;
@@ -93,16 +93,16 @@ public final class SelectionManager_androidKt$selectionMagnifier$1 implements Fu
     }
 
     private static final long invoke$lambda$1(MutableState<IntSize> mutableState) {
-        return mutableState.getValue().m7439unboximpl();
+        return mutableState.getValue().m8170unboximpl();
     }
 
     private static final void invoke$lambda$2(MutableState<IntSize> mutableState, long j) {
-        mutableState.setValue(IntSize.m7427boximpl(j));
+        mutableState.setValue(IntSize.m8158boximpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset invoke$lambda$4$lambda$3(SelectionManager selectionManager, MutableState mutableState) {
-        return Offset.m4294boximpl(SelectionManagerKt.m1801calculateSelectionMagnifierCenterAndroidO0kMr_c(selectionManager, invoke$lambda$1(mutableState)));
+        return Offset.m5024boximpl(SelectionManagerKt.m1801calculateSelectionMagnifierCenterAndroidO0kMr_c(selectionManager, invoke$lambda$1(mutableState)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -131,7 +131,7 @@ public final class SelectionManager_androidKt$selectionMagnifier$1 implements Fu
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invoke$lambda$9$lambda$8$lambda$7(Density density, MutableState mutableState, DpSize dpSize) {
-        invoke$lambda$2(mutableState, IntSize.m7430constructorimpl((density.mo423roundToPx0680j_4(DpSize.m7362getWidthD9Ej5fM(dpSize.m7370unboximpl())) << 32) | (density.mo423roundToPx0680j_4(DpSize.m7360getHeightD9Ej5fM(dpSize.m7370unboximpl())) & 4294967295L)));
+        invoke$lambda$2(mutableState, IntSize.m8161constructorimpl((density.mo423roundToPx0680j_4(DpSize.m8093getWidthD9Ej5fM(dpSize.m8101unboximpl())) << 32) | (density.mo423roundToPx0680j_4(DpSize.m8091getHeightD9Ej5fM(dpSize.m8101unboximpl())) & 4294967295L)));
         return Unit.INSTANCE;
     }
 }

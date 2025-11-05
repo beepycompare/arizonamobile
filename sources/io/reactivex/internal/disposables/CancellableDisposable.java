@@ -5,7 +5,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Cancellable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class CancellableDisposable extends AtomicReference<Cancellable> implements Disposable {
     private static final long serialVersionUID = 5718521705281392066L;
 

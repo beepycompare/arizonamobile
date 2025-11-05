@@ -8,7 +8,7 @@ import com.google.android.gms.common.moduleinstall.ModuleInstallResponse;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zau extends zaa {
     final /* synthetic */ AtomicReference zaa;
     final /* synthetic */ TaskCompletionSource zab;

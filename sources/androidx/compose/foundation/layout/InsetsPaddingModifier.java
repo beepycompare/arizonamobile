@@ -59,8 +59,8 @@ public final class InsetsPaddingModifier implements LayoutModifier, ModifierLoca
         final int top = getUnconsumedInsets().getTop(measureScope2);
         int right = getUnconsumedInsets().getRight(measureScope2, measureScope.getLayoutDirection()) + left;
         int bottom = getUnconsumedInsets().getBottom(measureScope2) + top;
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(ConstraintsKt.m7236offsetNN6EwU(j, -right, -bottom));
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7234constrainWidthK40F9xA(j, mo5967measureBRTryo0.getWidth() + right), ConstraintsKt.m7233constrainHeightK40F9xA(j, mo5967measureBRTryo0.getHeight() + bottom), null, new Function1() { // from class: androidx.compose.foundation.layout.InsetsPaddingModifier$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(j, -right, -bottom));
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7965constrainWidthK40F9xA(j, mo6697measureBRTryo0.getWidth() + right), ConstraintsKt.m7964constrainHeightK40F9xA(j, mo6697measureBRTryo0.getHeight() + bottom), null, new Function1() { // from class: androidx.compose.foundation.layout.InsetsPaddingModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;

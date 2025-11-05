@@ -21,8 +21,8 @@ final class CircleShape implements Shape {
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
     public Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
-        float m4373getMinDimensionimpl = Size.m4373getMinDimensionimpl(j) / 2.0f;
-        long m4259constructorimpl = CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(m4373getMinDimensionimpl) & 4294967295L) | (Float.floatToRawIntBits(m4373getMinDimensionimpl) << 32));
-        return new Outline.Rounded(RoundRectKt.m4357RoundRectZAM2FJo(SizeKt.m4395toRectuvyYCjk(j), m4259constructorimpl, m4259constructorimpl, m4259constructorimpl, m4259constructorimpl));
+        float m5103getMinDimensionimpl = Size.m5103getMinDimensionimpl(j) / 2.0f;
+        long m4989constructorimpl = CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(m5103getMinDimensionimpl) & 4294967295L) | (Float.floatToRawIntBits(m5103getMinDimensionimpl) << 32));
+        return new Outline.Rounded(RoundRectKt.m5087RoundRectZAM2FJo(SizeKt.m5125toRectuvyYCjk(j), m4989constructorimpl, m4989constructorimpl, m4989constructorimpl, m4989constructorimpl));
     }
 }

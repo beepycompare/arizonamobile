@@ -146,7 +146,7 @@ final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2 extends Suspend
             }
             if (requestFrameLocked != null) {
                 Result.Companion companion = Result.Companion;
-                requestFrameLocked.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
+                requestFrameLocked.resumeWith(Result.m9847constructorimpl(Unit.INSTANCE));
             }
             i3 = 0;
             shouldKeepRecomposing = this.this$0.getShouldKeepRecomposing();

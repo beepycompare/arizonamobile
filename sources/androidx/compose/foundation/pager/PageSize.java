@@ -56,13 +56,13 @@ public interface PageSize {
                 return true;
             }
             if (obj instanceof Fixed) {
-                return Dp.m7269equalsimpl0(this.pageSize, ((Fixed) obj).pageSize);
+                return Dp.m8000equalsimpl0(this.pageSize, ((Fixed) obj).pageSize);
             }
             return false;
         }
 
         public int hashCode() {
-            return Dp.m7270hashCodeimpl(this.pageSize);
+            return Dp.m8001hashCodeimpl(this.pageSize);
         }
     }
 }

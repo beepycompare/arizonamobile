@@ -1,6 +1,5 @@
 package androidx.compose.material3;
 
-import android.view.View;
 import androidx.compose.animation.core.MutableTransitionState;
 import androidx.compose.foundation.BorderStroke;
 import androidx.compose.foundation.ScrollKt;
@@ -19,7 +18,6 @@ import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.Shape;
 import androidx.compose.ui.graphics.TransformOrigin;
-import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
 import androidx.compose.ui.platform.CompositionLocalsKt;
 import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.IntRect;
@@ -38,8 +36,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import okhttp3.internal.ws.WebSocketProtocol;
-/* compiled from: ExposedDropdownMenu.android.kt */
-@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\b7\u0018\u00002\u00020\u0001B\u0007\b\u0004¢\u0006\u0002\u0010\u0002JU\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\b0\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\u001c\u0010\u0011\u001a\u0018\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\b0\u0012¢\u0006\u0002\b\u0014¢\u0006\u0002\b\u0015H\u0007¢\u0006\u0002\u0010\u0016J\u0098\u0001\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\b0\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0017\u001a\u00020\n2\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001d2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 2\u001c\u0010\u0011\u001a\u0018\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\b0\u0012¢\u0006\u0002\b\u0014¢\u0006\u0002\b\u0015H\u0007ø\u0001\u0000¢\u0006\u0004\b!\u0010\"J¢\u0001\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\b0\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010#\u001a\u00020\n2\b\b\u0002\u0010\u0017\u001a\u00020\n2\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001d2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 2\u001c\u0010\u0011\u001a\u0018\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\b0\u0012¢\u0006\u0002\b\u0014¢\u0006\u0002\b\u0015H\u0007ø\u0001\u0000¢\u0006\u0004\b$\u0010%J\u0016\u0010&\u001a\u00020\u000e*\u00020\u000e2\b\b\u0002\u0010\u0017\u001a\u00020\nH&J\f\u0010'\u001a\u00020\u000e*\u00020\u000eH\u0007J(\u0010'\u001a\u00020\u000e*\u00020\u000e2\u0006\u0010(\u001a\u00020\u00042\b\b\u0002\u0010)\u001a\u00020\nH&ø\u0001\u0000¢\u0006\u0004\b*\u0010+R\u0018\u0010\u0003\u001a\u00020\u0004X \u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006\u0082\u0001\u0001,\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006-"}, d2 = {"Landroidx/compose/material3/ExposedDropdownMenuBoxScope;", "", "()V", "anchorType", "Landroidx/compose/material3/MenuAnchorType;", "getAnchorType-Mg6Rgbw$material3_release", "()Ljava/lang/String;", "ExposedDropdownMenu", "", "expanded", "", "onDismissRequest", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "scrollState", "Landroidx/compose/foundation/ScrollState;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/ColumnScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "matchTextFieldWidth", "shape", "Landroidx/compose/ui/graphics/Shape;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "shadowElevation", "border", "Landroidx/compose/foundation/BorderStroke;", "ExposedDropdownMenu-vNxi1II", "(ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;ZLandroidx/compose/ui/graphics/Shape;JFFLandroidx/compose/foundation/BorderStroke;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "focusable", "ExposedDropdownMenu-kbRbctU", "(ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;ZZLandroidx/compose/ui/graphics/Shape;JFFLandroidx/compose/foundation/BorderStroke;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "exposedDropdownSize", "menuAnchor", "type", "enabled", "menuAnchor-fsE2BvY", "(Landroidx/compose/ui/Modifier;Ljava/lang/String;Z)Landroidx/compose/ui/Modifier;", "Landroidx/compose/material3/ExposedDropdownMenuBoxScopeImpl;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+/* compiled from: ExposedDropdownMenu.kt */
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\b7\u0018\u00002\u00020\u0001B\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003J%\u0010\u0004\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\tH&¢\u0006\u0004\b\n\u0010\u000bJ\u0016\u0010\f\u001a\u00020\u0005*\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\tH&J\u0095\u0001\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\t2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00150\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u00052\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\r\u001a\u00020\t2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010 \u001a\u00020!2\b\b\u0002\u0010\"\u001a\u00020!2\n\b\u0002\u0010#\u001a\u0004\u0018\u00010$2\u001c\u0010%\u001a\u0018\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020\u00150&¢\u0006\u0002\b(¢\u0006\u0002\b)H\u0007¢\u0006\u0004\b*\u0010+J\f\u0010\u0004\u001a\u00020\u0005*\u00020\u0005H\u0007J\u009f\u0001\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\t2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00150\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u00052\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010,\u001a\u00020\t2\b\b\u0002\u0010-\u001a\u00020\t2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010 \u001a\u00020!2\b\b\u0002\u0010\"\u001a\u00020!2\n\b\u0002\u0010#\u001a\u0004\u0018\u00010$2\u001c\u0010%\u001a\u0018\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020\u00150&¢\u0006\u0002\b(¢\u0006\u0002\b)H\u0007¢\u0006\u0004\b.\u0010/JU\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\t2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00150\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u00052\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\u001c\u0010%\u001a\u0018\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020\u00150&¢\u0006\u0002\b(¢\u0006\u0002\b)H\u0007¢\u0006\u0002\u00100R\u0012\u0010\u000e\u001a\u00020\u0007X \u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010R\u0012\u0010\u0011\u001a\u00020\tX \u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013\u0082\u0001\u00011¨\u00062"}, d2 = {"Landroidx/compose/material3/ExposedDropdownMenuBoxScope;", "", "<init>", "()V", "menuAnchor", "Landroidx/compose/ui/Modifier;", "type", "Landroidx/compose/material3/ExposedDropdownMenuAnchorType;", "enabled", "", "menuAnchor-2Hz36ac", "(Landroidx/compose/ui/Modifier;Ljava/lang/String;Z)Landroidx/compose/ui/Modifier;", "exposedDropdownSize", "matchAnchorWidth", "anchorType", "getAnchorType-oYjWRB4$material3", "()Ljava/lang/String;", "alwaysFocusable", "getAlwaysFocusable$material3", "()Z", "ExposedDropdownMenu", "", "expanded", "onDismissRequest", "Lkotlin/Function0;", "modifier", "scrollState", "Landroidx/compose/foundation/ScrollState;", "shape", "Landroidx/compose/ui/graphics/Shape;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "shadowElevation", "border", "Landroidx/compose/foundation/BorderStroke;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/ColumnScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "ExposedDropdownMenu-vNxi1II", "(ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;ZLandroidx/compose/ui/graphics/Shape;JFFLandroidx/compose/foundation/BorderStroke;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "focusable", "matchTextFieldWidth", "ExposedDropdownMenu-kbRbctU", "(ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;ZZLandroidx/compose/ui/graphics/Shape;JFFLandroidx/compose/foundation/BorderStroke;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "(ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/material3/ExposedDropdownMenuBoxScopeImpl;", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class ExposedDropdownMenuBoxScope {
     public static final int $stable = 0;
@@ -48,26 +46,46 @@ public abstract class ExposedDropdownMenuBoxScope {
         this();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ExposedDropdownMenu$lambda$9(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, boolean z, Function0 function0, Modifier modifier, ScrollState scrollState, Function3 function3, int i, int i2, Composer composer, int i3) {
+        exposedDropdownMenuBoxScope.ExposedDropdownMenu(z, function0, modifier, scrollState, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ExposedDropdownMenu_kbRbctU$lambda$8(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, boolean z, Function0 function0, Modifier modifier, ScrollState scrollState, boolean z2, boolean z3, Shape shape, long j, float f, float f2, BorderStroke borderStroke, Function3 function3, int i, int i2, int i3, Composer composer, int i4) {
+        exposedDropdownMenuBoxScope.m2350ExposedDropdownMenukbRbctU(z, function0, modifier, scrollState, z2, z3, shape, j, f, f2, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ExposedDropdownMenu_vNxi1II$lambda$7(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, boolean z, Function0 function0, Modifier modifier, ScrollState scrollState, boolean z2, Shape shape, long j, float f, float f2, BorderStroke borderStroke, Function3 function3, int i, int i2, int i3, Composer composer, int i4) {
+        exposedDropdownMenuBoxScope.m2351ExposedDropdownMenuvNxi1II(z, function0, modifier, scrollState, z2, shape, j, f, f2, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        return Unit.INSTANCE;
+    }
+
     public abstract Modifier exposedDropdownSize(Modifier modifier, boolean z);
 
-    /* renamed from: getAnchorType-Mg6Rgbw$material3_release  reason: not valid java name */
-    public abstract String mo2203getAnchorTypeMg6Rgbw$material3_release();
+    public abstract boolean getAlwaysFocusable$material3();
 
-    /* renamed from: menuAnchor-fsE2BvY  reason: not valid java name */
-    public abstract Modifier mo2204menuAnchorfsE2BvY(Modifier modifier, String str, boolean z);
+    /* renamed from: getAnchorType-oYjWRB4$material3  reason: not valid java name */
+    public abstract String mo2352getAnchorTypeoYjWRB4$material3();
+
+    /* renamed from: menuAnchor-2Hz36ac  reason: not valid java name */
+    public abstract Modifier mo2353menuAnchor2Hz36ac(Modifier modifier, String str, boolean z);
 
     private ExposedDropdownMenuBoxScope() {
     }
 
-    /* renamed from: menuAnchor-fsE2BvY$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m2200menuAnchorfsE2BvY$default(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, Modifier modifier, String str, boolean z, int i, Object obj) {
+    /* renamed from: menuAnchor-2Hz36ac$default  reason: not valid java name */
+    public static /* synthetic */ Modifier m2349menuAnchor2Hz36ac$default(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, Modifier modifier, String str, boolean z, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
                 z = true;
             }
-            return exposedDropdownMenuBoxScope.mo2204menuAnchorfsE2BvY(modifier, str, z);
+            return exposedDropdownMenuBoxScope.mo2353menuAnchor2Hz36ac(modifier, str, z);
         }
-        throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: menuAnchor-fsE2BvY");
+        throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: menuAnchor-2Hz36ac");
     }
 
     public static /* synthetic */ Modifier exposedDropdownSize$default(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, Modifier modifier, boolean z, int i, Object obj) {
@@ -86,28 +104,18 @@ public abstract class ExposedDropdownMenuBoxScope {
     /* JADX WARN: Removed duplicated region for block: B:112:0x0142  */
     /* JADX WARN: Removed duplicated region for block: B:122:0x015e  */
     /* JADX WARN: Removed duplicated region for block: B:123:0x0161  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0183  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x01a8  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x01dc  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x01e1  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x01e6  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x01ee  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x01f1  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x01f6  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0202  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0213  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x021a  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x021e  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x0225  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x0229  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x023a  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0252  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x026e  */
-    /* JADX WARN: Removed duplicated region for block: B:188:0x02c6  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x0301  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x0349  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x03f0  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0184  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x0196  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x024d  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x0269  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x029e  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x02cf  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x02ea  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x0345  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x03ee  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x0402  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x0417  */
+    /* JADX WARN: Removed duplicated region for block: B:221:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0067  */
@@ -126,7 +134,7 @@ public abstract class ExposedDropdownMenuBoxScope {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2202ExposedDropdownMenuvNxi1II(final boolean z, final Function0<Unit> function0, Modifier modifier, ScrollState scrollState, boolean z2, Shape shape, long j, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public final void m2351ExposedDropdownMenuvNxi1II(final boolean z, final Function0<Unit> function0, Modifier modifier, ScrollState scrollState, boolean z2, Shape shape, long j, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -134,7 +142,6 @@ public abstract class ExposedDropdownMenuBoxScope {
         ScrollState scrollState2;
         int i6;
         boolean z3;
-        Shape shape2;
         final long j2;
         int i7;
         int i8;
@@ -142,35 +149,36 @@ public abstract class ExposedDropdownMenuBoxScope {
         int i10;
         int i11;
         int i12;
-        ScrollState scrollState3;
         int i13;
-        final BorderStroke borderStroke2;
-        final Object obj3;
-        final Shape shape3;
+        Composer composer2;
+        final Shape shape2;
         final float f3;
-        final long j3;
-        final float f4;
-        final ScrollState scrollState4;
+        final Modifier modifier2;
+        final ScrollState scrollState3;
         final boolean z4;
+        final float f4;
+        final BorderStroke borderStroke2;
+        ScopeUpdateScope endRestartGroup;
+        ScrollState scrollState4;
+        Shape shape3;
+        final BorderStroke borderStroke3;
+        final Modifier modifier3;
+        final float f5;
+        final long j3;
+        final Shape shape4;
+        final ScrollState scrollState5;
+        final float f6;
+        final boolean z5;
         Object rememberedValue;
         final MutableState mutableState;
-        Density density;
         Object rememberedValue2;
         final MutableTransitionState mutableTransitionState;
         Object rememberedValue3;
         boolean changed;
         Object rememberedValue4;
-        Composer composer2;
-        final Modifier modifier2;
-        final boolean z5;
-        final ScrollState scrollState5;
-        final Shape shape4;
-        final float f5;
-        final float f6;
-        final BorderStroke borderStroke3;
         int i14;
-        Composer startRestartGroup = composer.startRestartGroup(720925481);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ExposedDropdownMenu)P(3,6,5,7,4,9,1:c#ui.graphics.Color,10:c#ui.unit.Dp,8:c#ui.unit.Dp)336@15550L21,338@15654L5,339@15706L14,347@16155L53,348@16238L7,349@16281L7,350@16332L10,357@16596L42,361@16795L51,363@16903L486,377@17583L27,378@17626L587,374@17403L810:ExposedDropdownMenu.android.kt#uh7d8r");
+        Composer startRestartGroup = composer.startRestartGroup(-126848451);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ExposedDropdownMenu)N(expanded,onDismissRequest,modifier,scrollState,matchAnchorWidth,shape,containerColor:c#ui.graphics.Color,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp,border,content)324@15347L53,325@15436L7,326@15487L10,333@15744L42:ExposedDropdownMenu.kt#uh7d8r");
         if ((i3 & 1) != 0) {
             i4 = i | 6;
         } else if ((i & 6) == 0) {
@@ -210,11 +218,8 @@ public abstract class ExposedDropdownMenuBoxScope {
                 } else if ((i & 24576) == 0) {
                     z3 = z2;
                     i4 |= startRestartGroup.changed(z3) ? 16384 : 8192;
-                    if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
-                        shape2 = shape;
-                        i4 |= ((i3 & 32) == 0 && startRestartGroup.changed(shape2)) ? 131072 : 65536;
-                    } else {
-                        shape2 = shape;
+                    if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                        i4 |= ((i3 & 32) == 0 && startRestartGroup.changed(shape)) ? 131072 : 65536;
                     }
                     if ((i & 1572864) != 0) {
                         j2 = j;
@@ -251,191 +256,11 @@ public abstract class ExposedDropdownMenuBoxScope {
                                 i12 |= 48;
                             } else if ((i2 & 48) == 0) {
                                 i12 |= startRestartGroup.changed(this) ? 32 : 16;
-                                int i15 = i12;
-                                if ((i4 & 306783379) == 306783378 || (i15 & 19) != 18 || !startRestartGroup.getSkipping()) {
+                                i13 = i12;
+                                if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i13 & 19) != 18, i4 & 1)) {
                                     startRestartGroup.startDefaults();
-                                    if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                                        Modifier.Companion companion = i5 != 0 ? Modifier.Companion : obj2;
-                                        if ((i3 & 8) != 0) {
-                                            scrollState3 = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
-                                            i4 &= -7169;
-                                        } else {
-                                            scrollState3 = scrollState2;
-                                        }
-                                        if (i6 != 0) {
-                                            z3 = true;
-                                        }
-                                        if ((i3 & 32) != 0) {
-                                            i13 = 6;
-                                            shape2 = MenuDefaults.INSTANCE.getShape(startRestartGroup, 6);
-                                            i4 &= -458753;
-                                        } else {
-                                            i13 = 6;
-                                        }
-                                        if ((i3 & 64) != 0) {
-                                            j2 = MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, i13);
-                                            i4 &= -3670017;
-                                        }
-                                        float m2349getTonalElevationD9Ej5fM = i7 != 0 ? MenuDefaults.INSTANCE.m2349getTonalElevationD9Ej5fM() : f;
-                                        float m2348getShadowElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2348getShadowElevationD9Ej5fM() : f2;
-                                        if (i11 != 0) {
-                                            obj3 = companion;
-                                            shape3 = shape2;
-                                            f3 = m2349getTonalElevationD9Ej5fM;
-                                            j3 = j2;
-                                            f4 = m2348getShadowElevationD9Ej5fM;
-                                            scrollState4 = scrollState3;
-                                            z4 = z3;
-                                            borderStroke2 = null;
-                                            startRestartGroup.endDefaults();
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventStart(720925481, i4, i15, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu (ExposedDropdownMenu.android.kt:344)");
-                                            }
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321492941, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
-                                            rememberedValue = startRestartGroup.rememberedValue();
-                                            if (rememberedValue == Composer.Companion.getEmpty()) {
-                                                rememberedValue = SnapshotStateKt.mutableStateOf(Unit.INSTANCE, SnapshotStateKt.neverEqualPolicy());
-                                                startRestartGroup.updateRememberedValue(rememberedValue);
-                                            }
-                                            mutableState = (MutableState) rememberedValue;
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                            Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalView());
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            View view = (View) consume;
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                            Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            density = (Density) consume2;
-                                            int top = WindowInsets_androidKt.getStatusBars(WindowInsets.Companion, startRestartGroup, 6).getTop(density);
-                                            startRestartGroup.startReplaceGroup(321499814);
-                                            ComposerKt.sourceInformation(startRestartGroup, "353@16432L36,353@16396L72");
-                                            if (z) {
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321501788, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
-                                                Object rememberedValue5 = startRestartGroup.rememberedValue();
-                                                if (rememberedValue5 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue5 = (Function0) new Function0<Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$1$1
-                                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                        {
-                                                            super(0);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function0
-                                                        public /* bridge */ /* synthetic */ Unit invoke() {
-                                                            invoke2();
-                                                            return Unit.INSTANCE;
-                                                        }
-
-                                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                        public final void invoke2() {
-                                                            mutableState.setValue(Unit.INSTANCE);
-                                                        }
-                                                    };
-                                                    startRestartGroup.updateRememberedValue(rememberedValue5);
-                                                }
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                ExposedDropdownMenu_androidKt.SoftKeyboardListener(view, density, (Function0) rememberedValue5, startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                            }
-                                            startRestartGroup.endReplaceGroup();
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321507042, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
-                                            rememberedValue2 = startRestartGroup.rememberedValue();
-                                            if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                                                rememberedValue2 = new MutableTransitionState(false);
-                                                startRestartGroup.updateRememberedValue(rememberedValue2);
-                                            }
-                                            mutableTransitionState = (MutableTransitionState) rememberedValue2;
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            mutableTransitionState.setTargetState$animation_core(Boolean.valueOf(z));
-                                            if (!((Boolean) mutableTransitionState.getCurrentState()).booleanValue() || ((Boolean) mutableTransitionState.getTargetState()).booleanValue()) {
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321513419, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
-                                                rememberedValue3 = startRestartGroup.rememberedValue();
-                                                if (rememberedValue3 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TransformOrigin.m4944boximpl(TransformOrigin.Companion.m4957getCenterSzJe1aQ()), null, 2, null);
-                                                    startRestartGroup.updateRememberedValue(rememberedValue3);
-                                                }
-                                                final MutableState mutableState2 = (MutableState) rememberedValue3;
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321517310, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
-                                                changed = startRestartGroup.changed(density) | startRestartGroup.changed(top);
-                                                rememberedValue4 = startRestartGroup.rememberedValue();
-                                                if (!changed || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue4 = new ExposedDropdownMenuPositionProvider(density, top, mutableState, 0, new Function2<IntRect, IntRect, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$popupPositionProvider$1$1
-                                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                        {
-                                                            super(2);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function2
-                                                        public /* bridge */ /* synthetic */ Unit invoke(IntRect intRect, IntRect intRect2) {
-                                                            invoke2(intRect, intRect2);
-                                                            return Unit.INSTANCE;
-                                                        }
-
-                                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                        public final void invoke2(IntRect intRect, IntRect intRect2) {
-                                                            mutableState2.setValue(TransformOrigin.m4944boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
-                                                        }
-                                                    }, 8, null);
-                                                    startRestartGroup.updateRememberedValue(rememberedValue4);
-                                                }
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                AndroidPopup_androidKt.Popup((ExposedDropdownMenuPositionProvider) rememberedValue4, obj, ExposedDropdownMenuDefaults.INSTANCE.m2208popupPropertiespR6Bxps$material3_release(mo2203getAnchorTypeMg6Rgbw$material3_release(), startRestartGroup, 48), ComposableLambdaKt.rememberComposableLambda(-1082380263, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$2
-                                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                    /* JADX WARN: Multi-variable type inference failed */
-                                                    {
-                                                        super(2);
-                                                    }
-
-                                                    @Override // kotlin.jvm.functions.Function2
-                                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                                        invoke(composer3, num.intValue());
-                                                        return Unit.INSTANCE;
-                                                    }
-
-                                                    public final void invoke(Composer composer3, int i16) {
-                                                        ComposerKt.sourceInformation(composer3, "C379@17644L555:ExposedDropdownMenu.android.kt#uh7d8r");
-                                                        if ((i16 & 3) != 2 || !composer3.getSkipping()) {
-                                                            if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventStart(-1082380263, i16, -1, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu.<anonymous> (ExposedDropdownMenu.android.kt:379)");
-                                                            }
-                                                            MenuKt.m2362DropdownMenuContentQj0Zi0g(ExposedDropdownMenuBoxScope.this.exposedDropdownSize(obj3, z4), mutableTransitionState, mutableState2, scrollState4, shape3, j3, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
-                                                            if (ComposerKt.isTraceInProgress()) {
-                                                                ComposerKt.traceEventEnd();
-                                                                return;
-                                                            }
-                                                            return;
-                                                        }
-                                                        composer3.skipToGroupEnd();
-                                                    }
-                                                }, startRestartGroup, 54), startRestartGroup, (i4 & 112) | 3072, 0);
-                                                composer2 = startRestartGroup;
-                                            } else {
-                                                composer2 = startRestartGroup;
-                                            }
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventEnd();
-                                            }
-                                            modifier2 = obj3;
-                                            z5 = z4;
-                                            scrollState5 = scrollState4;
-                                            shape4 = shape3;
-                                            j2 = j3;
-                                            f5 = f3;
-                                            f6 = f4;
-                                            borderStroke3 = borderStroke2;
-                                        } else {
-                                            borderStroke2 = borderStroke;
-                                            obj3 = companion;
-                                            shape3 = shape2;
-                                            f3 = m2349getTonalElevationD9Ej5fM;
-                                            j3 = j2;
-                                            f4 = m2348getShadowElevationD9Ej5fM;
-                                            scrollState4 = scrollState3;
-                                        }
-                                    } else {
+                                    ComposerKt.sourceInformation(startRestartGroup, "313@14737L21,315@14838L5,316@14890L14");
+                                    if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
                                         startRestartGroup.skipToGroupEnd();
                                         if ((i3 & 8) != 0) {
                                             i4 &= -7169;
@@ -446,175 +271,283 @@ public abstract class ExposedDropdownMenuBoxScope {
                                         if ((i3 & 64) != 0) {
                                             i4 &= -3670017;
                                         }
-                                        f3 = f;
-                                        f4 = f2;
-                                        borderStroke2 = borderStroke;
-                                        shape3 = shape2;
+                                        shape4 = shape;
+                                        f5 = f;
+                                        f6 = f2;
+                                        borderStroke3 = borderStroke;
                                         j3 = j2;
-                                        obj3 = obj2;
-                                        scrollState4 = scrollState2;
+                                        modifier3 = obj2;
+                                        scrollState5 = scrollState2;
+                                    } else {
+                                        Modifier.Companion companion = i5 != 0 ? Modifier.Companion : obj2;
+                                        if ((i3 & 8) != 0) {
+                                            scrollState4 = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
+                                            i4 &= -7169;
+                                        } else {
+                                            scrollState4 = scrollState2;
+                                        }
+                                        if (i6 != 0) {
+                                            z3 = true;
+                                        }
+                                        if ((i3 & 32) != 0) {
+                                            shape3 = MenuDefaults.INSTANCE.getShape(startRestartGroup, 6);
+                                            i4 &= -458753;
+                                        } else {
+                                            shape3 = shape;
+                                        }
+                                        if ((i3 & 64) != 0) {
+                                            j2 = MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
+                                            i4 &= -3670017;
+                                        }
+                                        float m2545getTonalElevationD9Ej5fM = i7 != 0 ? MenuDefaults.INSTANCE.m2545getTonalElevationD9Ej5fM() : f;
+                                        float m2544getShadowElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2544getShadowElevationD9Ej5fM() : f2;
+                                        if (i11 != 0) {
+                                            modifier3 = companion;
+                                            f5 = m2545getTonalElevationD9Ej5fM;
+                                            j3 = j2;
+                                            shape4 = shape3;
+                                            scrollState5 = scrollState4;
+                                            f6 = m2544getShadowElevationD9Ej5fM;
+                                            z5 = z3;
+                                            borderStroke3 = null;
+                                            startRestartGroup.endDefaults();
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventStart(-126848451, i4, i13, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu (ExposedDropdownMenu.kt:321)");
+                                            }
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642251790, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
+                                            rememberedValue = startRestartGroup.rememberedValue();
+                                            if (rememberedValue == Composer.Companion.getEmpty()) {
+                                                rememberedValue = SnapshotStateKt.mutableStateOf(Unit.INSTANCE, SnapshotStateKt.neverEqualPolicy());
+                                                startRestartGroup.updateRememberedValue(rememberedValue);
+                                            }
+                                            mutableState = (MutableState) rememberedValue;
+                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                            Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
+                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                            Density density = (Density) consume;
+                                            int top = WindowInsets_androidKt.getStatusBars(WindowInsets.Companion, startRestartGroup, 6).getTop(density);
+                                            if (!z) {
+                                                startRestartGroup.startReplaceGroup(629991660);
+                                                ComposerKt.sourceInformation(startRestartGroup, "329@15580L36,329@15551L65");
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642244351, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
+                                                Object rememberedValue5 = startRestartGroup.rememberedValue();
+                                                if (rememberedValue5 == Composer.Companion.getEmpty()) {
+                                                    rememberedValue5 = new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda2
+                                                        @Override // kotlin.jvm.functions.Function0
+                                                        public final Object invoke() {
+                                                            Unit ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1;
+                                                            ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1(MutableState.this);
+                                                            return ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1;
+                                                        }
+                                                    };
+                                                    startRestartGroup.updateRememberedValue(rememberedValue5);
+                                                }
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                ExposedDropdownMenu_androidKt.OnPlatformWindowBoundsChange((Function0) rememberedValue5, startRestartGroup, 6);
+                                                startRestartGroup.endReplaceGroup();
+                                            } else {
+                                                startRestartGroup.startReplaceGroup(630077189);
+                                                startRestartGroup.endReplaceGroup();
+                                            }
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642239097, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
+                                            rememberedValue2 = startRestartGroup.rememberedValue();
+                                            if (rememberedValue2 == Composer.Companion.getEmpty()) {
+                                                rememberedValue2 = new MutableTransitionState(false);
+                                                startRestartGroup.updateRememberedValue(rememberedValue2);
+                                            }
+                                            mutableTransitionState = (MutableTransitionState) rememberedValue2;
+                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                            mutableTransitionState.setTargetState$animation_core(Boolean.valueOf(z));
+                                            if (!((Boolean) mutableTransitionState.getCurrentState()).booleanValue() || ((Boolean) mutableTransitionState.getTargetState()).booleanValue()) {
+                                                startRestartGroup.startReplaceGroup(630396489);
+                                                ComposerKt.sourceInformation(startRestartGroup, "337@15943L51,339@16051L486,353@16703L57,354@16776L584,350@16551L809");
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642232720, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
+                                                rememberedValue3 = startRestartGroup.rememberedValue();
+                                                if (rememberedValue3 == Composer.Companion.getEmpty()) {
+                                                    rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TransformOrigin.m5674boximpl(TransformOrigin.Companion.m5687getCenterSzJe1aQ()), null, 2, null);
+                                                    startRestartGroup.updateRememberedValue(rememberedValue3);
+                                                }
+                                                final MutableState mutableState2 = (MutableState) rememberedValue3;
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642228829, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
+                                                changed = startRestartGroup.changed(density) | startRestartGroup.changed(top);
+                                                rememberedValue4 = startRestartGroup.rememberedValue();
+                                                if (!changed || rememberedValue4 == Composer.Companion.getEmpty()) {
+                                                    rememberedValue4 = new ExposedDropdownMenuPositionProvider(density, top, mutableState, 0, new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda3
+                                                        @Override // kotlin.jvm.functions.Function2
+                                                        public final Object invoke(Object obj3, Object obj4) {
+                                                            Unit ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5;
+                                                            ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5(MutableState.this, (IntRect) obj3, (IntRect) obj4);
+                                                            return ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5;
+                                                        }
+                                                    }, 8, null);
+                                                    startRestartGroup.updateRememberedValue(rememberedValue4);
+                                                }
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                AndroidPopup_androidKt.Popup((ExposedDropdownMenuPositionProvider) rememberedValue4, obj, ExposedDropdownMenu_androidKt.m2372popupPropertiesForAnchorTypeBTG8q0(mo2352getAnchorTypeoYjWRB4$material3(), getAlwaysFocusable$material3(), startRestartGroup, 0), ComposableLambdaKt.rememberComposableLambda(2063119149, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$2
+                                                    @Override // kotlin.jvm.functions.Function2
+                                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                        invoke(composer3, num.intValue());
+                                                        return Unit.INSTANCE;
+                                                    }
+
+                                                    public final void invoke(Composer composer3, int i15) {
+                                                        ComposerKt.sourceInformation(composer3, "C355@16794L552:ExposedDropdownMenu.kt#uh7d8r");
+                                                        if (!composer3.shouldExecute((i15 & 3) != 2, i15 & 1)) {
+                                                            composer3.skipToGroupEnd();
+                                                            return;
+                                                        }
+                                                        if (ComposerKt.isTraceInProgress()) {
+                                                            ComposerKt.traceEventStart(2063119149, i15, -1, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu.<anonymous> (ExposedDropdownMenu.kt:355)");
+                                                        }
+                                                        MenuKt.m2559DropdownMenuContentQj0Zi0g(ExposedDropdownMenuBoxScope.this.exposedDropdownSize(modifier3, z5), mutableTransitionState, mutableState2, scrollState5, shape4, j3, f5, f6, borderStroke3, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                                                        if (ComposerKt.isTraceInProgress()) {
+                                                            ComposerKt.traceEventEnd();
+                                                        }
+                                                    }
+                                                }, startRestartGroup, 54), startRestartGroup, (i4 & 112) | 3072, 0);
+                                                composer2 = startRestartGroup;
+                                                composer2.endReplaceGroup();
+                                            } else {
+                                                startRestartGroup.startReplaceGroup(631807237);
+                                                startRestartGroup.endReplaceGroup();
+                                                composer2 = startRestartGroup;
+                                            }
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventEnd();
+                                            }
+                                            modifier2 = modifier3;
+                                            z4 = z5;
+                                            scrollState3 = scrollState5;
+                                            shape2 = shape4;
+                                            j2 = j3;
+                                            f3 = f5;
+                                            f4 = f6;
+                                            borderStroke2 = borderStroke3;
+                                        } else {
+                                            borderStroke3 = borderStroke;
+                                            modifier3 = companion;
+                                            f5 = m2545getTonalElevationD9Ej5fM;
+                                            j3 = j2;
+                                            shape4 = shape3;
+                                            scrollState5 = scrollState4;
+                                            f6 = m2544getShadowElevationD9Ej5fM;
+                                        }
                                     }
-                                    z4 = z3;
+                                    z5 = z3;
                                     startRestartGroup.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321492941, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642251790, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
                                     rememberedValue = startRestartGroup.rememberedValue();
                                     if (rememberedValue == Composer.Companion.getEmpty()) {
                                     }
                                     mutableState = (MutableState) rememberedValue;
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                    Object consume3 = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalView());
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                    Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    View view2 = (View) consume3;
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                    Object consume22 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
-                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    density = (Density) consume22;
-                                    int top2 = WindowInsets_androidKt.getStatusBars(WindowInsets.Companion, startRestartGroup, 6).getTop(density);
-                                    startRestartGroup.startReplaceGroup(321499814);
-                                    ComposerKt.sourceInformation(startRestartGroup, "353@16432L36,353@16396L72");
-                                    if (z) {
+                                    Density density2 = (Density) consume2;
+                                    int top2 = WindowInsets_androidKt.getStatusBars(WindowInsets.Companion, startRestartGroup, 6).getTop(density2);
+                                    if (!z) {
                                     }
-                                    startRestartGroup.endReplaceGroup();
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321507042, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642239097, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
                                     rememberedValue2 = startRestartGroup.rememberedValue();
                                     if (rememberedValue2 == Composer.Companion.getEmpty()) {
                                     }
                                     mutableTransitionState = (MutableTransitionState) rememberedValue2;
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     mutableTransitionState.setTargetState$animation_core(Boolean.valueOf(z));
-                                    if (((Boolean) mutableTransitionState.getCurrentState()).booleanValue()) {
+                                    if (!((Boolean) mutableTransitionState.getCurrentState()).booleanValue()) {
                                     }
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321513419, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
+                                    startRestartGroup.startReplaceGroup(630396489);
+                                    ComposerKt.sourceInformation(startRestartGroup, "337@15943L51,339@16051L486,353@16703L57,354@16776L584,350@16551L809");
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642232720, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
                                     rememberedValue3 = startRestartGroup.rememberedValue();
                                     if (rememberedValue3 == Composer.Companion.getEmpty()) {
                                     }
                                     final MutableState<TransformOrigin> mutableState22 = (MutableState) rememberedValue3;
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321517310, "CC(remember):ExposedDropdownMenu.android.kt#9igjgp");
-                                    changed = startRestartGroup.changed(density) | startRestartGroup.changed(top2);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642228829, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
+                                    changed = startRestartGroup.changed(density2) | startRestartGroup.changed(top2);
                                     rememberedValue4 = startRestartGroup.rememberedValue();
                                     if (!changed) {
                                     }
-                                    rememberedValue4 = new ExposedDropdownMenuPositionProvider(density, top2, mutableState, 0, new Function2<IntRect, IntRect, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$popupPositionProvider$1$1
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        {
-                                            super(2);
-                                        }
-
+                                    rememberedValue4 = new ExposedDropdownMenuPositionProvider(density2, top2, mutableState, 0, new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda3
                                         @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(IntRect intRect, IntRect intRect2) {
-                                            invoke2(intRect, intRect2);
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                        public final void invoke2(IntRect intRect, IntRect intRect2) {
-                                            mutableState22.setValue(TransformOrigin.m4944boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
+                                        public final Object invoke(Object obj3, Object obj4) {
+                                            Unit ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5;
+                                            ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5(MutableState.this, (IntRect) obj3, (IntRect) obj4);
+                                            return ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5;
                                         }
                                     }, 8, null);
                                     startRestartGroup.updateRememberedValue(rememberedValue4);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    AndroidPopup_androidKt.Popup((ExposedDropdownMenuPositionProvider) rememberedValue4, obj, ExposedDropdownMenuDefaults.INSTANCE.m2208popupPropertiespR6Bxps$material3_release(mo2203getAnchorTypeMg6Rgbw$material3_release(), startRestartGroup, 48), ComposableLambdaKt.rememberComposableLambda(-1082380263, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$2
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
-
+                                    AndroidPopup_androidKt.Popup((ExposedDropdownMenuPositionProvider) rememberedValue4, obj, ExposedDropdownMenu_androidKt.m2372popupPropertiesForAnchorTypeBTG8q0(mo2352getAnchorTypeoYjWRB4$material3(), getAlwaysFocusable$material3(), startRestartGroup, 0), ComposableLambdaKt.rememberComposableLambda(2063119149, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$2
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                             invoke(composer3, num.intValue());
                                             return Unit.INSTANCE;
                                         }
 
-                                        public final void invoke(Composer composer3, int i16) {
-                                            ComposerKt.sourceInformation(composer3, "C379@17644L555:ExposedDropdownMenu.android.kt#uh7d8r");
-                                            if ((i16 & 3) != 2 || !composer3.getSkipping()) {
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(-1082380263, i16, -1, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu.<anonymous> (ExposedDropdownMenu.android.kt:379)");
-                                                }
-                                                MenuKt.m2362DropdownMenuContentQj0Zi0g(ExposedDropdownMenuBoxScope.this.exposedDropdownSize(obj3, z4), mutableTransitionState, mutableState22, scrollState4, shape3, j3, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventEnd();
-                                                    return;
-                                                }
+                                        public final void invoke(Composer composer3, int i15) {
+                                            ComposerKt.sourceInformation(composer3, "C355@16794L552:ExposedDropdownMenu.kt#uh7d8r");
+                                            if (!composer3.shouldExecute((i15 & 3) != 2, i15 & 1)) {
+                                                composer3.skipToGroupEnd();
                                                 return;
                                             }
-                                            composer3.skipToGroupEnd();
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventStart(2063119149, i15, -1, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu.<anonymous> (ExposedDropdownMenu.kt:355)");
+                                            }
+                                            MenuKt.m2559DropdownMenuContentQj0Zi0g(ExposedDropdownMenuBoxScope.this.exposedDropdownSize(modifier3, z5), mutableTransitionState, mutableState22, scrollState5, shape4, j3, f5, f6, borderStroke3, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventEnd();
+                                            }
                                         }
                                     }, startRestartGroup, 54), startRestartGroup, (i4 & 112) | 3072, 0);
                                     composer2 = startRestartGroup;
+                                    composer2.endReplaceGroup();
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
-                                    modifier2 = obj3;
-                                    z5 = z4;
-                                    scrollState5 = scrollState4;
-                                    shape4 = shape3;
+                                    modifier2 = modifier3;
+                                    z4 = z5;
+                                    scrollState3 = scrollState5;
+                                    shape2 = shape4;
                                     j2 = j3;
-                                    f5 = f3;
-                                    f6 = f4;
-                                    borderStroke3 = borderStroke2;
+                                    f3 = f5;
+                                    f4 = f6;
+                                    borderStroke2 = borderStroke3;
                                 } else {
-                                    startRestartGroup.skipToGroupEnd();
-                                    f5 = f;
                                     composer2 = startRestartGroup;
-                                    shape4 = shape2;
+                                    composer2.skipToGroupEnd();
+                                    shape2 = shape;
+                                    f3 = f;
                                     modifier2 = obj2;
-                                    scrollState5 = scrollState2;
-                                    z5 = z3;
-                                    f6 = f2;
-                                    borderStroke3 = borderStroke;
+                                    scrollState3 = scrollState2;
+                                    z4 = z3;
+                                    f4 = f2;
+                                    borderStroke2 = borderStroke;
                                 }
-                                ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
+                                endRestartGroup = composer2.endRestartGroup();
                                 if (endRestartGroup != null) {
-                                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$3
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
-
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda4
                                         @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                            invoke(composer3, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer3, int i16) {
-                                            ExposedDropdownMenuBoxScope.this.m2202ExposedDropdownMenuvNxi1II(z, function0, modifier2, scrollState5, z5, shape4, j2, f5, f6, borderStroke3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+                                        public final Object invoke(Object obj3, Object obj4) {
+                                            Unit ExposedDropdownMenu_vNxi1II$lambda$7;
+                                            ExposedDropdownMenu_vNxi1II$lambda$7 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$7(ExposedDropdownMenuBoxScope.this, z, function0, modifier2, scrollState3, z4, shape2, j2, f3, f4, borderStroke2, function3, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
+                                            return ExposedDropdownMenu_vNxi1II$lambda$7;
                                         }
                                     });
                                     return;
                                 }
                                 return;
                             }
-                            int i152 = i12;
-                            if ((i4 & 306783379) == 306783378) {
+                            i13 = i12;
+                            if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i13 & 19) != 18, i4 & 1)) {
                             }
-                            startRestartGroup.startDefaults();
-                            if ((i & 1) != 0) {
-                            }
-                            if (i5 != 0) {
-                            }
-                            if ((i3 & 8) != 0) {
-                            }
-                            if (i6 != 0) {
-                            }
-                            if ((i3 & 32) != 0) {
-                            }
-                            if ((i3 & 64) != 0) {
-                            }
-                            if (i7 != 0) {
-                            }
-                            if (i9 != 0) {
-                            }
-                            if (i11 != 0) {
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup != null) {
                             }
                         }
                         i11 = i10;
@@ -622,27 +555,11 @@ public abstract class ExposedDropdownMenuBoxScope {
                         }
                         if ((i3 & 2048) == 0) {
                         }
-                        int i1522 = i12;
-                        if ((i4 & 306783379) == 306783378) {
+                        i13 = i12;
+                        if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i13 & 19) != 18, i4 & 1)) {
                         }
-                        startRestartGroup.startDefaults();
-                        if ((i & 1) != 0) {
-                        }
-                        if (i5 != 0) {
-                        }
-                        if ((i3 & 8) != 0) {
-                        }
-                        if (i6 != 0) {
-                        }
-                        if ((i3 & 32) != 0) {
-                        }
-                        if ((i3 & 64) != 0) {
-                        }
-                        if (i7 != 0) {
-                        }
-                        if (i9 != 0) {
-                        }
-                        if (i11 != 0) {
+                        endRestartGroup = composer2.endRestartGroup();
+                        if (endRestartGroup != null) {
                         }
                     }
                     i9 = i8;
@@ -654,31 +571,15 @@ public abstract class ExposedDropdownMenuBoxScope {
                     }
                     if ((i3 & 2048) == 0) {
                     }
-                    int i15222 = i12;
-                    if ((i4 & 306783379) == 306783378) {
+                    i13 = i12;
+                    if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i13 & 19) != 18, i4 & 1)) {
                     }
-                    startRestartGroup.startDefaults();
-                    if ((i & 1) != 0) {
-                    }
-                    if (i5 != 0) {
-                    }
-                    if ((i3 & 8) != 0) {
-                    }
-                    if (i6 != 0) {
-                    }
-                    if ((i3 & 32) != 0) {
-                    }
-                    if ((i3 & 64) != 0) {
-                    }
-                    if (i7 != 0) {
-                    }
-                    if (i9 != 0) {
-                    }
-                    if (i11 != 0) {
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup != null) {
                     }
                 }
                 z3 = z2;
-                if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
+                if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
                 }
                 if ((i & 1572864) != 0) {
                 }
@@ -697,27 +598,11 @@ public abstract class ExposedDropdownMenuBoxScope {
                 }
                 if ((i3 & 2048) == 0) {
                 }
-                int i152222 = i12;
-                if ((i4 & 306783379) == 306783378) {
+                i13 = i12;
+                if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i13 & 19) != 18, i4 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i & 1) != 0) {
-                }
-                if (i5 != 0) {
-                }
-                if ((i3 & 8) != 0) {
-                }
-                if (i6 != 0) {
-                }
-                if ((i3 & 32) != 0) {
-                }
-                if ((i3 & 64) != 0) {
-                }
-                if (i7 != 0) {
-                }
-                if (i9 != 0) {
-                }
-                if (i11 != 0) {
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup != null) {
                 }
             }
             obj2 = modifier;
@@ -727,7 +612,7 @@ public abstract class ExposedDropdownMenuBoxScope {
             if (i6 != 0) {
             }
             z3 = z2;
-            if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
+            if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
             }
             if ((i & 1572864) != 0) {
             }
@@ -746,27 +631,11 @@ public abstract class ExposedDropdownMenuBoxScope {
             }
             if ((i3 & 2048) == 0) {
             }
-            int i1522222 = i12;
-            if ((i4 & 306783379) == 306783378) {
+            i13 = i12;
+            if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i13 & 19) != 18, i4 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i & 1) != 0) {
-            }
-            if (i5 != 0) {
-            }
-            if ((i3 & 8) != 0) {
-            }
-            if (i6 != 0) {
-            }
-            if ((i3 & 32) != 0) {
-            }
-            if ((i3 & 64) != 0) {
-            }
-            if (i7 != 0) {
-            }
-            if (i9 != 0) {
-            }
-            if (i11 != 0) {
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup != null) {
             }
         }
         obj = function0;
@@ -780,7 +649,7 @@ public abstract class ExposedDropdownMenuBoxScope {
         if (i6 != 0) {
         }
         z3 = z2;
-        if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) != 0) {
+        if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
         }
         if ((i & 1572864) != 0) {
         }
@@ -799,33 +668,29 @@ public abstract class ExposedDropdownMenuBoxScope {
         }
         if ((i3 & 2048) == 0) {
         }
-        int i15222222 = i12;
-        if ((i4 & 306783379) == 306783378) {
+        i13 = i12;
+        if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i13 & 19) != 18, i4 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i & 1) != 0) {
-        }
-        if (i5 != 0) {
-        }
-        if ((i3 & 8) != 0) {
-        }
-        if (i6 != 0) {
-        }
-        if ((i3 & 32) != 0) {
-        }
-        if ((i3 & 64) != 0) {
-        }
-        if (i7 != 0) {
-        }
-        if (i9 != 0) {
-        }
-        if (i11 != 0) {
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup != null) {
         }
     }
 
-    @Deprecated(level = DeprecationLevel.WARNING, message = "Use overload that takes MenuAnchorType and enabled parameters", replaceWith = @ReplaceWith(expression = "menuAnchor(type, enabled)", imports = {}))
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1(MutableState mutableState) {
+        mutableState.setValue(Unit.INSTANCE);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5(MutableState mutableState, IntRect intRect, IntRect intRect2) {
+        mutableState.setValue(TransformOrigin.m5674boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
+        return Unit.INSTANCE;
+    }
+
+    @Deprecated(level = DeprecationLevel.WARNING, message = "Use overload that takes ExposedDropdownMenuAnchorType and enabled parameters", replaceWith = @ReplaceWith(expression = "menuAnchor(type, enabled)", imports = {}))
     public final Modifier menuAnchor(Modifier modifier) {
-        return m2200menuAnchorfsE2BvY$default(this, modifier, MenuAnchorType.Companion.m2346getPrimaryNotEditableMg6Rgbw(), false, 2, null);
+        return m2349menuAnchor2Hz36ac$default(this, modifier, ExposedDropdownMenuAnchorType.Companion.m2345getPrimaryNotEditableoYjWRB4(), false, 2, null);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x0129  */
@@ -833,27 +698,11 @@ public abstract class ExposedDropdownMenuBoxScope {
     /* JADX WARN: Removed duplicated region for block: B:111:0x014c  */
     /* JADX WARN: Removed duplicated region for block: B:121:0x0168  */
     /* JADX WARN: Removed duplicated region for block: B:122:0x016b  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x018b  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x01b8  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x01f6  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x01fe  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0203  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0205  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0209  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0211  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x021d  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x022a  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0231  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x0235  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x023c  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x0240  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x026c  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x02c4  */
-    /* JADX WARN: Removed duplicated region for block: B:193:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x018c  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x019e  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x02c9  */
+    /* JADX WARN: Removed duplicated region for block: B:196:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006f  */
@@ -869,20 +718,19 @@ public abstract class ExposedDropdownMenuBoxScope {
     /* JADX WARN: Removed duplicated region for block: B:88:0x0101  */
     /* JADX WARN: Removed duplicated region for block: B:89:0x0104  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x0122  */
-    @Deprecated(level = DeprecationLevel.WARNING, message = "The `focusable` parameter is unused. Pass the proper MenuAnchorType to Modifier.menuAnchor instead, which will handle focusability automatically.")
+    @Deprecated(level = DeprecationLevel.WARNING, message = "The `focusable` parameter is unused. Pass the proper ExposedDropdownMenuAnchorType to Modifier.menuAnchor instead, which will handle focusability automatically.")
     /* renamed from: ExposedDropdownMenu-kbRbctU  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2201ExposedDropdownMenukbRbctU(final boolean z, final Function0<Unit> function0, Modifier modifier, ScrollState scrollState, boolean z2, boolean z3, Shape shape, long j, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public final void m2350ExposedDropdownMenukbRbctU(final boolean z, final Function0<Unit> function0, Modifier modifier, ScrollState scrollState, boolean z2, boolean z3, Shape shape, long j, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
         Modifier.Companion companion;
-        final ScrollState scrollState2;
         int i6;
         boolean z4;
-        Shape shape2;
+        Object obj2;
         long j2;
         int i7;
         int i8;
@@ -890,31 +738,30 @@ public abstract class ExposedDropdownMenuBoxScope {
         int i10;
         int i11;
         int i12;
-        ScrollState scrollState3;
-        boolean z5;
-        long j3;
-        BorderStroke borderStroke2;
-        ScrollState scrollState4;
-        float f3;
-        boolean z6;
-        Shape shape3;
-        float f4;
-        long j4;
-        Modifier modifier2;
         int i13;
         Composer composer2;
-        final boolean z7;
-        final Modifier modifier3;
-        final boolean z8;
-        final Shape shape4;
-        final long j5;
-        final float f5;
-        final float f6;
-        final BorderStroke borderStroke3;
+        final ScrollState scrollState2;
+        final float f3;
+        final boolean z5;
+        final Shape shape2;
+        final long j3;
+        final Modifier modifier2;
+        final boolean z6;
+        final float f4;
+        final BorderStroke borderStroke2;
         ScopeUpdateScope endRestartGroup;
+        ScrollState scrollState3;
+        boolean z7;
+        Shape shape3;
+        BorderStroke borderStroke3;
+        ScrollState scrollState4;
+        float f5;
+        boolean z8;
+        Shape shape4;
+        float f6;
         int i14;
-        Composer startRestartGroup = composer.startRestartGroup(366140493);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ExposedDropdownMenu)P(3,7,6,8,4,5,10,1:c#ui.graphics.Color,11:c#ui.unit.Dp,9:c#ui.unit.Dp)414@19050L21,417@19189L5,418@19241L14,424@19482L463:ExposedDropdownMenu.android.kt#uh7d8r");
+        Composer startRestartGroup = composer.startRestartGroup(-1772805535);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ExposedDropdownMenu)N(expanded,onDismissRequest,modifier,scrollState,focusable,matchTextFieldWidth,shape,containerColor:c#ui.graphics.Color,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp,border,content)401@18683L460:ExposedDropdownMenu.kt#uh7d8r");
         if ((i3 & 1) != 0) {
             i4 = i | 6;
         } else if ((i & 6) == 0) {
@@ -934,19 +781,12 @@ public abstract class ExposedDropdownMenuBoxScope {
                 companion = modifier;
                 i4 |= startRestartGroup.changed(companion) ? 256 : 128;
                 if ((i & 3072) == 0) {
-                    if ((i3 & 8) == 0) {
-                        scrollState2 = scrollState;
-                        if (startRestartGroup.changed(scrollState2)) {
-                            i14 = 2048;
-                            i4 |= i14;
-                        }
-                    } else {
-                        scrollState2 = scrollState;
+                    if ((i3 & 8) == 0 && startRestartGroup.changed(scrollState)) {
+                        i14 = 2048;
+                        i4 |= i14;
                     }
                     i14 = 1024;
                     i4 |= i14;
-                } else {
-                    scrollState2 = scrollState;
                 }
                 i6 = i3 & 32;
                 if (i6 != 0) {
@@ -959,10 +799,10 @@ public abstract class ExposedDropdownMenuBoxScope {
                     }
                 }
                 if ((i & 1572864) == 0) {
-                    shape2 = shape;
-                    i4 |= ((i3 & 64) == 0 && startRestartGroup.changed(shape2)) ? 1048576 : 524288;
+                    obj2 = shape;
+                    i4 |= ((i3 & 64) == 0 && startRestartGroup.changed(obj2)) ? 1048576 : 524288;
                 } else {
-                    shape2 = shape;
+                    obj2 = shape;
                 }
                 if ((i & 12582912) == 0) {
                     j2 = j;
@@ -998,59 +838,15 @@ public abstract class ExposedDropdownMenuBoxScope {
                     } else if ((i2 & 48) == 0) {
                         i12 |= startRestartGroup.changedInstance(function3) ? 32 : 16;
                     }
-                    int i15 = i12;
+                    i13 = i12;
                     if ((i3 & 4096) == 0) {
-                        i15 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+                        i13 |= RendererCapabilities.DECODER_SUPPORT_MASK;
                     } else if ((i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                        i15 |= startRestartGroup.changed(this) ? 256 : 128;
-                        if ((i4 & 306775187) == 306775186 || (i15 & 147) != 146 || !startRestartGroup.getSkipping()) {
+                        i13 |= startRestartGroup.changed(this) ? 256 : 128;
+                        if (startRestartGroup.shouldExecute((i4 & 306775187) == 306775186 || (i13 & 147) != 146, i4 & 1)) {
                             startRestartGroup.startDefaults();
-                            if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                                if (i5 != 0) {
-                                    companion = Modifier.Companion;
-                                }
-                                if ((i3 & 8) != 0) {
-                                    scrollState3 = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
-                                    i4 &= -7169;
-                                } else {
-                                    scrollState3 = scrollState2;
-                                }
-                                z5 = (i3 & 16) != 0 ? true : z2;
-                                if (i6 != 0) {
-                                    z4 = true;
-                                }
-                                if ((i3 & 64) != 0) {
-                                    shape2 = MenuDefaults.INSTANCE.getShape(startRestartGroup, 6);
-                                    i4 &= -3670017;
-                                }
-                                if ((i3 & 128) != 0) {
-                                    j3 = MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
-                                    i4 &= -29360129;
-                                } else {
-                                    j3 = j2;
-                                }
-                                float m2349getTonalElevationD9Ej5fM = i7 != 0 ? MenuDefaults.INSTANCE.m2349getTonalElevationD9Ej5fM() : f;
-                                float m2348getShadowElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2348getShadowElevationD9Ej5fM() : f2;
-                                if (i11 != 0) {
-                                    scrollState4 = scrollState3;
-                                    f3 = m2349getTonalElevationD9Ej5fM;
-                                    z6 = z4;
-                                    shape3 = shape2;
-                                    f4 = m2348getShadowElevationD9Ej5fM;
-                                    j4 = j3;
-                                    borderStroke2 = null;
-                                } else {
-                                    borderStroke2 = borderStroke;
-                                    scrollState4 = scrollState3;
-                                    f3 = m2349getTonalElevationD9Ej5fM;
-                                    z6 = z4;
-                                    shape3 = shape2;
-                                    f4 = m2348getShadowElevationD9Ej5fM;
-                                    j4 = j3;
-                                }
-                                modifier2 = companion;
-                                i13 = 366140493;
-                            } else {
+                            ComposerKt.sourceInformation(startRestartGroup, "391@18251L21,394@18390L5,395@18442L14");
+                            if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
                                 startRestartGroup.skipToGroupEnd();
                                 if ((i3 & 8) != 0) {
                                     i4 &= -7169;
@@ -1061,114 +857,103 @@ public abstract class ExposedDropdownMenuBoxScope {
                                 if ((i3 & 128) != 0) {
                                     i4 &= -29360129;
                                 }
-                                f3 = f;
-                                f4 = f2;
-                                borderStroke2 = borderStroke;
-                                scrollState4 = scrollState2;
-                                z6 = z4;
-                                shape3 = shape2;
-                                j4 = j2;
-                                modifier2 = companion;
-                                i13 = 366140493;
-                                z5 = z2;
+                                scrollState4 = scrollState;
+                                z7 = z2;
+                                f5 = f;
+                                f6 = f2;
+                                borderStroke3 = borderStroke;
+                                z8 = z4;
+                                shape4 = obj2;
+                            } else {
+                                if (i5 != 0) {
+                                    companion = Modifier.Companion;
+                                }
+                                if ((i3 & 8) != 0) {
+                                    scrollState3 = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
+                                    i4 &= -7169;
+                                } else {
+                                    scrollState3 = scrollState;
+                                }
+                                z7 = (i3 & 16) != 0 ? true : z2;
+                                boolean z9 = i6 == 0 ? z4 : true;
+                                if ((i3 & 64) != 0) {
+                                    shape3 = MenuDefaults.INSTANCE.getShape(startRestartGroup, 6);
+                                    i4 &= -3670017;
+                                } else {
+                                    shape3 = obj2;
+                                }
+                                if ((i3 & 128) != 0) {
+                                    j2 = MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
+                                    i4 &= -29360129;
+                                }
+                                float m2545getTonalElevationD9Ej5fM = i7 != 0 ? MenuDefaults.INSTANCE.m2545getTonalElevationD9Ej5fM() : f;
+                                float m2544getShadowElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2544getShadowElevationD9Ej5fM() : f2;
+                                if (i11 != 0) {
+                                    scrollState4 = scrollState3;
+                                    f5 = m2545getTonalElevationD9Ej5fM;
+                                    z8 = z9;
+                                    shape4 = shape3;
+                                    f6 = m2544getShadowElevationD9Ej5fM;
+                                    borderStroke3 = null;
+                                } else {
+                                    borderStroke3 = borderStroke;
+                                    scrollState4 = scrollState3;
+                                    f5 = m2545getTonalElevationD9Ej5fM;
+                                    z8 = z9;
+                                    shape4 = shape3;
+                                    f6 = m2544getShadowElevationD9Ej5fM;
+                                }
                             }
+                            long j4 = j2;
+                            Modifier modifier3 = companion;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(i13, i4, i15, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu (ExposedDropdownMenu.android.kt:424)");
+                                ComposerKt.traceEventStart(-1772805535, i4, i13, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu (ExposedDropdownMenu.kt:401)");
                             }
-                            int i16 = i4 >> 3;
+                            int i15 = i4 >> 3;
                             composer2 = startRestartGroup;
-                            m2202ExposedDropdownMenuvNxi1II(z, obj, modifier2, scrollState4, z6, shape3, j4, f3, f4, borderStroke2, function3, composer2, (i4 & 8190) | (57344 & i16) | (458752 & i16) | (3670016 & i16) | (29360128 & i16) | (i16 & 234881024) | ((i15 << 27) & 1879048192), (i15 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+                            m2351ExposedDropdownMenuvNxi1II(z, obj, modifier3, scrollState4, z8, shape4, j4, f5, f6, borderStroke3, function3, composer2, (i4 & 8190) | (57344 & i15) | (458752 & i15) | (3670016 & i15) | (29360128 & i15) | (i15 & 234881024) | ((i13 << 27) & 1879048192), (i13 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
-                            z7 = z5;
-                            modifier3 = modifier2;
+                            z6 = z7;
+                            modifier2 = modifier3;
                             scrollState2 = scrollState4;
-                            z8 = z6;
-                            shape4 = shape3;
-                            j5 = j4;
-                            f5 = f3;
-                            f6 = f4;
-                            borderStroke3 = borderStroke2;
+                            z5 = z8;
+                            shape2 = shape4;
+                            j3 = j4;
+                            f3 = f5;
+                            f4 = f6;
+                            borderStroke2 = borderStroke3;
                         } else {
-                            startRestartGroup.skipToGroupEnd();
-                            f5 = f;
                             composer2 = startRestartGroup;
-                            z8 = z4;
-                            shape4 = shape2;
-                            j5 = j2;
-                            modifier3 = companion;
-                            z7 = z2;
-                            f6 = f2;
-                            borderStroke3 = borderStroke;
+                            composer2.skipToGroupEnd();
+                            scrollState2 = scrollState;
+                            f3 = f;
+                            z5 = z4;
+                            shape2 = obj2;
+                            j3 = j2;
+                            modifier2 = companion;
+                            z6 = z2;
+                            f4 = f2;
+                            borderStroke2 = borderStroke;
                         }
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup != null) {
-                            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$4
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
-                                }
-
+                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                    invoke(composer3, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer3, int i17) {
-                                    ExposedDropdownMenuBoxScope.this.m2201ExposedDropdownMenukbRbctU(z, function0, modifier3, scrollState2, z7, z8, shape4, j5, f5, f6, borderStroke3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+                                public final Object invoke(Object obj3, Object obj4) {
+                                    Unit ExposedDropdownMenu_kbRbctU$lambda$8;
+                                    ExposedDropdownMenu_kbRbctU$lambda$8 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_kbRbctU$lambda$8(ExposedDropdownMenuBoxScope.this, z, function0, modifier2, scrollState2, z6, z5, shape2, j3, f3, f4, borderStroke2, function3, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
+                                    return ExposedDropdownMenu_kbRbctU$lambda$8;
                                 }
                             });
                             return;
                         }
                         return;
                     }
-                    if ((i4 & 306775187) == 306775186) {
+                    if (startRestartGroup.shouldExecute((i4 & 306775187) == 306775186 || (i13 & 147) != 146, i4 & 1)) {
                     }
-                    startRestartGroup.startDefaults();
-                    if ((i & 1) != 0) {
-                    }
-                    if (i5 != 0) {
-                    }
-                    if ((i3 & 8) != 0) {
-                    }
-                    if ((i3 & 16) != 0) {
-                    }
-                    if (i6 != 0) {
-                    }
-                    if ((i3 & 64) != 0) {
-                    }
-                    if ((i3 & 128) != 0) {
-                    }
-                    if (i7 != 0) {
-                    }
-                    if (i9 != 0) {
-                    }
-                    if (i11 != 0) {
-                    }
-                    modifier2 = companion;
-                    i13 = 366140493;
-                    startRestartGroup.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    int i162 = i4 >> 3;
-                    composer2 = startRestartGroup;
-                    m2202ExposedDropdownMenuvNxi1II(z, obj, modifier2, scrollState4, z6, shape3, j4, f3, f4, borderStroke2, function3, composer2, (i4 & 8190) | (57344 & i162) | (458752 & i162) | (3670016 & i162) | (29360128 & i162) | (i162 & 234881024) | ((i15 << 27) & 1879048192), (i15 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    z7 = z5;
-                    modifier3 = modifier2;
-                    scrollState2 = scrollState4;
-                    z8 = z6;
-                    shape4 = shape3;
-                    j5 = j4;
-                    f5 = f3;
-                    f6 = f4;
-                    borderStroke3 = borderStroke2;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
@@ -1179,51 +964,11 @@ public abstract class ExposedDropdownMenuBoxScope {
                 }
                 if ((i3 & 2048) == 0) {
                 }
-                int i152 = i12;
+                i13 = i12;
                 if ((i3 & 4096) == 0) {
                 }
-                if ((i4 & 306775187) == 306775186) {
+                if (startRestartGroup.shouldExecute((i4 & 306775187) == 306775186 || (i13 & 147) != 146, i4 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i & 1) != 0) {
-                }
-                if (i5 != 0) {
-                }
-                if ((i3 & 8) != 0) {
-                }
-                if ((i3 & 16) != 0) {
-                }
-                if (i6 != 0) {
-                }
-                if ((i3 & 64) != 0) {
-                }
-                if ((i3 & 128) != 0) {
-                }
-                if (i7 != 0) {
-                }
-                if (i9 != 0) {
-                }
-                if (i11 != 0) {
-                }
-                modifier2 = companion;
-                i13 = 366140493;
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                int i1622 = i4 >> 3;
-                composer2 = startRestartGroup;
-                m2202ExposedDropdownMenuvNxi1II(z, obj, modifier2, scrollState4, z6, shape3, j4, f3, f4, borderStroke2, function3, composer2, (i4 & 8190) | (57344 & i1622) | (458752 & i1622) | (3670016 & i1622) | (29360128 & i1622) | (i1622 & 234881024) | ((i152 << 27) & 1879048192), (i152 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                z7 = z5;
-                modifier3 = modifier2;
-                scrollState2 = scrollState4;
-                z8 = z6;
-                shape4 = shape3;
-                j5 = j4;
-                f5 = f3;
-                f6 = f4;
-                borderStroke3 = borderStroke2;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup != null) {
                 }
@@ -1250,51 +995,11 @@ public abstract class ExposedDropdownMenuBoxScope {
             }
             if ((i3 & 2048) == 0) {
             }
-            int i1522 = i12;
+            i13 = i12;
             if ((i3 & 4096) == 0) {
             }
-            if ((i4 & 306775187) == 306775186) {
+            if (startRestartGroup.shouldExecute((i4 & 306775187) == 306775186 || (i13 & 147) != 146, i4 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i & 1) != 0) {
-            }
-            if (i5 != 0) {
-            }
-            if ((i3 & 8) != 0) {
-            }
-            if ((i3 & 16) != 0) {
-            }
-            if (i6 != 0) {
-            }
-            if ((i3 & 64) != 0) {
-            }
-            if ((i3 & 128) != 0) {
-            }
-            if (i7 != 0) {
-            }
-            if (i9 != 0) {
-            }
-            if (i11 != 0) {
-            }
-            modifier2 = companion;
-            i13 = 366140493;
-            startRestartGroup.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            int i16222 = i4 >> 3;
-            composer2 = startRestartGroup;
-            m2202ExposedDropdownMenuvNxi1II(z, obj, modifier2, scrollState4, z6, shape3, j4, f3, f4, borderStroke2, function3, composer2, (i4 & 8190) | (57344 & i16222) | (458752 & i16222) | (3670016 & i16222) | (29360128 & i16222) | (i16222 & 234881024) | ((i1522 << 27) & 1879048192), (i1522 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            z7 = z5;
-            modifier3 = modifier2;
-            scrollState2 = scrollState4;
-            z8 = z6;
-            shape4 = shape3;
-            j5 = j4;
-            f5 = f3;
-            f6 = f4;
-            borderStroke3 = borderStroke2;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -1325,70 +1030,30 @@ public abstract class ExposedDropdownMenuBoxScope {
         }
         if ((i3 & 2048) == 0) {
         }
-        int i15222 = i12;
+        i13 = i12;
         if ((i3 & 4096) == 0) {
         }
-        if ((i4 & 306775187) == 306775186) {
+        if (startRestartGroup.shouldExecute((i4 & 306775187) == 306775186 || (i13 & 147) != 146, i4 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i & 1) != 0) {
-        }
-        if (i5 != 0) {
-        }
-        if ((i3 & 8) != 0) {
-        }
-        if ((i3 & 16) != 0) {
-        }
-        if (i6 != 0) {
-        }
-        if ((i3 & 64) != 0) {
-        }
-        if ((i3 & 128) != 0) {
-        }
-        if (i7 != 0) {
-        }
-        if (i9 != 0) {
-        }
-        if (i11 != 0) {
-        }
-        modifier2 = companion;
-        i13 = 366140493;
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        int i162222 = i4 >> 3;
-        composer2 = startRestartGroup;
-        m2202ExposedDropdownMenuvNxi1II(z, obj, modifier2, scrollState4, z6, shape3, j4, f3, f4, borderStroke2, function3, composer2, (i4 & 8190) | (57344 & i162222) | (458752 & i162222) | (3670016 & i162222) | (29360128 & i162222) | (i162222 & 234881024) | ((i15222 << 27) & 1879048192), (i15222 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        z7 = z5;
-        modifier3 = modifier2;
-        scrollState2 = scrollState4;
-        z8 = z6;
-        shape4 = shape3;
-        j5 = j4;
-        f5 = f3;
-        f6 = f4;
-        borderStroke3 = borderStroke2;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:102:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0066  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x007b  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0081  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0084  */
     /* JADX WARN: Removed duplicated region for block: B:58:0x009f  */
     /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x00d4  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x015a  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use overload with customization options parameters.")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1401,12 +1066,13 @@ public abstract class ExposedDropdownMenuBoxScope {
         final ScrollState scrollState2;
         Object obj2;
         ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope;
+        Composer composer2;
+        ScopeUpdateScope endRestartGroup;
         Modifier modifier2;
         ScrollState rememberScrollState;
-        Composer composer2;
         int i4;
-        Composer startRestartGroup = composer.startRestartGroup(1729549851);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ExposedDropdownMenu)P(1,3,2,4)449@20337L21,458@20677L5,459@20726L14,452@20429L498:ExposedDropdownMenu.android.kt#uh7d8r");
+        Composer startRestartGroup = composer.startRestartGroup(-1501437777);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ExposedDropdownMenu)N(expanded,onDismissRequest,modifier,scrollState,content)436@19905L5,437@19954L14,430@19657L498:ExposedDropdownMenu.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
             z2 = z;
@@ -1458,20 +1124,28 @@ public abstract class ExposedDropdownMenuBoxScope {
                 } else if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
                     exposedDropdownMenuBoxScope = this;
                     i3 |= startRestartGroup.changed(exposedDropdownMenuBoxScope) ? 131072 : 65536;
-                    if ((74899 & i3) == 74898 || !startRestartGroup.getSkipping()) {
+                    if (!startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
                         startRestartGroup.startDefaults();
-                        if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                            Modifier.Companion companion = i5 == 0 ? Modifier.Companion : obj;
-                            if ((i2 & 8) == 0) {
+                        ComposerKt.sourceInformation(startRestartGroup, "427@19565L21");
+                        if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                            startRestartGroup.skipToGroupEnd();
+                            if ((i2 & 8) != 0) {
+                                i3 &= -7169;
+                            }
+                            modifier2 = obj;
+                        } else {
+                            Modifier.Companion companion = i5 != 0 ? Modifier.Companion : obj;
+                            if ((i2 & 8) != 0) {
                                 i3 &= -7169;
                                 modifier2 = companion;
                                 rememberScrollState = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
                                 startRestartGroup.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(1729549851, i3, -1, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu (ExposedDropdownMenu.android.kt:452)");
+                                    ComposerKt.traceEventStart(-1501437777, i3, -1, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu (ExposedDropdownMenu.kt:430)");
                                 }
+                                int i6 = i3 >> 9;
                                 composer2 = startRestartGroup;
-                                exposedDropdownMenuBoxScope.m2202ExposedDropdownMenuvNxi1II(z2, function02, modifier2, rememberScrollState, true, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2349getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2348getShadowElevationD9Ej5fM(), null, obj2, composer2, (i3 & 14) | 918577152 | (i3 & 112) | (i3 & 896) | (i3 & 7168), (i3 >> 12) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+                                exposedDropdownMenuBoxScope.m2350ExposedDropdownMenukbRbctU(z2, function02, modifier2, rememberScrollState, false, true, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2545getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2544getShadowElevationD9Ej5fM(), null, obj2, composer2, (i3 & 14) | 906166272 | (i3 & 112) | (i3 & 896) | (i3 & 7168), (i6 & 112) | 6 | (i6 & 896), 16);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1480,45 +1154,30 @@ public abstract class ExposedDropdownMenuBoxScope {
                             } else {
                                 modifier2 = companion;
                             }
-                        } else {
-                            startRestartGroup.skipToGroupEnd();
-                            if ((i2 & 8) != 0) {
-                                i3 &= -7169;
-                            }
-                            modifier2 = obj;
                         }
                         rememberScrollState = scrollState2;
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
                         }
+                        int i62 = i3 >> 9;
                         composer2 = startRestartGroup;
-                        exposedDropdownMenuBoxScope.m2202ExposedDropdownMenuvNxi1II(z2, function02, modifier2, rememberScrollState, true, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2349getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2348getShadowElevationD9Ej5fM(), null, obj2, composer2, (i3 & 14) | 918577152 | (i3 & 112) | (i3 & 896) | (i3 & 7168), (i3 >> 12) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+                        exposedDropdownMenuBoxScope.m2350ExposedDropdownMenukbRbctU(z2, function02, modifier2, rememberScrollState, false, true, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2545getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2544getShadowElevationD9Ej5fM(), null, obj2, composer2, (i3 & 14) | 906166272 | (i3 & 112) | (i3 & 896) | (i3 & 7168), (i62 & 112) | 6 | (i62 & 896), 16);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         obj = modifier2;
                         scrollState2 = rememberScrollState;
                     } else {
-                        startRestartGroup.skipToGroupEnd();
                         composer2 = startRestartGroup;
+                        composer2.skipToGroupEnd();
                     }
-                    ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup != null) {
-                        endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$5
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            /* JADX WARN: Multi-variable type inference failed */
-                            {
-                                super(2);
-                            }
-
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup == null) {
+                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                invoke(composer3, num.intValue());
-                                return Unit.INSTANCE;
-                            }
-
-                            public final void invoke(Composer composer3, int i6) {
-                                ExposedDropdownMenuBoxScope.this.ExposedDropdownMenu(z, function0, obj, scrollState2, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                            public final Object invoke(Object obj3, Object obj4) {
+                                Unit ExposedDropdownMenu$lambda$9;
+                                ExposedDropdownMenu$lambda$9 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu$lambda$9(ExposedDropdownMenuBoxScope.this, z, function0, obj, scrollState2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                                return ExposedDropdownMenu$lambda$9;
                             }
                         });
                         return;
@@ -1526,28 +1185,20 @@ public abstract class ExposedDropdownMenuBoxScope {
                     return;
                 }
                 exposedDropdownMenuBoxScope = this;
-                if ((74899 & i3) == 74898) {
+                if (!startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i & 1) != 0) {
-                }
-                if (i5 == 0) {
-                }
-                if ((i2 & 8) == 0) {
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup == null) {
                 }
             }
             obj2 = function3;
             if ((i2 & 32) != 0) {
             }
             exposedDropdownMenuBoxScope = this;
-            if ((74899 & i3) == 74898) {
+            if (!startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i & 1) != 0) {
-            }
-            if (i5 == 0) {
-            }
-            if ((i2 & 8) == 0) {
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup == null) {
             }
         }
         obj = modifier;
@@ -1559,14 +1210,10 @@ public abstract class ExposedDropdownMenuBoxScope {
         if ((i2 & 32) != 0) {
         }
         exposedDropdownMenuBoxScope = this;
-        if ((74899 & i3) == 74898) {
+        if (!startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i & 1) != 0) {
-        }
-        if (i5 == 0) {
-        }
-        if ((i2 & 8) == 0) {
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup == null) {
         }
     }
 }

@@ -1,38 +1,33 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.backport.Provider;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult;
 import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-/* loaded from: classes4.dex */
-public abstract /* synthetic */ class N {
+/* loaded from: classes3.dex */
+public final class N implements K {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f586a;
+    public final K f598a;
 
-    static {
-        int[] iArr = new int[IdentifierStatus.values().length];
-        f586a = iArr;
-        try {
-            iArr[IdentifierStatus.OK.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            f586a[IdentifierStatus.NO_STARTUP.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            f586a[IdentifierStatus.FEATURE_DISABLED.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            f586a[IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            f586a[IdentifierStatus.INVALID_ADV_ID.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            f586a[IdentifierStatus.FORBIDDEN_BY_CLIENT_CONFIG.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
+    public N(K k) {
+        this.f598a = k;
+    }
+
+    @Override // io.appmetrica.analytics.impl.K
+    public final AdTrackingInfoResult a(Context context) {
+        return a(new L(this, context));
+    }
+
+    @Override // io.appmetrica.analytics.impl.K
+    public final AdTrackingInfoResult a(Context context, Li li) {
+        return a(new M(this, context, li));
+    }
+
+    public static AdTrackingInfoResult a(Provider provider) {
+        AdTrackingInfoResult adTrackingInfoResult = (AdTrackingInfoResult) provider.get();
+        AdTrackingInfo adTrackingInfo = adTrackingInfoResult.mAdTrackingInfo;
+        return (adTrackingInfo == null || !"00000000-0000-0000-0000-000000000000".equals(adTrackingInfo.advId)) ? adTrackingInfoResult : new AdTrackingInfoResult(null, IdentifierStatus.INVALID_ADV_ID, "AdvId is invalid: 00000000-0000-0000-0000-000000000000");
     }
 }

@@ -103,7 +103,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Publisher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Single<T> implements SingleSource<T> {
     protected abstract void subscribeActual(SingleObserver<? super T> singleObserver);
 

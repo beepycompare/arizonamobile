@@ -13,7 +13,7 @@ import com.google.android.gms.common.internal.ClientSettings;
 import com.google.android.gms.common.internal.GmsClient;
 import com.google.android.gms.common.internal.TelemetryLoggingOptions;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zap extends GmsClient {
     private final TelemetryLoggingOptions zaa;
 

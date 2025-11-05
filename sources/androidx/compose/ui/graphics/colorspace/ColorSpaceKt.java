@@ -16,11 +16,11 @@ public final class ColorSpaceKt {
     }
 
     /* renamed from: createConnector-YBCOT_4 */
-    private static final Connector m4987createConnectorYBCOT_4(ColorSpace colorSpace, ColorSpace colorSpace2, int i) {
+    private static final Connector m5717createConnectorYBCOT_4(ColorSpace colorSpace, ColorSpace colorSpace2, int i) {
         if (colorSpace == colorSpace2) {
             return Connector.Companion.identity$ui_graphics_release(colorSpace);
         }
-        if (ColorModel.m4974equalsimpl0(colorSpace.m4983getModelxdoWZVw(), ColorModel.Companion.m4981getRgbxdoWZVw()) && ColorModel.m4974equalsimpl0(colorSpace2.m4983getModelxdoWZVw(), ColorModel.Companion.m4981getRgbxdoWZVw())) {
+        if (ColorModel.m5704equalsimpl0(colorSpace.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw()) && ColorModel.m5704equalsimpl0(colorSpace2.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw())) {
             Intrinsics.checkNotNull(colorSpace, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb");
             Intrinsics.checkNotNull(colorSpace2, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb");
             return new Connector.RgbConnector((Rgb) colorSpace, (Rgb) colorSpace2, i, null);
@@ -29,28 +29,28 @@ public final class ColorSpaceKt {
     }
 
     /* renamed from: connect-YBCOT_4$default */
-    public static /* synthetic */ Connector m4986connectYBCOT_4$default(ColorSpace colorSpace, ColorSpace colorSpace2, int i, int i2, Object obj) {
+    public static /* synthetic */ Connector m5716connectYBCOT_4$default(ColorSpace colorSpace, ColorSpace colorSpace2, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             colorSpace2 = ColorSpaces.INSTANCE.getSrgb();
         }
         if ((i2 & 2) != 0) {
-            i = RenderIntent.Companion.m5003getPerceptualuksYyKA();
+            i = RenderIntent.Companion.m5733getPerceptualuksYyKA();
         }
-        return m4985connectYBCOT_4(colorSpace, colorSpace2, i);
+        return m5715connectYBCOT_4(colorSpace, colorSpace2, i);
     }
 
     /* renamed from: connect-YBCOT_4 */
-    public static final Connector m4985connectYBCOT_4(ColorSpace colorSpace, ColorSpace colorSpace2, int i) {
+    public static final Connector m5715connectYBCOT_4(ColorSpace colorSpace, ColorSpace colorSpace2, int i) {
         int id$ui_graphics_release = colorSpace.getId$ui_graphics_release();
         int id$ui_graphics_release2 = colorSpace2.getId$ui_graphics_release();
         if ((id$ui_graphics_release | id$ui_graphics_release2) < 0) {
-            return m4987createConnectorYBCOT_4(colorSpace, colorSpace2, i);
+            return m5717createConnectorYBCOT_4(colorSpace, colorSpace2, i);
         }
         MutableIntObjectMap<Connector> connectors = ConnectorKt.getConnectors();
         int i2 = id$ui_graphics_release | (id$ui_graphics_release2 << 6) | (i << 12);
         Connector connector = connectors.get(i2);
         if (connector == null) {
-            connector = m4987createConnectorYBCOT_4(colorSpace, colorSpace2, i);
+            connector = m5717createConnectorYBCOT_4(colorSpace, colorSpace2, i);
             connectors.set(i2, connector);
         }
         return connector;
@@ -64,7 +64,7 @@ public final class ColorSpaceKt {
     }
 
     public static final ColorSpace adapt(ColorSpace colorSpace, WhitePoint whitePoint, Adaptation adaptation) {
-        if (ColorModel.m4974equalsimpl0(colorSpace.m4983getModelxdoWZVw(), ColorModel.Companion.m4981getRgbxdoWZVw())) {
+        if (ColorModel.m5704equalsimpl0(colorSpace.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw())) {
             Intrinsics.checkNotNull(colorSpace, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb");
             Rgb rgb = (Rgb) colorSpace;
             if (!compare(rgb.getWhitePoint(), whitePoint)) {

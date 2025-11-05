@@ -10,11 +10,11 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.common.internal.Preconditions;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BaseImplementation {
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ResultHolder<R> {
         void setFailedResult(Status status);
 
@@ -22,7 +22,7 @@ public class BaseImplementation {
     }
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class ApiMethodImpl<R extends Result, A extends Api.AnyClient> extends BasePendingResult<R> implements ResultHolder<R> {
         private final Api<?> api;
         private final Api.AnyClientKey<A> clientKey;

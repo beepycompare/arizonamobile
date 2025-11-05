@@ -7,7 +7,7 @@ import androidx.media3.datasource.DataSpec;
 import androidx.media3.exoplayer.upstream.TimeToFirstByteEstimator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ExponentialWeightedAverageTimeToFirstByteEstimator implements TimeToFirstByteEstimator {
     public static final double DEFAULT_SMOOTHING_FACTOR = 0.85d;
     private static final int MAX_DATA_SPECS = 10;
@@ -63,7 +63,7 @@ public final class ExponentialWeightedAverageTimeToFirstByteEstimator implements
         this.estimateUs = (long) ((j * d) + ((1.0d - d) * msToUs));
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static class FixedSizeLinkedHashMap<K, V> extends LinkedHashMap<K, V> {
         private final int maxSize;
 

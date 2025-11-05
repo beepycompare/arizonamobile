@@ -22,7 +22,7 @@ import ru.rustore.sdk.reactive.single.SingleSubscribeOnKt;
 public final class SendMetricsEventJobService extends JobService {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Lazy f1466a = LazyKt.lazy(new a());
+    public final Lazy f1509a = LazyKt.lazy(new a());
     public Disposable b;
     public volatile boolean c;
 
@@ -46,7 +46,7 @@ public final class SendMetricsEventJobService extends JobService {
 
         @Override // kotlin.jvm.functions.Function0
         public final Unit invoke() {
-            ((X) SendMetricsEventJobService.this.f1466a.getValue()).f1445a.a();
+            ((X) SendMetricsEventJobService.this.f1509a.getValue()).f1488a.a();
             return Unit.INSTANCE;
         }
     }

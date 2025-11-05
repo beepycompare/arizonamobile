@@ -5,7 +5,7 @@ import com.google.android.gms.common.moduleinstall.ModuleAvailabilityResponse;
 import com.google.android.gms.common.moduleinstall.ModuleInstallIntentResponse;
 import com.google.android.gms.common.moduleinstall.ModuleInstallResponse;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class zaa extends zad {
     @Override // com.google.android.gms.common.moduleinstall.internal.zae
     public void zab(Status status) {

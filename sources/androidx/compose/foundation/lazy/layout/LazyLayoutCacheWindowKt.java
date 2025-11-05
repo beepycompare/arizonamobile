@@ -28,10 +28,10 @@ public final class LazyLayoutCacheWindowKt {
     /* renamed from: LazyLayoutCacheWindow-YgX7TsA$default  reason: not valid java name */
     public static /* synthetic */ LazyLayoutCacheWindow m1027LazyLayoutCacheWindowYgX7TsA$default(float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7264constructorimpl(0);
+            f = Dp.m7995constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7264constructorimpl(0);
+            f2 = Dp.m7995constructorimpl(0);
         }
         return m1026LazyLayoutCacheWindowYgX7TsA(f, f2);
     }

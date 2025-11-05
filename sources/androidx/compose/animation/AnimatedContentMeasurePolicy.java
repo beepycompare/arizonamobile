@@ -42,7 +42,7 @@ public final class AnimatedContentMeasurePolicy implements MeasurePolicy {
         final int height;
         int size = list.size();
         final Placeable[] placeableArr = new Placeable[size];
-        long m7440getZeroYbymL2g = IntSize.Companion.m7440getZeroYbymL2g();
+        long m8171getZeroYbymL2g = IntSize.Companion.m8171getZeroYbymL2g();
         List<? extends Measurable> list2 = list;
         int size2 = list2.size();
         int i2 = 0;
@@ -56,11 +56,11 @@ public final class AnimatedContentMeasurePolicy implements MeasurePolicy {
             Object parentData = measurable.getParentData();
             AnimatedContentTransitionScopeImpl.ChildData childData = parentData instanceof AnimatedContentTransitionScopeImpl.ChildData ? (AnimatedContentTransitionScopeImpl.ChildData) parentData : null;
             if (childData != null && childData.isTarget()) {
-                Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
-                long m7430constructorimpl = IntSize.m7430constructorimpl((mo5967measureBRTryo0.getWidth() << 32) | (mo5967measureBRTryo0.getHeight() & 4294967295L));
+                Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
+                long m8161constructorimpl = IntSize.m8161constructorimpl((mo6697measureBRTryo0.getWidth() << 32) | (mo6697measureBRTryo0.getHeight() & 4294967295L));
                 Unit unit = Unit.INSTANCE;
-                placeableArr[i2] = mo5967measureBRTryo0;
-                m7440getZeroYbymL2g = m7430constructorimpl;
+                placeableArr[i2] = mo6697measureBRTryo0;
+                m8171getZeroYbymL2g = m8161constructorimpl;
             }
             i2++;
         }
@@ -68,11 +68,11 @@ public final class AnimatedContentMeasurePolicy implements MeasurePolicy {
         for (int i3 = 0; i3 < size3; i3++) {
             Measurable measurable2 = list.get(i3);
             if (placeableArr[i3] == null) {
-                placeableArr[i3] = measurable2.mo5967measureBRTryo0(j);
+                placeableArr[i3] = measurable2.mo6697measureBRTryo0(j);
             }
         }
         if (measureScope.isLookingAhead()) {
-            width = (int) (m7440getZeroYbymL2g >> 32);
+            width = (int) (m8171getZeroYbymL2g >> 32);
         } else {
             if (size == 0) {
                 placeable2 = null;
@@ -101,7 +101,7 @@ public final class AnimatedContentMeasurePolicy implements MeasurePolicy {
             width = placeable2 != null ? placeable2.getWidth() : 0;
         }
         if (measureScope.isLookingAhead()) {
-            height = (int) (m7440getZeroYbymL2g & 4294967295L);
+            height = (int) (m8171getZeroYbymL2g & 4294967295L);
         } else {
             if (size != 0) {
                 placeable = placeableArr[0];
@@ -127,7 +127,7 @@ public final class AnimatedContentMeasurePolicy implements MeasurePolicy {
             height = placeable != null ? placeable.getHeight() : 0;
         }
         if (!measureScope.isLookingAhead()) {
-            this.rootScope.m77setMeasuredSizeozmzZPI$animation(IntSize.m7430constructorimpl((width << 32) | (height & 4294967295L)));
+            this.rootScope.m77setMeasuredSizeozmzZPI$animation(IntSize.m8161constructorimpl((width << 32) | (height & 4294967295L)));
         }
         return MeasureScope.layout$default(measureScope, width, height, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedContentMeasurePolicy$measure$3
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -155,8 +155,8 @@ public final class AnimatedContentMeasurePolicy implements MeasurePolicy {
                     Placeable placeable5 = placeableArr3[i7];
                     if (placeable5 != null) {
                         placeableArr2 = placeableArr3;
-                        long mo4028alignKFBX0sM = animatedContentMeasurePolicy.getRootScope().getContentAlignment().mo4028alignKFBX0sM(IntSize.m7430constructorimpl((placeable5.getWidth() << 32) | (placeable5.getHeight() & 4294967295L)), IntSize.m7430constructorimpl((i6 & 4294967295L) | (i5 << 32)), LayoutDirection.Ltr);
-                        Placeable.PlacementScope.place$default(placementScope, placeable5, IntOffset.m7392getXimpl(mo4028alignKFBX0sM), IntOffset.m7393getYimpl(mo4028alignKFBX0sM), 0.0f, 4, null);
+                        long mo4758alignKFBX0sM = animatedContentMeasurePolicy.getRootScope().getContentAlignment().mo4758alignKFBX0sM(IntSize.m8161constructorimpl((placeable5.getWidth() << 32) | (placeable5.getHeight() & 4294967295L)), IntSize.m8161constructorimpl((i6 & 4294967295L) | (i5 << 32)), LayoutDirection.Ltr);
+                        Placeable.PlacementScope.place$default(placementScope, placeable5, IntOffset.m8123getXimpl(mo4758alignKFBX0sM), IntOffset.m8124getYimpl(mo4758alignKFBX0sM), 0.0f, 4, null);
                     } else {
                         placeableArr2 = placeableArr3;
                     }

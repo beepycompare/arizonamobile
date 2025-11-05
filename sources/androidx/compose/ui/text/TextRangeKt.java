@@ -10,12 +10,12 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes2.dex */
 public final class TextRangeKt {
     /* renamed from: substring-FDrldGo  reason: not valid java name */
-    public static final String m6733substringFDrldGo(CharSequence charSequence, long j) {
-        return charSequence.subSequence(TextRange.m6724getMinimpl(j), TextRange.m6723getMaximpl(j)).toString();
+    public static final String m7464substringFDrldGo(CharSequence charSequence, long j) {
+        return charSequence.subSequence(TextRange.m7455getMinimpl(j), TextRange.m7454getMaximpl(j)).toString();
     }
 
     public static final long TextRange(int i, int i2) {
-        return TextRange.m6715constructorimpl(packWithCheck(i, i2));
+        return TextRange.m7446constructorimpl(packWithCheck(i, i2));
     }
 
     public static final long TextRange(int i) {
@@ -23,22 +23,22 @@ public final class TextRangeKt {
     }
 
     /* renamed from: coerceIn-8ffj60Q  reason: not valid java name */
-    public static final long m6732coerceIn8ffj60Q(long j, int i, int i2) {
-        int m6726getStartimpl = TextRange.m6726getStartimpl(j);
-        if (m6726getStartimpl < i) {
-            m6726getStartimpl = i;
+    public static final long m7463coerceIn8ffj60Q(long j, int i, int i2) {
+        int m7457getStartimpl = TextRange.m7457getStartimpl(j);
+        if (m7457getStartimpl < i) {
+            m7457getStartimpl = i;
         }
-        if (m6726getStartimpl > i2) {
-            m6726getStartimpl = i2;
+        if (m7457getStartimpl > i2) {
+            m7457getStartimpl = i2;
         }
-        int m6721getEndimpl = TextRange.m6721getEndimpl(j);
-        if (m6721getEndimpl >= i) {
-            i = m6721getEndimpl;
+        int m7452getEndimpl = TextRange.m7452getEndimpl(j);
+        if (m7452getEndimpl >= i) {
+            i = m7452getEndimpl;
         }
         if (i <= i2) {
             i2 = i;
         }
-        return (m6726getStartimpl == TextRange.m6726getStartimpl(j) && i2 == TextRange.m6721getEndimpl(j)) ? j : TextRange(m6726getStartimpl, i2);
+        return (m7457getStartimpl == TextRange.m7457getStartimpl(j) && i2 == TextRange.m7452getEndimpl(j)) ? j : TextRange(m7457getStartimpl, i2);
     }
 
     private static final long packWithCheck(int i, int i2) {

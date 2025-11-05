@@ -41,7 +41,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ServerSideAdInsertionMediaSource extends BaseMediaSource implements MediaSource.MediaSourceCaller, MediaSourceEventListener, DrmSessionEventListener {
     private final AdPlaybackStateUpdater adPlaybackStateUpdater;
     private SharedMediaPeriod lastUsedMediaPeriod;
@@ -52,7 +52,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
     private final MediaSourceEventListener.EventDispatcher mediaSourceEventDispatcherWithoutId = createEventDispatcher(null);
     private final DrmSessionEventListener.EventDispatcher drmEventDispatcherWithoutId = createDrmEventDispatcher(null);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AdPlaybackStateUpdater {
         boolean onAdPlaybackStateUpdateRequested(Timeline timeline);
     }
@@ -95,7 +95,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.ServerSideAdInsertionMediaSource$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ServerSideAdInsertionMediaSource.this.m8006x8b1696bf(immutableMap, timeline);
+                        ServerSideAdInsertionMediaSource.this.m8737x8b1696bf(immutableMap, timeline);
                     }
                 });
             }
@@ -104,7 +104,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAdPlaybackStates$0$androidx-media3-exoplayer-source-ads-ServerSideAdInsertionMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8006x8b1696bf(ImmutableMap immutableMap, Timeline timeline) {
+    public /* synthetic */ void m8737x8b1696bf(ImmutableMap immutableMap, Timeline timeline) {
         AdPlaybackState adPlaybackState;
         for (SharedMediaPeriod sharedMediaPeriod : this.mediaPeriods.values()) {
             AdPlaybackState adPlaybackState2 = (AdPlaybackState) immutableMap.get(sharedMediaPeriod.periodUid);
@@ -427,7 +427,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SharedMediaPeriod implements MediaPeriod.Callback {
         private final MediaPeriod actualMediaPeriod;
         private AdPlaybackState adPlaybackState;
@@ -735,7 +735,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class ServerSideAdInsertionTimeline extends ForwardingTimeline {
         private final ImmutableMap<Object, AdPlaybackState> adPlaybackStates;
 
@@ -800,7 +800,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaPeriodImpl implements MediaPeriod {
         public MediaPeriod.Callback callback;
         public final DrmSessionEventListener.EventDispatcher drmEventDispatcher;
@@ -902,7 +902,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SampleStreamImpl implements SampleStream {
         private final MediaPeriodImpl mediaPeriod;
         private final int streamIndex;

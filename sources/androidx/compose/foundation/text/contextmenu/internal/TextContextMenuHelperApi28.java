@@ -86,7 +86,7 @@ public final class TextContextMenuHelperApi28 {
             ContextMenuScope.item$default(contextMenuScope, function2, null, false, icon != null ? ComposableLambdaKt.composableLambdaInstance(-1123224187, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$textClassificationItem$2$1
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                    m1420invokeek8zF_U(color.m4559unboximpl(), composer, num.intValue());
+                    m1420invokeek8zF_U(color.m5289unboximpl(), composer, num.intValue());
                     return Unit.INSTANCE;
                 }
 
@@ -140,7 +140,7 @@ public final class TextContextMenuHelperApi28 {
             r3 = ComposableLambdaKt.composableLambdaInstance(-1261173016, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$textClassificationItem$5
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                    m1421invokeek8zF_U(color.m4559unboximpl(), composer, num.intValue());
+                    m1421invokeek8zF_U(color.m5289unboximpl(), composer, num.intValue());
                     return Unit.INSTANCE;
                 }
 
@@ -308,7 +308,7 @@ public final class TextContextMenuHelperApi28 {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit IconBox$lambda$8$lambda$7(Drawable drawable, DrawScope drawScope) {
         Canvas canvas = drawScope.getDrawContext().getCanvas();
-        drawable.setBounds(0, 0, (int) Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() >> 32)), (int) Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L)));
+        drawable.setBounds(0, 0, (int) Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() >> 32)), (int) Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() & 4294967295L)));
         drawable.draw(AndroidCanvas_androidKt.getNativeCanvas(canvas));
         return Unit.INSTANCE;
     }

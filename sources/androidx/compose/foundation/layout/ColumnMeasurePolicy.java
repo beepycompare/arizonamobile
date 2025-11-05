@@ -115,7 +115,7 @@ public final class ColumnMeasurePolicy implements MeasurePolicy, RowColumnMeasur
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         MeasureResult measure;
-        measure = RowColumnMeasurePolicyKt.measure(this, Constraints.m7218getMinHeightimpl(j), Constraints.m7219getMinWidthimpl(j), Constraints.m7216getMaxHeightimpl(j), Constraints.m7217getMaxWidthimpl(j), measureScope.mo423roundToPx0680j_4(this.verticalArrangement.mo708getSpacingD9Ej5fM()), measureScope, list, new Placeable[list.size()], 0, list.size(), (r28 & 1024) != 0 ? null : null, (r28 & 2048) != 0 ? 0 : 0);
+        measure = RowColumnMeasurePolicyKt.measure(this, Constraints.m7949getMinHeightimpl(j), Constraints.m7950getMinWidthimpl(j), Constraints.m7947getMaxHeightimpl(j), Constraints.m7948getMaxWidthimpl(j), measureScope.mo423roundToPx0680j_4(this.verticalArrangement.mo708getSpacingD9Ej5fM()), measureScope, list, new Placeable[list.size()], 0, list.size(), (r28 & 1024) != 0 ? null : null, (r28 & 2048) != 0 ? 0 : 0);
         return measure;
     }
 

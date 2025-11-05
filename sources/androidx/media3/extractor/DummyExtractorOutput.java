@@ -1,6 +1,6 @@
 package androidx.media3.extractor;
 @Deprecated
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DummyExtractorOutput implements ExtractorOutput {
     @Override // androidx.media3.extractor.ExtractorOutput
     public void endTracks() {

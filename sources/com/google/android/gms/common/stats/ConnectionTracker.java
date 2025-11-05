@@ -7,15 +7,15 @@ import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.common.internal.zzt;
+import com.google.android.gms.common.internal.zzr;
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.common.wrappers.Wrappers;
 import java.util.NoSuchElementException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class ConnectionTracker {
     private static final Object zzb = new Object();
     @Nullable
@@ -38,14 +38,7 @@ public class ConnectionTracker {
         return connectionTracker;
     }
 
-    private static void zzb(Context context, ServiceConnection serviceConnection) {
-        try {
-            context.unbindService(serviceConnection);
-        } catch (IllegalArgumentException | IllegalStateException | NoSuchElementException unused) {
-        }
-    }
-
-    private final boolean zzc(Context context, String str, Intent intent, ServiceConnection serviceConnection, int i, boolean z, @Nullable Executor executor) {
+    private final boolean zzb(Context context, String str, Intent intent, ServiceConnection serviceConnection, int i, boolean z, @Nullable Executor executor) {
         ComponentName component = intent.getComponent();
         if (component != null) {
             String packageName = component.getPackageName();
@@ -58,7 +51,7 @@ public class ConnectionTracker {
             } catch (PackageManager.NameNotFoundException unused) {
             }
         }
-        if (zzd(serviceConnection)) {
+        if (zzc(serviceConnection)) {
             ServiceConnection serviceConnection2 = (ServiceConnection) this.zza.putIfAbsent(serviceConnection, serviceConnection);
             if (serviceConnection2 != null && serviceConnection != serviceConnection2) {
                 Log.w("ConnectionTracker", String.format("Duplicate binding with the same ServiceConnection: %s, %s, %s.", serviceConnection, str, intent.getAction()));
@@ -76,24 +69,34 @@ public class ConnectionTracker {
         return zze(context, intent, serviceConnection, i, executor);
     }
 
-    private static boolean zzd(ServiceConnection serviceConnection) {
-        return !(serviceConnection instanceof zzt);
+    private static boolean zzc(ServiceConnection serviceConnection) {
+        return !(serviceConnection instanceof zzr);
+    }
+
+    private static void zzd(Context context, ServiceConnection serviceConnection) {
+        try {
+            context.unbindService(serviceConnection);
+        } catch (IllegalArgumentException | IllegalStateException | NoSuchElementException unused) {
+        }
     }
 
     public boolean bindService(Context context, Intent intent, ServiceConnection serviceConnection, int i) {
-        return zzc(context, context.getClass().getName(), intent, serviceConnection, i, true, null);
+        return zzb(context, context.getClass().getName(), intent, serviceConnection, i, true, null);
     }
 
     public void unbindService(Context context, ServiceConnection serviceConnection) {
-        if (!zzd(serviceConnection) || !this.zza.containsKey(serviceConnection)) {
-            zzb(context, serviceConnection);
-            return;
+        if (zzc(serviceConnection)) {
+            ConcurrentHashMap concurrentHashMap = this.zza;
+            if (concurrentHashMap.containsKey(serviceConnection)) {
+                try {
+                    zzd(context, (ServiceConnection) concurrentHashMap.get(serviceConnection));
+                    return;
+                } finally {
+                    this.zza.remove(serviceConnection);
+                }
+            }
         }
-        try {
-            zzb(context, (ServiceConnection) this.zza.get(serviceConnection));
-        } finally {
-            this.zza.remove(serviceConnection);
-        }
+        zzd(context, serviceConnection);
     }
 
     public void unbindServiceSafe(Context context, ServiceConnection serviceConnection) {
@@ -104,7 +107,7 @@ public class ConnectionTracker {
     }
 
     public final boolean zza(Context context, String str, Intent intent, ServiceConnection serviceConnection, int i, @Nullable Executor executor) {
-        return zzc(context, str, intent, serviceConnection, 4225, true, executor);
+        return zzb(context, str, intent, serviceConnection, 4225, true, executor);
     }
 
     private static final boolean zze(Context context, Intent intent, ServiceConnection serviceConnection, int i, @Nullable Executor executor) {

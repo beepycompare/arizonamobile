@@ -37,7 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DefaultExtractorsFactory implements ExtractorsFactory {
     private static final int[] DEFAULT_EXTRACTOR_ORDER = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
     private static final ExtensionLoader FLAC_EXTENSION_LOADER = new ExtensionLoader(new ExtensionLoader.ConstructorSupplier() { // from class: androidx.media3.extractor.DefaultExtractorsFactory$$ExternalSyntheticLambda0
@@ -297,13 +297,13 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class ExtensionLoader {
         private final ConstructorSupplier constructorSupplier;
         private final AtomicBoolean extensionLoaded = new AtomicBoolean(false);
         private Constructor<? extends Extractor> extractorConstructor;
 
-        /* loaded from: classes.dex */
+        /* loaded from: classes3.dex */
         public interface ConstructorSupplier {
             Constructor<? extends Extractor> getConstructor() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, ClassNotFoundException;
         }

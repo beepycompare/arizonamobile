@@ -65,7 +65,7 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical Center = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$Center$1
-        private final float spacing = Dp.m7264constructorimpl(0);
+        private final float spacing = Dp.m7995constructorimpl(0);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM  reason: not valid java name */
@@ -92,7 +92,7 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceEvenly = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceEvenly$1
-        private final float spacing = Dp.m7264constructorimpl(0);
+        private final float spacing = Dp.m7995constructorimpl(0);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
@@ -119,7 +119,7 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceBetween = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceBetween$1
-        private final float spacing = Dp.m7264constructorimpl(0);
+        private final float spacing = Dp.m7995constructorimpl(0);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
@@ -146,7 +146,7 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceAround = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceAround$1
-        private final float spacing = Dp.m7264constructorimpl(0);
+        private final float spacing = Dp.m7995constructorimpl(0);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
@@ -219,7 +219,7 @@ public final class Arrangement {
 
         /* renamed from: getSpacing-D9Ej5fM */
         default float mo708getSpacingD9Ej5fM() {
-            return Dp.m7264constructorimpl(0);
+            return Dp.m7995constructorimpl(0);
         }
     }
 
@@ -242,7 +242,7 @@ public final class Arrangement {
 
         /* renamed from: getSpacing-D9Ej5fM */
         default float mo708getSpacingD9Ej5fM() {
-            return Dp.m7264constructorimpl(0);
+            return Dp.m7995constructorimpl(0);
         }
     }
 
@@ -265,7 +265,7 @@ public final class Arrangement {
         @Override // androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
         default float mo708getSpacingD9Ej5fM() {
-            return Dp.m7264constructorimpl(0);
+            return Dp.m7995constructorimpl(0);
         }
     }
 
@@ -344,7 +344,7 @@ public final class Arrangement {
     }
 
     public final Horizontal aligned(final Alignment.Horizontal horizontal) {
-        return new SpacedAligned(Dp.m7264constructorimpl(0), true, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda2
+        return new SpacedAligned(Dp.m7995constructorimpl(0), true, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 int align;
@@ -355,7 +355,7 @@ public final class Arrangement {
     }
 
     public final Vertical aligned(final Alignment.Vertical vertical) {
-        return new SpacedAligned(Dp.m7264constructorimpl(0), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda3
+        return new SpacedAligned(Dp.m7995constructorimpl(0), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 int align;
@@ -509,7 +509,7 @@ public final class Arrangement {
         }
 
         public final Horizontal aligned(final Alignment.Horizontal horizontal) {
-            return new SpacedAligned(Dp.m7264constructorimpl(0), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda1
+            return new SpacedAligned(Dp.m7995constructorimpl(0), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     int align;
@@ -573,15 +573,15 @@ public final class Arrangement {
             }
             if (obj instanceof SpacedAligned) {
                 SpacedAligned spacedAligned = (SpacedAligned) obj;
-                return Dp.m7269equalsimpl0(this.space, spacedAligned.space) && this.rtlMirror == spacedAligned.rtlMirror && Intrinsics.areEqual(this.alignment, spacedAligned.alignment);
+                return Dp.m8000equalsimpl0(this.space, spacedAligned.space) && this.rtlMirror == spacedAligned.rtlMirror && Intrinsics.areEqual(this.alignment, spacedAligned.alignment);
             }
             return false;
         }
 
         public int hashCode() {
-            int m7270hashCodeimpl = ((Dp.m7270hashCodeimpl(this.space) * 31) + Boolean.hashCode(this.rtlMirror)) * 31;
+            int m8001hashCodeimpl = ((Dp.m8001hashCodeimpl(this.space) * 31) + Boolean.hashCode(this.rtlMirror)) * 31;
             Function2<Integer, LayoutDirection, Integer> function2 = this.alignment;
-            return m7270hashCodeimpl + (function2 == null ? 0 : function2.hashCode());
+            return m8001hashCodeimpl + (function2 == null ? 0 : function2.hashCode());
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -666,7 +666,7 @@ public final class Arrangement {
         }
 
         public String toString() {
-            return (this.rtlMirror ? "" : "Absolute") + "Arrangement#spacedAligned(" + ((Object) Dp.m7275toStringimpl(this.space)) + ", " + this.alignment + ')';
+            return (this.rtlMirror ? "" : "Absolute") + "Arrangement#spacedAligned(" + ((Object) Dp.m8006toStringimpl(this.space)) + ", " + this.alignment + ')';
         }
     }
 

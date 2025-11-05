@@ -59,8 +59,8 @@ final class DerivedWidthModifier extends InspectorValueInfo implements LayoutMod
                 }
             }, 4, null);
         }
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, intValue, intValue, 0, 0, 12, null));
-        return MeasureScope.layout$default(measureScope, intValue, mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.DerivedWidthModifier$$ExternalSyntheticLambda1
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.m7938copyZbe2FdA$default(j, intValue, intValue, 0, 0, 12, null));
+        return MeasureScope.layout$default(measureScope, intValue, mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.DerivedWidthModifier$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$1;

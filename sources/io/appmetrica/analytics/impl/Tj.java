@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-/* loaded from: classes4.dex */
-public final class Tj implements InterfaceC0534qb {
+/* loaded from: classes3.dex */
+public final class Tj implements Xa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ECommerceEvent f689a;
+    public final /* synthetic */ String f709a;
+    public final /* synthetic */ String b;
 
-    public Tj(ECommerceEvent eCommerceEvent) {
-        this.f689a = eCommerceEvent;
+    public Tj(String str, String str2) {
+        this.f709a = str;
+        this.b = str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0534qb
-    public final void a(InterfaceC0558rb interfaceC0558rb) {
-        interfaceC0558rb.reportECommerce(this.f689a);
+    @Override // io.appmetrica.analytics.impl.Xa
+    public final void a(Ya ya) {
+        ya.reportEvent(this.f709a, this.b);
     }
 }

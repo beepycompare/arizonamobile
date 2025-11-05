@@ -1,43 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-/* loaded from: classes4.dex */
-public final class Fa implements ProtobufConverter {
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.net.Uri;
+import android.text.TextUtils;
+import java.util.concurrent.Callable;
+/* loaded from: classes3.dex */
+public final class Fa implements Callable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final He f444a;
+    public final /* synthetic */ Ga f474a;
 
-    public Fa() {
-        this(new C0158bm());
+    public Fa(Ga ga) {
+        this.f474a = ga;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Bm fromModel(J4 j4) {
-        Bm bm = new Bm();
-        bm.b = j4.b;
-        bm.f376a = j4.f510a;
-        bm.c = j4.c;
-        bm.d = j4.d;
-        bm.e = j4.e;
-        bm.f = this.f444a.a(j4.f);
-        return bm;
-    }
-
-    public Fa(C0158bm c0158bm) {
-        this.f444a = c0158bm;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final J4 toModel(Bm bm) {
-        H4 h4 = new H4();
-        h4.d = bm.d;
-        h4.c = bm.c;
-        h4.b = bm.b;
-        h4.f472a = bm.f376a;
-        h4.e = bm.e;
-        h4.f = this.f444a.a(bm.f);
-        return new J4(h4);
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        Uri parse = Uri.parse("content://com.huawei.appmarket.commondata/item/5");
+        ContentResolver contentResolver = this.f474a.f489a.getContentResolver();
+        Ga ga = this.f474a;
+        ga.b = contentResolver.query(parse, null, null, new String[]{ga.f489a.getPackageName()}, null);
+        Cursor cursor = this.f474a.b;
+        if (cursor == null || !cursor.moveToFirst()) {
+            return null;
+        }
+        String string = this.f474a.b.getString(0);
+        if (TextUtils.isEmpty(string)) {
+            return null;
+        }
+        return new C0576sg(string, this.f474a.b.getLong(1), this.f474a.b.getLong(2), EnumC0551rg.d);
     }
 }

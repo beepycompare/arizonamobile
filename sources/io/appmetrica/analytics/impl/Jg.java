@@ -1,78 +1,75 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
-public final class Jg {
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import java.util.List;
+/* loaded from: classes3.dex */
+public final class Jg implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f520a;
-    public final long b;
-    public final long c;
-    public final Ig d;
+    public final Hn f547a;
+    public final W b;
+    public final C0467o6 c;
+    public final Fl d;
+    public final Me e;
+    public final Ne f;
 
-    public Jg(byte[] bArr) {
-        Kg a2 = Kg.a(bArr);
-        this.f520a = a2.f541a;
-        this.b = a2.c;
-        this.c = a2.b;
-        this.d = a(a2.d);
+    public Jg() {
+        this(new Hn(), new W(new C0758zn()), new C0467o6(), new Fl(), new Me(), new Ne());
     }
 
-    public final byte[] a() {
-        Kg kg = new Kg();
-        kg.f541a = this.f520a;
-        kg.c = this.b;
-        kg.b = this.c;
-        int ordinal = this.d.ordinal();
-        int i = 1;
-        if (ordinal != 1) {
-            i = 2;
-            if (ordinal != 2) {
-                i = 0;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0211e6 fromModel(Ig ig) {
+        C0211e6 c0211e6 = new C0211e6();
+        c0211e6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(ig.f529a, c0211e6.f));
+        Sn sn = ig.b;
+        if (sn != null) {
+            In in = sn.f691a;
+            if (in != null) {
+                c0211e6.f858a = this.f547a.fromModel(in);
+            }
+            V v = sn.b;
+            if (v != null) {
+                c0211e6.b = this.b.fromModel(v);
+            }
+            List<Hl> list = sn.c;
+            if (list != null) {
+                c0211e6.e = this.d.fromModel(list);
+            }
+            c0211e6.c = (String) WrapUtils.getOrDefault(sn.g, c0211e6.c);
+            c0211e6.d = this.c.a(sn.h);
+            if (!TextUtils.isEmpty(sn.d)) {
+                c0211e6.i = this.e.fromModel(sn.d);
+            }
+            if (!TextUtils.isEmpty(sn.e)) {
+                c0211e6.j = sn.e.getBytes();
+            }
+            if (!no.a(sn.f)) {
+                c0211e6.k = this.f.fromModel(sn.f);
             }
         }
-        kg.d = i;
-        return MessageNano.toByteArray(kg);
+        return c0211e6;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && Jg.class == obj.getClass()) {
-            Jg jg = (Jg) obj;
-            if (this.b == jg.b && this.c == jg.c && this.f520a.equals(jg.f520a) && this.d == jg.d) {
-                return true;
-            }
-        }
-        return false;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0211e6 c0211e6 = (C0211e6) obj;
+        throw new UnsupportedOperationException();
     }
 
-    public final int hashCode() {
-        long j = this.b;
-        long j2 = this.c;
-        return this.d.hashCode() + (((((this.f520a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
+    public Jg(Hn hn, W w, C0467o6 c0467o6, Fl fl, Me me2, Ne ne) {
+        this.f547a = hn;
+        this.b = w;
+        this.c = c0467o6;
+        this.d = fl;
+        this.e = me2;
+        this.f = ne;
     }
 
-    public final String toString() {
-        return "ReferrerInfo{installReferrer='" + this.f520a + "', referrerClickTimestampSeconds=" + this.b + ", installBeginTimestampSeconds=" + this.c + ", source=" + this.d + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Jg(String str, long j, long j2, Ig ig) {
-        this.f520a = str;
-        this.b = j;
-        this.c = j2;
-        this.d = ig;
-    }
-
-    public static Ig a(int i) {
-        if (i != 1) {
-            if (i != 2) {
-                return Ig.b;
-            }
-            return Ig.d;
-        }
-        return Ig.c;
+    public final Ig a(C0211e6 c0211e6) {
+        throw new UnsupportedOperationException();
     }
 }

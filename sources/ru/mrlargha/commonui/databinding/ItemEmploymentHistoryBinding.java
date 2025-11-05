@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.textview.MaterialTextView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ItemEmploymentHistoryBinding implements ViewBinding {
     public final Guideline guideline1;
     public final Guideline guideline2;

@@ -1,17 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.ResultReceiver;
-/* loaded from: classes4.dex */
-public final class N4 {
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+/* loaded from: classes3.dex */
+public abstract class N4 extends AbstractC0640v5 {
+    public N4(BaseRequestConfig.ComponentLoader<Object, Object, S5> componentLoader, C0356jm c0356jm, BaseRequestConfig.BaseRequestArguments<C0639v4, Object> baseRequestArguments) {
+        super(componentLoader, c0356jm, baseRequestArguments);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0338im f589a;
-    public final M4 b;
-    public final ResultReceiver c;
+    @Override // io.appmetrica.analytics.impl.AbstractC0640v5
+    public final void a(Object obj) {
+        C0639v4 c0639v4 = (C0639v4) obj;
+        synchronized (this) {
+            super.a((Object) c0639v4);
+        }
+    }
 
-    public N4(C0338im c0338im, M4 m4, ResultReceiver resultReceiver) {
-        this.f589a = c0338im;
-        this.b = m4;
-        this.c = resultReceiver;
+    public final synchronized void a(C0639v4 c0639v4) {
+        super.a((Object) c0639v4);
     }
 }

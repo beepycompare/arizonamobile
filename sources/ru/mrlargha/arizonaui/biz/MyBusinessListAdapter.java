@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,7 +52,26 @@ public final class MyBusinessListAdapter extends RecyclerView.Adapter<BusinessVi
         MyBusinessScreen.Companion.BusinessItemInfo businessItemInfo = this.businessItemInfoList.get(i);
         Intrinsics.checkNotNullExpressionValue(businessItemInfo, "get(...)");
         final MyBusinessScreen.Companion.BusinessItemInfo businessItemInfo2 = businessItemInfo;
-        MyBusinessItemBinding binding = holder.getBinding();
+        final MyBusinessItemBinding binding = holder.getBinding();
+        int rank = businessItemInfo2.getRank();
+        Integer valueOf = rank != 1 ? rank != 2 ? rank != 3 ? rank != 4 ? rank != 5 ? null : Integer.valueOf(R.drawable.my_business_ic_fivth) : Integer.valueOf(R.drawable.my_business_ic_fourth) : Integer.valueOf(R.drawable.my_business_ic_third) : Integer.valueOf(R.drawable.my_business_ic_second) : Integer.valueOf(R.drawable.my_business_ic_first);
+        int i2 = 0;
+        if (valueOf != null) {
+            int intValue = valueOf.intValue();
+            ImageView ivRank = binding.ivRank;
+            Intrinsics.checkNotNullExpressionValue(ivRank, "ivRank");
+            ivRank.setVisibility(0);
+            binding.ivRank.setImageResource(intValue);
+        } else {
+            new Function0() { // from class: ru.mrlargha.arizonaui.biz.MyBusinessListAdapter$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function0
+                public final Object invoke() {
+                    Unit onBindViewHolder$lambda$0$1;
+                    onBindViewHolder$lambda$0$1 = MyBusinessListAdapter.onBindViewHolder$lambda$0$1(MyBusinessItemBinding.this);
+                    return onBindViewHolder$lambda$0$1;
+                }
+            };
+        }
         if (businessItemInfo2.getOpened() == 1) {
             binding.bizStatusContainer.setBackgroundResource(R.drawable.my_biz_status_close_ic);
             binding.bizStatus.setText("закрыт");
@@ -63,7 +83,6 @@ public final class MyBusinessListAdapter extends RecyclerView.Adapter<BusinessVi
         }
         binding.bizName.setText(businessItemInfo2.getTitle());
         binding.bizNumber.setText("№" + businessItemInfo2.getId());
-        int i2 = 0;
         for (Object obj : businessItemInfo2.getStats()) {
             int i3 = i2 + 1;
             if (i2 < 0) {
@@ -322,18 +341,26 @@ public final class MyBusinessListAdapter extends RecyclerView.Adapter<BusinessVi
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ConstraintLayout myBusinessItem = binding.myBusinessItem;
         Intrinsics.checkNotNullExpressionValue(myBusinessItem, "myBusinessItem");
-        EasyAnimation.animateClick$default(easyAnimation, myBusinessItem, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.biz.MyBusinessListAdapter$$ExternalSyntheticLambda0
+        EasyAnimation.animateClick$default(easyAnimation, myBusinessItem, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.biz.MyBusinessListAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$0$1;
-                onBindViewHolder$lambda$0$1 = MyBusinessListAdapter.onBindViewHolder$lambda$0$1(MyBusinessListAdapter.this, businessItemInfo2);
-                return onBindViewHolder$lambda$0$1;
+                Unit onBindViewHolder$lambda$0$3;
+                onBindViewHolder$lambda$0$3 = MyBusinessListAdapter.onBindViewHolder$lambda$0$3(MyBusinessListAdapter.this, businessItemInfo2);
+                return onBindViewHolder$lambda$0$3;
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$0$1(MyBusinessListAdapter myBusinessListAdapter, MyBusinessScreen.Companion.BusinessItemInfo businessItemInfo) {
+    public static final Unit onBindViewHolder$lambda$0$1(MyBusinessItemBinding myBusinessItemBinding) {
+        ImageView ivRank = myBusinessItemBinding.ivRank;
+        Intrinsics.checkNotNullExpressionValue(ivRank, "ivRank");
+        ivRank.setVisibility(8);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit onBindViewHolder$lambda$0$3(MyBusinessListAdapter myBusinessListAdapter, MyBusinessScreen.Companion.BusinessItemInfo businessItemInfo) {
         OnBizClickListener onBizClickListener = myBusinessListAdapter.onBizClickListener;
         if (onBizClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onBizClickListener");

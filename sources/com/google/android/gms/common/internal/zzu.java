@@ -1,16 +1,17 @@
 package com.google.android.gms.common.internal;
 
-import android.net.Uri;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzu {
-    public static final /* synthetic */ int zza = 0;
-    private static final Uri zzb;
-    private static final Uri zzc;
+import android.os.IBinder;
+import android.os.RemoteException;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzu extends com.google.android.gms.internal.common.zza implements ICancelToken {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzu(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.common.internal.ICancelToken");
+    }
 
-    static {
-        Uri parse = Uri.parse("https://plus.google.com/");
-        zzb = parse;
-        zzc = parse.buildUpon().appendPath("circles").appendPath("find").build();
+    @Override // com.google.android.gms.common.internal.ICancelToken
+    public final void cancel() throws RemoteException {
+        zzC(2, zza());
     }
 }

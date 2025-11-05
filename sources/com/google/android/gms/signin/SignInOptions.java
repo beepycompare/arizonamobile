@@ -3,7 +3,7 @@ package com.google.android.gms.signin;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.internal.Objects;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SignInOptions implements Api.ApiOptions.Optional {
     public static final SignInOptions zaa = new SignInOptions(false, false, null, false, null, null, false, null, null, null);
     private final boolean zab = false;

@@ -5,54 +5,54 @@ import kotlin.jvm.JvmInline;
 /* compiled from: PointerEvent.kt */
 @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0087@\u0018\u00002\u00020\u0001B\u0013\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0013\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u000b\u001a\u00020\u0003HÖ\u0001J\t\u0010\f\u001a\u00020\rHÖ\u0001R\u0014\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004X\u0080\u0004¢\u0006\u0004\n\u0002\u0010\u0007\u0088\u0001\u0002\u0092\u0001\u00060\u0003j\u0002`\u0004¨\u0006\u000e"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerKeyboardModifiers;", "", "packedValue", "", "Landroidx/compose/ui/input/pointer/NativePointerKeyboardModifiers;", "constructor-impl", "(I)I", "I", "equals", "", "other", "hashCode", "toString", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class PointerKeyboardModifiers {
     private final int packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PointerKeyboardModifiers m5900boximpl(int i) {
+    public static final /* synthetic */ PointerKeyboardModifiers m6630boximpl(int i) {
         return new PointerKeyboardModifiers(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5901constructorimpl(int i) {
+    public static int m6631constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5902equalsimpl(int i, Object obj) {
-        return (obj instanceof PointerKeyboardModifiers) && i == ((PointerKeyboardModifiers) obj).m5906unboximpl();
+    public static boolean m6632equalsimpl(int i, Object obj) {
+        return (obj instanceof PointerKeyboardModifiers) && i == ((PointerKeyboardModifiers) obj).m6636unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5903equalsimpl0(int i, int i2) {
+    public static final boolean m6633equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5904hashCodeimpl(int i) {
+    public static int m6634hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5905toStringimpl(int i) {
+    public static String m6635toStringimpl(int i) {
         return "PointerKeyboardModifiers(packedValue=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m5902equalsimpl(this.packedValue, obj);
+        return m6632equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m5904hashCodeimpl(this.packedValue);
+        return m6634hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m5905toStringimpl(this.packedValue);
+        return m6635toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5906unboximpl() {
+    public final /* synthetic */ int m6636unboximpl() {
         return this.packedValue;
     }
 

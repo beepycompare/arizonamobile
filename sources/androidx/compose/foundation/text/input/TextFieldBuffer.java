@@ -117,7 +117,7 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     public final boolean hasSelection() {
-        return !TextRange.m6720getCollapsedimpl(m1438getSelectiond9O1mEE());
+        return !TextRange.m7451getCollapsedimpl(m1438getSelectiond9O1mEE());
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
@@ -139,7 +139,7 @@ public final class TextFieldBuffer implements Appendable {
 
     /* renamed from: setComposition-OEnZFl4  reason: not valid java name */
     private final void m1434setCompositionOEnZFl4(TextRange textRange) {
-        if (textRange == null || TextRange.m6720getCollapsedimpl(textRange.m6730unboximpl())) {
+        if (textRange == null || TextRange.m7451getCollapsedimpl(textRange.m7461unboximpl())) {
             this.composition = null;
             MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = this.composingAnnotations;
             if (mutableVector != null) {
@@ -186,7 +186,7 @@ public final class TextFieldBuffer implements Appendable {
         if (i >= i2) {
             throw new IllegalArgumentException("Do not set reversed or empty range: " + i + " > " + i2);
         }
-        m1434setCompositionOEnZFl4(TextRange.m6714boximpl(TextRangeKt.TextRange(i, i2)));
+        m1434setCompositionOEnZFl4(TextRange.m7445boximpl(TextRangeKt.TextRange(i, i2)));
         MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = this.composingAnnotations;
         if (mutableVector != null) {
             mutableVector.clear();
@@ -217,7 +217,7 @@ public final class TextFieldBuffer implements Appendable {
         if (i2 >= i3) {
             throw new IllegalArgumentException("Do not set reversed or empty range: " + i2 + " > " + i3);
         }
-        this.highlight = new Pair<>(TextHighlightType.m1453boximpl(i), TextRange.m6714boximpl(TextRangeKt.TextRange(RangesKt.coerceIn(i2, 0, getLength()), RangesKt.coerceIn(i3, 0, getLength()))));
+        this.highlight = new Pair<>(TextHighlightType.m1453boximpl(i), TextRange.m7445boximpl(TextRangeKt.TextRange(RangesKt.coerceIn(i2, 0, getLength()), RangesKt.coerceIn(i3, 0, getLength()))));
     }
 
     public final void clearHighlight$foundation_release() {
@@ -405,10 +405,10 @@ public final class TextFieldBuffer implements Appendable {
     /* renamed from: requireValidRange-5zc-tL8  reason: not valid java name */
     private final void m1433requireValidRange5zctL8(long j) {
         long TextRange = TextRangeKt.TextRange(0, getLength());
-        if (TextRange.m6716contains5zctL8(TextRange, j)) {
+        if (TextRange.m7447contains5zctL8(TextRange, j)) {
             return;
         }
-        InlineClassHelperKt.throwIllegalArgumentException("Expected " + ((Object) TextRange.m6729toStringimpl(j)) + " to be in " + ((Object) TextRange.m6729toStringimpl(TextRange)));
+        InlineClassHelperKt.throwIllegalArgumentException("Expected " + ((Object) TextRange.m7460toStringimpl(j)) + " to be in " + ((Object) TextRange.m7460toStringimpl(TextRange)));
     }
 
     public final boolean getCanCallAddStyle$foundation_release() {

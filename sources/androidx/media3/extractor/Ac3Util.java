@@ -16,7 +16,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.nio.ByteBuffer;
 import okio.Utf8;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Ac3Util {
     public static final int AC3_MAX_RATE_BYTES_PER_SECOND = 80000;
     private static final int AC3_SYNCFRAME_AUDIO_SAMPLE_COUNT = 1536;
@@ -32,7 +32,7 @@ public final class Ac3Util {
     private static final int[] BITRATE_BY_HALF_FRMSIZECOD = {32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, RendererCapabilities.DECODER_SUPPORT_MASK, 448, 512, 576, 640};
     private static final int[] SYNCFRAME_SIZE_WORDS_BY_HALF_FRMSIZECOD_44_1 = {69, 87, 104, 121, TsExtractor.TS_STREAM_TYPE_DTS_UHD, 174, 208, 243, 278, 348, 417, DownloaderService.STATUS_FILE_DELIVERED_INCORRECTLY, 557, 696, 835, 975, 1114, 1253, 1393};
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class SyncFrameInfo {
         public static final int STREAM_TYPE_TYPE0 = 0;
         public static final int STREAM_TYPE_TYPE1 = 1;
@@ -49,7 +49,7 @@ public final class Ac3Util {
         @Target({ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes.dex */
+        /* loaded from: classes3.dex */
         public @interface StreamType {
         }
 

@@ -92,7 +92,7 @@ public interface SelectionAdjustment {
                 @Override // androidx.compose.foundation.text.selection.BoundaryFunction
                 /* renamed from: getBoundary-fzxv0v0 */
                 public final long mo1737getBoundaryfzxv0v0(SelectableInfo selectableInfo, int i) {
-                    return selectableInfo.getTextLayoutResult().m6698getWordBoundaryjx7JFs(i);
+                    return selectableInfo.getTextLayoutResult().m7429getWordBoundaryjx7JFs(i);
                 }
             });
             return adjustToBoundaries;

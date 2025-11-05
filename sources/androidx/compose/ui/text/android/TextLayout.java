@@ -111,8 +111,8 @@ public final class TextLayout {
             lineHeightSpans = TextLayout_androidKt.getLineHeightSpans(this);
             this.lineHeightSpans = lineHeightSpans;
             long lineHeightPaddings = lineHeightSpans != null ? TextLayout_androidKt.getLineHeightPaddings(lineHeightSpans) : TextLayout_androidKt.ZeroVerticalPadding;
-            this.topPadding = Math.max(VerticalPaddings.m6779getTopPaddingimpl(verticalPaddings), VerticalPaddings.m6779getTopPaddingimpl(lineHeightPaddings));
-            this.bottomPadding = Math.max(VerticalPaddings.m6778getBottomPaddingimpl(verticalPaddings), VerticalPaddings.m6778getBottomPaddingimpl(lineHeightPaddings));
+            this.topPadding = Math.max(VerticalPaddings.m7510getTopPaddingimpl(verticalPaddings), VerticalPaddings.m7510getTopPaddingimpl(lineHeightPaddings));
+            this.bottomPadding = Math.max(VerticalPaddings.m7509getBottomPaddingimpl(verticalPaddings), VerticalPaddings.m7509getBottomPaddingimpl(lineHeightPaddings));
             lastLineMetrics = TextLayout_androidKt.getLastLineMetrics(this, textPaint2, textDirectionHeuristic, lineHeightSpans);
             this.lastLineExtra = lastLineMetrics != null ? lastLineMetrics.bottom - ((int) getLineHeight(i11)) : i10;
             this.lastLineFontMetrics = lastLineMetrics;

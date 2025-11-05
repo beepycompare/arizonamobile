@@ -17,7 +17,7 @@ public interface DragAndDropStartDetectorScope extends PointerInputScope {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: requestDragAndDropTransfer-k-4lQ0M");
         }
         if ((i & 1) != 0) {
-            j = Offset.Companion.m4320getUnspecifiedF1C5BW0();
+            j = Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
         dragAndDropStartDetectorScope.mo421requestDragAndDropTransferk4lQ0M(j);
     }

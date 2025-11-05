@@ -1,4 +1,7 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class G6 extends He {
+
+import android.content.Context;
+/* loaded from: classes3.dex */
+public interface G6 {
+    void a(Context context);
 }

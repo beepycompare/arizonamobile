@@ -14,10 +14,11 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Ripple.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B%\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0002\u0010\fJ\b\u0010\u0010\u001a\u00020\u0011H\u0002J\b\u0010\u0012\u001a\u00020\u0011H\u0016J\b\u0010\u0013\u001a\u00020\u0011H\u0016J\b\u0010\u0014\u001a\u00020\u0011H\u0002J\b\u0010\u0015\u001a\u00020\u0011H\u0002R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\u00020\tX\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\rR\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0016"}, d2 = {"Landroidx/compose/material3/DelegatingThemeAwareRippleNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/ObserverModifierNode;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "bounded", "", "radius", "Landroidx/compose/ui/unit/Dp;", "color", "Landroidx/compose/ui/graphics/ColorProducer;", "(Landroidx/compose/foundation/interaction/InteractionSource;ZFLandroidx/compose/ui/graphics/ColorProducer;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "rippleNode", "Landroidx/compose/ui/node/DelegatableNode;", "attachNewRipple", "", "onAttach", "onObservedReadsChanged", "removeRipple", "updateConfiguration", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B'\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ\b\u0010\u0011\u001a\u00020\u0012H\u0016J\b\u0010\u0013\u001a\u00020\u0012H\u0016J\b\u0010\u0014\u001a\u00020\u0012H\u0002J\b\u0010\u0015\u001a\u00020\u0012H\u0002J\b\u0010\u0016\u001a\u00020\u0012H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000eR\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/material3/DelegatingThemeAwareRippleNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/ObserverModifierNode;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "bounded", "", "radius", "Landroidx/compose/ui/unit/Dp;", "color", "Landroidx/compose/ui/graphics/ColorProducer;", "<init>", "(Landroidx/compose/foundation/interaction/InteractionSource;ZFLandroidx/compose/ui/graphics/ColorProducer;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "rippleNode", "Landroidx/compose/ui/node/DelegatableNode;", "onAttach", "", "onObservedReadsChanged", "updateConfiguration", "attachNewRipple", "removeRipple", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class DelegatingThemeAwareRippleNode extends DelegatingNode implements CompositionLocalConsumerModifierNode, ObserverModifierNode {
+public final class DelegatingThemeAwareRippleNode extends DelegatingNode implements CompositionLocalConsumerModifierNode, ObserverModifierNode {
     private final boolean bounded;
     private final ColorProducer color;
     private final InteractionSource interactionSource;
@@ -46,72 +47,66 @@ final class DelegatingThemeAwareRippleNode extends DelegatingNode implements Com
     }
 
     private final void updateConfiguration() {
-        ObserverModifierNodeKt.observeReads(this, new Function0<Unit>() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$updateConfiguration$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                DelegatableNode delegatableNode;
-                if (((RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, RippleKt.getLocalRippleConfiguration())) == null) {
-                    DelegatingThemeAwareRippleNode.this.removeRipple();
-                    return;
-                }
-                delegatableNode = DelegatingThemeAwareRippleNode.this.rippleNode;
-                if (delegatableNode == null) {
-                    DelegatingThemeAwareRippleNode.this.attachNewRipple();
-                }
+            public final Object invoke() {
+                Unit updateConfiguration$lambda$0;
+                updateConfiguration$lambda$0 = DelegatingThemeAwareRippleNode.updateConfiguration$lambda$0(DelegatingThemeAwareRippleNode.this);
+                return updateConfiguration$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void attachNewRipple() {
-        this.rippleNode = delegate(androidx.compose.material.ripple.RippleKt.m1865createRippleModifierNodeTDGSqEk(this.interactionSource, this.bounded, this.radius, new ColorProducer() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$attachNewRipple$calculateColor$1
+    public static final Unit updateConfiguration$lambda$0(DelegatingThemeAwareRippleNode delegatingThemeAwareRippleNode) {
+        if (((RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(delegatingThemeAwareRippleNode, RippleKt.getLocalRippleConfiguration())) == null) {
+            delegatingThemeAwareRippleNode.removeRipple();
+        } else if (delegatingThemeAwareRippleNode.rippleNode == null) {
+            delegatingThemeAwareRippleNode.attachNewRipple();
+        }
+        return Unit.INSTANCE;
+    }
+
+    private final void attachNewRipple() {
+        Function0 function0 = new Function0() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                RippleAlpha attachNewRipple$lambda$1;
+                attachNewRipple$lambda$1 = DelegatingThemeAwareRippleNode.attachNewRipple$lambda$1(DelegatingThemeAwareRippleNode.this);
+                return attachNewRipple$lambda$1;
+            }
+        };
+        this.rippleNode = delegate(androidx.compose.material.ripple.RippleKt.m1863createRippleModifierNodeTDGSqEk(this.interactionSource, this.bounded, this.radius, new ColorProducer() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$attachNewRipple$calculateColor$1
             @Override // androidx.compose.ui.graphics.ColorProducer
             /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-            public final long mo2181invoke0d7_KjU() {
+            public final long mo2299invoke0d7_KjU() {
                 ColorProducer colorProducer;
                 colorProducer = DelegatingThemeAwareRippleNode.this.color;
-                long mo2181invoke0d7_KjU = colorProducer.mo2181invoke0d7_KjU();
-                if (mo2181invoke0d7_KjU != 16) {
-                    return mo2181invoke0d7_KjU;
+                long mo2299invoke0d7_KjU = colorProducer.mo2299invoke0d7_KjU();
+                if (mo2299invoke0d7_KjU != 16) {
+                    return mo2299invoke0d7_KjU;
                 }
                 RippleConfiguration rippleConfiguration = (RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, RippleKt.getLocalRippleConfiguration());
-                if (rippleConfiguration != null && rippleConfiguration.m2523getColor0d7_KjU() != 16) {
-                    return rippleConfiguration.m2523getColor0d7_KjU();
+                if (rippleConfiguration != null && rippleConfiguration.m2777getColor0d7_KjU() != 16) {
+                    return rippleConfiguration.m2777getColor0d7_KjU();
                 }
-                return ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, ContentColorKt.getLocalContentColor())).m4559unboximpl();
+                return ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, ContentColorKt.getLocalContentColor())).m5289unboximpl();
             }
-        }, new Function0<RippleAlpha>() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$attachNewRipple$calculateRippleAlpha$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // kotlin.jvm.functions.Function0
-            public final RippleAlpha invoke() {
-                RippleAlpha rippleAlpha;
-                RippleConfiguration rippleConfiguration = (RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, RippleKt.getLocalRippleConfiguration());
-                return (rippleConfiguration == null || (rippleAlpha = rippleConfiguration.getRippleAlpha()) == null) ? RippleDefaults.INSTANCE.getRippleAlpha() : rippleAlpha;
-            }
-        }));
+        }, function0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void removeRipple() {
+    public static final RippleAlpha attachNewRipple$lambda$1(DelegatingThemeAwareRippleNode delegatingThemeAwareRippleNode) {
+        RippleAlpha rippleAlpha;
+        RippleConfiguration rippleConfiguration = (RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(delegatingThemeAwareRippleNode, RippleKt.getLocalRippleConfiguration());
+        return (rippleConfiguration == null || (rippleAlpha = rippleConfiguration.getRippleAlpha()) == null) ? RippleDefaults.INSTANCE.getRippleAlpha() : rippleAlpha;
+    }
+
+    private final void removeRipple() {
         DelegatableNode delegatableNode = this.rippleNode;
         if (delegatableNode != null) {
             undelegate(delegatableNode);
         }
+        this.rippleNode = null;
     }
 }

@@ -8,10 +8,10 @@ import androidx.media3.common.Timeline;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.exoplayer.source.ads.AdsMediaSource;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface AdsLoader {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface EventListener {
         default void onAdClicked() {
         }
@@ -26,7 +26,7 @@ public interface AdsLoader {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Provider {
         AdsLoader getAdsLoader(MediaItem.AdsConfiguration adsConfiguration);
     }

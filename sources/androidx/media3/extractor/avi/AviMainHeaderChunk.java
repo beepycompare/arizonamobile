@@ -1,7 +1,7 @@
 package androidx.media3.extractor.avi;
 
 import androidx.media3.common.util.ParsableByteArray;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class AviMainHeaderChunk implements AviChunk {
     private static final int AVIF_HAS_INDEX = 16;
     public final int flags;

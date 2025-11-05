@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.ContextWrapper;
 import androidx.fragment.app.FragmentActivity;
 import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class LifecycleActivity {
     private final Object zza;
 
@@ -14,20 +14,20 @@ public class LifecycleActivity {
         this.zza = activity;
     }
 
-    public final Activity zza() {
-        return (Activity) this.zza;
+    public final boolean zza() {
+        return this.zza instanceof FragmentActivity;
     }
 
-    public final FragmentActivity zzb() {
-        return (FragmentActivity) this.zza;
-    }
-
-    public final boolean zzc() {
+    public final boolean zzb() {
         return this.zza instanceof Activity;
     }
 
-    public final boolean zzd() {
-        return this.zza instanceof FragmentActivity;
+    public final Activity zzc() {
+        return (Activity) this.zza;
+    }
+
+    public final FragmentActivity zzd() {
+        return (FragmentActivity) this.zza;
     }
 
     @Deprecated

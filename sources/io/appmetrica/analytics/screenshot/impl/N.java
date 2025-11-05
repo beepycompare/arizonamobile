@@ -7,34 +7,30 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class N extends MessageNano {
-    public static volatile N[] d;
+    public static volatile N[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public K f1303a;
-    public M b;
-    public L c;
+    public boolean f1343a;
 
     public N() {
         a();
     }
 
     public static N[] b() {
-        if (d == null) {
+        if (b == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new N[0];
+                if (b == null) {
+                    b = new N[0];
                 }
             }
         }
-        return d;
+        return b;
     }
 
     public final N a() {
-        this.f1303a = null;
-        this.b = null;
-        this.c = null;
+        this.f1343a = true;
         this.cachedSize = -1;
         return this;
     }
@@ -42,31 +38,15 @@ public final class N extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        K k = this.f1303a;
-        if (k != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, k);
-        }
-        M m = this.b;
-        if (m != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, m);
-        }
-        L l = this.c;
-        return l != null ? CodedOutputByteBufferNano.computeMessageSize(3, l) + computeSerializedSize : computeSerializedSize;
+        boolean z = this.f1343a;
+        return !z ? CodedOutputByteBufferNano.computeBoolSize(1, z) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        K k = this.f1303a;
-        if (k != null) {
-            codedOutputByteBufferNano.writeMessage(1, k);
-        }
-        M m = this.b;
-        if (m != null) {
-            codedOutputByteBufferNano.writeMessage(2, m);
-        }
-        L l = this.c;
-        if (l != null) {
-            codedOutputByteBufferNano.writeMessage(3, l);
+        boolean z = this.f1343a;
+        if (!z) {
+            codedOutputByteBufferNano.writeBool(1, z);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -78,25 +58,12 @@ public final class N extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag == 10) {
-                if (this.f1303a == null) {
-                    this.f1303a = new K();
-                }
-                codedInputByteBufferNano.readMessage(this.f1303a);
-            } else if (readTag == 18) {
-                if (this.b == null) {
-                    this.b = new M();
-                }
-                codedInputByteBufferNano.readMessage(this.b);
-            } else if (readTag != 26) {
+            } else if (readTag != 8) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                if (this.c == null) {
-                    this.c = new L();
-                }
-                codedInputByteBufferNano.readMessage(this.c);
+                this.f1343a = codedInputByteBufferNano.readBool();
             }
         }
         return this;

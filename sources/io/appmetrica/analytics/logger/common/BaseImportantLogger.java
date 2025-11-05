@@ -6,23 +6,23 @@ import io.appmetrica.analytics.logger.common.impl.b;
 import io.appmetrica.analytics.logger.common.impl.c;
 import io.appmetrica.analytics.logger.common.impl.d;
 import java.util.Iterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseImportantLogger {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f1225a;
+    private final c f1266a;
 
     public BaseImportantLogger(String str) {
-        this.f1225a = new c(new d(str), new a(), new b());
+        this.f1266a = new c(new d(str), new a(), new b());
     }
 
     public void info(String str, String str2, Object... objArr) {
-        c cVar = this.f1225a;
+        c cVar = this.f1266a;
         cVar.b.getClass();
         Iterator it = cVar.c.a(a.a(str, str2, objArr)).iterator();
         while (it.hasNext()) {
             String str3 = (String) it.next();
-            String str4 = cVar.f1228a.f1229a;
+            String str4 = cVar.f1269a.f1270a;
             if (str3 == null) {
                 str3 = "";
             }

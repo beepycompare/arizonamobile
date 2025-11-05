@@ -265,7 +265,8 @@ public final class WebSocketReader implements Closeable {
     public void close() throws IOException {
         MessageInflater messageInflater = this.messageInflater;
         if (messageInflater != null) {
-            messageInflater.close();
+            _UtilCommonKt.closeQuietly(messageInflater);
         }
+        _UtilCommonKt.closeQuietly(this.source);
     }
 }

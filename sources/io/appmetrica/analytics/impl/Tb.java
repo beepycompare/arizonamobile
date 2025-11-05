@@ -1,84 +1,87 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Set;
-/* loaded from: classes4.dex */
-public final class Tb implements InterfaceC0302hb {
+import android.location.Location;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory;
+import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
+import io.appmetrica.analytics.locationapi.internal.LocationFilter;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory;
+/* loaded from: classes3.dex */
+public final class Tb implements Rb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0302hb f684a;
+    public final Be f703a = new Be();
+    public final Bb b = new Bb();
+    public final C0192dc c = new C0192dc();
 
-    public Tb(InterfaceC0302hb interfaceC0302hb) {
-        this.f684a = interfaceC0302hb;
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void a(Location location) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb a(String str, String str2) {
-        this.f684a.a(str, str2);
-        return this;
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void a(Object obj) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final void b() {
-        this.f684a.b();
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void a(boolean z) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final boolean getBoolean(String str, boolean z) {
-        return this.f684a.getBoolean(str, z);
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void b(Object obj) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final int getInt(String str, int i) {
-        return this.f684a.getInt(str, i);
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final LastKnownLocationExtractorProviderFactory getLastKnownExtractorProviderFactory() {
+        return this.b;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final long getLong(String str, long j) {
-        return this.f684a.getLong(str, j);
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final LocationReceiverProviderFactory getLocationReceiverProviderFactory() {
+        return this.c;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final String getString(String str, String str2) {
-        return this.f684a.getString(str, str2);
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final PermissionExtractor getPermissionExtractor() {
+        return this.f703a;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb remove(String str) {
-        this.f684a.remove(str);
-        return this;
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
+    public final Location getSystemLocation() {
+        return null;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb a(String str, long j) {
-        this.f684a.a(str, j);
-        return this;
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
+    public final Location getUserLocation() {
+        return null;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb a(int i, String str) {
-        this.f684a.a(i, str);
-        return this;
+    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
+    public final void init() {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb a(String str, boolean z) {
-        this.f684a.a(str, z);
-        return this;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerControllerObserver(LocationControllerObserver locationControllerObserver) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final InterfaceC0302hb a(String str, float f) {
-        this.f684a.a(str, f);
-        return this;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final boolean a(String str) {
-        return this.f684a.a(str);
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerSource(LocationReceiverProvider locationReceiverProvider) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
-    public final Set a() {
-        return this.f684a.a();
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void unregisterSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void unregisterSource(LocationReceiverProvider locationReceiverProvider) {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void updateLocationFilter(LocationFilter locationFilter) {
     }
 }

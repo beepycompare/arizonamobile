@@ -4,7 +4,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zaba implements GoogleApiClient.OnConnectionFailedListener {
     final /* synthetic */ StatusPendingResult zaa;
 

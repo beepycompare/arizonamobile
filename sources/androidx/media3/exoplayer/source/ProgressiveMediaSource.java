@@ -31,7 +31,7 @@ import androidx.media3.extractor.SeekMap;
 import com.google.common.base.Supplier;
 import java.util.Objects;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ProgressiveMediaSource extends BaseMediaSource implements ProgressiveMediaPeriod.Listener {
     public static final int DEFAULT_LOADING_CHECK_INTERVAL_BYTES = 1048576;
     private final int continueLoadingCheckIntervalBytes;
@@ -50,7 +50,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
     private boolean timelineIsSeekable;
     private TransferListener transferListener;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onSeekMap(MediaSource mediaSource, SeekMap seekMap);
     }
@@ -59,7 +59,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
     public void maybeThrowSourceInfoRefreshError() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory implements MediaSourceFactory {
         private int continueLoadingCheckIntervalBytes;
         private final DataSource.Factory dataSourceFactory;

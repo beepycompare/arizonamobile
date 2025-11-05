@@ -24,7 +24,7 @@ public final class SizeElement extends ModifierNodeElement<SizeNode> {
     }
 
     public /* synthetic */ SizeElement(float f, float f2, float f3, float f4, boolean z, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f2, (i & 4) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f3, (i & 8) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f4, z, function1, null);
+        this((i & 1) != 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : f2, (i & 4) != 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : f3, (i & 8) != 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : f4, z, function1, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -64,13 +64,13 @@ public final class SizeElement extends ModifierNodeElement<SizeNode> {
         }
         if (obj instanceof SizeElement) {
             SizeElement sizeElement = (SizeElement) obj;
-            return Dp.m7269equalsimpl0(this.minWidth, sizeElement.minWidth) && Dp.m7269equalsimpl0(this.minHeight, sizeElement.minHeight) && Dp.m7269equalsimpl0(this.maxWidth, sizeElement.maxWidth) && Dp.m7269equalsimpl0(this.maxHeight, sizeElement.maxHeight) && this.enforceIncoming == sizeElement.enforceIncoming;
+            return Dp.m8000equalsimpl0(this.minWidth, sizeElement.minWidth) && Dp.m8000equalsimpl0(this.minHeight, sizeElement.minHeight) && Dp.m8000equalsimpl0(this.maxWidth, sizeElement.maxWidth) && Dp.m8000equalsimpl0(this.maxHeight, sizeElement.maxHeight) && this.enforceIncoming == sizeElement.enforceIncoming;
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Dp.m7270hashCodeimpl(this.minWidth) * 31) + Dp.m7270hashCodeimpl(this.minHeight)) * 31) + Dp.m7270hashCodeimpl(this.maxWidth)) * 31) + Dp.m7270hashCodeimpl(this.maxHeight)) * 31) + Boolean.hashCode(this.enforceIncoming);
+        return (((((((Dp.m8001hashCodeimpl(this.minWidth) * 31) + Dp.m8001hashCodeimpl(this.minHeight)) * 31) + Dp.m8001hashCodeimpl(this.maxWidth)) * 31) + Dp.m8001hashCodeimpl(this.maxHeight)) * 31) + Boolean.hashCode(this.enforceIncoming);
     }
 }

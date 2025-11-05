@@ -57,7 +57,7 @@ public final class Scrollable2DKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Ref.LongRef longRef2 = new Ref.LongRef();
-                    longRef2.element = Offset.Companion.m4321getZeroF1C5BW0();
+                    longRef2.element = Offset.Companion.m5051getZeroF1C5BW0();
                     scrollable2DKt$semanticsScrollBy$1.L$0 = longRef2;
                     scrollable2DKt$semanticsScrollBy$1.label = 1;
                     if (scrollingLogic2D.scroll(MutatePriority.Default, new Scrollable2DKt$semanticsScrollBy$2(j, longRef2, null), scrollable2DKt$semanticsScrollBy$1) == coroutine_suspended) {
@@ -70,7 +70,7 @@ public final class Scrollable2DKt {
                     longRef = (Ref.LongRef) scrollable2DKt$semanticsScrollBy$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Offset.m4294boximpl(longRef.element);
+                return Offset.m5024boximpl(longRef.element);
             }
         }
         scrollable2DKt$semanticsScrollBy$1 = new Scrollable2DKt$semanticsScrollBy$1(continuation);
@@ -79,19 +79,19 @@ public final class Scrollable2DKt {
         i = scrollable2DKt$semanticsScrollBy$1.label;
         if (i != 0) {
         }
-        return Offset.m4294boximpl(longRef.element);
+        return Offset.m5024boximpl(longRef.element);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getMagnitude-TH1AsA0  reason: not valid java name */
     public static final float m569getMagnitudeTH1AsA0(long j) {
         double d = 2;
-        return (float) Math.sqrt(((float) Math.pow(Velocity.m7502getXimpl(j), d)) + ((float) Math.pow(Velocity.m7503getYimpl(j), d)));
+        return (float) Math.sqrt(((float) Math.pow(Velocity.m8233getXimpl(j), d)) + ((float) Math.pow(Velocity.m8234getYimpl(j), d)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getAngle-TH1AsA0  reason: not valid java name */
     public static final float m568getAngleTH1AsA0(long j) {
-        return (float) Math.atan2(Velocity.m7503getYimpl(j), Velocity.m7502getXimpl(j));
+        return (float) Math.atan2(Velocity.m8234getYimpl(j), Velocity.m8233getXimpl(j));
     }
 }

@@ -30,40 +30,40 @@ public final class Matrix {
     private final float[] values;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Matrix m4789boximpl(float[] fArr) {
+    public static final /* synthetic */ Matrix m5519boximpl(float[] fArr) {
         return new Matrix(fArr);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static float[] m4790constructorimpl(float[] fArr) {
+    public static float[] m5520constructorimpl(float[] fArr) {
         return fArr;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4792equalsimpl(float[] fArr, Object obj) {
-        return (obj instanceof Matrix) && Intrinsics.areEqual(fArr, ((Matrix) obj).m4814unboximpl());
+    public static boolean m5522equalsimpl(float[] fArr, Object obj) {
+        return (obj instanceof Matrix) && Intrinsics.areEqual(fArr, ((Matrix) obj).m5544unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4793equalsimpl0(float[] fArr, float[] fArr2) {
+    public static final boolean m5523equalsimpl0(float[] fArr, float[] fArr2) {
         return Intrinsics.areEqual(fArr, fArr2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4795hashCodeimpl(float[] fArr) {
+    public static int m5525hashCodeimpl(float[] fArr) {
         return Arrays.hashCode(fArr);
     }
 
     public boolean equals(Object obj) {
-        return m4792equalsimpl(this.values, obj);
+        return m5522equalsimpl(this.values, obj);
     }
 
     public int hashCode() {
-        return m4795hashCodeimpl(this.values);
+        return m5525hashCodeimpl(this.values);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ float[] m4814unboximpl() {
+    public final /* synthetic */ float[] m5544unboximpl() {
         return this.values;
     }
 
@@ -76,25 +76,25 @@ public final class Matrix {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ float[] m4791constructorimpl$default(float[] fArr, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ float[] m5521constructorimpl$default(float[] fArr, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             fArr = new float[]{1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
         }
-        return m4790constructorimpl(fArr);
+        return m5520constructorimpl(fArr);
     }
 
     /* renamed from: get-impl  reason: not valid java name */
-    public static final float m4794getimpl(float[] fArr, int i, int i2) {
+    public static final float m5524getimpl(float[] fArr, int i, int i2) {
         return fArr[(i * 4) + i2];
     }
 
     /* renamed from: set-impl  reason: not valid java name */
-    public static final void m4808setimpl(float[] fArr, int i, int i2, float f) {
+    public static final void m5538setimpl(float[] fArr, int i, int i2, float f) {
         fArr[(i * 4) + i2] = f;
     }
 
     /* renamed from: map-MK-Hz9U  reason: not valid java name */
-    public static final long m4797mapMKHz9U(float[] fArr, long j) {
+    public static final long m5527mapMKHz9U(float[] fArr, long j) {
         if (fArr.length < 16) {
             return j;
         }
@@ -113,11 +113,11 @@ public final class Matrix {
         if ((Float.floatToRawIntBits(f10) & Integer.MAX_VALUE) >= 2139095040) {
             f10 = 0.0f;
         }
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits((((f * intBitsToFloat) + (f4 * intBitsToFloat2)) + f7) * f10) << 32) | (Float.floatToRawIntBits(f10 * ((f2 * intBitsToFloat) + (f5 * intBitsToFloat2) + f8)) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits((((f * intBitsToFloat) + (f4 * intBitsToFloat2)) + f7) * f10) << 32) | (Float.floatToRawIntBits(f10 * ((f2 * intBitsToFloat) + (f5 * intBitsToFloat2) + f8)) & 4294967295L));
     }
 
     /* renamed from: map-impl  reason: not valid java name */
-    public static final Rect m4798mapimpl(float[] fArr, Rect rect) {
+    public static final Rect m5528mapimpl(float[] fArr, Rect rect) {
         if (fArr.length < 16) {
             return rect;
         }
@@ -172,7 +172,7 @@ public final class Matrix {
     }
 
     /* renamed from: map-impl  reason: not valid java name */
-    public static final void m4799mapimpl(float[] fArr, MutableRect mutableRect) {
+    public static final void m5529mapimpl(float[] fArr, MutableRect mutableRect) {
         if (fArr.length < 16) {
             return;
         }
@@ -230,7 +230,7 @@ public final class Matrix {
     }
 
     /* renamed from: timesAssign-58bKbWc  reason: not valid java name */
-    public static final void m4810timesAssign58bKbWc(float[] fArr, float[] fArr2) {
+    public static final void m5540timesAssign58bKbWc(float[] fArr, float[] fArr2) {
         if (fArr.length >= 16 && fArr2.length >= 16) {
             float f = fArr[0];
             float f2 = fArr2[0];
@@ -295,11 +295,11 @@ public final class Matrix {
     }
 
     public String toString() {
-        return m4811toStringimpl(this.values);
+        return m5541toStringimpl(this.values);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4811toStringimpl(float[] fArr) {
+    public static String m5541toStringimpl(float[] fArr) {
         StringBuilder sb = new StringBuilder("\n            |");
         sb.append(fArr[0]).append(' ').append(fArr[1]).append(' ').append(fArr[2]).append(' ').append(fArr[3]).append("|\n            |").append(fArr[4]).append(' ').append(fArr[5]).append(' ').append(fArr[6]).append(' ').append(fArr[7]).append("|\n            |").append(fArr[8]).append(' ').append(fArr[9]).append(' ').append(fArr[10]).append(' ');
         sb.append(fArr[11]).append("|\n            |").append(fArr[12]).append(' ').append(fArr[13]).append(' ').append(fArr[14]).append(' ').append(fArr[15]).append("|\n        ");
@@ -307,7 +307,7 @@ public final class Matrix {
     }
 
     /* renamed from: invert-impl  reason: not valid java name */
-    public static final void m4796invertimpl(float[] fArr) {
+    public static final void m5526invertimpl(float[] fArr) {
         if (fArr.length < 16) {
             return;
         }
@@ -365,7 +365,7 @@ public final class Matrix {
     }
 
     /* renamed from: reset-impl  reason: not valid java name */
-    public static final void m4800resetimpl(float[] fArr) {
+    public static final void m5530resetimpl(float[] fArr) {
         if (fArr.length < 16) {
             return;
         }
@@ -388,7 +388,7 @@ public final class Matrix {
     }
 
     /* renamed from: setFrom-58bKbWc  reason: not valid java name */
-    public static final void m4809setFrom58bKbWc(float[] fArr, float[] fArr2) {
+    public static final void m5539setFrom58bKbWc(float[] fArr, float[] fArr2) {
         if (fArr.length >= 16 && fArr2.length >= 16) {
             fArr[0] = fArr2[0];
             fArr[1] = fArr2[1];
@@ -410,7 +410,7 @@ public final class Matrix {
     }
 
     /* renamed from: rotateX-impl  reason: not valid java name */
-    public static final void m4803rotateXimpl(float[] fArr, float f) {
+    public static final void m5533rotateXimpl(float[] fArr, float f) {
         if (fArr.length < 16) {
             return;
         }
@@ -436,7 +436,7 @@ public final class Matrix {
     }
 
     /* renamed from: rotateY-impl  reason: not valid java name */
-    public static final void m4804rotateYimpl(float[] fArr, float f) {
+    public static final void m5534rotateYimpl(float[] fArr, float f) {
         if (fArr.length < 16) {
             return;
         }
@@ -462,7 +462,7 @@ public final class Matrix {
     }
 
     /* renamed from: rotateZ-impl  reason: not valid java name */
-    public static final void m4805rotateZimpl(float[] fArr, float f) {
+    public static final void m5535rotateZimpl(float[] fArr, float f) {
         if (fArr.length < 16) {
             return;
         }
@@ -489,7 +489,7 @@ public final class Matrix {
     }
 
     /* renamed from: scale-impl$default  reason: not valid java name */
-    public static /* synthetic */ void m4807scaleimpl$default(float[] fArr, float f, float f2, float f3, int i, Object obj) {
+    public static /* synthetic */ void m5537scaleimpl$default(float[] fArr, float f, float f2, float f3, int i, Object obj) {
         if ((i & 1) != 0) {
             f = 1.0f;
         }
@@ -499,11 +499,11 @@ public final class Matrix {
         if ((i & 4) != 0) {
             f3 = 1.0f;
         }
-        m4806scaleimpl(fArr, f, f2, f3);
+        m5536scaleimpl(fArr, f, f2, f3);
     }
 
     /* renamed from: scale-impl  reason: not valid java name */
-    public static final void m4806scaleimpl(float[] fArr, float f, float f2, float f3) {
+    public static final void m5536scaleimpl(float[] fArr, float f, float f2, float f3) {
         if (fArr.length < 16) {
             return;
         }
@@ -522,7 +522,7 @@ public final class Matrix {
     }
 
     /* renamed from: translate-impl$default  reason: not valid java name */
-    public static /* synthetic */ void m4813translateimpl$default(float[] fArr, float f, float f2, float f3, int i, Object obj) {
+    public static /* synthetic */ void m5543translateimpl$default(float[] fArr, float f, float f2, float f3, int i, Object obj) {
         if ((i & 1) != 0) {
             f = 0.0f;
         }
@@ -532,11 +532,11 @@ public final class Matrix {
         if ((i & 4) != 0) {
             f3 = 0.0f;
         }
-        m4812translateimpl(fArr, f, f2, f3);
+        m5542translateimpl(fArr, f, f2, f3);
     }
 
     /* renamed from: translate-impl  reason: not valid java name */
-    public static final void m4812translateimpl(float[] fArr, float f, float f2, float f3) {
+    public static final void m5542translateimpl(float[] fArr, float f, float f2, float f3) {
         if (fArr.length < 16) {
             return;
         }
@@ -550,7 +550,7 @@ public final class Matrix {
     }
 
     /* renamed from: resetToPivotedTransform-impl$default  reason: not valid java name */
-    public static /* synthetic */ void m4802resetToPivotedTransformimpl$default(float[] fArr, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11, int i, Object obj) {
+    public static /* synthetic */ void m5532resetToPivotedTransformimpl$default(float[] fArr, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11, int i, Object obj) {
         if ((i & 1) != 0) {
             f = 0.0f;
         }
@@ -584,11 +584,11 @@ public final class Matrix {
         if ((i & 1024) != 0) {
             f11 = 1.0f;
         }
-        m4801resetToPivotedTransformimpl(fArr, f, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11);
+        m5531resetToPivotedTransformimpl(fArr, f, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11);
     }
 
     /* renamed from: resetToPivotedTransform-impl  reason: not valid java name */
-    public static final void m4801resetToPivotedTransformimpl(float[] fArr, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11) {
+    public static final void m5531resetToPivotedTransformimpl(float[] fArr, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11) {
         double d = f6 * 0.017453292519943295d;
         float sin = (float) Math.sin(d);
         float cos = (float) Math.cos(d);

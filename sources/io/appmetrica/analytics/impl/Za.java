@@ -1,15 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.database.Cursor;
-/* loaded from: classes4.dex */
-public final class Za {
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.ReporterConfig;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+/* loaded from: classes3.dex */
+public interface Za extends InterfaceC0113ab {
+    Pa a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0386l0 c0386l0);
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f773a;
-    public Cursor b;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0113ab
+    /* synthetic */ Za a();
 
-    public Za(Context context) {
-        this.f773a = context;
-    }
+    InterfaceC0139bb a(AppMetricaConfig appMetricaConfig);
+
+    void a(ReporterConfig reporterConfig);
+
+    Pa b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0386l0 c0386l0);
+
+    Ya b(ReporterConfig reporterConfig);
 }

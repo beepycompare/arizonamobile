@@ -1,5 +1,6 @@
 package okio.internal;
 
+import androidx.media3.container.MdtaMetadataEntry;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -8,14 +9,15 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.sequences.SequenceScope;
 import okio.FileSystem;
 import okio.Path;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FileSystem.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlin/sequences/SequenceScope;", "Lokio/Path;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "okio.internal.-FileSystem$commonDeleteRecursively$sequence$1", f = "FileSystem.kt", i = {}, l = {75}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlin/sequences/SequenceScope;", "Lokio/Path;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "okio.internal.-FileSystem$commonDeleteRecursively$sequence$1", f = "FileSystem.kt", i = {0}, l = {MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT}, m = "invokeSuspend", n = {"$this$sequence"}, s = {"L$0"}, v = 1)
 /* renamed from: okio.internal.-FileSystem$commonDeleteRecursively$sequence$1  reason: invalid class name */
 /* loaded from: classes5.dex */
 public final class FileSystem$commonDeleteRecursively$sequence$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super Path>, Continuation<? super Unit>, Object> {
@@ -46,12 +48,14 @@ public final class FileSystem$commonDeleteRecursively$sequence$1 extends Restric
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        SequenceScope sequenceScope = (SequenceScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
+            this.L$0 = SpillingKt.nullOutSpilledVariable(sequenceScope);
             this.label = 1;
-            if (FileSystem.collectRecursively((SequenceScope) this.L$0, this.$this_commonDeleteRecursively, new ArrayDeque(), this.$fileOrDirectory, false, true, this) == coroutine_suspended) {
+            if (FileSystem.collectRecursively(sequenceScope, this.$this_commonDeleteRecursively, new ArrayDeque(), this.$fileOrDirectory, false, true, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

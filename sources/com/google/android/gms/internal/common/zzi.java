@@ -1,12 +1,29 @@
 package com.google.android.gms.internal.common;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzi extends zzj {
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public class zzi {
+    private final Class zza;
+    private final Object zzb;
+
     private zzi(Class cls, Object obj) {
-        super(cls, obj);
+        this.zza = cls;
+        this.zzb = obj;
     }
 
-    public static zzi zza(long j) {
-        return new zzi(Long.TYPE, Long.valueOf(j));
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzi(Class cls, Object obj, byte[] bArr) {
+        this(cls, obj);
+    }
+
+    public static zzi zzb(Class cls, Object obj) {
+        return new zzi(cls, obj);
+    }
+
+    public final Class zzc() {
+        return this.zza;
+    }
+
+    public final Object zzd() {
+        return this.zzb;
     }
 }

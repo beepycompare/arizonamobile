@@ -9,7 +9,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface LoadErrorHandlingPolicy {
     public static final int FALLBACK_TYPE_LOCATION = 1;
     public static final int FALLBACK_TYPE_TRACK = 2;
@@ -17,7 +17,7 @@ public interface LoadErrorHandlingPolicy {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface FallbackType {
     }
 
@@ -30,7 +30,7 @@ public interface LoadErrorHandlingPolicy {
     default void onLoadTaskConcluded(long j) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class LoadErrorInfo {
         public final int errorCount;
         public final IOException exception;
@@ -45,7 +45,7 @@ public interface LoadErrorHandlingPolicy {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class FallbackOptions {
         public final int numberOfExcludedLocations;
         public final int numberOfExcludedTracks;
@@ -64,7 +64,7 @@ public interface LoadErrorHandlingPolicy {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class FallbackSelection {
         public final long exclusionDurationMs;
         public final int type;

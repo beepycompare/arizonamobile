@@ -1,5 +1,5 @@
 package androidx.media3.extractor.avi;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 interface AviChunk {
     int getType();
 }

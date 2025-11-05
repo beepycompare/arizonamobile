@@ -64,7 +64,7 @@ public final class SelectionManager$suggestSelectionForLongPressOrDoubleClick$2 
             PlatformSelectionBehaviors platformSelectionBehaviors$foundation_release = this.this$0.getPlatformSelectionBehaviors$foundation_release();
             if (platformSelectionBehaviors$foundation_release != null) {
                 this.label = 1;
-                obj = platformSelectionBehaviors$foundation_release.mo1746suggestSelectionForLongPressOrDoubleClickpYaCww(this.$textInSelectable.element, this.$selectionInSelectable.element.m6730unboximpl(), this);
+                obj = platformSelectionBehaviors$foundation_release.mo1746suggestSelectionForLongPressOrDoubleClickpYaCww(this.$textInSelectable.element, this.$selectionInSelectable.element.m7461unboximpl(), this);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -75,7 +75,7 @@ public final class SelectionManager$suggestSelectionForLongPressOrDoubleClick$2 
                     if (textLayoutResult != null) {
                         return Unit.INSTANCE;
                     }
-                    Selection selection = new Selection(new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m6726getStartimpl(textRange.m6730unboximpl())), TextRange.m6726getStartimpl(textRange.m6730unboximpl()), this.$targetSelectableId.element), new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m6721getEndimpl(textRange.m6730unboximpl())), TextRange.m6721getEndimpl(textRange.m6730unboximpl()), this.$targetSelectableId.element), false, 4, null);
+                    Selection selection = new Selection(new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7457getStartimpl(textRange.m7461unboximpl())), TextRange.m7457getStartimpl(textRange.m7461unboximpl()), this.$targetSelectableId.element), new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7452getEndimpl(textRange.m7461unboximpl())), TextRange.m7452getEndimpl(textRange.m7461unboximpl()), this.$targetSelectableId.element), false, 4, null);
                     this.this$0.selectionRegistrar.setSubselections(LongObjectMapKt.mutableLongObjectMapOf(this.$targetSelectableId.element, selection));
                     this.this$0.getOnSelectionChange().invoke(selection);
                     this.this$0.setPreviousSelectionLayout$foundation_release(null);

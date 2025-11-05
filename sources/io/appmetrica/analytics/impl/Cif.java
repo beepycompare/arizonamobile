@@ -1,45 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Provider;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.plugins.IPluginReporter;
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
-import java.util.Collection;
+import java.util.List;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.if  reason: invalid class name */
-/* loaded from: classes4.dex */
-public final class Cif implements IPluginReporter {
+/* loaded from: classes3.dex */
+public final class Cif implements W7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0409lf f923a = new C0409lf();
-    public final C0435mf b = new C0435mf();
-    public final IHandlerExecutor c = A4.l().g().a();
-    public final Provider d;
+    public final C0650vf f935a;
+    public final List<C0298hf> b;
 
-    public Cif(Provider<InterfaceC0558rb> provider) {
-        this.d = provider;
+    public Cif(C0650vf c0650vf, List<C0298hf> list) {
+        this.f935a = c0650vf;
+        this.b = list;
     }
 
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-        C0409lf c0409lf = this.f923a;
-        c0409lf.f973a.a(pluginErrorDetails);
-        if (c0409lf.c.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1146a) {
-            this.b.getClass();
-            this.c.execute(new RunnableC0280gf(this, pluginErrorDetails, str));
-        }
+    @Override // io.appmetrica.analytics.impl.W7
+    public final List<C0298hf> a() {
+        return this.b;
     }
 
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
-        this.f923a.f973a.a(pluginErrorDetails);
-        this.b.getClass();
-        this.c.execute(new RunnableC0254ff(this, pluginErrorDetails));
+    @Override // io.appmetrica.analytics.impl.W7
+    public final Object b() {
+        return this.f935a;
     }
 
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f923a.b.a(str);
-        this.b.getClass();
-        this.c.execute(new RunnableC0306hf(this, str, str2, pluginErrorDetails));
+    public final C0650vf c() {
+        return this.f935a;
+    }
+
+    public final String toString() {
+        return "PreloadInfoData{chosenPreloadInfo=" + this.f935a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

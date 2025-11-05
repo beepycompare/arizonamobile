@@ -3,8 +3,8 @@ package com.google.android.gms.common.internal;
 import android.os.Looper;
 import android.util.Log;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class Asserts {
     private Asserts() {
         throw new AssertionError("Uninstantiable");
@@ -16,7 +16,13 @@ public final class Asserts {
         }
         String valueOf = String.valueOf(Thread.currentThread());
         String valueOf2 = String.valueOf(Looper.getMainLooper().getThread());
-        Log.e("Asserts", "checkMainThread: current thread " + valueOf + " IS NOT the main thread " + valueOf2 + "!");
+        StringBuilder sb = new StringBuilder(String.valueOf(valueOf).length() + 56 + String.valueOf(valueOf2).length() + 1);
+        sb.append("checkMainThread: current thread ");
+        sb.append(valueOf);
+        sb.append(" IS NOT the main thread ");
+        sb.append(valueOf2);
+        sb.append("!");
+        Log.e("Asserts", sb.toString());
         throw new IllegalStateException(str);
     }
 
@@ -26,7 +32,13 @@ public final class Asserts {
         }
         String valueOf = String.valueOf(Thread.currentThread());
         String valueOf2 = String.valueOf(Looper.getMainLooper().getThread());
-        Log.e("Asserts", "checkNotMainThread: current thread " + valueOf + " IS the main thread " + valueOf2 + "!");
+        StringBuilder sb = new StringBuilder(String.valueOf(valueOf).length() + 55 + String.valueOf(valueOf2).length() + 1);
+        sb.append("checkNotMainThread: current thread ");
+        sb.append(valueOf);
+        sb.append(" IS the main thread ");
+        sb.append(valueOf2);
+        sb.append("!");
+        Log.e("Asserts", sb.toString());
         throw new IllegalStateException(str);
     }
 

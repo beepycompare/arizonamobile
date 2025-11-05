@@ -1,10 +1,10 @@
 package androidx.media3.exoplayer.upstream;
 
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface LoaderErrorThrower {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Placeholder implements LoaderErrorThrower {
         @Override // androidx.media3.exoplayer.upstream.LoaderErrorThrower
         public void maybeThrowError() {

@@ -49,31 +49,31 @@ public final class ShapeContainingUtilKt {
             Path.addRoundRect$default(Path, roundRect, null, 2, null);
             return isInPath(Path, f, f2, path, path2);
         }
-        float left = roundRect.getLeft() + Float.intBitsToFloat((int) (roundRect.m4355getTopLeftCornerRadiuskKHJgLs() >> 32));
-        float top = roundRect.getTop() + Float.intBitsToFloat((int) (roundRect.m4355getTopLeftCornerRadiuskKHJgLs() & 4294967295L));
-        float right = roundRect.getRight() - Float.intBitsToFloat((int) (roundRect.m4356getTopRightCornerRadiuskKHJgLs() >> 32));
-        float top2 = roundRect.getTop() + Float.intBitsToFloat((int) (roundRect.m4356getTopRightCornerRadiuskKHJgLs() & 4294967295L));
-        float right2 = roundRect.getRight() - Float.intBitsToFloat((int) (roundRect.m4354getBottomRightCornerRadiuskKHJgLs() >> 32));
-        float bottom = roundRect.getBottom() - Float.intBitsToFloat((int) (roundRect.m4354getBottomRightCornerRadiuskKHJgLs() & 4294967295L));
-        float bottom2 = roundRect.getBottom() - Float.intBitsToFloat((int) (4294967295L & roundRect.m4353getBottomLeftCornerRadiuskKHJgLs()));
-        float left2 = roundRect.getLeft() + Float.intBitsToFloat((int) (roundRect.m4353getBottomLeftCornerRadiuskKHJgLs() >> 32));
+        float left = roundRect.getLeft() + Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() >> 32));
+        float top = roundRect.getTop() + Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() & 4294967295L));
+        float right = roundRect.getRight() - Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() >> 32));
+        float top2 = roundRect.getTop() + Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() & 4294967295L));
+        float right2 = roundRect.getRight() - Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() >> 32));
+        float bottom = roundRect.getBottom() - Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() & 4294967295L));
+        float bottom2 = roundRect.getBottom() - Float.intBitsToFloat((int) (4294967295L & roundRect.m5083getBottomLeftCornerRadiuskKHJgLs()));
+        float left2 = roundRect.getLeft() + Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() >> 32));
         if (f >= left || f2 >= top) {
             if (f >= left2 || f2 <= bottom2) {
                 if (f <= right || f2 >= top2) {
                     if (f <= right2 || f2 <= bottom) {
                         return true;
                     }
-                    return m6450isWithinEllipseVE1yxkc(f, f2, roundRect.m4354getBottomRightCornerRadiuskKHJgLs(), right2, bottom);
+                    return m7180isWithinEllipseVE1yxkc(f, f2, roundRect.m5084getBottomRightCornerRadiuskKHJgLs(), right2, bottom);
                 }
-                return m6450isWithinEllipseVE1yxkc(f, f2, roundRect.m4356getTopRightCornerRadiuskKHJgLs(), right, top2);
+                return m7180isWithinEllipseVE1yxkc(f, f2, roundRect.m5086getTopRightCornerRadiuskKHJgLs(), right, top2);
             }
-            return m6450isWithinEllipseVE1yxkc(f, f2, roundRect.m4353getBottomLeftCornerRadiuskKHJgLs(), left2, bottom2);
+            return m7180isWithinEllipseVE1yxkc(f, f2, roundRect.m5083getBottomLeftCornerRadiuskKHJgLs(), left2, bottom2);
         }
-        return m6450isWithinEllipseVE1yxkc(f, f2, roundRect.m4355getTopLeftCornerRadiuskKHJgLs(), left, top);
+        return m7180isWithinEllipseVE1yxkc(f, f2, roundRect.m5085getTopLeftCornerRadiuskKHJgLs(), left, top);
     }
 
     private static final boolean cornersFit(RoundRect roundRect) {
-        return Float.intBitsToFloat((int) (roundRect.m4355getTopLeftCornerRadiuskKHJgLs() >> 32)) + Float.intBitsToFloat((int) (roundRect.m4356getTopRightCornerRadiuskKHJgLs() >> 32)) <= roundRect.getWidth() && Float.intBitsToFloat((int) (roundRect.m4353getBottomLeftCornerRadiuskKHJgLs() >> 32)) + Float.intBitsToFloat((int) (roundRect.m4354getBottomRightCornerRadiuskKHJgLs() >> 32)) <= roundRect.getWidth() && Float.intBitsToFloat((int) (roundRect.m4355getTopLeftCornerRadiuskKHJgLs() & 4294967295L)) + Float.intBitsToFloat((int) (roundRect.m4353getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)) <= roundRect.getHeight() && Float.intBitsToFloat((int) (roundRect.m4356getTopRightCornerRadiuskKHJgLs() & 4294967295L)) + Float.intBitsToFloat((int) (roundRect.m4354getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) <= roundRect.getHeight();
+        return Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() >> 32)) + Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() >> 32)) <= roundRect.getWidth() && Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() >> 32)) + Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() >> 32)) <= roundRect.getWidth() && Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() & 4294967295L)) + Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)) <= roundRect.getHeight() && Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() & 4294967295L)) + Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) <= roundRect.getHeight();
     }
 
     private static final boolean isInPath(Path path, float f, float f2, Path path2, Path path3) {
@@ -85,7 +85,7 @@ public final class ShapeContainingUtilKt {
         if (path3 == null) {
             path3 = AndroidPath_androidKt.Path();
         }
-        path3.mo4439opN5in7k0(path, path2, PathOperation.Companion.m4854getIntersectb3I0S0c());
+        path3.mo5169opN5in7k0(path, path2, PathOperation.Companion.m5584getIntersectb3I0S0c());
         boolean isEmpty = path3.isEmpty();
         path3.reset();
         path2.reset();
@@ -93,7 +93,7 @@ public final class ShapeContainingUtilKt {
     }
 
     /* renamed from: isWithinEllipse-VE1yxkc  reason: not valid java name */
-    private static final boolean m6450isWithinEllipseVE1yxkc(float f, float f2, long j, float f3, float f4) {
+    private static final boolean m7180isWithinEllipseVE1yxkc(float f, float f2, long j, float f3, float f4) {
         float f5 = f - f3;
         float f6 = f2 - f4;
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));

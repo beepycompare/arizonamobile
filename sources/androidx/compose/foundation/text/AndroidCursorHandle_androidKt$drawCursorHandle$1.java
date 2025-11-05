@@ -70,14 +70,14 @@ final class AndroidCursorHandle_androidKt$drawCursorHandle$1 implements Function
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final DrawResult invoke$lambda$4$lambda$3(long j, CacheDrawScope cacheDrawScope) {
-        final float intBitsToFloat = Float.intBitsToFloat((int) (cacheDrawScope.m4089getSizeNHjbRc() >> 32)) / 2.0f;
+        final float intBitsToFloat = Float.intBitsToFloat((int) (cacheDrawScope.m4819getSizeNHjbRc() >> 32)) / 2.0f;
         final ImageBitmap createHandleImage = AndroidSelectionHandles_androidKt.createHandleImage(cacheDrawScope, intBitsToFloat);
-        final ColorFilter m4590tintxETnrds$default = ColorFilter.Companion.m4590tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
+        final ColorFilter m5320tintxETnrds$default = ColorFilter.Companion.m5320tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
         return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.foundation.text.AndroidCursorHandle_androidKt$drawCursorHandle$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit invoke$lambda$4$lambda$3$lambda$2;
-                invoke$lambda$4$lambda$3$lambda$2 = AndroidCursorHandle_androidKt$drawCursorHandle$1.invoke$lambda$4$lambda$3$lambda$2(intBitsToFloat, createHandleImage, m4590tintxETnrds$default, (ContentDrawScope) obj);
+                invoke$lambda$4$lambda$3$lambda$2 = AndroidCursorHandle_androidKt$drawCursorHandle$1.invoke$lambda$4$lambda$3$lambda$2(intBitsToFloat, createHandleImage, m5320tintxETnrds$default, (ContentDrawScope) obj);
                 return invoke$lambda$4$lambda$3$lambda$2;
             }
         });
@@ -88,19 +88,19 @@ final class AndroidCursorHandle_androidKt$drawCursorHandle$1 implements Function
         contentDrawScope.drawContent();
         ContentDrawScope contentDrawScope2 = contentDrawScope;
         DrawContext drawContext = contentDrawScope2.getDrawContext();
-        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
+        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
             DrawTransform.translate$default(transform, f, 0.0f, 2, null);
-            transform.mo5055rotateUv8p0NA(45.0f, Offset.Companion.m4321getZeroF1C5BW0());
-            DrawScope.m5112drawImagegbVJVH8$default(contentDrawScope2, imageBitmap, 0L, 0.0f, null, colorFilter, 0, 46, null);
+            transform.mo5785rotateUv8p0NA(45.0f, Offset.Companion.m5051getZeroF1C5BW0());
+            DrawScope.m5842drawImagegbVJVH8$default(contentDrawScope2, imageBitmap, 0L, 0.0f, null, colorFilter, 0, 46, null);
             drawContext.getCanvas().restore();
-            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
             return Unit.INSTANCE;
         } catch (Throwable th) {
             drawContext.getCanvas().restore();
-            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
             throw th;
         }
     }

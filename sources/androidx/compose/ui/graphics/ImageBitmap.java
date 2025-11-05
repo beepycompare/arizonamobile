@@ -11,7 +11,7 @@ public interface ImageBitmap {
     ColorSpace getColorSpace();
 
     /* renamed from: getConfig-_sVssgQ */
-    int mo4414getConfig_sVssgQ();
+    int mo5144getConfig_sVssgQ();
 
     boolean getHasAlpha();
 

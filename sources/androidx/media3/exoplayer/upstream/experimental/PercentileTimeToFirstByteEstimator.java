@@ -9,7 +9,7 @@ import androidx.media3.exoplayer.upstream.SlidingPercentile;
 import androidx.media3.exoplayer.upstream.TimeToFirstByteEstimator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PercentileTimeToFirstByteEstimator implements TimeToFirstByteEstimator {
     public static final int DEFAULT_MAX_SAMPLES_COUNT = 10;
     public static final float DEFAULT_PERCENTILE = 0.5f;
@@ -64,7 +64,7 @@ public final class PercentileTimeToFirstByteEstimator implements TimeToFirstByte
         this.isEmpty = false;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static class FixedSizeLinkedHashMap<K, V> extends LinkedHashMap<K, V> {
         private final int maxSize;
 

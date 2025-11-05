@@ -4,7 +4,7 @@ import androidx.media3.common.Format;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSpec;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class MediaChunk extends Chunk {
     public final long chunkIndex;
 

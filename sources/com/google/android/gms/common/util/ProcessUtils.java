@@ -5,16 +5,16 @@ import android.os.Build;
 import android.os.Process;
 import android.os.StrictMode;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.common.zzab;
-import com.google.android.gms.internal.common.zzac;
+import com.google.android.gms.internal.common.zzi;
 import com.google.android.gms.internal.common.zzj;
-import com.google.android.gms.internal.common.zzl;
+import com.google.android.gms.internal.common.zzx;
+import com.google.android.gms.internal.common.zzy;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class ProcessUtils {
     @Nullable
     private static String zza;
@@ -32,10 +32,10 @@ public class ProcessUtils {
                 bool = Boolean.valueOf(Process.isIsolated());
             } else {
                 try {
-                    Object zza2 = zzl.zza(Process.class, "isIsolated", new zzj[0]);
+                    Object zza2 = zzj.zza(Process.class, "isIsolated", new zzi[0]);
                     Object[] objArr = new Object[0];
                     if (zza2 == null) {
-                        throw new zzac(zzab.zza("expected a non-null reference", objArr));
+                        throw new zzy(zzx.zza("expected a non-null reference", objArr));
                     }
                     bool = (Boolean) zza2;
                 } catch (ReflectiveOperationException unused) {
@@ -64,29 +64,30 @@ public class ProcessUtils {
                 BufferedReader bufferedReader2 = null;
                 if (i > 0) {
                     try {
-                        String str2 = "/proc/" + i + "/cmdline";
+                        StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 14);
+                        sb.append("/proc/");
+                        sb.append(i);
+                        sb.append("/cmdline");
+                        String sb2 = sb.toString();
                         StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
-                        try {
-                            bufferedReader = new BufferedReader(new FileReader(str2));
-                            try {
-                                String readLine = bufferedReader.readLine();
-                                Preconditions.checkNotNull(readLine);
-                                String str3 = readLine;
-                                str = readLine.trim();
-                            } catch (IOException unused) {
-                            } catch (Throwable th) {
-                                th = th;
-                                bufferedReader2 = bufferedReader;
-                                IOUtils.closeQuietly(bufferedReader2);
-                                throw th;
-                            }
-                        } finally {
-                            StrictMode.setThreadPolicy(allowThreadDiskReads);
-                        }
-                    } catch (IOException unused2) {
+                        bufferedReader = new BufferedReader(new FileReader(sb2));
+                        StrictMode.setThreadPolicy(allowThreadDiskReads);
+                    } catch (IOException unused) {
                         bufferedReader = null;
+                    } catch (Throwable th) {
+                        th = th;
+                    }
+                    try {
+                        String readLine = bufferedReader.readLine();
+                        Preconditions.checkNotNull(readLine);
+                        String str2 = readLine;
+                        str = readLine.trim();
+                    } catch (IOException unused2) {
                     } catch (Throwable th2) {
                         th = th2;
+                        bufferedReader2 = bufferedReader;
+                        IOUtils.closeQuietly(bufferedReader2);
+                        throw th;
                     }
                     IOUtils.closeQuietly(bufferedReader);
                 }

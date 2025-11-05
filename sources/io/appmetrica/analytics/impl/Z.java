@@ -1,25 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.AppMetricaLibraryAdapterConfig;
-import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
-/* loaded from: classes4.dex */
-public final class Z extends SafeRunnable {
+import io.appmetrica.analytics.ecommerce.ECommerceAmount;
+import java.math.BigDecimal;
+/* loaded from: classes3.dex */
+public final class Z {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0110a0 f765a;
-    public final /* synthetic */ Context b;
+    public final BigDecimal f777a;
+    public final String b;
 
-    public Z(C0110a0 c0110a0, Context context) {
-        this.f765a = c0110a0;
-        this.b = context;
+    public Z(ECommerceAmount eCommerceAmount) {
+        this(eCommerceAmount.getAmount(), eCommerceAmount.getUnit());
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
-    public final void runSafety() {
-        C0110a0 c0110a0 = this.f765a;
-        Context context = this.b;
-        c0110a0.getClass();
-        c0110a0.a(context, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());
+    public final String toString() {
+        return "AmountWrapper{amount=" + this.f777a + ", unit='" + this.b + "'}";
+    }
+
+    public Z(BigDecimal bigDecimal, String str) {
+        this.f777a = bigDecimal;
+        this.b = str;
     }
 }

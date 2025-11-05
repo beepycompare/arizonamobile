@@ -1,21 +1,21 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Q0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ boolean f633a;
-    public final /* synthetic */ C0548r1 b;
+    public final /* synthetic */ boolean f643a;
+    public final /* synthetic */ C0561s1 b;
 
-    public Q0(C0548r1 c0548r1, boolean z) {
-        this.b = c0548r1;
-        this.f633a = z;
+    public Q0(C0561s1 c0561s1, boolean z) {
+        this.b = c0561s1;
+        this.f643a = z;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0672w0 c0672w0 = this.b.f1059a;
-        boolean z = this.f633a;
-        c0672w0.getClass();
-        C0647v0.c().setDataSendingEnabled(z);
+        C0685x0 c0685x0 = this.b.f1103a;
+        boolean z = this.f643a;
+        c0685x0.getClass();
+        C0660w0.c().a(z, true);
     }
 }

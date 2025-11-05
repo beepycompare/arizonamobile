@@ -557,7 +557,7 @@ public final class Cea708Decoder extends CeaDecoder {
                         case CHARACTER_THREE_EIGHTHS /* 119 */:
                             this.currentCueInfoBuilder.append((char) 8540);
                             return;
-                        case 120:
+                        case CHARACTER_FIVE_EIGHTHS /* 120 */:
                             this.currentCueInfoBuilder.append((char) 8541);
                             return;
                         case CHARACTER_SEVEN_EIGHTHS /* 121 */:

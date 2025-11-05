@@ -12,46 +12,46 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface Canvas {
     /* renamed from: clipPath-mtrdD-E */
-    void mo4399clipPathmtrdDE(Path path, int i);
+    void mo5129clipPathmtrdDE(Path path, int i);
 
     /* renamed from: clipRect-N_I0leg */
-    void mo4400clipRectN_I0leg(float f, float f2, float f3, float f4, int i);
+    void mo5130clipRectN_I0leg(float f, float f2, float f3, float f4, int i);
 
     /* renamed from: concat-58bKbWc */
-    void mo4401concat58bKbWc(float[] fArr);
+    void mo5131concat58bKbWc(float[] fArr);
 
     void disableZ();
 
     void drawArc(float f, float f2, float f3, float f4, float f5, float f6, boolean z, Paint paint);
 
     /* renamed from: drawCircle-9KIMszo */
-    void mo4402drawCircle9KIMszo(long j, float f, Paint paint);
+    void mo5132drawCircle9KIMszo(long j, float f, Paint paint);
 
     /* renamed from: drawImage-d-4ec7I */
-    void mo4403drawImaged4ec7I(ImageBitmap imageBitmap, long j, Paint paint);
+    void mo5133drawImaged4ec7I(ImageBitmap imageBitmap, long j, Paint paint);
 
     /* renamed from: drawImageRect-HPBpro0 */
-    void mo4404drawImageRectHPBpro0(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, Paint paint);
+    void mo5134drawImageRectHPBpro0(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, Paint paint);
 
     /* renamed from: drawLine-Wko1d7g */
-    void mo4405drawLineWko1d7g(long j, long j2, Paint paint);
+    void mo5135drawLineWko1d7g(long j, long j2, Paint paint);
 
     void drawOval(float f, float f2, float f3, float f4, Paint paint);
 
     void drawPath(Path path, Paint paint);
 
     /* renamed from: drawPoints-O7TthRY */
-    void mo4406drawPointsO7TthRY(int i, List<Offset> list, Paint paint);
+    void mo5136drawPointsO7TthRY(int i, List<Offset> list, Paint paint);
 
     /* renamed from: drawRawPoints-O7TthRY */
-    void mo4407drawRawPointsO7TthRY(int i, float[] fArr, Paint paint);
+    void mo5137drawRawPointsO7TthRY(int i, float[] fArr, Paint paint);
 
     void drawRect(float f, float f2, float f3, float f4, Paint paint);
 
     void drawRoundRect(float f, float f2, float f3, float f4, float f5, float f6, Paint paint);
 
     /* renamed from: drawVertices-TPEHhCM */
-    void mo4408drawVerticesTPEHhCM(Vertices vertices, int i, Paint paint);
+    void mo5138drawVerticesTPEHhCM(Vertices vertices, int i, Paint paint);
 
     void enableZ();
 
@@ -80,8 +80,8 @@ public interface Canvas {
 
         @Deprecated
         /* renamed from: clipRect-mtrdD-E  reason: not valid java name */
-        public static void m4527clipRectmtrdDE(Canvas canvas, Rect rect, int i) {
-            Canvas.super.m4524clipRectmtrdDE(rect, i);
+        public static void m5257clipRectmtrdDE(Canvas canvas, Rect rect, int i) {
+            Canvas.super.m5254clipRectmtrdDE(rect, i);
         }
 
         @Deprecated
@@ -120,41 +120,41 @@ public interface Canvas {
     }
 
     /* renamed from: clipRect-mtrdD-E$default  reason: not valid java name */
-    static /* synthetic */ void m4522clipRectmtrdDE$default(Canvas canvas, Rect rect, int i, int i2, Object obj) {
+    static /* synthetic */ void m5252clipRectmtrdDE$default(Canvas canvas, Rect rect, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: clipRect-mtrdD-E");
         }
         if ((i2 & 2) != 0) {
-            i = ClipOp.Companion.m4538getIntersectrtfAjoo();
+            i = ClipOp.Companion.m5268getIntersectrtfAjoo();
         }
-        canvas.m4524clipRectmtrdDE(rect, i);
+        canvas.m5254clipRectmtrdDE(rect, i);
     }
 
     /* renamed from: clipRect-mtrdD-E  reason: not valid java name */
-    default void m4524clipRectmtrdDE(Rect rect, int i) {
-        mo4400clipRectN_I0leg(rect.getLeft(), rect.getTop(), rect.getRight(), rect.getBottom(), i);
+    default void m5254clipRectmtrdDE(Rect rect, int i) {
+        mo5130clipRectN_I0leg(rect.getLeft(), rect.getTop(), rect.getRight(), rect.getBottom(), i);
     }
 
     /* renamed from: clipRect-N_I0leg$default  reason: not valid java name */
-    static /* synthetic */ void m4521clipRectN_I0leg$default(Canvas canvas, float f, float f2, float f3, float f4, int i, int i2, Object obj) {
+    static /* synthetic */ void m5251clipRectN_I0leg$default(Canvas canvas, float f, float f2, float f3, float f4, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: clipRect-N_I0leg");
         }
         if ((i2 & 16) != 0) {
-            i = ClipOp.Companion.m4538getIntersectrtfAjoo();
+            i = ClipOp.Companion.m5268getIntersectrtfAjoo();
         }
-        canvas.mo4400clipRectN_I0leg(f, f2, f3, f4, i);
+        canvas.mo5130clipRectN_I0leg(f, f2, f3, f4, i);
     }
 
     /* renamed from: clipPath-mtrdD-E$default  reason: not valid java name */
-    static /* synthetic */ void m4520clipPathmtrdDE$default(Canvas canvas, Path path, int i, int i2, Object obj) {
+    static /* synthetic */ void m5250clipPathmtrdDE$default(Canvas canvas, Path path, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: clipPath-mtrdD-E");
         }
         if ((i2 & 2) != 0) {
-            i = ClipOp.Companion.m4538getIntersectrtfAjoo();
+            i = ClipOp.Companion.m5268getIntersectrtfAjoo();
         }
-        canvas.mo4399clipPathmtrdDE(path, i);
+        canvas.mo5129clipPathmtrdDE(path, i);
     }
 
     default void drawRect(Rect rect, Paint paint) {
@@ -174,17 +174,17 @@ public interface Canvas {
     }
 
     /* renamed from: drawImageRect-HPBpro0$default  reason: not valid java name */
-    static /* synthetic */ void m4523drawImageRectHPBpro0$default(Canvas canvas, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, Paint paint, int i, Object obj) {
+    static /* synthetic */ void m5253drawImageRectHPBpro0$default(Canvas canvas, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, Paint paint, int i, Object obj) {
         long j5;
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawImageRect-HPBpro0");
         }
-        long m7403getZeronOccac = (i & 2) != 0 ? IntOffset.Companion.m7403getZeronOccac() : j;
+        long m8134getZeronOccac = (i & 2) != 0 ? IntOffset.Companion.m8134getZeronOccac() : j;
         if ((i & 4) != 0) {
-            j5 = IntSize.m7430constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
+            j5 = IntSize.m8161constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
         } else {
             j5 = j2;
         }
-        canvas.mo4404drawImageRectHPBpro0(imageBitmap, m7403getZeronOccac, j5, (i & 8) != 0 ? IntOffset.Companion.m7403getZeronOccac() : j3, (i & 16) != 0 ? j5 : j4, paint);
+        canvas.mo5134drawImageRectHPBpro0(imageBitmap, m8134getZeronOccac, j5, (i & 8) != 0 ? IntOffset.Companion.m8134getZeronOccac() : j3, (i & 16) != 0 ? j5 : j4, paint);
     }
 }

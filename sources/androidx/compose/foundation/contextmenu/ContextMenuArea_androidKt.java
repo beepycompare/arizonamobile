@@ -199,15 +199,15 @@ public final class ContextMenuArea_androidKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-                                Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+                                Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                    m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                 }
-                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -620261367, "C57@2211L9,58@2229L147:ContextMenuArea.android.kt#3xeu6s");
@@ -331,7 +331,7 @@ public final class ContextMenuArea_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ContextMenuArea$lambda$3$lambda$2(Function0 function0, ContextMenuState contextMenuState, Offset offset) {
         function0.invoke();
-        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m4315unboximpl(), null));
+        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m5045unboximpl(), null));
         return Unit.INSTANCE;
     }
 
@@ -385,7 +385,7 @@ public final class ContextMenuArea_androidKt {
                 boolean changed = startRestartGroup.changed(open);
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                    ContextMenuPopupPositionProvider contextMenuPopupPositionProvider = new ContextMenuPopupPositionProvider(IntOffsetKt.m7409roundk4lQ0M(open.m409getOffsetF1C5BW0()), (Function2) null, 2, (DefaultConstructorMarker) null);
+                    ContextMenuPopupPositionProvider contextMenuPopupPositionProvider = new ContextMenuPopupPositionProvider(IntOffsetKt.m8140roundk4lQ0M(open.m409getOffsetF1C5BW0()), (Function2) null, 2, (DefaultConstructorMarker) null);
                     startRestartGroup.updateRememberedValue(contextMenuPopupPositionProvider);
                     rememberedValue = contextMenuPopupPositionProvider;
                 }

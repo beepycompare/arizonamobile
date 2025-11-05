@@ -3,9 +3,7 @@ package androidx.core.graphics;
 import android.graphics.Path;
 import android.util.Log;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import io.appmetrica.analytics.BuildConfig;
 import java.util.ArrayList;
 /* loaded from: classes2.dex */
 public final class PathParser {
@@ -319,14 +317,14 @@ public final class PathParser {
                 case 'T':
                 case 'l':
                 case 'm':
-                case AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID /* 116 */:
+                case 't':
                 default:
                     i2 = 2;
                     break;
                 case 'Q':
                 case 'S':
                 case 'q':
-                case BuildConfig.API_LEVEL /* 115 */:
+                case 's':
                     i2 = 4;
                     break;
                 case 'Z':

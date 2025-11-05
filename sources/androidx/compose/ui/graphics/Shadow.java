@@ -22,11 +22,11 @@ public final class Shadow {
     }
 
     /* renamed from: getColor-0d7_KjU$annotations  reason: not valid java name */
-    public static /* synthetic */ void m4886getColor0d7_KjU$annotations() {
+    public static /* synthetic */ void m5616getColor0d7_KjU$annotations() {
     }
 
     /* renamed from: getOffset-F1C5BW0$annotations  reason: not valid java name */
-    public static /* synthetic */ void m4887getOffsetF1C5BW0$annotations() {
+    public static /* synthetic */ void m5617getOffsetF1C5BW0$annotations() {
     }
 
     private Shadow(long j, long j2, float f) {
@@ -36,16 +36,16 @@ public final class Shadow {
     }
 
     public /* synthetic */ Shadow(long j, long j2, float f, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? ColorKt.Color(4278190080L) : j, (i & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j2, (i & 4) != 0 ? 0.0f : f, null);
+        this((i & 1) != 0 ? ColorKt.Color(4278190080L) : j, (i & 2) != 0 ? Offset.Companion.m5051getZeroF1C5BW0() : j2, (i & 4) != 0 ? 0.0f : f, null);
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m4889getColor0d7_KjU() {
+    public final long m5619getColor0d7_KjU() {
         return this.color;
     }
 
     /* renamed from: getOffset-F1C5BW0  reason: not valid java name */
-    public final long m4890getOffsetF1C5BW0() {
+    public final long m5620getOffsetF1C5BW0() {
         return this.offset;
     }
 
@@ -78,21 +78,21 @@ public final class Shadow {
         }
         if (obj instanceof Shadow) {
             Shadow shadow = (Shadow) obj;
-            return Color.m4550equalsimpl0(this.color, shadow.color) && Offset.m4302equalsimpl0(this.offset, shadow.offset) && this.blurRadius == shadow.blurRadius;
+            return Color.m5280equalsimpl0(this.color, shadow.color) && Offset.m5032equalsimpl0(this.offset, shadow.offset) && this.blurRadius == shadow.blurRadius;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Color.m4556hashCodeimpl(this.color) * 31) + Offset.m4307hashCodeimpl(this.offset)) * 31) + Float.hashCode(this.blurRadius);
+        return (((Color.m5286hashCodeimpl(this.color) * 31) + Offset.m5037hashCodeimpl(this.offset)) * 31) + Float.hashCode(this.blurRadius);
     }
 
     public String toString() {
-        return "Shadow(color=" + ((Object) Color.m4557toStringimpl(this.color)) + ", offset=" + ((Object) Offset.m4313toStringimpl(this.offset)) + ", blurRadius=" + this.blurRadius + ')';
+        return "Shadow(color=" + ((Object) Color.m5287toStringimpl(this.color)) + ", offset=" + ((Object) Offset.m5043toStringimpl(this.offset)) + ", blurRadius=" + this.blurRadius + ')';
     }
 
     /* renamed from: copy-qcb84PM$default  reason: not valid java name */
-    public static /* synthetic */ Shadow m4885copyqcb84PM$default(Shadow shadow, long j, long j2, float f, int i, Object obj) {
+    public static /* synthetic */ Shadow m5615copyqcb84PM$default(Shadow shadow, long j, long j2, float f, int i, Object obj) {
         if ((i & 1) != 0) {
             j = shadow.color;
         }
@@ -104,11 +104,11 @@ public final class Shadow {
         if ((i & 4) != 0) {
             f = shadow.blurRadius;
         }
-        return shadow.m4888copyqcb84PM(j3, j4, f);
+        return shadow.m5618copyqcb84PM(j3, j4, f);
     }
 
     /* renamed from: copy-qcb84PM  reason: not valid java name */
-    public final Shadow m4888copyqcb84PM(long j, long j2, float f) {
+    public final Shadow m5618copyqcb84PM(long j, long j2, float f) {
         return new Shadow(j, j2, f, null);
     }
 }

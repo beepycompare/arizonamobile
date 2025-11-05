@@ -31,7 +31,7 @@ final class SizeNode extends Modifier.Node implements LayoutModifierNode {
     }
 
     public /* synthetic */ SizeNode(float f, float f2, float f3, float f4, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f2, (i & 4) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f3, (i & 8) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f4, z, null);
+        this((i & 1) != 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : f2, (i & 4) != 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : f3, (i & 8) != 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : f4, z, null);
     }
 
     /* renamed from: getMinWidth-D9Ej5fM  reason: not valid java name */
@@ -146,55 +146,55 @@ final class SizeNode extends Modifier.Node implements LayoutModifierNode {
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        int m7219getMinWidthimpl;
-        int m7217getMaxWidthimpl;
-        int m7218getMinHeightimpl;
-        int m7216getMaxHeightimpl;
+        int m7950getMinWidthimpl;
+        int m7948getMaxWidthimpl;
+        int m7949getMinHeightimpl;
+        int m7947getMaxHeightimpl;
         long Constraints;
         long m903getTargetConstraintsOenEA2s = m903getTargetConstraintsOenEA2s(measureScope);
         if (this.enforceIncoming) {
-            Constraints = ConstraintsKt.m7232constrainN9IONVI(j, m903getTargetConstraintsOenEA2s);
+            Constraints = ConstraintsKt.m7963constrainN9IONVI(j, m903getTargetConstraintsOenEA2s);
         } else {
             if (!Float.isNaN(this.minWidth)) {
-                m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(m903getTargetConstraintsOenEA2s);
+                m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(m903getTargetConstraintsOenEA2s);
             } else {
-                m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-                int m7217getMaxWidthimpl2 = Constraints.m7217getMaxWidthimpl(m903getTargetConstraintsOenEA2s);
-                if (m7219getMinWidthimpl > m7217getMaxWidthimpl2) {
-                    m7219getMinWidthimpl = m7217getMaxWidthimpl2;
+                m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+                int m7948getMaxWidthimpl2 = Constraints.m7948getMaxWidthimpl(m903getTargetConstraintsOenEA2s);
+                if (m7950getMinWidthimpl > m7948getMaxWidthimpl2) {
+                    m7950getMinWidthimpl = m7948getMaxWidthimpl2;
                 }
             }
             if (!Float.isNaN(this.maxWidth)) {
-                m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(m903getTargetConstraintsOenEA2s);
+                m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(m903getTargetConstraintsOenEA2s);
             } else {
-                m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-                int m7219getMinWidthimpl2 = Constraints.m7219getMinWidthimpl(m903getTargetConstraintsOenEA2s);
-                if (m7217getMaxWidthimpl < m7219getMinWidthimpl2) {
-                    m7217getMaxWidthimpl = m7219getMinWidthimpl2;
+                m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+                int m7950getMinWidthimpl2 = Constraints.m7950getMinWidthimpl(m903getTargetConstraintsOenEA2s);
+                if (m7948getMaxWidthimpl < m7950getMinWidthimpl2) {
+                    m7948getMaxWidthimpl = m7950getMinWidthimpl2;
                 }
             }
             if (!Float.isNaN(this.minHeight)) {
-                m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(m903getTargetConstraintsOenEA2s);
+                m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(m903getTargetConstraintsOenEA2s);
             } else {
-                m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j);
-                int m7216getMaxHeightimpl2 = Constraints.m7216getMaxHeightimpl(m903getTargetConstraintsOenEA2s);
-                if (m7218getMinHeightimpl > m7216getMaxHeightimpl2) {
-                    m7218getMinHeightimpl = m7216getMaxHeightimpl2;
+                m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+                int m7947getMaxHeightimpl2 = Constraints.m7947getMaxHeightimpl(m903getTargetConstraintsOenEA2s);
+                if (m7949getMinHeightimpl > m7947getMaxHeightimpl2) {
+                    m7949getMinHeightimpl = m7947getMaxHeightimpl2;
                 }
             }
             if (!Float.isNaN(this.maxHeight)) {
-                m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(m903getTargetConstraintsOenEA2s);
+                m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(m903getTargetConstraintsOenEA2s);
             } else {
-                m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
-                int m7218getMinHeightimpl2 = Constraints.m7218getMinHeightimpl(m903getTargetConstraintsOenEA2s);
-                if (m7216getMaxHeightimpl < m7218getMinHeightimpl2) {
-                    m7216getMaxHeightimpl = m7218getMinHeightimpl2;
+                m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+                int m7949getMinHeightimpl2 = Constraints.m7949getMinHeightimpl(m903getTargetConstraintsOenEA2s);
+                if (m7947getMaxHeightimpl < m7949getMinHeightimpl2) {
+                    m7947getMaxHeightimpl = m7949getMinHeightimpl2;
                 }
             }
-            Constraints = ConstraintsKt.Constraints(m7219getMinWidthimpl, m7217getMaxWidthimpl, m7218getMinHeightimpl, m7216getMaxHeightimpl);
+            Constraints = ConstraintsKt.Constraints(m7950getMinWidthimpl, m7948getMaxWidthimpl, m7949getMinHeightimpl, m7947getMaxHeightimpl);
         }
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints);
-        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.SizeNode$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints);
+        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.SizeNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$3;
@@ -213,48 +213,48 @@ final class SizeNode extends Modifier.Node implements LayoutModifierNode {
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         long m903getTargetConstraintsOenEA2s = m903getTargetConstraintsOenEA2s(intrinsicMeasureScope);
-        if (Constraints.m7215getHasFixedWidthimpl(m903getTargetConstraintsOenEA2s)) {
-            return Constraints.m7217getMaxWidthimpl(m903getTargetConstraintsOenEA2s);
+        if (Constraints.m7946getHasFixedWidthimpl(m903getTargetConstraintsOenEA2s)) {
+            return Constraints.m7948getMaxWidthimpl(m903getTargetConstraintsOenEA2s);
         }
         if (!this.enforceIncoming) {
-            i = ConstraintsKt.m7233constrainHeightK40F9xA(m903getTargetConstraintsOenEA2s, i);
+            i = ConstraintsKt.m7964constrainHeightK40F9xA(m903getTargetConstraintsOenEA2s, i);
         }
-        return ConstraintsKt.m7234constrainWidthK40F9xA(m903getTargetConstraintsOenEA2s, intrinsicMeasurable.minIntrinsicWidth(i));
+        return ConstraintsKt.m7965constrainWidthK40F9xA(m903getTargetConstraintsOenEA2s, intrinsicMeasurable.minIntrinsicWidth(i));
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         long m903getTargetConstraintsOenEA2s = m903getTargetConstraintsOenEA2s(intrinsicMeasureScope);
-        if (Constraints.m7214getHasFixedHeightimpl(m903getTargetConstraintsOenEA2s)) {
-            return Constraints.m7216getMaxHeightimpl(m903getTargetConstraintsOenEA2s);
+        if (Constraints.m7945getHasFixedHeightimpl(m903getTargetConstraintsOenEA2s)) {
+            return Constraints.m7947getMaxHeightimpl(m903getTargetConstraintsOenEA2s);
         }
         if (!this.enforceIncoming) {
-            i = ConstraintsKt.m7234constrainWidthK40F9xA(m903getTargetConstraintsOenEA2s, i);
+            i = ConstraintsKt.m7965constrainWidthK40F9xA(m903getTargetConstraintsOenEA2s, i);
         }
-        return ConstraintsKt.m7233constrainHeightK40F9xA(m903getTargetConstraintsOenEA2s, intrinsicMeasurable.minIntrinsicHeight(i));
+        return ConstraintsKt.m7964constrainHeightK40F9xA(m903getTargetConstraintsOenEA2s, intrinsicMeasurable.minIntrinsicHeight(i));
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         long m903getTargetConstraintsOenEA2s = m903getTargetConstraintsOenEA2s(intrinsicMeasureScope);
-        if (Constraints.m7215getHasFixedWidthimpl(m903getTargetConstraintsOenEA2s)) {
-            return Constraints.m7217getMaxWidthimpl(m903getTargetConstraintsOenEA2s);
+        if (Constraints.m7946getHasFixedWidthimpl(m903getTargetConstraintsOenEA2s)) {
+            return Constraints.m7948getMaxWidthimpl(m903getTargetConstraintsOenEA2s);
         }
         if (!this.enforceIncoming) {
-            i = ConstraintsKt.m7233constrainHeightK40F9xA(m903getTargetConstraintsOenEA2s, i);
+            i = ConstraintsKt.m7964constrainHeightK40F9xA(m903getTargetConstraintsOenEA2s, i);
         }
-        return ConstraintsKt.m7234constrainWidthK40F9xA(m903getTargetConstraintsOenEA2s, intrinsicMeasurable.maxIntrinsicWidth(i));
+        return ConstraintsKt.m7965constrainWidthK40F9xA(m903getTargetConstraintsOenEA2s, intrinsicMeasurable.maxIntrinsicWidth(i));
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         long m903getTargetConstraintsOenEA2s = m903getTargetConstraintsOenEA2s(intrinsicMeasureScope);
-        if (Constraints.m7214getHasFixedHeightimpl(m903getTargetConstraintsOenEA2s)) {
-            return Constraints.m7216getMaxHeightimpl(m903getTargetConstraintsOenEA2s);
+        if (Constraints.m7945getHasFixedHeightimpl(m903getTargetConstraintsOenEA2s)) {
+            return Constraints.m7947getMaxHeightimpl(m903getTargetConstraintsOenEA2s);
         }
         if (!this.enforceIncoming) {
-            i = ConstraintsKt.m7234constrainWidthK40F9xA(m903getTargetConstraintsOenEA2s, i);
+            i = ConstraintsKt.m7965constrainWidthK40F9xA(m903getTargetConstraintsOenEA2s, i);
         }
-        return ConstraintsKt.m7233constrainHeightK40F9xA(m903getTargetConstraintsOenEA2s, intrinsicMeasurable.maxIntrinsicHeight(i));
+        return ConstraintsKt.m7964constrainHeightK40F9xA(m903getTargetConstraintsOenEA2s, intrinsicMeasurable.maxIntrinsicHeight(i));
     }
 }

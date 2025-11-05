@@ -28,7 +28,7 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
     public static final int $stable = 8;
     private Function2<? super DragAndDropSourceScope, ? super Continuation<? super Unit>, ? extends Object> dragAndDropSourceHandler;
     private Function1<? super DrawScope, Unit> drawDragDecoration;
-    private long size = IntSize.Companion.m7440getZeroYbymL2g();
+    private long size = IntSize.Companion.m8171getZeroYbymL2g();
 
     public final Function1<DrawScope, Unit> getDrawDragDecoration() {
         return this.drawDragDecoration;
@@ -188,7 +188,7 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
 
                 @Override // androidx.compose.foundation.draganddrop.DragAndDropSourceScope
                 public void startTransfer(DragAndDropTransferData dragAndDropTransferData) {
-                    this.$dragAndDropModifierNode.mo4060drag12SF9DM(dragAndDropTransferData, IntSizeKt.m7447toSizeozmzZPI(mo420getSizeYbymL2g()), this.this$0.getDrawDragDecoration());
+                    this.$dragAndDropModifierNode.mo4790drag12SF9DM(dragAndDropTransferData, IntSizeKt.m8178toSizeozmzZPI(mo420getSizeYbymL2g()), this.this$0.getDrawDragDecoration());
                 }
             }
 

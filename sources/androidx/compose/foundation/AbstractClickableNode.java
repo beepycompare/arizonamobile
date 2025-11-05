@@ -109,9 +109,9 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
         this.role = role;
         this.enabled = z2;
         this.onClick = function0;
-        this.focusableNode = new FocusableNode(this.interactionSource, Focusability.Companion.m4241getSystemDefinedLCbbffg(), new AbstractClickableNode$focusableNode$1(this), null);
+        this.focusableNode = new FocusableNode(this.interactionSource, Focusability.Companion.m4971getSystemDefinedLCbbffg(), new AbstractClickableNode$focusableNode$1(this), null);
         this.currentKeyPressInteractions = LongObjectMapKt.mutableLongObjectMapOf();
-        this.centerOffset = Offset.Companion.m4321getZeroF1C5BW0();
+        this.centerOffset = Offset.Companion.m5051getZeroF1C5BW0();
         this.userProvidedInteractionSource = this.interactionSource;
         this.lazilyCreateIndication = shouldLazilyCreateIndication();
         this.traverseKey = TraverseKey;
@@ -367,14 +367,14 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
     /* renamed from: onPointerEvent-H0pRuoY  reason: not valid java name */
     public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         SuspendingPointerInputModifierNode createPointerInputNodeIfNeeded;
-        long m7441getCenterozmzZPI = IntSizeKt.m7441getCenterozmzZPI(j);
-        this.centerOffset = Offset.m4297constructorimpl((Float.floatToRawIntBits(IntOffset.m7392getXimpl(m7441getCenterozmzZPI)) << 32) | (Float.floatToRawIntBits(IntOffset.m7393getYimpl(m7441getCenterozmzZPI)) & 4294967295L));
+        long m8172getCenterozmzZPI = IntSizeKt.m8172getCenterozmzZPI(j);
+        this.centerOffset = Offset.m5027constructorimpl((Float.floatToRawIntBits(IntOffset.m8123getXimpl(m8172getCenterozmzZPI)) << 32) | (Float.floatToRawIntBits(IntOffset.m8124getYimpl(m8172getCenterozmzZPI)) & 4294967295L));
         initializeIndicationAndInteractionSourceIfNeeded();
         if (this.enabled && pointerEventPass == PointerEventPass.Main) {
-            int m5781getType7fucELk = pointerEvent.m5781getType7fucELk();
-            if (PointerEventType.m5788equalsimpl0(m5781getType7fucELk, PointerEventType.Companion.m5792getEnter7fucELk())) {
+            int m6511getType7fucELk = pointerEvent.m6511getType7fucELk();
+            if (PointerEventType.m6518equalsimpl0(m6511getType7fucELk, PointerEventType.Companion.m6522getEnter7fucELk())) {
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AbstractClickableNode$onPointerEvent$1(this, null), 3, null);
-            } else if (PointerEventType.m5788equalsimpl0(m5781getType7fucELk, PointerEventType.Companion.m5793getExit7fucELk())) {
+            } else if (PointerEventType.m6518equalsimpl0(m6511getType7fucELk, PointerEventType.Companion.m6523getExit7fucELk())) {
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AbstractClickableNode$onPointerEvent$2(this, null), 3, null);
             }
         }
@@ -406,13 +406,13 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
     public final boolean mo236onKeyEventZmokQxo(KeyEvent keyEvent) {
         boolean z;
         initializeIndicationAndInteractionSourceIfNeeded();
-        long m5695getKeyZmokQxo = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
+        long m6425getKeyZmokQxo = KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent);
         if (this.enabled && ClickableKt.m302access$isPressZmokQxo(keyEvent)) {
-            if (this.currentKeyPressInteractions.containsKey(m5695getKeyZmokQxo)) {
+            if (this.currentKeyPressInteractions.containsKey(m6425getKeyZmokQxo)) {
                 z = false;
             } else {
                 PressInteraction.Press press = new PressInteraction.Press(this.centerOffset, null);
-                this.currentKeyPressInteractions.set(m5695getKeyZmokQxo, press);
+                this.currentKeyPressInteractions.set(m6425getKeyZmokQxo, press);
                 if (this.interactionSource != null) {
                     BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AbstractClickableNode$onKeyEvent$1(this, press, null), 3, null);
                 }
@@ -421,7 +421,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
             return mo234onClickKeyDownEventZmokQxo(keyEvent) || z;
         }
         if (this.enabled && ClickableKt.m301access$isClickZmokQxo(keyEvent)) {
-            PressInteraction.Press remove = this.currentKeyPressInteractions.remove(m5695getKeyZmokQxo);
+            PressInteraction.Press remove = this.currentKeyPressInteractions.remove(m6425getKeyZmokQxo);
             if (remove != null) {
                 if (this.interactionSource != null) {
                     BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AbstractClickableNode$onKeyEvent$2(this, remove, null), 3, null);
@@ -440,7 +440,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
         Role role = this.role;
         if (role != null) {
             Intrinsics.checkNotNull(role);
-            SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, role.m6473unboximpl());
+            SemanticsPropertiesKt.m7223setRolekuIjeqM(semanticsPropertyReceiver, role.m7203unboximpl());
         }
         SemanticsPropertiesKt.onClick(semanticsPropertyReceiver, this.onClickLabel, new Function0() { // from class: androidx.compose.foundation.AbstractClickableNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0

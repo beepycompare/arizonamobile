@@ -1,59 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-import java.util.concurrent.atomic.AtomicLong;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
-public final class Nk {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0652v5 f600a;
-    public final C0234el b;
-    public final Qk c;
-    public long d;
-    public long e;
-    public AtomicLong f;
-    public boolean g;
-    public volatile C0183cl h;
-    public long i;
-    public long j;
-    public final SystemTimeProvider k;
-
-    public Nk(C0652v5 c0652v5, C0234el c0234el, Qk qk, SystemTimeProvider systemTimeProvider) {
-        this.f600a = c0652v5;
-        this.b = c0234el;
-        this.c = qk;
-        this.k = systemTimeProvider;
-        a();
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.collections.MapsKt;
+import kotlin.ranges.RangesKt;
+import kotlin.text.Charsets;
+/* loaded from: classes3.dex */
+public final class Nk implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Pk fromModel(Map<String, byte[]> map) {
+        Pk pk = new Pk();
+        ArrayList arrayList = new ArrayList(map.size());
+        for (Map.Entry<String, byte[]> entry : map.entrySet()) {
+            Qk qk = new Qk();
+            qk.f654a = entry.getKey().getBytes(Charsets.UTF_8);
+            qk.b = entry.getValue();
+            arrayList.add(qk);
+        }
+        Object[] array = arrayList.toArray(new Qk[0]);
+        if (array != null) {
+            pk.f641a = (Qk[]) array;
+            return pk;
+        }
+        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
     }
 
-    public final void a() {
-        Qk qk = this.c;
-        long elapsedRealtime = this.k.elapsedRealtime();
-        Long l = qk.c;
-        if (l != null) {
-            elapsedRealtime = l.longValue();
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Map<String, byte[]> toModel(Pk pk) {
+        Qk[] qkArr = pk.f641a;
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(qkArr.length), 16));
+        for (Qk qk : qkArr) {
+            Pair pair = TuplesKt.to(new String(qk.f654a, Charsets.UTF_8), qk.b);
+            linkedHashMap.put(pair.getFirst(), pair.getSecond());
         }
-        this.e = elapsedRealtime;
-        Long l2 = this.c.b;
-        this.d = l2 == null ? -1L : l2.longValue();
-        Long l3 = this.c.e;
-        this.f = new AtomicLong(l3 == null ? 0L : l3.longValue());
-        Boolean bool = this.c.f;
-        this.g = bool == null ? true : bool.booleanValue();
-        Long l4 = this.c.g;
-        long longValue = l4 != null ? l4.longValue() : 0L;
-        this.i = longValue;
-        Qk qk2 = this.c;
-        long j = longValue - this.e;
-        Long l5 = qk2.h;
-        if (l5 != null) {
-            j = l5.longValue();
-        }
-        this.j = j;
-    }
-
-    public final String toString() {
-        return "Session{id=" + this.d + ", creationTime=" + this.e + ", currentReportId=" + this.f + ", sessionRequestParams=" + this.h + ", sleepStart=" + this.i + AbstractJsonLexerKt.END_OBJ;
+        return linkedHashMap;
     }
 }

@@ -135,7 +135,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda51
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8440lambda$new$2$comadjustsdkActivityHandler(adjustConfig);
+                ActivityHandler.this.m9170lambda$new$2$comadjustsdkActivityHandler(adjustConfig);
             }
         });
     }
@@ -303,7 +303,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         if (activityState == null || !activityState.enabled || activityState.isGdprForgotten) {
             return;
         }
-        m8451lambda$sendPreinstallReferrer$18$comadjustsdkActivityHandler();
+        m9181lambda$sendPreinstallReferrer$18$comadjustsdkActivityHandler();
         if (this.adjustConfig.isPreinstallTrackingEnabled && !this.internalState.hasPreinstallBeenRead()) {
             String str = this.deviceInfo.packageName;
             if (str != null && !str.isEmpty()) {
@@ -454,7 +454,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: gdprForgetMeI */
-    public void m8435lambda$gdprForgetMe$34$comadjustsdkActivityHandler() {
+    public void m9165lambda$gdprForgetMe$34$comadjustsdkActivityHandler() {
         if (checkActivityStateI(this.activityState) && isEnabledI()) {
             ActivityState activityState = this.activityState;
             if (activityState.isGdprForgotten) {
@@ -509,7 +509,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.activityState.isGdprForgotten = true;
         writeActivityStateI();
         this.packageHandler.flush();
-        m8456lambda$setEnabled$5$comadjustsdkActivityHandler(false);
+        m9186lambda$setEnabled$5$comadjustsdkActivityHandler(false);
     }
 
     private void handleAdidCallbackI() {
@@ -823,7 +823,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: processDeeplinkI */
-    public void m8445lambda$processDeeplink$12$comadjustsdkActivityHandler(AdjustDeeplink adjustDeeplink, long j) {
+    public void m9175lambda$processDeeplink$12$comadjustsdkActivityHandler(AdjustDeeplink adjustDeeplink, long j) {
         if (isEnabledI() && adjustDeeplink != null) {
             if (Util.isUrlFilteredOut(adjustDeeplink.getUrl())) {
                 if (adjustDeeplink.getUrl() != null) {
@@ -1069,7 +1069,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: sendPreinstallReferrerI */
-    public void m8451lambda$sendPreinstallReferrer$18$comadjustsdkActivityHandler() {
+    public void m9181lambda$sendPreinstallReferrer$18$comadjustsdkActivityHandler() {
         String preinstallReferrer;
         if (!isEnabledI() || this.activityState == null || (preinstallReferrer = SharedPreferencesManager.getDefaultInstance(getContext()).getPreinstallReferrer()) == null || preinstallReferrer.isEmpty()) {
             return;
@@ -1079,7 +1079,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: sendReftagReferrerI */
-    public void m8453lambda$sendReftagReferrer$16$comadjustsdkActivityHandler() {
+    public void m9183lambda$sendReftagReferrer$16$comadjustsdkActivityHandler() {
         if (isEnabledI() && this.activityState != null) {
             this.sdkClickHandler.sendReftagReferrers();
         }
@@ -1093,7 +1093,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setEnabledI */
-    public void m8456lambda$setEnabled$5$comadjustsdkActivityHandler(boolean z) {
+    public void m9186lambda$setEnabled$5$comadjustsdkActivityHandler(boolean z) {
         ActivityState activityState;
         if (hasChangedStateI(isEnabledI(), z, "Adjust already enabled", "Adjust already disabled")) {
             if (z && (activityState = this.activityState) != null && activityState.isGdprForgotten) {
@@ -1111,7 +1111,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             if (z) {
                 SharedPreferencesManager defaultInstance = SharedPreferencesManager.getDefaultInstance(getContext());
                 if (defaultInstance.getGdprForgetMe()) {
-                    m8435lambda$gdprForgetMe$34$comadjustsdkActivityHandler();
+                    m9165lambda$gdprForgetMe$34$comadjustsdkActivityHandler();
                 } else {
                     processCoppaComplianceI();
                     processPreLaunchArraysI();
@@ -1128,7 +1128,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setOfflineModeI */
-    public void m8459lambda$setOfflineMode$7$comadjustsdkActivityHandler(boolean z) {
+    public void m9189lambda$setOfflineMode$7$comadjustsdkActivityHandler(boolean z) {
         if (hasChangedStateI(this.internalState.isOffline(), z, "Adjust already in offline mode", "Adjust already in online mode")) {
             this.internalState.offline = z;
             if (this.activityState == null) {
@@ -1194,7 +1194,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.activityState.pushToken = defaultInstance.getPushToken();
         if (this.internalState.isEnabled()) {
             if (defaultInstance.getGdprForgetMe()) {
-                m8435lambda$gdprForgetMe$34$comadjustsdkActivityHandler();
+                m9165lambda$gdprForgetMe$34$comadjustsdkActivityHandler();
             } else {
                 processCoppaComplianceI();
                 processPreLaunchArraysI();
@@ -1279,7 +1279,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: trackAdRevenueI */
-    public void m8464lambda$trackAdRevenue$40$comadjustsdkActivityHandler(AdjustAdRevenue adjustAdRevenue) {
+    public void m9194lambda$trackAdRevenue$40$comadjustsdkActivityHandler(AdjustAdRevenue adjustAdRevenue) {
         if (checkActivityStateI(this.activityState) && isEnabledI() && checkAdjustAdRevenue(adjustAdRevenue) && !this.activityState.isGdprForgotten) {
             PackageBuilder packageBuilder = new PackageBuilder(this.adjustConfig, this.deviceInfo, this.activityState, this.globalParameters, this.firstSessionDelayManager, System.currentTimeMillis());
             packageBuilder.internalState = this.internalState;
@@ -1322,7 +1322,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: trackPlayStoreSubscriptionI */
-    public void m8469xcb9cd494(AdjustPlayStoreSubscription adjustPlayStoreSubscription) {
+    public void m9199xcb9cd494(AdjustPlayStoreSubscription adjustPlayStoreSubscription) {
         if (checkActivityStateI(this.activityState) && isEnabledI() && !this.activityState.isGdprForgotten) {
             PackageBuilder packageBuilder = new PackageBuilder(this.adjustConfig, this.deviceInfo, this.activityState, this.globalParameters, this.firstSessionDelayManager, System.currentTimeMillis());
             packageBuilder.internalState = this.internalState;
@@ -1421,7 +1421,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: verifyAndTrackPlayStorePurchaseI */
-    public void m8472x261e5b58(AdjustEvent adjustEvent, OnPurchaseVerificationFinishedListener onPurchaseVerificationFinishedListener) {
+    public void m9202x261e5b58(AdjustEvent adjustEvent, OnPurchaseVerificationFinishedListener onPurchaseVerificationFinishedListener) {
         if (onPurchaseVerificationFinishedListener == null) {
             this.logger.warn("Purchase verification aborted because verification callback is null", new Object[0]);
         } else if (this.adjustConfig.isDataResidency) {
@@ -1453,7 +1453,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: verifyPlayStorePurchaseI */
-    public void m8474lambda$verifyPlayStorePurchase$44$comadjustsdkActivityHandler(AdjustPlayStorePurchase adjustPlayStorePurchase, OnPurchaseVerificationFinishedListener onPurchaseVerificationFinishedListener) {
+    public void m9204lambda$verifyPlayStorePurchase$44$comadjustsdkActivityHandler(AdjustPlayStorePurchase adjustPlayStorePurchase, OnPurchaseVerificationFinishedListener onPurchaseVerificationFinishedListener) {
         if (onPurchaseVerificationFinishedListener == null) {
             this.logger.warn("Purchase verification aborted because verification callback is null", new Object[0]);
         } else if (this.adjustConfig.isDataResidency) {
@@ -1529,7 +1529,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda48
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8432x17863ad4(str, str2);
+                ActivityHandler.this.m9162x17863ad4(str, str2);
             }
         });
     }
@@ -1558,7 +1558,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8433x4b984c1d(str, str2);
+                ActivityHandler.this.m9163x4b984c1d(str, str2);
             }
         });
     }
@@ -1596,7 +1596,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8434lambda$endFirstSessionDelay$48$comadjustsdkActivityHandler();
+                ActivityHandler.this.m9164lambda$endFirstSessionDelay$48$comadjustsdkActivityHandler();
             }
         });
     }
@@ -1631,7 +1631,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8436lambda$gdprForgetMe$35$comadjustsdkActivityHandler();
+                ActivityHandler.this.m9166lambda$gdprForgetMe$35$comadjustsdkActivityHandler();
             }
         });
     }
@@ -1737,7 +1737,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             adjustConfig.preLaunchActions.preLaunchActionsArray.add(new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler.16
                 @Override // com.adjust.sdk.IRunActivityHandler
                 public final void run(ActivityHandler activityHandler) {
-                    activityHandler.m8456lambda$setEnabled$5$comadjustsdkActivityHandler(ActivityHandler.this.adjustConfig.startEnabled.booleanValue());
+                    activityHandler.m9186lambda$setEnabled$5$comadjustsdkActivityHandler(ActivityHandler.this.adjustConfig.startEnabled.booleanValue());
                 }
             });
         }
@@ -1827,7 +1827,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             }
         });
         preLaunchActionsI(this.adjustConfig.preLaunchActions.preLaunchActionsArray);
-        m8453lambda$sendReftagReferrer$16$comadjustsdkActivityHandler();
+        m9183lambda$sendReftagReferrer$16$comadjustsdkActivityHandler();
         bootstrapLifecycleI();
     }
 
@@ -1838,7 +1838,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addGlobalCallbackParameter$21$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8432x17863ad4(final String str, final String str2) {
+    public /* synthetic */ void m9162x17863ad4(final String str, final String str2) {
         this.firstSessionDelayManager.a("add global callback parameter", new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda26
             @Override // com.adjust.sdk.IRunActivityHandler
             public final void run(ActivityHandler activityHandler) {
@@ -1849,7 +1849,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addGlobalPartnerParameter$23$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8433x4b984c1d(final String str, final String str2) {
+    public /* synthetic */ void m9163x4b984c1d(final String str, final String str2) {
         this.firstSessionDelayManager.a("add global partner parameter", new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda18
             @Override // com.adjust.sdk.IRunActivityHandler
             public final void run(ActivityHandler activityHandler) {
@@ -1860,13 +1860,13 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$endFirstSessionDelay$48$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public void m8434lambda$endFirstSessionDelay$48$comadjustsdkActivityHandler() {
+    public void m9164lambda$endFirstSessionDelay$48$comadjustsdkActivityHandler() {
         FirstSessionDelayManager firstSessionDelayManager = this.firstSessionDelayManager;
         if (firstSessionDelayManager.c != 3) {
             return;
         }
         firstSessionDelayManager.c = 4;
-        firstSessionDelayManager.f148a.initI();
+        firstSessionDelayManager.f133a.initI();
         ArrayList arrayList = firstSessionDelayManager.b;
         int size = arrayList.size();
         int i = 0;
@@ -1879,55 +1879,55 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$gdprForgetMe$35$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8436lambda$gdprForgetMe$35$comadjustsdkActivityHandler() {
+    public /* synthetic */ void m9166lambda$gdprForgetMe$35$comadjustsdkActivityHandler() {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8435lambda$gdprForgetMe$34$comadjustsdkActivityHandler();
+                ActivityHandler.this.m9165lambda$gdprForgetMe$34$comadjustsdkActivityHandler();
             }
         }, "GDPR forget device");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$isEnabled$10$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8437lambda$isEnabled$10$comadjustsdkActivityHandler(final OnIsEnabledListener onIsEnabledListener) {
+    public /* synthetic */ void m9167lambda$isEnabled$10$comadjustsdkActivityHandler(final OnIsEnabledListener onIsEnabledListener) {
         new Handler(this.adjustConfig.context.getMainLooper()).post(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8439lambda$isEnabled$9$comadjustsdkActivityHandler(onIsEnabledListener);
+                ActivityHandler.this.m9169lambda$isEnabled$9$comadjustsdkActivityHandler(onIsEnabledListener);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$isEnabled$11$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8438lambda$isEnabled$11$comadjustsdkActivityHandler(final OnIsEnabledListener onIsEnabledListener) {
+    public /* synthetic */ void m9168lambda$isEnabled$11$comadjustsdkActivityHandler(final OnIsEnabledListener onIsEnabledListener) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8437lambda$isEnabled$10$comadjustsdkActivityHandler(onIsEnabledListener);
+                ActivityHandler.this.m9167lambda$isEnabled$10$comadjustsdkActivityHandler(onIsEnabledListener);
             }
         }, "is SDK enabled");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$isEnabled$9$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8439lambda$isEnabled$9$comadjustsdkActivityHandler(OnIsEnabledListener onIsEnabledListener) {
+    public /* synthetic */ void m9169lambda$isEnabled$9$comadjustsdkActivityHandler(OnIsEnabledListener onIsEnabledListener) {
         onIsEnabledListener.onIsEnabledRead(isEnabledI());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public void m8440lambda$new$2$comadjustsdkActivityHandler(AdjustConfig adjustConfig) {
+    public void m9170lambda$new$2$comadjustsdkActivityHandler(AdjustConfig adjustConfig) {
         readAttributionI(adjustConfig.context);
         readActivityStateI(adjustConfig.context);
         FirstSessionDelayManager firstSessionDelayManager = this.firstSessionDelayManager;
-        if (firstSessionDelayManager.f148a.getActivityState() == null && firstSessionDelayManager.f148a.getAdjustConfig().isFirstSessionDelayEnabled) {
+        if (firstSessionDelayManager.f133a.getActivityState() == null && firstSessionDelayManager.f133a.getAdjustConfig().isFirstSessionDelayEnabled) {
             firstSessionDelayManager.c = 3;
             return;
         }
         firstSessionDelayManager.c = 2;
-        firstSessionDelayManager.f148a.initI();
+        firstSessionDelayManager.f133a.initI();
         ArrayList arrayList = firstSessionDelayManager.b;
         int size = arrayList.size();
         int i = 0;
@@ -1940,7 +1940,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onActivityLifecycle$0$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8441lambda$onActivityLifecycle$0$comadjustsdkActivityHandler(boolean z) {
+    public /* synthetic */ void m9171lambda$onActivityLifecycle$0$comadjustsdkActivityHandler(boolean z) {
         Boolean bool = this.internalState.foregroundOrElseBackground;
         if (bool == null || bool.booleanValue() != z) {
             this.internalState.foregroundOrElseBackground = Boolean.valueOf(z);
@@ -1954,40 +1954,40 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onActivityLifecycle$1$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8442lambda$onActivityLifecycle$1$comadjustsdkActivityHandler(final boolean z) {
+    public /* synthetic */ void m9172lambda$onActivityLifecycle$1$comadjustsdkActivityHandler(final boolean z) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8441lambda$onActivityLifecycle$0$comadjustsdkActivityHandler(z);
+                ActivityHandler.this.m9171lambda$onActivityLifecycle$0$comadjustsdkActivityHandler(z);
             }
         }, "activity state");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$processAndResolveDeeplink$15$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8444xe6a7b9ff(final AdjustDeeplink adjustDeeplink, final long j) {
+    public /* synthetic */ void m9174xe6a7b9ff(final AdjustDeeplink adjustDeeplink, final long j) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8443x5e777a20(adjustDeeplink, j);
+                ActivityHandler.this.m9173x5e777a20(adjustDeeplink, j);
             }
         }, "process and resolve deep link");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$processDeeplink$13$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8446lambda$processDeeplink$13$comadjustsdkActivityHandler(final AdjustDeeplink adjustDeeplink, final long j) {
+    public /* synthetic */ void m9176lambda$processDeeplink$13$comadjustsdkActivityHandler(final AdjustDeeplink adjustDeeplink, final long j) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8445lambda$processDeeplink$12$comadjustsdkActivityHandler(adjustDeeplink, j);
+                ActivityHandler.this.m9175lambda$processDeeplink$12$comadjustsdkActivityHandler(adjustDeeplink, j);
             }
         }, "process deep link");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$removeGlobalCallbackParameter$25$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8447x867b5f33(final String str) {
+    public /* synthetic */ void m9177x867b5f33(final String str) {
         this.firstSessionDelayManager.a("remove global callback parameter", new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda41
             @Override // com.adjust.sdk.IRunActivityHandler
             public final void run(ActivityHandler activityHandler) {
@@ -1998,7 +1998,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$removeGlobalCallbackParameters$29$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8448xa96985e2() {
+    public /* synthetic */ void m9178xa96985e2() {
         this.firstSessionDelayManager.a("remove global callback parameters", new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda2
             @Override // com.adjust.sdk.IRunActivityHandler
             public final void run(ActivityHandler activityHandler) {
@@ -2009,7 +2009,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$removeGlobalPartnerParameter$27$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8449xa06b7e56(final String str) {
+    public /* synthetic */ void m9179xa06b7e56(final String str) {
         this.firstSessionDelayManager.a("remove global partner parameter", new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda6
             @Override // com.adjust.sdk.IRunActivityHandler
             public final void run(ActivityHandler activityHandler) {
@@ -2020,7 +2020,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$removeGlobalPartnerParameters$31$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8450xe239026() {
+    public /* synthetic */ void m9180xe239026() {
         this.firstSessionDelayManager.a("remove global partner parameters", new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda10
             @Override // com.adjust.sdk.IRunActivityHandler
             public final void run(ActivityHandler activityHandler) {
@@ -2031,81 +2031,81 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$sendPreinstallReferrer$19$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8452lambda$sendPreinstallReferrer$19$comadjustsdkActivityHandler() {
+    public /* synthetic */ void m9182lambda$sendPreinstallReferrer$19$comadjustsdkActivityHandler() {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8451lambda$sendPreinstallReferrer$18$comadjustsdkActivityHandler();
+                ActivityHandler.this.m9181lambda$sendPreinstallReferrer$18$comadjustsdkActivityHandler();
             }
         }, "send preinstall referrer");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$sendReftagReferrer$17$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8454lambda$sendReftagReferrer$17$comadjustsdkActivityHandler() {
+    public /* synthetic */ void m9184lambda$sendReftagReferrer$17$comadjustsdkActivityHandler() {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8453lambda$sendReftagReferrer$16$comadjustsdkActivityHandler();
+                ActivityHandler.this.m9183lambda$sendReftagReferrer$16$comadjustsdkActivityHandler();
             }
         }, "send referrer");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setCoppaComplianceInDelay$49$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public void m8455x46726ce4(boolean z) {
+    public void m9185x46726ce4(boolean z) {
         FirstSessionDelayManager firstSessionDelayManager = this.firstSessionDelayManager;
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f148a.getAdjustConfig().coppaComplianceEnabled = z;
+        firstSessionDelayManager.f133a.getAdjustConfig().coppaComplianceEnabled = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setEnabled$6$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8457lambda$setEnabled$6$comadjustsdkActivityHandler(final boolean z) {
+    public /* synthetic */ void m9187lambda$setEnabled$6$comadjustsdkActivityHandler(final boolean z) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda30
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8456lambda$setEnabled$5$comadjustsdkActivityHandler(z);
+                ActivityHandler.this.m9186lambda$setEnabled$5$comadjustsdkActivityHandler(z);
             }
         }, z ? "enable" : "disable");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setExternalDeviceIdInDelay$51$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public void m8458x94e41b37(String str) {
+    public void m9188x94e41b37(String str) {
         FirstSessionDelayManager firstSessionDelayManager = this.firstSessionDelayManager;
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f148a.getAdjustConfig().externalDeviceId = str;
+        firstSessionDelayManager.f133a.getAdjustConfig().externalDeviceId = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOfflineMode$8$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8460lambda$setOfflineMode$8$comadjustsdkActivityHandler(final boolean z) {
+    public /* synthetic */ void m9190lambda$setOfflineMode$8$comadjustsdkActivityHandler(final boolean z) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8459lambda$setOfflineMode$7$comadjustsdkActivityHandler(z);
+                ActivityHandler.this.m9189lambda$setOfflineMode$7$comadjustsdkActivityHandler(z);
             }
         }, z ? "put SDK in offline mode" : "put SDK back to online mode");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setPlayStoreKidsComplianceInDelay$50$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public void m8461xcaa71549(boolean z) {
+    public void m9191xcaa71549(boolean z) {
         FirstSessionDelayManager firstSessionDelayManager = this.firstSessionDelayManager;
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f148a.getAdjustConfig().playStoreKidsComplianceEnabled = z;
+        firstSessionDelayManager.f133a.getAdjustConfig().playStoreKidsComplianceEnabled = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setPushToken$32$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8462lambda$setPushToken$32$comadjustsdkActivityHandler(boolean z, String str) {
+    public /* synthetic */ void m9192lambda$setPushToken$32$comadjustsdkActivityHandler(boolean z, String str) {
         if (!z) {
             SharedPreferencesManager.getDefaultInstance(getContext()).savePushToken(str);
         }
@@ -2117,29 +2117,29 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setPushToken$33$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8463lambda$setPushToken$33$comadjustsdkActivityHandler(final boolean z, final String str) {
+    public /* synthetic */ void m9193lambda$setPushToken$33$comadjustsdkActivityHandler(final boolean z, final String str) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda50
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8462lambda$setPushToken$32$comadjustsdkActivityHandler(z, str);
+                ActivityHandler.this.m9192lambda$setPushToken$32$comadjustsdkActivityHandler(z, str);
             }
         }, "set push token");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$trackAdRevenue$41$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8465lambda$trackAdRevenue$41$comadjustsdkActivityHandler(final AdjustAdRevenue adjustAdRevenue) {
+    public /* synthetic */ void m9195lambda$trackAdRevenue$41$comadjustsdkActivityHandler(final AdjustAdRevenue adjustAdRevenue) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda45
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8464lambda$trackAdRevenue$40$comadjustsdkActivityHandler(adjustAdRevenue);
+                ActivityHandler.this.m9194lambda$trackAdRevenue$40$comadjustsdkActivityHandler(adjustAdRevenue);
             }
         }, "track ad revenue");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$trackEvent$3$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8466lambda$trackEvent$3$comadjustsdkActivityHandler(AdjustEvent adjustEvent) {
+    public /* synthetic */ void m9196lambda$trackEvent$3$comadjustsdkActivityHandler(AdjustEvent adjustEvent) {
         if (this.activityState == null) {
             this.logger.warn("Event tracked before first activity resumed.\nIf it was triggered in the Application class, it might timestamp or even send an install long before the user opens the app.\nPlease check https://github.com/adjust/android_sdk#can-i-trigger-an-event-at-application-launch for more information.", new Object[0]);
             startI();
@@ -2149,18 +2149,18 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$trackEvent$4$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8467lambda$trackEvent$4$comadjustsdkActivityHandler(final AdjustEvent adjustEvent) {
+    public /* synthetic */ void m9197lambda$trackEvent$4$comadjustsdkActivityHandler(final AdjustEvent adjustEvent) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8466lambda$trackEvent$3$comadjustsdkActivityHandler(adjustEvent);
+                ActivityHandler.this.m9196lambda$trackEvent$3$comadjustsdkActivityHandler(adjustEvent);
             }
         }, "track event");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$trackMeasurementConsent$39$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8468lambda$trackMeasurementConsent$39$comadjustsdkActivityHandler(final boolean z) {
+    public /* synthetic */ void m9198lambda$trackMeasurementConsent$39$comadjustsdkActivityHandler(final boolean z) {
         this.firstSessionDelayManager.a("track measurement consent", new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda28
             @Override // com.adjust.sdk.IRunActivityHandler
             public final void run(ActivityHandler activityHandler) {
@@ -2171,18 +2171,18 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$trackPlayStoreSubscription$43$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8470x53cd1473(final AdjustPlayStoreSubscription adjustPlayStoreSubscription) {
+    public /* synthetic */ void m9200x53cd1473(final AdjustPlayStoreSubscription adjustPlayStoreSubscription) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8469xcb9cd494(adjustPlayStoreSubscription);
+                ActivityHandler.this.m9199xcb9cd494(adjustPlayStoreSubscription);
             }
         }, "track play store subscription");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$trackThirdPartySharing$37$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8471lambda$trackThirdPartySharing$37$comadjustsdkActivityHandler(final AdjustThirdPartySharing adjustThirdPartySharing) {
+    public /* synthetic */ void m9201lambda$trackThirdPartySharing$37$comadjustsdkActivityHandler(final AdjustThirdPartySharing adjustThirdPartySharing) {
         this.firstSessionDelayManager.a("track third party sharing", new IRunActivityHandler() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda21
             @Override // com.adjust.sdk.IRunActivityHandler
             public final void run(ActivityHandler activityHandler) {
@@ -2193,22 +2193,22 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$verifyAndTrackPlayStorePurchase$47$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8473xae4e9b37(final AdjustEvent adjustEvent, final OnPurchaseVerificationFinishedListener onPurchaseVerificationFinishedListener) {
+    public /* synthetic */ void m9203xae4e9b37(final AdjustEvent adjustEvent, final OnPurchaseVerificationFinishedListener onPurchaseVerificationFinishedListener) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8472x261e5b58(adjustEvent, onPurchaseVerificationFinishedListener);
+                ActivityHandler.this.m9202x261e5b58(adjustEvent, onPurchaseVerificationFinishedListener);
             }
         }, "verify and track play store purchase");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$verifyPlayStorePurchase$45$com-adjust-sdk-ActivityHandler  reason: not valid java name */
-    public /* synthetic */ void m8475lambda$verifyPlayStorePurchase$45$comadjustsdkActivityHandler(final AdjustPlayStorePurchase adjustPlayStorePurchase, final OnPurchaseVerificationFinishedListener onPurchaseVerificationFinishedListener) {
+    public /* synthetic */ void m9205lambda$verifyPlayStorePurchase$45$comadjustsdkActivityHandler(final AdjustPlayStorePurchase adjustPlayStorePurchase, final OnPurchaseVerificationFinishedListener onPurchaseVerificationFinishedListener) {
         this.firstSessionDelayManager.a(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8474lambda$verifyPlayStorePurchase$44$comadjustsdkActivityHandler(adjustPlayStorePurchase, onPurchaseVerificationFinishedListener);
+                ActivityHandler.this.m9204lambda$verifyPlayStorePurchase$44$comadjustsdkActivityHandler(adjustPlayStorePurchase, onPurchaseVerificationFinishedListener);
             }
         }, "verify play store purchase");
     }
@@ -2269,7 +2269,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda39
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ActivityHandler.this.m8442lambda$onActivityLifecycle$1$comadjustsdkActivityHandler(z);
+                    ActivityHandler.this.m9172lambda$onActivityLifecycle$1$comadjustsdkActivityHandler(z);
                 }
             });
         } catch (Exception unused) {
@@ -2310,7 +2310,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda49
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8444xe6a7b9ff(adjustDeeplink, j);
+                ActivityHandler.this.m9174xe6a7b9ff(adjustDeeplink, j);
             }
         });
     }
@@ -2320,7 +2320,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8446lambda$processDeeplink$13$comadjustsdkActivityHandler(adjustDeeplink, j);
+                ActivityHandler.this.m9176lambda$processDeeplink$13$comadjustsdkActivityHandler(adjustDeeplink, j);
             }
         });
     }
@@ -2330,7 +2330,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8447x867b5f33(str);
+                ActivityHandler.this.m9177x867b5f33(str);
             }
         });
     }
@@ -2354,7 +2354,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8448xa96985e2();
+                ActivityHandler.this.m9178xa96985e2();
             }
         });
     }
@@ -2372,7 +2372,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda43
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8449xa06b7e56(str);
+                ActivityHandler.this.m9179xa06b7e56(str);
             }
         });
     }
@@ -2396,7 +2396,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8450xe239026();
+                ActivityHandler.this.m9180xe239026();
             }
         });
     }
@@ -2434,7 +2434,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8452lambda$sendPreinstallReferrer$19$comadjustsdkActivityHandler();
+                ActivityHandler.this.m9182lambda$sendPreinstallReferrer$19$comadjustsdkActivityHandler();
             }
         });
     }
@@ -2444,7 +2444,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8454lambda$sendReftagReferrer$17$comadjustsdkActivityHandler();
+                ActivityHandler.this.m9184lambda$sendReftagReferrer$17$comadjustsdkActivityHandler();
             }
         });
     }
@@ -2464,7 +2464,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8455x46726ce4(z);
+                ActivityHandler.this.m9185x46726ce4(z);
             }
         });
     }
@@ -2474,7 +2474,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8457lambda$setEnabled$6$comadjustsdkActivityHandler(z);
+                ActivityHandler.this.m9187lambda$setEnabled$6$comadjustsdkActivityHandler(z);
             }
         });
     }
@@ -2484,7 +2484,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8458x94e41b37(str);
+                ActivityHandler.this.m9188x94e41b37(str);
             }
         });
     }
@@ -2494,7 +2494,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8460lambda$setOfflineMode$8$comadjustsdkActivityHandler(z);
+                ActivityHandler.this.m9190lambda$setOfflineMode$8$comadjustsdkActivityHandler(z);
             }
         });
     }
@@ -2504,7 +2504,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8461xcaa71549(z);
+                ActivityHandler.this.m9191xcaa71549(z);
             }
         });
     }
@@ -2514,7 +2514,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8463lambda$setPushToken$33$comadjustsdkActivityHandler(z, str);
+                ActivityHandler.this.m9193lambda$setPushToken$33$comadjustsdkActivityHandler(z, str);
             }
         });
     }
@@ -2582,7 +2582,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8465lambda$trackAdRevenue$41$comadjustsdkActivityHandler(adjustAdRevenue);
+                ActivityHandler.this.m9195lambda$trackAdRevenue$41$comadjustsdkActivityHandler(adjustAdRevenue);
             }
         });
     }
@@ -2592,7 +2592,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8467lambda$trackEvent$4$comadjustsdkActivityHandler(adjustEvent);
+                ActivityHandler.this.m9197lambda$trackEvent$4$comadjustsdkActivityHandler(adjustEvent);
             }
         });
     }
@@ -2602,7 +2602,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8468lambda$trackMeasurementConsent$39$comadjustsdkActivityHandler(z);
+                ActivityHandler.this.m9198lambda$trackMeasurementConsent$39$comadjustsdkActivityHandler(z);
             }
         });
     }
@@ -2612,7 +2612,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8470x53cd1473(adjustPlayStoreSubscription);
+                ActivityHandler.this.m9200x53cd1473(adjustPlayStoreSubscription);
             }
         });
     }
@@ -2622,7 +2622,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda25
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8471lambda$trackThirdPartySharing$37$comadjustsdkActivityHandler(adjustThirdPartySharing);
+                ActivityHandler.this.m9201lambda$trackThirdPartySharing$37$comadjustsdkActivityHandler(adjustThirdPartySharing);
             }
         });
     }
@@ -2684,7 +2684,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda40
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8473xae4e9b37(adjustEvent, onPurchaseVerificationFinishedListener);
+                ActivityHandler.this.m9203xae4e9b37(adjustEvent, onPurchaseVerificationFinishedListener);
             }
         });
     }
@@ -2694,7 +2694,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda44
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8475lambda$verifyPlayStorePurchase$45$comadjustsdkActivityHandler(adjustPlayStorePurchase, onPurchaseVerificationFinishedListener);
+                ActivityHandler.this.m9205lambda$verifyPlayStorePurchase$45$comadjustsdkActivityHandler(adjustPlayStorePurchase, onPurchaseVerificationFinishedListener);
             }
         });
     }
@@ -2737,7 +2737,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         this.executor.submit(new Runnable() { // from class: com.adjust.sdk.ActivityHandler$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
-                ActivityHandler.this.m8438lambda$isEnabled$11$comadjustsdkActivityHandler(onIsEnabledListener);
+                ActivityHandler.this.m9168lambda$isEnabled$11$comadjustsdkActivityHandler(onIsEnabledListener);
             }
         });
     }

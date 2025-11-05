@@ -49,11 +49,11 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     /* renamed from: twoDimensionalFocusSearch-sMXa3k8  reason: not valid java name */
-    public static final Boolean m4255twoDimensionalFocusSearchsMXa3k8(FocusTargetNode focusTargetNode, int i, Rect rect, Function1<? super FocusTargetNode, Boolean> function1) {
+    public static final Boolean m4985twoDimensionalFocusSearchsMXa3k8(FocusTargetNode focusTargetNode, int i, Rect rect, Function1<? super FocusTargetNode, Boolean> function1) {
         int i2 = WhenMappings.$EnumSwitchMapping$0[focusTargetNode.getFocusState().ordinal()];
         if (i2 != 1) {
             if (i2 == 2 || i2 == 3) {
-                return Boolean.valueOf(m4251findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, i, function1));
+                return Boolean.valueOf(m4981findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, i, function1));
             }
             if (i2 != 4) {
                 throw new NoWhenBranchMatchedException();
@@ -62,9 +62,9 @@ public final class TwoDimensionalFocusSearchKt {
                 return function1.invoke(focusTargetNode);
             }
             if (rect == null) {
-                return Boolean.valueOf(m4251findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, i, function1));
+                return Boolean.valueOf(m4981findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, i, function1));
             }
-            return Boolean.valueOf(m4254searchChildren4C6V_qg(focusTargetNode, rect, i, function1));
+            return Boolean.valueOf(m4984searchChildren4C6V_qg(focusTargetNode, rect, i, function1));
         }
         FocusTargetNode activeChild = FocusTraversalKt.getActiveChild(focusTargetNode);
         if (activeChild == null) {
@@ -72,19 +72,19 @@ public final class TwoDimensionalFocusSearchKt {
         }
         int i3 = WhenMappings.$EnumSwitchMapping$0[activeChild.getFocusState().ordinal()];
         if (i3 == 1) {
-            Boolean m4255twoDimensionalFocusSearchsMXa3k8 = m4255twoDimensionalFocusSearchsMXa3k8(activeChild, i, rect, function1);
-            if (Intrinsics.areEqual((Object) m4255twoDimensionalFocusSearchsMXa3k8, (Object) false)) {
+            Boolean m4985twoDimensionalFocusSearchsMXa3k8 = m4985twoDimensionalFocusSearchsMXa3k8(activeChild, i, rect, function1);
+            if (Intrinsics.areEqual((Object) m4985twoDimensionalFocusSearchsMXa3k8, (Object) false)) {
                 if (rect == null) {
                     rect = FocusTraversalKt.focusRect(activeNode(activeChild));
                 }
-                return Boolean.valueOf(m4252generateAndSearchChildren4C6V_qg(focusTargetNode, rect, i, function1));
+                return Boolean.valueOf(m4982generateAndSearchChildren4C6V_qg(focusTargetNode, rect, i, function1));
             }
-            return m4255twoDimensionalFocusSearchsMXa3k8;
+            return m4985twoDimensionalFocusSearchsMXa3k8;
         } else if (i3 == 2 || i3 == 3) {
             if (rect == null) {
                 rect = FocusTraversalKt.focusRect(activeChild);
             }
-            return Boolean.valueOf(m4252generateAndSearchChildren4C6V_qg(focusTargetNode, rect, i, function1));
+            return Boolean.valueOf(m4982generateAndSearchChildren4C6V_qg(focusTargetNode, rect, i, function1));
         } else if (i3 != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
@@ -93,12 +93,12 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     /* renamed from: generateAndSearchChildren-4C6V_qg  reason: not valid java name */
-    private static final boolean m4252generateAndSearchChildren4C6V_qg(final FocusTargetNode focusTargetNode, final Rect rect, final int i, final Function1<? super FocusTargetNode, Boolean> function1) {
-        if (m4254searchChildren4C6V_qg(focusTargetNode, rect, i, function1)) {
+    private static final boolean m4982generateAndSearchChildren4C6V_qg(final FocusTargetNode focusTargetNode, final Rect rect, final int i, final Function1<? super FocusTargetNode, Boolean> function1) {
+        if (m4984searchChildren4C6V_qg(focusTargetNode, rect, i, function1)) {
             return true;
         }
         final FocusTargetNode activeFocusTargetNode = DelegatableNodeKt.requireOwner(focusTargetNode).getFocusOwner().getActiveFocusTargetNode();
-        Boolean bool = (Boolean) BeyondBoundsLayoutKt.m4179searchBeyondBoundsOMvw8(focusTargetNode, i, new Function1<BeyondBoundsLayout.BeyondBoundsScope, Boolean>() { // from class: androidx.compose.ui.focus.TwoDimensionalFocusSearchKt$generateAndSearchChildren$1
+        Boolean bool = (Boolean) BeyondBoundsLayoutKt.m4909searchBeyondBoundsOMvw8(focusTargetNode, i, new Function1<BeyondBoundsLayout.BeyondBoundsScope, Boolean>() { // from class: androidx.compose.ui.focus.TwoDimensionalFocusSearchKt$generateAndSearchChildren$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -108,10 +108,10 @@ public final class TwoDimensionalFocusSearchKt {
 
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(BeyondBoundsLayout.BeyondBoundsScope beyondBoundsScope) {
-                boolean m4254searchChildren4C6V_qg;
+                boolean m4984searchChildren4C6V_qg;
                 if (FocusTargetNode.this == DelegatableNodeKt.requireOwner(focusTargetNode).getFocusOwner().getActiveFocusTargetNode()) {
-                    m4254searchChildren4C6V_qg = TwoDimensionalFocusSearchKt.m4254searchChildren4C6V_qg(focusTargetNode, rect, i, function1);
-                    Boolean valueOf = Boolean.valueOf(m4254searchChildren4C6V_qg);
+                    m4984searchChildren4C6V_qg = TwoDimensionalFocusSearchKt.m4984searchChildren4C6V_qg(focusTargetNode, rect, i, function1);
+                    Boolean valueOf = Boolean.valueOf(m4984searchChildren4C6V_qg);
                     if (valueOf.booleanValue() || !beyondBoundsScope.getHasMoreContent()) {
                         return valueOf;
                     }
@@ -127,15 +127,15 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     /* renamed from: findBestCandidate-4WY_MpI  reason: not valid java name */
-    private static final FocusTargetNode m4250findBestCandidate4WY_MpI(MutableVector<FocusTargetNode> mutableVector, Rect rect, int i) {
+    private static final FocusTargetNode m4980findBestCandidate4WY_MpI(MutableVector<FocusTargetNode> mutableVector, Rect rect, int i) {
         Rect translate;
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s())) {
             translate = rect.translate((rect.getRight() - rect.getLeft()) + 1, 0.0f);
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
             translate = rect.translate(-((rect.getRight() - rect.getLeft()) + 1), 0.0f);
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
             translate = rect.translate(0.0f, (rect.getBottom() - rect.getTop()) + 1);
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
             translate = rect.translate(0.0f, -((rect.getBottom() - rect.getTop()) + 1));
         } else {
             throw new IllegalStateException(InvalidFocusDirection.toString());
@@ -147,7 +147,7 @@ public final class TwoDimensionalFocusSearchKt {
             FocusTargetNode focusTargetNode2 = focusTargetNodeArr[i2];
             if (FocusTraversalKt.isEligibleForFocusSearch(focusTargetNode2)) {
                 Rect focusRect = FocusTraversalKt.focusRect(focusTargetNode2);
-                if (m4253isBetterCandidateI7lrPNg(focusRect, translate, rect, i)) {
+                if (m4983isBetterCandidateI7lrPNg(focusRect, translate, rect, i)) {
                     focusTargetNode = focusTargetNode2;
                     translate = focusRect;
                 }
@@ -157,13 +157,13 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     private static final boolean isBetterCandidate_I7lrPNg$isCandidate(Rect rect, int i, Rect rect2) {
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s())) {
             return (rect2.getRight() > rect.getRight() || rect2.getLeft() >= rect.getRight()) && rect2.getLeft() > rect.getLeft();
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
             return (rect2.getLeft() < rect.getLeft() || rect2.getRight() <= rect.getLeft()) && rect2.getRight() < rect.getRight();
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
             return (rect2.getBottom() > rect.getBottom() || rect2.getTop() >= rect.getBottom()) && rect2.getTop() > rect.getTop();
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
             return (rect2.getTop() < rect.getTop() || rect2.getBottom() <= rect.getTop()) && rect2.getBottom() < rect.getBottom();
         } else {
             throw new IllegalStateException(InvalidFocusDirection.toString());
@@ -181,14 +181,14 @@ public final class TwoDimensionalFocusSearchKt {
         float top2;
         float bottom2;
         float f;
-        if (!FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s())) {
-            if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        if (!FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s())) {
+            if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
                 top = rect.getLeft();
                 bottom = rect2.getRight();
-            } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
+            } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
                 top2 = rect2.getTop();
                 bottom2 = rect.getBottom();
-            } else if (!FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+            } else if (!FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
                 throw new IllegalStateException(InvalidFocusDirection.toString());
             } else {
                 top = rect.getTop();
@@ -213,7 +213,7 @@ public final class TwoDimensionalFocusSearchKt {
         float top;
         float bottom;
         float top2;
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
             float top3 = rect2.getTop();
             float bottom2 = rect2.getBottom() - rect2.getTop();
             f = 2;
@@ -221,7 +221,7 @@ public final class TwoDimensionalFocusSearchKt {
             top = rect.getTop();
             bottom = rect.getBottom();
             top2 = rect.getTop();
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
             float left = rect2.getLeft();
             float right = rect2.getRight() - rect2.getLeft();
             f = 2;
@@ -242,10 +242,10 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     /* renamed from: isBetterCandidate-I7lrPNg  reason: not valid java name */
-    public static final boolean m4253isBetterCandidateI7lrPNg(Rect rect, Rect rect2, Rect rect3, int i) {
+    public static final boolean m4983isBetterCandidateI7lrPNg(Rect rect, Rect rect2, Rect rect3, int i) {
         if (isBetterCandidate_I7lrPNg$isCandidate(rect, i, rect3)) {
-            if (isBetterCandidate_I7lrPNg$isCandidate(rect2, i, rect3) && !m4249beamBeatsI7lrPNg(rect3, rect, rect2, i)) {
-                return !m4249beamBeatsI7lrPNg(rect3, rect2, rect, i) && isBetterCandidate_I7lrPNg$weightedDistance(i, rect3, rect) < isBetterCandidate_I7lrPNg$weightedDistance(i, rect3, rect2);
+            if (isBetterCandidate_I7lrPNg$isCandidate(rect2, i, rect3) && !m4979beamBeatsI7lrPNg(rect3, rect, rect2, i)) {
+                return !m4979beamBeatsI7lrPNg(rect3, rect2, rect, i) && isBetterCandidate_I7lrPNg$weightedDistance(i, rect3, rect) < isBetterCandidate_I7lrPNg$weightedDistance(i, rect3, rect2);
             }
             return true;
         }
@@ -253,9 +253,9 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     private static final boolean beamBeats_I7lrPNg$inSourceBeam(Rect rect, int i, Rect rect2) {
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
             return rect.getBottom() > rect2.getTop() && rect.getTop() < rect2.getBottom();
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
             return rect.getRight() > rect2.getLeft() && rect.getLeft() < rect2.getRight();
         } else {
             throw new IllegalStateException(InvalidFocusDirection.toString());
@@ -263,13 +263,13 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     private static final boolean beamBeats_I7lrPNg$isInDirectionOfSearch(Rect rect, int i, Rect rect2) {
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s())) {
             return rect2.getLeft() >= rect.getRight();
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
             return rect2.getRight() <= rect.getLeft();
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
             return rect2.getTop() >= rect.getBottom();
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
             return rect2.getBottom() <= rect.getTop();
         } else {
             throw new IllegalStateException(InvalidFocusDirection.toString());
@@ -287,14 +287,14 @@ public final class TwoDimensionalFocusSearchKt {
         float top2;
         float bottom2;
         float f;
-        if (!FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s())) {
-            if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        if (!FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s())) {
+            if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
                 top = rect.getLeft();
                 bottom = rect2.getRight();
-            } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
+            } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
                 top2 = rect2.getTop();
                 bottom2 = rect.getBottom();
-            } else if (!FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+            } else if (!FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
                 throw new IllegalStateException(InvalidFocusDirection.toString());
             } else {
                 top = rect.getTop();
@@ -324,14 +324,14 @@ public final class TwoDimensionalFocusSearchKt {
         float top;
         float top2;
         float f;
-        if (!FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s())) {
-            if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        if (!FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s())) {
+            if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
                 bottom = rect.getRight();
                 bottom2 = rect2.getRight();
-            } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
+            } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
                 top = rect2.getTop();
                 top2 = rect.getTop();
-            } else if (!FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+            } else if (!FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
                 throw new IllegalStateException(InvalidFocusDirection.toString());
             } else {
                 bottom = rect.getBottom();
@@ -351,11 +351,11 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     /* renamed from: beamBeats-I7lrPNg  reason: not valid java name */
-    private static final boolean m4249beamBeatsI7lrPNg(Rect rect, Rect rect2, Rect rect3, int i) {
+    private static final boolean m4979beamBeatsI7lrPNg(Rect rect, Rect rect2, Rect rect3, int i) {
         if (beamBeats_I7lrPNg$inSourceBeam(rect3, i, rect) || !beamBeats_I7lrPNg$inSourceBeam(rect2, i, rect)) {
             return false;
         }
-        return !beamBeats_I7lrPNg$isInDirectionOfSearch(rect3, i, rect) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s()) || beamBeats_I7lrPNg$majorAxisDistance$6(rect2, i, rect) < beamBeats_I7lrPNg$majorAxisDistanceToFarEdge(rect3, i, rect);
+        return !beamBeats_I7lrPNg$isInDirectionOfSearch(rect3, i, rect) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s()) || beamBeats_I7lrPNg$majorAxisDistance$6(rect2, i, rect) < beamBeats_I7lrPNg$majorAxisDistanceToFarEdge(rect3, i, rect);
     }
 
     private static final Rect topLeft(Rect rect) {
@@ -378,7 +378,7 @@ public final class TwoDimensionalFocusSearchKt {
     }
 
     /* renamed from: findChildCorrespondingToFocusEnter--OM-vw8  reason: not valid java name */
-    public static final boolean m4251findChildCorrespondingToFocusEnterOMvw8(FocusTargetNode focusTargetNode, int i, Function1<? super FocusTargetNode, Boolean> function1) {
+    public static final boolean m4981findChildCorrespondingToFocusEnterOMvw8(FocusTargetNode focusTargetNode, int i, Function1<? super FocusTargetNode, Boolean> function1) {
         Rect rect;
         MutableVector mutableVector = new MutableVector(new FocusTargetNode[16], 0);
         collectAccessibleChildren(focusTargetNode, mutableVector);
@@ -389,30 +389,30 @@ public final class TwoDimensionalFocusSearchKt {
             }
             return false;
         }
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4189getEnterdhqQ8s())) {
-            i = FocusDirection.Companion.m4194getRightdhqQ8s();
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4919getEnterdhqQ8s())) {
+            i = FocusDirection.Companion.m4924getRightdhqQ8s();
         }
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
             rect = topLeft(FocusTraversalKt.focusRect(focusTargetNode));
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
             rect = bottomRight(FocusTraversalKt.focusRect(focusTargetNode));
         } else {
             throw new IllegalStateException(InvalidFocusDirection.toString());
         }
-        FocusTargetNode m4250findBestCandidate4WY_MpI = m4250findBestCandidate4WY_MpI(mutableVector, rect, i);
-        if (m4250findBestCandidate4WY_MpI != null) {
-            return function1.invoke(m4250findBestCandidate4WY_MpI).booleanValue();
+        FocusTargetNode m4980findBestCandidate4WY_MpI = m4980findBestCandidate4WY_MpI(mutableVector, rect, i);
+        if (m4980findBestCandidate4WY_MpI != null) {
+            return function1.invoke(m4980findBestCandidate4WY_MpI).booleanValue();
         }
         return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: searchChildren-4C6V_qg  reason: not valid java name */
-    public static final boolean m4254searchChildren4C6V_qg(FocusTargetNode focusTargetNode, Rect rect, int i, Function1<? super FocusTargetNode, Boolean> function1) {
-        FocusTargetNode m4250findBestCandidate4WY_MpI;
+    public static final boolean m4984searchChildren4C6V_qg(FocusTargetNode focusTargetNode, Rect rect, int i, Function1<? super FocusTargetNode, Boolean> function1) {
+        FocusTargetNode m4980findBestCandidate4WY_MpI;
         MutableVector mutableVector = new MutableVector(new FocusTargetNode[16], 0);
         FocusTargetNode focusTargetNode2 = focusTargetNode;
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
         if (!focusTargetNode2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
@@ -425,13 +425,13 @@ public final class TwoDimensionalFocusSearchKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
+            if ((node.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node, false);
             } else {
                 while (true) {
                     if (node == null) {
                         break;
-                    } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                    } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node != null) {
                             if (node instanceof FocusTargetNode) {
@@ -439,10 +439,10 @@ public final class TwoDimensionalFocusSearchKt {
                                 if (focusTargetNode3.isAttached()) {
                                     mutableVector.add(focusTargetNode3);
                                 }
-                            } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             node = delegate$ui_release;
@@ -473,20 +473,20 @@ public final class TwoDimensionalFocusSearchKt {
                 }
             }
         }
-        while (mutableVector.getSize() != 0 && (m4250findBestCandidate4WY_MpI = m4250findBestCandidate4WY_MpI(mutableVector, rect, i)) != null) {
-            if (m4250findBestCandidate4WY_MpI.fetchFocusProperties$ui_release().getCanFocus()) {
-                return function1.invoke(m4250findBestCandidate4WY_MpI).booleanValue();
+        while (mutableVector.getSize() != 0 && (m4980findBestCandidate4WY_MpI = m4980findBestCandidate4WY_MpI(mutableVector, rect, i)) != null) {
+            if (m4980findBestCandidate4WY_MpI.fetchFocusProperties$ui_release().getCanFocus()) {
+                return function1.invoke(m4980findBestCandidate4WY_MpI).booleanValue();
             }
-            if (m4252generateAndSearchChildren4C6V_qg(m4250findBestCandidate4WY_MpI, rect, i, function1)) {
+            if (m4982generateAndSearchChildren4C6V_qg(m4980findBestCandidate4WY_MpI, rect, i, function1)) {
                 return true;
             }
-            mutableVector.remove(m4250findBestCandidate4WY_MpI);
+            mutableVector.remove(m4980findBestCandidate4WY_MpI);
         }
         return false;
     }
 
     private static final void collectAccessibleChildren(DelegatableNode delegatableNode, MutableVector<FocusTargetNode> mutableVector) {
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
@@ -499,13 +499,13 @@ public final class TwoDimensionalFocusSearchKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
+            if ((node.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node, false);
             } else {
                 while (true) {
                     if (node == null) {
                         break;
-                    } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                    } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node != null) {
                             if (node instanceof FocusTargetNode) {
@@ -520,10 +520,10 @@ public final class TwoDimensionalFocusSearchKt {
                                         }
                                     }
                                 }
-                            } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui_release;

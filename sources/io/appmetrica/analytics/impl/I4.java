@@ -1,20 +1,15 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public abstract class I4 {
+/* loaded from: classes3.dex */
+public final class I4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f489a;
-    public static final boolean b;
-    public static final boolean c;
-    public static final boolean d;
-    public static final boolean e;
+    public final C0446na f519a;
+    public final Ei b;
+    public final C0152bo c;
 
-    static {
-        Bm bm = new Bm();
-        f489a = bm.f376a;
-        b = bm.b;
-        c = bm.c;
-        d = bm.d;
-        e = bm.e;
+    public I4(E4 e4) {
+        this.f519a = new C0446na(e4);
+        this.b = new Ei(e4);
+        this.c = new C0152bo(e4, C0620ua.k().h());
     }
 }

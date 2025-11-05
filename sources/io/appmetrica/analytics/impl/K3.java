@@ -1,40 +1,13 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.List;
-/* loaded from: classes4.dex */
-public final class K3 implements Converter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Ra f531a;
-
-    public K3() {
-        this(new Ra(20, 100));
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Zi fromModel(List<String> list) {
-        Sn a2 = this.f531a.a((List<Object>) list);
-        E8 e8 = new E8();
-        e8.f425a = StringUtils.getUTF8Bytes((List) a2.f676a);
-        A3 a3 = a2.b;
-        int i = ((L4) a3).f1182a;
-        return new Zi(e8, a3);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        Zi zi = (Zi) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public K3(Ra ra) {
-        this.f531a = ra;
-    }
-
-    public final List<String> a(Zi zi) {
-        throw new UnsupportedOperationException();
+import java.util.Map;
+/* loaded from: classes3.dex */
+public final class K3 {
+    public static boolean a(Map map, C0356jm c0356jm, H3 h3) {
+        Map map2 = ((C0738z3) h3.a(new C0738z3(map, Y7.c))).f1224a;
+        if (no.a(map2)) {
+            return true;
+        }
+        return map2.equals(Jm.a(c0356jm.m));
     }
 }

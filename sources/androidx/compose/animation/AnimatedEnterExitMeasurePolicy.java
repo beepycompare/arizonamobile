@@ -45,17 +45,17 @@ final class AnimatedEnterExitMeasurePolicy implements MeasurePolicy {
         int i = 0;
         int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
-            Placeable mo5967measureBRTryo0 = list.get(i3).mo5967measureBRTryo0(j);
-            i = Math.max(i, mo5967measureBRTryo0.getWidth());
-            i2 = Math.max(i2, mo5967measureBRTryo0.getHeight());
-            arrayList.add(mo5967measureBRTryo0);
+            Placeable mo6697measureBRTryo0 = list.get(i3).mo6697measureBRTryo0(j);
+            i = Math.max(i, mo6697measureBRTryo0.getWidth());
+            i2 = Math.max(i2, mo6697measureBRTryo0.getHeight());
+            arrayList.add(mo6697measureBRTryo0);
         }
         final ArrayList arrayList2 = arrayList;
         if (measureScope.isLookingAhead()) {
             this.hasLookaheadOccurred = true;
-            this.scope.getTargetSize$animation().setValue(IntSize.m7427boximpl(IntSize.m7430constructorimpl((4294967295L & i2) | (i << 32))));
+            this.scope.getTargetSize$animation().setValue(IntSize.m8158boximpl(IntSize.m8161constructorimpl((4294967295L & i2) | (i << 32))));
         } else if (!this.hasLookaheadOccurred) {
-            this.scope.getTargetSize$animation().setValue(IntSize.m7427boximpl(IntSize.m7430constructorimpl((4294967295L & i2) | (i << 32))));
+            this.scope.getTargetSize$animation().setValue(IntSize.m8158boximpl(IntSize.m8161constructorimpl((4294967295L & i2) | (i << 32))));
         }
         return MeasureScope.layout$default(measureScope, i, i2, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedEnterExitMeasurePolicy$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */

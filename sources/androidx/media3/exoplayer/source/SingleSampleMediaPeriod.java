@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callback<SourceLoadable> {
     private static final int INITIAL_SAMPLE_SIZE = 1024;
     private static final String TAG = "SingleSampleMediaPeriod";
@@ -212,7 +212,7 @@ public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callba
         return loadErrorAction2;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class SampleStreamImpl implements SampleStream {
         private static final int STREAM_STATE_END_OF_STREAM = 2;
         private static final int STREAM_STATE_SEND_FORMAT = 0;
@@ -293,7 +293,7 @@ public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callba
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SourceLoadable implements Loader.Loadable {
         private final StatsDataSource dataSource;
         public final DataSpec dataSpec;

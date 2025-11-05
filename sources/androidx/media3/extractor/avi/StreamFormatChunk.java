@@ -6,7 +6,7 @@ import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import com.google.common.collect.ImmutableList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class StreamFormatChunk implements AviChunk {
     private static final String TAG = "StreamFormatChunk";
     public final Format format;

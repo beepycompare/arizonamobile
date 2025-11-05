@@ -76,34 +76,34 @@ public final class TextFieldDelegate {
         /* renamed from: layout-_EkL_-Y$foundation_release  reason: not valid java name */
         public final Triple<Integer, Integer, TextLayoutResult> m1359layout_EkL_Y$foundation_release(TextDelegate textDelegate, long j, LayoutDirection layoutDirection, TextLayoutResult textLayoutResult) {
             TextLayoutResult m1344layoutNN6EwU = textDelegate.m1344layoutNN6EwU(j, layoutDirection, textLayoutResult);
-            return new Triple<>(Integer.valueOf((int) (m1344layoutNN6EwU.m6697getSizeYbymL2g() >> 32)), Integer.valueOf((int) (m1344layoutNN6EwU.m6697getSizeYbymL2g() & 4294967295L)), m1344layoutNN6EwU);
+            return new Triple<>(Integer.valueOf((int) (m1344layoutNN6EwU.m7428getSizeYbymL2g() >> 32)), Integer.valueOf((int) (m1344layoutNN6EwU.m7428getSizeYbymL2g() & 4294967295L)), m1344layoutNN6EwU);
         }
 
         @JvmStatic
         /* renamed from: draw-Q1vqE60$foundation_release  reason: not valid java name */
         public final void m1358drawQ1vqE60$foundation_release(Canvas canvas, TextFieldValue textFieldValue, long j, long j2, OffsetMapping offsetMapping, TextLayoutResult textLayoutResult, Paint paint, long j3) {
-            if (!TextRange.m6720getCollapsedimpl(j)) {
-                paint.mo4426setColor8_81llA(j3);
+            if (!TextRange.m7451getCollapsedimpl(j)) {
+                paint.mo5156setColor8_81llA(j3);
                 m1355drawHighlightLepunE(canvas, j, offsetMapping, textLayoutResult, paint);
-            } else if (!TextRange.m6720getCollapsedimpl(j2)) {
-                Color m4539boximpl = Color.m4539boximpl(textLayoutResult.getLayoutInput().getStyle().m6756getColor0d7_KjU());
-                if (m4539boximpl.m4559unboximpl() == 16) {
-                    m4539boximpl = null;
+            } else if (!TextRange.m7451getCollapsedimpl(j2)) {
+                Color m5269boximpl = Color.m5269boximpl(textLayoutResult.getLayoutInput().getStyle().m7487getColor0d7_KjU());
+                if (m5269boximpl.m5289unboximpl() == 16) {
+                    m5269boximpl = null;
                 }
-                long m4559unboximpl = m4539boximpl != null ? m4539boximpl.m4559unboximpl() : Color.Companion.m4575getBlack0d7_KjU();
-                paint.mo4426setColor8_81llA(Color.m4548copywmQWz5c$default(m4559unboximpl, Color.m4551getAlphaimpl(m4559unboximpl) * 0.2f, 0.0f, 0.0f, 0.0f, 14, null));
+                long m5289unboximpl = m5269boximpl != null ? m5269boximpl.m5289unboximpl() : Color.Companion.m5305getBlack0d7_KjU();
+                paint.mo5156setColor8_81llA(Color.m5278copywmQWz5c$default(m5289unboximpl, Color.m5281getAlphaimpl(m5289unboximpl) * 0.2f, 0.0f, 0.0f, 0.0f, 14, null));
                 m1355drawHighlightLepunE(canvas, j2, offsetMapping, textLayoutResult, paint);
-            } else if (!TextRange.m6720getCollapsedimpl(textFieldValue.m6977getSelectiond9O1mEE())) {
-                paint.mo4426setColor8_81llA(j3);
-                m1355drawHighlightLepunE(canvas, textFieldValue.m6977getSelectiond9O1mEE(), offsetMapping, textLayoutResult, paint);
+            } else if (!TextRange.m7451getCollapsedimpl(textFieldValue.m7708getSelectiond9O1mEE())) {
+                paint.mo5156setColor8_81llA(j3);
+                m1355drawHighlightLepunE(canvas, textFieldValue.m7708getSelectiond9O1mEE(), offsetMapping, textLayoutResult, paint);
             }
             TextPainter.INSTANCE.paint(canvas, textLayoutResult);
         }
 
         /* renamed from: drawHighlight-Le-punE  reason: not valid java name */
         private final void m1355drawHighlightLepunE(Canvas canvas, long j, OffsetMapping offsetMapping, TextLayoutResult textLayoutResult, Paint paint) {
-            int originalToTransformed = offsetMapping.originalToTransformed(TextRange.m6724getMinimpl(j));
-            int originalToTransformed2 = offsetMapping.originalToTransformed(TextRange.m6723getMaximpl(j));
+            int originalToTransformed = offsetMapping.originalToTransformed(TextRange.m7455getMinimpl(j));
+            int originalToTransformed2 = offsetMapping.originalToTransformed(TextRange.m7454getMaximpl(j));
             if (originalToTransformed != originalToTransformed2) {
                 canvas.drawPath(textLayoutResult.getPathForRange(originalToTransformed, originalToTransformed2), paint);
             }
@@ -112,7 +112,7 @@ public final class TextFieldDelegate {
         @JvmStatic
         public final void notifyFocusedRect$foundation_release(TextFieldValue textFieldValue, final TextDelegate textDelegate, TextLayoutResult textLayoutResult, LayoutCoordinates layoutCoordinates, TextInputSession textInputSession, boolean z, OffsetMapping offsetMapping) {
             if (z) {
-                textInputSession.notifyFocusedRect(TextFieldDelegateKt.focusedRectInRoot(textLayoutResult, layoutCoordinates, offsetMapping.originalToTransformed(TextRange.m6723getMaximpl(textFieldValue.m6977getSelectiond9O1mEE())), new Function0() { // from class: androidx.compose.foundation.text.TextFieldDelegate$Companion$$ExternalSyntheticLambda1
+                textInputSession.notifyFocusedRect(TextFieldDelegateKt.focusedRectInRoot(textLayoutResult, layoutCoordinates, offsetMapping.originalToTransformed(TextRange.m7454getMaximpl(textFieldValue.m7708getSelectiond9O1mEE())), new Function0() { // from class: androidx.compose.foundation.text.TextFieldDelegate$Companion$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         IntSize notifyFocusedRect$lambda$1;
@@ -125,7 +125,7 @@ public final class TextFieldDelegate {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final IntSize notifyFocusedRect$lambda$1(TextDelegate textDelegate) {
-            return IntSize.m7427boximpl(TextFieldDelegateKt.computeSizeForDefaultText$default(textDelegate.getStyle(), textDelegate.getDensity(), textDelegate.getFontFamilyResolver(), null, 0, 24, null));
+            return IntSize.m8158boximpl(TextFieldDelegateKt.computeSizeForDefaultText$default(textDelegate.getStyle(), textDelegate.getDensity(), textDelegate.getFontFamilyResolver(), null, 0, 24, null));
         }
 
         @JvmStatic
@@ -138,14 +138,14 @@ public final class TextFieldDelegate {
             textInputSession.updateTextLayoutResult(textFieldValue, offsetMapping, textLayoutResultProxy.getValue(), new Function1<Matrix, Unit>() { // from class: androidx.compose.foundation.text.TextFieldDelegate$Companion$updateTextLayoutResult$1$1$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Matrix matrix) {
-                    m1361invoke58bKbWc(matrix.m4814unboximpl());
+                    m1361invoke58bKbWc(matrix.m5544unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-58bKbWc  reason: not valid java name */
                 public final void m1361invoke58bKbWc(float[] fArr) {
                     if (LayoutCoordinates.this.isAttached()) {
-                        LayoutCoordinatesKt.findRootCoordinates(LayoutCoordinates.this).mo5982transformFromEL8BTi8(LayoutCoordinates.this, fArr);
+                        LayoutCoordinatesKt.findRootCoordinates(LayoutCoordinates.this).mo6712transformFromEL8BTi8(LayoutCoordinates.this, fArr);
                     }
                 }
             }, SelectionManagerKt.visibleBounds(innerTextFieldCoordinates), innerTextFieldCoordinates.localBoundingBoxOf(decorationBoxCoordinates, false));
@@ -163,7 +163,7 @@ public final class TextFieldDelegate {
         @JvmStatic
         /* renamed from: setCursorOffset-ULxng0E$foundation_release  reason: not valid java name */
         public final void m1360setCursorOffsetULxng0E$foundation_release(long j, TextLayoutResultProxy textLayoutResultProxy, EditProcessor editProcessor, OffsetMapping offsetMapping, Function1<? super TextFieldValue, Unit> function1) {
-            function1.invoke(TextFieldValue.m6972copy3r_uNRQ$default(editProcessor.toTextFieldValue(), (AnnotatedString) null, TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(textLayoutResultProxy, j, false, 2, null))), (TextRange) null, 5, (Object) null));
+            function1.invoke(TextFieldValue.m7703copy3r_uNRQ$default(editProcessor.toTextFieldValue(), (AnnotatedString) null, TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(textLayoutResultProxy, j, false, 2, null))), (TextRange) null, 5, (Object) null));
         }
 
         /* JADX WARN: Type inference failed for: r3v1, types: [T, androidx.compose.ui.text.input.TextInputSession] */
@@ -194,14 +194,14 @@ public final class TextFieldDelegate {
 
         @JvmStatic
         public final void onBlur$foundation_release(TextInputSession textInputSession, EditProcessor editProcessor, Function1<? super TextFieldValue, Unit> function1) {
-            function1.invoke(TextFieldValue.m6972copy3r_uNRQ$default(editProcessor.toTextFieldValue(), (AnnotatedString) null, 0L, (TextRange) null, 3, (Object) null));
+            function1.invoke(TextFieldValue.m7703copy3r_uNRQ$default(editProcessor.toTextFieldValue(), (AnnotatedString) null, 0L, (TextRange) null, 3, (Object) null));
             textInputSession.dispose();
         }
 
         /* renamed from: applyCompositionDecoration-72CqOWE  reason: not valid java name */
         public final TransformedText m1357applyCompositionDecoration72CqOWE(long j, TransformedText transformedText) {
-            int originalToTransformed = transformedText.getOffsetMapping().originalToTransformed(TextRange.m6726getStartimpl(j));
-            int originalToTransformed2 = transformedText.getOffsetMapping().originalToTransformed(TextRange.m6721getEndimpl(j));
+            int originalToTransformed = transformedText.getOffsetMapping().originalToTransformed(TextRange.m7457getStartimpl(j));
+            int originalToTransformed2 = transformedText.getOffsetMapping().originalToTransformed(TextRange.m7452getEndimpl(j));
             int min = Math.min(originalToTransformed, originalToTransformed2);
             int max = Math.max(originalToTransformed, originalToTransformed2);
             AnnotatedString.Builder builder = new AnnotatedString.Builder(transformedText.getText());

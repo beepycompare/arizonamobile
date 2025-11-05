@@ -57,13 +57,13 @@ public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScop
         }
         if (obj instanceof BoxWithConstraintsScopeImpl) {
             BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl = (BoxWithConstraintsScopeImpl) obj;
-            return Intrinsics.areEqual(this.density, boxWithConstraintsScopeImpl.density) && Constraints.m7210equalsimpl0(this.constraints, boxWithConstraintsScopeImpl.constraints);
+            return Intrinsics.areEqual(this.density, boxWithConstraintsScopeImpl.density) && Constraints.m7941equalsimpl0(this.constraints, boxWithConstraintsScopeImpl.constraints);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.density.hashCode() * 31) + Constraints.m7220hashCodeimpl(this.constraints);
+        return (this.density.hashCode() * 31) + Constraints.m7951hashCodeimpl(this.constraints);
     }
 
     @Override // androidx.compose.foundation.layout.BoxScope
@@ -72,7 +72,7 @@ public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScop
     }
 
     public String toString() {
-        return "BoxWithConstraintsScopeImpl(density=" + this.density + ", constraints=" + ((Object) Constraints.m7222toStringimpl(this.constraints)) + ')';
+        return "BoxWithConstraintsScopeImpl(density=" + this.density + ", constraints=" + ((Object) Constraints.m7953toStringimpl(this.constraints)) + ')';
     }
 
     private BoxWithConstraintsScopeImpl(Density density, long j) {
@@ -90,24 +90,24 @@ public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScop
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getMinWidth-D9Ej5fM */
     public float mo732getMinWidthD9Ej5fM() {
-        return this.density.mo426toDpu2uoSUM(Constraints.m7219getMinWidthimpl(mo728getConstraintsmsEJaDk()));
+        return this.density.mo426toDpu2uoSUM(Constraints.m7950getMinWidthimpl(mo728getConstraintsmsEJaDk()));
     }
 
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getMaxWidth-D9Ej5fM */
     public float mo730getMaxWidthD9Ej5fM() {
-        return Constraints.m7213getHasBoundedWidthimpl(mo728getConstraintsmsEJaDk()) ? this.density.mo426toDpu2uoSUM(Constraints.m7217getMaxWidthimpl(mo728getConstraintsmsEJaDk())) : Dp.Companion.m7283getInfinityD9Ej5fM();
+        return Constraints.m7944getHasBoundedWidthimpl(mo728getConstraintsmsEJaDk()) ? this.density.mo426toDpu2uoSUM(Constraints.m7948getMaxWidthimpl(mo728getConstraintsmsEJaDk())) : Dp.Companion.m8014getInfinityD9Ej5fM();
     }
 
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getMinHeight-D9Ej5fM */
     public float mo731getMinHeightD9Ej5fM() {
-        return this.density.mo426toDpu2uoSUM(Constraints.m7218getMinHeightimpl(mo728getConstraintsmsEJaDk()));
+        return this.density.mo426toDpu2uoSUM(Constraints.m7949getMinHeightimpl(mo728getConstraintsmsEJaDk()));
     }
 
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getMaxHeight-D9Ej5fM */
     public float mo729getMaxHeightD9Ej5fM() {
-        return Constraints.m7212getHasBoundedHeightimpl(mo728getConstraintsmsEJaDk()) ? this.density.mo426toDpu2uoSUM(Constraints.m7216getMaxHeightimpl(mo728getConstraintsmsEJaDk())) : Dp.Companion.m7283getInfinityD9Ej5fM();
+        return Constraints.m7943getHasBoundedHeightimpl(mo728getConstraintsmsEJaDk()) ? this.density.mo426toDpu2uoSUM(Constraints.m7947getMaxHeightimpl(mo728getConstraintsmsEJaDk())) : Dp.Companion.m8014getInfinityD9Ej5fM();
     }
 }

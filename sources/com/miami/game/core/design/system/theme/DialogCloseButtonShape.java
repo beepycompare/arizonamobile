@@ -7,7 +7,6 @@ import androidx.compose.ui.graphics.Shape;
 import androidx.compose.ui.graphics.vector.PathParser;
 import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.LayoutDirection;
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Shape.kt */
@@ -22,9 +21,9 @@ public final class DialogCloseButtonShape implements Shape {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M153.1,94.82L155.77,22.82C156.24,10.35,146.26,0,133.79,0H25.12C13.29,0,3.58,9.36,3.14,21.18L0.47,93.18C0,105.65,9.98,116,22.45,116H131.12C142.95,116,152.66,106.64,153.1,94.82Z"), null, 1, null);
-        float[] m4791constructorimpl$default = Matrix.m4791constructorimpl$default(null, 1, null);
-        Matrix.m4807scaleimpl$default(m4791constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 157, Float.intBitsToFloat((int) (j & 4294967295L)) / ((float) AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID), 0.0f, 4, null);
-        path$default.mo4441transform58bKbWc(m4791constructorimpl$default);
+        float[] m5521constructorimpl$default = Matrix.m5521constructorimpl$default(null, 1, null);
+        Matrix.m5537scaleimpl$default(m5521constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 157, Float.intBitsToFloat((int) (j & 4294967295L)) / 116, 0.0f, 4, null);
+        path$default.mo5171transform58bKbWc(m5521constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

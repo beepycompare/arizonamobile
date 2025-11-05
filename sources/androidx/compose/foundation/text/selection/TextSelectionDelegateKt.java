@@ -12,9 +12,9 @@ public final class TextSelectionDelegateKt {
     public static final long getSelectionHandleCoordinates(TextLayoutResult textLayoutResult, int i, boolean z, boolean z2) {
         int lineForOffset = textLayoutResult.getLineForOffset(i);
         if (lineForOffset >= textLayoutResult.getLineCount()) {
-            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(RangesKt.coerceIn(getHorizontalPosition(textLayoutResult, i, z, z2), 0.0f, (int) (textLayoutResult.m6697getSizeYbymL2g() >> 32))) << 32) | (Float.floatToRawIntBits(RangesKt.coerceIn(textLayoutResult.getLineBottom(lineForOffset), 0.0f, (int) (textLayoutResult.m6697getSizeYbymL2g() & 4294967295L))) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(RangesKt.coerceIn(getHorizontalPosition(textLayoutResult, i, z, z2), 0.0f, (int) (textLayoutResult.m7428getSizeYbymL2g() >> 32))) << 32) | (Float.floatToRawIntBits(RangesKt.coerceIn(textLayoutResult.getLineBottom(lineForOffset), 0.0f, (int) (textLayoutResult.m7428getSizeYbymL2g() & 4294967295L))) & 4294967295L));
     }
 
     public static final float getHorizontalPosition(TextLayoutResult textLayoutResult, int i, boolean z, boolean z2) {

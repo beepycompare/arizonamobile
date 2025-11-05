@@ -289,7 +289,7 @@ public final class NavInflater {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m8262constructorimpl(bundleOf);
+        SavedStateWriter.m8992constructorimpl(bundleOf);
         int depth2 = xmlResourceParser.getDepth() + 1;
         while (true) {
             int next = xmlResourceParser.next();
@@ -299,7 +299,7 @@ public final class NavInflater {
                 inflateArgumentForBundle(resources, bundleOf, attributeSet, i);
             }
         }
-        if (!SavedStateReader.m8254isEmptyimpl(SavedStateReader.m8176constructorimpl(bundleOf))) {
+        if (!SavedStateReader.m8984isEmptyimpl(SavedStateReader.m8906constructorimpl(bundleOf))) {
             navAction.setDefaultArguments(bundleOf);
         }
         navDestination.putAction(resourceId, navAction);

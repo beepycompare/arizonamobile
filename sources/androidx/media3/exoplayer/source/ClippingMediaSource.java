@@ -14,7 +14,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.ArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ClippingMediaSource extends WrappingMediaSource {
     private final boolean allowDynamicClippingUpdates;
     private final boolean allowUnseekableMedia;
@@ -29,7 +29,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
     private final long startUs;
     private final Timeline.Window window;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private boolean allowDynamicClippingUpdates;
         private boolean allowUnseekableMedia;
@@ -95,7 +95,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class IllegalClippingException extends IOException {
         public static final int REASON_INVALID_PERIOD_COUNT = 0;
         public static final int REASON_NOT_SEEKABLE_TO_START = 1;
@@ -105,7 +105,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         @Target({ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public @interface Reason {
         }
 
@@ -246,7 +246,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ClippingTimeline extends ForwardingTimeline {
         private final long durationUs;
         private final long endUs;

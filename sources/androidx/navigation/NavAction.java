@@ -63,7 +63,7 @@ public final class NavAction {
                 if (Intrinsics.areEqual(bundle, bundle2)) {
                     return true;
                 }
-                return (bundle == null || bundle2 == null || !SavedStateReader.m8178contentDeepEqualsimpl(SavedStateReader.m8176constructorimpl(bundle), bundle2)) ? false : true;
+                return (bundle == null || bundle2 == null || !SavedStateReader.m8908contentDeepEqualsimpl(SavedStateReader.m8906constructorimpl(bundle), bundle2)) ? false : true;
             }
             return false;
         }
@@ -75,7 +75,7 @@ public final class NavAction {
         NavOptions navOptions = this.navOptions;
         int hashCode2 = hashCode + (navOptions != null ? navOptions.hashCode() : 0);
         Bundle bundle = this.defaultArguments;
-        return bundle != null ? (hashCode2 * 31) + SavedStateReader.m8179contentDeepHashCodeimpl(SavedStateReader.m8176constructorimpl(bundle)) : hashCode2;
+        return bundle != null ? (hashCode2 * 31) + SavedStateReader.m8909contentDeepHashCodeimpl(SavedStateReader.m8906constructorimpl(bundle)) : hashCode2;
     }
 
     public String toString() {

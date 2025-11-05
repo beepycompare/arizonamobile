@@ -57,17 +57,17 @@ public final class Scale {
         }
         if (obj instanceof Scale) {
             Scale scale = (Scale) obj;
-            return Float.compare(this.scale, scale.scale) == 0 && TransformOrigin.m4951equalsimpl0(this.transformOrigin, scale.transformOrigin) && Intrinsics.areEqual(this.animationSpec, scale.animationSpec);
+            return Float.compare(this.scale, scale.scale) == 0 && TransformOrigin.m5681equalsimpl0(this.transformOrigin, scale.transformOrigin) && Intrinsics.areEqual(this.animationSpec, scale.animationSpec);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Float.hashCode(this.scale) * 31) + TransformOrigin.m4954hashCodeimpl(this.transformOrigin)) * 31) + this.animationSpec.hashCode();
+        return (((Float.hashCode(this.scale) * 31) + TransformOrigin.m5684hashCodeimpl(this.transformOrigin)) * 31) + this.animationSpec.hashCode();
     }
 
     public String toString() {
-        return "Scale(scale=" + this.scale + ", transformOrigin=" + ((Object) TransformOrigin.m4955toStringimpl(this.transformOrigin)) + ", animationSpec=" + this.animationSpec + ')';
+        return "Scale(scale=" + this.scale + ", transformOrigin=" + ((Object) TransformOrigin.m5685toStringimpl(this.transformOrigin)) + ", animationSpec=" + this.animationSpec + ')';
     }
 
     private Scale(float f, long j, FiniteAnimationSpec<Float> finiteAnimationSpec) {

@@ -4,7 +4,7 @@ import androidx.media3.exoplayer.upstream.SlidingPercentile;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class SlidingPercentile {
     private static final int MAX_RECYCLED_SAMPLES = 5;
     private static final int SORT_ORDER_BY_INDEX = 1;
@@ -124,7 +124,7 @@ public class SlidingPercentile {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Sample {
         public int index;
         public float value;

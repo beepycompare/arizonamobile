@@ -1,54 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import kotlin.jvm.internal.DefaultConstructorMarker;
-/* loaded from: classes4.dex */
-public final class C7 implements Converter {
+import java.util.HashMap;
+/* loaded from: classes3.dex */
+public final class C7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B7 f385a;
+    public final HashMap f423a;
 
     public C7() {
-        this(null, 1, null);
-    }
-
-    public final byte[] a(D7 d7) {
-        return MessageNano.toByteArray(this.f385a.fromModel(d7));
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object fromModel(Object obj) {
-        return MessageNano.toByteArray(this.f385a.fromModel((D7) obj));
-    }
-
-    public C7(B7 b7) {
-        this.f385a = b7;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x000d, code lost:
-        if (r2 == null) goto L2;
-     */
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final D7 toModel(byte[] bArr) {
-        M7 m7;
-        if (bArr != null) {
-            try {
-                m7 = (M7) MessageNano.mergeFrom(new M7(), bArr);
-            } catch (InvalidProtocolBufferNanoException unused) {
-                m7 = new M7();
-            }
-        }
-        m7 = new M7();
-        return this.f385a.toModel(m7);
-    }
-
-    public /* synthetic */ C7(B7 b7, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new B7(null, null, 3, null) : b7);
+        HashMap hashMap = new HashMap();
+        this.f423a = hashMap;
+        hashMap.put("events", AbstractC0740z5.f1225a);
+        hashMap.put("sessions", B5.f407a);
+        hashMap.put("preferences", A5.f390a);
+        hashMap.put("binary_data", AbstractC0715y5.f1209a);
     }
 }

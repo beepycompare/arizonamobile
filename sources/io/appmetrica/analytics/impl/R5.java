@@ -1,10 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
-/* loaded from: classes4.dex */
-public abstract class R5 {
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder;
+/* loaded from: classes3.dex */
+public final class R5 implements Q5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List f651a = CollectionUtils.createSortedListWithoutRepetitions("id", "session_id", "session_type", "number_in_session", "type", "global_number", "time", "event_description");
+    public final C0491p5 f660a;
+
+    public R5(C0491p5 c0491p5) {
+        this.f660a = c0491p5;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Q5, io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
+    public final C0491p5 getAdRevenueProcessorsHolder() {
+        return this.f660a;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
+    public final ModuleAdRevenueProcessorsHolder getAdRevenueProcessorsHolder() {
+        return this.f660a;
+    }
 }

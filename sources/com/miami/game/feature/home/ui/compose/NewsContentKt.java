@@ -54,8 +54,8 @@ public final class NewsContentKt {
                 ComposerKt.traceEventStart(1833928254, i2, -1, "com.miami.game.feature.home.ui.compose.NewsContent (NewsContent.kt:20)");
             }
             LazyListState rememberLazyListState = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
-            Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(8));
-            Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7264constructorimpl(-Dp.m7264constructorimpl(4)), 1, null);
+            Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7995constructorimpl(8));
+            Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7995constructorimpl(-Dp.m7995constructorimpl(4)), 1, null);
             Arrangement.HorizontalOrVertical horizontalOrVertical = m701spacedBy0680j_4;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468470253, "CC(remember):NewsContent.kt#9igjgp");
             boolean z = ((i2 & 14) == 4) | ((i2 & 112) == 32);

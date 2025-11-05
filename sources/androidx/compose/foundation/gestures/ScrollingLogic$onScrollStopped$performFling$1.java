@@ -32,18 +32,18 @@ public final class ScrollingLogic$onScrollStopped$performFling$1 extends Suspend
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         ScrollingLogic$onScrollStopped$performFling$1 scrollingLogic$onScrollStopped$performFling$1 = new ScrollingLogic$onScrollStopped$performFling$1(this.this$0, continuation);
-        scrollingLogic$onScrollStopped$performFling$1.J$0 = ((Velocity) obj).m7511unboximpl();
+        scrollingLogic$onScrollStopped$performFling$1.J$0 = ((Velocity) obj).m8242unboximpl();
         return scrollingLogic$onScrollStopped$performFling$1;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Velocity velocity, Continuation<? super Velocity> continuation) {
-        return m596invokesFctU(velocity.m7511unboximpl(), continuation);
+        return m596invokesFctU(velocity.m8242unboximpl(), continuation);
     }
 
     /* renamed from: invoke-sF-c-tU  reason: not valid java name */
     public final Object m596invokesFctU(long j, Continuation<? super Velocity> continuation) {
-        return ((ScrollingLogic$onScrollStopped$performFling$1) create(Velocity.m7493boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+        return ((ScrollingLogic$onScrollStopped$performFling$1) create(Velocity.m8224boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x006f, code lost:
@@ -55,13 +55,13 @@ public final class ScrollingLogic$onScrollStopped$performFling$1 extends Suspend
     */
     public final Object invokeSuspend(Object obj) {
         NestedScrollDispatcher nestedScrollDispatcher;
-        Object m5715dispatchPreFlingQWom1Mo;
+        Object m6445dispatchPreFlingQWom1Mo;
         long j;
-        long m7505minusAH228Gc;
+        long m8236minusAH228Gc;
         Object mo563doFlingAnimationQWom1Mo;
-        long m7511unboximpl;
+        long m8242unboximpl;
         NestedScrollDispatcher nestedScrollDispatcher2;
-        Object m5713dispatchPostFlingRZ2iAVY;
+        Object m6443dispatchPostFlingRZ2iAVY;
         long j2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -71,8 +71,8 @@ public final class ScrollingLogic$onScrollStopped$performFling$1 extends Suspend
             nestedScrollDispatcher = this.this$0.nestedScrollDispatcher;
             this.J$0 = j3;
             this.label = 1;
-            m5715dispatchPreFlingQWom1Mo = nestedScrollDispatcher.m5715dispatchPreFlingQWom1Mo(j3, this);
-            if (m5715dispatchPreFlingQWom1Mo != coroutine_suspended) {
+            m6445dispatchPreFlingQWom1Mo = nestedScrollDispatcher.m6445dispatchPreFlingQWom1Mo(j3, this);
+            if (m6445dispatchPreFlingQWom1Mo != coroutine_suspended) {
                 j = j3;
             }
             return coroutine_suspended;
@@ -82,38 +82,38 @@ public final class ScrollingLogic$onScrollStopped$performFling$1 extends Suspend
                     long j4 = this.J$1;
                     j2 = this.J$0;
                     ResultKt.throwOnFailure(obj);
-                    m7511unboximpl = j4;
-                    m5713dispatchPostFlingRZ2iAVY = obj;
-                    return Velocity.m7493boximpl(Velocity.m7505minusAH228Gc(j2, Velocity.m7505minusAH228Gc(m7511unboximpl, ((Velocity) m5713dispatchPostFlingRZ2iAVY).m7511unboximpl())));
+                    m8242unboximpl = j4;
+                    m6443dispatchPostFlingRZ2iAVY = obj;
+                    return Velocity.m8224boximpl(Velocity.m8236minusAH228Gc(j2, Velocity.m8236minusAH228Gc(m8242unboximpl, ((Velocity) m6443dispatchPostFlingRZ2iAVY).m8242unboximpl())));
                 }
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             long j5 = this.J$1;
             long j6 = this.J$0;
             ResultKt.throwOnFailure(obj);
-            m7505minusAH228Gc = j5;
+            m8236minusAH228Gc = j5;
             j = j6;
             mo563doFlingAnimationQWom1Mo = obj;
-            m7511unboximpl = ((Velocity) mo563doFlingAnimationQWom1Mo).m7511unboximpl();
+            m8242unboximpl = ((Velocity) mo563doFlingAnimationQWom1Mo).m8242unboximpl();
             nestedScrollDispatcher2 = this.this$0.nestedScrollDispatcher;
             this.J$0 = j;
-            this.J$1 = m7511unboximpl;
+            this.J$1 = m8242unboximpl;
             this.label = 3;
-            m5713dispatchPostFlingRZ2iAVY = nestedScrollDispatcher2.m5713dispatchPostFlingRZ2iAVY(Velocity.m7505minusAH228Gc(m7505minusAH228Gc, m7511unboximpl), m7511unboximpl, this);
-            if (m5713dispatchPostFlingRZ2iAVY != coroutine_suspended) {
+            m6443dispatchPostFlingRZ2iAVY = nestedScrollDispatcher2.m6443dispatchPostFlingRZ2iAVY(Velocity.m8236minusAH228Gc(m8236minusAH228Gc, m8242unboximpl), m8242unboximpl, this);
+            if (m6443dispatchPostFlingRZ2iAVY != coroutine_suspended) {
                 j2 = j;
-                return Velocity.m7493boximpl(Velocity.m7505minusAH228Gc(j2, Velocity.m7505minusAH228Gc(m7511unboximpl, ((Velocity) m5713dispatchPostFlingRZ2iAVY).m7511unboximpl())));
+                return Velocity.m8224boximpl(Velocity.m8236minusAH228Gc(j2, Velocity.m8236minusAH228Gc(m8242unboximpl, ((Velocity) m6443dispatchPostFlingRZ2iAVY).m8242unboximpl())));
             }
             return coroutine_suspended;
         } else {
             j = this.J$0;
             ResultKt.throwOnFailure(obj);
-            m5715dispatchPreFlingQWom1Mo = obj;
+            m6445dispatchPreFlingQWom1Mo = obj;
         }
-        m7505minusAH228Gc = Velocity.m7505minusAH228Gc(j, ((Velocity) m5715dispatchPreFlingQWom1Mo).m7511unboximpl());
+        m8236minusAH228Gc = Velocity.m8236minusAH228Gc(j, ((Velocity) m6445dispatchPreFlingQWom1Mo).m8242unboximpl());
         this.J$0 = j;
-        this.J$1 = m7505minusAH228Gc;
+        this.J$1 = m8236minusAH228Gc;
         this.label = 2;
-        mo563doFlingAnimationQWom1Mo = this.this$0.mo563doFlingAnimationQWom1Mo(m7505minusAH228Gc, this);
+        mo563doFlingAnimationQWom1Mo = this.this$0.mo563doFlingAnimationQWom1Mo(m8236minusAH228Gc, this);
     }
 }

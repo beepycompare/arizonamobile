@@ -1,155 +1,99 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-/* loaded from: classes4.dex */
-public final class G9 extends MessageNano {
-    public static final int d = 0;
-    public static final int e = 1;
-    public static final int f = 2;
-    public static final int g = 3;
-    public static final int h = 4;
-    public static final int i = 5;
-    public static final int j = 6;
-    public static final int k = 7;
-    public static final int l = 8;
-    public static final int m = 9;
-    public static final int n = 10;
-    public static final int o = 11;
-    public static final int p = 12;
-    public static volatile G9[] q;
+import android.os.Handler;
+import android.os.Looper;
+import com.google.android.vending.expansion.downloader.Constants;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+/* loaded from: classes3.dex */
+public final class G9 implements IHandlerExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f459a;
-    public F9 b;
-    public E9[] c;
+    public final Looper f488a;
+    public final Handler b;
+    public final HandlerThreadC0345jb c;
 
-    public G9() {
-        a();
+    public G9(String str) {
+        this(a(str));
     }
 
-    public static G9[] b() {
-        if (q == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (q == null) {
-                    q = new G9[0];
-                }
-            }
+    public static HandlerThreadC0345jb a(String str) {
+        HandlerThreadC0345jb handlerThreadC0345jb = new HandlerThreadC0345jb(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Gd.f490a.incrementAndGet());
+        handlerThreadC0345jb.start();
+        return handlerThreadC0345jb;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor, java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.b.post(runnable);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
+    public final void executeDelayed(Runnable runnable, long j) {
+        this.b.postDelayed(runnable, TimeUnit.MILLISECONDS.toMillis(j));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
+    public final Handler getHandler() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
+    public final Looper getLooper() {
+        return this.f488a;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
+    public final boolean isRunning() {
+        boolean z;
+        HandlerThreadC0345jb handlerThreadC0345jb = this.c;
+        synchronized (handlerThreadC0345jb) {
+            z = handlerThreadC0345jb.f951a;
         }
-        return q;
+        return z;
     }
 
-    public final G9 a() {
-        this.f459a = 0L;
-        this.b = null;
-        this.c = E9.b();
-        this.cachedSize = -1;
-        return this;
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
+    public final void remove(Runnable runnable) {
+        this.b.removeCallbacks(runnable);
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeUInt64Size = CodedOutputByteBufferNano.computeUInt64Size(1, this.f459a) + super.computeSerializedSize();
-        F9 f9 = this.b;
-        if (f9 != null) {
-            computeUInt64Size += CodedOutputByteBufferNano.computeMessageSize(2, f9);
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
+    public final void removeAll() {
+        this.b.removeCallbacksAndMessages(null);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
+    public final void stopRunning() {
+        HandlerThreadC0345jb handlerThreadC0345jb = this.c;
+        synchronized (handlerThreadC0345jb) {
+            handlerThreadC0345jb.f951a = false;
+            handlerThreadC0345jb.interrupt();
         }
-        E9[] e9Arr = this.c;
-        if (e9Arr != null && e9Arr.length > 0) {
-            int i2 = 0;
-            while (true) {
-                E9[] e9Arr2 = this.c;
-                if (i2 >= e9Arr2.length) {
-                    break;
-                }
-                E9 e9 = e9Arr2[i2];
-                if (e9 != null) {
-                    computeUInt64Size = CodedOutputByteBufferNano.computeMessageSize(3, e9) + computeUInt64Size;
-                }
-                i2++;
-            }
-        }
-        return computeUInt64Size;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeUInt64(1, this.f459a);
-        F9 f9 = this.b;
-        if (f9 != null) {
-            codedOutputByteBufferNano.writeMessage(2, f9);
-        }
-        E9[] e9Arr = this.c;
-        if (e9Arr != null && e9Arr.length > 0) {
-            int i2 = 0;
-            while (true) {
-                E9[] e9Arr2 = this.c;
-                if (i2 >= e9Arr2.length) {
-                    break;
-                }
-                E9 e9 = e9Arr2[i2];
-                if (e9 != null) {
-                    codedOutputByteBufferNano.writeMessage(3, e9);
-                }
-                i2++;
-            }
-        }
-        super.writeTo(codedOutputByteBufferNano);
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
+    public final <T> Future<T> submit(Callable<T> callable) {
+        FutureTask futureTask = new FutureTask(callable);
+        this.b.post(futureTask);
+        return futureTask;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final G9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f459a = codedInputByteBufferNano.readUInt64();
-            } else if (readTag == 18) {
-                if (this.b == null) {
-                    this.b = new F9();
-                }
-                codedInputByteBufferNano.readMessage(this.b);
-            } else if (readTag != 26) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 26);
-                E9[] e9Arr = this.c;
-                int length = e9Arr == null ? 0 : e9Arr.length;
-                int i2 = repeatedFieldArrayLength + length;
-                E9[] e9Arr2 = new E9[i2];
-                if (length != 0) {
-                    System.arraycopy(e9Arr, 0, e9Arr2, 0, length);
-                }
-                while (length < i2 - 1) {
-                    E9 e9 = new E9();
-                    e9Arr2[length] = e9;
-                    codedInputByteBufferNano.readMessage(e9);
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                E9 e92 = new E9();
-                e9Arr2[length] = e92;
-                codedInputByteBufferNano.readMessage(e92);
-                this.c = e9Arr2;
-            }
-        }
-        return this;
+    public G9(HandlerThreadC0345jb handlerThreadC0345jb) {
+        this(handlerThreadC0345jb, handlerThreadC0345jb.getLooper(), new Handler(handlerThreadC0345jb.getLooper()));
     }
 
-    public static G9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new G9().mergeFrom(codedInputByteBufferNano);
+    public G9(HandlerThreadC0345jb handlerThreadC0345jb, Looper looper, Handler handler) {
+        this.c = handlerThreadC0345jb;
+        this.f488a = looper;
+        this.b = handler;
     }
 
-    public static G9 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (G9) MessageNano.mergeFrom(new G9(), bArr);
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
+    public final void executeDelayed(Runnable runnable, long j, TimeUnit timeUnit) {
+        this.b.postDelayed(runnable, timeUnit.toMillis(j));
     }
 }

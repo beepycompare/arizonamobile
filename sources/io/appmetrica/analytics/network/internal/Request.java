@@ -6,26 +6,26 @@ import io.appmetrica.analytics.network.impl.e;
 import java.util.HashMap;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Request {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1246a;
+    private final String f1287a;
     private final String b;
     private final byte[] c;
     private final Map d;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f1247a;
+        private final String f1288a;
         private String b;
         private byte[] c = new byte[0];
         private final HashMap d = new HashMap();
 
         public Builder(String str) {
-            this.f1247a = str;
+            this.f1288a = str;
         }
 
         public Builder addHeader(String str, String str2) {
@@ -34,7 +34,7 @@ public class Request {
         }
 
         public Request build() {
-            return new Request(this.f1247a, this.b, this.c, this.d, 0);
+            return new Request(this.f1288a, this.b, this.c, this.d, 0);
         }
 
         public Builder post(byte[] bArr) {
@@ -65,15 +65,15 @@ public class Request {
     }
 
     public String getUrl() {
-        return this.f1246a;
+        return this.f1287a;
     }
 
     public String toString() {
-        return "Request{url=" + this.f1246a + ", method='" + this.b + "', bodyLength=" + this.c.length + ", headers=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "Request{url=" + this.f1287a + ", method='" + this.b + "', bodyLength=" + this.c.length + ", headers=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
     private Request(String str, String str2, byte[] bArr, HashMap hashMap) {
-        this.f1246a = str;
+        this.f1287a = str;
         this.b = TextUtils.isEmpty(str2) ? UtilsKt.HTTP_METHOD_GET : str2;
         this.c = bArr;
         this.d = e.a(hashMap);

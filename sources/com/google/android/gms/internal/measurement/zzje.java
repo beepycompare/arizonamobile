@@ -2,7 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzje extends zzmf implements zznn {
     private static final zzje zzj;
     private int zzb;

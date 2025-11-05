@@ -2,7 +2,7 @@ package androidx.media3.extractor;
 
 import java.io.IOException;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ForwardingExtractor implements Extractor {
     private final Extractor delegate;
 

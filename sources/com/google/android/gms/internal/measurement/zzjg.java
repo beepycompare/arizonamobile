@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import android.net.Uri;
 import java.util.regex.Pattern;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzjg {
     public static final Uri zza = Uri.parse("content://com.google.android.gsf.gservices");
     public static final Uri zzb = Uri.parse("content://com.google.android.gsf.gservices/prefix");

@@ -71,14 +71,14 @@ public final class TextFieldSelectionManager$maybeSuggestSelection$1 extends Sus
         TextRange textRange = (TextRange) obj;
         if (textRange != null) {
             OffsetMapping offsetMapping = this.$offsetMapping;
-            long m6730unboximpl = textRange.m6730unboximpl();
-            long TextRange = TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextRange.m6726getStartimpl(m6730unboximpl)), offsetMapping.transformedToOriginal(TextRange.m6721getEndimpl(m6730unboximpl)));
-            if (!TextRange.m6718equalsimpl(TextRange, this.$selection) && Intrinsics.areEqual(this.this$0.getValue$foundation_release().getText(), this.$text) && this.$offsetMapping == this.this$0.getOffsetMapping$foundation_release()) {
+            long m7461unboximpl = textRange.m7461unboximpl();
+            long TextRange = TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextRange.m7457getStartimpl(m7461unboximpl)), offsetMapping.transformedToOriginal(TextRange.m7452getEndimpl(m7461unboximpl)));
+            if (!TextRange.m7449equalsimpl(TextRange, this.$selection) && Intrinsics.areEqual(this.this$0.getValue$foundation_release().getText(), this.$text) && this.$offsetMapping == this.this$0.getOffsetMapping$foundation_release()) {
                 Function1<TextFieldValue, Unit> onValueChange$foundation_release = this.this$0.getOnValueChange$foundation_release();
                 TextFieldSelectionManager textFieldSelectionManager = this.this$0;
                 m1825createTextFieldValueFDrldGo = textFieldSelectionManager.m1825createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation_release().getAnnotatedString(), TextRange);
                 onValueChange$foundation_release.invoke(m1825createTextFieldValueFDrldGo);
-                this.this$0.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m6714boximpl(TextRange));
+                this.this$0.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m7445boximpl(TextRange));
             }
             return Unit.INSTANCE;
         }

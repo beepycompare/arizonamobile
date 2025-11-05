@@ -6,13 +6,13 @@ import io.appmetrica.analytics.identifiers.impl.a;
 import io.appmetrica.analytics.identifiers.impl.b;
 import io.appmetrica.analytics.identifiers.impl.c;
 import io.appmetrica.analytics.identifiers.impl.d;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AdvIdentifiersProvider {
     private static final d retriever = new d();
 
     public static Bundle requestIdentifiers(Context context, Bundle bundle) {
         c a2;
-        b bVar = (b) retriever.f329a.get(bundle.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
+        b bVar = (b) retriever.f345a.get(bundle.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
         if (bVar == null || (a2 = bVar.a(context)) == null) {
             return null;
         }
@@ -20,7 +20,7 @@ public class AdvIdentifiersProvider {
         a aVar = a2.b;
         if (aVar != null) {
             Bundle bundle3 = new Bundle();
-            bundle3.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", aVar.f327a);
+            bundle3.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", aVar.f343a);
             bundle3.putString("io.appmetrica.analytics.identifiers.extra.ID", aVar.b);
             Boolean bool = aVar.c;
             if (bool != null) {
@@ -28,7 +28,7 @@ public class AdvIdentifiersProvider {
             }
             bundle2.putBundle("io.appmetrica.analytics.identifiers.extra.TRACKING_INFO", bundle3);
         }
-        bundle2.putString("io.appmetrica.analytics.identifiers.extra.STATUS", a2.f328a.getValue());
+        bundle2.putString("io.appmetrica.analytics.identifiers.extra.STATUS", a2.f344a.getValue());
         bundle2.putString("io.appmetrica.analytics.identifiers.extra.ERROR_MESSAGE", a2.c);
         return bundle2;
     }

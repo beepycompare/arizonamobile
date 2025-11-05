@@ -24,7 +24,7 @@ public final class ComposableSingletons$NotificationsScreentKt {
     public static final ComposableSingletons$NotificationsScreentKt INSTANCE = new ComposableSingletons$NotificationsScreentKt();
 
     /* renamed from: lambda$-556808038  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f77lambda$556808038 = ComposableLambdaKt.composableLambdaInstance(-556808038, false, new Function3() { // from class: com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f62lambda$556808038 = ComposableLambdaKt.composableLambdaInstance(-556808038, false, new Function3() { // from class: com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__556808038$lambda$0;
@@ -34,21 +34,21 @@ public final class ComposableSingletons$NotificationsScreentKt {
     });
 
     /* renamed from: getLambda$-556808038$notifications_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9026getLambda$556808038$notifications_release() {
-        return f77lambda$556808038;
+    public final Function3<BoxScope, Composer, Integer, Unit> m9766getLambda$556808038$notifications_release() {
+        return f62lambda$556808038;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit lambda__556808038$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C135@5180L84,134@5149L290:NotificationsScreent.kt#21zkme");
+        ComposerKt.sourceInformation(composer, "C141@5372L84,140@5341L290:NotificationsScreent.kt#21zkme");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-556808038, i, -1, "com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt.lambda$-556808038.<anonymous> (NotificationsScreent.kt:134)");
+                ComposerKt.traceEventStart(-556808038, i, -1, "com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt.lambda$-556808038.<anonymous> (NotificationsScreent.kt:140)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

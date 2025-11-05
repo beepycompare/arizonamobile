@@ -42,7 +42,7 @@ public abstract class Key {
 
     @Override // 
     /* renamed from: clone */
-    public abstract Key mo7747clone();
+    public abstract Key mo8478clone();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract void getAttributeNames(HashSet<String> hashSet);

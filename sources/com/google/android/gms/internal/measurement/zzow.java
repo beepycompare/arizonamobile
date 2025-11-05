@@ -4,7 +4,7 @@ import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import org.checkerframework.dataflow.qual.SideEffectFree;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzow implements Supplier {
     private static final zzow zza = new zzow();
     private final Supplier zzb = Suppliers.ofInstance(new zzoy());

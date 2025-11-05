@@ -1,97 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import com.google.android.vending.expansion.downloader.Constants;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import java.io.BufferedOutputStream;
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
-/* loaded from: classes4.dex */
+import java.util.ArrayList;
+import java.util.List;
+/* loaded from: classes3.dex */
 public final class M6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Aa f573a;
-    public final E6 b;
-    public final Context c;
-    public final C0757za d;
+    public final List f586a;
+    public final int b;
 
-    public M6(Context context) {
-        this(context, new Aa(), new E6(), C0757za.a(context));
-    }
-
-    /* JADX WARN: Can't wrap try/catch for region: R(6:3|(5:(10:5|(2:7|(1:9)(1:13))|14|15|16|18|19|20|9b|25)(1:34)|18|19|20|9b)|(1:11)|14|15|16) */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x00a6, code lost:
-        r0 = null;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x009c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Rh rh) {
-        boolean mkdir;
-        Vf vf;
-        String str;
-        X9 b;
-        PrintWriter printWriter;
-        C0757za c0757za;
-        File crashesDirectory = FileUtils.getCrashesDirectory(this.c);
-        this.b.getClass();
-        if (crashesDirectory == null) {
-            return;
-        }
-        try {
-            if (crashesDirectory.exists()) {
-                if (!crashesDirectory.isDirectory()) {
-                    if (!crashesDirectory.delete()) {
-                        return;
-                    }
-                    mkdir = crashesDirectory.mkdir();
-                }
-                str = rh.e.f889a.f713a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + vf.f713a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
-                b = this.d.b(str);
-                b.f740a.lock();
-                b.b.a();
-                this.f573a.getClass();
-                printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
-                printWriter.write(new Jb(rh.f658a, rh.e, rh.d).k());
-                ro.a((Closeable) printWriter);
-                b.c();
-                c0757za = this.d;
-                synchronized (c0757za) {
-                    c0757za.b.remove(str);
-                }
-                return;
-            }
-            mkdir = crashesDirectory.mkdir();
-            printWriter.write(new Jb(rh.f658a, rh.e, rh.d).k());
-            ro.a((Closeable) printWriter);
-            b.c();
-            c0757za = this.d;
-            synchronized (c0757za) {
-            }
-        } catch (Throwable unused) {
-            ro.a((Closeable) printWriter);
-            b.c();
-            this.d.a(str);
-            return;
-        }
-        if (!mkdir) {
-            return;
-        }
-        str = rh.e.f889a.f713a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + vf.f713a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
-        b = this.d.b(str);
-        b.f740a.lock();
-        b.b.a();
-        this.f573a.getClass();
-        printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
-    }
-
-    public M6(Context context, Aa aa, E6 e6, C0757za c0757za) {
-        this.c = context;
-        this.f573a = aa;
-        this.b = e6;
-        this.d = c0757za;
+    public M6(ArrayList arrayList, int i) {
+        this.f586a = arrayList;
+        this.b = i;
     }
 }

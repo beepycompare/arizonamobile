@@ -1,5 +1,5 @@
 package io.reactivex.internal.fuseable;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface SimplePlainQueue<T> extends SimpleQueue<T> {
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     T poll();

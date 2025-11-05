@@ -12,7 +12,7 @@ import androidx.media3.exoplayer.trackselection.TrackSelectionUtil;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
 import java.util.List;
 import java.util.Random;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class RandomTrackSelection extends BaseTrackSelection {
     private final Random random;
     private int selectedIndex;
@@ -27,7 +27,7 @@ public final class RandomTrackSelection extends BaseTrackSelection {
         return 3;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory implements ExoTrackSelection.Factory {
         private final Random random;
 
@@ -44,14 +44,14 @@ public final class RandomTrackSelection extends BaseTrackSelection {
             return TrackSelectionUtil.createTrackSelectionsForDefinitions(definitionArr, new TrackSelectionUtil.AdaptiveTrackSelectionFactory() { // from class: androidx.media3.exoplayer.trackselection.RandomTrackSelection$Factory$$ExternalSyntheticLambda0
                 @Override // androidx.media3.exoplayer.trackselection.TrackSelectionUtil.AdaptiveTrackSelectionFactory
                 public final ExoTrackSelection createAdaptiveTrackSelection(ExoTrackSelection.Definition definition) {
-                    return RandomTrackSelection.Factory.this.m8033xa167648d(definition);
+                    return RandomTrackSelection.Factory.this.m8764xa167648d(definition);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$createTrackSelections$0$androidx-media3-exoplayer-trackselection-RandomTrackSelection$Factory  reason: not valid java name */
-        public /* synthetic */ ExoTrackSelection m8033xa167648d(ExoTrackSelection.Definition definition) {
+        public /* synthetic */ ExoTrackSelection m8764xa167648d(ExoTrackSelection.Definition definition) {
             return new RandomTrackSelection(definition.group, definition.tracks, definition.type, this.random);
         }
     }

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 /* compiled from: com.google.android.gms:play-services-appset@@16.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zze extends zzb implements zzf {
     public zze() {
         super("com.google.android.gms.appset.internal.IAppSetIdCallback");

@@ -437,7 +437,7 @@ public class Carousel extends MotionHelper {
             this.mMotionLayout.post(new Runnable() { // from class: androidx.constraintlayout.helper.widget.Carousel$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Carousel.this.m7746xc943cdea();
+                    Carousel.this.m8477xc943cdea();
                 }
             });
         } else if (i5 == this.mIndex) {
@@ -464,7 +464,7 @@ public class Carousel extends MotionHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$updateItems$0$androidx-constraintlayout-helper-widget-Carousel  reason: not valid java name */
-    public /* synthetic */ void m7746xc943cdea() {
+    public /* synthetic */ void m8477xc943cdea() {
         this.mMotionLayout.setTransitionDuration(this.mAnimateTargetDelay);
         if (this.mTargetIndex < this.mIndex) {
             this.mMotionLayout.transitionToState(this.mPreviousState, this.mAnimateTargetDelay);

@@ -4,7 +4,7 @@ import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.common.moduleinstall.InstallStatusListener;
 import com.google.android.gms.common.moduleinstall.ModuleInstallStatusUpdate;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zaaa implements ListenerHolder.Notifier {
     final /* synthetic */ ModuleInstallStatusUpdate zaa;
 

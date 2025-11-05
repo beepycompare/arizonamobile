@@ -24,7 +24,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.ArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AviExtractor implements Extractor {
     private static final int AVIIF_KEYFRAME = 16;
     public static final int FLAG_EMIT_RAW_SUBTITLE_DATA = 1;
@@ -72,7 +72,7 @@ public final class AviExtractor implements Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 
@@ -406,7 +406,7 @@ public final class AviExtractor implements Extractor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class AviSeekMap implements SeekMap {
         private final long durationUs;
 
@@ -437,7 +437,7 @@ public final class AviExtractor implements Extractor {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static class ChunkHeaderHolder {
         public int chunkType;
         public int listType;

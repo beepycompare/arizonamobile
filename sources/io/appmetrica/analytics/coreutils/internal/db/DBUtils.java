@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import io.appmetrica.analytics.coreutils.internal.io.CloseableUtilsKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DBUtils {
     public static void cursorRowToContentValues(Cursor cursor, ContentValues contentValues) {
         try {

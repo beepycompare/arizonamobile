@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MicStatusElementBinding implements ViewBinding {
     public final AppCompatImageView micStatusButton;
     public final FrameLayout micStatusLayout;

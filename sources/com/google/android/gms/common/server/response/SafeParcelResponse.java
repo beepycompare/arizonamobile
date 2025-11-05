@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Set;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SafeParcelResponse extends FastSafeParcelableJsonResponse {
     public static final Parcelable.Creator<SafeParcelResponse> CREATOR = new zaq();
     private final int zaa;

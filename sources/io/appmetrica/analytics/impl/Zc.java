@@ -1,74 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.Pair;
-import kotlin.TuplesKt;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import kotlin.collections.CollectionsKt;
-import kotlin.collections.MapsKt;
-import kotlin.ranges.RangesKt;
-import kotlin.text.Charsets;
-import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Zc {
-    public static final C0120aa a(Zc zc, EnumC0352ja enumC0352ja, Map map) {
-        int i;
-        Object value;
-        zc.getClass();
-        C0120aa c0120aa = new C0120aa();
-        switch (enumC0352ja.ordinal()) {
-            case 0:
-                i = 0;
-                break;
-            case 1:
-                i = 1;
-                break;
-            case 2:
-                i = 2;
-                break;
-            case 3:
-                i = 3;
-                break;
-            case 4:
-                i = 4;
-                break;
-            case 5:
-                i = 5;
-                break;
-            case 6:
-                i = 6;
-                break;
-            default:
-                throw new NoWhenBranchMatchedException();
+
+    /* renamed from: a  reason: collision with root package name */
+    public final ArrayList f784a = new ArrayList();
+
+    public final synchronized List a() {
+        ArrayList arrayList;
+        ArrayList arrayList2 = this.f784a;
+        ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList2, 10));
+        Iterator it = arrayList2.iterator();
+        while (it.hasNext()) {
+            arrayList3.add(((Yc) it.next()).a());
         }
-        c0120aa.f791a = i;
-        C0123ad.b.getClass();
-        Set<Map.Entry> entrySet = map.entrySet();
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(entrySet, 10)), 16));
-        for (Map.Entry entry : entrySet) {
-            Object key = entry.getKey();
-            if (entry.getValue() instanceof Number) {
-                Object value2 = entry.getValue();
-                if (value2 == null) {
-                    throw new NullPointerException("null cannot be cast to non-null type kotlin.Number");
-                }
-                double doubleValue = ((Number) value2).doubleValue();
-                if (Double.isInfinite(doubleValue) || Double.isNaN(doubleValue)) {
-                    value = null;
-                    Pair pair = TuplesKt.to(key, value);
-                    linkedHashMap.put(pair.getFirst(), pair.getSecond());
-                }
+        arrayList = new ArrayList();
+        Iterator it2 = arrayList3.iterator();
+        while (it2.hasNext()) {
+            Object next = it2.next();
+            if (((String) next).length() > 0) {
+                arrayList.add(next);
             }
-            value = entry.getValue();
-            Pair pair2 = TuplesKt.to(key, value);
-            linkedHashMap.put(pair2.getFirst(), pair2.getSecond());
         }
-        String jSONObject = new JSONObject(linkedHashMap).toString();
-        if (jSONObject != null) {
-            c0120aa.b = jSONObject.getBytes(Charsets.UTF_8);
-        }
-        return c0120aa;
+        return CollectionsKt.distinct(arrayList);
+    }
+
+    public final synchronized void a(Yc... ycArr) {
+        CollectionsKt.addAll(this.f784a, ycArr);
     }
 }

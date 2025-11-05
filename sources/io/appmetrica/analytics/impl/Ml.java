@@ -1,25 +1,13 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Ml {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f582a;
-    public final String b;
-    public final Integer c;
-    public final Integer d;
-    public final String e;
-    public final Boolean f;
-
-    public Ml(String str, String str2, Integer num, Integer num2, String str3, Boolean bool) {
-        this.f582a = str;
-        this.b = str2;
-        this.c = num;
-        this.d = num2;
-        this.e = str3;
-        this.f = bool;
+/* loaded from: classes3.dex */
+public final class Ml extends AbstractC0640v5 {
+    public Ml(C0227em c0227em, C0356jm c0356jm, C0202dm c0202dm) {
+        super(c0227em, c0356jm, c0202dm);
     }
 
-    public Ml(StackTraceElement stackTraceElement) {
-        this(stackTraceElement.getClassName(), stackTraceElement.getFileName(), Integer.valueOf(stackTraceElement.getLineNumber()), null, stackTraceElement.getMethodName(), Boolean.valueOf(stackTraceElement.isNativeMethod()));
+    @Override // io.appmetrica.analytics.impl.AbstractC0640v5
+    public final synchronized void a(C0202dm c0202dm) {
+        a(new S5(c(), C0620ua.H.v(), C0620ua.H.s(), ((C0202dm) b()).mergeFrom(c0202dm)));
+        e();
     }
 }

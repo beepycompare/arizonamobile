@@ -1,12 +1,12 @@
 package io.appmetrica.analytics;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0265g0;
-import io.appmetrica.analytics.impl.Kn;
-import io.appmetrica.analytics.impl.L5;
+import io.appmetrica.analytics.impl.C0283h0;
+import io.appmetrica.analytics.impl.C0615u5;
+import io.appmetrica.analytics.impl.Gn;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public class ReporterConfig {
     public final Map<String, Object> additionalConfig;
     public final String apiKey;
@@ -19,12 +19,12 @@ public class ReporterConfig {
     public final Integer sessionTimeout;
     public final String userProfileID;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public static class Builder {
-        private static final Kn l = new Kn(new C0265g0());
+        private static final Gn l = new Gn(new C0283h0());
 
         /* renamed from: a  reason: collision with root package name */
-        private final L5 f204a;
+        private final C0615u5 f189a;
         private final String b;
         private Integer c;
         private Boolean d;
@@ -75,7 +75,7 @@ public class ReporterConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.f = Integer.valueOf(this.f204a.a(i));
+            this.f = Integer.valueOf(this.f189a.a(i));
             return this;
         }
 
@@ -93,7 +93,7 @@ public class ReporterConfig {
             this.j = new HashMap();
             this.k = new HashMap();
             l.a(str);
-            this.f204a = new L5(str);
+            this.f189a = new C0615u5(str);
             this.b = str;
         }
     }

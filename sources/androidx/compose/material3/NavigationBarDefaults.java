@@ -10,25 +10,25 @@ import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import kotlin.Metadata;
 /* compiled from: NavigationBar.kt */
-@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0017\u0010\b\u001a\u00020\t8Gø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\f\u001a\u00020\r8G¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000f\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0010"}, d2 = {"Landroidx/compose/material3/NavigationBarDefaults;", "", "()V", "Elevation", "Landroidx/compose/ui/unit/Dp;", "getElevation-D9Ej5fM", "()F", "F", "containerColor", "Landroidx/compose/ui/graphics/Color;", "getContainerColor", "(Landroidx/compose/runtime/Composer;I)J", "windowInsets", "Landroidx/compose/foundation/layout/WindowInsets;", "getWindowInsets", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/layout/WindowInsets;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\t\u001a\u00020\n8G¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\r\u001a\u00020\u000e8G¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"Landroidx/compose/material3/NavigationBarDefaults;", "", "<init>", "()V", "Elevation", "Landroidx/compose/ui/unit/Dp;", "getElevation-D9Ej5fM", "()F", "F", "containerColor", "Landroidx/compose/ui/graphics/Color;", "getContainerColor", "(Landroidx/compose/runtime/Composer;I)J", "windowInsets", "Landroidx/compose/foundation/layout/WindowInsets;", "getWindowInsets", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/layout/WindowInsets;", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class NavigationBarDefaults {
     public static final int $stable = 0;
     public static final NavigationBarDefaults INSTANCE = new NavigationBarDefaults();
-    private static final float Elevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+    private static final float Elevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
 
     private NavigationBarDefaults() {
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2379getElevationD9Ej5fM() {
+    public final float m2586getElevationD9Ej5fM() {
         return Elevation;
     }
 
     public final long getContainerColor(Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1528098623, "C292@12864L5:NavigationBar.kt#uh7d8r");
+        ComposerKt.sourceInformationMarkerStart(composer, 1528098623, "C(<get-containerColor>)326@14412L5:NavigationBar.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1528098623, i, -1, "androidx.compose.material3.NavigationBarDefaults.<get-containerColor> (NavigationBar.kt:292)");
+            ComposerKt.traceEventStart(1528098623, i, -1, "androidx.compose.material3.NavigationBarDefaults.<get-containerColor> (NavigationBar.kt:326)");
         }
         long value = ColorSchemeKt.getValue(NavigationBarTokens.INSTANCE.getContainerColor(), composer, 6);
         if (ComposerKt.isTraceInProgress()) {
@@ -39,9 +39,9 @@ public final class NavigationBarDefaults {
     }
 
     public final WindowInsets getWindowInsets(Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1938678202, "C298@13042L29:NavigationBar.kt#uh7d8r");
+        ComposerKt.sourceInformationMarkerStart(composer, -1938678202, "C(<get-windowInsets>)332@14590L29:NavigationBar.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1938678202, i, -1, "androidx.compose.material3.NavigationBarDefaults.<get-windowInsets> (NavigationBar.kt:298)");
+            ComposerKt.traceEventStart(-1938678202, i, -1, "androidx.compose.material3.NavigationBarDefaults.<get-windowInsets> (NavigationBar.kt:332)");
         }
         WindowInsets m922onlybOOhFvg = WindowInsetsKt.m922onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m936plusgK_yJZ4(WindowInsetsSides.Companion.m946getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m944getBottomJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {

@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nullable;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ClientSettings {
     @Nullable
     private final Account zaa;
@@ -31,7 +31,7 @@ public final class ClientSettings {
     private Integer zaj;
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         @Nullable
         private Account zaa;

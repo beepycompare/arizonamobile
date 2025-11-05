@@ -11,15 +11,15 @@ public final class TransformedTextFieldStateKt {
         IndexTransformationType indexTransformationType;
         long m1598mapFromTransformedjx7JFs = transformedTextFieldState.m1598mapFromTransformedjx7JFs(i);
         long m1601mapToTransformedGEjPoXI = transformedTextFieldState.m1601mapToTransformedGEjPoXI(m1598mapFromTransformedjx7JFs);
-        if (TextRange.m6720getCollapsedimpl(m1598mapFromTransformedjx7JFs) && TextRange.m6720getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
+        if (TextRange.m7451getCollapsedimpl(m1598mapFromTransformedjx7JFs) && TextRange.m7451getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Untransformed;
-        } else if (!TextRange.m6720getCollapsedimpl(m1598mapFromTransformedjx7JFs) && !TextRange.m6720getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
+        } else if (!TextRange.m7451getCollapsedimpl(m1598mapFromTransformedjx7JFs) && !TextRange.m7451getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Replacement;
-        } else if (TextRange.m6720getCollapsedimpl(m1598mapFromTransformedjx7JFs) && !TextRange.m6720getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
+        } else if (TextRange.m7451getCollapsedimpl(m1598mapFromTransformedjx7JFs) && !TextRange.m7451getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Insertion;
         } else {
             indexTransformationType = IndexTransformationType.Deletion;
         }
-        return function3.invoke(indexTransformationType, TextRange.m6714boximpl(m1598mapFromTransformedjx7JFs), TextRange.m6714boximpl(m1601mapToTransformedGEjPoXI));
+        return function3.invoke(indexTransformationType, TextRange.m7445boximpl(m1598mapFromTransformedjx7JFs), TextRange.m7445boximpl(m1601mapToTransformedGEjPoXI));
     }
 }

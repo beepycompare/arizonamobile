@@ -73,14 +73,14 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
         @DebugMetadata(c = "androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1", f = "AsyncPagingDataDiffer.kt", i = {0, 0, 0, 1, 1}, l = {224, 225, 229}, m = "emit", n = {"this", "it", "$this$loadStateFlow_u24lambda_u242", "it", "$this$loadStateFlow_u24lambda_u242"}, s = {"L$0", "L$1", "L$2", "L$0", "L$1"})
         /* renamed from: androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes3.dex */
-        public static final class C00471 extends ContinuationImpl {
+        public static final class C00351 extends ContinuationImpl {
             Object L$0;
             Object L$1;
             Object L$2;
             int label;
             /* synthetic */ Object result;
 
-            public C00471(Continuation continuation) {
+            public C00351(Continuation continuation) {
                 super(continuation);
             }
 
@@ -110,43 +110,43 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final Object emit(T t, Continuation<? super Unit> continuation) {
-            C00471 c00471;
+            C00351 c00351;
             int i;
             FlowCollector<CombinedLoadStates> flowCollector;
             CombinedLoadStates combinedLoadStates;
             AnonymousClass1<T> anonymousClass1;
             CombinedLoadStates combinedLoadStates2;
             FlowCollector<CombinedLoadStates> flowCollector2;
-            if (continuation instanceof C00471) {
-                c00471 = (C00471) continuation;
-                if ((c00471.label & Integer.MIN_VALUE) != 0) {
-                    c00471.label -= Integer.MIN_VALUE;
-                    Object obj = c00471.result;
+            if (continuation instanceof C00351) {
+                c00351 = (C00351) continuation;
+                if ((c00351.label & Integer.MIN_VALUE) != 0) {
+                    c00351.label -= Integer.MIN_VALUE;
+                    Object obj = c00351.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = c00471.label;
+                    i = c00351.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         flowCollector = this.$$this$flow;
                         combinedLoadStates = (CombinedLoadStates) t;
                         if (this.this$0.getInGetItem$paging_runtime_release().getValue().booleanValue()) {
-                            c00471.L$0 = this;
-                            c00471.L$1 = combinedLoadStates;
-                            c00471.L$2 = flowCollector;
-                            c00471.label = 1;
-                            if (YieldKt.yield(c00471) != coroutine_suspended) {
+                            c00351.L$0 = this;
+                            c00351.L$1 = combinedLoadStates;
+                            c00351.L$2 = flowCollector;
+                            c00351.label = 1;
+                            if (YieldKt.yield(c00351) != coroutine_suspended) {
                                 anonymousClass1 = this;
                                 combinedLoadStates2 = combinedLoadStates;
                                 flowCollector2 = flowCollector;
                             }
                             return coroutine_suspended;
                         }
-                        c00471.L$0 = null;
-                        c00471.L$1 = null;
-                        c00471.label = 3;
+                        c00351.L$0 = null;
+                        c00351.L$1 = null;
+                        c00351.label = 3;
                     } else if (i == 1) {
-                        flowCollector2 = (FlowCollector) c00471.L$2;
-                        combinedLoadStates2 = (CombinedLoadStates) c00471.L$1;
-                        anonymousClass1 = (AnonymousClass1) c00471.L$0;
+                        flowCollector2 = (FlowCollector) c00351.L$2;
+                        combinedLoadStates2 = (CombinedLoadStates) c00351.L$1;
+                        anonymousClass1 = (AnonymousClass1) c00351.L$0;
                         ResultKt.throwOnFailure(obj);
                     } else if (i != 2) {
                         if (i == 3) {
@@ -155,31 +155,31 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        flowCollector2 = (FlowCollector) c00471.L$1;
-                        combinedLoadStates2 = (CombinedLoadStates) c00471.L$0;
+                        flowCollector2 = (FlowCollector) c00351.L$1;
+                        combinedLoadStates2 = (CombinedLoadStates) c00351.L$0;
                         ResultKt.throwOnFailure(obj);
                         flowCollector = flowCollector2;
                         combinedLoadStates = combinedLoadStates2;
-                        c00471.L$0 = null;
-                        c00471.L$1 = null;
-                        c00471.label = 3;
+                        c00351.L$0 = null;
+                        c00351.L$1 = null;
+                        c00351.label = 3;
                     }
-                    c00471.L$0 = combinedLoadStates2;
-                    c00471.L$1 = flowCollector2;
-                    c00471.L$2 = null;
-                    c00471.label = 2;
+                    c00351.L$0 = combinedLoadStates2;
+                    c00351.L$1 = flowCollector2;
+                    c00351.L$2 = null;
+                    c00351.label = 2;
                 }
             }
-            c00471 = new C00471(continuation);
-            Object obj2 = c00471.result;
+            c00351 = new C00351(continuation);
+            Object obj2 = c00351.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            i = c00471.label;
+            i = c00351.label;
             if (i != 0) {
             }
-            c00471.L$0 = combinedLoadStates2;
-            c00471.L$1 = flowCollector2;
-            c00471.L$2 = null;
-            c00471.label = 2;
+            c00351.L$0 = combinedLoadStates2;
+            c00351.L$1 = flowCollector2;
+            c00351.L$2 = null;
+            c00351.label = 2;
         }
     }
 }

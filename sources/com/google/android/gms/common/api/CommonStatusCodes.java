@@ -1,6 +1,6 @@
 package com.google.android.gms.common.api;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class CommonStatusCodes {
     public static final int API_NOT_CONNECTED = 17;
     public static final int CANCELED = 16;
@@ -35,7 +35,10 @@ public class CommonStatusCodes {
             case 11:
             case 12:
             default:
-                return "unknown status code: " + i;
+                StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 21);
+                sb.append("unknown status code: ");
+                sb.append(i);
+                return sb.toString();
             case 2:
                 return "SERVICE_VERSION_UPDATE_REQUIRED";
             case 3:

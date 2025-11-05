@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Random;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
+import okhttp3.internal._UtilCommonKt;
 import okio.Buffer;
 import okio.BufferedSink;
 import okio.ByteString;
@@ -157,14 +158,15 @@ public final class WebSocketWriter implements Closeable {
             }
         }
         this.sinkBuffer.write(this.messageBuffer, size);
-        this.sink.emit();
+        this.sink.flush();
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
         MessageDeflater messageDeflater = this.messageDeflater;
         if (messageDeflater != null) {
-            messageDeflater.close();
+            _UtilCommonKt.closeQuietly(messageDeflater);
         }
+        _UtilCommonKt.closeQuietly(this.sink);
     }
 }

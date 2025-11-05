@@ -63,16 +63,16 @@ final class OffsetElement extends ModifierNodeElement<OffsetNode> {
             return true;
         }
         OffsetElement offsetElement = obj instanceof OffsetElement ? (OffsetElement) obj : null;
-        return offsetElement != null && Dp.m7269equalsimpl0(this.x, offsetElement.x) && Dp.m7269equalsimpl0(this.y, offsetElement.y) && this.rtlAware == offsetElement.rtlAware;
+        return offsetElement != null && Dp.m8000equalsimpl0(this.x, offsetElement.x) && Dp.m8000equalsimpl0(this.y, offsetElement.y) && this.rtlAware == offsetElement.rtlAware;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((Dp.m7270hashCodeimpl(this.x) * 31) + Dp.m7270hashCodeimpl(this.y)) * 31) + Boolean.hashCode(this.rtlAware);
+        return (((Dp.m8001hashCodeimpl(this.x) * 31) + Dp.m8001hashCodeimpl(this.y)) * 31) + Boolean.hashCode(this.rtlAware);
     }
 
     public String toString() {
-        return "OffsetModifierElement(x=" + ((Object) Dp.m7275toStringimpl(this.x)) + ", y=" + ((Object) Dp.m7275toStringimpl(this.y)) + ", rtlAware=" + this.rtlAware + ')';
+        return "OffsetModifierElement(x=" + ((Object) Dp.m8006toStringimpl(this.x)) + ", y=" + ((Object) Dp.m8006toStringimpl(this.y)) + ", rtlAware=" + this.rtlAware + ')';
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement

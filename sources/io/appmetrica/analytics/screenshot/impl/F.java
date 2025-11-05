@@ -2,25 +2,31 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class F implements Parcelable {
     public static final E CREATOR = new E();
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1295a;
-    public final long b;
+    public final C0783z f1336a;
+    public final H b;
+    public final B c;
 
-    public F(boolean z, long j) {
-        this.f1295a = z;
-        this.b = j;
+    public F(C0783z c0783z, H h, B b) {
+        this.f1336a = c0783z;
+        this.b = h;
+        this.c = b;
     }
 
-    public final long a() {
+    public final C0783z a() {
+        return this.f1336a;
+    }
+
+    public final B b() {
+        return this.c;
+    }
+
+    public final H c() {
         return this.b;
-    }
-
-    public final boolean b() {
-        return this.f1295a;
     }
 
     @Override // android.os.Parcelable
@@ -29,16 +35,26 @@ public final class F implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableServiceCaptorConfig(enabled=" + this.f1295a + ", delaySeconds=" + this.b + ')';
+        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1336a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeByte(this.f1295a ? (byte) 1 : (byte) 0);
-        parcel.writeLong(this.b);
+        parcel.writeParcelable(this.f1336a, i);
+        parcel.writeParcelable(this.b, i);
+        parcel.writeParcelable(this.c, i);
     }
 
-    public F(i0 i0Var) {
-        this(i0Var.b(), i0Var.a());
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public F(k0 k0Var) {
+        this(r2, r3, r5 != null ? new B(r5) : null);
+        h0 a2 = k0Var.a();
+        C0783z c0783z = a2 != null ? new C0783z(a2) : null;
+        l0 c = k0Var.c();
+        H h = c != null ? new H(c) : null;
+        i0 b = k0Var.b();
     }
 }

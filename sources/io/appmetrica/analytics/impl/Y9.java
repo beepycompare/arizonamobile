@@ -1,56 +1,50 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Handler;
-import com.google.android.vending.expansion.downloader.Constants;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
-import io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider;
-import java.util.concurrent.Executor;
-/* loaded from: classes4.dex */
-public final class Y9 implements ExecutorProvider {
+import com.facebook.internal.NativeProtocol;
+import org.json.JSONObject;
+/* loaded from: classes3.dex */
+public final class Y9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ak f755a;
-    public final IHandlerExecutor b;
+    public final String f769a;
+    public final int b;
+    public final boolean c;
 
-    public Y9() {
-        Ak w = Na.j().w();
-        this.f755a = w;
-        this.b = w.c();
+    public Y9(JSONObject jSONObject) {
+        this.f769a = jSONObject.getString("name");
+        this.c = jSONObject.getBoolean("required");
+        this.b = jSONObject.optInt(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, -1);
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
-    public final IHandlerExecutor getDefaultExecutor() {
-        return this.f755a.a();
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
-    public final InterruptionSafeThread getInterruptionThread(String str, String str2, Runnable runnable) {
-        return new InterruptionSafeThread(runnable, (str + '-' + str2) + Constants.FILENAME_SEQUENCE_SEPARATOR + Ud.f700a.incrementAndGet());
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
-    public final IHandlerExecutor getModuleExecutor() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
-    public final IHandlerExecutor getSupportIOExecutor() {
-        Ak ak = this.f755a;
-        if (ak.f == null) {
-            synchronized (ak) {
-                if (ak.f == null) {
-                    ak.f354a.getClass();
-                    Cb a2 = Z9.a("IAA-SIO");
-                    ak.f = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
-                }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && Y9.class == obj.getClass()) {
+            Y9 y9 = (Y9) obj;
+            if (this.b != y9.b || this.c != y9.c) {
+                return false;
+            }
+            String str = this.f769a;
+            String str2 = y9.f769a;
+            if (str != null) {
+                return str.equals(str2);
+            }
+            if (str2 == null) {
+                return true;
             }
         }
-        return ak.f;
+        return false;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
-    public final Executor getUiExecutor() {
-        return this.f755a.f();
+    public final int hashCode() {
+        String str = this.f769a;
+        return ((((str != null ? str.hashCode() : 0) * 31) + this.b) * 31) + (this.c ? 1 : 0);
+    }
+
+    public Y9(String str, int i, boolean z) {
+        this.f769a = str;
+        this.b = i;
+        this.c = z;
     }
 }

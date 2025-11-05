@@ -856,8 +856,8 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
         @Override // androidx.compose.animation.SharedTransitionScope.OverlayClip
         public Path getClipPath(SharedTransitionScope.SharedContentState sharedContentState, Rect rect, LayoutDirection layoutDirection, Density density) {
             this.path.reset();
-            OutlineKt.addOutline(this.path, this.clipShape.mo331createOutlinePq9zytI(rect.m4338getSizeNHjbRc(), layoutDirection, density));
-            this.path.mo4442translatek4lQ0M(rect.m4340getTopLeftF1C5BW0());
+            OutlineKt.addOutline(this.path, this.clipShape.mo331createOutlinePq9zytI(rect.m5068getSizeNHjbRc(), layoutDirection, density));
+            this.path.mo5172translatek4lQ0M(rect.m5070getTopLeftF1C5BW0());
             return this.path;
         }
     }

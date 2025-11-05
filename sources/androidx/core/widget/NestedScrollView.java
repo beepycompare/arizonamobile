@@ -40,7 +40,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityRecordCompat;
 import androidx.media3.extractor.ts.TsExtractor;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import java.util.ArrayList;
 /* loaded from: classes2.dex */
 public class NestedScrollView extends FrameLayout implements NestedScrollingParent3, NestedScrollingChild3, ScrollingView {
@@ -1115,7 +1114,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     }
 
     public final void smoothScrollBy(int i, int i2) {
-        smoothScrollBy(i, i2, ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION, false);
+        smoothScrollBy(i, i2, 250, false);
     }
 
     public final void smoothScrollBy(int i, int i2, int i3) {
@@ -1144,7 +1143,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     }
 
     public final void smoothScrollTo(int i, int i2) {
-        smoothScrollTo(i, i2, ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION, false);
+        smoothScrollTo(i, i2, 250, false);
     }
 
     public final void smoothScrollTo(int i, int i2, int i3) {
@@ -1152,7 +1151,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     }
 
     void smoothScrollTo(int i, int i2, boolean z) {
-        smoothScrollTo(i, i2, ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION, z);
+        smoothScrollTo(i, i2, 250, z);
     }
 
     void smoothScrollTo(int i, int i2, int i3, boolean z) {

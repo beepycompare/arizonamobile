@@ -1,98 +1,148 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-/* loaded from: classes4.dex */
-public final class Gf extends MessageNano {
-    public static volatile Gf[] d;
+import android.content.ContentValues;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.Process;
+import android.os.ResultReceiver;
+import android.text.TextUtils;
+import io.appmetrica.analytics.AppMetrica;
+import io.appmetrica.analytics.AppMetricaConfig;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import org.json.JSONArray;
+/* loaded from: classes3.dex */
+public final class Gf implements Parcelable {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f462a;
-    public String b;
-    public int c;
+    public final ContentValues f492a;
+    public final ResultReceiver b;
+    public static final String c = UUID.randomUUID().toString();
+    public static final Parcelable.Creator<Gf> CREATOR = new Ff();
 
-    public Gf() {
-        a();
+    public Gf(Context context, ResultReceiver resultReceiver) {
+        ContentValues contentValues = new ContentValues();
+        this.f492a = contentValues;
+        contentValues.put("PROCESS_CFG_PROCESS_ID", Integer.valueOf(Process.myPid()));
+        contentValues.put("PROCESS_CFG_PROCESS_SESSION_ID", c);
+        contentValues.put("PROCESS_CFG_SDK_API_LEVEL", Integer.valueOf(AppMetrica.getLibraryApiLevel()));
+        contentValues.put("PROCESS_CFG_PACKAGE_NAME", context.getPackageName());
+        this.b = resultReceiver;
     }
 
-    public static Gf[] b() {
-        if (d == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new Gf[0];
-                }
+    public final void a(AppMetricaConfig appMetricaConfig) {
+        Object obj = appMetricaConfig.additionalConfig.get("YMM_clids");
+        Map map = obj instanceof Map ? (Map) obj : null;
+        if (map != null) {
+            HashMap b = Jm.b(map);
+            synchronized (this) {
+                this.f492a.put("PROCESS_CFG_CLIDS", AbstractC0447nb.b(b));
             }
         }
-        return d;
     }
 
-    public final Gf a() {
-        this.f462a = "";
-        this.b = "";
-        this.c = 0;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f462a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f462a);
-        }
-        if (!this.b.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
-        }
-        return CodedOutputByteBufferNano.computeInt32Size(3, this.c) + computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f462a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f462a);
-        }
-        if (!this.b.equals("")) {
-            codedOutputByteBufferNano.writeString(2, this.b);
-        }
-        codedOutputByteBufferNano.writeInt32(3, this.c);
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final Gf mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f462a = codedInputByteBufferNano.readString();
-            } else if (readTag == 18) {
-                this.b = codedInputByteBufferNano.readString();
-            } else if (readTag != 24) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {
-                    this.c = readInt32;
-                }
+    public final void b(AppMetricaConfig appMetricaConfig) {
+        List<String> list = appMetricaConfig.customHosts;
+        if (list != null) {
+            synchronized (this) {
+                this.f492a.put("PROCESS_CFG_CUSTOM_HOSTS", no.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
             }
         }
-        return this;
     }
 
-    public static Gf b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Gf().mergeFrom(codedInputByteBufferNano);
+    public final void c(AppMetricaConfig appMetricaConfig) {
+        String str = (String) appMetricaConfig.additionalConfig.get("YMM_distributionReferrer");
+        if (str != null) {
+            synchronized (this) {
+                this.f492a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
+            }
+            i();
+        }
     }
 
-    public static Gf a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Gf) MessageNano.mergeFrom(new Gf(), bArr);
+    public final void d(AppMetricaConfig appMetricaConfig) {
+        if (appMetricaConfig != null) {
+            synchronized (this) {
+                b(appMetricaConfig);
+                a(appMetricaConfig);
+                c(appMetricaConfig);
+            }
+        }
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final String e() {
+        return this.f492a.getAsString("PROCESS_CFG_PACKAGE_NAME");
+    }
+
+    public final Integer f() {
+        return this.f492a.getAsInteger("PROCESS_CFG_PROCESS_ID");
+    }
+
+    public final String g() {
+        return this.f492a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+    }
+
+    public final boolean h() {
+        return this.f492a.containsKey("PROCESS_CFG_CUSTOM_HOSTS");
+    }
+
+    public final synchronized void i() {
+        this.f492a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", "api");
+    }
+
+    public final String toString() {
+        return "ProcessConfiguration{mParamsMapping=" + this.f492a + ", mDataResultReceiver=" + this.b + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("CFG_KEY_PROCESS_ENVIRONMENT", this.f492a);
+        bundle.putParcelable("CFG_KEY_PROCESS_ENVIRONMENT_RECEIVER", this.b);
+        parcel.writeBundle(bundle);
+    }
+
+    public final HashMap a() {
+        return AbstractC0447nb.c(this.f492a.getAsString("PROCESS_CFG_CLIDS"));
+    }
+
+    public final String c() {
+        return this.f492a.getAsString("PROCESS_CFG_DISTRIBUTION_REFERRER");
+    }
+
+    public final String d() {
+        return this.f492a.getAsString("PROCESS_CFG_INSTALL_REFERRER_SOURCE");
+    }
+
+    public Gf(Gf gf) {
+        synchronized (gf) {
+            this.f492a = new ContentValues(gf.f492a);
+            this.b = gf.b;
+        }
+    }
+
+    public final ArrayList b() {
+        String asString = this.f492a.getAsString("PROCESS_CFG_CUSTOM_HOSTS");
+        if (TextUtils.isEmpty(asString)) {
+            return null;
+        }
+        return AbstractC0447nb.b(asString);
+    }
+
+    public Gf(ContentValues contentValues, ResultReceiver resultReceiver) {
+        this.f492a = contentValues == null ? new ContentValues() : contentValues;
+        this.b = resultReceiver;
     }
 }

@@ -15,7 +15,7 @@ public final class SwipeableDefaults {
     public static final float StiffResistanceFactor = 20.0f;
     public static final SwipeableDefaults INSTANCE = new SwipeableDefaults();
     private static final SpringSpec<Float> AnimationSpec = new SpringSpec<>(0.0f, 0.0f, null, 7, null);
-    private static final float VelocityThreshold = Dp.m7264constructorimpl(125);
+    private static final float VelocityThreshold = Dp.m7995constructorimpl(125);
 
     private SwipeableDefaults() {
     }
@@ -25,7 +25,7 @@ public final class SwipeableDefaults {
     }
 
     /* renamed from: getVelocityThreshold-D9Ej5fM */
-    public final float m7743getVelocityThresholdD9Ej5fM() {
+    public final float m8474getVelocityThresholdD9Ej5fM() {
         return VelocityThreshold;
     }
 

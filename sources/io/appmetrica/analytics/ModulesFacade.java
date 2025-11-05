@@ -1,17 +1,17 @@
 package io.appmetrica.analytics;
 
 import android.content.Context;
-import io.appmetrica.analytics.impl.Bd;
-import io.appmetrica.analytics.impl.C0647v0;
-import io.appmetrica.analytics.impl.Dd;
-import io.appmetrica.analytics.impl.Ed;
-import io.appmetrica.analytics.impl.Fd;
-import io.appmetrica.analytics.impl.Gd;
-import io.appmetrica.analytics.impl.Hd;
-import io.appmetrica.analytics.impl.Id;
-import io.appmetrica.analytics.impl.Jd;
-import io.appmetrica.analytics.impl.Ji;
-/* loaded from: classes4.dex */
+import io.appmetrica.analytics.impl.AbstractC0578si;
+import io.appmetrica.analytics.impl.C0424md;
+import io.appmetrica.analytics.impl.C0474od;
+import io.appmetrica.analytics.impl.C0499pd;
+import io.appmetrica.analytics.impl.C0524qd;
+import io.appmetrica.analytics.impl.C0548rd;
+import io.appmetrica.analytics.impl.C0573sd;
+import io.appmetrica.analytics.impl.C0598td;
+import io.appmetrica.analytics.impl.C0623ud;
+import io.appmetrica.analytics.impl.C0685x0;
+/* loaded from: classes.dex */
 public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_ADJUST = 2;
     public static final int EXTERNAL_ATTRIBUTION_AIRBRIDGE = 5;
@@ -21,27 +21,23 @@ public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_TENJIN = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    private static Jd f201a = new Jd();
+    private static C0623ud f186a = new C0623ud();
 
     public static IModuleReporter getModuleReporter(Context context, String str) {
-        Jd jd = f201a;
-        Bd bd = jd.b;
-        bd.b.a(context);
-        bd.d.a(str);
-        jd.c.f626a.a(context.getApplicationContext().getApplicationContext());
-        return Ji.f521a.a(context.getApplicationContext(), str);
+        C0623ud c0623ud = f186a;
+        C0424md c0424md = c0623ud.b;
+        c0424md.b.a(context);
+        c0424md.d.a(str);
+        c0623ud.c.f412a.a(context.getApplicationContext().getApplicationContext());
+        return AbstractC0578si.f1115a.a(context.getApplicationContext(), str);
     }
 
     public static boolean isActivatedForApp() {
-        boolean z;
-        Jd jd = f201a;
-        jd.b.getClass();
-        jd.c.getClass();
-        jd.f518a.getClass();
-        synchronized (C0647v0.class) {
-            z = C0647v0.f;
-        }
-        return z;
+        C0623ud c0623ud = f186a;
+        c0623ud.b.getClass();
+        c0623ud.c.getClass();
+        c0623ud.f1150a.getClass();
+        return C0685x0.a();
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue) {
@@ -49,58 +45,58 @@ public final class ModulesFacade {
     }
 
     public static void reportEvent(ModuleEvent moduleEvent) {
-        Jd jd = f201a;
-        jd.b.f371a.a(null);
-        jd.c.getClass();
-        jd.d.execute(new Ed(jd, moduleEvent));
+        C0623ud c0623ud = f186a;
+        c0623ud.b.f1008a.a(null);
+        c0623ud.c.getClass();
+        c0623ud.d.execute(new C0499pd(c0623ud, moduleEvent));
     }
 
     public static void reportExternalAttribution(int i, String str) {
-        Jd jd = f201a;
-        jd.b.getClass();
-        jd.c.getClass();
-        jd.d.execute(new Fd(jd, i, str));
+        C0623ud c0623ud = f186a;
+        c0623ud.b.getClass();
+        c0623ud.c.getClass();
+        c0623ud.d.execute(new C0524qd(c0623ud, i, str));
     }
 
     public static void sendEventsBuffer() {
-        Jd jd = f201a;
-        jd.b.getClass();
-        jd.c.getClass();
+        C0623ud c0623ud = f186a;
+        c0623ud.b.getClass();
+        c0623ud.c.getClass();
         AppMetrica.sendEventsBuffer();
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        Jd jd = f201a;
-        jd.b.getClass();
-        jd.c.getClass();
-        jd.d.execute(new Gd(jd, z));
+        C0623ud c0623ud = f186a;
+        c0623ud.b.getClass();
+        c0623ud.c.getClass();
+        c0623ud.d.execute(new C0548rd(c0623ud, z));
     }
 
-    public static void setProxy(Jd jd) {
-        f201a = jd;
+    public static void setProxy(C0623ud c0623ud) {
+        f186a = c0623ud;
     }
 
     public static void setSessionExtra(String str, byte[] bArr) {
-        Jd jd = f201a;
-        jd.b.c.a(str);
-        jd.c.getClass();
-        jd.d.execute(new Hd(jd, str, bArr));
+        C0623ud c0623ud = f186a;
+        c0623ud.b.c.a(str);
+        c0623ud.c.getClass();
+        c0623ud.d.execute(new C0573sd(c0623ud, str, bArr));
     }
 
     public static void subscribeForAutoCollectedData(Context context, String str) {
-        Jd jd = f201a;
-        Bd bd = jd.b;
-        bd.b.a(context);
-        bd.d.a(str);
-        jd.c.f626a.a(context.getApplicationContext());
-        jd.d.execute(new Id(str));
+        C0623ud c0623ud = f186a;
+        C0424md c0424md = c0623ud.b;
+        c0424md.b.a(context);
+        c0424md.d.a(str);
+        c0623ud.c.f412a.a(context.getApplicationContext());
+        c0623ud.d.execute(new C0598td(str));
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue, Boolean bool) {
-        Jd jd = f201a;
+        C0623ud c0623ud = f186a;
         boolean booleanValue = bool.booleanValue();
-        jd.b.getClass();
-        jd.c.getClass();
-        jd.d.execute(new Dd(jd, adRevenue, booleanValue));
+        c0623ud.b.getClass();
+        c0623ud.c.getClass();
+        c0623ud.d.execute(new C0474od(c0623ud, adRevenue, booleanValue));
     }
 }

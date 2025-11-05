@@ -202,7 +202,7 @@ import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Flowable<T> implements Publisher<T> {
     static final int BUFFER_SIZE = Math.max(1, Integer.getInteger("rx2.buffer-size", 128).intValue());
 

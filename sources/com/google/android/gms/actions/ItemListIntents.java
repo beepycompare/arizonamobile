@@ -1,6 +1,6 @@
 package com.google.android.gms.actions;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class ItemListIntents {
     public static final String ACTION_ACCEPT_ITEM = "com.google.android.gms.actions.ACCEPT_ITEM";
     public static final String ACTION_APPEND_ITEM_LIST = "com.google.android.gms.actions.APPEND_ITEM_LIST";

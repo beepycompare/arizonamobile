@@ -253,7 +253,7 @@ public final class ComposerKt {
     }
 
     public static final <K, V> MutableScatterMap<Object, Object> multiMap(int i) {
-        return MultiValueMap.m3946constructorimpl(new MutableScatterMap(i));
+        return MultiValueMap.m4676constructorimpl(new MutableScatterMap(i));
     }
 
     public static final Object getKey(Object obj, Object obj2, Object obj3) {

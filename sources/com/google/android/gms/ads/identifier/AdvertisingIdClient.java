@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.ParametersAreNonnullByDefault;
 /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
 @ParametersAreNonnullByDefault
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AdvertisingIdClient {
     private static final Object zzg = new Object();
     private static volatile AdvertisingIdClient zzh;
@@ -36,7 +36,7 @@ public class AdvertisingIdClient {
     private final Context zzi;
 
     /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Info {
         private final String zza;
         private final boolean zzb;

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.concurrent.Callable;
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final /* synthetic */ class zze implements Callable {
     static final /* synthetic */ zze zza = new zze();
 

@@ -7,7 +7,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzd implements Parcelable {
     public static final Parcelable.Creator<zzd> CREATOR = new zzb();
     Messenger zza;

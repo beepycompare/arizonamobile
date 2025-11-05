@@ -12,7 +12,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class VorbisUtil {
     private static final String TAG = "VorbisUtil";
 
@@ -25,7 +25,7 @@ public final class VorbisUtil {
         return i2;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class CommentHeader {
         public final String[] comments;
         public final int length;
@@ -38,7 +38,7 @@ public final class VorbisUtil {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class VorbisIdHeader {
         public final int bitrateMaximum;
         public final int bitrateMinimum;
@@ -65,7 +65,7 @@ public final class VorbisUtil {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Mode {
         public final boolean blockFlag;
         public final int mapping;

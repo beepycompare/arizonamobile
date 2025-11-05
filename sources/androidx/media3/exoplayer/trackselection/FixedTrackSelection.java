@@ -4,7 +4,7 @@ import androidx.media3.common.TrackGroup;
 import androidx.media3.exoplayer.source.chunk.MediaChunk;
 import androidx.media3.exoplayer.source.chunk.MediaChunkIterator;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class FixedTrackSelection extends BaseTrackSelection {
     private final Object data;
     private final int reason;

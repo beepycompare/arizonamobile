@@ -18,7 +18,7 @@ public final class Synchronization_androidKt {
     }
 
     /* renamed from: synchronized  reason: not valid java name */
-    public static final <R> R m3992synchronized(Object obj, Function0<? extends R> function0) {
+    public static final <R> R m4722synchronized(Object obj, Function0<? extends R> function0) {
         R invoke;
         synchronized (obj) {
             invoke = function0.invoke();

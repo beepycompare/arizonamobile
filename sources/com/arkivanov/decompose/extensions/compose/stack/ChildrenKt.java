@@ -99,7 +99,7 @@ public final class ChildrenKt {
             }
             final SaveableStateHolder rememberSaveableStateHolder = SaveableStateHolderKt.rememberSaveableStateHolder(startRestartGroup, 0);
             retainStates(rememberSaveableStateHolder, getKeys(stack), startRestartGroup, 0);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(StackAnimationProviderKt.getLocalStackAnimationProvider());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             StackAnimationProvider stackAnimationProvider = (StackAnimationProvider) consume;

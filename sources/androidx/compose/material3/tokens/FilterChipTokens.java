@@ -4,41 +4,41 @@ import androidx.compose.ui.unit.Dp;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import kotlin.Metadata;
 /* compiled from: FilterChipTokens.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\bB\n\u0002\u0018\u0002\n\u0002\b?\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\u0011X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0006R\u0011\u0010\u0013\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u000fR\u0014\u0010\u0015\u001a\u00020\u0011X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0006R\u0011\u0010\u0017\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u000fR\u0014\u0010\u0019\u001a\u00020\u0011X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0006R\u0019\u0010\u001b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u001c\u0010\u0006R\u0019\u0010\u001d\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u001e\u0010\u0006R\u0011\u0010\u001f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u000fR\u0019\u0010!\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\"\u0010\u0006R\u0014\u0010#\u001a\u00020\u0011X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\u0006R\u0019\u0010%\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b&\u0010\u0006R\u0019\u0010'\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b(\u0010\u0006R\u0019\u0010)\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b*\u0010\u0006R\u0011\u0010+\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b,\u0010\u000fR\u0011\u0010-\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u000fR\u0019\u0010/\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b0\u0010\u0006R\u0011\u00101\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b2\u0010\u000fR\u0014\u00103\u001a\u00020\u0011X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b4\u0010\u0006R\u0011\u00105\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u000fR\u0014\u00107\u001a\u00020\u0011X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\u0006R\u0011\u00109\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b:\u0010\u000fR\u0019\u0010;\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b<\u0010\u0006R\u0019\u0010=\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b>\u0010\u0006R\u0019\u0010?\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b@\u0010\u0006R\u0019\u0010A\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\bB\u0010\u0006R\u0019\u0010C\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\bD\u0010\u0006R\u0011\u0010E\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bF\u0010\u000fR\u0019\u0010G\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\bH\u0010\u0006R\u0011\u0010I\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bJ\u0010\u000fR\u0019\u0010K\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\bL\u0010\u0006R\u0019\u0010M\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\bN\u0010\u0006R\u0011\u0010O\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bP\u0010\u000fR\u0019\u0010Q\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\bR\u0010\u0006R\u0011\u0010S\u001a\u00020T¢\u0006\b\n\u0000\u001a\u0004\bU\u0010VR\u0011\u0010W\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bX\u0010\u000fR\u0011\u0010Y\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010\u000fR\u0011\u0010[\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\\\u0010\u000fR\u0011\u0010]\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b^\u0010\u000fR\u0011\u0010_\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b`\u0010\u000fR\u0011\u0010a\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bb\u0010\u000fR\u0011\u0010c\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bd\u0010\u000fR\u0011\u0010e\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bf\u0010\u000fR\u0011\u0010g\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bh\u0010\u000fR\u0011\u0010i\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bj\u0010\u000fR\u0011\u0010k\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bl\u0010\u000fR\u0011\u0010m\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bn\u0010\u000fR\u0011\u0010o\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bp\u0010\u000fR\u0011\u0010q\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\br\u0010\u000fR\u0011\u0010s\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bt\u0010\u000fR\u0011\u0010u\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bv\u0010\u000fR\u0011\u0010w\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bx\u0010\u000fR\u0011\u0010y\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\bz\u0010\u000fR\u0011\u0010{\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b|\u0010\u000fR\u0011\u0010}\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b~\u0010\u000fR\u0012\u0010\u007f\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u0080\u0001\u0010\u000fR\u0013\u0010\u0081\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u0082\u0001\u0010\u000fR\u0013\u0010\u0083\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u0084\u0001\u0010\u000fR\u0013\u0010\u0085\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u0086\u0001\u0010\u000fR\u0013\u0010\u0087\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u0088\u0001\u0010\u000fR\u0013\u0010\u0089\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u008a\u0001\u0010\u000fR\u0013\u0010\u008b\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u008c\u0001\u0010\u000fR\u0013\u0010\u008d\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u008e\u0001\u0010\u000fR\u0013\u0010\u008f\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u0090\u0001\u0010\u000fR\u0013\u0010\u0091\u0001\u001a\u00020\r¢\u0006\t\n\u0000\u001a\u0005\b\u0092\u0001\u0010\u000f\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0093\u0001"}, d2 = {"Landroidx/compose/material3/tokens/FilterChipTokens;", "", "()V", "ContainerHeight", "Landroidx/compose/ui/unit/Dp;", "getContainerHeight-D9Ej5fM", "()F", "F", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "DisabledLabelTextColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getDisabledLabelTextColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "DisabledLabelTextOpacity", "", "getDisabledLabelTextOpacity", "DisabledLeadingIconColor", "getDisabledLeadingIconColor", "DisabledLeadingIconOpacity", "getDisabledLeadingIconOpacity", "DisabledTrailingIconColor", "getDisabledTrailingIconColor", "DisabledTrailingIconOpacity", "getDisabledTrailingIconOpacity", "DraggedContainerElevation", "getDraggedContainerElevation-D9Ej5fM", "ElevatedContainerElevation", "getElevatedContainerElevation-D9Ej5fM", "ElevatedDisabledContainerColor", "getElevatedDisabledContainerColor", "ElevatedDisabledContainerElevation", "getElevatedDisabledContainerElevation-D9Ej5fM", "ElevatedDisabledContainerOpacity", "getElevatedDisabledContainerOpacity", "ElevatedFocusContainerElevation", "getElevatedFocusContainerElevation-D9Ej5fM", "ElevatedHoverContainerElevation", "getElevatedHoverContainerElevation-D9Ej5fM", "ElevatedPressedContainerElevation", "getElevatedPressedContainerElevation-D9Ej5fM", "ElevatedSelectedContainerColor", "getElevatedSelectedContainerColor", "ElevatedUnselectedContainerColor", "getElevatedUnselectedContainerColor", "FlatContainerElevation", "getFlatContainerElevation-D9Ej5fM", "FlatDisabledSelectedContainerColor", "getFlatDisabledSelectedContainerColor", "FlatDisabledSelectedContainerOpacity", "getFlatDisabledSelectedContainerOpacity", "FlatDisabledUnselectedOutlineColor", "getFlatDisabledUnselectedOutlineColor", "FlatDisabledUnselectedOutlineOpacity", "getFlatDisabledUnselectedOutlineOpacity", "FlatSelectedContainerColor", "getFlatSelectedContainerColor", "FlatSelectedFocusContainerElevation", "getFlatSelectedFocusContainerElevation-D9Ej5fM", "FlatSelectedHoverContainerElevation", "getFlatSelectedHoverContainerElevation-D9Ej5fM", "FlatSelectedOutlineWidth", "getFlatSelectedOutlineWidth-D9Ej5fM", "FlatSelectedPressedContainerElevation", "getFlatSelectedPressedContainerElevation-D9Ej5fM", "FlatUnselectedFocusContainerElevation", "getFlatUnselectedFocusContainerElevation-D9Ej5fM", "FlatUnselectedFocusOutlineColor", "getFlatUnselectedFocusOutlineColor", "FlatUnselectedHoverContainerElevation", "getFlatUnselectedHoverContainerElevation-D9Ej5fM", "FlatUnselectedOutlineColor", "getFlatUnselectedOutlineColor", "FlatUnselectedOutlineWidth", "getFlatUnselectedOutlineWidth-D9Ej5fM", "FlatUnselectedPressedContainerElevation", "getFlatUnselectedPressedContainerElevation-D9Ej5fM", "FocusIndicatorColor", "getFocusIndicatorColor", "IconSize", "getIconSize-D9Ej5fM", "LabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "SelectedDraggedLabelTextColor", "getSelectedDraggedLabelTextColor", "SelectedDraggedLeadingIconColor", "getSelectedDraggedLeadingIconColor", "SelectedDraggedTrailingIconColor", "getSelectedDraggedTrailingIconColor", "SelectedFocusLabelTextColor", "getSelectedFocusLabelTextColor", "SelectedFocusLeadingIconColor", "getSelectedFocusLeadingIconColor", "SelectedFocusTrailingIconColor", "getSelectedFocusTrailingIconColor", "SelectedHoverLabelTextColor", "getSelectedHoverLabelTextColor", "SelectedHoverLeadingIconColor", "getSelectedHoverLeadingIconColor", "SelectedHoverTrailingIconColor", "getSelectedHoverTrailingIconColor", "SelectedLabelTextColor", "getSelectedLabelTextColor", "SelectedLeadingIconColor", "getSelectedLeadingIconColor", "SelectedPressedLabelTextColor", "getSelectedPressedLabelTextColor", "SelectedPressedLeadingIconColor", "getSelectedPressedLeadingIconColor", "SelectedPressedTrailingIconColor", "getSelectedPressedTrailingIconColor", "SelectedTrailingIconColor", "getSelectedTrailingIconColor", "UnselectedDraggedLabelTextColor", "getUnselectedDraggedLabelTextColor", "UnselectedDraggedLeadingIconColor", "getUnselectedDraggedLeadingIconColor", "UnselectedDraggedTrailingIconColor", "getUnselectedDraggedTrailingIconColor", "UnselectedFocusLabelTextColor", "getUnselectedFocusLabelTextColor", "UnselectedFocusLeadingIconColor", "getUnselectedFocusLeadingIconColor", "UnselectedFocusTrailingIconColor", "getUnselectedFocusTrailingIconColor", "UnselectedHoverLabelTextColor", "getUnselectedHoverLabelTextColor", "UnselectedHoverLeadingIconColor", "getUnselectedHoverLeadingIconColor", "UnselectedHoverTrailingIconColor", "getUnselectedHoverTrailingIconColor", "UnselectedLabelTextColor", "getUnselectedLabelTextColor", "UnselectedLeadingIconColor", "getUnselectedLeadingIconColor", "UnselectedPressedLabelTextColor", "getUnselectedPressedLabelTextColor", "UnselectedPressedLeadingIconColor", "getUnselectedPressedLeadingIconColor", "UnselectedPressedTrailingIconColor", "getUnselectedPressedTrailingIconColor", "UnselectedTrailingIconColor", "getUnselectedTrailingIconColor", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b8\n\u0002\u0018\u0002\n\u0002\bI\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0014\u0010\u0011\u001a\u00020\u0012X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0007R\u0013\u0010\u0014\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0015\u0010\u0007R\u0013\u0010\u0016\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0017\u0010\u0007R\u0011\u0010\u0018\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0010R\u0013\u0010\u001a\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001b\u0010\u0007R\u0014\u0010\u001c\u001a\u00020\u0012X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0007R\u0013\u0010\u001e\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001f\u0010\u0007R\u0013\u0010 \u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b!\u0010\u0007R\u0013\u0010\"\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b#\u0010\u0007R\u0011\u0010$\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0010R\u0011\u0010&\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u0010R\u0013\u0010(\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b)\u0010\u0007R\u0011\u0010*\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0010R\u0014\u0010,\u001a\u00020\u0012X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b-\u0010\u0007R\u0011\u0010.\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u0010R\u0014\u00100\u001a\u00020\u0012X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0007R\u0011\u00102\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b3\u0010\u0010R\u0013\u00104\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b5\u0010\u0007R\u0013\u00106\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b7\u0010\u0007R\u0013\u00108\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b9\u0010\u0007R\u0013\u0010:\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b;\u0010\u0007R\u0013\u0010<\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b=\u0010\u0007R\u0011\u0010>\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b?\u0010\u0010R\u0013\u0010@\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\bA\u0010\u0007R\u0011\u0010B\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bC\u0010\u0010R\u0013\u0010D\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\bE\u0010\u0007R\u0013\u0010F\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\bG\u0010\u0007R\u0011\u0010H\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bI\u0010\u0010R\u0011\u0010J\u001a\u00020K¢\u0006\b\n\u0000\u001a\u0004\bL\u0010MR\u0011\u0010N\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bO\u0010\u0010R\u0011\u0010P\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bQ\u0010\u0010R\u0011\u0010R\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bS\u0010\u0010R\u0011\u0010T\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bU\u0010\u0010R\u0011\u0010V\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bW\u0010\u0010R\u0011\u0010X\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bY\u0010\u0010R\u0011\u0010Z\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b[\u0010\u0010R\u0011\u0010\\\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b]\u0010\u0010R\u0011\u0010^\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b_\u0010\u0010R\u0011\u0010`\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\ba\u0010\u0010R\u0013\u0010b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\bc\u0010\u0007R\u0011\u0010d\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\be\u0010\u0010R\u0014\u0010f\u001a\u00020\u0012X\u0086D¢\u0006\b\n\u0000\u001a\u0004\bg\u0010\u0007R\u0011\u0010h\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bi\u0010\u0010R\u0011\u0010j\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bk\u0010\u0010R\u0011\u0010l\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bm\u0010\u0010R\u0011\u0010n\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bo\u0010\u0010R\u0011\u0010p\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bq\u0010\u0010R\u0011\u0010r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bs\u0010\u0010R\u0011\u0010t\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bu\u0010\u0010R\u0011\u0010v\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\bw\u0010\u0010R\u0011\u0010x\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\by\u0010\u0010R\u0011\u0010z\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b{\u0010\u0010R\u0011\u0010|\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b}\u0010\u0010R\u0014\u0010~\u001a\u00020\u0012X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u007f\u0010\u0007R\u0013\u0010\u0080\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u0081\u0001\u0010\u0010R\u0013\u0010\u0082\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u0083\u0001\u0010\u0010R\u0013\u0010\u0084\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u0085\u0001\u0010\u0010R\u0013\u0010\u0086\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u0087\u0001\u0010\u0010R\u0013\u0010\u0088\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u0089\u0001\u0010\u0010R\u0013\u0010\u008a\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u008b\u0001\u0010\u0010R\u0013\u0010\u008c\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u008d\u0001\u0010\u0010R\u0013\u0010\u008e\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u008f\u0001\u0010\u0010R\u0013\u0010\u0090\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u0091\u0001\u0010\u0010R\u0013\u0010\u0092\u0001\u001a\u00020\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u0093\u0001\u0010\u0010¨\u0006\u0094\u0001"}, d2 = {"Landroidx/compose/material3/tokens/FilterChipTokens;", "", "<init>", "()V", "ContainerHeight", "Landroidx/compose/ui/unit/Dp;", "getContainerHeight-D9Ej5fM", "()F", "F", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "DisabledLabelTextColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getDisabledLabelTextColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "DisabledLabelTextOpacity", "", "getDisabledLabelTextOpacity", "DraggedContainerElevation", "getDraggedContainerElevation-D9Ej5fM", "ElevatedContainerElevation", "getElevatedContainerElevation-D9Ej5fM", "ElevatedDisabledContainerColor", "getElevatedDisabledContainerColor", "ElevatedDisabledContainerElevation", "getElevatedDisabledContainerElevation-D9Ej5fM", "ElevatedDisabledContainerOpacity", "getElevatedDisabledContainerOpacity", "ElevatedFocusContainerElevation", "getElevatedFocusContainerElevation-D9Ej5fM", "ElevatedHoverContainerElevation", "getElevatedHoverContainerElevation-D9Ej5fM", "ElevatedPressedContainerElevation", "getElevatedPressedContainerElevation-D9Ej5fM", "ElevatedSelectedContainerColor", "getElevatedSelectedContainerColor", "ElevatedUnselectedContainerColor", "getElevatedUnselectedContainerColor", "FlatContainerElevation", "getFlatContainerElevation-D9Ej5fM", "FlatDisabledSelectedContainerColor", "getFlatDisabledSelectedContainerColor", "FlatDisabledSelectedContainerOpacity", "getFlatDisabledSelectedContainerOpacity", "FlatDisabledUnselectedOutlineColor", "getFlatDisabledUnselectedOutlineColor", "FlatDisabledUnselectedOutlineOpacity", "getFlatDisabledUnselectedOutlineOpacity", "FlatSelectedContainerColor", "getFlatSelectedContainerColor", "FlatSelectedFocusContainerElevation", "getFlatSelectedFocusContainerElevation-D9Ej5fM", "FlatSelectedHoverContainerElevation", "getFlatSelectedHoverContainerElevation-D9Ej5fM", "FlatSelectedOutlineWidth", "getFlatSelectedOutlineWidth-D9Ej5fM", "FlatSelectedPressedContainerElevation", "getFlatSelectedPressedContainerElevation-D9Ej5fM", "FlatUnselectedFocusContainerElevation", "getFlatUnselectedFocusContainerElevation-D9Ej5fM", "FlatUnselectedFocusOutlineColor", "getFlatUnselectedFocusOutlineColor", "FlatUnselectedHoverContainerElevation", "getFlatUnselectedHoverContainerElevation-D9Ej5fM", "FlatUnselectedOutlineColor", "getFlatUnselectedOutlineColor", "FlatUnselectedOutlineWidth", "getFlatUnselectedOutlineWidth-D9Ej5fM", "FlatUnselectedPressedContainerElevation", "getFlatUnselectedPressedContainerElevation-D9Ej5fM", "FocusIndicatorColor", "getFocusIndicatorColor", "LabelTextFont", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", "getLabelTextFont", "()Landroidx/compose/material3/tokens/TypographyKeyTokens;", "SelectedDraggedLabelTextColor", "getSelectedDraggedLabelTextColor", "SelectedFocusLabelTextColor", "getSelectedFocusLabelTextColor", "SelectedHoverLabelTextColor", "getSelectedHoverLabelTextColor", "SelectedLabelTextColor", "getSelectedLabelTextColor", "SelectedPressedLabelTextColor", "getSelectedPressedLabelTextColor", "UnselectedDraggedLabelTextColor", "getUnselectedDraggedLabelTextColor", "UnselectedFocusLabelTextColor", "getUnselectedFocusLabelTextColor", "UnselectedHoverLabelTextColor", "getUnselectedHoverLabelTextColor", "UnselectedLabelTextColor", "getUnselectedLabelTextColor", "UnselectedPressedLabelTextColor", "getUnselectedPressedLabelTextColor", "IconSize", "getIconSize-D9Ej5fM", "DisabledLeadingIconColor", "getDisabledLeadingIconColor", "DisabledLeadingIconOpacity", "getDisabledLeadingIconOpacity", "SelectedDraggedLeadingIconColor", "getSelectedDraggedLeadingIconColor", "SelectedFocusLeadingIconColor", "getSelectedFocusLeadingIconColor", "SelectedHoverLeadingIconColor", "getSelectedHoverLeadingIconColor", "SelectedLeadingIconColor", "getSelectedLeadingIconColor", "SelectedPressedLeadingIconColor", "getSelectedPressedLeadingIconColor", "UnselectedDraggedLeadingIconColor", "getUnselectedDraggedLeadingIconColor", "UnselectedFocusLeadingIconColor", "getUnselectedFocusLeadingIconColor", "UnselectedHoverLeadingIconColor", "getUnselectedHoverLeadingIconColor", "UnselectedLeadingIconColor", "getUnselectedLeadingIconColor", "UnselectedPressedLeadingIconColor", "getUnselectedPressedLeadingIconColor", "DisabledTrailingIconColor", "getDisabledTrailingIconColor", "DisabledTrailingIconOpacity", "getDisabledTrailingIconOpacity", "SelectedDraggedTrailingIconColor", "getSelectedDraggedTrailingIconColor", "SelectedFocusTrailingIconColor", "getSelectedFocusTrailingIconColor", "SelectedHoverTrailingIconColor", "getSelectedHoverTrailingIconColor", "SelectedPressedTrailingIconColor", "getSelectedPressedTrailingIconColor", "SelectedTrailingIconColor", "getSelectedTrailingIconColor", "UnselectedDraggedTrailingIconColor", "getUnselectedDraggedTrailingIconColor", "UnselectedFocusTrailingIconColor", "getUnselectedFocusTrailingIconColor", "UnselectedHoverTrailingIconColor", "getUnselectedHoverTrailingIconColor", "UnselectedPressedTrailingIconColor", "getUnselectedPressedTrailingIconColor", "UnselectedTrailingIconColor", "getUnselectedTrailingIconColor", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FilterChipTokens {
     public static final int $stable = 0;
     public static final FilterChipTokens INSTANCE = new FilterChipTokens();
-    private static final float ContainerHeight = Dp.m7264constructorimpl((float) 32.0d);
+    private static final float ContainerHeight = Dp.m7995constructorimpl((float) 32.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerSmall;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledLabelTextOpacity = 0.38f;
-    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3298getLevel4D9Ej5fM();
-    private static final float ElevatedContainerElevation = ElevationTokens.INSTANCE.m3295getLevel1D9Ej5fM();
+    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3892getLevel4D9Ej5fM();
+    private static final float ElevatedContainerElevation = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens ElevatedDisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float ElevatedDisabledContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+    private static final float ElevatedDisabledContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
     private static final float ElevatedDisabledContainerOpacity = 0.12f;
-    private static final float ElevatedFocusContainerElevation = ElevationTokens.INSTANCE.m3295getLevel1D9Ej5fM();
-    private static final float ElevatedHoverContainerElevation = ElevationTokens.INSTANCE.m3296getLevel2D9Ej5fM();
-    private static final float ElevatedPressedContainerElevation = ElevationTokens.INSTANCE.m3295getLevel1D9Ej5fM();
+    private static final float ElevatedFocusContainerElevation = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
+    private static final float ElevatedHoverContainerElevation = ElevationTokens.INSTANCE.m3890getLevel2D9Ej5fM();
+    private static final float ElevatedPressedContainerElevation = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens ElevatedSelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens ElevatedUnselectedContainerColor = ColorSchemeKeyTokens.SurfaceContainerLow;
-    private static final float FlatContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+    private static final float FlatContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FlatDisabledSelectedContainerColor = ColorSchemeKeyTokens.OnSurface;
     private static final float FlatDisabledSelectedContainerOpacity = 0.12f;
     private static final ColorSchemeKeyTokens FlatDisabledUnselectedOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final float FlatDisabledUnselectedOutlineOpacity = 0.12f;
     private static final ColorSchemeKeyTokens FlatSelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float FlatSelectedFocusContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
-    private static final float FlatSelectedHoverContainerElevation = ElevationTokens.INSTANCE.m3295getLevel1D9Ej5fM();
-    private static final float FlatSelectedOutlineWidth = Dp.m7264constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
-    private static final float FlatSelectedPressedContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
-    private static final float FlatUnselectedFocusContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+    private static final float FlatSelectedFocusContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float FlatSelectedHoverContainerElevation = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
+    private static final float FlatSelectedOutlineWidth = Dp.m7995constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+    private static final float FlatSelectedPressedContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float FlatUnselectedFocusContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FlatUnselectedFocusOutlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float FlatUnselectedHoverContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
-    private static final ColorSchemeKeyTokens FlatUnselectedOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float FlatUnselectedOutlineWidth = Dp.m7264constructorimpl((float) 1.0d);
-    private static final float FlatUnselectedPressedContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+    private static final float FlatUnselectedHoverContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final ColorSchemeKeyTokens FlatUnselectedOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
+    private static final float FlatUnselectedOutlineWidth = Dp.m7995constructorimpl((float) 1.0d);
+    private static final float FlatUnselectedPressedContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens SelectedDraggedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
@@ -51,7 +51,7 @@ public final class FilterChipTokens {
     private static final ColorSchemeKeyTokens UnselectedHoverLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float IconSize = Dp.m7264constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m7995constructorimpl((float) 18.0d);
     private static final ColorSchemeKeyTokens DisabledLeadingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledLeadingIconOpacity = 0.38f;
     private static final ColorSchemeKeyTokens SelectedDraggedLeadingIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
@@ -81,7 +81,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3394getContainerHeightD9Ej5fM() {
+    public final float m3983getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -98,12 +98,12 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getDraggedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3395getDraggedContainerElevationD9Ej5fM() {
+    public final float m3984getDraggedContainerElevationD9Ej5fM() {
         return DraggedContainerElevation;
     }
 
     /* renamed from: getElevatedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3396getElevatedContainerElevationD9Ej5fM() {
+    public final float m3985getElevatedContainerElevationD9Ej5fM() {
         return ElevatedContainerElevation;
     }
 
@@ -112,7 +112,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getElevatedDisabledContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3397getElevatedDisabledContainerElevationD9Ej5fM() {
+    public final float m3986getElevatedDisabledContainerElevationD9Ej5fM() {
         return ElevatedDisabledContainerElevation;
     }
 
@@ -121,17 +121,17 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getElevatedFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3398getElevatedFocusContainerElevationD9Ej5fM() {
+    public final float m3987getElevatedFocusContainerElevationD9Ej5fM() {
         return ElevatedFocusContainerElevation;
     }
 
     /* renamed from: getElevatedHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3399getElevatedHoverContainerElevationD9Ej5fM() {
+    public final float m3988getElevatedHoverContainerElevationD9Ej5fM() {
         return ElevatedHoverContainerElevation;
     }
 
     /* renamed from: getElevatedPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3400getElevatedPressedContainerElevationD9Ej5fM() {
+    public final float m3989getElevatedPressedContainerElevationD9Ej5fM() {
         return ElevatedPressedContainerElevation;
     }
 
@@ -144,7 +144,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getFlatContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3401getFlatContainerElevationD9Ej5fM() {
+    public final float m3990getFlatContainerElevationD9Ej5fM() {
         return FlatContainerElevation;
     }
 
@@ -169,27 +169,27 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getFlatSelectedFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3402getFlatSelectedFocusContainerElevationD9Ej5fM() {
+    public final float m3991getFlatSelectedFocusContainerElevationD9Ej5fM() {
         return FlatSelectedFocusContainerElevation;
     }
 
     /* renamed from: getFlatSelectedHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3403getFlatSelectedHoverContainerElevationD9Ej5fM() {
+    public final float m3992getFlatSelectedHoverContainerElevationD9Ej5fM() {
         return FlatSelectedHoverContainerElevation;
     }
 
     /* renamed from: getFlatSelectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3404getFlatSelectedOutlineWidthD9Ej5fM() {
+    public final float m3993getFlatSelectedOutlineWidthD9Ej5fM() {
         return FlatSelectedOutlineWidth;
     }
 
     /* renamed from: getFlatSelectedPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3405getFlatSelectedPressedContainerElevationD9Ej5fM() {
+    public final float m3994getFlatSelectedPressedContainerElevationD9Ej5fM() {
         return FlatSelectedPressedContainerElevation;
     }
 
     /* renamed from: getFlatUnselectedFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3406getFlatUnselectedFocusContainerElevationD9Ej5fM() {
+    public final float m3995getFlatUnselectedFocusContainerElevationD9Ej5fM() {
         return FlatUnselectedFocusContainerElevation;
     }
 
@@ -198,7 +198,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getFlatUnselectedHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3407getFlatUnselectedHoverContainerElevationD9Ej5fM() {
+    public final float m3996getFlatUnselectedHoverContainerElevationD9Ej5fM() {
         return FlatUnselectedHoverContainerElevation;
     }
 
@@ -207,12 +207,12 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getFlatUnselectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3408getFlatUnselectedOutlineWidthD9Ej5fM() {
+    public final float m3997getFlatUnselectedOutlineWidthD9Ej5fM() {
         return FlatUnselectedOutlineWidth;
     }
 
     /* renamed from: getFlatUnselectedPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3409getFlatUnselectedPressedContainerElevationD9Ej5fM() {
+    public final float m3998getFlatUnselectedPressedContainerElevationD9Ej5fM() {
         return FlatUnselectedPressedContainerElevation;
     }
 
@@ -265,7 +265,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3410getIconSizeD9Ej5fM() {
+    public final float m3999getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

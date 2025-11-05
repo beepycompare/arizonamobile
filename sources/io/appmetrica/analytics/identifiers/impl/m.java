@@ -2,14 +2,14 @@ package io.appmetrica.analytics.identifiers.impl;
 
 import android.os.IBinder;
 import android.os.Parcel;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class m implements o {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IBinder f335a;
+    public final IBinder f351a;
 
     public m(IBinder iBinder) {
-        this.f335a = iBinder;
+        this.f351a = iBinder;
     }
 
     public final String a() {
@@ -17,7 +17,7 @@ public final class m implements o {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-            this.f335a.transact(1, obtain, obtain2, 0);
+            this.f351a.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             return obtain2.readString();
         } finally {
@@ -28,7 +28,7 @@ public final class m implements o {
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f335a;
+        return this.f351a;
     }
 
     public final boolean b() {
@@ -36,7 +36,7 @@ public final class m implements o {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-            this.f335a.transact(2, obtain, obtain2, 0);
+            this.f351a.transact(2, obtain, obtain2, 0);
             obtain2.readException();
             return obtain2.readInt() != 0;
         } finally {

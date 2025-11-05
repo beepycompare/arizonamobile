@@ -6,7 +6,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.math.MathKt;
 /* compiled from: AlignmentLine.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 /* synthetic */ class AlignmentLineKt$FirstBaseline$1 extends FunctionReferenceImpl implements Function2<Integer, Integer, Integer> {
     public static final AlignmentLineKt$FirstBaseline$1 INSTANCE = new AlignmentLineKt$FirstBaseline$1();
 

@@ -1,66 +1,11 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public final class Rc {
 
-import android.content.Context;
-import io.appmetrica.analytics.billinginterface.internal.BillingType;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-import java.lang.reflect.Field;
-import java.util.Objects;
-import java.util.concurrent.Executor;
-import kotlin.text.StringsKt;
-/* loaded from: classes4.dex */
-public final class Rc extends A5 {
-    public final Ak n;
+    /* renamed from: a  reason: collision with root package name */
+    public final String f664a;
 
-    public Rc(Context context, C0477o5 c0477o5, M4 m4, AbstractC0602t5 abstractC0602t5, C0494om c0494om, Dh dh, ICommonExecutor iCommonExecutor, int i, Ak ak, C0251fc c0251fc, S9 s9) {
-        super(context, c0477o5, m4, abstractC0602t5, c0494om, dh, iCommonExecutor, i, c0251fc, s9);
-        this.n = ak;
-    }
-
-    public final C0526q3 a(Pc pc) {
-        String str;
-        BillingType billingType;
-        Field field;
-        Context context = this.c;
-        IHandlerExecutor a2 = this.n.a();
-        Executor f = this.n.f();
-        try {
-            Class<?> findClass = ReflectionUtils.findClass("com.android.billingclient.BuildConfig");
-            str = (String) ((findClass == null || (field = findClass.getField("VERSION_NAME")) == null) ? null : field.get(null));
-        } catch (Throwable unused) {
-            str = null;
-        }
-        if (str != null && !StringsKt.isBlank(str)) {
-            if (StringsKt.startsWith$default(str, "2.", false, 2, (Object) null)) {
-                billingType = BillingType.NONE;
-            } else if (StringsKt.startsWith$default(str, "3.", false, 2, (Object) null)) {
-                billingType = BillingType.NONE;
-            } else if (StringsKt.startsWith$default(str, "4.", false, 2, (Object) null)) {
-                billingType = BillingType.NONE;
-            } else if (StringsKt.startsWith$default(str, "5.", false, 2, (Object) null)) {
-                billingType = BillingType.LIBRARY_V6;
-            } else if (StringsKt.startsWith$default(str, "6.", false, 2, (Object) null)) {
-                billingType = BillingType.LIBRARY_V6;
-            } else if (StringsKt.startsWith$default(str, "7.", false, 2, (Object) null)) {
-                billingType = BillingType.LIBRARY_V6;
-            } else {
-                billingType = StringsKt.startsWith$default(str, "8.", false, 2, (Object) null) ? BillingType.LIBRARY_V8 : BillingType.LIBRARY_V8;
-            }
-        } else {
-            billingType = BillingType.NONE;
-        }
-        return new C0526q3(context, a2, f, billingType, new C0423m3(Zm.a(C0749z2.class).a(this.c)), new C0397l3(pc, Na.j().w().e()));
-    }
-
-    public final Lg b(Pc pc) {
-        Fe fe = new Fe(pc);
-        Objects.requireNonNull(pc);
-        return new Lg(fe, new Oc(pc), pc);
-    }
-
-    @Override // io.appmetrica.analytics.impl.A5
-    public final Q9 a(V9 v9, C0375k7 c0375k7, C0437mh c0437mh, M4 m4, C0477o5 c0477o5, C0538qf c0538qf) {
-        return this.l.a(v9, c0375k7, c0437mh, m4, c0477o5, c0538qf).a();
+    public Rc(String str) {
+        this.f664a = str;
     }
 }

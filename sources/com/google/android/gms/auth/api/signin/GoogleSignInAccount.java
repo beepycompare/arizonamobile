@@ -27,7 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GoogleSignInAccount extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new zab();
     public static final Clock zaa = DefaultClock.getInstance();

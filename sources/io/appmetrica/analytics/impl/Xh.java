@@ -1,17 +1,19 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public final class Xh implements Runnable {
 
-import android.content.Context;
-import io.appmetrica.analytics.ICrashTransformer;
-/* loaded from: classes4.dex */
-public final class Xh extends I6 {
-    public final AbstractC0186co d;
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ boolean f757a;
+    public final /* synthetic */ C0404li b;
 
-    public Xh(Context context, AbstractC0186co abstractC0186co, H6 h6, ICrashTransformer iCrashTransformer) {
-        this(abstractC0186co, h6, iCrashTransformer, new C0430ma(context));
+    public Xh(C0404li c0404li, boolean z) {
+        this.b = c0404li;
+        this.f757a = z;
     }
 
-    public Xh(AbstractC0186co abstractC0186co, H6 h6, ICrashTransformer iCrashTransformer, C0430ma c0430ma) {
-        super(h6, iCrashTransformer, c0430ma);
-        this.d = abstractC0186co;
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0404li c0404li = this.b;
+        C0404li.a(c0404li.f993a, c0404li.d, c0404li.e).setDataSendingEnabled(this.f757a);
     }
 }

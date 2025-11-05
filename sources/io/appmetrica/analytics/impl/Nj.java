@@ -1,16 +1,18 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Nj implements InterfaceC0534qb {
+
+import java.util.Map;
+/* loaded from: classes3.dex */
+public final class Nj implements Xa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f599a;
+    public final /* synthetic */ Map f611a;
 
-    public Nj(Throwable th) {
-        this.f599a = th;
+    public Nj(Map map) {
+        this.f611a = map;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0534qb
-    public final void a(InterfaceC0558rb interfaceC0558rb) {
-        interfaceC0558rb.reportUnhandledException(this.f599a);
+    @Override // io.appmetrica.analytics.impl.Xa
+    public final void a(Ya ya) {
+        ya.reportAnr(this.f611a);
     }
 }

@@ -90,7 +90,7 @@ public final class ConstraintsKt {
         int i7 = i2 + 1;
         int i8 = i4 + 1;
         int i9 = bitsNeedForSizeUnchecked2 - 13;
-        return Constraints.m7205constructorimpl(((i7 & (~(i7 >> 31))) << 33) | ((i9 >> 1) + (i9 & 1)) | (i << 2) | (i3 << (bitsNeedForSizeUnchecked2 + 2)) | ((i8 & (~(i8 >> 31))) << (bitsNeedForSizeUnchecked2 + 33)));
+        return Constraints.m7936constructorimpl(((i7 & (~(i7 >> 31))) << 33) | ((i9 >> 1) + (i9 & 1)) | (i << 2) | (i3 << (bitsNeedForSizeUnchecked2 + 2)) | ((i8 & (~(i8 >> 31))) << (bitsNeedForSizeUnchecked2 + 33)));
     }
 
     private static final int maxAllowedForSize(int i) {
@@ -134,123 +134,123 @@ public final class ConstraintsKt {
     }
 
     /* renamed from: constrain-N9IONVI  reason: not valid java name */
-    public static final long m7232constrainN9IONVI(long j, long j2) {
-        int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-        int m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j);
-        int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
-        int m7219getMinWidthimpl2 = Constraints.m7219getMinWidthimpl(j2);
-        if (m7219getMinWidthimpl2 < m7219getMinWidthimpl) {
-            m7219getMinWidthimpl2 = m7219getMinWidthimpl;
+    public static final long m7963constrainN9IONVI(long j, long j2) {
+        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+        int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+        int m7950getMinWidthimpl2 = Constraints.m7950getMinWidthimpl(j2);
+        if (m7950getMinWidthimpl2 < m7950getMinWidthimpl) {
+            m7950getMinWidthimpl2 = m7950getMinWidthimpl;
         }
-        if (m7219getMinWidthimpl2 > m7217getMaxWidthimpl) {
-            m7219getMinWidthimpl2 = m7217getMaxWidthimpl;
+        if (m7950getMinWidthimpl2 > m7948getMaxWidthimpl) {
+            m7950getMinWidthimpl2 = m7948getMaxWidthimpl;
         }
-        int m7217getMaxWidthimpl2 = Constraints.m7217getMaxWidthimpl(j2);
-        if (m7217getMaxWidthimpl2 >= m7219getMinWidthimpl) {
-            m7219getMinWidthimpl = m7217getMaxWidthimpl2;
+        int m7948getMaxWidthimpl2 = Constraints.m7948getMaxWidthimpl(j2);
+        if (m7948getMaxWidthimpl2 >= m7950getMinWidthimpl) {
+            m7950getMinWidthimpl = m7948getMaxWidthimpl2;
         }
-        if (m7219getMinWidthimpl <= m7217getMaxWidthimpl) {
-            m7217getMaxWidthimpl = m7219getMinWidthimpl;
+        if (m7950getMinWidthimpl <= m7948getMaxWidthimpl) {
+            m7948getMaxWidthimpl = m7950getMinWidthimpl;
         }
-        int m7218getMinHeightimpl2 = Constraints.m7218getMinHeightimpl(j2);
-        if (m7218getMinHeightimpl2 < m7218getMinHeightimpl) {
-            m7218getMinHeightimpl2 = m7218getMinHeightimpl;
+        int m7949getMinHeightimpl2 = Constraints.m7949getMinHeightimpl(j2);
+        if (m7949getMinHeightimpl2 < m7949getMinHeightimpl) {
+            m7949getMinHeightimpl2 = m7949getMinHeightimpl;
         }
-        if (m7218getMinHeightimpl2 > m7216getMaxHeightimpl) {
-            m7218getMinHeightimpl2 = m7216getMaxHeightimpl;
+        if (m7949getMinHeightimpl2 > m7947getMaxHeightimpl) {
+            m7949getMinHeightimpl2 = m7947getMaxHeightimpl;
         }
-        int m7216getMaxHeightimpl2 = Constraints.m7216getMaxHeightimpl(j2);
-        if (m7216getMaxHeightimpl2 >= m7218getMinHeightimpl) {
-            m7218getMinHeightimpl = m7216getMaxHeightimpl2;
+        int m7947getMaxHeightimpl2 = Constraints.m7947getMaxHeightimpl(j2);
+        if (m7947getMaxHeightimpl2 >= m7949getMinHeightimpl) {
+            m7949getMinHeightimpl = m7947getMaxHeightimpl2;
         }
-        if (m7218getMinHeightimpl <= m7216getMaxHeightimpl) {
-            m7216getMaxHeightimpl = m7218getMinHeightimpl;
+        if (m7949getMinHeightimpl <= m7947getMaxHeightimpl) {
+            m7947getMaxHeightimpl = m7949getMinHeightimpl;
         }
-        return Constraints(m7219getMinWidthimpl2, m7217getMaxWidthimpl, m7218getMinHeightimpl2, m7216getMaxHeightimpl);
+        return Constraints(m7950getMinWidthimpl2, m7948getMaxWidthimpl, m7949getMinHeightimpl2, m7947getMaxHeightimpl);
     }
 
     /* renamed from: constrain-4WqzIAM  reason: not valid java name */
-    public static final long m7231constrain4WqzIAM(long j, long j2) {
+    public static final long m7962constrain4WqzIAM(long j, long j2) {
         int i = (int) (j2 >> 32);
-        int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-        if (i < m7219getMinWidthimpl) {
-            i = m7219getMinWidthimpl;
+        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+        if (i < m7950getMinWidthimpl) {
+            i = m7950getMinWidthimpl;
         }
-        if (i <= m7217getMaxWidthimpl) {
-            m7217getMaxWidthimpl = i;
+        if (i <= m7948getMaxWidthimpl) {
+            m7948getMaxWidthimpl = i;
         }
         int i2 = (int) (j2 & 4294967295L);
-        int m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j);
-        int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
-        if (i2 < m7218getMinHeightimpl) {
-            i2 = m7218getMinHeightimpl;
+        int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+        if (i2 < m7949getMinHeightimpl) {
+            i2 = m7949getMinHeightimpl;
         }
-        if (i2 <= m7216getMaxHeightimpl) {
-            m7216getMaxHeightimpl = i2;
+        if (i2 <= m7947getMaxHeightimpl) {
+            m7947getMaxHeightimpl = i2;
         }
-        return IntSize.m7430constructorimpl((m7217getMaxWidthimpl << 32) | (m7216getMaxHeightimpl & 4294967295L));
+        return IntSize.m8161constructorimpl((m7948getMaxWidthimpl << 32) | (m7947getMaxHeightimpl & 4294967295L));
     }
 
     /* renamed from: constrainWidth-K40F9xA  reason: not valid java name */
-    public static final int m7234constrainWidthK40F9xA(long j, int i) {
-        int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-        if (i < m7219getMinWidthimpl) {
-            i = m7219getMinWidthimpl;
+    public static final int m7965constrainWidthK40F9xA(long j, int i) {
+        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+        if (i < m7950getMinWidthimpl) {
+            i = m7950getMinWidthimpl;
         }
-        return i > m7217getMaxWidthimpl ? m7217getMaxWidthimpl : i;
+        return i > m7948getMaxWidthimpl ? m7948getMaxWidthimpl : i;
     }
 
     /* renamed from: constrainHeight-K40F9xA  reason: not valid java name */
-    public static final int m7233constrainHeightK40F9xA(long j, int i) {
-        int m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j);
-        int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
-        if (i < m7218getMinHeightimpl) {
-            i = m7218getMinHeightimpl;
+    public static final int m7964constrainHeightK40F9xA(long j, int i) {
+        int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+        if (i < m7949getMinHeightimpl) {
+            i = m7949getMinHeightimpl;
         }
-        return i > m7216getMaxHeightimpl ? m7216getMaxHeightimpl : i;
+        return i > m7947getMaxHeightimpl ? m7947getMaxHeightimpl : i;
     }
 
     /* renamed from: isSatisfiedBy-4WqzIAM  reason: not valid java name */
-    public static final boolean m7235isSatisfiedBy4WqzIAM(long j, long j2) {
-        int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
+    public static final boolean m7966isSatisfiedBy4WqzIAM(long j, long j2) {
+        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
         int i = (int) (j2 >> 32);
-        if (m7219getMinWidthimpl > i || i > m7217getMaxWidthimpl) {
+        if (m7950getMinWidthimpl > i || i > m7948getMaxWidthimpl) {
             return false;
         }
         int i2 = (int) (j2 & 4294967295L);
-        return Constraints.m7218getMinHeightimpl(j) <= i2 && i2 <= Constraints.m7216getMaxHeightimpl(j);
+        return Constraints.m7949getMinHeightimpl(j) <= i2 && i2 <= Constraints.m7947getMaxHeightimpl(j);
     }
 
     /* renamed from: offset-NN6Ew-U$default  reason: not valid java name */
-    public static /* synthetic */ long m7237offsetNN6EwU$default(long j, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ long m7968offsetNN6EwU$default(long j, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = 0;
         }
         if ((i3 & 2) != 0) {
             i2 = 0;
         }
-        return m7236offsetNN6EwU(j, i, i2);
+        return m7967offsetNN6EwU(j, i, i2);
     }
 
     /* renamed from: offset-NN6Ew-U  reason: not valid java name */
-    public static final long m7236offsetNN6EwU(long j, int i, int i2) {
-        int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j) + i;
-        if (m7219getMinWidthimpl < 0) {
-            m7219getMinWidthimpl = 0;
+    public static final long m7967offsetNN6EwU(long j, int i, int i2) {
+        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j) + i;
+        if (m7950getMinWidthimpl < 0) {
+            m7950getMinWidthimpl = 0;
         }
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-        if (m7217getMaxWidthimpl != Integer.MAX_VALUE && (m7217getMaxWidthimpl = m7217getMaxWidthimpl + i) < 0) {
-            m7217getMaxWidthimpl = 0;
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+        if (m7948getMaxWidthimpl != Integer.MAX_VALUE && (m7948getMaxWidthimpl = m7948getMaxWidthimpl + i) < 0) {
+            m7948getMaxWidthimpl = 0;
         }
-        int m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j) + i2;
-        if (m7218getMinHeightimpl < 0) {
-            m7218getMinHeightimpl = 0;
+        int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j) + i2;
+        if (m7949getMinHeightimpl < 0) {
+            m7949getMinHeightimpl = 0;
         }
-        int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
-        return Constraints(m7219getMinWidthimpl, m7217getMaxWidthimpl, m7218getMinHeightimpl, (m7216getMaxHeightimpl == Integer.MAX_VALUE || (m7216getMaxHeightimpl = m7216getMaxHeightimpl + i2) >= 0) ? m7216getMaxHeightimpl : 0);
+        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+        return Constraints(m7950getMinWidthimpl, m7948getMaxWidthimpl, m7949getMinHeightimpl, (m7947getMaxHeightimpl == Integer.MAX_VALUE || (m7947getMaxHeightimpl = m7947getMaxHeightimpl + i2) >= 0) ? m7947getMaxHeightimpl : 0);
     }
 }

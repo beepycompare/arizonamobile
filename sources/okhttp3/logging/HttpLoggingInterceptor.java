@@ -31,13 +31,13 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.internal.Internal;
+import okhttp3.internal.IsProbablyUtf8Kt;
 import okhttp3.internal.platform.Platform;
-import okhttp3.logging.internal.IsProbablyUtf8Kt;
 import okio.Buffer;
 import okio.BufferedSource;
 import okio.GzipSource;
 /* compiled from: HttpLoggingInterceptor.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\u0018\u0000 +2\u00020\u0001:\u0003)*+B\u0013\b\u0007\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\bJ\u001f\u0010\u0013\u001a\u00020\u00112\u0012\u0010\u0012\u001a\n\u0012\u0006\b\u0001\u0012\u00020\b0\u0014\"\u00020\b¢\u0006\u0002\u0010\u0015J\u000e\u0010\u0016\u001a\u00020\u00002\u0006\u0010\f\u001a\u00020\u000bJ\r\u0010\r\u001a\u00020\u000bH\u0007¢\u0006\u0002\b\u0017J\u0010\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0016J\u0015\u0010\u001c\u001a\u00020\b2\u0006\u0010\u001d\u001a\u00020\u001eH\u0000¢\u0006\u0002\b\u001fJ\u0018\u0010 \u001a\u00020\u00112\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0002J\u0010\u0010%\u001a\u00020&2\u0006\u0010!\u001a\u00020\"H\u0002J\u0010\u0010'\u001a\u00020&2\u0006\u0010(\u001a\u00020\u0019H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\f\u001a\u00020\u000b2\u0006\u0010\n\u001a\u00020\u000b@GX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\f\u0010\u000f¨\u0006,"}, d2 = {"Lokhttp3/logging/HttpLoggingInterceptor;", "Lokhttp3/Interceptor;", "logger", "Lokhttp3/logging/HttpLoggingInterceptor$Logger;", "<init>", "(Lokhttp3/logging/HttpLoggingInterceptor$Logger;)V", "headersToRedact", "", "", "queryParamsNameToRedact", "value", "Lokhttp3/logging/HttpLoggingInterceptor$Level;", FirebaseAnalytics.Param.LEVEL, "getLevel", "()Lokhttp3/logging/HttpLoggingInterceptor$Level;", "(Lokhttp3/logging/HttpLoggingInterceptor$Level;)V", "redactHeader", "", "name", "redactQueryParams", "", "([Ljava/lang/String;)V", "setLevel", "-deprecated_level", "intercept", "Lokhttp3/Response;", "chain", "Lokhttp3/Interceptor$Chain;", "redactUrl", "url", "Lokhttp3/HttpUrl;", "redactUrl$logging_interceptor", "logHeader", "headers", "Lokhttp3/Headers;", CmcdData.OBJECT_TYPE_INIT_SEGMENT, "", "bodyHasUnknownEncoding", "", "bodyIsStreaming", "response", "Level", "Logger", "Companion", "logging-interceptor"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\u0018\u0000 *2\u00020\u0001:\u0003()*B\u0013\b\u0007\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\bJ\u001f\u0010\u0012\u001a\u00020\u00102\u0012\u0010\u0011\u001a\n\u0012\u0006\b\u0001\u0012\u00020\b0\u0013\"\u00020\b¢\u0006\u0002\u0010\u0014J\u000e\u0010\u0015\u001a\u00020\u00002\u0006\u0010\n\u001a\u00020\u000bJ\r\u0010\f\u001a\u00020\u000bH\u0007¢\u0006\u0002\b\u0016J\u0010\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0016J\u0015\u0010\u001b\u001a\u00020\b2\u0006\u0010\u001c\u001a\u00020\u001dH\u0000¢\u0006\u0002\b\u001eJ\u0018\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010$\u001a\u00020%2\u0006\u0010 \u001a\u00020!H\u0002J\u0010\u0010&\u001a\u00020%2\u0006\u0010'\u001a\u00020\u0018H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\n\u001a\u00020\u000b@\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\n\u0010\u000e¨\u0006+"}, d2 = {"Lokhttp3/logging/HttpLoggingInterceptor;", "Lokhttp3/Interceptor;", "logger", "Lokhttp3/logging/HttpLoggingInterceptor$Logger;", "<init>", "(Lokhttp3/logging/HttpLoggingInterceptor$Logger;)V", "headersToRedact", "", "", "queryParamsNameToRedact", FirebaseAnalytics.Param.LEVEL, "Lokhttp3/logging/HttpLoggingInterceptor$Level;", "getLevel", "()Lokhttp3/logging/HttpLoggingInterceptor$Level;", "(Lokhttp3/logging/HttpLoggingInterceptor$Level;)V", "redactHeader", "", "name", "redactQueryParams", "", "([Ljava/lang/String;)V", "setLevel", "-deprecated_level", "intercept", "Lokhttp3/Response;", "chain", "Lokhttp3/Interceptor$Chain;", "redactUrl", "url", "Lokhttp3/HttpUrl;", "redactUrl$logging_interceptor", "logHeader", "headers", "Lokhttp3/Headers;", CmcdData.OBJECT_TYPE_INIT_SEGMENT, "", "bodyHasUnknownEncoding", "", "bodyIsStreaming", "response", "Level", "Logger", "Companion", "logging-interceptor"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class HttpLoggingInterceptor implements Interceptor {
     public static final Companion Companion = new Companion(null);
@@ -167,19 +167,27 @@ public final class HttpLoggingInterceptor implements Interceptor {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to var", replaceWith = @ReplaceWith(expression = FirebaseAnalytics.Param.LEVEL, imports = {}))
     /* renamed from: -deprecated_level  reason: not valid java name */
-    public final Level m11025deprecated_level() {
+    public final Level m11765deprecated_level() {
         return this.level;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0110 A[LOOP:0: B:42:0x010e->B:43:0x0110, LOOP_END] */
     @Override // okhttp3.Interceptor
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Connection connection;
         boolean z;
         boolean z2;
         String str;
-        long j;
+        String str2;
         Long l;
         GzipSource gzipSource;
+        String str3;
+        String str4;
+        int size;
+        int i;
         Long l2;
         Intrinsics.checkNotNullParameter(chain, "chain");
         Level level = this.level;
@@ -190,18 +198,12 @@ public final class HttpLoggingInterceptor implements Interceptor {
         boolean z3 = level == Level.BODY;
         boolean z4 = z3 || level == Level.HEADERS;
         RequestBody body = request.body();
-        String str2 = "--> " + request.method() + ' ' + redactUrl$logging_interceptor(request.url()) + (chain.connection() != null ? " " + connection.protocol() : "");
+        String str5 = "--> " + request.method() + ' ' + redactUrl$logging_interceptor(request.url()) + (chain.connection() != null ? " " + connection.protocol() : "");
         if (!z4 && body != null) {
-            str2 = str2 + " (" + body.contentLength() + "-byte body)";
+            str5 = str5 + " (" + body.contentLength() + "-byte body)";
         }
-        this.logger.log(str2);
-        if (!z4) {
-            z = z4;
-            z2 = z3;
-            str = "-byte body omitted)";
-            j = -1;
-        } else {
-            j = -1;
+        this.logger.log(str5);
+        if (z4) {
             Headers headers = request.headers();
             if (body != null) {
                 MediaType contentType = body.contentType();
@@ -214,57 +216,71 @@ public final class HttpLoggingInterceptor implements Interceptor {
                     this.logger.log("Content-Type: " + contentType);
                 }
                 if (body.contentLength() != -1 && headers.get("Content-Length") == null) {
+                    str3 = "-byte body)";
+                    str4 = " ";
                     this.logger.log("Content-Length: " + body.contentLength());
+                    size = headers.size();
+                    for (i = 0; i < size; i++) {
+                        logHeader(headers, i);
+                    }
+                    if (z2 || body == null) {
+                        str = str4;
+                        this.logger.log("--> END " + request.method());
+                    } else {
+                        if (bodyHasUnknownEncoding(request.headers())) {
+                            this.logger.log("--> END " + request.method() + " (encoded body omitted)");
+                        } else if (body.isDuplex()) {
+                            this.logger.log("--> END " + request.method() + " (duplex request body omitted)");
+                        } else if (body.isOneShot()) {
+                            this.logger.log("--> END " + request.method() + " (one-shot body omitted)");
+                        } else {
+                            Buffer buffer = new Buffer();
+                            body.writeTo(buffer);
+                            if (StringsKt.equals("gzip", headers.get(HttpHeaders.CONTENT_ENCODING), true)) {
+                                l2 = Long.valueOf(buffer.size());
+                                gzipSource = new GzipSource(buffer);
+                                try {
+                                    Buffer buffer2 = new Buffer();
+                                    buffer2.writeAll(gzipSource);
+                                    CloseableKt.closeFinally(gzipSource, null);
+                                    buffer = buffer2;
+                                } finally {
+                                }
+                            } else {
+                                l2 = null;
+                            }
+                            Charset charsetOrUtf8 = Internal.charsetOrUtf8(body.contentType());
+                            this.logger.log("");
+                            str = str4;
+                            if (!IsProbablyUtf8Kt.isProbablyUtf8(buffer, 16L)) {
+                                this.logger.log("--> END " + request.method() + " (binary " + body.contentLength() + "-byte body omitted)");
+                            } else if (l2 != null) {
+                                this.logger.log("--> END " + request.method() + " (" + buffer.size() + "-byte, " + l2.longValue() + "-gzipped-byte body)");
+                            } else {
+                                this.logger.log(buffer.readString(charsetOrUtf8));
+                                this.logger.log("--> END " + request.method() + " (" + body.contentLength() + str3);
+                            }
+                        }
+                        str = str4;
+                    }
                 }
             } else {
                 z = z4;
                 z2 = z3;
             }
-            int size = headers.size();
-            for (int i = 0; i < size; i++) {
-                logHeader(headers, i);
+            str3 = "-byte body)";
+            str4 = " ";
+            size = headers.size();
+            while (i < size) {
             }
-            if (!z2 || body == null) {
-                str = "-byte body omitted)";
-                this.logger.log("--> END " + request.method());
-            } else {
-                if (bodyHasUnknownEncoding(request.headers())) {
-                    this.logger.log("--> END " + request.method() + " (encoded body omitted)");
-                } else if (body.isDuplex()) {
-                    this.logger.log("--> END " + request.method() + " (duplex request body omitted)");
-                } else if (body.isOneShot()) {
-                    this.logger.log("--> END " + request.method() + " (one-shot body omitted)");
-                } else {
-                    Buffer buffer = new Buffer();
-                    body.writeTo(buffer);
-                    if (StringsKt.equals("gzip", headers.get(HttpHeaders.CONTENT_ENCODING), true)) {
-                        l2 = Long.valueOf(buffer.size());
-                        gzipSource = new GzipSource(buffer);
-                        try {
-                            Buffer buffer2 = new Buffer();
-                            buffer2.writeAll(gzipSource);
-                            CloseableKt.closeFinally(gzipSource, null);
-                            buffer = buffer2;
-                        } finally {
-                        }
-                    } else {
-                        l2 = null;
-                    }
-                    Charset charsetOrUtf8 = Internal.charsetOrUtf8(body.contentType());
-                    this.logger.log("");
-                    if (!IsProbablyUtf8Kt.isProbablyUtf8(buffer)) {
-                        this.logger.log("--> END " + request.method() + " (binary " + body.contentLength() + "-byte body omitted)");
-                    } else if (l2 != null) {
-                        str = "-byte body omitted)";
-                        this.logger.log("--> END " + request.method() + " (" + buffer.size() + "-byte, " + l2 + "-gzipped-byte body)");
-                    } else {
-                        str = "-byte body omitted)";
-                        this.logger.log(buffer.readString(charsetOrUtf8));
-                        this.logger.log("--> END " + request.method() + " (" + body.contentLength() + "-byte body)");
-                    }
-                }
-                str = "-byte body omitted)";
+            if (z2) {
             }
+            str = str4;
+            this.logger.log("--> END " + request.method());
+        } else {
+            z = z4;
+            z2 = z3;
+            str = " ";
         }
         long nanoTime = System.nanoTime();
         try {
@@ -273,16 +289,19 @@ public final class HttpLoggingInterceptor implements Interceptor {
             ResponseBody body2 = proceed.body();
             Intrinsics.checkNotNull(body2);
             long contentLength = body2.contentLength();
-            String str3 = contentLength != j ? contentLength + "-byte" : "unknown-length";
+            String str6 = contentLength != -1 ? contentLength + "-byte" : "unknown-length";
             Logger logger = this.logger;
             StringBuilder sb = new StringBuilder();
             sb.append("<-- " + proceed.code());
             if (proceed.message().length() > 0) {
-                sb.append(" " + proceed.message());
+                str2 = str;
+                sb.append(str2 + proceed.message());
+            } else {
+                str2 = str;
             }
-            sb.append(" " + redactUrl$logging_interceptor(proceed.request().url()) + " (" + millis + "ms");
+            sb.append(str2 + redactUrl$logging_interceptor(proceed.request().url()) + " (" + millis + "ms");
             if (!z) {
-                sb.append(", " + str3 + " body");
+                sb.append(", " + str6 + " body");
             }
             sb.append(")");
             logger.log(sb.toString());
@@ -306,12 +325,13 @@ public final class HttpLoggingInterceptor implements Interceptor {
                     long millis2 = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - nanoTime);
                     Buffer buffer3 = source.getBuffer();
                     if (StringsKt.equals("gzip", headers2.get(HttpHeaders.CONTENT_ENCODING), true)) {
-                        l = Long.valueOf(buffer3.size());
+                        Long valueOf = Long.valueOf(buffer3.size());
                         gzipSource = new GzipSource(buffer3.clone());
                         try {
                             Buffer buffer4 = new Buffer();
                             buffer4.writeAll(gzipSource);
                             CloseableKt.closeFinally(gzipSource, null);
+                            l = valueOf;
                             buffer3 = buffer4;
                         } finally {
                             try {
@@ -323,9 +343,9 @@ public final class HttpLoggingInterceptor implements Interceptor {
                         l = null;
                     }
                     Charset charsetOrUtf82 = Internal.charsetOrUtf8(body2.contentType());
-                    if (!IsProbablyUtf8Kt.isProbablyUtf8(buffer3)) {
+                    if (!IsProbablyUtf8Kt.isProbablyUtf8(buffer3, 16L)) {
                         this.logger.log("");
-                        this.logger.log("<-- END HTTP (" + millis2 + "ms, binary " + buffer3.size() + str);
+                        this.logger.log("<-- END HTTP (" + millis2 + "ms, binary " + buffer3.size() + "-byte body omitted)");
                         return proceed;
                     }
                     if (contentLength != 0) {
@@ -336,7 +356,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append("<-- END HTTP (" + millis2 + "ms, " + buffer3.size() + "-byte");
                     if (l != null) {
-                        sb2.append(", " + l + "-gzipped-byte");
+                        sb2.append(", " + l.longValue() + "-gzipped-byte");
                     }
                     sb2.append(" body)");
                     logger2.log(sb2.toString());
@@ -345,7 +365,12 @@ public final class HttpLoggingInterceptor implements Interceptor {
             }
             return proceed;
         } catch (Exception e) {
-            this.logger.log("<-- HTTP FAILED: " + e);
+            long millis3 = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - nanoTime);
+            Logger logger3 = this.logger;
+            StringBuilder sb3 = new StringBuilder();
+            sb3.append("<-- HTTP FAILED: " + e + '.');
+            sb3.append(str + redactUrl$logging_interceptor(request.url()) + " (" + millis3 + "ms)");
+            logger3.log(sb3.toString());
             throw e;
         }
     }

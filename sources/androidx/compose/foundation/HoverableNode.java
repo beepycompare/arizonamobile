@@ -37,10 +37,10 @@ final class HoverableNode extends Modifier.Node implements PointerInputModifierN
     /* renamed from: onPointerEvent-H0pRuoY */
     public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         if (pointerEventPass == PointerEventPass.Main) {
-            int m5781getType7fucELk = pointerEvent.m5781getType7fucELk();
-            if (PointerEventType.m5788equalsimpl0(m5781getType7fucELk, PointerEventType.Companion.m5792getEnter7fucELk())) {
+            int m6511getType7fucELk = pointerEvent.m6511getType7fucELk();
+            if (PointerEventType.m6518equalsimpl0(m6511getType7fucELk, PointerEventType.Companion.m6522getEnter7fucELk())) {
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new HoverableNode$onPointerEvent$1(this, null), 3, null);
-            } else if (PointerEventType.m5788equalsimpl0(m5781getType7fucELk, PointerEventType.Companion.m5793getExit7fucELk())) {
+            } else if (PointerEventType.m6518equalsimpl0(m6511getType7fucELk, PointerEventType.Companion.m6523getExit7fucELk())) {
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new HoverableNode$onPointerEvent$2(this, null), 3, null);
             }
         }

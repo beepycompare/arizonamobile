@@ -32,7 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AdsMediaSource extends CompositeMediaSource<MediaSource.MediaPeriodId> {
     private static final MediaSource.MediaPeriodId CHILD_SOURCE_MEDIA_PERIOD_ID = new MediaSource.MediaPeriodId(new Object());
     private final MediaSource.Factory adMediaSourceFactory;
@@ -51,7 +51,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
     private Handler playerHandler;
     private final boolean useLazyContentSourcePreparation;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class AdLoadException extends IOException {
         public static final int TYPE_AD = 0;
         public static final int TYPE_AD_GROUP = 1;
@@ -62,7 +62,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         @Target({ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public @interface Type {
         }
 
@@ -143,14 +143,14 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AdsMediaSource.this.m8001x9f9466de(componentListener);
+                AdsMediaSource.this.m8732x9f9466de(componentListener);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$prepareSourceInternal$0$androidx-media3-exoplayer-source-ads-AdsMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8001x9f9466de(ComponentListener componentListener) {
+    public /* synthetic */ void m8732x9f9466de(ComponentListener componentListener) {
         this.adsLoader.start(this, this.adTagDataSpec, this.adsId, this.adViewProvider, componentListener);
     }
 
@@ -209,14 +209,14 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                AdsMediaSource.this.m8002x4d6cb35f(componentListener);
+                AdsMediaSource.this.m8733x4d6cb35f(componentListener);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releaseSourceInternal$1$androidx-media3-exoplayer-source-ads-AdsMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8002x4d6cb35f(ComponentListener componentListener) {
+    public /* synthetic */ void m8733x4d6cb35f(ComponentListener componentListener) {
         this.adsLoader.stop(this, componentListener);
     }
 
@@ -233,7 +233,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                AdsMediaSource.this.m8000xbe1bc96f(timeline);
+                AdsMediaSource.this.m8731xbe1bc96f(timeline);
             }
         });
         if (this.useLazyContentSourcePreparation) {
@@ -243,7 +243,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onChildSourceInfoRefreshed$2$androidx-media3-exoplayer-source-ads-AdsMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8000xbe1bc96f(Timeline timeline) {
+    public /* synthetic */ void m8731xbe1bc96f(Timeline timeline) {
         boolean handleContentTimelineChanged = this.adsLoader.handleContentTimelineChanged(this, timeline);
         Assertions.checkState((handleContentTimelineChanged && this.useLazyContentSourcePreparation) ? false : true);
         if (handleContentTimelineChanged || this.useLazyContentSourcePreparation) {
@@ -392,7 +392,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class ComponentListener implements AdsLoader.EventListener {
         private final Handler playerHandler;
         private volatile boolean stopped;
@@ -414,14 +414,14 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             this.playerHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$ComponentListener$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AdsMediaSource.ComponentListener.this.m8005x6396e000(adPlaybackState);
+                    AdsMediaSource.ComponentListener.this.m8736x6396e000(adPlaybackState);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onAdPlaybackState$0$androidx-media3-exoplayer-source-ads-AdsMediaSource$ComponentListener  reason: not valid java name */
-        public /* synthetic */ void m8005x6396e000(AdPlaybackState adPlaybackState) {
+        public /* synthetic */ void m8736x6396e000(AdPlaybackState adPlaybackState) {
             if (this.stopped) {
                 return;
             }
@@ -438,7 +438,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class AdPrepareListener implements MaskingMediaPeriod.PrepareListener {
         private final MediaItem adMediaItem;
 
@@ -451,14 +451,14 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             AdsMediaSource.this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$AdPrepareListener$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AdsMediaSource.AdPrepareListener.this.m8003x672fc1f4(mediaPeriodId);
+                    AdsMediaSource.AdPrepareListener.this.m8734x672fc1f4(mediaPeriodId);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepareComplete$0$androidx-media3-exoplayer-source-ads-AdsMediaSource$AdPrepareListener  reason: not valid java name */
-        public /* synthetic */ void m8003x672fc1f4(MediaSource.MediaPeriodId mediaPeriodId) {
+        public /* synthetic */ void m8734x672fc1f4(MediaSource.MediaPeriodId mediaPeriodId) {
             AdsMediaSource.this.adsLoader.handlePrepareComplete(AdsMediaSource.this, mediaPeriodId.adGroupIndex, mediaPeriodId.adIndexInAdGroup);
         }
 
@@ -468,20 +468,20 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             AdsMediaSource.this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$AdPrepareListener$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AdsMediaSource.AdPrepareListener.this.m8004xa9898f8e(mediaPeriodId, iOException);
+                    AdsMediaSource.AdPrepareListener.this.m8735xa9898f8e(mediaPeriodId, iOException);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepareError$1$androidx-media3-exoplayer-source-ads-AdsMediaSource$AdPrepareListener  reason: not valid java name */
-        public /* synthetic */ void m8004xa9898f8e(MediaSource.MediaPeriodId mediaPeriodId, IOException iOException) {
+        public /* synthetic */ void m8735xa9898f8e(MediaSource.MediaPeriodId mediaPeriodId, IOException iOException) {
             AdsMediaSource.this.adsLoader.handlePrepareError(AdsMediaSource.this, mediaPeriodId.adGroupIndex, mediaPeriodId.adIndexInAdGroup, iOException);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class AdMediaSourceHolder {
         private final List<MaskingMediaPeriod> activeMediaPeriods = new ArrayList();
         private MediaItem adMediaItem;

@@ -1,57 +1,46 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import java.util.ArrayList;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
 import java.util.Map;
-import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt;
-/* loaded from: classes4.dex */
-public final class Ld implements Converter {
+/* loaded from: classes3.dex */
+public final class Ld implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hk f559a = Na.j().o();
+    public static final Kd f574a = new Kd();
+    public static final Map b = MapsKt.mapOf(TuplesKt.to(NativeCrashSource.UNKNOWN, 0), TuplesKt.to(NativeCrashSource.CRASHPAD, 3));
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Cm[] fromModel(Map<String, ? extends Object> map) {
-        Cm cm;
-        Map<String, C0735yd> c = this.f559a.c();
-        ArrayList arrayList = new ArrayList();
-        for (Map.Entry<String, ? extends Object> entry : map.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            C0735yd c0735yd = c.get(key);
-            if (c0735yd == null || value == null) {
-                cm = null;
-            } else {
-                cm = new Cm();
-                cm.f396a = key;
-                cm.b = (byte[]) c0735yd.c.fromModel(value);
-            }
-            if (cm != null) {
-                arrayList.add(cm);
-            }
+    public final C0160c6 fromModel(Rd rd) {
+        C0160c6 c0160c6 = new C0160c6();
+        c0160c6.f = 1;
+        C0134b6 c0134b6 = new C0134b6();
+        c0134b6.f813a = rd.f665a;
+        C0237f6 c0237f6 = new C0237f6();
+        Integer num = (Integer) b.get(rd.b.f619a);
+        if (num != null) {
+            c0237f6.f871a = num.intValue();
         }
-        Object[] array = arrayList.toArray(new Cm[0]);
-        if (array != null) {
-            return (Cm[]) array;
+        String str = rd.b.b;
+        if (str == null) {
+            str = "";
         }
-        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
+        c0237f6.b = str;
+        c0134b6.b = c0237f6;
+        c0160c6.g = c0134b6;
+        return c0160c6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Map<String, Object> toModel(Cm[] cmArr) {
-        Map<String, C0735yd> c = this.f559a.c();
-        ArrayList arrayList = new ArrayList();
-        for (Cm cm : cmArr) {
-            C0735yd c0735yd = c.get(cm.f396a);
-            Pair pair = c0735yd != null ? TuplesKt.to(cm.f396a, c0735yd.c.toModel(cm.b)) : null;
-            if (pair != null) {
-                arrayList.add(pair);
-            }
-        }
-        return MapsKt.toMap(arrayList);
+    public final Object toModel(Object obj) {
+        C0160c6 c0160c6 = (C0160c6) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public final Rd a(C0160c6 c0160c6) {
+        throw new UnsupportedOperationException();
     }
 }

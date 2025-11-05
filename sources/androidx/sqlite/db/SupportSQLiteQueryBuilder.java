@@ -1,6 +1,5 @@
 package androidx.sqlite.db;
 
-import androidx.compose.material3.MenuKt;
 import java.util.regex.Pattern;
 import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
@@ -81,7 +80,7 @@ public final class SupportSQLiteQueryBuilder {
         String str;
         String str2 = this.groupBy;
         if ((str2 != null && str2.length() != 0) || (str = this.having) == null || str.length() == 0) {
-            StringBuilder sb = new StringBuilder((int) MenuKt.InTransitionDuration);
+            StringBuilder sb = new StringBuilder(120);
             sb.append("SELECT ");
             if (this.distinct) {
                 sb.append("DISTINCT ");

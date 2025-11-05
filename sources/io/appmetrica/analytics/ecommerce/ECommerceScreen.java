@@ -3,11 +3,11 @@ package io.appmetrica.analytics.ecommerce;
 import java.util.List;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ECommerceScreen {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f320a;
+    private String f336a;
     private List b;
     private String c;
     private Map d;
@@ -17,7 +17,7 @@ public class ECommerceScreen {
     }
 
     public String getName() {
-        return this.f320a;
+        return this.f336a;
     }
 
     public Map<String, String> getPayload() {
@@ -34,7 +34,7 @@ public class ECommerceScreen {
     }
 
     public ECommerceScreen setName(String str) {
-        this.f320a = str;
+        this.f336a = str;
         return this;
     }
 
@@ -49,6 +49,6 @@ public class ECommerceScreen {
     }
 
     public String toString() {
-        return "ECommerceScreen{name='" + this.f320a + "', categoriesPath=" + this.b + ", searchQuery='" + this.c + "', payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceScreen{name='" + this.f336a + "', categoriesPath=" + this.b + ", searchQuery='" + this.c + "', payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 }

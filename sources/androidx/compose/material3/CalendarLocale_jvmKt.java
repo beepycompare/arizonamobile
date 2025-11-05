@@ -1,16 +1,17 @@
 package androidx.compose.material3;
 
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.WeakHashMap;
 import kotlin.Metadata;
 /* compiled from: CalendarLocale.jvm.kt */
-@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a \u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\tH\u0002\u001a*\u0010\n\u001a\u00020\u0002*\u00020\u00062\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00062\b\b\u0002\u0010\b\u001a\u00020\tH\u0000\"\u001a\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000*\n\u0010\u000b\"\u00020\f2\u00020\f¨\u0006\r"}, d2 = {"cachedFormatters", "Ljava/util/WeakHashMap;", "", "Ljava/text/NumberFormat;", "getCachedDateTimeFormatter", "minDigits", "", "maxDigits", "isGroupingUsed", "", "toLocalString", "CalendarLocale", "Ljava/util/Locale;", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a<\u0010\u0002\u001a\u00020\u0003*\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00042\b\b\u0002\u0010\u0006\u001a\u00020\u00042\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0010\b\u0002\u0010\t\u001a\n\u0018\u00010\u0001j\u0004\u0018\u0001`\nH\u0000\u001a,\u0010\u000e\u001a\u00020\r2\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\b2\n\u0010\t\u001a\u00060\u0001j\u0002`\nH\u0002\"\u001a\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\r0\fX\u0082\u0004¢\u0006\u0002\n\u0000*\n\u0010\u0000\"\u00020\u00012\u00020\u0001¨\u0006\u000f"}, d2 = {"CalendarLocale", "Ljava/util/Locale;", "toLocalString", "", "", "minDigits", "maxDigits", "isGroupingUsed", "", CommonUrlParts.LOCALE, "Landroidx/compose/material3/CalendarLocale;", "cachedFormatters", "Ljava/util/WeakHashMap;", "Ljava/text/NumberFormat;", "getCachedDateTimeFormatter", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CalendarLocale_jvmKt {
     private static final WeakHashMap<String, NumberFormat> cachedFormatters = new WeakHashMap<>();
 
-    public static /* synthetic */ String toLocalString$default(int i, int i2, int i3, boolean z, int i4, Object obj) {
+    public static /* synthetic */ String toLocalString$default(int i, int i2, int i3, boolean z, Locale locale, int i4, Object obj) {
         if ((i4 & 1) != 0) {
             i2 = 1;
         }
@@ -20,19 +21,25 @@ public final class CalendarLocale_jvmKt {
         if ((i4 & 4) != 0) {
             z = false;
         }
-        return toLocalString(i, i2, i3, z);
+        if ((i4 & 8) != 0) {
+            locale = null;
+        }
+        return toLocalString(i, i2, i3, z, locale);
     }
 
-    public static final String toLocalString(int i, int i2, int i3, boolean z) {
-        return getCachedDateTimeFormatter(i2, i3, z).format(Integer.valueOf(i));
+    public static final String toLocalString(int i, int i2, int i3, boolean z, Locale locale) {
+        if (locale == null) {
+            locale = Locale.getDefault();
+        }
+        return getCachedDateTimeFormatter(i2, i3, z, locale).format(Integer.valueOf(i));
     }
 
-    private static final NumberFormat getCachedDateTimeFormatter(int i, int i2, boolean z) {
-        String str = i + '.' + i2 + '.' + z + '.' + Locale.getDefault().toLanguageTag();
+    private static final NumberFormat getCachedDateTimeFormatter(int i, int i2, boolean z, Locale locale) {
+        String str = i + '.' + i2 + '.' + z + '.' + locale.toLanguageTag();
         WeakHashMap<String, NumberFormat> weakHashMap = cachedFormatters;
         NumberFormat numberFormat = weakHashMap.get(str);
         if (numberFormat == null) {
-            numberFormat = NumberFormat.getIntegerInstance();
+            numberFormat = NumberFormat.getIntegerInstance(locale);
             numberFormat.setGroupingUsed(z);
             numberFormat.setMinimumIntegerDigits(i);
             numberFormat.setMaximumIntegerDigits(i2);

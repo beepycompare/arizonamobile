@@ -259,34 +259,34 @@ public final class SharedElement {
         long j2;
         updateTargetBoundsProvider();
         if (getFoundMatch() && sharedElementInternalState.getBoundsAnimation().getTarget() && (coordinates = placementScope.getCoordinates()) != null) {
-            long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(coordinates.mo5975getSizeYbymL2g());
-            long m5996localLookaheadPositionOfauaQtc$default = LookaheadScope.m5996localLookaheadPositionOfauaQtc$default(sharedElementInternalState.getSharedElement().scope, sharedElementInternalState.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 6, null);
+            long m8178toSizeozmzZPI = IntSizeKt.m8178toSizeozmzZPI(coordinates.mo6705getSizeYbymL2g());
+            long m6726localLookaheadPositionOfauaQtc$default = LookaheadScope.m6726localLookaheadPositionOfauaQtc$default(sharedElementInternalState.getSharedElement().scope, sharedElementInternalState.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 6, null);
             SharedTransitionScopeImpl sharedTransitionScopeImpl = sharedElementInternalState.getSharedElement().scope;
-            long m5974localPositionOfS_NoaFU$default = LayoutCoordinates.m5974localPositionOfS_NoaFU$default(sharedElementInternalState.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 2, null);
+            long m6704localPositionOfS_NoaFU$default = LayoutCoordinates.m6704localPositionOfS_NoaFU$default(sharedElementInternalState.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 2, null);
             TargetData targetData$animation = getTargetData$animation();
             if (targetData$animation == null) {
-                j = m7447toSizeozmzZPI;
-                j2 = m5974localPositionOfS_NoaFU$default;
-                targetData$animation = new TargetData(j, Offset.m4309minusMKHz9U(m5996localLookaheadPositionOfauaQtc$default, m5974localPositionOfS_NoaFU$default), j2, null);
+                j = m8178toSizeozmzZPI;
+                j2 = m6704localPositionOfS_NoaFU$default;
+                targetData$animation = new TargetData(j, Offset.m5039minusMKHz9U(m6726localLookaheadPositionOfauaQtc$default, m6704localPositionOfS_NoaFU$default), j2, null);
             } else {
-                j = m7447toSizeozmzZPI;
-                j2 = m5974localPositionOfS_NoaFU$default;
+                j = m8178toSizeozmzZPI;
+                j2 = m6704localPositionOfS_NoaFU$default;
             }
-            if (!Offset.m4302equalsimpl0(targetData$animation.m143getTargetStructuralOffsetF1C5BW0(), j2) || !Size.m4370equalsimpl0(targetData$animation.m142getSizeNHjbRc(), j) || this.targetBoundsProviderChanged) {
+            if (!Offset.m5032equalsimpl0(targetData$animation.m143getTargetStructuralOffsetF1C5BW0(), j2) || !Size.m5100equalsimpl0(targetData$animation.m142getSizeNHjbRc(), j) || this.targetBoundsProviderChanged) {
                 targetData$animation.m146setSizeuvyYCjk(j);
                 targetData$animation.m147setTargetStructuralOffsetk4lQ0M(j2);
                 if (this.targetBoundsProviderChanged) {
-                    targetData$animation.m145setInitialMfrOffsetk4lQ0M(Offset.m4309minusMKHz9U(Offset.m4309minusMKHz9U(m5996localLookaheadPositionOfauaQtc$default, j2), Offset.m4309minusMKHz9U(targetData$animation.m140getCurrentMfrOffsetF1C5BW0(), targetData$animation.m141getInitialMfrOffsetF1C5BW0())));
+                    targetData$animation.m145setInitialMfrOffsetk4lQ0M(Offset.m5039minusMKHz9U(Offset.m5039minusMKHz9U(m6726localLookaheadPositionOfauaQtc$default, j2), Offset.m5039minusMKHz9U(targetData$animation.m140getCurrentMfrOffsetF1C5BW0(), targetData$animation.m141getInitialMfrOffsetF1C5BW0())));
                 }
                 if (getCurrentBoundsWhenMatched() == null) {
                     Rect obtainBoundsFromLastTarget = obtainBoundsFromLastTarget();
                     if (obtainBoundsFromLastTarget == null) {
-                        obtainBoundsFromLastTarget = RectKt.m4345Recttz77jQw(m5996localLookaheadPositionOfauaQtc$default, j);
+                        obtainBoundsFromLastTarget = RectKt.m5075Recttz77jQw(m6726localLookaheadPositionOfauaQtc$default, j);
                     }
                     setCurrentBoundsWhenMatched(obtainBoundsFromLastTarget);
                 }
             }
-            targetData$animation.m144setCurrentMfrOffsetk4lQ0M(Offset.m4309minusMKHz9U(m5996localLookaheadPositionOfauaQtc$default, j2));
+            targetData$animation.m144setCurrentMfrOffsetk4lQ0M(Offset.m5039minusMKHz9U(m6726localLookaheadPositionOfauaQtc$default, j2));
             setTargetData$animation(targetData$animation);
             this.targetBoundsProviderChanged = false;
         }

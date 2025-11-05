@@ -2,11 +2,11 @@ package io.appmetrica.analytics.logger.common.impl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Pattern f1230a = Pattern.compile("[\\p{Space},;]");
+    public final Pattern f1271a = Pattern.compile("[\\p{Space},;]");
 
     public static int a(Matcher matcher, int i, int i2) {
         if (i2 >= i) {

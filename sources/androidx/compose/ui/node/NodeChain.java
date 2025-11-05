@@ -389,7 +389,7 @@ public final class NodeChain {
                 nodeCoordinator.setWrappedBy$ui_release(parent$ui_release2 != null ? parent$ui_release2.getInnerCoordinator$ui_release() : null);
                 this.outerCoordinator = nodeCoordinator;
                 return;
-            } else if ((NodeKind.m6258constructorimpl(2) & parent$ui_release.getKindSet$ui_release()) != 0) {
+            } else if ((NodeKind.m6988constructorimpl(2) & parent$ui_release.getKindSet$ui_release()) != 0) {
                 return;
             } else {
                 parent$ui_release.updateCoordinator$ui_release(nodeCoordinator);
@@ -503,7 +503,7 @@ public final class NodeChain {
             if (logger != null) {
                 logger.nodeRemoved(i2, this.before.content[this.offset + i2], child$ui_release);
             }
-            if ((NodeKind.m6258constructorimpl(2) & child$ui_release.getKindSet$ui_release()) != 0) {
+            if ((NodeKind.m6988constructorimpl(2) & child$ui_release.getKindSet$ui_release()) != 0) {
                 NodeCoordinator coordinator$ui_release = child$ui_release.getCoordinator$ui_release();
                 Intrinsics.checkNotNull(coordinator$ui_release);
                 NodeCoordinator wrappedBy$ui_release = coordinator$ui_release.getWrappedBy$ui_release();
@@ -662,7 +662,7 @@ public final class NodeChain {
     }
 
     /* renamed from: has-H91voCI$ui_release */
-    public final boolean m6219hasH91voCI$ui_release(int i) {
+    public final boolean m6949hasH91voCI$ui_release(int i) {
         return (i & getAggregateChildKindSet()) != 0;
     }
 
@@ -742,7 +742,7 @@ public final class NodeChain {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: firstFromHead-aLcG6gQ$ui_release */
-    public final /* synthetic */ <T> T m6218firstFromHeadaLcG6gQ$ui_release(int i, Function1<? super T, Boolean> function1) {
+    public final /* synthetic */ <T> T m6948firstFromHeadaLcG6gQ$ui_release(int i, Function1<? super T, Boolean> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui_release = getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
                 if ((head$ui_release.getKindSet$ui_release() & i) != 0) {
@@ -796,7 +796,7 @@ public final class NodeChain {
     }
 
     /* renamed from: headToTail-aLcG6gQ$ui_release */
-    public final /* synthetic */ <T> void m6221headToTailaLcG6gQ$ui_release(int i, Function1<? super T, Unit> function1) {
+    public final /* synthetic */ <T> void m6951headToTailaLcG6gQ$ui_release(int i, Function1<? super T, Unit> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui_release = getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
                 if ((head$ui_release.getKindSet$ui_release() & i) != 0) {
@@ -843,7 +843,7 @@ public final class NodeChain {
     }
 
     /* renamed from: tailToHead-aLcG6gQ$ui_release */
-    public final /* synthetic */ <T> void m6223tailToHeadaLcG6gQ$ui_release(int i, Function1<? super T, Unit> function1) {
+    public final /* synthetic */ <T> void m6953tailToHeadaLcG6gQ$ui_release(int i, Function1<? super T, Unit> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node tail$ui_release = getTail$ui_release(); tail$ui_release != null; tail$ui_release = tail$ui_release.getParent$ui_release()) {
                 if ((tail$ui_release.getKindSet$ui_release() & i) != 0) {
@@ -891,7 +891,7 @@ public final class NodeChain {
     /* JADX WARN: Type inference failed for: r2v23 */
     /* JADX WARN: Type inference failed for: r2v25 */
     /* renamed from: tail-H91voCI$ui_release */
-    public final /* synthetic */ <T> T m6222tailH91voCI$ui_release(int i) {
+    public final /* synthetic */ <T> T m6952tailH91voCI$ui_release(int i) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node tail$ui_release = getTail$ui_release(); tail$ui_release != null; tail$ui_release = tail$ui_release.getParent$ui_release()) {
                 if ((tail$ui_release.getKindSet$ui_release() & i) != 0) {
@@ -944,7 +944,7 @@ public final class NodeChain {
     /* JADX WARN: Type inference failed for: r2v25 */
     /* JADX WARN: Type inference failed for: r2v27 */
     /* renamed from: head-H91voCI$ui_release */
-    public final /* synthetic */ <T> T m6220headH91voCI$ui_release(int i) {
+    public final /* synthetic */ <T> T m6950headH91voCI$ui_release(int i) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui_release = getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
                 if ((head$ui_release.getKindSet$ui_release() & i) != 0) {

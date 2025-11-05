@@ -126,7 +126,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 int valueOf3 = this.sideCalculator.valueOf(currentInsets);
                 if (valueOf3 == (i > 0 ? valueOf2 : valueOf)) {
                     this.partialConsumption = 0.0f;
-                    return Offset.Companion.m4321getZeroF1C5BW0();
+                    return Offset.Companion.m5051getZeroF1C5BW0();
                 }
                 float f2 = valueOf3 + f + this.partialConsumption;
                 int coerceIn = RangesKt.coerceIn(Math.round(f2), valueOf, valueOf2);
@@ -137,19 +137,19 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 return this.sideCalculator.mo875consumedOffsetsMKHz9U(j);
             }
         }
-        return Offset.Companion.m4321getZeroF1C5BW0();
+        return Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreFling-QWom1Mo  reason: not valid java name */
     public Object mo927onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
-        return m925flinghuYlsQE(j, this.sideCalculator.hideMotion(Velocity.m7502getXimpl(j), Velocity.m7503getYimpl(j)), false, continuation);
+        return m925flinghuYlsQE(j, this.sideCalculator.hideMotion(Velocity.m8233getXimpl(j), Velocity.m8234getYimpl(j)), false, continuation);
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostFling-RZ2iAVY */
     public Object mo576onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
-        return m925flinghuYlsQE(j2, this.sideCalculator.showMotion(Velocity.m7502getXimpl(j2), Velocity.m7503getYimpl(j2)), true, continuation);
+        return m925flinghuYlsQE(j2, this.sideCalculator.showMotion(Velocity.m8233getXimpl(j2), Velocity.m8234getYimpl(j2)), true, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -188,7 +188,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                     this.animationJob = null;
                     this.partialConsumption = 0.0f;
                     if ((f2 == 0.0f && !z) || (this.animationController == null && this.windowInsets.isVisible() == z)) {
-                        return Velocity.m7493boximpl(Velocity.Companion.m7513getZero9UxMQ8M());
+                        return Velocity.m8224boximpl(Velocity.Companion.m8244getZero9UxMQ8M());
                     }
                     windowInsetsNestedScrollConnection$fling$12.J$0 = j;
                     windowInsetsNestedScrollConnection$fling$12.F$0 = f2;
@@ -203,11 +203,11 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                         j3 = windowInsetsNestedScrollConnection$fling$12.J$0;
                         floatRef = (Ref.FloatRef) windowInsetsNestedScrollConnection$fling$12.L$0;
                         ResultKt.throwOnFailure(obj);
-                        return Velocity.m7493boximpl(this.sideCalculator.mo876consumedVelocityQWom1Mo(j3, floatRef.element));
+                        return Velocity.m8224boximpl(this.sideCalculator.mo876consumedVelocityQWom1Mo(j3, floatRef.element));
                     } else if (i == 3) {
                         j4 = windowInsetsNestedScrollConnection$fling$12.J$0;
                         ResultKt.throwOnFailure(obj);
-                        return Velocity.m7493boximpl(this.sideCalculator.mo876consumedVelocityQWom1Mo(j4, 0.0f));
+                        return Velocity.m8224boximpl(this.sideCalculator.mo876consumedVelocityQWom1Mo(j4, 0.0f));
                     } else {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
@@ -220,7 +220,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 float f3 = f2;
                 windowInsetsAnimationController = (WindowInsetsAnimationController) animationController;
                 if (windowInsetsAnimationController != null) {
-                    return Velocity.m7493boximpl(Velocity.Companion.m7513getZero9UxMQ8M());
+                    return Velocity.m8224boximpl(Velocity.Companion.m8244getZero9UxMQ8M());
                 }
                 int valueOf = this.sideCalculator.valueOf(windowInsetsAnimationController.getHiddenStateInsets());
                 int valueOf2 = this.sideCalculator.valueOf(windowInsetsAnimationController.getShownStateInsets());
@@ -228,7 +228,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 if ((f3 <= 0.0f && valueOf3 == valueOf) || (f3 >= 0.0f && valueOf3 == valueOf2)) {
                     windowInsetsAnimationController.finish(valueOf3 == valueOf2);
                     this.animationController = null;
-                    return Velocity.m7493boximpl(Velocity.Companion.m7513getZero9UxMQ8M());
+                    return Velocity.m8224boximpl(Velocity.Companion.m8244getZero9UxMQ8M());
                 }
                 SplineBasedFloatDecayAnimationSpec splineBasedFloatDecayAnimationSpec = new SplineBasedFloatDecayAnimationSpec(this.density);
                 float flingDistance = valueOf3 + splineBasedFloatDecayAnimationSpec.flingDistance(f3);
@@ -243,14 +243,14 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                     if (CoroutineScopeKt.coroutineScope(new WindowInsetsNestedScrollConnection$fling$2(this, valueOf3, f3, splineBasedFloatDecayAnimationSpec, valueOf, valueOf2, floatRef2, windowInsetsAnimationController, z2, null), windowInsetsNestedScrollConnection$fling$12) != coroutine_suspended) {
                         floatRef = floatRef2;
                         j3 = j2;
-                        return Velocity.m7493boximpl(this.sideCalculator.mo876consumedVelocityQWom1Mo(j3, floatRef.element));
+                        return Velocity.m8224boximpl(this.sideCalculator.mo876consumedVelocityQWom1Mo(j3, floatRef.element));
                     }
                 } else {
                     windowInsetsNestedScrollConnection$fling$12.J$0 = j2;
                     windowInsetsNestedScrollConnection$fling$12.label = 3;
                     if (CoroutineScopeKt.coroutineScope(new WindowInsetsNestedScrollConnection$fling$3(this, valueOf3, i2, f3, windowInsetsAnimationController, z2, null), windowInsetsNestedScrollConnection$fling$12) != coroutine_suspended) {
                         j4 = j2;
-                        return Velocity.m7493boximpl(this.sideCalculator.mo876consumedVelocityQWom1Mo(j4, 0.0f));
+                        return Velocity.m8224boximpl(this.sideCalculator.mo876consumedVelocityQWom1Mo(j4, 0.0f));
                     }
                 }
                 return coroutine_suspended;

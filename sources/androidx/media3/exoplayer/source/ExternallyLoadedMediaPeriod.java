@@ -20,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class ExternallyLoadedMediaPeriod implements MediaPeriod {
     private final ExternalLoader externalLoader;
     private final AtomicBoolean loadingFinished;
@@ -140,7 +140,7 @@ final class ExternallyLoadedMediaPeriod implements MediaPeriod {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class SampleStreamImpl implements SampleStream {
         private static final int STREAM_STATE_END_OF_STREAM = 2;
         private static final int STREAM_STATE_SEND_FORMAT = 0;

@@ -12,7 +12,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class VideoFrameReleaseControl {
     public static final int FRAME_RELEASE_DROP = 2;
     public static final int FRAME_RELEASE_IGNORE = 4;
@@ -40,11 +40,11 @@ public final class VideoFrameReleaseControl {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface FrameReleaseAction {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface FrameTimingEvaluator {
         boolean shouldDropFrame(long j, long j2, boolean z);
 
@@ -53,7 +53,7 @@ public final class VideoFrameReleaseControl {
         boolean shouldIgnoreFrame(long j, long j2, long j3, boolean z, boolean z2) throws ExoPlaybackException;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class FrameReleaseInfo {
         private long earlyUs = C.TIME_UNSET;
         private long releaseTimeNs = C.TIME_UNSET;

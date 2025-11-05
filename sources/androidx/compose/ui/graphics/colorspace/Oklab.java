@@ -31,7 +31,7 @@ public final class Oklab extends ColorSpace {
     }
 
     public Oklab(String str, int i) {
-        super(str, ColorModel.Companion.m4980getLabxdoWZVw(), i, null);
+        super(str, ColorModel.Companion.m5710getLabxdoWZVw(), i, null);
     }
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
@@ -125,7 +125,7 @@ public final class Oklab extends ColorSpace {
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
     /* renamed from: xyzaToColor-JlNiLsg$ui_graphics_release */
-    public long mo4984xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
+    public long mo5714xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
         float[] fArr = M1;
         float f5 = (fArr[2] * f) + (fArr[5] * f2) + (fArr[8] * f3);
         float fastCbrt = MathHelpersKt.fastCbrt((fArr[0] * f) + (fArr[3] * f2) + (fArr[6] * f3));

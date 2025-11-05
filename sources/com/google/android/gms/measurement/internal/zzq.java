@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import java.util.Objects;
 /* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzq implements zzjq {
     public final com.google.android.gms.internal.measurement.zzda zza;
     final /* synthetic */ AppMeasurementDynamiteService zzb;

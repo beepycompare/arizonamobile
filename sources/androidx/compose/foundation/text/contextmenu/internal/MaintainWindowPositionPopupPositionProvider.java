@@ -68,18 +68,18 @@ final class MaintainWindowPositionPopupPositionProvider implements PopupPosition
         IntOffset intOffset = this.previousPosition;
         if (intOffset != null) {
             IntSize intSize = this.previousWindowSize;
-            if ((intSize == null ? false : IntSize.m7433equalsimpl0(intSize.m7439unboximpl(), j)) && this.previousLayoutDirection == layoutDirection) {
+            if ((intSize == null ? false : IntSize.m8164equalsimpl0(intSize.m8170unboximpl(), j)) && this.previousLayoutDirection == layoutDirection) {
                 IntSize intSize2 = this.previousPopupContentSize;
-                if (intSize2 != null ? IntSize.m7433equalsimpl0(intSize2.m7439unboximpl(), j2) : false) {
-                    return intOffset.m7401unboximpl();
+                if (intSize2 != null ? IntSize.m8164equalsimpl0(intSize2.m8170unboximpl(), j2) : false) {
+                    return intOffset.m8132unboximpl();
                 }
             }
         }
         long mo393calculatePositionllwVHH4 = this.popupPositionProvider.mo393calculatePositionllwVHH4(intRect, j, layoutDirection, j2);
-        this.previousWindowSize = IntSize.m7427boximpl(j);
+        this.previousWindowSize = IntSize.m8158boximpl(j);
         this.previousLayoutDirection = layoutDirection;
-        this.previousPopupContentSize = IntSize.m7427boximpl(j2);
-        this.previousPosition = IntOffset.m7383boximpl(mo393calculatePositionllwVHH4);
+        this.previousPopupContentSize = IntSize.m8158boximpl(j2);
+        this.previousPosition = IntOffset.m8114boximpl(mo393calculatePositionllwVHH4);
         return mo393calculatePositionllwVHH4;
     }
 }

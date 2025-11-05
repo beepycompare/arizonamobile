@@ -5,7 +5,7 @@ import io.appmetrica.analytics.adrevenue.fyber.v3.impl.c;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class FyberClientModuleEntryPoint extends ModuleClientEntryPoint<Object> {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public String getIdentifier() {

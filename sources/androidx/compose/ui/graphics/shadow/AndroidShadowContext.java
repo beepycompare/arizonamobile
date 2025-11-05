@@ -64,7 +64,7 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
         }
 
         /* renamed from: copy-eZhPAX0$default  reason: not valid java name */
-        public static /* synthetic */ ShadowKey m5257copyeZhPAX0$default(ShadowKey shadowKey, Shape shape, long j, LayoutDirection layoutDirection, float f, Shadow shadow, int i, Object obj) {
+        public static /* synthetic */ ShadowKey m5987copyeZhPAX0$default(ShadowKey shadowKey, Shape shape, long j, LayoutDirection layoutDirection, float f, Shadow shadow, int i, Object obj) {
             if ((i & 1) != 0) {
                 shape = shadowKey.shape;
             }
@@ -82,7 +82,7 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
             }
             Shadow shadow2 = shadow;
             LayoutDirection layoutDirection2 = layoutDirection;
-            return shadowKey.m5259copyeZhPAX0(shape, j, layoutDirection2, f, shadow2);
+            return shadowKey.m5989copyeZhPAX0(shape, j, layoutDirection2, f, shadow2);
         }
 
         public final Shape component1() {
@@ -90,7 +90,7 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
         }
 
         /* renamed from: component2-NH-jbRc  reason: not valid java name */
-        public final long m5258component2NHjbRc() {
+        public final long m5988component2NHjbRc() {
             return this.size;
         }
 
@@ -107,7 +107,7 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
         }
 
         /* renamed from: copy-eZhPAX0  reason: not valid java name */
-        public final ShadowKey m5259copyeZhPAX0(Shape shape, long j, LayoutDirection layoutDirection, float f, Shadow shadow) {
+        public final ShadowKey m5989copyeZhPAX0(Shape shape, long j, LayoutDirection layoutDirection, float f, Shadow shadow) {
             return new ShadowKey(shape, j, layoutDirection, f, shadow, null);
         }
 
@@ -117,19 +117,19 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
             }
             if (obj instanceof ShadowKey) {
                 ShadowKey shadowKey = (ShadowKey) obj;
-                return Intrinsics.areEqual(this.shape, shadowKey.shape) && Size.m4370equalsimpl0(this.size, shadowKey.size) && this.layoutDirection == shadowKey.layoutDirection && Float.compare(this.density, shadowKey.density) == 0 && Intrinsics.areEqual(this.shadow, shadowKey.shadow);
+                return Intrinsics.areEqual(this.shape, shadowKey.shape) && Size.m5100equalsimpl0(this.size, shadowKey.size) && this.layoutDirection == shadowKey.layoutDirection && Float.compare(this.density, shadowKey.density) == 0 && Intrinsics.areEqual(this.shadow, shadowKey.shadow);
             }
             return false;
         }
 
         public int hashCode() {
-            int hashCode = ((((((this.shape.hashCode() * 31) + Size.m4375hashCodeimpl(this.size)) * 31) + this.layoutDirection.hashCode()) * 31) + Float.hashCode(this.density)) * 31;
+            int hashCode = ((((((this.shape.hashCode() * 31) + Size.m5105hashCodeimpl(this.size)) * 31) + this.layoutDirection.hashCode()) * 31) + Float.hashCode(this.density)) * 31;
             Shadow shadow = this.shadow;
             return hashCode + (shadow == null ? 0 : shadow.hashCode());
         }
 
         public String toString() {
-            return "ShadowKey(shape=" + this.shape + ", size=" + ((Object) Size.m4378toStringimpl(this.size)) + ", layoutDirection=" + this.layoutDirection + ", density=" + this.density + ", shadow=" + this.shadow + ')';
+            return "ShadowKey(shape=" + this.shape + ", size=" + ((Object) Size.m5108toStringimpl(this.size)) + ", layoutDirection=" + this.layoutDirection + ", density=" + this.density + ", shadow=" + this.shadow + ')';
         }
 
         private ShadowKey(Shape shape, long j, LayoutDirection layoutDirection, float f, Shadow shadow) {
@@ -141,7 +141,7 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
         }
 
         public /* synthetic */ ShadowKey(Shape shape, long j, LayoutDirection layoutDirection, float f, Shadow shadow, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? RectangleShapeKt.getRectangleShape() : shape, (i & 2) != 0 ? Size.Companion.m4383getZeroNHjbRc() : j, (i & 4) != 0 ? LayoutDirection.Ltr : layoutDirection, (i & 8) != 0 ? 1.0f : f, (i & 16) != 0 ? null : shadow, null);
+            this((i & 1) != 0 ? RectangleShapeKt.getRectangleShape() : shape, (i & 2) != 0 ? Size.Companion.m5113getZeroNHjbRc() : j, (i & 4) != 0 ? LayoutDirection.Ltr : layoutDirection, (i & 8) != 0 ? 1.0f : f, (i & 16) != 0 ? null : shadow, null);
         }
 
         public final Shape getShape() {
@@ -153,12 +153,12 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
         }
 
         /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-        public final long m5260getSizeNHjbRc() {
+        public final long m5990getSizeNHjbRc() {
             return this.size;
         }
 
         /* renamed from: setSize-uvyYCjk  reason: not valid java name */
-        public final void m5261setSizeuvyYCjk(long j) {
+        public final void m5991setSizeuvyYCjk(long j) {
             this.size = j;
         }
 
@@ -189,19 +189,19 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
 
     @Override // androidx.compose.ui.graphics.shadow.DropShadowRendererProvider
     /* renamed from: obtainDropShadowRenderer-eZhPAX0  reason: not valid java name */
-    public DropShadowRenderer mo5255obtainDropShadowRenderereZhPAX0(Shape shape, long j, LayoutDirection layoutDirection, Density density, Shadow shadow) {
+    public DropShadowRenderer mo5985obtainDropShadowRenderereZhPAX0(Shape shape, long j, LayoutDirection layoutDirection, Density density, Shadow shadow) {
         DropShadowRenderer dropShadowRenderer;
         synchronized (this) {
             ShadowKey obtainShadowKey = obtainShadowKey();
             obtainShadowKey.setShape(shape);
-            obtainShadowKey.m5261setSizeuvyYCjk(j);
+            obtainShadowKey.m5991setSizeuvyYCjk(j);
             obtainShadowKey.setLayoutDirection(layoutDirection);
             obtainShadowKey.setDensity(density.getDensity());
             obtainShadowKey.setShadow(shadow.copyWithoutOffset$ui_graphics_release());
             dropShadowRenderer = obtainDropShadowCache().get(obtainShadowKey);
             if (dropShadowRenderer == null) {
                 DropShadowRenderer dropShadowRenderer2 = new DropShadowRenderer(shadow, shape.mo331createOutlinePq9zytI(j, layoutDirection, density));
-                obtainDropShadowCache().set(ShadowKey.m5257copyeZhPAX0$default(obtainShadowKey, null, 0L, null, 0.0f, null, 31, null), dropShadowRenderer2);
+                obtainDropShadowCache().set(ShadowKey.m5987copyeZhPAX0$default(obtainShadowKey, null, 0L, null, 0.0f, null, 31, null), dropShadowRenderer2);
                 dropShadowRenderer = dropShadowRenderer2;
             }
         }
@@ -210,19 +210,19 @@ public final class AndroidShadowContext implements PlatformShadowContext, DropSh
 
     @Override // androidx.compose.ui.graphics.shadow.InnerShadowRendererProvider
     /* renamed from: obtainInnerShadowRenderer-eZhPAX0  reason: not valid java name */
-    public InnerShadowRenderer mo5256obtainInnerShadowRenderereZhPAX0(Shape shape, long j, LayoutDirection layoutDirection, Density density, Shadow shadow) {
+    public InnerShadowRenderer mo5986obtainInnerShadowRenderereZhPAX0(Shape shape, long j, LayoutDirection layoutDirection, Density density, Shadow shadow) {
         InnerShadowRenderer innerShadowRenderer;
         synchronized (this) {
             ShadowKey obtainShadowKey = obtainShadowKey();
             obtainShadowKey.setShape(shape);
-            obtainShadowKey.m5261setSizeuvyYCjk(j);
+            obtainShadowKey.m5991setSizeuvyYCjk(j);
             obtainShadowKey.setLayoutDirection(layoutDirection);
             obtainShadowKey.setDensity(density.getDensity());
             obtainShadowKey.setShadow(shadow);
             innerShadowRenderer = obtainInnerShadowCache().get(obtainShadowKey);
             if (innerShadowRenderer == null) {
                 InnerShadowRenderer innerShadowRenderer2 = new InnerShadowRenderer(shadow, shape.mo331createOutlinePq9zytI(j, layoutDirection, density));
-                obtainInnerShadowCache().set(ShadowKey.m5257copyeZhPAX0$default(obtainShadowKey, null, 0L, null, 0.0f, null, 31, null), innerShadowRenderer2);
+                obtainInnerShadowCache().set(ShadowKey.m5987copyeZhPAX0$default(obtainShadowKey, null, 0L, null, 0.0f, null, 31, null), innerShadowRenderer2);
                 innerShadowRenderer = innerShadowRenderer2;
             }
         }

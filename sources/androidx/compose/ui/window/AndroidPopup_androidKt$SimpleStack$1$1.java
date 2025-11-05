@@ -23,8 +23,8 @@ public final class AndroidPopup_androidKt$SimpleStack$1$1 implements MeasurePoli
         int size = list.size();
         if (size != 0) {
             if (size == 1) {
-                final Placeable mo5967measureBRTryo0 = list.get(0).mo5967measureBRTryo0(j);
-                return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$SimpleStack$1$1.2
+                final Placeable mo6697measureBRTryo0 = list.get(0).mo6697measureBRTryo0(j);
+                return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$SimpleStack$1$1.2
                     {
                         super(1);
                     }
@@ -46,10 +46,10 @@ public final class AndroidPopup_androidKt$SimpleStack$1$1 implements MeasurePoli
             int i = 0;
             int i2 = 0;
             for (int i3 = 0; i3 < size2; i3++) {
-                Placeable mo5967measureBRTryo02 = list.get(i3).mo5967measureBRTryo0(j);
-                i = Math.max(i, mo5967measureBRTryo02.getWidth());
-                i2 = Math.max(i2, mo5967measureBRTryo02.getHeight());
-                arrayList.add(mo5967measureBRTryo02);
+                Placeable mo6697measureBRTryo02 = list.get(i3).mo6697measureBRTryo0(j);
+                i = Math.max(i, mo6697measureBRTryo02.getWidth());
+                i2 = Math.max(i2, mo6697measureBRTryo02.getHeight());
+                arrayList.add(mo6697measureBRTryo02);
             }
             final ArrayList arrayList2 = arrayList;
             return MeasureScope.layout$default(measureScope, i, i2, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$SimpleStack$1$1.3

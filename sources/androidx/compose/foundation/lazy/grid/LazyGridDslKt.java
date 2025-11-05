@@ -247,7 +247,7 @@ public final class LazyGridDslKt {
                                 } else {
                                     lazyGridState3 = obj2;
                                 }
-                                PaddingValues m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj3;
+                                PaddingValues m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
@@ -606,7 +606,7 @@ public final class LazyGridDslKt {
                                             lazyGridState2 = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
                                             i3 &= -897;
                                         }
-                                        PaddingValues m835PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj;
+                                        PaddingValues m835PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
                                         if (i5 != 0) {
                                             z3 = false;
                                         }
@@ -978,7 +978,7 @@ public final class LazyGridDslKt {
                                 } else {
                                     lazyGridState3 = obj2;
                                 }
-                                PaddingValues m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj3;
+                                PaddingValues m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
@@ -1338,7 +1338,7 @@ public final class LazyGridDslKt {
                                             lazyGridState2 = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
                                             i3 &= -897;
                                         }
-                                        PaddingValues m835PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj;
+                                        PaddingValues m835PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
                                         if (i5 != 0) {
                                             z3 = false;
                                         }
@@ -1558,13 +1558,13 @@ public final class LazyGridDslKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final LazyGridSlots rememberColumnWidthSums$lambda$9$lambda$8(GridCells gridCells, Arrangement.Horizontal horizontal, Density density, Constraints constraints) {
-        if (!(Constraints.m7217getMaxWidthimpl(constraints.m7223unboximpl()) != Integer.MAX_VALUE)) {
+        if (!(Constraints.m7948getMaxWidthimpl(constraints.m7954unboximpl()) != Integer.MAX_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("LazyVerticalGrid's width should be bound by parent.");
         }
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(constraints.m7223unboximpl());
-        int[] intArray = CollectionsKt.toIntArray(gridCells.calculateCrossAxisCellSizes(density, m7217getMaxWidthimpl, density.mo423roundToPx0680j_4(horizontal.mo708getSpacingD9Ej5fM())));
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(constraints.m7954unboximpl());
+        int[] intArray = CollectionsKt.toIntArray(gridCells.calculateCrossAxisCellSizes(density, m7948getMaxWidthimpl, density.mo423roundToPx0680j_4(horizontal.mo708getSpacingD9Ej5fM())));
         int[] iArr = new int[intArray.length];
-        horizontal.arrange(density, m7217getMaxWidthimpl, intArray, LayoutDirection.Ltr, iArr);
+        horizontal.arrange(density, m7948getMaxWidthimpl, intArray, LayoutDirection.Ltr, iArr);
         return new LazyGridSlots(intArray, iArr);
     }
 
@@ -1598,13 +1598,13 @@ public final class LazyGridDslKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final LazyGridSlots rememberRowHeightSums$lambda$15$lambda$14(GridCells gridCells, Arrangement.Vertical vertical, Density density, Constraints constraints) {
-        if (!(Constraints.m7216getMaxHeightimpl(constraints.m7223unboximpl()) != Integer.MAX_VALUE)) {
+        if (!(Constraints.m7947getMaxHeightimpl(constraints.m7954unboximpl()) != Integer.MAX_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("LazyHorizontalGrid's height should be bound by parent.");
         }
-        int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(constraints.m7223unboximpl());
-        int[] intArray = CollectionsKt.toIntArray(gridCells.calculateCrossAxisCellSizes(density, m7216getMaxHeightimpl, density.mo423roundToPx0680j_4(vertical.mo708getSpacingD9Ej5fM())));
+        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(constraints.m7954unboximpl());
+        int[] intArray = CollectionsKt.toIntArray(gridCells.calculateCrossAxisCellSizes(density, m7947getMaxHeightimpl, density.mo423roundToPx0680j_4(vertical.mo708getSpacingD9Ej5fM())));
         int[] iArr = new int[intArray.length];
-        vertical.arrange(density, m7216getMaxHeightimpl, intArray, iArr);
+        vertical.arrange(density, m7947getMaxHeightimpl, intArray, iArr);
         return new LazyGridSlots(intArray, iArr);
     }
 

@@ -1,49 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
-public final class P5 implements InterfaceC0560rd {
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
+import io.appmetrica.analytics.coreutils.internal.services.WaitForActivationDelayBarrier;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+/* loaded from: classes3.dex */
+public final class P5 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f621a;
+    public final List f631a;
+    public final IHandlerExecutor b = C0620ua.k().x().a();
+    public final WaitForActivationDelayBarrier c = C0620ua.k().a();
 
-    public P5(String str) {
-        this.f621a = str;
+    public P5(List list) {
+        this.f631a = list;
     }
 
-    public final P5 a(String str) {
-        return new P5(str);
-    }
-
-    public final String b() {
-        return this.f621a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static final void a(P5 p5) {
+        for (Runnable runnable : p5.f631a) {
+            runnable.run();
         }
-        return (obj instanceof P5) && Intrinsics.areEqual(this.f621a, ((P5) obj).f621a);
     }
 
-    public final int hashCode() {
-        return this.f621a.hashCode();
-    }
-
-    public final String toString() {
-        return "ConstantModuleEntryPointProvider(className=" + this.f621a + ')';
-    }
-
-    public static P5 a(P5 p5, String str, int i, Object obj) {
-        if ((i & 1) != 0) {
-            str = p5.f621a;
-        }
-        p5.getClass();
-        return new P5(str);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0560rd
-    public final String a() {
-        return this.f621a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.c.subscribe(TimeUnit.SECONDS.toMillis(10L), this.b, new ActivationBarrierCallback() { // from class: io.appmetrica.analytics.impl.P5$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
+            public final void onWaitFinished() {
+                P5.a(P5.this);
+            }
+        });
     }
 }

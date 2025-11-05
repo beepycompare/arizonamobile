@@ -31,7 +31,7 @@ public final class FocusRestorerKt {
     public static final boolean saveFocusedChild(final FocusTargetNode focusTargetNode) {
         if (focusTargetNode.getFocusState().getHasFocus()) {
             FocusTargetNode focusTargetNode2 = focusTargetNode;
-            int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
+            int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
             if (!focusTargetNode2.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
             }
@@ -44,13 +44,13 @@ public final class FocusRestorerKt {
             }
             while (mutableVector.getSize() != 0) {
                 Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-                if ((node.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
+                if ((node.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
                     DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
                 } else {
                     while (true) {
                         if (node == null) {
                             break;
-                        } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                        } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                             MutableVector mutableVector2 = null;
                             while (node != null) {
                                 if (node instanceof FocusTargetNode) {
@@ -73,10 +73,10 @@ public final class FocusRestorerKt {
                                         }
                                         return true;
                                     }
-                                } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i = 0;
                                     for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                        if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                        if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                             i++;
                                             if (i == 1) {
                                                 node = delegate$ui_release;
@@ -129,7 +129,7 @@ public final class FocusRestorerKt {
             return false;
         }
         FocusTargetNode focusTargetNode2 = focusTargetNode;
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
         if (!focusTargetNode2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
@@ -142,24 +142,24 @@ public final class FocusRestorerKt {
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
+            if ((node.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
             } else {
                 while (true) {
                     if (node == null) {
                         break;
-                    } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                    } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                         MutableVector mutableVector2 = null;
                         while (node != null) {
                             if (node instanceof FocusTargetNode) {
                                 FocusTargetNode focusTargetNode3 = (FocusTargetNode) node;
                                 if (focusTargetNode3.isAttached() && DelegatableNodeKt.requireLayoutNode(focusTargetNode3).getCompositeKeyHash() == focusTargetNode.getPreviouslyFocusedChildHash()) {
-                                    return restoreFocusedChild(focusTargetNode3) || FocusTargetModifierNode.m4214requestFocus3ESFkO8$default(focusTargetNode3, 0, 1, null);
+                                    return restoreFocusedChild(focusTargetNode3) || FocusTargetModifierNode.m4944requestFocus3ESFkO8$default(focusTargetNode3, 0, 1, null);
                                 }
-                            } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui_release;

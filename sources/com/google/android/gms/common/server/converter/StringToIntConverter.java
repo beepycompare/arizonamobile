@@ -9,7 +9,7 @@ import com.google.android.gms.common.server.response.FastJsonResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StringToIntConverter extends AbstractSafeParcelable implements FastJsonResponse.FieldConverter<String, Integer> {
     public static final Parcelable.Creator<StringToIntConverter> CREATOR = new zad();
     final int zaa;

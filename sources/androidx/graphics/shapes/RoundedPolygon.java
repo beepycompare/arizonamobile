@@ -125,13 +125,13 @@ public final class RoundedPolygon {
 
     public final RoundedPolygon transformed(PointTransformer f) {
         Intrinsics.checkNotNullParameter(f, "f");
-        long m7832transformedso9K2fw = PointKt.m7832transformedso9K2fw(FloatFloatPair.m24constructorimpl(this.centerX, this.centerY), f);
+        long m8563transformedso9K2fw = PointKt.m8563transformedso9K2fw(FloatFloatPair.m24constructorimpl(this.centerX, this.centerY), f);
         List createListBuilder = CollectionsKt.createListBuilder();
         int size = this.features.size();
         for (int i = 0; i < size; i++) {
             createListBuilder.add(this.features.get(i).transformed$graphics_shapes_release(f));
         }
-        return new RoundedPolygon(CollectionsKt.build(createListBuilder), PointKt.m7825getXDnnuFBc(m7832transformedso9K2fw), PointKt.m7826getYDnnuFBc(m7832transformedso9K2fw));
+        return new RoundedPolygon(CollectionsKt.build(createListBuilder), PointKt.m8556getXDnnuFBc(m8563transformedso9K2fw), PointKt.m8557getYDnnuFBc(m8563transformedso9K2fw));
     }
 
     public final RoundedPolygon normalized() {
@@ -145,7 +145,7 @@ public final class RoundedPolygon {
         return transformed(new PointTransformer() { // from class: androidx.graphics.shapes.RoundedPolygon$normalized$1
             @Override // androidx.graphics.shapes.PointTransformer
             /* renamed from: transform-XgqJiTY */
-            public final long mo7834transformXgqJiTY(float f6, float f7) {
+            public final long mo8565transformXgqJiTY(float f6, float f7) {
                 float f8 = f6 + f4;
                 float f9 = max;
                 return FloatFloatPair.m24constructorimpl(f8 / f9, (f7 + f5) / f9);
@@ -174,8 +174,8 @@ public final class RoundedPolygon {
         for (int i = 0; i < size; i++) {
             Cubic cubic = this.cubics.get(i);
             float distanceSquared = Utils.distanceSquared(cubic.getAnchor0X() - this.centerX, cubic.getAnchor0Y() - this.centerY);
-            long m7813pointOnCurveOOQOV4g$graphics_shapes_release = cubic.m7813pointOnCurveOOQOV4g$graphics_shapes_release(0.5f);
-            f = Math.max(f, Math.max(distanceSquared, Utils.distanceSquared(PointKt.m7825getXDnnuFBc(m7813pointOnCurveOOQOV4g$graphics_shapes_release) - this.centerX, PointKt.m7826getYDnnuFBc(m7813pointOnCurveOOQOV4g$graphics_shapes_release) - this.centerY)));
+            long m8544pointOnCurveOOQOV4g$graphics_shapes_release = cubic.m8544pointOnCurveOOQOV4g$graphics_shapes_release(0.5f);
+            f = Math.max(f, Math.max(distanceSquared, Utils.distanceSquared(PointKt.m8556getXDnnuFBc(m8544pointOnCurveOOQOV4g$graphics_shapes_release) - this.centerX, PointKt.m8557getYDnnuFBc(m8544pointOnCurveOOQOV4g$graphics_shapes_release) - this.centerY)));
         }
         float sqrt = (float) Math.sqrt(f);
         float f2 = this.centerX;

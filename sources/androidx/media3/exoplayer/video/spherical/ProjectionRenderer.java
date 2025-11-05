@@ -7,7 +7,7 @@ import androidx.media3.common.util.GlUtil;
 import androidx.media3.exoplayer.video.spherical.Projection;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class ProjectionRenderer {
     private static final String FRAGMENT_SHADER = "// This is required since the texture data is GL_TEXTURE_EXTERNAL_OES.\n#extension GL_OES_EGL_image_external : require\nprecision mediump float;\n// Standard texture rendering shader.\nuniform samplerExternalOES uTexture;\nvarying vec2 vTexCoords;\nvoid main() {\n  gl_FragColor = texture2D(uTexture, vTexCoords);\n}\n";
     private static final String TAG = "ProjectionRenderer";
@@ -110,7 +110,7 @@ final class ProjectionRenderer {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static class MeshData {
         private final int drawMode;
         private final FloatBuffer textureBuffer;

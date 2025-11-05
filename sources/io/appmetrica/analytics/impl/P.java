@@ -1,26 +1,39 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import kotlin.jvm.functions.Function0;
-import kotlin.jvm.internal.Lambda;
-/* loaded from: classes4.dex */
-public final class P extends Lambda implements Function0 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ T f616a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public P(T t) {
-        super(0);
-        this.f616a = t;
-    }
-
-    @Override // kotlin.jvm.functions.Function0
-    public final Object invoke() {
-        T t = this.f616a;
-        M m = t.f;
-        Context context = t.f677a;
-        m.getClass();
-        return M.a(new K(m, context));
+import io.appmetrica.analytics.AdvIdentifiersResult;
+import io.appmetrica.analytics.internal.IdentifiersResult;
+/* loaded from: classes3.dex */
+public final class P {
+    public static AdvIdentifiersResult.AdvId a(IdentifiersResult identifiersResult) {
+        AdvIdentifiersResult.Details details;
+        String str = identifiersResult == null ? null : identifiersResult.id;
+        if (identifiersResult == null) {
+            details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
+        } else {
+            switch (O.f613a[identifiersResult.status.ordinal()]) {
+                case 1:
+                    details = AdvIdentifiersResult.Details.OK;
+                    break;
+                case 2:
+                    details = AdvIdentifiersResult.Details.NO_STARTUP;
+                    break;
+                case 3:
+                    details = AdvIdentifiersResult.Details.FEATURE_DISABLED;
+                    break;
+                case 4:
+                    details = AdvIdentifiersResult.Details.IDENTIFIER_PROVIDER_UNAVAILABLE;
+                    break;
+                case 5:
+                    details = AdvIdentifiersResult.Details.INVALID_ADV_ID;
+                    break;
+                case 6:
+                    details = AdvIdentifiersResult.Details.FORBIDDEN_BY_CLIENT_CONFIG;
+                    break;
+                default:
+                    details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
+                    break;
+            }
+        }
+        return new AdvIdentifiersResult.AdvId(str, details, identifiersResult != null ? identifiersResult.errorExplanation : null);
     }
 }

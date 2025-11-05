@@ -37,16 +37,16 @@ public final class TextSelectionColors {
         }
         if (obj instanceof TextSelectionColors) {
             TextSelectionColors textSelectionColors = (TextSelectionColors) obj;
-            return Color.m4550equalsimpl0(this.handleColor, textSelectionColors.handleColor) && Color.m4550equalsimpl0(this.backgroundColor, textSelectionColors.backgroundColor);
+            return Color.m5280equalsimpl0(this.handleColor, textSelectionColors.handleColor) && Color.m5280equalsimpl0(this.backgroundColor, textSelectionColors.backgroundColor);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Color.m4556hashCodeimpl(this.handleColor) * 31) + Color.m4556hashCodeimpl(this.backgroundColor);
+        return (Color.m5286hashCodeimpl(this.handleColor) * 31) + Color.m5286hashCodeimpl(this.backgroundColor);
     }
 
     public String toString() {
-        return "SelectionColors(selectionHandleColor=" + ((Object) Color.m4557toStringimpl(this.handleColor)) + ", selectionBackgroundColor=" + ((Object) Color.m4557toStringimpl(this.backgroundColor)) + ')';
+        return "SelectionColors(selectionHandleColor=" + ((Object) Color.m5287toStringimpl(this.handleColor)) + ", selectionBackgroundColor=" + ((Object) Color.m5287toStringimpl(this.backgroundColor)) + ')';
     }
 }

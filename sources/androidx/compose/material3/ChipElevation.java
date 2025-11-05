@@ -24,7 +24,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Chip.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\b\u0007\u0018\u00002\u00020\u0001B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003¢\u0006\u0002\u0010\tJ#\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00030\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0003¢\u0006\u0002\u0010\u0018J\u0013\u0010\u0019\u001a\u00020\u00152\b\u0010\u001a\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u001b\u001a\u00020\u001cH\u0016J%\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00030\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0001¢\u0006\u0004\b\u001e\u0010\u0018R\u0019\u0010\b\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0019\u0010\u0007\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\r\u0010\u000bR\u0019\u0010\u0002\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u000e\u0010\u000bR\u0019\u0010\u0005\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u000f\u0010\u000bR\u0019\u0010\u0006\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u0010\u0010\u000bR\u0019\u0010\u0004\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u0011\u0010\u000b\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u001f²\u0006\f\u0010 \u001a\u0004\u0018\u00010!X\u008a\u008e\u0002"}, d2 = {"Landroidx/compose/material3/ChipElevation;", "", "elevation", "Landroidx/compose/ui/unit/Dp;", "pressedElevation", "focusedElevation", "hoveredElevation", "draggedElevation", "disabledElevation", "(FFFFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getDisabledElevation-D9Ej5fM", "()F", "F", "getDraggedElevation-D9Ej5fM", "getElevation-D9Ej5fM", "getFocusedElevation-D9Ej5fM", "getHoveredElevation-D9Ej5fM", "getPressedElevation-D9Ej5fM", "animateElevation", "Landroidx/compose/runtime/State;", "enabled", "", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "(ZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "equals", "other", "hashCode", "", "shadowElevation", "shadowElevation$material3_release", "material3_release", "lastInteraction", "Landroidx/compose/foundation/interaction/Interaction;"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\b\u0007\u0018\u00002\u00020\u0001B7\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003¢\u0006\u0004\b\t\u0010\nJ%\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00030\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0001¢\u0006\u0004\b\u0019\u0010\u001aJ#\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00030\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0003¢\u0006\u0002\u0010\u001aJ\u0013\u0010\u001c\u001a\u00020\u00162\b\u0010\u001d\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u001e\u001a\u00020\u001fH\u0016R\u0013\u0010\u0002\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u000b\u0010\fR\u0013\u0010\u0004\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u000e\u0010\fR\u0013\u0010\u0005\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u000f\u0010\fR\u0013\u0010\u0006\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u0010\u0010\fR\u0013\u0010\u0007\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u0011\u0010\fR\u0013\u0010\b\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u0012\u0010\f¨\u0006 ²\u0006\f\u0010!\u001a\u0004\u0018\u00010\"X\u008a\u008e\u0002"}, d2 = {"Landroidx/compose/material3/ChipElevation;", "", "elevation", "Landroidx/compose/ui/unit/Dp;", "pressedElevation", "focusedElevation", "hoveredElevation", "draggedElevation", "disabledElevation", "<init>", "(FFFFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getElevation-D9Ej5fM", "()F", "F", "getPressedElevation-D9Ej5fM", "getFocusedElevation-D9Ej5fM", "getHoveredElevation-D9Ej5fM", "getDraggedElevation-D9Ej5fM", "getDisabledElevation-D9Ej5fM", "shadowElevation", "Landroidx/compose/runtime/State;", "enabled", "", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "shadowElevation$material3", "(ZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "animateElevation", "equals", "other", "hashCode", "", "material3", "lastInteraction", "Landroidx/compose/foundation/interaction/Interaction;"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ChipElevation {
     public static final int $stable = 0;
@@ -49,39 +49,39 @@ public final class ChipElevation {
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1990getElevationD9Ej5fM() {
+    public final float m2042getElevationD9Ej5fM() {
         return this.elevation;
     }
 
     /* renamed from: getPressedElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1993getPressedElevationD9Ej5fM() {
+    public final float m2045getPressedElevationD9Ej5fM() {
         return this.pressedElevation;
     }
 
     /* renamed from: getFocusedElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1991getFocusedElevationD9Ej5fM() {
+    public final float m2043getFocusedElevationD9Ej5fM() {
         return this.focusedElevation;
     }
 
     /* renamed from: getHoveredElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1992getHoveredElevationD9Ej5fM() {
+    public final float m2044getHoveredElevationD9Ej5fM() {
         return this.hoveredElevation;
     }
 
     /* renamed from: getDraggedElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1989getDraggedElevationD9Ej5fM() {
+    public final float m2041getDraggedElevationD9Ej5fM() {
         return this.draggedElevation;
     }
 
     /* renamed from: getDisabledElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1988getDisabledElevationD9Ej5fM() {
+    public final float m2040getDisabledElevationD9Ej5fM() {
         return this.disabledElevation;
     }
 
-    public final State<Dp> shadowElevation$material3_release(boolean z, InteractionSource interactionSource, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1881877139, "C(shadowElevation)2172@104887L74:Chip.kt#uh7d8r");
+    public final State<Dp> shadowElevation$material3(boolean z, InteractionSource interactionSource, Composer composer, int i) {
+        ComposerKt.sourceInformationMarkerStart(composer, 1881877139, "C(shadowElevation)N(enabled,interactionSource)2354@112599L74:Chip.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1881877139, i, -1, "androidx.compose.material3.ChipElevation.shadowElevation (Chip.kt:2171)");
+            ComposerKt.traceEventStart(1881877139, i, -1, "androidx.compose.material3.ChipElevation.shadowElevation (Chip.kt:2353)");
         }
         State<Dp> animateElevation = animateElevation(z, interactionSource, composer, i & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
         if (ComposerKt.isTraceInProgress()) {
@@ -94,11 +94,11 @@ public final class ChipElevation {
     private final State<Dp> animateElevation(boolean z, InteractionSource interactionSource, Composer composer, int i) {
         float f;
         Animatable animatable;
-        ComposerKt.sourceInformationMarkerStart(composer, -2071499570, "C(animateElevation)2180@105136L46,2181@105214L47,2182@105304L1473,2182@105270L1507,2234@107332L51,2236@107416L514,2236@107393L537:Chip.kt#uh7d8r");
+        ComposerKt.sourceInformationMarkerStart(composer, -2071499570, "C(animateElevation)N(enabled,interactionSource)2362@112849L46,2363@112927L47,2364@113017L1473,2364@112983L1507,2416@115045L51,2418@115129L515,2418@115106L538:Chip.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-2071499570, i, -1, "androidx.compose.material3.ChipElevation.animateElevation (Chip.kt:2179)");
+            ComposerKt.traceEventStart(-2071499570, i, -1, "androidx.compose.material3.ChipElevation.animateElevation (Chip.kt:2361)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 363854634, "CC(remember):Chip.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -2141223428, "CC(remember):Chip.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt.mutableStateListOf();
@@ -106,7 +106,7 @@ public final class ChipElevation {
         }
         SnapshotStateList snapshotStateList = (SnapshotStateList) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 363857131, "CC(remember):Chip.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -2141220931, "CC(remember):Chip.kt#9igjgp");
         Object rememberedValue2 = composer.rememberedValue();
         if (rememberedValue2 == Composer.Companion.getEmpty()) {
             rememberedValue2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
@@ -114,7 +114,7 @@ public final class ChipElevation {
         }
         MutableState mutableState = (MutableState) rememberedValue2;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 363861437, "CC(remember):Chip.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -2141216625, "CC(remember):Chip.kt#9igjgp");
         boolean z2 = true;
         boolean z3 = (((i & 112) ^ 48) > 32 && composer.changed(interactionSource)) || (i & 48) == 32;
         Object rememberedValue3 = composer.rememberedValue();
@@ -136,17 +136,17 @@ public final class ChipElevation {
         } else {
             f = interaction instanceof DragInteraction.Start ? this.draggedElevation : this.elevation;
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 363924911, "CC(remember):Chip.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -2141153151, "CC(remember):Chip.kt#9igjgp");
         Object rememberedValue4 = composer.rememberedValue();
         if (rememberedValue4 == Composer.Companion.getEmpty()) {
-            Object animatable2 = new Animatable(Dp.m7262boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+            Object animatable2 = new Animatable(Dp.m7993boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
             composer.updateRememberedValue(animatable2);
             rememberedValue4 = animatable2;
         }
         Object obj = (Animatable) rememberedValue4;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Dp m7262boximpl = Dp.m7262boximpl(f);
-        ComposerKt.sourceInformationMarkerStart(composer, 363928062, "CC(remember):Chip.kt#9igjgp");
+        Dp m7993boximpl = Dp.m7993boximpl(f);
+        ComposerKt.sourceInformationMarkerStart(composer, -2141149999, "CC(remember):Chip.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(obj) | composer.changed(f);
         if ((((i & 14) ^ 6) <= 4 || !composer.changed(z)) && (i & 6) != 4) {
             z2 = false;
@@ -161,7 +161,7 @@ public final class ChipElevation {
             animatable = obj;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        EffectsKt.LaunchedEffect(m7262boximpl, (Function2) rememberedValue5, composer, 0);
+        EffectsKt.LaunchedEffect(m7993boximpl, (Function2) rememberedValue5, composer, 0);
         State<Dp> asState = animatable.asState();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -183,10 +183,10 @@ public final class ChipElevation {
             return false;
         }
         ChipElevation chipElevation = (ChipElevation) obj;
-        return Dp.m7269equalsimpl0(this.elevation, chipElevation.elevation) && Dp.m7269equalsimpl0(this.pressedElevation, chipElevation.pressedElevation) && Dp.m7269equalsimpl0(this.focusedElevation, chipElevation.focusedElevation) && Dp.m7269equalsimpl0(this.hoveredElevation, chipElevation.hoveredElevation) && Dp.m7269equalsimpl0(this.disabledElevation, chipElevation.disabledElevation);
+        return Dp.m8000equalsimpl0(this.elevation, chipElevation.elevation) && Dp.m8000equalsimpl0(this.pressedElevation, chipElevation.pressedElevation) && Dp.m8000equalsimpl0(this.focusedElevation, chipElevation.focusedElevation) && Dp.m8000equalsimpl0(this.hoveredElevation, chipElevation.hoveredElevation) && Dp.m8000equalsimpl0(this.disabledElevation, chipElevation.disabledElevation);
     }
 
     public int hashCode() {
-        return (((((((Dp.m7270hashCodeimpl(this.elevation) * 31) + Dp.m7270hashCodeimpl(this.pressedElevation)) * 31) + Dp.m7270hashCodeimpl(this.focusedElevation)) * 31) + Dp.m7270hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m7270hashCodeimpl(this.disabledElevation);
+        return (((((((Dp.m8001hashCodeimpl(this.elevation) * 31) + Dp.m8001hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8001hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8001hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m8001hashCodeimpl(this.disabledElevation);
     }
 }

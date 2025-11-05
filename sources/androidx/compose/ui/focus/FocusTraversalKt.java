@@ -61,24 +61,24 @@ public final class FocusTraversalKt {
     }
 
     /* renamed from: customFocusSearch--OM-vw8  reason: not valid java name */
-    public static final FocusRequester m4229customFocusSearchOMvw8(FocusTargetNode focusTargetNode, int i, LayoutDirection layoutDirection) {
+    public static final FocusRequester m4959customFocusSearchOMvw8(FocusTargetNode focusTargetNode, int i, LayoutDirection layoutDirection) {
         FocusRequester end;
         FocusRequester focusRequester;
         FocusRequester start;
         FocusProperties fetchFocusProperties$ui_release = focusTargetNode.fetchFocusProperties$ui_release();
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4192getNextdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4922getNextdhqQ8s())) {
             return fetchFocusProperties$ui_release.getNext();
         }
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4193getPreviousdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4923getPreviousdhqQ8s())) {
             return fetchFocusProperties$ui_release.getPrevious();
         }
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
             return fetchFocusProperties$ui_release.getUp();
         }
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
             return fetchFocusProperties$ui_release.getDown();
         }
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s())) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
             if (i2 == 1) {
                 start = fetchFocusProperties$ui_release.getStart();
@@ -89,7 +89,7 @@ public final class FocusTraversalKt {
             }
             focusRequester = start != FocusRequester.Companion.getDefault() ? start : null;
             return focusRequester == null ? fetchFocusProperties$ui_release.getLeft() : focusRequester;
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
             int i3 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
             if (i3 == 1) {
                 end = fetchFocusProperties$ui_release.getEnd();
@@ -100,11 +100,11 @@ public final class FocusTraversalKt {
             }
             focusRequester = end != FocusRequester.Companion.getDefault() ? end : null;
             return focusRequester == null ? fetchFocusProperties$ui_release.getRight() : focusRequester;
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4189getEnterdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4190getExitdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4919getEnterdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4920getExitdhqQ8s())) {
             CancelIndicatingFocusBoundaryScope cancelIndicatingFocusBoundaryScope = new CancelIndicatingFocusBoundaryScope(i, null);
             FocusOwner focusOwner = DelegatableNodeKt.requireOwner(focusTargetNode).getFocusOwner();
             FocusTargetNode activeFocusTargetNode = focusOwner.getActiveFocusTargetNode();
-            if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4189getEnterdhqQ8s())) {
+            if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4919getEnterdhqQ8s())) {
                 fetchFocusProperties$ui_release.getOnEnter().invoke(cancelIndicatingFocusBoundaryScope);
             } else {
                 fetchFocusProperties$ui_release.getOnExit().invoke(cancelIndicatingFocusBoundaryScope);
@@ -122,34 +122,34 @@ public final class FocusTraversalKt {
     }
 
     /* renamed from: focusSearch-0X8WOeE  reason: not valid java name */
-    public static final Boolean m4230focusSearch0X8WOeE(FocusTargetNode focusTargetNode, int i, LayoutDirection layoutDirection, Rect rect, Function1<? super FocusTargetNode, Boolean> function1) {
-        int m4194getRightdhqQ8s;
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4192getNextdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4193getPreviousdhqQ8s())) {
-            return Boolean.valueOf(OneDimensionalFocusSearchKt.m4244oneDimensionalFocusSearchOMvw8(focusTargetNode, i, function1));
+    public static final Boolean m4960focusSearch0X8WOeE(FocusTargetNode focusTargetNode, int i, LayoutDirection layoutDirection, Rect rect, Function1<? super FocusTargetNode, Boolean> function1) {
+        int m4924getRightdhqQ8s;
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4922getNextdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4923getPreviousdhqQ8s())) {
+            return Boolean.valueOf(OneDimensionalFocusSearchKt.m4974oneDimensionalFocusSearchOMvw8(focusTargetNode, i, function1));
         }
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s()) || FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
-            return TwoDimensionalFocusSearchKt.m4255twoDimensionalFocusSearchsMXa3k8(focusTargetNode, i, rect, function1);
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s()) || FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
+            return TwoDimensionalFocusSearchKt.m4985twoDimensionalFocusSearchsMXa3k8(focusTargetNode, i, rect, function1);
         }
-        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4189getEnterdhqQ8s())) {
+        if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4919getEnterdhqQ8s())) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
             if (i2 == 1) {
-                m4194getRightdhqQ8s = FocusDirection.Companion.m4194getRightdhqQ8s();
+                m4924getRightdhqQ8s = FocusDirection.Companion.m4924getRightdhqQ8s();
             } else if (i2 != 2) {
                 throw new NoWhenBranchMatchedException();
             } else {
-                m4194getRightdhqQ8s = FocusDirection.Companion.m4191getLeftdhqQ8s();
+                m4924getRightdhqQ8s = FocusDirection.Companion.m4921getLeftdhqQ8s();
             }
             FocusTargetNode findActiveFocusNode = findActiveFocusNode(focusTargetNode);
             if (findActiveFocusNode != null) {
-                return TwoDimensionalFocusSearchKt.m4255twoDimensionalFocusSearchsMXa3k8(findActiveFocusNode, m4194getRightdhqQ8s, rect, function1);
+                return TwoDimensionalFocusSearchKt.m4985twoDimensionalFocusSearchsMXa3k8(findActiveFocusNode, m4924getRightdhqQ8s, rect, function1);
             }
             return null;
-        } else if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4190getExitdhqQ8s())) {
+        } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4920getExitdhqQ8s())) {
             FocusTargetNode findActiveFocusNode2 = findActiveFocusNode(focusTargetNode);
             FocusTargetNode findNonDeactivatedParent = findActiveFocusNode2 != null ? findNonDeactivatedParent(findActiveFocusNode2) : null;
             return Boolean.valueOf((findNonDeactivatedParent == null || Intrinsics.areEqual(findNonDeactivatedParent, focusTargetNode)) ? false : function1.invoke(findNonDeactivatedParent).booleanValue());
         } else {
-            throw new IllegalStateException(("Focus search invoked with invalid FocusDirection " + ((Object) FocusDirection.m4186toStringimpl(i))).toString());
+            throw new IllegalStateException(("Focus search invoked with invalid FocusDirection " + ((Object) FocusDirection.m4916toStringimpl(i))).toString());
         }
     }
 
@@ -182,7 +182,7 @@ public final class FocusTraversalKt {
     public static final FocusTargetNode getActiveChild(FocusTargetNode focusTargetNode) {
         if (focusTargetNode.getNode().isAttached()) {
             FocusTargetNode focusTargetNode2 = focusTargetNode;
-            int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
+            int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
             if (!focusTargetNode2.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
             }
@@ -195,13 +195,13 @@ public final class FocusTraversalKt {
             }
             while (mutableVector.getSize() != 0) {
                 Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-                if ((node.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
+                if ((node.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
                     DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
                 } else {
                     while (true) {
                         if (node == null) {
                             break;
-                        } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                        } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                             MutableVector mutableVector2 = null;
                             while (node != null) {
                                 if (node instanceof FocusTargetNode) {
@@ -215,10 +215,10 @@ public final class FocusTraversalKt {
                                             throw new NoWhenBranchMatchedException();
                                         }
                                     }
-                                } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i2 = 0;
                                     for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                        if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                        if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                             i2++;
                                             if (i2 == 1) {
                                                 node = delegate$ui_release;
@@ -266,16 +266,16 @@ public final class FocusTraversalKt {
     private static final FocusTargetNode findNonDeactivatedParent(FocusTargetNode focusTargetNode) {
         NodeChain nodes$ui_release;
         FocusTargetNode focusTargetNode2 = focusTargetNode;
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
         if (!focusTargetNode2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui_release = focusTargetNode2.getNode().getParent$ui_release();
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(focusTargetNode2);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6258constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0) {
                 while (parent$ui_release != null) {
-                    if ((parent$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                    if ((parent$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                         Modifier.Node node = parent$ui_release;
                         MutableVector mutableVector = null;
                         while (node != null) {
@@ -284,10 +284,10 @@ public final class FocusTraversalKt {
                                 if (focusTargetNode3.fetchFocusProperties$ui_release().getCanFocus()) {
                                     return focusTargetNode3;
                                 }
-                            } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui_release;

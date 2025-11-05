@@ -14,7 +14,7 @@ import kotlinx.coroutines.DelayKt;
 /* compiled from: OnFirstVisibleModifier.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.ui.layout.OnFirstVisibleNode$startTimer$1", f = "OnFirstVisibleModifier.kt", i = {}, l = {179}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class OnFirstVisibleNode$startTimer$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $minDurationMs;
     int label;

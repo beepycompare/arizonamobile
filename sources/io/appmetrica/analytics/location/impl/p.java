@@ -2,11 +2,11 @@ package io.appmetrica.analytics.location.impl;
 
 import java.util.HashMap;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    public i f1216a;
+    public i f1257a;
     public final m b;
     public final h c;
     public final List d;
@@ -14,7 +14,7 @@ public final class p {
 
     public p(List list, i iVar) {
         this.d = list;
-        this.f1216a = iVar;
+        this.f1257a = iVar;
         m mVar = new m();
         this.b = mVar;
         this.c = new h(mVar);

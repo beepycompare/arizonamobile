@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.plugins;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface IPluginReporter {
     void reportError(PluginErrorDetails pluginErrorDetails, String str);
 

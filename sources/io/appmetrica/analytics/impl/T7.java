@@ -1,64 +1,31 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.ContentValues;
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import kotlin.jvm.internal.DefaultConstructorMarker;
-/* loaded from: classes4.dex */
-public final class T7 implements Converter {
+import android.app.UiModeManager;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+/* loaded from: classes3.dex */
+public abstract class T7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Q7 f682a;
+    public static final SafePackageManager f700a = new SafePackageManager();
 
-    public T7() {
-        this(null, 1, null);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final ContentValues fromModel(S7 s7) {
-        ContentValues contentValues = new ContentValues();
-        Long l = s7.f668a;
-        if (l != null) {
-            contentValues.put("id", Long.valueOf(l.longValue()));
-        }
-        EnumC0260fl enumC0260fl = s7.b;
-        if (enumC0260fl != null) {
-            contentValues.put("type", Integer.valueOf(enumC0260fl.f884a));
-        }
-        String str = s7.c;
-        if (str != null) {
-            contentValues.put("report_request_parameters", str);
-        }
-        Q7 q7 = this.f682a;
-        contentValues.put("session_description", MessageNano.toByteArray(q7.f638a.fromModel(s7.d)));
-        return contentValues;
-    }
-
-    public T7(Q7 q7) {
-        this.f682a = q7;
-    }
-
-    public /* synthetic */ T7(Q7 q7, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new Q7(null, 1, null) : q7);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final S7 toModel(ContentValues contentValues) {
-        EnumC0260fl enumC0260fl;
-        int intValue;
-        Long asLong = contentValues.getAsLong("id");
-        Integer asInteger = contentValues.getAsInteger("type");
-        if (asInteger != null) {
-            Integer valueOf = Integer.valueOf(asInteger.intValue());
-            enumC0260fl = EnumC0260fl.FOREGROUND;
-            if (valueOf != null && (intValue = valueOf.intValue()) != 0 && intValue == 1) {
-                enumC0260fl = EnumC0260fl.BACKGROUND;
+    public static boolean a(Context context) {
+        Object systemService = context.getSystemService("uimode");
+        Integer num = (Integer) SystemServiceUtils.accessSystemServiceSafelyOrDefault(systemService instanceof UiModeManager ? (UiModeManager) systemService : null, "getting current mode type", "UiModeManager", null, new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.T7$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+            public final Object apply(Object obj) {
+                return T7.a((UiModeManager) obj);
             }
-        } else {
-            enumC0260fl = null;
-        }
-        return new S7(asLong, enumC0260fl, contentValues.getAsString("report_request_parameters"), this.f682a.toModel(contentValues.getAsByteArray("session_description")));
+        });
+        boolean z = num != null && num.intValue() == 4;
+        SafePackageManager safePackageManager = f700a;
+        return z || safePackageManager.hasSystemFeature(context, "android.software.leanback") || (AndroidUtils.isApiAchieved(26) ? safePackageManager.hasSystemFeature(context, "android.software.leanback_only") : false);
+    }
+
+    public static final Integer a(UiModeManager uiModeManager) {
+        return Integer.valueOf(uiModeManager.getCurrentModeType());
     }
 }

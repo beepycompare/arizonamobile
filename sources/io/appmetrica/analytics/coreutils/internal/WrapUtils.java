@@ -2,7 +2,7 @@ package io.appmetrica.analytics.coreutils.internal;
 
 import android.text.TextUtils;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class WrapUtils {
     public static double getFiniteDoubleOrDefault(double d, double d2) {
         return Double.isFinite(d) ? d : d2;

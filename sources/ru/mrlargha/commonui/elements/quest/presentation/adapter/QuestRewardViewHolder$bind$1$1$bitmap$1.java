@@ -44,6 +44,6 @@ final class QuestRewardViewHolder$bind$1$1$bitmap$1 extends SuspendLambda implem
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive$default("items", Integer.parseInt(this.$item.getIcon()), null, 4, null);
+        return UtilsKt.getIconFromArchive$default("items", Integer.parseInt(this.$item.getIcon()), (String) null, 4, (Object) null);
     }
 }

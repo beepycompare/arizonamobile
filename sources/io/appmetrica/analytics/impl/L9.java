@@ -1,32 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.LinkedList;
-/* loaded from: classes4.dex */
-public final class L9 extends Zf {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Ih f557a;
-    public final Kh b;
-    public final C0689wh c;
-
-    public L9(C0652v5 c0652v5) {
-        this.f557a = new Ih(c0652v5);
-        this.b = new Kh(c0652v5);
-        this.c = new C0689wh(c0652v5);
+import java.util.List;
+/* loaded from: classes3.dex */
+public final class L9 extends C0497pb {
+    public L9(C0678wi c0678wi) {
+        super(c0678wi);
     }
 
-    @Override // io.appmetrica.analytics.impl.Zf
-    public final AbstractC0681w9 a(int i) {
-        LinkedList linkedList = new LinkedList();
-        int ordinal = Bb.a(i).ordinal();
-        if (ordinal == 1) {
-            linkedList.add(this.f557a);
-        } else if (ordinal == 3) {
-            linkedList.add(this.c);
-        } else if (ordinal == 27) {
-            linkedList.add(this.b);
-            linkedList.add(this.f557a);
-        }
-        return new C0656v9(linkedList);
+    @Override // io.appmetrica.analytics.impl.C0497pb, io.appmetrica.analytics.impl.AbstractC0645va
+    public final void a(List<Wg> list) {
+        list.add(this.f1167a.u);
+        super.a(list);
     }
 }

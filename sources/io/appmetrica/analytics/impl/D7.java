@@ -1,109 +1,39 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class D7 {
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Integer f405a;
-    public final String b;
-    public final String c;
-    public final Long d;
-    public final I7 e;
-    public final String f;
-    public final String g;
-    public final Long h;
-    public final Integer i;
-    public final Integer j;
-    public final String k;
-    public final EnumC0274g9 l;
-    public final String m;
-    public final Da n;
-    public final M9 o;
-    public final Boolean p;
-    public final Integer q;
-    public final byte[] r;
-
-    public D7(Integer num, String str, String str2, Long l, I7 i7, String str3, String str4, Long l2, Integer num2, Integer num3, String str5, EnumC0274g9 enumC0274g9, String str6, Da da, M9 m9, Boolean bool, Integer num4, byte[] bArr) {
-        this.f405a = num;
-        this.b = str;
-        this.c = str2;
-        this.d = l;
-        this.e = i7;
-        this.f = str3;
-        this.g = str4;
-        this.h = l2;
-        this.i = num2;
-        this.j = num3;
-        this.k = str5;
-        this.l = enumC0274g9;
-        this.m = str6;
-        this.n = da;
-        this.o = m9;
-        this.p = bool;
-        this.q = num4;
-        this.r = bArr;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+/* loaded from: classes3.dex */
+public final class D7 implements ProtobufConverter {
+    public final BigDecimal a(C0419m8 c0419m8) {
+        throw new UnsupportedOperationException();
     }
 
-    public final Boolean a() {
-        return this.p;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0419m8 c0419m8 = (C0419m8) obj;
+        throw new UnsupportedOperationException();
     }
 
-    public final String b() {
-        return this.k;
-    }
-
-    public final Integer c() {
-        return this.j;
-    }
-
-    public final Integer d() {
-        return this.f405a;
-    }
-
-    public final EnumC0274g9 e() {
-        return this.l;
-    }
-
-    public final String f() {
-        return this.f;
-    }
-
-    public final byte[] g() {
-        return this.r;
-    }
-
-    public final Da h() {
-        return this.n;
-    }
-
-    public final I7 i() {
-        return this.e;
-    }
-
-    public final String j() {
-        return this.b;
-    }
-
-    public final Long k() {
-        return this.d;
-    }
-
-    public final Integer l() {
-        return this.q;
-    }
-
-    public final String m() {
-        return this.m;
-    }
-
-    public final M9 n() {
-        return this.o;
-    }
-
-    public final Integer o() {
-        return this.i;
-    }
-
-    public final String p() {
-        return this.c;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0419m8 fromModel(BigDecimal bigDecimal) {
+        BigInteger bigInteger = F7.f472a;
+        int i = -bigDecimal.scale();
+        BigInteger unscaledValue = bigDecimal.unscaledValue();
+        while (true) {
+            if (unscaledValue.compareTo(F7.f472a) <= 0 && unscaledValue.compareTo(F7.b) >= 0) {
+                Pair pair = TuplesKt.to(Long.valueOf(unscaledValue.longValue()), Integer.valueOf(i));
+                E7 e7 = new E7(((Number) pair.getSecond()).intValue(), ((Number) pair.getFirst()).longValue());
+                C0419m8 c0419m8 = new C0419m8();
+                c0419m8.f1005a = e7.f454a;
+                c0419m8.b = e7.b;
+                return c0419m8;
+            }
+            unscaledValue = unscaledValue.divide(BigInteger.TEN);
+            i++;
+        }
     }
 }

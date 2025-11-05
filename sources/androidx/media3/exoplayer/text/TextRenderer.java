@@ -29,7 +29,7 @@ import java.nio.ByteBuffer;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 import org.checkerframework.dataflow.qual.SideEffectFree;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TextRenderer extends BaseRenderer implements Handler.Callback {
     private static final int MSG_UPDATE_OUTPUT = 1;
     private static final int REPLACEMENT_STATE_NONE = 0;

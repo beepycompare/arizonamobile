@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.networktasks.internal;
 
 import javax.net.ssl.SSLSocketFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface UnderlyingNetworkTask {
     String description();
 

@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import com.google.android.gms.common.internal.Preconditions;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzhb extends BroadcastReceiver {
     private final zzpg zza;
     private boolean zzb;

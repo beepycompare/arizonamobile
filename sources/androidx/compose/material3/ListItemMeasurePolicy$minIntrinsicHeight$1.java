@@ -5,7 +5,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: ListItem.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 /* synthetic */ class ListItemMeasurePolicy$minIntrinsicHeight$1 extends FunctionReferenceImpl implements Function2<IntrinsicMeasurable, Integer, Integer> {
     public static final ListItemMeasurePolicy$minIntrinsicHeight$1 INSTANCE = new ListItemMeasurePolicy$minIntrinsicHeight$1();

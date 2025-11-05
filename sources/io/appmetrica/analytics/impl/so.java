@@ -1,16 +1,14 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public final class so {
 
-import android.content.Context;
-import android.text.TextUtils;
-import io.appmetrica.analytics.internal.IdentifiersResult;
-/* loaded from: classes4.dex */
-public final class so implements InterfaceC0379kb {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0379kb
-    public final String a(Context context) {
-        IdentifiersResult q = new C0513pf(C0729y7.a(context.getApplicationContext()).a()).q();
-        if (TextUtils.isEmpty(q.id)) {
-            return null;
-        }
-        return q.id;
+    /* renamed from: a  reason: collision with root package name */
+    public final boolean f1120a;
+    public final String b;
+
+    public so(uo uoVar, boolean z, String str) {
+        uoVar.getClass();
+        this.f1120a = z;
+        this.b = str;
     }
 }

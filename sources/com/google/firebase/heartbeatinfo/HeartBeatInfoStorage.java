@@ -50,23 +50,23 @@ public class HeartBeatInfoStorage {
         this.firebaseDataStore.editSync(new Function1() { // from class: com.google.firebase.heartbeatinfo.HeartBeatInfoStorage$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return HeartBeatInfoStorage.this.m8875xe97e9b5a((MutablePreferences) obj);
+                return HeartBeatInfoStorage.this.m9613xe97e9b5a((MutablePreferences) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$deleteAllHeartBeats$0$com-google-firebase-heartbeatinfo-HeartBeatInfoStorage  reason: not valid java name */
-    public /* synthetic */ Unit m8875xe97e9b5a(MutablePreferences mutablePreferences) {
-        Set m9178m;
+    public /* synthetic */ Unit m9613xe97e9b5a(MutablePreferences mutablePreferences) {
+        Set m9919m;
         long j = 0;
         for (Map.Entry<Preferences.Key<?>, Object> entry : mutablePreferences.asMap().entrySet()) {
             if (entry.getValue() instanceof Set) {
                 Preferences.Key<?> key = entry.getKey();
                 String formattedDate = getFormattedDate(System.currentTimeMillis());
                 if (((Set) entry.getValue()).contains(formattedDate)) {
-                    m9178m = UByte$$ExternalSyntheticBackport0.m9178m(new Object[]{formattedDate});
-                    mutablePreferences.set(key, m9178m);
+                    m9919m = UByte$$ExternalSyntheticBackport0.m9919m(new Object[]{formattedDate});
+                    mutablePreferences.set(key, m9919m);
                     j++;
                 } else {
                     mutablePreferences.remove(key);
@@ -140,14 +140,14 @@ public class HeartBeatInfoStorage {
         this.firebaseDataStore.editSync(new Function1() { // from class: com.google.firebase.heartbeatinfo.HeartBeatInfoStorage$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return HeartBeatInfoStorage.this.m8876x44e9f764(formattedDate, (MutablePreferences) obj);
+                return HeartBeatInfoStorage.this.m9614x44e9f764(formattedDate, (MutablePreferences) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$postHeartBeatCleanUp$1$com-google-firebase-heartbeatinfo-HeartBeatInfoStorage  reason: not valid java name */
-    public /* synthetic */ Unit m8876x44e9f764(String str, MutablePreferences mutablePreferences) {
+    public /* synthetic */ Unit m9614x44e9f764(String str, MutablePreferences mutablePreferences) {
         mutablePreferences.set(LAST_STORED_DATE, str);
         removeStoredDate(mutablePreferences, str);
         return null;
@@ -167,14 +167,14 @@ public class HeartBeatInfoStorage {
         this.firebaseDataStore.editSync(new Function1() { // from class: com.google.firebase.heartbeatinfo.HeartBeatInfoStorage$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return HeartBeatInfoStorage.this.m8877x76ccc570(formattedDate, str, stringSetKey, (MutablePreferences) obj);
+                return HeartBeatInfoStorage.this.m9615x76ccc570(formattedDate, str, stringSetKey, (MutablePreferences) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$storeHeartBeat$2$com-google-firebase-heartbeatinfo-HeartBeatInfoStorage  reason: not valid java name */
-    public /* synthetic */ Unit m8877x76ccc570(String str, String str2, Preferences.Key key, MutablePreferences mutablePreferences) {
+    public /* synthetic */ Unit m9615x76ccc570(String str, String str2, Preferences.Key key, MutablePreferences mutablePreferences) {
         Preferences.Key<String> key2 = LAST_STORED_DATE;
         if (((String) JavaDataStorageKt.getOrDefault(mutablePreferences, key2, "")).equals(str)) {
             Preferences.Key<Set<String>> storedUserAgentString = getStoredUserAgentString(mutablePreferences, str);

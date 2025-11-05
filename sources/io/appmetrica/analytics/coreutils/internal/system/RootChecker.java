@@ -3,13 +3,13 @@ package io.appmetrica.analytics.coreutils.internal.system;
 import androidx.media3.exoplayer.upstream.CmcdConfiguration;
 import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RootChecker {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f308a = {"/sbin/", "/system/bin/", "/system/xbin/", "/data/local/xbin/", "/data/local/bin/", "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/"};
+    private static final String[] f324a = {"/sbin/", "/system/bin/", "/system/xbin/", "/data/local/xbin/", "/data/local/bin/", "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/"};
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class RootStatus {
         public static final int NOT_ROOT = 0;
         public static final int ROOT = 1;
@@ -28,7 +28,7 @@ public final class RootChecker {
     }
 
     public static boolean isSuperuserNativeLibExists() {
-        String[] strArr = f308a;
+        String[] strArr = f324a;
         for (int i = 0; i < 8; i++) {
             String str = strArr[i];
             try {

@@ -49,16 +49,16 @@ final class CommonRippleIndicationInstance extends RippleIndicationInstance impl
     public void drawIndication(ContentDrawScope contentDrawScope) {
         float f;
         if (Float.isNaN(this.radius)) {
-            f = RippleAnimationKt.m1858getRippleEndRadiuscSwnlzA(contentDrawScope, this.bounded, contentDrawScope.mo5128getSizeNHjbRc());
+            f = RippleAnimationKt.m1856getRippleEndRadiuscSwnlzA(contentDrawScope, this.bounded, contentDrawScope.mo5858getSizeNHjbRc());
         } else {
             f = contentDrawScope.mo429toPx0680j_4(this.radius);
         }
         this.targetRadius = f;
-        long m4559unboximpl = this.color.getValue().m4559unboximpl();
+        long m5289unboximpl = this.color.getValue().m5289unboximpl();
         contentDrawScope.drawContent();
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        m1864drawStateLayerH2RKhps(contentDrawScope2, this.radius, m4559unboximpl);
-        m1855drawRipples4WTKRHQ(contentDrawScope2, m4559unboximpl);
+        m1862drawStateLayerH2RKhps(contentDrawScope2, this.radius, m5289unboximpl);
+        m1853drawRipples4WTKRHQ(contentDrawScope2, m5289unboximpl);
     }
 
     @Override // androidx.compose.material.ripple.RippleIndicationInstance
@@ -66,7 +66,7 @@ final class CommonRippleIndicationInstance extends RippleIndicationInstance impl
         for (Map.Entry<PressInteraction.Press, RippleAnimation> entry : this.ripples.entrySet()) {
             entry.getValue().finish();
         }
-        RippleAnimation rippleAnimation = new RippleAnimation(this.bounded ? Offset.m4294boximpl(press.m638getPressPositionF1C5BW0()) : null, this.targetRadius, this.bounded, null);
+        RippleAnimation rippleAnimation = new RippleAnimation(this.bounded ? Offset.m5024boximpl(press.m638getPressPositionF1C5BW0()) : null, this.targetRadius, this.bounded, null);
         this.ripples.put(press, rippleAnimation);
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new CommonRippleIndicationInstance$addRipple$2(rippleAnimation, this, press, null), 3, null);
     }
@@ -80,7 +80,7 @@ final class CommonRippleIndicationInstance extends RippleIndicationInstance impl
     }
 
     /* renamed from: drawRipples-4WTKRHQ  reason: not valid java name */
-    private final void m1855drawRipples4WTKRHQ(DrawScope drawScope, long j) {
+    private final void m1853drawRipples4WTKRHQ(DrawScope drawScope, long j) {
         long j2;
         for (Map.Entry<PressInteraction.Press, RippleAnimation> entry : this.ripples.entrySet()) {
             RippleAnimation value = entry.getValue();
@@ -89,7 +89,7 @@ final class CommonRippleIndicationInstance extends RippleIndicationInstance impl
                 j2 = j;
             } else {
                 j2 = j;
-                value.m1857draw4WTKRHQ(drawScope, Color.m4548copywmQWz5c$default(j2, pressedAlpha, 0.0f, 0.0f, 0.0f, 14, null));
+                value.m1855draw4WTKRHQ(drawScope, Color.m5278copywmQWz5c$default(j2, pressedAlpha, 0.0f, 0.0f, 0.0f, 14, null));
             }
             j = j2;
         }

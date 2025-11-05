@@ -13,6 +13,6 @@ public final class KeyEventHelpers_androidKt {
 
     /* renamed from: cancelsTextSelection-ZmokQxo  reason: not valid java name */
     public static final boolean m1267cancelsTextSelectionZmokQxo(KeyEvent keyEvent) {
-        return keyEvent.getKeyCode() == 4 && KeyEventType.m5688equalsimpl0(KeyEvent_androidKt.m5696getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5693getKeyUpCS__XNY());
+        return keyEvent.getKeyCode() == 4 && KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6423getKeyUpCS__XNY());
     }
 }

@@ -1,90 +1,86 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import io.appmetrica.analytics.internal.IdentifiersResult;
-/* loaded from: classes4.dex */
-public final class Qd {
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrash;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashHandler;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
+import java.io.File;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
+/* loaded from: classes3.dex */
+public final class Qd implements NativeCrashHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f640a;
-    public final InterfaceC0379kb b;
-    public final X9 c;
-    public final Ue d;
-    public final vo e;
-    public volatile IdentifiersResult f;
+    public final Function1 f650a;
+    public final IHandlerExecutor b = C0620ua.k().x().e();
+    public final Td c;
 
-    public Qd(Context context, InterfaceC0379kb interfaceC0379kb) {
-        this(context, interfaceC0379kb, Rd.a(context), new Ue(context), new vo());
+    public Qd(Context context, Xg xg, Function1<? super String, Unit> function1, Yd yd, EnumC0320ib enumC0320ib, String str) {
+        this.f650a = function1;
+        this.c = new Td(context, xg, yd, enumC0320ib);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final IdentifiersResult a() {
-        IdentifiersResult identifiersResult = this.f;
-        if (identifiersResult != null && identifiersResult.status == IdentifierStatus.OK) {
-            vo voVar = this.e;
-            String str = identifiersResult.id;
-            voVar.getClass();
-            if (vo.a(str)) {
-                return identifiersResult;
-            }
-        }
-        try {
-            X9 x9 = this.c;
-            x9.f740a.lock();
-            x9.b.a();
-            identifiersResult = this.f;
-        } catch (Throwable unused) {
-        }
-        if (identifiersResult != null && identifiersResult.status == IdentifierStatus.OK) {
-            vo voVar2 = this.e;
-            String str2 = identifiersResult.id;
-            voVar2.getClass();
-            if (vo.a(str2)) {
-                X9 x92 = this.c;
-                x92.b.b();
-                x92.f740a.unlock();
-                return identifiersResult == null ? identifiersResult : new IdentifiersResult(null, IdentifierStatus.UNKNOWN, "Uuid must be obtained via async API AppMetrica#requestStartupParams(Context, StartupParamsCallback, List<String>)");
-            }
-        }
-        String a2 = AbstractC0353jb.a(FileUtils.getFileFromSdkStorage(this.d.f701a, "uuid.dat"));
-        this.e.getClass();
-        if (!vo.a(a2)) {
-            a2 = this.d.a(this.b.a(this.f640a));
-        }
-        this.e.getClass();
-        if (vo.a(a2)) {
-            IdentifiersResult identifiersResult2 = new IdentifiersResult(a2, IdentifierStatus.OK, null);
-            try {
-                this.f = identifiersResult2;
-            } catch (Throwable unused2) {
-            }
-            identifiersResult = identifiersResult2;
-        }
-        X9 x922 = this.c;
-        x922.b.b();
-        x922.f740a.unlock();
-        if (identifiersResult == null) {
-        }
+    public static final void a(Qd qd, NativeCrash nativeCrash, File file) {
+        qd.f650a.invoke(nativeCrash.getUuid());
     }
 
-    public Qd(Context context, InterfaceC0379kb interfaceC0379kb, X9 x9, Ue ue, vo voVar) {
-        this.f640a = context;
-        this.b = interfaceC0379kb;
-        this.c = x9;
-        this.d = ue;
-        this.e = voVar;
+    @Override // io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashHandler
+    public final void newCrash(final NativeCrash nativeCrash) {
+        E0 e0;
+        C0267ga c0267ga;
         try {
-            x9.a();
-            ue.a();
-            x9.b();
+            NativeCrashSource source = nativeCrash.getSource();
+            String handlerVersion = nativeCrash.getHandlerVersion();
+            String uuid = nativeCrash.getUuid();
+            String dumpFile = nativeCrash.getDumpFile();
+            long creationTime = nativeCrash.getCreationTime();
+            F0 a2 = G0.a(nativeCrash.getMetadata());
+            Intrinsics.checkNotNull(a2);
+            e0 = new E0(source, handlerVersion, uuid, dumpFile, creationTime, a2);
         } catch (Throwable unused) {
-            this.c.b();
+            e0 = null;
         }
+        if (e0 != null) {
+            LoggerStorage.getOrCreatePublicLogger(e0.f.f468a).info("Detected native crash with uuid = " + e0.c, new Object[0]);
+            IHandlerExecutor iHandlerExecutor = this.b;
+            Td td = this.c;
+            Consumer consumer = new Consumer() { // from class: io.appmetrica.analytics.impl.Qd$$ExternalSyntheticLambda0
+                @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
+                public final void consume(Object obj) {
+                    Qd.a(Qd.this, nativeCrash, (File) obj);
+                }
+            };
+            td.getClass();
+            Md md = new Md(new Od(e0.f447a, e0.b), td.f);
+            Jd jd = new Jd(td.b, e0.f, new Sd(e0, td.d));
+            C0293ha c0293ha = td.e;
+            String str = e0.d;
+            c0293ha.getClass();
+            File file = new File(str);
+            Context context = td.f705a;
+            if (C0267ga.c == null) {
+                synchronized (Reflection.getOrCreateKotlinClass(C0267ga.class)) {
+                    if (C0267ga.c == null) {
+                        C0267ga.c = new C0267ga(context);
+                    }
+                    Unit unit = Unit.INSTANCE;
+                }
+            }
+            C0267ga c0267ga2 = C0267ga.c;
+            if (c0267ga2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("INSTANCE");
+                c0267ga = null;
+            } else {
+                c0267ga = c0267ga2;
+            }
+            iHandlerExecutor.execute(new Yf(file, md, consumer, jd, c0267ga, td.c.a(e0)));
+            return;
+        }
+        this.f650a.invoke(nativeCrash.getUuid());
     }
 }

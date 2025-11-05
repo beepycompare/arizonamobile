@@ -1,33 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.AppMetricaPlugins;
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
-/* loaded from: classes4.dex */
-public final class G0 implements AppMetricaPlugins {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final I0 f452a;
-
-    public G0(I0 i0) {
-        this.f452a = i0;
+import android.util.Base64;
+import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import kotlin.text.Charsets;
+import org.json.JSONObject;
+/* loaded from: classes3.dex */
+public final class G0 {
+    public static String a(F0 f0) {
+        try {
+            return Base64.encodeToString(new JSONObject().put("apiKey", f0.f468a).put(RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, f0.b).put("reporterType", f0.c.getStringValue()).put("processID", f0.d).put("processSessionID", f0.e).put("errorEnvironment", f0.f).toString().getBytes(Charsets.UTF_8), 0);
+        } catch (Throwable unused) {
+            return "";
+        }
     }
 
-    @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
-    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-        this.f452a.a(pluginErrorDetails, str);
-    }
-
-    @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
-    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
-        this.f452a.a(pluginErrorDetails);
-    }
-
-    public G0() {
-        this(new I0());
-    }
-
-    @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
-    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f452a.a(str, str2, pluginErrorDetails);
+    public static F0 a(String str) {
+        try {
+            JSONObject jSONObject = new JSONObject(new String(Base64.decode(str, 0), Charsets.UTF_8));
+            return new F0(jSONObject.getString("apiKey"), jSONObject.getString(RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME), CounterConfigurationReporterType.Companion.fromStringValue(jSONObject.getString("reporterType")), jSONObject.getInt("processID"), jSONObject.getString("processSessionID"), JsonUtils.optStringOrNull(jSONObject, "errorEnvironment"));
+        } catch (Throwable unused) {
+            return null;
+        }
     }
 }

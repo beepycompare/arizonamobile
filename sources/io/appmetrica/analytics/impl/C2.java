@@ -1,130 +1,73 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-/* loaded from: classes4.dex */
-public final class C2 extends MessageNano {
-    public static final int c = 1;
-    public static final int d = 2;
-    public static final int e = 3;
-    public static volatile C2[] f;
+import android.app.ActivityManager;
+import android.app.usage.UsageStatsManager;
+import android.content.Context;
+import androidx.media3.exoplayer.upstream.CmcdData;
+import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import kotlin.Metadata;
+import kotlin.jvm.JvmStatic;
+@Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\b\u0010\tJ\u0018\u0010\u0007\u001a\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0004H\u0007¨\u0006\n"}, d2 = {"Lio/appmetrica/analytics/impl/C2;", "", "Landroid/content/Context;", "context", "Lio/appmetrica/analytics/impl/l2;", "converter", "Lio/appmetrica/analytics/impl/F2;", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "<init>", "()V", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
+/* loaded from: classes3.dex */
+public final class C2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public B2[] f381a;
-    public boolean b;
+    public static final C2 f419a = new C2();
 
-    public C2() {
-        a();
+    private C2() {
     }
 
-    public static C2[] b() {
-        if (f == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (f == null) {
-                    f = new C2[0];
-                }
+    @JvmStatic
+    public static final F2 a(Context context, final C0388l2 c0388l2) {
+        return new F2((E2) SystemServiceUtils.accessSystemServiceByNameSafely(context, "usagestats", "getting app standby bucket", "usageStatsManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.C2$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+            public final Object apply(Object obj) {
+                E2 a2;
+                a2 = C2.a(C0388l2.this, (UsageStatsManager) obj);
+                return a2;
             }
-        }
-        return f;
-    }
-
-    public final C2 a() {
-        this.f381a = B2.b();
-        this.b = false;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        B2[] b2Arr = this.f381a;
-        if (b2Arr != null && b2Arr.length > 0) {
-            int i = 0;
-            while (true) {
-                B2[] b2Arr2 = this.f381a;
-                if (i >= b2Arr2.length) {
-                    break;
-                }
-                B2 b2 = b2Arr2[i];
-                if (b2 != null) {
-                    computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, b2);
-                }
-                i++;
+        }), (Boolean) SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "getting is background restricted", "activityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.C2$$ExternalSyntheticLambda1
+            @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+            public final Object apply(Object obj) {
+                Boolean a2;
+                a2 = C2.a((ActivityManager) obj);
+                return a2;
             }
-        }
-        return CodedOutputByteBufferNano.computeBoolSize(2, this.b) + computeSerializedSize;
+        }));
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        B2[] b2Arr = this.f381a;
-        if (b2Arr != null && b2Arr.length > 0) {
-            int i = 0;
-            while (true) {
-                B2[] b2Arr2 = this.f381a;
-                if (i >= b2Arr2.length) {
-                    break;
-                }
-                B2 b2 = b2Arr2[i];
-                if (b2 != null) {
-                    codedOutputByteBufferNano.writeMessage(1, b2);
-                }
-                i++;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final E2 a(C0388l2 c0388l2, UsageStatsManager usageStatsManager) {
+        int appStandbyBucket = usageStatsManager.getAppStandbyBucket();
+        c0388l2.getClass();
+        if (AndroidUtils.isApiAchieved(28)) {
+            if (AndroidUtils.isApiAchieved(30) && appStandbyBucket == 45) {
+                return E2.RESTRICTED;
             }
-        }
-        codedOutputByteBufferNano.writeBool(2, this.b);
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final C2 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                B2[] b2Arr = this.f381a;
-                int length = b2Arr == null ? 0 : b2Arr.length;
-                int i = repeatedFieldArrayLength + length;
-                B2[] b2Arr2 = new B2[i];
-                if (length != 0) {
-                    System.arraycopy(b2Arr, 0, b2Arr2, 0, length);
-                }
-                while (length < i - 1) {
-                    B2 b2 = new B2();
-                    b2Arr2[length] = b2;
-                    codedInputByteBufferNano.readMessage(b2);
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                B2 b22 = new B2();
-                b2Arr2[length] = b22;
-                codedInputByteBufferNano.readMessage(b22);
-                this.f381a = b2Arr2;
-            } else if (readTag != 16) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.b = codedInputByteBufferNano.readBool();
+            if (appStandbyBucket == 5) {
+                return E2.EXEMPTED;
             }
+            if (appStandbyBucket == 10) {
+                return E2.ACTIVE;
+            }
+            if (appStandbyBucket == 30) {
+                return E2.FREQUENT;
+            }
+            if (appStandbyBucket == 20) {
+                return E2.WORKING_SET;
+            }
+            if (appStandbyBucket == 40) {
+                return E2.RARE;
+            }
+            return E2.UNKNOWN;
         }
-        return this;
+        return null;
     }
 
-    public static C2 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new C2().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static C2 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (C2) MessageNano.mergeFrom(new C2(), bArr);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Boolean a(ActivityManager activityManager) {
+        return Boolean.valueOf(activityManager.isBackgroundRestricted());
     }
 }

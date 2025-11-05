@@ -1,30 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
-import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory;
-/* loaded from: classes4.dex */
-public final class Ub implements LastKnownLocationExtractorProviderFactory {
+import android.location.Location;
+import io.appmetrica.analytics.locationapi.internal.LocationProvider;
+/* loaded from: classes3.dex */
+public interface Ub extends LocationProvider {
+    void a(Location location);
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Vb f699a = new Vb();
+    void a(Object obj);
 
-    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
-    public final LastKnownLocationExtractorProvider getGplLastKnownLocationExtractorProvider() {
-        return this.f699a;
-    }
+    void a(boolean z);
 
-    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
-    public final LastKnownLocationExtractorProvider getGpsLastKnownLocationExtractorProvider() {
-        return this.f699a;
-    }
+    void b(Object obj);
 
-    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
-    public final LastKnownLocationExtractorProvider getNetworkLastKnownLocationExtractorProvider() {
-        return this.f699a;
-    }
-
-    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
-    public final LastKnownLocationExtractorProvider getPassiveLastKnownLocationExtractorProvider() {
-        return this.f699a;
-    }
+    void init();
 }

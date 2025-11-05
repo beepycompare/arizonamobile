@@ -10,10 +10,9 @@ import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.IndexSeekMap;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class FlvExtractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: androidx.media3.extractor.flv.FlvExtractor$$ExternalSyntheticLambda0
         @Override // androidx.media3.extractor.ExtractorsFactory
@@ -66,7 +65,7 @@ public final class FlvExtractor implements Extractor {
         }
         extractorInput.peekFully(this.scratch.getData(), 0, 2);
         this.scratch.setPosition(0);
-        if ((this.scratch.readUnsignedShort() & ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION) != 0) {
+        if ((this.scratch.readUnsignedShort() & 250) != 0) {
             return false;
         }
         extractorInput.peekFully(this.scratch.getData(), 0, 4);

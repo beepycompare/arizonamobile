@@ -1,19 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.internal.Ref;
-/* loaded from: classes4.dex */
-public final class G7 implements InterfaceC0670vn {
+import kotlin.jvm.internal.Intrinsics;
+/* loaded from: classes3.dex */
+public final class G7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Ref.ObjectRef f457a;
+    public final Pa f486a;
+    public String b = "";
 
-    public G7(Ref.ObjectRef objectRef) {
-        this.f457a = objectRef;
+    public G7(Pa pa) {
+        this.f486a = pa;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // io.appmetrica.analytics.impl.InterfaceC0670vn
-    public final void a(C0381kd c0381kd) {
-        this.f457a.element = c0381kd != null ? c0381kd.f954a : 0;
+    public final void a(String str, boolean z) {
+        if (str != null) {
+            if ((str.length() > 0 ? str : null) == null || Intrinsics.areEqual(this.b, str)) {
+                return;
+            }
+            this.b = str;
+            this.f486a.a(str, z);
+        }
     }
 }

@@ -220,17 +220,17 @@ public final class TextLinkScope {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$5$lambda$2() {
-        return IntOffset.m7383boximpl(IntOffset.Companion.m7403getZeronOccac());
+        return IntOffset.m8114boximpl(IntOffset.Companion.m8134getZeronOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$5$lambda$3() {
-        return IntOffset.m7383boximpl(IntOffset.Companion.m7403getZeronOccac());
+        return IntOffset.m8114boximpl(IntOffset.Companion.m8134getZeronOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$5$lambda$4(IntRect intRect) {
-        return IntOffset.m7383boximpl(intRect.m7421getTopLeftnOccac());
+        return IntOffset.m8114boximpl(intRect.m8152getTopLeftnOccac());
     }
 
     private final Modifier clipLink(Modifier modifier, final AnnotatedString.Range<LinkAnnotation> range) {
@@ -277,7 +277,7 @@ public final class TextLinkScope {
                 path = textLayoutResult.getPathForRange(calculateVisibleLinkRange.getStart(), calculateVisibleLinkRange.getEnd());
                 Rect boundingBox = textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getStart());
                 float min = textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getStart()) == textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getEnd() + (-1)) ? Math.min(textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getEnd() - 1).getLeft(), boundingBox.getLeft()) : 0.0f;
-                path.mo4442translatek4lQ0M(Offset.m4297constructorimpl(Offset.m4297constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
+                path.mo5172translatek4lQ0M(Offset.m5027constructorimpl(Offset.m5027constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
             }
             return path;
         }

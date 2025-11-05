@@ -12,20 +12,20 @@ public final class MultiParagraphLayoutCacheKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: times-NB67dxo  reason: not valid java name */
     public static final long m1714timesNB67dxo(long j, long j2) {
-        if (TextUnit.m7460isEmimpl(j2)) {
-            if (TextUnit.m7460isEmimpl(j)) {
-                throw new IllegalStateException("Cannot convert Em to Px when style.fontSize is Em (" + ((Object) TextUnit.m7465toStringimpl(j2)) + "). Please declare the style.fontSize with Sp units instead.");
+        if (TextUnit.m8191isEmimpl(j2)) {
+            if (TextUnit.m8191isEmimpl(j)) {
+                throw new IllegalStateException("Cannot convert Em to Px when style.fontSize is Em (" + ((Object) TextUnit.m8196toStringimpl(j2)) + "). Please declare the style.fontSize with Sp units instead.");
             }
-            if (TextUnit.m7456getRawTypeimpl(j) == 0) {
+            if (TextUnit.m8187getRawTypeimpl(j) == 0) {
                 long j3 = DefaultFontSize;
-                float m7458getValueimpl = TextUnit.m7458getValueimpl(j2);
-                TextUnitKt.m7471checkArithmeticR2X_6o(j3);
-                return TextUnitKt.pack(TextUnit.m7456getRawTypeimpl(j3), TextUnit.m7458getValueimpl(j3) * m7458getValueimpl);
+                float m8189getValueimpl = TextUnit.m8189getValueimpl(j2);
+                TextUnitKt.m8202checkArithmeticR2X_6o(j3);
+                return TextUnitKt.pack(TextUnit.m8187getRawTypeimpl(j3), TextUnit.m8189getValueimpl(j3) * m8189getValueimpl);
             }
-            float m7458getValueimpl2 = TextUnit.m7458getValueimpl(j2);
-            TextUnitKt.m7471checkArithmeticR2X_6o(j);
-            return TextUnitKt.pack(TextUnit.m7456getRawTypeimpl(j), TextUnit.m7458getValueimpl(j) * m7458getValueimpl2);
+            float m8189getValueimpl2 = TextUnit.m8189getValueimpl(j2);
+            TextUnitKt.m8202checkArithmeticR2X_6o(j);
+            return TextUnitKt.pack(TextUnit.m8187getRawTypeimpl(j), TextUnit.m8189getValueimpl(j) * m8189getValueimpl2);
         }
-        throw new IllegalArgumentException("The multiplier must be in em, but was " + ((Object) TextUnit.m7465toStringimpl(j2)) + '.');
+        throw new IllegalArgumentException("The multiplier must be in em, but was " + ((Object) TextUnit.m8196toStringimpl(j2)) + '.');
     }
 }

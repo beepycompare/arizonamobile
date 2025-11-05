@@ -1,36 +1,36 @@
 package io.appmetrica.analytics.profile;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.InterfaceC0392ko;
+import io.appmetrica.analytics.impl.InterfaceC0281go;
 import java.util.LinkedList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class UserProfile {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List f1282a;
+    private final List f1323a;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final LinkedList f1283a;
+        private final LinkedList f1324a;
 
         /* synthetic */ Builder(int i) {
             this();
         }
 
-        public Builder apply(UserProfileUpdate<? extends InterfaceC0392ko> userProfileUpdate) {
-            this.f1283a.add(userProfileUpdate);
+        public Builder apply(UserProfileUpdate<? extends InterfaceC0281go> userProfileUpdate) {
+            this.f1324a.add(userProfileUpdate);
             return this;
         }
 
         public UserProfile build() {
-            return new UserProfile(this.f1283a, 0);
+            return new UserProfile(this.f1324a, 0);
         }
 
         private Builder() {
-            this.f1283a = new LinkedList();
+            this.f1324a = new LinkedList();
         }
     }
 
@@ -42,11 +42,11 @@ public class UserProfile {
         return new Builder(0);
     }
 
-    public List<UserProfileUpdate<? extends InterfaceC0392ko>> getUserProfileUpdates() {
-        return this.f1282a;
+    public List<UserProfileUpdate<? extends InterfaceC0281go>> getUserProfileUpdates() {
+        return this.f1323a;
     }
 
     private UserProfile(LinkedList linkedList) {
-        this.f1282a = CollectionUtils.unmodifiableListCopy(linkedList);
+        this.f1323a = CollectionUtils.unmodifiableListCopy(linkedList);
     }
 }

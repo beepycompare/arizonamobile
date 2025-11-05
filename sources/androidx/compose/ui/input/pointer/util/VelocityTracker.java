@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.VelocityKt;
 import kotlin.Metadata;
 /* compiled from: VelocityTracker.kt */
 @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001d\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00112\u0006\u0010\u0017\u001a\u00020\n¢\u0006\u0004\b\u0018\u0010\u0019J\r\u0010\u001a\u001a\u00020\u001b¢\u0006\u0004\b\u001c\u0010\fJ\u0015\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001d\u001a\u00020\u001b¢\u0006\u0004\b\u001e\u0010\u001fJ\u0006\u0010 \u001a\u00020\u0015R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\t\u001a\u00020\nX\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u000f\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u0010\u001a\u00020\u0011X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\f\"\u0004\b\u0013\u0010\u000e¨\u0006!"}, d2 = {"Landroidx/compose/ui/input/pointer/util/VelocityTracker;", "", "<init>", "()V", "strategy", "Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;", "xVelocityTracker", "Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;", "yVelocityTracker", "currentPointerPositionAccumulator", "Landroidx/compose/ui/geometry/Offset;", "getCurrentPointerPositionAccumulator-F1C5BW0$ui_release", "()J", "setCurrentPointerPositionAccumulator-k-4lQ0M$ui_release", "(J)V", "J", "lastMoveEventTimeStamp", "", "getLastMoveEventTimeStamp$ui_release", "setLastMoveEventTimeStamp$ui_release", "addPosition", "", "timeMillis", "position", "addPosition-Uv8p0NA", "(JJ)V", "calculateVelocity", "Landroidx/compose/ui/unit/Velocity;", "calculateVelocity-9UxMQ8M", "maximumVelocity", "calculateVelocity-AH228Gc", "(J)J", "resetTracking", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class VelocityTracker {
     public static final int $stable = 8;
     private long currentPointerPositionAccumulator;
@@ -27,16 +27,16 @@ public final class VelocityTracker {
         this.strategy = strategy;
         this.xVelocityTracker = new VelocityTracker1D(false, strategy, 1, null);
         this.yVelocityTracker = new VelocityTracker1D(false, strategy, 1, null);
-        this.currentPointerPositionAccumulator = Offset.Companion.m4321getZeroF1C5BW0();
+        this.currentPointerPositionAccumulator = Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     /* renamed from: getCurrentPointerPositionAccumulator-F1C5BW0$ui_release  reason: not valid java name */
-    public final long m5939getCurrentPointerPositionAccumulatorF1C5BW0$ui_release() {
+    public final long m6669getCurrentPointerPositionAccumulatorF1C5BW0$ui_release() {
         return this.currentPointerPositionAccumulator;
     }
 
     /* renamed from: setCurrentPointerPositionAccumulator-k-4lQ0M$ui_release  reason: not valid java name */
-    public final void m5940setCurrentPointerPositionAccumulatork4lQ0M$ui_release(long j) {
+    public final void m6670setCurrentPointerPositionAccumulatork4lQ0M$ui_release(long j) {
         this.currentPointerPositionAccumulator = j;
     }
 
@@ -49,22 +49,22 @@ public final class VelocityTracker {
     }
 
     /* renamed from: addPosition-Uv8p0NA  reason: not valid java name */
-    public final void m5936addPositionUv8p0NA(long j, long j2) {
+    public final void m6666addPositionUv8p0NA(long j, long j2) {
         this.xVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 >> 32)));
         this.yVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 & 4294967295L)));
     }
 
     /* renamed from: calculateVelocity-9UxMQ8M  reason: not valid java name */
-    public final long m5937calculateVelocity9UxMQ8M() {
-        return m5938calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
+    public final long m6667calculateVelocity9UxMQ8M() {
+        return m6668calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
     }
 
     /* renamed from: calculateVelocity-AH228Gc  reason: not valid java name */
-    public final long m5938calculateVelocityAH228Gc(long j) {
-        if (!(Velocity.m7502getXimpl(j) > 0.0f && Velocity.m7503getYimpl(j) > 0.0f)) {
-            InlineClassHelperKt.throwIllegalStateException("maximumVelocity should be a positive value. You specified=" + ((Object) Velocity.m7509toStringimpl(j)));
+    public final long m6668calculateVelocityAH228Gc(long j) {
+        if (!(Velocity.m8233getXimpl(j) > 0.0f && Velocity.m8234getYimpl(j) > 0.0f)) {
+            InlineClassHelperKt.throwIllegalStateException("maximumVelocity should be a positive value. You specified=" + ((Object) Velocity.m8240toStringimpl(j)));
         }
-        return VelocityKt.Velocity(this.xVelocityTracker.calculateVelocity(Velocity.m7502getXimpl(j)), this.yVelocityTracker.calculateVelocity(Velocity.m7503getYimpl(j)));
+        return VelocityKt.Velocity(this.xVelocityTracker.calculateVelocity(Velocity.m8233getXimpl(j)), this.yVelocityTracker.calculateVelocity(Velocity.m8234getYimpl(j)));
     }
 
     public final void resetTracking() {

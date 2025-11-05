@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextFieldHandleState {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final TextFieldHandleState Hidden = new TextFieldHandleState(false, Offset.Companion.m4320getUnspecifiedF1C5BW0(), 0.0f, ResolvedTextDirection.Ltr, false, null);
+    private static final TextFieldHandleState Hidden = new TextFieldHandleState(false, Offset.Companion.m5050getUnspecifiedF1C5BW0(), 0.0f, ResolvedTextDirection.Ltr, false, null);
     private final ResolvedTextDirection direction;
     private final boolean handlesCrossed;
     private final float lineHeight;
@@ -75,17 +75,17 @@ public final class TextFieldHandleState {
         }
         if (obj instanceof TextFieldHandleState) {
             TextFieldHandleState textFieldHandleState = (TextFieldHandleState) obj;
-            return this.visible == textFieldHandleState.visible && Offset.m4302equalsimpl0(this.position, textFieldHandleState.position) && Float.compare(this.lineHeight, textFieldHandleState.lineHeight) == 0 && this.direction == textFieldHandleState.direction && this.handlesCrossed == textFieldHandleState.handlesCrossed;
+            return this.visible == textFieldHandleState.visible && Offset.m5032equalsimpl0(this.position, textFieldHandleState.position) && Float.compare(this.lineHeight, textFieldHandleState.lineHeight) == 0 && this.direction == textFieldHandleState.direction && this.handlesCrossed == textFieldHandleState.handlesCrossed;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((Boolean.hashCode(this.visible) * 31) + Offset.m4307hashCodeimpl(this.position)) * 31) + Float.hashCode(this.lineHeight)) * 31) + this.direction.hashCode()) * 31) + Boolean.hashCode(this.handlesCrossed);
+        return (((((((Boolean.hashCode(this.visible) * 31) + Offset.m5037hashCodeimpl(this.position)) * 31) + Float.hashCode(this.lineHeight)) * 31) + this.direction.hashCode()) * 31) + Boolean.hashCode(this.handlesCrossed);
     }
 
     public String toString() {
-        return "TextFieldHandleState(visible=" + this.visible + ", position=" + ((Object) Offset.m4313toStringimpl(this.position)) + ", lineHeight=" + this.lineHeight + ", direction=" + this.direction + ", handlesCrossed=" + this.handlesCrossed + ')';
+        return "TextFieldHandleState(visible=" + this.visible + ", position=" + ((Object) Offset.m5043toStringimpl(this.position)) + ", lineHeight=" + this.lineHeight + ", direction=" + this.direction + ", handlesCrossed=" + this.handlesCrossed + ')';
     }
 
     private TextFieldHandleState(boolean z, long j, float f, ResolvedTextDirection resolvedTextDirection, boolean z2) {

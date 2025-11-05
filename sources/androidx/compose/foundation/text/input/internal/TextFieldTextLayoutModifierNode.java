@@ -73,16 +73,16 @@ public final class TextFieldTextLayoutModifierNode extends DelegatingNode implem
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        float m7264constructorimpl;
+        float m7995constructorimpl;
         TextLayoutResult m1586layoutWithNewMeasureInputshBUhpc = this.textLayoutState.m1586layoutWithNewMeasureInputshBUhpc(measureScope, measureScope.getLayoutDirection(), (FontFamily.Resolver) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFontFamilyResolver()), j);
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.Companion.m7226fitPrioritizingWidthZbe2FdA((int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() >> 32), (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() >> 32), (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() & 4294967295L), (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() & 4294967295L)));
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.Companion.m7957fitPrioritizingWidthZbe2FdA((int) (m1586layoutWithNewMeasureInputshBUhpc.m7428getSizeYbymL2g() >> 32), (int) (m1586layoutWithNewMeasureInputshBUhpc.m7428getSizeYbymL2g() >> 32), (int) (m1586layoutWithNewMeasureInputshBUhpc.m7428getSizeYbymL2g() & 4294967295L), (int) (m1586layoutWithNewMeasureInputshBUhpc.m7428getSizeYbymL2g() & 4294967295L)));
         TextLayoutState textLayoutState = this.textLayoutState;
         if (this.singleLine) {
-            m7264constructorimpl = measureScope.mo426toDpu2uoSUM(TextDelegateKt.ceilToIntPx(m1586layoutWithNewMeasureInputshBUhpc.getLineBottom(0)));
+            m7995constructorimpl = measureScope.mo426toDpu2uoSUM(TextDelegateKt.ceilToIntPx(m1586layoutWithNewMeasureInputshBUhpc.getLineBottom(0)));
         } else {
-            m7264constructorimpl = Dp.m7264constructorimpl(0);
+            m7995constructorimpl = Dp.m7995constructorimpl(0);
         }
-        textLayoutState.m1587setMinHeightForSingleLineField0680j_4(m7264constructorimpl);
+        textLayoutState.m1587setMinHeightForSingleLineField0680j_4(m7995constructorimpl);
         LinkedHashMap linkedHashMap = this.baselineCache;
         if (linkedHashMap == null) {
             linkedHashMap = new LinkedHashMap(2);
@@ -90,11 +90,11 @@ public final class TextFieldTextLayoutModifierNode extends DelegatingNode implem
         linkedHashMap.put(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(m1586layoutWithNewMeasureInputshBUhpc.getFirstBaseline())));
         linkedHashMap.put(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(m1586layoutWithNewMeasureInputshBUhpc.getLastBaseline())));
         this.baselineCache = linkedHashMap;
-        int m6697getSizeYbymL2g = (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() >> 32);
-        int m6697getSizeYbymL2g2 = (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() & 4294967295L);
+        int m7428getSizeYbymL2g = (int) (m1586layoutWithNewMeasureInputshBUhpc.m7428getSizeYbymL2g() >> 32);
+        int m7428getSizeYbymL2g2 = (int) (m1586layoutWithNewMeasureInputshBUhpc.m7428getSizeYbymL2g() & 4294967295L);
         Map<AlignmentLine, Integer> map = this.baselineCache;
         Intrinsics.checkNotNull(map);
-        return measureScope.layout(m6697getSizeYbymL2g, m6697getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldTextLayoutModifierNode$$ExternalSyntheticLambda0
+        return measureScope.layout(m7428getSizeYbymL2g, m7428getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldTextLayoutModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;

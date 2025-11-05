@@ -1,29 +1,21 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
-import java.math.BigDecimal;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
-public final class J3 {
+/* loaded from: classes3.dex */
+public final class J3 implements Xi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0204dg f509a;
-    public final BigDecimal b;
-    public final Tf c;
-    public final Tg d;
+    public final C0220ef f540a;
 
-    public J3(ECommerceCartItem eCommerceCartItem) {
-        this(new C0204dg(eCommerceCartItem.getProduct()), eCommerceCartItem.getQuantity(), new Tf(eCommerceCartItem.getRevenue()), eCommerceCartItem.getReferrer() == null ? null : new Tg(eCommerceCartItem.getReferrer()));
+    public J3(C0220ef c0220ef) {
+        this.f540a = c0220ef;
     }
 
-    public final String toString() {
-        return "CartItemWrapper{product=" + this.f509a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.impl.Xi
+    public final boolean a() {
+        return this.f540a.j();
     }
 
-    public J3(C0204dg c0204dg, BigDecimal bigDecimal, Tf tf, Tg tg) {
-        this.f509a = c0204dg;
-        this.b = bigDecimal;
-        this.c = tf;
-        this.d = tg;
+    @Override // io.appmetrica.analytics.impl.Xi
+    public final void b() {
+        this.f540a.g().b();
     }
 }

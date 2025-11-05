@@ -1,4 +1,10 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public interface V9 {
+
+import android.content.pm.FeatureInfo;
+/* loaded from: classes3.dex */
+public final class V9 extends X9 {
+    @Override // io.appmetrica.analytics.impl.X9
+    public final Y9 b(FeatureInfo featureInfo) {
+        return new Y9(featureInfo.name, featureInfo.version, (featureInfo.flags & 1) != 0);
+    }
 }

@@ -78,6 +78,6 @@ final class SelectableElement extends ModifierNodeElement<SelectableNode> {
         IndicationNodeFactory indicationNodeFactory = this.indicationNodeFactory;
         int hashCode3 = (((((hashCode2 + (indicationNodeFactory != null ? indicationNodeFactory.hashCode() : 0)) * 31) + Boolean.hashCode(this.useLocalIndication)) * 31) + Boolean.hashCode(this.enabled)) * 31;
         Role role = this.role;
-        return ((hashCode3 + (role != null ? Role.m6471hashCodeimpl(role.m6473unboximpl()) : 0)) * 31) + this.onClick.hashCode();
+        return ((hashCode3 + (role != null ? Role.m7201hashCodeimpl(role.m7203unboximpl()) : 0)) * 31) + this.onClick.hashCode();
     }
 }

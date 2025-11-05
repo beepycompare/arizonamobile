@@ -2,7 +2,6 @@ package kotlinx.metadata.internal.metadata;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.extractor.ts.TsExtractor;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.io.IOException;
@@ -7396,7 +7395,7 @@ public final class ProtoBuf {
                                     this.versionRequirement_.add(Integer.valueOf(codedInputStream.readInt32()));
                                     continue;
                                     z = z4;
-                                case ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION /* 250 */:
+                                case 250:
                                     int pushLimit7 = codedInputStream.pushLimit(codedInputStream.readRawVarint32());
                                     if (!(z3 & true) && codedInputStream.getBytesUntilLimit() > 0) {
                                         this.versionRequirement_ = new ArrayList();
@@ -12426,7 +12425,7 @@ public final class ProtoBuf {
                                     }
                                     this.versionRequirement_.add(Integer.valueOf(codedInputStream.readInt32()));
                                     continue;
-                                case ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION /* 250 */:
+                                case 250:
                                     int pushLimit2 = codedInputStream.pushLimit(codedInputStream.readRawVarint32());
                                     boolean z9 = (z2 ? 1 : 0) & true;
                                     z2 = z2;
@@ -14069,7 +14068,7 @@ public final class ProtoBuf {
                                         }
                                         this.versionRequirement_.add(Integer.valueOf(codedInputStream.readInt32()));
                                         continue;
-                                    case ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION /* 250 */:
+                                    case 250:
                                         int pushLimit2 = codedInputStream.pushLimit(codedInputStream.readRawVarint32());
                                         boolean z8 = (z2 ? 1 : 0) & true;
                                         z2 = z2;
@@ -16205,7 +16204,7 @@ public final class ProtoBuf {
                                     }
                                     this.versionRequirement_.add(Integer.valueOf(codedInputStream.readInt32()));
                                     continue;
-                                case ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION /* 250 */:
+                                case 250:
                                     int pushLimit = codedInputStream.pushLimit(codedInputStream.readRawVarint32());
                                     if (!(z2 & true) && codedInputStream.getBytesUntilLimit() > 0) {
                                         this.versionRequirement_ = new ArrayList();

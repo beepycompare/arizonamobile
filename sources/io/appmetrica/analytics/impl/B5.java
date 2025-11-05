@@ -1,27 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import java.util.HashMap;
-/* loaded from: classes4.dex */
-public final class B5 {
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.List;
+import java.util.Locale;
+/* loaded from: classes3.dex */
+public abstract class B5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f364a = new HashMap();
-    public final HashMap b = new HashMap();
-    public final Context c;
+    public static final List f407a = CollectionUtils.createSortedListWithoutRepetitions("id", "type", "report_request_parameters", "session_description");
+    public static final String b;
+    public static final String c;
 
-    public B5(Context context) {
-        this.c = context.getApplicationContext();
-    }
-
-    public final InterfaceC0276gb a(C0477o5 c0477o5, N4 n4, InterfaceC0428m8 interfaceC0428m8, HashMap hashMap) {
-        InterfaceC0276gb interfaceC0276gb = (InterfaceC0276gb) hashMap.get(c0477o5.toString());
-        if (interfaceC0276gb == null) {
-            InterfaceC0276gb a2 = interfaceC0428m8.a(this.c, c0477o5, n4);
-            hashMap.put(c0477o5.toString(), a2);
-            return a2;
-        }
-        interfaceC0276gb.a(n4);
-        return interfaceC0276gb;
+    static {
+        Locale locale = Locale.US;
+        b = String.format(locale, "SELECT DISTINCT %s  FROM %s WHERE %s >=0 AND (SELECT count() FROM %5$s WHERE %5$s.%6$s = %2$s.%3$s AND %5$s.%7$s = %2$s.%4$s) > 0 ORDER BY %3$s LIMIT 1", "report_request_parameters", "sessions", "id", "type", "events", "session_id", "session_type");
+        c = String.format(locale, "(select count(%s.%s) from %s where %s.%s = %s.%s) = 0 and cast(%s as integer) < ?", "events", "id", "events", "events", "session_id", "sessions", "id", "id");
     }
 }

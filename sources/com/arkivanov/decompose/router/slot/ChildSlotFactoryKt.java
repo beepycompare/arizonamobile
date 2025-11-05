@@ -68,17 +68,17 @@ public final class ChildSlotFactoryKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final SerializableContainer childSlot$lambda$0(KSerializer kSerializer, Object obj) {
-        if (kSerializer == null || obj == null) {
-            return null;
+        if (kSerializer != null) {
+            return SerializableContainerKt.SerializableContainer(obj, kSerializer);
         }
-        return SerializableContainerKt.SerializableContainer(obj, kSerializer);
+        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object childSlot$lambda$1(KSerializer kSerializer, SerializableContainer container) {
         Intrinsics.checkNotNullParameter(container, "container");
         if (kSerializer != null) {
-            return SerializableContainerKt.consumeRequired(container, kSerializer);
+            return container.consume(kSerializer);
         }
         return null;
     }

@@ -6,10 +6,13 @@ import android.content.pm.PackageManager;
 import com.google.android.gms.common.wrappers.Wrappers;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class AndroidUtilsLight {
-    private static volatile int zza = -1;
+    public static final /* synthetic */ int zza = 0;
+    private static volatile int zzb = -1;
+    private static volatile zza zzc;
+    private static final Object zzd = new Object();
 
     @Deprecated
     public static byte[] getPackageCertificateHashBytes(Context context, String str) throws PackageManager.NameNotFoundException {

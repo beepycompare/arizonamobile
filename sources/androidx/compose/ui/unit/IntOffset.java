@@ -11,26 +11,26 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class IntOffset {
     private final long packedValue;
     public static final Companion Companion = new Companion(null);
-    private static final long Zero = m7386constructorimpl(0);
-    private static final long Max = m7386constructorimpl(9223372034707292159L);
+    private static final long Zero = m8117constructorimpl(0);
+    private static final long Max = m8117constructorimpl(9223372034707292159L);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ IntOffset m7383boximpl(long j) {
+    public static final /* synthetic */ IntOffset m8114boximpl(long j) {
         return new IntOffset(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m7386constructorimpl(long j) {
+    public static long m8117constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7390equalsimpl(long j, Object obj) {
-        return (obj instanceof IntOffset) && j == ((IntOffset) obj).m7401unboximpl();
+    public static boolean m8121equalsimpl(long j, Object obj) {
+        return (obj instanceof IntOffset) && j == ((IntOffset) obj).m8132unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7391equalsimpl0(long j, long j2) {
+    public static final boolean m8122equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -38,7 +38,7 @@ public final class IntOffset {
     }
 
     /* renamed from: getX-impl  reason: not valid java name */
-    public static final int m7392getXimpl(long j) {
+    public static final int m8123getXimpl(long j) {
         return (int) (j >> 32);
     }
 
@@ -46,25 +46,25 @@ public final class IntOffset {
     }
 
     /* renamed from: getY-impl  reason: not valid java name */
-    public static final int m7393getYimpl(long j) {
+    public static final int m8124getYimpl(long j) {
         return (int) (j & 4294967295L);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7394hashCodeimpl(long j) {
+    public static int m8125hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m7390equalsimpl(this.packedValue, obj);
+        return m8121equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m7394hashCodeimpl(this.packedValue);
+        return m8125hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m7401unboximpl() {
+    public final /* synthetic */ long m8132unboximpl() {
         return this.packedValue;
     }
 
@@ -77,58 +77,58 @@ public final class IntOffset {
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final int m7384component1impl(long j) {
-        return m7392getXimpl(j);
+    public static final int m8115component1impl(long j) {
+        return m8123getXimpl(j);
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final int m7385component2impl(long j) {
-        return m7393getYimpl(j);
+    public static final int m8116component2impl(long j) {
+        return m8124getYimpl(j);
     }
 
     /* renamed from: copy-iSbpLlY$default  reason: not valid java name */
-    public static /* synthetic */ long m7388copyiSbpLlY$default(long j, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ long m8119copyiSbpLlY$default(long j, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = (int) (j >> 32);
         }
         if ((i3 & 2) != 0) {
             i2 = (int) (4294967295L & j);
         }
-        return m7387copyiSbpLlY(j, i, i2);
+        return m8118copyiSbpLlY(j, i, i2);
     }
 
     /* renamed from: copy-iSbpLlY  reason: not valid java name */
-    public static final long m7387copyiSbpLlY(long j, int i, int i2) {
-        return m7386constructorimpl((i << 32) | (i2 & 4294967295L));
+    public static final long m8118copyiSbpLlY(long j, int i, int i2) {
+        return m8117constructorimpl((i << 32) | (i2 & 4294967295L));
     }
 
     /* renamed from: minus-qkQi6aY  reason: not valid java name */
-    public static final long m7395minusqkQi6aY(long j, long j2) {
-        return m7386constructorimpl(((((int) (j >> 32)) - ((int) (j2 >> 32))) << 32) | ((((int) (j & 4294967295L)) - ((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m8126minusqkQi6aY(long j, long j2) {
+        return m8117constructorimpl(((((int) (j >> 32)) - ((int) (j2 >> 32))) << 32) | ((((int) (j & 4294967295L)) - ((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: plus-qkQi6aY  reason: not valid java name */
-    public static final long m7396plusqkQi6aY(long j, long j2) {
-        return m7386constructorimpl(((((int) (j >> 32)) + ((int) (j2 >> 32))) << 32) | ((((int) (j & 4294967295L)) + ((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m8127plusqkQi6aY(long j, long j2) {
+        return m8117constructorimpl(((((int) (j >> 32)) + ((int) (j2 >> 32))) << 32) | ((((int) (j & 4294967295L)) + ((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: unaryMinus-nOcc-ac  reason: not valid java name */
-    public static final long m7400unaryMinusnOccac(long j) {
-        return m7386constructorimpl(((-((int) (j & 4294967295L))) & 4294967295L) | ((-((int) (j >> 32))) << 32));
+    public static final long m8131unaryMinusnOccac(long j) {
+        return m8117constructorimpl(((-((int) (j & 4294967295L))) & 4294967295L) | ((-((int) (j >> 32))) << 32));
     }
 
     /* renamed from: rem-Bjo55l4  reason: not valid java name */
-    public static final long m7397remBjo55l4(long j, int i) {
-        return m7386constructorimpl(((((int) (j >> 32)) % i) << 32) | ((((int) (j & 4294967295L)) % i) & 4294967295L));
+    public static final long m8128remBjo55l4(long j, int i) {
+        return m8117constructorimpl(((((int) (j >> 32)) % i) << 32) | ((((int) (j & 4294967295L)) % i) & 4294967295L));
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7399toStringimpl(long j) {
-        return "(" + m7392getXimpl(j) + ", " + m7393getYimpl(j) + ')';
+    public static String m8130toStringimpl(long j) {
+        return "(" + m8123getXimpl(j) + ", " + m8124getYimpl(j) + ')';
     }
 
     public String toString() {
-        return m7399toStringimpl(this.packedValue);
+        return m8130toStringimpl(this.packedValue);
     }
 
     /* compiled from: IntOffset.kt */
@@ -143,23 +143,23 @@ public final class IntOffset {
         }
 
         /* renamed from: getZero-nOcc-ac  reason: not valid java name */
-        public final long m7403getZeronOccac() {
+        public final long m8134getZeronOccac() {
             return IntOffset.Zero;
         }
 
         /* renamed from: getMax-nOcc-ac  reason: not valid java name */
-        public final long m7402getMaxnOccac() {
+        public final long m8133getMaxnOccac() {
             return IntOffset.Max;
         }
     }
 
     /* renamed from: times-Bjo55l4  reason: not valid java name */
-    public static final long m7398timesBjo55l4(long j, float f) {
-        return m7386constructorimpl((Math.round(((int) (j >> 32)) * f) << 32) | (Math.round(((int) (j & 4294967295L)) * f) & 4294967295L));
+    public static final long m8129timesBjo55l4(long j, float f) {
+        return m8117constructorimpl((Math.round(((int) (j >> 32)) * f) << 32) | (Math.round(((int) (j & 4294967295L)) * f) & 4294967295L));
     }
 
     /* renamed from: div-Bjo55l4  reason: not valid java name */
-    public static final long m7389divBjo55l4(long j, float f) {
-        return m7386constructorimpl((Math.round(((int) (j >> 32)) / f) << 32) | (Math.round(((int) (j & 4294967295L)) / f) & 4294967295L));
+    public static final long m8120divBjo55l4(long j, float f) {
+        return m8117constructorimpl((Math.round(((int) (j >> 32)) / f) << 32) | (Math.round(((int) (j & 4294967295L)) / f) & 4294967295L));
     }
 }

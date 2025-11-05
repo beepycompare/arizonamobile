@@ -67,7 +67,7 @@ public final class FragmentViewModelLazyKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: viewModels$lambda-0  reason: not valid java name */
-    public static final ViewModelStoreOwner m7809viewModels$lambda0(Lazy<? extends ViewModelStoreOwner> lazy) {
+    public static final ViewModelStoreOwner m8540viewModels$lambda0(Lazy<? extends ViewModelStoreOwner> lazy) {
         return lazy.getValue();
     }
 
@@ -120,7 +120,7 @@ public final class FragmentViewModelLazyKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: viewModels$lambda-1  reason: not valid java name */
-    public static final ViewModelStoreOwner m7810viewModels$lambda1(Lazy<? extends ViewModelStoreOwner> lazy) {
+    public static final ViewModelStoreOwner m8541viewModels$lambda1(Lazy<? extends ViewModelStoreOwner> lazy) {
         return lazy.getValue();
     }
 

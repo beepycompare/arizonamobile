@@ -5,14 +5,14 @@ import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.ReadOnlyBufferException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CodedOutputByteBufferNano {
     public static final int LITTLE_ENDIAN_32_SIZE = 4;
     public static final int LITTLE_ENDIAN_64_SIZE = 8;
     private static final int MAX_UTF8_EXPANSION = 3;
     private final ByteBuffer buffer;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class OutOfSpaceException extends IOException {
         private static final long serialVersionUID = -6947486886997889499L;
 

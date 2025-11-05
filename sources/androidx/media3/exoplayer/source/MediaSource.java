@@ -12,10 +12,10 @@ import androidx.media3.exoplayer.upstream.CmcdConfiguration;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import androidx.media3.extractor.text.SubtitleParser;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface MediaSource {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Factory {
         public static final Factory UNSUPPORTED = MediaSourceFactory.UNSUPPORTED;
 
@@ -45,7 +45,7 @@ public interface MediaSource {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface MediaSourceCaller {
         void onSourceInfoRefreshed(MediaSource mediaSource, Timeline timeline);
     }
@@ -89,7 +89,7 @@ public interface MediaSource {
     default void updateMediaItem(MediaItem mediaItem) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaPeriodId {
         public final int adGroupIndex;
         public final int adIndexInAdGroup;

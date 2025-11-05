@@ -1,16 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import java.util.List;
-/* loaded from: classes4.dex */
-public final class Pf extends Oa {
-    public Pf(Ni ni) {
-        super(ni);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Oa
-    public final void a(List<AbstractC0463nh> list) {
-        list.add(this.f608a.h);
-        list.add(this.f608a.f598a);
-        list.add(this.f608a.d);
-    }
+/* loaded from: classes3.dex */
+public interface Pf {
+    List toProto();
 }

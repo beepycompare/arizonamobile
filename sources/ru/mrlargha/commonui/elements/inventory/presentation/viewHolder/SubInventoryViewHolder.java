@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.adjust.sdk.Constants;
+import com.bumptech.glide.Glide;
 import java.util.Arrays;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -27,6 +28,8 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ItemSubInventoryBinding;
+import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEffectType;
+import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEntityKt;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.DraggedItem;
 import ru.mrlargha.commonui.utils.ArizonaBlockType;
@@ -63,7 +66,7 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
     }
 
-    /* JADX WARN: Type inference failed for: r1v58, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$5] */
+    /* JADX WARN: Type inference failed for: r1v67, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$5] */
     public final void bind(final InventoryItem itemVal) {
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
@@ -117,12 +120,12 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
                     itemSubInventoryBinding.ivItemDefaultImage.setImageResource(R.drawable.ic_case_54);
                     setGreyColor();
                     itemSubInventoryBinding.tvTitleText.setText(this.binding.getRoot().getContext().getString(R.string.user_case));
-                } else if (itemVal.getSlot() == 0 && getPosition() == 0 && !this.isArizonaType) {
+                } else if (getPosition() == 0 && !this.isArizonaType) {
                     setDefaultCell();
                     itemSubInventoryBinding.ivItemDefaultImage.setImageResource(R.drawable.ic_case_54);
                     setGreyColor();
                     itemSubInventoryBinding.tvTitleText.setText(this.binding.getRoot().getContext().getString(R.string.user_case));
-                } else if (itemVal.getSlot() == 1 && getPosition() == 2 && !this.isArizonaType) {
+                } else if (getPosition() == 2 && !this.isArizonaType) {
                     setDefaultCell();
                     itemSubInventoryBinding.ivItemDefaultImage.setImageResource(R.drawable.ic_shield_54);
                     setGreyColor();
@@ -215,6 +218,38 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         View viewColored = itemSubInventoryBinding.viewColored;
         Intrinsics.checkNotNullExpressionValue(viewColored, "viewColored");
         viewColored.setVisibility(itemVal.isColored() ? 0 : 8);
+        InventoryItemEffectType effect = InventoryItemEntityKt.getEffect(itemVal);
+        if (effect == null) {
+            effect = InventoryItemEffectType.NONE;
+        }
+        if (effect.getResId() != null) {
+            if (effect == InventoryItemEffectType.FIRE || effect == InventoryItemEffectType.WHITE_FIRE) {
+                Glide.with(itemSubInventoryBinding.ivEffectBackground.getContext()).load(effect.getResId()).into(itemSubInventoryBinding.ivEffectBackground);
+                ImageView ivEffectBackground = itemSubInventoryBinding.ivEffectBackground;
+                Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
+                ivEffectBackground.setVisibility(0);
+                ImageView ivEffectForeground = itemSubInventoryBinding.ivEffectForeground;
+                Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
+                ivEffectForeground.setVisibility(8);
+                return;
+            }
+            Glide.with(itemSubInventoryBinding.ivEffectForeground.getContext()).load(effect.getResId()).into(itemSubInventoryBinding.ivEffectForeground);
+            ImageView ivEffectBackground2 = itemSubInventoryBinding.ivEffectBackground;
+            Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
+            ivEffectBackground2.setVisibility(8);
+            ImageView ivEffectForeground2 = itemSubInventoryBinding.ivEffectForeground;
+            Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
+            ivEffectForeground2.setVisibility(0);
+            return;
+        }
+        itemSubInventoryBinding.ivEffectBackground.setImageDrawable(null);
+        ImageView ivEffectBackground3 = itemSubInventoryBinding.ivEffectBackground;
+        Intrinsics.checkNotNullExpressionValue(ivEffectBackground3, "ivEffectBackground");
+        ivEffectBackground3.setVisibility(8);
+        itemSubInventoryBinding.ivEffectForeground.setImageDrawable(null);
+        ImageView ivEffectForeground3 = itemSubInventoryBinding.ivEffectForeground;
+        Intrinsics.checkNotNullExpressionValue(ivEffectForeground3, "ivEffectForeground");
+        ivEffectForeground3.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

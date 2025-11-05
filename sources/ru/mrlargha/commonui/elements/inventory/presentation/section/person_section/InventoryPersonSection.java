@@ -23,7 +23,6 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.AccessPagesModel;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.BaseInventory;
 import ru.mrlargha.commonui.elements.inventory.presentation.BlockType;
-import ru.mrlargha.commonui.elements.inventory.presentation.adapter.UpgradesInventoryAdapter;
 import ru.mrlargha.commonui.utils.ConstantsKt;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.StringKt;
@@ -183,9 +182,7 @@ public final class InventoryPersonSection {
     public final void updateSet() {
         AccessPagesModel accessPages = BaseInventory.Companion.getAccessPages();
         this.currentPage = accessPages != null ? accessPages.getPage() : 1;
-        UpgradesInventoryAdapter accessoriesInventoryAdapter = this.inventory.getAccessoriesInventoryAdapter();
-        BaseInventory baseInventory = this.inventory;
-        accessoriesInventoryAdapter.submitList(baseInventory.getCurrentSectionList(6, CollectionsKt.toList(baseInventory.getSubAccessoriesList())));
+        this.inventory.getAccessoriesInventoryAdapter().submitList(this.inventory.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
         setPageNumber();
     }
 
@@ -238,12 +235,10 @@ public final class InventoryPersonSection {
             }
         }
         if (BaseInventory.Companion.getAccessPages() != null) {
-            UpgradesInventoryAdapter accessoriesInventoryAdapter = this.inventory.getAccessoriesInventoryAdapter();
-            BaseInventory baseInventory = this.inventory;
-            accessoriesInventoryAdapter.submitList(baseInventory.getCurrentSectionList(6, CollectionsKt.toList(baseInventory.getSubAccessoriesList())));
-            return;
+            this.inventory.getAccessoriesInventoryAdapter().submitList(this.inventory.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
+        } else {
+            this.inventory.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
         }
-        this.inventory.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
     }
 
     public final void changeAccessoriesItem(InventoryItem item, boolean z) {
@@ -267,24 +262,27 @@ public final class InventoryPersonSection {
         int acs_slot = itemsInfo != null ? itemsInfo.getAcs_slot() : -1;
         List<InventoryItem> subAccessoriesList = baseInventory.getSubAccessoriesList();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subAccessoriesList, 10));
-        for (InventoryItem inventoryItem : subAccessoriesList) {
+        Iterator<T> it2 = subAccessoriesList.iterator();
+        while (true) {
+            if (!it2.hasNext()) {
+                break;
+            }
+            InventoryItem inventoryItem = (InventoryItem) it2.next();
             AccessPagesModel accessPages = BaseInventory.Companion.getAccessPages();
             if (accessPages == null) {
                 accessPages = new AccessPagesModel(3, 1);
             }
             if (inventoryItem.getSlot() == ((accessPages.getPage() - 1) * 6) + acs_slot) {
-                inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, 1572863, null);
+                inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, 3670015, null);
             }
             arrayList.add(inventoryItem);
         }
         baseInventory.setSubAccessoriesList(CollectionsKt.toMutableList((Collection) arrayList));
         if (BaseInventory.Companion.getAccessPages() != null) {
-            UpgradesInventoryAdapter accessoriesInventoryAdapter = this.inventory.getAccessoriesInventoryAdapter();
-            BaseInventory baseInventory2 = this.inventory;
-            accessoriesInventoryAdapter.submitList(baseInventory2.getCurrentSectionList(6, CollectionsKt.toList(baseInventory2.getSubAccessoriesList())));
-            return;
+            this.inventory.getAccessoriesInventoryAdapter().submitList(this.inventory.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
+        } else {
+            this.inventory.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
         }
-        this.inventory.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
     }
 
     private final void upgradesNotVisible() {
@@ -365,7 +363,7 @@ public final class InventoryPersonSection {
         rvSubInventory.setVisibility(this.currentPersonType != InventoryPersonType.WALLET ? 0 : 8);
         FrameLayout layoutAcsUpg = inventoryPersonSectionBinding.layoutAcsUpg;
         Intrinsics.checkNotNullExpressionValue(layoutAcsUpg, "layoutAcsUpg");
-        layoutAcsUpg.setVisibility(this.currentPersonType == InventoryPersonType.WALLET ? 8 : 0);
+        layoutAcsUpg.setVisibility(this.currentPersonType == InventoryPersonType.WALLET || this.currentPersonType == InventoryPersonType.NONE ? 8 : 0);
         RecyclerView rvAccessoriesInventory = inventoryPersonSectionBinding.rvAccessoriesInventory;
         Intrinsics.checkNotNullExpressionValue(rvAccessoriesInventory, "rvAccessoriesInventory");
         rvAccessoriesInventory.setVisibility(this.currentPersonType == InventoryPersonType.ACCESSORIES ? 0 : 8);
@@ -374,18 +372,10 @@ public final class InventoryPersonSection {
         rvUpgradesInventory.setVisibility(this.currentPersonType == InventoryPersonType.UPGRADES ? 0 : 8);
         ImageView btnWallet = inventoryPersonSectionBinding.btnWallet;
         Intrinsics.checkNotNullExpressionValue(btnWallet, "btnWallet");
-        ImageView imageView = btnWallet;
-        if (this.currentPersonType == InventoryPersonType.ACCESSORIES) {
-            UtilsKt.isArizonaType();
-        }
-        imageView.setVisibility(0);
+        btnWallet.setVisibility(this.currentPersonType != InventoryPersonType.ACCESSORIES ? 0 : 8);
         LinearLayout setContainer = inventoryPersonSectionBinding.setContainer;
         Intrinsics.checkNotNullExpressionValue(setContainer, "setContainer");
-        LinearLayout linearLayout = setContainer;
-        if (this.currentPersonType == InventoryPersonType.ACCESSORIES) {
-            UtilsKt.isArizonaType();
-        }
-        linearLayout.setVisibility(8);
+        setContainer.setVisibility(this.currentPersonType == InventoryPersonType.ACCESSORIES ? 0 : 8);
     }
 
     public final void defaultPersonSection() {

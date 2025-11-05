@@ -28,13 +28,13 @@ public final class ReusableGraphicsLayerScope implements GraphicsLayerScope {
     private long ambientShadowColor = GraphicsLayerScopeKt.getDefaultShadowColor();
     private long spotShadowColor = GraphicsLayerScopeKt.getDefaultShadowColor();
     private float cameraDistance = 8.0f;
-    private long transformOrigin = TransformOrigin.Companion.m4957getCenterSzJe1aQ();
+    private long transformOrigin = TransformOrigin.Companion.m5687getCenterSzJe1aQ();
     private Shape shape = RectangleShapeKt.getRectangleShape();
-    private int compositingStrategy = CompositingStrategy.Companion.m4639getAutoNrFUSI();
-    private long size = Size.Companion.m4382getUnspecifiedNHjbRc();
+    private int compositingStrategy = CompositingStrategy.Companion.m5369getAutoNrFUSI();
+    private long size = Size.Companion.m5112getUnspecifiedNHjbRc();
     private Density graphicsDensity = DensityKt.Density$default(1.0f, 0.0f, 2, null);
     private LayoutDirection layoutDirection = LayoutDirection.Ltr;
-    private int blendMode = BlendMode.Companion.m4490getSrcOver0nO6VwU();
+    private int blendMode = BlendMode.Companion.m5220getSrcOver0nO6VwU();
 
     public final int getMutatedFields$ui_release() {
         return this.mutatedFields;
@@ -130,14 +130,14 @@ public final class ReusableGraphicsLayerScope implements GraphicsLayerScope {
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: getAmbientShadowColor-0d7_KjU */
-    public long mo4741getAmbientShadowColor0d7_KjU() {
+    public long mo5471getAmbientShadowColor0d7_KjU() {
         return this.ambientShadowColor;
     }
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: setAmbientShadowColor-8_81llA */
-    public void mo4747setAmbientShadowColor8_81llA(long j) {
-        if (Color.m4550equalsimpl0(this.ambientShadowColor, j)) {
+    public void mo5477setAmbientShadowColor8_81llA(long j) {
+        if (Color.m5280equalsimpl0(this.ambientShadowColor, j)) {
             return;
         }
         this.mutatedFields |= 64;
@@ -146,14 +146,14 @@ public final class ReusableGraphicsLayerScope implements GraphicsLayerScope {
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: getSpotShadowColor-0d7_KjU */
-    public long mo4745getSpotShadowColor0d7_KjU() {
+    public long mo5475getSpotShadowColor0d7_KjU() {
         return this.spotShadowColor;
     }
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: setSpotShadowColor-8_81llA */
-    public void mo4750setSpotShadowColor8_81llA(long j) {
-        if (Color.m4550equalsimpl0(this.spotShadowColor, j)) {
+    public void mo5480setSpotShadowColor8_81llA(long j) {
+        if (Color.m5280equalsimpl0(this.spotShadowColor, j)) {
             return;
         }
         this.mutatedFields |= 128;
@@ -218,14 +218,14 @@ public final class ReusableGraphicsLayerScope implements GraphicsLayerScope {
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: getTransformOrigin-SzJe1aQ */
-    public long mo4746getTransformOriginSzJe1aQ() {
+    public long mo5476getTransformOriginSzJe1aQ() {
         return this.transformOrigin;
     }
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: setTransformOrigin-__ExYCQ */
-    public void mo4751setTransformOrigin__ExYCQ(long j) {
-        if (TransformOrigin.m4951equalsimpl0(this.transformOrigin, j)) {
+    public void mo5481setTransformOrigin__ExYCQ(long j) {
+        if (TransformOrigin.m5681equalsimpl0(this.transformOrigin, j)) {
             return;
         }
         this.mutatedFields |= 4096;
@@ -261,14 +261,14 @@ public final class ReusableGraphicsLayerScope implements GraphicsLayerScope {
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: getCompositingStrategy--NrFUSI */
-    public int mo4743getCompositingStrategyNrFUSI() {
+    public int mo5473getCompositingStrategyNrFUSI() {
         return this.compositingStrategy;
     }
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: setCompositingStrategy-aDBOjCE */
-    public void mo4749setCompositingStrategyaDBOjCE(int i) {
-        if (CompositingStrategy.m4635equalsimpl0(this.compositingStrategy, i)) {
+    public void mo5479setCompositingStrategyaDBOjCE(int i) {
+        if (CompositingStrategy.m5365equalsimpl0(this.compositingStrategy, i)) {
             return;
         }
         this.mutatedFields |= 32768;
@@ -277,12 +277,12 @@ public final class ReusableGraphicsLayerScope implements GraphicsLayerScope {
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: getSize-NH-jbRc */
-    public long mo4744getSizeNHjbRc() {
+    public long mo5474getSizeNHjbRc() {
         return this.size;
     }
 
     /* renamed from: setSize-uvyYCjk  reason: not valid java name */
-    public void m4873setSizeuvyYCjk(long j) {
+    public void m5603setSizeuvyYCjk(long j) {
         this.size = j;
     }
 
@@ -342,14 +342,14 @@ public final class ReusableGraphicsLayerScope implements GraphicsLayerScope {
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: getBlendMode-0nO6VwU */
-    public int mo4742getBlendMode0nO6VwU() {
+    public int mo5472getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
     @Override // androidx.compose.ui.graphics.GraphicsLayerScope
     /* renamed from: setBlendMode-s9anfk8 */
-    public void mo4748setBlendModes9anfk8(int i) {
-        if (BlendMode.m4459equalsimpl0(this.blendMode, i)) {
+    public void mo5478setBlendModes9anfk8(int i) {
+        if (BlendMode.m5189equalsimpl0(this.blendMode, i)) {
             return;
         }
         this.mutatedFields |= 524288;
@@ -371,25 +371,25 @@ public final class ReusableGraphicsLayerScope implements GraphicsLayerScope {
         setTranslationX(0.0f);
         setTranslationY(0.0f);
         setShadowElevation(0.0f);
-        mo4747setAmbientShadowColor8_81llA(GraphicsLayerScopeKt.getDefaultShadowColor());
-        mo4750setSpotShadowColor8_81llA(GraphicsLayerScopeKt.getDefaultShadowColor());
+        mo5477setAmbientShadowColor8_81llA(GraphicsLayerScopeKt.getDefaultShadowColor());
+        mo5480setSpotShadowColor8_81llA(GraphicsLayerScopeKt.getDefaultShadowColor());
         setRotationX(0.0f);
         setRotationY(0.0f);
         setRotationZ(0.0f);
         setCameraDistance(8.0f);
-        mo4751setTransformOrigin__ExYCQ(TransformOrigin.Companion.m4957getCenterSzJe1aQ());
+        mo5481setTransformOrigin__ExYCQ(TransformOrigin.Companion.m5687getCenterSzJe1aQ());
         setShape(RectangleShapeKt.getRectangleShape());
         setClip(false);
         setRenderEffect(null);
         setColorFilter(null);
-        mo4748setBlendModes9anfk8(BlendMode.Companion.m4490getSrcOver0nO6VwU());
-        mo4749setCompositingStrategyaDBOjCE(CompositingStrategy.Companion.m4639getAutoNrFUSI());
-        m4873setSizeuvyYCjk(Size.Companion.m4382getUnspecifiedNHjbRc());
+        mo5478setBlendModes9anfk8(BlendMode.Companion.m5220getSrcOver0nO6VwU());
+        mo5479setCompositingStrategyaDBOjCE(CompositingStrategy.Companion.m5369getAutoNrFUSI());
+        m5603setSizeuvyYCjk(Size.Companion.m5112getUnspecifiedNHjbRc());
         this.outline = null;
         this.mutatedFields = 0;
     }
 
     public final void updateOutline$ui_release() {
-        this.outline = getShape().mo331createOutlinePq9zytI(mo4744getSizeNHjbRc(), this.layoutDirection, this.graphicsDensity);
+        this.outline = getShape().mo331createOutlinePq9zytI(mo5474getSizeNHjbRc(), this.layoutDirection, this.graphicsDensity);
     }
 }

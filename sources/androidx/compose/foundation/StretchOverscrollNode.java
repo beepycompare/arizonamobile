@@ -45,10 +45,10 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
     public void draw(ContentDrawScope contentDrawScope) {
         long j;
         boolean z;
-        this.overscrollEffect.m248updateSizeuvyYCjk$foundation_release(contentDrawScope.mo5128getSizeNHjbRc());
+        this.overscrollEffect.m248updateSizeuvyYCjk$foundation_release(contentDrawScope.mo5858getSizeNHjbRc());
         Canvas nativeCanvas = AndroidCanvas_androidKt.getNativeCanvas(contentDrawScope.getDrawContext().getCanvas());
         this.overscrollEffect.getRedrawSignal$foundation_release().getValue();
-        if (Size.m4376isEmptyimpl(contentDrawScope.mo5128getSizeNHjbRc())) {
+        if (Size.m5106isEmptyimpl(contentDrawScope.mo5858getSizeNHjbRc())) {
             contentDrawScope.drawContent();
         } else if (!nativeCanvas.isHardwareAccelerated()) {
             this.edgeEffectWrapper.finishAll();
@@ -134,17 +134,17 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
             ContentDrawScope contentDrawScope2 = contentDrawScope;
             LayoutDirection layoutDirection = contentDrawScope.getLayoutDirection();
             androidx.compose.ui.graphics.Canvas Canvas = AndroidCanvas_androidKt.Canvas(beginRecording);
-            long j2 = contentDrawScope.mo5128getSizeNHjbRc();
+            long j2 = contentDrawScope.mo5858getSizeNHjbRc();
             Density density = contentDrawScope2.getDrawContext().getDensity();
             LayoutDirection layoutDirection2 = contentDrawScope2.getDrawContext().getLayoutDirection();
             androidx.compose.ui.graphics.Canvas canvas = contentDrawScope2.getDrawContext().getCanvas();
-            long mo5049getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5049getSizeNHjbRc();
+            long mo5779getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5779getSizeNHjbRc();
             GraphicsLayer graphicsLayer = contentDrawScope2.getDrawContext().getGraphicsLayer();
             DrawContext drawContext = contentDrawScope2.getDrawContext();
             drawContext.setDensity(contentDrawScope);
             drawContext.setLayoutDirection(layoutDirection);
             drawContext.setCanvas(Canvas);
-            drawContext.mo5050setSizeuvyYCjk(j2);
+            drawContext.mo5780setSizeuvyYCjk(j2);
             drawContext.setGraphicsLayer(null);
             Canvas.save();
             try {
@@ -158,7 +158,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 drawContext2.setDensity(density);
                 drawContext2.setLayoutDirection(layoutDirection2);
                 drawContext2.setCanvas(canvas);
-                drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+                drawContext2.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
                 drawContext2.setGraphicsLayer(graphicsLayer);
                 getRenderNode().endRecording();
                 int save = nativeCanvas.save();
@@ -171,7 +171,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 drawContext3.setDensity(density);
                 drawContext3.setLayoutDirection(layoutDirection2);
                 drawContext3.setCanvas(canvas);
-                drawContext3.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+                drawContext3.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
                 drawContext3.setGraphicsLayer(graphicsLayer);
                 throw th;
             }

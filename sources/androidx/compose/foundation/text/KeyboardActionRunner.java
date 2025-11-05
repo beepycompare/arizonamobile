@@ -50,19 +50,19 @@ public final class KeyboardActionRunner implements KeyboardActionScope {
     /* renamed from: runAction-KlQnJC8  reason: not valid java name */
     public final boolean m1271runActionKlQnJC8(int i) {
         Function1<KeyboardActionScope, Unit> function1;
-        if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6909getDoneeUduSuo())) {
+        if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7640getDoneeUduSuo())) {
             function1 = getKeyboardActions().getOnDone();
-        } else if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6910getGoeUduSuo())) {
+        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7641getGoeUduSuo())) {
             function1 = getKeyboardActions().getOnGo();
-        } else if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6911getNexteUduSuo())) {
+        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7642getNexteUduSuo())) {
             function1 = getKeyboardActions().getOnNext();
-        } else if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6913getPreviouseUduSuo())) {
+        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7644getPreviouseUduSuo())) {
             function1 = getKeyboardActions().getOnPrevious();
-        } else if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6914getSearcheUduSuo())) {
+        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7645getSearcheUduSuo())) {
             function1 = getKeyboardActions().getOnSearch();
-        } else if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6915getSendeUduSuo())) {
+        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7646getSendeUduSuo())) {
             function1 = getKeyboardActions().getOnSend();
-        } else if (!ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6908getDefaulteUduSuo()) && !ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6912getNoneeUduSuo())) {
+        } else if (!ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7639getDefaulteUduSuo()) && !ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7643getNoneeUduSuo())) {
             throw new IllegalStateException("invalid ImeAction".toString());
         } else {
             function1 = null;
@@ -77,13 +77,13 @@ public final class KeyboardActionRunner implements KeyboardActionScope {
     /* renamed from: defaultKeyboardActionWithResult-KlQnJC8  reason: not valid java name */
     private final boolean m1269defaultKeyboardActionWithResultKlQnJC8(int i) {
         SoftwareKeyboardController softwareKeyboardController;
-        if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6911getNexteUduSuo())) {
-            getFocusManager().mo4198moveFocus3ESFkO8(FocusDirection.Companion.m4192getNextdhqQ8s());
+        if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7642getNexteUduSuo())) {
+            getFocusManager().mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4922getNextdhqQ8s());
             return true;
-        } else if (ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6913getPreviouseUduSuo())) {
-            getFocusManager().mo4198moveFocus3ESFkO8(FocusDirection.Companion.m4193getPreviousdhqQ8s());
+        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7644getPreviouseUduSuo())) {
+            getFocusManager().mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4923getPreviousdhqQ8s());
             return true;
-        } else if (!ImeAction.m6895equalsimpl0(i, ImeAction.Companion.m6909getDoneeUduSuo()) || (softwareKeyboardController = this.keyboardController) == null) {
+        } else if (!ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7640getDoneeUduSuo()) || (softwareKeyboardController = this.keyboardController) == null) {
             return false;
         } else {
             softwareKeyboardController.hide();

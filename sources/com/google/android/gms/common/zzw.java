@@ -1,66 +1,29 @@
 package com.google.android.gms.common;
 
-import android.util.Log;
-import javax.annotation.Nullable;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public class zzw {
-    private static final zzw zze = new zzw(true, 3, 1, null, null);
-    final boolean zza;
-    @Nullable
-    final String zzb;
-    @Nullable
-    final Throwable zzc;
-    final int zzd;
+import android.content.Context;
+import com.google.android.gms.dynamic.ObjectWrapper;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+final class zzw {
+    private final String zza;
+    private final boolean zzb;
+    private final boolean zzc;
 
-    private zzw(boolean z, int i, int i2, @Nullable String str, @Nullable Throwable th) {
-        this.zza = z;
-        this.zzd = i;
-        this.zzb = str;
-        this.zzc = th;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzw(String str, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, byte[] bArr) {
+        this.zza = str;
+        this.zzb = z;
+        this.zzc = z4;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Deprecated
-    public static zzw zzb() {
-        return zze;
+    public final boolean zza() {
+        return this.zzc;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzw zzc(String str) {
-        return new zzw(false, 1, 5, str, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzw zzd(String str, Throwable th) {
-        return new zzw(false, 1, 5, str, th);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzw zzf(int i) {
-        return new zzw(true, i, 1, null, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzw zzg(int i, int i2, String str, @Nullable Throwable th) {
-        return new zzw(false, i, i2, str, th);
-    }
-
-    @Nullable
-    String zza() {
-        return this.zzb;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zze() {
-        if (this.zza || !Log.isLoggable("GoogleCertificatesRslt", 3)) {
-            return;
-        }
-        if (this.zzc != null) {
-            Log.d("GoogleCertificatesRslt", zza(), this.zzc);
-        } else {
-            Log.d("GoogleCertificatesRslt", zza());
-        }
+    /* JADX WARN: Type inference failed for: r4v0, types: [com.google.android.gms.dynamic.IObjectWrapper, android.os.IBinder] */
+    public final zzp zzb(Context context) {
+        return new zzp(this.zza, this.zzb, false, ObjectWrapper.wrap(context), false, true, false);
     }
 }

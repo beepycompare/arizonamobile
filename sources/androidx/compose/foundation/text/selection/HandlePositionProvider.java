@@ -17,7 +17,7 @@ public final class HandlePositionProvider implements PopupPositionProvider {
     public static final int $stable = 0;
     private final Alignment handleReferencePoint;
     private final OffsetProvider positionProvider;
-    private long prevPosition = Offset.Companion.m4321getZeroF1C5BW0();
+    private long prevPosition = Offset.Companion.m5051getZeroF1C5BW0();
 
     public HandlePositionProvider(Alignment alignment, OffsetProvider offsetProvider) {
         this.handleReferencePoint = alignment;
@@ -32,6 +32,6 @@ public final class HandlePositionProvider implements PopupPositionProvider {
             mo1229provideF1C5BW0 = this.prevPosition;
         }
         this.prevPosition = mo1229provideF1C5BW0;
-        return IntOffset.m7396plusqkQi6aY(IntOffset.m7396plusqkQi6aY(intRect.m7421getTopLeftnOccac(), IntOffsetKt.m7409roundk4lQ0M(mo1229provideF1C5BW0)), this.handleReferencePoint.mo4028alignKFBX0sM(j2, IntSize.Companion.m7440getZeroYbymL2g(), layoutDirection));
+        return IntOffset.m8127plusqkQi6aY(IntOffset.m8127plusqkQi6aY(intRect.m8152getTopLeftnOccac(), IntOffsetKt.m8140roundk4lQ0M(mo1229provideF1C5BW0)), this.handleReferencePoint.mo4758alignKFBX0sM(j2, IntSize.Companion.m8171getZeroYbymL2g(), layoutDirection));
     }
 }

@@ -13,7 +13,7 @@ public final class RectangleShapeKt {
         @Override // androidx.compose.ui.graphics.Shape
         /* renamed from: createOutline-Pq9zytI */
         public Outline.Rectangle mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
-            return new Outline.Rectangle(SizeKt.m4395toRectuvyYCjk(j));
+            return new Outline.Rectangle(SizeKt.m5125toRectuvyYCjk(j));
         }
 
         public String toString() {

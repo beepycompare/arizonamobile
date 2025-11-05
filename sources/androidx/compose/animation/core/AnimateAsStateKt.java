@@ -35,13 +35,13 @@ import kotlinx.coroutines.channels.ChannelKt;
 /* loaded from: classes.dex */
 public final class AnimateAsStateKt {
     private static final SpringSpec<Float> defaultAnimation = AnimationSpecKt.spring$default(0.0f, 0.0f, null, 7, null);
-    private static final SpringSpec<Dp> dpDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, Dp.m7262boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Dp.Companion)), 3, null);
-    private static final SpringSpec<Size> sizeDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, Size.m4362boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Size.Companion)), 3, null);
-    private static final SpringSpec<Offset> offsetDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, Offset.m4294boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion)), 3, null);
+    private static final SpringSpec<Dp> dpDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, Dp.m7993boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Dp.Companion)), 3, null);
+    private static final SpringSpec<Size> sizeDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, Size.m5092boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Size.Companion)), 3, null);
+    private static final SpringSpec<Offset> offsetDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, Offset.m5024boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion)), 3, null);
     private static final SpringSpec<Rect> rectDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, VisibilityThresholdsKt.getVisibilityThreshold(Rect.Companion), 3, null);
     private static final SpringSpec<Integer> intDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, Integer.valueOf(VisibilityThresholdsKt.getVisibilityThreshold(IntCompanionObject.INSTANCE)), 3, null);
-    private static final SpringSpec<IntOffset> intOffsetDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7383boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 3, null);
-    private static final SpringSpec<IntSize> intSizeDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m7427boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 3, null);
+    private static final SpringSpec<IntOffset> intOffsetDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m8114boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 3, null);
+    private static final SpringSpec<IntSize> intSizeDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m8158boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 3, null);
 
     public static final State<Float> animateFloatAsState(float f, AnimationSpec<Float> animationSpec, float f2, String str, Function1<? super Float, Unit> function1, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 668842840, "C(animateFloatAsState)N(targetValue,animationSpec,visibilityThreshold,label,finishedListener)74@3329L174:AnimateAsState.kt#pdpnli");
@@ -107,7 +107,7 @@ public final class AnimateAsStateKt {
             ComposerKt.traceEventStart(-1407150062, i, -1, "androidx.compose.animation.core.animateDpAsState (AnimateAsState.kt:111)");
         }
         int i3 = i << 6;
-        State<Dp> animateValueAsState = animateValueAsState(Dp.m7262boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
+        State<Dp> animateValueAsState = animateValueAsState(Dp.m7993boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -131,7 +131,7 @@ public final class AnimateAsStateKt {
             ComposerKt.traceEventStart(1374633148, i, -1, "androidx.compose.animation.core.animateSizeAsState (AnimateAsState.kt:152)");
         }
         int i3 = i << 6;
-        State<Size> animateValueAsState = animateValueAsState(Size.m4362boximpl(j), VectorConvertersKt.getVectorConverter(Size.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
+        State<Size> animateValueAsState = animateValueAsState(Size.m5092boximpl(j), VectorConvertersKt.getVectorConverter(Size.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -155,7 +155,7 @@ public final class AnimateAsStateKt {
             ComposerKt.traceEventStart(357896800, i, -1, "androidx.compose.animation.core.animateOffsetAsState (AnimateAsState.kt:191)");
         }
         int i3 = i << 6;
-        State<Offset> animateValueAsState = animateValueAsState(Offset.m4294boximpl(j), VectorConvertersKt.getVectorConverter(Offset.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
+        State<Offset> animateValueAsState = animateValueAsState(Offset.m5024boximpl(j), VectorConvertersKt.getVectorConverter(Offset.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -231,7 +231,7 @@ public final class AnimateAsStateKt {
             ComposerKt.traceEventStart(-696782904, i, -1, "androidx.compose.animation.core.animateIntOffsetAsState (AnimateAsState.kt:309)");
         }
         int i3 = i << 6;
-        State<IntOffset> animateValueAsState = animateValueAsState(IntOffset.m7383boximpl(j), VectorConvertersKt.getVectorConverter(IntOffset.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
+        State<IntOffset> animateValueAsState = animateValueAsState(IntOffset.m8114boximpl(j), VectorConvertersKt.getVectorConverter(IntOffset.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -255,7 +255,7 @@ public final class AnimateAsStateKt {
             ComposerKt.traceEventStart(582576328, i, -1, "androidx.compose.animation.core.animateIntSizeAsState (AnimateAsState.kt:347)");
         }
         int i3 = i << 6;
-        State<IntSize> animateValueAsState = animateValueAsState(IntSize.m7427boximpl(j), VectorConvertersKt.getVectorConverter(IntSize.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
+        State<IntSize> animateValueAsState = animateValueAsState(IntSize.m8158boximpl(j), VectorConvertersKt.getVectorConverter(IntSize.Companion), animationSpec2, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -358,7 +358,7 @@ public final class AnimateAsStateKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit animateValueAsState$lambda$9$lambda$8(Channel channel, Object obj) {
-        channel.mo8140trySendJP2dKIU(obj);
+        channel.mo8871trySendJP2dKIU(obj);
         return Unit.INSTANCE;
     }
 
@@ -403,7 +403,7 @@ public final class AnimateAsStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(704104481, i, -1, "androidx.compose.animation.core.animateDpAsState (AnimateAsState.kt:462)");
         }
-        State animateValueAsState = animateValueAsState(Dp.m7262boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
+        State animateValueAsState = animateValueAsState(Dp.m7993boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -426,7 +426,7 @@ public final class AnimateAsStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(875212471, i, -1, "androidx.compose.animation.core.animateSizeAsState (AnimateAsState.kt:480)");
         }
-        State animateValueAsState = animateValueAsState(Size.m4362boximpl(j), VectorConvertersKt.getVectorConverter(Size.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
+        State animateValueAsState = animateValueAsState(Size.m5092boximpl(j), VectorConvertersKt.getVectorConverter(Size.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -449,7 +449,7 @@ public final class AnimateAsStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-456513133, i, -1, "androidx.compose.animation.core.animateOffsetAsState (AnimateAsState.kt:498)");
         }
-        State animateValueAsState = animateValueAsState(Offset.m4294boximpl(j), VectorConvertersKt.getVectorConverter(Offset.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
+        State animateValueAsState = animateValueAsState(Offset.m5024boximpl(j), VectorConvertersKt.getVectorConverter(Offset.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -516,7 +516,7 @@ public final class AnimateAsStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1010307371, i, -1, "androidx.compose.animation.core.animateIntOffsetAsState (AnimateAsState.kt:552)");
         }
-        State animateValueAsState = animateValueAsState(IntOffset.m7383boximpl(j), VectorConvertersKt.getVectorConverter(IntOffset.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
+        State animateValueAsState = animateValueAsState(IntOffset.m8114boximpl(j), VectorConvertersKt.getVectorConverter(IntOffset.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -539,7 +539,7 @@ public final class AnimateAsStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1749239765, i, -1, "androidx.compose.animation.core.animateIntSizeAsState (AnimateAsState.kt:570)");
         }
-        State animateValueAsState = animateValueAsState(IntSize.m7427boximpl(j), VectorConvertersKt.getVectorConverter(IntSize.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
+        State animateValueAsState = animateValueAsState(IntSize.m8158boximpl(j), VectorConvertersKt.getVectorConverter(IntSize.Companion), animationSpec2, null, null, function12, composer, (i & 14) | ((i << 3) & 896) | ((i << 9) & 458752), 24);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

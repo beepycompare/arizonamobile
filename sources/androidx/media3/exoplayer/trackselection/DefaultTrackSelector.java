@@ -56,7 +56,7 @@ import java.util.Objects;
 import java.util.RandomAccess;
 import java.util.Set;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultTrackSelector extends MappingTrackSelector implements RendererCapabilities.Listener {
     private static final String AUDIO_CHANNEL_COUNT_CONSTRAINTS_WARN_MESSAGE = "Audio channel count constraints cannot be applied without reference to Context. Build the track selector instance with one of the non-deprecated constructors that take a Context argument.";
     private static final Ordering<Integer> FORMAT_VALUE_ORDERING = Ordering.from(new Comparator() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda0
@@ -90,7 +90,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     @Deprecated
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ParametersBuilder extends TrackSelectionParameters.Builder {
         private final Parameters.Builder delegate;
 
@@ -467,7 +467,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Parameters extends TrackSelectionParameters {
         public static final Parameters DEFAULT;
         @Deprecated
@@ -509,7 +509,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         private final SparseArray<Map<TrackGroupArray, SelectionOverride>> selectionOverrides;
         public final boolean tunnelingEnabled;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class Builder extends TrackSelectionParameters.Builder {
             private boolean allowAudioMixedChannelCountAdaptiveness;
             private boolean allowAudioMixedDecoderSupportAdaptiveness;
@@ -1270,7 +1270,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SelectionOverride {
         private static final String FIELD_GROUP_INDEX = Util.intToStringMaxRadix(0);
         private static final String FIELD_TRACKS = Util.intToStringMaxRadix(1);
@@ -1571,7 +1571,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         return selectTracksForType(1, mappedTrackInfo, iArr, new TrackInfo.Factory() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda6
             @Override // androidx.media3.exoplayer.trackselection.DefaultTrackSelector.TrackInfo.Factory
             public final List create(int i2, TrackGroup trackGroup, int[] iArr3) {
-                return DefaultTrackSelector.this.m8031x86684b84(parameters, z, iArr2, i2, trackGroup, iArr3);
+                return DefaultTrackSelector.this.m8762x86684b84(parameters, z, iArr2, i2, trackGroup, iArr3);
             }
         }, new Comparator() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda7
             @Override // java.util.Comparator
@@ -1583,18 +1583,18 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$selectAudioTrack$3$androidx-media3-exoplayer-trackselection-DefaultTrackSelector  reason: not valid java name */
-    public /* synthetic */ List m8031x86684b84(final Parameters parameters, boolean z, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
+    public /* synthetic */ List m8762x86684b84(final Parameters parameters, boolean z, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
         return AudioTrackInfo.createForTrackGroup(i, trackGroup, parameters, iArr2, z, new Predicate() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda3
             @Override // com.google.common.base.Predicate
             public final boolean apply(Object obj) {
-                return DefaultTrackSelector.this.m8030x92d8c743(parameters, (Format) obj);
+                return DefaultTrackSelector.this.m8761x92d8c743(parameters, (Format) obj);
             }
         }, iArr[i]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isAudioFormatWithinAudioChannelCountConstraints */
-    public boolean m8030x92d8c743(Format format, Parameters parameters) {
+    public boolean m8761x92d8c743(Format format, Parameters parameters) {
         SpatializerWrapperV32 spatializerWrapperV32;
         SpatializerWrapperV32 spatializerWrapperV322;
         if (parameters.constrainAudioChannelCountToDeviceCapabilities) {
@@ -2085,14 +2085,14 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static abstract class TrackInfo<T extends TrackInfo<T>> {
         public final Format format;
         public final int rendererIndex;
         public final TrackGroup trackGroup;
         public final int trackIndex;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public interface Factory<T extends TrackInfo<T>> {
             List<T> create(int i, TrackGroup trackGroup, int[] iArr);
         }
@@ -2110,7 +2110,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class VideoTrackInfo extends TrackInfo<VideoTrackInfo> {
         private static final float MIN_REASONABLE_FRAME_RATE = 10.0f;
         private final boolean allowMixedMimeTypes;
@@ -2286,7 +2286,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class AudioTrackInfo extends TrackInfo<AudioTrackInfo> implements Comparable<AudioTrackInfo> {
         private final boolean allowMixedMimeTypes;
         private final int bitrate;
@@ -2443,7 +2443,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class TextTrackInfo extends TrackInfo<TextTrackInfo> implements Comparable<TextTrackInfo> {
         private final boolean hasCaptionRoleFlags;
         private final boolean isDefault;
@@ -2531,7 +2531,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ImageTrackInfo extends TrackInfo<ImageTrackInfo> implements Comparable<ImageTrackInfo> {
         private final int pixelCount;
         private final int selectionEligibility;
@@ -2571,7 +2571,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class OtherTrackScore implements Comparable<OtherTrackScore> {
         private final boolean isDefault;
         private final boolean isWithinRendererCapabilities;
@@ -2588,7 +2588,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class SpatializerWrapperV32 {
         private final Handler handler;
         private final Spatializer.OnSpatializerStateChangedListener listener;

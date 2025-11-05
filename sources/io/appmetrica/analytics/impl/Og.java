@@ -1,7 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface Og {
-    void a(Jg jg);
-
-    void a(Throwable th);
+    String a(String str);
 }

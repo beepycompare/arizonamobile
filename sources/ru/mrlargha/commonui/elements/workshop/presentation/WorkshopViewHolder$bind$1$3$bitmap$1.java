@@ -44,6 +44,6 @@ final class WorkshopViewHolder$bind$1$3$bitmap$1 extends SuspendLambda implement
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive$default("items", this.$itemVal.getItem().intValue(), null, 4, null);
+        return UtilsKt.getIconFromArchive$default("items", this.$itemVal.getItem().intValue(), (String) null, 4, (Object) null);
     }
 }

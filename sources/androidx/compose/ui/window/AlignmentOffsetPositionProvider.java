@@ -30,14 +30,14 @@ public final class AlignmentOffsetPositionProvider implements PopupPositionProvi
     }
 
     /* renamed from: getOffset-nOcc-ac  reason: not valid java name */
-    public final long m7515getOffsetnOccac() {
+    public final long m8246getOffsetnOccac() {
         return this.offset;
     }
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4 */
     public long mo393calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
-        long mo4028alignKFBX0sM = this.alignment.mo4028alignKFBX0sM(IntSize.Companion.m7440getZeroYbymL2g(), intRect.m7419getSizeYbymL2g(), layoutDirection);
-        return IntOffset.m7396plusqkQi6aY(IntOffset.m7396plusqkQi6aY(IntOffset.m7396plusqkQi6aY(intRect.m7421getTopLeftnOccac(), mo4028alignKFBX0sM), IntOffset.m7400unaryMinusnOccac(this.alignment.mo4028alignKFBX0sM(IntSize.Companion.m7440getZeroYbymL2g(), j2, layoutDirection))), IntOffset.m7386constructorimpl(((IntOffset.m7392getXimpl(this.offset) * (layoutDirection == LayoutDirection.Ltr ? 1 : -1)) << 32) | (IntOffset.m7393getYimpl(this.offset) & 4294967295L)));
+        long mo4758alignKFBX0sM = this.alignment.mo4758alignKFBX0sM(IntSize.Companion.m8171getZeroYbymL2g(), intRect.m8150getSizeYbymL2g(), layoutDirection);
+        return IntOffset.m8127plusqkQi6aY(IntOffset.m8127plusqkQi6aY(IntOffset.m8127plusqkQi6aY(intRect.m8152getTopLeftnOccac(), mo4758alignKFBX0sM), IntOffset.m8131unaryMinusnOccac(this.alignment.mo4758alignKFBX0sM(IntSize.Companion.m8171getZeroYbymL2g(), j2, layoutDirection))), IntOffset.m8117constructorimpl(((IntOffset.m8123getXimpl(this.offset) * (layoutDirection == LayoutDirection.Ltr ? 1 : -1)) << 32) | (IntOffset.m8124getYimpl(this.offset) & 4294967295L)));
     }
 }

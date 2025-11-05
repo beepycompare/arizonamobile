@@ -1,39 +1,60 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Intent;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleObserver;
-/* loaded from: classes4.dex */
-public final class Ad implements ModuleServiceLifecycleController {
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
+import org.json.JSONArray;
+import org.json.JSONObject;
+/* loaded from: classes3.dex */
+public final class Ad {
 
     /* renamed from: a  reason: collision with root package name */
-    public final S1 f350a;
+    public final List f396a;
+    public final long b;
 
-    public Ad(S1 s1) {
-        this.f350a = s1;
+    public Ad(List list, long j) {
+        this.f396a = list;
+        this.b = j;
     }
 
-    public static final void a(ModuleServiceLifecycleObserver moduleServiceLifecycleObserver, Intent intent) {
-        moduleServiceLifecycleObserver.onFirstClientConnected();
-    }
-
-    public static final void b(ModuleServiceLifecycleObserver moduleServiceLifecycleObserver, Intent intent) {
-        moduleServiceLifecycleObserver.onAllClientsDisconnected();
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController
-    public final void registerObserver(final ModuleServiceLifecycleObserver moduleServiceLifecycleObserver) {
-        this.f350a.b(new R1() { // from class: io.appmetrica.analytics.impl.Ad$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.R1
-            public final void a(Intent intent) {
-                Ad.a(ModuleServiceLifecycleObserver.this, intent);
+    public final String a() {
+        try {
+            JSONObject jSONObject = new JSONObject();
+            List<C0322id> list = this.f396a;
+            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+            for (C0322id c0322id : list) {
+                c0322id.getClass();
+                JSONObject jSONObject2 = new JSONObject();
+                jSONObject2.put("moduleName", c0322id.f933a);
+                jSONObject2.put("loaded", c0322id.b);
+                arrayList.add(jSONObject2);
             }
-        });
-        this.f350a.a(new R1() { // from class: io.appmetrica.analytics.impl.Ad$$ExternalSyntheticLambda1
-            @Override // io.appmetrica.analytics.impl.R1
-            public final void a(Intent intent) {
-                Ad.b(ModuleServiceLifecycleObserver.this, intent);
-            }
-        });
+            jSONObject.put("modulesStatus", new JSONArray((Collection) arrayList));
+            jSONObject.put("lastSendTime", this.b);
+            return jSONObject.toString();
+        } catch (Throwable unused) {
+            return "";
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof Ad) {
+            Ad ad = (Ad) obj;
+            return Intrinsics.areEqual(this.f396a, ad.f396a) && this.b == ad.b;
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Long.hashCode(this.b) + (this.f396a.hashCode() * 31);
+    }
+
+    public final String toString() {
+        return "ModulesStatus(modulesStatus=" + this.f396a + ", lastSendTime=" + this.b + ')';
     }
 }

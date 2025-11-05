@@ -4,7 +4,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
 import java.util.ArrayList;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class EntityBuffer<T> extends AbstractDataBuffer<T> {
     private boolean zaa;
     private ArrayList zab;

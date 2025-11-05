@@ -1,49 +1,46 @@
 package com.google.android.gms.internal.common;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import org.jspecify.annotations.NullMarked;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-@NullMarked
-/* loaded from: classes3.dex */
-public final class zzaa {
-    private final zzr zza;
-    private final boolean zzb;
-    private final zzx zzc;
+import java.util.Arrays;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+class zzaa extends zzab {
+    Object[] zza = new Object[4];
+    int zzb = 0;
+    boolean zzc;
 
-    private zzaa(zzx zzxVar, boolean z, zzr zzrVar, int i) {
-        this.zzc = zzxVar;
-        this.zzb = z;
-        this.zza = zzrVar;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzaa(int i) {
     }
 
-    public static zzaa zzc(zzr zzrVar) {
-        return new zzaa(new zzx(zzrVar), false, zzq.zza, Integer.MAX_VALUE);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Iterator zzh(CharSequence charSequence) {
-        zzx zzxVar = this.zzc;
-        return new zzw(zzxVar, this, charSequence, zzxVar.zza);
-    }
-
-    public final zzaa zzb() {
-        return new zzaa(this.zzc, true, this.zza, Integer.MAX_VALUE);
-    }
-
-    public final Iterable zzd(CharSequence charSequence) {
-        return new zzy(this, charSequence);
-    }
-
-    public final List zzf(CharSequence charSequence) {
-        charSequence.getClass();
-        Iterator zzh = zzh(charSequence);
-        ArrayList arrayList = new ArrayList();
-        while (zzh.hasNext()) {
-            arrayList.add((String) zzh.next());
+    public final zzaa zza(Object obj) {
+        int i;
+        obj.getClass();
+        int length = this.zza.length;
+        int i2 = this.zzb;
+        int i3 = i2 + 1;
+        if (i3 >= 0) {
+            if (i3 <= length) {
+                i = length;
+            } else {
+                i = (length >> 1) + length + 1;
+                if (i < i3) {
+                    int highestOneBit = Integer.highestOneBit(i2);
+                    i = highestOneBit + highestOneBit;
+                }
+                if (i < 0) {
+                    i = Integer.MAX_VALUE;
+                }
+            }
+            if (i > length || this.zzc) {
+                this.zza = Arrays.copyOf(this.zza, i);
+                this.zzc = false;
+            }
+            Object[] objArr = this.zza;
+            int i4 = this.zzb;
+            this.zzb = i4 + 1;
+            objArr[i4] = obj;
+            return this;
         }
-        return Collections.unmodifiableList(arrayList);
+        throw new IllegalArgumentException("cannot store more than Integer.MAX_VALUE elements");
     }
 }

@@ -105,6 +105,6 @@ public final class AndroidOverscroll_androidKt {
 
     /* renamed from: destretchMultiplier-GyEprt8 */
     public static final float m264destretchMultiplierGyEprt8(int i) {
-        return NestedScrollSource.m5720equalsimpl0(i, NestedScrollSource.Companion.m5731getSideEffectWNlRxjI()) ? 4.0f : 1.0f;
+        return NestedScrollSource.m6450equalsimpl0(i, NestedScrollSource.Companion.m6461getSideEffectWNlRxjI()) ? 4.0f : 1.0f;
     }
 }

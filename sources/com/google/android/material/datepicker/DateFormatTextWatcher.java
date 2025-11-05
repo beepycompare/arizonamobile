@@ -39,14 +39,14 @@ public abstract class DateFormatTextWatcher extends TextWatcherAdapter {
         this.setErrorCallback = new Runnable() { // from class: com.google.android.material.datepicker.DateFormatTextWatcher$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DateFormatTextWatcher.this.m8750x5657fb8e(str);
+                DateFormatTextWatcher.this.m9488x5657fb8e(str);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-datepicker-DateFormatTextWatcher  reason: not valid java name */
-    public /* synthetic */ void m8750x5657fb8e(String str) {
+    public /* synthetic */ void m9488x5657fb8e(String str) {
         TextInputLayout textInputLayout = this.textInputLayout;
         DateFormat dateFormat = this.dateFormat;
         Context context = textInputLayout.getContext();
@@ -101,14 +101,14 @@ public abstract class DateFormatTextWatcher extends TextWatcherAdapter {
         return new Runnable() { // from class: com.google.android.material.datepicker.DateFormatTextWatcher$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                DateFormatTextWatcher.this.m8749x14d77527(j);
+                DateFormatTextWatcher.this.m9487x14d77527(j);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createRangeErrorCallback$1$com-google-android-material-datepicker-DateFormatTextWatcher  reason: not valid java name */
-    public /* synthetic */ void m8749x14d77527(long j) {
+    public /* synthetic */ void m9487x14d77527(long j) {
         this.textInputLayout.setError(String.format(this.outOfRange, sanitizeDateString(DateStrings.getDateString(j))));
         onInvalidDate();
     }

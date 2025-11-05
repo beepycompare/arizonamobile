@@ -9,11 +9,11 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface PlatformTypefaces {
     /* renamed from: createDefault-FO1MlWM  reason: not valid java name */
-    android.graphics.Typeface mo6867createDefaultFO1MlWM(FontWeight fontWeight, int i);
+    android.graphics.Typeface mo7598createDefaultFO1MlWM(FontWeight fontWeight, int i);
 
     /* renamed from: createNamed-RetOiIg  reason: not valid java name */
-    android.graphics.Typeface mo6868createNamedRetOiIg(GenericFontFamily genericFontFamily, FontWeight fontWeight, int i);
+    android.graphics.Typeface mo7599createNamedRetOiIg(GenericFontFamily genericFontFamily, FontWeight fontWeight, int i);
 
     /* renamed from: optionalOnDeviceFontFamilyByName-78DK7lM  reason: not valid java name */
-    android.graphics.Typeface mo6869optionalOnDeviceFontFamilyByName78DK7lM(String str, FontWeight fontWeight, int i, FontVariation.Settings settings, Context context);
+    android.graphics.Typeface mo7600optionalOnDeviceFontFamilyByName78DK7lM(String str, FontWeight fontWeight, int i, FontVariation.Settings settings, Context context);
 }

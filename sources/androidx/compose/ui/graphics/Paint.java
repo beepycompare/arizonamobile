@@ -11,32 +11,32 @@ public interface Paint {
     float getAlpha();
 
     /* renamed from: getBlendMode-0nO6VwU */
-    int mo4419getBlendMode0nO6VwU();
+    int mo5149getBlendMode0nO6VwU();
 
     /* renamed from: getColor-0d7_KjU */
-    long mo4420getColor0d7_KjU();
+    long mo5150getColor0d7_KjU();
 
     ColorFilter getColorFilter();
 
     /* renamed from: getFilterQuality-f-v9h1I */
-    int mo4421getFilterQualityfv9h1I();
+    int mo5151getFilterQualityfv9h1I();
 
     PathEffect getPathEffect();
 
     Shader getShader();
 
     /* renamed from: getStrokeCap-KaPHkGw */
-    int mo4422getStrokeCapKaPHkGw();
+    int mo5152getStrokeCapKaPHkGw();
 
     /* renamed from: getStrokeJoin-LxFBmk8 */
-    int mo4423getStrokeJoinLxFBmk8();
+    int mo5153getStrokeJoinLxFBmk8();
 
     float getStrokeMiterLimit();
 
     float getStrokeWidth();
 
     /* renamed from: getStyle-TiuSbCo */
-    int mo4424getStyleTiuSbCo();
+    int mo5154getStyleTiuSbCo();
 
     boolean isAntiAlias();
 
@@ -45,30 +45,30 @@ public interface Paint {
     void setAntiAlias(boolean z);
 
     /* renamed from: setBlendMode-s9anfk8 */
-    void mo4425setBlendModes9anfk8(int i);
+    void mo5155setBlendModes9anfk8(int i);
 
     /* renamed from: setColor-8_81llA */
-    void mo4426setColor8_81llA(long j);
+    void mo5156setColor8_81llA(long j);
 
     void setColorFilter(ColorFilter colorFilter);
 
     /* renamed from: setFilterQuality-vDHp3xo */
-    void mo4427setFilterQualityvDHp3xo(int i);
+    void mo5157setFilterQualityvDHp3xo(int i);
 
     void setPathEffect(PathEffect pathEffect);
 
     void setShader(Shader shader);
 
     /* renamed from: setStrokeCap-BeK7IIE */
-    void mo4428setStrokeCapBeK7IIE(int i);
+    void mo5158setStrokeCapBeK7IIE(int i);
 
     /* renamed from: setStrokeJoin-Ww9F2mQ */
-    void mo4429setStrokeJoinWw9F2mQ(int i);
+    void mo5159setStrokeJoinWw9F2mQ(int i);
 
     void setStrokeMiterLimit(float f);
 
     void setStrokeWidth(float f);
 
     /* renamed from: setStyle-k9PVt8s */
-    void mo4430setStylek9PVt8s(int i);
+    void mo5160setStylek9PVt8s(int i);
 }

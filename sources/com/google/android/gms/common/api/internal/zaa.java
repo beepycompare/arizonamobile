@@ -4,7 +4,7 @@ import android.app.Activity;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zaa extends LifecycleCallback {
     private List zaa;
 

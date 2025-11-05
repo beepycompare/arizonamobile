@@ -1,37 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ICrashTransformer;
-/* loaded from: classes4.dex */
-public abstract class I6 implements InterfaceC0250fb {
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.ResultReceiver;
+/* loaded from: classes3.dex */
+public final class I6 extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H6 f491a;
-    public final ICrashTransformer b;
-    public final C0430ma c;
+    public final H6 f521a;
 
-    public I6(H6 h6, ICrashTransformer iCrashTransformer, C0430ma c0430ma) {
-        this.f491a = h6;
-        this.b = iCrashTransformer;
-        this.c = c0430ma;
+    public I6(Handler handler, H6 h6) {
+        super(handler);
+        this.f521a = h6;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0250fb
-    public final void a(Throwable th, U u) {
-        if (this.f491a.a(th)) {
-            ICrashTransformer iCrashTransformer = this.b;
-            if (iCrashTransformer == null || th == null || (th = iCrashTransformer.process(th)) != null) {
-                Wn a2 = Zn.a(th, u, null, (String) this.c.b.a(), (Boolean) this.c.c.a());
-                Fc fc = (Fc) ((Xh) this).d;
-                fc.f831a.a().a(fc.b).a(a2);
-            }
+    public static void a(ResultReceiver resultReceiver, C0106a4 c0106a4) {
+        if (resultReceiver != null) {
+            Bundle bundle = new Bundle();
+            c0106a4.b(bundle);
+            resultReceiver.send(1, bundle);
         }
     }
 
-    public final H6 b() {
-        return this.f491a;
+    @Override // android.os.ResultReceiver
+    public final void onReceiveResult(int i, Bundle bundle) {
+        if (bundle == null) {
+            bundle = new Bundle();
+        }
+        this.f521a.a(i, bundle);
     }
 
-    public final ICrashTransformer a() {
-        return this.b;
+    public static void a(ResultReceiver resultReceiver, Nl nl, C0106a4 c0106a4) {
+        if (resultReceiver != null) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("startup_error_key_code", nl.f612a);
+            c0106a4.b(bundle);
+            resultReceiver.send(2, bundle);
+        }
     }
 }

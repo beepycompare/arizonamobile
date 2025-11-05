@@ -2,7 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbi extends zzav {
     @Override // com.google.android.gms.internal.measurement.zzav
     public final zzao zza(String str, zzg zzgVar, List list) {

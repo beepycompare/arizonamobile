@@ -114,7 +114,7 @@ public abstract class PagerState implements ScrollableState {
         if (!z) {
             InlineClassHelperKt.throwIllegalArgumentException("currentPageOffsetFraction " + f + " is not within the range -0.5 to 0.5");
         }
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m4294boximpl(Offset.Companion.m4321getZeroF1C5BW0()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5024boximpl(Offset.Companion.m5051getZeroF1C5BW0()), null, 2, null);
         this.upDownDifference$delegate = mutableStateOf$default;
         PagerScrollPosition pagerScrollPosition = new PagerScrollPosition(i, f, this);
         this.scrollPosition = pagerScrollPosition;
@@ -206,12 +206,12 @@ public abstract class PagerState implements ScrollableState {
 
     /* renamed from: getUpDownDifference-F1C5BW0$foundation_release  reason: not valid java name */
     public final long m1161getUpDownDifferenceF1C5BW0$foundation_release() {
-        return ((Offset) this.upDownDifference$delegate.getValue()).m4315unboximpl();
+        return ((Offset) this.upDownDifference$delegate.getValue()).m5045unboximpl();
     }
 
     /* renamed from: setUpDownDifference-k-4lQ0M$foundation_release  reason: not valid java name */
     public final void m1163setUpDownDifferencek4lQ0M$foundation_release(long j) {
-        this.upDownDifference$delegate.setValue(Offset.m4294boximpl(j));
+        this.upDownDifference$delegate.setValue(Offset.m5024boximpl(j));
     }
 
     public final int getFirstVisiblePage$foundation_release() {

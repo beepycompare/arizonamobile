@@ -10,8 +10,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: PullToRefresh.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.pulltorefresh.PullToRefreshModifierNode$onPostScroll$1", f = "PullToRefresh.kt", i = {}, l = {319}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.pulltorefresh.PullToRefreshModifierNode$onPostScroll$1", f = "PullToRefresh.kt", i = {}, l = {288}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class PullToRefreshModifierNode$onPostScroll$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -42,12 +42,14 @@ final class PullToRefreshModifierNode$onPostScroll$1 extends SuspendLambda imple
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            PullToRefreshState state = this.this$0.getState();
-            verticalOffset = this.this$0.getVerticalOffset();
-            thresholdPx = this.this$0.getThresholdPx();
-            this.label = 1;
-            if (state.snapTo(verticalOffset / thresholdPx, this) == coroutine_suspended) {
-                return coroutine_suspended;
+            if (!this.this$0.getState().isAnimating()) {
+                PullToRefreshState state = this.this$0.getState();
+                verticalOffset = this.this$0.getVerticalOffset();
+                thresholdPx = this.this$0.getThresholdPx();
+                this.label = 1;
+                if (state.snapTo(verticalOffset / thresholdPx, this) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

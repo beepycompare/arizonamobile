@@ -7,7 +7,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CompositeSequenceableLoader implements SequenceableLoader {
     private long lastAudioVideoBufferedPositionUs;
     private final ImmutableList<SequenceableLoaderWithTrackTypes> loadersWithTrackTypes;
@@ -107,7 +107,7 @@ public final class CompositeSequenceableLoader implements SequenceableLoader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SequenceableLoaderWithTrackTypes implements SequenceableLoader {
         private final SequenceableLoader loader;
         private final ImmutableList<Integer> trackTypes;

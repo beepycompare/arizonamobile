@@ -16,7 +16,6 @@ import androidx.compose.runtime.ComposerKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.ts.TsExtractor;
-import io.appmetrica.analytics.BuildConfig;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -60,7 +59,7 @@ public final class LocatorView extends View {
         SharedPreferences sharedPreferences = context.getSharedPreferences("flavorType", 0);
         this.sharedPref = sharedPreferences;
         this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
-        this.colorArrayListRodina = CollectionsKt.listOf((Object[]) new int[][]{new int[]{Color.argb(0, 255, (int) ComposerKt.providerMapsKey, 51), Color.argb(255, 255, (int) ComposerKt.providerMapsKey, 51), Color.argb((int) BuildConfig.API_LEVEL, 255, (int) ComposerKt.providerMapsKey, 51)}, new int[]{Color.parseColor("#0059E827"), Color.parseColor("#59E827"), Color.parseColor("#7359E827")}, new int[]{Color.argb(0, 255, 33, 33), Color.argb(255, 255, 33, 33), Color.argb((int) BuildConfig.API_LEVEL, 255, 33, 33)}});
+        this.colorArrayListRodina = CollectionsKt.listOf((Object[]) new int[][]{new int[]{Color.argb(0, 255, (int) ComposerKt.providerMapsKey, 51), Color.argb(255, 255, (int) ComposerKt.providerMapsKey, 51), Color.argb(115, 255, (int) ComposerKt.providerMapsKey, 51)}, new int[]{Color.parseColor("#0059E827"), Color.parseColor("#59E827"), Color.parseColor("#7359E827")}, new int[]{Color.argb(0, 255, 33, 33), Color.argb(255, 255, 33, 33), Color.argb(115, 255, 33, 33)}});
         this.colorArrayListArizona = CollectionsKt.listOf((Object[]) new int[][]{new int[]{Color.argb(0, 255, (int) ComposerKt.providerMapsKey, 51), Color.argb(255, 89, 232, 39), Color.argb(114, 89, 232, 39)}, new int[]{Color.parseColor("#0059E827"), Color.argb(255, 255, (int) ComposerKt.providerMapsKey, 51), Color.argb(114, 255, (int) ComposerKt.providerMapsKey, 51)}, new int[]{Color.argb(0, 255, 33, 33), Color.argb(255, 240, 108, 13), Color.argb(114, (int) TsExtractor.TS_PACKET_SIZE, 61, 10)}, new int[]{Color.argb(0, 255, 33, 33), Color.argb(255, 255, 255, 255), Color.argb(114, 192, 192, 192)}, new int[]{Color.argb(0, 255, 33, 33), Color.argb(255, 215, 14, 14), Color.argb(114, (int) TsExtractor.TS_STREAM_TYPE_AC3, 8, 8)}});
         Paint paint = new Paint();
         paint.setAntiAlias(true);

@@ -22,7 +22,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Button.kt */
-@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B/\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003¢\u0006\u0002\u0010\bJ#\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00030\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0003¢\u0006\u0002\u0010\u0010J\u0013\u0010\u0011\u001a\u00020\r2\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u0013\u001a\u00020\u0014H\u0016J%\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00030\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0001¢\u0006\u0004\b\u0016\u0010\u0010R\u0016\u0010\u0002\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\tR\u0016\u0010\u0007\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\tR\u0016\u0010\u0005\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\tR\u0016\u0010\u0006\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\tR\u0016\u0010\u0004\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\t\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0017"}, d2 = {"Landroidx/compose/material3/ButtonElevation;", "", "defaultElevation", "Landroidx/compose/ui/unit/Dp;", "pressedElevation", "focusedElevation", "hoveredElevation", "disabledElevation", "(FFFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "animateElevation", "Landroidx/compose/runtime/State;", "enabled", "", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "(ZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "equals", "other", "hashCode", "", "shadowElevation", "shadowElevation$material3_release", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0000\b\u0007\u0018\u00002\u00020\u0001B1\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003¢\u0006\u0004\b\b\u0010\tJ%\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00030\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0001¢\u0006\u0004\b\u0011\u0010\u0012J#\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00030\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0003¢\u0006\u0002\u0010\u0012J\u0013\u0010\u0014\u001a\u00020\u000e2\b\u0010\u0015\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u0016\u001a\u00020\u0017H\u0016R\u0010\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u0010\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u0010\u0010\u0005\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u0010\u0010\u0006\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u0010\u0010\u0007\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\n¨\u0006\u0018"}, d2 = {"Landroidx/compose/material3/ButtonElevation;", "", "defaultElevation", "Landroidx/compose/ui/unit/Dp;", "pressedElevation", "focusedElevation", "hoveredElevation", "disabledElevation", "<init>", "(FFFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "shadowElevation", "Landroidx/compose/runtime/State;", "enabled", "", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "shadowElevation$material3", "(ZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "animateElevation", "equals", "other", "hashCode", "", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ButtonElevation {
     public static final int $stable = 0;
@@ -44,10 +44,10 @@ public final class ButtonElevation {
         this.disabledElevation = f5;
     }
 
-    public final State<Dp> shadowElevation$material3_release(boolean z, InteractionSource interactionSource, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -2045116089, "C(shadowElevation)931@43193L74:Button.kt#uh7d8r");
+    public final State<Dp> shadowElevation$material3(boolean z, InteractionSource interactionSource, Composer composer, int i) {
+        ComposerKt.sourceInformationMarkerStart(composer, -2045116089, "C(shadowElevation)N(enabled,interactionSource)940@43977L74:Button.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-2045116089, i, -1, "androidx.compose.material3.ButtonElevation.shadowElevation (Button.kt:930)");
+            ComposerKt.traceEventStart(-2045116089, i, -1, "androidx.compose.material3.ButtonElevation.shadowElevation (Button.kt:939)");
         }
         State<Dp> animateElevation = animateElevation(z, interactionSource, composer, i & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
         if (ComposerKt.isTraceInProgress()) {
@@ -60,11 +60,11 @@ public final class ButtonElevation {
     private final State<Dp> animateElevation(boolean z, InteractionSource interactionSource, Composer composer, int i) {
         float f;
         Animatable animatable;
-        ComposerKt.sourceInformationMarkerStart(composer, -1312510462, "C(animateElevation)939@43442L46,940@43531L1077,940@43497L1111,982@45105L51,984@45189L863,984@45166L886:Button.kt#uh7d8r");
+        ComposerKt.sourceInformationMarkerStart(composer, -1312510462, "C(animateElevation)N(enabled,interactionSource)948@44227L46,949@44316L1077,949@44282L1111,991@45890L51,993@45974L864,993@45951L887:Button.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1312510462, i, -1, "androidx.compose.material3.ButtonElevation.animateElevation (Button.kt:938)");
+            ComposerKt.traceEventStart(-1312510462, i, -1, "androidx.compose.material3.ButtonElevation.animateElevation (Button.kt:947)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -842871664, "CC(remember):Button.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1397836336, "CC(remember):Button.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt.mutableStateListOf();
@@ -72,7 +72,7 @@ public final class ButtonElevation {
         }
         SnapshotStateList snapshotStateList = (SnapshotStateList) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, -842867785, "CC(remember):Button.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1397840215, "CC(remember):Button.kt#9igjgp");
         boolean z2 = true;
         boolean z3 = (((i & 112) ^ 48) > 32 && composer.changed(interactionSource)) || (i & 48) == 32;
         Object rememberedValue2 = composer.rememberedValue();
@@ -92,17 +92,17 @@ public final class ButtonElevation {
         } else {
             f = interaction instanceof FocusInteraction.Focus ? this.focusedElevation : this.defaultElevation;
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -842818443, "CC(remember):Button.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1397889557, "CC(remember):Button.kt#9igjgp");
         Object rememberedValue3 = composer.rememberedValue();
         if (rememberedValue3 == Composer.Companion.getEmpty()) {
-            Object animatable2 = new Animatable(Dp.m7262boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+            Object animatable2 = new Animatable(Dp.m7993boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
             composer.updateRememberedValue(animatable2);
             rememberedValue3 = animatable2;
         }
         Object obj = (Animatable) rememberedValue3;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Dp m7262boximpl = Dp.m7262boximpl(f);
-        ComposerKt.sourceInformationMarkerStart(composer, -842814943, "CC(remember):Button.kt#9igjgp");
+        Dp m7993boximpl = Dp.m7993boximpl(f);
+        ComposerKt.sourceInformationMarkerStart(composer, 1397893058, "CC(remember):Button.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(obj) | composer.changed(f) | ((((i & 14) ^ 6) > 4 && composer.changed(z)) || (i & 6) == 4);
         if ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(this)) && (i & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
             z2 = false;
@@ -117,7 +117,7 @@ public final class ButtonElevation {
             animatable = obj;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        EffectsKt.LaunchedEffect(m7262boximpl, (Function2) rememberedValue4, composer, 0);
+        EffectsKt.LaunchedEffect(m7993boximpl, (Function2) rememberedValue4, composer, 0);
         State<Dp> asState = animatable.asState();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -134,10 +134,10 @@ public final class ButtonElevation {
             return false;
         }
         ButtonElevation buttonElevation = (ButtonElevation) obj;
-        return Dp.m7269equalsimpl0(this.defaultElevation, buttonElevation.defaultElevation) && Dp.m7269equalsimpl0(this.pressedElevation, buttonElevation.pressedElevation) && Dp.m7269equalsimpl0(this.focusedElevation, buttonElevation.focusedElevation) && Dp.m7269equalsimpl0(this.hoveredElevation, buttonElevation.hoveredElevation) && Dp.m7269equalsimpl0(this.disabledElevation, buttonElevation.disabledElevation);
+        return Dp.m8000equalsimpl0(this.defaultElevation, buttonElevation.defaultElevation) && Dp.m8000equalsimpl0(this.pressedElevation, buttonElevation.pressedElevation) && Dp.m8000equalsimpl0(this.focusedElevation, buttonElevation.focusedElevation) && Dp.m8000equalsimpl0(this.hoveredElevation, buttonElevation.hoveredElevation) && Dp.m8000equalsimpl0(this.disabledElevation, buttonElevation.disabledElevation);
     }
 
     public int hashCode() {
-        return (((((((Dp.m7270hashCodeimpl(this.defaultElevation) * 31) + Dp.m7270hashCodeimpl(this.pressedElevation)) * 31) + Dp.m7270hashCodeimpl(this.focusedElevation)) * 31) + Dp.m7270hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m7270hashCodeimpl(this.disabledElevation);
+        return (((((((Dp.m8001hashCodeimpl(this.defaultElevation) * 31) + Dp.m8001hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8001hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8001hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m8001hashCodeimpl(this.disabledElevation);
     }
 }

@@ -96,7 +96,7 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
     }
 
     public /* synthetic */ FocusTargetNode(int i, Function2 function2, Function1 function1, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i2 & 1) != 0 ? Focusability.Companion.m4239getAlwaysLCbbffg() : i, (i2 & 2) != 0 ? null : function2, (i2 & 4) != 0 ? null : function1, null);
+        this((i2 & 1) != 0 ? Focusability.Companion.m4969getAlwaysLCbbffg() : i, (i2 & 2) != 0 ? null : function2, (i2 & 4) != 0 ? null : function1, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -129,16 +129,16 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
             }
             if (activeFocusTargetNode.isAttached()) {
                 FocusTargetNode focusTargetNode = activeFocusTargetNode;
-                int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
+                int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
                 if (!focusTargetNode.getNode().isAttached()) {
                     InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
                 }
                 Modifier.Node parent$ui_release = focusTargetNode.getNode().getParent$ui_release();
                 LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(focusTargetNode);
                 while (requireLayoutNode != null) {
-                    if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6258constructorimpl) != 0) {
+                    if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0) {
                         while (parent$ui_release != null) {
-                            if ((parent$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                            if ((parent$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                 Modifier.Node node = parent$ui_release;
                                 MutableVector mutableVector = null;
                                 while (node != null) {
@@ -146,12 +146,12 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
                                         if (this == node) {
                                             return FocusStateImpl.ActiveParent;
                                         }
-                                    } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                    } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                         Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release();
                                         int i = 0;
                                         node = node;
                                         while (delegate$ui_release != null) {
-                                            if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                            if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                                 i++;
                                                 if (i == 1) {
                                                     node = delegate$ui_release;
@@ -195,17 +195,17 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
     @Override // androidx.compose.ui.focus.FocusTargetModifierNode
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the version accepting FocusDirection", replaceWith = @ReplaceWith(expression = "this.requestFocus()", imports = {}))
     public /* synthetic */ boolean requestFocus() {
-        return mo4216requestFocus3ESFkO8(FocusDirection.Companion.m4189getEnterdhqQ8s());
+        return mo4946requestFocus3ESFkO8(FocusDirection.Companion.m4919getEnterdhqQ8s());
     }
 
     @Override // androidx.compose.ui.focus.FocusTargetModifierNode
     /* renamed from: requestFocus-3ESFkO8 */
-    public boolean mo4216requestFocus3ESFkO8(int i) {
+    public boolean mo4946requestFocus3ESFkO8(int i) {
         Trace.beginSection("FocusTransactions:requestFocus");
         try {
             boolean z = false;
             if (fetchFocusProperties$ui_release().getCanFocus()) {
-                int i2 = WhenMappings.$EnumSwitchMapping$0[FocusTransactionsKt.m4226performCustomRequestFocusMxy_nc0(this, i).ordinal()];
+                int i2 = WhenMappings.$EnumSwitchMapping$0[FocusTransactionsKt.m4956performCustomRequestFocusMxy_nc0(this, i).ordinal()];
                 if (i2 == 1) {
                     z = FocusTransactionsKt.performRequestFocus(this);
                 } else if (i2 == 2) {
@@ -223,18 +223,18 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
 
     @Override // androidx.compose.ui.focus.FocusTargetModifierNode
     /* renamed from: getFocusability-LCbbffg */
-    public int mo4215getFocusabilityLCbbffg() {
+    public int mo4945getFocusabilityLCbbffg() {
         return this.focusability;
     }
 
     @Override // androidx.compose.ui.focus.FocusTargetModifierNode
     /* renamed from: setFocusability-josRg5g */
-    public void mo4217setFocusabilityjosRg5g(int i) {
-        if (Focusability.m4235equalsimpl0(this.focusability, i)) {
+    public void mo4947setFocusabilityjosRg5g(int i) {
+        if (Focusability.m4965equalsimpl0(this.focusability, i)) {
             return;
         }
         this.focusability = i;
-        if (isAttached() && this == DelegatableNodeKt.requireOwner(this).getFocusOwner().getActiveFocusTargetNode() && !Focusability.m4232canFocusimpl$ui_release(this.focusability, this)) {
+        if (isAttached() && this == DelegatableNodeKt.requireOwner(this).getFocusOwner().getActiveFocusTargetNode() && !Focusability.m4962canFocusimpl$ui_release(this.focusability, this)) {
             FocusTransactionsKt.clearFocus(this, true, true);
         }
     }
@@ -259,7 +259,7 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
     @Override // androidx.compose.ui.Modifier.Node
     public void onReset() {
         if (ComposeUiFlags.isClearFocusOnResetEnabled && getFocusState().isFocused()) {
-            DelegatableNodeKt.requireOwner(this).getFocusOwner().mo4200clearFocusI7lrPNg(true, true, true, FocusDirection.Companion.m4190getExitdhqQ8s());
+            DelegatableNodeKt.requireOwner(this).getFocusOwner().mo4930clearFocusI7lrPNg(true, true, true, FocusDirection.Companion.m4920getExitdhqQ8s());
         }
     }
 
@@ -268,7 +268,7 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
         int i = WhenMappings.$EnumSwitchMapping$1[getFocusState().ordinal()];
         if (i == 1 || i == 2) {
             FocusOwner focusOwner = DelegatableNodeKt.requireOwner(this).getFocusOwner();
-            focusOwner.mo4200clearFocusI7lrPNg(true, true, false, FocusDirection.Companion.m4190getExitdhqQ8s());
+            focusOwner.mo4930clearFocusI7lrPNg(true, true, false, FocusDirection.Companion.m4920getExitdhqQ8s());
             focusOwner.scheduleInvalidationForOwner();
         } else if (i != 3 && i != 4) {
             throw new NoWhenBranchMatchedException();
@@ -279,12 +279,12 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
     public final FocusProperties fetchFocusProperties$ui_release() {
         NodeChain nodes$ui_release;
         FocusPropertiesImpl focusPropertiesImpl = new FocusPropertiesImpl();
-        focusPropertiesImpl.setCanFocus(Focusability.m4232canFocusimpl$ui_release(mo4215getFocusabilityLCbbffg(), this));
+        focusPropertiesImpl.setCanFocus(Focusability.m4962canFocusimpl$ui_release(mo4945getFocusabilityLCbbffg(), this));
         FocusTargetNode focusTargetNode = this;
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(2048);
-        int m6258constructorimpl2 = NodeKind.m6258constructorimpl(1024);
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(2048);
+        int m6988constructorimpl2 = NodeKind.m6988constructorimpl(1024);
         Modifier.Node node = focusTargetNode.getNode();
-        int i = m6258constructorimpl | m6258constructorimpl2;
+        int i = m6988constructorimpl | m6988constructorimpl2;
         if (!focusTargetNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
@@ -294,18 +294,18 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
             if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & i) != 0) {
                 while (node2 != null) {
                     if ((node2.getKindSet$ui_release() & i) != 0) {
-                        if (node2 != node && (node2.getKindSet$ui_release() & m6258constructorimpl2) != 0) {
+                        if (node2 != node && (node2.getKindSet$ui_release() & m6988constructorimpl2) != 0) {
                             break loop0;
-                        } else if ((node2.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                        } else if ((node2.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                             Modifier.Node node3 = node2;
                             MutableVector mutableVector = null;
                             while (node3 != null) {
                                 if (node3 instanceof FocusPropertiesModifierNode) {
                                     ((FocusPropertiesModifierNode) node3).applyFocusProperties(focusPropertiesImpl);
-                                } else if ((node3.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
+                                } else if ((node3.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
                                     int i2 = 0;
                                     for (Modifier.Node delegate$ui_release = ((DelegatingNode) node3).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                        if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                        if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                             i2++;
                                             if (i2 == 1) {
                                                 node3 = delegate$ui_release;
@@ -342,7 +342,7 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
     }
 
     /* renamed from: fetchCustomEnterOrExit-ULY8qGw  reason: not valid java name */
-    private final void m4220fetchCustomEnterOrExitULY8qGw(int i, Function1<? super FocusRequester, Unit> function1, Function2<? super FocusProperties, ? super FocusEnterExitScope, Unit> function2) {
+    private final void m4950fetchCustomEnterOrExitULY8qGw(int i, Function1<? super FocusRequester, Unit> function1, Function2<? super FocusProperties, ? super FocusEnterExitScope, Unit> function2) {
         FocusProperties fetchFocusProperties$ui_release = fetchFocusProperties$ui_release();
         CancelIndicatingFocusBoundaryScope cancelIndicatingFocusBoundaryScope = new CancelIndicatingFocusBoundaryScope(i, null);
         FocusOwner focusOwner = DelegatableNodeKt.requireOwner(this).getFocusOwner();
@@ -358,7 +358,7 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
     }
 
     /* renamed from: fetchCustomEnter-aToIllA$ui_release  reason: not valid java name */
-    public final void m4221fetchCustomEnteraToIllA$ui_release(int i, Function1<? super FocusRequester, Unit> function1) {
+    public final void m4951fetchCustomEnteraToIllA$ui_release(int i, Function1<? super FocusRequester, Unit> function1) {
         if (this.isProcessingCustomEnter) {
             return;
         }
@@ -381,7 +381,7 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
     }
 
     /* renamed from: fetchCustomExit-aToIllA$ui_release  reason: not valid java name */
-    public final void m4222fetchCustomExitaToIllA$ui_release(int i, Function1<? super FocusRequester, Unit> function1) {
+    public final void m4952fetchCustomExitaToIllA$ui_release(int i, Function1<? super FocusRequester, Unit> function1) {
         if (this.isProcessingCustomExit) {
             return;
         }
@@ -453,10 +453,10 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
         if (!Intrinsics.areEqual(focusState, focusState2) && (function2 = this.onFocusChange) != null) {
             function2.invoke(focusState, focusState2);
         }
-        int m6258constructorimpl = NodeKind.m6258constructorimpl(4096);
-        int m6258constructorimpl2 = NodeKind.m6258constructorimpl(1024);
+        int m6988constructorimpl = NodeKind.m6988constructorimpl(4096);
+        int m6988constructorimpl2 = NodeKind.m6988constructorimpl(1024);
         Modifier.Node node = focusTargetNode.getNode();
-        int i = m6258constructorimpl | m6258constructorimpl2;
+        int i = m6988constructorimpl | m6988constructorimpl2;
         if (!focusTargetNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
@@ -466,17 +466,17 @@ public final class FocusTargetNode extends Modifier.Node implements CompositionL
             if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & i) != 0) {
                 while (node2 != null) {
                     if ((node2.getKindSet$ui_release() & i) != 0) {
-                        if (node2 != node && (node2.getKindSet$ui_release() & m6258constructorimpl2) != 0) {
+                        if (node2 != node && (node2.getKindSet$ui_release() & m6988constructorimpl2) != 0) {
                             break loop0;
-                        } else if ((node2.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                        } else if ((node2.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                             Modifier.Node node3 = node2;
                             MutableVector mutableVector = null;
                             while (node3 != null) {
                                 if (!(node3 instanceof FocusEventModifierNode)) {
-                                    if ((node3.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
+                                    if ((node3.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
                                         int i2 = 0;
                                         for (Modifier.Node delegate$ui_release = ((DelegatingNode) node3).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                            if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
+                                            if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
                                                 i2++;
                                                 if (i2 == 1) {
                                                     node3 = delegate$ui_release;

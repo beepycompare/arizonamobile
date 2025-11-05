@@ -4,8 +4,8 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class NumberedThreadFactory implements ThreadFactory {
     private final String zza;
     private final AtomicInteger zzb = new AtomicInteger();
@@ -20,7 +20,14 @@ public class NumberedThreadFactory implements ThreadFactory {
     public final Thread newThread(Runnable runnable) {
         Thread newThread = this.zzc.newThread(new zza(runnable, 0));
         int andIncrement = this.zzb.getAndIncrement();
-        newThread.setName(this.zza + "[" + andIncrement + "]");
+        int length = String.valueOf(andIncrement).length();
+        String str = this.zza;
+        StringBuilder sb = new StringBuilder(str.length() + 1 + length + 1);
+        sb.append(str);
+        sb.append("[");
+        sb.append(andIncrement);
+        sb.append("]");
+        newThread.setName(sb.toString());
         return newThread;
     }
 }

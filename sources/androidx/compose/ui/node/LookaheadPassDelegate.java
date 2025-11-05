@@ -42,7 +42,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     private int previousPlaceOrder = Integer.MAX_VALUE;
     private int placeOrder = Integer.MAX_VALUE;
     private LayoutNode.UsageByParent measuredByParent = LayoutNode.UsageByParent.NotUsed;
-    private long lastPosition = IntOffset.Companion.m7403getZeronOccac();
+    private long lastPosition = IntOffset.Companion.m8134getZeronOccac();
     private PlacedState _placedState = PlacedState.IsNotPlaced;
     private final AlignmentLines alignmentLines = new LookaheadAlignmentLines(this);
     private final MutableVector<LookaheadPassDelegate> _childDelegates = new MutableVector<>(new LookaheadPassDelegate[16], 0);
@@ -212,7 +212,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     }
 
     /* renamed from: getLastConstraints-DWUhwKw  reason: not valid java name */
-    public final Constraints m6201getLastConstraintsDWUhwKw() {
+    public final Constraints m6931getLastConstraintsDWUhwKw() {
         return this.lookaheadConstraints;
     }
 
@@ -497,7 +497,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Placeable mo5967measureBRTryo0(long j) {
+    public Placeable mo6697measureBRTryo0(long j) {
         LayoutNode parent$ui_release = getLayoutNode().getParent$ui_release();
         if ((parent$ui_release != null ? parent$ui_release.getLayoutState$ui_release() : null) != LayoutNode.LayoutState.LookaheadMeasuring) {
             LayoutNode parent$ui_release2 = getLayoutNode().getParent$ui_release();
@@ -507,7 +507,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
         if (getLayoutNode().getIntrinsicsUsageByParent$ui_release() == LayoutNode.UsageByParent.NotUsed) {
             getLayoutNode().clearSubtreeIntrinsicsUsage$ui_release();
         }
-        m6203remeasureBRTryo0(j);
+        m6933remeasureBRTryo0(j);
         return this;
     }
 
@@ -538,7 +538,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     }
 
     /* renamed from: performMeasure-BRTryo0$ui_release  reason: not valid java name */
-    public final void m6202performMeasureBRTryo0$ui_release(final long j) {
+    public final void m6932performMeasureBRTryo0$ui_release(final long j) {
         setLayoutState(LayoutNode.LayoutState.LookaheadMeasuring);
         setMeasurePending(false);
         OwnerSnapshotObserver.observeMeasureSnapshotReads$ui_release$default(LayoutNodeKt.requireOwner(getLayoutNode()).getSnapshotObserver(), getLayoutNode(), false, new Function0<Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$performMeasure$1
@@ -560,7 +560,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                 outerCoordinator = LookaheadPassDelegate.this.getOuterCoordinator();
                 LookaheadDelegate lookaheadDelegate = outerCoordinator.getLookaheadDelegate();
                 Intrinsics.checkNotNull(lookaheadDelegate);
-                lookaheadDelegate.mo5967measureBRTryo0(j);
+                lookaheadDelegate.mo6697measureBRTryo0(j);
             }
         }, 2, null);
         markLayoutPending$ui_release();
@@ -582,9 +582,9 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean m6203remeasureBRTryo0(long j) {
+    public final boolean m6933remeasureBRTryo0(long j) {
         boolean z;
-        long m7430constructorimpl;
+        long m8161constructorimpl;
         LookaheadDelegate lookaheadDelegate;
         LayoutNode layoutNode = getLayoutNode();
         try {
@@ -598,7 +598,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                 layoutNode2.setCanMultiMeasure$ui_release(z);
                 if (!getLayoutNode().getLookaheadMeasurePending$ui_release()) {
                     Constraints constraints = this.lookaheadConstraints;
-                    if (constraints == null ? false : Constraints.m7210equalsimpl0(constraints.m7223unboximpl(), j)) {
+                    if (constraints == null ? false : Constraints.m7941equalsimpl0(constraints.m7954unboximpl(), j)) {
                         Owner owner$ui_release = getLayoutNode().getOwner$ui_release();
                         if (owner$ui_release != null) {
                             owner$ui_release.forceMeasureTheSubtree(getLayoutNode(), true);
@@ -607,8 +607,8 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                         return false;
                     }
                 }
-                this.lookaheadConstraints = Constraints.m7204boximpl(j);
-                m6031setMeasurementConstraintsBRTryo0(j);
+                this.lookaheadConstraints = Constraints.m7935boximpl(j);
+                m6761setMeasurementConstraintsBRTryo0(j);
                 getAlignmentLines().setUsedByModifierMeasurement$ui_release(false);
                 forEachChildAlignmentLinesOwner(new Function1<AlignmentLinesOwner, Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$remeasure$1$2
                     @Override // kotlin.jvm.functions.Function1
@@ -624,25 +624,25 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                 });
                 if (this.measuredOnce) {
                     long j2 = Integer.MIN_VALUE;
-                    m7430constructorimpl = IntSize.m7430constructorimpl((j2 & 4294967295L) | (j2 << 32));
+                    m8161constructorimpl = IntSize.m8161constructorimpl((j2 & 4294967295L) | (j2 << 32));
                 } else {
-                    m7430constructorimpl = m6027getMeasuredSizeYbymL2g();
+                    m8161constructorimpl = m6757getMeasuredSizeYbymL2g();
                 }
                 this.measuredOnce = true;
                 lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
                 if (!(lookaheadDelegate == null)) {
                     InlineClassHelperKt.throwIllegalStateException("Lookahead result from lookaheadRemeasure cannot be null");
                 }
-                this.layoutNodeLayoutDelegate.m6184performLookaheadMeasureBRTryo0$ui_release(j);
-                m6030setMeasuredSizeozmzZPI(IntSize.m7430constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
-                return ((int) (m7430constructorimpl >> 32)) == lookaheadDelegate.getWidth() || ((int) (m7430constructorimpl & 4294967295L)) != lookaheadDelegate.getHeight();
+                this.layoutNodeLayoutDelegate.m6914performLookaheadMeasureBRTryo0$ui_release(j);
+                m6760setMeasuredSizeozmzZPI(IntSize.m8161constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
+                return ((int) (m8161constructorimpl >> 32)) == lookaheadDelegate.getWidth() || ((int) (m8161constructorimpl & 4294967295L)) != lookaheadDelegate.getHeight();
             }
             z = true;
             layoutNode2.setCanMultiMeasure$ui_release(z);
             if (!getLayoutNode().getLookaheadMeasurePending$ui_release()) {
             }
-            this.lookaheadConstraints = Constraints.m7204boximpl(j);
-            m6031setMeasurementConstraintsBRTryo0(j);
+            this.lookaheadConstraints = Constraints.m7935boximpl(j);
+            m6761setMeasurementConstraintsBRTryo0(j);
             getAlignmentLines().setUsedByModifierMeasurement$ui_release(false);
             forEachChildAlignmentLinesOwner(new Function1<AlignmentLinesOwner, Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$remeasure$1$2
                 @Override // kotlin.jvm.functions.Function1
@@ -662,9 +662,9 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
             if (!(lookaheadDelegate == null)) {
             }
-            this.layoutNodeLayoutDelegate.m6184performLookaheadMeasureBRTryo0$ui_release(j);
-            m6030setMeasuredSizeozmzZPI(IntSize.m7430constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
-            if (((int) (m7430constructorimpl >> 32)) == lookaheadDelegate.getWidth()) {
+            this.layoutNodeLayoutDelegate.m6914performLookaheadMeasureBRTryo0$ui_release(j);
+            m6760setMeasuredSizeozmzZPI(IntSize.m8161constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
+            if (((int) (m8161constructorimpl >> 32)) == lookaheadDelegate.getWidth()) {
             }
         } catch (Throwable th) {
             layoutNode.rethrowWithComposeStackTrace(th);
@@ -675,15 +675,15 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public void mo5968placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
-        m6200placeSelfMLgxB_4(j, f, function1, null);
+    public void mo6698placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        m6930placeSelfMLgxB_4(j, f, function1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public void mo6029placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
-        m6200placeSelfMLgxB_4(j, f, null, graphicsLayer);
+    public void mo6759placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
+        m6930placeSelfMLgxB_4(j, f, null, graphicsLayer);
     }
 
     @Override // androidx.compose.ui.node.MotionReferencePlacementDelegate
@@ -706,7 +706,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     }
 
     /* renamed from: placeSelf-MLgxB_4  reason: not valid java name */
-    private final void m6200placeSelfMLgxB_4(final long j, float f, Function1<? super GraphicsLayerScope, Unit> function1, GraphicsLayer graphicsLayer) {
+    private final void m6930placeSelfMLgxB_4(final long j, float f, Function1<? super GraphicsLayerScope, Unit> function1, GraphicsLayer graphicsLayer) {
         LayoutNode layoutNode = getLayoutNode();
         try {
             LayoutNode parent$ui_release = getLayoutNode().getParent$ui_release();
@@ -719,7 +719,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             setLayoutState(LayoutNode.LayoutState.LookaheadLayingOut);
             this.placedOnce = true;
             this.onNodePlacedCalled = false;
-            if (!IntOffset.m7391equalsimpl0(j, this.lastPosition)) {
+            if (!IntOffset.m8122equalsimpl0(j, this.lastPosition)) {
                 if (this.layoutNodeLayoutDelegate.getLookaheadCoordinatesAccessedDuringModifierPlacement() || this.layoutNodeLayoutDelegate.getLookaheadCoordinatesAccessedDuringPlacement()) {
                     setLayoutPending(true);
                 }
@@ -729,7 +729,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             if (!getLayoutPending() && isPlaced()) {
                 LookaheadDelegate lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
                 Intrinsics.checkNotNull(lookaheadDelegate);
-                lookaheadDelegate.m6197placeSelfApparentToRealOffsetgyyYBs$ui_release(j);
+                lookaheadDelegate.m6927placeSelfApparentToRealOffsetgyyYBs$ui_release(j);
                 onNodePlaced$ui_release();
             } else {
                 this.layoutNodeLayoutDelegate.setLookaheadCoordinatesAccessedDuringModifierPlacement(false);
@@ -777,7 +777,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                                 outerCoordinator2 = lookaheadPassDelegate.getOuterCoordinator();
                                 LookaheadDelegate lookaheadDelegate3 = outerCoordinator2.getLookaheadDelegate();
                                 Intrinsics.checkNotNull(lookaheadDelegate3);
-                                Placeable.PlacementScope.m6032place70tqf50$default(placementScope, lookaheadDelegate3, j2, 0.0f, 2, null);
+                                Placeable.PlacementScope.m6762place70tqf50$default(placementScope, lookaheadDelegate3, j2, 0.0f, 2, null);
                             }
                         }
                         outerCoordinator = LookaheadPassDelegate.this.getOuterCoordinator();
@@ -792,7 +792,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                         outerCoordinator2 = lookaheadPassDelegate2.getOuterCoordinator();
                         LookaheadDelegate lookaheadDelegate32 = outerCoordinator2.getLookaheadDelegate();
                         Intrinsics.checkNotNull(lookaheadDelegate32);
-                        Placeable.PlacementScope.m6032place70tqf50$default(placementScope, lookaheadDelegate32, j22, 0.0f, 2, null);
+                        Placeable.PlacementScope.m6762place70tqf50$default(placementScope, lookaheadDelegate32, j22, 0.0f, 2, null);
                     }
                 }, 2, null);
             }
@@ -1022,9 +1022,9 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             if (layoutNode.getLookaheadMeasurePending$ui_release() && layoutNode.getMeasuredByParentInLookahead$ui_release() == LayoutNode.UsageByParent.InMeasureBlock) {
                 LookaheadPassDelegate lookaheadPassDelegate$ui_release = layoutNode.getLayoutDelegate$ui_release().getLookaheadPassDelegate$ui_release();
                 Intrinsics.checkNotNull(lookaheadPassDelegate$ui_release);
-                Constraints m6183getLastLookaheadConstraintsDWUhwKw = layoutNode.getLayoutDelegate$ui_release().m6183getLastLookaheadConstraintsDWUhwKw();
-                Intrinsics.checkNotNull(m6183getLastLookaheadConstraintsDWUhwKw);
-                if (lookaheadPassDelegate$ui_release.m6203remeasureBRTryo0(m6183getLastLookaheadConstraintsDWUhwKw.m7223unboximpl())) {
+                Constraints m6913getLastLookaheadConstraintsDWUhwKw = layoutNode.getLayoutDelegate$ui_release().m6913getLastLookaheadConstraintsDWUhwKw();
+                Intrinsics.checkNotNull(m6913getLastLookaheadConstraintsDWUhwKw);
+                if (lookaheadPassDelegate$ui_release.m6933remeasureBRTryo0(m6913getLastLookaheadConstraintsDWUhwKw.m7954unboximpl())) {
                     LayoutNode.requestLookaheadRemeasure$ui_release$default(getLayoutNode(), false, false, false, 7, null);
                 }
             }
@@ -1043,7 +1043,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             boolean isPlaced = isPlaced();
             lookaheadPassDelegate = this;
             try {
-                lookaheadPassDelegate.m6200placeSelfMLgxB_4(this.lastPosition, 0.0f, this.lastLayerBlock, this.lastExplicitLayer);
+                lookaheadPassDelegate.m6930placeSelfMLgxB_4(this.lastPosition, 0.0f, this.lastLayerBlock, this.lastExplicitLayer);
                 if (isPlaced && !lookaheadPassDelegate.onNodePlacedCalled && (parent$ui_release = getLayoutNode().getParent$ui_release()) != null) {
                     LayoutNode.requestLookaheadRelayout$ui_release$default(parent$ui_release, false, 1, null);
                 }

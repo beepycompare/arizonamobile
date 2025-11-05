@@ -1,73 +1,87 @@
 package androidx.compose.material3.tokens;
 
-import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
 /* compiled from: OutlinedIconButtonTokens.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u001f\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\u0007\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\nR\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u000e\u0010\u0010\u001a\u00020\u0011X\u0086T¢\u0006\u0002\n\u0000R\u0011\u0010\u0012\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u000fR\u000e\u0010\u0014\u001a\u00020\u0011X\u0086T¢\u0006\u0002\n\u0000R\u0011\u0010\u0015\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u000fR\u000e\u0010\u0017\u001a\u00020\u0011X\u0086T¢\u0006\u0002\n\u0000R\u0011\u0010\u0018\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u000fR\u0011\u0010\u001a\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u000fR\u0011\u0010\u001c\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u000fR\u0011\u0010\u001e\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u000fR\u0011\u0010 \u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u000fR\u0019\u0010\"\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b#\u0010\nR\u0011\u0010$\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u000fR\u0011\u0010&\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u000fR\u0011\u0010(\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u000fR\u0011\u0010*\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u000fR\u0019\u0010,\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b-\u0010\nR\u0011\u0010.\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u000f\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u00060"}, d2 = {"Landroidx/compose/material3/tokens/OutlinedIconButtonTokens;", "", "()V", "ContainerShape", "Landroidx/compose/material3/tokens/ShapeKeyTokens;", "getContainerShape", "()Landroidx/compose/material3/tokens/ShapeKeyTokens;", "ContainerSize", "Landroidx/compose/ui/unit/Dp;", "getContainerSize-D9Ej5fM", "()F", "F", "DisabledColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getDisabledColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "DisabledOpacity", "", "DisabledSelectedContainerColor", "getDisabledSelectedContainerColor", "DisabledSelectedContainerOpacity", "DisabledUnselectedOutlineColor", "getDisabledUnselectedOutlineColor", "DisabledUnselectedOutlineOpacity", "SelectedColor", "getSelectedColor", "SelectedContainerColor", "getSelectedContainerColor", "SelectedFocusColor", "getSelectedFocusColor", "SelectedHoverColor", "getSelectedHoverColor", "SelectedPressedColor", "getSelectedPressedColor", "Size", "getSize-D9Ej5fM", "UnselectedColor", "getUnselectedColor", "UnselectedFocusColor", "getUnselectedFocusColor", "UnselectedHoverColor", "getUnselectedHoverColor", "UnselectedOutlineColor", "getUnselectedOutlineColor", "UnselectedOutlineWidth", "getUnselectedOutlineWidth-D9Ej5fM", "UnselectedPressedColor", "getUnselectedPressedColor", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b)\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\tX\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u0007R\u0011\u0010\u000e\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0007R\u0011\u0010\u0010\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0007R\u0011\u0010\u0012\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0007R\u0011\u0010\u0014\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0007R\u0011\u0010\u0016\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0007R\u0011\u0010\u0018\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0007R\u0011\u0010\u001a\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0007R\u0014\u0010\u001c\u001a\u00020\tX\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u000bR\u0011\u0010\u001e\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0007R\u0011\u0010 \u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0007R\u0011\u0010\"\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0007R\u0011\u0010$\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0007R\u0011\u0010&\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u0007R\u0011\u0010(\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u0007R\u0011\u0010*\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0007R\u0011\u0010,\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b-\u0010\u0007R\u0011\u0010.\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u0007R\u0011\u00100\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0007¨\u00062"}, d2 = {"Landroidx/compose/material3/tokens/OutlinedIconButtonTokens;", "", "<init>", "()V", "DisabledColor", "Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "getDisabledColor", "()Landroidx/compose/material3/tokens/ColorSchemeKeyTokens;", "DisabledOpacity", "", "getDisabledOpacity", "()F", "DisabledOutlineColor", "getDisabledOutlineColor", "FocusedColor", "getFocusedColor", "HoveredColor", "getHoveredColor", "Color", "getColor", "OutlineColor", "getOutlineColor", "PressedColor", "getPressedColor", "SelectedContainerColor", "getSelectedContainerColor", "SelectedDisabledContainerColor", "getSelectedDisabledContainerColor", "SelectedDisabledContainerOpacity", "getSelectedDisabledContainerOpacity", "SelectedFocusedColor", "getSelectedFocusedColor", "SelectedHoveredColor", "getSelectedHoveredColor", "SelectedColor", "getSelectedColor", "SelectedPressedColor", "getSelectedPressedColor", "UnselectedDisabledOutlineColor", "getUnselectedDisabledOutlineColor", "UnselectedFocusedColor", "getUnselectedFocusedColor", "UnselectedHoveredColor", "getUnselectedHoveredColor", "UnselectedColor", "getUnselectedColor", "UnselectedOutlineColor", "getUnselectedOutlineColor", "UnselectedPressedColor", "getUnselectedPressedColor", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class OutlinedIconButtonTokens {
     public static final int $stable = 0;
-    public static final float DisabledOpacity = 0.38f;
-    public static final float DisabledSelectedContainerOpacity = 0.12f;
-    public static final float DisabledUnselectedOutlineOpacity = 0.12f;
     public static final OutlinedIconButtonTokens INSTANCE = new OutlinedIconButtonTokens();
-    private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ContainerSize = Dp.m7264constructorimpl((float) 40.0d);
     private static final ColorSchemeKeyTokens DisabledColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens DisabledSelectedContainerColor = ColorSchemeKeyTokens.OnSurface;
-    private static final ColorSchemeKeyTokens DisabledUnselectedOutlineColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float Size = Dp.m7264constructorimpl((float) 24.0d);
+    private static final float DisabledOpacity = 0.38f;
+    private static final ColorSchemeKeyTokens DisabledOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
+    private static final ColorSchemeKeyTokens FocusedColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final ColorSchemeKeyTokens HoveredColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final ColorSchemeKeyTokens Color = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final ColorSchemeKeyTokens OutlineColor = ColorSchemeKeyTokens.OutlineVariant;
+    private static final ColorSchemeKeyTokens PressedColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.InverseSurface;
-    private static final ColorSchemeKeyTokens SelectedFocusColor = ColorSchemeKeyTokens.InverseOnSurface;
-    private static final ColorSchemeKeyTokens SelectedHoverColor = ColorSchemeKeyTokens.InverseOnSurface;
+    private static final ColorSchemeKeyTokens SelectedDisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
+    private static final float SelectedDisabledContainerOpacity = 0.1f;
+    private static final ColorSchemeKeyTokens SelectedFocusedColor = ColorSchemeKeyTokens.InverseOnSurface;
+    private static final ColorSchemeKeyTokens SelectedHoveredColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens SelectedColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens SelectedPressedColor = ColorSchemeKeyTokens.InverseOnSurface;
-    private static final ColorSchemeKeyTokens UnselectedFocusColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final ColorSchemeKeyTokens UnselectedHoverColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final ColorSchemeKeyTokens UnselectedDisabledOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
+    private static final ColorSchemeKeyTokens UnselectedFocusedColor = ColorSchemeKeyTokens.OnSurfaceVariant;
+    private static final ColorSchemeKeyTokens UnselectedHoveredColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final ColorSchemeKeyTokens UnselectedOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float UnselectedOutlineWidth = Dp.m7264constructorimpl((float) 1.0d);
-    private static final ColorSchemeKeyTokens UnselectedPressedColor = ColorSchemeKeyTokens.OnSurface;
+    private static final ColorSchemeKeyTokens UnselectedOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
+    private static final ColorSchemeKeyTokens UnselectedPressedColor = ColorSchemeKeyTokens.OnSurfaceVariant;
 
     private OutlinedIconButtonTokens() {
-    }
-
-    public final ShapeKeyTokens getContainerShape() {
-        return ContainerShape;
-    }
-
-    /* renamed from: getContainerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3475getContainerSizeD9Ej5fM() {
-        return ContainerSize;
     }
 
     public final ColorSchemeKeyTokens getDisabledColor() {
         return DisabledColor;
     }
 
-    public final ColorSchemeKeyTokens getDisabledSelectedContainerColor() {
-        return DisabledSelectedContainerColor;
+    public final float getDisabledOpacity() {
+        return DisabledOpacity;
     }
 
-    public final ColorSchemeKeyTokens getDisabledUnselectedOutlineColor() {
-        return DisabledUnselectedOutlineColor;
+    public final ColorSchemeKeyTokens getDisabledOutlineColor() {
+        return DisabledOutlineColor;
     }
 
-    /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m3476getSizeD9Ej5fM() {
-        return Size;
+    public final ColorSchemeKeyTokens getFocusedColor() {
+        return FocusedColor;
+    }
+
+    public final ColorSchemeKeyTokens getHoveredColor() {
+        return HoveredColor;
+    }
+
+    public final ColorSchemeKeyTokens getColor() {
+        return Color;
+    }
+
+    public final ColorSchemeKeyTokens getOutlineColor() {
+        return OutlineColor;
+    }
+
+    public final ColorSchemeKeyTokens getPressedColor() {
+        return PressedColor;
     }
 
     public final ColorSchemeKeyTokens getSelectedContainerColor() {
         return SelectedContainerColor;
     }
 
-    public final ColorSchemeKeyTokens getSelectedFocusColor() {
-        return SelectedFocusColor;
+    public final ColorSchemeKeyTokens getSelectedDisabledContainerColor() {
+        return SelectedDisabledContainerColor;
     }
 
-    public final ColorSchemeKeyTokens getSelectedHoverColor() {
-        return SelectedHoverColor;
+    public final float getSelectedDisabledContainerOpacity() {
+        return SelectedDisabledContainerOpacity;
+    }
+
+    public final ColorSchemeKeyTokens getSelectedFocusedColor() {
+        return SelectedFocusedColor;
+    }
+
+    public final ColorSchemeKeyTokens getSelectedHoveredColor() {
+        return SelectedHoveredColor;
     }
 
     public final ColorSchemeKeyTokens getSelectedColor() {
@@ -78,12 +92,16 @@ public final class OutlinedIconButtonTokens {
         return SelectedPressedColor;
     }
 
-    public final ColorSchemeKeyTokens getUnselectedFocusColor() {
-        return UnselectedFocusColor;
+    public final ColorSchemeKeyTokens getUnselectedDisabledOutlineColor() {
+        return UnselectedDisabledOutlineColor;
     }
 
-    public final ColorSchemeKeyTokens getUnselectedHoverColor() {
-        return UnselectedHoverColor;
+    public final ColorSchemeKeyTokens getUnselectedFocusedColor() {
+        return UnselectedFocusedColor;
+    }
+
+    public final ColorSchemeKeyTokens getUnselectedHoveredColor() {
+        return UnselectedHoveredColor;
     }
 
     public final ColorSchemeKeyTokens getUnselectedColor() {
@@ -92,11 +110,6 @@ public final class OutlinedIconButtonTokens {
 
     public final ColorSchemeKeyTokens getUnselectedOutlineColor() {
         return UnselectedOutlineColor;
-    }
-
-    /* renamed from: getUnselectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3477getUnselectedOutlineWidthD9Ej5fM() {
-        return UnselectedOutlineWidth;
     }
 
     public final ColorSchemeKeyTokens getUnselectedPressedColor() {

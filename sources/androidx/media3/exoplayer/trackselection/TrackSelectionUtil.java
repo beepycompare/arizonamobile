@@ -13,10 +13,10 @@ import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TrackSelectionUtil {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AdaptiveTrackSelectionFactory {
         ExoTrackSelection createAdaptiveTrackSelection(ExoTrackSelection.Definition definition);
     }

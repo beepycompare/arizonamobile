@@ -24,25 +24,25 @@ public final class TextFieldBufferKt {
     */
     public static final long m1444adjustTextRangevJH6DeI(long j, int i, int i2, int i3) {
         int i4;
-        int m6724getMinimpl = TextRange.m6724getMinimpl(j);
-        int m6723getMaximpl = TextRange.m6723getMaximpl(j);
-        if (m6723getMaximpl < i) {
+        int m7455getMinimpl = TextRange.m7455getMinimpl(j);
+        int m7454getMaximpl = TextRange.m7454getMaximpl(j);
+        if (m7454getMaximpl < i) {
             return j;
         }
-        if (m6724getMinimpl > i || i2 > m6723getMaximpl) {
-            if (m6724getMinimpl > i && m6723getMaximpl < i2) {
+        if (m7455getMinimpl > i || i2 > m7454getMaximpl) {
+            if (m7455getMinimpl > i && m7454getMaximpl < i2) {
                 i += i3;
-                m6724getMinimpl = i;
-            } else if (m6724getMinimpl >= i2) {
+                m7455getMinimpl = i;
+            } else if (m7455getMinimpl >= i2) {
                 i4 = i3 - (i2 - i);
-                m6724getMinimpl += i4;
-                i = m6723getMaximpl + i4;
-            } else if (i < m6724getMinimpl) {
-                m6724getMinimpl = i + i3;
+                m7455getMinimpl += i4;
+                i = m7454getMaximpl + i4;
+            } else if (i < m7455getMinimpl) {
+                m7455getMinimpl = i + i3;
                 i4 = i3 - (i2 - i);
-                i = m6723getMaximpl + i4;
+                i = m7454getMaximpl + i4;
             }
-            return TextRangeKt.TextRange(m6724getMinimpl, i);
+            return TextRangeKt.TextRange(m7455getMinimpl, i);
         }
         i4 = i3 - (i2 - i);
     }
@@ -65,13 +65,13 @@ public final class TextFieldBufferKt {
 
     public static final void forEachChange(TextFieldBuffer.ChangeList changeList, Function2<? super TextRange, ? super TextRange, Unit> function2) {
         for (int i = 0; i < changeList.getChangeCount(); i++) {
-            function2.invoke(TextRange.m6714boximpl(changeList.mo1443getRangejx7JFs(i)), TextRange.m6714boximpl(changeList.mo1442getOriginalRangejx7JFs(i)));
+            function2.invoke(TextRange.m7445boximpl(changeList.mo1443getRangejx7JFs(i)), TextRange.m7445boximpl(changeList.mo1442getOriginalRangejx7JFs(i)));
         }
     }
 
     public static final void forEachChangeReversed(TextFieldBuffer.ChangeList changeList, Function2<? super TextRange, ? super TextRange, Unit> function2) {
         for (int changeCount = changeList.getChangeCount() - 1; changeCount >= 0; changeCount--) {
-            function2.invoke(TextRange.m6714boximpl(changeList.mo1443getRangejx7JFs(changeCount)), TextRange.m6714boximpl(changeList.mo1442getOriginalRangejx7JFs(changeCount)));
+            function2.invoke(TextRange.m7445boximpl(changeList.mo1443getRangejx7JFs(changeCount)), TextRange.m7445boximpl(changeList.mo1442getOriginalRangejx7JFs(changeCount)));
         }
     }
 

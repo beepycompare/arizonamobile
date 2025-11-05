@@ -3,22 +3,26 @@ package com.google.android.gms.common.api;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class zzb implements Parcelable.Creator {
     public static final ApiMetadata zza(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
         ComplianceOptions complianceOptions = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
-            if (SafeParcelReader.getFieldId(readHeader) == 1) {
+            int fieldId = SafeParcelReader.getFieldId(readHeader);
+            if (fieldId == 1) {
                 complianceOptions = (ComplianceOptions) SafeParcelReader.createParcelable(parcel, readHeader, ComplianceOptions.CREATOR);
+            } else if (fieldId == 2) {
+                z = SafeParcelReader.readBoolean(parcel, readHeader);
             } else {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new ApiMetadata(complianceOptions);
+        return new ApiMetadata(complianceOptions, z);
     }
 
     @Override // android.os.Parcelable.Creator

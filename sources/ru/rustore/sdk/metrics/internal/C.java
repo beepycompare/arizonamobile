@@ -6,10 +6,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1423a;
+    public final Context f1466a;
 
     public C(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1423a = context;
+        this.f1466a = context;
     }
 }

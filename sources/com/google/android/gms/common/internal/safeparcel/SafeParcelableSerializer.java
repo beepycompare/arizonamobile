@@ -6,10 +6,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.Base64Utils;
-import com.google.android.gms.internal.common.zzak;
+import com.google.android.gms.internal.common.zzah;
 import java.util.ArrayList;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class SafeParcelableSerializer {
     private SafeParcelableSerializer() {
     }
@@ -106,7 +106,7 @@ public final class SafeParcelableSerializer {
     public static <T extends SafeParcelable> byte[] serializeIterableToBytes(Iterable<T> iterable) {
         Parcel obtain = Parcel.obtain();
         try {
-            obtain.writeTypedList(zzak.zzj(iterable));
+            obtain.writeTypedList(zzah.zzo(iterable));
             return obtain.marshall();
         } finally {
             obtain.recycle();

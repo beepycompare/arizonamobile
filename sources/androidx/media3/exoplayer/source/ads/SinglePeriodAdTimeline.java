@@ -5,7 +5,7 @@ import androidx.media3.common.C;
 import androidx.media3.common.Timeline;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.source.ForwardingTimeline;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SinglePeriodAdTimeline extends ForwardingTimeline {
     private final AdPlaybackState adPlaybackState;
 

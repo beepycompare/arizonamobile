@@ -5,7 +5,7 @@ import androidx.compose.ui.node.LayoutNode;
 import kotlin.Metadata;
 /* compiled from: PointerInputEventProcessor.kt */
 @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J'\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0016\u001a\u00020\u000f¢\u0006\u0004\b\u0017\u0010\u0018J\u0006\u0010\u0019\u001a\u00020\u001aJ\u0006\u0010\u001b\u001a\u00020\u001aR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;", "", "root", "Landroidx/compose/ui/node/LayoutNode;", "<init>", "(Landroidx/compose/ui/node/LayoutNode;)V", "getRoot", "()Landroidx/compose/ui/node/LayoutNode;", "hitPathTracker", "Landroidx/compose/ui/input/pointer/HitPathTracker;", "pointerInputChangeEventProducer", "Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer;", "hitResult", "Landroidx/compose/ui/node/HitTestResult;", "isProcessing", "", "process", "Landroidx/compose/ui/input/pointer/ProcessResult;", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerInputEvent;", "positionCalculator", "Landroidx/compose/ui/input/pointer/PositionCalculator;", "isInBounds", "process-BIzXfog", "(Landroidx/compose/ui/input/pointer/PointerInputEvent;Landroidx/compose/ui/input/pointer/PositionCalculator;Z)I", "processCancel", "", "clearPreviouslyHitModifierNodes", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class PointerInputEventProcessor {
     public static final int $stable = 8;
     private final HitPathTracker hitPathTracker;
@@ -24,15 +24,15 @@ public final class PointerInputEventProcessor {
     }
 
     /* renamed from: process-BIzXfog$default  reason: not valid java name */
-    public static /* synthetic */ int m5859processBIzXfog$default(PointerInputEventProcessor pointerInputEventProcessor, PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator, boolean z, int i, Object obj) {
+    public static /* synthetic */ int m6589processBIzXfog$default(PointerInputEventProcessor pointerInputEventProcessor, PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             z = true;
         }
-        return pointerInputEventProcessor.m5860processBIzXfog(pointerInputEvent, positionCalculator, z);
+        return pointerInputEventProcessor.m6590processBIzXfog(pointerInputEvent, positionCalculator, z);
     }
 
     /* renamed from: process-BIzXfog  reason: not valid java name */
-    public final int m5860processBIzXfog(PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator, boolean z) {
+    public final int m6590processBIzXfog(PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator, boolean z) {
         boolean z2;
         boolean z3;
         if (this.isProcessing) {
@@ -55,9 +55,9 @@ public final class PointerInputEventProcessor {
             for (int i2 = 0; i2 < size2; i2++) {
                 PointerInputChange valueAt2 = produce.getChanges().valueAt(i2);
                 if (z2 || PointerEventKt.changedToDownIgnoreConsumed(valueAt2)) {
-                    LayoutNode.m6160hitTest6fMxITs$ui_release$default(this.root, valueAt2.m5839getPositionF1C5BW0(), this.hitResult, valueAt2.m5842getTypeT8wyACA(), false, 8, null);
+                    LayoutNode.m6890hitTest6fMxITs$ui_release$default(this.root, valueAt2.m6569getPositionF1C5BW0(), this.hitResult, valueAt2.m6572getTypeT8wyACA(), false, 8, null);
                     if (!this.hitResult.isEmpty()) {
-                        this.hitPathTracker.m5765addHitPathQJqDSyo(valueAt2.m5837getIdJ3iCeTQ(), this.hitResult, PointerEventKt.changedToDownIgnoreConsumed(valueAt2));
+                        this.hitPathTracker.m6495addHitPathQJqDSyo(valueAt2.m6567getIdJ3iCeTQ(), this.hitResult, PointerEventKt.changedToDownIgnoreConsumed(valueAt2));
                         this.hitResult.clear();
                     }
                 }

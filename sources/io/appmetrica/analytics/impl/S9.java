@@ -1,5 +1,23 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public interface S9 {
-    R9 a(V9 v9, C0375k7 c0375k7, C0437mh c0437mh, M4 m4, C0477o5 c0477o5, C0538qf c0538qf);
+
+import android.util.Base64;
+/* loaded from: classes3.dex */
+public final class S9 implements L8 {
+    @Override // io.appmetrica.analytics.impl.L8
+    public final E8 a(W5 w5) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // io.appmetrica.analytics.impl.L8
+    public final byte[] a(byte[] bArr) {
+        try {
+            return Base64.decode(bArr, 0);
+        } catch (Throwable unused) {
+            return new byte[0];
+        }
+    }
+
+    public final N8 a() {
+        return N8.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER;
+    }
 }

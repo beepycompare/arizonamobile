@@ -1,23 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-/* loaded from: classes4.dex */
-public final class Ii implements Runnable {
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+/* loaded from: classes3.dex */
+public final class Ii implements InterfaceC0337j3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f501a;
-    public final /* synthetic */ Ki b;
+    public final Object f530a;
+    public final InterfaceC0337j3 b;
 
-    public Ii(Ki ki, Context context) {
-        this.b = ki;
-        this.f501a = context;
+    public Ii(Object obj, InterfaceC0337j3 interfaceC0337j3) {
+        this.f530a = obj;
+        this.b = interfaceC0337j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0672w0 c0672w0 = this.b.b;
-        Context context = this.f501a;
-        c0672w0.getClass();
-        C0647v0.a(context);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0337j3
+    public final int getBytesTruncated() {
+        return this.b.getBytesTruncated();
+    }
+
+    public final String toString() {
+        return "Result{result=" + this.f530a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

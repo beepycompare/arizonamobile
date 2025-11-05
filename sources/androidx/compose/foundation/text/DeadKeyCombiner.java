@@ -14,21 +14,21 @@ public final class DeadKeyCombiner {
 
     /* renamed from: consume-ZmokQxo  reason: not valid java name */
     public final Integer m1265consumeZmokQxo(KeyEvent keyEvent) {
-        int m5697getUtf16CodePointZmokQxo = KeyEvent_androidKt.m5697getUtf16CodePointZmokQxo(keyEvent);
-        if ((Integer.MIN_VALUE & m5697getUtf16CodePointZmokQxo) != 0) {
-            this.deadKeyCode = Integer.valueOf(m5697getUtf16CodePointZmokQxo & Integer.MAX_VALUE);
+        int m6427getUtf16CodePointZmokQxo = KeyEvent_androidKt.m6427getUtf16CodePointZmokQxo(keyEvent);
+        if ((Integer.MIN_VALUE & m6427getUtf16CodePointZmokQxo) != 0) {
+            this.deadKeyCode = Integer.valueOf(m6427getUtf16CodePointZmokQxo & Integer.MAX_VALUE);
             return null;
         }
         Integer num = this.deadKeyCode;
         if (num != null) {
             this.deadKeyCode = null;
-            Integer valueOf = Integer.valueOf(KeyCharacterMap.getDeadChar(num.intValue(), m5697getUtf16CodePointZmokQxo));
+            Integer valueOf = Integer.valueOf(KeyCharacterMap.getDeadChar(num.intValue(), m6427getUtf16CodePointZmokQxo));
             Integer num2 = valueOf.intValue() != 0 ? valueOf : null;
             if (num2 != null) {
-                m5697getUtf16CodePointZmokQxo = num2.intValue();
+                m6427getUtf16CodePointZmokQxo = num2.intValue();
             }
-            return Integer.valueOf(m5697getUtf16CodePointZmokQxo);
+            return Integer.valueOf(m6427getUtf16CodePointZmokQxo);
         }
-        return Integer.valueOf(m5697getUtf16CodePointZmokQxo);
+        return Integer.valueOf(m6427getUtf16CodePointZmokQxo);
     }
 }

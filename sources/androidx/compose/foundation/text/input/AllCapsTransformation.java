@@ -18,7 +18,7 @@ import okhttp3.internal.ws.WebSocketProtocol;
 @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\f\u0010\n\u001a\u00020\u000b*\u00020\fH\u0016J\b\u0010\r\u001a\u00020\u000eH\u0016J\t\u0010\u000f\u001a\u00020\u0003HÂ\u0003J\u0013\u0010\u0010\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0013\u0010\u0011\u001a\u00020\u00122\b\u0010\u0013\u001a\u0004\u0018\u00010\u0014HÖ\u0003J\t\u0010\u0015\u001a\u00020\u0016HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u0007X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\u0017"}, d2 = {"Landroidx/compose/foundation/text/input/AllCapsTransformation;", "Landroidx/compose/foundation/text/input/InputTransformation;", CommonUrlParts.LOCALE, "Landroidx/compose/ui/text/intl/Locale;", "<init>", "(Landroidx/compose/ui/text/intl/Locale;)V", "keyboardOptions", "Landroidx/compose/foundation/text/KeyboardOptions;", "getKeyboardOptions", "()Landroidx/compose/foundation/text/KeyboardOptions;", "transformInput", "", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "toString", "", "component1", "copy", "equals", "", "other", "", "hashCode", "", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class AllCapsTransformation implements InputTransformation {
-    private final KeyboardOptions keyboardOptions = new KeyboardOptions(KeyboardCapitalization.Companion.m6940getCharactersIUNYP9k(), (Boolean) null, 0, 0, (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, (int) WebSocketProtocol.PAYLOAD_SHORT, (DefaultConstructorMarker) null);
+    private final KeyboardOptions keyboardOptions = new KeyboardOptions(KeyboardCapitalization.Companion.m7671getCharactersIUNYP9k(), (Boolean) null, 0, 0, (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, (int) WebSocketProtocol.PAYLOAD_SHORT, (DefaultConstructorMarker) null);
     private final Locale locale;
 
     private final Locale component1() {
@@ -62,8 +62,8 @@ final class AllCapsTransformation implements InputTransformation {
         for (int i = 0; i < changes.getChangeCount(); i++) {
             long mo1443getRangejx7JFs = changes.mo1443getRangejx7JFs(i);
             changes.mo1442getOriginalRangejx7JFs(i);
-            if (!TextRange.m6720getCollapsedimpl(mo1443getRangejx7JFs)) {
-                textFieldBuffer.replace(TextRange.m6724getMinimpl(mo1443getRangejx7JFs), TextRange.m6723getMaximpl(mo1443getRangejx7JFs), StringKt.toUpperCase(TextRangeKt.m6733substringFDrldGo(textFieldBuffer.asCharSequence(), mo1443getRangejx7JFs), this.locale));
+            if (!TextRange.m7451getCollapsedimpl(mo1443getRangejx7JFs)) {
+                textFieldBuffer.replace(TextRange.m7455getMinimpl(mo1443getRangejx7JFs), TextRange.m7454getMaximpl(mo1443getRangejx7JFs), StringKt.toUpperCase(TextRangeKt.m7464substringFDrldGo(textFieldBuffer.asCharSequence(), mo1443getRangejx7JFs), this.locale));
             }
         }
     }

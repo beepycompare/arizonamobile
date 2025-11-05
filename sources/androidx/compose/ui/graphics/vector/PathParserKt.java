@@ -49,9 +49,9 @@ public final class PathParserKt {
         float dy22;
         List<? extends PathNode> list2 = list;
         Path path2 = path;
-        int mo4438getFillTypeRgk1Os = path2.mo4438getFillTypeRgk1Os();
+        int mo5168getFillTypeRgk1Os = path2.mo5168getFillTypeRgk1Os();
         path2.rewind();
-        path2.mo4440setFillTypeoQ8Xj4U(mo4438getFillTypeRgk1Os);
+        path2.mo5170setFillTypeoQ8Xj4U(mo5168getFillTypeRgk1Os);
         PathNode pathNode2 = list2.isEmpty() ? PathNode.Close.INSTANCE : list2.get(0);
         int size = list2.size();
         float f7 = 0.0f;

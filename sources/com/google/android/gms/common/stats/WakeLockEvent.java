@@ -7,9 +7,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.List;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WakeLockEvent extends StatsEvent {
     public static final Parcelable.Creator<WakeLockEvent> CREATOR = new zza();
     final int zza;
@@ -70,13 +70,13 @@ public final class WakeLockEvent extends StatsEvent {
     }
 
     @Override // com.google.android.gms.common.stats.StatsEvent
-    public final int zza() {
-        return this.zzc;
+    public final long zza() {
+        return this.zzb;
     }
 
     @Override // com.google.android.gms.common.stats.StatsEvent
-    public final long zzb() {
-        return this.zzb;
+    public final int zzb() {
+        return this.zzc;
     }
 
     @Override // com.google.android.gms.common.stats.StatsEvent
@@ -91,7 +91,18 @@ public final class WakeLockEvent extends StatsEvent {
         int i2 = this.zzg;
         String str4 = this.zzd;
         boolean z = this.zzo;
-        StringBuilder sb = new StringBuilder("\t");
+        int length = String.valueOf(str4).length() + 2 + String.valueOf(i2).length() + 1 + String.valueOf(join).length() + 1 + String.valueOf(i).length();
+        if (str == null) {
+            str = "";
+        }
+        int length2 = length + 1 + str.length() + 1;
+        if (str2 == null) {
+            str2 = "";
+        }
+        int length3 = length2 + str2.length() + 1 + String.valueOf(f).length() + 1;
+        String str5 = str3 != null ? str3 : "";
+        StringBuilder sb = new StringBuilder(length3 + str5.length() + 1 + String.valueOf(z).length());
+        sb.append("\t");
         sb.append(str4);
         sb.append("\t");
         sb.append(i2);
@@ -100,19 +111,13 @@ public final class WakeLockEvent extends StatsEvent {
         sb.append("\t");
         sb.append(i);
         sb.append("\t");
-        if (str == null) {
-            str = "";
-        }
         sb.append(str);
         sb.append("\t");
-        if (str2 == null) {
-            str2 = "";
-        }
         sb.append(str2);
         sb.append("\t");
         sb.append(f);
         sb.append("\t");
-        sb.append(str3 != null ? str3 : "");
+        sb.append(str5);
         sb.append("\t");
         sb.append(z);
         return sb.toString();

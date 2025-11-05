@@ -1,19 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import java.util.Map;
-import kotlin.collections.MapsKt;
-/* loaded from: classes4.dex */
+import kotlinx.datetime.internal.DateCalculationsKt;
+/* loaded from: classes3.dex */
 public final class Tk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Xk f690a;
-    public final Map b;
+    public final EnumC0123al f710a;
+    public Integer b;
 
-    public Tk(Context context, C0477o5 c0477o5) {
-        c0477o5.a();
-        Xk xk = new Xk(context, c0477o5);
-        this.f690a = xk;
-        this.b = MapsKt.toMutableMap(xk.a());
+    public Tk(EnumC0123al enumC0123al) {
+        this.f710a = enumC0123al;
+    }
+
+    public final Uk a() {
+        return new Uk(this);
+    }
+
+    public final Tk b() {
+        this.b = Integer.valueOf((int) DateCalculationsKt.SECONDS_PER_HOUR);
+        return this;
     }
 }

@@ -50,11 +50,13 @@ public final class ChildBackHandlerKt {
         return childBackHandler;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit child$lambda$0(ChildBackHandler childBackHandler) {
         childBackHandler.setEnabled(true);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit child$lambda$1(ChildBackHandler childBackHandler) {
         childBackHandler.setEnabled(false);
         return Unit.INSTANCE;

@@ -62,18 +62,18 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
         }
         if (obj instanceof BorderModifierNodeElement) {
             BorderModifierNodeElement borderModifierNodeElement = (BorderModifierNodeElement) obj;
-            return Dp.m7269equalsimpl0(this.width, borderModifierNodeElement.width) && Intrinsics.areEqual(this.brush, borderModifierNodeElement.brush) && Intrinsics.areEqual(this.shape, borderModifierNodeElement.shape);
+            return Dp.m8000equalsimpl0(this.width, borderModifierNodeElement.width) && Intrinsics.areEqual(this.brush, borderModifierNodeElement.brush) && Intrinsics.areEqual(this.shape, borderModifierNodeElement.shape);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((Dp.m7270hashCodeimpl(this.width) * 31) + this.brush.hashCode()) * 31) + this.shape.hashCode();
+        return (((Dp.m8001hashCodeimpl(this.width) * 31) + this.brush.hashCode()) * 31) + this.shape.hashCode();
     }
 
     public String toString() {
-        return "BorderModifierNodeElement(width=" + ((Object) Dp.m7275toStringimpl(this.width)) + ", brush=" + this.brush + ", shape=" + this.shape + ')';
+        return "BorderModifierNodeElement(width=" + ((Object) Dp.m8006toStringimpl(this.width)) + ", brush=" + this.brush + ", shape=" + this.shape + ')';
     }
 
     public final Brush getBrush() {
@@ -111,10 +111,10 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void inspectableProperties(InspectorInfo inspectorInfo) {
         inspectorInfo.setName("border");
-        inspectorInfo.getProperties().set("width", Dp.m7262boximpl(this.width));
+        inspectorInfo.getProperties().set("width", Dp.m7993boximpl(this.width));
         if (this.brush instanceof SolidColor) {
-            inspectorInfo.getProperties().set("color", Color.m4539boximpl(((SolidColor) this.brush).m4901getValue0d7_KjU()));
-            inspectorInfo.setValue(Color.m4539boximpl(((SolidColor) this.brush).m4901getValue0d7_KjU()));
+            inspectorInfo.getProperties().set("color", Color.m5269boximpl(((SolidColor) this.brush).m5631getValue0d7_KjU()));
+            inspectorInfo.setValue(Color.m5269boximpl(((SolidColor) this.brush).m5631getValue0d7_KjU()));
         } else {
             inspectorInfo.getProperties().set("brush", this.brush);
         }

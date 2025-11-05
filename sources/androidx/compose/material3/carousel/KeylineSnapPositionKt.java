@@ -2,24 +2,24 @@ package androidx.compose.material3.carousel;
 
 import androidx.compose.foundation.gestures.snapping.SnapPosition;
 import kotlin.Metadata;
+import kotlin.collections.CollectionsKt;
 import kotlin.math.MathKt;
+import kotlin.ranges.RangesKt;
 /* compiled from: KeylineSnapPosition.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0010\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0000\u001a \u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u0005H\u0000¨\u0006\n"}, d2 = {"KeylineSnapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "pageSize", "Landroidx/compose/material3/carousel/CarouselPageSize;", "getSnapPositionOffset", "", "strategy", "Landroidx/compose/material3/carousel/Strategy;", "itemIndex", "itemCount", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a \u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00012\u0006\u0010\u0005\u001a\u00020\u0001H\u0000\u001a\u0010\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0000¨\u0006\n"}, d2 = {"getSnapPositionOffset", "", "strategy", "Landroidx/compose/material3/carousel/Strategy;", "itemIndex", "itemCount", "KeylineSnapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "pageSize", "Landroidx/compose/material3/carousel/CarouselPageSize;", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class KeylineSnapPositionKt {
     public static final int getSnapPositionOffset(Strategy strategy, int i, int i2) {
         if (strategy.isValid()) {
-            int lastFocalIndex = strategy.getDefaultKeylines().getLastFocalIndex() - strategy.getDefaultKeylines().getFirstFocalIndex();
-            int size = strategy.getStartKeylineSteps().size() + lastFocalIndex;
-            int size2 = strategy.getEndKeylineSteps().size() + lastFocalIndex;
             int roundToInt = MathKt.roundToInt(strategy.getDefaultKeylines().getFirstFocal().getUnadjustedOffset() - (strategy.getItemMainAxisSize() / 2.0f));
-            if (i < size) {
-                roundToInt = MathKt.roundToInt(strategy.getStartKeylineSteps().get(Math.min(strategy.getStartKeylineSteps().size() - 1, Math.max(0, (size - 1) - i))).getFirstFocal().getUnadjustedOffset() - (strategy.getItemMainAxisSize() / 2.0f));
+            if (i <= CollectionsKt.getLastIndex(strategy.getStartKeylineSteps())) {
+                roundToInt = MathKt.roundToInt(strategy.getStartKeylineSteps().get(RangesKt.coerceIn(CollectionsKt.getLastIndex(strategy.getStartKeylineSteps()) - i, 0, CollectionsKt.getLastIndex(strategy.getStartKeylineSteps()))).getFirstFocal().getUnadjustedOffset() - (strategy.getItemMainAxisSize() / 2.0f));
             }
-            if (i2 <= lastFocalIndex + 1 || i < i2 - size2) {
+            int i3 = i2 - 1;
+            if (i < i3 - CollectionsKt.getLastIndex(strategy.getEndKeylineSteps()) || i2 <= strategy.getDefaultKeylines().getFocalCount()) {
                 return roundToInt;
             }
-            return MathKt.roundToInt(strategy.getEndKeylineSteps().get(Math.min(strategy.getEndKeylineSteps().size() - 1, Math.max(0, (i - i2) + size2))).getFirstFocal().getUnadjustedOffset() - (strategy.getItemMainAxisSize() / 2.0f));
+            return MathKt.roundToInt(strategy.getEndKeylineSteps().get(RangesKt.coerceIn(CollectionsKt.getLastIndex(strategy.getEndKeylineSteps()) - (i3 - i), 0, CollectionsKt.getLastIndex(strategy.getEndKeylineSteps()))).getFirstFocal().getUnadjustedOffset() - (strategy.getItemMainAxisSize() / 2.0f));
         }
         return 0;
     }

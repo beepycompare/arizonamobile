@@ -4,14 +4,14 @@ import com.adjust.sdk.Constants;
 import java.util.Map;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f329a;
+    public final Map f345a;
 
     public d(Map map) {
-        this.f329a = map;
+        this.f345a = map;
     }
 
     public /* synthetic */ d() {

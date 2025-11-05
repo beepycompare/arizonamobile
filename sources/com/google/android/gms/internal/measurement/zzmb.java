@@ -4,7 +4,7 @@ import com.google.android.gms.internal.measurement.zzmb;
 import com.google.android.gms.internal.measurement.zzmf;
 import java.io.IOException;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class zzmb<MessageType extends zzmf<MessageType, BuilderType>, BuilderType extends zzmb<MessageType, BuilderType>> extends zzkr<MessageType, BuilderType> {
     protected zzmf zza;
     private final zzmf zzb;

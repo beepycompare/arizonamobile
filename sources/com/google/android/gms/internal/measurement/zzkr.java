@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzkr<MessageType extends zzks<MessageType, BuilderType>, BuilderType extends zzkr<MessageType, BuilderType>> implements zznl {
     private static void zza(List list, int i) {
         int size = list.size() - i;

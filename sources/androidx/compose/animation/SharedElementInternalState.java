@@ -148,25 +148,25 @@ public final class SharedElementInternalState implements LayerRenderer, Remember
             return;
         }
         Rect currentBoundsWhenMatched = getSharedElement().getCurrentBoundsWhenMatched();
-        Offset m4294boximpl = currentBoundsWhenMatched != null ? Offset.m4294boximpl(currentBoundsWhenMatched.m4340getTopLeftF1C5BW0()) : null;
-        Intrinsics.checkNotNull(m4294boximpl);
-        long m4315unboximpl = m4294boximpl.m4315unboximpl();
-        float intBitsToFloat = Float.intBitsToFloat((int) (m4315unboximpl >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (m4315unboximpl & 4294967295L));
+        Offset m5024boximpl = currentBoundsWhenMatched != null ? Offset.m5024boximpl(currentBoundsWhenMatched.m5070getTopLeftF1C5BW0()) : null;
+        Intrinsics.checkNotNull(m5024boximpl);
+        long m5045unboximpl = m5024boximpl.m5045unboximpl();
+        float intBitsToFloat = Float.intBitsToFloat((int) (m5045unboximpl >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (m5045unboximpl & 4294967295L));
         Path path = this.clipPathInOverlay;
         if (path != null) {
-            int m4538getIntersectrtfAjoo = ClipOp.Companion.m4538getIntersectrtfAjoo();
+            int m5268getIntersectrtfAjoo = ClipOp.Companion.m5268getIntersectrtfAjoo();
             DrawContext drawContext = drawScope.getDrawContext();
-            long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
+            long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5051clipPathmtrdDE(path, m4538getIntersectrtfAjoo);
+                drawContext.getTransform().mo5781clipPathmtrdDE(path, m5268getIntersectrtfAjoo);
                 drawScope.getDrawContext().getTransform().translate(intBitsToFloat, intBitsToFloat2);
                 GraphicsLayerKt.drawLayer(drawScope, layer);
                 return;
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
+                drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
             }
         }
         drawScope.getDrawContext().getTransform().translate(intBitsToFloat, intBitsToFloat2);

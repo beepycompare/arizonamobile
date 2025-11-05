@@ -231,13 +231,13 @@ public final class FlowLayoutOverflowState {
     public final void m764setOverflowMeasurableshBUhpc$foundation_layout(IntrinsicMeasurable intrinsicMeasurable, IntrinsicMeasurable intrinsicMeasurable2, boolean z, long j) {
         long m808constructorimpl = OrientationIndependentConstraints.m808constructorimpl(j, z ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
         if (intrinsicMeasurable != null) {
-            int mainAxisMin = FlowLayoutKt.mainAxisMin(intrinsicMeasurable, z, Constraints.m7216getMaxHeightimpl(m808constructorimpl));
+            int mainAxisMin = FlowLayoutKt.mainAxisMin(intrinsicMeasurable, z, Constraints.m7947getMaxHeightimpl(m808constructorimpl));
             this.seeMoreSize = IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(mainAxisMin, FlowLayoutKt.crossAxisMin(intrinsicMeasurable, z, mainAxisMin)));
             this.seeMoreMeasurable = intrinsicMeasurable instanceof Measurable ? (Measurable) intrinsicMeasurable : null;
             this.seeMorePlaceable = null;
         }
         if (intrinsicMeasurable2 != null) {
-            int mainAxisMin2 = FlowLayoutKt.mainAxisMin(intrinsicMeasurable2, z, Constraints.m7216getMaxHeightimpl(m808constructorimpl));
+            int mainAxisMin2 = FlowLayoutKt.mainAxisMin(intrinsicMeasurable2, z, Constraints.m7947getMaxHeightimpl(m808constructorimpl));
             this.collapseSize = IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(mainAxisMin2, FlowLayoutKt.crossAxisMin(intrinsicMeasurable2, z, mainAxisMin2)));
             this.collapseMeasurable = intrinsicMeasurable2 instanceof Measurable ? (Measurable) intrinsicMeasurable2 : null;
             this.collapsePlaceable = null;

@@ -19,7 +19,7 @@ public final class TextFieldSelectionStateKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverse-5zc-tL8  reason: not valid java name */
     public static final long m1666reverse5zctL8(long j) {
-        return TextRangeKt.TextRange(TextRange.m6721getEndimpl(j), TextRange.m6726getStartimpl(j));
+        return TextRangeKt.TextRange(TextRange.m7452getEndimpl(j), TextRange.m7457getStartimpl(j));
     }
 
     public static final Function0<Unit> menuItem(final TextFieldSelectionState textFieldSelectionState, boolean z, final TextToolbarState textToolbarState, final Function0<Unit> function0) {

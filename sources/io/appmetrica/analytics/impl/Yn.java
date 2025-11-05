@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Yn {
+/* loaded from: classes3.dex */
+public abstract class Yn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Lb f764a;
+    public final InterfaceC0113ab f776a;
 
-    public Yn(Lb lb) {
-        this.f764a = lb;
+    public Yn(InterfaceC0113ab interfaceC0113ab) {
+        this.f776a = interfaceC0113ab;
     }
 }

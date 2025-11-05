@@ -16,7 +16,7 @@ final class TileModeVerificationHelper {
     }
 
     /* renamed from: getComposeTileModeDecal-3opZhB0  reason: not valid java name */
-    public final int m4943getComposeTileModeDecal3opZhB0() {
-        return TileMode.Companion.m4940getDecal3opZhB0();
+    public final int m5673getComposeTileModeDecal3opZhB0() {
+        return TileMode.Companion.m5670getDecal3opZhB0();
     }
 }

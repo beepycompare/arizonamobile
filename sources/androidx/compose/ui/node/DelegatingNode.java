@@ -78,7 +78,7 @@ public abstract class DelegatingNode extends Modifier.Node {
         node.setParent$ui_release(this);
         updateNodeKindSet(getKindSet$ui_release() | calculateNodeKindSetFromIncludingDelegates, false);
         if (isAttached()) {
-            if ((calculateNodeKindSetFromIncludingDelegates & NodeKind.m6258constructorimpl(2)) != 0 && (kindSet$ui_release & NodeKind.m6258constructorimpl(2)) == 0) {
+            if ((calculateNodeKindSetFromIncludingDelegates & NodeKind.m6988constructorimpl(2)) != 0 && (kindSet$ui_release & NodeKind.m6988constructorimpl(2)) == 0) {
                 NodeChain nodes$ui_release = DelegatableNodeKt.requireLayoutNode(this).getNodes$ui_release();
                 getNode().updateCoordinator$ui_release(null);
                 nodes$ui_release.syncCoordinators();
@@ -114,7 +114,7 @@ public abstract class DelegatingNode extends Modifier.Node {
                 int kindSet$ui_release = getKindSet$ui_release();
                 int calculateNodeKindSetFromIncludingDelegates = NodeKindKt.calculateNodeKindSetFromIncludingDelegates(this);
                 updateNodeKindSet(calculateNodeKindSetFromIncludingDelegates, true);
-                if (isAttached() && (kindSet$ui_release & NodeKind.m6258constructorimpl(2)) != 0 && (NodeKind.m6258constructorimpl(2) & calculateNodeKindSetFromIncludingDelegates) == 0) {
+                if (isAttached() && (kindSet$ui_release & NodeKind.m6988constructorimpl(2)) != 0 && (NodeKind.m6988constructorimpl(2) & calculateNodeKindSetFromIncludingDelegates) == 0) {
                     NodeChain nodes$ui_release = DelegatableNodeKt.requireLayoutNode(this).getNodes$ui_release();
                     getNode().updateCoordinator$ui_release(null);
                     nodes$ui_release.syncCoordinators();
@@ -129,7 +129,7 @@ public abstract class DelegatingNode extends Modifier.Node {
 
     private final void validateDelegateKindSet(int i, Modifier.Node node) {
         int kindSet$ui_release = getKindSet$ui_release();
-        if ((i & NodeKind.m6258constructorimpl(2)) == 0 || (NodeKind.m6258constructorimpl(2) & kindSet$ui_release) == 0 || (this instanceof LayoutModifierNode)) {
+        if ((i & NodeKind.m6988constructorimpl(2)) == 0 || (NodeKind.m6988constructorimpl(2) & kindSet$ui_release) == 0 || (this instanceof LayoutModifierNode)) {
             return;
         }
         InlineClassHelperKt.throwIllegalStateException("Delegating to multiple LayoutModifierNodes without the delegating node implementing LayoutModifierNode itself is not allowed.\nDelegating Node: " + this + "\nDelegate Node: " + node);

@@ -3,8 +3,8 @@ package androidx.compose.material3;
 import androidx.compose.foundation.layout.BoxKt;
 import androidx.compose.foundation.layout.BoxScopeInstance;
 import androidx.compose.foundation.layout.PaddingKt;
+import androidx.compose.material3.internal.LayoutUtilKt;
 import androidx.compose.material3.internal.ProvideContentColorTextStyleKt;
-import androidx.compose.material3.internal.TextFieldImplKt;
 import androidx.compose.material3.tokens.ListTokens;
 import androidx.compose.material3.tokens.TypographyKeyTokens;
 import androidx.compose.runtime.Applier;
@@ -50,15 +50,33 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: ListItem.kt */
-@Metadata(d1 = {"\u0000t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\u001a©\u0001\u0010\u0016\u001a\u00020\u00172\u0011\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\u00170\u0019¢\u0006\u0002\b\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\u0015\b\u0002\u0010\u001d\u001a\u000f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019¢\u0006\u0002\b\u001a2\u0015\b\u0002\u0010\u001e\u001a\u000f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019¢\u0006\u0002\b\u001a2\u0015\b\u0002\u0010\u001f\u001a\u000f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019¢\u0006\u0002\b\u001a2\u0015\b\u0002\u0010 \u001a\u000f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019¢\u0006\u0002\b\u001a2\b\b\u0002\u0010!\u001a\u00020\"2\b\b\u0002\u0010#\u001a\u00020\u00012\b\b\u0002\u0010$\u001a\u00020\u0001H\u0007ø\u0001\u0000¢\u0006\u0004\b%\u0010&\u001at\u0010'\u001a\u00020\u00172\u0013\u0010(\u001a\u000f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019¢\u0006\u0002\b\u001a2\u0013\u0010)\u001a\u000f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019¢\u0006\u0002\b\u001a2\u0011\u0010*\u001a\r\u0012\u0004\u0012\u00020\u00170\u0019¢\u0006\u0002\b\u001a2\u0013\u0010+\u001a\u000f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019¢\u0006\u0002\b\u001a2\u0013\u0010,\u001a\u000f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019¢\u0006\u0002\b\u001aH\u0003¢\u0006\u0002\u0010-\u001a5\u0010.\u001a\u00020\u00172\u0006\u0010/\u001a\u0002002\u0006\u00101\u001a\u0002022\u0011\u00103\u001a\r\u0012\u0004\u0012\u00020\u00170\u0019¢\u0006\u0002\b\u001aH\u0003ø\u0001\u0000¢\u0006\u0004\b4\u00105\u001a\u001a\u00106\u001a\u00020\u00012\u0006\u00107\u001a\u000208H\u0002ø\u0001\u0000¢\u0006\u0004\b9\u0010:\u001aV\u0010;\u001a\u00020<*\u00020=2\u0006\u0010>\u001a\u00020<2\u0006\u0010?\u001a\u00020<2\u0006\u0010@\u001a\u00020<2\u0006\u0010A\u001a\u00020<2\u0006\u0010B\u001a\u00020<2\u0006\u00107\u001a\u0002082\u0006\u00106\u001a\u00020<2\u0006\u0010C\u001a\u00020DH\u0002ø\u0001\u0000¢\u0006\u0004\bE\u0010F\u001aN\u0010G\u001a\u00020<*\u00020=2\u0006\u0010H\u001a\u00020<2\u0006\u0010I\u001a\u00020<2\u0006\u0010J\u001a\u00020<2\u0006\u0010K\u001a\u00020<2\u0006\u0010L\u001a\u00020<2\u0006\u0010M\u001a\u00020<2\u0006\u0010C\u001a\u00020DH\u0002ø\u0001\u0000¢\u0006\u0004\bN\u0010O\u001a\u0014\u0010P\u001a\u00020Q*\u00020R2\u0006\u0010S\u001a\u00020<H\u0002\u001an\u0010T\u001a\u00020U*\u00020V2\u0006\u0010W\u001a\u00020<2\u0006\u0010X\u001a\u00020<2\b\u0010Y\u001a\u0004\u0018\u00010Z2\b\u0010[\u001a\u0004\u0018\u00010Z2\b\u0010\\\u001a\u0004\u0018\u00010Z2\b\u0010]\u001a\u0004\u0018\u00010Z2\b\u0010^\u001a\u0004\u0018\u00010Z2\u0006\u0010_\u001a\u00020Q2\u0006\u0010`\u001a\u00020<2\u0006\u0010a\u001a\u00020<2\u0006\u0010b\u001a\u00020<H\u0002\u001a\u0014\u0010c\u001a\u00020<*\u00020<2\u0006\u0010d\u001a\u00020<H\u0002\"\u001e\u0010\u0000\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010\u0006\u0012\u0004\b\u0002\u0010\u0003\u001a\u0004\b\u0004\u0010\u0005\"\u001e\u0010\u0007\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010\u0006\u0012\u0004\b\b\u0010\u0003\u001a\u0004\b\t\u0010\u0005\"\u001e\u0010\n\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010\u0006\u0012\u0004\b\u000b\u0010\u0003\u001a\u0004\b\f\u0010\u0005\"\u001e\u0010\r\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010\u0006\u0012\u0004\b\u000e\u0010\u0003\u001a\u0004\b\u000f\u0010\u0005\"\u001e\u0010\u0010\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010\u0006\u0012\u0004\b\u0011\u0010\u0003\u001a\u0004\b\u0012\u0010\u0005\"\u001e\u0010\u0013\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010\u0006\u0012\u0004\b\u0014\u0010\u0003\u001a\u0004\b\u0015\u0010\u0005\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006e"}, d2 = {"LeadingContentEndPadding", "Landroidx/compose/ui/unit/Dp;", "getLeadingContentEndPadding$annotations", "()V", "getLeadingContentEndPadding", "()F", "F", "ListItemEndPadding", "getListItemEndPadding$annotations", "getListItemEndPadding", "ListItemStartPadding", "getListItemStartPadding$annotations", "getListItemStartPadding", "ListItemThreeLineVerticalPadding", "getListItemThreeLineVerticalPadding$annotations", "getListItemThreeLineVerticalPadding", "ListItemVerticalPadding", "getListItemVerticalPadding$annotations", "getListItemVerticalPadding", "TrailingContentStartPadding", "getTrailingContentStartPadding$annotations", "getTrailingContentStartPadding", "ListItem", "", "headlineContent", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "modifier", "Landroidx/compose/ui/Modifier;", "overlineContent", "supportingContent", "leadingContent", "trailingContent", "colors", "Landroidx/compose/material3/ListItemColors;", "tonalElevation", "shadowElevation", "ListItem-HXNGIdc", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/material3/ListItemColors;FFLandroidx/compose/runtime/Composer;II)V", "ListItemLayout", "leading", "trailing", "headline", "overline", "supporting", "(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "ProvideTextStyleFromToken", "color", "Landroidx/compose/ui/graphics/Color;", "textToken", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", FirebaseAnalytics.Param.CONTENT, "ProvideTextStyleFromToken-3J-VO9M", "(JLandroidx/compose/material3/tokens/TypographyKeyTokens;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "verticalPadding", "listItemType", "Landroidx/compose/material3/ListItemType;", "verticalPadding-yh95HIg", "(I)F", "calculateHeight", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "leadingHeight", "trailingHeight", "headlineHeight", "overlineHeight", "supportingHeight", "constraints", "Landroidx/compose/ui/unit/Constraints;", "calculateHeight-N4Jib3Y", "(Landroidx/compose/ui/layout/IntrinsicMeasureScope;IIIIIIIJ)I", "calculateWidth", "leadingWidth", "trailingWidth", "headlineWidth", "overlineWidth", "supportingWidth", "horizontalPadding", "calculateWidth-yeHjK3Y", "(Landroidx/compose/ui/layout/IntrinsicMeasureScope;IIIIIIJ)I", "isSupportingMultilineHeuristic", "", "Landroidx/compose/ui/unit/Density;", "estimatedSupportingHeight", "place", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "width", "height", "leadingPlaceable", "Landroidx/compose/ui/layout/Placeable;", "trailingPlaceable", "headlinePlaceable", "overlinePlaceable", "supportingPlaceable", "isThreeLine", "startPadding", "endPadding", "topPadding", "subtractConstraintSafely", "n", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000v\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a¦\u0001\u0010\u0000\u001a\u00020\u00012\u0011\u0010\u0002\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\u0015\b\u0002\u0010\u0007\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0015\b\u0002\u0010\b\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0015\b\u0002\u0010\t\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0015\b\u0002\u0010\n\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u000eH\u0007¢\u0006\u0004\b\u0010\u0010\u0011\u001at\u0010\u0012\u001a\u00020\u00012\u0013\u0010\u0013\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0013\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0011\u0010\u0015\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u00042\u0013\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0013\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u0004H\u0003¢\u0006\u0002\u0010\u0018\u001aK\u0010\u0019\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001a2\u0006\u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020\u001a2\u0006\u0010 \u001a\u00020\u001a2\u0006\u0010!\u001a\u00020\u001a2\u0006\u0010\"\u001a\u00020#H\u0002¢\u0006\u0004\b$\u0010%\u001aS\u0010&\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010'\u001a\u00020\u001a2\u0006\u0010(\u001a\u00020\u001a2\u0006\u0010)\u001a\u00020\u001a2\u0006\u0010*\u001a\u00020\u001a2\u0006\u0010+\u001a\u00020\u001a2\u0006\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u001a2\u0006\u0010\"\u001a\u00020#H\u0002¢\u0006\u0004\b/\u00100\u001an\u00101\u001a\u000202*\u0002032\u0006\u00104\u001a\u00020\u001a2\u0006\u00105\u001a\u00020\u001a2\b\u00106\u001a\u0004\u0018\u0001072\b\u00108\u001a\u0004\u0018\u0001072\b\u00109\u001a\u0004\u0018\u0001072\b\u0010:\u001a\u0004\u0018\u0001072\b\u0010;\u001a\u0004\u0018\u0001072\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020\u001a2\u0006\u0010?\u001a\u00020\u001a2\u0006\u0010@\u001a\u00020\u001aH\u0002\u001a2\u0010A\u001a\u00020\u00012\u0006\u0010B\u001a\u00020C2\u0006\u0010D\u001a\u00020E2\u0011\u0010F\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0004H\u0003¢\u0006\u0004\bG\u0010H\u001a\u0014\u0010^\u001a\u00020=*\u00020_2\u0006\u0010`\u001a\u00020\u001aH\u0002\u001a\u0017\u0010.\u001a\u00020\u000e2\u0006\u0010,\u001a\u00020-H\u0002¢\u0006\u0004\ba\u0010b\"\u001e\u0010I\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bJ\u0010K\u001a\u0004\bL\u0010M\"\u001e\u0010O\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bP\u0010K\u001a\u0004\bQ\u0010M\"\u001e\u0010R\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bS\u0010K\u001a\u0004\bT\u0010M\"\u001e\u0010U\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bV\u0010K\u001a\u0004\bW\u0010M\"\u001e\u0010X\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bY\u0010K\u001a\u0004\bZ\u0010M\"\u001e\u0010[\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\b\\\u0010K\u001a\u0004\b]\u0010M¨\u0006c"}, d2 = {"ListItem", "", "headlineContent", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "modifier", "Landroidx/compose/ui/Modifier;", "overlineContent", "supportingContent", "leadingContent", "trailingContent", "colors", "Landroidx/compose/material3/ListItemColors;", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "shadowElevation", "ListItem-HXNGIdc", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/material3/ListItemColors;FFLandroidx/compose/runtime/Composer;II)V", "ListItemLayout", "leading", "trailing", "headline", "overline", "supporting", "(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "calculateWidth", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "leadingWidth", "trailingWidth", "headlineWidth", "overlineWidth", "supportingWidth", "horizontalPadding", "constraints", "Landroidx/compose/ui/unit/Constraints;", "calculateWidth-yeHjK3Y", "(Landroidx/compose/ui/layout/IntrinsicMeasureScope;IIIIIIJ)I", "calculateHeight", "leadingHeight", "trailingHeight", "headlineHeight", "overlineHeight", "supportingHeight", "listItemType", "Landroidx/compose/material3/ListItemType;", "verticalPadding", "calculateHeight-N4Jib3Y", "(Landroidx/compose/ui/layout/IntrinsicMeasureScope;IIIIIIIJ)I", "place", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "width", "height", "leadingPlaceable", "Landroidx/compose/ui/layout/Placeable;", "trailingPlaceable", "headlinePlaceable", "overlinePlaceable", "supportingPlaceable", "isThreeLine", "", "startPadding", "endPadding", "topPadding", "ProvideTextStyleFromToken", "color", "Landroidx/compose/ui/graphics/Color;", "textToken", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", FirebaseAnalytics.Param.CONTENT, "ProvideTextStyleFromToken-3J-VO9M", "(JLandroidx/compose/material3/tokens/TypographyKeyTokens;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "ListItemVerticalPadding", "getListItemVerticalPadding$annotations", "()V", "getListItemVerticalPadding", "()F", "F", "ListItemThreeLineVerticalPadding", "getListItemThreeLineVerticalPadding$annotations", "getListItemThreeLineVerticalPadding", "ListItemStartPadding", "getListItemStartPadding$annotations", "getListItemStartPadding", "ListItemEndPadding", "getListItemEndPadding$annotations", "getListItemEndPadding", "LeadingContentEndPadding", "getLeadingContentEndPadding$annotations", "getLeadingContentEndPadding", "TrailingContentStartPadding", "getTrailingContentStartPadding$annotations", "getTrailingContentStartPadding", "isSupportingMultilineHeuristic", "Landroidx/compose/ui/unit/Density;", "estimatedSupportingHeight", "verticalPadding-yh95HIg", "(I)F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ListItemKt {
     private static final float LeadingContentEndPadding;
     private static final float ListItemEndPadding;
     private static final float ListItemStartPadding;
     private static final float TrailingContentStartPadding;
-    private static final float ListItemVerticalPadding = Dp.m7264constructorimpl(8);
-    private static final float ListItemThreeLineVerticalPadding = Dp.m7264constructorimpl(12);
+    private static final float ListItemVerticalPadding = Dp.m7995constructorimpl(8);
+    private static final float ListItemThreeLineVerticalPadding = Dp.m7995constructorimpl(12);
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ListItemLayout$lambda$8(Function2 function2, Function2 function22, Function2 function23, Function2 function24, Function2 function25, int i, Composer composer, int i2) {
+        ListItemLayout(function2, function22, function23, function24, function25, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ListItem_HXNGIdc$lambda$6(Function2 function2, Modifier modifier, Function2 function22, Function2 function23, Function2 function24, Function2 function25, ListItemColors listItemColors, float f, float f2, int i, int i2, Composer composer, int i3) {
+        m2521ListItemHXNGIdc(function2, modifier, function22, function23, function24, function25, listItemColors, f, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ProvideTextStyleFromToken_3J_VO9M$lambda$12(long j, TypographyKeyTokens typographyKeyTokens, Function2 function2, int i, Composer composer, int i2) {
+        m2522ProvideTextStyleFromToken3JVO9M(j, typographyKeyTokens, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
 
     public static /* synthetic */ void getLeadingContentEndPadding$annotations() {
     }
@@ -78,38 +96,23 @@ public final class ListItemKt {
     public static /* synthetic */ void getTrailingContentStartPadding$annotations() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int subtractConstraintSafely(int i, int i2) {
-        return i == Integer.MAX_VALUE ? i : i - i2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0172  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0176  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x017d  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0180  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0185  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x01a9  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x01b3  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x01ba  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x01be  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x01c9  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x01d7  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x01fe  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0129  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0134  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x01bc  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x01d7  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01e3  */
     /* JADX WARN: Removed duplicated region for block: B:144:0x0201  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x021f  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0222  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0240  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0245  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0265  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0268  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x02df  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x02f3  */
-    /* JADX WARN: Removed duplicated region for block: B:165:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x020d  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x022b  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0265  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x029d  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0306  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0314  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x032a  */
+    /* JADX WARN: Removed duplicated region for block: B:164:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0067  */
@@ -128,7 +131,7 @@ public final class ListItemKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2316ListItemHXNGIdc(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, ListItemColors listItemColors, float f, float f2, Composer composer, final int i, final int i2) {
+    public static final void m2521ListItemHXNGIdc(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, ListItemColors listItemColors, float f, float f2, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         int i4;
@@ -136,37 +139,39 @@ public final class ListItemKt {
         int i5;
         final Object obj2;
         int i6;
-        int i7;
         Object obj3;
+        int i7;
+        Object obj4;
         int i8;
         int i9;
         int i10;
         int i11;
-        float f3;
-        Composer composer2;
-        final Function2<? super Composer, ? super Integer, Unit> function26;
-        final Object obj4;
         int i12;
-        int i13;
-        Composer composer3;
-        ListItemColors listItemColors2;
-        float f4;
-        float f5;
-        final ListItemColors listItemColors3;
-        Function2<? super Composer, ? super Integer, Unit> function27;
-        ComposableLambda rememberComposableLambda;
-        final ComposableLambda composableLambda;
+        Composer composer2;
+        final float f3;
+        final Modifier modifier2;
+        final Function2<? super Composer, ? super Integer, Unit> function26;
+        final Function2<? super Composer, ? super Integer, Unit> function27;
         final Function2<? super Composer, ? super Integer, Unit> function28;
         final Function2<? super Composer, ? super Integer, Unit> function29;
-        final Function2<? super Composer, ? super Integer, Unit> function210;
-        final float f6;
-        final float f7;
-        final ListItemColors listItemColors4;
-        final Modifier modifier2;
-        final Function2<? super Composer, ? super Integer, Unit> function211;
+        final ListItemColors listItemColors2;
+        final float f4;
         ScopeUpdateScope endRestartGroup;
-        Composer startRestartGroup = composer.startRestartGroup(-1647707763);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ListItem)P(1,3,4,6,2,8!1,7:c#ui.unit.Dp,5:c#ui.unit.Dp)100@4555L8,104@4735L176,157@6562L5,162@6761L288,155@6438L611:ListItem.kt#uh7d8r");
+        ListItemColors listItemColors3;
+        int i13;
+        float f5;
+        int i14;
+        float f6;
+        final ListItemColors listItemColors4;
+        final Function2<? super Composer, ? super Integer, Unit> function210;
+        ComposableLambda rememberComposableLambda;
+        ComposableLambda rememberComposableLambda2;
+        Function2<? super Composer, ? super Integer, Unit> function211;
+        ComposableLambda rememberComposableLambda3;
+        final ComposableLambda composableLambda;
+        Object rememberedValue;
+        Composer startRestartGroup = composer.startRestartGroup(487133126);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ListItem)N(headlineContent,modifier,overlineContent,supportingContent,leadingContent,trailingContent,colors,tonalElevation:c#ui.unit.Dp,shadowElevation:c#ui.unit.Dp)105@4827L177,157@6607L2,158@6659L5,163@6858L288,156@6535L611:ListItem.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -174,8 +179,8 @@ public final class ListItemKt {
         } else {
             i3 = i;
         }
-        int i14 = i2 & 2;
-        if (i14 != 0) {
+        int i15 = i2 & 2;
+        if (i15 != 0) {
             i3 |= 48;
         } else if ((i & 48) == 0) {
             companion = modifier;
@@ -196,13 +201,14 @@ public final class ListItemKt {
                     if (i6 == 0) {
                         i3 |= 24576;
                     } else if ((i & 24576) == 0) {
-                        i3 |= startRestartGroup.changedInstance(function24) ? 16384 : 8192;
+                        obj3 = function24;
+                        i3 |= startRestartGroup.changedInstance(obj3) ? 16384 : 8192;
                         i7 = i2 & 32;
                         if (i7 != 0) {
                             i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
                         } else if ((196608 & i) == 0) {
-                            obj3 = function25;
-                            i3 |= startRestartGroup.changedInstance(obj3) ? 131072 : 65536;
+                            obj4 = function25;
+                            i3 |= startRestartGroup.changedInstance(obj4) ? 131072 : 65536;
                             if ((i & 1572864) == 0) {
                                 i3 |= ((i2 & 64) == 0 && startRestartGroup.changed(listItemColors)) ? 1048576 : 524288;
                             }
@@ -217,14 +223,27 @@ public final class ListItemKt {
                                     i3 |= 100663296;
                                 } else if ((i & 100663296) == 0) {
                                     i11 = i10;
-                                    f3 = f2;
-                                    i3 |= startRestartGroup.changed(f3) ? 67108864 : 33554432;
-                                    composer2 = startRestartGroup;
-                                    if ((i3 & 38347923) == 38347922 || !composer2.getSkipping()) {
-                                        composer2.startDefaults();
+                                    i3 |= startRestartGroup.changed(f2) ? 67108864 : 33554432;
+                                    i12 = i3;
+                                    if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
+                                        startRestartGroup.startDefaults();
+                                        ComposerKt.sourceInformation(startRestartGroup, "101@4647L8");
                                         ComposableLambda composableLambda2 = null;
-                                        if ((i & 1) != 0 || composer2.getDefaultsInvalid()) {
-                                            if (i14 != 0) {
+                                        if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                            startRestartGroup.skipToGroupEnd();
+                                            if ((i2 & 64) != 0) {
+                                                listItemColors4 = listItemColors;
+                                                f6 = f;
+                                                f5 = f2;
+                                                i14 = i12 & (-3670017);
+                                            } else {
+                                                listItemColors4 = listItemColors;
+                                                f6 = f;
+                                                f5 = f2;
+                                                i14 = i12;
+                                            }
+                                        } else {
+                                            if (i15 != 0) {
                                                 companion = Modifier.Companion;
                                             }
                                             if (i4 != 0) {
@@ -233,379 +252,418 @@ public final class ListItemKt {
                                             if (i5 != 0) {
                                                 obj2 = null;
                                             }
-                                            function26 = i6 == 0 ? null : function24;
-                                            obj4 = i7 == 0 ? null : obj3;
-                                            if ((i2 & 64) == 0) {
-                                                i12 = i9;
-                                                i13 = i11;
-                                                listItemColors2 = ListItemDefaults.INSTANCE.m2314colorsJ08w3E(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, composer2, 805306368, 511);
-                                                composer3 = composer2;
-                                                i3 &= -3670017;
-                                            } else {
-                                                i12 = i9;
-                                                i13 = i11;
-                                                composer3 = composer2;
-                                                listItemColors2 = listItemColors;
+                                            if (i6 != 0) {
+                                                obj3 = null;
                                             }
-                                            float m2315getElevationD9Ej5fM = i12 == 0 ? ListItemDefaults.INSTANCE.m2315getElevationD9Ej5fM() : f;
-                                            if (i13 == 0) {
-                                                f5 = m2315getElevationD9Ej5fM;
-                                                f4 = ListItemDefaults.INSTANCE.m2315getElevationD9Ej5fM();
-                                            } else {
-                                                f4 = f2;
-                                                f5 = m2315getElevationD9Ej5fM;
+                                            if (i7 != 0) {
+                                                obj4 = null;
                                             }
-                                            listItemColors3 = listItemColors2;
-                                        } else {
-                                            composer2.skipToGroupEnd();
                                             if ((i2 & 64) != 0) {
-                                                i3 &= -3670017;
+                                                listItemColors3 = ListItemDefaults.INSTANCE.colors(startRestartGroup, 6);
+                                                i13 = i12 & (-3670017);
+                                            } else {
+                                                listItemColors3 = listItemColors;
+                                                i13 = i12;
                                             }
-                                            function26 = function24;
-                                            listItemColors3 = listItemColors;
-                                            f5 = f;
-                                            f4 = f3;
-                                            obj4 = obj3;
-                                            composer3 = composer2;
-                                        }
-                                        composer3.endDefaults();
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-1647707763, i3, -1, "androidx.compose.material3.ListItem (ListItem.kt:103)");
-                                        }
-                                        final ComposableLambda rememberComposableLambda2 = ComposableLambdaKt.rememberComposableLambda(-403249643, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
-
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                invoke(composer4, num.intValue());
-                                                return Unit.INSTANCE;
-                                            }
-
-                                            public final void invoke(Composer composer4, int i15) {
-                                                ComposerKt.sourceInformation(composer4, "C105@4745L160:ListItem.kt#uh7d8r");
-                                                if ((i15 & 3) != 2 || !composer4.getSkipping()) {
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventStart(-403249643, i15, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:105)");
-                                                    }
-                                                    ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2309headlineColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer4, 48);
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventEnd();
-                                                        return;
-                                                    }
-                                                    return;
+                                            float m2516getElevationD9Ej5fM = i9 != 0 ? ListItemDefaults.INSTANCE.m2516getElevationD9Ej5fM() : f;
+                                            if (i11 == 0) {
+                                                f5 = f2;
+                                                i14 = i13;
+                                                f6 = m2516getElevationD9Ej5fM;
+                                                function29 = obj4;
+                                                listItemColors4 = listItemColors3;
+                                                function210 = obj3;
+                                                startRestartGroup.endDefaults();
+                                                if (ComposerKt.isTraceInProgress()) {
+                                                    ComposerKt.traceEventStart(487133126, i14, -1, "androidx.compose.material3.ListItem (ListItem.kt:104)");
                                                 }
-                                                composer4.skipToGroupEnd();
-                                            }
-                                        }, composer3, 54);
-                                        composer3.startReplaceGroup(1640970492);
-                                        ComposerKt.sourceInformation(composer3, "*113@5021L204");
-                                        ComposableLambda rememberComposableLambda3 = obj2 != null ? null : ComposableLambdaKt.rememberComposableLambda(-1020860251, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedSupportingContent$1$1
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
-
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                invoke(composer4, num.intValue());
-                                                return Unit.INSTANCE;
-                                            }
-
-                                            public final void invoke(Composer composer4, int i15) {
-                                                ComposerKt.sourceInformation(composer4, "C114@5039L172:ListItem.kt#uh7d8r");
-                                                if ((i15 & 3) != 2 || !composer4.getSkipping()) {
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventStart(-1020860251, i15, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:114)");
+                                                final ComposableLambda rememberComposableLambda4 = ComposableLambdaKt.rememberComposableLambda(629852750, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
+                                                    @Override // kotlin.jvm.functions.Function2
+                                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                        invoke(composer3, num.intValue());
+                                                        return Unit.INSTANCE;
                                                     }
-                                                    ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2312supportingColor0d7_KjU$material3_release(), ListTokens.INSTANCE.getListItemSupportingTextFont(), obj2, composer4, 48);
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventEnd();
-                                                        return;
-                                                    }
-                                                    return;
-                                                }
-                                                composer4.skipToGroupEnd();
-                                            }
-                                        }, composer3, 54);
-                                        composer3.endReplaceGroup();
-                                        composer3.startReplaceGroup(1640980724);
-                                        ComposerKt.sourceInformation(composer3, "*123@5341L196");
-                                        ComposableLambda rememberComposableLambda4 = obj != null ? null : ComposableLambdaKt.rememberComposableLambda(-764441232, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedOverlineContent$1$1
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
 
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                invoke(composer4, num.intValue());
-                                                return Unit.INSTANCE;
-                                            }
-
-                                            public final void invoke(Composer composer4, int i15) {
-                                                ComposerKt.sourceInformation(composer4, "C124@5359L164:ListItem.kt#uh7d8r");
-                                                if ((i15 & 3) != 2 || !composer4.getSkipping()) {
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventStart(-764441232, i15, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:124)");
-                                                    }
-                                                    ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2311overlineColor0d7_KjU$material3_release(), ListTokens.INSTANCE.getListItemOverlineFont(), obj, composer4, 48);
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventEnd();
-                                                        return;
-                                                    }
-                                                    return;
-                                                }
-                                                composer4.skipToGroupEnd();
-                                            }
-                                        }, composer3, 54);
-                                        composer3.endReplaceGroup();
-                                        composer3.startReplaceGroup(1640990750);
-                                        ComposerKt.sourceInformation(composer3, "*133@5651L302");
-                                        if (function26 != null) {
-                                            function27 = function26;
-                                            rememberComposableLambda = null;
-                                        } else {
-                                            function27 = function26;
-                                            rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(1400509200, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedLeadingContent$1$1
-                                                /* JADX INFO: Access modifiers changed from: package-private */
-                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                /* JADX WARN: Multi-variable type inference failed */
-                                                {
-                                                    super(2);
-                                                }
-
-                                                @Override // kotlin.jvm.functions.Function2
-                                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                    invoke(composer4, num.intValue());
-                                                    return Unit.INSTANCE;
-                                                }
-
-                                                public final void invoke(Composer composer4, int i15) {
-                                                    ComposerKt.sourceInformation(composer4, "C134@5669L270:ListItem.kt#uh7d8r");
-                                                    if ((i15 & 3) != 2 || !composer4.getSkipping()) {
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(1400509200, i15, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:134)");
-                                                        }
-                                                        Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, ListItemKt.getLeadingContentEndPadding(), 0.0f, 11, null);
-                                                        ListItemColors listItemColors5 = ListItemColors.this;
-                                                        Function2<Composer, Integer, Unit> function212 = function26;
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                                        MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                                        int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                                        CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, m846paddingqDBjuR0$default);
-                                                        Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                                        if (!(composer4.getApplier() instanceof Applier)) {
-                                                            ComposablesKt.invalidApplier();
-                                                        }
-                                                        composer4.startReusableNode();
-                                                        if (composer4.getInserting()) {
-                                                            composer4.createNode(constructor);
-                                                        } else {
-                                                            composer4.useNode();
-                                                        }
-                                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                                        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                                        }
-                                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                                        BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, 690160162, "C135@5745L176:ListItem.kt#uh7d8r");
-                                                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(listItemColors5.m2310leadingIconColorvNxB06k$material3_release(true))), function212, composer4, ProvidedValue.$stable);
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        composer4.endNode();
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventEnd();
+                                                    public final void invoke(Composer composer3, int i16) {
+                                                        ComposerKt.sourceInformation(composer3, "C106@4837L161:ListItem.kt#uh7d8r");
+                                                        if (composer3.shouldExecute((i16 & 3) != 2, i16 & 1)) {
+                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                ComposerKt.traceEventStart(629852750, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:106)");
+                                                            }
+                                                            ListItemKt.m2522ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2510headlineColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer3, 48);
+                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                ComposerKt.traceEventEnd();
+                                                                return;
+                                                            }
                                                             return;
                                                         }
-                                                        return;
+                                                        composer3.skipToGroupEnd();
                                                     }
-                                                    composer4.skipToGroupEnd();
-                                                }
-                                            }, composer3, 54);
-                                        }
-                                        composer3.endReplaceGroup();
-                                        composer3.startReplaceGroup(1641004177);
-                                        ComposerKt.sourceInformation(composer3, "*144@6069L353");
-                                        if (obj4 != null) {
-                                            composableLambda = rememberComposableLambda;
-                                        } else {
-                                            composableLambda = rememberComposableLambda;
-                                            composableLambda2 = ComposableLambdaKt.rememberComposableLambda(1512306332, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedTrailingContent$1$1
-                                                /* JADX INFO: Access modifiers changed from: package-private */
-                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                /* JADX WARN: Multi-variable type inference failed */
-                                                {
-                                                    super(2);
-                                                }
+                                                }, startRestartGroup, 54);
+                                                if (obj2 != null) {
+                                                    startRestartGroup.startReplaceGroup(-510713870);
+                                                    startRestartGroup.endReplaceGroup();
+                                                    rememberComposableLambda = null;
+                                                } else {
+                                                    startRestartGroup.startReplaceGroup(-510713869);
+                                                    ComposerKt.sourceInformation(startRestartGroup, "*114@5114L205");
+                                                    rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(-1291211644, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedSupportingContent$1$1
+                                                        @Override // kotlin.jvm.functions.Function2
+                                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                            invoke(composer3, num.intValue());
+                                                            return Unit.INSTANCE;
+                                                        }
 
-                                                @Override // kotlin.jvm.functions.Function2
-                                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                    invoke(composer4, num.intValue());
-                                                    return Unit.INSTANCE;
+                                                        public final void invoke(Composer composer3, int i16) {
+                                                            ComposerKt.sourceInformation(composer3, "C115@5132L173:ListItem.kt#uh7d8r");
+                                                            if (composer3.shouldExecute((i16 & 3) != 2, i16 & 1)) {
+                                                                if (ComposerKt.isTraceInProgress()) {
+                                                                    ComposerKt.traceEventStart(-1291211644, i16, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:115)");
+                                                                }
+                                                                ListItemKt.m2522ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2513supportingColor0d7_KjU$material3(), ListTokens.INSTANCE.getListItemSupportingTextFont(), obj2, composer3, 48);
+                                                                if (ComposerKt.isTraceInProgress()) {
+                                                                    ComposerKt.traceEventEnd();
+                                                                    return;
+                                                                }
+                                                                return;
+                                                            }
+                                                            composer3.skipToGroupEnd();
+                                                        }
+                                                    }, startRestartGroup, 54);
+                                                    startRestartGroup.endReplaceGroup();
                                                 }
+                                                if (obj != null) {
+                                                    startRestartGroup.startReplaceGroup(-510395686);
+                                                    startRestartGroup.endReplaceGroup();
+                                                    rememberComposableLambda2 = null;
+                                                } else {
+                                                    startRestartGroup.startReplaceGroup(-510395685);
+                                                    ComposerKt.sourceInformation(startRestartGroup, "*124@5435L197");
+                                                    rememberComposableLambda2 = ComposableLambdaKt.rememberComposableLambda(372414991, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedOverlineContent$1$1
+                                                        @Override // kotlin.jvm.functions.Function2
+                                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                            invoke(composer3, num.intValue());
+                                                            return Unit.INSTANCE;
+                                                        }
 
-                                                public final void invoke(Composer composer4, int i15) {
-                                                    ComposerKt.sourceInformation(composer4, "C145@6087L321:ListItem.kt#uh7d8r");
-                                                    if ((i15 & 3) != 2 || !composer4.getSkipping()) {
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(1512306332, i15, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:145)");
+                                                        public final void invoke(Composer composer3, int i16) {
+                                                            ComposerKt.sourceInformation(composer3, "C125@5453L165:ListItem.kt#uh7d8r");
+                                                            if (composer3.shouldExecute((i16 & 3) != 2, i16 & 1)) {
+                                                                if (ComposerKt.isTraceInProgress()) {
+                                                                    ComposerKt.traceEventStart(372414991, i16, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:125)");
+                                                                }
+                                                                ListItemKt.m2522ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2512overlineColor0d7_KjU$material3(), ListTokens.INSTANCE.getListItemOverlineFont(), obj, composer3, 48);
+                                                                if (ComposerKt.isTraceInProgress()) {
+                                                                    ComposerKt.traceEventEnd();
+                                                                    return;
+                                                                }
+                                                                return;
+                                                            }
+                                                            composer3.skipToGroupEnd();
                                                         }
-                                                        Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(Modifier.Companion, ListItemKt.getTrailingContentStartPadding(), 0.0f, 0.0f, 0.0f, 14, null);
-                                                        ListItemColors listItemColors5 = ListItemColors.this;
-                                                        Function2<Composer, Integer, Unit> function212 = obj4;
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
-                                                        MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
-                                                        int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
-                                                        CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, m846paddingqDBjuR0$default);
-                                                        Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
-                                                        if (!(composer4.getApplier() instanceof Applier)) {
-                                                            ComposablesKt.invalidApplier();
+                                                    }, startRestartGroup, 54);
+                                                    startRestartGroup.endReplaceGroup();
+                                                }
+                                                if (function210 != null) {
+                                                    startRestartGroup.startReplaceGroup(-510083888);
+                                                    startRestartGroup.endReplaceGroup();
+                                                    function211 = function210;
+                                                    rememberComposableLambda3 = null;
+                                                } else {
+                                                    startRestartGroup.startReplaceGroup(-510083887);
+                                                    ComposerKt.sourceInformation(startRestartGroup, "*134@5746L303");
+                                                    function211 = function210;
+                                                    rememberComposableLambda3 = ComposableLambdaKt.rememberComposableLambda(449548451, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedLeadingContent$1$1
+                                                        @Override // kotlin.jvm.functions.Function2
+                                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                            invoke(composer3, num.intValue());
+                                                            return Unit.INSTANCE;
                                                         }
-                                                        composer4.startReusableNode();
-                                                        if (composer4.getInserting()) {
-                                                            composer4.createNode(constructor);
-                                                        } else {
-                                                            composer4.useNode();
+
+                                                        public final void invoke(Composer composer3, int i16) {
+                                                            ComposerKt.sourceInformation(composer3, "C135@5764L271:ListItem.kt#uh7d8r");
+                                                            if (!composer3.shouldExecute((i16 & 3) != 2, i16 & 1)) {
+                                                                composer3.skipToGroupEnd();
+                                                                return;
+                                                            }
+                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                ComposerKt.traceEventStart(449548451, i16, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:135)");
+                                                            }
+                                                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, ListItemKt.getLeadingContentEndPadding(), 0.0f, 11, null);
+                                                            ListItemColors listItemColors5 = ListItemColors.this;
+                                                            Function2<Composer, Integer, Unit> function212 = function210;
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
+                                                            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+                                                            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
+                                                            CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
+                                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
+                                                            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                                                            if (!(composer3.getApplier() instanceof Applier)) {
+                                                                ComposablesKt.invalidApplier();
+                                                            }
+                                                            composer3.startReusableNode();
+                                                            if (composer3.getInserting()) {
+                                                                composer3.createNode(constructor);
+                                                            } else {
+                                                                composer3.useNode();
+                                                            }
+                                                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer3);
+                                                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
+                                                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                            }
+                                                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
+                                                            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, 788364341, "C136@5840L177:ListItem.kt#uh7d8r");
+                                                            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(listItemColors5.m2511leadingIconColorvNxB06k$material3(true))), function212, composer3, ProvidedValue.$stable);
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            composer3.endNode();
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                ComposerKt.traceEventEnd();
+                                                            }
                                                         }
-                                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
-                                                        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                                        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                    }, startRestartGroup, 54);
+                                                    startRestartGroup.endReplaceGroup();
+                                                }
+                                                if (function29 != null) {
+                                                    startRestartGroup.startReplaceGroup(-509666659);
+                                                    startRestartGroup.endReplaceGroup();
+                                                    composableLambda = rememberComposableLambda3;
+                                                } else {
+                                                    startRestartGroup.startReplaceGroup(-509666658);
+                                                    ComposerKt.sourceInformation(startRestartGroup, "*145@6165L354");
+                                                    composableLambda = rememberComposableLambda3;
+                                                    composableLambda2 = ComposableLambdaKt.rememberComposableLambda(1946411067, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedTrailingContent$1$1
+                                                        @Override // kotlin.jvm.functions.Function2
+                                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                            invoke(composer3, num.intValue());
+                                                            return Unit.INSTANCE;
                                                         }
-                                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
-                                                        BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                                        ComposerKt.sourceInformationMarkerStart(composer4, 690581204, "C146@6168L222:ListItem.kt#uh7d8r");
-                                                        ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(listItemColors5.m2313trailingIconColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemTrailingSupportingTextFont(), function212, composer4, 48);
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        composer4.endNode();
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        ComposerKt.sourceInformationMarkerEnd(composer4);
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventEnd();
+
+                                                        public final void invoke(Composer composer3, int i16) {
+                                                            ComposerKt.sourceInformation(composer3, "C146@6183L322:ListItem.kt#uh7d8r");
+                                                            if (!composer3.shouldExecute((i16 & 3) != 2, i16 & 1)) {
+                                                                composer3.skipToGroupEnd();
+                                                                return;
+                                                            }
+                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                ComposerKt.traceEventStart(1946411067, i16, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:146)");
+                                                            }
+                                                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(Modifier.Companion, ListItemKt.getTrailingContentStartPadding(), 0.0f, 0.0f, 0.0f, 14, null);
+                                                            ListItemColors listItemColors5 = ListItemColors.this;
+                                                            Function2<Composer, Integer, Unit> function212 = function29;
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
+                                                            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+                                                            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
+                                                            CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
+                                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
+                                                            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                                                            if (!(composer3.getApplier() instanceof Applier)) {
+                                                                ComposablesKt.invalidApplier();
+                                                            }
+                                                            composer3.startReusableNode();
+                                                            if (composer3.getInserting()) {
+                                                                composer3.createNode(constructor);
+                                                            } else {
+                                                                composer3.useNode();
+                                                            }
+                                                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer3);
+                                                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
+                                                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                            }
+                                                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
+                                                            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
+                                                            ComposerKt.sourceInformationMarkerStart(composer3, -869008925, "C147@6264L223:ListItem.kt#uh7d8r");
+                                                            ListItemKt.m2522ProvideTextStyleFromToken3JVO9M(listItemColors5.m2514trailingIconColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemTrailingSupportingTextFont(), function212, composer3, 48);
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            composer3.endNode();
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                ComposerKt.traceEventEnd();
+                                                            }
+                                                        }
+                                                    }, startRestartGroup, 54);
+                                                    startRestartGroup.endReplaceGroup();
+                                                }
+                                                Modifier.Companion companion2 = Modifier.Companion;
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -16426520, "CC(remember):ListItem.kt#9igjgp");
+                                                rememberedValue = startRestartGroup.rememberedValue();
+                                                if (rememberedValue == Composer.Companion.getEmpty()) {
+                                                    rememberedValue = new Function1() { // from class: androidx.compose.material3.ListItemKt$$ExternalSyntheticLambda2
+                                                        @Override // kotlin.jvm.functions.Function1
+                                                        public final Object invoke(Object obj5) {
+                                                            Unit ListItem_HXNGIdc$lambda$5$lambda$4;
+                                                            ListItem_HXNGIdc$lambda$5$lambda$4 = ListItemKt.ListItem_HXNGIdc$lambda$5$lambda$4((SemanticsPropertyReceiver) obj5);
+                                                            return ListItem_HXNGIdc$lambda$5$lambda$4;
+                                                        }
+                                                    };
+                                                    startRestartGroup.updateRememberedValue(rememberedValue);
+                                                }
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                final ComposableLambda composableLambda3 = rememberComposableLambda2;
+                                                final ComposableLambda composableLambda4 = rememberComposableLambda;
+                                                final ComposableLambda composableLambda5 = composableLambda2;
+                                                int i16 = i14 >> 9;
+                                                composer2 = startRestartGroup;
+                                                SurfaceKt.m2996SurfaceT9BRK9s(SemanticsModifierKt.semantics(companion2, true, (Function1) rememberedValue).then(companion), ListItemDefaults.INSTANCE.getShape(startRestartGroup, 6), listItemColors4.m2499containerColor0d7_KjU$material3(), listItemColors4.m2510headlineColorvNxB06k$material3(true), f6, f5, null, ComposableLambdaKt.rememberComposableLambda(1192488737, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
+                                                    @Override // kotlin.jvm.functions.Function2
+                                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                        invoke(composer3, num.intValue());
+                                                        return Unit.INSTANCE;
+                                                    }
+
+                                                    public final void invoke(Composer composer3, int i17) {
+                                                        ComposerKt.sourceInformation(composer3, "C164@6868L272:ListItem.kt#uh7d8r");
+                                                        if (composer3.shouldExecute((i17 & 3) != 2, i17 & 1)) {
+                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                ComposerKt.traceEventStart(1192488737, i17, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:164)");
+                                                            }
+                                                            ListItemKt.ListItemLayout(composableLambda, composableLambda5, rememberComposableLambda4, composableLambda3, composableLambda4, composer3, RendererCapabilities.DECODER_SUPPORT_MASK);
+                                                            if (ComposerKt.isTraceInProgress()) {
+                                                                ComposerKt.traceEventEnd();
+                                                                return;
+                                                            }
                                                             return;
                                                         }
-                                                        return;
+                                                        composer3.skipToGroupEnd();
                                                     }
-                                                    composer4.skipToGroupEnd();
+                                                }, startRestartGroup, 54), composer2, (57344 & i16) | 12582912 | (i16 & 458752), 64);
+                                                if (ComposerKt.isTraceInProgress()) {
+                                                    ComposerKt.traceEventEnd();
                                                 }
-                                            }, composer3, 54);
+                                                modifier2 = companion;
+                                                function26 = obj;
+                                                listItemColors2 = listItemColors4;
+                                                function27 = obj2;
+                                                f3 = f6;
+                                                f4 = f5;
+                                                function28 = function211;
+                                            } else {
+                                                f6 = m2516getElevationD9Ej5fM;
+                                                f5 = ListItemDefaults.INSTANCE.m2516getElevationD9Ej5fM();
+                                                listItemColors4 = listItemColors3;
+                                                i14 = i13;
+                                            }
                                         }
-                                        composer3.endReplaceGroup();
-                                        final ComposableLambda composableLambda3 = rememberComposableLambda4;
-                                        final ComposableLambda composableLambda4 = rememberComposableLambda3;
-                                        final ComposableLambda composableLambda5 = composableLambda2;
-                                        int i15 = i3 >> 9;
-                                        composer2 = composer3;
-                                        SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics(Modifier.Companion, true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$1
-                                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                            public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                            }
-
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                                invoke2(semanticsPropertyReceiver);
-                                                return Unit.INSTANCE;
-                                            }
-                                        }).then(companion), ListItemDefaults.INSTANCE.getShape(composer3, 6), listItemColors3.m2299containerColor0d7_KjU$material3_release(), listItemColors3.m2309headlineColorvNxB06k$material3_release(true), f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1502590376, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
-
+                                        function210 = obj3;
+                                        function29 = obj4;
+                                        startRestartGroup.endDefaults();
+                                        if (ComposerKt.isTraceInProgress()) {
+                                        }
+                                        final Function2<? super Composer, ? super Integer, Unit> rememberComposableLambda42 = ComposableLambdaKt.rememberComposableLambda(629852750, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
                                             @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                invoke(composer4, num.intValue());
+                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                invoke(composer3, num.intValue());
                                                 return Unit.INSTANCE;
                                             }
 
-                                            public final void invoke(Composer composer4, int i16) {
-                                                ComposerKt.sourceInformation(composer4, "C163@6771L272:ListItem.kt#uh7d8r");
-                                                if ((i16 & 3) != 2 || !composer4.getSkipping()) {
+                                            public final void invoke(Composer composer3, int i162) {
+                                                ComposerKt.sourceInformation(composer3, "C106@4837L161:ListItem.kt#uh7d8r");
+                                                if (composer3.shouldExecute((i162 & 3) != 2, i162 & 1)) {
                                                     if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventStart(1502590376, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:163)");
+                                                        ComposerKt.traceEventStart(629852750, i162, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:106)");
                                                     }
-                                                    ListItemKt.ListItemLayout(composableLambda, composableLambda5, rememberComposableLambda2, composableLambda3, composableLambda4, composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
+                                                    ListItemKt.m2522ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2510headlineColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer3, 48);
                                                     if (ComposerKt.isTraceInProgress()) {
                                                         ComposerKt.traceEventEnd();
                                                         return;
                                                     }
                                                     return;
                                                 }
-                                                composer4.skipToGroupEnd();
+                                                composer3.skipToGroupEnd();
                                             }
-                                        }, composer3, 54), composer2, (57344 & i15) | 12582912 | (i15 & 458752), 64);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
+                                        }, startRestartGroup, 54);
+                                        if (obj2 != null) {
                                         }
-                                        function28 = obj4;
-                                        function29 = obj;
-                                        function210 = obj2;
-                                        f6 = f5;
-                                        f7 = f4;
-                                        listItemColors4 = listItemColors3;
+                                        if (obj != null) {
+                                        }
+                                        if (function210 != null) {
+                                        }
+                                        if (function29 != null) {
+                                        }
+                                        Modifier.Companion companion22 = Modifier.Companion;
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -16426520, "CC(remember):ListItem.kt#9igjgp");
+                                        rememberedValue = startRestartGroup.rememberedValue();
+                                        if (rememberedValue == Composer.Companion.getEmpty()) {
+                                        }
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        final Function2<? super Composer, ? super Integer, Unit> composableLambda32 = rememberComposableLambda2;
+                                        final Function2<? super Composer, ? super Integer, Unit> composableLambda42 = rememberComposableLambda;
+                                        final Function2<? super Composer, ? super Integer, Unit> composableLambda52 = composableLambda2;
+                                        int i162 = i14 >> 9;
+                                        composer2 = startRestartGroup;
+                                        SurfaceKt.m2996SurfaceT9BRK9s(SemanticsModifierKt.semantics(companion22, true, (Function1) rememberedValue).then(companion), ListItemDefaults.INSTANCE.getShape(startRestartGroup, 6), listItemColors4.m2499containerColor0d7_KjU$material3(), listItemColors4.m2510headlineColorvNxB06k$material3(true), f6, f5, null, ComposableLambdaKt.rememberComposableLambda(1192488737, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
+                                            @Override // kotlin.jvm.functions.Function2
+                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                                invoke(composer3, num.intValue());
+                                                return Unit.INSTANCE;
+                                            }
+
+                                            public final void invoke(Composer composer3, int i17) {
+                                                ComposerKt.sourceInformation(composer3, "C164@6868L272:ListItem.kt#uh7d8r");
+                                                if (composer3.shouldExecute((i17 & 3) != 2, i17 & 1)) {
+                                                    if (ComposerKt.isTraceInProgress()) {
+                                                        ComposerKt.traceEventStart(1192488737, i17, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:164)");
+                                                    }
+                                                    ListItemKt.ListItemLayout(composableLambda, composableLambda52, rememberComposableLambda42, composableLambda32, composableLambda42, composer3, RendererCapabilities.DECODER_SUPPORT_MASK);
+                                                    if (ComposerKt.isTraceInProgress()) {
+                                                        ComposerKt.traceEventEnd();
+                                                        return;
+                                                    }
+                                                    return;
+                                                }
+                                                composer3.skipToGroupEnd();
+                                            }
+                                        }, startRestartGroup, 54), composer2, (57344 & i162) | 12582912 | (i162 & 458752), 64);
+                                        if (ComposerKt.isTraceInProgress()) {
+                                        }
                                         modifier2 = companion;
-                                        function211 = function27;
+                                        function26 = obj;
+                                        listItemColors2 = listItemColors4;
+                                        function27 = obj2;
+                                        f3 = f6;
+                                        f4 = f5;
+                                        function28 = function211;
                                     } else {
+                                        composer2 = startRestartGroup;
                                         composer2.skipToGroupEnd();
-                                        f6 = f;
+                                        f3 = f;
                                         modifier2 = companion;
-                                        function29 = obj;
-                                        function210 = obj2;
-                                        f7 = f3;
+                                        function26 = obj;
+                                        function27 = obj2;
                                         function28 = obj3;
-                                        function211 = function24;
-                                        listItemColors4 = listItemColors;
+                                        function29 = obj4;
+                                        listItemColors2 = listItemColors;
+                                        f4 = f2;
                                     }
                                     endRestartGroup = composer2.endRestartGroup();
                                     if (endRestartGroup == null) {
-                                        endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$3
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
-
+                                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ListItemKt$$ExternalSyntheticLambda3
                                             @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                                invoke(composer4, num.intValue());
-                                                return Unit.INSTANCE;
-                                            }
-
-                                            public final void invoke(Composer composer4, int i16) {
-                                                ListItemKt.m2316ListItemHXNGIdc(function2, modifier2, function29, function210, function211, function28, listItemColors4, f6, f7, composer4, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                            public final Object invoke(Object obj5, Object obj6) {
+                                                Unit ListItem_HXNGIdc$lambda$6;
+                                                ListItem_HXNGIdc$lambda$6 = ListItemKt.ListItem_HXNGIdc$lambda$6(Function2.this, modifier2, function26, function27, function28, function29, listItemColors2, f3, f4, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
+                                                return ListItem_HXNGIdc$lambda$6;
                                             }
                                         });
                                         return;
@@ -613,139 +671,9 @@ public final class ListItemKt {
                                     return;
                                 }
                                 i11 = i10;
-                                f3 = f2;
-                                composer2 = startRestartGroup;
-                                if ((i3 & 38347923) == 38347922) {
+                                i12 = i3;
+                                if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
                                 }
-                                composer2.startDefaults();
-                                ComposableLambda composableLambda22 = null;
-                                if ((i & 1) != 0) {
-                                }
-                                if (i14 != 0) {
-                                }
-                                if (i4 != 0) {
-                                }
-                                if (i5 != 0) {
-                                }
-                                if (i6 == 0) {
-                                }
-                                if (i7 == 0) {
-                                }
-                                if ((i2 & 64) == 0) {
-                                }
-                                if (i12 == 0) {
-                                }
-                                if (i13 == 0) {
-                                }
-                                listItemColors3 = listItemColors2;
-                                composer3.endDefaults();
-                                if (ComposerKt.isTraceInProgress()) {
-                                }
-                                final Function2<? super Composer, ? super Integer, Unit> rememberComposableLambda22 = ComposableLambdaKt.rememberComposableLambda(-403249643, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    {
-                                        super(2);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                        invoke(composer4, num.intValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(Composer composer4, int i152) {
-                                        ComposerKt.sourceInformation(composer4, "C105@4745L160:ListItem.kt#uh7d8r");
-                                        if ((i152 & 3) != 2 || !composer4.getSkipping()) {
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventStart(-403249643, i152, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:105)");
-                                            }
-                                            ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2309headlineColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer4, 48);
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventEnd();
-                                                return;
-                                            }
-                                            return;
-                                        }
-                                        composer4.skipToGroupEnd();
-                                    }
-                                }, composer3, 54);
-                                composer3.startReplaceGroup(1640970492);
-                                ComposerKt.sourceInformation(composer3, "*113@5021L204");
-                                if (obj2 != null) {
-                                }
-                                composer3.endReplaceGroup();
-                                composer3.startReplaceGroup(1640980724);
-                                ComposerKt.sourceInformation(composer3, "*123@5341L196");
-                                if (obj != null) {
-                                }
-                                composer3.endReplaceGroup();
-                                composer3.startReplaceGroup(1640990750);
-                                ComposerKt.sourceInformation(composer3, "*133@5651L302");
-                                if (function26 != null) {
-                                }
-                                composer3.endReplaceGroup();
-                                composer3.startReplaceGroup(1641004177);
-                                ComposerKt.sourceInformation(composer3, "*144@6069L353");
-                                if (obj4 != null) {
-                                }
-                                composer3.endReplaceGroup();
-                                final Function2<? super Composer, ? super Integer, Unit> composableLambda32 = rememberComposableLambda4;
-                                final Function2<? super Composer, ? super Integer, Unit> composableLambda42 = rememberComposableLambda3;
-                                final Function2<? super Composer, ? super Integer, Unit> composableLambda52 = composableLambda22;
-                                int i152 = i3 >> 9;
-                                composer2 = composer3;
-                                SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics(Modifier.Companion, true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$1
-                                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                    public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function1
-                                    public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                        invoke2(semanticsPropertyReceiver);
-                                        return Unit.INSTANCE;
-                                    }
-                                }).then(companion), ListItemDefaults.INSTANCE.getShape(composer3, 6), listItemColors3.m2299containerColor0d7_KjU$material3_release(), listItemColors3.m2309headlineColorvNxB06k$material3_release(true), f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1502590376, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    {
-                                        super(2);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                        invoke(composer4, num.intValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(Composer composer4, int i16) {
-                                        ComposerKt.sourceInformation(composer4, "C163@6771L272:ListItem.kt#uh7d8r");
-                                        if ((i16 & 3) != 2 || !composer4.getSkipping()) {
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventStart(1502590376, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:163)");
-                                            }
-                                            ListItemKt.ListItemLayout(composableLambda, composableLambda52, rememberComposableLambda22, composableLambda32, composableLambda42, composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                            if (ComposerKt.isTraceInProgress()) {
-                                                ComposerKt.traceEventEnd();
-                                                return;
-                                            }
-                                            return;
-                                        }
-                                        composer4.skipToGroupEnd();
-                                    }
-                                }, composer3, 54), composer2, (57344 & i152) | 12582912 | (i152 & 458752), 64);
-                                if (ComposerKt.isTraceInProgress()) {
-                                }
-                                function28 = obj4;
-                                function29 = obj;
-                                function210 = obj2;
-                                f6 = f5;
-                                f7 = f4;
-                                listItemColors4 = listItemColors3;
-                                modifier2 = companion;
-                                function211 = function27;
                                 endRestartGroup = composer2.endRestartGroup();
                                 if (endRestartGroup == null) {
                                 }
@@ -755,144 +683,14 @@ public final class ListItemKt {
                             if (i10 != 0) {
                             }
                             i11 = i10;
-                            f3 = f2;
-                            composer2 = startRestartGroup;
-                            if ((i3 & 38347923) == 38347922) {
+                            i12 = i3;
+                            if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
                             }
-                            composer2.startDefaults();
-                            ComposableLambda composableLambda222 = null;
-                            if ((i & 1) != 0) {
-                            }
-                            if (i14 != 0) {
-                            }
-                            if (i4 != 0) {
-                            }
-                            if (i5 != 0) {
-                            }
-                            if (i6 == 0) {
-                            }
-                            if (i7 == 0) {
-                            }
-                            if ((i2 & 64) == 0) {
-                            }
-                            if (i12 == 0) {
-                            }
-                            if (i13 == 0) {
-                            }
-                            listItemColors3 = listItemColors2;
-                            composer3.endDefaults();
-                            if (ComposerKt.isTraceInProgress()) {
-                            }
-                            final Function2<? super Composer, ? super Integer, Unit> rememberComposableLambda222 = ComposableLambdaKt.rememberComposableLambda(-403249643, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                    invoke(composer4, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer4, int i1522) {
-                                    ComposerKt.sourceInformation(composer4, "C105@4745L160:ListItem.kt#uh7d8r");
-                                    if ((i1522 & 3) != 2 || !composer4.getSkipping()) {
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-403249643, i1522, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:105)");
-                                        }
-                                        ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2309headlineColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer4, 48);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                            return;
-                                        }
-                                        return;
-                                    }
-                                    composer4.skipToGroupEnd();
-                                }
-                            }, composer3, 54);
-                            composer3.startReplaceGroup(1640970492);
-                            ComposerKt.sourceInformation(composer3, "*113@5021L204");
-                            if (obj2 != null) {
-                            }
-                            composer3.endReplaceGroup();
-                            composer3.startReplaceGroup(1640980724);
-                            ComposerKt.sourceInformation(composer3, "*123@5341L196");
-                            if (obj != null) {
-                            }
-                            composer3.endReplaceGroup();
-                            composer3.startReplaceGroup(1640990750);
-                            ComposerKt.sourceInformation(composer3, "*133@5651L302");
-                            if (function26 != null) {
-                            }
-                            composer3.endReplaceGroup();
-                            composer3.startReplaceGroup(1641004177);
-                            ComposerKt.sourceInformation(composer3, "*144@6069L353");
-                            if (obj4 != null) {
-                            }
-                            composer3.endReplaceGroup();
-                            final Function2<? super Composer, ? super Integer, Unit> composableLambda322 = rememberComposableLambda4;
-                            final Function2<? super Composer, ? super Integer, Unit> composableLambda422 = rememberComposableLambda3;
-                            final Function2<? super Composer, ? super Integer, Unit> composableLambda522 = composableLambda222;
-                            int i1522 = i3 >> 9;
-                            composer2 = composer3;
-                            SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics(Modifier.Companion, true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$1
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                    invoke2(semanticsPropertyReceiver);
-                                    return Unit.INSTANCE;
-                                }
-                            }).then(companion), ListItemDefaults.INSTANCE.getShape(composer3, 6), listItemColors3.m2299containerColor0d7_KjU$material3_release(), listItemColors3.m2309headlineColorvNxB06k$material3_release(true), f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1502590376, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                    invoke(composer4, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer4, int i16) {
-                                    ComposerKt.sourceInformation(composer4, "C163@6771L272:ListItem.kt#uh7d8r");
-                                    if ((i16 & 3) != 2 || !composer4.getSkipping()) {
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(1502590376, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:163)");
-                                        }
-                                        ListItemKt.ListItemLayout(composableLambda, composableLambda522, rememberComposableLambda222, composableLambda322, composableLambda422, composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                            return;
-                                        }
-                                        return;
-                                    }
-                                    composer4.skipToGroupEnd();
-                                }
-                            }, composer3, 54), composer2, (57344 & i1522) | 12582912 | (i1522 & 458752), 64);
-                            if (ComposerKt.isTraceInProgress()) {
-                            }
-                            function28 = obj4;
-                            function29 = obj;
-                            function210 = obj2;
-                            f6 = f5;
-                            f7 = f4;
-                            listItemColors4 = listItemColors3;
-                            modifier2 = companion;
-                            function211 = function27;
                             endRestartGroup = composer2.endRestartGroup();
                             if (endRestartGroup == null) {
                             }
                         }
-                        obj3 = function25;
+                        obj4 = function25;
                         if ((i & 1572864) == 0) {
                         }
                         i8 = i2 & 128;
@@ -903,147 +701,18 @@ public final class ListItemKt {
                         if (i10 != 0) {
                         }
                         i11 = i10;
-                        f3 = f2;
-                        composer2 = startRestartGroup;
-                        if ((i3 & 38347923) == 38347922) {
+                        i12 = i3;
+                        if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
                         }
-                        composer2.startDefaults();
-                        ComposableLambda composableLambda2222 = null;
-                        if ((i & 1) != 0) {
-                        }
-                        if (i14 != 0) {
-                        }
-                        if (i4 != 0) {
-                        }
-                        if (i5 != 0) {
-                        }
-                        if (i6 == 0) {
-                        }
-                        if (i7 == 0) {
-                        }
-                        if ((i2 & 64) == 0) {
-                        }
-                        if (i12 == 0) {
-                        }
-                        if (i13 == 0) {
-                        }
-                        listItemColors3 = listItemColors2;
-                        composer3.endDefaults();
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        final Function2<? super Composer, ? super Integer, Unit> rememberComposableLambda2222 = ComposableLambdaKt.rememberComposableLambda(-403249643, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            /* JADX WARN: Multi-variable type inference failed */
-                            {
-                                super(2);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                invoke(composer4, num.intValue());
-                                return Unit.INSTANCE;
-                            }
-
-                            public final void invoke(Composer composer4, int i15222) {
-                                ComposerKt.sourceInformation(composer4, "C105@4745L160:ListItem.kt#uh7d8r");
-                                if ((i15222 & 3) != 2 || !composer4.getSkipping()) {
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-403249643, i15222, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:105)");
-                                    }
-                                    ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2309headlineColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer4, 48);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                        return;
-                                    }
-                                    return;
-                                }
-                                composer4.skipToGroupEnd();
-                            }
-                        }, composer3, 54);
-                        composer3.startReplaceGroup(1640970492);
-                        ComposerKt.sourceInformation(composer3, "*113@5021L204");
-                        if (obj2 != null) {
-                        }
-                        composer3.endReplaceGroup();
-                        composer3.startReplaceGroup(1640980724);
-                        ComposerKt.sourceInformation(composer3, "*123@5341L196");
-                        if (obj != null) {
-                        }
-                        composer3.endReplaceGroup();
-                        composer3.startReplaceGroup(1640990750);
-                        ComposerKt.sourceInformation(composer3, "*133@5651L302");
-                        if (function26 != null) {
-                        }
-                        composer3.endReplaceGroup();
-                        composer3.startReplaceGroup(1641004177);
-                        ComposerKt.sourceInformation(composer3, "*144@6069L353");
-                        if (obj4 != null) {
-                        }
-                        composer3.endReplaceGroup();
-                        final Function2<? super Composer, ? super Integer, Unit> composableLambda3222 = rememberComposableLambda4;
-                        final Function2<? super Composer, ? super Integer, Unit> composableLambda4222 = rememberComposableLambda3;
-                        final Function2<? super Composer, ? super Integer, Unit> composableLambda5222 = composableLambda2222;
-                        int i15222 = i3 >> 9;
-                        composer2 = composer3;
-                        SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics(Modifier.Companion, true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$1
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                invoke2(semanticsPropertyReceiver);
-                                return Unit.INSTANCE;
-                            }
-                        }).then(companion), ListItemDefaults.INSTANCE.getShape(composer3, 6), listItemColors3.m2299containerColor0d7_KjU$material3_release(), listItemColors3.m2309headlineColorvNxB06k$material3_release(true), f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1502590376, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            /* JADX WARN: Multi-variable type inference failed */
-                            {
-                                super(2);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                                invoke(composer4, num.intValue());
-                                return Unit.INSTANCE;
-                            }
-
-                            public final void invoke(Composer composer4, int i16) {
-                                ComposerKt.sourceInformation(composer4, "C163@6771L272:ListItem.kt#uh7d8r");
-                                if ((i16 & 3) != 2 || !composer4.getSkipping()) {
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(1502590376, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:163)");
-                                    }
-                                    ListItemKt.ListItemLayout(composableLambda, composableLambda5222, rememberComposableLambda2222, composableLambda3222, composableLambda4222, composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                        return;
-                                    }
-                                    return;
-                                }
-                                composer4.skipToGroupEnd();
-                            }
-                        }, composer3, 54), composer2, (57344 & i15222) | 12582912 | (i15222 & 458752), 64);
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        function28 = obj4;
-                        function29 = obj;
-                        function210 = obj2;
-                        f6 = f5;
-                        f7 = f4;
-                        listItemColors4 = listItemColors3;
-                        modifier2 = companion;
-                        function211 = function27;
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup == null) {
                         }
                     }
+                    obj3 = function24;
                     i7 = i2 & 32;
                     if (i7 != 0) {
                     }
-                    obj3 = function25;
+                    obj4 = function25;
                     if ((i & 1572864) == 0) {
                     }
                     i8 = i2 & 128;
@@ -1054,139 +723,9 @@ public final class ListItemKt {
                     if (i10 != 0) {
                     }
                     i11 = i10;
-                    f3 = f2;
-                    composer2 = startRestartGroup;
-                    if ((i3 & 38347923) == 38347922) {
+                    i12 = i3;
+                    if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
                     }
-                    composer2.startDefaults();
-                    ComposableLambda composableLambda22222 = null;
-                    if ((i & 1) != 0) {
-                    }
-                    if (i14 != 0) {
-                    }
-                    if (i4 != 0) {
-                    }
-                    if (i5 != 0) {
-                    }
-                    if (i6 == 0) {
-                    }
-                    if (i7 == 0) {
-                    }
-                    if ((i2 & 64) == 0) {
-                    }
-                    if (i12 == 0) {
-                    }
-                    if (i13 == 0) {
-                    }
-                    listItemColors3 = listItemColors2;
-                    composer3.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    final Function2<? super Composer, ? super Integer, Unit> rememberComposableLambda22222 = ComposableLambdaKt.rememberComposableLambda(-403249643, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(2);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                            invoke(composer4, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        public final void invoke(Composer composer4, int i152222) {
-                            ComposerKt.sourceInformation(composer4, "C105@4745L160:ListItem.kt#uh7d8r");
-                            if ((i152222 & 3) != 2 || !composer4.getSkipping()) {
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(-403249643, i152222, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:105)");
-                                }
-                                ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2309headlineColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer4, 48);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                    return;
-                                }
-                                return;
-                            }
-                            composer4.skipToGroupEnd();
-                        }
-                    }, composer3, 54);
-                    composer3.startReplaceGroup(1640970492);
-                    ComposerKt.sourceInformation(composer3, "*113@5021L204");
-                    if (obj2 != null) {
-                    }
-                    composer3.endReplaceGroup();
-                    composer3.startReplaceGroup(1640980724);
-                    ComposerKt.sourceInformation(composer3, "*123@5341L196");
-                    if (obj != null) {
-                    }
-                    composer3.endReplaceGroup();
-                    composer3.startReplaceGroup(1640990750);
-                    ComposerKt.sourceInformation(composer3, "*133@5651L302");
-                    if (function26 != null) {
-                    }
-                    composer3.endReplaceGroup();
-                    composer3.startReplaceGroup(1641004177);
-                    ComposerKt.sourceInformation(composer3, "*144@6069L353");
-                    if (obj4 != null) {
-                    }
-                    composer3.endReplaceGroup();
-                    final Function2<? super Composer, ? super Integer, Unit> composableLambda32222 = rememberComposableLambda4;
-                    final Function2<? super Composer, ? super Integer, Unit> composableLambda42222 = rememberComposableLambda3;
-                    final Function2<? super Composer, ? super Integer, Unit> composableLambda52222 = composableLambda22222;
-                    int i152222 = i3 >> 9;
-                    composer2 = composer3;
-                    SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics(Modifier.Companion, true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$1
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        }
-
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                            invoke2(semanticsPropertyReceiver);
-                            return Unit.INSTANCE;
-                        }
-                    }).then(companion), ListItemDefaults.INSTANCE.getShape(composer3, 6), listItemColors3.m2299containerColor0d7_KjU$material3_release(), listItemColors3.m2309headlineColorvNxB06k$material3_release(true), f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1502590376, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(2);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                            invoke(composer4, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        public final void invoke(Composer composer4, int i16) {
-                            ComposerKt.sourceInformation(composer4, "C163@6771L272:ListItem.kt#uh7d8r");
-                            if ((i16 & 3) != 2 || !composer4.getSkipping()) {
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(1502590376, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:163)");
-                                }
-                                ListItemKt.ListItemLayout(composableLambda, composableLambda52222, rememberComposableLambda22222, composableLambda32222, composableLambda42222, composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                    return;
-                                }
-                                return;
-                            }
-                            composer4.skipToGroupEnd();
-                        }
-                    }, composer3, 54), composer2, (57344 & i152222) | 12582912 | (i152222 & 458752), 64);
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    function28 = obj4;
-                    function29 = obj;
-                    function210 = obj2;
-                    f6 = f5;
-                    f7 = f4;
-                    listItemColors4 = listItemColors3;
-                    modifier2 = companion;
-                    function211 = function27;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup == null) {
                     }
@@ -1195,10 +734,11 @@ public final class ListItemKt {
                 i6 = i2 & 16;
                 if (i6 == 0) {
                 }
+                obj3 = function24;
                 i7 = i2 & 32;
                 if (i7 != 0) {
                 }
-                obj3 = function25;
+                obj4 = function25;
                 if ((i & 1572864) == 0) {
                 }
                 i8 = i2 & 128;
@@ -1209,139 +749,9 @@ public final class ListItemKt {
                 if (i10 != 0) {
                 }
                 i11 = i10;
-                f3 = f2;
-                composer2 = startRestartGroup;
-                if ((i3 & 38347923) == 38347922) {
+                i12 = i3;
+                if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
                 }
-                composer2.startDefaults();
-                ComposableLambda composableLambda222222 = null;
-                if ((i & 1) != 0) {
-                }
-                if (i14 != 0) {
-                }
-                if (i4 != 0) {
-                }
-                if (i5 != 0) {
-                }
-                if (i6 == 0) {
-                }
-                if (i7 == 0) {
-                }
-                if ((i2 & 64) == 0) {
-                }
-                if (i12 == 0) {
-                }
-                if (i13 == 0) {
-                }
-                listItemColors3 = listItemColors2;
-                composer3.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                final Function2<? super Composer, ? super Integer, Unit> rememberComposableLambda222222 = ComposableLambdaKt.rememberComposableLambda(-403249643, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                        invoke(composer4, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(Composer composer4, int i1522222) {
-                        ComposerKt.sourceInformation(composer4, "C105@4745L160:ListItem.kt#uh7d8r");
-                        if ((i1522222 & 3) != 2 || !composer4.getSkipping()) {
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-403249643, i1522222, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:105)");
-                            }
-                            ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2309headlineColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer4, 48);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                                return;
-                            }
-                            return;
-                        }
-                        composer4.skipToGroupEnd();
-                    }
-                }, composer3, 54);
-                composer3.startReplaceGroup(1640970492);
-                ComposerKt.sourceInformation(composer3, "*113@5021L204");
-                if (obj2 != null) {
-                }
-                composer3.endReplaceGroup();
-                composer3.startReplaceGroup(1640980724);
-                ComposerKt.sourceInformation(composer3, "*123@5341L196");
-                if (obj != null) {
-                }
-                composer3.endReplaceGroup();
-                composer3.startReplaceGroup(1640990750);
-                ComposerKt.sourceInformation(composer3, "*133@5651L302");
-                if (function26 != null) {
-                }
-                composer3.endReplaceGroup();
-                composer3.startReplaceGroup(1641004177);
-                ComposerKt.sourceInformation(composer3, "*144@6069L353");
-                if (obj4 != null) {
-                }
-                composer3.endReplaceGroup();
-                final Function2<? super Composer, ? super Integer, Unit> composableLambda322222 = rememberComposableLambda4;
-                final Function2<? super Composer, ? super Integer, Unit> composableLambda422222 = rememberComposableLambda3;
-                final Function2<? super Composer, ? super Integer, Unit> composableLambda522222 = composableLambda222222;
-                int i1522222 = i3 >> 9;
-                composer2 = composer3;
-                SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics(Modifier.Companion, true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$1
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        invoke2(semanticsPropertyReceiver);
-                        return Unit.INSTANCE;
-                    }
-                }).then(companion), ListItemDefaults.INSTANCE.getShape(composer3, 6), listItemColors3.m2299containerColor0d7_KjU$material3_release(), listItemColors3.m2309headlineColorvNxB06k$material3_release(true), f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1502590376, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                        invoke(composer4, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(Composer composer4, int i16) {
-                        ComposerKt.sourceInformation(composer4, "C163@6771L272:ListItem.kt#uh7d8r");
-                        if ((i16 & 3) != 2 || !composer4.getSkipping()) {
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(1502590376, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:163)");
-                            }
-                            ListItemKt.ListItemLayout(composableLambda, composableLambda522222, rememberComposableLambda222222, composableLambda322222, composableLambda422222, composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                                return;
-                            }
-                            return;
-                        }
-                        composer4.skipToGroupEnd();
-                    }
-                }, composer3, 54), composer2, (57344 & i1522222) | 12582912 | (i1522222 & 458752), 64);
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                function28 = obj4;
-                function29 = obj;
-                function210 = obj2;
-                f6 = f5;
-                f7 = f4;
-                listItemColors4 = listItemColors3;
-                modifier2 = companion;
-                function211 = function27;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup == null) {
                 }
@@ -1354,10 +764,11 @@ public final class ListItemKt {
             i6 = i2 & 16;
             if (i6 == 0) {
             }
+            obj3 = function24;
             i7 = i2 & 32;
             if (i7 != 0) {
             }
-            obj3 = function25;
+            obj4 = function25;
             if ((i & 1572864) == 0) {
             }
             i8 = i2 & 128;
@@ -1368,139 +779,9 @@ public final class ListItemKt {
             if (i10 != 0) {
             }
             i11 = i10;
-            f3 = f2;
-            composer2 = startRestartGroup;
-            if ((i3 & 38347923) == 38347922) {
+            i12 = i3;
+            if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
             }
-            composer2.startDefaults();
-            ComposableLambda composableLambda2222222 = null;
-            if ((i & 1) != 0) {
-            }
-            if (i14 != 0) {
-            }
-            if (i4 != 0) {
-            }
-            if (i5 != 0) {
-            }
-            if (i6 == 0) {
-            }
-            if (i7 == 0) {
-            }
-            if ((i2 & 64) == 0) {
-            }
-            if (i12 == 0) {
-            }
-            if (i13 == 0) {
-            }
-            listItemColors3 = listItemColors2;
-            composer3.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            final Function2<? super Composer, ? super Integer, Unit> rememberComposableLambda2222222 = ComposableLambdaKt.rememberComposableLambda(-403249643, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                    invoke(composer4, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer4, int i15222222) {
-                    ComposerKt.sourceInformation(composer4, "C105@4745L160:ListItem.kt#uh7d8r");
-                    if ((i15222222 & 3) != 2 || !composer4.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-403249643, i15222222, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:105)");
-                        }
-                        ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2309headlineColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer4, 48);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer4.skipToGroupEnd();
-                }
-            }, composer3, 54);
-            composer3.startReplaceGroup(1640970492);
-            ComposerKt.sourceInformation(composer3, "*113@5021L204");
-            if (obj2 != null) {
-            }
-            composer3.endReplaceGroup();
-            composer3.startReplaceGroup(1640980724);
-            ComposerKt.sourceInformation(composer3, "*123@5341L196");
-            if (obj != null) {
-            }
-            composer3.endReplaceGroup();
-            composer3.startReplaceGroup(1640990750);
-            ComposerKt.sourceInformation(composer3, "*133@5651L302");
-            if (function26 != null) {
-            }
-            composer3.endReplaceGroup();
-            composer3.startReplaceGroup(1641004177);
-            ComposerKt.sourceInformation(composer3, "*144@6069L353");
-            if (obj4 != null) {
-            }
-            composer3.endReplaceGroup();
-            final Function2<? super Composer, ? super Integer, Unit> composableLambda3222222 = rememberComposableLambda4;
-            final Function2<? super Composer, ? super Integer, Unit> composableLambda4222222 = rememberComposableLambda3;
-            final Function2<? super Composer, ? super Integer, Unit> composableLambda5222222 = composableLambda2222222;
-            int i15222222 = i3 >> 9;
-            composer2 = composer3;
-            SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics(Modifier.Companion, true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$1
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                }
-
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    invoke2(semanticsPropertyReceiver);
-                    return Unit.INSTANCE;
-                }
-            }).then(companion), ListItemDefaults.INSTANCE.getShape(composer3, 6), listItemColors3.m2299containerColor0d7_KjU$material3_release(), listItemColors3.m2309headlineColorvNxB06k$material3_release(true), f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1502590376, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                    invoke(composer4, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer4, int i16) {
-                    ComposerKt.sourceInformation(composer4, "C163@6771L272:ListItem.kt#uh7d8r");
-                    if ((i16 & 3) != 2 || !composer4.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(1502590376, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:163)");
-                        }
-                        ListItemKt.ListItemLayout(composableLambda, composableLambda5222222, rememberComposableLambda2222222, composableLambda3222222, composableLambda4222222, composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer4.skipToGroupEnd();
-                }
-            }, composer3, 54), composer2, (57344 & i15222222) | 12582912 | (i15222222 & 458752), 64);
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            function28 = obj4;
-            function29 = obj;
-            function210 = obj2;
-            f6 = f5;
-            f7 = f4;
-            listItemColors4 = listItemColors3;
-            modifier2 = companion;
-            function211 = function27;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup == null) {
             }
@@ -1517,10 +798,11 @@ public final class ListItemKt {
         i6 = i2 & 16;
         if (i6 == 0) {
         }
+        obj3 = function24;
         i7 = i2 & 32;
         if (i7 != 0) {
         }
-        obj3 = function25;
+        obj4 = function25;
         if ((i & 1572864) == 0) {
         }
         i8 = i2 & 128;
@@ -1531,149 +813,24 @@ public final class ListItemKt {
         if (i10 != 0) {
         }
         i11 = i10;
-        f3 = f2;
-        composer2 = startRestartGroup;
-        if ((i3 & 38347923) == 38347922) {
+        i12 = i3;
+        if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
         }
-        composer2.startDefaults();
-        ComposableLambda composableLambda22222222 = null;
-        if ((i & 1) != 0) {
-        }
-        if (i14 != 0) {
-        }
-        if (i4 != 0) {
-        }
-        if (i5 != 0) {
-        }
-        if (i6 == 0) {
-        }
-        if (i7 == 0) {
-        }
-        if ((i2 & 64) == 0) {
-        }
-        if (i12 == 0) {
-        }
-        if (i13 == 0) {
-        }
-        listItemColors3 = listItemColors2;
-        composer3.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        final Function2<? super Composer, ? super Integer, Unit> rememberComposableLambda22222222 = ComposableLambdaKt.rememberComposableLambda(-403249643, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$decoratedHeadlineContent$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                invoke(composer4, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Composer composer4, int i152222222) {
-                ComposerKt.sourceInformation(composer4, "C105@4745L160:ListItem.kt#uh7d8r");
-                if ((i152222222 & 3) != 2 || !composer4.getSkipping()) {
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(-403249643, i152222222, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:105)");
-                    }
-                    ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2309headlineColorvNxB06k$material3_release(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer4, 48);
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                        return;
-                    }
-                    return;
-                }
-                composer4.skipToGroupEnd();
-            }
-        }, composer3, 54);
-        composer3.startReplaceGroup(1640970492);
-        ComposerKt.sourceInformation(composer3, "*113@5021L204");
-        if (obj2 != null) {
-        }
-        composer3.endReplaceGroup();
-        composer3.startReplaceGroup(1640980724);
-        ComposerKt.sourceInformation(composer3, "*123@5341L196");
-        if (obj != null) {
-        }
-        composer3.endReplaceGroup();
-        composer3.startReplaceGroup(1640990750);
-        ComposerKt.sourceInformation(composer3, "*133@5651L302");
-        if (function26 != null) {
-        }
-        composer3.endReplaceGroup();
-        composer3.startReplaceGroup(1641004177);
-        ComposerKt.sourceInformation(composer3, "*144@6069L353");
-        if (obj4 != null) {
-        }
-        composer3.endReplaceGroup();
-        final Function2<? super Composer, ? super Integer, Unit> composableLambda32222222 = rememberComposableLambda4;
-        final Function2<? super Composer, ? super Integer, Unit> composableLambda42222222 = rememberComposableLambda3;
-        final Function2<? super Composer, ? super Integer, Unit> composableLambda52222222 = composableLambda22222222;
-        int i152222222 = i3 >> 9;
-        composer2 = composer3;
-        SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics(Modifier.Companion, true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$1
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                invoke2(semanticsPropertyReceiver);
-                return Unit.INSTANCE;
-            }
-        }).then(companion), ListItemDefaults.INSTANCE.getShape(composer3, 6), listItemColors3.m2299containerColor0d7_KjU$material3_release(), listItemColors3.m2309headlineColorvNxB06k$material3_release(true), f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1502590376, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
-                invoke(composer4, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Composer composer4, int i16) {
-                ComposerKt.sourceInformation(composer4, "C163@6771L272:ListItem.kt#uh7d8r");
-                if ((i16 & 3) != 2 || !composer4.getSkipping()) {
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(1502590376, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:163)");
-                    }
-                    ListItemKt.ListItemLayout(composableLambda, composableLambda52222222, rememberComposableLambda22222222, composableLambda32222222, composableLambda42222222, composer4, RendererCapabilities.DECODER_SUPPORT_MASK);
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                        return;
-                    }
-                    return;
-                }
-                composer4.skipToGroupEnd();
-            }
-        }, composer3, 54), composer2, (57344 & i152222222) | 12582912 | (i152222222 & 458752), 64);
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        function28 = obj4;
-        function29 = obj;
-        function210 = obj2;
-        f6 = f5;
-        f7 = f4;
-        listItemColors4 = listItemColors3;
-        modifier2 = companion;
-        function211 = function27;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup == null) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ListItem_HXNGIdc$lambda$5$lambda$4(SemanticsPropertyReceiver semanticsPropertyReceiver) {
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public static final void ListItemLayout(final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final Function2<? super Composer, ? super Integer, Unit> function25, Composer composer, final int i) {
         int i2;
-        Composer startRestartGroup = composer.startRestartGroup(2052297037);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ListItemLayout)P(1,4)181@7324L36,182@7365L261:ListItem.kt#uh7d8r");
+        Composer startRestartGroup = composer.startRestartGroup(-61277522);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ListItemLayout)N(leading,trailing,headline,overline,supporting)182@7421L36,183@7462L166:ListItem.kt#uh7d8r");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(function2) ? 4 : 2) | i;
         } else {
@@ -1691,11 +848,13 @@ public final class ListItemKt {
         if ((i & 24576) == 0) {
             i2 |= startRestartGroup.changedInstance(function25) ? 16384 : 8192;
         }
-        if ((i2 & 9363) != 9362 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 9363) != 9362, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(2052297037, i2, -1, "androidx.compose.material3.ListItemLayout (ListItem.kt:180)");
+                ComposerKt.traceEventStart(-61277522, i2, -1, "androidx.compose.material3.ListItemLayout (ListItem.kt:181)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -748109790, "CC(remember):ListItem.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1241852210, "CC(remember):ListItem.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new ListItemMeasurePolicy();
@@ -1705,15 +864,15 @@ public final class ListItemKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Function2[] function2Arr = new Function2[5];
             function2Arr[0] = function23;
-            function2Arr[1] = function24 == null ? ComposableSingletons$ListItemKt.INSTANCE.m2086getLambda1$material3_release() : function24;
-            function2Arr[2] = function25 == null ? ComposableSingletons$ListItemKt.INSTANCE.m2087getLambda2$material3_release() : function25;
-            function2Arr[3] = function2 == null ? ComposableSingletons$ListItemKt.INSTANCE.m2088getLambda3$material3_release() : function2;
-            function2Arr[4] = function22 == null ? ComposableSingletons$ListItemKt.INSTANCE.m2089getLambda4$material3_release() : function22;
+            function2Arr[1] = function24 == null ? ComposableSingletons$ListItemKt.INSTANCE.m2164getLambda$489887388$material3() : function24;
+            function2Arr[2] = function25 == null ? ComposableSingletons$ListItemKt.INSTANCE.getLambda$1629163587$material3() : function25;
+            function2Arr[3] = function2 == null ? ComposableSingletons$ListItemKt.INSTANCE.m2165getLambda$546752734$material3() : function2;
+            function2Arr[4] = function22 == null ? ComposableSingletons$ListItemKt.INSTANCE.getLambda$1572298241$material3() : function22;
             List listOf = CollectionsKt.listOf((Object[]) function2Arr);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)173@6976L62,170@6862L182:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)168@6883L62,165@6769L182:Layout.kt#80mrfh");
             Modifier.Companion companion = Modifier.Companion;
             Function2<Composer, Integer, Unit> combineAsVirtualLayouts = LayoutKt.combineAsVirtualLayouts(listOf);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -290761997, "CC(remember):Layout.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -290764973, "CC(remember):Layout.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = MultiContentMeasurePolicyKt.createMeasurePolicy(listItemMeasurePolicy);
@@ -1721,12 +880,12 @@ public final class ListItemKt {
             }
             MeasurePolicy measurePolicy = (MeasurePolicy) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, companion);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -1736,15 +895,15 @@ public final class ListItemKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1753,27 +912,15 @@ public final class ListItemKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItemLayout$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ListItemKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i3) {
-                    ListItemKt.ListItemLayout(function2, function22, function23, function24, function25, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit ListItemLayout$lambda$8;
+                    ListItemLayout$lambda$8 = ListItemKt.ListItemLayout$lambda$8(Function2.this, function22, function23, function24, function25, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ListItemLayout$lambda$8;
                 }
             });
         }
@@ -1781,149 +928,108 @@ public final class ListItemKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: calculateWidth-yeHjK3Y  reason: not valid java name */
-    public static final int m2323calculateWidthyeHjK3Y(IntrinsicMeasureScope intrinsicMeasureScope, int i, int i2, int i3, int i4, int i5, int i6, long j) {
-        if (Constraints.m7213getHasBoundedWidthimpl(j)) {
-            return Constraints.m7217getMaxWidthimpl(j);
+    public static final int m2528calculateWidthyeHjK3Y(IntrinsicMeasureScope intrinsicMeasureScope, int i, int i2, int i3, int i4, int i5, int i6, long j) {
+        if (Constraints.m7944getHasBoundedWidthimpl(j)) {
+            return Constraints.m7948getMaxWidthimpl(j);
         }
         return i6 + i + Math.max(i3, Math.max(i4, i5)) + i2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: calculateHeight-N4Jib3Y  reason: not valid java name */
-    public static final int m2322calculateHeightN4Jib3Y(IntrinsicMeasureScope intrinsicMeasureScope, int i, int i2, int i3, int i4, int i5, int i6, int i7, long j) {
-        float m3437getListItemTwoLineContainerHeightD9Ej5fM;
-        if (ListItemType.m2329equalsimpl0(i6, ListItemType.Companion.m2334getOneLineAlXitO8())) {
-            m3437getListItemTwoLineContainerHeightD9Ej5fM = ListTokens.INSTANCE.m3432getListItemOneLineContainerHeightD9Ej5fM();
+    public static final int m2527calculateHeightN4Jib3Y(IntrinsicMeasureScope intrinsicMeasureScope, int i, int i2, int i3, int i4, int i5, int i6, int i7, long j) {
+        float m4048getListItemTwoLineContainerHeightD9Ej5fM;
+        if (ListItemType.m2534equalsimpl0(i6, ListItemType.Companion.m2539getOneLineAlXitO8())) {
+            m4048getListItemTwoLineContainerHeightD9Ej5fM = ListTokens.INSTANCE.m4043getListItemOneLineContainerHeightD9Ej5fM();
         } else {
-            m3437getListItemTwoLineContainerHeightD9Ej5fM = ListItemType.m2329equalsimpl0(i6, ListItemType.Companion.m2336getTwoLineAlXitO8()) ? ListTokens.INSTANCE.m3437getListItemTwoLineContainerHeightD9Ej5fM() : ListTokens.INSTANCE.m3434getListItemThreeLineContainerHeightD9Ej5fM();
+            m4048getListItemTwoLineContainerHeightD9Ej5fM = ListItemType.m2534equalsimpl0(i6, ListItemType.Companion.m2541getTwoLineAlXitO8()) ? ListTokens.INSTANCE.m4048getListItemTwoLineContainerHeightD9Ej5fM() : ListTokens.INSTANCE.m4045getListItemThreeLineContainerHeightD9Ej5fM();
         }
-        return RangesKt.coerceAtMost(Math.max(Math.max(Constraints.m7218getMinHeightimpl(j), intrinsicMeasureScope.mo423roundToPx0680j_4(m3437getListItemTwoLineContainerHeightD9Ej5fM)), i7 + Math.max(i, Math.max(i3 + i4 + i5, i2))), Constraints.m7216getMaxHeightimpl(j));
+        return RangesKt.coerceAtMost(Math.max(Math.max(Constraints.m7949getMinHeightimpl(j), intrinsicMeasureScope.mo423roundToPx0680j_4(m4048getListItemTwoLineContainerHeightD9Ej5fM)), i7 + Math.max(i, Math.max(i3 + i4 + i5, i2))), Constraints.m7947getMaxHeightimpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult place(MeasureScope measureScope, final int i, final int i2, final Placeable placeable, final Placeable placeable2, final Placeable placeable3, final Placeable placeable4, final Placeable placeable5, final boolean z, final int i3, final int i4, final int i5) {
-        return MeasureScope.layout$default(measureScope, i, i2, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.ListItemKt$place$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        return MeasureScope.layout$default(measureScope, i, i2, null, new Function1() { // from class: androidx.compose.material3.ListItemKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable.PlacementScope placementScope2;
-                int align;
-                Placeable placeable6 = Placeable.this;
-                if (placeable6 != null) {
-                    int i6 = i3;
-                    boolean z2 = z;
-                    int i7 = i5;
-                    int i8 = i2;
-                    if (!z2) {
-                        i7 = Alignment.Companion.getCenterVertically().align(placeable6.getHeight(), i8);
-                    }
-                    Placeable.PlacementScope.placeRelative$default(placementScope, placeable6, i6, i7, 0.0f, 4, null);
-                    placementScope2 = placementScope;
-                } else {
-                    placementScope2 = placementScope;
-                }
-                Placeable placeable7 = placeable2;
-                if (placeable7 != null) {
-                    int i9 = i;
-                    int i10 = i4;
-                    boolean z3 = z;
-                    int i11 = i5;
-                    int i12 = i2;
-                    int width = (i9 - i10) - placeable7.getWidth();
-                    if (!z3) {
-                        i11 = Alignment.Companion.getCenterVertically().align(placeable7.getHeight(), i12);
-                    }
-                    Placeable.PlacementScope.placeRelative$default(placementScope2, placeable7, width, i11, 0.0f, 4, null);
-                }
-                int widthOrZero = i3 + TextFieldImplKt.widthOrZero(Placeable.this);
-                if (z) {
-                    align = i5;
-                } else {
-                    align = Alignment.Companion.getCenterVertically().align(TextFieldImplKt.heightOrZero(placeable3) + TextFieldImplKt.heightOrZero(placeable4) + TextFieldImplKt.heightOrZero(placeable5), i2);
-                }
-                int i13 = align;
-                Placeable placeable8 = placeable4;
-                if (placeable8 != null) {
-                    Placeable.PlacementScope.placeRelative$default(placementScope2, placeable8, widthOrZero, i13, 0.0f, 4, null);
-                }
-                int heightOrZero = i13 + TextFieldImplKt.heightOrZero(placeable4);
-                Placeable placeable9 = placeable3;
-                if (placeable9 != null) {
-                    Placeable.PlacementScope.placeRelative$default(placementScope2, placeable9, widthOrZero, heightOrZero, 0.0f, 4, null);
-                }
-                int heightOrZero2 = heightOrZero + TextFieldImplKt.heightOrZero(placeable3);
-                Placeable placeable10 = placeable5;
-                if (placeable10 != null) {
-                    Placeable.PlacementScope.placeRelative$default(placementScope2, placeable10, widthOrZero, heightOrZero2, 0.0f, 4, null);
-                }
+            public final Object invoke(Object obj) {
+                Unit place$lambda$11;
+                place$lambda$11 = ListItemKt.place$lambda$11(Placeable.this, i3, z, i5, placeable3, placeable4, placeable5, i2, placeable2, i, i4, (Placeable.PlacementScope) obj);
+                return place$lambda$11;
             }
         }, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit place$lambda$11(Placeable placeable, int i, boolean z, int i2, Placeable placeable2, Placeable placeable3, Placeable placeable4, int i3, Placeable placeable5, int i4, int i5, Placeable.PlacementScope placementScope) {
+        if (placeable != null) {
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i, z ? i2 : Alignment.Companion.getCenterVertically().align(placeable.getHeight(), i3), 0.0f, 4, null);
+        }
+        int widthOrZero = i + LayoutUtilKt.getWidthOrZero(placeable);
+        int align = z ? i2 : Alignment.Companion.getCenterVertically().align(LayoutUtilKt.getHeightOrZero(placeable2) + LayoutUtilKt.getHeightOrZero(placeable3) + LayoutUtilKt.getHeightOrZero(placeable4), i3);
+        if (placeable3 != null) {
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, widthOrZero, align, 0.0f, 4, null);
+        }
+        int heightOrZero = align + LayoutUtilKt.getHeightOrZero(placeable3);
+        if (placeable2 != null) {
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, widthOrZero, heightOrZero, 0.0f, 4, null);
+        }
+        int heightOrZero2 = heightOrZero + LayoutUtilKt.getHeightOrZero(placeable2);
+        if (placeable4 != null) {
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable4, widthOrZero, heightOrZero2, 0.0f, 4, null);
+        }
+        if (placeable5 != null) {
+            int width = (i4 - i5) - placeable5.getWidth();
+            if (!z) {
+                i2 = Alignment.Companion.getCenterVertically().align(placeable5.getHeight(), i3);
+            }
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable5, width, i2, 0.0f, 4, null);
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ProvideTextStyleFromToken-3J-VO9M  reason: not valid java name */
-    public static final void m2317ProvideTextStyleFromToken3JVO9M(long j, final TypographyKeyTokens typographyKeyTokens, Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    public static final void m2522ProvideTextStyleFromToken3JVO9M(long j, final TypographyKeyTokens typographyKeyTokens, Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         long j2;
         final Function2<? super Composer, ? super Integer, Unit> function22;
-        Composer startRestartGroup = composer.startRestartGroup(1133967795);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ProvideTextStyleFromToken)P(0:c#ui.graphics.Color,2)660@26959L5,658@26869L128:ListItem.kt#uh7d8r");
+        Composer startRestartGroup = composer.startRestartGroup(-285397024);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ProvideTextStyleFromToken)N(color:c#ui.graphics.Color,textToken,content)705@29794L5,703@29704L129:ListItem.kt#uh7d8r");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(j) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
         if ((i & 48) == 0) {
-            i2 |= startRestartGroup.changed(typographyKeyTokens) ? 32 : 16;
+            i2 |= startRestartGroup.changed(typographyKeyTokens.ordinal()) ? 32 : 16;
         }
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(function2) ? 256 : 128;
         }
-        if ((i2 & 147) != 146 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
+            j2 = j;
+            function22 = function2;
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1133967795, i2, -1, "androidx.compose.material3.ProvideTextStyleFromToken (ListItem.kt:658)");
+                ComposerKt.traceEventStart(-285397024, i2, -1, "androidx.compose.material3.ProvideTextStyleFromToken (ListItem.kt:703)");
             }
             j2 = j;
-            ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(j2, TypographyKt.getValue(typographyKeyTokens, startRestartGroup, (i2 >> 3) & 14), function2, startRestartGroup, i2 & 910);
+            ProvideContentColorTextStyleKt.m3529ProvideContentColorTextStyle3JVO9M(j2, TypographyKt.getValue(typographyKeyTokens, startRestartGroup, (i2 >> 3) & 14), function2, startRestartGroup, i2 & 910);
             function22 = function2;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
-            j2 = j;
-            function22 = function2;
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
             final long j3 = j2;
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ProvideTextStyleFromToken$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ListItemKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i3) {
-                    ListItemKt.m2317ProvideTextStyleFromToken3JVO9M(j3, typographyKeyTokens, function22, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit ProvideTextStyleFromToken_3J_VO9M$lambda$12;
+                    ProvideTextStyleFromToken_3J_VO9M$lambda$12 = ListItemKt.ProvideTextStyleFromToken_3J_VO9M$lambda$12(j3, typographyKeyTokens, function22, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ProvideTextStyleFromToken_3J_VO9M$lambda$12;
                 }
             });
         }
@@ -1960,15 +1066,15 @@ public final class ListItemKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: verticalPadding-yh95HIg  reason: not valid java name */
-    public static final float m2324verticalPaddingyh95HIg(int i) {
-        return ListItemType.m2329equalsimpl0(i, ListItemType.Companion.m2335getThreeLineAlXitO8()) ? ListItemThreeLineVerticalPadding : ListItemVerticalPadding;
+    public static final float m2529verticalPaddingyh95HIg(int i) {
+        return ListItemType.m2534equalsimpl0(i, ListItemType.Companion.m2540getThreeLineAlXitO8()) ? ListItemThreeLineVerticalPadding : ListItemVerticalPadding;
     }
 
     static {
         float f = 16;
-        ListItemStartPadding = Dp.m7264constructorimpl(f);
-        ListItemEndPadding = Dp.m7264constructorimpl(f);
-        LeadingContentEndPadding = Dp.m7264constructorimpl(f);
-        TrailingContentStartPadding = Dp.m7264constructorimpl(f);
+        ListItemStartPadding = Dp.m7995constructorimpl(f);
+        ListItemEndPadding = Dp.m7995constructorimpl(f);
+        LeadingContentEndPadding = Dp.m7995constructorimpl(f);
+        TrailingContentStartPadding = Dp.m7995constructorimpl(f);
     }
 }

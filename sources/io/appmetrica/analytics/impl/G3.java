@@ -1,51 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
-public final class G3 extends ECommerceEvent {
-    public static final int d = 4;
-    public static final int e = 5;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f455a;
-    public final J3 b;
-    public final A8 c;
-
-    public G3(int i, ECommerceCartItem eCommerceCartItem) {
-        this(i, new J3(eCommerceCartItem), new H3());
+import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+/* loaded from: classes3.dex */
+public final class G3 extends BaseProtobufStateSerializer {
+    public final F3 a() {
+        return new F3();
     }
 
-    public final A8 a() {
-        return this.c;
+    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final MessageNano defaultValue() {
+        return new F3();
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
-    public final String getPublicDescription() {
-        int i = this.f455a;
-        if (i != 4) {
-            if (i != 5) {
-                return "unknown cart action info";
-            }
-            return "remove cart item info";
-        }
-        return "add cart item info";
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: a */
+    public final F3 toState(byte[] bArr) {
+        return (F3) MessageNano.mergeFrom(new F3(), bArr);
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0281gg
-    public final List<Zi> toProto() {
-        return (List) this.c.fromModel(this);
-    }
-
-    public final String toString() {
-        return "CartActionInfoEvent{eventType=" + this.f455a + ", cartItem=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public G3(int i, J3 j3, A8 a8) {
-        this.f455a = i;
-        this.b = j3;
-        this.c = a8;
+    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final Object defaultValue() {
+        return new F3();
     }
 }

@@ -4,53 +4,54 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import androidx.collection.ArrayMap;
-import com.google.android.gms.internal.common.zzh;
+import com.google.android.gms.internal.common.zzg;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class zzc {
     private final Map zza = Collections.synchronizedMap(new ArrayMap());
     private int zzb = 0;
     private Bundle zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final LifecycleCallback zzc(String str, Class cls) {
+    public final LifecycleCallback zza(String str, Class cls) {
         return (LifecycleCallback) cls.cast(this.zza.get(str));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzd(String str, LifecycleCallback lifecycleCallback) {
-        if (!this.zza.containsKey(str)) {
-            this.zza.put(str, lifecycleCallback);
+    public final void zzb(String str, LifecycleCallback lifecycleCallback) {
+        Map map = this.zza;
+        if (!map.containsKey(str)) {
+            map.put(str, lifecycleCallback);
             if (this.zzb > 0) {
-                new zzh(Looper.getMainLooper()).post(new zzb(this, lifecycleCallback, str));
+                new zzg(Looper.getMainLooper()).post(new zzb(this, lifecycleCallback, str));
                 return;
             }
             return;
         }
-        throw new IllegalArgumentException("LifecycleCallback with tag " + str + " already added to this fragment.");
+        StringBuilder sb = new StringBuilder(String.valueOf(str).length() + 59);
+        sb.append("LifecycleCallback with tag ");
+        sb.append(str);
+        sb.append(" already added to this fragment.");
+        throw new IllegalArgumentException(sb.toString());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zze(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        for (LifecycleCallback lifecycleCallback : this.zza.values()) {
-            lifecycleCallback.dump(str, fileDescriptor, printWriter, strArr);
-        }
+    public final boolean zzc() {
+        return this.zzb > 0;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzf(int i, int i2, Intent intent) {
-        for (LifecycleCallback lifecycleCallback : this.zza.values()) {
-            lifecycleCallback.onActivityResult(i, i2, intent);
-        }
+    public final boolean zzd() {
+        return this.zzb >= 2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzg(Bundle bundle) {
+    public final void zze(Bundle bundle) {
         this.zzb = 1;
         this.zzc = bundle;
         for (Map.Entry entry : this.zza.entrySet()) {
@@ -59,15 +60,15 @@ public final class zzc {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzh() {
-        this.zzb = 5;
+    public final void zzf() {
+        this.zzb = 2;
         for (LifecycleCallback lifecycleCallback : this.zza.values()) {
-            lifecycleCallback.onDestroy();
+            lifecycleCallback.onStart();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzi() {
+    public final void zzg() {
         this.zzb = 3;
         for (LifecycleCallback lifecycleCallback : this.zza.values()) {
             lifecycleCallback.onResume();
@@ -75,7 +76,14 @@ public final class zzc {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzj(Bundle bundle) {
+    public final void zzh(int i, int i2, Intent intent) {
+        for (LifecycleCallback lifecycleCallback : this.zza.values()) {
+            lifecycleCallback.onActivityResult(i, i2, intent);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void zzi(Bundle bundle) {
         if (bundle == null) {
             return;
         }
@@ -87,15 +95,7 @@ public final class zzc {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzk() {
-        this.zzb = 2;
-        for (LifecycleCallback lifecycleCallback : this.zza.values()) {
-            lifecycleCallback.onStart();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzl() {
+    public final void zzj() {
         this.zzb = 4;
         for (LifecycleCallback lifecycleCallback : this.zza.values()) {
             lifecycleCallback.onStop();
@@ -103,12 +103,27 @@ public final class zzc {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzm() {
-        return this.zzb > 0;
+    public final void zzk() {
+        this.zzb = 5;
+        for (LifecycleCallback lifecycleCallback : this.zza.values()) {
+            lifecycleCallback.onDestroy();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzn() {
-        return this.zzb >= 2;
+    public final void zzl(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        for (LifecycleCallback lifecycleCallback : this.zza.values()) {
+            lifecycleCallback.dump(str, fileDescriptor, printWriter, strArr);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ int zzm() {
+        return this.zzb;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Bundle zzn() {
+        return this.zzc;
     }
 }

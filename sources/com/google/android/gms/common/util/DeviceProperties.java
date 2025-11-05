@@ -1,13 +1,15 @@
 package com.google.android.gms.common.util;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+import com.google.android.gms.common.internal.Objects;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class DeviceProperties {
     private static Boolean zza;
     private static Boolean zzb;
@@ -23,58 +25,53 @@ public final class DeviceProperties {
     private static Boolean zzl;
     private static Boolean zzm;
     private static Boolean zzn;
+    private static Boolean zzo;
+    private static Boolean zzp;
+    private static Boolean zzq;
 
     private DeviceProperties() {
     }
 
     public static boolean isAuto(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        if (zzj == null) {
-            boolean z = false;
-            if (PlatformVersion.isAtLeastO() && packageManager.hasSystemFeature("android.hardware.type.automotive")) {
-                z = true;
-            }
-            zzj = Boolean.valueOf(z);
-        }
-        return zzj.booleanValue();
+        return zze(context.getPackageManager());
     }
 
     public static boolean isBstar(Context context) {
-        if (zzm == null) {
+        if (zzo == null) {
             boolean z = false;
             if (PlatformVersion.isAtLeastR() && context.getPackageManager().hasSystemFeature("com.google.android.play.feature.HPE_EXPERIENCE")) {
                 z = true;
             }
-            zzm = Boolean.valueOf(z);
+            zzo = Boolean.valueOf(z);
         }
-        return zzm.booleanValue();
+        return zzo.booleanValue();
     }
 
     public static boolean isFoldable(Context context) {
-        if (zzc == null) {
+        if (zzd == null) {
             boolean z = false;
             if (PlatformVersion.isAtLeastR() && context.getPackageManager().hasSystemFeature("android.hardware.sensor.hinge_angle")) {
                 z = true;
             }
-            zzc = Boolean.valueOf(z);
+            zzd = Boolean.valueOf(z);
         }
-        return zzc.booleanValue();
+        return zzd.booleanValue();
     }
 
     public static boolean isLatchsky(Context context) {
-        if (zzg == null) {
+        if (zzh == null) {
             PackageManager packageManager = context.getPackageManager();
             boolean z = false;
             if (packageManager.hasSystemFeature("com.google.android.feature.services_updater") && packageManager.hasSystemFeature("cn.google.services")) {
                 z = true;
             }
-            zzg = Boolean.valueOf(z);
+            zzh = Boolean.valueOf(z);
         }
-        return zzg.booleanValue();
+        return zzh.booleanValue();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x006c, code lost:
-        if (isXr(r4) == false) goto L30;
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0088, code lost:
+        if (com.google.android.gms.common.util.DeviceProperties.zzq.booleanValue() == false) goto L35;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -83,16 +80,17 @@ public final class DeviceProperties {
         if (zza == null) {
             boolean z = true;
             if (!isFoldable(context)) {
-                if (!isTablet(context) && !isWearable(context) && !zzb(context)) {
-                    if (zzi == null) {
-                        zzi = Boolean.valueOf(context.getPackageManager().hasSystemFeature("org.chromium.arc"));
+                if (!isTablet(context) && !isWearable(context) && !zzd(context)) {
+                    if (zzk == null) {
+                        zzk = Boolean.valueOf(context.getPackageManager().hasSystemFeature("org.chromium.arc"));
                     }
-                    if (!zzi.booleanValue() && !isAuto(context) && !isTv(context)) {
-                        if (zzl == null) {
-                            zzl = Boolean.valueOf(context.getPackageManager().hasSystemFeature("com.google.android.feature.AMATI_EXPERIENCE"));
+                    if (!zzk.booleanValue() && !isAuto(context) && !isTv(context)) {
+                        if (zzn == null) {
+                            zzn = Boolean.valueOf(context.getPackageManager().hasSystemFeature("com.google.android.feature.AMATI_EXPERIENCE"));
                         }
-                        if (!zzl.booleanValue()) {
-                            if (!isBstar(context)) {
+                        if (!zzn.booleanValue() && !isBstar(context) && !isXr(context)) {
+                            if (zzq == null) {
+                                zzq = Boolean.valueOf(context.getPackageManager().hasSystemFeature("com.google.desktop.gms"));
                             }
                         }
                     }
@@ -104,12 +102,32 @@ public final class DeviceProperties {
         return zza.booleanValue();
     }
 
+    public static boolean isPhoneGo(Context context) {
+        ActivityManager activityManager;
+        boolean z = false;
+        if (context == null) {
+            return false;
+        }
+        if (zzb == null) {
+            if (isPhone(context)) {
+                if (zzi == null && (activityManager = (ActivityManager) context.getSystemService("activity")) != null) {
+                    zzi = Boolean.valueOf(activityManager.isLowRamDevice());
+                }
+                if (Objects.equal(zzi, true) && Build.VERSION.SDK_INT >= 27) {
+                    z = true;
+                }
+            }
+            zzb = Boolean.valueOf(z);
+        }
+        return zzb.booleanValue();
+    }
+
     public static boolean isSevenInchTablet(Context context) {
-        return zzc(context.getResources());
+        return zza(context.getResources());
     }
 
     public static boolean isSidewinder(Context context) {
-        return zza(context);
+        return zzc(context);
     }
 
     public static boolean isTablet(Context context) {
@@ -117,15 +135,7 @@ public final class DeviceProperties {
     }
 
     public static boolean isTv(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        if (zzk == null) {
-            boolean z = true;
-            if (!packageManager.hasSystemFeature("com.google.android.tv") && !packageManager.hasSystemFeature("android.hardware.type.television") && !packageManager.hasSystemFeature("android.software.leanback") && !packageManager.hasSystemFeature("com.google.android.feature.AMATI_EXPERIENCE")) {
-                z = false;
-            }
-            zzk = Boolean.valueOf(z);
-        }
-        return zzk.booleanValue();
+        return zzf(context.getPackageManager());
     }
 
     public static boolean isUserBuild() {
@@ -134,12 +144,12 @@ public final class DeviceProperties {
     }
 
     public static boolean isWearable(Context context) {
-        return zzd(context.getPackageManager());
+        return zzb(context.getPackageManager());
     }
 
     public static boolean isWearableWithoutPlayStore(Context context) {
         if (!isWearable(context) || PlatformVersion.isAtLeastN()) {
-            if (zza(context)) {
+            if (zzc(context)) {
                 return !PlatformVersion.isAtLeastO() || PlatformVersion.isAtLeastR();
             }
             return false;
@@ -148,60 +158,81 @@ public final class DeviceProperties {
     }
 
     public static boolean isXr(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        if (zzn == null) {
-            zzn = Boolean.valueOf(packageManager.hasSystemFeature("android.software.xr.immersive"));
-        }
-        return zzn.booleanValue();
+        return zzg(context.getPackageManager());
     }
 
-    public static boolean zza(Context context) {
-        if (zzf == null) {
-            zzf = Boolean.valueOf(context.getPackageManager().hasSystemFeature("cn.google"));
-        }
-        return zzf.booleanValue();
-    }
-
-    public static boolean zzb(Context context) {
-        if (zzh == null) {
-            boolean z = true;
-            if (!context.getPackageManager().hasSystemFeature("android.hardware.type.iot") && !context.getPackageManager().hasSystemFeature("android.hardware.type.embedded")) {
-                z = false;
-            }
-            zzh = Boolean.valueOf(z);
-        }
-        return zzh.booleanValue();
-    }
-
-    public static boolean zzc(Resources resources) {
+    public static boolean zza(Resources resources) {
         boolean z = false;
         if (resources == null) {
             return false;
         }
-        if (zzd == null) {
+        if (zze == null) {
             Configuration configuration = resources.getConfiguration();
             if ((configuration.screenLayout & 15) <= 3 && configuration.smallestScreenWidthDp >= 600) {
                 z = true;
             }
-            zzd = Boolean.valueOf(z);
-        }
-        return zzd.booleanValue();
-    }
-
-    public static boolean zzd(PackageManager packageManager) {
-        if (zze == null) {
-            zze = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
+            zze = Boolean.valueOf(z);
         }
         return zze.booleanValue();
+    }
+
+    public static boolean zzb(PackageManager packageManager) {
+        if (zzf == null) {
+            zzf = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
+        }
+        return zzf.booleanValue();
+    }
+
+    public static boolean zzc(Context context) {
+        if (zzg == null) {
+            zzg = Boolean.valueOf(context.getPackageManager().hasSystemFeature("cn.google"));
+        }
+        return zzg.booleanValue();
+    }
+
+    public static boolean zzd(Context context) {
+        if (zzj == null) {
+            zzj = Boolean.valueOf(PlatformVersion.isAtLeastO() ? context.getPackageManager().hasSystemFeature("android.hardware.type.embedded") : context.getPackageManager().hasSystemFeature("android.hardware.type.iot"));
+        }
+        return zzj.booleanValue();
+    }
+
+    public static boolean zze(PackageManager packageManager) {
+        if (zzl == null) {
+            boolean z = false;
+            if (PlatformVersion.isAtLeastO() && packageManager.hasSystemFeature("android.hardware.type.automotive")) {
+                z = true;
+            }
+            zzl = Boolean.valueOf(z);
+        }
+        return zzl.booleanValue();
+    }
+
+    public static boolean zzf(PackageManager packageManager) {
+        if (zzm == null) {
+            boolean z = true;
+            if (!packageManager.hasSystemFeature("com.google.android.tv") && !packageManager.hasSystemFeature("android.hardware.type.television") && !packageManager.hasSystemFeature("android.software.leanback") && !packageManager.hasSystemFeature("com.google.android.feature.AMATI_EXPERIENCE")) {
+                z = false;
+            }
+            zzm = Boolean.valueOf(z);
+        }
+        return zzm.booleanValue();
+    }
+
+    public static boolean zzg(PackageManager packageManager) {
+        if (zzp == null) {
+            zzp = Boolean.valueOf(packageManager.hasSystemFeature("android.software.xr.api.spatial"));
+        }
+        return zzp.booleanValue();
     }
 
     public static boolean isTablet(Resources resources) {
         if (resources == null) {
             return false;
         }
-        if (zzb == null) {
-            zzb = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || zzc(resources));
+        if (zzc == null) {
+            zzc = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || zza(resources));
         }
-        return zzb.booleanValue();
+        return zzc.booleanValue();
     }
 }

@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.android.gms.common.R;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class StringResourceValueReader {
     private final Resources zza;
     private final String zzb;
@@ -18,10 +18,12 @@ public class StringResourceValueReader {
     }
 
     public String getString(String str) {
-        int identifier = this.zza.getIdentifier(str, TypedValues.Custom.S_STRING, this.zzb);
+        String str2 = this.zzb;
+        Resources resources = this.zza;
+        int identifier = resources.getIdentifier(str, TypedValues.Custom.S_STRING, str2);
         if (identifier == 0) {
             return null;
         }
-        return this.zza.getString(identifier);
+        return resources.getString(identifier);
     }
 }

@@ -32,7 +32,7 @@ public final class CursorAnchorInfoController {
     private final TransformedTextFieldState textFieldState;
     private final TextLayoutState textLayoutState;
     private final CursorAnchorInfo.Builder builder = new CursorAnchorInfo.Builder();
-    private final float[] matrix = Matrix.m4791constructorimpl$default(null, 1, null);
+    private final float[] matrix = Matrix.m5521constructorimpl$default(null, 1, null);
     private final android.graphics.Matrix androidMatrix = new android.graphics.Matrix();
 
     public CursorAnchorInfoController(TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, ComposeInputMethodManager composeInputMethodManager, CoroutineScope coroutineScope) {
@@ -144,10 +144,10 @@ public final class CursorAnchorInfoController {
                         return null;
                     }
                     TextFieldCharSequence visualText = this.textFieldState.getVisualText();
-                    Matrix.m4800resetimpl(this.matrix);
-                    textLayoutNodeCoordinates.mo5983transformToScreen58bKbWc(this.matrix);
-                    AndroidMatrixConversions_androidKt.m4417setFromEL8BTi8(this.androidMatrix, this.matrix);
-                    return CursorAnchorInfoBuilder_androidKt.m1496buildvxqZcH0(this.builder, visualText, visualText.m1446getSelectiond9O1mEE(), visualText.m1445getCompositionMzsxiRA(), layoutResult, this.androidMatrix, SelectionManagerKt.visibleBounds(coreNodeCoordinates).m4342translatek4lQ0M(textLayoutNodeCoordinates.mo5976localPositionOfR5De75A(coreNodeCoordinates, Offset.Companion.m4321getZeroF1C5BW0())), SelectionManagerKt.visibleBounds(decoratorNodeCoordinates).m4342translatek4lQ0M(textLayoutNodeCoordinates.mo5976localPositionOfR5De75A(decoratorNodeCoordinates, Offset.Companion.m4321getZeroF1C5BW0())), this.includeInsertionMarker, this.includeCharacterBounds, this.includeEditorBounds, this.includeLineBounds);
+                    Matrix.m5530resetimpl(this.matrix);
+                    textLayoutNodeCoordinates.mo6713transformToScreen58bKbWc(this.matrix);
+                    AndroidMatrixConversions_androidKt.m5147setFromEL8BTi8(this.androidMatrix, this.matrix);
+                    return CursorAnchorInfoBuilder_androidKt.m1496buildvxqZcH0(this.builder, visualText, visualText.m1446getSelectiond9O1mEE(), visualText.m1445getCompositionMzsxiRA(), layoutResult, this.androidMatrix, SelectionManagerKt.visibleBounds(coreNodeCoordinates).m5072translatek4lQ0M(textLayoutNodeCoordinates.mo6706localPositionOfR5De75A(coreNodeCoordinates, Offset.Companion.m5051getZeroF1C5BW0())), SelectionManagerKt.visibleBounds(decoratorNodeCoordinates).m5072translatek4lQ0M(textLayoutNodeCoordinates.mo6706localPositionOfR5De75A(decoratorNodeCoordinates, Offset.Companion.m5051getZeroF1C5BW0())), this.includeInsertionMarker, this.includeCharacterBounds, this.includeEditorBounds, this.includeLineBounds);
                 }
             }
         }

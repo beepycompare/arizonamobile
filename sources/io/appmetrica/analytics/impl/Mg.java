@@ -1,45 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import java.util.HashSet;
-import java.util.Iterator;
-/* loaded from: classes4.dex */
-public final class Mg implements Gg {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final HashSet f579a;
-    public boolean b;
-    public Jg c;
-
-    public Mg() {
-        this(Na.j().t());
+import java.util.List;
+/* loaded from: classes3.dex */
+public final class Mg extends Lg {
+    public Mg(C0678wi c0678wi) {
+        super(c0678wi);
     }
 
-    @Override // io.appmetrica.analytics.impl.Gg
-    public final synchronized void a(Jg jg) {
-        if (jg != null) {
-            LoggerStorage.getMainPublicOrAnonymousLogger().info("Received referrer from source %s: %s", jg.d.f500a, jg.f520a);
-        }
-        this.c = jg;
-        this.b = true;
-        Iterator it = this.f579a.iterator();
-        while (it.hasNext()) {
-            ((Bg) it.next()).a(this.c);
-        }
-        this.f579a.clear();
-    }
-
-    public Mg(Hg hg) {
-        this.f579a = new HashSet();
-        hg.a(new Gl(this));
-        hg.a();
-    }
-
-    public final synchronized void a(Bg bg) {
-        this.f579a.add(bg);
-        if (this.b) {
-            bg.a(this.c);
-            this.f579a.remove(bg);
-        }
+    @Override // io.appmetrica.analytics.impl.Lg, io.appmetrica.analytics.impl.AbstractC0645va
+    public final void a(List<Wg> list) {
+        list.add(this.f1167a.i);
+        list.add(this.f1167a.j);
+        super.a(list);
     }
 }

@@ -24,7 +24,7 @@ public final class MultiWidgetSelectionDelegateKt {
         int previousAdjustedOffset;
         Selection.AnchorInfo start;
         Selection.AnchorInfo end;
-        Rect rect = new Rect(0.0f, 0.0f, (int) (textLayoutResult.m6697getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6697getSizeYbymL2g() & 4294967295L));
+        Rect rect = new Rect(0.0f, 0.0f, (int) (textLayoutResult.m7428getSizeYbymL2g() >> 32), (int) (textLayoutResult.m7428getSizeYbymL2g() & 4294967295L));
         Direction m1743getXDirection3MmeM6k = m1743getXDirection3MmeM6k(j, rect);
         Direction m1744getYDirection3MmeM6k = m1744getYDirection3MmeM6k(j, rect);
         if (selectionLayoutBuilder.isStartHandle()) {
@@ -112,6 +112,6 @@ public final class MultiWidgetSelectionDelegateKt {
         if (Float.intBitsToFloat(i) >= textLayoutResult.getMultiParagraph().getHeight()) {
             return textLayoutResult.getLayoutInput().getText().length();
         }
-        return textLayoutResult.m6696getOffsetForPositionk4lQ0M(j);
+        return textLayoutResult.m7427getOffsetForPositionk4lQ0M(j);
     }
 }

@@ -24,7 +24,7 @@ public interface TransformScope {
             f = 1.0f;
         }
         if ((i & 2) != 0) {
-            j = Offset.Companion.m4321getZeroF1C5BW0();
+            j = Offset.Companion.m5051getZeroF1C5BW0();
         }
         if ((i & 4) != 0) {
             f2 = 0.0f;

@@ -21,9 +21,9 @@ public final class ProgressBarShapeOutline implements Shape {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M 33.8718 0 H 29.9835 L 28.3952 3.5491 L 3.7819 58.5491 L 0 67 H 9.2585 H 764.8715 H 768.7425 L 770.3375 63.474 L 795.2245 8.4735 L 799.0595 0 H 789.7585 H 33.8718 Z"), null, 1, null);
-        float[] m4791constructorimpl$default = Matrix.m4791constructorimpl$default(null, 1, null);
-        Matrix.m4807scaleimpl$default(m4791constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 780.5f, Float.intBitsToFloat((int) (j & 4294967295L)) / 55.0f, 0.0f, 4, null);
-        path$default.mo4441transform58bKbWc(m4791constructorimpl$default);
+        float[] m5521constructorimpl$default = Matrix.m5521constructorimpl$default(null, 1, null);
+        Matrix.m5537scaleimpl$default(m5521constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 780.5f, Float.intBitsToFloat((int) (j & 4294967295L)) / 55.0f, 0.0f, 4, null);
+        path$default.mo5171transform58bKbWc(m5521constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

@@ -9,7 +9,7 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
-import io.appmetrica.analytics.impl.O2;
+import io.appmetrica.analytics.impl.H2;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -27,7 +27,7 @@ import ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao;
 import ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl;
 /* compiled from: AppDatabase_Impl.kt */
 @Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0007\u001a\u00020\bH\u0014J\b\u0010\t\u001a\u00020\nH\u0014J\b\u0010\u000b\u001a\u00020\fH\u0016J\"\u0010\r\u001a\u001c\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u000f\u0012\u000e\u0012\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u000f0\u00100\u000eH\u0014J\u0016\u0010\u0011\u001a\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00130\u000f0\u0012H\u0016J*\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00150\u00102\u001a\u0010\u0016\u001a\u0016\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00130\u000f\u0012\u0004\u0012\u00020\u00130\u000eH\u0016J\b\u0010\u0017\u001a\u00020\u0006H\u0016R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/domain/db/AppDatabase_Impl;", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "<init>", "()V", "_inventoryItemDao", "Lkotlin/Lazy;", "Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao;", "createOpenDelegate", "Landroidx/room/RoomOpenDelegate;", "createInvalidationTracker", "Landroidx/room/InvalidationTracker;", "clearAllTables", "", "getRequiredTypeConverterClasses", "", "Lkotlin/reflect/KClass;", "", "getRequiredAutoMigrationSpecClasses", "", "Landroidx/room/migration/AutoMigrationSpec;", "createAutoMigrations", "Landroidx/room/migration/Migration;", "autoMigrationSpecs", "inventoryItemDao", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class AppDatabase_Impl extends AppDatabase {
     private final Lazy<InventoryItemDao> _inventoryItemDao = LazyKt.lazy(new Function0() { // from class: ru.mrlargha.commonui.domain.db.AppDatabase_Impl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
@@ -59,15 +59,15 @@ public final class AppDatabase_Impl extends AppDatabase {
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                super(6, "06906dd4fa91f0e3453da37e4ab2918b", "db9fb19d3b8fe7a1d5d1cfb24857aed6");
+                super(7, "014c17641dfc8f9fa5c60cc489262771", "fc76e468ee8944c79caf42e3068d49cc");
             }
 
             @Override // androidx.room.RoomOpenDelegate
             public void createAllTables(SQLiteConnection connection) {
                 Intrinsics.checkNotNullParameter(connection, "connection");
-                SQLite.execSQL(connection, "CREATE TABLE IF NOT EXISTS `InventoryItemEntity` (`slot` INTEGER NOT NULL, `item` INTEGER, `id` INTEGER NOT NULL, `text` TEXT, `item_type` INTEGER, `amount` INTEGER, `background` INTEGER, `color` INTEGER, `bits` INTEGER, `available` INTEGER, `enchant` INTEGER, `breaks` INTEGER, `isActive` INTEGER, `itemStrength` INTEGER, `blackout` INTEGER, `time` INTEGER, `acsSlot` INTEGER, `inventoryType` INTEGER NOT NULL, `isColored` INTEGER NOT NULL, `isLocked` INTEGER NOT NULL, PRIMARY KEY(`slot`))");
+                SQLite.execSQL(connection, "CREATE TABLE IF NOT EXISTS `InventoryItemEntity` (`slot` INTEGER NOT NULL, `item` INTEGER, `id` INTEGER NOT NULL, `text` TEXT, `item_type` INTEGER, `amount` INTEGER, `background` INTEGER, `color` INTEGER, `bits` INTEGER, `available` INTEGER, `enchant` INTEGER, `breaks` INTEGER, `isActive` INTEGER, `itemStrength` INTEGER, `blackout` INTEGER, `time` INTEGER, `acsSlot` INTEGER, `inventoryType` INTEGER NOT NULL, `isColored` INTEGER NOT NULL, `isLocked` INTEGER NOT NULL, `effect` TEXT, PRIMARY KEY(`slot`))");
                 SQLite.execSQL(connection, RoomMasterTable.CREATE_QUERY);
-                SQLite.execSQL(connection, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '06906dd4fa91f0e3453da37e4ab2918b')");
+                SQLite.execSQL(connection, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '014c17641dfc8f9fa5c60cc489262771')");
             }
 
             @Override // androidx.room.RoomOpenDelegate
@@ -98,7 +98,7 @@ public final class AppDatabase_Impl extends AppDatabase {
                 linkedHashMap.put("text", new TableInfo.Column("text", "TEXT", false, 0, null, 1));
                 linkedHashMap.put("item_type", new TableInfo.Column("item_type", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("amount", new TableInfo.Column("amount", "INTEGER", false, 0, null, 1));
-                linkedHashMap.put(O2.g, new TableInfo.Column(O2.g, "INTEGER", false, 0, null, 1));
+                linkedHashMap.put(H2.g, new TableInfo.Column(H2.g, "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("color", new TableInfo.Column("color", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("bits", new TableInfo.Column("bits", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("available", new TableInfo.Column("available", "INTEGER", false, 0, null, 1));
@@ -112,6 +112,7 @@ public final class AppDatabase_Impl extends AppDatabase {
                 linkedHashMap.put("inventoryType", new TableInfo.Column("inventoryType", "INTEGER", true, 0, null, 1));
                 linkedHashMap.put("isColored", new TableInfo.Column("isColored", "INTEGER", true, 0, null, 1));
                 linkedHashMap.put("isLocked", new TableInfo.Column("isLocked", "INTEGER", true, 0, null, 1));
+                linkedHashMap.put("effect", new TableInfo.Column("effect", "TEXT", false, 0, null, 1));
                 TableInfo tableInfo = new TableInfo("InventoryItemEntity", linkedHashMap, new LinkedHashSet(), new LinkedHashSet());
                 TableInfo read = TableInfo.Companion.read(connection, "InventoryItemEntity");
                 if (!tableInfo.equals(read)) {

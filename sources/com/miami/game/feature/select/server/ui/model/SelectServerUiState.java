@@ -152,7 +152,7 @@ public final class SelectServerUiState {
         }
 
         public final SelectServerUiState initial(boolean z) {
-            return new SelectServerUiState(null, null, ServerStateCategory.Mobile, false, z ? R.drawable.bg_arizona : R.drawable.bg_rodina, z, 11, null);
+            return new SelectServerUiState(null, null, ServerStateCategory.Mobile, false, z ? R.drawable.arizona_backgournd_home : R.drawable.rodina_backgournd_home, z, 11, null);
         }
     }
 }

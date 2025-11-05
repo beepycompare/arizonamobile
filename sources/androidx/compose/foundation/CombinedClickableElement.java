@@ -92,9 +92,9 @@ public final class CombinedClickableElement extends ModifierNodeElement<Combined
         String str = this.onClickLabel;
         int hashCode3 = (hashCode2 + (str != null ? str.hashCode() : 0)) * 31;
         Role role = this.role;
-        int m6471hashCodeimpl = (((hashCode3 + (role != null ? Role.m6471hashCodeimpl(role.m6473unboximpl()) : 0)) * 31) + this.onClick.hashCode()) * 31;
+        int m7201hashCodeimpl = (((hashCode3 + (role != null ? Role.m7201hashCodeimpl(role.m7203unboximpl()) : 0)) * 31) + this.onClick.hashCode()) * 31;
         String str2 = this.onLongClickLabel;
-        int hashCode4 = (m6471hashCodeimpl + (str2 != null ? str2.hashCode() : 0)) * 31;
+        int hashCode4 = (m7201hashCodeimpl + (str2 != null ? str2.hashCode() : 0)) * 31;
         Function0<Unit> function0 = this.onLongClick;
         int hashCode5 = (hashCode4 + (function0 != null ? function0.hashCode() : 0)) * 31;
         Function0<Unit> function02 = this.onDoubleClick;

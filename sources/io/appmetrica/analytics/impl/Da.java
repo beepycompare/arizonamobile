@@ -1,27 +1,39 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public enum Da {
-    UNKNOWN(0),
-    FIRST_OCCURRENCE(1),
-    NON_FIRST_OCCURENCE(2);
-    
+
+import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
+/* loaded from: classes3.dex */
+public final class Da implements HostRetryInfoProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f408a;
+    public final C0220ef f439a;
+    public final EnumC0116ae b;
 
-    Da(int i) {
-        this.f408a = i;
+    public Da(C0220ef c0220ef, EnumC0116ae enumC0116ae) {
+        this.f439a = c0220ef;
+        this.b = enumC0116ae;
     }
 
-    public static Da a(Integer num) {
-        Da[] values;
-        if (num != null) {
-            for (Da da : values()) {
-                if (da.f408a == num.intValue()) {
-                    return da;
-                }
-            }
-        }
-        return UNKNOWN;
+    public final EnumC0116ae a() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final long getLastAttemptTimeSeconds() {
+        return this.f439a.a(this.b, 0L);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final int getNextSendAttemptNumber() {
+        return this.f439a.a(this.b, 1);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final void saveLastAttemptTimeSeconds(long j) {
+        this.f439a.b(this.b, j).b();
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final void saveNextSendAttemptNumber(int i) {
+        this.f439a.b(this.b, i).b();
     }
 }

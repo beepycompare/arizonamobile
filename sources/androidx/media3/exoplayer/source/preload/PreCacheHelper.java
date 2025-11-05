@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PreCacheHelper {
     static final int DEFAULT_MIN_RETRY_COUNT = 5;
     private final Handler applicationHandler = Util.createHandlerForCurrentOrMainLooper();
@@ -40,7 +40,7 @@ public final class PreCacheHelper {
     private final Handler preCacheHandler;
     private final MediaSource.Factory testMediaSourceFactory;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         default void onDownloadError(MediaItem mediaItem, IOException iOException) {
         }
@@ -55,7 +55,7 @@ public final class PreCacheHelper {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory {
         private final Cache cache;
         private Listener listener;
@@ -127,14 +127,14 @@ public final class PreCacheHelper {
         this.preCacheHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PreCacheHelper.this.m8011xada346dd(j, j2);
+                PreCacheHelper.this.m8742xada346dd(j, j2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$preCache$0$androidx-media3-exoplayer-source-preload-PreCacheHelper  reason: not valid java name */
-    public /* synthetic */ void m8011xada346dd(long j, long j2) {
+    public /* synthetic */ void m8742xada346dd(long j, long j2) {
         DownloadCallback downloadCallback = this.currentDownloadCallback;
         if (downloadCallback == null || !downloadCallback.isReusable(j, j2)) {
             DownloadCallback downloadCallback2 = this.currentDownloadCallback;
@@ -149,14 +149,14 @@ public final class PreCacheHelper {
         this.preCacheHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                PreCacheHelper.this.m8013x5a429201();
+                PreCacheHelper.this.m8744x5a429201();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$stop$1$androidx-media3-exoplayer-source-preload-PreCacheHelper  reason: not valid java name */
-    public /* synthetic */ void m8013x5a429201() {
+    public /* synthetic */ void m8744x5a429201() {
         DownloadCallback downloadCallback = this.currentDownloadCallback;
         if (downloadCallback != null) {
             downloadCallback.cancel(false);
@@ -167,14 +167,14 @@ public final class PreCacheHelper {
         this.preCacheHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                PreCacheHelper.this.m8012x4e6cbcad(z);
+                PreCacheHelper.this.m8743x4e6cbcad(z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$release$2$androidx-media3-exoplayer-source-preload-PreCacheHelper  reason: not valid java name */
-    public /* synthetic */ void m8012x4e6cbcad(boolean z) {
+    public /* synthetic */ void m8743x4e6cbcad(boolean z) {
         DownloadCallback downloadCallback = this.currentDownloadCallback;
         if (downloadCallback != null) {
             downloadCallback.cancel(z);
@@ -184,7 +184,7 @@ public final class PreCacheHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ReleasableSingleThreadExecutor implements ReleasableExecutor {
         private final ExecutorService executor;
         private final Runnable releaseRunnable;
@@ -207,7 +207,7 @@ public final class PreCacheHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ReleasableExecutorSupplier implements Supplier<ReleasableExecutor> {
         private DownloadCallback downloadCallback;
         private int executorCount;
@@ -244,7 +244,7 @@ public final class PreCacheHelper {
                     this.preCacheHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$ReleasableExecutorSupplier$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            PreCacheHelper.ReleasableExecutorSupplier.this.m8022x3edeb64e();
+                            PreCacheHelper.ReleasableExecutorSupplier.this.m8753x3edeb64e();
                         }
                     });
                 }
@@ -253,7 +253,7 @@ public final class PreCacheHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onExecutorReleased$0$androidx-media3-exoplayer-source-preload-PreCacheHelper$ReleasableExecutorSupplier  reason: not valid java name */
-        public /* synthetic */ void m8022x3edeb64e() {
+        public /* synthetic */ void m8753x3edeb64e() {
             Assertions.checkState(wereExecutorsReleased());
             DownloadCallback downloadCallback = this.downloadCallback;
             if (downloadCallback != null) {
@@ -271,7 +271,7 @@ public final class PreCacheHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class DownloadCallback implements DownloadHelper.Callback {
         private final DownloadHelper downloadHelper;
         private Downloader downloader;
@@ -314,7 +314,7 @@ public final class PreCacheHelper {
             notifyListeners(new Consumer() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$DownloadCallback$$ExternalSyntheticLambda1
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    PreCacheHelper.DownloadCallback.this.m8020x2cdaea77(mediaItem, (PreCacheHelper.Listener) obj);
+                    PreCacheHelper.DownloadCallback.this.m8751x2cdaea77(mediaItem, (PreCacheHelper.Listener) obj);
                 }
             });
             this.pendingDownloadRequest = downloadRequest;
@@ -326,7 +326,7 @@ public final class PreCacheHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepared$0$androidx-media3-exoplayer-source-preload-PreCacheHelper$DownloadCallback  reason: not valid java name */
-        public /* synthetic */ void m8020x2cdaea77(MediaItem mediaItem, Listener listener) {
+        public /* synthetic */ void m8751x2cdaea77(MediaItem mediaItem, Listener listener) {
             listener.onPrepared(PreCacheHelper.this.mediaItem, mediaItem);
         }
 
@@ -339,14 +339,14 @@ public final class PreCacheHelper {
             notifyListeners(new Consumer() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$DownloadCallback$$ExternalSyntheticLambda4
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    PreCacheHelper.DownloadCallback.this.m8019x987b4a12(iOException, (PreCacheHelper.Listener) obj);
+                    PreCacheHelper.DownloadCallback.this.m8750x987b4a12(iOException, (PreCacheHelper.Listener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepareError$1$androidx-media3-exoplayer-source-preload-PreCacheHelper$DownloadCallback  reason: not valid java name */
-        public /* synthetic */ void m8019x987b4a12(IOException iOException, Listener listener) {
+        public /* synthetic */ void m8750x987b4a12(IOException iOException, Listener listener) {
             listener.onPrepareError(PreCacheHelper.this.mediaItem, iOException);
         }
 
@@ -365,14 +365,14 @@ public final class PreCacheHelper {
             PreCacheHelper.this.preCacheHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$DownloadCallback$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreCacheHelper.DownloadCallback.this.m8018xa2e2ff64(task);
+                    PreCacheHelper.DownloadCallback.this.m8749xa2e2ff64(task);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onDownloadStopped$3$androidx-media3-exoplayer-source-preload-PreCacheHelper$DownloadCallback  reason: not valid java name */
-        public /* synthetic */ void m8018xa2e2ff64(Task task) {
+        public /* synthetic */ void m8749xa2e2ff64(Task task) {
             if (task != this.downloaderTask) {
                 return;
             }
@@ -384,14 +384,14 @@ public final class PreCacheHelper {
             notifyListeners(new Consumer() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$DownloadCallback$$ExternalSyntheticLambda0
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    PreCacheHelper.DownloadCallback.this.m8017x88720645(iOException, (PreCacheHelper.Listener) obj);
+                    PreCacheHelper.DownloadCallback.this.m8748x88720645(iOException, (PreCacheHelper.Listener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onDownloadStopped$2$androidx-media3-exoplayer-source-preload-PreCacheHelper$DownloadCallback  reason: not valid java name */
-        public /* synthetic */ void m8017x88720645(IOException iOException, Listener listener) {
+        public /* synthetic */ void m8748x88720645(IOException iOException, Listener listener) {
             listener.onDownloadError(PreCacheHelper.this.mediaItem, iOException);
         }
 
@@ -399,28 +399,28 @@ public final class PreCacheHelper {
             PreCacheHelper.this.preCacheHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$DownloadCallback$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreCacheHelper.DownloadCallback.this.m8016x5419627a(task);
+                    PreCacheHelper.DownloadCallback.this.m8747x5419627a(task);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onDownloadProgress$5$androidx-media3-exoplayer-source-preload-PreCacheHelper$DownloadCallback  reason: not valid java name */
-        public /* synthetic */ void m8016x5419627a(final Task task) {
+        public /* synthetic */ void m8747x5419627a(final Task task) {
             if (task != this.downloaderTask) {
                 return;
             }
             notifyListeners(new Consumer() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$DownloadCallback$$ExternalSyntheticLambda5
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    PreCacheHelper.DownloadCallback.this.m8015x39a8695b(task, (PreCacheHelper.Listener) obj);
+                    PreCacheHelper.DownloadCallback.this.m8746x39a8695b(task, (PreCacheHelper.Listener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onDownloadProgress$4$androidx-media3-exoplayer-source-preload-PreCacheHelper$DownloadCallback  reason: not valid java name */
-        public /* synthetic */ void m8015x39a8695b(Task task, Listener listener) {
+        public /* synthetic */ void m8746x39a8695b(Task task, Listener listener) {
             listener.onPreCacheProgress(PreCacheHelper.this.mediaItem, task.contentLength, task.bytesDownloaded, task.percentDownloaded);
         }
 
@@ -473,14 +473,14 @@ public final class PreCacheHelper {
             PreCacheHelper.this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreCacheHelper$DownloadCallback$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreCacheHelper.DownloadCallback.this.m8014x97097351(consumer);
+                    PreCacheHelper.DownloadCallback.this.m8745x97097351(consumer);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$notifyListeners$6$androidx-media3-exoplayer-source-preload-PreCacheHelper$DownloadCallback  reason: not valid java name */
-        public /* synthetic */ void m8014x97097351(Consumer consumer) {
+        public /* synthetic */ void m8745x97097351(Consumer consumer) {
             synchronized (this.lock) {
                 if (this.isCanceled) {
                     return;
@@ -493,7 +493,7 @@ public final class PreCacheHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Task extends Thread implements Downloader.ProgressListener {
         private volatile long bytesDownloaded;
         private volatile long contentLength;

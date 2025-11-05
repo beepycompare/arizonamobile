@@ -1,54 +1,90 @@
 package com.google.android.gms.internal.common;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+abstract class zzv extends zzk {
+    final CharSequence zzb;
+    final zzp zzc;
+    final boolean zzd;
+    int zze = 0;
+    int zzf = Integer.MAX_VALUE;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-import org.jspecify.annotations.NullMarked;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-@NullMarked
-/* loaded from: classes3.dex */
-public final class zzv {
-    public static int zza(int i, int i2, String str) {
-        String zza;
-        if (i < 0 || i >= i2) {
-            if (i < 0) {
-                zza = zzab.zza("%s (%s) must not be negative", FirebaseAnalytics.Param.INDEX, Integer.valueOf(i));
-            } else if (i2 < 0) {
-                throw new IllegalArgumentException("negative size: " + i2);
-            } else {
-                zza = zzab.zza("%s (%s) must be less than size (%s)", FirebaseAnalytics.Param.INDEX, Integer.valueOf(i), Integer.valueOf(i2));
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzv(zzw zzwVar, CharSequence charSequence) {
+        this.zzc = zzwVar.zzf();
+        this.zzd = zzwVar.zzg();
+        this.zzb = charSequence;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0047, code lost:
+        r3 = r5.zzf;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x004a, code lost:
+        if (r3 != 1) goto L29;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x004c, code lost:
+        r1 = r5.zzb;
+        r3 = r1.length();
+        r5.zze = -1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0054, code lost:
+        if (r3 <= r0) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0056, code lost:
+        r1.charAt(r3 - 1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x005b, code lost:
+        r1 = r3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x005d, code lost:
+        r5.zzf = r3 - 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x006a, code lost:
+        return r5.zzb.subSequence(r0, r1).toString();
+     */
+    @Override // com.google.android.gms.internal.common.zzk
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    protected final /* bridge */ /* synthetic */ Object zza() {
+        int zzd;
+        int i = this.zze;
+        while (true) {
+            int i2 = this.zze;
+            if (i2 == -1) {
+                zzb();
+                return null;
             }
-            throw new IndexOutOfBoundsException(zza);
-        }
-        return i;
-    }
-
-    public static int zzb(int i, int i2, String str) {
-        if (i < 0 || i > i2) {
-            throw new IndexOutOfBoundsException(zzd(i, i2, FirebaseAnalytics.Param.INDEX));
-        }
-        return i;
-    }
-
-    public static void zzc(int i, int i2, int i3) {
-        String zzd;
-        if (i < 0 || i2 < i || i2 > i3) {
-            if (i < 0 || i > i3) {
-                zzd = zzd(i, i3, "start index");
-            } else if (i2 < 0 || i2 > i3) {
-                zzd = zzd(i2, i3, "end index");
+            int zzc = zzc(i2);
+            if (zzc == -1) {
+                zzc = this.zzb.length();
+                this.zze = -1;
+                zzd = -1;
             } else {
-                zzd = zzab.zza("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i));
+                zzd = zzd(zzc);
+                this.zze = zzd;
             }
-            throw new IndexOutOfBoundsException(zzd);
+            if (zzd == i) {
+                int i3 = zzd + 1;
+                this.zze = i3;
+                if (i3 > this.zzb.length()) {
+                    this.zze = -1;
+                }
+            } else {
+                if (i < zzc) {
+                    this.zzb.charAt(i);
+                }
+                if (i < zzc) {
+                    this.zzb.charAt(zzc - 1);
+                }
+                if (!this.zzd || i != zzc) {
+                    break;
+                }
+                i = this.zze;
+            }
         }
     }
 
-    private static String zzd(int i, int i2, String str) {
-        if (i < 0) {
-            return zzab.zza("%s (%s) must not be negative", str, Integer.valueOf(i));
-        }
-        if (i2 < 0) {
-            throw new IllegalArgumentException("negative size: " + i2);
-        }
-        return zzab.zza("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
-    }
+    abstract int zzc(int i);
+
+    abstract int zzd(int i);
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.measurement;
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgn extends zzmf implements zznn {
     private static final zzgn zzd;
     private zzmo zzb = zzmf.zzcv();

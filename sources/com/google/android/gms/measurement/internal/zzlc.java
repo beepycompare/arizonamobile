@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import java.util.function.Function;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final /* synthetic */ class zzlc implements Function {
     static final /* synthetic */ zzlc zza = new zzlc();
 

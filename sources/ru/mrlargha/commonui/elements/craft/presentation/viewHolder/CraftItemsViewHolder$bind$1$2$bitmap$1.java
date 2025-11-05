@@ -44,6 +44,6 @@ final class CraftItemsViewHolder$bind$1$2$bitmap$1 extends SuspendLambda impleme
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive$default("items", this.$item.getItem(), null, 4, null);
+        return UtilsKt.getIconFromArchive$default("items", this.$item.getItem(), (String) null, 4, (Object) null);
     }
 }

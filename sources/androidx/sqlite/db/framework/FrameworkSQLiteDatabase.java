@@ -41,7 +41,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
     private static final Companion Companion = new Companion(null);
     private static final String[] CONFLICT_VALUES = {"", " OR ROLLBACK ", " OR ABORT ", " OR FAIL ", " OR IGNORE ", " OR REPLACE "};
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
-    private static final Lazy<Method> getThreadSessionMethod$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda3
+    private static final Lazy<Method> getThreadSessionMethod$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
             Method threadSessionMethod_delegate$lambda$7;
@@ -49,7 +49,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
             return threadSessionMethod_delegate$lambda$7;
         }
     });
-    private static final Lazy<Method> beginTransactionMethod$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda4
+    private static final Lazy<Method> beginTransactionMethod$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
             Method beginTransactionMethod_delegate$lambda$8;
@@ -173,7 +173,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
     }
 
     /* renamed from: setMaximumSize  reason: collision with other method in class */
-    public void m8304setMaximumSize(long j) {
+    public void m9034setMaximumSize(long j) {
         this.delegate.setMaximumSize(j);
     }
 

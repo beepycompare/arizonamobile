@@ -82,8 +82,8 @@ public class DrawableUtils {
         private static final Field sRight;
         private static final Field sTop;
 
-        /* JADX WARN: Removed duplicated region for block: B:25:0x004c  */
-        /* JADX WARN: Removed duplicated region for block: B:26:0x0059  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x004d  */
+        /* JADX WARN: Removed duplicated region for block: B:26:0x005a  */
         static {
             Method method;
             Field field;

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.base;
 
 import com.google.android.gms.common.Feature;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zaf {
     public static final Feature zaa;
     public static final Feature[] zab;

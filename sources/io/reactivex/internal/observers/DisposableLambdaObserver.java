@@ -8,7 +8,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DisposableLambdaObserver<T> implements Observer<T>, Disposable {
     final Observer<? super T> downstream;
     final Action onDispose;

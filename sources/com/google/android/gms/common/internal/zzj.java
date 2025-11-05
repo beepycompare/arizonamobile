@@ -1,20 +1,38 @@
 package com.google.android.gms.common.internal;
 
-import com.google.android.gms.common.util.concurrent.NamedThreadFactory;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-final class zzj {
-    static final ExecutorService zza;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.Feature;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzj extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zzj> CREATOR = new zzk();
+    Bundle zza;
+    Feature[] zzb;
+    int zzc;
+    ConnectionTelemetryConfiguration zzd;
 
-    static {
-        com.google.android.gms.internal.common.zzg.zza();
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new NamedThreadFactory("CallbackExecutor"));
-        threadPoolExecutor.allowCoreThreadTimeOut(true);
-        zza = Executors.unconfigurableExecutorService(threadPoolExecutor);
+    public zzj() {
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzj(Bundle bundle, Feature[] featureArr, int i, ConnectionTelemetryConfiguration connectionTelemetryConfiguration) {
+        this.zza = bundle;
+        this.zzb = featureArr;
+        this.zzc = i;
+        this.zzd = connectionTelemetryConfiguration;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeBundle(parcel, 1, this.zza, false);
+        SafeParcelWriter.writeTypedArray(parcel, 2, this.zzb, i, false);
+        SafeParcelWriter.writeInt(parcel, 3, this.zzc);
+        SafeParcelWriter.writeParcelable(parcel, 4, this.zzd, i, false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 }

@@ -1,61 +1,45 @@
 package com.google.android.gms.common.internal;
 
-import android.os.IBinder;
-import android.os.Parcel;
-import android.os.RemoteException;
-import com.google.android.gms.dynamic.IObjectWrapper;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzae extends com.google.android.gms.internal.common.zza implements zzag {
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzae(IBinder iBinder) {
-        super(iBinder, "com.google.android.gms.common.internal.IGoogleCertificatesApi");
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.common.wrappers.Wrappers;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzae {
+    private static final Object zza = new Object();
+    private static boolean zzb;
+    private static String zzc;
+    private static int zzd;
+
+    public static String zza(Context context) {
+        zzc(context);
+        return zzc;
     }
 
-    @Override // com.google.android.gms.common.internal.zzag
-    public final com.google.android.gms.common.zzq zze(com.google.android.gms.common.zzo zzoVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.common.zzc.zzc(zza, zzoVar);
-        Parcel zzB = zzB(6, zza);
-        com.google.android.gms.common.zzq zzqVar = (com.google.android.gms.common.zzq) com.google.android.gms.internal.common.zzc.zza(zzB, com.google.android.gms.common.zzq.CREATOR);
-        zzB.recycle();
-        return zzqVar;
+    public static int zzb(Context context) {
+        zzc(context);
+        return zzd;
     }
 
-    @Override // com.google.android.gms.common.internal.zzag
-    public final com.google.android.gms.common.zzq zzf(com.google.android.gms.common.zzo zzoVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.common.zzc.zzc(zza, zzoVar);
-        Parcel zzB = zzB(8, zza);
-        com.google.android.gms.common.zzq zzqVar = (com.google.android.gms.common.zzq) com.google.android.gms.internal.common.zzc.zza(zzB, com.google.android.gms.common.zzq.CREATOR);
-        zzB.recycle();
-        return zzqVar;
-    }
-
-    @Override // com.google.android.gms.common.internal.zzag
-    public final boolean zzg() throws RemoteException {
-        Parcel zzB = zzB(9, zza());
-        boolean zzf = com.google.android.gms.internal.common.zzc.zzf(zzB);
-        zzB.recycle();
-        return zzf;
-    }
-
-    @Override // com.google.android.gms.common.internal.zzag
-    public final boolean zzh(com.google.android.gms.common.zzs zzsVar, IObjectWrapper iObjectWrapper) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.common.zzc.zzc(zza, zzsVar);
-        com.google.android.gms.internal.common.zzc.zze(zza, iObjectWrapper);
-        Parcel zzB = zzB(5, zza);
-        boolean zzf = com.google.android.gms.internal.common.zzc.zzf(zzB);
-        zzB.recycle();
-        return zzf;
-    }
-
-    @Override // com.google.android.gms.common.internal.zzag
-    public final boolean zzi() throws RemoteException {
-        Parcel zzB = zzB(7, zza());
-        boolean zzf = com.google.android.gms.internal.common.zzc.zzf(zzB);
-        zzB.recycle();
-        return zzf;
+    private static void zzc(Context context) {
+        Bundle bundle;
+        synchronized (zza) {
+            if (zzb) {
+                return;
+            }
+            zzb = true;
+            try {
+                bundle = Wrappers.packageManager(context).getApplicationInfo(context.getPackageName(), 128).metaData;
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.wtf("MetadataValueReader", "This should never happen.", e);
+            }
+            if (bundle == null) {
+                return;
+            }
+            zzc = bundle.getString("com.google.app.id");
+            zzd = bundle.getInt("com.google.android.gms.version");
+        }
     }
 }

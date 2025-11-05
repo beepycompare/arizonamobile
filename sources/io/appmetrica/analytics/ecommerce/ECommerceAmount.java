@@ -1,20 +1,20 @@
 package io.appmetrica.analytics.ecommerce;
 
-import io.appmetrica.analytics.impl.ro;
+import io.appmetrica.analytics.impl.no;
 import java.math.BigDecimal;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ECommerceAmount {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BigDecimal f314a;
+    private final BigDecimal f330a;
     private final String b;
 
     public ECommerceAmount(long j, String str) {
-        this(ro.a(j), str);
+        this(no.a(j), str);
     }
 
     public BigDecimal getAmount() {
-        return this.f314a;
+        return this.f330a;
     }
 
     public String getUnit() {
@@ -22,15 +22,15 @@ public class ECommerceAmount {
     }
 
     public String toString() {
-        return "ECommerceAmount{amount=" + this.f314a + ", unit='" + this.b + "'}";
+        return "ECommerceAmount{amount=" + this.f330a + ", unit='" + this.b + "'}";
     }
 
     public ECommerceAmount(double d, String str) {
-        this(new BigDecimal(ro.a(d)), str);
+        this(new BigDecimal(no.a(d)), str);
     }
 
     public ECommerceAmount(BigDecimal bigDecimal, String str) {
-        this.f314a = bigDecimal;
+        this.f330a = bigDecimal;
         this.b = str;
     }
 }

@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes2.dex */
 public final class AsyncTypefaceCache {
     public static final int $stable = 8;
-    private final Object PermanentFailure = AsyncTypefaceResult.m6794constructorimpl(null);
+    private final Object PermanentFailure = AsyncTypefaceResult.m7525constructorimpl(null);
     private final LruCache<Key, AsyncTypefaceResult> resultCache = new LruCache<>(16);
     private final MutableScatterMap<Key, AsyncTypefaceResult> permanentCache = ScatterMapKt.mutableScatterMapOf();
     private final SynchronizedObject cacheLock = new SynchronizedObject();
@@ -31,27 +31,27 @@ public final class AsyncTypefaceCache {
         private final Object result;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ AsyncTypefaceResult m6793boximpl(Object obj) {
+        public static final /* synthetic */ AsyncTypefaceResult m7524boximpl(Object obj) {
             return new AsyncTypefaceResult(obj);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static Object m6794constructorimpl(Object obj) {
+        public static Object m7525constructorimpl(Object obj) {
             return obj;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m6795equalsimpl(Object obj, Object obj2) {
-            return (obj2 instanceof AsyncTypefaceResult) && Intrinsics.areEqual(obj, ((AsyncTypefaceResult) obj2).m6800unboximpl());
+        public static boolean m7526equalsimpl(Object obj, Object obj2) {
+            return (obj2 instanceof AsyncTypefaceResult) && Intrinsics.areEqual(obj, ((AsyncTypefaceResult) obj2).m7531unboximpl());
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m6796equalsimpl0(Object obj, Object obj2) {
+        public static final boolean m7527equalsimpl0(Object obj, Object obj2) {
             return Intrinsics.areEqual(obj, obj2);
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m6797hashCodeimpl(Object obj) {
+        public static int m7528hashCodeimpl(Object obj) {
             if (obj == null) {
                 return 0;
             }
@@ -59,29 +59,29 @@ public final class AsyncTypefaceCache {
         }
 
         /* renamed from: isPermanentFailure-impl  reason: not valid java name */
-        public static final boolean m6798isPermanentFailureimpl(Object obj) {
+        public static final boolean m7529isPermanentFailureimpl(Object obj) {
             return obj == null;
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m6799toStringimpl(Object obj) {
+        public static String m7530toStringimpl(Object obj) {
             return "AsyncTypefaceResult(result=" + obj + ')';
         }
 
         public boolean equals(Object obj) {
-            return m6795equalsimpl(this.result, obj);
+            return m7526equalsimpl(this.result, obj);
         }
 
         public int hashCode() {
-            return m6797hashCodeimpl(this.result);
+            return m7528hashCodeimpl(this.result);
         }
 
         public String toString() {
-            return m6799toStringimpl(this.result);
+            return m7530toStringimpl(this.result);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ Object m6800unboximpl() {
+        public final /* synthetic */ Object m7531unboximpl() {
             return this.result;
         }
 
@@ -171,13 +171,13 @@ public final class AsyncTypefaceCache {
         synchronized (this.cacheLock) {
             try {
                 if (obj == null) {
-                    this.permanentCache.set(key, AsyncTypefaceResult.m6793boximpl(this.PermanentFailure));
+                    this.permanentCache.set(key, AsyncTypefaceResult.m7524boximpl(this.PermanentFailure));
                     Unit unit = Unit.INSTANCE;
                 } else if (z) {
-                    this.permanentCache.set(key, AsyncTypefaceResult.m6793boximpl(AsyncTypefaceResult.m6794constructorimpl(obj)));
+                    this.permanentCache.set(key, AsyncTypefaceResult.m7524boximpl(AsyncTypefaceResult.m7525constructorimpl(obj)));
                     Unit unit2 = Unit.INSTANCE;
                 } else {
-                    this.resultCache.put(key, AsyncTypefaceResult.m6793boximpl(AsyncTypefaceResult.m6794constructorimpl(obj)));
+                    this.resultCache.put(key, AsyncTypefaceResult.m7524boximpl(AsyncTypefaceResult.m7525constructorimpl(obj)));
                 }
             } catch (Throwable th) {
                 throw th;
@@ -186,7 +186,7 @@ public final class AsyncTypefaceCache {
     }
 
     /* renamed from: get-1ASDuI8  reason: not valid java name */
-    public final AsyncTypefaceResult m6792get1ASDuI8(Font font, PlatformFontLoader platformFontLoader) {
+    public final AsyncTypefaceResult m7523get1ASDuI8(Font font, PlatformFontLoader platformFontLoader) {
         AsyncTypefaceResult asyncTypefaceResult;
         Key key = new Key(font, platformFontLoader.getCacheKey());
         synchronized (this.cacheLock) {
@@ -224,7 +224,7 @@ public final class AsyncTypefaceCache {
                             asyncTypefaceResult = this.permanentCache.get(key2);
                         }
                         if (asyncTypefaceResult != null) {
-                            return asyncTypefaceResult.m6800unboximpl();
+                            return asyncTypefaceResult.m7531unboximpl();
                         }
                         Unit unit = Unit.INSTANCE;
                         asyncTypefaceCache$runCached$1.L$0 = key2;
@@ -247,11 +247,11 @@ public final class AsyncTypefaceCache {
                 synchronized (this.cacheLock) {
                     try {
                         if (obj == null) {
-                            this.permanentCache.set(key, AsyncTypefaceResult.m6793boximpl(this.PermanentFailure));
+                            this.permanentCache.set(key, AsyncTypefaceResult.m7524boximpl(this.PermanentFailure));
                         } else if (z) {
-                            this.permanentCache.set(key, AsyncTypefaceResult.m6793boximpl(AsyncTypefaceResult.m6794constructorimpl(obj)));
+                            this.permanentCache.set(key, AsyncTypefaceResult.m7524boximpl(AsyncTypefaceResult.m7525constructorimpl(obj)));
                         } else {
-                            this.resultCache.put(key, AsyncTypefaceResult.m6793boximpl(AsyncTypefaceResult.m6794constructorimpl(obj)));
+                            this.resultCache.put(key, AsyncTypefaceResult.m7524boximpl(AsyncTypefaceResult.m7525constructorimpl(obj)));
                         }
                         Unit unit2 = Unit.INSTANCE;
                     } catch (Throwable th) {
@@ -279,7 +279,7 @@ public final class AsyncTypefaceCache {
                 asyncTypefaceResult = (AsyncTypefaceResult) this.permanentCache.get(key);
             }
             if (asyncTypefaceResult != null) {
-                return asyncTypefaceResult.m6800unboximpl();
+                return asyncTypefaceResult.m7531unboximpl();
             }
             Unit unit = Unit.INSTANCE;
             Object invoke = function0.invoke();

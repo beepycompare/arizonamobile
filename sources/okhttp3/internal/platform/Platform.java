@@ -30,6 +30,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.OkHttpClient;
 import okhttp3.Protocol;
 import okhttp3.internal._UtilJvmKt;
+import okhttp3.internal.publicsuffix.PublicSuffixDatabase;
 import okhttp3.internal.tls.BasicCertificateChainCleaner;
 import okhttp3.internal.tls.BasicTrustRootIndex;
 import okhttp3.internal.tls.CertificateChainCleaner;
@@ -237,6 +238,7 @@ public class Platform {
         public final void resetForTests(Platform platform) {
             Intrinsics.checkNotNullParameter(platform, "platform");
             Platform.platform = platform;
+            PublicSuffixDatabase.Companion.resetForTests$okhttp();
         }
 
         public final List<String> alpnProtocolNames(List<? extends Protocol> protocols) {

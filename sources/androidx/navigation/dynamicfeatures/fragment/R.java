@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int moduleName = 0x7f040462;
+        public static int moduleName = 0x7f040465;
 
         private attr() {
         }
@@ -12,11 +12,11 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int dfn_progress_fragment = 0x7f0a03e2;
-        public static int installation_progress = 0x7f0a06d4;
-        public static int progress_action = 0x7f0a0a75;
-        public static int progress_icon = 0x7f0a0a7d;
-        public static int progress_title = 0x7f0a0a81;
+        public static int dfn_progress_fragment = 0x7f0a03fd;
+        public static int installation_progress = 0x7f0a06f7;
+        public static int progress_action = 0x7f0a0a9b;
+        public static int progress_icon = 0x7f0a0aa3;
+        public static int progress_title = 0x7f0a0aa7;
 
         private id() {
         }
@@ -24,7 +24,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class layout {
-        public static int dynamic_feature_install_fragment = 0x7f0d00b3;
+        public static int dynamic_feature_install_fragment = 0x7f0d00b0;
 
         private layout() {
         }
@@ -32,12 +32,12 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int installation_cancelled = 0x7f1300ea;
-        public static int installation_failed = 0x7f1300eb;
-        public static int installing_module = 0x7f1300ec;
-        public static int ok = 0x7f1301ba;
-        public static int progress = 0x7f1301d0;
-        public static int retry = 0x7f1301e8;
+        public static int installation_cancelled = 0x7f130102;
+        public static int installation_failed = 0x7f130103;
+        public static int installing_module = 0x7f130104;
+        public static int ok = 0x7f1301e7;
+        public static int progress = 0x7f130200;
+        public static int retry = 0x7f13021e;
 
         private string() {
         }

@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InvalidationTracker.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.ObservedTableVersions", f = "InvalidationTracker.kt", i = {}, l = {652}, m = "collect", n = {}, s = {})
+@DebugMetadata(c = "androidx.room.ObservedTableVersions", f = "InvalidationTracker.kt", i = {}, l = {638}, m = "collect", n = {}, s = {})
 /* loaded from: classes3.dex */
 public final class ObservedTableVersions$collect$1 extends ContinuationImpl {
     int label;

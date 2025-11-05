@@ -41,9 +41,9 @@ public abstract class LazyStaggeredGridMeasureProvider extends LazyLayoutMeasure
             i3 = (this.resolvedSlots.getPositions()[i5] + this.resolvedSlots.getSizes()[i5]) - i4;
         }
         if (this.isVertical) {
-            return Constraints.Companion.m7229fixedWidthOenEA2s(i3);
+            return Constraints.Companion.m7960fixedWidthOenEA2s(i3);
         }
-        return Constraints.Companion.m7228fixedHeightOenEA2s(i3);
+        return Constraints.Companion.m7959fixedHeightOenEA2s(i3);
     }
 
     /* renamed from: getAndMeasure-jy6DScQ  reason: not valid java name */

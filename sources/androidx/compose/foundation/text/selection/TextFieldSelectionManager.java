@@ -126,8 +126,8 @@ public final class TextFieldSelectionManager {
         this.editable$delegate = mutableStateOf$default2;
         mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(true, null, 2, null);
         this.enabled$delegate = mutableStateOf$default3;
-        this.dragBeginPosition = Offset.Companion.m4321getZeroF1C5BW0();
-        this.dragTotalDistance = Offset.Companion.m4321getZeroF1C5BW0();
+        this.dragBeginPosition = Offset.Companion.m5051getZeroF1C5BW0();
+        this.dragTotalDistance = Offset.Companion.m5051getZeroF1C5BW0();
         mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.draggingHandle$delegate = mutableStateOf$default4;
         mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
@@ -174,10 +174,10 @@ public final class TextFieldSelectionManager {
                             textFieldSelectionManager.enterSelectionMode$foundation_release(false);
                             HapticFeedback hapticFeedBack = textFieldSelectionManager.getHapticFeedBack();
                             if (hapticFeedBack != null) {
-                                hapticFeedBack.mo5323performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5340getTextHandleMove5zf0vsI());
+                                hapticFeedBack.mo6053performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6070getTextHandleMove5zf0vsI());
                             }
                             textFieldSelectionManager.getOnValueChange$foundation_release().invoke(m1825createTextFieldValueFDrldGo);
-                            textFieldSelectionManager.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m6714boximpl(m1825createTextFieldValueFDrldGo.m6977getSelectiond9O1mEE()));
+                            textFieldSelectionManager.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m7445boximpl(m1825createTextFieldValueFDrldGo.m7708getSelectiond9O1mEE()));
                         }
                         this.isLongPressSelectionOnly = false;
                     } else if (TextFieldSelectionManager.this.getValue$foundation_release().getText().length() == 0) {
@@ -185,16 +185,16 @@ public final class TextFieldSelectionManager {
                     } else {
                         TextFieldSelectionManager.this.enterSelectionMode$foundation_release(false);
                         TextFieldSelectionManager textFieldSelectionManager2 = TextFieldSelectionManager.this;
-                        m1829updateSelection8UEBfa8 = textFieldSelectionManager2.m1829updateSelection8UEBfa8(TextFieldValue.m6972copy3r_uNRQ$default(textFieldSelectionManager2.getValue$foundation_release(), (AnnotatedString) null, TextRange.Companion.m6731getZerod9O1mEE(), (TextRange) null, 5, (Object) null), j, true, false, SelectionAdjustment.Companion.getWord(), true);
+                        m1829updateSelection8UEBfa8 = textFieldSelectionManager2.m1829updateSelection8UEBfa8(TextFieldValue.m7703copy3r_uNRQ$default(textFieldSelectionManager2.getValue$foundation_release(), (AnnotatedString) null, TextRange.Companion.m7462getZerod9O1mEE(), (TextRange) null, 5, (Object) null), j, true, false, SelectionAdjustment.Companion.getWord(), true);
                         j2 = j;
-                        TextFieldSelectionManager.this.dragBeginSelection = TextRange.m6714boximpl(m1829updateSelection8UEBfa8);
+                        TextFieldSelectionManager.this.dragBeginSelection = TextRange.m7445boximpl(m1829updateSelection8UEBfa8);
                     }
                     TextFieldSelectionManager.this.setHandleState(HandleState.None);
                     TextFieldSelectionManager.this.dragBeginPosition = j2;
                     TextFieldSelectionManager textFieldSelectionManager3 = TextFieldSelectionManager.this;
                     j3 = textFieldSelectionManager3.dragBeginPosition;
-                    textFieldSelectionManager3.m1828setCurrentDragPosition_kEHs6E(Offset.m4294boximpl(j3));
-                    TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m4321getZeroF1C5BW0();
+                    textFieldSelectionManager3.m1828setCurrentDragPosition_kEHs6E(Offset.m5024boximpl(j3));
+                    TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m5051getZeroF1C5BW0();
                 }
             }
 
@@ -224,25 +224,25 @@ public final class TextFieldSelectionManager {
                 }
                 TextFieldSelectionManager textFieldSelectionManager2 = TextFieldSelectionManager.this;
                 j2 = textFieldSelectionManager2.dragTotalDistance;
-                textFieldSelectionManager2.dragTotalDistance = Offset.m4310plusMKHz9U(j2, j);
+                textFieldSelectionManager2.dragTotalDistance = Offset.m5040plusMKHz9U(j2, j);
                 LegacyTextFieldState state$foundation_release = TextFieldSelectionManager.this.getState$foundation_release();
                 if (state$foundation_release != null && (layoutResult = state$foundation_release.getLayoutResult()) != null) {
                     TextFieldSelectionManager textFieldSelectionManager3 = TextFieldSelectionManager.this;
                     j3 = textFieldSelectionManager3.dragBeginPosition;
                     j4 = textFieldSelectionManager3.dragTotalDistance;
-                    textFieldSelectionManager3.m1828setCurrentDragPosition_kEHs6E(Offset.m4294boximpl(Offset.m4310plusMKHz9U(j3, j4)));
+                    textFieldSelectionManager3.m1828setCurrentDragPosition_kEHs6E(Offset.m5024boximpl(Offset.m5040plusMKHz9U(j3, j4)));
                     textRange = textFieldSelectionManager3.dragBeginSelection;
                     if (textRange == null) {
                         Offset m1831getCurrentDragPosition_m7T9E = textFieldSelectionManager3.m1831getCurrentDragPosition_m7T9E();
                         Intrinsics.checkNotNull(m1831getCurrentDragPosition_m7T9E);
-                        if (!layoutResult.m1388isPositionOnTextk4lQ0M(m1831getCurrentDragPosition_m7T9E.m4315unboximpl())) {
+                        if (!layoutResult.m1388isPositionOnTextk4lQ0M(m1831getCurrentDragPosition_m7T9E.m5045unboximpl())) {
                             OffsetMapping offsetMapping$foundation_release = textFieldSelectionManager3.getOffsetMapping$foundation_release();
                             j6 = textFieldSelectionManager3.dragBeginPosition;
                             int transformedToOriginal = offsetMapping$foundation_release.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(layoutResult, j6, false, 2, null));
                             OffsetMapping offsetMapping$foundation_release2 = textFieldSelectionManager3.getOffsetMapping$foundation_release();
                             Offset m1831getCurrentDragPosition_m7T9E2 = textFieldSelectionManager3.m1831getCurrentDragPosition_m7T9E();
                             Intrinsics.checkNotNull(m1831getCurrentDragPosition_m7T9E2);
-                            if (transformedToOriginal == offsetMapping$foundation_release2.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(layoutResult, m1831getCurrentDragPosition_m7T9E2.m4315unboximpl(), false, 2, null))) {
+                            if (transformedToOriginal == offsetMapping$foundation_release2.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(layoutResult, m1831getCurrentDragPosition_m7T9E2.m5045unboximpl(), false, 2, null))) {
                                 word = SelectionAdjustment.Companion.getNone();
                             } else {
                                 word = SelectionAdjustment.Companion.getWord();
@@ -252,9 +252,9 @@ public final class TextFieldSelectionManager {
                             Offset m1831getCurrentDragPosition_m7T9E3 = textFieldSelectionManager3.m1831getCurrentDragPosition_m7T9E();
                             Intrinsics.checkNotNull(m1831getCurrentDragPosition_m7T9E3);
                             textFieldSelectionManager = textFieldSelectionManager3;
-                            m1829updateSelection8UEBfa8 = textFieldSelectionManager.m1829updateSelection8UEBfa8(value$foundation_release, m1831getCurrentDragPosition_m7T9E3.m4315unboximpl(), false, false, selectionAdjustment, true);
+                            m1829updateSelection8UEBfa8 = textFieldSelectionManager.m1829updateSelection8UEBfa8(value$foundation_release, m1831getCurrentDragPosition_m7T9E3.m5045unboximpl(), false, false, selectionAdjustment, true);
                             textRange4 = textFieldSelectionManager.dragBeginSelection;
-                            if (!TextRange.m6718equalsimpl(m1829updateSelection8UEBfa8, textRange4)) {
+                            if (!TextRange.m7449equalsimpl(m1829updateSelection8UEBfa8, textRange4)) {
                                 this.isLongPressSelectionOnly = false;
                             }
                         }
@@ -262,14 +262,14 @@ public final class TextFieldSelectionManager {
                     textFieldSelectionManager = textFieldSelectionManager3;
                     textRange2 = textFieldSelectionManager.dragBeginSelection;
                     if (textRange2 != null) {
-                        m1387getOffsetForPosition3MmeM6k = TextRange.m6726getStartimpl(textRange2.m6730unboximpl());
+                        m1387getOffsetForPosition3MmeM6k = TextRange.m7457getStartimpl(textRange2.m7461unboximpl());
                     } else {
                         j5 = textFieldSelectionManager.dragBeginPosition;
                         m1387getOffsetForPosition3MmeM6k = layoutResult.m1387getOffsetForPosition3MmeM6k(j5, false);
                     }
                     Offset m1831getCurrentDragPosition_m7T9E4 = textFieldSelectionManager.m1831getCurrentDragPosition_m7T9E();
                     Intrinsics.checkNotNull(m1831getCurrentDragPosition_m7T9E4);
-                    int m1387getOffsetForPosition3MmeM6k2 = layoutResult.m1387getOffsetForPosition3MmeM6k(m1831getCurrentDragPosition_m7T9E4.m4315unboximpl(), false);
+                    int m1387getOffsetForPosition3MmeM6k2 = layoutResult.m1387getOffsetForPosition3MmeM6k(m1831getCurrentDragPosition_m7T9E4.m5045unboximpl(), false);
                     textRange3 = textFieldSelectionManager.dragBeginSelection;
                     if (textRange3 == null && m1387getOffsetForPosition3MmeM6k == m1387getOffsetForPosition3MmeM6k2) {
                         return;
@@ -277,9 +277,9 @@ public final class TextFieldSelectionManager {
                     TextFieldValue value$foundation_release2 = textFieldSelectionManager.getValue$foundation_release();
                     Offset m1831getCurrentDragPosition_m7T9E5 = textFieldSelectionManager.m1831getCurrentDragPosition_m7T9E();
                     Intrinsics.checkNotNull(m1831getCurrentDragPosition_m7T9E5);
-                    m1829updateSelection8UEBfa8 = textFieldSelectionManager.m1829updateSelection8UEBfa8(value$foundation_release2, m1831getCurrentDragPosition_m7T9E5.m4315unboximpl(), false, false, SelectionAdjustment.Companion.getWord(), true);
+                    m1829updateSelection8UEBfa8 = textFieldSelectionManager.m1829updateSelection8UEBfa8(value$foundation_release2, m1831getCurrentDragPosition_m7T9E5.m5045unboximpl(), false, false, SelectionAdjustment.Companion.getWord(), true);
                     textRange4 = textFieldSelectionManager.dragBeginSelection;
-                    if (!TextRange.m6718equalsimpl(m1829updateSelection8UEBfa8, textRange4)) {
+                    if (!TextRange.m7449equalsimpl(m1829updateSelection8UEBfa8, textRange4)) {
                     }
                 }
                 TextFieldSelectionManager.this.updateFloatingToolbar(false);
@@ -301,19 +301,19 @@ public final class TextFieldSelectionManager {
                 TextFieldSelectionManager.this.m1828setCurrentDragPosition_kEHs6E(null);
                 boolean z = true;
                 TextFieldSelectionManager.this.updateFloatingToolbar(true);
-                boolean m6720getCollapsedimpl = TextRange.m6720getCollapsedimpl(TextFieldSelectionManager.this.getValue$foundation_release().m6977getSelectiond9O1mEE());
-                TextFieldSelectionManager.this.setHandleState(m6720getCollapsedimpl ? HandleState.Cursor : HandleState.Selection);
+                boolean m7451getCollapsedimpl = TextRange.m7451getCollapsedimpl(TextFieldSelectionManager.this.getValue$foundation_release().m7708getSelectiond9O1mEE());
+                TextFieldSelectionManager.this.setHandleState(m7451getCollapsedimpl ? HandleState.Cursor : HandleState.Selection);
                 LegacyTextFieldState state$foundation_release = TextFieldSelectionManager.this.getState$foundation_release();
                 if (state$foundation_release != null) {
-                    state$foundation_release.setShowSelectionHandleStart(!m6720getCollapsedimpl && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, true));
+                    state$foundation_release.setShowSelectionHandleStart(!m7451getCollapsedimpl && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, true));
                 }
                 LegacyTextFieldState state$foundation_release2 = TextFieldSelectionManager.this.getState$foundation_release();
                 if (state$foundation_release2 != null) {
-                    state$foundation_release2.setShowSelectionHandleEnd(!m6720getCollapsedimpl && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, false));
+                    state$foundation_release2.setShowSelectionHandleEnd(!m7451getCollapsedimpl && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, false));
                 }
                 LegacyTextFieldState state$foundation_release3 = TextFieldSelectionManager.this.getState$foundation_release();
                 if (state$foundation_release3 != null) {
-                    if (!m6720getCollapsedimpl || !TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, true)) {
+                    if (!m7451getCollapsedimpl || !TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, true)) {
                         z = false;
                     }
                     state$foundation_release3.setShowCursorHandle(z);
@@ -382,7 +382,7 @@ public final class TextFieldSelectionManager {
                 }
                 FocusRequester focusRequester = TextFieldSelectionManager.this.getFocusRequester();
                 if (focusRequester != null) {
-                    FocusRequester.m4212requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
+                    FocusRequester.m4942requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
                 }
                 TextFieldSelectionManager.this.dragBeginPosition = j;
                 TextFieldSelectionManager.this.previousRawDragOffset = -1;
@@ -392,7 +392,7 @@ public final class TextFieldSelectionManager {
                 long updateMouseSelection = updateMouseSelection(value$foundation_release, j2, true, selectionAdjustment);
                 if (i >= 2) {
                     this.isDoubleOrTripleClickSelectionOnly = true;
-                    this.initialSelection = TextRange.m6714boximpl(updateMouseSelection);
+                    this.initialSelection = TextRange.m7445boximpl(updateMouseSelection);
                 }
                 return true;
             }
@@ -411,10 +411,10 @@ public final class TextFieldSelectionManager {
             public final long updateMouseSelection(TextFieldValue textFieldValue, long j, boolean z, SelectionAdjustment selectionAdjustment) {
                 long m1829updateSelection8UEBfa8;
                 m1829updateSelection8UEBfa8 = TextFieldSelectionManager.this.m1829updateSelection8UEBfa8(textFieldValue, j, z, false, selectionAdjustment, false);
-                if (!TextRange.m6718equalsimpl(m1829updateSelection8UEBfa8, this.initialSelection)) {
+                if (!TextRange.m7449equalsimpl(m1829updateSelection8UEBfa8, this.initialSelection)) {
                     this.isDoubleOrTripleClickSelectionOnly = false;
                 }
-                TextFieldSelectionManager.this.setHandleState(TextRange.m6720getCollapsedimpl(m1829updateSelection8UEBfa8) ? HandleState.Cursor : HandleState.Selection);
+                TextFieldSelectionManager.this.setHandleState(TextRange.m7451getCollapsedimpl(m1829updateSelection8UEBfa8) ? HandleState.Cursor : HandleState.Selection);
                 return m1829updateSelection8UEBfa8;
             }
 
@@ -470,7 +470,7 @@ public final class TextFieldSelectionManager {
 
     public final void setValue$foundation_release(TextFieldValue textFieldValue) {
         this.valueState.setValue(textFieldValue);
-        this.latestSelection = TextRange.m6714boximpl(textFieldValue.m6977getSelectiond9O1mEE());
+        this.latestSelection = TextRange.m7445boximpl(textFieldValue.m7708getSelectiond9O1mEE());
     }
 
     public final AnnotatedString getTransformedText$foundation_release() {
@@ -650,8 +650,8 @@ public final class TextFieldSelectionManager {
             return;
         }
         OffsetMapping offsetMapping = this.offsetMapping;
-        long TextRange = TextRangeKt.TextRange(offsetMapping.originalToTransformed(TextRange.m6726getStartimpl(textRange.m6730unboximpl())), offsetMapping.originalToTransformed(TextRange.m6721getEndimpl(textRange.m6730unboximpl())));
-        if (text.length() <= 0 || TextRange.m6720getCollapsedimpl(TextRange) || (coroutineScope = this.coroutineScope) == null) {
+        long TextRange = TextRangeKt.TextRange(offsetMapping.originalToTransformed(TextRange.m7457getStartimpl(textRange.m7461unboximpl())), offsetMapping.originalToTransformed(TextRange.m7452getEndimpl(textRange.m7461unboximpl())));
+        if (text.length() <= 0 || TextRange.m7451getCollapsedimpl(TextRange) || (coroutineScope = this.coroutineScope) == null) {
             return;
         }
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new TextFieldSelectionManager$maybeSuggestSelection$1(platformSelectionBehaviors, text, TextRange, textRange, this, offsetMapping, null), 3, null);
@@ -680,8 +680,8 @@ public final class TextFieldSelectionManager {
                 }
                 long m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release = layoutResult.m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release(m1767getAdjustedCoordinatesk4lQ0M);
                 TextFieldSelectionManager.this.dragBeginPosition = m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release;
-                TextFieldSelectionManager.this.m1828setCurrentDragPosition_kEHs6E(Offset.m4294boximpl(m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release));
-                TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m4321getZeroF1C5BW0();
+                TextFieldSelectionManager.this.m1828setCurrentDragPosition_kEHs6E(Offset.m5024boximpl(m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release));
+                TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m5051getZeroF1C5BW0();
                 TextFieldSelectionManager.this.previousRawDragOffset = -1;
                 LegacyTextFieldState state$foundation_release2 = TextFieldSelectionManager.this.getState$foundation_release();
                 if (state$foundation_release2 != null) {
@@ -705,16 +705,16 @@ public final class TextFieldSelectionManager {
                 long j4;
                 TextFieldSelectionManager textFieldSelectionManager = TextFieldSelectionManager.this;
                 j2 = textFieldSelectionManager.dragTotalDistance;
-                textFieldSelectionManager.dragTotalDistance = Offset.m4310plusMKHz9U(j2, j);
+                textFieldSelectionManager.dragTotalDistance = Offset.m5040plusMKHz9U(j2, j);
                 TextFieldSelectionManager textFieldSelectionManager2 = TextFieldSelectionManager.this;
                 j3 = textFieldSelectionManager2.dragBeginPosition;
                 j4 = TextFieldSelectionManager.this.dragTotalDistance;
-                textFieldSelectionManager2.m1828setCurrentDragPosition_kEHs6E(Offset.m4294boximpl(Offset.m4310plusMKHz9U(j3, j4)));
+                textFieldSelectionManager2.m1828setCurrentDragPosition_kEHs6E(Offset.m5024boximpl(Offset.m5040plusMKHz9U(j3, j4)));
                 TextFieldSelectionManager textFieldSelectionManager3 = TextFieldSelectionManager.this;
                 TextFieldValue value$foundation_release = textFieldSelectionManager3.getValue$foundation_release();
                 Offset m1831getCurrentDragPosition_m7T9E = TextFieldSelectionManager.this.m1831getCurrentDragPosition_m7T9E();
                 Intrinsics.checkNotNull(m1831getCurrentDragPosition_m7T9E);
-                textFieldSelectionManager3.m1829updateSelection8UEBfa8(value$foundation_release, m1831getCurrentDragPosition_m7T9E.m4315unboximpl(), false, z, SelectionAdjustment.Companion.getCharacterWithWordAccelerate(), true);
+                textFieldSelectionManager3.m1829updateSelection8UEBfa8(value$foundation_release, m1831getCurrentDragPosition_m7T9E.m5045unboximpl(), false, z, SelectionAdjustment.Companion.getCharacterWithWordAccelerate(), true);
                 TextFieldSelectionManager.this.updateFloatingToolbar(false);
             }
 
@@ -755,8 +755,8 @@ public final class TextFieldSelectionManager {
                 }
                 long m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release = layoutResult.m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release(m1767getAdjustedCoordinatesk4lQ0M);
                 TextFieldSelectionManager.this.dragBeginPosition = m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release;
-                TextFieldSelectionManager.this.m1828setCurrentDragPosition_kEHs6E(Offset.m4294boximpl(m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release));
-                TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m4321getZeroF1C5BW0();
+                TextFieldSelectionManager.this.m1828setCurrentDragPosition_kEHs6E(Offset.m5024boximpl(m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release));
+                TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m5051getZeroF1C5BW0();
                 TextFieldSelectionManager.this.setDraggingHandle(Handle.Cursor);
                 TextFieldSelectionManager.this.updateFloatingToolbar(false);
             }
@@ -772,7 +772,7 @@ public final class TextFieldSelectionManager {
                 TextFieldValue m1825createTextFieldValueFDrldGo;
                 TextFieldSelectionManager textFieldSelectionManager = TextFieldSelectionManager.this;
                 j2 = textFieldSelectionManager.dragTotalDistance;
-                textFieldSelectionManager.dragTotalDistance = Offset.m4310plusMKHz9U(j2, j);
+                textFieldSelectionManager.dragTotalDistance = Offset.m5040plusMKHz9U(j2, j);
                 LegacyTextFieldState state$foundation_release = TextFieldSelectionManager.this.getState$foundation_release();
                 if (state$foundation_release == null || (layoutResult = state$foundation_release.getLayoutResult()) == null) {
                     return;
@@ -780,23 +780,23 @@ public final class TextFieldSelectionManager {
                 TextFieldSelectionManager textFieldSelectionManager2 = TextFieldSelectionManager.this;
                 j3 = textFieldSelectionManager2.dragBeginPosition;
                 j4 = textFieldSelectionManager2.dragTotalDistance;
-                textFieldSelectionManager2.m1828setCurrentDragPosition_kEHs6E(Offset.m4294boximpl(Offset.m4310plusMKHz9U(j3, j4)));
+                textFieldSelectionManager2.m1828setCurrentDragPosition_kEHs6E(Offset.m5024boximpl(Offset.m5040plusMKHz9U(j3, j4)));
                 OffsetMapping offsetMapping$foundation_release = textFieldSelectionManager2.getOffsetMapping$foundation_release();
                 Offset m1831getCurrentDragPosition_m7T9E = textFieldSelectionManager2.m1831getCurrentDragPosition_m7T9E();
                 Intrinsics.checkNotNull(m1831getCurrentDragPosition_m7T9E);
-                int transformedToOriginal = offsetMapping$foundation_release.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(layoutResult, m1831getCurrentDragPosition_m7T9E.m4315unboximpl(), false, 2, null));
+                int transformedToOriginal = offsetMapping$foundation_release.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(layoutResult, m1831getCurrentDragPosition_m7T9E.m5045unboximpl(), false, 2, null));
                 long TextRange = TextRangeKt.TextRange(transformedToOriginal, transformedToOriginal);
-                if (TextRange.m6719equalsimpl0(TextRange, textFieldSelectionManager2.getValue$foundation_release().m6977getSelectiond9O1mEE())) {
+                if (TextRange.m7450equalsimpl0(TextRange, textFieldSelectionManager2.getValue$foundation_release().m7708getSelectiond9O1mEE())) {
                     return;
                 }
                 LegacyTextFieldState state$foundation_release2 = textFieldSelectionManager2.getState$foundation_release();
                 if ((state$foundation_release2 == null || state$foundation_release2.isInTouchMode()) && (hapticFeedBack = textFieldSelectionManager2.getHapticFeedBack()) != null) {
-                    hapticFeedBack.mo5323performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5340getTextHandleMove5zf0vsI());
+                    hapticFeedBack.mo6053performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6070getTextHandleMove5zf0vsI());
                 }
                 Function1<TextFieldValue, Unit> onValueChange$foundation_release = textFieldSelectionManager2.getOnValueChange$foundation_release();
                 m1825createTextFieldValueFDrldGo = textFieldSelectionManager2.m1825createTextFieldValueFDrldGo(textFieldSelectionManager2.getValue$foundation_release().getAnnotatedString(), TextRange);
                 onValueChange$foundation_release.invoke(m1825createTextFieldValueFDrldGo);
-                textFieldSelectionManager2.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m6714boximpl(TextRange));
+                textFieldSelectionManager2.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m7445boximpl(TextRange));
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
@@ -818,7 +818,7 @@ public final class TextFieldSelectionManager {
         FocusRequester focusRequester;
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState != null && !legacyTextFieldState.getHasFocus() && (focusRequester = this.focusRequester) != null) {
-            FocusRequester.m4212requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
+            FocusRequester.m4942requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
         }
         this.oldValue = getValue$foundation_release();
         updateFloatingToolbar(z);
@@ -840,18 +840,18 @@ public final class TextFieldSelectionManager {
 
     /* renamed from: deselect-_kEHs6E$foundation_release  reason: not valid java name */
     public final void m1830deselect_kEHs6E$foundation_release(Offset offset) {
-        int m6723getMaximpl;
-        if (!TextRange.m6720getCollapsedimpl(getValue$foundation_release().m6977getSelectiond9O1mEE())) {
+        int m7454getMaximpl;
+        if (!TextRange.m7451getCollapsedimpl(getValue$foundation_release().m7708getSelectiond9O1mEE())) {
             LegacyTextFieldState legacyTextFieldState = this.state;
             TextLayoutResultProxy layoutResult = legacyTextFieldState != null ? legacyTextFieldState.getLayoutResult() : null;
             if (offset != null && layoutResult != null) {
-                m6723getMaximpl = this.offsetMapping.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(layoutResult, offset.m4315unboximpl(), false, 2, null));
+                m7454getMaximpl = this.offsetMapping.transformedToOriginal(TextLayoutResultProxy.m1386getOffsetForPosition3MmeM6k$default(layoutResult, offset.m5045unboximpl(), false, 2, null));
             } else {
-                m6723getMaximpl = TextRange.m6723getMaximpl(getValue$foundation_release().m6977getSelectiond9O1mEE());
+                m7454getMaximpl = TextRange.m7454getMaximpl(getValue$foundation_release().m7708getSelectiond9O1mEE());
             }
-            TextFieldValue m6972copy3r_uNRQ$default = TextFieldValue.m6972copy3r_uNRQ$default(getValue$foundation_release(), (AnnotatedString) null, TextRangeKt.TextRange(m6723getMaximpl), (TextRange) null, 5, (Object) null);
-            this.onValueChange.invoke(m6972copy3r_uNRQ$default);
-            this.latestSelection = TextRange.m6714boximpl(m6972copy3r_uNRQ$default.m6977getSelectiond9O1mEE());
+            TextFieldValue m7703copy3r_uNRQ$default = TextFieldValue.m7703copy3r_uNRQ$default(getValue$foundation_release(), (AnnotatedString) null, TextRangeKt.TextRange(m7454getMaximpl), (TextRange) null, 5, (Object) null);
+            this.onValueChange.invoke(m7703copy3r_uNRQ$default);
+            this.latestSelection = TextRange.m7445boximpl(m7703copy3r_uNRQ$default.m7708getSelectiond9O1mEE());
         }
         setHandleState((offset == null || getValue$foundation_release().getText().length() <= 0) ? HandleState.None : HandleState.Cursor);
         updateFloatingToolbar(false);
@@ -865,9 +865,9 @@ public final class TextFieldSelectionManager {
         }
         LegacyTextFieldState legacyTextFieldState2 = this.state;
         if (legacyTextFieldState2 != null) {
-            legacyTextFieldState2.m1290setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m6731getZerod9O1mEE());
+            legacyTextFieldState2.m1290setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7462getZerod9O1mEE());
         }
-        if (TextRange.m6720getCollapsedimpl(j)) {
+        if (TextRange.m7451getCollapsedimpl(j)) {
             return;
         }
         exitSelectionMode$foundation_release();
@@ -881,9 +881,9 @@ public final class TextFieldSelectionManager {
         }
         LegacyTextFieldState legacyTextFieldState2 = this.state;
         if (legacyTextFieldState2 != null) {
-            legacyTextFieldState2.m1293setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m6731getZerod9O1mEE());
+            legacyTextFieldState2.m1293setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7462getZerod9O1mEE());
         }
-        if (TextRange.m6720getCollapsedimpl(j)) {
+        if (TextRange.m7451getCollapsedimpl(j)) {
             return;
         }
         exitSelectionMode$foundation_release();
@@ -892,11 +892,11 @@ public final class TextFieldSelectionManager {
     public final void clearPreviewHighlight$foundation_release() {
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState != null) {
-            legacyTextFieldState.m1290setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m6731getZerod9O1mEE());
+            legacyTextFieldState.m1290setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7462getZerod9O1mEE());
         }
         LegacyTextFieldState legacyTextFieldState2 = this.state;
         if (legacyTextFieldState2 != null) {
-            legacyTextFieldState2.m1293setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m6731getZerod9O1mEE());
+            legacyTextFieldState2.m1293setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7462getZerod9O1mEE());
         }
     }
 
@@ -921,7 +921,7 @@ public final class TextFieldSelectionManager {
     }
 
     private final boolean getHasSelection() {
-        return !TextRange.m6720getCollapsedimpl(getValue$foundation_release().m6977getSelectiond9O1mEE());
+        return !TextRange.m7451getCollapsedimpl(getValue$foundation_release().m7708getSelectiond9O1mEE());
     }
 
     public final boolean canCopy$foundation_release() {
@@ -1005,10 +1005,10 @@ public final class TextFieldSelectionManager {
                     ResultKt.throwOnFailure(obj);
                     AnnotatedString transformedText$foundation_release = getTransformedText$foundation_release();
                     if (transformedText$foundation_release != null && (text = transformedText$foundation_release.getText()) != null && (textRange = this.latestSelection) != null) {
-                        long m6730unboximpl = textRange.m6730unboximpl();
+                        long m7461unboximpl = textRange.m7461unboximpl();
                         PlatformSelectionBehaviors platformSelectionBehaviors = this.platformSelectionBehaviors;
                         if (platformSelectionBehaviors != null) {
-                            long TextRange = TextRangeKt.TextRange(this.offsetMapping.originalToTransformed(TextRange.m6726getStartimpl(m6730unboximpl)), this.offsetMapping.originalToTransformed(TextRange.m6721getEndimpl(m6730unboximpl)));
+                            long TextRange = TextRangeKt.TextRange(this.offsetMapping.originalToTransformed(TextRange.m7457getStartimpl(m7461unboximpl)), this.offsetMapping.originalToTransformed(TextRange.m7452getEndimpl(m7461unboximpl)));
                             textFieldSelectionManager$notifyPlatformSelectionBehaviorsOnShowContextMenu$1.label = 1;
                             if (platformSelectionBehaviors.mo1745onShowContextMenuSbBc2M(text, TextRange, textFieldSelectionManager$notifyPlatformSelectionBehaviorsOnShowContextMenu$1) == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -1042,11 +1042,11 @@ public final class TextFieldSelectionManager {
     }
 
     public final boolean canSelectAll$foundation_release() {
-        return TextRange.m6722getLengthimpl(getValue$foundation_release().m6977getSelectiond9O1mEE()) != getValue$foundation_release().getText().length();
+        return TextRange.m7453getLengthimpl(getValue$foundation_release().m7708getSelectiond9O1mEE()) != getValue$foundation_release().getText().length();
     }
 
     public final boolean canAutofill$foundation_release() {
-        return getEditable() && TextRange.m6720getCollapsedimpl(getValue$foundation_release().m6977getSelectiond9O1mEE());
+        return getEditable() && TextRange.m7451getCollapsedimpl(getValue$foundation_release().m7708getSelectiond9O1mEE());
     }
 
     public static /* synthetic */ Job copy$foundation_release$default(TextFieldSelectionManager textFieldSelectionManager, boolean z, int i, Object obj) {
@@ -1089,8 +1089,8 @@ public final class TextFieldSelectionManager {
     public final void selectAll$foundation_release() {
         TextFieldValue m1825createTextFieldValueFDrldGo = m1825createTextFieldValueFDrldGo(getValue$foundation_release().getAnnotatedString(), TextRangeKt.TextRange(0, getValue$foundation_release().getText().length()));
         this.onValueChange.invoke(m1825createTextFieldValueFDrldGo);
-        this.latestSelection = TextRange.m6714boximpl(m1825createTextFieldValueFDrldGo.m6977getSelectiond9O1mEE());
-        this.oldValue = TextFieldValue.m6972copy3r_uNRQ$default(this.oldValue, (AnnotatedString) null, m1825createTextFieldValueFDrldGo.m6977getSelectiond9O1mEE(), (TextRange) null, 5, (Object) null);
+        this.latestSelection = TextRange.m7445boximpl(m1825createTextFieldValueFDrldGo.m7708getSelectiond9O1mEE());
+        this.oldValue = TextFieldValue.m7703copy3r_uNRQ$default(this.oldValue, (AnnotatedString) null, m1825createTextFieldValueFDrldGo.m7708getSelectiond9O1mEE(), (TextRange) null, 5, (Object) null);
         enterSelectionMode$foundation_release(true);
     }
 
@@ -1107,39 +1107,39 @@ public final class TextFieldSelectionManager {
         TextLayoutResult value;
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null || (value = layoutResult.getValue()) == null) {
-            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
         AnnotatedString transformedText$foundation_release = getTransformedText$foundation_release();
         if (transformedText$foundation_release == null) {
-            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
         if (Intrinsics.areEqual(transformedText$foundation_release.getText(), value.getLayoutInput().getText().getText())) {
-            long m6977getSelectiond9O1mEE = getValue$foundation_release().m6977getSelectiond9O1mEE();
-            return TextSelectionDelegateKt.getSelectionHandleCoordinates(value, this.offsetMapping.originalToTransformed(z ? TextRange.m6726getStartimpl(m6977getSelectiond9O1mEE) : TextRange.m6721getEndimpl(m6977getSelectiond9O1mEE)), z, TextRange.m6725getReversedimpl(getValue$foundation_release().m6977getSelectiond9O1mEE()));
+            long m7708getSelectiond9O1mEE = getValue$foundation_release().m7708getSelectiond9O1mEE();
+            return TextSelectionDelegateKt.getSelectionHandleCoordinates(value, this.offsetMapping.originalToTransformed(z ? TextRange.m7457getStartimpl(m7708getSelectiond9O1mEE) : TextRange.m7452getEndimpl(m7708getSelectiond9O1mEE)), z, TextRange.m7456getReversedimpl(getValue$foundation_release().m7708getSelectiond9O1mEE()));
         }
-        return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5050getUnspecifiedF1C5BW0();
     }
 
     public final float getHandleLineHeight$foundation_release(boolean z) {
         TextLayoutResultProxy layoutResult;
         TextLayoutResult value;
-        int m6726getStartimpl = z ? TextRange.m6726getStartimpl(getValue$foundation_release().m6977getSelectiond9O1mEE()) : TextRange.m6721getEndimpl(getValue$foundation_release().m6977getSelectiond9O1mEE());
+        int m7457getStartimpl = z ? TextRange.m7457getStartimpl(getValue$foundation_release().m7708getSelectiond9O1mEE()) : TextRange.m7452getEndimpl(getValue$foundation_release().m7708getSelectiond9O1mEE());
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null || (value = layoutResult.getValue()) == null) {
             return 0.0f;
         }
-        return TextLayoutHelperKt.getLineHeight(value, m6726getStartimpl);
+        return TextLayoutHelperKt.getLineHeight(value, m7457getStartimpl);
     }
 
     /* renamed from: getCursorPosition-tuRUvjQ$foundation_release  reason: not valid java name */
     public final long m1832getCursorPositiontuRUvjQ$foundation_release(Density density) {
-        int originalToTransformed = this.offsetMapping.originalToTransformed(TextRange.m6726getStartimpl(getValue$foundation_release().m6977getSelectiond9O1mEE()));
+        int originalToTransformed = this.offsetMapping.originalToTransformed(TextRange.m7457getStartimpl(getValue$foundation_release().m7708getSelectiond9O1mEE()));
         LegacyTextFieldState legacyTextFieldState = this.state;
         TextLayoutResultProxy layoutResult = legacyTextFieldState != null ? legacyTextFieldState.getLayoutResult() : null;
         Intrinsics.checkNotNull(layoutResult);
         TextLayoutResult value = layoutResult.getValue();
         Rect cursorRect = value.getCursorRect(RangesKt.coerceIn(originalToTransformed, 0, value.getLayoutInput().getText().length()));
-        return Offset.m4297constructorimpl((Float.floatToRawIntBits(cursorRect.getLeft() + (density.mo429toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness()) / 2)) << 32) | (Float.floatToRawIntBits(cursorRect.getBottom()) & 4294967295L));
+        return Offset.m5027constructorimpl((Float.floatToRawIntBits(cursorRect.getLeft() + (density.mo429toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness()) / 2)) << 32) | (Float.floatToRawIntBits(cursorRect.getBottom()) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1203,7 +1203,7 @@ public final class TextFieldSelectionManager {
     public final void m1835selectWordAtPositionIfNotAlreadySelectedk4lQ0M(long j) {
         TextLayoutResultProxy layoutResult;
         LegacyTextFieldState legacyTextFieldState = this.state;
-        if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null || TextLayoutHelperKt.m1384isPositionInsideSelectionuaM50fQ(layoutResult.getValue(), layoutResult.m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release(j), TextRange.m6714boximpl(getValue$foundation_release().m6977getSelectiond9O1mEE()))) {
+        if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null || TextLayoutHelperKt.m1384isPositionInsideSelectionuaM50fQ(layoutResult.getValue(), layoutResult.m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release(j), TextRange.m7445boximpl(getValue$foundation_release().m7708getSelectiond9O1mEE()))) {
             return;
         }
         m1829updateSelection8UEBfa8(getValue$foundation_release(), j, true, false, SelectionAdjustment.Companion.getWord(), false);
@@ -1232,12 +1232,12 @@ public final class TextFieldSelectionManager {
                 legacyTextFieldState = null;
             }
             if (legacyTextFieldState != null) {
-                int originalToTransformed = this.offsetMapping.originalToTransformed(TextRange.m6726getStartimpl(getValue$foundation_release().m6977getSelectiond9O1mEE()));
-                int originalToTransformed2 = this.offsetMapping.originalToTransformed(TextRange.m6721getEndimpl(getValue$foundation_release().m6977getSelectiond9O1mEE()));
+                int originalToTransformed = this.offsetMapping.originalToTransformed(TextRange.m7457getStartimpl(getValue$foundation_release().m7708getSelectiond9O1mEE()));
+                int originalToTransformed2 = this.offsetMapping.originalToTransformed(TextRange.m7452getEndimpl(getValue$foundation_release().m7708getSelectiond9O1mEE()));
                 LegacyTextFieldState legacyTextFieldState2 = this.state;
-                long m4321getZeroF1C5BW0 = (legacyTextFieldState2 == null || (layoutCoordinates4 = legacyTextFieldState2.getLayoutCoordinates()) == null) ? Offset.Companion.m4321getZeroF1C5BW0() : layoutCoordinates4.mo5978localToRootMKHz9U(m1833getHandlePositiontuRUvjQ$foundation_release(true));
+                long m5051getZeroF1C5BW0 = (legacyTextFieldState2 == null || (layoutCoordinates4 = legacyTextFieldState2.getLayoutCoordinates()) == null) ? Offset.Companion.m5051getZeroF1C5BW0() : layoutCoordinates4.mo6708localToRootMKHz9U(m1833getHandlePositiontuRUvjQ$foundation_release(true));
                 LegacyTextFieldState legacyTextFieldState3 = this.state;
-                long m4321getZeroF1C5BW02 = (legacyTextFieldState3 == null || (layoutCoordinates3 = legacyTextFieldState3.getLayoutCoordinates()) == null) ? Offset.Companion.m4321getZeroF1C5BW0() : layoutCoordinates3.mo5978localToRootMKHz9U(m1833getHandlePositiontuRUvjQ$foundation_release(false));
+                long m5051getZeroF1C5BW02 = (legacyTextFieldState3 == null || (layoutCoordinates3 = legacyTextFieldState3.getLayoutCoordinates()) == null) ? Offset.Companion.m5051getZeroF1C5BW0() : layoutCoordinates3.mo6708localToRootMKHz9U(m1833getHandlePositiontuRUvjQ$foundation_release(false));
                 LegacyTextFieldState legacyTextFieldState4 = this.state;
                 float f2 = 0.0f;
                 if (legacyTextFieldState4 == null || (layoutCoordinates2 = legacyTextFieldState4.getLayoutCoordinates()) == null) {
@@ -1248,16 +1248,16 @@ public final class TextFieldSelectionManager {
                     TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
                     c = ' ';
                     j = 4294967295L;
-                    f = Float.intBitsToFloat((int) (layoutCoordinates2.mo5978localToRootMKHz9U(Offset.m4297constructorimpl((Float.floatToRawIntBits((layoutResult == null || (value2 = layoutResult.getValue()) == null || (cursorRect2 = value2.getCursorRect(originalToTransformed)) == null) ? 0.0f : cursorRect2.getTop()) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32))) & 4294967295L));
+                    f = Float.intBitsToFloat((int) (layoutCoordinates2.mo6708localToRootMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits((layoutResult == null || (value2 = layoutResult.getValue()) == null || (cursorRect2 = value2.getCursorRect(originalToTransformed)) == null) ? 0.0f : cursorRect2.getTop()) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32))) & 4294967295L));
                 }
                 LegacyTextFieldState legacyTextFieldState5 = this.state;
                 if (legacyTextFieldState5 != null && (layoutCoordinates = legacyTextFieldState5.getLayoutCoordinates()) != null) {
                     TextLayoutResultProxy layoutResult2 = legacyTextFieldState.getLayoutResult();
-                    f2 = Float.intBitsToFloat((int) (layoutCoordinates.mo5978localToRootMKHz9U(Offset.m4297constructorimpl((Float.floatToRawIntBits(0.0f) << c) | (Float.floatToRawIntBits((layoutResult2 == null || (value = layoutResult2.getValue()) == null || (cursorRect = value.getCursorRect(originalToTransformed2)) == null) ? 0.0f : cursorRect.getTop()) & j))) & j));
+                    f2 = Float.intBitsToFloat((int) (layoutCoordinates.mo6708localToRootMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) << c) | (Float.floatToRawIntBits((layoutResult2 == null || (value = layoutResult2.getValue()) == null || (cursorRect = value.getCursorRect(originalToTransformed2)) == null) ? 0.0f : cursorRect.getTop()) & j))) & j));
                 }
-                int i = (int) (m4321getZeroF1C5BW0 >> c);
-                int i2 = (int) (m4321getZeroF1C5BW02 >> c);
-                return new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.min(f, f2), Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.max(Float.intBitsToFloat((int) (m4321getZeroF1C5BW0 & j)), Float.intBitsToFloat((int) (m4321getZeroF1C5BW02 & j))) + (Dp.m7264constructorimpl(25) * legacyTextFieldState.getTextDelegate().getDensity().getDensity()));
+                int i = (int) (m5051getZeroF1C5BW0 >> c);
+                int i2 = (int) (m5051getZeroF1C5BW02 >> c);
+                return new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.min(f, f2), Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.max(Float.intBitsToFloat((int) (m5051getZeroF1C5BW0 & j)), Float.intBitsToFloat((int) (m5051getZeroF1C5BW02 & j))) + (Dp.m7995constructorimpl(25) * legacyTextFieldState.getTextDelegate().getDensity().getDensity()));
             }
         }
         return Rect.Companion.getZero();
@@ -1271,37 +1271,37 @@ public final class TextFieldSelectionManager {
         HapticFeedback hapticFeedback;
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null) {
-            return TextRange.Companion.m6731getZerod9O1mEE();
+            return TextRange.Companion.m7462getZerod9O1mEE();
         }
-        long TextRange = TextRangeKt.TextRange(this.offsetMapping.originalToTransformed(TextRange.m6726getStartimpl(textFieldValue.m6977getSelectiond9O1mEE())), this.offsetMapping.originalToTransformed(TextRange.m6721getEndimpl(textFieldValue.m6977getSelectiond9O1mEE())));
+        long TextRange = TextRangeKt.TextRange(this.offsetMapping.originalToTransformed(TextRange.m7457getStartimpl(textFieldValue.m7708getSelectiond9O1mEE())), this.offsetMapping.originalToTransformed(TextRange.m7452getEndimpl(textFieldValue.m7708getSelectiond9O1mEE())));
         boolean z4 = false;
         int m1387getOffsetForPosition3MmeM6k = layoutResult.m1387getOffsetForPosition3MmeM6k(j, false);
-        int m6726getStartimpl = (z2 || z) ? m1387getOffsetForPosition3MmeM6k : TextRange.m6726getStartimpl(TextRange);
-        int m6721getEndimpl = (!z2 || z) ? m1387getOffsetForPosition3MmeM6k : TextRange.m6721getEndimpl(TextRange);
+        int m7457getStartimpl = (z2 || z) ? m1387getOffsetForPosition3MmeM6k : TextRange.m7457getStartimpl(TextRange);
+        int m7452getEndimpl = (!z2 || z) ? m1387getOffsetForPosition3MmeM6k : TextRange.m7452getEndimpl(TextRange);
         SelectionLayout selectionLayout = this.previousSelectionLayout;
         if (z || selectionLayout == null || (i = this.previousRawDragOffset) == -1) {
             i = -1;
         }
-        SelectionLayout m1771getTextFieldSelectionLayoutRcvTLA = SelectionLayoutKt.m1771getTextFieldSelectionLayoutRcvTLA(layoutResult.getValue(), m6726getStartimpl, m6721getEndimpl, i, TextRange, z, z2);
+        SelectionLayout m1771getTextFieldSelectionLayoutRcvTLA = SelectionLayoutKt.m1771getTextFieldSelectionLayoutRcvTLA(layoutResult.getValue(), m7457getStartimpl, m7452getEndimpl, i, TextRange, z, z2);
         if (!m1771getTextFieldSelectionLayoutRcvTLA.shouldRecomputeSelection(selectionLayout)) {
-            return textFieldValue.m6977getSelectiond9O1mEE();
+            return textFieldValue.m7708getSelectiond9O1mEE();
         }
         this.previousSelectionLayout = m1771getTextFieldSelectionLayoutRcvTLA;
         this.previousRawDragOffset = m1387getOffsetForPosition3MmeM6k;
         Selection adjust = selectionAdjustment.adjust(m1771getTextFieldSelectionLayoutRcvTLA);
         long TextRange2 = TextRangeKt.TextRange(this.offsetMapping.transformedToOriginal(adjust.getStart().getOffset()), this.offsetMapping.transformedToOriginal(adjust.getEnd().getOffset()));
-        if (TextRange.m6719equalsimpl0(TextRange2, textFieldValue.m6977getSelectiond9O1mEE())) {
-            return textFieldValue.m6977getSelectiond9O1mEE();
+        if (TextRange.m7450equalsimpl0(TextRange2, textFieldValue.m7708getSelectiond9O1mEE())) {
+            return textFieldValue.m7708getSelectiond9O1mEE();
         }
-        boolean z5 = TextRange.m6725getReversedimpl(TextRange2) != TextRange.m6725getReversedimpl(textFieldValue.m6977getSelectiond9O1mEE()) && TextRange.m6719equalsimpl0(TextRangeKt.TextRange(TextRange.m6721getEndimpl(TextRange2), TextRange.m6726getStartimpl(TextRange2)), textFieldValue.m6977getSelectiond9O1mEE());
-        boolean z6 = TextRange.m6720getCollapsedimpl(TextRange2) && TextRange.m6720getCollapsedimpl(textFieldValue.m6977getSelectiond9O1mEE());
+        boolean z5 = TextRange.m7456getReversedimpl(TextRange2) != TextRange.m7456getReversedimpl(textFieldValue.m7708getSelectiond9O1mEE()) && TextRange.m7450equalsimpl0(TextRangeKt.TextRange(TextRange.m7452getEndimpl(TextRange2), TextRange.m7457getStartimpl(TextRange2)), textFieldValue.m7708getSelectiond9O1mEE());
+        boolean z6 = TextRange.m7451getCollapsedimpl(TextRange2) && TextRange.m7451getCollapsedimpl(textFieldValue.m7708getSelectiond9O1mEE());
         if (z3 && textFieldValue.getText().length() > 0 && !z5 && !z6 && (hapticFeedback = this.hapticFeedBack) != null) {
-            hapticFeedback.mo5323performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5340getTextHandleMove5zf0vsI());
+            hapticFeedback.mo6053performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6070getTextHandleMove5zf0vsI());
         }
         this.onValueChange.invoke(m1825createTextFieldValueFDrldGo(textFieldValue.getAnnotatedString(), TextRange2));
-        this.latestSelection = TextRange.m6714boximpl(TextRange2);
+        this.latestSelection = TextRange.m7445boximpl(TextRange2);
         if (!z3) {
-            updateFloatingToolbar(!TextRange.m6720getCollapsedimpl(TextRange2));
+            updateFloatingToolbar(!TextRange.m7451getCollapsedimpl(TextRange2));
         }
         LegacyTextFieldState legacyTextFieldState2 = this.state;
         if (legacyTextFieldState2 != null) {
@@ -1309,15 +1309,15 @@ public final class TextFieldSelectionManager {
         }
         LegacyTextFieldState legacyTextFieldState3 = this.state;
         if (legacyTextFieldState3 != null) {
-            legacyTextFieldState3.setShowSelectionHandleStart(!TextRange.m6720getCollapsedimpl(TextRange2) && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(this, true));
+            legacyTextFieldState3.setShowSelectionHandleStart(!TextRange.m7451getCollapsedimpl(TextRange2) && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(this, true));
         }
         LegacyTextFieldState legacyTextFieldState4 = this.state;
         if (legacyTextFieldState4 != null) {
-            legacyTextFieldState4.setShowSelectionHandleEnd(!TextRange.m6720getCollapsedimpl(TextRange2) && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(this, false));
+            legacyTextFieldState4.setShowSelectionHandleEnd(!TextRange.m7451getCollapsedimpl(TextRange2) && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(this, false));
         }
         LegacyTextFieldState legacyTextFieldState5 = this.state;
         if (legacyTextFieldState5 != null) {
-            if (TextRange.m6720getCollapsedimpl(TextRange2) && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(this, true)) {
+            if (TextRange.m7451getCollapsedimpl(TextRange2) && TextFieldSelectionManagerKt.isSelectionHandleInVisibleBound(this, true)) {
                 z4 = true;
             }
             legacyTextFieldState5.setShowCursorHandle(z4);

@@ -6,7 +6,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
     private final zzr zzb = new zzr();

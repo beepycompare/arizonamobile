@@ -20,94 +20,94 @@ public final class Float16 implements Comparable<Float16> {
     public static final int Size = 16;
     private final short halfValue;
     public static final Companion Companion = new Companion(null);
-    private static final short Epsilon = m4659constructorimpl((short) 5120);
-    private static final short LowestValue = m4659constructorimpl((short) -1025);
-    private static final short MaxValue = m4659constructorimpl((short) 31743);
-    private static final short MinNormal = m4659constructorimpl((short) SilenceSkippingAudioProcessor.DEFAULT_SILENCE_THRESHOLD_LEVEL);
-    private static final short MinValue = m4659constructorimpl((short) 1);
-    private static final short NaN = m4659constructorimpl((short) 32256);
-    private static final short NegativeInfinity = m4659constructorimpl((short) -1024);
-    private static final short NegativeZero = m4659constructorimpl((short) ShortCompanionObject.MIN_VALUE);
-    private static final short PositiveInfinity = m4659constructorimpl((short) 31744);
-    private static final short PositiveZero = m4659constructorimpl((short) 0);
+    private static final short Epsilon = m5389constructorimpl((short) 5120);
+    private static final short LowestValue = m5389constructorimpl((short) -1025);
+    private static final short MaxValue = m5389constructorimpl((short) 31743);
+    private static final short MinNormal = m5389constructorimpl((short) SilenceSkippingAudioProcessor.DEFAULT_SILENCE_THRESHOLD_LEVEL);
+    private static final short MinValue = m5389constructorimpl((short) 1);
+    private static final short NaN = m5389constructorimpl((short) 32256);
+    private static final short NegativeInfinity = m5389constructorimpl((short) -1024);
+    private static final short NegativeZero = m5389constructorimpl((short) ShortCompanionObject.MIN_VALUE);
+    private static final short PositiveInfinity = m5389constructorimpl((short) 31744);
+    private static final short PositiveZero = m5389constructorimpl((short) 0);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Float16 m4654boximpl(short s) {
+    public static final /* synthetic */ Float16 m5384boximpl(short s) {
         return new Float16(s);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short m4659constructorimpl(short s) {
+    public static short m5389constructorimpl(short s) {
         return s;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4660equalsimpl(short s, Object obj) {
-        return (obj instanceof Float16) && s == ((Float16) obj).m4685unboximpl();
+    public static boolean m5390equalsimpl(short s, Object obj) {
+        return (obj instanceof Float16) && s == ((Float16) obj).m5415unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4661equalsimpl0(short s, short s2) {
+    public static final boolean m5391equalsimpl0(short s, short s2) {
         return s == s2;
     }
 
     /* renamed from: getExponent-impl  reason: not valid java name */
-    public static final int m4663getExponentimpl(short s) {
+    public static final int m5393getExponentimpl(short s) {
         return ((s >>> 10) & 31) - 15;
     }
 
     /* renamed from: getSignificand-impl  reason: not valid java name */
-    public static final int m4665getSignificandimpl(short s) {
+    public static final int m5395getSignificandimpl(short s) {
         return s & 1023;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4666hashCodeimpl(short s) {
+    public static int m5396hashCodeimpl(short s) {
         return Short.hashCode(s);
     }
 
     /* renamed from: isFinite-impl  reason: not valid java name */
-    public static final boolean m4667isFiniteimpl(short s) {
+    public static final boolean m5397isFiniteimpl(short s) {
         return (s & ShortCompanionObject.MAX_VALUE) != 31744;
     }
 
     /* renamed from: isInfinite-impl  reason: not valid java name */
-    public static final boolean m4668isInfiniteimpl(short s) {
+    public static final boolean m5398isInfiniteimpl(short s) {
         return (s & ShortCompanionObject.MAX_VALUE) == 31744;
     }
 
     /* renamed from: isNaN-impl  reason: not valid java name */
-    public static final boolean m4669isNaNimpl(short s) {
+    public static final boolean m5399isNaNimpl(short s) {
         return (s & ShortCompanionObject.MAX_VALUE) > 31744;
     }
 
     /* renamed from: isNormalized-impl  reason: not valid java name */
-    public static final boolean m4670isNormalizedimpl(short s) {
+    public static final boolean m5400isNormalizedimpl(short s) {
         int i = s & 31744;
         return (i != 0) & (i != 31744);
     }
 
     /* renamed from: toRawBits-impl  reason: not valid java name */
-    public static final int m4679toRawBitsimpl(short s) {
+    public static final int m5409toRawBitsimpl(short s) {
         return s & UShort.MAX_VALUE;
     }
 
     public boolean equals(Object obj) {
-        return m4660equalsimpl(this.halfValue, obj);
+        return m5390equalsimpl(this.halfValue, obj);
     }
 
     public int hashCode() {
-        return m4666hashCodeimpl(this.halfValue);
+        return m5396hashCodeimpl(this.halfValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ short m4685unboximpl() {
+    public final /* synthetic */ short m5415unboximpl() {
         return this.halfValue;
     }
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(Float16 float16) {
-        return m4684compareTo41bOqos(float16.m4685unboximpl());
+        return m5414compareTo41bOqos(float16.m5415unboximpl());
     }
 
     private /* synthetic */ Float16(short s) {
@@ -119,90 +119,90 @@ public final class Float16 implements Comparable<Float16> {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short m4657constructorimpl(double d) {
-        return m4658constructorimpl((float) d);
+    public static short m5387constructorimpl(double d) {
+        return m5388constructorimpl((float) d);
     }
 
     /* renamed from: toByte-impl  reason: not valid java name */
-    public static final byte m4673toByteimpl(short s) {
-        return (byte) m4675toFloatimpl(s);
+    public static final byte m5403toByteimpl(short s) {
+        return (byte) m5405toFloatimpl(s);
     }
 
     /* renamed from: toShort-impl  reason: not valid java name */
-    public static final short m4680toShortimpl(short s) {
-        return (short) m4675toFloatimpl(s);
+    public static final short m5410toShortimpl(short s) {
+        return (short) m5405toFloatimpl(s);
     }
 
     /* renamed from: toInt-impl  reason: not valid java name */
-    public static final int m4677toIntimpl(short s) {
-        return (int) m4675toFloatimpl(s);
+    public static final int m5407toIntimpl(short s) {
+        return (int) m5405toFloatimpl(s);
     }
 
     /* renamed from: toLong-impl  reason: not valid java name */
-    public static final long m4678toLongimpl(short s) {
-        return m4675toFloatimpl(s);
+    public static final long m5408toLongimpl(short s) {
+        return m5405toFloatimpl(s);
     }
 
     /* renamed from: toDouble-impl  reason: not valid java name */
-    public static final double m4674toDoubleimpl(short s) {
-        return m4675toFloatimpl(s);
+    public static final double m5404toDoubleimpl(short s) {
+        return m5405toFloatimpl(s);
     }
 
     /* renamed from: toBits-impl  reason: not valid java name */
-    public static final int m4672toBitsimpl(short s) {
-        if (m4669isNaNimpl(s)) {
+    public static final int m5402toBitsimpl(short s) {
+        if (m5399isNaNimpl(s)) {
             return 32256;
         }
         return s & UShort.MAX_VALUE;
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4681toStringimpl(short s) {
-        return String.valueOf(m4675toFloatimpl(s));
+    public static String m5411toStringimpl(short s) {
+        return String.valueOf(m5405toFloatimpl(s));
     }
 
     public String toString() {
-        return m4681toStringimpl(this.halfValue);
+        return m5411toStringimpl(this.halfValue);
     }
 
     /* renamed from: compareTo-41bOqos  reason: not valid java name */
-    public int m4684compareTo41bOqos(short s) {
-        return m4656compareTo41bOqos(this.halfValue, s);
+    public int m5414compareTo41bOqos(short s) {
+        return m5386compareTo41bOqos(this.halfValue, s);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: compareTo-41bOqos  reason: not valid java name */
-    public static int m4656compareTo41bOqos(short s, short s2) {
-        if (m4669isNaNimpl(s)) {
-            return !m4669isNaNimpl(s2) ? 1 : 0;
+    public static int m5386compareTo41bOqos(short s, short s2) {
+        if (m5399isNaNimpl(s)) {
+            return !m5399isNaNimpl(s2) ? 1 : 0;
         }
-        if (m4669isNaNimpl(s2)) {
+        if (m5399isNaNimpl(s2)) {
             return -1;
         }
         return Intrinsics.compare((s & ShortCompanionObject.MIN_VALUE) != 0 ? 32768 - (s & UShort.MAX_VALUE) : s & UShort.MAX_VALUE, (s2 & ShortCompanionObject.MIN_VALUE) != 0 ? 32768 - (s2 & UShort.MAX_VALUE) : s2 & UShort.MAX_VALUE);
     }
 
     /* renamed from: getSign-slo4al4  reason: not valid java name */
-    public static final short m4664getSignslo4al4(short s) {
+    public static final short m5394getSignslo4al4(short s) {
         int i = s & ShortCompanionObject.MAX_VALUE;
         if (!((i > 31744) | (i == 0))) {
             i = (s & ShortCompanionObject.MIN_VALUE) | 15360;
         }
-        return m4659constructorimpl((short) i);
+        return m5389constructorimpl((short) i);
     }
 
     /* renamed from: withSign-qCeQghg  reason: not valid java name */
-    public static final short m4683withSignqCeQghg(short s, short s2) {
-        return m4659constructorimpl((short) ((s & ShortCompanionObject.MAX_VALUE) | (s2 & ShortCompanionObject.MIN_VALUE)));
+    public static final short m5413withSignqCeQghg(short s, short s2) {
+        return m5389constructorimpl((short) ((s & ShortCompanionObject.MAX_VALUE) | (s2 & ShortCompanionObject.MIN_VALUE)));
     }
 
     /* renamed from: absoluteValue-slo4al4  reason: not valid java name */
-    public static final short m4653absoluteValueslo4al4(short s) {
-        return m4659constructorimpl((short) (s & ShortCompanionObject.MAX_VALUE));
+    public static final short m5383absoluteValueslo4al4(short s) {
+        return m5389constructorimpl((short) (s & ShortCompanionObject.MAX_VALUE));
     }
 
     /* renamed from: round-slo4al4  reason: not valid java name */
-    public static final short m4671roundslo4al4(short s) {
+    public static final short m5401roundslo4al4(short s) {
         int i = s & UShort.MAX_VALUE;
         int i2 = s & ShortCompanionObject.MAX_VALUE;
         if (i2 < 15360) {
@@ -211,11 +211,11 @@ public final class Float16 implements Comparable<Float16> {
             int i3 = i2 >> 10;
             i = (i + (1 << (24 - i3))) & (~((1 << (25 - i3)) - 1));
         }
-        return m4659constructorimpl((short) i);
+        return m5389constructorimpl((short) i);
     }
 
     /* renamed from: ceil-slo4al4  reason: not valid java name */
-    public static final short m4655ceilslo4al4(short s) {
+    public static final short m5385ceilslo4al4(short s) {
         int i = 65535 & s;
         int i2 = s & ShortCompanionObject.MAX_VALUE;
         if (i2 < 15360) {
@@ -224,11 +224,11 @@ public final class Float16 implements Comparable<Float16> {
             int i3 = (1 << (25 - (i2 >> 10))) - 1;
             i = (i + (((i >> 15) - 1) & i3)) & (~i3);
         }
-        return m4659constructorimpl((short) i);
+        return m5389constructorimpl((short) i);
     }
 
     /* renamed from: floor-slo4al4  reason: not valid java name */
-    public static final short m4662floorslo4al4(short s) {
+    public static final short m5392floorslo4al4(short s) {
         int i = s & UShort.MAX_VALUE;
         int i2 = s & ShortCompanionObject.MAX_VALUE;
         if (i2 < 15360) {
@@ -237,11 +237,11 @@ public final class Float16 implements Comparable<Float16> {
             int i3 = (1 << (25 - (i2 >> 10))) - 1;
             i = (i + ((-(i >> 15)) & i3)) & (~i3);
         }
-        return m4659constructorimpl((short) i);
+        return m5389constructorimpl((short) i);
     }
 
     /* renamed from: trunc-slo4al4  reason: not valid java name */
-    public static final short m4682truncslo4al4(short s) {
+    public static final short m5412truncslo4al4(short s) {
         int i = 65535 & s;
         int i2 = s & ShortCompanionObject.MAX_VALUE;
         if (i2 < 15360) {
@@ -249,11 +249,11 @@ public final class Float16 implements Comparable<Float16> {
         } else if (i2 < 25600) {
             i &= ~((1 << (25 - (i2 >> 10))) - 1);
         }
-        return m4659constructorimpl((short) i);
+        return m5389constructorimpl((short) i);
     }
 
     /* renamed from: toHexString-impl  reason: not valid java name */
-    public static final String m4676toHexStringimpl(short s) {
+    public static final String m5406toHexStringimpl(short s) {
         StringBuilder sb = new StringBuilder();
         int i = 65535 & s;
         int i2 = i >>> 15;
@@ -302,58 +302,58 @@ public final class Float16 implements Comparable<Float16> {
         }
 
         /* renamed from: getEpsilon-slo4al4  reason: not valid java name */
-        public final short m4686getEpsilonslo4al4() {
+        public final short m5416getEpsilonslo4al4() {
             return Float16.Epsilon;
         }
 
         /* renamed from: getLowestValue-slo4al4  reason: not valid java name */
-        public final short m4687getLowestValueslo4al4() {
+        public final short m5417getLowestValueslo4al4() {
             return Float16.LowestValue;
         }
 
         /* renamed from: getMaxValue-slo4al4  reason: not valid java name */
-        public final short m4688getMaxValueslo4al4() {
+        public final short m5418getMaxValueslo4al4() {
             return Float16.MaxValue;
         }
 
         /* renamed from: getMinNormal-slo4al4  reason: not valid java name */
-        public final short m4689getMinNormalslo4al4() {
+        public final short m5419getMinNormalslo4al4() {
             return Float16.MinNormal;
         }
 
         /* renamed from: getMinValue-slo4al4  reason: not valid java name */
-        public final short m4690getMinValueslo4al4() {
+        public final short m5420getMinValueslo4al4() {
             return Float16.MinValue;
         }
 
         /* renamed from: getNaN-slo4al4  reason: not valid java name */
-        public final short m4691getNaNslo4al4() {
+        public final short m5421getNaNslo4al4() {
             return Float16.NaN;
         }
 
         /* renamed from: getNegativeInfinity-slo4al4  reason: not valid java name */
-        public final short m4692getNegativeInfinityslo4al4() {
+        public final short m5422getNegativeInfinityslo4al4() {
             return Float16.NegativeInfinity;
         }
 
         /* renamed from: getNegativeZero-slo4al4  reason: not valid java name */
-        public final short m4693getNegativeZeroslo4al4() {
+        public final short m5423getNegativeZeroslo4al4() {
             return Float16.NegativeZero;
         }
 
         /* renamed from: getPositiveInfinity-slo4al4  reason: not valid java name */
-        public final short m4694getPositiveInfinityslo4al4() {
+        public final short m5424getPositiveInfinityslo4al4() {
             return Float16.PositiveInfinity;
         }
 
         /* renamed from: getPositiveZero-slo4al4  reason: not valid java name */
-        public final short m4695getPositiveZeroslo4al4() {
+        public final short m5425getPositiveZeroslo4al4() {
             return Float16.PositiveZero;
         }
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short m4658constructorimpl(float f) {
+    public static short m5388constructorimpl(float f) {
         int i;
         int i2;
         int floatToRawIntBits = Float.floatToRawIntBits(f);
@@ -392,11 +392,11 @@ public final class Float16 implements Comparable<Float16> {
             }
             i = (i3 << 15) | (i6 << 10) | i7;
         }
-        return m4659constructorimpl((short) i);
+        return m5389constructorimpl((short) i);
     }
 
     /* renamed from: toFloat-impl  reason: not valid java name */
-    public static final float m4675toFloatimpl(short s) {
+    public static final float m5405toFloatimpl(short s) {
         int i;
         int i2;
         int i3;

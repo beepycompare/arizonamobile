@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class ModuleEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f198a;
+    private final int f183a;
     private final String b;
     private final String c;
     private final int d;
@@ -18,11 +18,11 @@ public final class ModuleEvent {
     private final List g;
     private final List h;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f199a;
+        private final int f184a;
         private String b;
         private String c;
         private int d;
@@ -83,11 +83,11 @@ public final class ModuleEvent {
         private Builder(int i) {
             this.d = 1;
             this.e = Category.GENERAL;
-            this.f199a = i;
+            this.f184a = i;
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public enum Category {
         GENERAL,
         SYSTEM
@@ -126,7 +126,7 @@ public final class ModuleEvent {
     }
 
     public int getType() {
-        return this.f198a;
+        return this.f183a;
     }
 
     public String getValue() {
@@ -134,11 +134,11 @@ public final class ModuleEvent {
     }
 
     public String toString() {
-        return "ModuleEvent{type=" + this.f198a + ", name='" + this.b + "', value='" + this.c + "', serviceDataReporterType=" + this.d + ", category=" + this.e + ", environment=" + this.f + ", extras=" + this.g + ", attributes=" + this.h + AbstractJsonLexerKt.END_OBJ;
+        return "ModuleEvent{type=" + this.f183a + ", name='" + this.b + "', value='" + this.c + "', serviceDataReporterType=" + this.d + ", category=" + this.e + ", environment=" + this.f + ", extras=" + this.g + ", attributes=" + this.h + AbstractJsonLexerKt.END_OBJ;
     }
 
     private ModuleEvent(Builder builder) {
-        this.f198a = builder.f199a;
+        this.f183a = builder.f184a;
         this.b = builder.b;
         this.c = builder.c;
         this.d = builder.d;

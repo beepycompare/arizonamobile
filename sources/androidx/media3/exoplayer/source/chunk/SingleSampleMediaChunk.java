@@ -10,7 +10,7 @@ import androidx.media3.extractor.DefaultExtractorInput;
 import androidx.media3.extractor.TrackOutput;
 import java.io.IOException;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SingleSampleMediaChunk extends BaseMediaChunk {
     private boolean loadCompleted;
     private long nextLoadPosition;

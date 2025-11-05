@@ -8,13 +8,13 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 /* compiled from: SnackbarHost.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$SnackbarHostKt {
     public static final ComposableSingletons$SnackbarHostKt INSTANCE = new ComposableSingletons$SnackbarHostKt();
 
-    /* renamed from: lambda-1  reason: not valid java name */
-    public static Function3<SnackbarData, Composer, Integer, Unit> f44lambda1 = ComposableLambdaKt.composableLambdaInstance(818736383, false, new Function3<SnackbarData, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarHostKt$lambda-1$1
+    /* renamed from: lambda$-1548712596  reason: not valid java name */
+    private static Function3<SnackbarData, Composer, Integer, Unit> f32lambda$1548712596 = ComposableLambdaKt.composableLambdaInstance(-1548712596, false, new Function3<SnackbarData, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarHostKt$lambda$-1548712596$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(SnackbarData snackbarData, Composer composer, Integer num) {
             invoke(snackbarData, composer, num.intValue());
@@ -24,7 +24,7 @@ public final class ComposableSingletons$SnackbarHostKt {
         public final void invoke(SnackbarData snackbarData, Composer composer, int i) {
             SnackbarData snackbarData2;
             int i2;
-            ComposerKt.sourceInformation(composer, "C220@9332L12:SnackbarHost.kt#uh7d8r");
+            ComposerKt.sourceInformation(composer, "CN(it)219@9383L12:SnackbarHost.kt#uh7d8r");
             if ((i & 6) == 0) {
                 snackbarData2 = snackbarData;
                 i2 = i | (composer.changed(snackbarData2) ? 4 : 2);
@@ -32,22 +32,22 @@ public final class ComposableSingletons$SnackbarHostKt {
                 snackbarData2 = snackbarData;
                 i2 = i;
             }
-            if ((i2 & 19) == 18 && composer.getSkipping()) {
+            if (!composer.shouldExecute((i2 & 19) != 18, i2 & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(818736383, i2, -1, "androidx.compose.material3.ComposableSingletons$SnackbarHostKt.lambda-1.<anonymous> (SnackbarHost.kt:220)");
+                ComposerKt.traceEventStart(-1548712596, i2, -1, "androidx.compose.material3.ComposableSingletons$SnackbarHostKt.lambda$-1548712596.<anonymous> (SnackbarHost.kt:219)");
             }
-            SnackbarKt.m2650SnackbarsDKtq54(snackbarData2, null, false, null, 0L, 0L, 0L, 0L, 0L, composer, i2 & 14, TypedValues.PositionType.TYPE_POSITION_TYPE);
+            SnackbarKt.m2982SnackbarsDKtq54(snackbarData2, null, false, null, 0L, 0L, 0L, 0L, 0L, composer, i2 & 14, TypedValues.PositionType.TYPE_POSITION_TYPE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
 
-    /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function3<SnackbarData, Composer, Integer, Unit> m2101getLambda1$material3_release() {
-        return f44lambda1;
+    /* renamed from: getLambda$-1548712596$material3  reason: not valid java name */
+    public final Function3<SnackbarData, Composer, Integer, Unit> m2172getLambda$1548712596$material3() {
+        return f32lambda$1548712596;
     }
 }

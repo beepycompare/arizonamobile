@@ -216,19 +216,19 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
     public long mo971getOffsetBjo55l4(int i) {
         if (i == 0 && getPlaceablesCount() == 0) {
             if (isVertical()) {
-                return IntOffset.m7386constructorimpl((4294967295L & getOffset()) | (0 << 32));
+                return IntOffset.m8117constructorimpl((4294967295L & getOffset()) | (0 << 32));
             }
-            return IntOffset.m7386constructorimpl((4294967295L & 0) | (getOffset() << 32));
+            return IntOffset.m8117constructorimpl((4294967295L & 0) | (getOffset() << 32));
         }
         int[] iArr = this.placeableOffsets;
         int i2 = i * 2;
         int i3 = iArr[i2];
-        return IntOffset.m7386constructorimpl((4294967295L & iArr[i2 + 1]) | (i3 << 32));
+        return IntOffset.m8117constructorimpl((4294967295L & iArr[i2 + 1]) | (i3 << 32));
     }
 
     public final void applyScrollDelta(int i, boolean z) {
         int intValue;
-        int m7393getYimpl;
+        int m8124getYimpl;
         if (getNonScrollableItem()) {
             return;
         }
@@ -248,13 +248,13 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
                 if (animation != null) {
                     long m1034getRawOffsetnOccac = animation.m1034getRawOffsetnOccac();
                     if (isVertical()) {
-                        intValue = IntOffset.m7392getXimpl(m1034getRawOffsetnOccac);
-                        m7393getYimpl = Integer.valueOf(IntOffset.m7393getYimpl(m1034getRawOffsetnOccac) + i).intValue();
+                        intValue = IntOffset.m8123getXimpl(m1034getRawOffsetnOccac);
+                        m8124getYimpl = Integer.valueOf(IntOffset.m8124getYimpl(m1034getRawOffsetnOccac) + i).intValue();
                     } else {
-                        intValue = Integer.valueOf(IntOffset.m7392getXimpl(m1034getRawOffsetnOccac) + i).intValue();
-                        m7393getYimpl = IntOffset.m7393getYimpl(m1034getRawOffsetnOccac);
+                        intValue = Integer.valueOf(IntOffset.m8123getXimpl(m1034getRawOffsetnOccac) + i).intValue();
+                        m8124getYimpl = IntOffset.m8124getYimpl(m1034getRawOffsetnOccac);
                     }
-                    animation.m1037setRawOffsetgyyYBs(IntOffset.m7386constructorimpl((intValue << 32) | (4294967295L & m7393getYimpl)));
+                    animation.m1037setRawOffsetgyyYBs(IntOffset.m8117constructorimpl((intValue << 32) | (4294967295L & m8124getYimpl)));
                 }
             }
         }
@@ -263,7 +263,7 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
     public final void place(Placeable.PlacementScope placementScope, boolean z) {
         GraphicsLayer graphicsLayer;
         Placeable.PlacementScope placementScope2;
-        long m7392getXimpl;
+        long m8123getXimpl;
         int i = 0;
         if (!(this.mainAxisLayoutSize != Integer.MIN_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("position() should be called first");
@@ -279,14 +279,14 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
                 if (z) {
                     animation.m1036setLookaheadOffsetgyyYBs(mo971getOffsetBjo55l4);
                 } else {
-                    if (!IntOffset.m7391equalsimpl0(animation.m1032getLookaheadOffsetnOccac(), LazyLayoutItemAnimation.Companion.m1038getNotInitializednOccac())) {
+                    if (!IntOffset.m8122equalsimpl0(animation.m1032getLookaheadOffsetnOccac(), LazyLayoutItemAnimation.Companion.m1038getNotInitializednOccac())) {
                         mo971getOffsetBjo55l4 = animation.m1032getLookaheadOffsetnOccac();
                     }
-                    long m7396plusqkQi6aY = IntOffset.m7396plusqkQi6aY(mo971getOffsetBjo55l4, animation.m1033getPlacementDeltanOccac());
-                    if ((m969getMainAxisgyyYBs(mo971getOffsetBjo55l4) <= mainAxisSize && m969getMainAxisgyyYBs(m7396plusqkQi6aY) <= mainAxisSize) || (m969getMainAxisgyyYBs(mo971getOffsetBjo55l4) >= i2 && m969getMainAxisgyyYBs(m7396plusqkQi6aY) >= i2)) {
+                    long m8127plusqkQi6aY = IntOffset.m8127plusqkQi6aY(mo971getOffsetBjo55l4, animation.m1033getPlacementDeltanOccac());
+                    if ((m969getMainAxisgyyYBs(mo971getOffsetBjo55l4) <= mainAxisSize && m969getMainAxisgyyYBs(m8127plusqkQi6aY) <= mainAxisSize) || (m969getMainAxisgyyYBs(mo971getOffsetBjo55l4) >= i2 && m969getMainAxisgyyYBs(m8127plusqkQi6aY) >= i2)) {
                         animation.cancelPlacementAnimation();
                     }
-                    mo971getOffsetBjo55l4 = m7396plusqkQi6aY;
+                    mo971getOffsetBjo55l4 = m8127plusqkQi6aY;
                 }
                 graphicsLayer = animation.getLayer();
             } else {
@@ -294,30 +294,30 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
             }
             if (this.reverseLayout) {
                 if (isVertical()) {
-                    m7392getXimpl = (((this.mainAxisLayoutSize - IntOffset.m7393getYimpl(mo971getOffsetBjo55l4)) - getMainAxisSize(placeable)) & 4294967295L) | (IntOffset.m7392getXimpl(mo971getOffsetBjo55l4) << 32);
+                    m8123getXimpl = (((this.mainAxisLayoutSize - IntOffset.m8124getYimpl(mo971getOffsetBjo55l4)) - getMainAxisSize(placeable)) & 4294967295L) | (IntOffset.m8123getXimpl(mo971getOffsetBjo55l4) << 32);
                 } else {
-                    m7392getXimpl = (((this.mainAxisLayoutSize - IntOffset.m7392getXimpl(mo971getOffsetBjo55l4)) - getMainAxisSize(placeable)) << 32) | (4294967295L & IntOffset.m7393getYimpl(mo971getOffsetBjo55l4));
+                    m8123getXimpl = (((this.mainAxisLayoutSize - IntOffset.m8123getXimpl(mo971getOffsetBjo55l4)) - getMainAxisSize(placeable)) << 32) | (4294967295L & IntOffset.m8124getYimpl(mo971getOffsetBjo55l4));
                 }
-                mo971getOffsetBjo55l4 = IntOffset.m7386constructorimpl(m7392getXimpl);
+                mo971getOffsetBjo55l4 = IntOffset.m8117constructorimpl(m8123getXimpl);
             }
-            long m7396plusqkQi6aY2 = IntOffset.m7396plusqkQi6aY(mo971getOffsetBjo55l4, this.visualOffset);
+            long m8127plusqkQi6aY2 = IntOffset.m8127plusqkQi6aY(mo971getOffsetBjo55l4, this.visualOffset);
             if (!z && animation != null) {
-                animation.m1035setFinalOffsetgyyYBs(m7396plusqkQi6aY2);
+                animation.m1035setFinalOffsetgyyYBs(m8127plusqkQi6aY2);
             }
             if (!isVertical()) {
                 placementScope2 = placementScope;
                 GraphicsLayer graphicsLayer2 = graphicsLayer;
                 if (graphicsLayer2 != null) {
-                    Placeable.PlacementScope.m6035placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m7396plusqkQi6aY2, graphicsLayer2, 0.0f, 4, (Object) null);
+                    Placeable.PlacementScope.m6765placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m8127plusqkQi6aY2, graphicsLayer2, 0.0f, 4, (Object) null);
                 } else {
-                    Placeable.PlacementScope.m6034placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m7396plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
+                    Placeable.PlacementScope.m6764placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m8127plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
                 }
             } else if (graphicsLayer != null) {
                 placementScope2 = placementScope;
-                Placeable.PlacementScope.m6037placeWithLayeraW9wM$default(placementScope2, placeable, m7396plusqkQi6aY2, graphicsLayer, 0.0f, 4, (Object) null);
+                Placeable.PlacementScope.m6767placeWithLayeraW9wM$default(placementScope2, placeable, m8127plusqkQi6aY2, graphicsLayer, 0.0f, 4, (Object) null);
             } else {
                 placementScope2 = placementScope;
-                Placeable.PlacementScope.m6036placeWithLayeraW9wM$default(placementScope2, placeable, m7396plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
+                Placeable.PlacementScope.m6766placeWithLayeraW9wM$default(placementScope2, placeable, m8127plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
             }
             i++;
             placementScope = placementScope2;
@@ -326,7 +326,7 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
 
     /* renamed from: getMainAxis--gyyYBs  reason: not valid java name */
     private final int m969getMainAxisgyyYBs(long j) {
-        return isVertical() ? IntOffset.m7393getYimpl(j) : IntOffset.m7392getXimpl(j);
+        return isVertical() ? IntOffset.m8124getYimpl(j) : IntOffset.m8123getXimpl(j);
     }
 
     private final int getMainAxisSize(Placeable placeable) {
@@ -335,17 +335,17 @@ public final class LazyListMeasuredItem implements LazyListItemInfo, LazyLayoutM
 
     /* renamed from: copy-4Tuh3kE  reason: not valid java name */
     private final long m968copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
-        int m7393getYimpl;
+        int m8124getYimpl;
         long j2;
         if (isVertical()) {
-            int m7392getXimpl = IntOffset.m7392getXimpl(j);
-            m7393getYimpl = function1.invoke(Integer.valueOf(IntOffset.m7393getYimpl(j))).intValue();
-            j2 = m7392getXimpl;
+            int m8123getXimpl = IntOffset.m8123getXimpl(j);
+            m8124getYimpl = function1.invoke(Integer.valueOf(IntOffset.m8124getYimpl(j))).intValue();
+            j2 = m8123getXimpl;
         } else {
-            int intValue = function1.invoke(Integer.valueOf(IntOffset.m7392getXimpl(j))).intValue();
-            m7393getYimpl = IntOffset.m7393getYimpl(j);
+            int intValue = function1.invoke(Integer.valueOf(IntOffset.m8123getXimpl(j))).intValue();
+            m8124getYimpl = IntOffset.m8124getYimpl(j);
             j2 = intValue;
         }
-        return IntOffset.m7386constructorimpl((j2 << 32) | (m7393getYimpl & 4294967295L));
+        return IntOffset.m8117constructorimpl((j2 << 32) | (m8124getYimpl & 4294967295L));
     }
 }

@@ -12,7 +12,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import com.google.android.gms.base.R;
 import com.google.android.gms.common.util.DeviceProperties;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zaaa extends Button {
     public zaaa(Context context, AttributeSet attributeSet) {
         super(context, null, 16842824);

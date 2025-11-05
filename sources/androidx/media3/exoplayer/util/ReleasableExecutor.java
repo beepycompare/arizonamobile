@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.util;
 
 import androidx.media3.common.util.Consumer;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface ReleasableExecutor extends Executor {
     void release();
 

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataHolder extends AbstractSafeParcelable implements Closeable {
     public static final Parcelable.Creator<DataHolder> CREATOR = new zaf();
     private static final Builder zaf = new zab(new String[0], null);
@@ -35,7 +35,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     private boolean zak;
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private final String[] zaa;
         private final ArrayList zab = new ArrayList();

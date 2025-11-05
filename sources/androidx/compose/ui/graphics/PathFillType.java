@@ -11,44 +11,44 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class PathFillType {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int NonZero = m4837constructorimpl(0);
-    private static final int EvenOdd = m4837constructorimpl(1);
+    private static final int NonZero = m5567constructorimpl(0);
+    private static final int EvenOdd = m5567constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PathFillType m4836boximpl(int i) {
+    public static final /* synthetic */ PathFillType m5566boximpl(int i) {
         return new PathFillType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4837constructorimpl(int i) {
+    public static int m5567constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4838equalsimpl(int i, Object obj) {
-        return (obj instanceof PathFillType) && i == ((PathFillType) obj).m4842unboximpl();
+    public static boolean m5568equalsimpl(int i, Object obj) {
+        return (obj instanceof PathFillType) && i == ((PathFillType) obj).m5572unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4839equalsimpl0(int i, int i2) {
+    public static final boolean m5569equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4840hashCodeimpl(int i) {
+    public static int m5570hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4838equalsimpl(this.value, obj);
+        return m5568equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4840hashCodeimpl(this.value);
+        return m5570hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4842unboximpl() {
+    public final /* synthetic */ int m5572unboximpl() {
         return this.value;
     }
 
@@ -64,12 +64,12 @@ public final class PathFillType {
         }
 
         /* renamed from: getNonZero-Rg-k1Os  reason: not valid java name */
-        public final int m4844getNonZeroRgk1Os() {
+        public final int m5574getNonZeroRgk1Os() {
             return PathFillType.NonZero;
         }
 
         /* renamed from: getEvenOdd-Rg-k1Os  reason: not valid java name */
-        public final int m4843getEvenOddRgk1Os() {
+        public final int m5573getEvenOddRgk1Os() {
             return PathFillType.EvenOdd;
         }
     }
@@ -79,11 +79,11 @@ public final class PathFillType {
     }
 
     public String toString() {
-        return m4841toStringimpl(this.value);
+        return m5571toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4841toStringimpl(int i) {
-        return m4839equalsimpl0(i, NonZero) ? "NonZero" : m4839equalsimpl0(i, EvenOdd) ? "EvenOdd" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5571toStringimpl(int i) {
+        return m5569equalsimpl0(i, NonZero) ? "NonZero" : m5569equalsimpl0(i, EvenOdd) ? "EvenOdd" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

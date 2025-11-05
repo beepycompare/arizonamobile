@@ -6,12 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AppBar.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1", f = "AppBar.kt", i = {0, 0}, l = {2467, 2469}, m = "onPostFling-RZ2iAVY", n = {"this", "available"}, s = {"L$0", "J$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1", f = "AppBar.kt", i = {0}, l = {3434, 3436}, m = "onPostFling-RZ2iAVY", n = {"available"}, s = {"J$0"})
 /* loaded from: classes.dex */
 public final class ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1 extends ContinuationImpl {
     long J$0;
-    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1 this$0;

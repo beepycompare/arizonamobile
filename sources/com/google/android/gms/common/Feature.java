@@ -6,10 +6,10 @@ import com.facebook.internal.NativeProtocol;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class Feature extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<Feature> CREATOR = new zzc();
+    public static final Parcelable.Creator<Feature> CREATOR = new zzb();
     private final String zza;
     @Deprecated
     private final int zzb;

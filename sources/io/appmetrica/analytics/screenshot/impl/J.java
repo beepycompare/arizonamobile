@@ -1,38 +1,29 @@
 package io.appmetrica.analytics.screenshot.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import kotlin.jvm.internal.DefaultConstructorMarker;
-/* loaded from: classes4.dex */
-public final class J implements Converter {
+/* loaded from: classes3.dex */
+public final class J {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V f1299a;
+    public final boolean f1339a;
+    public final W b;
+
+    public J(boolean z, W w) {
+        this.f1339a = z;
+        this.b = w;
+    }
+
+    public final W a() {
+        return this.b;
+    }
+
+    public final boolean b() {
+        return this.f1339a;
+    }
+
+    public final String toString() {
+        return "RemoteScreenshotConfig(enabled=" + this.f1339a + ", config=" + this.b + ')';
+    }
 
     public J() {
-        this(null, 1, null);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final O fromModel(G g) {
-        O o = new O();
-        o.f1304a = g.f1296a;
-        T t = g.b;
-        o.b = t != null ? this.f1299a.fromModel(t) : null;
-        return o;
-    }
-
-    public J(V v) {
-        this.f1299a = v;
-    }
-
-    public /* synthetic */ J(V v, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new V(null, null, null, 7, null) : v);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final G toModel(O o) {
-        return new G(o.f1304a, this.f1299a.toModel(o.b));
+        this(new S().f1347a, new W());
     }
 }

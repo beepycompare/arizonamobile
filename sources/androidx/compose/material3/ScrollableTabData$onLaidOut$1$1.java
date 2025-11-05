@@ -1,6 +1,6 @@
 package androidx.compose.material3;
 
-import androidx.compose.animation.core.AnimationSpec;
+import androidx.compose.animation.core.FiniteAnimationSpec;
 import androidx.compose.foundation.ScrollState;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -13,8 +13,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TabRow.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.ScrollableTabData$onLaidOut$1$1", f = "TabRow.kt", i = {}, l = {1318}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.ScrollableTabData$onLaidOut$1$1", f = "TabRow.kt", i = {}, l = {1156}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class ScrollableTabData$onLaidOut$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $calculatedOffset;
@@ -42,16 +42,16 @@ public final class ScrollableTabData$onLaidOut$1$1 extends SuspendLambda impleme
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         ScrollState scrollState;
-        AnimationSpec<Float> animationSpec;
+        FiniteAnimationSpec finiteAnimationSpec;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             scrollState = this.this$0.scrollState;
             int i2 = this.$calculatedOffset;
-            animationSpec = TabRowKt.ScrollableTabRowScrollSpec;
+            finiteAnimationSpec = this.this$0.animationSpec;
             this.label = 1;
-            if (scrollState.animateScrollTo(i2, animationSpec, this) == coroutine_suspended) {
+            if (scrollState.animateScrollTo(i2, finiteAnimationSpec, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

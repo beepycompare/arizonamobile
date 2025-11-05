@@ -21,9 +21,9 @@ public final class NotificationShape implements Shape {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M997.9,14.8C995.6,6.1 987.7,0 978.6,0H20.1C6.9,0 -2.6,12.5 0.8,25.2L92.1,364.2C94.4,372.9 102.3,379 111.4,379H1069.9C1083.1,379 1092.6,366.5 1089.2,353.8L997.9,14.8Z"), null, 1, null);
-        float[] m4791constructorimpl$default = Matrix.m4791constructorimpl$default(null, 1, null);
-        Matrix.m4807scaleimpl$default(m4791constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 1090, Float.intBitsToFloat((int) (j & 4294967295L)) / 379, 0.0f, 4, null);
-        path$default.mo4441transform58bKbWc(m4791constructorimpl$default);
+        float[] m5521constructorimpl$default = Matrix.m5521constructorimpl$default(null, 1, null);
+        Matrix.m5537scaleimpl$default(m5521constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 1090, Float.intBitsToFloat((int) (j & 4294967295L)) / 379, 0.0f, 4, null);
+        path$default.mo5171transform58bKbWc(m5521constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

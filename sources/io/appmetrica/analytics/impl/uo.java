@@ -1,4 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class uo {
+/* loaded from: classes3.dex */
+public interface uo {
+    so a(Object obj);
 }

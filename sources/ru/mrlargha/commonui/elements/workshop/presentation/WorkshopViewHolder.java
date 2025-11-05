@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -16,6 +17,8 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ItemInventoryBinding;
+import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEffectType;
+import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEntityKt;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: WorkshopViewHolder.kt */
@@ -136,6 +139,35 @@ public final class WorkshopViewHolder extends RecyclerView.ViewHolder {
             itemInventoryBinding.ivItemImage.setImageResource(R.drawable.ic_locked_item);
             itemInventoryBinding.tvTitleText.setText("");
         }
+        InventoryItemEffectType effect = InventoryItemEntityKt.getEffect(itemVal);
+        if (effect.getResId() != null) {
+            if (effect == InventoryItemEffectType.FIRE || effect == InventoryItemEffectType.WHITE_FIRE) {
+                Glide.with(itemInventoryBinding.ivEffectBackground.getContext()).load(effect.getResId()).into(itemInventoryBinding.ivEffectBackground);
+                ImageView ivEffectBackground = itemInventoryBinding.ivEffectBackground;
+                Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
+                ivEffectBackground.setVisibility(0);
+                ImageView ivEffectForeground = itemInventoryBinding.ivEffectForeground;
+                Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
+                ivEffectForeground.setVisibility(8);
+                return;
+            }
+            Glide.with(itemInventoryBinding.ivEffectForeground.getContext()).load(effect.getResId()).into(itemInventoryBinding.ivEffectForeground);
+            ImageView ivEffectBackground2 = itemInventoryBinding.ivEffectBackground;
+            Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
+            ivEffectBackground2.setVisibility(8);
+            ImageView ivEffectForeground2 = itemInventoryBinding.ivEffectForeground;
+            Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
+            ivEffectForeground2.setVisibility(0);
+            return;
+        }
+        itemInventoryBinding.ivEffectBackground.setImageDrawable(null);
+        ImageView ivEffectBackground3 = itemInventoryBinding.ivEffectBackground;
+        Intrinsics.checkNotNullExpressionValue(ivEffectBackground3, "ivEffectBackground");
+        ivEffectBackground3.setVisibility(8);
+        itemInventoryBinding.ivEffectForeground.setImageDrawable(null);
+        ImageView ivEffectForeground3 = itemInventoryBinding.ivEffectForeground;
+        Intrinsics.checkNotNullExpressionValue(ivEffectForeground3, "ivEffectForeground");
+        ivEffectForeground3.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

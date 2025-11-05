@@ -1,27 +1,21 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Mh extends AbstractC0463nh {
-    public Mh(C0652v5 c0652v5) {
-        super(c0652v5);
+/* loaded from: classes3.dex */
+public final class Mh implements Runnable {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ String f593a;
+    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ C0404li c;
+
+    public Mh(C0404li c0404li, String str, Throwable th) {
+        this.c = c0404li;
+        this.f593a = str;
+        this.b = th;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0463nh
-    public final boolean a(C0478o6 c0478o6) {
-        ((I5) this.f1006a.p).e();
-        C0157bl c0157bl = this.f1006a.j;
-        synchronized (c0157bl) {
-            Nk b = c0157bl.b(c0478o6);
-            if (b.g) {
-                b.g = false;
-                C0234el c0234el = b.b;
-                c0234el.a(C0234el.i, Boolean.FALSE);
-                c0234el.b();
-            }
-            if (c0157bl.g != 1) {
-                c0157bl.b(c0157bl.f, c0478o6);
-            }
-            c0157bl.g = 1;
-        }
-        return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0404li c0404li = this.c;
+        C0404li.a(c0404li.f993a, c0404li.d, c0404li.e).reportError(this.f593a, this.b);
     }
 }

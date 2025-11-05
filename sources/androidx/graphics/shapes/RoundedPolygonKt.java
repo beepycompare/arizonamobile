@@ -177,7 +177,7 @@ public final class RoundedPolygonKt {
             int i17 = (((i4 + length) - i3) % length) * i2;
             long m24constructorimpl2 = FloatFloatPair.m24constructorimpl(vertices[i17], vertices[i17 + i3]);
             int i18 = (i15 % length) * 2;
-            arrayList5.add(new Feature.Corner((List) arrayList.get(i4), m24constructorimpl, ((RoundedCorner) arrayList2.get(i4)).m7837getCenter1ufDz9w(), PointKt.m7816clockwiseybeJwSQ(PointKt.m7828minusybeJwSQ(m24constructorimpl, m24constructorimpl2), PointKt.m7828minusybeJwSQ(FloatFloatPair.m24constructorimpl(vertices[i18], vertices[i18 + i3]), m24constructorimpl)), null));
+            arrayList5.add(new Feature.Corner((List) arrayList.get(i4), m24constructorimpl, ((RoundedCorner) arrayList2.get(i4)).m8568getCenter1ufDz9w(), PointKt.m8547clockwiseybeJwSQ(PointKt.m8559minusybeJwSQ(m24constructorimpl, m24constructorimpl2), PointKt.m8559minusybeJwSQ(FloatFloatPair.m24constructorimpl(vertices[i18], vertices[i18 + i3]), m24constructorimpl)), null));
             arrayList5.add(new Feature.Edge(CollectionsKt.listOf(Cubic.Companion.straightLine(((Cubic) CollectionsKt.last((List<? extends Object>) arrayList.get(i4))).getAnchor1X(), ((Cubic) CollectionsKt.last((List<? extends Object>) arrayList.get(i4))).getAnchor1Y(), ((Cubic) CollectionsKt.first((List<? extends Object>) arrayList.get(i))).getAnchor0X(), ((Cubic) CollectionsKt.first((List<? extends Object>) arrayList.get(i))).getAnchor0Y()))));
             i4 = i15;
             i2 = 2;
@@ -211,11 +211,11 @@ public final class RoundedPolygonKt {
         int i3 = 0;
         while (i2 < i) {
             float f4 = f;
-            long m7829plusybeJwSQ = PointKt.m7829plusybeJwSQ(Utils.m7845radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2 * i2, 0L, 4, null), FloatFloatPair.m24constructorimpl(f2, f3));
+            long m8560plusybeJwSQ = PointKt.m8560plusybeJwSQ(Utils.m8576radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2 * i2, 0L, 4, null), FloatFloatPair.m24constructorimpl(f2, f3));
             int i4 = i3 + 1;
-            fArr[i3] = PointKt.m7825getXDnnuFBc(m7829plusybeJwSQ);
+            fArr[i3] = PointKt.m8556getXDnnuFBc(m8560plusybeJwSQ);
             i3 += 2;
-            fArr[i4] = PointKt.m7826getYDnnuFBc(m7829plusybeJwSQ);
+            fArr[i4] = PointKt.m8557getYDnnuFBc(m8560plusybeJwSQ);
             i2++;
             f = f4;
         }

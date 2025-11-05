@@ -2,8 +2,8 @@ package com.google.android.gms.common.util;
 
 import android.text.TextUtils;
 import java.util.regex.Pattern;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class Strings {
     private static final Pattern zza = Pattern.compile("\\$\\{(.*?)\\}");
 

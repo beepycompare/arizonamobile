@@ -34,17 +34,17 @@ public final class SingleValueAnimationKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-451899108, i, -1, "androidx.compose.animation.animateColorAsState (SingleValueAnimation.kt:61)");
         }
-        ColorSpace m4553getColorSpaceimpl = Color.m4553getColorSpaceimpl(j);
+        ColorSpace m5283getColorSpaceimpl = Color.m5283getColorSpaceimpl(j);
         ComposerKt.sourceInformationMarkerStart(composer, -483337392, "CC(remember):SingleValueAnimation.kt#9igjgp");
-        boolean changed = composer.changed(m4553getColorSpaceimpl);
+        boolean changed = composer.changed(m5283getColorSpaceimpl);
         TwoWayConverter<Color, AnimationVector4D> rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m4553getColorSpaceimpl(j));
+            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m5283getColorSpaceimpl(j));
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         int i3 = i << 6;
-        State<Color> animateValueAsState = AnimateAsStateKt.animateValueAsState(Color.m4539boximpl(j), (TwoWayConverter) rememberedValue, springSpec, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
+        State<Color> animateValueAsState = AnimateAsStateKt.animateValueAsState(Color.m5269boximpl(j), (TwoWayConverter) rememberedValue, springSpec, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -77,6 +77,6 @@ public final class SingleValueAnimationKt {
 
     /* renamed from: Animatable-8_81llA  reason: not valid java name */
     public static final Animatable<Color, AnimationVector4D> m128Animatable8_81llA(long j) {
-        return new Animatable<>(Color.m4539boximpl(j), ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m4553getColorSpaceimpl(j)), null, null, 12, null);
+        return new Animatable<>(Color.m5269boximpl(j), ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m5283getColorSpaceimpl(j)), null, null, 12, null);
     }
 }

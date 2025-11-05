@@ -1,18 +1,42 @@
 package com.google.android.gms.common.internal;
 
-import android.os.IInterface;
-import android.os.RemoteException;
-import com.google.android.gms.dynamic.IObjectWrapper;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public interface zzag extends IInterface {
-    com.google.android.gms.common.zzq zze(com.google.android.gms.common.zzo zzoVar) throws RemoteException;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzag implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        boolean z = false;
+        boolean z2 = false;
+        int i2 = 0;
+        int i3 = 0;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            int fieldId = SafeParcelReader.getFieldId(readHeader);
+            if (fieldId == 1) {
+                i = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 2) {
+                z = SafeParcelReader.readBoolean(parcel, readHeader);
+            } else if (fieldId == 3) {
+                z2 = SafeParcelReader.readBoolean(parcel, readHeader);
+            } else if (fieldId == 4) {
+                i2 = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 5) {
+                i3 = SafeParcelReader.readInt(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new RootTelemetryConfiguration(i, z, z2, i2, i3);
+    }
 
-    com.google.android.gms.common.zzq zzf(com.google.android.gms.common.zzo zzoVar) throws RemoteException;
-
-    boolean zzg() throws RemoteException;
-
-    boolean zzh(com.google.android.gms.common.zzs zzsVar, IObjectWrapper iObjectWrapper) throws RemoteException;
-
-    boolean zzi() throws RemoteException;
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new RootTelemetryConfiguration[i];
+    }
 }

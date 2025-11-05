@@ -3,7 +3,7 @@ package androidx.media3.extractor.avi;
 import androidx.media3.common.util.ParsableByteArray;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class ListChunk implements AviChunk {
     public final ImmutableList<AviChunk> children;
     private final int type;

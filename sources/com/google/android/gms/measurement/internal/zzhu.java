@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.android.gms.common.R;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzhu {
     public static String zza(Context context) {
         try {

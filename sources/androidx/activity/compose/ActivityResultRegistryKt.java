@@ -46,7 +46,7 @@ public final class ActivityResultRegistryKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final String str2 = (String) RememberSaveableKt.m3994rememberSaveable(objArr, (Saver<Object, ? extends Object>) null, (String) null, (Function0<? extends Object>) rememberedValue, composer, 3072, 6);
+        final String str2 = (String) RememberSaveableKt.m4724rememberSaveable(objArr, (Saver<Object, ? extends Object>) null, (String) null, (Function0<? extends Object>) rememberedValue, composer, 3072, 6);
         ActivityResultRegistryOwner current = LocalActivityResultRegistryOwner.INSTANCE.getCurrent(composer, 6);
         if (current == null) {
             throw new IllegalStateException("No ActivityResultRegistryOwner was provided via LocalActivityResultRegistryOwner".toString());

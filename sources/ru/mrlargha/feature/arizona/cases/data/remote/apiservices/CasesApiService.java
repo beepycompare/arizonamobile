@@ -1,5 +1,6 @@
 package ru.mrlargha.feature.arizona.cases.data.remote.apiservices;
 
+import com.arizona.game.BuildConfig;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
@@ -26,7 +27,7 @@ public interface CasesApiService {
     static /* synthetic */ Object getCases$default(CasesApiService casesApiService, String str, int i, String str2, Continuation continuation, int i2, Object obj) {
         if (obj == null) {
             if ((i2 & 1) != 0) {
-                str = "rodina";
+                str = BuildConfig.FLAVOR;
             }
             if ((i2 & 4) != 0) {
                 str2 = "cases";

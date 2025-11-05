@@ -26,14 +26,14 @@ public class PieRenderer extends SeriesRenderer<PieChart, Segment, SegmentFormat
     }
 
     protected static float degsToScreenDegs(float f) {
-        float f2 = f % FULL_PIE_DEGS;
-        return f2 > 0.0f ? FULL_PIE_DEGS - f2 : f2;
+        float f2 = f % 360.0f;
+        return f2 > 0.0f ? 360.0f - f2 : f2;
     }
 
     public PieRenderer(PieChart pieChart) {
         super(pieChart);
         this.startDegs = 0.0f;
-        this.extentDegs = FULL_PIE_DEGS;
+        this.extentDegs = 360.0f;
         this.donutSize = 0.5f;
         this.donutMode = DonutMode.PERCENT;
     }
@@ -223,7 +223,7 @@ public class PieRenderer extends SeriesRenderer<PieChart, Segment, SegmentFormat
         int i = 0;
         for (SeriesBundle<Segment, ? extends SegmentFormatter> seriesBundle : seriesAndFormatterList) {
             double d3 = d;
-            float f = (((float) ((values[i] * calculateScale) * this.extentDegs)) + degsToScreenDegs) % FULL_PIE_DEGS;
+            float f = (((float) ((values[i] * calculateScale) * this.extentDegs)) + degsToScreenDegs) % 360.0f;
             double d4 = f;
             double signedDistance = signedDistance(d4, atan2);
             double d5 = d2;
@@ -252,7 +252,7 @@ public class PieRenderer extends SeriesRenderer<PieChart, Segment, SegmentFormat
     }
 
     protected static void validateInputDegs(float f) {
-        if (f < 0.0f || f > FULL_PIE_DEGS) {
+        if (f < 0.0f || f > 360.0f) {
             throw new IllegalArgumentException("Degrees values must be between 0.0 and 360.");
         }
     }

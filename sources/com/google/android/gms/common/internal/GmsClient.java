@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class GmsClient<T extends IInterface> extends BaseGmsClient<T> implements Api.Client, zaj {
     private static volatile Executor zaa;
     private final ClientSettings zab;

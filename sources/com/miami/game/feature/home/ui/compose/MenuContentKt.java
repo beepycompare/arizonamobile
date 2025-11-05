@@ -76,10 +76,10 @@ public final class MenuContentKt {
                 ComposerKt.traceEventStart(1146511910, i3, -1, "com.miami.game.feature.home.ui.compose.MenuContent (MenuContent.kt:24)");
             }
             float f = 24;
-            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, Dp.m7264constructorimpl(f), 0.0f, 11, null);
+            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, Dp.m7995constructorimpl(f), 0.0f, 11, null);
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(4)), centerVertically, startRestartGroup, 54);
+            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7995constructorimpl(4)), centerVertically, startRestartGroup, 54);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
@@ -95,22 +95,22 @@ public final class MenuContentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
+            Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1874684794, "C32@1089L499,48@1597L99:MenuContent.kt#dswm0d");
             Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, 0.0f, 0.0f, 3, null);
             Alignment.Vertical centerVertically2 = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(-Dp.m7264constructorimpl(f))), centerVertically2, startRestartGroup, 54);
+            MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7995constructorimpl(-Dp.m7995constructorimpl(f))), centerVertically2, startRestartGroup, 54);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
             int hashCode2 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
@@ -126,15 +126,15 @@ public final class MenuContentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
-            Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(startRestartGroup);
+            Updater.m4604setimpl(m4597constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                m4597constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
             }
-            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1720621375, "C38@1335L69,38@1300L104,41@1417L76,44@1506L72:MenuContent.kt#dswm0d");
@@ -147,15 +147,15 @@ public final class MenuContentKt {
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i3 >> 15) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             startRestartGroup = startRestartGroup;
-            ScalingButtonKt.ScalingButton(onClickAccount, null, ComposableSingletons$MenuContentKt.INSTANCE.m9012getLambda$432014182$home_release(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
-            ScalingButtonKt.ScalingButton(onClickForum, null, ComposableSingletons$MenuContentKt.INSTANCE.m9013getLambda$989998245$home_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onClickAccount, null, ComposableSingletons$MenuContentKt.INSTANCE.m9752getLambda$432014182$home_release(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onClickForum, null, ComposableSingletons$MenuContentKt.INSTANCE.m9753getLambda$989998245$home_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton(onClickSettings, OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7264constructorimpl(-Dp.m7264constructorimpl(0)), 1, null), ComposableSingletons$MenuContentKt.INSTANCE.getLambda$1483995263$home_release(), startRestartGroup, ((i3 >> 12) & 14) | 432, 0);
+            ScalingButtonKt.ScalingButton(onClickSettings, OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7995constructorimpl(-Dp.m7995constructorimpl(0)), 1, null), ComposableSingletons$MenuContentKt.INSTANCE.getLambda$1483995263$home_release(), startRestartGroup, ((i3 >> 12) & 14) | 432, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

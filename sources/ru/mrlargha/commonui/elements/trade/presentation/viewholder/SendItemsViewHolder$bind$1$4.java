@@ -3,6 +3,7 @@ package ru.mrlargha.commonui.elements.trade.presentation.viewholder;
 import android.content.Context;
 import android.graphics.Bitmap;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -15,14 +16,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
-import okhttp3.internal.ws.WebSocketProtocol;
 import ru.mrlargha.commonui.databinding.ItemTradeBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SendItemsViewHolder.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.trade.presentation.viewholder.SendItemsViewHolder$bind$1$4", f = "SendItemsViewHolder.kt", i = {}, l = {WebSocketProtocol.PAYLOAD_SHORT}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.trade.presentation.viewholder.SendItemsViewHolder$bind$1$4", f = "SendItemsViewHolder.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_AC3}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes6.dex */
 public final class SendItemsViewHolder$bind$1$4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ InventoryItem $itemVal;

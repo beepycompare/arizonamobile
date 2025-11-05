@@ -181,7 +181,7 @@ public class PlaybackException extends Exception {
                                                                                     return "ERROR_CODE_AUDIO_TRACK_OFFLOAD_INIT_FAILED";
                                                                                 default:
                                                                                     switch (i) {
-                                                                                        case ERROR_CODE_DRM_UNSPECIFIED /* 6000 */:
+                                                                                        case 6000:
                                                                                             return "ERROR_CODE_DRM_UNSPECIFIED";
                                                                                         case ERROR_CODE_DRM_SCHEME_UNSUPPORTED /* 6001 */:
                                                                                             return "ERROR_CODE_DRM_SCHEME_UNSUPPORTED";

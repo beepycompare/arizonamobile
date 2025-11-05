@@ -1,7 +1,12 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public abstract class Pl {
 
-    /* renamed from: a  reason: collision with root package name */
-    public static final Ql f630a = new Ql();
+import io.appmetrica.analytics.StartupParamsCallback;
+import java.util.HashMap;
+/* loaded from: classes3.dex */
+public final class Pl extends HashMap {
+    public Pl() {
+        put(Nl.UNKNOWN, StartupParamsCallback.Reason.UNKNOWN);
+        put(Nl.NETWORK, StartupParamsCallback.Reason.NETWORK);
+        put(Nl.PARSE, StartupParamsCallback.Reason.INVALID_RESPONSE);
+    }
 }

@@ -3,19 +3,19 @@ package io.appmetrica.analytics.internal;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class c implements IAppMetricaService {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IBinder f1202a;
+    public final IBinder f1243a;
 
     public c(IBinder iBinder) {
-        this.f1202a = iBinder;
+        this.f1243a = iBinder;
     }
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f1202a;
+        return this.f1243a;
     }
 
     @Override // io.appmetrica.analytics.internal.IAppMetricaService
@@ -29,7 +29,7 @@ public final class c implements IAppMetricaService {
             } else {
                 obtain.writeInt(0);
             }
-            this.f1202a.transact(2, obtain, null, 1);
+            this.f1243a.transact(2, obtain, null, 1);
         } finally {
             obtain.recycle();
         }
@@ -47,7 +47,7 @@ public final class c implements IAppMetricaService {
             } else {
                 obtain.writeInt(0);
             }
-            this.f1202a.transact(3, obtain, null, 1);
+            this.f1243a.transact(3, obtain, null, 1);
         } finally {
             obtain.recycle();
         }
@@ -64,7 +64,7 @@ public final class c implements IAppMetricaService {
             } else {
                 obtain.writeInt(0);
             }
-            this.f1202a.transact(1, obtain, null, 1);
+            this.f1243a.transact(1, obtain, null, 1);
         } finally {
             obtain.recycle();
         }

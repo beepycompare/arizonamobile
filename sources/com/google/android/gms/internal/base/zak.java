@@ -5,9 +5,8 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
-import androidx.recyclerview.widget.ItemTouchHelper;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zak extends Drawable implements Drawable.Callback {
     private int zaa;
     private long zab;
@@ -140,7 +139,7 @@ public final class zak extends Drawable implements Drawable.Callback {
     public final void zab(int i) {
         this.zac = this.zad;
         this.zaf = 0;
-        this.zae = ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION;
+        this.zae = 250;
         this.zaa = 1;
         invalidateSelf();
     }

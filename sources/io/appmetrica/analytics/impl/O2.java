@@ -1,11 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-/* loaded from: classes4.dex */
-public final class O2 extends AbstractC0264g {
-    public static final String g = "background";
-
-    public O2(C0652v5 c0652v5, C0131al c0131al, C0234el c0234el, C0414lk c0414lk, SystemTimeProvider systemTimeProvider) {
-        super(c0652v5, c0131al, c0234el, Zk.a(EnumC0260fl.BACKGROUND).b().a(), c0414lk, systemTimeProvider);
+/* loaded from: classes3.dex */
+public final class O2 implements uo {
+    @Override // io.appmetrica.analytics.impl.uo
+    public final so a(Object obj) {
+        C0307ho[] c0307hoArr = ((C0384ko) obj).f979a;
+        if (c0307hoArr != null && c0307hoArr.length != 0) {
+            return new so(this, true, "");
+        }
+        return new so(this, false, "attributes list is empty");
     }
 }

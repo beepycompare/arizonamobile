@@ -4,8 +4,8 @@ import android.os.IBinder;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import java.lang.reflect.Field;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class ObjectWrapper<T> extends IObjectWrapper.Stub {
     private final Object zza;
 
@@ -41,7 +41,11 @@ public final class ObjectWrapper<T> extends IObjectWrapper.Stub {
             }
             throw new IllegalArgumentException("IObjectWrapper declared field not private!");
         }
-        throw new IllegalArgumentException("Unexpected number of IObjectWrapper declared fields: " + declaredFields.length);
+        int length = declaredFields.length;
+        StringBuilder sb = new StringBuilder(String.valueOf(length).length() + 53);
+        sb.append("Unexpected number of IObjectWrapper declared fields: ");
+        sb.append(length);
+        throw new IllegalArgumentException(sb.toString());
     }
 
     public static <T> IObjectWrapper wrap(T t) {

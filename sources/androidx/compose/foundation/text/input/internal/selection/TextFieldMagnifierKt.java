@@ -45,47 +45,47 @@ public final class TextFieldMagnifierKt {
 
     /* renamed from: calculateSelectionMagnifierCenterAndroid-hUlJWOE  reason: not valid java name */
     public static final long m1630calculateSelectionMagnifierCenterAndroidhUlJWOE(TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, TextLayoutState textLayoutState, long j) {
-        int m6726getStartimpl;
+        int m7457getStartimpl;
         long m1654getHandleDragPositionF1C5BW0 = textFieldSelectionState.m1654getHandleDragPositionF1C5BW0();
         if ((9223372034707292159L & m1654getHandleDragPositionF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats || transformedTextFieldState.getVisualText().length() == 0) {
-            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
         long m1446getSelectiond9O1mEE = transformedTextFieldState.getVisualText().m1446getSelectiond9O1mEE();
         Handle draggingHandle = textFieldSelectionState.getDraggingHandle();
         int i = draggingHandle == null ? -1 : WhenMappings.$EnumSwitchMapping$0[draggingHandle.ordinal()];
         if (i == -1) {
-            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
         if (i == 1 || i == 2) {
-            m6726getStartimpl = TextRange.m6726getStartimpl(m1446getSelectiond9O1mEE);
+            m7457getStartimpl = TextRange.m7457getStartimpl(m1446getSelectiond9O1mEE);
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            m6726getStartimpl = TextRange.m6721getEndimpl(m1446getSelectiond9O1mEE);
+            m7457getStartimpl = TextRange.m7452getEndimpl(m1446getSelectiond9O1mEE);
         }
         TextLayoutResult layoutResult = textLayoutState.getLayoutResult();
         if (layoutResult == null) {
-            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
         float intBitsToFloat = Float.intBitsToFloat((int) (m1654getHandleDragPositionF1C5BW0 >> 32));
-        int lineForOffset = layoutResult.getLineForOffset(m6726getStartimpl);
+        int lineForOffset = layoutResult.getLineForOffset(m7457getStartimpl);
         float lineLeft = layoutResult.getLineLeft(lineForOffset);
         float lineRight = layoutResult.getLineRight(lineForOffset);
         float coerceIn = RangesKt.coerceIn(intBitsToFloat, Math.min(lineLeft, lineRight), Math.max(lineLeft, lineRight));
-        if (!IntSize.m7433equalsimpl0(j, IntSize.Companion.m7440getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
-            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
+        if (!IntSize.m8164equalsimpl0(j, IntSize.Companion.m8171getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
+            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
         }
         float lineTop = layoutResult.getLineTop(lineForOffset);
-        long m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(((layoutResult.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L) | (Float.floatToRawIntBits(coerceIn) << 32));
+        long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(((layoutResult.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L) | (Float.floatToRawIntBits(coerceIn) << 32));
         LayoutCoordinates textLayoutNodeCoordinates = textLayoutState.getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
             if (!textLayoutNodeCoordinates.isAttached()) {
                 textLayoutNodeCoordinates = null;
             }
             if (textLayoutNodeCoordinates != null) {
-                m4297constructorimpl = TextLayoutStateKt.m1588coerceIn3MmeM6k(m4297constructorimpl, SelectionManagerKt.visibleBounds(textLayoutNodeCoordinates));
+                m5027constructorimpl = TextLayoutStateKt.m1588coerceIn3MmeM6k(m5027constructorimpl, SelectionManagerKt.visibleBounds(textLayoutNodeCoordinates));
             }
         }
-        return TextLayoutStateKt.m1590fromTextLayoutToCoreUv8p0NA(textLayoutState, m4297constructorimpl);
+        return TextLayoutStateKt.m1590fromTextLayoutToCoreUv8p0NA(textLayoutState, m5027constructorimpl);
     }
 }

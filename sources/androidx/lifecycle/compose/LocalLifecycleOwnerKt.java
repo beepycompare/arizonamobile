@@ -25,7 +25,7 @@ public final class LocalLifecycleOwnerKt {
     }
 
     static {
-        Object m9106constructorimpl;
+        Object m9847constructorimpl;
         ProvidableCompositionLocal providableCompositionLocal;
         try {
             Result.Companion companion = Result.Companion;
@@ -49,12 +49,12 @@ public final class LocalLifecycleOwnerKt {
                 }
             }
             providableCompositionLocal = null;
-            m9106constructorimpl = Result.m9106constructorimpl(providableCompositionLocal);
+            m9847constructorimpl = Result.m9847constructorimpl(providableCompositionLocal);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9106constructorimpl = Result.m9106constructorimpl(ResultKt.createFailure(th));
+            m9847constructorimpl = Result.m9847constructorimpl(ResultKt.createFailure(th));
         }
-        ProvidableCompositionLocal<LifecycleOwner> providableCompositionLocal2 = Result.m9112isFailureimpl(m9106constructorimpl) ? null : m9106constructorimpl;
+        ProvidableCompositionLocal<LifecycleOwner> providableCompositionLocal2 = Result.m9853isFailureimpl(m9847constructorimpl) ? null : m9847constructorimpl;
         if (providableCompositionLocal2 == null) {
             providableCompositionLocal2 = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.lifecycle.compose.LocalLifecycleOwnerKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0

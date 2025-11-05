@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppMeasurement {
     public static final String CRASH_ORIGIN = "crash";
     public static final String FCM_ORIGIN = "fcm";
@@ -25,14 +25,14 @@ public class AppMeasurement {
     private final zzc zzb;
 
     /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface EventInterceptor extends zzjp {
         @Override // com.google.android.gms.measurement.internal.zzjp
         void interceptEvent(String str, String str2, Bundle bundle, long j);
     }
 
     /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnEventListener extends zzjq {
         @Override // com.google.android.gms.measurement.internal.zzjq
         void onEvent(String str, String str2, Bundle bundle, long j);
@@ -218,7 +218,7 @@ public class AppMeasurement {
     }
 
     /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ConditionalUserProperty {
         public boolean mActive;
         public String mAppId;

@@ -1,8 +1,8 @@
 package io.appmetrica.analytics;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public interface DeferredDeeplinkListener {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public enum Error {
         NOT_A_FIRST_LAUNCH("Deferred deeplink can be requested during first launch only."),
         PARSE_ERROR("Google Play referrer did not contain deferred deeplink."),
@@ -11,14 +11,14 @@ public interface DeferredDeeplinkListener {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f196a;
+        private final String f181a;
 
         Error(String str) {
-            this.f196a = str;
+            this.f181a = str;
         }
 
         public String getDescription() {
-            return this.f196a;
+            return this.f181a;
         }
     }
 

@@ -214,57 +214,57 @@ public final class VectorConvertersKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AnimationVector1D DpToVector$lambda$4(Dp dp) {
-        return new AnimationVector1D(dp.m7278unboximpl());
+        return new AnimationVector1D(dp.m8009unboximpl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Dp DpToVector$lambda$5(AnimationVector1D animationVector1D) {
-        return Dp.m7262boximpl(Dp.m7264constructorimpl(animationVector1D.getValue()));
+        return Dp.m7993boximpl(Dp.m7995constructorimpl(animationVector1D.getValue()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AnimationVector2D DpOffsetToVector$lambda$6(DpOffset dpOffset) {
-        return new AnimationVector2D(DpOffset.m7325getXD9Ej5fM(dpOffset.m7333unboximpl()), DpOffset.m7327getYD9Ej5fM(dpOffset.m7333unboximpl()));
+        return new AnimationVector2D(DpOffset.m8056getXD9Ej5fM(dpOffset.m8064unboximpl()), DpOffset.m8058getYD9Ej5fM(dpOffset.m8064unboximpl()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final DpOffset DpOffsetToVector$lambda$7(AnimationVector2D animationVector2D) {
-        return DpOffset.m7319boximpl(DpOffset.m7320constructorimpl((Float.floatToRawIntBits(Dp.m7264constructorimpl(animationVector2D.getV1())) << 32) | (Float.floatToRawIntBits(Dp.m7264constructorimpl(animationVector2D.getV2())) & 4294967295L)));
+        return DpOffset.m8050boximpl(DpOffset.m8051constructorimpl((Float.floatToRawIntBits(Dp.m7995constructorimpl(animationVector2D.getV1())) << 32) | (Float.floatToRawIntBits(Dp.m7995constructorimpl(animationVector2D.getV2())) & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AnimationVector2D SizeToVector$lambda$8(Size size) {
-        return new AnimationVector2D(Float.intBitsToFloat((int) (size.m4379unboximpl() >> 32)), Float.intBitsToFloat((int) (size.m4379unboximpl() & 4294967295L)));
+        return new AnimationVector2D(Float.intBitsToFloat((int) (size.m5109unboximpl() >> 32)), Float.intBitsToFloat((int) (size.m5109unboximpl() & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Size SizeToVector$lambda$9(AnimationVector2D animationVector2D) {
-        return Size.m4362boximpl(Size.m4365constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
+        return Size.m5092boximpl(Size.m5095constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AnimationVector2D OffsetToVector$lambda$10(Offset offset) {
-        return new AnimationVector2D(Float.intBitsToFloat((int) (offset.m4315unboximpl() >> 32)), Float.intBitsToFloat((int) (offset.m4315unboximpl() & 4294967295L)));
+        return new AnimationVector2D(Float.intBitsToFloat((int) (offset.m5045unboximpl() >> 32)), Float.intBitsToFloat((int) (offset.m5045unboximpl() & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset OffsetToVector$lambda$11(AnimationVector2D animationVector2D) {
-        return Offset.m4294boximpl(Offset.m4297constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
+        return Offset.m5024boximpl(Offset.m5027constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AnimationVector2D IntOffsetToVector$lambda$12(IntOffset intOffset) {
-        return new AnimationVector2D(IntOffset.m7392getXimpl(intOffset.m7401unboximpl()), IntOffset.m7393getYimpl(intOffset.m7401unboximpl()));
+        return new AnimationVector2D(IntOffset.m8123getXimpl(intOffset.m8132unboximpl()), IntOffset.m8124getYimpl(intOffset.m8132unboximpl()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset IntOffsetToVector$lambda$13(AnimationVector2D animationVector2D) {
-        return IntOffset.m7383boximpl(IntOffset.m7386constructorimpl((Math.round(animationVector2D.getV1()) << 32) | (Math.round(animationVector2D.getV2()) & 4294967295L)));
+        return IntOffset.m8114boximpl(IntOffset.m8117constructorimpl((Math.round(animationVector2D.getV1()) << 32) | (Math.round(animationVector2D.getV2()) & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AnimationVector2D IntSizeToVector$lambda$14(IntSize intSize) {
-        return new AnimationVector2D((int) (intSize.m7439unboximpl() >> 32), (int) (intSize.m7439unboximpl() & 4294967295L));
+        return new AnimationVector2D((int) (intSize.m8170unboximpl() >> 32), (int) (intSize.m8170unboximpl() & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -274,7 +274,7 @@ public final class VectorConvertersKt {
         if (round2 < 0) {
             round2 = 0;
         }
-        return IntSize.m7427boximpl(IntSize.m7430constructorimpl(((Math.round(animationVector2D.getV2()) >= 0 ? round : 0) & 4294967295L) | (round2 << 32)));
+        return IntSize.m8158boximpl(IntSize.m8161constructorimpl(((Math.round(animationVector2D.getV2()) >= 0 ? round : 0) & 4294967295L) | (round2 << 32)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

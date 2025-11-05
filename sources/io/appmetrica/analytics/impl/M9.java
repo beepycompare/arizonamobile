@@ -1,15 +1,7 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public enum M9 {
-    NATIVE(0),
-    JS(1),
-    SYSTEM(2);
-    
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f576a;
-
-    M9(int i) {
-        this.f576a = i;
+/* loaded from: classes3.dex */
+public final class M9 extends J2 {
+    public M9(int i, String str) {
+        super(N9.a(i, str));
     }
 }

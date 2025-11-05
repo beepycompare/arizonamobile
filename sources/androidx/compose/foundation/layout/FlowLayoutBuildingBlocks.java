@@ -131,7 +131,7 @@ public final class FlowLayoutBuildingBlocks {
             if (z2) {
                 return new WrapInfo(true, true);
             }
-            return new WrapInfo(true, m754getWrapInfoOpUlnko(z, 0, IntIntPair.m36constructorimpl(Constraints.m7217getMaxWidthimpl(this.constraints), (IntIntPair.m41getSecondimpl(j) - this.crossAxisSpacing) - i4), IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(IntIntPair.m40getFirstimpl(intIntPair.m44unboximpl()) - this.mainAxisSpacing, IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()))), i2 + 1, i5, 0, true, false).isLastItemInContainer());
+            return new WrapInfo(true, m754getWrapInfoOpUlnko(z, 0, IntIntPair.m36constructorimpl(Constraints.m7948getMaxWidthimpl(this.constraints), (IntIntPair.m41getSecondimpl(j) - this.crossAxisSpacing) - i4), IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(IntIntPair.m40getFirstimpl(intIntPair.m44unboximpl()) - this.mainAxisSpacing, IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()))), i2 + 1, i5, 0, true, false).isLastItemInContainer());
         }
         int max = i3 + Math.max(i4, IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()));
         IntIntPair m762ellipsisSizeF35zmw$foundation_layout = z3 ? null : this.overflow.m762ellipsisSizeF35zmw$foundation_layout(z, i2, max);
@@ -141,7 +141,7 @@ public final class FlowLayoutBuildingBlocks {
                 if (z3) {
                     return new WrapInfo(true, true);
                 }
-                WrapInfo m754getWrapInfoOpUlnko = m754getWrapInfoOpUlnko(false, 0, IntIntPair.m36constructorimpl(Constraints.m7217getMaxWidthimpl(this.constraints), (IntIntPair.m41getSecondimpl(j) - this.crossAxisSpacing) - Math.max(i4, IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()))), m762ellipsisSizeF35zmw$foundation_layout, i2 + 1, max, 0, true, true);
+                WrapInfo m754getWrapInfoOpUlnko = m754getWrapInfoOpUlnko(false, 0, IntIntPair.m36constructorimpl(Constraints.m7948getMaxWidthimpl(this.constraints), (IntIntPair.m41getSecondimpl(j) - this.crossAxisSpacing) - Math.max(i4, IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()))), m762ellipsisSizeF35zmw$foundation_layout, i2 + 1, max, 0, true, true);
                 return new WrapInfo(m754getWrapInfoOpUlnko.isLastItemInContainer(), m754getWrapInfoOpUlnko.isLastItemInContainer());
             }
         }

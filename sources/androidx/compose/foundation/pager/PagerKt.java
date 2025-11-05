@@ -40,21 +40,25 @@ import kotlinx.coroutines.CoroutineScope;
 @Metadata(d1 = {"\u0000\u009c\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\u001aë\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b'\u0010(\u001aß\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b)\u0010*\u001aë\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b.\u0010/\u001aß\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b0\u00101\u001aL\u00102\u001a\u00020\u000b*\u00020\u001e2\u0006\u00103\u001a\u00020\u000b2\u0006\u0010\b\u001a\u00020\u000b2\u0006\u00104\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u00106\u001a\u00020\u000b2\u0006\u00107\u001a\u00020\u000b2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u000bH\u0000\u001a,\u0010;\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010<\u001a\u00020\u00132\u0006\u0010=\u001a\u00020>2\u0006\u0010\u0012\u001a\u00020\u0013H\u0000\u001a\u0017\u0010?\u001a\u00020\u00012\f\u0010@\u001a\b\u0012\u0004\u0012\u00020B0AH\u0082\b¨\u0006C"}, d2 = {"HorizontalPager", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "modifier", "Landroidx/compose/ui/Modifier;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "pageSize", "Landroidx/compose/foundation/pager/PageSize;", "beyondViewportPageCount", "", "pageSpacing", "Landroidx/compose/ui/unit/Dp;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "flingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "userScrollEnabled", "", "reverseLayout", "key", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "", "pageNestedScrollConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "pageContent", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "page", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "HorizontalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "HorizontalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "VerticalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "currentPageOffset", "layoutSize", "spaceBetweenPages", "beforeContentPadding", "afterContentPadding", "currentPage", "currentPageOffsetFraction", "", "pageCount", "pagerSemantics", "isVertical", "scope", "Lkotlinx/coroutines/CoroutineScope;", "debugLog", "generateMsg", "Lkotlin/Function0;", "", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PagerKt {
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit HorizontalPager__8jOkeI$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
         m1146HorizontalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit HorizontalPager_oI3XNZo$lambda$1(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
         m1147HorizontalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit VerticalPager__8jOkeI$lambda$2(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
         m1148VerticalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit VerticalPager_oI3XNZo$lambda$3(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
         m1149VerticalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
@@ -64,41 +68,41 @@ public final class PagerKt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:290:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:311:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:329:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:333:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:342:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:354:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:365:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:373:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:376:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:377:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:387:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:394:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:397:0x01cd  */
-    /* JADX WARN: Removed duplicated region for block: B:398:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:408:0x01f3  */
-    /* JADX WARN: Removed duplicated region for block: B:415:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:478:0x03cf  */
-    /* JADX WARN: Removed duplicated region for block: B:481:0x03ee  */
-    /* JADX WARN: Removed duplicated region for block: B:483:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0186  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0195  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x01b1  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x01c5  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x0206  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x03cf  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x03ee  */
+    /* JADX WARN: Removed duplicated region for block: B:241:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x010d  */
     /* JADX WARN: Type inference failed for: r4v10 */
     /* JADX WARN: Type inference failed for: r4v3 */
     /* JADX WARN: Type inference failed for: r4v4, types: [int] */
-    /* renamed from: HorizontalPager--8jOkeI */
+    /* renamed from: HorizontalPager--8jOkeI  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -323,10 +327,10 @@ public final class PagerKt {
                                             snapPosition3 = snapPosition;
                                         } else {
                                             Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                            PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : paddingValues;
+                                            PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : paddingValues;
                                             PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                             int i33 = i8 != 0 ? 0 : i9;
-                                            float m7264constructorimpl = i10 != 0 ? Dp.m7264constructorimpl(0) : f2;
+                                            float m7995constructorimpl = i10 != 0 ? Dp.m7995constructorimpl(0) : f2;
                                             if (i11 != 0) {
                                                 vertical2 = Alignment.Companion.getCenterVertically();
                                             }
@@ -367,7 +371,7 @@ public final class PagerKt {
                                                 pageSize3 = fill;
                                                 z5 = z7;
                                                 i26 = i33;
-                                                f4 = m7264constructorimpl;
+                                                f4 = m7995constructorimpl;
                                                 i27 = i15;
                                                 z6 = z8;
                                                 modifier3 = companion;
@@ -381,7 +385,7 @@ public final class PagerKt {
                                                 pageSize3 = fill;
                                                 z5 = z7;
                                                 i26 = i33;
-                                                f4 = m7264constructorimpl;
+                                                f4 = m7995constructorimpl;
                                                 i27 = i15;
                                                 z6 = z8;
                                                 snapPosition3 = start;
@@ -631,37 +635,37 @@ public final class PagerKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:252:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:327:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x0150  */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x016a  */
-    /* JADX WARN: Removed duplicated region for block: B:357:0x0182  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x018f  */
-    /* JADX WARN: Removed duplicated region for block: B:372:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:373:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x01e5  */
-    /* JADX WARN: Removed duplicated region for block: B:446:0x031c  */
-    /* JADX WARN: Removed duplicated region for block: B:449:0x0336  */
-    /* JADX WARN: Removed duplicated region for block: B:451:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x014b  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x018c  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x018f  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x01ad  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x01b0  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x01e5  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x031c  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x0336  */
+    /* JADX WARN: Removed duplicated region for block: B:225:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c8  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0109  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the non deprecated overload")
-    /* renamed from: HorizontalPager-oI3XNZo */
+    /* renamed from: HorizontalPager-oI3XNZo  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -863,10 +867,10 @@ public final class PagerKt {
                                     pageSize3 = pageSize;
                                 } else {
                                     companion = i27 != 0 ? Modifier.Companion : obj;
-                                    PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : paddingValues;
+                                    PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : paddingValues;
                                     PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                     i21 = i8 != 0 ? 0 : i9;
-                                    float m7264constructorimpl = i10 != 0 ? Dp.m7264constructorimpl(0) : f2;
+                                    float m7995constructorimpl = i10 != 0 ? Dp.m7995constructorimpl(0) : f2;
                                     if (i11 != 0) {
                                         obj2 = Alignment.Companion.getCenterVertically();
                                     }
@@ -907,7 +911,7 @@ public final class PagerKt {
                                     i20 = i23;
                                     pageSize3 = fill;
                                     z6 = z7;
-                                    f3 = m7264constructorimpl;
+                                    f3 = m7995constructorimpl;
                                     paddingValues3 = m835PaddingValues0680j_4;
                                     i24 = i15;
                                 }
@@ -1120,41 +1124,41 @@ public final class PagerKt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:290:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:311:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:329:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:333:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:342:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:354:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:365:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:373:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:376:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:377:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:387:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:394:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:397:0x01cd  */
-    /* JADX WARN: Removed duplicated region for block: B:398:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:408:0x01f3  */
-    /* JADX WARN: Removed duplicated region for block: B:415:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:478:0x03cf  */
-    /* JADX WARN: Removed duplicated region for block: B:481:0x03ee  */
-    /* JADX WARN: Removed duplicated region for block: B:483:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0186  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0195  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x01b1  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x01c5  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x0206  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x03cf  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x03ee  */
+    /* JADX WARN: Removed duplicated region for block: B:241:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x010d  */
     /* JADX WARN: Type inference failed for: r4v10 */
     /* JADX WARN: Type inference failed for: r4v3 */
     /* JADX WARN: Type inference failed for: r4v4, types: [int] */
-    /* renamed from: VerticalPager--8jOkeI */
+    /* renamed from: VerticalPager--8jOkeI  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1381,10 +1385,10 @@ public final class PagerKt {
                                             snapPosition3 = snapPosition;
                                         } else {
                                             Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                            PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : paddingValues;
+                                            PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : paddingValues;
                                             PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                             int i33 = i8 != 0 ? 0 : i9;
-                                            float m7264constructorimpl = i10 != 0 ? Dp.m7264constructorimpl(0) : f2;
+                                            float m7995constructorimpl = i10 != 0 ? Dp.m7995constructorimpl(0) : f2;
                                             if (i11 != 0) {
                                                 obj2 = Alignment.Companion.getCenterHorizontally();
                                             }
@@ -1426,7 +1430,7 @@ public final class PagerKt {
                                                 pageSize3 = fill;
                                                 z5 = z7;
                                                 i26 = i33;
-                                                f4 = m7264constructorimpl;
+                                                f4 = m7995constructorimpl;
                                                 i27 = i15;
                                                 z6 = z8;
                                                 modifier3 = companion;
@@ -1441,7 +1445,7 @@ public final class PagerKt {
                                                 pageSize3 = fill;
                                                 z5 = z7;
                                                 i26 = i33;
-                                                f4 = m7264constructorimpl;
+                                                f4 = m7995constructorimpl;
                                                 i27 = i15;
                                                 z6 = z8;
                                                 snapPosition3 = start;
@@ -1692,37 +1696,37 @@ public final class PagerKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:252:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:327:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x0150  */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x016a  */
-    /* JADX WARN: Removed duplicated region for block: B:357:0x0182  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x018f  */
-    /* JADX WARN: Removed duplicated region for block: B:372:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:373:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x01e5  */
-    /* JADX WARN: Removed duplicated region for block: B:446:0x031c  */
-    /* JADX WARN: Removed duplicated region for block: B:449:0x0336  */
-    /* JADX WARN: Removed duplicated region for block: B:451:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x014b  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x018c  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x018f  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x01ad  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x01b0  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x01e5  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x031c  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x0336  */
+    /* JADX WARN: Removed duplicated region for block: B:225:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c8  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0109  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the non deprecated overload")
-    /* renamed from: VerticalPager-oI3XNZo */
+    /* renamed from: VerticalPager-oI3XNZo  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1924,10 +1928,10 @@ public final class PagerKt {
                                     pageSize3 = pageSize;
                                 } else {
                                     companion = i27 != 0 ? Modifier.Companion : obj;
-                                    PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : paddingValues;
+                                    PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : paddingValues;
                                     PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                     i21 = i8 != 0 ? 0 : i9;
-                                    float m7264constructorimpl = i10 != 0 ? Dp.m7264constructorimpl(0) : f2;
+                                    float m7995constructorimpl = i10 != 0 ? Dp.m7995constructorimpl(0) : f2;
                                     if (i11 != 0) {
                                         obj2 = Alignment.Companion.getCenterHorizontally();
                                     }
@@ -1968,7 +1972,7 @@ public final class PagerKt {
                                     i20 = i23;
                                     pageSize3 = fill;
                                     z6 = z7;
-                                    f3 = m7264constructorimpl;
+                                    f3 = m7995constructorimpl;
                                     paddingValues3 = m835PaddingValues0680j_4;
                                     i24 = i15;
                                 }
@@ -2184,6 +2188,7 @@ public final class PagerKt {
         return MathKt.roundToInt(snapPosition.position(i, i2, i4, i5, i6, i7) - (f * (i2 + i3)));
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final boolean pagerSemantics$performForwardPaging(PagerState pagerState, CoroutineScope coroutineScope) {
         if (pagerState.getCanScrollForward()) {
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new PagerKt$pagerSemantics$performForwardPaging$1(pagerState, null), 3, null);
@@ -2192,6 +2197,7 @@ public final class PagerKt {
         return false;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final boolean pagerSemantics$performBackwardPaging(PagerState pagerState, CoroutineScope coroutineScope) {
         if (pagerState.getCanScrollBackward()) {
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new PagerKt$pagerSemantics$performBackwardPaging$1(pagerState, null), 3, null);
@@ -2214,6 +2220,7 @@ public final class PagerKt {
         return modifier.then(Modifier.Companion);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit pagerSemantics$lambda$8(boolean z, final PagerState pagerState, final CoroutineScope coroutineScope, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         if (z) {
             SemanticsPropertiesKt.pageUp$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda2

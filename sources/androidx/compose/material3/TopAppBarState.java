@@ -13,43 +13,42 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.ranges.RangesKt;
 /* compiled from: AppBar.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0016\b\u0007\u0018\u0000 \u001d2\u00020\u0001:\u0001\u001dB\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003¢\u0006\u0002\u0010\u0006R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\t\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR+\u0010\r\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u00038F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u0011\u0010\u0012\u001a\u0004\b\u000e\u0010\u000b\"\u0004\b\u000f\u0010\u0010R$\u0010\u0014\u001a\u00020\u00032\u0006\u0010\u0013\u001a\u00020\u00038F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u0015\u0010\u000b\"\u0004\b\u0016\u0010\u0010R+\u0010\u0017\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u00038F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u001a\u0010\u0012\u001a\u0004\b\u0018\u0010\u000b\"\u0004\b\u0019\u0010\u0010R\u0011\u0010\u001b\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u000b¨\u0006\u001e"}, d2 = {"Landroidx/compose/material3/TopAppBarState;", "", "initialHeightOffsetLimit", "", "initialHeightOffset", "initialContentOffset", "(FFF)V", "_heightOffset", "Landroidx/compose/runtime/MutableFloatState;", "collapsedFraction", "getCollapsedFraction", "()F", "<set-?>", "contentOffset", "getContentOffset", "setContentOffset", "(F)V", "contentOffset$delegate", "Landroidx/compose/runtime/MutableFloatState;", "newOffset", "heightOffset", "getHeightOffset", "setHeightOffset", "heightOffsetLimit", "getHeightOffsetLimit", "setHeightOffsetLimit", "heightOffsetLimit$delegate", "overlappedFraction", "getOverlappedFraction", "Companion", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u0000 \u001d2\u00020\u0001:\u0001\u001dB\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003¢\u0006\u0004\b\u0006\u0010\u0007R\u001a\u0010\b\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR$\u0010\u000e\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u00038F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u000f\u0010\n\"\u0004\b\u0010\u0010\fR+\u0010\u0012\u001a\u00020\u00032\u0006\u0010\u0011\u001a\u00020\u00038F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u0015\u0010\u0016\u001a\u0004\b\u0013\u0010\n\"\u0004\b\u0014\u0010\fR\u0011\u0010\u0017\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u0018\u0010\nR\u0011\u0010\u0019\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\nR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Landroidx/compose/material3/TopAppBarState;", "", "initialHeightOffsetLimit", "", "initialHeightOffset", "initialContentOffset", "<init>", "(FFF)V", "heightOffsetLimit", "getHeightOffsetLimit", "()F", "setHeightOffsetLimit", "(F)V", "newOffset", "heightOffset", "getHeightOffset", "setHeightOffset", "<set-?>", "contentOffset", "getContentOffset", "setContentOffset", "contentOffset$delegate", "Landroidx/compose/runtime/MutableFloatState;", "collapsedFraction", "getCollapsedFraction", "overlappedFraction", "getOverlappedFraction", "_heightOffset", "Landroidx/compose/runtime/MutableFloatState;", "Companion", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TopAppBarState {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final Saver<TopAppBarState, ?> Saver = ListSaverKt.listSaver(new Function2<SaverScope, TopAppBarState, List<? extends Float>>() { // from class: androidx.compose.material3.TopAppBarState$Companion$Saver$1
+    private static final Saver<TopAppBarState, ?> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.TopAppBarState$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
-        public final List<Float> invoke(SaverScope saverScope, TopAppBarState topAppBarState) {
-            return CollectionsKt.listOf((Object[]) new Float[]{Float.valueOf(topAppBarState.getHeightOffsetLimit()), Float.valueOf(topAppBarState.getHeightOffset()), Float.valueOf(topAppBarState.getContentOffset())});
+        public final Object invoke(Object obj, Object obj2) {
+            List Saver$lambda$0;
+            Saver$lambda$0 = TopAppBarState.Saver$lambda$0((SaverScope) obj, (TopAppBarState) obj2);
+            return Saver$lambda$0;
         }
-    }, new Function1<List<? extends Float>, TopAppBarState>() { // from class: androidx.compose.material3.TopAppBarState$Companion$Saver$2
+    }, new Function1() { // from class: androidx.compose.material3.TopAppBarState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ TopAppBarState invoke(List<? extends Float> list) {
-            return invoke2((List<Float>) list);
-        }
-
-        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-        public final TopAppBarState invoke2(List<Float> list) {
-            return new TopAppBarState(list.get(0).floatValue(), list.get(1).floatValue(), list.get(2).floatValue());
+        public final Object invoke(Object obj) {
+            TopAppBarState Saver$lambda$1;
+            Saver$lambda$1 = TopAppBarState.Saver$lambda$1((List) obj);
+            return Saver$lambda$1;
         }
     });
     private MutableFloatState _heightOffset;
     private final MutableFloatState contentOffset$delegate;
-    private final MutableFloatState heightOffsetLimit$delegate;
+    private float heightOffsetLimit;
 
     public TopAppBarState(float f, float f2, float f3) {
-        this.heightOffsetLimit$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(f);
+        this.heightOffsetLimit = f;
         this.contentOffset$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(f3);
         this._heightOffset = PrimitiveSnapshotStateKt.mutableFloatStateOf(f2);
     }
 
     public final float getHeightOffsetLimit() {
-        return this.heightOffsetLimit$delegate.getFloatValue();
+        return this.heightOffsetLimit;
     }
 
     public final void setHeightOffsetLimit(float f) {
-        this.heightOffsetLimit$delegate.setFloatValue(f);
+        this.heightOffsetLimit = f;
     }
 
     public final float getHeightOffset() {
@@ -57,7 +56,7 @@ public final class TopAppBarState {
     }
 
     public final void setHeightOffset(float f) {
-        this._heightOffset.setFloatValue(RangesKt.coerceIn(f, getHeightOffsetLimit(), 0.0f));
+        this._heightOffset.setFloatValue(RangesKt.coerceIn(f, this.heightOffsetLimit, 0.0f));
     }
 
     public final float getContentOffset() {
@@ -69,21 +68,22 @@ public final class TopAppBarState {
     }
 
     public final float getCollapsedFraction() {
-        if (getHeightOffsetLimit() == 0.0f) {
+        if (this.heightOffsetLimit == 0.0f) {
             return 0.0f;
         }
-        return getHeightOffset() / getHeightOffsetLimit();
+        return getHeightOffset() / this.heightOffsetLimit;
     }
 
     public final float getOverlappedFraction() {
-        if (getHeightOffsetLimit() == 0.0f) {
+        float f = this.heightOffsetLimit;
+        if (f == 0.0f) {
             return 0.0f;
         }
-        return 1 - (RangesKt.coerceIn(getHeightOffsetLimit() - getContentOffset(), getHeightOffsetLimit(), 0.0f) / getHeightOffsetLimit());
+        return 1 - (RangesKt.coerceIn(f - getContentOffset(), this.heightOffsetLimit, 0.0f) / this.heightOffsetLimit);
     }
 
     /* compiled from: AppBar.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001b\u0010\u0003\u001a\f\u0012\u0004\u0012\u00020\u0005\u0012\u0002\b\u00030\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/material3/TopAppBarState$Companion;", "", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/material3/TopAppBarState;", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001b\u0010\u0004\u001a\f\u0012\u0004\u0012\u00020\u0006\u0012\u0002\b\u00030\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/material3/TopAppBarState$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/material3/TopAppBarState;", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -96,5 +96,15 @@ public final class TopAppBarState {
         public final Saver<TopAppBarState, ?> getSaver() {
             return TopAppBarState.Saver;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final List Saver$lambda$0(SaverScope saverScope, TopAppBarState topAppBarState) {
+        return CollectionsKt.listOf((Object[]) new Float[]{Float.valueOf(topAppBarState.heightOffsetLimit), Float.valueOf(topAppBarState.getHeightOffset()), Float.valueOf(topAppBarState.getContentOffset())});
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final TopAppBarState Saver$lambda$1(List list) {
+        return new TopAppBarState(((Number) list.get(0)).floatValue(), ((Number) list.get(1)).floatValue(), ((Number) list.get(2)).floatValue());
     }
 }

@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.RowKt;
 import androidx.compose.foundation.layout.RowScopeInstance;
 import androidx.compose.foundation.layout.SizeKt;
 import androidx.compose.material3.MaterialTheme;
-import androidx.compose.material3.MenuKt;
 import androidx.compose.material3.TextKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
@@ -27,18 +26,11 @@ import androidx.compose.ui.layout.ContentScale;
 import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.res.PainterResources_androidKt;
-import androidx.compose.ui.text.TextLayoutResult;
-import androidx.compose.ui.text.font.FontFamily;
-import androidx.compose.ui.text.font.FontStyle;
-import androidx.compose.ui.text.font.FontWeight;
-import androidx.compose.ui.text.style.TextAlign;
-import androidx.compose.ui.text.style.TextDecoration;
 import androidx.compose.ui.unit.Dp;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.compose.FlowExtKt;
 import androidx.media3.exoplayer.RendererCapabilities;
-import androidx.media3.extractor.WavUtil;
 import com.miami.game.core.design.system.component.button.DialogButtonKt;
 import com.miami.game.core.design.system.component.dialog_frame.DialogFrameKt;
 import com.miami.game.core.drawable.resources.R;
@@ -48,7 +40,6 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
@@ -179,8 +170,8 @@ public final class ErrorDialogScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-59434296, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreen.<anonymous> (ErrorDialogScreen.kt:55)");
             }
-            TextKt.m2814Text4IGK_g(str, (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 0, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_download_image, composer, 0), (String) null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(100)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 432, (int) MenuKt.InTransitionDuration);
+            TextKt.m3168TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 0, 0, 131070);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_download_image, composer, 0), (String) null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(100)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 432, 120);
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer, 0);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
@@ -198,15 +189,15 @@ public final class ErrorDialogScreenKt {
             } else {
                 composer.useNode();
             }
-            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
-            Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
+            Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 967934991, "C66@2294L43,66@2269L188,72@2496L43,72@2470L191:ErrorDialogScreen.kt#d3gn1w");
@@ -225,7 +216,7 @@ public final class ErrorDialogScreenKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m8977getLambda$1032883188$dialogs_release(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m9717getLambda$1032883188$dialogs_release(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, -1354242697, "CC(remember):ErrorDialogScreen.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();

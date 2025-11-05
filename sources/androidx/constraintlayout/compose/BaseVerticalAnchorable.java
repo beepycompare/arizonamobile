@@ -22,7 +22,7 @@ public abstract class BaseVerticalAnchorable implements VerticalAnchorable {
 
     @Override // androidx.constraintlayout.compose.VerticalAnchorable
     /* renamed from: linkTo-VpY3zN4  reason: not valid java name */
-    public final void mo7523linkToVpY3zN4(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, float f, float f2) {
+    public final void mo8254linkToVpY3zN4(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, float f, float f2) {
         String verticalAnchorIndexToAnchorName = AnchorFunctions.INSTANCE.verticalAnchorIndexToAnchorName(verticalAnchor.getIndex$constraintlayout_compose_release());
         CLArray cLArray = new CLArray(new char[0]);
         cLArray.add(CLString.from(verticalAnchor.getId$constraintlayout_compose_release().toString()));

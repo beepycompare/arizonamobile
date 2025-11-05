@@ -1,23 +1,21 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.res.Configuration;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class B1 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ K1 f360a;
+    public final /* synthetic */ Configuration f404a;
+    public final /* synthetic */ L1 b;
 
-    public B1(K1 k1) {
-        this.f360a = k1;
+    public B1(L1 l1, Configuration configuration) {
+        this.b = l1;
+        this.f404a = configuration;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        synchronized (this.f360a) {
-            K1 k1 = this.f360a;
-            if (k1.c) {
-                k1.b.onCreate();
-            }
-        }
+        this.b.b.onConfigurationChanged(this.f404a);
     }
 }

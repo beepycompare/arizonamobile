@@ -1,7 +1,7 @@
 package com.google.android.material.color.utilities;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
+import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* loaded from: classes4.dex */
 public class MathUtils {
     public static double clampDouble(double d, double d2, double d3) {

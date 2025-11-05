@@ -1,53 +1,53 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0123ad;
-import io.appmetrica.analytics.impl.C0761ze;
-import io.appmetrica.analytics.impl.De;
-import io.appmetrica.analytics.impl.Eb;
-import io.appmetrica.analytics.impl.EnumC0352ja;
+import io.appmetrica.analytics.impl.C0397lb;
+import io.appmetrica.analytics.impl.C0400le;
+import io.appmetrica.analytics.impl.C0500pe;
+import io.appmetrica.analytics.impl.Hc;
+import io.appmetrica.analytics.impl.Q9;
 import java.util.Map;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class ExternalAttributions {
     public static ExternalAttribution adjust(Object obj) {
         if (obj == null) {
-            return new C0761ze(EnumC0352ja.ADJUST);
+            return new C0400le(Q9.ADJUST);
         }
-        return new De(EnumC0352ja.ADJUST, obj);
+        return new C0500pe(Q9.ADJUST, obj);
     }
 
     public static ExternalAttribution airbridge(Map<String, String> map) {
         if (map == null) {
-            return new C0761ze(EnumC0352ja.AIRBRIDGE);
+            return new C0400le(Q9.AIRBRIDGE);
         }
-        return new C0123ad(EnumC0352ja.AIRBRIDGE, map);
+        return new Hc(Q9.AIRBRIDGE, map);
     }
 
     public static ExternalAttribution appsflyer(Map<String, Object> map) {
         if (map == null) {
-            return new C0761ze(EnumC0352ja.APPSFLYER);
+            return new C0400le(Q9.APPSFLYER);
         }
-        return new C0123ad(EnumC0352ja.APPSFLYER, map);
+        return new Hc(Q9.APPSFLYER, map);
     }
 
     public static ExternalAttribution kochava(JSONObject jSONObject) {
         if (jSONObject == null) {
-            return new C0761ze(EnumC0352ja.KOCHAVA);
+            return new C0400le(Q9.KOCHAVA);
         }
-        return new Eb(EnumC0352ja.KOCHAVA, jSONObject);
+        return new C0397lb(Q9.KOCHAVA, jSONObject);
     }
 
     public static ExternalAttribution singular(Map<String, Object> map) {
         if (map == null) {
-            return new C0761ze(EnumC0352ja.SINGULAR);
+            return new C0400le(Q9.SINGULAR);
         }
-        return new C0123ad(EnumC0352ja.SINGULAR, map);
+        return new Hc(Q9.SINGULAR, map);
     }
 
     public static ExternalAttribution tenjin(Map<String, String> map) {
         if (map == null) {
-            return new C0761ze(EnumC0352ja.TENJIN);
+            return new C0400le(Q9.TENJIN);
         }
-        return new C0123ad(EnumC0352ja.TENJIN, map);
+        return new Hc(Q9.TENJIN, map);
     }
 }

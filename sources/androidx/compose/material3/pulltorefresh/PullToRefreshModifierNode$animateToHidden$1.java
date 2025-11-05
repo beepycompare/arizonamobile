@@ -1,17 +1,16 @@
 package androidx.compose.material3.pulltorefresh;
 
-import com.google.android.vending.expansion.downloader.Constants;
+import androidx.media3.exoplayer.RendererCapabilities;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PullToRefresh.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.pulltorefresh.PullToRefreshModifierNode", f = "PullToRefresh.kt", i = {0}, l = {Constants.STATUS_NOT_ACCEPTABLE}, m = "animateToHidden", n = {"this"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.pulltorefresh.PullToRefreshModifierNode", f = "PullToRefresh.kt", i = {}, l = {RendererCapabilities.DECODER_SUPPORT_MASK}, m = "animateToHidden", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class PullToRefreshModifierNode$animateToHidden$1 extends ContinuationImpl {
-    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ PullToRefreshModifierNode this$0;

@@ -5,7 +5,7 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class SplitParallelSampleBandwidthEstimator implements BandwidthEstimator {
     private long bandwidthEstimate;
     private final BandwidthStatistic bandwidthStatistic;
@@ -24,7 +24,7 @@ public class SplitParallelSampleBandwidthEstimator implements BandwidthEstimator
     public void onTransferInitializing(DataSource dataSource) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private BandwidthStatistic bandwidthStatistic = new SlidingWeightedAverageBandwidthStatistic();
         private Clock clock = Clock.DEFAULT;

@@ -34,7 +34,7 @@ public final class CharSequenceArraySerializer implements KSerializer<CharSequen
             throw new IllegalArgumentException(BuiltInSerializerKt.encoderErrorMessage(INSTANCE.getDescriptor().getSerialName(), encoder).toString());
         }
         SavedStateEncoder savedStateEncoder = (SavedStateEncoder) encoder;
-        SavedStateWriter.m8273putCharSequenceArrayimpl(SavedStateWriter.m8262constructorimpl(savedStateEncoder.getSavedState$savedstate_release()), savedStateEncoder.getKey$savedstate_release(), value);
+        SavedStateWriter.m9003putCharSequenceArrayimpl(SavedStateWriter.m8992constructorimpl(savedStateEncoder.getSavedState$savedstate_release()), savedStateEncoder.getKey$savedstate_release(), value);
     }
 
     @Override // kotlinx.serialization.DeserializationStrategy
@@ -44,6 +44,6 @@ public final class CharSequenceArraySerializer implements KSerializer<CharSequen
             throw new IllegalArgumentException(BuiltInSerializerKt.decoderErrorMessage(INSTANCE.getDescriptor().getSerialName(), decoder).toString());
         }
         SavedStateDecoder savedStateDecoder = (SavedStateDecoder) decoder;
-        return SavedStateReader.m8194getCharSequenceArrayimpl(SavedStateReader.m8176constructorimpl(savedStateDecoder.getSavedState$savedstate_release()), savedStateDecoder.getKey$savedstate_release());
+        return SavedStateReader.m8924getCharSequenceArrayimpl(SavedStateReader.m8906constructorimpl(savedStateDecoder.getSavedState$savedstate_release()), savedStateDecoder.getKey$savedstate_release());
     }
 }

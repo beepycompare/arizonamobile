@@ -5,7 +5,7 @@ import com.adjust.sdk.ActivityHandler;
 import com.facebook.AppEventsLogger;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import io.appmetrica.analytics.impl.O2;
+import io.appmetrica.analytics.impl.H2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Date;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ public class PackageBuilder {
     public static class ActivityStateCopy {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f153a;
+        public final int f138a;
         public final int b;
         public final int c;
         public final long d;
@@ -53,7 +53,7 @@ public class PackageBuilder {
         public final String g;
 
         public ActivityStateCopy(ActivityState activityState) {
-            this.f153a = -1;
+            this.f138a = -1;
             this.b = -1;
             this.c = -1;
             this.d = -1L;
@@ -63,7 +63,7 @@ public class PackageBuilder {
             if (activityState == null) {
                 return;
             }
-            this.f153a = activityState.eventCount;
+            this.f138a = activityState.eventCount;
             this.b = activityState.sessionCount;
             this.c = activityState.subsessionCount;
             this.d = activityState.timeSpent;
@@ -895,7 +895,7 @@ public class PackageBuilder {
             if (this.internalState.isInForeground()) {
                 addBoolean(map, "foreground", Boolean.TRUE);
             } else {
-                addBoolean(map, O2.g, Boolean.TRUE);
+                addBoolean(map, H2.g, Boolean.TRUE);
             }
         }
         if (this.adjustConfig.playStoreKidsComplianceEnabled) {
@@ -1077,7 +1077,7 @@ public class PackageBuilder {
         addString(hashMap, "display_width", this.deviceInfo.displayWidth);
         addString(hashMap, "environment", this.adjustConfig.environment);
         addString(hashMap, "event_callback_id", adjustEvent.callbackId);
-        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f153a);
+        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f138a);
         addString(hashMap, "event_token", adjustEvent.eventToken);
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);

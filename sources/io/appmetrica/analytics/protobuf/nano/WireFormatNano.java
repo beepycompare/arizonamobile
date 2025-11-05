@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.protobuf.nano;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WireFormatNano {
     static final int TAG_TYPE_BITS = 3;
     static final int TAG_TYPE_MASK = 7;

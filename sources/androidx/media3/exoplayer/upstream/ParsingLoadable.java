@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ParsingLoadable<T> implements Loader.Loadable {
     private final StatsDataSource dataSource;
     public final DataSpec dataSpec;
@@ -22,7 +22,7 @@ public final class ParsingLoadable<T> implements Loader.Loadable {
     private volatile T result;
     public final int type;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Parser<T> {
         T parse(Uri uri, InputStream inputStream) throws IOException;
     }

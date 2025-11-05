@@ -7,12 +7,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FloatingActionButton.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.FloatingActionButtonElevationAnimatable", f = "FloatingActionButton.kt", i = {0, 0}, l = {650}, m = "animateElevation", n = {"this", TypedValues.TransitionType.S_TO}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.FloatingActionButtonElevationAnimatable", f = "FloatingActionButton.kt", i = {0}, l = {753}, m = "animateElevation", n = {TypedValues.TransitionType.S_TO}, s = {"L$0"})
 /* loaded from: classes.dex */
 public final class FloatingActionButtonElevationAnimatable$animateElevation$1 extends ContinuationImpl {
     Object L$0;
-    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ FloatingActionButtonElevationAnimatable this$0;

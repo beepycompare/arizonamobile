@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import sun.misc.Unsafe;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzoo {
     final Unsafe zza;
 

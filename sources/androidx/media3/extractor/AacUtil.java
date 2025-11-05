@@ -1,6 +1,5 @@
 package androidx.media3.extractor;
 
-import androidx.compose.material3.MenuKt;
 import androidx.media3.common.ParserException;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableBitArray;
@@ -9,7 +8,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class AacUtil {
     public static final int AAC_ELD_MAX_RATE_BYTES_PER_SECOND = 8000;
     public static final int AAC_HE_AUDIO_SAMPLE_COUNT = 2048;
@@ -37,11 +36,11 @@ public final class AacUtil {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface AacAudioObjectType {
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Config {
         public final int channelCount;
         public final String codecs;
@@ -136,7 +135,7 @@ public final class AacUtil {
     }
 
     public static byte[] buildAudioSpecificConfig(int i, int i2, int i3) {
-        return new byte[]{(byte) (((i << 3) & 248) | ((i2 >> 1) & 7)), (byte) (((i2 << 7) & 128) | ((i3 << 3) & MenuKt.InTransitionDuration))};
+        return new byte[]{(byte) (((i << 3) & 248) | ((i2 >> 1) & 7)), (byte) (((i2 << 7) & 128) | ((i3 << 3) & 120))};
     }
 
     private static int getAudioObjectType(ParsableBitArray parsableBitArray) {

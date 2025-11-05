@@ -4,7 +4,7 @@ import android.net.Uri;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zza extends Thread {
     final /* synthetic */ Map zza;
 

@@ -1,53 +1,46 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import java.util.Collection;
-import java.util.List;
-/* loaded from: classes4.dex */
-public final class Rf implements Converter {
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+/* loaded from: classes3.dex */
+public final class Rf implements ProtobufStateStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X f657a;
-    public final Sf b;
+    public final String f667a;
+    public final IBinaryDataHelper b;
+    public final ProtobufStateSerializer c;
+    public final ProtobufConverter d;
 
-    public Rf() {
-        this(new X(), new Sf(30));
+    public Rf(String str, IBinaryDataHelper iBinaryDataHelper, ProtobufStateSerializer<MessageNano> protobufStateSerializer, ProtobufConverter<Object, MessageNano> protobufConverter) {
+        this.f667a = str;
+        this.b = iBinaryDataHelper;
+        this.c = protobufStateSerializer;
+        this.d = protobufConverter;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Zi fromModel(Tf tf) {
-        int i;
-        L8 l8 = new L8();
-        Zi fromModel = this.f657a.fromModel(tf.f686a);
-        l8.f556a = (B8) fromModel.f777a;
-        Sn a2 = this.b.a(tf.b);
-        if (ro.a((Collection) a2.f676a)) {
-            i = 0;
-        } else {
-            l8.b = new B8[((List) a2.f676a).size()];
-            i = 0;
-            for (int i2 = 0; i2 < ((List) a2.f676a).size(); i2++) {
-                Zi fromModel2 = this.f657a.fromModel((Y) ((List) a2.f676a).get(i2));
-                l8.b[i2] = (B8) fromModel2.f777a;
-                i += fromModel2.b.getBytesTruncated();
+    @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
+    public final void delete() {
+        this.b.remove(this.f667a);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
+    public final Object read() {
+        try {
+            byte[] bArr = this.b.get(this.f667a);
+            if (bArr != null && bArr.length != 0) {
+                return this.d.toModel((MessageNano) this.c.toState(bArr));
             }
+            return this.d.toModel((MessageNano) this.c.defaultValue());
+        } catch (Throwable unused) {
+            return this.d.toModel((MessageNano) this.c.defaultValue());
         }
-        return new Zi(l8, new C0750z3(C0750z3.b(fromModel, a2, new C0750z3(i))));
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        Zi zi = (Zi) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public Rf(X x, Sf sf) {
-        this.f657a = x;
-        this.b = sf;
-    }
-
-    public final Tf a(Zi zi) {
-        throw new UnsupportedOperationException();
+    @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
+    public final void save(Object obj) {
+        this.b.insert(this.f667a, this.c.toByteArray((MessageNano) this.d.fromModel(obj)));
     }
 }

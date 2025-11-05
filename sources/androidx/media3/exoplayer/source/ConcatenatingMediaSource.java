@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSourceHolder> {
     private static final int MSG_ADD = 1;
     private static final int MSG_MOVE = 3;
@@ -539,7 +539,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaSourceHolder {
         public int childIndex;
         public int firstWindowIndexInChild;
@@ -561,7 +561,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MessageData<T> {
         public final T customData;
         public final int index;
@@ -575,7 +575,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ConcatenatedTimeline extends AbstractConcatenatedTimeline {
         private final HashMap<Object, Integer> childIndexByUid;
         private final int[] firstPeriodInChildIndices;
@@ -660,7 +660,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class FakeMediaSource extends BaseMediaSource {
         @Override // androidx.media3.exoplayer.source.MediaSource
         public void maybeThrowSourceInfoRefreshError() {
@@ -693,7 +693,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class HandlerAndRunnable {
         private final Handler handler;
         private final Runnable runnable;

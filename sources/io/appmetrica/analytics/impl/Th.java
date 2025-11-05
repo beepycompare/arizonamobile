@@ -1,102 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Intent;
-import android.os.RemoteException;
-import io.appmetrica.analytics.internal.IAppMetricaService;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
-import kotlin.Unit;
-/* loaded from: classes4.dex */
-public abstract class Th implements Callable {
-    public static final Sh d = new Sh();
+import io.appmetrica.analytics.Revenue;
+/* loaded from: classes3.dex */
+public final class Th implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0472o0 f688a;
-    public final InterfaceC0337il b;
-    public boolean c;
+    public final /* synthetic */ Revenue f707a;
+    public final /* synthetic */ C0404li b;
 
-    public Th(C0472o0 c0472o0, InterfaceC0337il interfaceC0337il) {
-        this.f688a = c0472o0;
-        this.b = interfaceC0337il;
+    public Th(C0404li c0404li, Revenue revenue) {
+        this.b = c0404li;
+        this.f707a = revenue;
     }
 
-    public abstract void a(IAppMetricaService iAppMetricaService);
-
-    public void a(Throwable th) {
-    }
-
-    public final C0472o0 b() {
-        return this.f688a;
-    }
-
-    public boolean c() {
-        C0472o0 c0472o0 = this.f688a;
-        synchronized (c0472o0) {
-            if (c0472o0.d == null) {
-                c0472o0.e = new CountDownLatch(1);
-                Intent a2 = Jk.a(c0472o0.f1013a);
-                try {
-                    c0472o0.g.b(c0472o0.f1013a);
-                    c0472o0.f1013a.bindService(a2, c0472o0.i, 1);
-                } catch (Throwable unused) {
-                }
-            }
-        }
-        this.f688a.a(5000L);
-        return true;
-    }
-
-    @Override // java.util.concurrent.Callable
-    public /* bridge */ /* synthetic */ Object call() {
-        a();
-        return Unit.INSTANCE;
-    }
-
-    public final boolean d() {
-        return this.c;
-    }
-
-    public final void a(boolean z) {
-        this.c = z;
-    }
-
-    public void a() {
-        IAppMetricaService iAppMetricaService;
-        try {
-            if (this.c) {
-                return;
-            }
-            this.c = true;
-            int i = 0;
-            do {
-                C0472o0 c0472o0 = this.f688a;
-                synchronized (c0472o0) {
-                    iAppMetricaService = c0472o0.d;
-                }
-                if (iAppMetricaService != null) {
-                    try {
-                        a(iAppMetricaService);
-                        InterfaceC0337il interfaceC0337il = this.b;
-                        if (interfaceC0337il == null || ((Ei) interfaceC0337il).a()) {
-                            this.f688a.c();
-                            return;
-                        }
-                        return;
-                    } catch (RemoteException unused) {
-                    }
-                }
-                i++;
-                if (!c()) {
-                    return;
-                }
-                AtomicBoolean atomicBoolean = W1.e;
-                if (W1.e.get()) {
-                    return;
-                }
-            } while (i < 3);
-        } catch (Throwable th) {
-            a(th);
-        }
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0404li c0404li = this.b;
+        C0404li.a(c0404li.f993a, c0404li.d, c0404li.e).reportRevenue(this.f707a);
     }
 }

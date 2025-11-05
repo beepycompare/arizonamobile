@@ -1,116 +1,84 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AdRevenue;
-import io.appmetrica.analytics.ModuleEvent;
-import io.appmetrica.analytics.Revenue;
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import io.appmetrica.analytics.plugins.IPluginReporter;
-import io.appmetrica.analytics.profile.UserProfile;
-import java.util.Map;
-/* loaded from: classes4.dex */
-public class Di implements InterfaceC0558rb {
+import android.os.Bundle;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
+/* loaded from: classes3.dex */
+public final class Di implements InterfaceC0328ik {
+    public static final Ci e = new Ci();
+    public static final long f = TimeUnit.SECONDS.toMillis(4);
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0357jf f413a = new C0357jf();
+    public final C0486p0 f442a;
+    public final C0200dk b;
+    public final TimeProvider c;
+    public final ICommonExecutor d;
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0558rb, io.appmetrica.analytics.impl.InterfaceC0239f0
-    public final void a(U u) {
+    public Di(C0486p0 c0486p0, C0200dk c0200dk, TimeProvider timeProvider) {
+        this.f442a = c0486p0;
+        this.b = c0200dk;
+        this.c = timeProvider;
+        this.d = C0338j4.l().g().b();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0558rb, io.appmetrica.analytics.impl.InterfaceC0633ub
-    public final void a(Wn wn) {
+    public final void a(Ah ah) {
+        Callable ug;
+        ICommonExecutor iCommonExecutor = this.d;
+        if (ah.b) {
+            C0200dk c0200dk = this.b;
+            ug = new C0340j6(c0200dk.f850a, c0200dk.b, c0200dk.c, ah);
+        } else {
+            C0200dk c0200dk2 = this.b;
+            ug = new Ug(c0200dk2.b, c0200dk2.c, ah);
+        }
+        iCommonExecutor.submit(ug);
     }
 
-    @Override // io.appmetrica.analytics.IReporter
-    public final void clearAppEnvironment() {
+    public final void b(Ah ah) {
+        long uptimeMillis = this.c.uptimeMillis();
+        C0200dk c0200dk = this.b;
+        C0340j6 c0340j6 = new C0340j6(c0200dk.f850a, c0200dk.b, c0200dk.c, ah);
+        if (this.f442a.a()) {
+            try {
+                this.d.submit(c0340j6).get(f, TimeUnit.MILLISECONDS);
+            } catch (Throwable unused) {
+            }
+        }
+        if (!c0340j6.c) {
+            try {
+                c0340j6.a();
+            } catch (Throwable unused2) {
+            }
+        }
+        try {
+            Thread.sleep(Math.max(0L, f - (this.c.uptimeMillis() - uptimeMillis)));
+        } catch (Throwable unused3) {
+        }
     }
 
-    @Override // io.appmetrica.analytics.IReporter
-    public final IPluginReporter getPluginExtension() {
-        return this.f413a;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ik
+    public final void reportData(int i, Bundle bundle) {
+        ICommonExecutor iCommonExecutor = this.d;
+        C0200dk c0200dk = this.b;
+        iCommonExecutor.submit(new Pn(c0200dk.b, c0200dk.c, i, bundle));
     }
 
-    @Override // io.appmetrica.analytics.IReporter
-    public final void pauseSession() {
+    public Di(C0486p0 c0486p0, C0200dk c0200dk) {
+        this(c0486p0, c0200dk, new SystemTimeProvider());
     }
 
-    @Override // io.appmetrica.analytics.IReporter
-    public final void putAppEnvironmentValue(String str, String str2) {
+    public final void a(Gf gf) {
+        ICommonExecutor iCommonExecutor = this.d;
+        C0200dk c0200dk = this.b;
+        iCommonExecutor.submit(new C0699xe(c0200dk.b, c0200dk.c, gf));
     }
 
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportAdRevenue(AdRevenue adRevenue) {
-    }
-
-    @Override // io.appmetrica.analytics.IModuleReporter
-    public void reportAdRevenue(AdRevenue adRevenue, boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportAnr(Map<Thread, StackTraceElement[]> map) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportECommerce(ECommerceEvent eCommerceEvent) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportError(String str, String str2) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportError(String str, String str2, Throwable th) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportError(String str, Throwable th) {
-    }
-
-    @Override // io.appmetrica.analytics.IModuleReporter
-    public void reportEvent(ModuleEvent moduleEvent) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportEvent(String str) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportEvent(String str, String str2) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportEvent(String str, Map<String, Object> map) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportRevenue(Revenue revenue) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportUnhandledException(Throwable th) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void reportUserProfile(UserProfile userProfile) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void resumeSession() {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter, io.appmetrica.analytics.IModuleReporter
-    public final void sendEventsBuffer() {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void setDataSendingEnabled(boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.IModuleReporter
-    public final void setSessionExtra(String str, byte[] bArr) {
-    }
-
-    @Override // io.appmetrica.analytics.IReporter
-    public final void setUserProfileID(String str) {
+    public final void b(Gf gf) {
+        ICommonExecutor iCommonExecutor = this.d;
+        C0200dk c0200dk = this.b;
+        iCommonExecutor.submit(new Ji(c0200dk.b, c0200dk.c, gf));
     }
 }

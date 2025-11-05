@@ -10,7 +10,7 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.EGLSurfaceTexture;
 import androidx.media3.common.util.GlUtil;
 import androidx.media3.common.util.Log;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PlaceholderSurface extends Surface {
     private static final String TAG = "PlaceholderSurface";
     private static int secureMode;
@@ -71,7 +71,7 @@ public final class PlaceholderSurface extends Surface {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class PlaceholderSurfaceThread extends HandlerThread implements Handler.Callback {
         private static final int MSG_INIT = 1;
         private static final int MSG_RELEASE = 2;

@@ -165,14 +165,14 @@ public class BottomSheetDragHandleView extends AppCompatImageView implements Acc
         ViewCompat.replaceAccessibilityAction(this, AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK, this.clickToExpand ? this.clickToExpandActionLabel : this.clickToCollapseActionLabel, new AccessibilityViewCommand() { // from class: com.google.android.material.bottomsheet.BottomSheetDragHandleView$$ExternalSyntheticLambda0
             @Override // androidx.core.view.accessibility.AccessibilityViewCommand
             public final boolean perform(View view, AccessibilityViewCommand.CommandArguments commandArguments) {
-                return BottomSheetDragHandleView.this.m8695xa7b4c95f(view, commandArguments);
+                return BottomSheetDragHandleView.this.m9433xa7b4c95f(view, commandArguments);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onBottomSheetStateChanged$0$com-google-android-material-bottomsheet-BottomSheetDragHandleView  reason: not valid java name */
-    public /* synthetic */ boolean m8695xa7b4c95f(View view, AccessibilityViewCommand.CommandArguments commandArguments) {
+    public /* synthetic */ boolean m9433xa7b4c95f(View view, AccessibilityViewCommand.CommandArguments commandArguments) {
         return expandOrCollapseBottomSheetIfPossible();
     }
 

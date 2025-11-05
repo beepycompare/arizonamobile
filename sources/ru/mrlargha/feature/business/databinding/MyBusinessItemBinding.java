@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
@@ -24,6 +25,7 @@ public final class MyBusinessItemBinding implements ViewBinding {
     public final ImageView firstIc;
     public final TextView firstTitle;
     public final TextView firstValue;
+    public final ImageView ivRank;
     public final Guideline mainLeftLine;
     public final ConstraintLayout myBusinessItem;
     private final ConstraintLayout rootView;
@@ -35,8 +37,9 @@ public final class MyBusinessItemBinding implements ViewBinding {
     public final TextView thirdTitle;
     public final TextView thirdValue;
     public final Guideline thirdValueLeftLine;
+    public final LinearLayout titleContainer;
 
-    private MyBusinessItemBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, Guideline guideline, TextView textView, TextView textView2, TextView textView3, ConstraintLayout constraintLayout4, ImageView imageView, Guideline guideline2, ImageView imageView2, TextView textView4, TextView textView5, Guideline guideline3, ConstraintLayout constraintLayout5, ImageView imageView3, TextView textView6, TextView textView7, Guideline guideline4, ImageView imageView4, TextView textView8, TextView textView9, Guideline guideline5) {
+    private MyBusinessItemBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, Guideline guideline, TextView textView, TextView textView2, TextView textView3, ConstraintLayout constraintLayout4, ImageView imageView, Guideline guideline2, ImageView imageView2, TextView textView4, TextView textView5, ImageView imageView3, Guideline guideline3, ConstraintLayout constraintLayout5, ImageView imageView4, TextView textView6, TextView textView7, Guideline guideline4, ImageView imageView5, TextView textView8, TextView textView9, Guideline guideline5, LinearLayout linearLayout) {
         this.rootView = constraintLayout;
         this.bizIcContainer = constraintLayout2;
         this.bizIcNStatusContainer = constraintLayout3;
@@ -50,16 +53,18 @@ public final class MyBusinessItemBinding implements ViewBinding {
         this.firstIc = imageView2;
         this.firstTitle = textView4;
         this.firstValue = textView5;
+        this.ivRank = imageView3;
         this.mainLeftLine = guideline3;
         this.myBusinessItem = constraintLayout5;
-        this.secondIc = imageView3;
+        this.secondIc = imageView4;
         this.secondTitle = textView6;
         this.secondValue = textView7;
         this.secondValueLeftLine = guideline4;
-        this.thirdIc = imageView4;
+        this.thirdIc = imageView5;
         this.thirdTitle = textView8;
         this.thirdValue = textView9;
         this.thirdValueLeftLine = guideline5;
+        this.titleContainer = linearLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -116,35 +121,43 @@ public final class MyBusinessItemBinding implements ViewBinding {
                                                     i = R.id.first_value;
                                                     TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                                     if (textView5 != null) {
-                                                        i = R.id.main_left_line;
-                                                        Guideline guideline3 = (Guideline) ViewBindings.findChildViewById(view, i);
-                                                        if (guideline3 != null) {
-                                                            ConstraintLayout constraintLayout4 = (ConstraintLayout) view;
-                                                            i = R.id.second_ic;
-                                                            ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                            if (imageView3 != null) {
-                                                                i = R.id.second_title;
-                                                                TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                if (textView6 != null) {
-                                                                    i = R.id.second_value;
-                                                                    TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                    if (textView7 != null) {
-                                                                        i = R.id.second_value_left_line;
-                                                                        Guideline guideline4 = (Guideline) ViewBindings.findChildViewById(view, i);
-                                                                        if (guideline4 != null) {
-                                                                            i = R.id.third_ic;
-                                                                            ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                            if (imageView4 != null) {
-                                                                                i = R.id.third_title;
-                                                                                TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                if (textView8 != null) {
-                                                                                    i = R.id.third_value;
-                                                                                    TextView textView9 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                    if (textView9 != null) {
-                                                                                        i = R.id.third_value_left_line;
-                                                                                        Guideline guideline5 = (Guideline) ViewBindings.findChildViewById(view, i);
-                                                                                        if (guideline5 != null) {
-                                                                                            return new MyBusinessItemBinding(constraintLayout4, constraintLayout, constraintLayout2, guideline, textView, textView2, textView3, constraintLayout3, imageView, guideline2, imageView2, textView4, textView5, guideline3, constraintLayout4, imageView3, textView6, textView7, guideline4, imageView4, textView8, textView9, guideline5);
+                                                        i = R.id.iv_rank;
+                                                        ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                        if (imageView3 != null) {
+                                                            i = R.id.main_left_line;
+                                                            Guideline guideline3 = (Guideline) ViewBindings.findChildViewById(view, i);
+                                                            if (guideline3 != null) {
+                                                                ConstraintLayout constraintLayout4 = (ConstraintLayout) view;
+                                                                i = R.id.second_ic;
+                                                                ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                if (imageView4 != null) {
+                                                                    i = R.id.second_title;
+                                                                    TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                    if (textView6 != null) {
+                                                                        i = R.id.second_value;
+                                                                        TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                        if (textView7 != null) {
+                                                                            i = R.id.second_value_left_line;
+                                                                            Guideline guideline4 = (Guideline) ViewBindings.findChildViewById(view, i);
+                                                                            if (guideline4 != null) {
+                                                                                i = R.id.third_ic;
+                                                                                ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                if (imageView5 != null) {
+                                                                                    i = R.id.third_title;
+                                                                                    TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                    if (textView8 != null) {
+                                                                                        i = R.id.third_value;
+                                                                                        TextView textView9 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                        if (textView9 != null) {
+                                                                                            i = R.id.third_value_left_line;
+                                                                                            Guideline guideline5 = (Guideline) ViewBindings.findChildViewById(view, i);
+                                                                                            if (guideline5 != null) {
+                                                                                                i = R.id.title_container;
+                                                                                                LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                if (linearLayout != null) {
+                                                                                                    return new MyBusinessItemBinding(constraintLayout4, constraintLayout, constraintLayout2, guideline, textView, textView2, textView3, constraintLayout3, imageView, guideline2, imageView2, textView4, textView5, imageView3, guideline3, constraintLayout4, imageView4, textView6, textView7, guideline4, imageView5, textView8, textView9, guideline5, linearLayout);
+                                                                                                }
+                                                                                            }
                                                                                         }
                                                                                     }
                                                                                 }

@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import java.io.IOException;
 import java.util.Arrays;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzoj {
     private static final zzoj zza = new zzoj(0, new int[0], new Object[0], false);
     private int zzb;

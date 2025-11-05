@@ -47,7 +47,7 @@
                                 </LinearLayout>
                             </LinearLayout>
                             <RelativeLayout android:gravity="center" android:layout_gravity="center" android:id="@+id/button_battle_coins_convert" android:background="@drawable/background_az_battlepass_type_task_enabled" android:paddingLeft="@dimen/_18sdp" android:paddingTop="@dimen/_4sdp" android:paddingRight="@dimen/_18sdp" android:paddingBottom="@dimen/_4sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_4sdp" android:paddingHorizontal="@dimen/_18sdp" android:paddingVertical="@dimen/_4sdp">
-                                <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/battlepass_text" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ОБМЕНЯТЬ" android:fontFamily="@font/heading_now_65"/>
+                                <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/black" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ОБМЕНЯТЬ" android:fontFamily="@font/heading_now_65"/>
                             </RelativeLayout>
                         </LinearLayout>
                     </LinearLayout>

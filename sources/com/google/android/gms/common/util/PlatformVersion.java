@@ -2,8 +2,8 @@ package com.google.android.gms.common.util;
 
 import android.os.Build;
 import androidx.core.os.BuildCompat;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public final class PlatformVersion {
     private PlatformVersion() {
     }
@@ -13,46 +13,57 @@ public final class PlatformVersion {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastHoneycombMR1() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastIceCreamSandwich() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastIceCreamSandwichMR1() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastJellyBean() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastJellyBeanMR1() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastJellyBeanMR2() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastKitKat() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastKitKatWatch() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastLollipop() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastLollipopMR1() {
         return true;
     }
 
+    @Deprecated
     public static boolean isAtLeastM() {
         return true;
     }
@@ -94,9 +105,6 @@ public final class PlatformVersion {
     }
 
     public static boolean isAtLeastV() {
-        if (isAtLeastU()) {
-            return BuildCompat.isAtLeastV();
-        }
-        return false;
+        return BuildCompat.isAtLeastV();
     }
 }

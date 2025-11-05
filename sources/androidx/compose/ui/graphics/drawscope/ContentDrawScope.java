@@ -20,73 +20,73 @@ public interface ContentDrawScope extends DrawScope {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: drawImage-AZ2fEMs  reason: not valid java name */
-        public static void m5074drawImageAZ2fEMs(ContentDrawScope contentDrawScope, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
-            ContentDrawScope.super.mo5030drawImageAZ2fEMs(imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i, i2);
+        public static void m5804drawImageAZ2fEMs(ContentDrawScope contentDrawScope, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
+            ContentDrawScope.super.mo5760drawImageAZ2fEMs(imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i, i2);
         }
 
         @Deprecated
         /* renamed from: getCenter-F1C5BW0  reason: not valid java name */
-        public static long m5075getCenterF1C5BW0(ContentDrawScope contentDrawScope) {
-            return ContentDrawScope.super.mo5127getCenterF1C5BW0();
+        public static long m5805getCenterF1C5BW0(ContentDrawScope contentDrawScope) {
+            return ContentDrawScope.super.mo5857getCenterF1C5BW0();
         }
 
         @Deprecated
         /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-        public static long m5076getSizeNHjbRc(ContentDrawScope contentDrawScope) {
-            return ContentDrawScope.super.mo5128getSizeNHjbRc();
+        public static long m5806getSizeNHjbRc(ContentDrawScope contentDrawScope) {
+            return ContentDrawScope.super.mo5858getSizeNHjbRc();
         }
 
         @Deprecated
         /* renamed from: record-JVtK1S4  reason: not valid java name */
-        public static void m5077recordJVtK1S4(ContentDrawScope contentDrawScope, GraphicsLayer graphicsLayer, long j, Function1<? super DrawScope, Unit> function1) {
-            ContentDrawScope.super.mo5129recordJVtK1S4(graphicsLayer, j, function1);
+        public static void m5807recordJVtK1S4(ContentDrawScope contentDrawScope, GraphicsLayer graphicsLayer, long j, Function1<? super DrawScope, Unit> function1) {
+            ContentDrawScope.super.mo5859recordJVtK1S4(graphicsLayer, j, function1);
         }
 
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m5078roundToPxR2X_6o(ContentDrawScope contentDrawScope, long j) {
+        public static int m5808roundToPxR2X_6o(ContentDrawScope contentDrawScope, long j) {
             return ContentDrawScope.super.mo422roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m5079roundToPx0680j_4(ContentDrawScope contentDrawScope, float f) {
+        public static int m5809roundToPx0680j_4(ContentDrawScope contentDrawScope, float f) {
             return ContentDrawScope.super.mo423roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m5080toDpGaN1DYA(ContentDrawScope contentDrawScope, long j) {
+        public static float m5810toDpGaN1DYA(ContentDrawScope contentDrawScope, long j) {
             return ContentDrawScope.super.mo424toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5081toDpu2uoSUM(ContentDrawScope contentDrawScope, float f) {
+        public static float m5811toDpu2uoSUM(ContentDrawScope contentDrawScope, float f) {
             return ContentDrawScope.super.mo425toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5082toDpu2uoSUM(ContentDrawScope contentDrawScope, int i) {
+        public static float m5812toDpu2uoSUM(ContentDrawScope contentDrawScope, int i) {
             return ContentDrawScope.super.mo426toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m5083toDpSizekrfVVM(ContentDrawScope contentDrawScope, long j) {
+        public static long m5813toDpSizekrfVVM(ContentDrawScope contentDrawScope, long j) {
             return ContentDrawScope.super.mo427toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m5084toPxR2X_6o(ContentDrawScope contentDrawScope, long j) {
+        public static float m5814toPxR2X_6o(ContentDrawScope contentDrawScope, long j) {
             return ContentDrawScope.super.mo428toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m5085toPx0680j_4(ContentDrawScope contentDrawScope, float f) {
+        public static float m5815toPx0680j_4(ContentDrawScope contentDrawScope, float f) {
             return ContentDrawScope.super.mo429toPx0680j_4(f);
         }
 
@@ -97,25 +97,25 @@ public interface ContentDrawScope extends DrawScope {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m5086toSizeXkaWNTQ(ContentDrawScope contentDrawScope, long j) {
+        public static long m5816toSizeXkaWNTQ(ContentDrawScope contentDrawScope, long j) {
             return ContentDrawScope.super.mo430toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m5087toSp0xMU5do(ContentDrawScope contentDrawScope, float f) {
+        public static long m5817toSp0xMU5do(ContentDrawScope contentDrawScope, float f) {
             return ContentDrawScope.super.mo431toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5088toSpkPz2Gy4(ContentDrawScope contentDrawScope, float f) {
+        public static long m5818toSpkPz2Gy4(ContentDrawScope contentDrawScope, float f) {
             return ContentDrawScope.super.mo432toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5089toSpkPz2Gy4(ContentDrawScope contentDrawScope, int i) {
+        public static long m5819toSpkPz2Gy4(ContentDrawScope contentDrawScope, int i) {
             return ContentDrawScope.super.mo433toSpkPz2Gy4(i);
         }
     }

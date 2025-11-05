@@ -77,13 +77,13 @@ public final class ConstraintLayoutKt$ConstraintLayout$contentDelegate$1 extends
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2() {
-                        RawConstraintSet rawConstraintSet = new RawConstraintSet(ConstraintLayoutScope.this.getContainerObject().mo7745clone());
+                        RawConstraintSet rawConstraintSet = new RawConstraintSet(ConstraintLayoutScope.this.getContainerObject().mo8476clone());
                         if (mutableState.getValue() == null || mutableState2.getValue() == null) {
                             mutableState.setValue(rawConstraintSet);
                             mutableState2.setValue(mutableState.getValue());
                             return;
                         }
-                        channel.mo8140trySendJP2dKIU(rawConstraintSet);
+                        channel.mo8871trySendJP2dKIU(rawConstraintSet);
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);

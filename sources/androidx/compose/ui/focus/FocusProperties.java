@@ -86,11 +86,11 @@ public interface FocusProperties {
         return new Function1<FocusDirection, FocusRequester>() { // from class: androidx.compose.ui.focus.FocusProperties$enter$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ FocusRequester invoke(FocusDirection focusDirection) {
-                return m4210invoke3ESFkO8(focusDirection.m4187unboximpl());
+                return m4940invoke3ESFkO8(focusDirection.m4917unboximpl());
             }
 
             /* renamed from: invoke-3ESFkO8  reason: not valid java name */
-            public final FocusRequester m4210invoke3ESFkO8(int i) {
+            public final FocusRequester m4940invoke3ESFkO8(int i) {
                 return FocusRequester.Companion.getDefault();
             }
         };
@@ -121,11 +121,11 @@ public interface FocusProperties {
         return new Function1<FocusDirection, FocusRequester>() { // from class: androidx.compose.ui.focus.FocusProperties$exit$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ FocusRequester invoke(FocusDirection focusDirection) {
-                return m4211invoke3ESFkO8(focusDirection.m4187unboximpl());
+                return m4941invoke3ESFkO8(focusDirection.m4917unboximpl());
             }
 
             /* renamed from: invoke-3ESFkO8  reason: not valid java name */
-            public final FocusRequester m4211invoke3ESFkO8(int i) {
+            public final FocusRequester m4941invoke3ESFkO8(int i) {
                 return FocusRequester.Companion.getDefault();
             }
         };

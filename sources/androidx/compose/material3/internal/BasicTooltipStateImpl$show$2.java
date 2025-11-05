@@ -1,5 +1,6 @@
 package androidx.compose.material3.internal;
 
+import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -10,10 +11,9 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
-import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* compiled from: BasicTooltip.kt */
-@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\u008a@"}, d2 = {"<anonymous>", ""}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.internal.BasicTooltipStateImpl$show$2", f = "BasicTooltip.kt", i = {}, l = {BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, 154}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.internal.BasicTooltipStateImpl$show$2", f = "BasicTooltip.kt", i = {}, l = {410, Constants.STATUS_PRECONDITION_FAILED}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class BasicTooltipStateImpl$show$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ Function1<Continuation<? super Unit>, Object> $cancellableShow;
@@ -78,8 +78,8 @@ final class BasicTooltipStateImpl$show$2 extends SuspendLambda implements Functi
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: BasicTooltip.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.material3.internal.BasicTooltipStateImpl$show$2$1", f = "BasicTooltip.kt", i = {}, l = {154}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.material3.internal.BasicTooltipStateImpl$show$2$1", f = "BasicTooltip.kt", i = {}, l = {Constants.STATUS_PRECONDITION_FAILED}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.material3.internal.BasicTooltipStateImpl$show$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

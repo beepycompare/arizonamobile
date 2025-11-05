@@ -6,13 +6,13 @@ import io.appmetrica.analytics.coreutils.internal.cache.SynchronizedDataCache;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class m extends SynchronizedDataCache {
     public static final long d = 200;
     public static final long e = 50;
 
     /* renamed from: a  reason: collision with root package name */
-    public final l f1213a;
+    public final l f1254a;
     public static final long b = TimeUnit.SECONDS.toMillis(10);
     public static final long c = TimeUnit.MINUTES.toMillis(2);
     public static final List<String> f = Arrays.asList("gps", "network");
@@ -31,14 +31,14 @@ public final class m extends SynchronizedDataCache {
     /* renamed from: a */
     public final boolean shouldUpdate(Location location) {
         if (f.contains(location.getProvider())) {
-            return this.mCachedData.isEmpty() || this.mCachedData.shouldUpdateData() || a(location, (Location) this.mCachedData.getData(), this.f1213a.f1212a, 200L);
+            return this.mCachedData.isEmpty() || this.mCachedData.shouldUpdateData() || a(location, (Location) this.mCachedData.getData(), this.f1254a.f1253a, 200L);
         }
         return false;
     }
 
     public m(l lVar, long j, long j2) {
         super(j, j2, FirebaseAnalytics.Param.LOCATION);
-        this.f1213a = lVar;
+        this.f1254a = lVar;
     }
 
     public static boolean a(Location location, Location location2, long j, long j2) {

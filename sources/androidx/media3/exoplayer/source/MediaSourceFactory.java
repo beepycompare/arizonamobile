@@ -5,7 +5,7 @@ import androidx.media3.exoplayer.drm.DrmSessionManagerProvider;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface MediaSourceFactory extends MediaSource.Factory {
     public static final MediaSourceFactory UNSUPPORTED = new MediaSourceFactory() { // from class: androidx.media3.exoplayer.source.MediaSourceFactory.1
         @Override // androidx.media3.exoplayer.source.MediaSource.Factory

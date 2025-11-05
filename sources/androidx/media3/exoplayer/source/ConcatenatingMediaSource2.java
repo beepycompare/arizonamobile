@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Integer> {
     private static final int MSG_UPDATE_TIMELINE = 1;
     private MediaItem mediaItem;
@@ -46,7 +46,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         return 0;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private int index;
         private MediaItem mediaItem;
@@ -377,7 +377,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaSourceHolder {
         public int activeMediaPeriods;
         public final int index;
@@ -393,7 +393,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ConcatenatedTimeline extends Timeline {
         private final long defaultPositionUs;
         private final long durationUs;

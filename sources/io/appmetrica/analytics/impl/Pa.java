@@ -1,37 +1,48 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-/* loaded from: classes4.dex */
-public final class Pa {
+import android.app.Activity;
+import android.location.Location;
+import io.appmetrica.analytics.AnrListener;
+import io.appmetrica.analytics.ExternalAttribution;
+import java.util.List;
+/* loaded from: classes3.dex */
+public interface Pa extends Ka, Oc {
+    void a(Activity activity);
 
-    /* renamed from: a  reason: collision with root package name */
-    public final HashMap f624a;
-    public final boolean b;
+    /* synthetic */ void a(Location location);
 
-    public Pa() {
-        this(false);
-    }
+    void a(AnrListener anrListener);
 
-    public final void a(Object obj, Object obj2) {
-        ArrayList arrayList;
-        Collection collection = (Collection) this.f624a.get(obj);
-        if (collection == null) {
-            arrayList = new ArrayList();
-        } else {
-            arrayList = new ArrayList(collection);
-        }
-        arrayList.add(obj2);
-        Collection collection2 = (Collection) this.f624a.put(obj, arrayList);
-    }
+    void a(ExternalAttribution externalAttribution);
 
-    public final String toString() {
-        return this.f624a.toString();
-    }
+    void a(Io io2);
 
-    public Pa(boolean z) {
-        this.f624a = new HashMap();
-        this.b = z;
-    }
+    void a(EnumC0435n enumC0435n);
+
+    /* synthetic */ void a(String str);
+
+    /* synthetic */ void a(String str, String str2);
+
+    void a(String str, boolean z);
+
+    /* synthetic */ void a(boolean z);
+
+    /* synthetic */ void a(boolean z, boolean z2);
+
+    void b(Activity activity);
+
+    @Override // io.appmetrica.analytics.impl.Ka
+    /* synthetic */ void b(String str);
+
+    @Override // io.appmetrica.analytics.impl.Ka
+    /* synthetic */ void b(String str, String str2);
+
+    @Override // io.appmetrica.analytics.impl.Ka
+    /* synthetic */ boolean b();
+
+    void c();
+
+    void c(String str);
+
+    List<String> f();
 }

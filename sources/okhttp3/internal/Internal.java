@@ -98,6 +98,6 @@ public final class Internal {
     public static final ConnectionPool buildConnectionPool(ConnectionListener connectionListener, TaskRunner taskRunner) {
         Intrinsics.checkNotNullParameter(connectionListener, "connectionListener");
         Intrinsics.checkNotNullParameter(taskRunner, "taskRunner");
-        return new ConnectionPool(0, 0L, null, taskRunner, connectionListener, 0, 0, 0, 0, 0, false, false, null, 8167, null);
+        return new ConnectionPool(0, 0L, null, taskRunner, connectionListener, 7, null);
     }
 }

@@ -38,24 +38,24 @@ public final class AndroidTextFieldKeyEventHandler extends TextFieldKeyEventHand
             return true;
         }
         InputDevice device = keyEvent.getDevice();
-        if (device == null || !device.supportsSource(InputDeviceCompat.SOURCE_DPAD) || device.isVirtual() || !KeyEventType.m5688equalsimpl0(KeyEvent_androidKt.m5696getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5692getKeyDownCS__XNY()) || keyEvent.getSource() == 257) {
+        if (device == null || !device.supportsSource(InputDeviceCompat.SOURCE_DPAD) || device.isVirtual() || !KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6422getKeyDownCS__XNY()) || keyEvent.getSource() == 257) {
             return false;
         }
         m1573isKeyCodeYhN2O0w = TextFieldKeyEventHandler_androidKt.m1573isKeyCodeYhN2O0w(keyEvent, 19);
         if (m1573isKeyCodeYhN2O0w) {
-            return focusManager.mo4198moveFocus3ESFkO8(FocusDirection.Companion.m4195getUpdhqQ8s());
+            return focusManager.mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4925getUpdhqQ8s());
         }
         m1573isKeyCodeYhN2O0w2 = TextFieldKeyEventHandler_androidKt.m1573isKeyCodeYhN2O0w(keyEvent, 20);
         if (m1573isKeyCodeYhN2O0w2) {
-            return focusManager.mo4198moveFocus3ESFkO8(FocusDirection.Companion.m4188getDowndhqQ8s());
+            return focusManager.mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4918getDowndhqQ8s());
         }
         m1573isKeyCodeYhN2O0w3 = TextFieldKeyEventHandler_androidKt.m1573isKeyCodeYhN2O0w(keyEvent, 21);
         if (m1573isKeyCodeYhN2O0w3) {
-            return focusManager.mo4198moveFocus3ESFkO8(FocusDirection.Companion.m4191getLeftdhqQ8s());
+            return focusManager.mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4921getLeftdhqQ8s());
         }
         m1573isKeyCodeYhN2O0w4 = TextFieldKeyEventHandler_androidKt.m1573isKeyCodeYhN2O0w(keyEvent, 22);
         if (m1573isKeyCodeYhN2O0w4) {
-            return focusManager.mo4198moveFocus3ESFkO8(FocusDirection.Companion.m4194getRightdhqQ8s());
+            return focusManager.mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4924getRightdhqQ8s());
         }
         m1573isKeyCodeYhN2O0w5 = TextFieldKeyEventHandler_androidKt.m1573isKeyCodeYhN2O0w(keyEvent, 23);
         if (m1573isKeyCodeYhN2O0w5) {
@@ -68,7 +68,7 @@ public final class AndroidTextFieldKeyEventHandler extends TextFieldKeyEventHand
     @Override // androidx.compose.foundation.text.input.internal.TextFieldKeyEventHandler
     /* renamed from: onKeyEvent-8zsqlwg  reason: not valid java name */
     public boolean mo1475onKeyEvent8zsqlwg(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
-        if (KeyEventType.m5688equalsimpl0(KeyEvent_androidKt.m5696getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5692getKeyDownCS__XNY()) && keyEvent.isFromSource(257) && !TextFieldKeyEventHandler_androidKt.m1572isFromSoftKeyboardZmokQxo(keyEvent)) {
+        if (KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6422getKeyDownCS__XNY()) && keyEvent.isFromSource(257) && !TextFieldKeyEventHandler_androidKt.m1572isFromSoftKeyboardZmokQxo(keyEvent)) {
             textFieldSelectionState.setInTouchMode(false);
         }
         return super.mo1475onKeyEvent8zsqlwg(keyEvent, transformedTextFieldState, textLayoutState, textFieldSelectionState, function1, softwareKeyboardController, z, z2, function0);

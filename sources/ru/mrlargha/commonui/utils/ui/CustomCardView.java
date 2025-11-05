@@ -177,6 +177,7 @@ public final class CustomCardView extends FrameLayout {
         this.hasGradientList = false;
         this.bgMainColor = i;
         this.bgSecondColor = i2;
+        this.hasSecondColor = true;
         if (num != null) {
             this.gradientAngle = num.intValue();
         }
@@ -228,6 +229,7 @@ public final class CustomCardView extends FrameLayout {
     }
 
     public final void setBorder(int i, int i2, Integer num) {
+        this.hasBorderSecondColor = true;
         this.borderMainColor = i;
         this.borderSecondColor = i2;
         if (num != null) {
@@ -307,6 +309,7 @@ public final class CustomCardView extends FrameLayout {
             }
         }
         if (!this.hasSecondColor) {
+            this.paint.setShader(null);
             this.paint.setColor(this.bgMainColor);
             return;
         }

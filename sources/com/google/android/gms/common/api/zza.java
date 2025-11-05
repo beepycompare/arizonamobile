@@ -2,18 +2,18 @@ package com.google.android.gms.common.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 final class zza implements Parcelable.Creator {
-    private static final zza zza = new zza(new zzb());
-    private final Parcelable.Creator zzb;
+    private static final zza zzb = new zza(new zzb());
+    private final Parcelable.Creator zza;
 
     private zza(Parcelable.Creator creator) {
-        this.zzb = creator;
+        this.zza = creator;
     }
 
     public static zza zza() {
-        return zza;
+        return zzb;
     }
 
     @Override // android.os.Parcelable.Creator

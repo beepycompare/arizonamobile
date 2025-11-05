@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Slider.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.SliderKt", f = "Slider.kt", i = {0}, l = {1426}, m = "awaitSlop-8vUncbI", n = {"initialDelta"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.SliderKt", f = "Slider.kt", i = {0}, l = {2188}, m = "awaitSlop-8vUncbI", n = {"initialDelta"}, s = {"L$0"})
 /* loaded from: classes.dex */
 public final class SliderKt$awaitSlop$1 extends ContinuationImpl {
     Object L$0;
@@ -21,10 +21,10 @@ public final class SliderKt$awaitSlop$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m2625awaitSlop8vUncbI;
+        Object m2958awaitSlop8vUncbI;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m2625awaitSlop8vUncbI = SliderKt.m2625awaitSlop8vUncbI(null, 0L, 0, this);
-        return m2625awaitSlop8vUncbI;
+        m2958awaitSlop8vUncbI = SliderKt.m2958awaitSlop8vUncbI(null, 0L, 0, this);
+        return m2958awaitSlop8vUncbI;
     }
 }

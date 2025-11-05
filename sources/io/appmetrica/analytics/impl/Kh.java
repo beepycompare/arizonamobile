@@ -1,13 +1,47 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Kh extends AbstractC0463nh {
-    public Kh(C0652v5 c0652v5) {
-        super(c0652v5);
+
+import android.os.Bundle;
+import io.appmetrica.analytics.internal.CounterConfiguration;
+import org.json.JSONObject;
+/* loaded from: classes3.dex */
+public class Kh extends P3 {
+    protected I8 c;
+    protected C0750zf d;
+    public boolean e;
+    public String f;
+
+    public Kh(Gf gf, CounterConfiguration counterConfiguration, I8 i8) {
+        this(gf, counterConfiguration, i8, null);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0463nh
-    public final boolean a(C0478o6 c0478o6) {
-        this.f1006a.j.c(c0478o6);
-        return false;
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        this.b.toBundle(bundle);
+        Gf gf = this.f629a;
+        synchronized (gf) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", gf);
+        }
+        return bundle;
+    }
+
+    public final synchronized String d() {
+        I8 i8;
+        i8 = this.c;
+        return i8.f523a.isEmpty() ? null : new JSONObject(i8.f523a).toString();
+    }
+
+    public final synchronized String e() {
+        return this.f;
+    }
+
+    public boolean f() {
+        return this.e;
+    }
+
+    public Kh(Gf gf, CounterConfiguration counterConfiguration, I8 i8, String str) {
+        super(gf, counterConfiguration);
+        this.e = true;
+        this.f = str;
+        this.c = i8;
     }
 }

@@ -1,6 +1,5 @@
 package androidx.room;
 
-import com.facebook.internal.NativeProtocol;
 import java.util.concurrent.locks.ReentrantLock;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -10,69 +9,74 @@ import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InvalidationTracker.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0018\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0015\n\u0002\b\n\b\u0000\u0018\u00002\u00020\u0001:\u0002\"#B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J+\u0010\u0011\u001a\u00020\u00122\u0018\u0010\u0013\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u0015\u0012\u0004\u0012\u00020\u00100\u0014H\u0080\bø\u0001\u0000¢\u0006\u0002\b\u0017J\u0015\u0010\u0018\u001a\u00020\u00102\u0006\u0010\u0019\u001a\u00020\u001aH\u0000¢\u0006\u0002\b\u001bJ\u0015\u0010\u001c\u001a\u00020\u00102\u0006\u0010\u0019\u001a\u00020\u001aH\u0000¢\u0006\u0002\b\u001dJ\r\u0010\u001e\u001a\u00020\u0012H\u0000¢\u0006\u0002\b\u001fJ\r\u0010 \u001a\u00020\u0012H\u0000¢\u0006\u0002\b!R\u0014\u0010\u0006\u001a\u00060\u0007j\u0002`\bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006$"}, d2 = {"Landroidx/room/ObservedTableStates;", "", "size", "", "<init>", "(I)V", "lock", "Ljava/util/concurrent/locks/ReentrantLock;", "Landroidx/room/concurrent/ReentrantLock;", "Ljava/util/concurrent/locks/ReentrantLock;", "tableObserversCount", "", "tableObservedState", "", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "needsSync", "", "onSync", "", "action", "Lkotlin/Function1;", "", "Landroidx/room/ObservedTableStates$ObserveOp;", "onSync$room_runtime", "onObserverAdded", "tableIds", "", "onObserverAdded$room_runtime", "onObserverRemoved", "onObserverRemoved$room_runtime", "resetTriggerState", "resetTriggerState$room_runtime", "forceNeedSync", "forceNeedSync$room_runtime", "ObserveOp", "SyncState", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0018\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0015\n\u0002\b\t\b\u0000\u0018\u00002\u00020\u0001:\u0001#B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J+\u0010\u0012\u001a\u00020\u00132\u0018\u0010\u0014\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00170\u0016\u0012\u0004\u0012\u00020\u00130\u0015H\u0080\bø\u0001\u0000¢\u0006\u0002\b\u0018J\u0015\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\u001bH\u0000¢\u0006\u0002\b\u001cJ\u0015\u0010\u001d\u001a\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\u001bH\u0000¢\u0006\u0002\b\u001eJ\r\u0010\u001f\u001a\u00020\u0013H\u0000¢\u0006\u0002\b J\r\u0010!\u001a\u00020\u0013H\u0000¢\u0006\u0002\b\"R\u0014\u0010\u0006\u001a\u00060\u0007j\u0002`\bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\tR\u0010\u0010\n\u001a\u00020\u000b8\u0002X\u0083\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u00020\r8\u0002X\u0083\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u000e\u001a\u00020\u000f8\u0002@\u0002X\u0083\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\u00060\u0007j\u0002`\bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\tR\u0012\u0010\u0011\u001a\u00020\u000f8\u0002@\u0002X\u0083\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006$"}, d2 = {"Landroidx/room/ObservedTableStates;", "", "size", "", "<init>", "(I)V", "lock", "Ljava/util/concurrent/locks/ReentrantLock;", "Landroidx/room/concurrent/ReentrantLock;", "Ljava/util/concurrent/locks/ReentrantLock;", "tableObserversCount", "", "tableObservedState", "", "needsSync", "", "onSyncLock", "inProgressSync", "onSync", "", "action", "Lkotlin/Function1;", "", "Landroidx/room/ObservedTableStates$ObserveOp;", "onSync$room_runtime", "onObserverAdded", "tableIds", "", "onObserverAdded$room_runtime", "onObserverRemoved", "onObserverRemoved$room_runtime", "resetTriggerState", "resetTriggerState$room_runtime", "forceNeedSync", "forceNeedSync$room_runtime", "ObserveOp", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ObservedTableStates {
-    private final ReentrantLock lock = new ReentrantLock();
+    private volatile boolean inProgressSync;
     private volatile boolean needsSync;
     private final boolean[] tableObservedState;
     private final long[] tableObserversCount;
-    private volatile int version;
+    private final ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock onSyncLock = new ReentrantLock();
 
     public ObservedTableStates(int i) {
         this.tableObserversCount = new long[i];
         this.tableObservedState = new boolean[i];
     }
 
-    public final void onSync$room_runtime(Function1<? super ObserveOp[], Boolean> action) {
+    /* JADX WARN: Type inference failed for: r6v0 */
+    /* JADX WARN: Type inference failed for: r6v1 */
+    /* JADX WARN: Type inference failed for: r6v2, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r6v3 */
+    public final void onSync$room_runtime(Function1<? super ObserveOp[], Unit> action) {
+        Object[] objArr;
         ObserveOp observeOp;
         Intrinsics.checkNotNullParameter(action, "action");
-        ReentrantLock reentrantLock = this.lock;
+        ReentrantLock reentrantLock = this.onSyncLock;
         reentrantLock.lock();
         try {
+            this.inProgressSync = true;
+            ReentrantLock reentrantLock2 = this.lock;
+            reentrantLock2.lock();
+            ?? r6 = 0;
+            r6 = 0;
             if (this.needsSync) {
-                int i = this.version;
-                boolean[] zArr = new boolean[this.tableObserversCount.length];
+                this.needsSync = false;
                 int length = this.tableObserversCount.length;
                 ObserveOp[] observeOpArr = new ObserveOp[length];
-                int i2 = 0;
-                boolean z = false;
-                while (i2 < length) {
-                    boolean z2 = true;
-                    boolean z3 = this.tableObserversCount[i2] > 0;
-                    if (z3 != this.tableObservedState[i2]) {
-                        zArr[i2] = z3;
-                        observeOp = z3 ? ObserveOp.ADD : ObserveOp.REMOVE;
+                int i = 0;
+                Object[] objArr2 = null;
+                while (i < length) {
+                    boolean z = this.tableObserversCount[i] > 0;
+                    if (z != this.tableObservedState[i]) {
+                        this.tableObservedState[i] = z;
+                        observeOp = z ? ObserveOp.ADD : ObserveOp.REMOVE;
+                        objArr = 1;
                     } else {
-                        z2 = z;
+                        objArr = objArr2;
                         observeOp = ObserveOp.NO_OP;
                     }
-                    observeOpArr[i2] = observeOp;
-                    i2++;
-                    z = z2;
+                    observeOpArr[i] = observeOp;
+                    i++;
+                    objArr2 = objArr;
                 }
-                if (z) {
-                    SyncState syncState = new SyncState(i, observeOpArr, zArr);
-                    reentrantLock.unlock();
-                    if (action.invoke(syncState.getOps()).booleanValue()) {
-                        this.lock.lock();
-                        try {
-                            if (this.needsSync && syncState.getVersion() == this.version) {
-                                ArraysKt.copyInto$default(syncState.getNewStates(), this.tableObservedState, 0, 0, 0, 14, (Object) null);
-                                this.needsSync = false;
-                            }
-                            Unit unit = Unit.INSTANCE;
-                        } finally {
-                        }
-                    }
+                if (objArr2 != null) {
+                    r6 = observeOpArr;
                 }
             }
+            reentrantLock2.unlock();
+            if (r6 != 0 && r6.length != 0) {
+                action.invoke(r6);
+            }
+            this.inProgressSync = false;
+            Unit unit = Unit.INSTANCE;
         } finally {
+            reentrantLock.unlock();
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0032, code lost:
-        if (r12.needsSync != false) goto L20;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0031, code lost:
+        if (r12.inProgressSync != false) goto L22;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -89,12 +93,11 @@ public final class ObservedTableStates {
                 long j = jArr[i];
                 jArr[i] = 1 + j;
                 if (j == 0) {
-                    this.version++;
                     this.needsSync = true;
                     z2 = true;
                 }
             }
-            if (!z2) {
+            if (!z2 && !this.needsSync) {
             }
             z = true;
             return z;
@@ -103,8 +106,8 @@ public final class ObservedTableStates {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0031, code lost:
-        if (r14.needsSync != false) goto L20;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0030, code lost:
+        if (r14.inProgressSync != false) goto L22;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -121,12 +124,11 @@ public final class ObservedTableStates {
                 long j = jArr[i];
                 jArr[i] = j - 1;
                 if (j == 1) {
-                    this.version++;
                     this.needsSync = true;
                     z2 = true;
                 }
             }
-            if (!z2) {
+            if (!z2 && !this.needsSync) {
             }
             z = true;
             return z;
@@ -193,35 +195,6 @@ public final class ObservedTableStates {
             ObserveOp[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
-        }
-    }
-
-    /* compiled from: InvalidationTracker.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0018\n\u0002\b\n\b\u0000\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0019\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u0012"}, d2 = {"Landroidx/room/ObservedTableStates$SyncState;", "", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "", "ops", "", "Landroidx/room/ObservedTableStates$ObserveOp;", "newStates", "", "<init>", "(I[Landroidx/room/ObservedTableStates$ObserveOp;[Z)V", "getVersion", "()I", "getOps", "()[Landroidx/room/ObservedTableStates$ObserveOp;", "[Landroidx/room/ObservedTableStates$ObserveOp;", "getNewStates", "()[Z", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
-    /* loaded from: classes3.dex */
-    public static final class SyncState {
-        private final boolean[] newStates;
-        private final ObserveOp[] ops;
-        private final int version;
-
-        public SyncState(int i, ObserveOp[] ops, boolean[] newStates) {
-            Intrinsics.checkNotNullParameter(ops, "ops");
-            Intrinsics.checkNotNullParameter(newStates, "newStates");
-            this.version = i;
-            this.ops = ops;
-            this.newStates = newStates;
-        }
-
-        public final int getVersion() {
-            return this.version;
-        }
-
-        public final ObserveOp[] getOps() {
-            return this.ops;
-        }
-
-        public final boolean[] getNewStates() {
-            return this.newStates;
         }
     }
 }

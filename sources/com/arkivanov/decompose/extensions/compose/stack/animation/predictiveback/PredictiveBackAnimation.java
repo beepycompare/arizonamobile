@@ -8,7 +8,6 @@ import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionLocalMap;
-import androidx.compose.runtime.CompositionScopedCoroutineScopeCanceller;
 import androidx.compose.runtime.DisposableEffectResult;
 import androidx.compose.runtime.DisposableEffectScope;
 import androidx.compose.runtime.EffectsKt;
@@ -112,7 +111,7 @@ public final class PredictiveBackAnimation<C, T> implements StackAnimation<C, T>
         }
         composer.endReplaceGroup();
         final Handler<C, T> rememberHandler = rememberHandler(stack, (Function0) rememberedValue2, composer, (i & 14) | ((i >> 3) & 896));
-        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(StackAnimationProviderKt.getLocalStackAnimationProvider());
         ComposerKt.sourceInformationMarkerEnd(composer);
         StackAnimationProvider stackAnimationProvider = (StackAnimationProvider) consume;
@@ -142,14 +141,14 @@ public final class PredictiveBackAnimation<C, T> implements StackAnimation<C, T>
         }
         Function3<? super Child.Created<? extends C, ? extends T>, ? super Composer, ? super Integer, Unit> function3 = rememberedValue4;
         composer.endReplaceGroup();
-        ComposerKt.sourceInformationMarkerStart(composer, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
+        ComposerKt.sourceInformationMarkerStart(composer, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-        ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3208L23,82@3359L411:Layout.kt#80mrfh");
+        ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
         Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, modifier);
         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-        ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
         if (!(composer.getApplier() instanceof Applier)) {
             ComposablesKt.invalidApplier();
         }
@@ -159,16 +158,16 @@ public final class PredictiveBackAnimation<C, T> implements StackAnimation<C, T>
         } else {
             composer.useNode();
         }
-        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
-        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
+        Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-        ComposerKt.sourceInformationMarkerStart(composer, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
+        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         composer.startReplaceGroup(1687044724);
         Iterator<T> it = rememberHandler.getItems().iterator();
@@ -238,16 +237,15 @@ public final class PredictiveBackAnimation<C, T> implements StackAnimation<C, T>
             ComposerKt.traceEventStart(-974149690, i, -1, "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimation.rememberHandler (PredictiveBackAnimation.kt:114)");
         }
         composer.startMovableGroup(1762026581, childStack);
-        ComposerKt.sourceInformationMarkerStart(composer, 773894976, "CC(rememberCoroutineScope)482@20332L144:Effects.kt#9igjgp");
-        ComposerKt.sourceInformationMarkerStart(composer, -954367824, "CC(remember):Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 773894976, "CC(rememberCoroutineScope)558@25470L68:Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -954203484, "CC(remember):Effects.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            Object compositionScopedCoroutineScopeCanceller = new CompositionScopedCoroutineScopeCanceller(EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, composer));
-            composer.updateRememberedValue(compositionScopedCoroutineScopeCanceller);
-            rememberedValue = compositionScopedCoroutineScopeCanceller;
+            rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, composer);
+            composer.updateRememberedValue(rememberedValue);
         }
+        final CoroutineScope coroutineScope = (CoroutineScope) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final CoroutineScope coroutineScope = ((CompositionScopedCoroutineScopeCanceller) rememberedValue).getCoroutineScope();
         ComposerKt.sourceInformationMarkerEnd(composer);
         composer.endMovableGroup();
         composer.startReplaceGroup(1762029485);

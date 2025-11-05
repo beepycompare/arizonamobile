@@ -7,7 +7,6 @@ import android.animation.TimeInterpolator;
 import android.content.Context;
 import android.util.Property;
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
-import com.google.android.gms.common.ConnectionResult;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.animation.ArgbEvaluatorCompat;
@@ -38,7 +37,7 @@ public final class CircularIndeterminateRetreatAnimatorDelegate extends Indeterm
     private int indicatorColorIndexOffset;
     private final TimeInterpolator standardInterpolator;
     private static final TimeInterpolator DEFAULT_INTERPOLATOR = AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR;
-    private static final int[] DELAY_SPINS_IN_MS = {0, ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED, 3000, 4500};
+    private static final int[] DELAY_SPINS_IN_MS = {0, 1500, 3000, 4500};
     private static final float[] END_FRACTION_RANGE = {0.1f, 0.87f};
     private static final Property<CircularIndeterminateRetreatAnimatorDelegate, Float> ANIMATION_FRACTION = new Property<CircularIndeterminateRetreatAnimatorDelegate, Float>(Float.class, "animationFraction") { // from class: com.google.android.material.progressindicator.CircularIndeterminateRetreatAnimatorDelegate.3
         @Override // android.util.Property

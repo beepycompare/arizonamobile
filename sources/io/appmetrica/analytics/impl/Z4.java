@@ -1,15 +1,4 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Z4 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Ga f769a;
-    public final Vi b;
-    public final C0263fo c;
-
-    public Z4(V4 v4) {
-        this.f769a = new Ga(v4);
-        this.b = new Vi(v4);
-        this.c = new C0263fo(v4, Na.j().g());
-    }
 }

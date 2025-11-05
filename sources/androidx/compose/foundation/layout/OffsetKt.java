@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function1;
 @Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a'\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0004\b\u0005\u0010\u0006\u001a'\u0010\u0007\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0004\b\b\u0010\u0006\u001a#\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0017\u0010\u0000\u001a\u0013\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\t¢\u0006\u0002\b\f\u001a#\u0010\u0007\u001a\u00020\u0001*\u00020\u00012\u0017\u0010\u0000\u001a\u0013\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\t¢\u0006\u0002\b\f¨\u0006\r"}, d2 = {TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/Modifier;", "x", "Landroidx/compose/ui/unit/Dp;", "y", "offset-VpY3zN4", "(Landroidx/compose/ui/Modifier;FF)Landroidx/compose/ui/Modifier;", "absoluteOffset", "absoluteOffset-VpY3zN4", "Lkotlin/Function1;", "Landroidx/compose/ui/unit/Density;", "Landroidx/compose/ui/unit/IntOffset;", "Lkotlin/ExtensionFunctionType;", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class OffsetKt {
-    /* renamed from: offset-VpY3zN4 */
+    /* renamed from: offset-VpY3zN4  reason: not valid java name */
     public static final Modifier m796offsetVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new OffsetElement(f, f2, true, new Function1() { // from class: androidx.compose.foundation.layout.OffsetKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
@@ -25,14 +25,15 @@ public final class OffsetKt {
         }, null));
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit offset_VpY3zN4$lambda$0(float f, float f2, InspectorInfo inspectorInfo) {
         inspectorInfo.setName(TypedValues.CycleType.S_WAVE_OFFSET);
-        inspectorInfo.getProperties().set("x", Dp.m7262boximpl(f));
-        inspectorInfo.getProperties().set("y", Dp.m7262boximpl(f2));
+        inspectorInfo.getProperties().set("x", Dp.m7993boximpl(f));
+        inspectorInfo.getProperties().set("y", Dp.m7993boximpl(f2));
         return Unit.INSTANCE;
     }
 
-    /* renamed from: absoluteOffset-VpY3zN4 */
+    /* renamed from: absoluteOffset-VpY3zN4  reason: not valid java name */
     public static final Modifier m794absoluteOffsetVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new OffsetElement(f, f2, false, new Function1() { // from class: androidx.compose.foundation.layout.OffsetKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
@@ -44,10 +45,11 @@ public final class OffsetKt {
         }, null));
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit absoluteOffset_VpY3zN4$lambda$1(float f, float f2, InspectorInfo inspectorInfo) {
         inspectorInfo.setName("absoluteOffset");
-        inspectorInfo.getProperties().set("x", Dp.m7262boximpl(f));
-        inspectorInfo.getProperties().set("y", Dp.m7262boximpl(f2));
+        inspectorInfo.getProperties().set("x", Dp.m7993boximpl(f));
+        inspectorInfo.getProperties().set("y", Dp.m7993boximpl(f2));
         return Unit.INSTANCE;
     }
 
@@ -62,6 +64,7 @@ public final class OffsetKt {
         }));
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit offset$lambda$2(Function1 function1, InspectorInfo inspectorInfo) {
         inspectorInfo.setName(TypedValues.CycleType.S_WAVE_OFFSET);
         inspectorInfo.getProperties().set(TypedValues.CycleType.S_WAVE_OFFSET, function1);
@@ -79,30 +82,31 @@ public final class OffsetKt {
         }));
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final Unit absoluteOffset$lambda$3(Function1 function1, InspectorInfo inspectorInfo) {
         inspectorInfo.setName("absoluteOffset");
         inspectorInfo.getProperties().set(TypedValues.CycleType.S_WAVE_OFFSET, function1);
         return Unit.INSTANCE;
     }
 
-    /* renamed from: offset-VpY3zN4$default */
+    /* renamed from: offset-VpY3zN4$default  reason: not valid java name */
     public static /* synthetic */ Modifier m797offsetVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7264constructorimpl(0);
+            f = Dp.m7995constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7264constructorimpl(0);
+            f2 = Dp.m7995constructorimpl(0);
         }
         return m796offsetVpY3zN4(modifier, f, f2);
     }
 
-    /* renamed from: absoluteOffset-VpY3zN4$default */
+    /* renamed from: absoluteOffset-VpY3zN4$default  reason: not valid java name */
     public static /* synthetic */ Modifier m795absoluteOffsetVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7264constructorimpl(0);
+            f = Dp.m7995constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7264constructorimpl(0);
+            f2 = Dp.m7995constructorimpl(0);
         }
         return m794absoluteOffsetVpY3zN4(modifier, f, f2);
     }

@@ -5,7 +5,7 @@ import androidx.media3.common.Timeline;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.Allocator;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class WrappingMediaSource extends CompositeMediaSource<Void> {
     private static final Void CHILD_SOURCE_ID = null;
     protected final MediaSource mediaSource;

@@ -1,9 +1,9 @@
 package io.appmetrica.analytics;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class BuildConfig {
-    public static final int API_LEVEL = 115;
-    public static final String BUILD_DATE = "04.09.2025";
-    public static final String BUILD_NUMBER = "50139596";
+    public static final int API_LEVEL = 116;
+    public static final String BUILD_DATE = "17.10.2025";
+    public static final String BUILD_NUMBER = "50142752";
     public static final String BUILD_TYPE = "release";
     public static final String CLIENT_COMPONENTS_INITIALIZER_CLASS_NAME = "";
     public static final boolean DEBUG = false;
@@ -16,5 +16,5 @@ public final class BuildConfig {
     public static final String SDK_BUILD_TYPE = "";
     public static final String SDK_DEPENDENCY = "binary";
     public static final String SERVICE_COMPONENTS_INITIALIZER_CLASS_NAME = "";
-    public static final String VERSION_NAME = "7.12.0";
+    public static final String VERSION_NAME = "7.13.0";
 }

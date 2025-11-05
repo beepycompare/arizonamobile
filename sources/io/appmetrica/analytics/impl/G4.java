@@ -1,26 +1,28 @@
 package io.appmetrica.analytics.impl;
-
-import kotlin.NoWhenBranchMatchedException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class G4 {
-    public static E4 a(C0476o4 c0476o4) {
-        switch (F4.f438a[c0476o4.e.ordinal()]) {
-            case 1:
-                return new Ac();
-            case 2:
-                return new Ej();
-            case 3:
-                return new Hj();
-            case 4:
-                return new Yh(new C0128ai());
-            case 5:
-                return new Yh(new C0466nk());
-            case 6:
-                return new Lc();
-            case 7:
-                return new Lc();
-            default:
-                throw new NoWhenBranchMatchedException();
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Mb f485a;
+
+    public G4() {
+        this(C0620ua.k().l());
+    }
+
+    public static L4 a(E4 e4) {
+        return new L4(new J4(e4), e4);
+    }
+
+    public G4(Mb mb) {
+        this.f485a = mb;
+    }
+
+    public final C0484on a(E4 e4, Em em) {
+        C0484on c0484on = new C0484on(e4, new Ng(em));
+        Mb mb = this.f485a;
+        synchronized (mb) {
+            mb.c.add(c0484on);
         }
+        return c0484on;
     }
 }

@@ -5,7 +5,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.TreeSet;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class SlidingPercentileBandwidthStatistic implements BandwidthStatistic {
     public static final int DEFAULT_MAX_SAMPLES_COUNT = 10;
     public static final double DEFAULT_PERCENTILE = 0.5d;
@@ -80,7 +80,7 @@ public class SlidingPercentileBandwidthStatistic implements BandwidthStatistic {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Sample implements Comparable<Sample> {
         private final long bitrate;
         private final double weight;

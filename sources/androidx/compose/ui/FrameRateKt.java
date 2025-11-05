@@ -7,12 +7,12 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class FrameRateKt {
     public static final Modifier preferredFrameRate(Modifier modifier, float f) {
-        return ComposeUiFlags.isAdaptiveRefreshRateEnabled ? frameRate(GraphicsLayerModifierKt.m4715graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 0, null, 524287, null), f) : modifier;
+        return ComposeUiFlags.isAdaptiveRefreshRateEnabled ? frameRate(GraphicsLayerModifierKt.m5445graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 0, null, 524287, null), f) : modifier;
     }
 
     /* renamed from: preferredFrameRate-kI47g10  reason: not valid java name */
-    public static final Modifier m4039preferredFrameRatekI47g10(Modifier modifier, float f) {
-        return ComposeUiFlags.isAdaptiveRefreshRateEnabled ? frameRate(GraphicsLayerModifierKt.m4715graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 0, null, 524287, null), f) : modifier;
+    public static final Modifier m4769preferredFrameRatekI47g10(Modifier modifier, float f) {
+        return ComposeUiFlags.isAdaptiveRefreshRateEnabled ? frameRate(GraphicsLayerModifierKt.m5445graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 0, null, 524287, null), f) : modifier;
     }
 
     private static final Modifier frameRate(Modifier modifier, float f) {

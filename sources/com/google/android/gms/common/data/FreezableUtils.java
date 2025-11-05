@@ -2,7 +2,7 @@ package com.google.android.gms.common.data;
 
 import java.util.ArrayList;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FreezableUtils {
     /* JADX WARN: Multi-variable type inference failed */
     public static <T, E extends Freezable<T>> ArrayList<T> freeze(ArrayList<E> arrayList) {

@@ -72,21 +72,21 @@ public final class ServersDAO_Impl implements ServersDAO {
             public void bind(SQLiteStatement statement, ServerEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo8164bindLong(1, entity.getId());
-                statement.mo8166bindText(2, entity.getAddress());
-                statement.mo8164bindLong(3, entity.getPort());
-                statement.mo8164bindLong(4, entity.getHasPassword() ? 1L : 0L);
-                statement.mo8164bindLong(5, entity.getCurrentPlayerCount());
-                statement.mo8164bindLong(6, entity.getMaxPlayerCount());
-                statement.mo8166bindText(7, entity.getServerName());
-                statement.mo8166bindText(8, entity.getTg());
-                statement.mo8166bindText(9, entity.getVk());
-                statement.mo8166bindText(10, entity.getInst());
-                statement.mo8164bindLong(11, entity.getFavorite() ? 1L : 0L);
-                statement.mo8166bindText(12, ServersDAO_Impl.this.__ServerType_enumToString(entity.getServerType()));
-                statement.mo8164bindLong(13, entity.getPing());
-                statement.mo8166bindText(14, entity.getPlotPoints());
-                statement.mo8166bindText(15, entity.getServerIcon());
+                statement.mo8894bindLong(1, entity.getId());
+                statement.mo8896bindText(2, entity.getAddress());
+                statement.mo8894bindLong(3, entity.getPort());
+                statement.mo8894bindLong(4, entity.getHasPassword() ? 1L : 0L);
+                statement.mo8894bindLong(5, entity.getCurrentPlayerCount());
+                statement.mo8894bindLong(6, entity.getMaxPlayerCount());
+                statement.mo8896bindText(7, entity.getServerName());
+                statement.mo8896bindText(8, entity.getTg());
+                statement.mo8896bindText(9, entity.getVk());
+                statement.mo8896bindText(10, entity.getInst());
+                statement.mo8894bindLong(11, entity.getFavorite() ? 1L : 0L);
+                statement.mo8896bindText(12, ServersDAO_Impl.this.__ServerType_enumToString(entity.getServerType()));
+                statement.mo8894bindLong(13, entity.getPing());
+                statement.mo8896bindText(14, entity.getPlotPoints());
+                statement.mo8896bindText(15, entity.getServerIcon());
             }
         };
     }

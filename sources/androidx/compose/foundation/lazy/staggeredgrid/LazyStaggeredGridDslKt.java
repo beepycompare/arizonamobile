@@ -242,12 +242,12 @@ public final class LazyStaggeredGridDslKt {
                                 } else {
                                     lazyStaggeredGridState3 = obj2;
                                 }
-                                m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj3;
+                                m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
-                                float m7264constructorimpl = i7 != 0 ? Dp.m7264constructorimpl(0) : f;
-                                m701spacedBy0680j_4 = i8 != 0 ? Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(0)) : horizontal;
+                                float m7995constructorimpl = i7 != 0 ? Dp.m7995constructorimpl(0) : f;
+                                m701spacedBy0680j_4 = i8 != 0 ? Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7995constructorimpl(0)) : horizontal;
                                 if ((i3 & 128) != 0) {
                                     flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                                     i4 &= -29360129;
@@ -264,7 +264,7 @@ public final class LazyStaggeredGridDslKt {
                                     modifier3 = companion;
                                 }
                                 lazyStaggeredGridState4 = lazyStaggeredGridState3;
-                                f3 = m7264constructorimpl;
+                                f3 = m7995constructorimpl;
                                 flingBehavior4 = flingBehavior3;
                                 z6 = z8;
                                 z7 = z3;
@@ -575,12 +575,12 @@ public final class LazyStaggeredGridDslKt {
                                             lazyStaggeredGridState2 = LazyStaggeredGridStateKt.rememberLazyStaggeredGridState(0, 0, startRestartGroup, 0, 3);
                                             i3 &= -897;
                                         }
-                                        PaddingValues m835PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj;
+                                        PaddingValues m835PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
                                         if (i5 != 0) {
                                             z3 = false;
                                         }
-                                        float m7264constructorimpl = i6 != 0 ? Dp.m7264constructorimpl(0) : f2;
-                                        Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = i7 != 0 ? Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(0)) : horizontal;
+                                        float m7995constructorimpl = i6 != 0 ? Dp.m7995constructorimpl(0) : f2;
+                                        Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = i7 != 0 ? Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7995constructorimpl(0)) : horizontal;
                                         if ((i2 & 128) != 0) {
                                             flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                                             i3 &= -29360129;
@@ -596,13 +596,13 @@ public final class LazyStaggeredGridDslKt {
                                             flingBehavior4 = flingBehavior3;
                                             z6 = true;
                                             i10 = 1695323794;
-                                            f4 = m7264constructorimpl;
+                                            f4 = m7995constructorimpl;
                                         } else {
                                             z6 = z2;
                                             modifier3 = companion;
                                             lazyStaggeredGridState4 = lazyStaggeredGridState2;
                                             paddingValues3 = m835PaddingValues0680j_4;
-                                            f4 = m7264constructorimpl;
+                                            f4 = m7995constructorimpl;
                                             horizontal3 = m701spacedBy0680j_4;
                                             z7 = z3;
                                             flingBehavior4 = flingBehavior3;
@@ -795,13 +795,13 @@ public final class LazyStaggeredGridDslKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final LazyStaggeredGridSlots rememberColumnSlots$lambda$7$lambda$6(PaddingValues paddingValues, StaggeredGridCells staggeredGridCells, Arrangement.Horizontal horizontal, Density density, Constraints constraints) {
-        if (!(Constraints.m7217getMaxWidthimpl(constraints.m7223unboximpl()) != Integer.MAX_VALUE)) {
+        if (!(Constraints.m7948getMaxWidthimpl(constraints.m7954unboximpl()) != Integer.MAX_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("LazyVerticalStaggeredGrid's width should be bound by parent.");
         }
-        int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(constraints.m7223unboximpl()) - density.mo423roundToPx0680j_4(Dp.m7264constructorimpl(PaddingKt.calculateStartPadding(paddingValues, LayoutDirection.Ltr) + PaddingKt.calculateEndPadding(paddingValues, LayoutDirection.Ltr)));
-        int[] calculateCrossAxisCellSizes = staggeredGridCells.calculateCrossAxisCellSizes(density, m7217getMaxWidthimpl, density.mo423roundToPx0680j_4(horizontal.mo708getSpacingD9Ej5fM()));
+        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(constraints.m7954unboximpl()) - density.mo423roundToPx0680j_4(Dp.m7995constructorimpl(PaddingKt.calculateStartPadding(paddingValues, LayoutDirection.Ltr) + PaddingKt.calculateEndPadding(paddingValues, LayoutDirection.Ltr)));
+        int[] calculateCrossAxisCellSizes = staggeredGridCells.calculateCrossAxisCellSizes(density, m7948getMaxWidthimpl, density.mo423roundToPx0680j_4(horizontal.mo708getSpacingD9Ej5fM()));
         int[] iArr = new int[calculateCrossAxisCellSizes.length];
-        horizontal.arrange(density, m7217getMaxWidthimpl, calculateCrossAxisCellSizes, LayoutDirection.Ltr, iArr);
+        horizontal.arrange(density, m7948getMaxWidthimpl, calculateCrossAxisCellSizes, LayoutDirection.Ltr, iArr);
         return new LazyStaggeredGridSlots(iArr, calculateCrossAxisCellSizes);
     }
 
@@ -982,12 +982,12 @@ public final class LazyStaggeredGridDslKt {
                                 } else {
                                     lazyStaggeredGridState3 = obj2;
                                 }
-                                m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj3;
+                                m835PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
-                                m701spacedBy0680j_4 = i7 != 0 ? Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(0)) : vertical;
-                                float m7264constructorimpl = i8 != 0 ? Dp.m7264constructorimpl(0) : f;
+                                m701spacedBy0680j_4 = i7 != 0 ? Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7995constructorimpl(0)) : vertical;
+                                float m7995constructorimpl = i8 != 0 ? Dp.m7995constructorimpl(0) : f;
                                 if ((i3 & 128) != 0) {
                                     flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                                     i4 &= -29360129;
@@ -1004,7 +1004,7 @@ public final class LazyStaggeredGridDslKt {
                                     modifier3 = companion;
                                 }
                                 lazyStaggeredGridState4 = lazyStaggeredGridState3;
-                                f3 = m7264constructorimpl;
+                                f3 = m7995constructorimpl;
                                 flingBehavior4 = flingBehavior3;
                                 z6 = z7;
                             }
@@ -1315,12 +1315,12 @@ public final class LazyStaggeredGridDslKt {
                                             lazyStaggeredGridState2 = LazyStaggeredGridStateKt.rememberLazyStaggeredGridState(0, 0, startRestartGroup, 0, 3);
                                             i3 &= -897;
                                         }
-                                        PaddingValues m835PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj;
+                                        PaddingValues m835PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
                                         if (i5 != 0) {
                                             z3 = false;
                                         }
-                                        Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = i6 != 0 ? Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(0)) : obj2;
-                                        float m7264constructorimpl = i7 != 0 ? Dp.m7264constructorimpl(0) : f;
+                                        Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = i6 != 0 ? Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7995constructorimpl(0)) : obj2;
+                                        float m7995constructorimpl = i7 != 0 ? Dp.m7995constructorimpl(0) : f;
                                         if ((i2 & 128) != 0) {
                                             flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
                                             i3 &= -29360129;
@@ -1331,7 +1331,7 @@ public final class LazyStaggeredGridDslKt {
                                             modifier3 = companion;
                                             lazyStaggeredGridState4 = lazyStaggeredGridState2;
                                             paddingValues3 = m835PaddingValues0680j_4;
-                                            f3 = m7264constructorimpl;
+                                            f3 = m7995constructorimpl;
                                             z7 = z3;
                                             flingBehavior4 = flingBehavior3;
                                             z6 = true;
@@ -1343,7 +1343,7 @@ public final class LazyStaggeredGridDslKt {
                                             lazyStaggeredGridState4 = lazyStaggeredGridState2;
                                             paddingValues3 = m835PaddingValues0680j_4;
                                             vertical3 = m701spacedBy0680j_4;
-                                            f3 = m7264constructorimpl;
+                                            f3 = m7995constructorimpl;
                                             z7 = z3;
                                             flingBehavior4 = flingBehavior3;
                                             i10 = -8666074;
@@ -1535,13 +1535,13 @@ public final class LazyStaggeredGridDslKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final LazyStaggeredGridSlots rememberRowSlots$lambda$15$lambda$14(PaddingValues paddingValues, StaggeredGridCells staggeredGridCells, Arrangement.Vertical vertical, Density density, Constraints constraints) {
-        if (!(Constraints.m7216getMaxHeightimpl(constraints.m7223unboximpl()) != Integer.MAX_VALUE)) {
+        if (!(Constraints.m7947getMaxHeightimpl(constraints.m7954unboximpl()) != Integer.MAX_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("LazyHorizontalStaggeredGrid's height should be bound by parent.");
         }
-        int m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(constraints.m7223unboximpl()) - density.mo423roundToPx0680j_4(Dp.m7264constructorimpl(paddingValues.mo788calculateTopPaddingD9Ej5fM() + paddingValues.mo785calculateBottomPaddingD9Ej5fM()));
-        int[] calculateCrossAxisCellSizes = staggeredGridCells.calculateCrossAxisCellSizes(density, m7216getMaxHeightimpl, density.mo423roundToPx0680j_4(vertical.mo708getSpacingD9Ej5fM()));
+        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(constraints.m7954unboximpl()) - density.mo423roundToPx0680j_4(Dp.m7995constructorimpl(paddingValues.mo788calculateTopPaddingD9Ej5fM() + paddingValues.mo785calculateBottomPaddingD9Ej5fM()));
+        int[] calculateCrossAxisCellSizes = staggeredGridCells.calculateCrossAxisCellSizes(density, m7947getMaxHeightimpl, density.mo423roundToPx0680j_4(vertical.mo708getSpacingD9Ej5fM()));
         int[] iArr = new int[calculateCrossAxisCellSizes.length];
-        vertical.arrange(density, m7216getMaxHeightimpl, calculateCrossAxisCellSizes, iArr);
+        vertical.arrange(density, m7947getMaxHeightimpl, calculateCrossAxisCellSizes, iArr);
         return new LazyStaggeredGridSlots(iArr, calculateCrossAxisCellSizes);
     }
 

@@ -2,6 +2,7 @@ package androidx.compose.material3;
 
 import androidx.compose.foundation.text.BasicTextKt;
 import androidx.compose.foundation.text.InlineTextContent;
+import androidx.compose.foundation.text.TextAutoSize;
 import androidx.compose.material3.tokens.TypographyTokensKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
@@ -14,18 +15,29 @@ import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.Color;
 import androidx.compose.ui.graphics.ColorProducer;
+import androidx.compose.ui.graphics.Shadow;
+import androidx.compose.ui.graphics.drawscope.DrawStyle;
 import androidx.compose.ui.text.AnnotatedString;
+import androidx.compose.ui.text.LinkAnnotation;
+import androidx.compose.ui.text.PlatformSpanStyle;
+import androidx.compose.ui.text.SpanStyle;
 import androidx.compose.ui.text.TextLayoutResult;
+import androidx.compose.ui.text.TextLinkStyles;
 import androidx.compose.ui.text.TextStyle;
 import androidx.compose.ui.text.font.FontFamily;
 import androidx.compose.ui.text.font.FontStyle;
+import androidx.compose.ui.text.font.FontSynthesis;
 import androidx.compose.ui.text.font.FontWeight;
+import androidx.compose.ui.text.intl.LocaleList;
+import androidx.compose.ui.text.style.BaselineShift;
 import androidx.compose.ui.text.style.TextAlign;
 import androidx.compose.ui.text.style.TextDecoration;
+import androidx.compose.ui.text.style.TextGeometricTransform;
 import androidx.compose.ui.text.style.TextOverflow;
 import androidx.compose.ui.unit.TextUnit;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
+import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.profileinstaller.ProfileVerifier;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -38,18 +50,1377 @@ import kotlin.collections.MapsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: Text.kt */
-@Metadata(d1 = {"\u0000\u008a\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u001a(\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00022\u0011\u0010\b\u001a\r\u0012\u0004\u0012\u00020\u00060\t¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u000b\u001aæ\u0001\u0010\f\u001a\u00020\u00062\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010\u0013\u001a\u00020\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\n\b\u0002\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u00142\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f2\b\b\u0002\u0010 \u001a\u00020\u00142\b\b\u0002\u0010!\u001a\u00020\"2\b\b\u0002\u0010#\u001a\u00020$2\b\b\u0002\u0010%\u001a\u00020&2\b\b\u0002\u0010'\u001a\u00020&2\u0014\b\u0002\u0010(\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020+0)2\u0014\b\u0002\u0010,\u001a\u000e\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u00060-2\b\b\u0002\u0010/\u001a\u00020\u0002H\u0007ø\u0001\u0000¢\u0006\u0004\b0\u00101\u001aÜ\u0001\u0010\f\u001a\u00020\u00062\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010\u0013\u001a\u00020\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\n\b\u0002\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u00142\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f2\b\b\u0002\u0010 \u001a\u00020\u00142\b\b\u0002\u0010!\u001a\u00020\"2\b\b\u0002\u0010#\u001a\u00020$2\b\b\u0002\u0010%\u001a\u00020&2\u0014\b\u0002\u0010(\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020+0)2\u0014\b\u0002\u0010,\u001a\u000e\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u00060-2\b\b\u0002\u0010/\u001a\u00020\u0002H\u0007ø\u0001\u0000¢\u0006\u0004\b2\u00103\u001aÆ\u0001\u0010\f\u001a\u00020\u00062\u0006\u0010\r\u001a\u00020*2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010\u0013\u001a\u00020\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\n\b\u0002\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u00142\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f2\b\b\u0002\u0010 \u001a\u00020\u00142\b\b\u0002\u0010!\u001a\u00020\"2\b\b\u0002\u0010#\u001a\u00020$2\b\b\u0002\u0010%\u001a\u00020&2\u0014\b\u0002\u0010,\u001a\u000e\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u00060-2\b\b\u0002\u0010/\u001a\u00020\u0002H\u0007ø\u0001\u0000¢\u0006\u0004\b4\u00105\u001aÒ\u0001\u0010\f\u001a\u00020\u00062\u0006\u0010\r\u001a\u00020*2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010\u0013\u001a\u00020\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\n\b\u0002\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u00142\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f2\b\b\u0002\u0010 \u001a\u00020\u00142\b\b\u0002\u0010!\u001a\u00020\"2\b\b\u0002\u0010#\u001a\u00020$2\b\b\u0002\u0010%\u001a\u00020&2\b\b\u0002\u0010'\u001a\u00020&2\u0016\b\u0002\u0010,\u001a\u0010\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u0006\u0018\u00010-2\b\b\u0002\u0010/\u001a\u00020\u0002H\u0007ø\u0001\u0000¢\u0006\u0004\b2\u00106\"\u0017\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0003\u0010\u0004\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u00067"}, d2 = {"LocalTextStyle", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/compose/ui/text/TextStyle;", "getLocalTextStyle", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "ProvideTextStyle", "", "value", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "Text", "text", "Landroidx/compose/ui/text/AnnotatedString;", "modifier", "Landroidx/compose/ui/Modifier;", "color", "Landroidx/compose/ui/graphics/Color;", TtmlNode.ATTR_TTS_FONT_SIZE, "Landroidx/compose/ui/unit/TextUnit;", TtmlNode.ATTR_TTS_FONT_STYLE, "Landroidx/compose/ui/text/font/FontStyle;", TtmlNode.ATTR_TTS_FONT_WEIGHT, "Landroidx/compose/ui/text/font/FontWeight;", TtmlNode.ATTR_TTS_FONT_FAMILY, "Landroidx/compose/ui/text/font/FontFamily;", "letterSpacing", TtmlNode.ATTR_TTS_TEXT_DECORATION, "Landroidx/compose/ui/text/style/TextDecoration;", TtmlNode.ATTR_TTS_TEXT_ALIGN, "Landroidx/compose/ui/text/style/TextAlign;", "lineHeight", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "inlineContent", "", "", "Landroidx/compose/foundation/text/InlineTextContent;", "onTextLayout", "Lkotlin/Function1;", "Landroidx/compose/ui/text/TextLayoutResult;", "style", "Text-IbK3jfQ", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILjava/util/Map;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "Text--4IGK_g", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZILjava/util/Map;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "Text-fLXpl1I", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZILkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aÛ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001d2\u0016\b\u0002\u0010\u001f\u001a\u0010\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u0001\u0018\u00010 2\b\b\u0002\u0010\"\u001a\u00020#H\u0007¢\u0006\u0004\b$\u0010%\u001aï\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020&2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001d2\u0014\b\u0002\u0010'\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020)0(2\u0014\b\u0002\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u00010 2\b\b\u0002\u0010\"\u001a\u00020#H\u0007¢\u0006\u0004\b*\u0010+\u001aÏ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\n\u001a\u00020\u000b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001d2\u0016\b\u0002\u0010\u001f\u001a\u0010\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u0001\u0018\u00010 2\b\b\u0002\u0010\"\u001a\u00020#H\u0007¢\u0006\u0004\b,\u0010-\u001aã\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020&2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\n\u001a\u00020\u000b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001d2\u0014\b\u0002\u0010'\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020)0(2\u0014\b\u0002\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u00010 2\b\b\u0002\u0010\"\u001a\u00020#H\u0007¢\u0006\u0004\b.\u0010/\u001aÃ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\n\u001a\u00020\u000b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\u0014\b\u0002\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u00010 2\b\b\u0002\u0010\"\u001a\u00020#H\u0007¢\u0006\u0004\b0\u00101\u001aÙ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020&2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\n\u001a\u00020\u000b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u000b2\b\b\u0002\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\u0014\b\u0002\u0010'\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020)0(2\u0014\b\u0002\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u00010 2\b\b\u0002\u0010\"\u001a\u00020#H\u0007¢\u0006\u0004\b,\u00102\u001a(\u00107\u001a\u00020\u00012\u0006\u00108\u001a\u00020#2\u0011\u00109\u001a\r\u0012\u0004\u0012\u00020\u00010:¢\u0006\u0002\b;H\u0007¢\u0006\u0002\u0010<\u001a\u0018\u0010=\u001a\u00020&2\u0006\u0010\u0002\u001a\u00020&2\u0006\u0010>\u001a\u00020?H\u0002\u001a\r\u0010@\u001a\u00020?H\u0003¢\u0006\u0002\u0010A\"\u0017\u00103\u001a\b\u0012\u0004\u0012\u00020#04¢\u0006\b\n\u0000\u001a\u0004\b5\u00106¨\u0006B"}, d2 = {"Text", "", "text", "", "modifier", "Landroidx/compose/ui/Modifier;", "color", "Landroidx/compose/ui/graphics/Color;", "autoSize", "Landroidx/compose/foundation/text/TextAutoSize;", TtmlNode.ATTR_TTS_FONT_SIZE, "Landroidx/compose/ui/unit/TextUnit;", TtmlNode.ATTR_TTS_FONT_STYLE, "Landroidx/compose/ui/text/font/FontStyle;", TtmlNode.ATTR_TTS_FONT_WEIGHT, "Landroidx/compose/ui/text/font/FontWeight;", TtmlNode.ATTR_TTS_FONT_FAMILY, "Landroidx/compose/ui/text/font/FontFamily;", "letterSpacing", TtmlNode.ATTR_TTS_TEXT_DECORATION, "Landroidx/compose/ui/text/style/TextDecoration;", TtmlNode.ATTR_TTS_TEXT_ALIGN, "Landroidx/compose/ui/text/style/TextAlign;", "lineHeight", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "onTextLayout", "Lkotlin/Function1;", "Landroidx/compose/ui/text/TextLayoutResult;", "style", "Landroidx/compose/ui/text/TextStyle;", "Text-Nvy7gAk", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;JLandroidx/compose/foundation/text/TextAutoSize;JLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "Landroidx/compose/ui/text/AnnotatedString;", "inlineContent", "", "Landroidx/compose/foundation/text/InlineTextContent;", "Text-Z58ophY", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;JLandroidx/compose/foundation/text/TextAutoSize;JLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILjava/util/Map;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "Text--4IGK_g", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "Text-IbK3jfQ", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILjava/util/Map;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "Text-fLXpl1I", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZILkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZILjava/util/Map;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V", "LocalTextStyle", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "getLocalTextStyle", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "ProvideTextStyle", "value", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "createTextWithLinkStyles", "linkStyles", "Landroidx/compose/ui/text/TextLinkStyles;", "rememberTextLinkStyles", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/text/TextLinkStyles;", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextKt {
-    private static final ProvidableCompositionLocal<TextStyle> LocalTextStyle = CompositionLocalKt.compositionLocalOf(SnapshotStateKt.structuralEqualityPolicy(), new Function0<TextStyle>() { // from class: androidx.compose.material3.TextKt$LocalTextStyle$1
-        /* JADX WARN: Can't rename method to resolve collision */
+    private static final ProvidableCompositionLocal<TextStyle> LocalTextStyle = CompositionLocalKt.compositionLocalOf(SnapshotStateKt.structuralEqualityPolicy(), new Function0() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
-        public final TextStyle invoke() {
-            return TypographyTokensKt.getDefaultTextStyle();
+        public final Object invoke() {
+            TextStyle LocalTextStyle$lambda$19;
+            LocalTextStyle$lambda$19 = TextKt.LocalTextStyle$lambda$19();
+            return LocalTextStyle$lambda$19;
         }
     });
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ProvideTextStyle$lambda$20(TextStyle textStyle, Function2 function2, int i, Composer composer, int i2) {
+        ProvideTextStyle(textStyle, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text_IbK3jfQ$lambda$12(AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Map map, Function1 function1, TextStyle textStyle, int i4, int i5, int i6, Composer composer, int i7) {
+        m3167TextIbK3jfQ(annotatedString, modifier, j, j2, fontStyle, fontWeight, fontFamily, j3, textDecoration, textAlign, j4, i, z, i2, i3, map, function1, textStyle, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text_Nvy7gAk$lambda$2(String str, Modifier modifier, long j, TextAutoSize textAutoSize, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Function1 function1, TextStyle textStyle, int i4, int i5, int i6, Composer composer, int i7) {
+        m3168TextNvy7gAk(str, modifier, j, textAutoSize, j2, fontStyle, fontWeight, fontFamily, j3, textDecoration, textAlign, j4, i, z, i2, i3, function1, textStyle, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text_Z58ophY$lambda$8(AnnotatedString annotatedString, Modifier modifier, long j, TextAutoSize textAutoSize, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Map map, Function1 function1, TextStyle textStyle, int i4, int i5, int i6, Composer composer, int i7) {
+        m3169TextZ58ophY(annotatedString, modifier, j, textAutoSize, j2, fontStyle, fontWeight, fontFamily, j3, textDecoration, textAlign, j4, i, z, i2, i3, map, function1, textStyle, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text__4IGK_g$lambda$18(AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Map map, Function1 function1, TextStyle textStyle, int i3, int i4, int i5, Composer composer, int i6) {
+        m3165Text4IGK_g(annotatedString, modifier, j, j2, fontStyle, fontWeight, fontFamily, j3, textDecoration, textAlign, j4, i, z, i2, map, function1, textStyle, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text__4IGK_g$lambda$9(String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Function1 function1, TextStyle textStyle, int i4, int i5, int i6, Composer composer, int i7) {
+        m3166Text4IGK_g(str, modifier, j, j2, fontStyle, fontWeight, fontFamily, j3, textDecoration, textAlign, j4, i, z, i2, i3, function1, textStyle, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text_fLXpl1I$lambda$15(String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Function1 function1, TextStyle textStyle, int i3, int i4, int i5, Composer composer, int i6) {
+        m3170TextfLXpl1I(str, modifier, j, j2, fontStyle, fontWeight, fontFamily, j3, textDecoration, textAlign, j4, i, z, i2, function1, textStyle, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0152  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0179  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x017e  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0199  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x019c  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x01b8  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01bb  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x01db  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x01e0  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x01fd  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0202  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x021e  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0235  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0257  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x026e  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x0482  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x04a9  */
+    /* JADX WARN: Removed duplicated region for block: B:283:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0134  */
+    /* renamed from: Text-Nvy7gAk  reason: not valid java name */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final void m3168TextNvy7gAk(final String str, Modifier modifier, long j, TextAutoSize textAutoSize, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Function1<? super TextLayoutResult, Unit> function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
+        int i7;
+        Modifier.Companion companion;
+        int i8;
+        int i9;
+        Object obj;
+        int i10;
+        long j5;
+        int i11;
+        Object obj2;
+        int i12;
+        Object obj3;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        int i27;
+        int i28;
+        int i29;
+        Composer composer2;
+        final long j6;
+        final boolean z2;
+        final int i30;
+        final int i31;
+        final Function1<? super TextLayoutResult, Unit> function12;
+        final TextStyle textStyle2;
+        final int i32;
+        final TextAutoSize textAutoSize2;
+        final FontStyle fontStyle2;
+        final Modifier modifier2;
+        final long j7;
+        final FontWeight fontWeight2;
+        final FontFamily fontFamily2;
+        final long j8;
+        final TextDecoration textDecoration2;
+        final TextAlign textAlign2;
+        final long j9;
+        ScopeUpdateScope endRestartGroup;
+        long m5315getUnspecified0d7_KjU;
+        TextDecoration textDecoration3;
+        TextAlign textAlign3;
+        long j10;
+        long j11;
+        int i33;
+        FontFamily fontFamily3;
+        boolean z3;
+        FontWeight fontWeight3;
+        long j12;
+        int i34;
+        TextStyle textStyle3;
+        FontStyle fontStyle3;
+        Function1<? super TextLayoutResult, Unit> function13;
+        int i35;
+        long j13;
+        long m7487getColor0d7_KjU;
+        Composer startRestartGroup = composer.startRestartGroup(1809465675);
+        ComposerKt.sourceInformation(startRestartGroup, "C(Text)N(text,modifier,color:c#ui.graphics.Color,autoSize,fontSize:c#ui.unit.TextUnit,fontStyle:c#ui.text.font.FontStyle,fontWeight,fontFamily,letterSpacing:c#ui.unit.TextUnit,textDecoration,textAlign:c#ui.text.style.TextAlign,lineHeight:c#ui.unit.TextUnit,overflow:c#ui.text.style.TextOverflow,softWrap,maxLines,minLines,onTextLayout,style)124@6409L698:Text.kt#uh7d8r");
+        if ((i6 & 1) != 0) {
+            i7 = i4 | 6;
+        } else if ((i4 & 6) == 0) {
+            i7 = (startRestartGroup.changed(str) ? 4 : 2) | i4;
+        } else {
+            i7 = i4;
+        }
+        int i36 = i6 & 2;
+        if (i36 != 0) {
+            i7 |= 48;
+        } else if ((i4 & 48) == 0) {
+            companion = modifier;
+            i7 |= startRestartGroup.changed(companion) ? 32 : 16;
+            i8 = i6 & 4;
+            if (i8 == 0) {
+                i7 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+            } else if ((i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                i7 |= startRestartGroup.changed(j) ? 256 : 128;
+            }
+            i9 = i6 & 8;
+            if (i9 == 0) {
+                i7 |= 3072;
+            } else if ((i4 & 3072) == 0) {
+                obj = textAutoSize;
+                i7 |= startRestartGroup.changedInstance(obj) ? 2048 : 1024;
+                i10 = i6 & 16;
+                if (i10 != 0) {
+                    i7 |= 24576;
+                    j5 = j2;
+                } else {
+                    j5 = j2;
+                    if ((i4 & 24576) == 0) {
+                        i7 |= startRestartGroup.changed(j5) ? 16384 : 8192;
+                    }
+                }
+                i11 = i6 & 32;
+                if (i11 != 0) {
+                    i7 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                    obj2 = fontStyle;
+                } else {
+                    obj2 = fontStyle;
+                    if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                        i7 |= startRestartGroup.changed(obj2) ? 131072 : 65536;
+                    }
+                }
+                i12 = i6 & 64;
+                if (i12 != 0) {
+                    i7 |= 1572864;
+                    obj3 = fontWeight;
+                } else {
+                    obj3 = fontWeight;
+                    if ((i4 & 1572864) == 0) {
+                        i7 |= startRestartGroup.changed(obj3) ? 1048576 : 524288;
+                    }
+                }
+                i13 = i6 & 128;
+                if (i13 != 0) {
+                    i7 |= 12582912;
+                } else if ((i4 & 12582912) == 0) {
+                    i14 = i13;
+                    i7 |= startRestartGroup.changed(fontFamily) ? 8388608 : 4194304;
+                    i15 = i6 & 256;
+                    if (i15 == 0) {
+                        i7 |= 100663296;
+                    } else if ((i4 & 100663296) == 0) {
+                        i7 |= startRestartGroup.changed(j3) ? 67108864 : 33554432;
+                    }
+                    i16 = i6 & 512;
+                    if (i16 == 0) {
+                        i7 |= 805306368;
+                    } else if ((i4 & 805306368) == 0) {
+                        i17 = i15;
+                        i7 |= startRestartGroup.changed(textDecoration) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                        i18 = i6 & 1024;
+                        if (i18 != 0) {
+                            i20 = i5 | 6;
+                            i19 = i18;
+                        } else if ((i5 & 6) == 0) {
+                            i19 = i18;
+                            i20 = i5 | (startRestartGroup.changed(textAlign) ? 4 : 2);
+                        } else {
+                            i19 = i18;
+                            i20 = i5;
+                        }
+                        i21 = i6 & 2048;
+                        if (i21 != 0) {
+                            i20 |= 48;
+                        } else if ((i5 & 48) == 0) {
+                            i20 |= startRestartGroup.changed(j4) ? 32 : 16;
+                        }
+                        int i37 = i20;
+                        i22 = i6 & 4096;
+                        if (i22 != 0) {
+                            i37 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+                        } else if ((i5 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                            i23 = i;
+                            i37 |= startRestartGroup.changed(i23) ? 256 : 128;
+                            i24 = i6 & 8192;
+                            if (i24 == 0) {
+                                i25 = i37 | 3072;
+                            } else {
+                                int i38 = i37;
+                                if ((i5 & 3072) == 0) {
+                                    i25 = i38 | (startRestartGroup.changed(z) ? 2048 : 1024);
+                                } else {
+                                    i25 = i38;
+                                }
+                            }
+                            i26 = i6 & 16384;
+                            if (i26 == 0) {
+                                i27 = i25 | 24576;
+                            } else {
+                                i27 = i25;
+                                if ((i5 & 24576) == 0) {
+                                    i27 |= startRestartGroup.changed(i2) ? 16384 : 8192;
+                                    i28 = i6 & 32768;
+                                    if (i28 != 0) {
+                                        i27 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                                    } else if ((i5 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                                        i27 |= startRestartGroup.changed(i3) ? 131072 : 65536;
+                                    }
+                                    i29 = i6 & 65536;
+                                    if (i29 != 0) {
+                                        i27 |= 1572864;
+                                    } else if ((i5 & 1572864) == 0) {
+                                        i27 |= startRestartGroup.changedInstance(function1) ? 1048576 : 524288;
+                                    }
+                                    if ((i5 & 12582912) == 0) {
+                                        i27 |= ((i6 & 131072) == 0 && startRestartGroup.changed(textStyle)) ? 8388608 : 4194304;
+                                    }
+                                    if (startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i27 & 4793491) != 4793490, i7 & 1)) {
+                                        startRestartGroup.startDefaults();
+                                        ComposerKt.sourceInformation(startRestartGroup, "119@6296L7");
+                                        if ((i4 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                            startRestartGroup.skipToGroupEnd();
+                                            if ((i6 & 131072) != 0) {
+                                                i27 &= -29360129;
+                                            }
+                                            m5315getUnspecified0d7_KjU = j;
+                                            fontFamily3 = fontFamily;
+                                            j11 = j3;
+                                            textDecoration3 = textDecoration;
+                                            textAlign3 = textAlign;
+                                            j10 = j4;
+                                            z3 = z;
+                                            i33 = i2;
+                                            i35 = i3;
+                                            textStyle3 = textStyle;
+                                            fontWeight3 = obj3;
+                                            j12 = j5;
+                                            i34 = i27;
+                                            fontStyle3 = obj2;
+                                            function13 = function1;
+                                        } else {
+                                            if (i36 != 0) {
+                                                companion = Modifier.Companion;
+                                            }
+                                            m5315getUnspecified0d7_KjU = i8 != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j;
+                                            if (i9 != 0) {
+                                                obj = null;
+                                            }
+                                            long m8200getUnspecifiedXSAIIZE = i10 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j5;
+                                            if (i11 != 0) {
+                                                obj2 = null;
+                                            }
+                                            if (i12 != 0) {
+                                                obj3 = null;
+                                            }
+                                            FontFamily fontFamily4 = i14 != 0 ? null : fontFamily;
+                                            long m8200getUnspecifiedXSAIIZE2 = i17 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j3;
+                                            TextDecoration textDecoration4 = i16 != 0 ? null : textDecoration;
+                                            TextAlign textAlign4 = i19 != 0 ? null : textAlign;
+                                            long m8200getUnspecifiedXSAIIZE3 = i21 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j4;
+                                            if (i22 != 0) {
+                                                i23 = TextOverflow.Companion.m7930getClipgIe3tQ8();
+                                            }
+                                            boolean z4 = i24 != 0 ? true : z;
+                                            int i39 = i26 != 0 ? Integer.MAX_VALUE : i2;
+                                            int i40 = i28 == 0 ? i3 : 1;
+                                            Function1<? super TextLayoutResult, Unit> function14 = i29 == 0 ? function1 : null;
+                                            if ((i6 & 131072) != 0) {
+                                                long j14 = m5315getUnspecified0d7_KjU;
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                                Object consume = startRestartGroup.consume(LocalTextStyle);
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                textDecoration3 = textDecoration4;
+                                                textAlign3 = textAlign4;
+                                                j10 = m8200getUnspecifiedXSAIIZE3;
+                                                j11 = m8200getUnspecifiedXSAIIZE2;
+                                                i33 = i39;
+                                                fontFamily3 = fontFamily4;
+                                                z3 = z4;
+                                                fontWeight3 = obj3;
+                                                j12 = m8200getUnspecifiedXSAIIZE;
+                                                i34 = i27 & (-29360129);
+                                                textStyle3 = (TextStyle) consume;
+                                                fontStyle3 = obj2;
+                                                m5315getUnspecified0d7_KjU = j14;
+                                            } else {
+                                                textDecoration3 = textDecoration4;
+                                                textAlign3 = textAlign4;
+                                                j10 = m8200getUnspecifiedXSAIIZE3;
+                                                j11 = m8200getUnspecifiedXSAIIZE2;
+                                                i33 = i39;
+                                                fontFamily3 = fontFamily4;
+                                                z3 = z4;
+                                                fontWeight3 = obj3;
+                                                j12 = m8200getUnspecifiedXSAIIZE;
+                                                i34 = i27;
+                                                textStyle3 = textStyle;
+                                                fontStyle3 = obj2;
+                                            }
+                                            function13 = function14;
+                                            i35 = i40;
+                                        }
+                                        startRestartGroup.endDefaults();
+                                        if (ComposerKt.isTraceInProgress()) {
+                                            j13 = m5315getUnspecified0d7_KjU;
+                                            ComposerKt.traceEventStart(1809465675, i7, i34, "androidx.compose.material3.Text (Text.kt:120)");
+                                        } else {
+                                            j13 = m5315getUnspecified0d7_KjU;
+                                        }
+                                        startRestartGroup.startReplaceGroup(-565217106);
+                                        ComposerKt.sourceInformation(startRestartGroup, "");
+                                        if (j13 != 16) {
+                                            m7487getColor0d7_KjU = j13;
+                                        } else {
+                                            startRestartGroup.startReplaceGroup(-565216333);
+                                            ComposerKt.sourceInformation(startRestartGroup, "*122@6392L7");
+                                            m7487getColor0d7_KjU = textStyle3.m7487getColor0d7_KjU();
+                                            if (m7487getColor0d7_KjU == 16) {
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                                Object consume2 = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                m7487getColor0d7_KjU = ((Color) consume2).m5289unboximpl();
+                                            }
+                                            startRestartGroup.endReplaceGroup();
+                                        }
+                                        startRestartGroup.endReplaceGroup();
+                                        long j15 = m7487getColor0d7_KjU;
+                                        int i41 = i34;
+                                        int i42 = i41 << 6;
+                                        boolean z5 = z3;
+                                        int i43 = i33;
+                                        int i44 = i35;
+                                        Function1<? super TextLayoutResult, Unit> function15 = function13;
+                                        BasicTextKt.m1242BasicTextRWo7tUw(str, companion, TextStyle.m7477mergedA7vx0o$default(textStyle3, j15, j12, fontWeight3, fontStyle3, null, fontFamily3, null, j11, null, null, null, 0L, textDecoration3, null, null, textAlign3 != null ? textAlign3.m7878unboximpl() : TextAlign.Companion.m7885getUnspecifiede0LSkKk(), 0, j10, null, null, 0, 0, null, null, 16609104, null), function15, i23, z5, i43, i44, (ColorProducer) null, obj, startRestartGroup, (i42 & 29360128) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i41 >> 9) & 7168) | (57344 & i42) | (458752 & i42) | (3670016 & i42) | ((i7 << 18) & 1879048192), 256);
+                                        composer2 = startRestartGroup;
+                                        if (ComposerKt.isTraceInProgress()) {
+                                            ComposerKt.traceEventEnd();
+                                        }
+                                        FontWeight fontWeight4 = fontWeight3;
+                                        i32 = i23;
+                                        textAutoSize2 = obj;
+                                        fontWeight2 = fontWeight4;
+                                        textAlign2 = textAlign3;
+                                        i30 = i43;
+                                        function12 = function15;
+                                        modifier2 = companion;
+                                        j7 = j12;
+                                        fontStyle2 = fontStyle3;
+                                        fontFamily2 = fontFamily3;
+                                        i31 = i44;
+                                        textDecoration2 = textDecoration3;
+                                        j9 = j10;
+                                        j6 = j13;
+                                        z2 = z5;
+                                        long j16 = j11;
+                                        textStyle2 = textStyle3;
+                                        j8 = j16;
+                                    } else {
+                                        composer2 = startRestartGroup;
+                                        composer2.skipToGroupEnd();
+                                        j6 = j;
+                                        z2 = z;
+                                        i30 = i2;
+                                        i31 = i3;
+                                        function12 = function1;
+                                        textStyle2 = textStyle;
+                                        i32 = i23;
+                                        textAutoSize2 = obj;
+                                        fontStyle2 = obj2;
+                                        modifier2 = companion;
+                                        j7 = j5;
+                                        fontWeight2 = obj3;
+                                        fontFamily2 = fontFamily;
+                                        j8 = j3;
+                                        textDecoration2 = textDecoration;
+                                        textAlign2 = textAlign;
+                                        j9 = j4;
+                                    }
+                                    endRestartGroup = composer2.endRestartGroup();
+                                    if (endRestartGroup != null) {
+                                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda3
+                                            @Override // kotlin.jvm.functions.Function2
+                                            public final Object invoke(Object obj4, Object obj5) {
+                                                Unit Text_Nvy7gAk$lambda$2;
+                                                Text_Nvy7gAk$lambda$2 = TextKt.Text_Nvy7gAk$lambda$2(str, modifier2, j6, textAutoSize2, j7, fontStyle2, fontWeight2, fontFamily2, j8, textDecoration2, textAlign2, j9, i32, z2, i30, i31, function12, textStyle2, i4, i5, i6, (Composer) obj4, ((Integer) obj5).intValue());
+                                                return Text_Nvy7gAk$lambda$2;
+                                            }
+                                        });
+                                        return;
+                                    }
+                                    return;
+                                }
+                            }
+                            i28 = i6 & 32768;
+                            if (i28 != 0) {
+                            }
+                            i29 = i6 & 65536;
+                            if (i29 != 0) {
+                            }
+                            if ((i5 & 12582912) == 0) {
+                            }
+                            if (startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i27 & 4793491) != 4793490, i7 & 1)) {
+                            }
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup != null) {
+                            }
+                        }
+                        i23 = i;
+                        i24 = i6 & 8192;
+                        if (i24 == 0) {
+                        }
+                        i26 = i6 & 16384;
+                        if (i26 == 0) {
+                        }
+                        i28 = i6 & 32768;
+                        if (i28 != 0) {
+                        }
+                        i29 = i6 & 65536;
+                        if (i29 != 0) {
+                        }
+                        if ((i5 & 12582912) == 0) {
+                        }
+                        if (startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i27 & 4793491) != 4793490, i7 & 1)) {
+                        }
+                        endRestartGroup = composer2.endRestartGroup();
+                        if (endRestartGroup != null) {
+                        }
+                    }
+                    i17 = i15;
+                    i18 = i6 & 1024;
+                    if (i18 != 0) {
+                    }
+                    i21 = i6 & 2048;
+                    if (i21 != 0) {
+                    }
+                    int i372 = i20;
+                    i22 = i6 & 4096;
+                    if (i22 != 0) {
+                    }
+                    i23 = i;
+                    i24 = i6 & 8192;
+                    if (i24 == 0) {
+                    }
+                    i26 = i6 & 16384;
+                    if (i26 == 0) {
+                    }
+                    i28 = i6 & 32768;
+                    if (i28 != 0) {
+                    }
+                    i29 = i6 & 65536;
+                    if (i29 != 0) {
+                    }
+                    if ((i5 & 12582912) == 0) {
+                    }
+                    if (startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i27 & 4793491) != 4793490, i7 & 1)) {
+                    }
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup != null) {
+                    }
+                }
+                i14 = i13;
+                i15 = i6 & 256;
+                if (i15 == 0) {
+                }
+                i16 = i6 & 512;
+                if (i16 == 0) {
+                }
+                i17 = i15;
+                i18 = i6 & 1024;
+                if (i18 != 0) {
+                }
+                i21 = i6 & 2048;
+                if (i21 != 0) {
+                }
+                int i3722 = i20;
+                i22 = i6 & 4096;
+                if (i22 != 0) {
+                }
+                i23 = i;
+                i24 = i6 & 8192;
+                if (i24 == 0) {
+                }
+                i26 = i6 & 16384;
+                if (i26 == 0) {
+                }
+                i28 = i6 & 32768;
+                if (i28 != 0) {
+                }
+                i29 = i6 & 65536;
+                if (i29 != 0) {
+                }
+                if ((i5 & 12582912) == 0) {
+                }
+                if (startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i27 & 4793491) != 4793490, i7 & 1)) {
+                }
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup != null) {
+                }
+            }
+            obj = textAutoSize;
+            i10 = i6 & 16;
+            if (i10 != 0) {
+            }
+            i11 = i6 & 32;
+            if (i11 != 0) {
+            }
+            i12 = i6 & 64;
+            if (i12 != 0) {
+            }
+            i13 = i6 & 128;
+            if (i13 != 0) {
+            }
+            i14 = i13;
+            i15 = i6 & 256;
+            if (i15 == 0) {
+            }
+            i16 = i6 & 512;
+            if (i16 == 0) {
+            }
+            i17 = i15;
+            i18 = i6 & 1024;
+            if (i18 != 0) {
+            }
+            i21 = i6 & 2048;
+            if (i21 != 0) {
+            }
+            int i37222 = i20;
+            i22 = i6 & 4096;
+            if (i22 != 0) {
+            }
+            i23 = i;
+            i24 = i6 & 8192;
+            if (i24 == 0) {
+            }
+            i26 = i6 & 16384;
+            if (i26 == 0) {
+            }
+            i28 = i6 & 32768;
+            if (i28 != 0) {
+            }
+            i29 = i6 & 65536;
+            if (i29 != 0) {
+            }
+            if ((i5 & 12582912) == 0) {
+            }
+            if (startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i27 & 4793491) != 4793490, i7 & 1)) {
+            }
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup != null) {
+            }
+        }
+        companion = modifier;
+        i8 = i6 & 4;
+        if (i8 == 0) {
+        }
+        i9 = i6 & 8;
+        if (i9 == 0) {
+        }
+        obj = textAutoSize;
+        i10 = i6 & 16;
+        if (i10 != 0) {
+        }
+        i11 = i6 & 32;
+        if (i11 != 0) {
+        }
+        i12 = i6 & 64;
+        if (i12 != 0) {
+        }
+        i13 = i6 & 128;
+        if (i13 != 0) {
+        }
+        i14 = i13;
+        i15 = i6 & 256;
+        if (i15 == 0) {
+        }
+        i16 = i6 & 512;
+        if (i16 == 0) {
+        }
+        i17 = i15;
+        i18 = i6 & 1024;
+        if (i18 != 0) {
+        }
+        i21 = i6 & 2048;
+        if (i21 != 0) {
+        }
+        int i372222 = i20;
+        i22 = i6 & 4096;
+        if (i22 != 0) {
+        }
+        i23 = i;
+        i24 = i6 & 8192;
+        if (i24 == 0) {
+        }
+        i26 = i6 & 16384;
+        if (i26 == 0) {
+        }
+        i28 = i6 & 32768;
+        if (i28 != 0) {
+        }
+        i29 = i6 & 65536;
+        if (i29 != 0) {
+        }
+        if ((i5 & 12582912) == 0) {
+        }
+        if (startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i27 & 4793491) != 4793490, i7 & 1)) {
+        }
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup != null) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text_Z58ophY$lambda$4$lambda$3(TextLayoutResult textLayoutResult) {
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0139  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x017e  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0183  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x01a3  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x01a6  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x01c9  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01ec  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0207  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x020c  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x0223  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x023f  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0244  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x025d  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0273  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x0281  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x0297  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x0513  */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x053c  */
+    /* JADX WARN: Removed duplicated region for block: B:310:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0134  */
+    /* renamed from: Text-Z58ophY  reason: not valid java name */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final void m3169TextZ58ophY(final AnnotatedString annotatedString, Modifier modifier, long j, TextAutoSize textAutoSize, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Map<String, InlineTextContent> map, Function1<? super TextLayoutResult, Unit> function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
+        int i7;
+        Modifier.Companion companion;
+        int i8;
+        long j5;
+        int i9;
+        int i10;
+        long j6;
+        int i11;
+        Object obj;
+        int i12;
+        Object obj2;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        int i27;
+        int i28;
+        int i29;
+        int i30;
+        int i31;
+        Composer composer2;
+        final TextAutoSize textAutoSize2;
+        final int i32;
+        final boolean z2;
+        final int i33;
+        final int i34;
+        final Map<String, InlineTextContent> map2;
+        final Function1<? super TextLayoutResult, Unit> function12;
+        final TextStyle textStyle2;
+        final long j7;
+        final Modifier modifier2;
+        final FontStyle fontStyle2;
+        final FontFamily fontFamily2;
+        final long j8;
+        final TextDecoration textDecoration2;
+        final FontWeight fontWeight2;
+        final long j9;
+        final TextAlign textAlign2;
+        final long j10;
+        ScopeUpdateScope endRestartGroup;
+        int m7930getClipgIe3tQ8;
+        boolean z3;
+        int i35;
+        int i36;
+        Map<String, InlineTextContent> emptyMap;
+        TextAutoSize textAutoSize3;
+        Function1<? super TextLayoutResult, Unit> function13;
+        TextAlign textAlign3;
+        TextAutoSize textAutoSize4;
+        Function1<? super TextLayoutResult, Unit> function14;
+        TextStyle textStyle3;
+        FontWeight fontWeight3;
+        FontFamily fontFamily3;
+        TextDecoration textDecoration3;
+        FontStyle fontStyle3;
+        long j11;
+        long j12;
+        long j13;
+        int i37;
+        long j14;
+        Composer startRestartGroup = composer.startRestartGroup(292247417);
+        ComposerKt.sourceInformation(startRestartGroup, "C(Text)N(text,modifier,color:c#ui.graphics.Color,autoSize,fontSize:c#ui.unit.TextUnit,fontStyle:c#ui.text.font.FontStyle,fontWeight,fontFamily,letterSpacing:c#ui.unit.TextUnit,textDecoration,textAlign:c#ui.text.style.TextAlign,lineHeight:c#ui.unit.TextUnit,overflow:c#ui.text.style.TextOverflow,softWrap,maxLines,minLines,inlineContent,onTextLayout,style)230@11970L24,232@12040L73,234@12119L759:Text.kt#uh7d8r");
+        if ((i6 & 1) != 0) {
+            i7 = i4 | 6;
+        } else if ((i4 & 6) == 0) {
+            i7 = (startRestartGroup.changed(annotatedString) ? 4 : 2) | i4;
+        } else {
+            i7 = i4;
+        }
+        int i38 = i6 & 2;
+        if (i38 != 0) {
+            i7 |= 48;
+        } else if ((i4 & 48) == 0) {
+            companion = modifier;
+            i7 |= startRestartGroup.changed(companion) ? 32 : 16;
+            i8 = i6 & 4;
+            if (i8 == 0) {
+                i7 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+                j5 = j;
+            } else {
+                j5 = j;
+                if ((i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                    i7 |= startRestartGroup.changed(j5) ? 256 : 128;
+                }
+            }
+            i9 = i6 & 8;
+            if (i9 == 0) {
+                i7 |= 3072;
+            } else if ((i4 & 3072) == 0) {
+                i7 |= startRestartGroup.changedInstance(textAutoSize) ? 2048 : 1024;
+                i10 = i6 & 16;
+                if (i10 != 0) {
+                    i7 |= 24576;
+                    j6 = j2;
+                } else {
+                    j6 = j2;
+                    if ((i4 & 24576) == 0) {
+                        i7 |= startRestartGroup.changed(j6) ? 16384 : 8192;
+                    }
+                }
+                i11 = i6 & 32;
+                if (i11 != 0) {
+                    i7 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                    obj = fontStyle;
+                } else {
+                    obj = fontStyle;
+                    if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                        i7 |= startRestartGroup.changed(obj) ? 131072 : 65536;
+                    }
+                }
+                i12 = i6 & 64;
+                if (i12 != 0) {
+                    i7 |= 1572864;
+                    obj2 = fontWeight;
+                } else {
+                    obj2 = fontWeight;
+                    if ((i4 & 1572864) == 0) {
+                        i7 |= startRestartGroup.changed(obj2) ? 1048576 : 524288;
+                    }
+                }
+                i13 = i6 & 128;
+                if (i13 != 0) {
+                    i7 |= 12582912;
+                } else if ((i4 & 12582912) == 0) {
+                    i14 = i13;
+                    i7 |= startRestartGroup.changed(fontFamily) ? 8388608 : 4194304;
+                    i15 = i6 & 256;
+                    if (i15 == 0) {
+                        i7 |= 100663296;
+                    } else if ((i4 & 100663296) == 0) {
+                        i16 = i7 | (startRestartGroup.changed(j3) ? 67108864 : 33554432);
+                        i17 = i6 & 512;
+                        if (i17 != 0) {
+                            i16 |= 805306368;
+                            i18 = i17;
+                        } else if ((i4 & 805306368) == 0) {
+                            i18 = i17;
+                            i16 |= startRestartGroup.changed(textDecoration) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                        } else {
+                            i18 = i17;
+                        }
+                        i19 = i16;
+                        i20 = i6 & 1024;
+                        if (i20 != 0) {
+                            i21 = i5 | 6;
+                        } else if ((i5 & 6) == 0) {
+                            i21 = i5 | (startRestartGroup.changed(textAlign) ? 4 : 2);
+                        } else {
+                            i21 = i5;
+                        }
+                        i22 = i6 & 2048;
+                        if (i22 != 0) {
+                            i21 |= 48;
+                            i23 = i22;
+                        } else if ((i5 & 48) == 0) {
+                            i23 = i22;
+                            i21 |= startRestartGroup.changed(j4) ? 32 : 16;
+                        } else {
+                            i23 = i22;
+                        }
+                        int i39 = i21;
+                        i24 = i6 & 4096;
+                        if (i24 != 0) {
+                            i25 = i39 | RendererCapabilities.DECODER_SUPPORT_MASK;
+                        } else {
+                            int i40 = i39;
+                            if ((i5 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                                i40 |= startRestartGroup.changed(i) ? 256 : 128;
+                            }
+                            i25 = i40;
+                        }
+                        i26 = i6 & 8192;
+                        if (i26 != 0) {
+                            i27 = i25 | 3072;
+                        } else {
+                            int i41 = i25;
+                            if ((i5 & 3072) == 0) {
+                                i27 = i41 | (startRestartGroup.changed(z) ? 2048 : 1024);
+                            } else {
+                                i27 = i41;
+                            }
+                        }
+                        i28 = i6 & 16384;
+                        if (i28 != 0) {
+                            i27 |= 24576;
+                        } else if ((i5 & 24576) == 0) {
+                            i27 |= startRestartGroup.changed(i2) ? 16384 : 8192;
+                            i29 = i6 & 32768;
+                            if (i29 == 0) {
+                                i27 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                            } else if ((i5 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                                i27 |= startRestartGroup.changed(i3) ? 131072 : 65536;
+                            }
+                            i30 = i6 & 65536;
+                            if (i30 == 0) {
+                                i27 |= 1572864;
+                            } else if ((i5 & 1572864) == 0) {
+                                i27 |= startRestartGroup.changedInstance(map) ? 1048576 : 524288;
+                            }
+                            i31 = i6 & 131072;
+                            if (i31 == 0) {
+                                i27 |= 12582912;
+                            } else if ((i5 & 12582912) == 0) {
+                                i27 |= startRestartGroup.changedInstance(function1) ? 8388608 : 4194304;
+                            }
+                            if ((i5 & 100663296) == 0) {
+                                i27 |= ((i6 & 262144) == 0 && startRestartGroup.changed(textStyle)) ? 67108864 : 33554432;
+                            }
+                            if (!startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (38347923 & i27) != 38347922, i19 & 1)) {
+                                startRestartGroup.startDefaults();
+                                ComposerKt.sourceInformation(startRestartGroup, "226@11800L2,227@11842L7");
+                                if ((i4 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                    startRestartGroup.skipToGroupEnd();
+                                    if ((i6 & 262144) != 0) {
+                                        i27 &= -234881025;
+                                    }
+                                    textAutoSize4 = textAutoSize;
+                                    fontFamily3 = fontFamily;
+                                    j12 = j3;
+                                    textDecoration3 = textDecoration;
+                                    textAlign3 = textAlign;
+                                    j13 = j4;
+                                    m7930getClipgIe3tQ8 = i;
+                                    z3 = z;
+                                    i35 = i2;
+                                    i36 = i3;
+                                    emptyMap = map;
+                                    textStyle3 = textStyle;
+                                    fontWeight3 = obj2;
+                                    fontStyle3 = obj;
+                                    j11 = j6;
+                                    i37 = i27;
+                                    function14 = function1;
+                                } else {
+                                    if (i38 != 0) {
+                                        companion = Modifier.Companion;
+                                    }
+                                    if (i8 != 0) {
+                                        j5 = Color.Companion.m5315getUnspecified0d7_KjU();
+                                    }
+                                    TextAutoSize textAutoSize5 = i9 != 0 ? null : textAutoSize;
+                                    if (i10 != 0) {
+                                        j6 = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
+                                    }
+                                    if (i11 != 0) {
+                                        obj = null;
+                                    }
+                                    if (i12 != 0) {
+                                        obj2 = null;
+                                    }
+                                    FontFamily fontFamily4 = i14 != 0 ? null : fontFamily;
+                                    long m8200getUnspecifiedXSAIIZE = i15 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j3;
+                                    TextDecoration textDecoration4 = i18 != 0 ? null : textDecoration;
+                                    TextAlign textAlign4 = i20 == 0 ? textAlign : null;
+                                    long m8200getUnspecifiedXSAIIZE2 = i23 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j4;
+                                    m7930getClipgIe3tQ8 = i24 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
+                                    z3 = i26 != 0 ? true : z;
+                                    i35 = i28 != 0 ? Integer.MAX_VALUE : i2;
+                                    i36 = i29 != 0 ? 1 : i3;
+                                    emptyMap = i30 != 0 ? MapsKt.emptyMap() : map;
+                                    TextAlign textAlign5 = textAlign4;
+                                    if (i31 != 0) {
+                                        textAutoSize3 = textAutoSize5;
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1676916987, "CC(remember):Text.kt#9igjgp");
+                                        Object rememberedValue = startRestartGroup.rememberedValue();
+                                        if (rememberedValue == Composer.Companion.getEmpty()) {
+                                            rememberedValue = new Function1() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda4
+                                                @Override // kotlin.jvm.functions.Function1
+                                                public final Object invoke(Object obj3) {
+                                                    Unit Text_Z58ophY$lambda$4$lambda$3;
+                                                    Text_Z58ophY$lambda$4$lambda$3 = TextKt.Text_Z58ophY$lambda$4$lambda$3((TextLayoutResult) obj3);
+                                                    return Text_Z58ophY$lambda$4$lambda$3;
+                                                }
+                                            };
+                                            startRestartGroup.updateRememberedValue(rememberedValue);
+                                        }
+                                        function13 = (Function1) rememberedValue;
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    } else {
+                                        textAutoSize3 = textAutoSize5;
+                                        function13 = function1;
+                                    }
+                                    if ((i6 & 262144) != 0) {
+                                        Function1<? super TextLayoutResult, Unit> function15 = function13;
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                        Object consume = startRestartGroup.consume(LocalTextStyle);
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        textAlign3 = textAlign5;
+                                        textStyle3 = (TextStyle) consume;
+                                        fontWeight3 = obj2;
+                                        fontFamily3 = fontFamily4;
+                                        textDecoration3 = textDecoration4;
+                                        fontStyle3 = obj;
+                                        j11 = j6;
+                                        j12 = m8200getUnspecifiedXSAIIZE;
+                                        j13 = m8200getUnspecifiedXSAIIZE2;
+                                        textAutoSize4 = textAutoSize3;
+                                        i37 = i27 & (-234881025);
+                                        function14 = function15;
+                                    } else {
+                                        Function1<? super TextLayoutResult, Unit> function16 = function13;
+                                        int i42 = i27;
+                                        textAlign3 = textAlign5;
+                                        textAutoSize4 = textAutoSize3;
+                                        function14 = function16;
+                                        textStyle3 = textStyle;
+                                        fontWeight3 = obj2;
+                                        fontFamily3 = fontFamily4;
+                                        textDecoration3 = textDecoration4;
+                                        fontStyle3 = obj;
+                                        j11 = j6;
+                                        j12 = m8200getUnspecifiedXSAIIZE;
+                                        j13 = m8200getUnspecifiedXSAIIZE2;
+                                        i37 = i42;
+                                    }
+                                }
+                                startRestartGroup.endDefaults();
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(292247417, i19, i37, "androidx.compose.material3.Text (Text.kt:228)");
+                                }
+                                startRestartGroup.startReplaceGroup(1676919644);
+                                ComposerKt.sourceInformation(startRestartGroup, "");
+                                if (j5 != 16) {
+                                    j14 = j5;
+                                } else {
+                                    startRestartGroup.startReplaceGroup(1676920417);
+                                    ComposerKt.sourceInformation(startRestartGroup, "*229@11937L7");
+                                    long m7487getColor0d7_KjU = textStyle3.m7487getColor0d7_KjU();
+                                    if (m7487getColor0d7_KjU == 16) {
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                        Object consume2 = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        m7487getColor0d7_KjU = ((Color) consume2).m5289unboximpl();
+                                    }
+                                    startRestartGroup.endReplaceGroup();
+                                    j14 = m7487getColor0d7_KjU;
+                                }
+                                startRestartGroup.endReplaceGroup();
+                                TextLinkStyles rememberTextLinkStyles = rememberTextLinkStyles(startRestartGroup, 0);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1676924738, "CC(remember):Text.kt#9igjgp");
+                                boolean changed = ((i19 & 14) == 4) | startRestartGroup.changed(rememberTextLinkStyles);
+                                Object rememberedValue2 = startRestartGroup.rememberedValue();
+                                if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
+                                    rememberedValue2 = createTextWithLinkStyles(annotatedString, rememberTextLinkStyles);
+                                    startRestartGroup.updateRememberedValue(rememberedValue2);
+                                }
+                                AnnotatedString annotatedString2 = (AnnotatedString) rememberedValue2;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                int i43 = i37 << 6;
+                                TextAutoSize textAutoSize6 = textAutoSize4;
+                                Function1<? super TextLayoutResult, Unit> function17 = function14;
+                                BasicTextKt.m1240BasicTextCL7eQgs(annotatedString2, companion, TextStyle.m7477mergedA7vx0o$default(textStyle3, j14, j11, fontWeight3, fontStyle3, null, fontFamily3, null, j12, null, null, null, 0L, textDecoration3, null, null, textAlign3 != null ? textAlign3.m7878unboximpl() : TextAlign.Companion.m7885getUnspecifiede0LSkKk(), 0, j13, null, null, 0, 0, null, null, 16609104, null), function17, m7930getClipgIe3tQ8, z3, i35, i36, emptyMap, null, textAutoSize6, startRestartGroup, (i43 & 234881024) | (i19 & 112) | ((i37 >> 12) & 7168) | (57344 & i43) | (458752 & i43) | (3670016 & i43) | (29360128 & i43), (i19 >> 9) & 14, 512);
+                                composer2 = startRestartGroup;
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventEnd();
+                                }
+                                function12 = function17;
+                                textAlign2 = textAlign3;
+                                textAutoSize2 = textAutoSize6;
+                                j7 = j5;
+                                modifier2 = companion;
+                                i34 = i36;
+                                map2 = emptyMap;
+                                textStyle2 = textStyle3;
+                                fontWeight2 = fontWeight3;
+                                fontStyle2 = fontStyle3;
+                                fontFamily2 = fontFamily3;
+                                j8 = j12;
+                                textDecoration2 = textDecoration3;
+                                i33 = i35;
+                                z2 = z3;
+                                j9 = j11;
+                                i32 = m7930getClipgIe3tQ8;
+                                j10 = j13;
+                            } else {
+                                composer2 = startRestartGroup;
+                                composer2.skipToGroupEnd();
+                                textAutoSize2 = textAutoSize;
+                                i32 = i;
+                                z2 = z;
+                                i33 = i2;
+                                i34 = i3;
+                                map2 = map;
+                                function12 = function1;
+                                textStyle2 = textStyle;
+                                j7 = j5;
+                                modifier2 = companion;
+                                fontStyle2 = obj;
+                                fontFamily2 = fontFamily;
+                                j8 = j3;
+                                textDecoration2 = textDecoration;
+                                fontWeight2 = obj2;
+                                j9 = j6;
+                                textAlign2 = textAlign;
+                                j10 = j4;
+                            }
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda5
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj3, Object obj4) {
+                                        Unit Text_Z58ophY$lambda$8;
+                                        Text_Z58ophY$lambda$8 = TextKt.Text_Z58ophY$lambda$8(AnnotatedString.this, modifier2, j7, textAutoSize2, j9, fontStyle2, fontWeight2, fontFamily2, j8, textDecoration2, textAlign2, j10, i32, z2, i33, i34, map2, function12, textStyle2, i4, i5, i6, (Composer) obj3, ((Integer) obj4).intValue());
+                                        return Text_Z58ophY$lambda$8;
+                                    }
+                                });
+                                return;
+                            }
+                            return;
+                        }
+                        i29 = i6 & 32768;
+                        if (i29 == 0) {
+                        }
+                        i30 = i6 & 65536;
+                        if (i30 == 0) {
+                        }
+                        i31 = i6 & 131072;
+                        if (i31 == 0) {
+                        }
+                        if ((i5 & 100663296) == 0) {
+                        }
+                        if (!startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (38347923 & i27) != 38347922, i19 & 1)) {
+                        }
+                        endRestartGroup = composer2.endRestartGroup();
+                        if (endRestartGroup == null) {
+                        }
+                    }
+                    i16 = i7;
+                    i17 = i6 & 512;
+                    if (i17 != 0) {
+                    }
+                    i19 = i16;
+                    i20 = i6 & 1024;
+                    if (i20 != 0) {
+                    }
+                    i22 = i6 & 2048;
+                    if (i22 != 0) {
+                    }
+                    int i392 = i21;
+                    i24 = i6 & 4096;
+                    if (i24 != 0) {
+                    }
+                    i26 = i6 & 8192;
+                    if (i26 != 0) {
+                    }
+                    i28 = i6 & 16384;
+                    if (i28 != 0) {
+                    }
+                    i29 = i6 & 32768;
+                    if (i29 == 0) {
+                    }
+                    i30 = i6 & 65536;
+                    if (i30 == 0) {
+                    }
+                    i31 = i6 & 131072;
+                    if (i31 == 0) {
+                    }
+                    if ((i5 & 100663296) == 0) {
+                    }
+                    if (!startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (38347923 & i27) != 38347922, i19 & 1)) {
+                    }
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup == null) {
+                    }
+                }
+                i14 = i13;
+                i15 = i6 & 256;
+                if (i15 == 0) {
+                }
+                i16 = i7;
+                i17 = i6 & 512;
+                if (i17 != 0) {
+                }
+                i19 = i16;
+                i20 = i6 & 1024;
+                if (i20 != 0) {
+                }
+                i22 = i6 & 2048;
+                if (i22 != 0) {
+                }
+                int i3922 = i21;
+                i24 = i6 & 4096;
+                if (i24 != 0) {
+                }
+                i26 = i6 & 8192;
+                if (i26 != 0) {
+                }
+                i28 = i6 & 16384;
+                if (i28 != 0) {
+                }
+                i29 = i6 & 32768;
+                if (i29 == 0) {
+                }
+                i30 = i6 & 65536;
+                if (i30 == 0) {
+                }
+                i31 = i6 & 131072;
+                if (i31 == 0) {
+                }
+                if ((i5 & 100663296) == 0) {
+                }
+                if (!startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (38347923 & i27) != 38347922, i19 & 1)) {
+                }
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup == null) {
+                }
+            }
+            i10 = i6 & 16;
+            if (i10 != 0) {
+            }
+            i11 = i6 & 32;
+            if (i11 != 0) {
+            }
+            i12 = i6 & 64;
+            if (i12 != 0) {
+            }
+            i13 = i6 & 128;
+            if (i13 != 0) {
+            }
+            i14 = i13;
+            i15 = i6 & 256;
+            if (i15 == 0) {
+            }
+            i16 = i7;
+            i17 = i6 & 512;
+            if (i17 != 0) {
+            }
+            i19 = i16;
+            i20 = i6 & 1024;
+            if (i20 != 0) {
+            }
+            i22 = i6 & 2048;
+            if (i22 != 0) {
+            }
+            int i39222 = i21;
+            i24 = i6 & 4096;
+            if (i24 != 0) {
+            }
+            i26 = i6 & 8192;
+            if (i26 != 0) {
+            }
+            i28 = i6 & 16384;
+            if (i28 != 0) {
+            }
+            i29 = i6 & 32768;
+            if (i29 == 0) {
+            }
+            i30 = i6 & 65536;
+            if (i30 == 0) {
+            }
+            i31 = i6 & 131072;
+            if (i31 == 0) {
+            }
+            if ((i5 & 100663296) == 0) {
+            }
+            if (!startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (38347923 & i27) != 38347922, i19 & 1)) {
+            }
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup == null) {
+            }
+        }
+        companion = modifier;
+        i8 = i6 & 4;
+        if (i8 == 0) {
+        }
+        i9 = i6 & 8;
+        if (i9 == 0) {
+        }
+        i10 = i6 & 16;
+        if (i10 != 0) {
+        }
+        i11 = i6 & 32;
+        if (i11 != 0) {
+        }
+        i12 = i6 & 64;
+        if (i12 != 0) {
+        }
+        i13 = i6 & 128;
+        if (i13 != 0) {
+        }
+        i14 = i13;
+        i15 = i6 & 256;
+        if (i15 == 0) {
+        }
+        i16 = i7;
+        i17 = i6 & 512;
+        if (i17 != 0) {
+        }
+        i19 = i16;
+        i20 = i6 & 1024;
+        if (i20 != 0) {
+        }
+        i22 = i6 & 2048;
+        if (i22 != 0) {
+        }
+        int i392222 = i21;
+        i24 = i6 & 4096;
+        if (i24 != 0) {
+        }
+        i26 = i6 & 8192;
+        if (i26 != 0) {
+        }
+        i28 = i6 & 16384;
+        if (i28 != 0) {
+        }
+        i29 = i6 & 32768;
+        if (i29 == 0) {
+        }
+        i30 = i6 & 65536;
+        if (i30 == 0) {
+        }
+        i31 = i6 & 131072;
+        if (i31 == 0) {
+        }
+        if ((i5 & 100663296) == 0) {
+        }
+        if (!startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (38347923 & i27) != 38347922, i19 & 1)) {
+        }
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup == null) {
+        }
+    }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x013c  */
     /* JADX WARN: Removed duplicated region for block: B:101:0x0141  */
@@ -67,40 +1438,11 @@ public final class TextKt {
     /* JADX WARN: Removed duplicated region for block: B:167:0x020e  */
     /* JADX WARN: Removed duplicated region for block: B:176:0x0223  */
     /* JADX WARN: Removed duplicated region for block: B:183:0x0237  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x02ad  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x02b2  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x02b6  */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x02be  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x02c7  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x02ca  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x02cd  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x02d0  */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x02d7  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x02dd  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x02e1  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x02e3  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x02e7  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x02ee  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x02f2  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x02f9  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x02ff  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0303  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0307  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x030c  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x0311  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x0317  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x0349  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x0366  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x037f  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x0382  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x03bd  */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x03c2  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x0431  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x0454  */
-    /* JADX WARN: Removed duplicated region for block: B:269:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x0245  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x025b  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x03ce  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x03f4  */
+    /* JADX WARN: Removed duplicated region for block: B:259:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0077  */
@@ -115,11 +1457,12 @@ public final class TextKt {
     /* JADX WARN: Removed duplicated region for block: B:79:0x00f9  */
     /* JADX WARN: Removed duplicated region for block: B:89:0x0119  */
     /* JADX WARN: Removed duplicated region for block: B:90:0x011c  */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use version with autoSize instead")
     /* renamed from: Text--4IGK_g  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2814Text4IGK_g(final String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Function1<? super TextLayoutResult, Unit> function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
+    public static final /* synthetic */ void m3166Text4IGK_g(final String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Function1 function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
         int i7;
         int i8;
         long j5;
@@ -149,39 +1492,43 @@ public final class TextKt {
         int i27;
         int i28;
         int i29;
-        Modifier.Companion companion;
-        final TextAlign textAlign2;
-        final int m7199getClipgIe3tQ8;
-        int i30;
-        int i31;
-        Function1<? super TextLayoutResult, Unit> function12;
-        TextStyle textStyle2;
-        TextDecoration textDecoration2;
-        FontStyle fontStyle2;
-        long j7;
-        FontWeight fontWeight2;
-        FontFamily fontFamily2;
-        long j8;
-        long j9;
-        long j10;
         Composer composer2;
-        final Function1<? super TextLayoutResult, Unit> function13;
-        final long j11;
-        final int i32;
-        final int i33;
-        final TextStyle textStyle3;
-        final FontWeight fontWeight3;
-        final FontStyle fontStyle3;
-        final FontFamily fontFamily3;
-        final long j12;
-        final TextDecoration textDecoration3;
-        final long j13;
         final Modifier modifier2;
+        final TextAlign textAlign2;
+        final int i30;
+        final int i31;
+        final int i32;
+        final Function1 function12;
+        final TextStyle textStyle2;
         final boolean z3;
-        final long j14;
+        final long j7;
+        final FontStyle fontStyle2;
+        final long j8;
+        final FontWeight fontWeight2;
+        final FontFamily fontFamily2;
+        final long j9;
+        final TextDecoration textDecoration2;
+        final long j10;
         ScopeUpdateScope endRestartGroup;
+        Function1 function13;
+        Modifier modifier3;
+        TextStyle textStyle3;
+        long j11;
+        Function1 function14;
+        int i33;
+        int i34;
+        TextDecoration textDecoration3;
+        boolean z4;
+        long j12;
+        int i35;
+        TextAlign textAlign3;
+        FontFamily fontFamily3;
+        FontStyle fontStyle3;
+        long j13;
+        FontWeight fontWeight3;
+        long j14;
         Composer startRestartGroup = composer.startRestartGroup(-2055108902);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Text)P(14,9,0:c#ui.graphics.Color,2:c#ui.unit.TextUnit,3:c#ui.text.font.FontStyle,4!1,5:c#ui.unit.TextUnit,16,15:c#ui.text.style.TextAlign,6:c#ui.unit.TextUnit,11:c#ui.text.style.TextOverflow,12)108@5620L7,113@5732L530:Text.kt#uh7d8r");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Text)N(text,modifier,color:c#ui.graphics.Color,fontSize:c#ui.unit.TextUnit,fontStyle:c#ui.text.font.FontStyle,fontWeight,fontFamily,letterSpacing:c#ui.unit.TextUnit,textDecoration,textAlign:c#ui.text.style.TextAlign,lineHeight:c#ui.unit.TextUnit,overflow:c#ui.text.style.TextOverflow,softWrap,maxLines,minLines,onTextLayout,style)283@13704L555:Text.kt#uh7d8r");
         if ((i6 & 1) != 0) {
             i7 = i4 | 6;
         } else if ((i4 & 6) == 0) {
@@ -189,8 +1536,8 @@ public final class TextKt {
         } else {
             i7 = i4;
         }
-        int i34 = i6 & 2;
-        if (i34 != 0) {
+        int i36 = i6 & 2;
+        if (i36 != 0) {
             i7 |= 48;
         } else if ((i4 & 48) == 0) {
             i7 |= startRestartGroup.changed(modifier) ? 32 : 16;
@@ -199,12 +1546,12 @@ public final class TextKt {
                 i9 = i7 | RendererCapabilities.DECODER_SUPPORT_MASK;
                 j5 = j;
             } else {
-                int i35 = i7;
+                int i37 = i7;
                 j5 = j;
                 if ((i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                    i35 |= startRestartGroup.changed(j5) ? 256 : 128;
+                    i37 |= startRestartGroup.changed(j5) ? 256 : 128;
                 }
-                i9 = i35;
+                i9 = i37;
             }
             i10 = i6 & 8;
             if (i10 == 0) {
@@ -282,22 +1629,22 @@ public final class TextKt {
                         } else {
                             i24 = i23;
                         }
-                        int i36 = i22;
+                        int i38 = i22;
                         i25 = i6 & 4096;
                         if (i25 != 0) {
-                            i36 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+                            i38 |= RendererCapabilities.DECODER_SUPPORT_MASK;
                         } else if ((i5 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                             z2 = z;
-                            i36 |= startRestartGroup.changed(z2) ? 256 : 128;
+                            i38 |= startRestartGroup.changed(z2) ? 256 : 128;
                             i26 = i6 & 8192;
                             if (i26 == 0) {
-                                i27 = i36 | 3072;
+                                i27 = i38 | 3072;
                             } else {
-                                int i37 = i36;
+                                int i39 = i38;
                                 if ((i5 & 3072) == 0) {
-                                    i27 = i37 | (startRestartGroup.changed(i2) ? 2048 : 1024);
+                                    i27 = i39 | (startRestartGroup.changed(i2) ? 2048 : 1024);
                                 } else {
-                                    i27 = i37;
+                                    i27 = i39;
                                 }
                             }
                             i28 = i6 & 16384;
@@ -314,15 +1661,38 @@ public final class TextKt {
                                 if ((i5 & 1572864) == 0) {
                                     i27 |= ((i6 & 65536) == 0 && startRestartGroup.changed(textStyle)) ? 1048576 : 524288;
                                 }
-                                if ((i20 & 306783379) == 306783378 || (599187 & i27) != 599186 || !startRestartGroup.getSkipping()) {
+                                if (startRestartGroup.shouldExecute((i20 & 306783379) == 306783378 || (599187 & i27) != 599186, i20 & 1)) {
                                     startRestartGroup.startDefaults();
-                                    if ((i4 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                                        companion = i34 != 0 ? Modifier.Companion : modifier;
+                                    ComposerKt.sourceInformation(startRestartGroup, "281@13687L7");
+                                    if ((i4 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i6 & 65536) != 0) {
+                                            i27 &= -3670017;
+                                        }
+                                        long j15 = j6;
+                                        fontStyle3 = obj;
+                                        j13 = j15;
+                                        modifier3 = modifier;
+                                        textDecoration3 = textDecoration;
+                                        textAlign3 = textAlign;
+                                        j11 = j4;
+                                        i34 = i;
+                                        i35 = i2;
+                                        i33 = i3;
+                                        function14 = function1;
+                                        textStyle3 = textStyle;
+                                        z4 = z2;
+                                        j12 = j5;
+                                        fontWeight3 = obj2;
+                                        fontFamily3 = obj3;
+                                        j14 = j3;
+                                    } else {
+                                        Modifier.Companion companion = i36 != 0 ? Modifier.Companion : modifier;
                                         if (i8 != 0) {
-                                            j5 = Color.Companion.m4585getUnspecified0d7_KjU();
+                                            j5 = Color.Companion.m5315getUnspecified0d7_KjU();
                                         }
                                         if (i10 != 0) {
-                                            j6 = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
+                                            j6 = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
                                         }
                                         if (i11 != 0) {
                                             obj = null;
@@ -333,143 +1703,103 @@ public final class TextKt {
                                         if (i13 != 0) {
                                             obj3 = null;
                                         }
-                                        long m7469getUnspecifiedXSAIIZE = i14 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
+                                        long m8200getUnspecifiedXSAIIZE = i14 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j3;
                                         TextDecoration textDecoration4 = i17 != 0 ? null : textDecoration;
-                                        textAlign2 = i19 != 0 ? null : textAlign;
-                                        long m7469getUnspecifiedXSAIIZE2 = i21 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4;
-                                        m7199getClipgIe3tQ8 = i24 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
+                                        TextAlign textAlign4 = i19 != 0 ? null : textAlign;
+                                        long m8200getUnspecifiedXSAIIZE2 = i21 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j4;
+                                        int m7930getClipgIe3tQ8 = i24 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
                                         if (i25 != 0) {
                                             z2 = true;
                                         }
-                                        i30 = i26 != 0 ? Integer.MAX_VALUE : i2;
-                                        i31 = i28 == 0 ? i3 : 1;
-                                        function12 = i29 == 0 ? function1 : null;
+                                        int i40 = i26 != 0 ? Integer.MAX_VALUE : i2;
+                                        int i41 = i28 == 0 ? i3 : 1;
+                                        Function1 function15 = i29 == 0 ? function1 : null;
                                         if ((i6 & 65536) != 0) {
-                                            Modifier modifier3 = companion;
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                                            Modifier modifier4 = companion;
+                                            function13 = function15;
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                             Object consume = startRestartGroup.consume(LocalTextStyle);
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             i27 &= -3670017;
-                                            function12 = function12;
-                                            textStyle2 = (TextStyle) consume;
-                                            textDecoration2 = textDecoration4;
-                                            fontStyle2 = obj;
-                                            j7 = j6;
-                                            fontWeight2 = obj2;
-                                            fontFamily2 = obj3;
-                                            j8 = m7469getUnspecifiedXSAIIZE;
-                                            j9 = m7469getUnspecifiedXSAIIZE2;
-                                            companion = modifier3;
+                                            modifier3 = modifier4;
+                                            textStyle3 = (TextStyle) consume;
                                         } else {
-                                            textStyle2 = textStyle;
-                                            textDecoration2 = textDecoration4;
-                                            fontStyle2 = obj;
-                                            j7 = j6;
-                                            fontWeight2 = obj2;
-                                            fontFamily2 = obj3;
-                                            j8 = m7469getUnspecifiedXSAIIZE;
-                                            j9 = m7469getUnspecifiedXSAIIZE2;
+                                            function13 = function15;
+                                            modifier3 = companion;
+                                            textStyle3 = textStyle;
                                         }
-                                    } else {
-                                        startRestartGroup.skipToGroupEnd();
-                                        if ((i6 & 65536) != 0) {
-                                            i27 &= -3670017;
-                                        }
-                                        companion = modifier;
-                                        j8 = j3;
-                                        textDecoration2 = textDecoration;
-                                        textAlign2 = textAlign;
-                                        j9 = j4;
-                                        m7199getClipgIe3tQ8 = i;
-                                        i30 = i2;
-                                        i31 = i3;
-                                        function12 = function1;
-                                        textStyle2 = textStyle;
-                                        fontStyle2 = obj;
-                                        j7 = j6;
-                                        fontWeight2 = obj2;
-                                        fontFamily2 = obj3;
+                                        j11 = m8200getUnspecifiedXSAIIZE2;
+                                        function14 = function13;
+                                        i33 = i41;
+                                        i34 = m7930getClipgIe3tQ8;
+                                        textDecoration3 = textDecoration4;
+                                        long j16 = m8200getUnspecifiedXSAIIZE;
+                                        z4 = z2;
+                                        j12 = j5;
+                                        i35 = i40;
+                                        textAlign3 = textAlign4;
+                                        fontFamily3 = obj3;
+                                        long j17 = j6;
+                                        fontStyle3 = obj;
+                                        j13 = j17;
+                                        fontWeight3 = obj2;
+                                        j14 = j16;
                                     }
                                     startRestartGroup.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-2055108902, i20, i27, "androidx.compose.material3.Text (Text.kt:109)");
+                                        ComposerKt.traceEventStart(-2055108902, i20, i27, "androidx.compose.material3.Text (Text.kt:283)");
                                     }
-                                    startRestartGroup.startReplaceGroup(-1827892941);
-                                    ComposerKt.sourceInformation(startRestartGroup, "");
-                                    if (j5 != 16) {
-                                        j10 = j5;
-                                    } else {
-                                        startRestartGroup.startReplaceGroup(-1827892168);
-                                        ComposerKt.sourceInformation(startRestartGroup, "*111@5715L7");
-                                        long m6756getColor0d7_KjU = textStyle2.m6756getColor0d7_KjU();
-                                        if (m6756getColor0d7_KjU == 16) {
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                            Object consume2 = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            m6756getColor0d7_KjU = ((Color) consume2).m4559unboximpl();
-                                        }
-                                        startRestartGroup.endReplaceGroup();
-                                        j10 = m6756getColor0d7_KjU;
-                                    }
-                                    startRestartGroup.endReplaceGroup();
-                                    int i38 = i27 << 9;
-                                    BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38) | (458752 & i38) | (3670016 & i38) | (i38 & 29360128), 256);
+                                    int i42 = i20 << 3;
+                                    int i43 = i27 << 3;
                                     composer2 = startRestartGroup;
+                                    m3168TextNvy7gAk(str, modifier3, j12, null, j13, fontStyle3, fontWeight3, fontFamily3, j14, textDecoration3, textAlign3, j11, i34, z4, i35, i33, function14, textStyle3, composer2, (i20 & 14) | 3072 | (i20 & 112) | (i20 & 896) | (57344 & i42) | (458752 & i42) | (3670016 & i42) | (29360128 & i42) | (234881024 & i42) | (i42 & 1879048192), ((i20 >> 27) & 14) | (i43 & 112) | (i43 & 896) | (i43 & 7168) | (57344 & i43) | (458752 & i43) | (3670016 & i43) | (i43 & 29360128), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
-                                    function13 = function12;
-                                    j11 = j5;
-                                    i32 = i30;
-                                    i33 = i31;
-                                    textStyle3 = textStyle2;
-                                    fontWeight3 = fontWeight2;
-                                    fontStyle3 = fontStyle2;
-                                    fontFamily3 = fontFamily2;
-                                    j12 = j8;
-                                    textDecoration3 = textDecoration2;
-                                    j13 = j9;
-                                    modifier2 = companion;
-                                    z3 = z2;
-                                    j14 = j7;
+                                    modifier2 = modifier3;
+                                    j7 = j12;
+                                    j8 = j13;
+                                    fontStyle2 = fontStyle3;
+                                    fontWeight2 = fontWeight3;
+                                    fontFamily2 = fontFamily3;
+                                    j9 = j14;
+                                    textDecoration2 = textDecoration3;
+                                    textAlign2 = textAlign3;
+                                    j10 = j11;
+                                    i30 = i34;
+                                    z3 = z4;
+                                    i31 = i35;
+                                    i32 = i33;
+                                    function12 = function14;
+                                    textStyle2 = textStyle3;
                                 } else {
-                                    startRestartGroup.skipToGroupEnd();
+                                    composer2 = startRestartGroup;
+                                    composer2.skipToGroupEnd();
                                     modifier2 = modifier;
                                     textAlign2 = textAlign;
-                                    m7199getClipgIe3tQ8 = i;
-                                    i32 = i2;
-                                    i33 = i3;
-                                    function13 = function1;
-                                    textStyle3 = textStyle;
-                                    composer2 = startRestartGroup;
+                                    i30 = i;
+                                    i31 = i2;
+                                    i32 = i3;
+                                    function12 = function1;
+                                    textStyle2 = textStyle;
                                     z3 = z2;
-                                    j11 = j5;
-                                    fontStyle3 = obj;
-                                    j14 = j6;
-                                    fontWeight3 = obj2;
-                                    fontFamily3 = obj3;
-                                    j12 = j3;
-                                    textDecoration3 = textDecoration;
-                                    j13 = j4;
+                                    j7 = j5;
+                                    fontStyle2 = obj;
+                                    j8 = j6;
+                                    fontWeight2 = obj2;
+                                    fontFamily2 = obj3;
+                                    j9 = j3;
+                                    textDecoration2 = textDecoration;
+                                    j10 = j4;
                                 }
                                 endRestartGroup = composer2.endRestartGroup();
                                 if (endRestartGroup != null) {
-                                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextKt$Text$1
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
-
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda2
                                         @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                            invoke(composer3, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer3, int i39) {
-                                            TextKt.m2814Text4IGK_g(str, modifier2, j11, j14, fontStyle3, fontWeight3, fontFamily3, j12, textDecoration3, textAlign2, j13, m7199getClipgIe3tQ8, z3, i32, i33, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+                                        public final Object invoke(Object obj4, Object obj5) {
+                                            Unit Text__4IGK_g$lambda$9;
+                                            Text__4IGK_g$lambda$9 = TextKt.Text__4IGK_g$lambda$9(str, modifier2, j7, j8, fontStyle2, fontWeight2, fontFamily2, j9, textDecoration2, textAlign2, j10, i30, z3, i31, i32, function12, textStyle2, i4, i5, i6, (Composer) obj4, ((Integer) obj5).intValue());
+                                            return Text__4IGK_g$lambda$9;
                                         }
                                     });
                                     return;
@@ -481,70 +1811,8 @@ public final class TextKt {
                             }
                             if ((i5 & 1572864) == 0) {
                             }
-                            if ((i20 & 306783379) == 306783378) {
+                            if (startRestartGroup.shouldExecute((i20 & 306783379) == 306783378 || (599187 & i27) != 599186, i20 & 1)) {
                             }
-                            startRestartGroup.startDefaults();
-                            if ((i4 & 1) != 0) {
-                            }
-                            if (i34 != 0) {
-                            }
-                            if (i8 != 0) {
-                            }
-                            if (i10 != 0) {
-                            }
-                            if (i11 != 0) {
-                            }
-                            if (i12 != 0) {
-                            }
-                            if (i13 != 0) {
-                            }
-                            if (i14 != 0) {
-                            }
-                            if (i17 != 0) {
-                            }
-                            if (i19 != 0) {
-                            }
-                            if (i21 != 0) {
-                            }
-                            if (i24 != 0) {
-                            }
-                            if (i25 != 0) {
-                            }
-                            if (i26 != 0) {
-                            }
-                            if (i28 == 0) {
-                            }
-                            if (i29 == 0) {
-                            }
-                            if ((i6 & 65536) != 0) {
-                            }
-                            startRestartGroup.endDefaults();
-                            if (ComposerKt.isTraceInProgress()) {
-                            }
-                            startRestartGroup.startReplaceGroup(-1827892941);
-                            ComposerKt.sourceInformation(startRestartGroup, "");
-                            if (j5 != 16) {
-                            }
-                            startRestartGroup.endReplaceGroup();
-                            int i382 = i27 << 9;
-                            BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i382) | (458752 & i382) | (3670016 & i382) | (i382 & 29360128), 256);
-                            composer2 = startRestartGroup;
-                            if (ComposerKt.isTraceInProgress()) {
-                            }
-                            function13 = function12;
-                            j11 = j5;
-                            i32 = i30;
-                            i33 = i31;
-                            textStyle3 = textStyle2;
-                            fontWeight3 = fontWeight2;
-                            fontStyle3 = fontStyle2;
-                            fontFamily3 = fontFamily2;
-                            j12 = j8;
-                            textDecoration3 = textDecoration2;
-                            j13 = j9;
-                            modifier2 = companion;
-                            z3 = z2;
-                            j14 = j7;
                             endRestartGroup = composer2.endRestartGroup();
                             if (endRestartGroup != null) {
                             }
@@ -561,70 +1829,8 @@ public final class TextKt {
                         }
                         if ((i5 & 1572864) == 0) {
                         }
-                        if ((i20 & 306783379) == 306783378) {
+                        if (startRestartGroup.shouldExecute((i20 & 306783379) == 306783378 || (599187 & i27) != 599186, i20 & 1)) {
                         }
-                        startRestartGroup.startDefaults();
-                        if ((i4 & 1) != 0) {
-                        }
-                        if (i34 != 0) {
-                        }
-                        if (i8 != 0) {
-                        }
-                        if (i10 != 0) {
-                        }
-                        if (i11 != 0) {
-                        }
-                        if (i12 != 0) {
-                        }
-                        if (i13 != 0) {
-                        }
-                        if (i14 != 0) {
-                        }
-                        if (i17 != 0) {
-                        }
-                        if (i19 != 0) {
-                        }
-                        if (i21 != 0) {
-                        }
-                        if (i24 != 0) {
-                        }
-                        if (i25 != 0) {
-                        }
-                        if (i26 != 0) {
-                        }
-                        if (i28 == 0) {
-                        }
-                        if (i29 == 0) {
-                        }
-                        if ((i6 & 65536) != 0) {
-                        }
-                        startRestartGroup.endDefaults();
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        startRestartGroup.startReplaceGroup(-1827892941);
-                        ComposerKt.sourceInformation(startRestartGroup, "");
-                        if (j5 != 16) {
-                        }
-                        startRestartGroup.endReplaceGroup();
-                        int i3822 = i27 << 9;
-                        BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i3822) | (458752 & i3822) | (3670016 & i3822) | (i3822 & 29360128), 256);
-                        composer2 = startRestartGroup;
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        function13 = function12;
-                        j11 = j5;
-                        i32 = i30;
-                        i33 = i31;
-                        textStyle3 = textStyle2;
-                        fontWeight3 = fontWeight2;
-                        fontStyle3 = fontStyle2;
-                        fontFamily3 = fontFamily2;
-                        j12 = j8;
-                        textDecoration3 = textDecoration2;
-                        j13 = j9;
-                        modifier2 = companion;
-                        z3 = z2;
-                        j14 = j7;
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup != null) {
                         }
@@ -640,7 +1846,7 @@ public final class TextKt {
                     i23 = i6 & 2048;
                     if (i23 != 0) {
                     }
-                    int i362 = i22;
+                    int i382 = i22;
                     i25 = i6 & 4096;
                     if (i25 != 0) {
                     }
@@ -656,70 +1862,8 @@ public final class TextKt {
                     }
                     if ((i5 & 1572864) == 0) {
                     }
-                    if ((i20 & 306783379) == 306783378) {
+                    if (startRestartGroup.shouldExecute((i20 & 306783379) == 306783378 || (599187 & i27) != 599186, i20 & 1)) {
                     }
-                    startRestartGroup.startDefaults();
-                    if ((i4 & 1) != 0) {
-                    }
-                    if (i34 != 0) {
-                    }
-                    if (i8 != 0) {
-                    }
-                    if (i10 != 0) {
-                    }
-                    if (i11 != 0) {
-                    }
-                    if (i12 != 0) {
-                    }
-                    if (i13 != 0) {
-                    }
-                    if (i14 != 0) {
-                    }
-                    if (i17 != 0) {
-                    }
-                    if (i19 != 0) {
-                    }
-                    if (i21 != 0) {
-                    }
-                    if (i24 != 0) {
-                    }
-                    if (i25 != 0) {
-                    }
-                    if (i26 != 0) {
-                    }
-                    if (i28 == 0) {
-                    }
-                    if (i29 == 0) {
-                    }
-                    if ((i6 & 65536) != 0) {
-                    }
-                    startRestartGroup.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    startRestartGroup.startReplaceGroup(-1827892941);
-                    ComposerKt.sourceInformation(startRestartGroup, "");
-                    if (j5 != 16) {
-                    }
-                    startRestartGroup.endReplaceGroup();
-                    int i38222 = i27 << 9;
-                    BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38222) | (458752 & i38222) | (3670016 & i38222) | (i38222 & 29360128), 256);
-                    composer2 = startRestartGroup;
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    function13 = function12;
-                    j11 = j5;
-                    i32 = i30;
-                    i33 = i31;
-                    textStyle3 = textStyle2;
-                    fontWeight3 = fontWeight2;
-                    fontStyle3 = fontStyle2;
-                    fontFamily3 = fontFamily2;
-                    j12 = j8;
-                    textDecoration3 = textDecoration2;
-                    j13 = j9;
-                    modifier2 = companion;
-                    z3 = z2;
-                    j14 = j7;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
@@ -739,7 +1883,7 @@ public final class TextKt {
                 i23 = i6 & 2048;
                 if (i23 != 0) {
                 }
-                int i3622 = i22;
+                int i3822 = i22;
                 i25 = i6 & 4096;
                 if (i25 != 0) {
                 }
@@ -755,70 +1899,8 @@ public final class TextKt {
                 }
                 if ((i5 & 1572864) == 0) {
                 }
-                if ((i20 & 306783379) == 306783378) {
+                if (startRestartGroup.shouldExecute((i20 & 306783379) == 306783378 || (599187 & i27) != 599186, i20 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i4 & 1) != 0) {
-                }
-                if (i34 != 0) {
-                }
-                if (i8 != 0) {
-                }
-                if (i10 != 0) {
-                }
-                if (i11 != 0) {
-                }
-                if (i12 != 0) {
-                }
-                if (i13 != 0) {
-                }
-                if (i14 != 0) {
-                }
-                if (i17 != 0) {
-                }
-                if (i19 != 0) {
-                }
-                if (i21 != 0) {
-                }
-                if (i24 != 0) {
-                }
-                if (i25 != 0) {
-                }
-                if (i26 != 0) {
-                }
-                if (i28 == 0) {
-                }
-                if (i29 == 0) {
-                }
-                if ((i6 & 65536) != 0) {
-                }
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                startRestartGroup.startReplaceGroup(-1827892941);
-                ComposerKt.sourceInformation(startRestartGroup, "");
-                if (j5 != 16) {
-                }
-                startRestartGroup.endReplaceGroup();
-                int i382222 = i27 << 9;
-                BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i382222) | (458752 & i382222) | (3670016 & i382222) | (i382222 & 29360128), 256);
-                composer2 = startRestartGroup;
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                function13 = function12;
-                j11 = j5;
-                i32 = i30;
-                i33 = i31;
-                textStyle3 = textStyle2;
-                fontWeight3 = fontWeight2;
-                fontStyle3 = fontStyle2;
-                fontFamily3 = fontFamily2;
-                j12 = j8;
-                textDecoration3 = textDecoration2;
-                j13 = j9;
-                modifier2 = companion;
-                z3 = z2;
-                j14 = j7;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup != null) {
                 }
@@ -848,7 +1930,7 @@ public final class TextKt {
             i23 = i6 & 2048;
             if (i23 != 0) {
             }
-            int i36222 = i22;
+            int i38222 = i22;
             i25 = i6 & 4096;
             if (i25 != 0) {
             }
@@ -864,70 +1946,8 @@ public final class TextKt {
             }
             if ((i5 & 1572864) == 0) {
             }
-            if ((i20 & 306783379) == 306783378) {
+            if (startRestartGroup.shouldExecute((i20 & 306783379) == 306783378 || (599187 & i27) != 599186, i20 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i4 & 1) != 0) {
-            }
-            if (i34 != 0) {
-            }
-            if (i8 != 0) {
-            }
-            if (i10 != 0) {
-            }
-            if (i11 != 0) {
-            }
-            if (i12 != 0) {
-            }
-            if (i13 != 0) {
-            }
-            if (i14 != 0) {
-            }
-            if (i17 != 0) {
-            }
-            if (i19 != 0) {
-            }
-            if (i21 != 0) {
-            }
-            if (i24 != 0) {
-            }
-            if (i25 != 0) {
-            }
-            if (i26 != 0) {
-            }
-            if (i28 == 0) {
-            }
-            if (i29 == 0) {
-            }
-            if ((i6 & 65536) != 0) {
-            }
-            startRestartGroup.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            startRestartGroup.startReplaceGroup(-1827892941);
-            ComposerKt.sourceInformation(startRestartGroup, "");
-            if (j5 != 16) {
-            }
-            startRestartGroup.endReplaceGroup();
-            int i3822222 = i27 << 9;
-            BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i3822222) | (458752 & i3822222) | (3670016 & i3822222) | (i3822222 & 29360128), 256);
-            composer2 = startRestartGroup;
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            function13 = function12;
-            j11 = j5;
-            i32 = i30;
-            i33 = i31;
-            textStyle3 = textStyle2;
-            fontWeight3 = fontWeight2;
-            fontStyle3 = fontStyle2;
-            fontFamily3 = fontFamily2;
-            j12 = j8;
-            textDecoration3 = textDecoration2;
-            j13 = j9;
-            modifier2 = companion;
-            z3 = z2;
-            j14 = j7;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -966,7 +1986,7 @@ public final class TextKt {
         i23 = i6 & 2048;
         if (i23 != 0) {
         }
-        int i362222 = i22;
+        int i382222 = i22;
         i25 = i6 & 4096;
         if (i25 != 0) {
         }
@@ -982,73 +2002,614 @@ public final class TextKt {
         }
         if ((i5 & 1572864) == 0) {
         }
-        if ((i20 & 306783379) == 306783378) {
+        if (startRestartGroup.shouldExecute((i20 & 306783379) == 306783378 || (599187 & i27) != 599186, i20 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i4 & 1) != 0) {
-        }
-        if (i34 != 0) {
-        }
-        if (i8 != 0) {
-        }
-        if (i10 != 0) {
-        }
-        if (i11 != 0) {
-        }
-        if (i12 != 0) {
-        }
-        if (i13 != 0) {
-        }
-        if (i14 != 0) {
-        }
-        if (i17 != 0) {
-        }
-        if (i19 != 0) {
-        }
-        if (i21 != 0) {
-        }
-        if (i24 != 0) {
-        }
-        if (i25 != 0) {
-        }
-        if (i26 != 0) {
-        }
-        if (i28 == 0) {
-        }
-        if (i29 == 0) {
-        }
-        if ((i6 & 65536) != 0) {
-        }
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        startRestartGroup.startReplaceGroup(-1827892941);
-        ComposerKt.sourceInformation(startRestartGroup, "");
-        if (j5 != 16) {
-        }
-        startRestartGroup.endReplaceGroup();
-        int i38222222 = i27 << 9;
-        BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38222222) | (458752 & i38222222) | (3670016 & i38222222) | (i38222222 & 29360128), 256);
-        composer2 = startRestartGroup;
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        function13 = function12;
-        j11 = j5;
-        i32 = i30;
-        i33 = i31;
-        textStyle3 = textStyle2;
-        fontWeight3 = fontWeight2;
-        fontStyle3 = fontStyle2;
-        fontFamily3 = fontFamily2;
-        j12 = j8;
-        textDecoration3 = textDecoration2;
-        j13 = j9;
-        modifier2 = companion;
-        z3 = z2;
-        j14 = j7;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text_IbK3jfQ$lambda$11$lambda$10(TextLayoutResult textLayoutResult) {
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:108:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0152  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0173  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0193  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0196  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x01b2  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x01d5  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x01da  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x01f7  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x01fc  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x0213  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x022f  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0251  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x042b  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x0454  */
+    /* JADX WARN: Removed duplicated region for block: B:274:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x010e  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0113  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x012f  */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use version with autoSize instead")
+    /* renamed from: Text-IbK3jfQ  reason: not valid java name */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final /* synthetic */ void m3167TextIbK3jfQ(final AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Map map, Function1 function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
+        int i7;
+        int i8;
+        int i9;
+        long j5;
+        int i10;
+        Object obj;
+        int i11;
+        Object obj2;
+        int i12;
+        Object obj3;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        boolean z2;
+        int i22;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        int i27;
+        Composer composer2;
+        final Modifier modifier2;
+        final long j6;
+        final TextDecoration textDecoration2;
+        final int i28;
+        final int i29;
+        final int i30;
+        final Map map2;
+        final Function1 function12;
+        final TextStyle textStyle2;
+        final boolean z3;
+        final FontStyle fontStyle2;
+        final long j7;
+        final FontWeight fontWeight2;
+        final FontFamily fontFamily2;
+        final long j8;
+        final TextAlign textAlign2;
+        final long j9;
+        ScopeUpdateScope endRestartGroup;
+        long m5315getUnspecified0d7_KjU;
+        int i31;
+        TextAlign textAlign3;
+        Function1 function13;
+        FontStyle fontStyle3;
+        long j10;
+        TextAlign textAlign4;
+        Function1 function14;
+        TextStyle textStyle3;
+        Map map3;
+        boolean z4;
+        int i32;
+        int i33;
+        FontWeight fontWeight3;
+        FontFamily fontFamily3;
+        long j11;
+        int i34;
+        long j12;
+        Modifier modifier3;
+        TextDecoration textDecoration3;
+        Composer startRestartGroup = composer.startRestartGroup(2027001676);
+        ComposerKt.sourceInformation(startRestartGroup, "C(Text)N(text,modifier,color:c#ui.graphics.Color,fontSize:c#ui.unit.TextUnit,fontStyle:c#ui.text.font.FontStyle,fontWeight,fontFamily,letterSpacing:c#ui.unit.TextUnit,textDecoration,textAlign:c#ui.text.style.TextAlign,lineHeight:c#ui.unit.TextUnit,overflow:c#ui.text.style.TextOverflow,softWrap,maxLines,minLines,inlineContent,onTextLayout,style)329@15148L594:Text.kt#uh7d8r");
+        if ((i6 & 1) != 0) {
+            i7 = i4 | 6;
+        } else if ((i4 & 6) == 0) {
+            i7 = (startRestartGroup.changed(annotatedString) ? 4 : 2) | i4;
+        } else {
+            i7 = i4;
+        }
+        int i35 = i6 & 2;
+        if (i35 != 0) {
+            i7 |= 48;
+        } else if ((i4 & 48) == 0) {
+            i7 |= startRestartGroup.changed(modifier) ? 32 : 16;
+            i8 = i6 & 4;
+            if (i8 == 0) {
+                i7 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+            } else if ((i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                i7 |= startRestartGroup.changed(j) ? 256 : 128;
+            }
+            i9 = i6 & 8;
+            if (i9 == 0) {
+                i7 |= 3072;
+                j5 = j2;
+            } else {
+                j5 = j2;
+                if ((i4 & 3072) == 0) {
+                    i7 |= startRestartGroup.changed(j5) ? 2048 : 1024;
+                }
+            }
+            i10 = i6 & 16;
+            if (i10 == 0) {
+                i7 |= 24576;
+            } else if ((i4 & 24576) == 0) {
+                obj = fontStyle;
+                i7 |= startRestartGroup.changed(obj) ? 16384 : 8192;
+                i11 = i6 & 32;
+                if (i11 != 0) {
+                    i7 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                    obj2 = fontWeight;
+                } else {
+                    obj2 = fontWeight;
+                    if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                        i7 |= startRestartGroup.changed(obj2) ? 131072 : 65536;
+                    }
+                }
+                i12 = i6 & 64;
+                if (i12 != 0) {
+                    i7 |= 1572864;
+                    obj3 = fontFamily;
+                } else {
+                    obj3 = fontFamily;
+                    if ((i4 & 1572864) == 0) {
+                        i7 |= startRestartGroup.changed(obj3) ? 1048576 : 524288;
+                    }
+                }
+                i13 = i6 & 128;
+                if (i13 != 0) {
+                    i7 |= 12582912;
+                } else if ((i4 & 12582912) == 0) {
+                    i7 |= startRestartGroup.changed(j3) ? 8388608 : 4194304;
+                }
+                i14 = i6 & 256;
+                if (i14 != 0) {
+                    i7 |= 100663296;
+                } else if ((i4 & 100663296) == 0) {
+                    i7 |= startRestartGroup.changed(textDecoration) ? 67108864 : 33554432;
+                }
+                i15 = i6 & 512;
+                if (i15 != 0) {
+                    i7 |= 805306368;
+                } else if ((i4 & 805306368) == 0) {
+                    i16 = i15;
+                    i7 |= startRestartGroup.changed(textAlign) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                    i17 = i6 & 1024;
+                    if (i17 == 0) {
+                        i18 = i5 | 6;
+                    } else if ((i5 & 6) == 0) {
+                        i18 = i5 | (startRestartGroup.changed(j4) ? 4 : 2);
+                    } else {
+                        i18 = i5;
+                    }
+                    i19 = i6 & 2048;
+                    if (i19 == 0) {
+                        i18 |= 48;
+                        i20 = i19;
+                    } else if ((i5 & 48) == 0) {
+                        i20 = i19;
+                        i18 |= startRestartGroup.changed(i) ? 32 : 16;
+                    } else {
+                        i20 = i19;
+                    }
+                    int i36 = i18;
+                    i21 = i6 & 4096;
+                    if (i21 == 0) {
+                        i36 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+                    } else if ((i5 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                        z2 = z;
+                        i36 |= startRestartGroup.changed(z2) ? 256 : 128;
+                        i22 = i6 & 8192;
+                        if (i22 != 0) {
+                            i23 = i36 | 3072;
+                        } else {
+                            int i37 = i36;
+                            if ((i5 & 3072) == 0) {
+                                i23 = i37 | (startRestartGroup.changed(i2) ? 2048 : 1024);
+                            } else {
+                                i23 = i37;
+                            }
+                        }
+                        i24 = i6 & 16384;
+                        if (i24 != 0) {
+                            i25 = i23 | 24576;
+                        } else {
+                            i25 = i23;
+                            if ((i5 & 24576) == 0) {
+                                i25 |= startRestartGroup.changed(i3) ? 16384 : 8192;
+                                i26 = i6 & 32768;
+                                if (i26 == 0) {
+                                    i25 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                                } else if ((i5 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                                    i25 |= startRestartGroup.changedInstance(map) ? 131072 : 65536;
+                                }
+                                i27 = i6 & 65536;
+                                if (i27 == 0) {
+                                    i25 |= 1572864;
+                                } else if ((i5 & 1572864) == 0) {
+                                    i25 |= startRestartGroup.changedInstance(function1) ? 1048576 : 524288;
+                                }
+                                if ((i5 & 12582912) == 0) {
+                                    i25 |= ((i6 & 131072) == 0 && startRestartGroup.changed(textStyle)) ? 8388608 : 4194304;
+                                }
+                                if (!startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i25 & 4793491) != 4793490, i7 & 1)) {
+                                    startRestartGroup.startDefaults();
+                                    ComposerKt.sourceInformation(startRestartGroup, "326@15089L2,327@15131L7");
+                                    if ((i4 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i6 & 131072) != 0) {
+                                            i25 &= -29360129;
+                                        }
+                                        fontStyle3 = obj;
+                                        j10 = j5;
+                                        m5315getUnspecified0d7_KjU = j;
+                                        textDecoration3 = textDecoration;
+                                        textAlign4 = textAlign;
+                                        i32 = i;
+                                        i33 = i2;
+                                        i31 = i3;
+                                        map3 = map;
+                                        function14 = function1;
+                                        textStyle3 = textStyle;
+                                        z4 = z2;
+                                        fontWeight3 = obj2;
+                                        fontFamily3 = obj3;
+                                        i34 = i25;
+                                        modifier3 = modifier;
+                                        j11 = j3;
+                                        j12 = j4;
+                                    } else {
+                                        Modifier.Companion companion = i35 != 0 ? Modifier.Companion : modifier;
+                                        m5315getUnspecified0d7_KjU = i8 != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j;
+                                        if (i9 != 0) {
+                                            j5 = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
+                                        }
+                                        if (i10 != 0) {
+                                            obj = null;
+                                        }
+                                        if (i11 != 0) {
+                                            obj2 = null;
+                                        }
+                                        if (i12 != 0) {
+                                            obj3 = null;
+                                        }
+                                        long m8200getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j3;
+                                        TextDecoration textDecoration4 = i14 != 0 ? null : textDecoration;
+                                        TextAlign textAlign5 = i16 == 0 ? textAlign : null;
+                                        long m8200getUnspecifiedXSAIIZE2 = i17 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j4;
+                                        int m7930getClipgIe3tQ8 = i20 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
+                                        if (i21 != 0) {
+                                            z2 = true;
+                                        }
+                                        int i38 = i22 != 0 ? Integer.MAX_VALUE : i2;
+                                        i31 = i24 == 0 ? i3 : 1;
+                                        Map emptyMap = i26 != 0 ? MapsKt.emptyMap() : map;
+                                        Modifier modifier4 = companion;
+                                        if (i27 != 0) {
+                                            textAlign3 = textAlign5;
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1966515250, "CC(remember):Text.kt#9igjgp");
+                                            Object rememberedValue = startRestartGroup.rememberedValue();
+                                            if (rememberedValue == Composer.Companion.getEmpty()) {
+                                                rememberedValue = new Function1() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda8
+                                                    @Override // kotlin.jvm.functions.Function1
+                                                    public final Object invoke(Object obj4) {
+                                                        Unit Text_IbK3jfQ$lambda$11$lambda$10;
+                                                        Text_IbK3jfQ$lambda$11$lambda$10 = TextKt.Text_IbK3jfQ$lambda$11$lambda$10((TextLayoutResult) obj4);
+                                                        return Text_IbK3jfQ$lambda$11$lambda$10;
+                                                    }
+                                                };
+                                                startRestartGroup.updateRememberedValue(rememberedValue);
+                                            }
+                                            function13 = (Function1) rememberedValue;
+                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        } else {
+                                            textAlign3 = textAlign5;
+                                            function13 = function1;
+                                        }
+                                        if ((i6 & 131072) != 0) {
+                                            Function1 function15 = function13;
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                            Object consume = startRestartGroup.consume(LocalTextStyle);
+                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                            fontStyle3 = obj;
+                                            j10 = j5;
+                                            textAlign4 = textAlign3;
+                                            textStyle3 = (TextStyle) consume;
+                                            map3 = emptyMap;
+                                            z4 = z2;
+                                            i32 = m7930getClipgIe3tQ8;
+                                            i33 = i38;
+                                            fontWeight3 = obj2;
+                                            fontFamily3 = obj3;
+                                            j11 = m8200getUnspecifiedXSAIIZE;
+                                            i34 = i25 & (-29360129);
+                                            j12 = m8200getUnspecifiedXSAIIZE2;
+                                            modifier3 = modifier4;
+                                            function14 = function15;
+                                        } else {
+                                            fontStyle3 = obj;
+                                            j10 = j5;
+                                            textAlign4 = textAlign3;
+                                            function14 = function13;
+                                            textStyle3 = textStyle;
+                                            map3 = emptyMap;
+                                            z4 = z2;
+                                            i32 = m7930getClipgIe3tQ8;
+                                            i33 = i38;
+                                            fontWeight3 = obj2;
+                                            fontFamily3 = obj3;
+                                            j11 = m8200getUnspecifiedXSAIIZE;
+                                            i34 = i25;
+                                            j12 = m8200getUnspecifiedXSAIIZE2;
+                                            modifier3 = modifier4;
+                                        }
+                                        textDecoration3 = textDecoration4;
+                                    }
+                                    startRestartGroup.endDefaults();
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(2027001676, i7, i34, "androidx.compose.material3.Text (Text.kt:329)");
+                                    }
+                                    int i39 = i7 << 3;
+                                    int i40 = i34 << 3;
+                                    composer2 = startRestartGroup;
+                                    long j13 = m5315getUnspecified0d7_KjU;
+                                    Function1 function16 = function14;
+                                    TextStyle textStyle4 = textStyle3;
+                                    m3169TextZ58ophY(annotatedString, modifier3, j13, null, j10, fontStyle3, fontWeight3, fontFamily3, j11, textDecoration3, textAlign4, j12, i32, z4, i33, i31, map3, function16, textStyle4, composer2, (i7 & 14) | 3072 | (i7 & 112) | (i7 & 896) | (57344 & i39) | (458752 & i39) | (3670016 & i39) | (29360128 & i39) | (234881024 & i39) | (i39 & 1879048192), ((i7 >> 27) & 14) | (i40 & 112) | (i40 & 896) | (i40 & 7168) | (57344 & i40) | (458752 & i40) | (3670016 & i40) | (29360128 & i40) | (i40 & 234881024), 0);
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
+                                    }
+                                    modifier2 = modifier3;
+                                    j6 = j13;
+                                    j7 = j10;
+                                    fontStyle2 = fontStyle3;
+                                    fontWeight2 = fontWeight3;
+                                    fontFamily2 = fontFamily3;
+                                    j8 = j11;
+                                    textDecoration2 = textDecoration3;
+                                    textAlign2 = textAlign4;
+                                    j9 = j12;
+                                    i28 = i32;
+                                    z3 = z4;
+                                    i29 = i33;
+                                    i30 = i31;
+                                    map2 = map3;
+                                    function12 = function16;
+                                    textStyle2 = textStyle4;
+                                } else {
+                                    composer2 = startRestartGroup;
+                                    composer2.skipToGroupEnd();
+                                    modifier2 = modifier;
+                                    j6 = j;
+                                    textDecoration2 = textDecoration;
+                                    i28 = i;
+                                    i29 = i2;
+                                    i30 = i3;
+                                    map2 = map;
+                                    function12 = function1;
+                                    textStyle2 = textStyle;
+                                    z3 = z2;
+                                    fontStyle2 = obj;
+                                    j7 = j5;
+                                    fontWeight2 = obj2;
+                                    fontFamily2 = obj3;
+                                    j8 = j3;
+                                    textAlign2 = textAlign;
+                                    j9 = j4;
+                                }
+                                endRestartGroup = composer2.endRestartGroup();
+                                if (endRestartGroup == null) {
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda9
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public final Object invoke(Object obj4, Object obj5) {
+                                            Unit Text_IbK3jfQ$lambda$12;
+                                            Text_IbK3jfQ$lambda$12 = TextKt.Text_IbK3jfQ$lambda$12(AnnotatedString.this, modifier2, j6, j7, fontStyle2, fontWeight2, fontFamily2, j8, textDecoration2, textAlign2, j9, i28, z3, i29, i30, map2, function12, textStyle2, i4, i5, i6, (Composer) obj4, ((Integer) obj5).intValue());
+                                            return Text_IbK3jfQ$lambda$12;
+                                        }
+                                    });
+                                    return;
+                                }
+                                return;
+                            }
+                        }
+                        i26 = i6 & 32768;
+                        if (i26 == 0) {
+                        }
+                        i27 = i6 & 65536;
+                        if (i27 == 0) {
+                        }
+                        if ((i5 & 12582912) == 0) {
+                        }
+                        if (!startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i25 & 4793491) != 4793490, i7 & 1)) {
+                        }
+                        endRestartGroup = composer2.endRestartGroup();
+                        if (endRestartGroup == null) {
+                        }
+                    }
+                    z2 = z;
+                    i22 = i6 & 8192;
+                    if (i22 != 0) {
+                    }
+                    i24 = i6 & 16384;
+                    if (i24 != 0) {
+                    }
+                    i26 = i6 & 32768;
+                    if (i26 == 0) {
+                    }
+                    i27 = i6 & 65536;
+                    if (i27 == 0) {
+                    }
+                    if ((i5 & 12582912) == 0) {
+                    }
+                    if (!startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i25 & 4793491) != 4793490, i7 & 1)) {
+                    }
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup == null) {
+                    }
+                }
+                i16 = i15;
+                i17 = i6 & 1024;
+                if (i17 == 0) {
+                }
+                i19 = i6 & 2048;
+                if (i19 == 0) {
+                }
+                int i362 = i18;
+                i21 = i6 & 4096;
+                if (i21 == 0) {
+                }
+                z2 = z;
+                i22 = i6 & 8192;
+                if (i22 != 0) {
+                }
+                i24 = i6 & 16384;
+                if (i24 != 0) {
+                }
+                i26 = i6 & 32768;
+                if (i26 == 0) {
+                }
+                i27 = i6 & 65536;
+                if (i27 == 0) {
+                }
+                if ((i5 & 12582912) == 0) {
+                }
+                if (!startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i25 & 4793491) != 4793490, i7 & 1)) {
+                }
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup == null) {
+                }
+            }
+            obj = fontStyle;
+            i11 = i6 & 32;
+            if (i11 != 0) {
+            }
+            i12 = i6 & 64;
+            if (i12 != 0) {
+            }
+            i13 = i6 & 128;
+            if (i13 != 0) {
+            }
+            i14 = i6 & 256;
+            if (i14 != 0) {
+            }
+            i15 = i6 & 512;
+            if (i15 != 0) {
+            }
+            i16 = i15;
+            i17 = i6 & 1024;
+            if (i17 == 0) {
+            }
+            i19 = i6 & 2048;
+            if (i19 == 0) {
+            }
+            int i3622 = i18;
+            i21 = i6 & 4096;
+            if (i21 == 0) {
+            }
+            z2 = z;
+            i22 = i6 & 8192;
+            if (i22 != 0) {
+            }
+            i24 = i6 & 16384;
+            if (i24 != 0) {
+            }
+            i26 = i6 & 32768;
+            if (i26 == 0) {
+            }
+            i27 = i6 & 65536;
+            if (i27 == 0) {
+            }
+            if ((i5 & 12582912) == 0) {
+            }
+            if (!startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i25 & 4793491) != 4793490, i7 & 1)) {
+            }
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup == null) {
+            }
+        }
+        i8 = i6 & 4;
+        if (i8 == 0) {
+        }
+        i9 = i6 & 8;
+        if (i9 == 0) {
+        }
+        i10 = i6 & 16;
+        if (i10 == 0) {
+        }
+        obj = fontStyle;
+        i11 = i6 & 32;
+        if (i11 != 0) {
+        }
+        i12 = i6 & 64;
+        if (i12 != 0) {
+        }
+        i13 = i6 & 128;
+        if (i13 != 0) {
+        }
+        i14 = i6 & 256;
+        if (i14 != 0) {
+        }
+        i15 = i6 & 512;
+        if (i15 != 0) {
+        }
+        i16 = i15;
+        i17 = i6 & 1024;
+        if (i17 == 0) {
+        }
+        i19 = i6 & 2048;
+        if (i19 == 0) {
+        }
+        int i36222 = i18;
+        i21 = i6 & 4096;
+        if (i21 == 0) {
+        }
+        z2 = z;
+        i22 = i6 & 8192;
+        if (i22 != 0) {
+        }
+        i24 = i6 & 16384;
+        if (i24 != 0) {
+        }
+        i26 = i6 & 32768;
+        if (i26 == 0) {
+        }
+        i27 = i6 & 65536;
+        if (i27 == 0) {
+        }
+        if ((i5 & 12582912) == 0) {
+        }
+        if (!startRestartGroup.shouldExecute((i7 & 306783379) == 306783378 || (i25 & 4793491) != 4793490, i7 & 1)) {
+        }
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup == null) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text_fLXpl1I$lambda$14$lambda$13(TextLayoutResult textLayoutResult) {
+        return Unit.INSTANCE;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x013a  */
@@ -1065,35 +2626,11 @@ public final class TextKt {
     /* JADX WARN: Removed duplicated region for block: B:156:0x01ec  */
     /* JADX WARN: Removed duplicated region for block: B:166:0x0207  */
     /* JADX WARN: Removed duplicated region for block: B:172:0x0218  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0224  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x025b  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0289  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x028e  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x0292  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x029a  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x02a3  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x02a9  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x02ac  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x02b3  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x02b7  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x02b9  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x02be  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x02c2  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x02c9  */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x02cd  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x02d4  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x02d8  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x02df  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x02e3  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x02e8  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x02ee  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0345  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x037b  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x039a  */
-    /* JADX WARN: Removed duplicated region for block: B:243:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0226  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x03c8  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x03ec  */
+    /* JADX WARN: Removed duplicated region for block: B:249:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0077  */
@@ -1113,7 +2650,7 @@ public final class TextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2816TextfLXpl1I(final String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Function1 function1, TextStyle textStyle, Composer composer, final int i3, final int i4, final int i5) {
+    public static final /* synthetic */ void m3170TextfLXpl1I(final String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Function1 function1, TextStyle textStyle, Composer composer, final int i3, final int i4, final int i5) {
         int i6;
         int i7;
         long j5;
@@ -1142,41 +2679,43 @@ public final class TextKt {
         int i25;
         int i26;
         int i27;
-        Modifier modifier2;
-        TextAlign textAlign2;
-        boolean z3;
-        long j7;
-        int i28;
-        long j8;
-        TextStyle textStyle2;
-        Function1 function12;
-        Modifier modifier3;
-        TextAlign textAlign3;
-        TextDecoration textDecoration2;
-        long j9;
-        FontWeight fontWeight2;
-        FontFamily fontFamily2;
-        long j10;
-        int i29;
         Composer composer2;
-        final Modifier modifier4;
-        final long j11;
-        final long j12;
+        final Modifier modifier2;
+        final TextAlign textAlign2;
+        final int i28;
+        final int i29;
+        final Function1 function12;
+        final TextStyle textStyle2;
+        final boolean z3;
+        final long j7;
         final FontStyle fontStyle2;
-        final FontWeight fontWeight3;
-        final FontFamily fontFamily3;
-        final long j13;
-        final TextDecoration textDecoration3;
-        final TextAlign textAlign4;
-        final long j14;
-        final int i30;
-        final boolean z4;
-        final int i31;
-        final Function1 function13;
-        final TextStyle textStyle3;
+        final long j8;
+        final FontWeight fontWeight2;
+        final FontFamily fontFamily2;
+        final long j9;
+        final TextDecoration textDecoration2;
+        final long j10;
         ScopeUpdateScope endRestartGroup;
+        Modifier modifier3;
+        Function1 function13;
+        Function1 function14;
+        Modifier modifier4;
+        TextAlign textAlign3;
+        TextStyle textStyle3;
+        TextDecoration textDecoration3;
+        int i30;
+        FontFamily fontFamily3;
+        Function1 function15;
+        int i31;
+        long j11;
+        boolean z4;
+        long j12;
+        FontStyle fontStyle3;
+        long j13;
+        FontWeight fontWeight3;
+        long j14;
         Composer startRestartGroup = composer.startRestartGroup(1968784669);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Text)P(13,8,0:c#ui.graphics.Color,2:c#ui.unit.TextUnit,3:c#ui.text.font.FontStyle,4!1,5:c#ui.unit.TextUnit,15,14:c#ui.text.style.TextAlign,6:c#ui.unit.TextUnit,10:c#ui.text.style.TextOverflow,11)156@7042L7,158@7058L322:Text.kt#uh7d8r");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Text)N(text,modifier,color:c#ui.graphics.Color,fontSize:c#ui.unit.TextUnit,fontStyle:c#ui.text.font.FontStyle,fontWeight,fontFamily,letterSpacing:c#ui.unit.TextUnit,textDecoration,textAlign:c#ui.text.style.TextAlign,lineHeight:c#ui.unit.TextUnit,overflow:c#ui.text.style.TextOverflow,softWrap,maxLines,onTextLayout,style)374@16538L523:Text.kt#uh7d8r");
         if ((i5 & 1) != 0) {
             i6 = i3 | 6;
         } else if ((i3 & 6) == 0) {
@@ -1307,15 +2846,37 @@ public final class TextKt {
                                     }
                                     i26 |= i34;
                                 }
-                                if ((i19 & 306783379) == 306783378 || (74899 & i26) != 74898 || !startRestartGroup.getSkipping()) {
+                                if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (74899 & i26) != 74898, i19 & 1)) {
                                     startRestartGroup.startDefaults();
-                                    if ((i3 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
+                                    ComposerKt.sourceInformation(startRestartGroup, "371@16479L2,372@16521L7");
+                                    if ((i3 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i5 & 32768) != 0) {
+                                            i26 &= -458753;
+                                        }
+                                        long j15 = j6;
+                                        fontStyle3 = obj;
+                                        j13 = j15;
+                                        modifier4 = modifier;
+                                        textDecoration3 = textDecoration;
+                                        textAlign3 = textAlign;
+                                        j12 = j4;
+                                        i30 = i;
+                                        i31 = i2;
+                                        function15 = function1;
+                                        textStyle3 = textStyle;
+                                        z4 = z2;
+                                        j11 = j5;
+                                        fontWeight3 = obj2;
+                                        fontFamily3 = obj3;
+                                        j14 = j3;
+                                    } else {
                                         Modifier.Companion companion = i32 != 0 ? Modifier.Companion : modifier;
                                         if (i7 != 0) {
-                                            j5 = Color.Companion.m4585getUnspecified0d7_KjU();
+                                            j5 = Color.Companion.m5315getUnspecified0d7_KjU();
                                         }
                                         if (i9 != 0) {
-                                            j6 = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
+                                            j6 = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
                                         }
                                         if (i10 != 0) {
                                             obj = null;
@@ -1326,140 +2887,120 @@ public final class TextKt {
                                         if (i12 != 0) {
                                             obj3 = null;
                                         }
-                                        long m7469getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
+                                        long m8200getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j3;
                                         TextDecoration textDecoration4 = i16 != 0 ? null : textDecoration;
-                                        TextAlign textAlign5 = i18 == 0 ? textAlign : null;
-                                        long m7469getUnspecifiedXSAIIZE2 = i20 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4;
-                                        int m7199getClipgIe3tQ8 = i23 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
-                                        if (i24 != 0) {
-                                            z2 = true;
-                                        }
+                                        TextAlign textAlign4 = i18 == 0 ? textAlign : null;
+                                        long m8200getUnspecifiedXSAIIZE2 = i20 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j4;
+                                        int m7930getClipgIe3tQ8 = i23 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
+                                        boolean z5 = i24 == 0 ? z2 : true;
                                         int i37 = i25 != 0 ? Integer.MAX_VALUE : i2;
-                                        TextKt$Text$2 textKt$Text$2 = i27 != 0 ? new Function1<TextLayoutResult, Unit>() { // from class: androidx.compose.material3.TextKt$Text$2
-                                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                            public final void invoke2(TextLayoutResult textLayoutResult) {
+                                        if (i27 != 0) {
+                                            modifier3 = companion;
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2078487105, "CC(remember):Text.kt#9igjgp");
+                                            Object rememberedValue = startRestartGroup.rememberedValue();
+                                            if (rememberedValue == Composer.Companion.getEmpty()) {
+                                                rememberedValue = new Function1() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda6
+                                                    @Override // kotlin.jvm.functions.Function1
+                                                    public final Object invoke(Object obj4) {
+                                                        Unit Text_fLXpl1I$lambda$14$lambda$13;
+                                                        Text_fLXpl1I$lambda$14$lambda$13 = TextKt.Text_fLXpl1I$lambda$14$lambda$13((TextLayoutResult) obj4);
+                                                        return Text_fLXpl1I$lambda$14$lambda$13;
+                                                    }
+                                                };
+                                                startRestartGroup.updateRememberedValue(rememberedValue);
                                             }
-
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public /* bridge */ /* synthetic */ Unit invoke(TextLayoutResult textLayoutResult) {
-                                                invoke2(textLayoutResult);
-                                                return Unit.INSTANCE;
-                                            }
-                                        } : function1;
+                                            function13 = (Function1) rememberedValue;
+                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        } else {
+                                            modifier3 = companion;
+                                            function13 = function1;
+                                        }
                                         if ((i5 & 32768) != 0) {
-                                            modifier2 = companion;
-                                            textAlign2 = textAlign5;
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                                            function14 = function13;
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                             Object consume = startRestartGroup.consume(LocalTextStyle);
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             i26 &= -458753;
-                                            z3 = z2;
-                                            j7 = j5;
-                                            i28 = m7199getClipgIe3tQ8;
-                                            j8 = m7469getUnspecifiedXSAIIZE2;
-                                            textStyle2 = (TextStyle) consume;
+                                            modifier4 = modifier3;
+                                            textAlign3 = textAlign4;
+                                            textStyle3 = (TextStyle) consume;
                                         } else {
-                                            modifier2 = companion;
-                                            textAlign2 = textAlign5;
-                                            z3 = z2;
-                                            j7 = j5;
-                                            i28 = m7199getClipgIe3tQ8;
-                                            j8 = m7469getUnspecifiedXSAIIZE2;
-                                            textStyle2 = textStyle;
+                                            function14 = function13;
+                                            modifier4 = modifier3;
+                                            textAlign3 = textAlign4;
+                                            textStyle3 = textStyle;
                                         }
-                                        function12 = textKt$Text$2;
-                                        modifier3 = modifier2;
-                                        int i38 = i37;
-                                        textAlign3 = textAlign2;
-                                        FontFamily fontFamily4 = obj3;
-                                        textDecoration2 = textDecoration4;
-                                        j9 = j6;
-                                        fontWeight2 = obj2;
-                                        fontFamily2 = fontFamily4;
-                                        j10 = m7469getUnspecifiedXSAIIZE;
-                                        i29 = i38;
-                                    } else {
-                                        startRestartGroup.skipToGroupEnd();
-                                        if ((i5 & 32768) != 0) {
-                                            i26 &= -458753;
-                                        }
-                                        modifier3 = modifier;
-                                        textAlign3 = textAlign;
-                                        j8 = j4;
-                                        i28 = i;
-                                        i29 = i2;
-                                        function12 = function1;
-                                        textStyle2 = textStyle;
-                                        z3 = z2;
-                                        j7 = j5;
-                                        j9 = j6;
-                                        fontWeight2 = obj2;
-                                        fontFamily2 = obj3;
-                                        j10 = j3;
-                                        textDecoration2 = textDecoration;
+                                        textDecoration3 = textDecoration4;
+                                        i30 = m7930getClipgIe3tQ8;
+                                        fontFamily3 = obj3;
+                                        function15 = function14;
+                                        long j16 = m8200getUnspecifiedXSAIIZE;
+                                        i31 = i37;
+                                        j11 = j5;
+                                        z4 = z5;
+                                        j12 = m8200getUnspecifiedXSAIIZE2;
+                                        long j17 = j6;
+                                        fontStyle3 = obj;
+                                        j13 = j17;
+                                        fontWeight3 = obj2;
+                                        j14 = j16;
                                     }
                                     startRestartGroup.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(1968784669, i19, i26, "androidx.compose.material3.Text (Text.kt:157)");
+                                        ComposerKt.traceEventStart(1968784669, i19, i26, "androidx.compose.material3.Text (Text.kt:373)");
                                     }
-                                    int i39 = i26 << 3;
+                                    int i38 = i19 << 3;
+                                    int i39 = (i19 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED) | (57344 & i38) | (458752 & i38) | (3670016 & i38) | (29360128 & i38) | (234881024 & i38) | (i38 & 1879048192);
+                                    int i40 = i26 << 3;
+                                    int i41 = ((i19 >> 27) & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i40 & 112) | (i40 & 896) | (i40 & 7168) | (i40 & 57344);
+                                    int i42 = i26 << 6;
                                     composer2 = startRestartGroup;
-                                    m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39) | (i39 & 3670016), 0);
+                                    m3168TextNvy7gAk(str, modifier4, j11, null, j13, fontStyle3, fontWeight3, fontFamily3, j14, textDecoration3, textAlign3, j12, i30, z4, i31, 1, function15, textStyle3, composer2, i39, i41 | (3670016 & i42) | (i42 & 29360128), 8);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
-                                    modifier4 = modifier3;
-                                    j11 = j7;
-                                    j12 = j9;
-                                    fontStyle2 = obj;
-                                    fontWeight3 = fontWeight2;
-                                    fontFamily3 = fontFamily2;
-                                    j13 = j10;
-                                    textDecoration3 = textDecoration2;
-                                    textAlign4 = textAlign3;
-                                    j14 = j8;
-                                    i30 = i28;
-                                    z4 = z3;
-                                    i31 = i29;
-                                    function13 = function12;
-                                    textStyle3 = textStyle2;
+                                    modifier2 = modifier4;
+                                    j7 = j11;
+                                    j8 = j13;
+                                    fontStyle2 = fontStyle3;
+                                    fontWeight2 = fontWeight3;
+                                    fontFamily2 = fontFamily3;
+                                    j9 = j14;
+                                    textDecoration2 = textDecoration3;
+                                    textAlign2 = textAlign3;
+                                    j10 = j12;
+                                    i28 = i30;
+                                    z3 = z4;
+                                    i29 = i31;
+                                    function12 = function15;
+                                    textStyle2 = textStyle3;
                                 } else {
-                                    startRestartGroup.skipToGroupEnd();
-                                    modifier4 = modifier;
-                                    textAlign4 = textAlign;
-                                    i30 = i;
-                                    i31 = i2;
-                                    function13 = function1;
-                                    textStyle3 = textStyle;
                                     composer2 = startRestartGroup;
-                                    z4 = z2;
-                                    j11 = j5;
+                                    composer2.skipToGroupEnd();
+                                    modifier2 = modifier;
+                                    textAlign2 = textAlign;
+                                    i28 = i;
+                                    i29 = i2;
+                                    function12 = function1;
+                                    textStyle2 = textStyle;
+                                    z3 = z2;
+                                    j7 = j5;
                                     fontStyle2 = obj;
-                                    j12 = j6;
-                                    fontWeight3 = obj2;
-                                    fontFamily3 = obj3;
-                                    j13 = j3;
-                                    textDecoration3 = textDecoration;
-                                    j14 = j4;
+                                    j8 = j6;
+                                    fontWeight2 = obj2;
+                                    fontFamily2 = obj3;
+                                    j9 = j3;
+                                    textDecoration2 = textDecoration;
+                                    j10 = j4;
                                 }
                                 endRestartGroup = composer2.endRestartGroup();
                                 if (endRestartGroup != null) {
-                                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextKt$Text$3
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
-
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda7
                                         @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                            invoke(composer3, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer3, int i40) {
-                                            TextKt.m2816TextfLXpl1I(str, modifier4, j11, j12, fontStyle2, fontWeight3, fontFamily3, j13, textDecoration3, textAlign4, j14, i30, z4, i31, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+                                        public final Object invoke(Object obj4, Object obj5) {
+                                            Unit Text_fLXpl1I$lambda$15;
+                                            Text_fLXpl1I$lambda$15 = TextKt.Text_fLXpl1I$lambda$15(str, modifier2, j7, j8, fontStyle2, fontWeight2, fontFamily2, j9, textDecoration2, textAlign2, j10, i28, z3, i29, function12, textStyle2, i3, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
+                                            return Text_fLXpl1I$lambda$15;
                                         }
                                     });
                                     return;
@@ -1468,75 +3009,8 @@ public final class TextKt {
                             }
                             if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
                             }
-                            if ((i19 & 306783379) == 306783378) {
+                            if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (74899 & i26) != 74898, i19 & 1)) {
                             }
-                            startRestartGroup.startDefaults();
-                            if ((i3 & 1) != 0) {
-                            }
-                            if (i32 != 0) {
-                            }
-                            if (i7 != 0) {
-                            }
-                            if (i9 != 0) {
-                            }
-                            if (i10 != 0) {
-                            }
-                            if (i11 != 0) {
-                            }
-                            if (i12 != 0) {
-                            }
-                            if (i13 != 0) {
-                            }
-                            if (i16 != 0) {
-                            }
-                            if (i18 == 0) {
-                            }
-                            if (i20 != 0) {
-                            }
-                            if (i23 != 0) {
-                            }
-                            if (i24 != 0) {
-                            }
-                            if (i25 != 0) {
-                            }
-                            if (i27 != 0) {
-                            }
-                            if ((i5 & 32768) != 0) {
-                            }
-                            function12 = textKt$Text$2;
-                            modifier3 = modifier2;
-                            int i382 = i37;
-                            textAlign3 = textAlign2;
-                            FontFamily fontFamily42 = obj3;
-                            textDecoration2 = textDecoration4;
-                            j9 = j6;
-                            fontWeight2 = obj2;
-                            fontFamily2 = fontFamily42;
-                            j10 = m7469getUnspecifiedXSAIIZE;
-                            i29 = i382;
-                            startRestartGroup.endDefaults();
-                            if (ComposerKt.isTraceInProgress()) {
-                            }
-                            int i392 = i26 << 3;
-                            composer2 = startRestartGroup;
-                            m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392) | (i392 & 3670016), 0);
-                            if (ComposerKt.isTraceInProgress()) {
-                            }
-                            modifier4 = modifier3;
-                            j11 = j7;
-                            j12 = j9;
-                            fontStyle2 = obj;
-                            fontWeight3 = fontWeight2;
-                            fontFamily3 = fontFamily2;
-                            j13 = j10;
-                            textDecoration3 = textDecoration2;
-                            textAlign4 = textAlign3;
-                            j14 = j8;
-                            i30 = i28;
-                            z4 = z3;
-                            i31 = i29;
-                            function13 = function12;
-                            textStyle3 = textStyle2;
                             endRestartGroup = composer2.endRestartGroup();
                             if (endRestartGroup != null) {
                             }
@@ -1550,75 +3024,8 @@ public final class TextKt {
                         }
                         if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
                         }
-                        if ((i19 & 306783379) == 306783378) {
+                        if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (74899 & i26) != 74898, i19 & 1)) {
                         }
-                        startRestartGroup.startDefaults();
-                        if ((i3 & 1) != 0) {
-                        }
-                        if (i32 != 0) {
-                        }
-                        if (i7 != 0) {
-                        }
-                        if (i9 != 0) {
-                        }
-                        if (i10 != 0) {
-                        }
-                        if (i11 != 0) {
-                        }
-                        if (i12 != 0) {
-                        }
-                        if (i13 != 0) {
-                        }
-                        if (i16 != 0) {
-                        }
-                        if (i18 == 0) {
-                        }
-                        if (i20 != 0) {
-                        }
-                        if (i23 != 0) {
-                        }
-                        if (i24 != 0) {
-                        }
-                        if (i25 != 0) {
-                        }
-                        if (i27 != 0) {
-                        }
-                        if ((i5 & 32768) != 0) {
-                        }
-                        function12 = textKt$Text$2;
-                        modifier3 = modifier2;
-                        int i3822 = i37;
-                        textAlign3 = textAlign2;
-                        FontFamily fontFamily422 = obj3;
-                        textDecoration2 = textDecoration4;
-                        j9 = j6;
-                        fontWeight2 = obj2;
-                        fontFamily2 = fontFamily422;
-                        j10 = m7469getUnspecifiedXSAIIZE;
-                        i29 = i3822;
-                        startRestartGroup.endDefaults();
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        int i3922 = i26 << 3;
-                        composer2 = startRestartGroup;
-                        m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922) | (i3922 & 3670016), 0);
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        modifier4 = modifier3;
-                        j11 = j7;
-                        j12 = j9;
-                        fontStyle2 = obj;
-                        fontWeight3 = fontWeight2;
-                        fontFamily3 = fontFamily2;
-                        j13 = j10;
-                        textDecoration3 = textDecoration2;
-                        textAlign4 = textAlign3;
-                        j14 = j8;
-                        i30 = i28;
-                        z4 = z3;
-                        i31 = i29;
-                        function13 = function12;
-                        textStyle3 = textStyle2;
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup != null) {
                         }
@@ -1647,75 +3054,8 @@ public final class TextKt {
                     }
                     if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
                     }
-                    if ((i19 & 306783379) == 306783378) {
+                    if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (74899 & i26) != 74898, i19 & 1)) {
                     }
-                    startRestartGroup.startDefaults();
-                    if ((i3 & 1) != 0) {
-                    }
-                    if (i32 != 0) {
-                    }
-                    if (i7 != 0) {
-                    }
-                    if (i9 != 0) {
-                    }
-                    if (i10 != 0) {
-                    }
-                    if (i11 != 0) {
-                    }
-                    if (i12 != 0) {
-                    }
-                    if (i13 != 0) {
-                    }
-                    if (i16 != 0) {
-                    }
-                    if (i18 == 0) {
-                    }
-                    if (i20 != 0) {
-                    }
-                    if (i23 != 0) {
-                    }
-                    if (i24 != 0) {
-                    }
-                    if (i25 != 0) {
-                    }
-                    if (i27 != 0) {
-                    }
-                    if ((i5 & 32768) != 0) {
-                    }
-                    function12 = textKt$Text$2;
-                    modifier3 = modifier2;
-                    int i38222 = i37;
-                    textAlign3 = textAlign2;
-                    FontFamily fontFamily4222 = obj3;
-                    textDecoration2 = textDecoration4;
-                    j9 = j6;
-                    fontWeight2 = obj2;
-                    fontFamily2 = fontFamily4222;
-                    j10 = m7469getUnspecifiedXSAIIZE;
-                    i29 = i38222;
-                    startRestartGroup.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    int i39222 = i26 << 3;
-                    composer2 = startRestartGroup;
-                    m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222) | (i39222 & 3670016), 0);
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    modifier4 = modifier3;
-                    j11 = j7;
-                    j12 = j9;
-                    fontStyle2 = obj;
-                    fontWeight3 = fontWeight2;
-                    fontFamily3 = fontFamily2;
-                    j13 = j10;
-                    textDecoration3 = textDecoration2;
-                    textAlign4 = textAlign3;
-                    j14 = j8;
-                    i30 = i28;
-                    z4 = z3;
-                    i31 = i29;
-                    function13 = function12;
-                    textStyle3 = textStyle2;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
@@ -1748,75 +3088,8 @@ public final class TextKt {
                 }
                 if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
                 }
-                if ((i19 & 306783379) == 306783378) {
+                if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (74899 & i26) != 74898, i19 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i3 & 1) != 0) {
-                }
-                if (i32 != 0) {
-                }
-                if (i7 != 0) {
-                }
-                if (i9 != 0) {
-                }
-                if (i10 != 0) {
-                }
-                if (i11 != 0) {
-                }
-                if (i12 != 0) {
-                }
-                if (i13 != 0) {
-                }
-                if (i16 != 0) {
-                }
-                if (i18 == 0) {
-                }
-                if (i20 != 0) {
-                }
-                if (i23 != 0) {
-                }
-                if (i24 != 0) {
-                }
-                if (i25 != 0) {
-                }
-                if (i27 != 0) {
-                }
-                if ((i5 & 32768) != 0) {
-                }
-                function12 = textKt$Text$2;
-                modifier3 = modifier2;
-                int i382222 = i37;
-                textAlign3 = textAlign2;
-                FontFamily fontFamily42222 = obj3;
-                textDecoration2 = textDecoration4;
-                j9 = j6;
-                fontWeight2 = obj2;
-                fontFamily2 = fontFamily42222;
-                j10 = m7469getUnspecifiedXSAIIZE;
-                i29 = i382222;
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                int i392222 = i26 << 3;
-                composer2 = startRestartGroup;
-                m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392222) | (i392222 & 3670016), 0);
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                modifier4 = modifier3;
-                j11 = j7;
-                j12 = j9;
-                fontStyle2 = obj;
-                fontWeight3 = fontWeight2;
-                fontFamily3 = fontFamily2;
-                j13 = j10;
-                textDecoration3 = textDecoration2;
-                textAlign4 = textAlign3;
-                j14 = j8;
-                i30 = i28;
-                z4 = z3;
-                i31 = i29;
-                function13 = function12;
-                textStyle3 = textStyle2;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup != null) {
                 }
@@ -1860,75 +3133,8 @@ public final class TextKt {
             }
             if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
             }
-            if ((i19 & 306783379) == 306783378) {
+            if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (74899 & i26) != 74898, i19 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i3 & 1) != 0) {
-            }
-            if (i32 != 0) {
-            }
-            if (i7 != 0) {
-            }
-            if (i9 != 0) {
-            }
-            if (i10 != 0) {
-            }
-            if (i11 != 0) {
-            }
-            if (i12 != 0) {
-            }
-            if (i13 != 0) {
-            }
-            if (i16 != 0) {
-            }
-            if (i18 == 0) {
-            }
-            if (i20 != 0) {
-            }
-            if (i23 != 0) {
-            }
-            if (i24 != 0) {
-            }
-            if (i25 != 0) {
-            }
-            if (i27 != 0) {
-            }
-            if ((i5 & 32768) != 0) {
-            }
-            function12 = textKt$Text$2;
-            modifier3 = modifier2;
-            int i3822222 = i37;
-            textAlign3 = textAlign2;
-            FontFamily fontFamily422222 = obj3;
-            textDecoration2 = textDecoration4;
-            j9 = j6;
-            fontWeight2 = obj2;
-            fontFamily2 = fontFamily422222;
-            j10 = m7469getUnspecifiedXSAIIZE;
-            i29 = i3822222;
-            startRestartGroup.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            int i3922222 = i26 << 3;
-            composer2 = startRestartGroup;
-            m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922222) | (i3922222 & 3670016), 0);
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            modifier4 = modifier3;
-            j11 = j7;
-            j12 = j9;
-            fontStyle2 = obj;
-            fontWeight3 = fontWeight2;
-            fontFamily3 = fontFamily2;
-            j13 = j10;
-            textDecoration3 = textDecoration2;
-            textAlign4 = textAlign3;
-            j14 = j8;
-            i30 = i28;
-            z4 = z3;
-            i31 = i29;
-            function13 = function12;
-            textStyle3 = textStyle2;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -1981,1041 +3187,16 @@ public final class TextKt {
         }
         if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
         }
-        if ((i19 & 306783379) == 306783378) {
+        if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (74899 & i26) != 74898, i19 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i3 & 1) != 0) {
-        }
-        if (i32 != 0) {
-        }
-        if (i7 != 0) {
-        }
-        if (i9 != 0) {
-        }
-        if (i10 != 0) {
-        }
-        if (i11 != 0) {
-        }
-        if (i12 != 0) {
-        }
-        if (i13 != 0) {
-        }
-        if (i16 != 0) {
-        }
-        if (i18 == 0) {
-        }
-        if (i20 != 0) {
-        }
-        if (i23 != 0) {
-        }
-        if (i24 != 0) {
-        }
-        if (i25 != 0) {
-        }
-        if (i27 != 0) {
-        }
-        if ((i5 & 32768) != 0) {
-        }
-        function12 = textKt$Text$2;
-        modifier3 = modifier2;
-        int i38222222 = i37;
-        textAlign3 = textAlign2;
-        FontFamily fontFamily4222222 = obj3;
-        textDecoration2 = textDecoration4;
-        j9 = j6;
-        fontWeight2 = obj2;
-        fontFamily2 = fontFamily4222222;
-        j10 = m7469getUnspecifiedXSAIIZE;
-        i29 = i38222222;
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        int i39222222 = i26 << 3;
-        composer2 = startRestartGroup;
-        m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222222) | (i39222222 & 3670016), 0);
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        modifier4 = modifier3;
-        j11 = j7;
-        j12 = j9;
-        fontStyle2 = obj;
-        fontWeight3 = fontWeight2;
-        fontFamily3 = fontFamily2;
-        j13 = j10;
-        textDecoration3 = textDecoration2;
-        textAlign4 = textAlign3;
-        j14 = j8;
-        i30 = i28;
-        z4 = z3;
-        i31 = i29;
-        function13 = function12;
-        textStyle3 = textStyle2;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x014d  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0173  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0193  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0196  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x01b2  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x01b5  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x01d5  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x01da  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x01fc  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x0213  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0218  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x022f  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x024f  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x028b  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x02c4  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x02c9  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x02cd  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x02d4  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x02d8  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x02e1  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x02e4  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x02e7  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x02ea  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x02f1  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x02f7  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x02fc  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x0300  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0307  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x030b  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0312  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0317  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x031e  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x0323  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x0327  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x032c  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x0330  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x0335  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x033b  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x0372  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0391  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x03aa  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x03ad  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x03e8  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x03ed  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0464  */
-    /* JADX WARN: Removed duplicated region for block: B:278:0x048c  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:280:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0077  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0095  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00d3  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x010e  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0113  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x012f  */
-    /* renamed from: Text-IbK3jfQ  reason: not valid java name */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final void m2815TextIbK3jfQ(final AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Map<String, InlineTextContent> map, Function1<? super TextLayoutResult, Unit> function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
-        int i7;
-        int i8;
-        int i9;
-        long j5;
-        int i10;
-        Object obj;
-        int i11;
-        Object obj2;
-        int i12;
-        Object obj3;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        int i20;
-        int i21;
-        boolean z2;
-        int i22;
-        int i23;
-        int i24;
-        int i25;
-        int i26;
-        int i27;
-        Modifier.Companion companion;
-        long m4585getUnspecified0d7_KjU;
-        TextAlign textAlign2;
-        int m7199getClipgIe3tQ8;
-        int i28;
-        int i29;
-        Map<String, InlineTextContent> emptyMap;
-        TextKt$Text$4 textKt$Text$4;
-        TextStyle textStyle2;
-        TextDecoration textDecoration2;
-        FontStyle fontStyle2;
-        long j6;
-        FontWeight fontWeight2;
-        FontFamily fontFamily2;
-        long j7;
-        int i30;
-        long j8;
-        long j9;
-        final Modifier modifier2;
-        Composer composer2;
-        final TextAlign textAlign3;
-        final Map<String, InlineTextContent> map2;
-        final int i31;
-        final int i32;
-        final Function1<? super TextLayoutResult, Unit> function12;
-        final long j10;
-        final TextStyle textStyle3;
-        final FontWeight fontWeight3;
-        final FontStyle fontStyle3;
-        final FontFamily fontFamily3;
-        final long j11;
-        final long j12;
-        final boolean z3;
-        final int i33;
-        final long j13;
-        final TextDecoration textDecoration3;
-        ScopeUpdateScope endRestartGroup;
-        Composer startRestartGroup = composer.startRestartGroup(2027001676);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Text)P(15,10,0:c#ui.graphics.Color,2:c#ui.unit.TextUnit,3:c#ui.text.font.FontStyle,4!1,6:c#ui.unit.TextUnit,17,16:c#ui.text.style.TextAlign,7:c#ui.unit.TextUnit,12:c#ui.text.style.TextOverflow,13,8,9)254@11726L7,258@11837L706:Text.kt#uh7d8r");
-        if ((i6 & 1) != 0) {
-            i7 = i4 | 6;
-        } else if ((i4 & 6) == 0) {
-            i7 = (startRestartGroup.changed(annotatedString) ? 4 : 2) | i4;
-        } else {
-            i7 = i4;
-        }
-        int i34 = i6 & 2;
-        if (i34 != 0) {
-            i7 |= 48;
-        } else if ((i4 & 48) == 0) {
-            i7 |= startRestartGroup.changed(modifier) ? 32 : 16;
-            i8 = i6 & 4;
-            if (i8 == 0) {
-                i7 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-            } else if ((i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                i7 |= startRestartGroup.changed(j) ? 256 : 128;
-            }
-            i9 = i6 & 8;
-            if (i9 == 0) {
-                i7 |= 3072;
-                j5 = j2;
-            } else {
-                j5 = j2;
-                if ((i4 & 3072) == 0) {
-                    i7 |= startRestartGroup.changed(j5) ? 2048 : 1024;
-                }
-            }
-            i10 = i6 & 16;
-            if (i10 == 0) {
-                i7 |= 24576;
-            } else if ((i4 & 24576) == 0) {
-                obj = fontStyle;
-                i7 |= startRestartGroup.changed(obj) ? 16384 : 8192;
-                i11 = i6 & 32;
-                if (i11 != 0) {
-                    i7 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
-                    obj2 = fontWeight;
-                } else {
-                    obj2 = fontWeight;
-                    if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
-                        i7 |= startRestartGroup.changed(obj2) ? 131072 : 65536;
-                    }
-                }
-                i12 = i6 & 64;
-                if (i12 != 0) {
-                    i7 |= 1572864;
-                    obj3 = fontFamily;
-                } else {
-                    obj3 = fontFamily;
-                    if ((i4 & 1572864) == 0) {
-                        i7 |= startRestartGroup.changed(obj3) ? 1048576 : 524288;
-                    }
-                }
-                i13 = i6 & 128;
-                if (i13 != 0) {
-                    i7 |= 12582912;
-                } else if ((i4 & 12582912) == 0) {
-                    i7 |= startRestartGroup.changed(j3) ? 8388608 : 4194304;
-                }
-                i14 = i6 & 256;
-                if (i14 != 0) {
-                    i7 |= 100663296;
-                } else if ((i4 & 100663296) == 0) {
-                    i7 |= startRestartGroup.changed(textDecoration) ? 67108864 : 33554432;
-                }
-                i15 = i6 & 512;
-                if (i15 != 0) {
-                    i7 |= 805306368;
-                } else if ((i4 & 805306368) == 0) {
-                    i16 = i15;
-                    i7 |= startRestartGroup.changed(textAlign) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
-                    i17 = i6 & 1024;
-                    if (i17 == 0) {
-                        i18 = i5 | 6;
-                    } else if ((i5 & 6) == 0) {
-                        i18 = i5 | (startRestartGroup.changed(j4) ? 4 : 2);
-                    } else {
-                        i18 = i5;
-                    }
-                    i19 = i6 & 2048;
-                    if (i19 == 0) {
-                        i18 |= 48;
-                        i20 = i19;
-                    } else if ((i5 & 48) == 0) {
-                        i20 = i19;
-                        i18 |= startRestartGroup.changed(i) ? 32 : 16;
-                    } else {
-                        i20 = i19;
-                    }
-                    int i35 = i18;
-                    i21 = i6 & 4096;
-                    if (i21 == 0) {
-                        i35 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-                    } else if ((i5 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                        z2 = z;
-                        i35 |= startRestartGroup.changed(z2) ? 256 : 128;
-                        i22 = i6 & 8192;
-                        if (i22 != 0) {
-                            i23 = i35 | 3072;
-                        } else {
-                            int i36 = i35;
-                            if ((i5 & 3072) == 0) {
-                                i23 = i36 | (startRestartGroup.changed(i2) ? 2048 : 1024);
-                            } else {
-                                i23 = i36;
-                            }
-                        }
-                        i24 = i6 & 16384;
-                        if (i24 != 0) {
-                            i25 = i23 | 24576;
-                        } else {
-                            i25 = i23;
-                            if ((i5 & 24576) == 0) {
-                                i25 |= startRestartGroup.changed(i3) ? 16384 : 8192;
-                                i26 = i6 & 32768;
-                                if (i26 == 0) {
-                                    i25 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
-                                } else if ((i5 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
-                                    i25 |= startRestartGroup.changedInstance(map) ? 131072 : 65536;
-                                }
-                                i27 = i6 & 65536;
-                                if (i27 == 0) {
-                                    i25 |= 1572864;
-                                } else if ((i5 & 1572864) == 0) {
-                                    i25 |= startRestartGroup.changedInstance(function1) ? 1048576 : 524288;
-                                }
-                                if ((i5 & 12582912) == 0) {
-                                    i25 |= ((i6 & 131072) == 0 && startRestartGroup.changed(textStyle)) ? 8388608 : 4194304;
-                                }
-                                if ((i7 & 306783379) == 306783378 || (i25 & 4793491) != 4793490 || !startRestartGroup.getSkipping()) {
-                                    startRestartGroup.startDefaults();
-                                    if ((i4 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                                        companion = i34 == 0 ? Modifier.Companion : modifier;
-                                        m4585getUnspecified0d7_KjU = i8 == 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
-                                        if (i9 != 0) {
-                                            j5 = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
-                                        }
-                                        if (i10 != 0) {
-                                            obj = null;
-                                        }
-                                        if (i11 != 0) {
-                                            obj2 = null;
-                                        }
-                                        if (i12 != 0) {
-                                            obj3 = null;
-                                        }
-                                        long m7469getUnspecifiedXSAIIZE = i13 == 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
-                                        TextDecoration textDecoration4 = i14 == 0 ? null : textDecoration;
-                                        textAlign2 = i16 == 0 ? textAlign : null;
-                                        long m7469getUnspecifiedXSAIIZE2 = i17 == 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4;
-                                        m7199getClipgIe3tQ8 = i20 == 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
-                                        if (i21 != 0) {
-                                            z2 = true;
-                                        }
-                                        i28 = i22 == 0 ? Integer.MAX_VALUE : i2;
-                                        i29 = i24 == 0 ? i3 : 1;
-                                        emptyMap = i26 == 0 ? MapsKt.emptyMap() : map;
-                                        textKt$Text$4 = i27 == 0 ? new Function1<TextLayoutResult, Unit>() { // from class: androidx.compose.material3.TextKt$Text$4
-                                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                            public final void invoke2(TextLayoutResult textLayoutResult) {
-                                            }
-
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public /* bridge */ /* synthetic */ Unit invoke(TextLayoutResult textLayoutResult) {
-                                                invoke2(textLayoutResult);
-                                                return Unit.INSTANCE;
-                                            }
-                                        } : function1;
-                                        if ((i6 & 131072) == 0) {
-                                            Modifier modifier3 = companion;
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                            Object consume = startRestartGroup.consume(LocalTextStyle);
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            textAlign2 = textAlign2;
-                                            textStyle2 = (TextStyle) consume;
-                                            textDecoration2 = textDecoration4;
-                                            fontStyle2 = obj;
-                                            j6 = j5;
-                                            fontWeight2 = obj2;
-                                            fontFamily2 = obj3;
-                                            j7 = m7469getUnspecifiedXSAIIZE;
-                                            i30 = i25 & (-29360129);
-                                            j8 = m7469getUnspecifiedXSAIIZE2;
-                                            companion = modifier3;
-                                        } else {
-                                            textStyle2 = textStyle;
-                                            textDecoration2 = textDecoration4;
-                                            fontStyle2 = obj;
-                                            j6 = j5;
-                                            fontWeight2 = obj2;
-                                            fontFamily2 = obj3;
-                                            j7 = m7469getUnspecifiedXSAIIZE;
-                                            i30 = i25;
-                                            j8 = m7469getUnspecifiedXSAIIZE2;
-                                        }
-                                    } else {
-                                        startRestartGroup.skipToGroupEnd();
-                                        if ((i6 & 131072) != 0) {
-                                            i25 &= -29360129;
-                                        }
-                                        companion = modifier;
-                                        m4585getUnspecified0d7_KjU = j;
-                                        j7 = j3;
-                                        textDecoration2 = textDecoration;
-                                        textAlign2 = textAlign;
-                                        j8 = j4;
-                                        m7199getClipgIe3tQ8 = i;
-                                        i28 = i2;
-                                        i29 = i3;
-                                        emptyMap = map;
-                                        textKt$Text$4 = function1;
-                                        textStyle2 = textStyle;
-                                        fontStyle2 = obj;
-                                        j6 = j5;
-                                        fontWeight2 = obj2;
-                                        fontFamily2 = obj3;
-                                        i30 = i25;
-                                    }
-                                    startRestartGroup.endDefaults();
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(2027001676, i7, i30, "androidx.compose.material3.Text (Text.kt:255)");
-                                    }
-                                    startRestartGroup.startReplaceGroup(-1827697581);
-                                    ComposerKt.sourceInformation(startRestartGroup, "");
-                                    if (m4585getUnspecified0d7_KjU == 16) {
-                                        j9 = m4585getUnspecified0d7_KjU;
-                                    } else {
-                                        startRestartGroup.startReplaceGroup(-1827696808);
-                                        ComposerKt.sourceInformation(startRestartGroup, "*256@11820L7");
-                                        long m6756getColor0d7_KjU = textStyle2.m6756getColor0d7_KjU();
-                                        if (m6756getColor0d7_KjU == 16) {
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
-                                            Object consume2 = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            m6756getColor0d7_KjU = ((Color) consume2).m4559unboximpl();
-                                        }
-                                        startRestartGroup.endReplaceGroup();
-                                        j9 = m6756getColor0d7_KjU;
-                                    }
-                                    startRestartGroup.endReplaceGroup();
-                                    int i37 = i30 << 9;
-                                    Modifier modifier4 = companion;
-                                    BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier4, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i37 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i37) | (458752 & i37) | (3670016 & i37) | (29360128 & i37), 512);
-                                    modifier2 = modifier4;
-                                    composer2 = startRestartGroup;
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
-                                    textAlign3 = textAlign2;
-                                    map2 = emptyMap;
-                                    i31 = m7199getClipgIe3tQ8;
-                                    i32 = i28;
-                                    function12 = textKt$Text$4;
-                                    j10 = m4585getUnspecified0d7_KjU;
-                                    textStyle3 = textStyle2;
-                                    fontWeight3 = fontWeight2;
-                                    fontStyle3 = fontStyle2;
-                                    fontFamily3 = fontFamily2;
-                                    j11 = j7;
-                                    j12 = j8;
-                                    z3 = z2;
-                                    i33 = i29;
-                                    j13 = j6;
-                                    textDecoration3 = textDecoration2;
-                                } else {
-                                    startRestartGroup.skipToGroupEnd();
-                                    modifier2 = modifier;
-                                    textDecoration3 = textDecoration;
-                                    i31 = i;
-                                    i32 = i2;
-                                    i33 = i3;
-                                    map2 = map;
-                                    function12 = function1;
-                                    textStyle3 = textStyle;
-                                    composer2 = startRestartGroup;
-                                    z3 = z2;
-                                    fontStyle3 = obj;
-                                    j13 = j5;
-                                    fontWeight3 = obj2;
-                                    fontFamily3 = obj3;
-                                    j10 = j;
-                                    j11 = j3;
-                                    textAlign3 = textAlign;
-                                    j12 = j4;
-                                }
-                                endRestartGroup = composer2.endRestartGroup();
-                                if (endRestartGroup == null) {
-                                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextKt$Text$5
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                            invoke(composer3, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer3, int i38) {
-                                            TextKt.m2815TextIbK3jfQ(AnnotatedString.this, modifier2, j10, j13, fontStyle3, fontWeight3, fontFamily3, j11, textDecoration3, textAlign3, j12, i31, z3, i32, i33, map2, function12, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
-                                        }
-                                    });
-                                    return;
-                                }
-                                return;
-                            }
-                        }
-                        i26 = i6 & 32768;
-                        if (i26 == 0) {
-                        }
-                        i27 = i6 & 65536;
-                        if (i27 == 0) {
-                        }
-                        if ((i5 & 12582912) == 0) {
-                        }
-                        if ((i7 & 306783379) == 306783378) {
-                        }
-                        startRestartGroup.startDefaults();
-                        if ((i4 & 1) != 0) {
-                        }
-                        if (i34 == 0) {
-                        }
-                        if (i8 == 0) {
-                        }
-                        if (i9 != 0) {
-                        }
-                        if (i10 != 0) {
-                        }
-                        if (i11 != 0) {
-                        }
-                        if (i12 != 0) {
-                        }
-                        if (i13 == 0) {
-                        }
-                        if (i14 == 0) {
-                        }
-                        if (i16 == 0) {
-                        }
-                        if (i17 == 0) {
-                        }
-                        if (i20 == 0) {
-                        }
-                        if (i21 != 0) {
-                        }
-                        if (i22 == 0) {
-                        }
-                        if (i24 == 0) {
-                        }
-                        if (i26 == 0) {
-                        }
-                        if (i27 == 0) {
-                        }
-                        if ((i6 & 131072) == 0) {
-                        }
-                        startRestartGroup.endDefaults();
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        startRestartGroup.startReplaceGroup(-1827697581);
-                        ComposerKt.sourceInformation(startRestartGroup, "");
-                        if (m4585getUnspecified0d7_KjU == 16) {
-                        }
-                        startRestartGroup.endReplaceGroup();
-                        int i372 = i30 << 9;
-                        Modifier modifier42 = companion;
-                        BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier42, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i372 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i372) | (458752 & i372) | (3670016 & i372) | (29360128 & i372), 512);
-                        modifier2 = modifier42;
-                        composer2 = startRestartGroup;
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        textAlign3 = textAlign2;
-                        map2 = emptyMap;
-                        i31 = m7199getClipgIe3tQ8;
-                        i32 = i28;
-                        function12 = textKt$Text$4;
-                        j10 = m4585getUnspecified0d7_KjU;
-                        textStyle3 = textStyle2;
-                        fontWeight3 = fontWeight2;
-                        fontStyle3 = fontStyle2;
-                        fontFamily3 = fontFamily2;
-                        j11 = j7;
-                        j12 = j8;
-                        z3 = z2;
-                        i33 = i29;
-                        j13 = j6;
-                        textDecoration3 = textDecoration2;
-                        endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup == null) {
-                        }
-                    }
-                    z2 = z;
-                    i22 = i6 & 8192;
-                    if (i22 != 0) {
-                    }
-                    i24 = i6 & 16384;
-                    if (i24 != 0) {
-                    }
-                    i26 = i6 & 32768;
-                    if (i26 == 0) {
-                    }
-                    i27 = i6 & 65536;
-                    if (i27 == 0) {
-                    }
-                    if ((i5 & 12582912) == 0) {
-                    }
-                    if ((i7 & 306783379) == 306783378) {
-                    }
-                    startRestartGroup.startDefaults();
-                    if ((i4 & 1) != 0) {
-                    }
-                    if (i34 == 0) {
-                    }
-                    if (i8 == 0) {
-                    }
-                    if (i9 != 0) {
-                    }
-                    if (i10 != 0) {
-                    }
-                    if (i11 != 0) {
-                    }
-                    if (i12 != 0) {
-                    }
-                    if (i13 == 0) {
-                    }
-                    if (i14 == 0) {
-                    }
-                    if (i16 == 0) {
-                    }
-                    if (i17 == 0) {
-                    }
-                    if (i20 == 0) {
-                    }
-                    if (i21 != 0) {
-                    }
-                    if (i22 == 0) {
-                    }
-                    if (i24 == 0) {
-                    }
-                    if (i26 == 0) {
-                    }
-                    if (i27 == 0) {
-                    }
-                    if ((i6 & 131072) == 0) {
-                    }
-                    startRestartGroup.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    startRestartGroup.startReplaceGroup(-1827697581);
-                    ComposerKt.sourceInformation(startRestartGroup, "");
-                    if (m4585getUnspecified0d7_KjU == 16) {
-                    }
-                    startRestartGroup.endReplaceGroup();
-                    int i3722 = i30 << 9;
-                    Modifier modifier422 = companion;
-                    BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier422, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i3722 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i3722) | (458752 & i3722) | (3670016 & i3722) | (29360128 & i3722), 512);
-                    modifier2 = modifier422;
-                    composer2 = startRestartGroup;
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    textAlign3 = textAlign2;
-                    map2 = emptyMap;
-                    i31 = m7199getClipgIe3tQ8;
-                    i32 = i28;
-                    function12 = textKt$Text$4;
-                    j10 = m4585getUnspecified0d7_KjU;
-                    textStyle3 = textStyle2;
-                    fontWeight3 = fontWeight2;
-                    fontStyle3 = fontStyle2;
-                    fontFamily3 = fontFamily2;
-                    j11 = j7;
-                    j12 = j8;
-                    z3 = z2;
-                    i33 = i29;
-                    j13 = j6;
-                    textDecoration3 = textDecoration2;
-                    endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup == null) {
-                    }
-                }
-                i16 = i15;
-                i17 = i6 & 1024;
-                if (i17 == 0) {
-                }
-                i19 = i6 & 2048;
-                if (i19 == 0) {
-                }
-                int i352 = i18;
-                i21 = i6 & 4096;
-                if (i21 == 0) {
-                }
-                z2 = z;
-                i22 = i6 & 8192;
-                if (i22 != 0) {
-                }
-                i24 = i6 & 16384;
-                if (i24 != 0) {
-                }
-                i26 = i6 & 32768;
-                if (i26 == 0) {
-                }
-                i27 = i6 & 65536;
-                if (i27 == 0) {
-                }
-                if ((i5 & 12582912) == 0) {
-                }
-                if ((i7 & 306783379) == 306783378) {
-                }
-                startRestartGroup.startDefaults();
-                if ((i4 & 1) != 0) {
-                }
-                if (i34 == 0) {
-                }
-                if (i8 == 0) {
-                }
-                if (i9 != 0) {
-                }
-                if (i10 != 0) {
-                }
-                if (i11 != 0) {
-                }
-                if (i12 != 0) {
-                }
-                if (i13 == 0) {
-                }
-                if (i14 == 0) {
-                }
-                if (i16 == 0) {
-                }
-                if (i17 == 0) {
-                }
-                if (i20 == 0) {
-                }
-                if (i21 != 0) {
-                }
-                if (i22 == 0) {
-                }
-                if (i24 == 0) {
-                }
-                if (i26 == 0) {
-                }
-                if (i27 == 0) {
-                }
-                if ((i6 & 131072) == 0) {
-                }
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                startRestartGroup.startReplaceGroup(-1827697581);
-                ComposerKt.sourceInformation(startRestartGroup, "");
-                if (m4585getUnspecified0d7_KjU == 16) {
-                }
-                startRestartGroup.endReplaceGroup();
-                int i37222 = i30 << 9;
-                Modifier modifier4222 = companion;
-                BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier4222, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i37222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i37222) | (458752 & i37222) | (3670016 & i37222) | (29360128 & i37222), 512);
-                modifier2 = modifier4222;
-                composer2 = startRestartGroup;
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                textAlign3 = textAlign2;
-                map2 = emptyMap;
-                i31 = m7199getClipgIe3tQ8;
-                i32 = i28;
-                function12 = textKt$Text$4;
-                j10 = m4585getUnspecified0d7_KjU;
-                textStyle3 = textStyle2;
-                fontWeight3 = fontWeight2;
-                fontStyle3 = fontStyle2;
-                fontFamily3 = fontFamily2;
-                j11 = j7;
-                j12 = j8;
-                z3 = z2;
-                i33 = i29;
-                j13 = j6;
-                textDecoration3 = textDecoration2;
-                endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup == null) {
-                }
-            }
-            obj = fontStyle;
-            i11 = i6 & 32;
-            if (i11 != 0) {
-            }
-            i12 = i6 & 64;
-            if (i12 != 0) {
-            }
-            i13 = i6 & 128;
-            if (i13 != 0) {
-            }
-            i14 = i6 & 256;
-            if (i14 != 0) {
-            }
-            i15 = i6 & 512;
-            if (i15 != 0) {
-            }
-            i16 = i15;
-            i17 = i6 & 1024;
-            if (i17 == 0) {
-            }
-            i19 = i6 & 2048;
-            if (i19 == 0) {
-            }
-            int i3522 = i18;
-            i21 = i6 & 4096;
-            if (i21 == 0) {
-            }
-            z2 = z;
-            i22 = i6 & 8192;
-            if (i22 != 0) {
-            }
-            i24 = i6 & 16384;
-            if (i24 != 0) {
-            }
-            i26 = i6 & 32768;
-            if (i26 == 0) {
-            }
-            i27 = i6 & 65536;
-            if (i27 == 0) {
-            }
-            if ((i5 & 12582912) == 0) {
-            }
-            if ((i7 & 306783379) == 306783378) {
-            }
-            startRestartGroup.startDefaults();
-            if ((i4 & 1) != 0) {
-            }
-            if (i34 == 0) {
-            }
-            if (i8 == 0) {
-            }
-            if (i9 != 0) {
-            }
-            if (i10 != 0) {
-            }
-            if (i11 != 0) {
-            }
-            if (i12 != 0) {
-            }
-            if (i13 == 0) {
-            }
-            if (i14 == 0) {
-            }
-            if (i16 == 0) {
-            }
-            if (i17 == 0) {
-            }
-            if (i20 == 0) {
-            }
-            if (i21 != 0) {
-            }
-            if (i22 == 0) {
-            }
-            if (i24 == 0) {
-            }
-            if (i26 == 0) {
-            }
-            if (i27 == 0) {
-            }
-            if ((i6 & 131072) == 0) {
-            }
-            startRestartGroup.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            startRestartGroup.startReplaceGroup(-1827697581);
-            ComposerKt.sourceInformation(startRestartGroup, "");
-            if (m4585getUnspecified0d7_KjU == 16) {
-            }
-            startRestartGroup.endReplaceGroup();
-            int i372222 = i30 << 9;
-            Modifier modifier42222 = companion;
-            BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier42222, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i372222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i372222) | (458752 & i372222) | (3670016 & i372222) | (29360128 & i372222), 512);
-            modifier2 = modifier42222;
-            composer2 = startRestartGroup;
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            textAlign3 = textAlign2;
-            map2 = emptyMap;
-            i31 = m7199getClipgIe3tQ8;
-            i32 = i28;
-            function12 = textKt$Text$4;
-            j10 = m4585getUnspecified0d7_KjU;
-            textStyle3 = textStyle2;
-            fontWeight3 = fontWeight2;
-            fontStyle3 = fontStyle2;
-            fontFamily3 = fontFamily2;
-            j11 = j7;
-            j12 = j8;
-            z3 = z2;
-            i33 = i29;
-            j13 = j6;
-            textDecoration3 = textDecoration2;
-            endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup == null) {
-            }
-        }
-        i8 = i6 & 4;
-        if (i8 == 0) {
-        }
-        i9 = i6 & 8;
-        if (i9 == 0) {
-        }
-        i10 = i6 & 16;
-        if (i10 == 0) {
-        }
-        obj = fontStyle;
-        i11 = i6 & 32;
-        if (i11 != 0) {
-        }
-        i12 = i6 & 64;
-        if (i12 != 0) {
-        }
-        i13 = i6 & 128;
-        if (i13 != 0) {
-        }
-        i14 = i6 & 256;
-        if (i14 != 0) {
-        }
-        i15 = i6 & 512;
-        if (i15 != 0) {
-        }
-        i16 = i15;
-        i17 = i6 & 1024;
-        if (i17 == 0) {
-        }
-        i19 = i6 & 2048;
-        if (i19 == 0) {
-        }
-        int i35222 = i18;
-        i21 = i6 & 4096;
-        if (i21 == 0) {
-        }
-        z2 = z;
-        i22 = i6 & 8192;
-        if (i22 != 0) {
-        }
-        i24 = i6 & 16384;
-        if (i24 != 0) {
-        }
-        i26 = i6 & 32768;
-        if (i26 == 0) {
-        }
-        i27 = i6 & 65536;
-        if (i27 == 0) {
-        }
-        if ((i5 & 12582912) == 0) {
-        }
-        if ((i7 & 306783379) == 306783378) {
-        }
-        startRestartGroup.startDefaults();
-        if ((i4 & 1) != 0) {
-        }
-        if (i34 == 0) {
-        }
-        if (i8 == 0) {
-        }
-        if (i9 != 0) {
-        }
-        if (i10 != 0) {
-        }
-        if (i11 != 0) {
-        }
-        if (i12 != 0) {
-        }
-        if (i13 == 0) {
-        }
-        if (i14 == 0) {
-        }
-        if (i16 == 0) {
-        }
-        if (i17 == 0) {
-        }
-        if (i20 == 0) {
-        }
-        if (i21 != 0) {
-        }
-        if (i22 == 0) {
-        }
-        if (i24 == 0) {
-        }
-        if (i26 == 0) {
-        }
-        if (i27 == 0) {
-        }
-        if ((i6 & 131072) == 0) {
-        }
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        startRestartGroup.startReplaceGroup(-1827697581);
-        ComposerKt.sourceInformation(startRestartGroup, "");
-        if (m4585getUnspecified0d7_KjU == 16) {
-        }
-        startRestartGroup.endReplaceGroup();
-        int i3722222 = i30 << 9;
-        Modifier modifier422222 = companion;
-        BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier422222, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i3722222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i3722222) | (458752 & i3722222) | (3670016 & i3722222) | (29360128 & i3722222), 512);
-        modifier2 = modifier422222;
-        composer2 = startRestartGroup;
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        textAlign3 = textAlign2;
-        map2 = emptyMap;
-        i31 = m7199getClipgIe3tQ8;
-        i32 = i28;
-        function12 = textKt$Text$4;
-        j10 = m4585getUnspecified0d7_KjU;
-        textStyle3 = textStyle2;
-        fontWeight3 = fontWeight2;
-        fontStyle3 = fontStyle2;
-        fontFamily3 = fontFamily2;
-        j11 = j7;
-        j12 = j8;
-        z3 = z2;
-        i33 = i29;
-        j13 = j6;
-        textDecoration3 = textDecoration2;
-        endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup == null) {
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit Text__4IGK_g$lambda$17$lambda$16(TextLayoutResult textLayoutResult) {
+        return Unit.INSTANCE;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x013c  */
@@ -3034,37 +3215,11 @@ public final class TextKt {
     /* JADX WARN: Removed duplicated region for block: B:167:0x020e  */
     /* JADX WARN: Removed duplicated region for block: B:176:0x0223  */
     /* JADX WARN: Removed duplicated region for block: B:183:0x0237  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x027c  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x02ac  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x02b1  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x02b5  */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x02bd  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x02c6  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x02c9  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x02cc  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x02cf  */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x02d6  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x02da  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x02dc  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x02e1  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x02e5  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x02ec  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x02f0  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x02f7  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x02fb  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x02fe  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0302  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x0306  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x030b  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x030f  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0314  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x033f  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x036e  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x03a8  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x03c9  */
-    /* JADX WARN: Removed duplicated region for block: B:257:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x0245  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x025b  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x03fb  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x0421  */
+    /* JADX WARN: Removed duplicated region for block: B:264:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0077  */
@@ -3084,7 +3239,7 @@ public final class TextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2813Text4IGK_g(final AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Map map, Function1 function1, TextStyle textStyle, Composer composer, final int i3, final int i4, final int i5) {
+    public static final /* synthetic */ void m3165Text4IGK_g(final AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Map map, Function1 function1, TextStyle textStyle, Composer composer, final int i3, final int i4, final int i5) {
         int i6;
         int i7;
         long j5;
@@ -3114,43 +3269,44 @@ public final class TextKt {
         int i26;
         int i27;
         int i28;
-        Modifier modifier2;
-        TextAlign textAlign2;
-        TextStyle textStyle2;
-        int i29;
-        Function1 function12;
-        long j7;
-        Map map2;
-        Modifier modifier3;
-        TextAlign textAlign3;
-        boolean z3;
-        long j8;
-        int i30;
-        TextDecoration textDecoration2;
-        long j9;
-        FontWeight fontWeight2;
-        FontFamily fontFamily2;
-        long j10;
         Composer composer2;
-        final Modifier modifier4;
-        final long j11;
-        final long j12;
+        final Modifier modifier2;
+        final TextAlign textAlign2;
+        final int i29;
+        final int i30;
+        final Map map2;
+        final Function1 function12;
+        final TextStyle textStyle2;
+        final boolean z3;
+        final long j7;
         final FontStyle fontStyle2;
-        final FontWeight fontWeight3;
-        final FontFamily fontFamily3;
-        final long j13;
-        final TextDecoration textDecoration3;
-        final TextAlign textAlign4;
-        final long j14;
-        final int i31;
-        final boolean z4;
-        final int i32;
-        final Map map3;
-        final Function1 function13;
-        final TextStyle textStyle3;
+        final long j8;
+        final FontWeight fontWeight2;
+        final FontFamily fontFamily2;
+        final long j9;
+        final TextDecoration textDecoration2;
+        final long j10;
         ScopeUpdateScope endRestartGroup;
+        TextAlign textAlign3;
+        Function1 function13;
+        TextAlign textAlign4;
+        Function1 function14;
+        TextStyle textStyle3;
+        TextDecoration textDecoration3;
+        long j11;
+        Map map3;
+        Modifier modifier3;
+        int i31;
+        long j12;
+        boolean z4;
+        int i32;
+        FontFamily fontFamily3;
+        FontStyle fontStyle3;
+        long j13;
+        FontWeight fontWeight3;
+        long j14;
         Composer startRestartGroup = composer.startRestartGroup(224529679);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Text)P(14,9,0:c#ui.graphics.Color,2:c#ui.unit.TextUnit,3:c#ui.text.font.FontStyle,4!1,6:c#ui.unit.TextUnit,16,15:c#ui.text.style.TextAlign,7:c#ui.unit.TextUnit,11:c#ui.text.style.TextOverflow,12,8)304@13393L7,306@13409L345:Text.kt#uh7d8r");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Text)N(text,modifier,color:c#ui.graphics.Color,fontSize:c#ui.unit.TextUnit,fontStyle:c#ui.text.font.FontStyle,fontWeight,fontFamily,letterSpacing:c#ui.unit.TextUnit,textDecoration,textAlign:c#ui.text.style.TextAlign,lineHeight:c#ui.unit.TextUnit,overflow:c#ui.text.style.TextOverflow,softWrap,maxLines,inlineContent,onTextLayout,style)419@17929L562:Text.kt#uh7d8r");
         if ((i5 & 1) != 0) {
             i6 = i3 | 6;
         } else if ((i3 & 6) == 0) {
@@ -3283,15 +3439,38 @@ public final class TextKt {
                                 if ((i4 & 1572864) == 0) {
                                     i26 |= ((i5 & 65536) == 0 && startRestartGroup.changed(textStyle)) ? 1048576 : 524288;
                                 }
-                                if ((i19 & 306783379) == 306783378 || (599187 & i26) != 599186 || !startRestartGroup.getSkipping()) {
+                                if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (599187 & i26) != 599186, i19 & 1)) {
                                     startRestartGroup.startDefaults();
-                                    if ((i3 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
+                                    ComposerKt.sourceInformation(startRestartGroup, "416@17870L2,417@17912L7");
+                                    if ((i3 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i5 & 65536) != 0) {
+                                            i26 &= -3670017;
+                                        }
+                                        long j15 = j6;
+                                        fontStyle3 = obj;
+                                        j13 = j15;
+                                        modifier3 = modifier;
+                                        textDecoration3 = textDecoration;
+                                        textAlign4 = textAlign;
+                                        j11 = j4;
+                                        i32 = i;
+                                        i31 = i2;
+                                        map3 = map;
+                                        function14 = function1;
+                                        textStyle3 = textStyle;
+                                        z4 = z2;
+                                        j12 = j5;
+                                        fontWeight3 = obj2;
+                                        fontFamily3 = obj3;
+                                        j14 = j3;
+                                    } else {
                                         Modifier.Companion companion = i33 != 0 ? Modifier.Companion : modifier;
                                         if (i7 != 0) {
-                                            j5 = Color.Companion.m4585getUnspecified0d7_KjU();
+                                            j5 = Color.Companion.m5315getUnspecified0d7_KjU();
                                         }
                                         if (i9 != 0) {
-                                            j6 = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
+                                            j6 = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
                                         }
                                         if (i10 != 0) {
                                             obj = null;
@@ -3302,142 +3481,124 @@ public final class TextKt {
                                         if (i12 != 0) {
                                             obj3 = null;
                                         }
-                                        long m7469getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
+                                        long m8200getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j3;
                                         TextDecoration textDecoration4 = i16 != 0 ? null : textDecoration;
                                         TextAlign textAlign5 = i18 == 0 ? textAlign : null;
-                                        long m7469getUnspecifiedXSAIIZE2 = i20 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4;
-                                        int m7199getClipgIe3tQ8 = i23 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
-                                        if (i24 != 0) {
-                                            z2 = true;
-                                        }
+                                        long m8200getUnspecifiedXSAIIZE2 = i20 != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j4;
+                                        int m7930getClipgIe3tQ8 = i23 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
+                                        boolean z5 = i24 == 0 ? z2 : true;
                                         int i37 = i25 != 0 ? Integer.MAX_VALUE : i2;
                                         Map emptyMap = i27 != 0 ? MapsKt.emptyMap() : map;
-                                        TextKt$Text$6 textKt$Text$6 = i28 != 0 ? new Function1<TextLayoutResult, Unit>() { // from class: androidx.compose.material3.TextKt$Text$6
-                                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                            public final void invoke2(TextLayoutResult textLayoutResult) {
+                                        Modifier modifier4 = companion;
+                                        if (i28 != 0) {
+                                            textAlign3 = textAlign5;
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1024682481, "CC(remember):Text.kt#9igjgp");
+                                            Object rememberedValue = startRestartGroup.rememberedValue();
+                                            if (rememberedValue == Composer.Companion.getEmpty()) {
+                                                rememberedValue = new Function1() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda12
+                                                    @Override // kotlin.jvm.functions.Function1
+                                                    public final Object invoke(Object obj4) {
+                                                        Unit Text__4IGK_g$lambda$17$lambda$16;
+                                                        Text__4IGK_g$lambda$17$lambda$16 = TextKt.Text__4IGK_g$lambda$17$lambda$16((TextLayoutResult) obj4);
+                                                        return Text__4IGK_g$lambda$17$lambda$16;
+                                                    }
+                                                };
+                                                startRestartGroup.updateRememberedValue(rememberedValue);
                                             }
-
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public /* bridge */ /* synthetic */ Unit invoke(TextLayoutResult textLayoutResult) {
-                                                invoke2(textLayoutResult);
-                                                return Unit.INSTANCE;
-                                            }
-                                        } : function1;
+                                            function13 = (Function1) rememberedValue;
+                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        } else {
+                                            textAlign3 = textAlign5;
+                                            function13 = function1;
+                                        }
                                         if ((i5 & 65536) != 0) {
-                                            modifier2 = companion;
-                                            textAlign2 = textAlign5;
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                                            Function1 function15 = function13;
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                             Object consume = startRestartGroup.consume(LocalTextStyle);
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             i26 &= -3670017;
-                                            textStyle2 = (TextStyle) consume;
+                                            textAlign4 = textAlign3;
+                                            function14 = function15;
+                                            textStyle3 = (TextStyle) consume;
                                         } else {
-                                            modifier2 = companion;
-                                            textAlign2 = textAlign5;
-                                            textStyle2 = textStyle;
+                                            textAlign4 = textAlign3;
+                                            function14 = function13;
+                                            textStyle3 = textStyle;
                                         }
-                                        i29 = m7199getClipgIe3tQ8;
-                                        function12 = textKt$Text$6;
-                                        j7 = m7469getUnspecifiedXSAIIZE2;
-                                        map2 = emptyMap;
-                                        modifier3 = modifier2;
-                                        int i38 = i37;
-                                        textAlign3 = textAlign2;
-                                        long j15 = m7469getUnspecifiedXSAIIZE;
-                                        z3 = z2;
-                                        j8 = j5;
-                                        i30 = i38;
-                                        FontFamily fontFamily4 = obj3;
-                                        textDecoration2 = textDecoration4;
-                                        j9 = j6;
-                                        fontWeight2 = obj2;
-                                        fontFamily2 = fontFamily4;
-                                        j10 = j15;
-                                    } else {
-                                        startRestartGroup.skipToGroupEnd();
-                                        if ((i5 & 65536) != 0) {
-                                            i26 &= -3670017;
-                                        }
-                                        modifier3 = modifier;
-                                        textAlign3 = textAlign;
-                                        j7 = j4;
-                                        i29 = i;
-                                        i30 = i2;
-                                        map2 = map;
-                                        function12 = function1;
-                                        textStyle2 = textStyle;
-                                        z3 = z2;
-                                        j8 = j5;
-                                        j9 = j6;
-                                        fontWeight2 = obj2;
-                                        fontFamily2 = obj3;
-                                        j10 = j3;
-                                        textDecoration2 = textDecoration;
+                                        textDecoration3 = textDecoration4;
+                                        j11 = m8200getUnspecifiedXSAIIZE2;
+                                        map3 = emptyMap;
+                                        modifier3 = modifier4;
+                                        long j16 = m8200getUnspecifiedXSAIIZE;
+                                        i31 = i37;
+                                        j12 = j5;
+                                        z4 = z5;
+                                        i32 = m7930getClipgIe3tQ8;
+                                        fontFamily3 = obj3;
+                                        long j17 = j6;
+                                        fontStyle3 = obj;
+                                        j13 = j17;
+                                        fontWeight3 = obj2;
+                                        j14 = j16;
                                     }
                                     startRestartGroup.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(224529679, i19, i26, "androidx.compose.material3.Text (Text.kt:305)");
+                                        ComposerKt.traceEventStart(224529679, i19, i26, "androidx.compose.material3.Text (Text.kt:418)");
                                     }
-                                    int i39 = i26 << 3;
+                                    int i38 = i19 << 3;
+                                    int i39 = (i19 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED) | (57344 & i38) | (458752 & i38) | (3670016 & i38) | (29360128 & i38) | (234881024 & i38) | (i38 & 1879048192);
+                                    int i40 = i26 << 3;
+                                    int i41 = ((i19 >> 27) & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i40 & 112) | (i40 & 896) | (i40 & 7168) | (i40 & 57344);
+                                    int i42 = i26 << 6;
                                     composer2 = startRestartGroup;
-                                    m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39) | (3670016 & i39) | (i39 & 29360128), 0);
+                                    m3169TextZ58ophY(annotatedString, modifier3, j12, null, j13, fontStyle3, fontWeight3, fontFamily3, j14, textDecoration3, textAlign4, j11, i32, z4, i31, 1, map3, function14, textStyle3, composer2, i39, i41 | (3670016 & i42) | (29360128 & i42) | (i42 & 234881024), 8);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
-                                    modifier4 = modifier3;
-                                    j11 = j8;
-                                    j12 = j9;
-                                    fontStyle2 = obj;
-                                    fontWeight3 = fontWeight2;
-                                    fontFamily3 = fontFamily2;
-                                    j13 = j10;
-                                    textDecoration3 = textDecoration2;
-                                    textAlign4 = textAlign3;
-                                    j14 = j7;
-                                    i31 = i29;
-                                    z4 = z3;
-                                    i32 = i30;
-                                    map3 = map2;
-                                    function13 = function12;
-                                    textStyle3 = textStyle2;
+                                    modifier2 = modifier3;
+                                    j7 = j12;
+                                    j8 = j13;
+                                    fontStyle2 = fontStyle3;
+                                    fontWeight2 = fontWeight3;
+                                    fontFamily2 = fontFamily3;
+                                    j9 = j14;
+                                    textDecoration2 = textDecoration3;
+                                    textAlign2 = textAlign4;
+                                    j10 = j11;
+                                    i29 = i32;
+                                    z3 = z4;
+                                    i30 = i31;
+                                    map2 = map3;
+                                    function12 = function14;
+                                    textStyle2 = textStyle3;
                                 } else {
-                                    startRestartGroup.skipToGroupEnd();
-                                    modifier4 = modifier;
-                                    textAlign4 = textAlign;
-                                    i31 = i;
-                                    i32 = i2;
-                                    map3 = map;
-                                    function13 = function1;
-                                    textStyle3 = textStyle;
                                     composer2 = startRestartGroup;
-                                    z4 = z2;
-                                    j11 = j5;
+                                    composer2.skipToGroupEnd();
+                                    modifier2 = modifier;
+                                    textAlign2 = textAlign;
+                                    i29 = i;
+                                    i30 = i2;
+                                    map2 = map;
+                                    function12 = function1;
+                                    textStyle2 = textStyle;
+                                    z3 = z2;
+                                    j7 = j5;
                                     fontStyle2 = obj;
-                                    j12 = j6;
-                                    fontWeight3 = obj2;
-                                    fontFamily3 = obj3;
-                                    j13 = j3;
-                                    textDecoration3 = textDecoration;
-                                    j14 = j4;
+                                    j8 = j6;
+                                    fontWeight2 = obj2;
+                                    fontFamily2 = obj3;
+                                    j9 = j3;
+                                    textDecoration2 = textDecoration;
+                                    j10 = j4;
                                 }
                                 endRestartGroup = composer2.endRestartGroup();
                                 if (endRestartGroup != null) {
-                                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextKt$Text$7
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
-
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda1
                                         @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                            invoke(composer3, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer3, int i40) {
-                                            TextKt.m2813Text4IGK_g(AnnotatedString.this, modifier4, j11, j12, fontStyle2, fontWeight3, fontFamily3, j13, textDecoration3, textAlign4, j14, i31, z4, i32, map3, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+                                        public final Object invoke(Object obj4, Object obj5) {
+                                            Unit Text__4IGK_g$lambda$18;
+                                            Text__4IGK_g$lambda$18 = TextKt.Text__4IGK_g$lambda$18(AnnotatedString.this, modifier2, j7, j8, fontStyle2, fontWeight2, fontFamily2, j9, textDecoration2, textAlign2, j10, i29, z3, i30, map2, function12, textStyle2, i3, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
+                                            return Text__4IGK_g$lambda$18;
                                         }
                                     });
                                     return;
@@ -3449,84 +3610,8 @@ public final class TextKt {
                             }
                             if ((i4 & 1572864) == 0) {
                             }
-                            if ((i19 & 306783379) == 306783378) {
+                            if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (599187 & i26) != 599186, i19 & 1)) {
                             }
-                            startRestartGroup.startDefaults();
-                            if ((i3 & 1) != 0) {
-                            }
-                            if (i33 != 0) {
-                            }
-                            if (i7 != 0) {
-                            }
-                            if (i9 != 0) {
-                            }
-                            if (i10 != 0) {
-                            }
-                            if (i11 != 0) {
-                            }
-                            if (i12 != 0) {
-                            }
-                            if (i13 != 0) {
-                            }
-                            if (i16 != 0) {
-                            }
-                            if (i18 == 0) {
-                            }
-                            if (i20 != 0) {
-                            }
-                            if (i23 != 0) {
-                            }
-                            if (i24 != 0) {
-                            }
-                            if (i25 != 0) {
-                            }
-                            if (i27 != 0) {
-                            }
-                            if (i28 != 0) {
-                            }
-                            if ((i5 & 65536) != 0) {
-                            }
-                            i29 = m7199getClipgIe3tQ8;
-                            function12 = textKt$Text$6;
-                            j7 = m7469getUnspecifiedXSAIIZE2;
-                            map2 = emptyMap;
-                            modifier3 = modifier2;
-                            int i382 = i37;
-                            textAlign3 = textAlign2;
-                            long j152 = m7469getUnspecifiedXSAIIZE;
-                            z3 = z2;
-                            j8 = j5;
-                            i30 = i382;
-                            FontFamily fontFamily42 = obj3;
-                            textDecoration2 = textDecoration4;
-                            j9 = j6;
-                            fontWeight2 = obj2;
-                            fontFamily2 = fontFamily42;
-                            j10 = j152;
-                            startRestartGroup.endDefaults();
-                            if (ComposerKt.isTraceInProgress()) {
-                            }
-                            int i392 = i26 << 3;
-                            composer2 = startRestartGroup;
-                            m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392) | (3670016 & i392) | (i392 & 29360128), 0);
-                            if (ComposerKt.isTraceInProgress()) {
-                            }
-                            modifier4 = modifier3;
-                            j11 = j8;
-                            j12 = j9;
-                            fontStyle2 = obj;
-                            fontWeight3 = fontWeight2;
-                            fontFamily3 = fontFamily2;
-                            j13 = j10;
-                            textDecoration3 = textDecoration2;
-                            textAlign4 = textAlign3;
-                            j14 = j7;
-                            i31 = i29;
-                            z4 = z3;
-                            i32 = i30;
-                            map3 = map2;
-                            function13 = function12;
-                            textStyle3 = textStyle2;
                             endRestartGroup = composer2.endRestartGroup();
                             if (endRestartGroup != null) {
                             }
@@ -3543,84 +3628,8 @@ public final class TextKt {
                         }
                         if ((i4 & 1572864) == 0) {
                         }
-                        if ((i19 & 306783379) == 306783378) {
+                        if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (599187 & i26) != 599186, i19 & 1)) {
                         }
-                        startRestartGroup.startDefaults();
-                        if ((i3 & 1) != 0) {
-                        }
-                        if (i33 != 0) {
-                        }
-                        if (i7 != 0) {
-                        }
-                        if (i9 != 0) {
-                        }
-                        if (i10 != 0) {
-                        }
-                        if (i11 != 0) {
-                        }
-                        if (i12 != 0) {
-                        }
-                        if (i13 != 0) {
-                        }
-                        if (i16 != 0) {
-                        }
-                        if (i18 == 0) {
-                        }
-                        if (i20 != 0) {
-                        }
-                        if (i23 != 0) {
-                        }
-                        if (i24 != 0) {
-                        }
-                        if (i25 != 0) {
-                        }
-                        if (i27 != 0) {
-                        }
-                        if (i28 != 0) {
-                        }
-                        if ((i5 & 65536) != 0) {
-                        }
-                        i29 = m7199getClipgIe3tQ8;
-                        function12 = textKt$Text$6;
-                        j7 = m7469getUnspecifiedXSAIIZE2;
-                        map2 = emptyMap;
-                        modifier3 = modifier2;
-                        int i3822 = i37;
-                        textAlign3 = textAlign2;
-                        long j1522 = m7469getUnspecifiedXSAIIZE;
-                        z3 = z2;
-                        j8 = j5;
-                        i30 = i3822;
-                        FontFamily fontFamily422 = obj3;
-                        textDecoration2 = textDecoration4;
-                        j9 = j6;
-                        fontWeight2 = obj2;
-                        fontFamily2 = fontFamily422;
-                        j10 = j1522;
-                        startRestartGroup.endDefaults();
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        int i3922 = i26 << 3;
-                        composer2 = startRestartGroup;
-                        m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922) | (3670016 & i3922) | (i3922 & 29360128), 0);
-                        if (ComposerKt.isTraceInProgress()) {
-                        }
-                        modifier4 = modifier3;
-                        j11 = j8;
-                        j12 = j9;
-                        fontStyle2 = obj;
-                        fontWeight3 = fontWeight2;
-                        fontFamily3 = fontFamily2;
-                        j13 = j10;
-                        textDecoration3 = textDecoration2;
-                        textAlign4 = textAlign3;
-                        j14 = j7;
-                        i31 = i29;
-                        z4 = z3;
-                        i32 = i30;
-                        map3 = map2;
-                        function13 = function12;
-                        textStyle3 = textStyle2;
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup != null) {
                         }
@@ -3652,84 +3661,8 @@ public final class TextKt {
                     }
                     if ((i4 & 1572864) == 0) {
                     }
-                    if ((i19 & 306783379) == 306783378) {
+                    if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (599187 & i26) != 599186, i19 & 1)) {
                     }
-                    startRestartGroup.startDefaults();
-                    if ((i3 & 1) != 0) {
-                    }
-                    if (i33 != 0) {
-                    }
-                    if (i7 != 0) {
-                    }
-                    if (i9 != 0) {
-                    }
-                    if (i10 != 0) {
-                    }
-                    if (i11 != 0) {
-                    }
-                    if (i12 != 0) {
-                    }
-                    if (i13 != 0) {
-                    }
-                    if (i16 != 0) {
-                    }
-                    if (i18 == 0) {
-                    }
-                    if (i20 != 0) {
-                    }
-                    if (i23 != 0) {
-                    }
-                    if (i24 != 0) {
-                    }
-                    if (i25 != 0) {
-                    }
-                    if (i27 != 0) {
-                    }
-                    if (i28 != 0) {
-                    }
-                    if ((i5 & 65536) != 0) {
-                    }
-                    i29 = m7199getClipgIe3tQ8;
-                    function12 = textKt$Text$6;
-                    j7 = m7469getUnspecifiedXSAIIZE2;
-                    map2 = emptyMap;
-                    modifier3 = modifier2;
-                    int i38222 = i37;
-                    textAlign3 = textAlign2;
-                    long j15222 = m7469getUnspecifiedXSAIIZE;
-                    z3 = z2;
-                    j8 = j5;
-                    i30 = i38222;
-                    FontFamily fontFamily4222 = obj3;
-                    textDecoration2 = textDecoration4;
-                    j9 = j6;
-                    fontWeight2 = obj2;
-                    fontFamily2 = fontFamily4222;
-                    j10 = j15222;
-                    startRestartGroup.endDefaults();
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    int i39222 = i26 << 3;
-                    composer2 = startRestartGroup;
-                    m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222) | (3670016 & i39222) | (i39222 & 29360128), 0);
-                    if (ComposerKt.isTraceInProgress()) {
-                    }
-                    modifier4 = modifier3;
-                    j11 = j8;
-                    j12 = j9;
-                    fontStyle2 = obj;
-                    fontWeight3 = fontWeight2;
-                    fontFamily3 = fontFamily2;
-                    j13 = j10;
-                    textDecoration3 = textDecoration2;
-                    textAlign4 = textAlign3;
-                    j14 = j7;
-                    i31 = i29;
-                    z4 = z3;
-                    i32 = i30;
-                    map3 = map2;
-                    function13 = function12;
-                    textStyle3 = textStyle2;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
@@ -3765,84 +3698,8 @@ public final class TextKt {
                 }
                 if ((i4 & 1572864) == 0) {
                 }
-                if ((i19 & 306783379) == 306783378) {
+                if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (599187 & i26) != 599186, i19 & 1)) {
                 }
-                startRestartGroup.startDefaults();
-                if ((i3 & 1) != 0) {
-                }
-                if (i33 != 0) {
-                }
-                if (i7 != 0) {
-                }
-                if (i9 != 0) {
-                }
-                if (i10 != 0) {
-                }
-                if (i11 != 0) {
-                }
-                if (i12 != 0) {
-                }
-                if (i13 != 0) {
-                }
-                if (i16 != 0) {
-                }
-                if (i18 == 0) {
-                }
-                if (i20 != 0) {
-                }
-                if (i23 != 0) {
-                }
-                if (i24 != 0) {
-                }
-                if (i25 != 0) {
-                }
-                if (i27 != 0) {
-                }
-                if (i28 != 0) {
-                }
-                if ((i5 & 65536) != 0) {
-                }
-                i29 = m7199getClipgIe3tQ8;
-                function12 = textKt$Text$6;
-                j7 = m7469getUnspecifiedXSAIIZE2;
-                map2 = emptyMap;
-                modifier3 = modifier2;
-                int i382222 = i37;
-                textAlign3 = textAlign2;
-                long j152222 = m7469getUnspecifiedXSAIIZE;
-                z3 = z2;
-                j8 = j5;
-                i30 = i382222;
-                FontFamily fontFamily42222 = obj3;
-                textDecoration2 = textDecoration4;
-                j9 = j6;
-                fontWeight2 = obj2;
-                fontFamily2 = fontFamily42222;
-                j10 = j152222;
-                startRestartGroup.endDefaults();
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                int i392222 = i26 << 3;
-                composer2 = startRestartGroup;
-                m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392222) | (3670016 & i392222) | (i392222 & 29360128), 0);
-                if (ComposerKt.isTraceInProgress()) {
-                }
-                modifier4 = modifier3;
-                j11 = j8;
-                j12 = j9;
-                fontStyle2 = obj;
-                fontWeight3 = fontWeight2;
-                fontFamily3 = fontFamily2;
-                j13 = j10;
-                textDecoration3 = textDecoration2;
-                textAlign4 = textAlign3;
-                j14 = j7;
-                i31 = i29;
-                z4 = z3;
-                i32 = i30;
-                map3 = map2;
-                function13 = function12;
-                textStyle3 = textStyle2;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup != null) {
                 }
@@ -3888,84 +3745,8 @@ public final class TextKt {
             }
             if ((i4 & 1572864) == 0) {
             }
-            if ((i19 & 306783379) == 306783378) {
+            if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (599187 & i26) != 599186, i19 & 1)) {
             }
-            startRestartGroup.startDefaults();
-            if ((i3 & 1) != 0) {
-            }
-            if (i33 != 0) {
-            }
-            if (i7 != 0) {
-            }
-            if (i9 != 0) {
-            }
-            if (i10 != 0) {
-            }
-            if (i11 != 0) {
-            }
-            if (i12 != 0) {
-            }
-            if (i13 != 0) {
-            }
-            if (i16 != 0) {
-            }
-            if (i18 == 0) {
-            }
-            if (i20 != 0) {
-            }
-            if (i23 != 0) {
-            }
-            if (i24 != 0) {
-            }
-            if (i25 != 0) {
-            }
-            if (i27 != 0) {
-            }
-            if (i28 != 0) {
-            }
-            if ((i5 & 65536) != 0) {
-            }
-            i29 = m7199getClipgIe3tQ8;
-            function12 = textKt$Text$6;
-            j7 = m7469getUnspecifiedXSAIIZE2;
-            map2 = emptyMap;
-            modifier3 = modifier2;
-            int i3822222 = i37;
-            textAlign3 = textAlign2;
-            long j1522222 = m7469getUnspecifiedXSAIIZE;
-            z3 = z2;
-            j8 = j5;
-            i30 = i3822222;
-            FontFamily fontFamily422222 = obj3;
-            textDecoration2 = textDecoration4;
-            j9 = j6;
-            fontWeight2 = obj2;
-            fontFamily2 = fontFamily422222;
-            j10 = j1522222;
-            startRestartGroup.endDefaults();
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            int i3922222 = i26 << 3;
-            composer2 = startRestartGroup;
-            m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922222) | (3670016 & i3922222) | (i3922222 & 29360128), 0);
-            if (ComposerKt.isTraceInProgress()) {
-            }
-            modifier4 = modifier3;
-            j11 = j8;
-            j12 = j9;
-            fontStyle2 = obj;
-            fontWeight3 = fontWeight2;
-            fontFamily3 = fontFamily2;
-            j13 = j10;
-            textDecoration3 = textDecoration2;
-            textAlign4 = textAlign3;
-            j14 = j7;
-            i31 = i29;
-            z4 = z3;
-            i32 = i30;
-            map3 = map2;
-            function13 = function12;
-            textStyle3 = textStyle2;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -4020,87 +3801,16 @@ public final class TextKt {
         }
         if ((i4 & 1572864) == 0) {
         }
-        if ((i19 & 306783379) == 306783378) {
+        if (startRestartGroup.shouldExecute((i19 & 306783379) == 306783378 || (599187 & i26) != 599186, i19 & 1)) {
         }
-        startRestartGroup.startDefaults();
-        if ((i3 & 1) != 0) {
-        }
-        if (i33 != 0) {
-        }
-        if (i7 != 0) {
-        }
-        if (i9 != 0) {
-        }
-        if (i10 != 0) {
-        }
-        if (i11 != 0) {
-        }
-        if (i12 != 0) {
-        }
-        if (i13 != 0) {
-        }
-        if (i16 != 0) {
-        }
-        if (i18 == 0) {
-        }
-        if (i20 != 0) {
-        }
-        if (i23 != 0) {
-        }
-        if (i24 != 0) {
-        }
-        if (i25 != 0) {
-        }
-        if (i27 != 0) {
-        }
-        if (i28 != 0) {
-        }
-        if ((i5 & 65536) != 0) {
-        }
-        i29 = m7199getClipgIe3tQ8;
-        function12 = textKt$Text$6;
-        j7 = m7469getUnspecifiedXSAIIZE2;
-        map2 = emptyMap;
-        modifier3 = modifier2;
-        int i38222222 = i37;
-        textAlign3 = textAlign2;
-        long j15222222 = m7469getUnspecifiedXSAIIZE;
-        z3 = z2;
-        j8 = j5;
-        i30 = i38222222;
-        FontFamily fontFamily4222222 = obj3;
-        textDecoration2 = textDecoration4;
-        j9 = j6;
-        fontWeight2 = obj2;
-        fontFamily2 = fontFamily4222222;
-        j10 = j15222222;
-        startRestartGroup.endDefaults();
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        int i39222222 = i26 << 3;
-        composer2 = startRestartGroup;
-        m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222222) | (3670016 & i39222222) | (i39222222 & 29360128), 0);
-        if (ComposerKt.isTraceInProgress()) {
-        }
-        modifier4 = modifier3;
-        j11 = j8;
-        j12 = j9;
-        fontStyle2 = obj;
-        fontWeight3 = fontWeight2;
-        fontFamily3 = fontFamily2;
-        j13 = j10;
-        textDecoration3 = textDecoration2;
-        textAlign4 = textAlign3;
-        j14 = j7;
-        i31 = i29;
-        z4 = z3;
-        i32 = i30;
-        map3 = map2;
-        function13 = function12;
-        textStyle3 = textStyle2;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final TextStyle LocalTextStyle$lambda$19() {
+        return TypographyTokensKt.getDefaultTextStyle();
     }
 
     public static final ProvidableCompositionLocal<TextStyle> getLocalTextStyle() {
@@ -4109,8 +3819,8 @@ public final class TextKt {
 
     public static final void ProvideTextStyle(final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
-        Composer startRestartGroup = composer.startRestartGroup(-460300127);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ProvideTextStyle)P(1)347@14710L7,348@14735L80:Text.kt#uh7d8r");
+        Composer startRestartGroup = composer.startRestartGroup(15327438);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ProvideTextStyle)N(value,content)460@19447L7,461@19472L80:Text.kt#uh7d8r");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(textStyle) ? 4 : 2) | i;
         } else {
@@ -4119,41 +3829,85 @@ public final class TextKt {
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changedInstance(function2) ? 32 : 16;
         }
-        if ((i2 & 19) != 18 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-460300127, i2, -1, "androidx.compose.material3.ProvideTextStyle (Text.kt:346)");
+                ComposerKt.traceEventStart(15327438, i2, -1, "androidx.compose.material3.ProvideTextStyle (Text.kt:459)");
             }
             ProvidableCompositionLocal<TextStyle> providableCompositionLocal = LocalTextStyle;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(providableCompositionLocal);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             CompositionLocalKt.CompositionLocalProvider(providableCompositionLocal.provides(((TextStyle) consume).merge(textStyle)), function2, startRestartGroup, (i2 & 112) | ProvidedValue.$stable);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextKt$ProvideTextStyle$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda10
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i3) {
-                    TextKt.ProvideTextStyle(TextStyle.this, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit ProvideTextStyle$lambda$20;
+                    ProvideTextStyle$lambda$20 = TextKt.ProvideTextStyle$lambda$20(TextStyle.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ProvideTextStyle$lambda$20;
                 }
             });
         }
+    }
+
+    private static final AnnotatedString createTextWithLinkStyles(AnnotatedString annotatedString, final TextLinkStyles textLinkStyles) {
+        return annotatedString.mapAnnotations(new Function1() { // from class: androidx.compose.material3.TextKt$$ExternalSyntheticLambda11
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                AnnotatedString.Range createTextWithLinkStyles$lambda$21;
+                createTextWithLinkStyles$lambda$21 = TextKt.createTextWithLinkStyles$lambda$21(TextLinkStyles.this, (AnnotatedString.Range) obj);
+                return createTextWithLinkStyles$lambda$21;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final AnnotatedString.Range createTextWithLinkStyles$lambda$21(TextLinkStyles textLinkStyles, AnnotatedString.Range range) {
+        AnnotatedString.Annotation annotation = (AnnotatedString.Annotation) range.getItem();
+        if (annotation instanceof LinkAnnotation.Url) {
+            LinkAnnotation.Url url = (LinkAnnotation.Url) annotation;
+            if (url.getStyles() == null) {
+                Intrinsics.checkNotNull(range, "null cannot be cast to non-null type androidx.compose.ui.text.AnnotatedString.Range<androidx.compose.ui.text.LinkAnnotation.Url>");
+                return AnnotatedString.Range.copy$default(range, LinkAnnotation.Url.copy$default(url, null, textLinkStyles, null, 5, null), 0, 0, null, 14, null);
+            }
+        }
+        if (annotation instanceof LinkAnnotation.Clickable) {
+            LinkAnnotation.Clickable clickable = (LinkAnnotation.Clickable) annotation;
+            if (clickable.getStyles() == null) {
+                Intrinsics.checkNotNull(range, "null cannot be cast to non-null type androidx.compose.ui.text.AnnotatedString.Range<androidx.compose.ui.text.LinkAnnotation.Clickable>");
+                return AnnotatedString.Range.copy$default(range, LinkAnnotation.Clickable.copy$default(clickable, null, textLinkStyles, null, 5, null), 0, 0, null, 14, null);
+            }
+        }
+        return range;
+    }
+
+    private static final TextLinkStyles rememberTextLinkStyles(Composer composer, int i) {
+        ComposerKt.sourceInformationMarkerStart(composer, 1113329403, "C(rememberTextLinkStyles)482@20251L11,483@20282L159:Text.kt#uh7d8r");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(1113329403, i, -1, "androidx.compose.material3.rememberTextLinkStyles (Text.kt:481)");
+        }
+        long m2102getPrimary0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2102getPrimary0d7_KjU();
+        ComposerKt.sourceInformationMarkerStart(composer, 462704058, "CC(remember):Text.kt#9igjgp");
+        boolean changed = composer.changed(m2102getPrimary0d7_KjU);
+        Object rememberedValue = composer.rememberedValue();
+        if (changed || rememberedValue == Composer.Companion.getEmpty()) {
+            TextLinkStyles textLinkStyles = new TextLinkStyles(new SpanStyle(m2102getPrimary0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, TextDecoration.Companion.getUnderline(), (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 61438, (DefaultConstructorMarker) null), null, null, null, 14, null);
+            composer.updateRememberedValue(textLinkStyles);
+            rememberedValue = textLinkStyles;
+        }
+        TextLinkStyles textLinkStyles2 = (TextLinkStyles) rememberedValue;
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        return textLinkStyles2;
     }
 }

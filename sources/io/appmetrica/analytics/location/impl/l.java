@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.location.impl;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f1212a;
+    public final long f1253a;
 
     public l(long j) {
-        this.f1212a = j;
+        this.f1253a = j;
     }
 }

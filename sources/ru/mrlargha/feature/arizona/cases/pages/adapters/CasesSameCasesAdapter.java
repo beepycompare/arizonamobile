@@ -2,6 +2,7 @@ package ru.mrlargha.feature.arizona.cases.pages.adapters;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.feature.arizona.cases.CasesCurrencyType;
 import ru.mrlargha.feature.arizona.cases.CasesSameCasesModel;
 import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesBadgesModel;
-import ru.mrlargha.feature.arizona.cases.databinding.CasesSameCasesItemBinding;
+import ru.mrlargha.feature.arizona.cases.databinding.ArizonaCasesSameCasesItemBinding;
 import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
 /* compiled from: CasesSameCasesAdapter.kt */
 @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 \u00172\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0003\u0016\u0017\u0018B*\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u001c\u0010\u000f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0006H\u0016J\u001c\u0010\u0013\u001a\u00020\n2\n\u0010\u0014\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0015\u001a\u00020\u0006H\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u0019"}, d2 = {"Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesSameCasesAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/feature/arizona/cases/CasesSameCasesModel;", "Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesSameCasesAdapter$SameCasesViewHolder;", "onClick", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "caseId", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "SameCasesViewHolder", "Companion", "DiffUtilCallback", "cases_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
@@ -49,10 +50,10 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
     }
 
     /* compiled from: CasesSameCasesAdapter.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bJ\u0010\u0010\f\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\u0010\u0010\r\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0010"}, d2 = {"Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesSameCasesAdapter$SameCasesViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/feature/arizona/cases/databinding/CasesSameCasesItemBinding;", "<init>", "(Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesSameCasesAdapter;Lru/mrlargha/feature/arizona/cases/databinding/CasesSameCasesItemBinding;)V", "getBinding", "()Lru/mrlargha/feature/arizona/cases/databinding/CasesSameCasesItemBinding;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/feature/arizona/cases/CasesSameCasesModel;", "initialize", "setupListeners", "caseId", "", "cases_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bJ\u0010\u0010\f\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\u0010\u0010\r\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0010"}, d2 = {"Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesSameCasesAdapter$SameCasesViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesSameCasesItemBinding;", "<init>", "(Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesSameCasesAdapter;Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesSameCasesItemBinding;)V", "getBinding", "()Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesSameCasesItemBinding;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/feature/arizona/cases/CasesSameCasesModel;", "initialize", "setupListeners", "caseId", "", "cases_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public final class SameCasesViewHolder extends RecyclerView.ViewHolder {
-        private final CasesSameCasesItemBinding binding;
+        private final ArizonaCasesSameCasesItemBinding binding;
         final /* synthetic */ CasesSameCasesAdapter this$0;
 
         /* compiled from: CasesSameCasesAdapter.kt */
@@ -76,14 +77,14 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public SameCasesViewHolder(CasesSameCasesAdapter casesSameCasesAdapter, CasesSameCasesItemBinding binding) {
+        public SameCasesViewHolder(CasesSameCasesAdapter casesSameCasesAdapter, ArizonaCasesSameCasesItemBinding binding) {
             super(binding.getRoot());
             Intrinsics.checkNotNullParameter(binding, "binding");
             this.this$0 = casesSameCasesAdapter;
             this.binding = binding;
         }
 
-        public final CasesSameCasesItemBinding getBinding() {
+        public final ArizonaCasesSameCasesItemBinding getBinding() {
             return this.binding;
         }
 
@@ -94,52 +95,53 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
         }
 
         private final void initialize(CasesSameCasesModel casesSameCasesModel) {
-            CasesSameCasesItemBinding casesSameCasesItemBinding = this.binding;
-            Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/cases/" + casesSameCasesModel.getId() + ".webp").into(casesSameCasesItemBinding.ivPrize);
-            casesSameCasesItemBinding.tvPrizeCost.setText(String.valueOf(casesSameCasesModel.getCost()));
-            TextView tvPrizeCost = casesSameCasesItemBinding.tvPrizeCost;
+            ArizonaCasesSameCasesItemBinding arizonaCasesSameCasesItemBinding = this.binding;
+            Log.d("CasesScreen", "initialize: " + casesSameCasesModel);
+            arizonaCasesSameCasesItemBinding.tvPrizeName.setText(casesSameCasesModel.getTitle());
+            Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/systems/cases/" + casesSameCasesModel.getId() + ".webp").into(arizonaCasesSameCasesItemBinding.ivPrize);
+            arizonaCasesSameCasesItemBinding.tvPrizeCost.setText(String.valueOf(casesSameCasesModel.getCost()));
+            TextView tvPrizeCost = arizonaCasesSameCasesItemBinding.tvPrizeCost;
             Intrinsics.checkNotNullExpressionValue(tvPrizeCost, "tvPrizeCost");
             tvPrizeCost.setVisibility(casesSameCasesModel.getCost() <= 0 ? 8 : 0);
-            ImageView ivRub = casesSameCasesItemBinding.ivRub;
+            ImageView ivRub = arizonaCasesSameCasesItemBinding.ivRub;
             Intrinsics.checkNotNullExpressionValue(ivRub, "ivRub");
             ivRub.setVisibility(casesSameCasesModel.getCost() <= 0 ? 8 : 0);
-            casesSameCasesItemBinding.tvPrizeName.setText(casesSameCasesModel.getTitle());
-            casesSameCasesItemBinding.tvBenefit.setText(casesSameCasesModel.getBenefitWithPercent());
-            TextView tvBenefit = casesSameCasesItemBinding.tvBenefit;
+            arizonaCasesSameCasesItemBinding.tvBenefit.setText(casesSameCasesModel.getBenefitWithPercent());
+            TextView tvBenefit = arizonaCasesSameCasesItemBinding.tvBenefit;
             Intrinsics.checkNotNullExpressionValue(tvBenefit, "tvBenefit");
             tvBenefit.setVisibility(8);
-            TextView tvTop = casesSameCasesItemBinding.tvTop;
+            TextView tvTop = arizonaCasesSameCasesItemBinding.tvTop;
             Intrinsics.checkNotNullExpressionValue(tvTop, "tvTop");
             tvTop.setVisibility(8);
-            TextView tvNew = casesSameCasesItemBinding.tvNew;
+            TextView tvNew = arizonaCasesSameCasesItemBinding.tvNew;
             Intrinsics.checkNotNullExpressionValue(tvNew, "tvNew");
             tvNew.setVisibility(8);
             for (CasesBadgesModel casesBadgesModel : casesSameCasesModel.getBadges()) {
                 if (Intrinsics.areEqual(casesBadgesModel.getStyle(), CasesSameCasesAdapter.BENEFIT)) {
-                    TextView tvBenefit2 = casesSameCasesItemBinding.tvBenefit;
+                    TextView tvBenefit2 = arizonaCasesSameCasesItemBinding.tvBenefit;
                     Intrinsics.checkNotNullExpressionValue(tvBenefit2, "tvBenefit");
                     tvBenefit2.setVisibility(0);
                 }
                 if (Intrinsics.areEqual(casesBadgesModel.getStyle(), CasesSameCasesAdapter.TOP)) {
-                    TextView tvTop2 = casesSameCasesItemBinding.tvTop;
+                    TextView tvTop2 = arizonaCasesSameCasesItemBinding.tvTop;
                     Intrinsics.checkNotNullExpressionValue(tvTop2, "tvTop");
                     tvTop2.setVisibility(0);
                 }
                 if (Intrinsics.areEqual(casesBadgesModel.getStyle(), CasesSameCasesAdapter.NEW)) {
-                    TextView tvNew2 = casesSameCasesItemBinding.tvNew;
+                    TextView tvNew2 = arizonaCasesSameCasesItemBinding.tvNew;
                     Intrinsics.checkNotNullExpressionValue(tvNew2, "tvNew");
                     tvNew2.setVisibility(0);
                 }
             }
-            int i = WhenMappings.$EnumSwitchMapping$0[casesSameCasesModel.m11350getCurrency().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[casesSameCasesModel.m12069getCurrency().ordinal()];
             if (i == 1) {
-                casesSameCasesItemBinding.ivRub.setImageResource(R.drawable.blueprint_ic_rub);
-                casesSameCasesItemBinding.ivRub.setImageTintList(ColorStateList.valueOf(Color.parseColor("#95FF00")));
+                arizonaCasesSameCasesItemBinding.ivRub.setImageResource(R.drawable.blueprint_ic_rub);
+                arizonaCasesSameCasesItemBinding.ivRub.setImageTintList(ColorStateList.valueOf(Color.parseColor("#95FF00")));
             } else if (i != 2) {
                 throw new NoWhenBranchMatchedException();
             } else {
-                casesSameCasesItemBinding.ivRub.setImageResource(R.drawable.ic_az_coins);
-                casesSameCasesItemBinding.ivRub.setImageTintList(null);
+                arizonaCasesSameCasesItemBinding.ivRub.setImageResource(R.drawable.ic_az_coins);
+                arizonaCasesSameCasesItemBinding.ivRub.setImageTintList(null);
             }
         }
 
@@ -163,7 +165,7 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public SameCasesViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        CasesSameCasesItemBinding inflate = CasesSameCasesItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ArizonaCasesSameCasesItemBinding inflate = ArizonaCasesSameCasesItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
         return new SameCasesViewHolder(this, inflate);
     }

@@ -1,6 +1,5 @@
 package kotlinx.coroutines.flow;
 
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -19,7 +18,7 @@ public final class FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> implement
     final /* synthetic */ Flow $this_onStart$inlined;
 
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1", f = "Emitters.kt", i = {0, 0, 0}, l = {112, AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID}, m = "collect", n = {"this", "$this$onStart_u24lambda_u241", "safeCollector"}, s = {"L$0", "L$1", "L$2"})
+    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1", f = "Emitters.kt", i = {0, 0, 0}, l = {112, 116}, m = "collect", n = {"this", "$this$onStart_u24lambda_u241", "safeCollector"}, s = {"L$0", "L$1", "L$2"})
     /* renamed from: kotlinx.coroutines.flow.FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends ContinuationImpl {

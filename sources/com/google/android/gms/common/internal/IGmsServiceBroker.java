@@ -6,12 +6,12 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public interface IGmsServiceBroker extends IInterface {
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-    /* loaded from: classes3.dex */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends Binder implements IGmsServiceBroker {
         public Stub() {
             attachInterface(this, "com.google.android.gms.common.internal.IGmsServiceBroker");
@@ -24,26 +24,26 @@ public interface IGmsServiceBroker extends IInterface {
 
         @Override // android.os.Binder
         public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
-            IGmsCallbacks zzabVar;
+            IGmsCallbacks zzyVar;
             if (i <= 0 || i > 16777215) {
                 return super.onTransact(i, parcel, parcel2, i2);
             }
             parcel.enforceInterface("com.google.android.gms.common.internal.IGmsServiceBroker");
             IBinder readStrongBinder = parcel.readStrongBinder();
             if (readStrongBinder == null) {
-                zzabVar = null;
+                zzyVar = null;
             } else {
                 IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.common.internal.IGmsCallbacks");
-                zzabVar = queryLocalInterface instanceof IGmsCallbacks ? (IGmsCallbacks) queryLocalInterface : new zzab(readStrongBinder);
+                zzyVar = queryLocalInterface instanceof IGmsCallbacks ? (IGmsCallbacks) queryLocalInterface : new zzy(readStrongBinder);
             }
             if (i == 46) {
-                getService(zzabVar, parcel.readInt() != 0 ? GetServiceRequest.CREATOR.createFromParcel(parcel) : null);
+                getService(zzyVar, parcel.readInt() != 0 ? GetServiceRequest.CREATOR.createFromParcel(parcel) : null);
                 Preconditions.checkNotNull(parcel2);
                 parcel2.writeNoException();
                 return true;
             } else if (i == 47) {
                 if (parcel.readInt() != 0) {
-                    zzal.CREATOR.createFromParcel(parcel);
+                    zzai.CREATOR.createFromParcel(parcel);
                 }
                 throw new UnsupportedOperationException();
             } else {

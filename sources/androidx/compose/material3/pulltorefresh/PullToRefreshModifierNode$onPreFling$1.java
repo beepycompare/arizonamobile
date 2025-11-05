@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PullToRefresh.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.pulltorefresh.PullToRefreshModifierNode", f = "PullToRefresh.kt", i = {}, l = {327}, m = "onPreFling-QWom1Mo", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.pulltorefresh.PullToRefreshModifierNode", f = "PullToRefresh.kt", i = {}, l = {298}, m = "onPreFling-QWom1Mo", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class PullToRefreshModifierNode$onPreFling$1 extends ContinuationImpl {
     float F$0;

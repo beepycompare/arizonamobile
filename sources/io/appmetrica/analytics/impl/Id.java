@@ -1,21 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
-/* loaded from: classes4.dex */
-public final class Id extends SafeRunnable {
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModule;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModuleDummy;
+/* loaded from: classes3.dex */
+public final class Id {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f497a;
+    public final Gf f527a;
+    public final NativeCrashClientModule b;
+    public final G0 c;
+    public F0 d;
 
-    public Id(String str) {
-        this.f497a = str;
-    }
-
-    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
-    public final void runSafety() {
-        C0672w0 c0672w0 = A4.l().p;
-        String str = this.f497a;
-        c0672w0.getClass();
-        C0647v0.c().a(str);
+    public Id(Gf gf) {
+        this.f527a = gf;
+        ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
+        NativeCrashClientModule nativeCrashClientModule = (NativeCrashClientModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashClientModuleImpl", NativeCrashClientModule.class);
+        this.b = nativeCrashClientModule == null ? new NativeCrashClientModuleDummy() : nativeCrashClientModule;
+        this.c = new G0();
     }
 }

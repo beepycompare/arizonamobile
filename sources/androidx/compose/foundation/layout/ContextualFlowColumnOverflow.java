@@ -108,14 +108,14 @@ public final class ContextualFlowColumnOverflow extends FlowLayoutOverflow {
             ComposerKt.sourceInformationMarkerStart(composer, -1169622732, "C(expandOrCollapseIndicator)N(expandIndicator,collapseIndicator,minColumnsToShowCollapse,minWidthToShowCollapse:c#ui.unit.Dp)545@26090L7,546@26157L1124:FlowLayoutOverflow.kt#2w3rfo");
             boolean z = true;
             int i4 = (i3 & 4) != 0 ? 1 : i;
-            float m7264constructorimpl = (i3 & 8) != 0 ? Dp.m7264constructorimpl(0) : f;
+            float m7995constructorimpl = (i3 & 8) != 0 ? Dp.m7995constructorimpl(0) : f;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1169622732, i2, -1, "androidx.compose.foundation.layout.ContextualFlowColumnOverflow.Companion.expandOrCollapseIndicator (FlowLayoutOverflow.kt:543)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            int mo423roundToPx0680j_4 = ((Density) consume).mo423roundToPx0680j_4(m7264constructorimpl);
+            int mo423roundToPx0680j_4 = ((Density) consume).mo423roundToPx0680j_4(m7995constructorimpl);
             ComposerKt.sourceInformationMarkerStart(composer, 1274004440, "CC(remember):FlowLayoutOverflow.kt#9igjgp");
             boolean changed = ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i4)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer.changed(mo423roundToPx0680j_4) | ((((i2 & 14) ^ 6) > 4 && composer.changed(function3)) || (i2 & 6) == 4);
             if ((((i2 & 112) ^ 48) <= 32 || !composer.changed(function32)) && (i2 & 48) != 32) {

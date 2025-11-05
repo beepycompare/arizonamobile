@@ -1,8 +1,8 @@
 package com.google.android.gms.common.util;
 
 import com.android.internal.http.multipart.FilePart;
-import com.google.android.gms.internal.common.zzaa;
-import com.google.android.gms.internal.common.zzr;
+import com.google.android.gms.internal.common.zzp;
+import com.google.android.gms.internal.common.zzw;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLDecoder;
@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 import kotlin.text.Typography;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class HttpUtils {
     private static final Pattern zza = Pattern.compile("^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$");
     private static final Pattern zzb = Pattern.compile("^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$");
@@ -27,11 +27,11 @@ public class HttpUtils {
         String rawQuery = uri.getRawQuery();
         if (rawQuery != null && rawQuery.length() > 0) {
             emptyMap = new HashMap<>();
-            zzaa zzc2 = zzaa.zzc(zzr.zzb('='));
-            for (String str2 : zzaa.zzc(zzr.zzb(Typography.amp)).zzb().zzd(rawQuery)) {
-                List zzf = zzc2.zzf(str2);
-                if (!zzf.isEmpty() && zzf.size() <= 2) {
-                    emptyMap.put(zza((String) zzf.get(0), str), zzf.size() == 2 ? zza((String) zzf.get(1), str) : null);
+            zzw zza2 = zzw.zza(zzp.zzb('='));
+            for (String str2 : zzw.zza(zzp.zzb(Typography.amp)).zzb().zzc(rawQuery)) {
+                List zzd = zza2.zzd(str2);
+                if (!zzd.isEmpty() && zzd.size() <= 2) {
+                    emptyMap.put(zza((String) zzd.get(0), str), zzd.size() == 2 ? zza((String) zzd.get(1), str) : null);
                 } else {
                     throw new IllegalArgumentException("bad parameter");
                 }

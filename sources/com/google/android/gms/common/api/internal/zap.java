@@ -11,7 +11,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zap extends LifecycleCallback implements DialogInterface.OnCancelListener {
     protected volatile boolean zaa;
     protected final AtomicReference zab;

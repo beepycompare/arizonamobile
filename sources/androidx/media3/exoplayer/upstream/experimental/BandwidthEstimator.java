@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.upstream.experimental;
 import android.os.Handler;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface BandwidthEstimator {
     public static final long ESTIMATE_NOT_AVAILABLE = Long.MIN_VALUE;
 

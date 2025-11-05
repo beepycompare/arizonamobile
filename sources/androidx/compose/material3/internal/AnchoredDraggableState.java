@@ -3,6 +3,7 @@ package androidx.compose.material3.internal;
 import androidx.compose.animation.core.AnimationSpec;
 import androidx.compose.foundation.MutatePriority;
 import androidx.compose.foundation.gestures.DraggableState;
+import androidx.compose.material3.internal.AnchoredDraggableState;
 import androidx.compose.runtime.MutableFloatState;
 import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.PrimitiveSnapshotStateKt;
@@ -28,14 +29,14 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: AnchoredDraggable.kt */
-@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0015\b\u0001\u0018\u0000 i*\u0004\b\u0000\u0010\u00012\u00020\u0002:\u0001iB\u0081\u0001\b\u0016\u0012\u0006\u0010\u0003\u001a\u00028\u0000\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005\u0012!\u0010\u0006\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\b0\u0007\u0012\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\b0\r\u0012\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\b0\u000f\u0012#\b\u0002\u0010\u0010\u001a\u001d\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u00120\u0007¢\u0006\u0002\u0010\u0013Bq\u0012\u0006\u0010\u0003\u001a\u00028\u0000\u0012!\u0010\u0006\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\b0\u0007\u0012\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\b0\r\u0012\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\b0\u000f\u0012#\b\u0002\u0010\u0010\u001a\u001d\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u00120\u0007¢\u0006\u0002\u0010\u0014Jy\u0010L\u001a\u00020M2\u0006\u0010G\u001a\u00028\u00002\b\b\u0002\u0010N\u001a\u00020O2W\u0010P\u001aS\b\u0001\u0012\u0004\u0012\u00020\u0016\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00028\u00000\u0005¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0004\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(G\u0012\n\u0012\b\u0012\u0004\u0012\u00020M0R\u0012\u0006\u0012\u0004\u0018\u00010\u00020Q¢\u0006\u0002\bSH\u0086@¢\u0006\u0002\u0010TJ\\\u0010L\u001a\u00020M2\b\b\u0002\u0010N\u001a\u00020O2B\u0010P\u001a>\b\u0001\u0012\u0004\u0012\u00020\u0016\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00028\u00000\u0005¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0004\u0012\n\u0012\b\u0012\u0004\u0012\u00020M0R\u0012\u0006\u0012\u0004\u0018\u00010\u00020U¢\u0006\u0002\bSH\u0086@¢\u0006\u0002\u0010VJ%\u0010W\u001a\u00028\u00002\u0006\u0010?\u001a\u00020\b2\u0006\u0010'\u001a\u00028\u00002\u0006\u0010X\u001a\u00020\bH\u0002¢\u0006\u0002\u0010YJ\u001d\u0010Z\u001a\u00028\u00002\u0006\u0010?\u001a\u00020\b2\u0006\u0010'\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010[J\u000e\u0010\\\u001a\u00020\b2\u0006\u0010]\u001a\u00020\bJ\u0015\u0010^\u001a\u00020\b2\u0006\u0010]\u001a\u00020\bH\u0000¢\u0006\u0002\b_J\u0006\u0010`\u001a\u00020\bJ\u0016\u0010a\u001a\u00020M2\u0006\u0010X\u001a\u00020\bH\u0086@¢\u0006\u0002\u0010bJ\u0015\u0010c\u001a\u00020\u00122\u0006\u0010G\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010dJ#\u0010e\u001a\u00020M2\f\u0010f\u001a\b\u0012\u0004\u0012\u00028\u00000\u00052\b\b\u0002\u0010g\u001a\u00028\u0000¢\u0006\u0002\u0010hR\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R7\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00000\u00058F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u001c\u0010\u001d\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u0017\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\b0\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u001b\u0010 \u001a\u00028\u00008@X\u0080\u0084\u0002¢\u0006\f\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\"R/\u0010\u0010\u001a\u001d\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u00120\u0007X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R+\u0010'\u001a\u00028\u00002\u0006\u0010\u0017\u001a\u00028\u00008F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b+\u0010\u001d\u001a\u0004\b(\u0010\"\"\u0004\b)\u0010*R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000R/\u0010.\u001a\u0004\u0018\u00018\u00002\b\u0010\u0017\u001a\u0004\u0018\u00018\u00008B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b1\u0010\u001d\u001a\u0004\b/\u0010\"\"\u0004\b0\u0010*R\u0014\u00102\u001a\u000203X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b4\u00105R\u0011\u00106\u001a\u00020\u00128F¢\u0006\u0006\u001a\u0004\b6\u00107R+\u00108\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b8F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b=\u0010>\u001a\u0004\b9\u0010:\"\u0004\b;\u0010<R+\u0010?\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b8F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bB\u0010>\u001a\u0004\b@\u0010:\"\u0004\bA\u0010<R/\u0010\u0006\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\b0\u0007X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bC\u0010&R\u001b\u0010D\u001a\u00020\b8GX\u0086\u0084\u0002¢\u0006\f\n\u0004\bF\u0010$\u001a\u0004\bE\u0010:R\u001b\u0010G\u001a\u00028\u00008FX\u0086\u0084\u0002¢\u0006\f\n\u0004\bI\u0010$\u001a\u0004\bH\u0010\"R\u001a\u0010\f\u001a\b\u0012\u0004\u0012\u00020\b0\rX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bJ\u0010K¨\u0006j"}, d2 = {"Landroidx/compose/material3/internal/AnchoredDraggableState;", ExifInterface.GPS_DIRECTION_TRUE, "", "initialValue", "anchors", "Landroidx/compose/material3/internal/DraggableAnchors;", "positionalThreshold", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "totalDistance", "velocityThreshold", "Lkotlin/Function0;", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "confirmValueChange", "newValue", "", "(Ljava/lang/Object;Landroidx/compose/material3/internal/DraggableAnchors;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Landroidx/compose/animation/core/AnimationSpec;Lkotlin/jvm/functions/Function1;)V", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Landroidx/compose/animation/core/AnimationSpec;Lkotlin/jvm/functions/Function1;)V", "anchoredDragScope", "Landroidx/compose/material3/internal/AnchoredDragScope;", "<set-?>", "getAnchors", "()Landroidx/compose/material3/internal/DraggableAnchors;", "setAnchors", "(Landroidx/compose/material3/internal/DraggableAnchors;)V", "anchors$delegate", "Landroidx/compose/runtime/MutableState;", "getAnimationSpec", "()Landroidx/compose/animation/core/AnimationSpec;", "closestValue", "getClosestValue$material3_release", "()Ljava/lang/Object;", "closestValue$delegate", "Landroidx/compose/runtime/State;", "getConfirmValueChange$material3_release", "()Lkotlin/jvm/functions/Function1;", "currentValue", "getCurrentValue", "setCurrentValue", "(Ljava/lang/Object;)V", "currentValue$delegate", "dragMutex", "Landroidx/compose/material3/internal/InternalMutatorMutex;", "dragTarget", "getDragTarget", "setDragTarget", "dragTarget$delegate", "draggableState", "Landroidx/compose/foundation/gestures/DraggableState;", "getDraggableState$material3_release", "()Landroidx/compose/foundation/gestures/DraggableState;", "isAnimationRunning", "()Z", "lastVelocity", "getLastVelocity", "()F", "setLastVelocity", "(F)V", "lastVelocity$delegate", "Landroidx/compose/runtime/MutableFloatState;", TypedValues.CycleType.S_WAVE_OFFSET, "getOffset", "setOffset", "offset$delegate", "getPositionalThreshold$material3_release", "progress", "getProgress", "progress$delegate", "targetValue", "getTargetValue", "targetValue$delegate", "getVelocityThreshold$material3_release", "()Lkotlin/jvm/functions/Function0;", "anchoredDrag", "", "dragPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function4;", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function4;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lkotlin/Function3;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "computeTarget", "velocity", "(FLjava/lang/Object;F)Ljava/lang/Object;", "computeTargetWithoutThresholds", "(FLjava/lang/Object;)Ljava/lang/Object;", "dispatchRawDelta", "delta", "newOffsetForDelta", "newOffsetForDelta$material3_release", "requireOffset", "settle", "(FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "trySnapTo", "(Ljava/lang/Object;)Z", "updateAnchors", "newAnchors", "newTarget", "(Landroidx/compose/material3/internal/DraggableAnchors;Ljava/lang/Object;)V", "Companion", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b,\n\u0002\u0010\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\b\u0001\u0018\u0000 i*\u0004\b\u0000\u0010\u00012\u00020\u0002:\u0001iBy\u0012\u0006\u0010\u0003\u001a\u00028\u0000\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\u00060\u0005\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00060\u000b\u0012\u0012\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\r0\u000b\u0012#\b\u0002\u0010\u000e\u001a\u001d\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u0005¢\u0006\u0004\b\u0011\u0010\u0012B\u0089\u0001\b\u0016\u0012\u0006\u0010\u0003\u001a\u00028\u0000\u0012\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00028\u00000\u0014\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\u00060\u0005\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00060\u000b\u0012\u0012\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\r0\u000b\u0012#\b\u0002\u0010\u000e\u001a\u001d\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u0005¢\u0006\u0004\b\u0011\u0010\u0015J\u0006\u00108\u001a\u00020\u0006J#\u0010K\u001a\u00020L2\f\u0010M\u001a\b\u0012\u0004\u0012\u00028\u00000\u00142\b\b\u0002\u0010N\u001a\u00028\u0000¢\u0006\u0002\u0010OJ\u0016\u0010P\u001a\u00020L2\u0006\u0010Q\u001a\u00020\u0006H\u0086@¢\u0006\u0002\u0010RJ%\u0010S\u001a\u00028\u00002\u0006\u00101\u001a\u00020\u00062\u0006\u0010#\u001a\u00028\u00002\u0006\u0010Q\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010TJ\u001d\u0010U\u001a\u00028\u00002\u0006\u00101\u001a\u00020\u00062\u0006\u0010#\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010VJ\\\u0010Y\u001a\u00020L2\b\b\u0002\u0010Z\u001a\u00020[2B\u0010\\\u001a>\b\u0001\u0012\u0004\u0012\u00020X\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00028\u00000\u0014¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u00020L0^\u0012\u0006\u0012\u0004\u0018\u00010\u00020]¢\u0006\u0002\b_H\u0086@¢\u0006\u0002\u0010`Jy\u0010Y\u001a\u00020L2\u0006\u0010*\u001a\u00028\u00002\b\b\u0002\u0010Z\u001a\u00020[2W\u0010\\\u001aS\b\u0001\u0012\u0004\u0012\u00020X\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00028\u00000\u0014¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0013\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(*\u0012\n\u0012\b\u0012\u0004\u0012\u00020L0^\u0012\u0006\u0012\u0004\u0018\u00010\u00020a¢\u0006\u0002\b_H\u0086@¢\u0006\u0002\u0010bJ\u0015\u0010c\u001a\u00020\u00062\u0006\u0010d\u001a\u00020\u0006H\u0000¢\u0006\u0002\beJ\u000e\u0010f\u001a\u00020\u00062\u0006\u0010d\u001a\u00020\u0006J\u0015\u0010g\u001a\u00020\u00102\u0006\u0010*\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010hR/\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\u00060\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00060\u000bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u001d\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\r0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0019R/\u0010\u000e\u001a\u001d\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0017R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001e\u001a\u00020\u001fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R+\u0010#\u001a\u00028\u00002\u0006\u0010\"\u001a\u00028\u00008F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b(\u0010)\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'R\u001b\u0010*\u001a\u00028\u00008FX\u0086\u0084\u0002¢\u0006\f\n\u0004\b,\u0010-\u001a\u0004\b+\u0010%R\u001b\u0010.\u001a\u00028\u00008@X\u0080\u0084\u0002¢\u0006\f\n\u0004\b0\u0010-\u001a\u0004\b/\u0010%R+\u00101\u001a\u00020\u00062\u0006\u0010\"\u001a\u00020\u00068F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b6\u00107\u001a\u0004\b2\u00103\"\u0004\b4\u00105R\u0011\u00109\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b9\u0010:R\u001b\u0010;\u001a\u00020\u00068GX\u0086\u0084\u0002¢\u0006\f\n\u0004\b=\u0010-\u001a\u0004\b<\u00103R+\u0010>\u001a\u00020\u00062\u0006\u0010\"\u001a\u00020\u00068F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bA\u00107\u001a\u0004\b?\u00103\"\u0004\b@\u00105R/\u0010B\u001a\u0004\u0018\u00018\u00002\b\u0010\"\u001a\u0004\u0018\u00018\u00008B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bE\u0010)\u001a\u0004\bC\u0010%\"\u0004\bD\u0010'R7\u0010\u0013\u001a\b\u0012\u0004\u0012\u00028\u00000\u00142\f\u0010\"\u001a\b\u0012\u0004\u0012\u00028\u00000\u00148F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bJ\u0010)\u001a\u0004\bF\u0010G\"\u0004\bH\u0010IR\u000e\u0010W\u001a\u00020XX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006j"}, d2 = {"Landroidx/compose/material3/internal/AnchoredDraggableState;", ExifInterface.GPS_DIRECTION_TRUE, "", "initialValue", "positionalThreshold", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "totalDistance", "velocityThreshold", "Lkotlin/Function0;", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "confirmValueChange", "newValue", "", "<init>", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)V", "anchors", "Landroidx/compose/material3/internal/DraggableAnchors;", "(Ljava/lang/Object;Landroidx/compose/material3/internal/DraggableAnchors;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)V", "getPositionalThreshold$material3", "()Lkotlin/jvm/functions/Function1;", "getVelocityThreshold$material3", "()Lkotlin/jvm/functions/Function0;", "getAnimationSpec", "getConfirmValueChange$material3", "dragMutex", "Landroidx/compose/material3/internal/InternalMutatorMutex;", "draggableState", "Landroidx/compose/foundation/gestures/DraggableState;", "getDraggableState$material3", "()Landroidx/compose/foundation/gestures/DraggableState;", "<set-?>", "currentValue", "getCurrentValue", "()Ljava/lang/Object;", "setCurrentValue", "(Ljava/lang/Object;)V", "currentValue$delegate", "Landroidx/compose/runtime/MutableState;", "targetValue", "getTargetValue", "targetValue$delegate", "Landroidx/compose/runtime/State;", "closestValue", "getClosestValue$material3", "closestValue$delegate", TypedValues.CycleType.S_WAVE_OFFSET, "getOffset", "()F", "setOffset", "(F)V", "offset$delegate", "Landroidx/compose/runtime/MutableFloatState;", "requireOffset", "isAnimationRunning", "()Z", "progress", "getProgress", "progress$delegate", "lastVelocity", "getLastVelocity", "setLastVelocity", "lastVelocity$delegate", "dragTarget", "getDragTarget", "setDragTarget", "dragTarget$delegate", "getAnchors", "()Landroidx/compose/material3/internal/DraggableAnchors;", "setAnchors", "(Landroidx/compose/material3/internal/DraggableAnchors;)V", "anchors$delegate", "updateAnchors", "", "newAnchors", "newTarget", "(Landroidx/compose/material3/internal/DraggableAnchors;Ljava/lang/Object;)V", "settle", "velocity", "(FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "computeTarget", "(FLjava/lang/Object;F)Ljava/lang/Object;", "computeTargetWithoutThresholds", "(FLjava/lang/Object;)Ljava/lang/Object;", "anchoredDragScope", "Landroidx/compose/material3/internal/AnchoredDragScope;", "anchoredDrag", "dragPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function3;", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lkotlin/Function4;", "(Ljava/lang/Object;Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function4;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "newOffsetForDelta", "delta", "newOffsetForDelta$material3", "dispatchRawDelta", "trySnapTo", "(Ljava/lang/Object;)Z", "Companion", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AnchoredDraggableState<T> {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
     private final AnchoredDragScope anchoredDragScope;
     private final MutableState anchors$delegate;
-    private final AnimationSpec<Float> animationSpec;
+    private final Function0<AnimationSpec<Float>> animationSpec;
     private final State closestValue$delegate;
     private final Function1<T, Boolean> confirmValueChange;
     private final MutableState currentValue$delegate;
@@ -49,103 +50,51 @@ public final class AnchoredDraggableState<T> {
     private final State targetValue$delegate;
     private final Function0<Float> velocityThreshold;
 
+    public static final boolean _init_$lambda$0(Object obj) {
+        return true;
+    }
+
+    public static final boolean _init_$lambda$1(Object obj) {
+        return true;
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
-    public AnchoredDraggableState(T t, Function1<? super Float, Float> function1, Function0<Float> function0, AnimationSpec<Float> animationSpec, Function1<? super T, Boolean> function12) {
+    public AnchoredDraggableState(T t, Function1<? super Float, Float> function1, Function0<Float> function0, Function0<? extends AnimationSpec<Float>> function02, Function1<? super T, Boolean> function12) {
         MutableState mutableStateOf$default;
         MutableState mutableStateOf$default2;
         MapDraggableAnchors emptyDraggableAnchors;
         MutableState mutableStateOf$default3;
         this.positionalThreshold = function1;
         this.velocityThreshold = function0;
-        this.animationSpec = animationSpec;
+        this.animationSpec = function02;
         this.confirmValueChange = function12;
         this.dragMutex = new InternalMutatorMutex();
         this.draggableState = new AnchoredDraggableState$draggableState$1(this);
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
         this.currentValue$delegate = mutableStateOf$default;
-        this.targetValue$delegate = SnapshotStateKt.derivedStateOf(new Function0<T>(this) { // from class: androidx.compose.material3.internal.AnchoredDraggableState$targetValue$2
-            final /* synthetic */ AnchoredDraggableState<T> this$0;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-                this.this$0 = this;
-            }
-
+        this.targetValue$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
-            public final T invoke() {
-                Object dragTarget;
-                Object computeTarget;
-                dragTarget = this.this$0.getDragTarget();
-                T t2 = (T) dragTarget;
-                if (t2 == null) {
-                    AnchoredDraggableState<T> anchoredDraggableState = this.this$0;
-                    float offset = anchoredDraggableState.getOffset();
-                    if (!Float.isNaN(offset)) {
-                        computeTarget = anchoredDraggableState.computeTarget(offset, anchoredDraggableState.getCurrentValue(), 0.0f);
-                        return (T) computeTarget;
-                    }
-                    return anchoredDraggableState.getCurrentValue();
-                }
-                return t2;
+            public final Object invoke() {
+                Object targetValue_delegate$lambda$3;
+                targetValue_delegate$lambda$3 = AnchoredDraggableState.targetValue_delegate$lambda$3(AnchoredDraggableState.this);
+                return targetValue_delegate$lambda$3;
             }
         });
-        this.closestValue$delegate = SnapshotStateKt.derivedStateOf(new Function0<T>(this) { // from class: androidx.compose.material3.internal.AnchoredDraggableState$closestValue$2
-            final /* synthetic */ AnchoredDraggableState<T> this$0;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-                this.this$0 = this;
-            }
-
+        this.closestValue$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
-            public final T invoke() {
-                Object dragTarget;
-                Object computeTargetWithoutThresholds;
-                dragTarget = this.this$0.getDragTarget();
-                T t2 = (T) dragTarget;
-                if (t2 == null) {
-                    AnchoredDraggableState<T> anchoredDraggableState = this.this$0;
-                    float offset = anchoredDraggableState.getOffset();
-                    if (!Float.isNaN(offset)) {
-                        computeTargetWithoutThresholds = anchoredDraggableState.computeTargetWithoutThresholds(offset, anchoredDraggableState.getCurrentValue());
-                        return (T) computeTargetWithoutThresholds;
-                    }
-                    return anchoredDraggableState.getCurrentValue();
-                }
-                return t2;
+            public final Object invoke() {
+                Object closestValue_delegate$lambda$5;
+                closestValue_delegate$lambda$5 = AnchoredDraggableState.closestValue_delegate$lambda$5(AnchoredDraggableState.this);
+                return closestValue_delegate$lambda$5;
             }
         });
         this.offset$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(Float.NaN);
-        this.progress$delegate = SnapshotStateKt.derivedStateOf(SnapshotStateKt.structuralEqualityPolicy(), new Function0<Float>(this) { // from class: androidx.compose.material3.internal.AnchoredDraggableState$progress$2
-            final /* synthetic */ AnchoredDraggableState<T> this$0;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-                this.this$0 = this;
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        this.progress$delegate = SnapshotStateKt.derivedStateOf(SnapshotStateKt.structuralEqualityPolicy(), new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
-            public final Float invoke() {
-                float positionOf = this.this$0.getAnchors().positionOf(this.this$0.getCurrentValue());
-                float positionOf2 = this.this$0.getAnchors().positionOf(this.this$0.getClosestValue$material3_release()) - positionOf;
-                float abs = Math.abs(positionOf2);
-                float f = 1.0f;
-                if (!Float.isNaN(abs) && abs > 1.0E-6f) {
-                    float requireOffset = (this.this$0.requireOffset() - positionOf) / positionOf2;
-                    if (requireOffset < 1.0E-6f) {
-                        f = 0.0f;
-                    } else if (requireOffset <= 0.999999f) {
-                        f = requireOffset;
-                    }
-                }
-                return Float.valueOf(f);
+            public final Object invoke() {
+                float progress_delegate$lambda$7;
+                progress_delegate$lambda$7 = AnchoredDraggableState.progress_delegate$lambda$7(AnchoredDraggableState.this);
+                return Float.valueOf(progress_delegate$lambda$7);
             }
         });
         this.lastVelocity$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
@@ -170,61 +119,55 @@ public final class AnchoredDraggableState<T> {
         };
     }
 
-    public final Function1<Float, Float> getPositionalThreshold$material3_release() {
+    public final Function1<Float, Float> getPositionalThreshold$material3() {
         return this.positionalThreshold;
     }
 
-    public final Function0<Float> getVelocityThreshold$material3_release() {
+    public final Function0<Float> getVelocityThreshold$material3() {
         return this.velocityThreshold;
     }
 
-    public final AnimationSpec<Float> getAnimationSpec() {
+    public final Function0<AnimationSpec<Float>> getAnimationSpec() {
         return this.animationSpec;
     }
 
-    public /* synthetic */ AnchoredDraggableState(Object obj, Function1 function1, Function0 function0, AnimationSpec animationSpec, AnonymousClass1 anonymousClass1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(obj, function1, function0, animationSpec, (i & 16) != 0 ? new Function1<T, Boolean>() { // from class: androidx.compose.material3.internal.AnchoredDraggableState.1
+    public /* synthetic */ AnchoredDraggableState(Object obj, Function1 function1, Function0 function0, Function0 function02, Function1 function12, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(obj, function1, function0, function02, (i & 16) != 0 ? new Function1() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(T t) {
-                return true;
+            public final Object invoke(Object obj2) {
+                boolean _init_$lambda$0;
+                _init_$lambda$0 = AnchoredDraggableState._init_$lambda$0(obj2);
+                return Boolean.valueOf(_init_$lambda$0);
             }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Boolean invoke(Object obj2) {
-                return invoke((AnonymousClass1) obj2);
-            }
-        } : anonymousClass1);
+        } : function12);
     }
 
-    public final Function1<T, Boolean> getConfirmValueChange$material3_release() {
+    public final Function1<T, Boolean> getConfirmValueChange$material3() {
         return this.confirmValueChange;
     }
 
-    public /* synthetic */ AnchoredDraggableState(Object obj, DraggableAnchors draggableAnchors, Function1 function1, Function0 function0, AnimationSpec animationSpec, AnonymousClass2 anonymousClass2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(obj, draggableAnchors, function1, function0, animationSpec, (i & 32) != 0 ? new Function1<T, Boolean>() { // from class: androidx.compose.material3.internal.AnchoredDraggableState.2
+    public /* synthetic */ AnchoredDraggableState(Object obj, DraggableAnchors draggableAnchors, Function1 function1, Function0 function0, Function0 function02, Function1 function12, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(obj, draggableAnchors, function1, function0, function02, (i & 32) != 0 ? new Function1() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(T t) {
-                return true;
+            public final Object invoke(Object obj2) {
+                boolean _init_$lambda$1;
+                _init_$lambda$1 = AnchoredDraggableState._init_$lambda$1(obj2);
+                return Boolean.valueOf(_init_$lambda$1);
             }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Boolean invoke(Object obj2) {
-                return invoke((AnonymousClass2) obj2);
-            }
-        } : anonymousClass2);
+        } : function12);
     }
 
-    public AnchoredDraggableState(T t, DraggableAnchors<T> draggableAnchors, Function1<? super Float, Float> function1, Function0<Float> function0, AnimationSpec<Float> animationSpec, Function1<? super T, Boolean> function12) {
-        this(t, function1, function0, animationSpec, function12);
+    public AnchoredDraggableState(T t, DraggableAnchors<T> draggableAnchors, Function1<? super Float, Float> function1, Function0<Float> function0, Function0<? extends AnimationSpec<Float>> function02, Function1<? super T, Boolean> function12) {
+        this(t, function1, function0, function02, function12);
         setAnchors(draggableAnchors);
         trySnapTo(t);
     }
 
-    public final DraggableState getDraggableState$material3_release() {
+    public final DraggableState getDraggableState$material3() {
         return this.draggableState;
     }
 
-    public final void setCurrentValue(T t) {
+    private final void setCurrentValue(T t) {
         this.currentValue$delegate.setValue(t);
     }
 
@@ -236,8 +179,34 @@ public final class AnchoredDraggableState<T> {
         return (T) this.targetValue$delegate.getValue();
     }
 
-    public final T getClosestValue$material3_release() {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final Object targetValue_delegate$lambda$3(AnchoredDraggableState anchoredDraggableState) {
+        Object dragTarget = anchoredDraggableState.getDragTarget();
+        if (dragTarget == null) {
+            float offset = anchoredDraggableState.getOffset();
+            if (!Float.isNaN(offset)) {
+                return anchoredDraggableState.computeTarget(offset, anchoredDraggableState.getCurrentValue(), 0.0f);
+            }
+            return anchoredDraggableState.getCurrentValue();
+        }
+        return dragTarget;
+    }
+
+    public final T getClosestValue$material3() {
         return (T) this.closestValue$delegate.getValue();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final Object closestValue_delegate$lambda$5(AnchoredDraggableState anchoredDraggableState) {
+        Object dragTarget = anchoredDraggableState.getDragTarget();
+        if (dragTarget == null) {
+            float offset = anchoredDraggableState.getOffset();
+            if (!Float.isNaN(offset)) {
+                return anchoredDraggableState.computeTargetWithoutThresholds(offset, anchoredDraggableState.getCurrentValue());
+            }
+            return anchoredDraggableState.getCurrentValue();
+        }
+        return dragTarget;
     }
 
     public final void setOffset(float f) {
@@ -263,6 +232,23 @@ public final class AnchoredDraggableState<T> {
         return ((Number) this.progress$delegate.getValue()).floatValue();
     }
 
+    public static final float progress_delegate$lambda$7(AnchoredDraggableState anchoredDraggableState) {
+        float positionOf = anchoredDraggableState.getAnchors().positionOf((T) anchoredDraggableState.getCurrentValue());
+        float positionOf2 = anchoredDraggableState.getAnchors().positionOf((T) anchoredDraggableState.getClosestValue$material3()) - positionOf;
+        float abs = Math.abs(positionOf2);
+        if (Float.isNaN(abs) || abs <= 1.0E-6f) {
+            return 1.0f;
+        }
+        float requireOffset = (anchoredDraggableState.requireOffset() - positionOf) / positionOf2;
+        if (requireOffset < 1.0E-6f) {
+            return 0.0f;
+        }
+        if (requireOffset > 0.999999f) {
+            return 1.0f;
+        }
+        return requireOffset;
+    }
+
     public final void setLastVelocity(float f) {
         this.lastVelocity$delegate.setFloatValue(f);
     }
@@ -271,7 +257,7 @@ public final class AnchoredDraggableState<T> {
         return this.lastVelocity$delegate.getFloatValue();
     }
 
-    public final T getDragTarget() {
+    private final T getDragTarget() {
         return this.dragTarget$delegate.getValue();
     }
 
@@ -324,7 +310,7 @@ public final class AnchoredDraggableState<T> {
         return animateTo2 == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? animateTo2 : Unit.INSTANCE;
     }
 
-    public final T computeTarget(float f, T t, float f2) {
+    private final T computeTarget(float f, T t, float f2) {
         DraggableAnchors<T> anchors = getAnchors();
         float positionOf = anchors.positionOf(t);
         float floatValue = this.velocityThreshold.invoke().floatValue();
@@ -357,7 +343,7 @@ public final class AnchoredDraggableState<T> {
         return t;
     }
 
-    public final T computeTargetWithoutThresholds(float f, T t) {
+    private final T computeTargetWithoutThresholds(float f, T t) {
         DraggableAnchors<T> anchors = getAnchors();
         float positionOf = anchors.positionOf(t);
         int i = (positionOf > f ? 1 : (positionOf == f ? 0 : -1));
@@ -377,75 +363,56 @@ public final class AnchoredDraggableState<T> {
         return t;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0036  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object anchoredDrag(MutatePriority mutatePriority, Function3<? super AnchoredDragScope, ? super DraggableAnchors<T>, ? super Continuation<? super Unit>, ? extends Object> function3, Continuation<? super Unit> continuation) {
         AnchoredDraggableState$anchoredDrag$1 anchoredDraggableState$anchoredDrag$1;
         int i;
-        AnchoredDraggableState<T> anchoredDraggableState;
         T closestAnchor;
-        T closestAnchor2;
-        if (continuation instanceof AnchoredDraggableState$anchoredDrag$1) {
-            anchoredDraggableState$anchoredDrag$1 = (AnchoredDraggableState$anchoredDrag$1) continuation;
-            if ((anchoredDraggableState$anchoredDrag$1.label & Integer.MIN_VALUE) != 0) {
-                anchoredDraggableState$anchoredDrag$1.label -= Integer.MIN_VALUE;
-                Object obj = anchoredDraggableState$anchoredDrag$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = anchoredDraggableState$anchoredDrag$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    try {
-                        anchoredDraggableState$anchoredDrag$1.L$0 = this;
+        try {
+            if (continuation instanceof AnchoredDraggableState$anchoredDrag$1) {
+                anchoredDraggableState$anchoredDrag$1 = (AnchoredDraggableState$anchoredDrag$1) continuation;
+                if ((anchoredDraggableState$anchoredDrag$1.label & Integer.MIN_VALUE) != 0) {
+                    anchoredDraggableState$anchoredDrag$1.label -= Integer.MIN_VALUE;
+                    Object obj = anchoredDraggableState$anchoredDrag$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = anchoredDraggableState$anchoredDrag$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
                         anchoredDraggableState$anchoredDrag$1.label = 1;
                         if (this.dragMutex.mutate(mutatePriority, new AnchoredDraggableState$anchoredDrag$2(this, function3, null), anchoredDraggableState$anchoredDrag$1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        anchoredDraggableState = this;
-                    } catch (Throwable th) {
-                        th = th;
-                        anchoredDraggableState = this;
-                        closestAnchor = anchoredDraggableState.getAnchors().closestAnchor(anchoredDraggableState.getOffset());
-                        if (closestAnchor != null) {
-                            anchoredDraggableState.setCurrentValue(closestAnchor);
-                        }
-                        throw th;
-                    }
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    anchoredDraggableState = (AnchoredDraggableState) anchoredDraggableState$anchoredDrag$1.L$0;
-                    try {
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        closestAnchor = anchoredDraggableState.getAnchors().closestAnchor(anchoredDraggableState.getOffset());
-                        if (closestAnchor != null && Math.abs(anchoredDraggableState.getOffset() - anchoredDraggableState.getAnchors().positionOf(closestAnchor)) <= 0.5f && anchoredDraggableState.confirmValueChange.invoke(closestAnchor).booleanValue()) {
-                            anchoredDraggableState.setCurrentValue(closestAnchor);
-                        }
-                        throw th;
                     }
+                    if (closestAnchor != null && Math.abs(getOffset() - getAnchors().positionOf(closestAnchor)) <= 0.5f && this.confirmValueChange.invoke(closestAnchor).booleanValue()) {
+                        setCurrentValue(closestAnchor);
+                    }
+                    return Unit.INSTANCE;
                 }
-                closestAnchor2 = anchoredDraggableState.getAnchors().closestAnchor(anchoredDraggableState.getOffset());
-                if (closestAnchor2 != null && Math.abs(anchoredDraggableState.getOffset() - anchoredDraggableState.getAnchors().positionOf(closestAnchor2)) <= 0.5f && anchoredDraggableState.confirmValueChange.invoke(closestAnchor2).booleanValue()) {
-                    anchoredDraggableState.setCurrentValue(closestAnchor2);
-                }
-                return Unit.INSTANCE;
+            }
+            if (i != 0) {
+            }
+            if (closestAnchor != null) {
+                setCurrentValue(closestAnchor);
+            }
+            return Unit.INSTANCE;
+        } finally {
+            closestAnchor = getAnchors().closestAnchor(getOffset());
+            if (closestAnchor != null && Math.abs(getOffset() - getAnchors().positionOf(closestAnchor)) <= 0.5f && this.confirmValueChange.invoke(closestAnchor).booleanValue()) {
+                setCurrentValue(closestAnchor);
             }
         }
         anchoredDraggableState$anchoredDrag$1 = new AnchoredDraggableState$anchoredDrag$1(this, continuation);
         Object obj2 = anchoredDraggableState$anchoredDrag$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = anchoredDraggableState$anchoredDrag$1.label;
-        if (i != 0) {
-        }
-        closestAnchor2 = anchoredDraggableState.getAnchors().closestAnchor(anchoredDraggableState.getOffset());
-        if (closestAnchor2 != null) {
-            anchoredDraggableState.setCurrentValue(closestAnchor2);
-        }
-        return Unit.INSTANCE;
     }
 
     public static /* synthetic */ Object anchoredDrag$default(AnchoredDraggableState anchoredDraggableState, MutatePriority mutatePriority, Function3 function3, Continuation continuation, int i, Object obj) {
@@ -455,84 +422,62 @@ public final class AnchoredDraggableState<T> {
         return anchoredDraggableState.anchoredDrag(mutatePriority, function3, continuation);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0027  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0037  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object anchoredDrag(T t, MutatePriority mutatePriority, Function4<? super AnchoredDragScope, ? super DraggableAnchors<T>, ? super T, ? super Continuation<? super Unit>, ? extends Object> function4, Continuation<? super Unit> continuation) {
         AnchoredDraggableState$anchoredDrag$3 anchoredDraggableState$anchoredDrag$3;
         int i;
-        AnchoredDraggableState<T> anchoredDraggableState;
         T closestAnchor;
-        T closestAnchor2;
-        if (continuation instanceof AnchoredDraggableState$anchoredDrag$3) {
-            anchoredDraggableState$anchoredDrag$3 = (AnchoredDraggableState$anchoredDrag$3) continuation;
-            if ((anchoredDraggableState$anchoredDrag$3.label & Integer.MIN_VALUE) != 0) {
-                anchoredDraggableState$anchoredDrag$3.label -= Integer.MIN_VALUE;
-                Object obj = anchoredDraggableState$anchoredDrag$3.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = anchoredDraggableState$anchoredDrag$3.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    if (getAnchors().hasAnchorFor(t)) {
-                        try {
-                            anchoredDraggableState$anchoredDrag$3.L$0 = this;
+        try {
+            if (continuation instanceof AnchoredDraggableState$anchoredDrag$3) {
+                anchoredDraggableState$anchoredDrag$3 = (AnchoredDraggableState$anchoredDrag$3) continuation;
+                if ((anchoredDraggableState$anchoredDrag$3.label & Integer.MIN_VALUE) != 0) {
+                    anchoredDraggableState$anchoredDrag$3.label -= Integer.MIN_VALUE;
+                    Object obj = anchoredDraggableState$anchoredDrag$3.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = anchoredDraggableState$anchoredDrag$3.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        if (getAnchors().hasAnchorFor(t)) {
                             anchoredDraggableState$anchoredDrag$3.label = 1;
                             if (this.dragMutex.mutate(mutatePriority, new AnchoredDraggableState$anchoredDrag$4(this, t, function4, null), anchoredDraggableState$anchoredDrag$3) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            anchoredDraggableState = this;
-                        } catch (Throwable th) {
-                            th = th;
-                            anchoredDraggableState = this;
-                            anchoredDraggableState.setDragTarget(null);
-                            closestAnchor = anchoredDraggableState.getAnchors().closestAnchor(anchoredDraggableState.getOffset());
-                            if (closestAnchor != null) {
-                                anchoredDraggableState.setCurrentValue(closestAnchor);
-                            }
-                            throw th;
+                        } else {
+                            setCurrentValue(t);
+                            return Unit.INSTANCE;
                         }
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        setCurrentValue(t);
-                        return Unit.INSTANCE;
-                    }
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    anchoredDraggableState = (AnchoredDraggableState) anchoredDraggableState$anchoredDrag$3.L$0;
-                    try {
                         ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        anchoredDraggableState.setDragTarget(null);
-                        closestAnchor = anchoredDraggableState.getAnchors().closestAnchor(anchoredDraggableState.getOffset());
-                        if (closestAnchor != null && Math.abs(anchoredDraggableState.getOffset() - anchoredDraggableState.getAnchors().positionOf(closestAnchor)) <= 0.5f && anchoredDraggableState.confirmValueChange.invoke(closestAnchor).booleanValue()) {
-                            anchoredDraggableState.setCurrentValue(closestAnchor);
-                        }
-                        throw th;
                     }
+                    if (closestAnchor != null && Math.abs(getOffset() - getAnchors().positionOf(closestAnchor)) <= 0.5f && this.confirmValueChange.invoke(closestAnchor).booleanValue()) {
+                        setCurrentValue(closestAnchor);
+                    }
+                    return Unit.INSTANCE;
                 }
-                anchoredDraggableState.setDragTarget(null);
-                closestAnchor2 = anchoredDraggableState.getAnchors().closestAnchor(anchoredDraggableState.getOffset());
-                if (closestAnchor2 != null && Math.abs(anchoredDraggableState.getOffset() - anchoredDraggableState.getAnchors().positionOf(closestAnchor2)) <= 0.5f && anchoredDraggableState.confirmValueChange.invoke(closestAnchor2).booleanValue()) {
-                    anchoredDraggableState.setCurrentValue(closestAnchor2);
-                }
-                return Unit.INSTANCE;
+            }
+            if (i != 0) {
+            }
+            if (closestAnchor != null) {
+                setCurrentValue(closestAnchor);
+            }
+            return Unit.INSTANCE;
+        } finally {
+            setDragTarget(null);
+            closestAnchor = getAnchors().closestAnchor(getOffset());
+            if (closestAnchor != null && Math.abs(getOffset() - getAnchors().positionOf(closestAnchor)) <= 0.5f && this.confirmValueChange.invoke(closestAnchor).booleanValue()) {
+                setCurrentValue(closestAnchor);
             }
         }
         anchoredDraggableState$anchoredDrag$3 = new AnchoredDraggableState$anchoredDrag$3(this, continuation);
         Object obj2 = anchoredDraggableState$anchoredDrag$3.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = anchoredDraggableState$anchoredDrag$3.label;
-        if (i != 0) {
-        }
-        anchoredDraggableState.setDragTarget(null);
-        closestAnchor2 = anchoredDraggableState.getAnchors().closestAnchor(anchoredDraggableState.getOffset());
-        if (closestAnchor2 != null) {
-            anchoredDraggableState.setCurrentValue(closestAnchor2);
-        }
-        return Unit.INSTANCE;
     }
 
     public static /* synthetic */ Object anchoredDrag$default(AnchoredDraggableState anchoredDraggableState, Object obj, MutatePriority mutatePriority, Function4 function4, Continuation continuation, int i, Object obj2) {
@@ -542,52 +487,42 @@ public final class AnchoredDraggableState<T> {
         return anchoredDraggableState.anchoredDrag(obj, mutatePriority, function4, continuation);
     }
 
-    public final float newOffsetForDelta$material3_release(float f) {
+    public final float newOffsetForDelta$material3(float f) {
         return RangesKt.coerceIn((Float.isNaN(getOffset()) ? 0.0f : getOffset()) + f, getAnchors().minAnchor(), getAnchors().maxAnchor());
     }
 
     public final float dispatchRawDelta(float f) {
-        float newOffsetForDelta$material3_release = newOffsetForDelta$material3_release(f);
+        float newOffsetForDelta$material3 = newOffsetForDelta$material3(f);
         float offset = Float.isNaN(getOffset()) ? 0.0f : getOffset();
-        setOffset(newOffsetForDelta$material3_release);
-        return newOffsetForDelta$material3_release - offset;
+        setOffset(newOffsetForDelta$material3);
+        return newOffsetForDelta$material3 - offset;
     }
 
     private final boolean trySnapTo(final T t) {
-        return this.dragMutex.tryMutate(new Function0<Unit>(this) { // from class: androidx.compose.material3.internal.AnchoredDraggableState$trySnapTo$1
-            final /* synthetic */ AnchoredDraggableState<T> this$0;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-                this.this$0 = this;
-            }
-
+        return this.dragMutex.tryMutate(new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                AnchoredDragScope anchoredDragScope;
-                anchoredDragScope = ((AnchoredDraggableState) this.this$0).anchoredDragScope;
-                AnchoredDraggableState<T> anchoredDraggableState = this.this$0;
-                T t2 = t;
-                float positionOf = anchoredDraggableState.getAnchors().positionOf(t2);
-                if (!Float.isNaN(positionOf)) {
-                    AnchoredDragScope.dragTo$default(anchoredDragScope, positionOf, 0.0f, 2, null);
-                    anchoredDraggableState.setDragTarget(null);
-                }
-                anchoredDraggableState.setCurrentValue(t2);
+            public final Object invoke() {
+                Unit trySnapTo$lambda$9;
+                trySnapTo$lambda$9 = AnchoredDraggableState.trySnapTo$lambda$9(AnchoredDraggableState.this, t);
+                return trySnapTo$lambda$9;
             }
         });
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final Unit trySnapTo$lambda$9(AnchoredDraggableState anchoredDraggableState, Object obj) {
+        AnchoredDragScope anchoredDragScope = anchoredDraggableState.anchoredDragScope;
+        float positionOf = anchoredDraggableState.getAnchors().positionOf(obj);
+        if (!Float.isNaN(positionOf)) {
+            AnchoredDragScope.dragTo$default(anchoredDragScope, positionOf, 0.0f, 2, null);
+            anchoredDraggableState.setDragTarget(null);
+        }
+        anchoredDraggableState.setCurrentValue(obj);
+        return Unit.INSTANCE;
+    }
+
     /* compiled from: AnchoredDraggable.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002Ju\u0010\u0003\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00060\u0005\u0012\u0004\u0012\u0002H\u00060\u0004\"\b\b\u0001\u0010\u0006*\u00020\u00012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b2\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u0002H\u0006\u0012\u0004\u0012\u00020\f0\u000b2!\u0010\r\u001a\u001d\u0012\u0013\u0012\u00110\t¢\u0006\f\b\u000e\u0012\b\b\u000f\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\t0\u000b2\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\t0\u0012¨\u0006\u0013"}, d2 = {"Landroidx/compose/material3/internal/AnchoredDraggableState$Companion;", "", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/material3/internal/AnchoredDraggableState;", ExifInterface.GPS_DIRECTION_TRUE, "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "", "confirmValueChange", "Lkotlin/Function1;", "", "positionalThreshold", "Lkotlin/ParameterName;", "name", "distance", "velocityThreshold", "Lkotlin/Function0;", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J{\u0010\u0004\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00070\u0006\u0012\u0004\u0012\u0002H\u00070\u0005\"\b\b\u0001\u0010\u0007*\u00020\u00012\u0012\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0\t2\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u0002H\u0007\u0012\u0004\u0012\u00020\u000e0\r2!\u0010\u000f\u001a\u001d\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u000b0\r2\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u000b0\t¨\u0006\u0014"}, d2 = {"Landroidx/compose/material3/internal/AnchoredDraggableState$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/material3/internal/AnchoredDraggableState;", ExifInterface.GPS_DIRECTION_TRUE, "animationSpec", "Lkotlin/Function0;", "Landroidx/compose/animation/core/AnimationSpec;", "", "confirmValueChange", "Lkotlin/Function1;", "", "positionalThreshold", "Lkotlin/ParameterName;", "name", "distance", "velocityThreshold", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -597,35 +532,30 @@ public final class AnchoredDraggableState<T> {
         private Companion() {
         }
 
-        public final <T> Saver<AnchoredDraggableState<T>, T> Saver(final AnimationSpec<Float> animationSpec, final Function1<? super T, Boolean> function1, final Function1<? super Float, Float> function12, final Function0<Float> function0) {
-            return SaverKt.Saver(new Function2<SaverScope, AnchoredDraggableState<T>, T>() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$Companion$Saver$1
+        public final <T> Saver<AnchoredDraggableState<T>, T> Saver(final Function0<? extends AnimationSpec<Float>> function0, final Function1<? super T, Boolean> function1, final Function1<? super Float, Float> function12, final Function0<Float> function02) {
+            return SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Object invoke(SaverScope saverScope, Object obj) {
-                    return invoke(saverScope, (AnchoredDraggableState) ((AnchoredDraggableState) obj));
+                public final Object invoke(Object obj, Object obj2) {
+                    Object Saver$lambda$0;
+                    Saver$lambda$0 = AnchoredDraggableState.Companion.Saver$lambda$0((SaverScope) obj, (AnchoredDraggableState) obj2);
+                    return Saver$lambda$0;
                 }
-
-                public final T invoke(SaverScope saverScope, AnchoredDraggableState<T> anchoredDraggableState) {
-                    return anchoredDraggableState.getCurrentValue();
-                }
-            }, new Function1<T, AnchoredDraggableState<T>>() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$Companion$Saver$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(1);
-                }
-
-                /* JADX WARN: Multi-variable type inference failed */
+            }, new Function1() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Object invoke(Object obj) {
-                    return invoke((AnchoredDraggableState$Companion$Saver$2<T>) obj);
-                }
-
-                @Override // kotlin.jvm.functions.Function1
-                public final AnchoredDraggableState<T> invoke(T t) {
-                    return new AnchoredDraggableState<>(t, function12, function0, animationSpec, function1);
+                public final Object invoke(Object obj) {
+                    AnchoredDraggableState Saver$lambda$1;
+                    Saver$lambda$1 = AnchoredDraggableState.Companion.Saver$lambda$1(Function1.this, function02, function0, function1, obj);
+                    return Saver$lambda$1;
                 }
             });
+        }
+
+        public static final Object Saver$lambda$0(SaverScope saverScope, AnchoredDraggableState anchoredDraggableState) {
+            return anchoredDraggableState.getCurrentValue();
+        }
+
+        public static final AnchoredDraggableState Saver$lambda$1(Function1 function1, Function0 function0, Function0 function02, Function1 function12, Object obj) {
+            return new AnchoredDraggableState(obj, function1, function0, function02, function12);
         }
     }
 }

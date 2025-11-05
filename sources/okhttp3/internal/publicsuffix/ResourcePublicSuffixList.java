@@ -19,6 +19,13 @@ public final class ResourcePublicSuffixList extends BasePublicSuffixList {
         this(null, null, 3, null);
     }
 
+    public ResourcePublicSuffixList(Path path, FileSystem fileSystem) {
+        Intrinsics.checkNotNullParameter(path, "path");
+        Intrinsics.checkNotNullParameter(fileSystem, "fileSystem");
+        this.path = path;
+        this.fileSystem = fileSystem;
+    }
+
     public /* synthetic */ ResourcePublicSuffixList(Path path, FileSystem fileSystem, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? PUBLIC_SUFFIX_RESOURCE : path, (i & 2) != 0 ? FileSystem.RESOURCES : fileSystem);
     }
@@ -30,13 +37,6 @@ public final class ResourcePublicSuffixList extends BasePublicSuffixList {
 
     public final FileSystem getFileSystem() {
         return this.fileSystem;
-    }
-
-    public ResourcePublicSuffixList(Path path, FileSystem fileSystem) {
-        Intrinsics.checkNotNullParameter(path, "path");
-        Intrinsics.checkNotNullParameter(fileSystem, "fileSystem");
-        this.path = path;
-        this.fileSystem = fileSystem;
     }
 
     @Override // okhttp3.internal.publicsuffix.BasePublicSuffixList

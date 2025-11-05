@@ -1,23 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
+import android.content.Intent;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class H1 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ int f469a;
-    public final /* synthetic */ Bundle b;
-    public final /* synthetic */ K1 c;
+    public final /* synthetic */ Intent f500a;
+    public final /* synthetic */ L1 b;
 
-    public H1(K1 k1, int i, Bundle bundle) {
-        this.c = k1;
-        this.f469a = i;
-        this.b = bundle;
+    public H1(L1 l1, Intent intent) {
+        this.b = l1;
+        this.f500a = intent;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        this.c.b.reportData(this.f469a, this.b);
+        this.b.b.b(this.f500a);
     }
 }

@@ -3,9 +3,9 @@ package com.google.android.gms.common.internal;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzd extends zzac {
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+public final class zzd extends zzz {
     private BaseGmsClient zza;
     private final int zzb;
 
@@ -27,11 +27,11 @@ public final class zzd extends zzac {
     }
 
     @Override // com.google.android.gms.common.internal.IGmsCallbacks
-    public final void zzc(int i, IBinder iBinder, zzk zzkVar) {
+    public final void zzc(int i, IBinder iBinder, zzj zzjVar) {
         BaseGmsClient baseGmsClient = this.zza;
         Preconditions.checkNotNull(baseGmsClient, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService");
-        Preconditions.checkNotNull(zzkVar);
-        BaseGmsClient.zzj(baseGmsClient, zzkVar);
-        onPostInitComplete(i, iBinder, zzkVar.zza);
+        Preconditions.checkNotNull(zzjVar);
+        baseGmsClient.zzc(zzjVar);
+        onPostInitComplete(i, iBinder, zzjVar.zza);
     }
 }

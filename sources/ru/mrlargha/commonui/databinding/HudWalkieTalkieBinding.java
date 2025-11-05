@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.viewbinding.ViewBinding;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class HudWalkieTalkieBinding implements ViewBinding {
     public final ImageView ivWalkieTalkie;
     private final ImageView rootView;

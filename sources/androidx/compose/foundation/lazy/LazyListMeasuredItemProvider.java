@@ -31,7 +31,7 @@ public abstract class LazyListMeasuredItemProvider extends LazyLayoutMeasuredIte
     private LazyListMeasuredItemProvider(long j, boolean z, LazyListItemProvider lazyListItemProvider, LazyLayoutMeasureScope lazyLayoutMeasureScope) {
         this.itemProvider = lazyListItemProvider;
         this.measureScope = lazyLayoutMeasureScope;
-        this.childConstraints = ConstraintsKt.Constraints$default(0, z ? Constraints.m7217getMaxWidthimpl(j) : Integer.MAX_VALUE, 0, z ? Integer.MAX_VALUE : Constraints.m7216getMaxHeightimpl(j), 5, null);
+        this.childConstraints = ConstraintsKt.Constraints$default(0, z ? Constraints.m7948getMaxWidthimpl(j) : Integer.MAX_VALUE, 0, z ? Integer.MAX_VALUE : Constraints.m7947getMaxHeightimpl(j), 5, null);
     }
 
     /* renamed from: getChildConstraints-msEJaDk  reason: not valid java name */

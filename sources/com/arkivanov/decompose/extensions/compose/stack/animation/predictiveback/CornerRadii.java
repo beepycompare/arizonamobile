@@ -18,7 +18,7 @@ final class CornerRadii {
     }
 
     /* renamed from: copy-WZe73OQ$default  reason: not valid java name */
-    public static /* synthetic */ CornerRadii m8594copyWZe73OQ$default(CornerRadii cornerRadii, Dp dp, Dp dp2, Dp dp3, Dp dp4, int i, Object obj) {
+    public static /* synthetic */ CornerRadii m9331copyWZe73OQ$default(CornerRadii cornerRadii, Dp dp, Dp dp2, Dp dp3, Dp dp4, int i, Object obj) {
         if ((i & 1) != 0) {
             dp = cornerRadii.topLeft;
         }
@@ -31,31 +31,31 @@ final class CornerRadii {
         if ((i & 8) != 0) {
             dp4 = cornerRadii.bottomLeft;
         }
-        return cornerRadii.m8599copyWZe73OQ(dp, dp2, dp3, dp4);
+        return cornerRadii.m9336copyWZe73OQ(dp, dp2, dp3, dp4);
     }
 
     /* renamed from: component1-lTKBWiU  reason: not valid java name */
-    public final Dp m8595component1lTKBWiU() {
+    public final Dp m9332component1lTKBWiU() {
         return this.topLeft;
     }
 
     /* renamed from: component2-lTKBWiU  reason: not valid java name */
-    public final Dp m8596component2lTKBWiU() {
+    public final Dp m9333component2lTKBWiU() {
         return this.topRight;
     }
 
     /* renamed from: component3-lTKBWiU  reason: not valid java name */
-    public final Dp m8597component3lTKBWiU() {
+    public final Dp m9334component3lTKBWiU() {
         return this.bottomRight;
     }
 
     /* renamed from: component4-lTKBWiU  reason: not valid java name */
-    public final Dp m8598component4lTKBWiU() {
+    public final Dp m9335component4lTKBWiU() {
         return this.bottomLeft;
     }
 
     /* renamed from: copy-WZe73OQ  reason: not valid java name */
-    public final CornerRadii m8599copyWZe73OQ(Dp dp, Dp dp2, Dp dp3, Dp dp4) {
+    public final CornerRadii m9336copyWZe73OQ(Dp dp, Dp dp2, Dp dp3, Dp dp4) {
         return new CornerRadii(dp, dp2, dp3, dp4, null);
     }
 
@@ -72,13 +72,13 @@ final class CornerRadii {
 
     public int hashCode() {
         Dp dp = this.topLeft;
-        int m7270hashCodeimpl = (dp == null ? 0 : Dp.m7270hashCodeimpl(dp.m7278unboximpl())) * 31;
+        int m8001hashCodeimpl = (dp == null ? 0 : Dp.m8001hashCodeimpl(dp.m8009unboximpl())) * 31;
         Dp dp2 = this.topRight;
-        int m7270hashCodeimpl2 = (m7270hashCodeimpl + (dp2 == null ? 0 : Dp.m7270hashCodeimpl(dp2.m7278unboximpl()))) * 31;
+        int m8001hashCodeimpl2 = (m8001hashCodeimpl + (dp2 == null ? 0 : Dp.m8001hashCodeimpl(dp2.m8009unboximpl()))) * 31;
         Dp dp3 = this.bottomRight;
-        int m7270hashCodeimpl3 = (m7270hashCodeimpl2 + (dp3 == null ? 0 : Dp.m7270hashCodeimpl(dp3.m7278unboximpl()))) * 31;
+        int m8001hashCodeimpl3 = (m8001hashCodeimpl2 + (dp3 == null ? 0 : Dp.m8001hashCodeimpl(dp3.m8009unboximpl()))) * 31;
         Dp dp4 = this.bottomLeft;
-        return m7270hashCodeimpl3 + (dp4 != null ? Dp.m7270hashCodeimpl(dp4.m7278unboximpl()) : 0);
+        return m8001hashCodeimpl3 + (dp4 != null ? Dp.m8001hashCodeimpl(dp4.m8009unboximpl()) : 0);
     }
 
     public String toString() {
@@ -97,22 +97,22 @@ final class CornerRadii {
     }
 
     /* renamed from: getTopLeft-lTKBWiU  reason: not valid java name */
-    public final Dp m8602getTopLeftlTKBWiU() {
+    public final Dp m9339getTopLeftlTKBWiU() {
         return this.topLeft;
     }
 
     /* renamed from: getTopRight-lTKBWiU  reason: not valid java name */
-    public final Dp m8603getTopRightlTKBWiU() {
+    public final Dp m9340getTopRightlTKBWiU() {
         return this.topRight;
     }
 
     /* renamed from: getBottomRight-lTKBWiU  reason: not valid java name */
-    public final Dp m8601getBottomRightlTKBWiU() {
+    public final Dp m9338getBottomRightlTKBWiU() {
         return this.bottomRight;
     }
 
     /* renamed from: getBottomLeft-lTKBWiU  reason: not valid java name */
-    public final Dp m8600getBottomLeftlTKBWiU() {
+    public final Dp m9337getBottomLeftlTKBWiU() {
         return this.bottomLeft;
     }
 }

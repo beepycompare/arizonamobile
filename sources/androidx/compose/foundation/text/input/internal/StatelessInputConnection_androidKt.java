@@ -63,8 +63,8 @@ public final class StatelessInputConnection_androidKt {
         extractedText.startOffset = 0;
         extractedText.partialEndOffset = textFieldCharSequence.length();
         extractedText.partialStartOffset = -1;
-        extractedText.selectionStart = TextRange.m6724getMinimpl(textFieldCharSequence.m1446getSelectiond9O1mEE());
-        extractedText.selectionEnd = TextRange.m6723getMaximpl(textFieldCharSequence.m1446getSelectiond9O1mEE());
+        extractedText.selectionStart = TextRange.m7455getMinimpl(textFieldCharSequence.m1446getSelectiond9O1mEE());
+        extractedText.selectionEnd = TextRange.m7454getMaximpl(textFieldCharSequence.m1446getSelectiond9O1mEE());
         extractedText.flags = !StringsKt.contains$default((CharSequence) textFieldCharSequence2, '\n', false, 2, (Object) null) ? 1 : 0;
         return extractedText;
     }
@@ -124,9 +124,9 @@ public final class StatelessInputConnection_androidKt {
                 if (style != 3) {
                     return null;
                 }
-                return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), FontStyle.m6836boximpl(FontStyle.Companion.m6845getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65523, (DefaultConstructorMarker) null);
+                return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), FontStyle.m7567boximpl(FontStyle.Companion.m7576getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65523, (DefaultConstructorMarker) null);
             }
-            return new SpanStyle(0L, 0L, (FontWeight) null, FontStyle.m6836boximpl(FontStyle.Companion.m6845getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65527, (DefaultConstructorMarker) null);
+            return new SpanStyle(0L, 0L, (FontWeight) null, FontStyle.m7567boximpl(FontStyle.Companion.m7576getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65527, (DefaultConstructorMarker) null);
         }
         return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65531, (DefaultConstructorMarker) null);
     }

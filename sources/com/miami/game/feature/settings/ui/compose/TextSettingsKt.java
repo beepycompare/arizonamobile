@@ -9,18 +9,12 @@ import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.Color;
-import androidx.compose.ui.text.TextLayoutResult;
-import androidx.compose.ui.text.font.FontFamily;
-import androidx.compose.ui.text.font.FontStyle;
-import androidx.compose.ui.text.font.FontWeight;
 import androidx.compose.ui.text.style.TextAlign;
-import androidx.compose.ui.text.style.TextDecoration;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.miami.game.ui.theme.TypeKt;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextSettings.kt */
@@ -36,8 +30,8 @@ public final class TextSettingsKt {
     /* JADX WARN: Removed duplicated region for block: B:23:0x004a  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x004c  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00f1  */
     /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -69,9 +63,9 @@ public final class TextSettingsKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1473964271, i3, -1, "com.miami.game.feature.settings.ui.compose.TextSettings (TextSettings.kt:15)");
                 }
-                composer2 = startRestartGroup;
                 Modifier modifier2 = companion;
-                TextKt.m2814Text4IGK_g(text, OffsetKt.m797offsetVpY3zN4$default(companion, 0.0f, Dp.m7264constructorimpl(-Dp.m7264constructorimpl(1)), 1, null), Color.Companion.m4586getWhite0d7_KjU(), TypeKt.m9061dpToSp8Feqmps(Dp.m7264constructorimpl(20), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, TextAlign.m7141boximpl(TextAlign.Companion.m7148getCentere0LSkKk()), 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65008);
+                composer2 = startRestartGroup;
+                TextKt.m3168TextNvy7gAk(text, OffsetKt.m797offsetVpY3zN4$default(companion, 0.0f, Dp.m7995constructorimpl(-Dp.m7995constructorimpl(1)), 1, null), Color.Companion.m5316getWhite0d7_KjU(), null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(20), startRestartGroup, 6), null, null, null, 0L, null, TextAlign.m7872boximpl(TextAlign.Companion.m7879getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 130024);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

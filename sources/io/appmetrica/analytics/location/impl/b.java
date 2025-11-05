@@ -9,18 +9,18 @@ import io.appmetrica.analytics.gpllibrary.internal.GplLibraryWrapper;
 import io.appmetrica.analytics.gpllibrary.internal.IGplLibraryWrapper;
 import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class b implements LastKnownLocationExtractor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1205a;
+    public final Context f1246a;
     public final PermissionResolutionStrategy b;
     public final LocationListener c;
     public final IHandlerExecutor d;
     public final d e = new d();
 
     public b(Context context, PermissionResolutionStrategy permissionResolutionStrategy, LocationListener locationListener, IHandlerExecutor iHandlerExecutor) {
-        this.f1205a = context;
+        this.f1246a = context;
         this.b = permissionResolutionStrategy;
         this.c = locationListener;
         this.d = iHandlerExecutor;
@@ -29,10 +29,10 @@ public final class b implements LastKnownLocationExtractor {
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor
     public final void updateLastKnownLocation() {
         IGplLibraryWrapper gplLibraryWrapper;
-        if (this.b.hasNecessaryPermissions(this.f1205a)) {
+        if (this.b.hasNecessaryPermissions(this.f1246a)) {
             try {
                 d dVar = this.e;
-                Context context = this.f1205a;
+                Context context = this.f1246a;
                 LocationListener locationListener = this.c;
                 IHandlerExecutor iHandlerExecutor = this.d;
                 dVar.getClass();

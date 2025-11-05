@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzhh extends zzjf {
     static final Pair zza = new Pair("", 0L);
     public zzhf zzb;

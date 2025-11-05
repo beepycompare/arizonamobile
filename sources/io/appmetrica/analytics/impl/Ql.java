@@ -1,47 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import java.util.HashMap;
-/* loaded from: classes4.dex */
-public final class Ql {
+import android.os.Bundle;
+/* loaded from: classes3.dex */
+public final class Ql implements H6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Pa f645a = new Pa();
-    public final HashMap b = new HashMap();
-    public C0494om c = null;
-    public final Ol d = new Ol(this);
+    public final /* synthetic */ Sl f655a;
 
-    public static final Ql a() {
-        return Pl.f630a;
+    public Ql(Sl sl) {
+        this.f655a = sl;
     }
 
-    public final Km a(Context context, C0477o5 c0477o5, C0338im c0338im) {
-        Km km = (Km) this.b.get(c0477o5.f1017a);
-        boolean z = true;
-        if (km == null) {
-            synchronized (this.b) {
-                km = (Km) this.b.get(c0477o5.f1017a);
-                if (km == null) {
-                    km = new Km(new Lm(context, c0477o5.f1017a, c0338im, this.d));
-                    km.f();
-                    this.b.put(c0477o5.f1017a, km);
-                    z = false;
-                }
-            }
-        }
-        if (z) {
-            km.a(c0338im);
-        }
-        return km;
-    }
-
-    public final void a(C0477o5 c0477o5, Zl zl) {
-        synchronized (this.b) {
-            this.f645a.a(c0477o5.f1017a, zl);
-            C0494om c0494om = this.c;
-            if (c0494om != null) {
-                zl.a(c0494om);
-            }
-        }
+    @Override // io.appmetrica.analytics.impl.H6
+    public final void a(int i, Bundle bundle) {
+        this.f655a.b(bundle);
     }
 }

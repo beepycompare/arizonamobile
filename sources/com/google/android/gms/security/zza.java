@@ -6,8 +6,8 @@ import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.security.ProviderInstaller;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 final class zza extends AsyncTask {
     final /* synthetic */ Context zza;
     final /* synthetic */ ProviderInstaller.ProviderInstallListener zzb;
@@ -40,7 +40,9 @@ final class zza extends AsyncTask {
             return;
         }
         Context context = this.zza;
+        String str = ProviderInstaller.PROVIDER_NAME;
+        int intValue = num.intValue();
         googleApiAvailabilityLight = ProviderInstaller.zza;
-        this.zzb.onProviderInstallFailed(num.intValue(), googleApiAvailabilityLight.getErrorResolutionIntent(context, num.intValue(), "pi"));
+        this.zzb.onProviderInstallFailed(num.intValue(), googleApiAvailabilityLight.getErrorResolutionIntent(context, intValue, "pi"));
     }
 }

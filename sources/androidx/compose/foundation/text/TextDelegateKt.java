@@ -23,7 +23,7 @@ public final class TextDelegateKt {
             z = true;
         }
         if ((i4 & 64) != 0) {
-            i = TextOverflow.Companion.m7199getClipgIe3tQ8();
+            i = TextOverflow.Companion.m7930getClipgIe3tQ8();
         }
         if ((i4 & 128) != 0) {
             i2 = Integer.MAX_VALUE;
@@ -46,7 +46,7 @@ public final class TextDelegateKt {
             z2 = z;
             if (textDelegate.getSoftWrap() == z2) {
                 i4 = i;
-                if (TextOverflow.m7190equalsimpl0(textDelegate.m1343getOverflowgIe3tQ8(), i4)) {
+                if (TextOverflow.m7921equalsimpl0(textDelegate.m1343getOverflowgIe3tQ8(), i4)) {
                     i5 = i2;
                     if (textDelegate.getMaxLines() == i5) {
                         i6 = i3;

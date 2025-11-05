@@ -12,7 +12,7 @@ import java.net.InetAddress;
 import java.net.SocketTimeoutException;
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SntpClient {
     public static final String DEFAULT_NTP_HOST = "time.android.com";
     public static final int DEFAULT_TIMEOUT_MS = 1000;
@@ -39,7 +39,7 @@ public final class SntpClient {
     private static final Object loaderLock = new Object();
     private static final Object valueLock = new Object();
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface InitializationCallback {
         void onInitializationFailed(IOException iOException);
 
@@ -251,7 +251,7 @@ public final class SntpClient {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class NtpTimeLoadable implements Loader.Loadable {
         @Override // androidx.media3.exoplayer.upstream.Loader.Loadable
         public void cancelLoad() {
@@ -278,7 +278,7 @@ public final class SntpClient {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class NtpTimeCallback implements Loader.Callback<Loader.Loadable> {
         private final InitializationCallback callback;
 

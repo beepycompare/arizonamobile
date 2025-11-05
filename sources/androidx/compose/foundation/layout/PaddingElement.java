@@ -113,13 +113,13 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Dp.m7270hashCodeimpl(this.start) * 31) + Dp.m7270hashCodeimpl(this.top)) * 31) + Dp.m7270hashCodeimpl(this.end)) * 31) + Dp.m7270hashCodeimpl(this.bottom)) * 31) + Boolean.hashCode(this.rtlAware);
+        return (((((((Dp.m8001hashCodeimpl(this.start) * 31) + Dp.m8001hashCodeimpl(this.top)) * 31) + Dp.m8001hashCodeimpl(this.end)) * 31) + Dp.m8001hashCodeimpl(this.bottom)) * 31) + Boolean.hashCode(this.rtlAware);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public boolean equals(Object obj) {
         PaddingElement paddingElement = obj instanceof PaddingElement ? (PaddingElement) obj : null;
-        return paddingElement != null && Dp.m7269equalsimpl0(this.start, paddingElement.start) && Dp.m7269equalsimpl0(this.top, paddingElement.top) && Dp.m7269equalsimpl0(this.end, paddingElement.end) && Dp.m7269equalsimpl0(this.bottom, paddingElement.bottom) && this.rtlAware == paddingElement.rtlAware;
+        return paddingElement != null && Dp.m8000equalsimpl0(this.start, paddingElement.start) && Dp.m8000equalsimpl0(this.top, paddingElement.top) && Dp.m8000equalsimpl0(this.end, paddingElement.end) && Dp.m8000equalsimpl0(this.bottom, paddingElement.bottom) && this.rtlAware == paddingElement.rtlAware;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -128,6 +128,6 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
     }
 
     public /* synthetic */ PaddingElement(float f, float f2, float f3, float f4, boolean z, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7264constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7264constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7264constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7264constructorimpl(0) : f4, z, function1, null);
+        this((i & 1) != 0 ? Dp.m7995constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7995constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7995constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7995constructorimpl(0) : f4, z, function1, null);
     }
 }

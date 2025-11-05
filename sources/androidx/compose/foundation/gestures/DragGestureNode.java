@@ -44,7 +44,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
             return Boolean.valueOf(_canDrag$lambda$0);
         }
     };
-    private long nodeOffset = Offset.Companion.m4321getZeroF1C5BW0();
+    private long nodeOffset = Offset.Companion.m5051getZeroF1C5BW0();
 
     public abstract Object drag(Function2<? super Function1<? super DragEvent.DragDelta, Unit>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super Unit> continuation);
 
@@ -92,7 +92,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
     public void onDetach() {
         this.isListeningForEvents = false;
         disposeInteractionSource();
-        this.nodeOffset = Offset.Companion.m4321getZeroF1C5BW0();
+        this.nodeOffset = Offset.Companion.m5051getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
@@ -281,7 +281,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                             }
                         }
                     }
-                    mo449onDragStoppedTH1AsA0(Velocity.Companion.m7513getZero9UxMQ8M());
+                    mo449onDragStoppedTH1AsA0(Velocity.Companion.m8244getZero9UxMQ8M());
                     return Unit.INSTANCE;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -289,7 +289,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                     ResultKt.throwOnFailure(obj);
                 }
                 this.dragInteraction = null;
-                mo449onDragStoppedTH1AsA0(Velocity.Companion.m7513getZero9UxMQ8M());
+                mo449onDragStoppedTH1AsA0(Velocity.Companion.m8244getZero9UxMQ8M());
                 return Unit.INSTANCE;
             }
         }
@@ -300,7 +300,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
         if (i != 0) {
         }
         this.dragInteraction = null;
-        mo449onDragStoppedTH1AsA0(Velocity.Companion.m7513getZero9UxMQ8M());
+        mo449onDragStoppedTH1AsA0(Velocity.Companion.m8244getZero9UxMQ8M());
         return Unit.INSTANCE;
     }
 

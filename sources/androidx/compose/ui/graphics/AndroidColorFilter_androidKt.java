@@ -26,26 +26,26 @@ public final class AndroidColorFilter_androidKt {
     }
 
     /* renamed from: actualTintColorFilter-xETnrds  reason: not valid java name */
-    public static final android.graphics.ColorFilter m4412actualTintColorFilterxETnrds(long j, int i) {
+    public static final android.graphics.ColorFilter m5142actualTintColorFilterxETnrds(long j, int i) {
         if (Build.VERSION.SDK_INT >= 29) {
-            return BlendModeColorFilterHelper.INSTANCE.m4494BlendModeColorFilterxETnrds(j, i);
+            return BlendModeColorFilterHelper.INSTANCE.m5224BlendModeColorFilterxETnrds(j, i);
         }
-        return new PorterDuffColorFilter(ColorKt.m4603toArgb8_81llA(j), AndroidBlendMode_androidKt.m4398toPorterDuffModes9anfk8(i));
+        return new PorterDuffColorFilter(ColorKt.m5333toArgb8_81llA(j), AndroidBlendMode_androidKt.m5128toPorterDuffModes9anfk8(i));
     }
 
     /* renamed from: actualColorMatrixColorFilter-jHG-Opc  reason: not valid java name */
-    public static final android.graphics.ColorFilter m4410actualColorMatrixColorFilterjHGOpc(float[] fArr) {
+    public static final android.graphics.ColorFilter m5140actualColorMatrixColorFilterjHGOpc(float[] fArr) {
         return new android.graphics.ColorMatrixColorFilter(fArr);
     }
 
     /* renamed from: actualLightingColorFilter--OWjLjI  reason: not valid java name */
-    public static final android.graphics.ColorFilter m4411actualLightingColorFilterOWjLjI(long j, long j2) {
-        return new android.graphics.LightingColorFilter(ColorKt.m4603toArgb8_81llA(j), ColorKt.m4603toArgb8_81llA(j2));
+    public static final android.graphics.ColorFilter m5141actualLightingColorFilterOWjLjI(long j, long j2) {
+        return new android.graphics.LightingColorFilter(ColorKt.m5333toArgb8_81llA(j), ColorKt.m5333toArgb8_81llA(j2));
     }
 
     public static final float[] actualColorMatrixFromFilter(android.graphics.ColorFilter colorFilter) {
         if ((colorFilter instanceof android.graphics.ColorMatrixColorFilter) && supportsColorMatrixQuery()) {
-            return ColorMatrixFilterHelper.INSTANCE.m4628getColorMatrix8unuwjk((android.graphics.ColorMatrixColorFilter) colorFilter);
+            return ColorMatrixFilterHelper.INSTANCE.m5358getColorMatrix8unuwjk((android.graphics.ColorMatrixColorFilter) colorFilter);
         }
         throw new IllegalArgumentException("Unable to obtain ColorMatrix from Android ColorMatrixColorFilter. This method was invoked on an unsupported Android version");
     }

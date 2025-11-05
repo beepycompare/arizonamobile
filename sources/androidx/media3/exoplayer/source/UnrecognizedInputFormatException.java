@@ -6,7 +6,7 @@ import androidx.media3.extractor.SniffFailure;
 import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class UnrecognizedInputFormatException extends ParserException {
     public final ImmutableList<SniffFailure> sniffFailures;
     public final Uri uri;

@@ -1,40 +1,25 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import android.os.Bundle;
-/* loaded from: classes4.dex */
-public final class Hh implements Runnable {
+/* loaded from: classes3.dex */
+public final class Hh implements InterfaceC0440n4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f481a;
-    public final C0478o6 b;
-    public final Bundle c;
-    public final C0751z4 d;
+    public final InterfaceC0236f5 f508a;
 
-    public Hh(Context context, C0478o6 c0478o6, Bundle bundle, C0751z4 c0751z4) {
-        this.f481a = context;
-        this.b = c0478o6;
-        this.c = bundle;
-        this.d = c0751z4;
+    public Hh(InterfaceC0236f5 interfaceC0236f5) {
+        this.f508a = interfaceC0236f5;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        try {
-            C0269g4 a2 = C0269g4.a(this.f481a, this.c);
-            if (a2 == null) {
-                return;
-            }
-            C0476o4 a3 = C0476o4.a(a2);
-            Aj u = Na.F.u();
-            u.a(a2.b.getAppVersion(), a2.b.getAppBuildNumber());
-            u.a(a2.b.getDeviceType());
-            N4 n4 = new N4(new C0338im(a2), new M4(a2.b, Gb.c(a2.f889a.f713a.getAsString("PROCESS_CFG_CLIDS"))), a2.f889a.b);
-            this.d.a(a3, n4).a(this.b, n4);
-        } catch (Throwable th) {
-            C0414lk c0414lk = Kj.f543a;
-            c0414lk.getClass();
-            c0414lk.a(new Lj("Exception during processing event with type: " + this.b.d + " (" + this.b.e + "): " + th.getMessage(), th));
+    @Override // io.appmetrica.analytics.impl.InterfaceC0440n4
+    /* renamed from: b */
+    public final Fg a(Context context, C0365k5 c0365k5, X3 x3, C0664w4 c0664w4) {
+        Gg gg;
+        X4 x4 = new X4(x3.b, x3.f751a);
+        Hg hg = new Hg(this.f508a);
+        synchronized (c0365k5) {
+            gg = (Gg) c0365k5.a(x4, c0664w4, hg, c0365k5.f967a);
         }
+        return new Fg(context, gg);
     }
 }

@@ -16,27 +16,27 @@ public interface FontScalingLinear {
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m7382toSp0xMU5do(FontScalingLinear fontScalingLinear, float f) {
-            return FontScalingLinear.super.m7380toSp0xMU5do(f);
+        public static long m8113toSp0xMU5do(FontScalingLinear fontScalingLinear, float f) {
+            return FontScalingLinear.super.m8111toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m7381toDpGaN1DYA(FontScalingLinear fontScalingLinear, long j) {
-            return FontScalingLinear.super.m7379toDpGaN1DYA(j);
+        public static float m8112toDpGaN1DYA(FontScalingLinear fontScalingLinear, long j) {
+            return FontScalingLinear.super.m8110toDpGaN1DYA(j);
         }
     }
 
     /* renamed from: toSp-0xMU5do  reason: not valid java name */
-    default long m7380toSp0xMU5do(float f) {
+    default long m8111toSp0xMU5do(float f) {
         return TextUnitKt.getSp(f / getFontScale());
     }
 
     /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-    default float m7379toDpGaN1DYA(long j) {
-        if (!TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(j), TextUnitType.Companion.m7491getSpUIouoOA())) {
+    default float m8110toDpGaN1DYA(long j) {
+        if (!TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(j), TextUnitType.Companion.m8222getSpUIouoOA())) {
             throw new IllegalStateException("Only Sp can convert to Px".toString());
         }
-        return Dp.m7264constructorimpl(TextUnit.m7458getValueimpl(j) * getFontScale());
+        return Dp.m7995constructorimpl(TextUnit.m8189getValueimpl(j) * getFontScale());
     }
 }

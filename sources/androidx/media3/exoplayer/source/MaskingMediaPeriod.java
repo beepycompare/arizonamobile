@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     private final Allocator allocator;
     private MediaPeriod.Callback callback;
@@ -22,7 +22,7 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     private long preparePositionOverrideUs = C.TIME_UNSET;
     private final long preparePositionUs;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface PrepareListener {
         void onPrepareComplete(MediaSource.MediaPeriodId mediaPeriodId);
 

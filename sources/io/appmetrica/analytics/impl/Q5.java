@@ -1,10 +1,8 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
-/* loaded from: classes4.dex */
-public abstract class Q5 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final List f636a = CollectionUtils.createSortedListWithoutRepetitions("data_key", "value");
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext;
+/* loaded from: classes3.dex */
+public interface Q5 extends ModuleAdRevenueContext {
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
+    C0491p5 getAdRevenueProcessorsHolder();
 }

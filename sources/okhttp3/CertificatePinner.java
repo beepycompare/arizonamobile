@@ -69,15 +69,15 @@ public final class CertificatePinner {
         check$okhttp(hostname, new Function0() { // from class: okhttp3.CertificatePinner$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List check$lambda$1;
-                check$lambda$1 = CertificatePinner.check$lambda$1(CertificatePinner.this, peerCertificates, hostname);
-                return check$lambda$1;
+                List check$lambda$0;
+                check$lambda$0 = CertificatePinner.check$lambda$0(CertificatePinner.this, peerCertificates, hostname);
+                return check$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List check$lambda$1(CertificatePinner certificatePinner, List list, String str) {
+    public static final List check$lambda$0(CertificatePinner certificatePinner, List list, String str) {
         List<Certificate> clean;
         CertificateChainCleaner certificateChainCleaner = certificatePinner.certificateChainCleaner;
         if (certificateChainCleaner != null && (clean = certificateChainCleaner.clean(list, str)) != null) {

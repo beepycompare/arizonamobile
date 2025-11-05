@@ -20,6 +20,6 @@ public final class TextFieldKeyEventHandler_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isKeyCode-YhN2O0w  reason: not valid java name */
     public static final boolean m1573isKeyCodeYhN2O0w(KeyEvent keyEvent, int i) {
-        return Key_androidKt.m5702getNativeKeyCodeYVgTNJs(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent)) == i;
+        return Key_androidKt.m6432getNativeKeyCodeYVgTNJs(KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent)) == i;
     }
 }

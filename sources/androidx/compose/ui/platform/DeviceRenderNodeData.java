@@ -46,7 +46,7 @@ public final class DeviceRenderNodeData {
     }
 
     /* renamed from: copy-qCc9W8c$default  reason: not valid java name */
-    public static /* synthetic */ DeviceRenderNodeData m6397copyqCc9W8c$default(DeviceRenderNodeData deviceRenderNodeData, long j, int i, int i2, int i3, int i4, int i5, int i6, float f, float f2, float f3, float f4, float f5, int i7, int i8, float f6, float f7, float f8, float f9, float f10, float f11, boolean z, boolean z2, float f12, RenderEffect renderEffect, int i9, ColorFilter colorFilter, int i10, int i11, Object obj) {
+    public static /* synthetic */ DeviceRenderNodeData m7127copyqCc9W8c$default(DeviceRenderNodeData deviceRenderNodeData, long j, int i, int i2, int i3, int i4, int i5, int i6, float f, float f2, float f3, float f4, float f5, int i7, int i8, float f6, float f7, float f8, float f9, float f10, float f11, boolean z, boolean z2, float f12, RenderEffect renderEffect, int i9, ColorFilter colorFilter, int i10, int i11, Object obj) {
         int i12;
         ColorFilter colorFilter2;
         long j2 = (i11 & 1) != 0 ? deviceRenderNodeData.uniqueId : j;
@@ -83,7 +83,7 @@ public final class DeviceRenderNodeData {
             i12 = i10;
             colorFilter2 = colorFilter3;
         }
-        return deviceRenderNodeData.m6400copyqCc9W8c(j3, i13, i14, i15, i16, i17, i18, f13, f14, f15, f16, f17, i19, i20, f18, f19, f20, f21, f22, f23, z3, z4, f24, renderEffect2, i21, colorFilter2, i12);
+        return deviceRenderNodeData.m7130copyqCc9W8c(j3, i13, i14, i15, i16, i17, i18, f13, f14, f15, f16, f17, i19, i20, f18, f19, f20, f21, f22, f23, z3, z4, f24, renderEffect2, i21, colorFilter2, i12);
     }
 
     public final long component1() {
@@ -155,7 +155,7 @@ public final class DeviceRenderNodeData {
     }
 
     /* renamed from: component25-0nO6VwU  reason: not valid java name */
-    public final int m6398component250nO6VwU() {
+    public final int m7128component250nO6VwU() {
         return this.blendMode;
     }
 
@@ -164,7 +164,7 @@ public final class DeviceRenderNodeData {
     }
 
     /* renamed from: component27--NrFUSI  reason: not valid java name */
-    public final int m6399component27NrFUSI() {
+    public final int m7129component27NrFUSI() {
         return this.compositingStrategy;
     }
 
@@ -197,7 +197,7 @@ public final class DeviceRenderNodeData {
     }
 
     /* renamed from: copy-qCc9W8c  reason: not valid java name */
-    public final DeviceRenderNodeData m6400copyqCc9W8c(long j, int i, int i2, int i3, int i4, int i5, int i6, float f, float f2, float f3, float f4, float f5, int i7, int i8, float f6, float f7, float f8, float f9, float f10, float f11, boolean z, boolean z2, float f12, RenderEffect renderEffect, int i9, ColorFilter colorFilter, int i10) {
+    public final DeviceRenderNodeData m7130copyqCc9W8c(long j, int i, int i2, int i3, int i4, int i5, int i6, float f, float f2, float f3, float f4, float f5, int i7, int i8, float f6, float f7, float f8, float f9, float f10, float f11, boolean z, boolean z2, float f12, RenderEffect renderEffect, int i9, ColorFilter colorFilter, int i10) {
         return new DeviceRenderNodeData(j, i, i2, i3, i4, i5, i6, f, f2, f3, f4, f5, i7, i8, f6, f7, f8, f9, f10, f11, z, z2, f12, renderEffect, i9, colorFilter, i10, null);
     }
 
@@ -207,7 +207,7 @@ public final class DeviceRenderNodeData {
         }
         if (obj instanceof DeviceRenderNodeData) {
             DeviceRenderNodeData deviceRenderNodeData = (DeviceRenderNodeData) obj;
-            return this.uniqueId == deviceRenderNodeData.uniqueId && this.left == deviceRenderNodeData.left && this.top == deviceRenderNodeData.top && this.right == deviceRenderNodeData.right && this.bottom == deviceRenderNodeData.bottom && this.width == deviceRenderNodeData.width && this.height == deviceRenderNodeData.height && Float.compare(this.scaleX, deviceRenderNodeData.scaleX) == 0 && Float.compare(this.scaleY, deviceRenderNodeData.scaleY) == 0 && Float.compare(this.translationX, deviceRenderNodeData.translationX) == 0 && Float.compare(this.translationY, deviceRenderNodeData.translationY) == 0 && Float.compare(this.elevation, deviceRenderNodeData.elevation) == 0 && this.ambientShadowColor == deviceRenderNodeData.ambientShadowColor && this.spotShadowColor == deviceRenderNodeData.spotShadowColor && Float.compare(this.rotationZ, deviceRenderNodeData.rotationZ) == 0 && Float.compare(this.rotationX, deviceRenderNodeData.rotationX) == 0 && Float.compare(this.rotationY, deviceRenderNodeData.rotationY) == 0 && Float.compare(this.cameraDistance, deviceRenderNodeData.cameraDistance) == 0 && Float.compare(this.pivotX, deviceRenderNodeData.pivotX) == 0 && Float.compare(this.pivotY, deviceRenderNodeData.pivotY) == 0 && this.clipToOutline == deviceRenderNodeData.clipToOutline && this.clipToBounds == deviceRenderNodeData.clipToBounds && Float.compare(this.alpha, deviceRenderNodeData.alpha) == 0 && Intrinsics.areEqual(this.renderEffect, deviceRenderNodeData.renderEffect) && BlendMode.m4459equalsimpl0(this.blendMode, deviceRenderNodeData.blendMode) && Intrinsics.areEqual(this.colorFilter, deviceRenderNodeData.colorFilter) && CompositingStrategy.m4635equalsimpl0(this.compositingStrategy, deviceRenderNodeData.compositingStrategy);
+            return this.uniqueId == deviceRenderNodeData.uniqueId && this.left == deviceRenderNodeData.left && this.top == deviceRenderNodeData.top && this.right == deviceRenderNodeData.right && this.bottom == deviceRenderNodeData.bottom && this.width == deviceRenderNodeData.width && this.height == deviceRenderNodeData.height && Float.compare(this.scaleX, deviceRenderNodeData.scaleX) == 0 && Float.compare(this.scaleY, deviceRenderNodeData.scaleY) == 0 && Float.compare(this.translationX, deviceRenderNodeData.translationX) == 0 && Float.compare(this.translationY, deviceRenderNodeData.translationY) == 0 && Float.compare(this.elevation, deviceRenderNodeData.elevation) == 0 && this.ambientShadowColor == deviceRenderNodeData.ambientShadowColor && this.spotShadowColor == deviceRenderNodeData.spotShadowColor && Float.compare(this.rotationZ, deviceRenderNodeData.rotationZ) == 0 && Float.compare(this.rotationX, deviceRenderNodeData.rotationX) == 0 && Float.compare(this.rotationY, deviceRenderNodeData.rotationY) == 0 && Float.compare(this.cameraDistance, deviceRenderNodeData.cameraDistance) == 0 && Float.compare(this.pivotX, deviceRenderNodeData.pivotX) == 0 && Float.compare(this.pivotY, deviceRenderNodeData.pivotY) == 0 && this.clipToOutline == deviceRenderNodeData.clipToOutline && this.clipToBounds == deviceRenderNodeData.clipToBounds && Float.compare(this.alpha, deviceRenderNodeData.alpha) == 0 && Intrinsics.areEqual(this.renderEffect, deviceRenderNodeData.renderEffect) && BlendMode.m5189equalsimpl0(this.blendMode, deviceRenderNodeData.blendMode) && Intrinsics.areEqual(this.colorFilter, deviceRenderNodeData.colorFilter) && CompositingStrategy.m5365equalsimpl0(this.compositingStrategy, deviceRenderNodeData.compositingStrategy);
         }
         return false;
     }
@@ -215,16 +215,16 @@ public final class DeviceRenderNodeData {
     public int hashCode() {
         int hashCode = ((((((((((((((((((((((((((((((((((((((((((((Long.hashCode(this.uniqueId) * 31) + Integer.hashCode(this.left)) * 31) + Integer.hashCode(this.top)) * 31) + Integer.hashCode(this.right)) * 31) + Integer.hashCode(this.bottom)) * 31) + Integer.hashCode(this.width)) * 31) + Integer.hashCode(this.height)) * 31) + Float.hashCode(this.scaleX)) * 31) + Float.hashCode(this.scaleY)) * 31) + Float.hashCode(this.translationX)) * 31) + Float.hashCode(this.translationY)) * 31) + Float.hashCode(this.elevation)) * 31) + Integer.hashCode(this.ambientShadowColor)) * 31) + Integer.hashCode(this.spotShadowColor)) * 31) + Float.hashCode(this.rotationZ)) * 31) + Float.hashCode(this.rotationX)) * 31) + Float.hashCode(this.rotationY)) * 31) + Float.hashCode(this.cameraDistance)) * 31) + Float.hashCode(this.pivotX)) * 31) + Float.hashCode(this.pivotY)) * 31) + Boolean.hashCode(this.clipToOutline)) * 31) + Boolean.hashCode(this.clipToBounds)) * 31) + Float.hashCode(this.alpha)) * 31;
         RenderEffect renderEffect = this.renderEffect;
-        int hashCode2 = (((hashCode + (renderEffect == null ? 0 : renderEffect.hashCode())) * 31) + BlendMode.m4460hashCodeimpl(this.blendMode)) * 31;
+        int hashCode2 = (((hashCode + (renderEffect == null ? 0 : renderEffect.hashCode())) * 31) + BlendMode.m5190hashCodeimpl(this.blendMode)) * 31;
         ColorFilter colorFilter = this.colorFilter;
-        return ((hashCode2 + (colorFilter != null ? colorFilter.hashCode() : 0)) * 31) + CompositingStrategy.m4636hashCodeimpl(this.compositingStrategy);
+        return ((hashCode2 + (colorFilter != null ? colorFilter.hashCode() : 0)) * 31) + CompositingStrategy.m5366hashCodeimpl(this.compositingStrategy);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder("DeviceRenderNodeData(uniqueId=");
         sb.append(this.uniqueId).append(", left=").append(this.left).append(", top=").append(this.top).append(", right=").append(this.right).append(", bottom=").append(this.bottom).append(", width=").append(this.width).append(", height=").append(this.height).append(", scaleX=").append(this.scaleX).append(", scaleY=").append(this.scaleY).append(", translationX=").append(this.translationX).append(", translationY=").append(this.translationY).append(", elevation=");
         sb.append(this.elevation).append(", ambientShadowColor=").append(this.ambientShadowColor).append(", spotShadowColor=").append(this.spotShadowColor).append(", rotationZ=").append(this.rotationZ).append(", rotationX=").append(this.rotationX).append(", rotationY=").append(this.rotationY).append(", cameraDistance=").append(this.cameraDistance).append(", pivotX=").append(this.pivotX).append(", pivotY=").append(this.pivotY).append(", clipToOutline=").append(this.clipToOutline).append(", clipToBounds=").append(this.clipToBounds).append(", alpha=").append(this.alpha);
-        sb.append(", renderEffect=").append(this.renderEffect).append(", blendMode=").append((Object) BlendMode.m4461toStringimpl(this.blendMode)).append(", colorFilter=").append(this.colorFilter).append(", compositingStrategy=").append((Object) CompositingStrategy.m4637toStringimpl(this.compositingStrategy)).append(')');
+        sb.append(", renderEffect=").append(this.renderEffect).append(", blendMode=").append((Object) BlendMode.m5191toStringimpl(this.blendMode)).append(", colorFilter=").append(this.colorFilter).append(", compositingStrategy=").append((Object) CompositingStrategy.m5367toStringimpl(this.compositingStrategy)).append(')');
         return sb.toString();
     }
 
@@ -423,12 +423,12 @@ public final class DeviceRenderNodeData {
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m6401getBlendMode0nO6VwU() {
+    public final int m7131getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    public final void m6403setBlendModes9anfk8(int i) {
+    public final void m7133setBlendModes9anfk8(int i) {
         this.blendMode = i;
     }
 
@@ -441,12 +441,12 @@ public final class DeviceRenderNodeData {
     }
 
     /* renamed from: getCompositingStrategy--NrFUSI  reason: not valid java name */
-    public final int m6402getCompositingStrategyNrFUSI() {
+    public final int m7132getCompositingStrategyNrFUSI() {
         return this.compositingStrategy;
     }
 
     /* renamed from: setCompositingStrategy-aDBOjCE  reason: not valid java name */
-    public final void m6404setCompositingStrategyaDBOjCE(int i) {
+    public final void m7134setCompositingStrategyaDBOjCE(int i) {
         this.compositingStrategy = i;
     }
 }

@@ -344,7 +344,7 @@ public final class BasicSecureTextFieldKt {
                                         if (i17 != 0) {
                                             keyboardOptions2 = obj4;
                                             z7 = z3;
-                                            solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
+                                            solidColor = new SolidColor(Color.Companion.m5305getBlack0d7_KjU(), null);
                                         } else {
                                             keyboardOptions2 = obj4;
                                             z7 = z3;
@@ -472,7 +472,7 @@ public final class BasicSecureTextFieldKt {
                                         rememberedValue6 = new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$secureTextFieldModifier$2$1
                                             @Override // kotlin.jvm.functions.Function1
                                             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                                                return m1219invokeZmokQxo(keyEvent.m5684unboximpl());
+                                                return m1219invokeZmokQxo(keyEvent.m6414unboximpl());
                                             }
 
                                             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
@@ -1101,7 +1101,7 @@ public final class BasicSecureTextFieldKt {
                                         KeyboardActionHandler keyboardActionHandler3 = i10 != 0 ? null : obj6;
                                         Function2 function23 = i12 != 0 ? null : function2;
                                         MutableInteractionSource mutableInteractionSource3 = i14 != 0 ? null : mutableInteractionSource;
-                                        SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null) : brush;
+                                        SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m5305getBlack0d7_KjU(), null) : brush;
                                         TextFieldDecorator textFieldDecorator3 = i17 != 0 ? null : textFieldDecorator;
                                         int m1470getRevealLastTypedvTwcZD0 = i20 != 0 ? TextObfuscationMode.Companion.m1470getRevealLastTypedvTwcZD0() : i;
                                         char c3 = i21 != 0 ? (char) 8226 : c;
@@ -1596,7 +1596,7 @@ public final class BasicSecureTextFieldKt {
                                 KeyboardActionHandler keyboardActionHandler3 = i10 != 0 ? null : keyboardActionHandler;
                                 Function2 function23 = i12 != 0 ? null : function2;
                                 MutableInteractionSource mutableInteractionSource3 = i14 != 0 ? null : mutableInteractionSource;
-                                SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null) : brush;
+                                SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m5305getBlack0d7_KjU(), null) : brush;
                                 TextFieldDecorator textFieldDecorator3 = i18 != 0 ? null : textFieldDecorator;
                                 int m1470getRevealLastTypedvTwcZD0 = i19 != 0 ? TextObfuscationMode.Companion.m1470getRevealLastTypedvTwcZD0() : i;
                                 char c3 = i25 != 0 ? (char) 8226 : c;

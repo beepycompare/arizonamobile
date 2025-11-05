@@ -1,25 +1,25 @@
 package io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate;
 
-import io.appmetrica.analytics.impl.O2;
-/* loaded from: classes4.dex */
+import io.appmetrica.analytics.impl.H2;
+/* loaded from: classes2.dex */
 public enum ApplicationState {
     UNKNOWN("unknown"),
-    BACKGROUND(O2.g),
+    BACKGROUND(H2.g),
     VISIBLE("visible");
     
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f265a;
+    private final String f280a;
 
     ApplicationState(String str) {
-        this.f265a = str;
+        this.f280a = str;
     }
 
     public static ApplicationState fromString(String str) {
         ApplicationState[] values;
         ApplicationState applicationState = UNKNOWN;
         for (ApplicationState applicationState2 : values()) {
-            if (applicationState2.f265a.equals(str)) {
+            if (applicationState2.f280a.equals(str)) {
                 return applicationState2;
             }
         }
@@ -27,6 +27,6 @@ public enum ApplicationState {
     }
 
     public String getStringValue() {
-        return this.f265a;
+        return this.f280a;
     }
 }

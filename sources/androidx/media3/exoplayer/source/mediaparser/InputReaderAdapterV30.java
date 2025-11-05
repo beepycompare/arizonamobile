@@ -4,7 +4,7 @@ import android.media.MediaParser;
 import androidx.media3.common.DataReader;
 import androidx.media3.common.util.Util;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class InputReaderAdapterV30 implements MediaParser.SeekableInputReader {
     private long currentPosition;
     private DataReader dataReader;

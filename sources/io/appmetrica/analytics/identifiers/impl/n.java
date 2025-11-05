@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class n extends Binder implements o {
     public n() {
         attachInterface(this, "com.uodis.opendevice.aidl.OpenDeviceIdentifierService");

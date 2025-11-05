@@ -1,11 +1,16 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Bf implements Y5 {
-    @Override // kotlin.jvm.functions.Function1
-    /* renamed from: a */
-    public final Boolean invoke(Kf kf) {
-        Na na = Na.F;
-        na.C();
-        return Boolean.valueOf(na.j.b(kf));
+
+import java.util.List;
+/* loaded from: classes3.dex */
+public final class Bf extends AbstractC0645va {
+    public Bf(C0678wi c0678wi) {
+        super(c0678wi);
+    }
+
+    @Override // io.appmetrica.analytics.impl.AbstractC0645va
+    public final void a(List<Wg> list) {
+        list.add(this.f1167a.n);
+        list.add(this.f1167a.h);
+        list.add(this.f1167a.d);
     }
 }

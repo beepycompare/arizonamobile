@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.LinkedHashMap;
@@ -69,7 +68,7 @@ public final class TableDialog extends AbstractDialog {
         this.adapter = new DialogTableAdapter(tableData, z, targetActivity, null, null, null, 56, null);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         if (tableData.size() > 7) {
-            recyclerView.getLayoutParams().height = ConverterKt.dpToPx((int) ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION, targetActivity);
+            recyclerView.getLayoutParams().height = ConverterKt.dpToPx(250, targetActivity);
         }
         if (!tableData.isEmpty() && ((List) CollectionsKt.first((List<? extends Object>) tableData)).size() == 1) {
             for (List<TableCell> list : tableData) {

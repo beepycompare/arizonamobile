@@ -35,15 +35,15 @@ public final class AndroidGenericFontFamilyTypeface implements AndroidTypeface {
 
     @Override // androidx.compose.ui.text.platform.AndroidTypeface
     /* renamed from: getNativeTypeface-PYhJU0U */
-    public Typeface mo6982getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
-        return m6983buildStyledTypefaceFO1MlWM(fontWeight, i);
+    public Typeface mo7713getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
+        return m7714buildStyledTypefaceFO1MlWM(fontWeight, i);
     }
 
     /* renamed from: buildStyledTypeface-FO1MlWM  reason: not valid java name */
-    private final Typeface m6983buildStyledTypefaceFO1MlWM(FontWeight fontWeight, int i) {
+    private final Typeface m7714buildStyledTypefaceFO1MlWM(FontWeight fontWeight, int i) {
         if (Build.VERSION.SDK_INT < 28) {
-            return Typeface.create(this.nativeTypeface, AndroidFontUtils_androidKt.m6790getAndroidTypefaceStyleFO1MlWM(fontWeight, i));
+            return Typeface.create(this.nativeTypeface, AndroidFontUtils_androidKt.m7521getAndroidTypefaceStyleFO1MlWM(fontWeight, i));
         }
-        return TypefaceHelperMethodsApi28.INSTANCE.create(this.nativeTypeface, fontWeight.getWeight(), FontStyle.m6839equalsimpl0(i, FontStyle.Companion.m6845getItalic_LCdwA()));
+        return TypefaceHelperMethodsApi28.INSTANCE.create(this.nativeTypeface, fontWeight.getWeight(), FontStyle.m7570equalsimpl0(i, FontStyle.Companion.m7576getItalic_LCdwA()));
     }
 }

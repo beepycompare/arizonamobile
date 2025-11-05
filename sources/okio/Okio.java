@@ -12,7 +12,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
-@Metadata(d1 = {"okio/Okio__JvmOkioKt", "okio/Okio__OkioKt", "okio/Okio__ZlibOkioKt"}, k = 4, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"okio/Okio__JvmOkioKt", "okio/Okio__OkioKt", "okio/Okio__ZlibOkioKt"}, k = 4, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Okio {
     public static final Sink appendingSink(File file) throws FileNotFoundException {

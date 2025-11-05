@@ -1,19 +1,16 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public final class T2 implements InterfaceC0583sn {
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-/* loaded from: classes4.dex */
-public abstract class T2 implements ProtobufStateSerializer {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    /* renamed from: a */
-    public abstract MessageNano defaultValue();
+    /* renamed from: a  reason: collision with root package name */
+    public final InterfaceC0608tn f695a;
 
-    public final byte[] a(MessageNano messageNano) {
-        return MessageNano.toByteArray(messageNano);
+    public T2(InterfaceC0608tn interfaceC0608tn) {
+        this.f695a = interfaceC0608tn;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final byte[] toByteArray(Object obj) {
-        return MessageNano.toByteArray((MessageNano) obj);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0583sn
+    public final void a(InterfaceC0558rn interfaceC0558rn) {
+        interfaceC0558rn.a(this.f695a.a());
     }
 }

@@ -1,23 +1,57 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
-/* loaded from: classes4.dex */
-public final class Le extends Th {
-    public final Vf e;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import java.util.Locale;
+/* loaded from: classes3.dex */
+public abstract class Le {
 
-    public Le(C0472o0 c0472o0, InterfaceC0337il interfaceC0337il, Vf vf) {
-        super(c0472o0, interfaceC0337il);
-        this.e = vf;
+    /* renamed from: a  reason: collision with root package name */
+    public static final He f575a;
+    public static final Ie b;
+    public static final Je c;
+
+    static {
+        NetworkType networkType = NetworkType.UNDEFINED;
+        f575a = new He(networkType);
+        b = new Ie(networkType);
+        c = new Je(2);
     }
 
-    @Override // io.appmetrica.analytics.impl.Th
-    public final void a(IAppMetricaService iAppMetricaService) {
-        Bundle bundle = new Bundle();
-        Vf vf = this.e;
-        synchronized (vf) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", vf);
+    public static String a(Locale locale) {
+        String language = locale.getLanguage();
+        String country = locale.getCountry();
+        StringBuilder sb = new StringBuilder(language);
+        String script = locale.getScript();
+        if (!TextUtils.isEmpty(script)) {
+            sb.append('-').append(script);
         }
-        iAppMetricaService.pauseUserSession(bundle);
+        if (!TextUtils.isEmpty(country)) {
+            sb.append('_').append(country);
+        }
+        return sb.toString();
+    }
+
+    public static NetworkType a(ConnectivityManager connectivityManager) {
+        NetworkInfo networkInfo;
+        NetworkType networkType = NetworkType.UNDEFINED;
+        Network activeNetwork = connectivityManager.getActiveNetwork();
+        if (!AndroidUtils.isApiAchieved(29) ? !(activeNetwork != null && ((networkInfo = connectivityManager.getNetworkInfo(activeNetwork)) == null || networkInfo.isConnected())) : activeNetwork == null) {
+            return NetworkType.OFFLINE;
+        }
+        NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
+        if (networkCapabilities != null) {
+            for (Integer num : b.f560a.keySet()) {
+                if (networkCapabilities.hasTransport(num.intValue())) {
+                    return (NetworkType) b.a(num);
+                }
+            }
+        }
+        return networkType;
     }
 }

@@ -1,151 +1,152 @@
 package com.google.android.gms.common.internal;
 
-import android.app.PendingIntent;
 import android.content.ComponentName;
-import android.content.ContentProviderClient;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.RemoteException;
-import android.util.Log;
+import android.content.ServiceConnection;
+import android.os.IBinder;
+import android.os.StrictMode;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.firebase.analytics.FirebaseAnalytics;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
-public final class zzo {
-    private static final Uri zza = new Uri.Builder().scheme(FirebaseAnalytics.Param.CONTENT).authority("com.google.android.gms.chimera").build();
-    private final String zzb;
-    private final String zzc;
-    private final ComponentName zzd;
-    private final int zze;
-    private final boolean zzf;
+import com.google.android.gms.common.stats.ConnectionTracker;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.Executor;
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
+final class zzo implements ServiceConnection, zzr {
+    final /* synthetic */ zzq zza;
+    private final Map zzb;
+    private int zzc;
+    private boolean zzd;
+    private IBinder zze;
+    private final zzn zzf;
+    private ComponentName zzg;
 
-    public zzo(ComponentName componentName, int i) {
-        this.zzb = null;
-        this.zzc = null;
-        Preconditions.checkNotNull(componentName);
-        this.zzd = componentName;
-        this.zze = 4225;
-        this.zzf = false;
+    public zzo(zzq zzqVar, zzn zznVar) {
+        java.util.Objects.requireNonNull(zzqVar);
+        this.zza = zzqVar;
+        this.zzf = zznVar;
+        this.zzb = new HashMap();
+        this.zzc = 2;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof zzo) {
-            zzo zzoVar = (zzo) obj;
-            if (Objects.equal(this.zzb, zzoVar.zzb) && Objects.equal(this.zzc, zzoVar.zzc) && Objects.equal(this.zzd, zzoVar.zzd)) {
-                int i = zzoVar.zze;
-                if (this.zzf == zzoVar.zzf) {
-                    return true;
-                }
+    @Override // android.content.ServiceConnection
+    public final void onBindingDied(ComponentName componentName) {
+        onServiceDisconnected(componentName);
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        zzq zzqVar = this.zza;
+        synchronized (zzqVar.zzf()) {
+            zzqVar.zzh().removeMessages(1, this.zzf);
+            this.zze = iBinder;
+            this.zzg = componentName;
+            for (ServiceConnection serviceConnection : this.zzb.values()) {
+                serviceConnection.onServiceConnected(componentName, iBinder);
             }
-            return false;
+            this.zzc = 1;
         }
-        return false;
     }
 
-    public final int hashCode() {
-        return Objects.hashCode(this.zzb, this.zzc, this.zzd, 4225, Boolean.valueOf(this.zzf));
-    }
-
-    public final String toString() {
-        String str = this.zzb;
-        if (str == null) {
-            Preconditions.checkNotNull(this.zzd);
-            return this.zzd.flattenToString();
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        zzq zzqVar = this.zza;
+        synchronized (zzqVar.zzf()) {
+            zzqVar.zzh().removeMessages(1, this.zzf);
+            this.zze = null;
+            this.zzg = componentName;
+            for (ServiceConnection serviceConnection : this.zzb.values()) {
+                serviceConnection.onServiceDisconnected(componentName);
+            }
+            this.zzc = 2;
         }
-        return str;
     }
 
-    public final ComponentName zza() {
+    public final void zza(String str) {
+        zzn zznVar = this.zzf;
+        zzq zzqVar = this.zza;
+        zzqVar.zzh().removeMessages(1, zznVar);
+        zzqVar.zzi().unbindService(zzqVar.zzg(), this);
+        this.zzd = false;
+        this.zzc = 2;
+    }
+
+    public final void zzb(ServiceConnection serviceConnection, ServiceConnection serviceConnection2, String str) {
+        this.zzb.put(serviceConnection, serviceConnection2);
+    }
+
+    public final void zzc(ServiceConnection serviceConnection, String str) {
+        this.zzb.remove(serviceConnection);
+    }
+
+    public final boolean zzd() {
         return this.zzd;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0051  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00ad A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Intent zzb(Context context) throws zzaj {
-        Bundle bundle;
-        PendingIntent pendingIntent;
-        ContentProviderClient acquireUnstableContentProviderClient;
-        if (this.zzb != null) {
-            Intent intent = null;
-            if (this.zzf) {
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("serviceActionBundleKey", this.zzb);
-                try {
-                    acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(zza);
-                } catch (RemoteException | IllegalArgumentException e) {
-                    e = e;
-                    bundle = null;
-                }
-                if (acquireUnstableContentProviderClient == null) {
-                    throw new RemoteException("Failed to acquire ContentProviderClient");
-                }
-                try {
-                    bundle = acquireUnstableContentProviderClient.call("serviceIntentCall", null, bundle2);
-                    try {
-                    } catch (RemoteException e2) {
-                        e = e2;
-                        Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
-                        if (bundle != null) {
-                        }
-                        if (intent == null) {
-                        }
-                        if (intent == null) {
-                        }
-                    } catch (IllegalArgumentException e3) {
-                        e = e3;
-                        Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
-                        if (bundle != null) {
-                        }
-                        if (intent == null) {
-                        }
-                        if (intent == null) {
-                        }
-                    }
-                    if (bundle != null) {
-                        Intent intent2 = (Intent) bundle.getParcelable("serviceResponseIntentKey");
-                        if (intent2 == null && (pendingIntent = (PendingIntent) bundle.getParcelable("serviceMissingResolutionIntentKey")) != null) {
-                            Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action " + this.zzb + " but has possible resolution");
-                            throw new zzaj(new ConnectionResult(25, pendingIntent));
-                        }
-                        intent = intent2;
-                    }
-                    if (intent == null) {
-                        Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action: ".concat(String.valueOf(this.zzb)));
-                    }
-                } finally {
-                    acquireUnstableContentProviderClient.release();
-                }
-            }
-            return intent == null ? new Intent(this.zzb).setPackage(this.zzc) : intent;
-        }
-        return new Intent().setComponent(this.zzd);
-    }
-
-    public final String zzc() {
+    public final int zze() {
         return this.zzc;
     }
 
-    public zzo(String str, int i, boolean z) {
-        this(str, "com.google.android.gms", 4225, false);
+    public final boolean zzf(ServiceConnection serviceConnection) {
+        return this.zzb.containsKey(serviceConnection);
     }
 
-    public zzo(String str, String str2, int i, boolean z) {
-        Preconditions.checkNotEmpty(str);
-        this.zzb = str;
-        Preconditions.checkNotEmpty(str2);
-        this.zzc = str2;
-        this.zzd = null;
-        this.zze = 4225;
-        this.zzf = z;
+    public final boolean zzg() {
+        return this.zzb.isEmpty();
+    }
+
+    public final IBinder zzh() {
+        return this.zze;
+    }
+
+    public final ComponentName zzi() {
+        return this.zzg;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ ConnectionResult zzj(String str, Executor executor) {
+        zzq zzqVar;
+        ConnectionTracker zzi;
+        Context zzg;
+        zzn zznVar;
+        try {
+            Intent zza = zzah.zza(this.zza.zzg(), this.zzf);
+            this.zzc = 3;
+            StrictMode.VmPolicy zza2 = com.google.android.gms.common.util.zzd.zza();
+            try {
+                zzqVar = this.zza;
+                zzi = zzqVar.zzi();
+                zzg = zzqVar.zzg();
+                zznVar = this.zzf;
+            } catch (Throwable th) {
+                th = th;
+            }
+            try {
+                boolean zza3 = zzi.zza(zzg, str, zza, this, 4225, executor);
+                this.zzd = zza3;
+                if (zza3) {
+                    zzqVar.zzh().sendMessageDelayed(zzqVar.zzh().obtainMessage(1, zznVar), zzqVar.zzj());
+                    ConnectionResult connectionResult = ConnectionResult.RESULT_SUCCESS;
+                    StrictMode.setVmPolicy(zza2);
+                    return connectionResult;
+                }
+                this.zzc = 2;
+                try {
+                    zzqVar.zzi().unbindService(zzqVar.zzg(), this);
+                } catch (IllegalArgumentException unused) {
+                }
+                ConnectionResult connectionResult2 = new ConnectionResult(16);
+                StrictMode.setVmPolicy(zza2);
+                return connectionResult2;
+            } catch (Throwable th2) {
+                th = th2;
+                Throwable th3 = th;
+                StrictMode.setVmPolicy(zza2);
+                throw th3;
+            }
+        } catch (zzaf e) {
+            return e.zza;
+        }
     }
 }

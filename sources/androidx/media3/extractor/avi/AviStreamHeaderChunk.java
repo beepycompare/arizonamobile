@@ -3,7 +3,7 @@ package androidx.media3.extractor.avi;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class AviStreamHeaderChunk implements AviChunk {
     private static final String TAG = "AviStreamHeaderChunk";
     public final int initialFrames;

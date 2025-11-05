@@ -1,30 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
-/* loaded from: classes4.dex */
-public abstract class R4 extends Vd {
-    public final Object f;
+import android.database.sqlite.SQLiteDatabase;
+import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
+/* loaded from: classes3.dex */
+public final class R4 extends DatabaseScript {
 
-    public R4(int i, String str, Object obj, yo yoVar, Z2 z2) {
-        super(i, str, yoVar, z2);
-        this.f = obj;
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public final Q4 f659a = new Q4();
+    public final P4 b = new P4();
 
-    @Override // io.appmetrica.analytics.impl.Vd, io.appmetrica.analytics.impl.InterfaceC0392ko
-    public final void a(C0366jo c0366jo) {
-        if (f()) {
-            Z2 z2 = this.d;
-            int i = this.b;
-            C0418lo a2 = z2.a(c0366jo, (C0418lo) ((HashMap) c0366jo.f944a.get(i)).get(this.f712a), this);
-            if (a2 != null) {
-                a(a2);
-            }
-        }
-    }
-
-    public abstract void a(C0418lo c0418lo);
-
-    public final Object g() {
-        return this.f;
+    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
+    public final void runScript(SQLiteDatabase sQLiteDatabase) {
+        this.f659a.runScript(sQLiteDatabase);
+        this.b.runScript(sQLiteDatabase);
     }
 }

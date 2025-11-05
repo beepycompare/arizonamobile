@@ -3,7 +3,9 @@ package com.arkivanov.decompose;
 import android.app.Activity;
 import android.app.TaskStackBuilder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import androidx.core.os.BundleKt;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.savedstate.SavedStateRegistry;
@@ -11,10 +13,12 @@ import androidx.savedstate.SavedStateRegistryOwner;
 import kotlin.Metadata;
 import kotlin.Pair;
 import kotlin.TuplesKt;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DeeplinkUtils.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\u001aA\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\f\b\u0000\u0010\u0002*\u00020\u0003*\u00020\u0004\"\b\b\u0001\u0010\u0001*\u00020\u0005*\u0002H\u00022\u0014\u0010\u0006\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\b\u0012\u0004\u0012\u0002H\u00010\u0007H\u0007¢\u0006\u0002\u0010\t\u001a\f\u0010\n\u001a\u00020\u000b*\u00020\u0003H\u0002\"\u000e\u0010\f\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000e\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"handleDeepLink", ExifInterface.GPS_DIRECTION_TRUE, ExifInterface.GPS_MEASUREMENT_IN_PROGRESS, "Landroid/app/Activity;", "Landroidx/savedstate/SavedStateRegistryOwner;", "", "block", "Lkotlin/Function1;", "Landroid/net/Uri;", "(Landroid/app/Activity;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "restartIfNeeded", "", "KEY_SAVED_DEEP_LINK_STATE", "", "KEY_DEEP_LINK_HANDLED", "decompose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\u001aA\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\f\b\u0000\u0010\u0002*\u00020\u0003*\u00020\u0004\"\b\b\u0001\u0010\u0001*\u00020\u0005*\u0002H\u00022\u0014\u0010\u0006\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\b\u0012\u0004\u0012\u0002H\u00010\u0007H\u0007¢\u0006\u0002\u0010\t\u001a\f\u0010\n\u001a\u00020\u000b*\u00020\u0003H\u0002\u001a\u0017\u0010\f\u001a\u00020\r2\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\r0\u000eH\u0082\b\u001a\f\u0010\f\u001a\u00020\u000f*\u00020\u000fH\u0002\"\u000e\u0010\u0010\u001a\u00020\u0011X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0012\u001a\u00020\u0011X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"handleDeepLink", ExifInterface.GPS_DIRECTION_TRUE, ExifInterface.GPS_MEASUREMENT_IN_PROGRESS, "Landroid/app/Activity;", "Landroidx/savedstate/SavedStateRegistryOwner;", "", "block", "Lkotlin/Function1;", "Landroid/net/Uri;", "(Landroid/app/Activity;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "restartIfNeeded", "", "withPermittedUnsafeIntentLaunch", "", "Lkotlin/Function0;", "Landroid/os/StrictMode$VmPolicy;", "KEY_SAVED_DEEP_LINK_STATE", "", "KEY_DEEP_LINK_HANDLED", "decompose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class DeeplinkUtilsKt {
     private static final String KEY_DEEP_LINK_HANDLED = "DEEP_LINK_HANDLED";
@@ -23,22 +27,25 @@ public final class DeeplinkUtilsKt {
     public static final <A extends Activity & SavedStateRegistryOwner, T> T handleDeepLink(A a2, Function1<? super Uri, ? extends T> block) {
         Intrinsics.checkNotNullParameter(a2, "<this>");
         Intrinsics.checkNotNullParameter(block, "block");
-        if (restartIfNeeded(a2)) {
-            return null;
-        }
-        A a3 = a2;
-        Bundle consumeRestoredStateForKey = a3.getSavedStateRegistry().consumeRestoredStateForKey(KEY_SAVED_DEEP_LINK_STATE);
-        final boolean z = consumeRestoredStateForKey != null ? consumeRestoredStateForKey.getBoolean(KEY_DEEP_LINK_HANDLED) : false;
-        final Uri data = z ? null : a2.getIntent().getData();
-        a3.getSavedStateRegistry().registerSavedStateProvider(KEY_SAVED_DEEP_LINK_STATE, new SavedStateRegistry.SavedStateProvider() { // from class: com.arkivanov.decompose.DeeplinkUtilsKt$$ExternalSyntheticLambda0
-            @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
-            public final Bundle saveState() {
-                Bundle handleDeepLink$lambda$1;
-                handleDeepLink$lambda$1 = DeeplinkUtilsKt.handleDeepLink$lambda$1(z, data);
-                return handleDeepLink$lambda$1;
+        final Uri data = a2.getIntent().getData();
+        if (data == null || !restartIfNeeded(a2)) {
+            A a3 = a2;
+            Bundle consumeRestoredStateForKey = a3.getSavedStateRegistry().consumeRestoredStateForKey(KEY_SAVED_DEEP_LINK_STATE);
+            final boolean z = consumeRestoredStateForKey != null ? consumeRestoredStateForKey.getBoolean(KEY_DEEP_LINK_HANDLED) : false;
+            if (data == null || z) {
+                data = null;
             }
-        });
-        return block.invoke(data);
+            a3.getSavedStateRegistry().registerSavedStateProvider(KEY_SAVED_DEEP_LINK_STATE, new SavedStateRegistry.SavedStateProvider() { // from class: com.arkivanov.decompose.DeeplinkUtilsKt$$ExternalSyntheticLambda0
+                @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
+                public final Bundle saveState() {
+                    Bundle handleDeepLink$lambda$1;
+                    handleDeepLink$lambda$1 = DeeplinkUtilsKt.handleDeepLink$lambda$1(z, data);
+                    return handleDeepLink$lambda$1;
+                }
+            });
+            return block.invoke(data);
+        }
+        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -57,9 +64,38 @@ public final class DeeplinkUtilsKt {
             return false;
         }
         activity.getIntent().addFlags(32768);
-        TaskStackBuilder.create(activity).addNextIntentWithParentStack(activity.getIntent()).startActivities();
-        activity.finish();
-        activity.overridePendingTransition(0, 0);
-        return true;
+        StrictMode.VmPolicy vmPolicy = StrictMode.getVmPolicy();
+        Intrinsics.checkNotNull(vmPolicy);
+        StrictMode.setVmPolicy(withPermittedUnsafeIntentLaunch(vmPolicy));
+        try {
+            TaskStackBuilder.create(activity).addNextIntentWithParentStack(activity.getIntent()).startActivities();
+            StrictMode.setVmPolicy(vmPolicy);
+            activity.finish();
+            activity.overridePendingTransition(0, 0);
+            return true;
+        } catch (Throwable th) {
+            StrictMode.setVmPolicy(vmPolicy);
+            throw th;
+        }
+    }
+
+    private static final void withPermittedUnsafeIntentLaunch(Function0<Unit> function0) {
+        StrictMode.VmPolicy vmPolicy = StrictMode.getVmPolicy();
+        Intrinsics.checkNotNull(vmPolicy);
+        StrictMode.setVmPolicy(withPermittedUnsafeIntentLaunch(vmPolicy));
+        try {
+            function0.invoke();
+        } finally {
+            StrictMode.setVmPolicy(vmPolicy);
+        }
+    }
+
+    private static final StrictMode.VmPolicy withPermittedUnsafeIntentLaunch(StrictMode.VmPolicy vmPolicy) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            StrictMode.VmPolicy build = new StrictMode.VmPolicy.Builder(vmPolicy).permitUnsafeIntentLaunch().build();
+            Intrinsics.checkNotNull(build);
+            return build;
+        }
+        return vmPolicy;
     }
 }

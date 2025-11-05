@@ -7,7 +7,7 @@ import androidx.media3.extractor.ChunkIndex;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.TreeSet;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CachedRegionTracker implements Cache.Listener {
     public static final int CACHED_TO_END = -2;
     public static final int NOT_CACHED = -1;
@@ -124,7 +124,7 @@ public final class CachedRegionTracker implements Cache.Listener {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Region implements Comparable<Region> {
         public long endOffset;
         public int endOffsetIndex;

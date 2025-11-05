@@ -3,27 +3,32 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ItemTradeBinding implements ViewBinding {
     public final CardView cvColoredItem;
     public final CardView item;
     public final AppCompatImageView ivActiveItem;
+    public final ImageView ivEffectBackground;
+    public final ImageView ivEffectForeground;
     public final AppCompatImageView ivItemImage;
     private final CardView rootView;
     public final TextView tvTitleText;
     public final View viewCenter;
 
-    private ItemTradeBinding(CardView rootView, CardView cvColoredItem, CardView item, AppCompatImageView ivActiveItem, AppCompatImageView ivItemImage, TextView tvTitleText, View viewCenter) {
+    private ItemTradeBinding(CardView rootView, CardView cvColoredItem, CardView item, AppCompatImageView ivActiveItem, ImageView ivEffectBackground, ImageView ivEffectForeground, AppCompatImageView ivItemImage, TextView tvTitleText, View viewCenter) {
         this.rootView = rootView;
         this.cvColoredItem = cvColoredItem;
         this.item = item;
         this.ivActiveItem = ivActiveItem;
+        this.ivEffectBackground = ivEffectBackground;
+        this.ivEffectForeground = ivEffectForeground;
         this.ivItemImage = ivItemImage;
         this.tvTitleText = tvTitleText;
         this.viewCenter = viewCenter;
@@ -55,13 +60,21 @@ public final class ItemTradeBinding implements ViewBinding {
             i = R.id.ivActiveItem;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
             if (appCompatImageView != null) {
-                i = R.id.ivItemImage;
-                AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
-                if (appCompatImageView2 != null) {
-                    i = R.id.tvTitleText;
-                    TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
-                        return new ItemTradeBinding(cardView2, cardView, cardView2, appCompatImageView, appCompatImageView2, textView, findChildViewById);
+                i = R.id.iv_effect_background;
+                ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                if (imageView != null) {
+                    i = R.id.iv_effect_foreground;
+                    ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                    if (imageView2 != null) {
+                        i = R.id.ivItemImage;
+                        AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
+                        if (appCompatImageView2 != null) {
+                            i = R.id.tvTitleText;
+                            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                            if (textView != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
+                                return new ItemTradeBinding(cardView2, cardView, cardView2, appCompatImageView, imageView, imageView2, appCompatImageView2, textView, findChildViewById);
+                            }
+                        }
                     }
                 }
             }

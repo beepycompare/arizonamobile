@@ -1,13 +1,15 @@
 package io.appmetrica.analytics.impl;
+/* loaded from: classes3.dex */
+public enum Nl {
+    UNKNOWN(0),
+    NETWORK(1),
+    PARSE(2);
+    
 
-import java.util.List;
-/* loaded from: classes4.dex */
-public final class Nl extends Oa {
-    public Nl(Ni ni) {
-        super(ni);
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public final int f612a;
 
-    @Override // io.appmetrica.analytics.impl.Oa
-    public final void a(List<AbstractC0463nh> list) {
+    Nl(int i) {
+        this.f612a = i;
     }
 }

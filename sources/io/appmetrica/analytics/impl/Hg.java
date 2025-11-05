@@ -1,50 +1,23 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import java.util.HashSet;
-import java.util.Iterator;
-/* loaded from: classes4.dex */
-public final class Hg {
+/* loaded from: classes3.dex */
+public final class Hg implements U7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f480a = new HashSet();
-    public Jg b;
-    public boolean c;
-    public final Co d;
-    public final Context e;
+    public final InterfaceC0236f5 f507a;
 
-    public Hg(Context context, Co co) {
-        this.e = context;
-        this.d = co;
-        this.b = co.b();
-        this.c = co.c();
+    public Hg(InterfaceC0236f5 interfaceC0236f5) {
+        this.f507a = interfaceC0236f5;
     }
 
-    public final void a() {
-        if (this.c) {
-            return;
-        }
-        Context context = this.e;
-        InterfaceC0483ob a2 = Rg.a(context, Na.F.d.a());
-        Og og = (Og) new Ag(this, new Rg(a2), new Za(context), new Sg(context)).f.getValue();
-        try {
-            a2.a(og);
-        } catch (Throwable th) {
-            og.a(th);
-        }
+    @Override // io.appmetrica.analytics.impl.U7
+    /* renamed from: b */
+    public final Gg a(Context context, X4 x4, C0664w4 c0664w4) {
+        return new Gg(context, x4, c0664w4, this.f507a, new Y4(), Ll.a());
     }
 
-    public final synchronized void a(Lg lg) {
-        this.f480a.add(lg);
-        if (this.c) {
-            lg.a(this.b);
-        }
-    }
-
-    public final synchronized void a(Jg jg) {
-        Iterator it = this.f480a.iterator();
-        while (it.hasNext()) {
-            ((Lg) it.next()).a(jg);
-        }
+    public final InterfaceC0236f5 a() {
+        return this.f507a;
     }
 }

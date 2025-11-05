@@ -15,22 +15,22 @@ import kotlin.jvm.functions.Function1;
 import kotlin.ranges.RangesKt;
 /* compiled from: Placeable.kt */
 @Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\b'\u0018\u00002\u00020\u0001:\u0001,B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0016\u001a\u00020\u0017H\u0002J:\u0010\u0018\u001a\u00020\u00172\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0019\u0010\u001d\u001a\u0015\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u001e¢\u0006\u0002\b H$¢\u0006\u0004\b!\u0010\"J'\u0010\u0018\u001a\u00020\u00172\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010#\u001a\u00020$H\u0014¢\u0006\u0004\b!\u0010%R\u001e\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0004\u001a\u00020\u0005@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001e\u0010\t\u001a\u00020\u00052\u0006\u0010\u0004\u001a\u00020\u0005@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\bR\u0014\u0010\u000b\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\bR\u0014\u0010\r\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\bR&\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0004\u001a\u00020\u000f@DX\u0084\u000e¢\u0006\u0010\n\u0002\u0010\u0015\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R&\u0010'\u001a\u00020&2\u0006\u0010\u0004\u001a\u00020&@DX\u0084\u000e¢\u0006\u0010\n\u0002\u0010\u0015\u001a\u0004\b(\u0010\u0012\"\u0004\b)\u0010\u0014R \u0010*\u001a\u00020\u001a2\u0006\u0010\u0004\u001a\u00020\u001a@BX\u0084\u000e¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b+\u0010\u0012¨\u0006-"}, d2 = {"Landroidx/compose/ui/layout/Placeable;", "Landroidx/compose/ui/layout/Measured;", "<init>", "()V", "value", "", "width", "getWidth", "()I", "height", "getHeight", "measuredWidth", "getMeasuredWidth", "measuredHeight", "getMeasuredHeight", "Landroidx/compose/ui/unit/IntSize;", "measuredSize", "getMeasuredSize-YbymL2g", "()J", "setMeasuredSize-ozmzZPI", "(J)V", "J", "onMeasuredSizeChanged", "", "placeAt", "position", "Landroidx/compose/ui/unit/IntOffset;", "zIndex", "", "layerBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "Lkotlin/ExtensionFunctionType;", "placeAt-f8xVGno", "(JFLkotlin/jvm/functions/Function1;)V", AdRevenueConstants.LAYER_KEY, "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "(JFLandroidx/compose/ui/graphics/layer/GraphicsLayer;)V", "Landroidx/compose/ui/unit/Constraints;", "measurementConstraints", "getMeasurementConstraints-msEJaDk", "setMeasurementConstraints-BRTryo0", "apparentToRealOffset", "getApparentToRealOffset-nOcc-ac", "PlacementScope", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public abstract class Placeable implements Measured {
     public static final int $stable = 8;
     private int height;
     private long measuredSize;
     private int width;
     private long measurementConstraints = PlaceableKt.access$getDefaultConstraints$p();
-    private long apparentToRealOffset = IntOffset.Companion.m7403getZeronOccac();
+    private long apparentToRealOffset = IntOffset.Companion.m8134getZeronOccac();
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: placeAt-f8xVGno */
-    public abstract void mo5968placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1);
+    public abstract void mo6698placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1);
 
     public Placeable() {
         long j = 0;
-        this.measuredSize = IntSize.m7430constructorimpl((j & 4294967295L) | (j << 32));
+        this.measuredSize = IntSize.m8161constructorimpl((j & 4294967295L) | (j << 32));
     }
 
     public final int getWidth() {
@@ -53,14 +53,14 @@ public abstract class Placeable implements Measured {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: getMeasuredSize-YbymL2g  reason: not valid java name */
-    public final long m6027getMeasuredSizeYbymL2g() {
+    public final long m6757getMeasuredSizeYbymL2g() {
         return this.measuredSize;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: setMeasuredSize-ozmzZPI  reason: not valid java name */
-    public final void m6030setMeasuredSizeozmzZPI(long j) {
-        if (IntSize.m7433equalsimpl0(this.measuredSize, j)) {
+    public final void m6760setMeasuredSizeozmzZPI(long j) {
+        if (IntSize.m8164equalsimpl0(this.measuredSize, j)) {
             return;
         }
         this.measuredSize = j;
@@ -68,30 +68,30 @@ public abstract class Placeable implements Measured {
     }
 
     private final void onMeasuredSizeChanged() {
-        this.width = RangesKt.coerceIn((int) (this.measuredSize >> 32), Constraints.m7219getMinWidthimpl(this.measurementConstraints), Constraints.m7217getMaxWidthimpl(this.measurementConstraints));
-        int coerceIn = RangesKt.coerceIn((int) (this.measuredSize & 4294967295L), Constraints.m7218getMinHeightimpl(this.measurementConstraints), Constraints.m7216getMaxHeightimpl(this.measurementConstraints));
+        this.width = RangesKt.coerceIn((int) (this.measuredSize >> 32), Constraints.m7950getMinWidthimpl(this.measurementConstraints), Constraints.m7948getMaxWidthimpl(this.measurementConstraints));
+        int coerceIn = RangesKt.coerceIn((int) (this.measuredSize & 4294967295L), Constraints.m7949getMinHeightimpl(this.measurementConstraints), Constraints.m7947getMaxHeightimpl(this.measurementConstraints));
         this.height = coerceIn;
         int i = this.width;
         long j = this.measuredSize;
-        this.apparentToRealOffset = IntOffset.m7386constructorimpl((((i - ((int) (j >> 32))) / 2) << 32) | (4294967295L & ((coerceIn - ((int) (j & 4294967295L))) / 2)));
+        this.apparentToRealOffset = IntOffset.m8117constructorimpl((((i - ((int) (j >> 32))) / 2) << 32) | (4294967295L & ((coerceIn - ((int) (j & 4294967295L))) / 2)));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: placeAt-f8xVGno  reason: not valid java name */
-    public void mo6029placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
-        mo5968placeAtf8xVGno(j, f, (Function1<? super GraphicsLayerScope, Unit>) null);
+    public void mo6759placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
+        mo6698placeAtf8xVGno(j, f, (Function1<? super GraphicsLayerScope, Unit>) null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: getMeasurementConstraints-msEJaDk  reason: not valid java name */
-    public final long m6028getMeasurementConstraintsmsEJaDk() {
+    public final long m6758getMeasurementConstraintsmsEJaDk() {
         return this.measurementConstraints;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: setMeasurementConstraints-BRTryo0  reason: not valid java name */
-    public final void m6031setMeasurementConstraintsBRTryo0(long j) {
-        if (Constraints.m7210equalsimpl0(this.measurementConstraints, j)) {
+    public final void m6761setMeasurementConstraintsBRTryo0(long j) {
+        if (Constraints.m7941equalsimpl0(this.measurementConstraints, j)) {
             return;
         }
         this.measurementConstraints = j;
@@ -100,14 +100,14 @@ public abstract class Placeable implements Measured {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: getApparentToRealOffset-nOcc-ac  reason: not valid java name */
-    public final long m6026getApparentToRealOffsetnOccac() {
+    public final long m6756getApparentToRealOffsetnOccac() {
         return this.apparentToRealOffset;
     }
 
     /* compiled from: Placeable.kt */
     @Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0004\b'\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0016\u001a\u00020\u0005*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0005H\u0016J#\u0010\u0019\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u0005¢\u0006\u0004\b\u001f\u0010 J$\u0010\u0019\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010!\u001a\u00020\u000b2\u0006\u0010\"\u001a\u00020\u000b2\b\b\u0002\u0010\u001e\u001a\u00020\u0005J$\u0010#\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010!\u001a\u00020\u000b2\u0006\u0010\"\u001a\u00020\u000b2\b\b\u0002\u0010\u001e\u001a\u00020\u0005J#\u0010#\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u0005¢\u0006\u0004\b$\u0010 J>\u0010%\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u00052\u0019\b\u0002\u0010&\u001a\u0013\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u001a0'¢\u0006\u0002\b)¢\u0006\u0004\b*\u0010+J?\u0010%\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010!\u001a\u00020\u000b2\u0006\u0010\"\u001a\u00020\u000b2\b\b\u0002\u0010\u001e\u001a\u00020\u00052\u0019\b\u0002\u0010&\u001a\u0013\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u001a0'¢\u0006\u0002\b)J?\u0010,\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010!\u001a\u00020\u000b2\u0006\u0010\"\u001a\u00020\u000b2\b\b\u0002\u0010\u001e\u001a\u00020\u00052\u0019\b\u0002\u0010&\u001a\u0013\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u001a0'¢\u0006\u0002\b)J>\u0010,\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u00052\u0019\b\u0002\u0010&\u001a\u0013\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u001a0'¢\u0006\u0002\b)¢\u0006\u0004\b-\u0010+J,\u0010,\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010!\u001a\u00020\u000b2\u0006\u0010\"\u001a\u00020\u000b2\u0006\u0010.\u001a\u00020/2\b\b\u0002\u0010\u001e\u001a\u00020\u0005J+\u0010,\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010.\u001a\u00020/2\b\b\u0002\u0010\u001e\u001a\u00020\u0005¢\u0006\u0004\b-\u00100J,\u0010%\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010!\u001a\u00020\u000b2\u0006\u0010\"\u001a\u00020\u000b2\u0006\u0010.\u001a\u00020/2\b\b\u0002\u0010\u001e\u001a\u00020\u0005J+\u0010%\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010.\u001a\u00020/2\b\b\u0002\u0010\u001e\u001a\u00020\u0005¢\u0006\u0004\b*\u00100JA\u00101\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00052\u001b\b\b\u0010&\u001a\u0015\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u001a\u0018\u00010'¢\u0006\u0002\b)H\u0080\b¢\u0006\u0004\b2\u0010+J,\u00101\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00052\u0006\u0010.\u001a\u00020/H\u0080\b¢\u0006\u0004\b2\u00103JA\u00104\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00052\u001b\b\b\u0010&\u001a\u0015\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u001a\u0018\u00010'¢\u0006\u0002\b)H\u0080\b¢\u0006\u0004\b5\u0010+J,\u00104\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00052\u0006\u0010.\u001a\u00020/H\u0080\b¢\u0006\u0004\b5\u00103J\u001f\u00108\u001a\u00020\u001a2\u0017\u00109\u001a\u0013\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020\u001a0'¢\u0006\u0002\b)J\f\u0010:\u001a\u00020\u001a*\u00020\u001bH\u0002R\u0014\u0010\u0004\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\t\u0010\u0007R\u0012\u0010\n\u001a\u00020\u000bX¤\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\rR\u0012\u0010\u000e\u001a\u00020\u000fX¤\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011R\u0016\u0010\u0012\u001a\u0004\u0018\u00010\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u000e\u00106\u001a\u000207X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006;"}, d2 = {"Landroidx/compose/ui/layout/Placeable$PlacementScope;", "Landroidx/compose/ui/unit/Density;", "<init>", "()V", "density", "", "getDensity", "()F", "fontScale", "getFontScale", "parentWidth", "", "getParentWidth", "()I", "parentLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getParentLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "current", "Landroidx/compose/ui/layout/Ruler;", "defaultValue", "placeRelative", "", "Landroidx/compose/ui/layout/Placeable;", "position", "Landroidx/compose/ui/unit/IntOffset;", "zIndex", "placeRelative-70tqf50", "(Landroidx/compose/ui/layout/Placeable;JF)V", "x", "y", "place", "place-70tqf50", "placeRelativeWithLayer", "layerBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "Lkotlin/ExtensionFunctionType;", "placeRelativeWithLayer-aW-9-wM", "(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V", "placeWithLayer", "placeWithLayer-aW-9-wM", AdRevenueConstants.LAYER_KEY, "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "(Landroidx/compose/ui/layout/Placeable;JLandroidx/compose/ui/graphics/layer/GraphicsLayer;F)V", "placeAutoMirrored", "placeAutoMirrored-aW-9-wM$ui_release", "(Landroidx/compose/ui/layout/Placeable;JFLandroidx/compose/ui/graphics/layer/GraphicsLayer;)V", "placeApparentToRealOffset", "placeApparentToRealOffset-aW-9-wM$ui_release", "motionFrameOfReferencePlacement", "", "withMotionFrameOfReferencePlacement", "block", "handleMotionFrameOfReferencePlacement", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     @PlacementScopeMarker
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static abstract class PlacementScope implements Density {
         public static final int $stable = 0;
         private boolean motionFrameOfReferencePlacement;
@@ -137,14 +137,14 @@ public abstract class Placeable implements Measured {
         public abstract int getParentWidth();
 
         /* renamed from: placeRelative-70tqf50$default  reason: not valid java name */
-        public static /* synthetic */ void m6033placeRelative70tqf50$default(PlacementScope placementScope, Placeable placeable, long j, float f, int i, Object obj) {
+        public static /* synthetic */ void m6763placeRelative70tqf50$default(PlacementScope placementScope, Placeable placeable, long j, float f, int i, Object obj) {
             if (obj != null) {
                 throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: placeRelative-70tqf50");
             }
             if ((i & 2) != 0) {
                 f = 0.0f;
             }
-            placementScope.m6043placeRelative70tqf50(placeable, j, f);
+            placementScope.m6773placeRelative70tqf50(placeable, j, f);
         }
 
         public static /* synthetic */ void placeRelative$default(PlacementScope placementScope, Placeable placeable, int i, int i2, float f, int i3, Object obj) {
@@ -168,18 +168,18 @@ public abstract class Placeable implements Measured {
         }
 
         /* renamed from: place-70tqf50$default  reason: not valid java name */
-        public static /* synthetic */ void m6032place70tqf50$default(PlacementScope placementScope, Placeable placeable, long j, float f, int i, Object obj) {
+        public static /* synthetic */ void m6762place70tqf50$default(PlacementScope placementScope, Placeable placeable, long j, float f, int i, Object obj) {
             if (obj != null) {
                 throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: place-70tqf50");
             }
             if ((i & 2) != 0) {
                 f = 0.0f;
             }
-            placementScope.m6038place70tqf50(placeable, j, f);
+            placementScope.m6768place70tqf50(placeable, j, f);
         }
 
         /* renamed from: placeRelativeWithLayer-aW-9-wM$default  reason: not valid java name */
-        public static /* synthetic */ void m6034placeRelativeWithLayeraW9wM$default(PlacementScope placementScope, Placeable placeable, long j, float f, Function1 function1, int i, Object obj) {
+        public static /* synthetic */ void m6764placeRelativeWithLayeraW9wM$default(PlacementScope placementScope, Placeable placeable, long j, float f, Function1 function1, int i, Object obj) {
             if (obj != null) {
                 throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: placeRelativeWithLayer-aW-9-wM");
             }
@@ -191,7 +191,7 @@ public abstract class Placeable implements Measured {
             if ((i & 4) != 0) {
                 function12 = PlaceableKt.access$getDefaultLayerBlock$p();
             }
-            placementScope.m6044placeRelativeWithLayeraW9wM(placeable, j, f2, function12);
+            placementScope.m6774placeRelativeWithLayeraW9wM(placeable, j, f2, function12);
         }
 
         public static /* synthetic */ void placeRelativeWithLayer$default(PlacementScope placementScope, Placeable placeable, int i, int i2, float f, Function1 function1, int i3, Object obj) {
@@ -225,7 +225,7 @@ public abstract class Placeable implements Measured {
         }
 
         /* renamed from: placeWithLayer-aW-9-wM$default  reason: not valid java name */
-        public static /* synthetic */ void m6036placeWithLayeraW9wM$default(PlacementScope placementScope, Placeable placeable, long j, float f, Function1 function1, int i, Object obj) {
+        public static /* synthetic */ void m6766placeWithLayeraW9wM$default(PlacementScope placementScope, Placeable placeable, long j, float f, Function1 function1, int i, Object obj) {
             if (obj != null) {
                 throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: placeWithLayer-aW-9-wM");
             }
@@ -237,7 +237,7 @@ public abstract class Placeable implements Measured {
             if ((i & 4) != 0) {
                 function12 = PlaceableKt.access$getDefaultLayerBlock$p();
             }
-            placementScope.m6046placeWithLayeraW9wM(placeable, j, f2, function12);
+            placementScope.m6776placeWithLayeraW9wM(placeable, j, f2, function12);
         }
 
         public static /* synthetic */ void placeWithLayer$default(PlacementScope placementScope, Placeable placeable, int i, int i2, GraphicsLayer graphicsLayer, float f, int i3, Object obj) {
@@ -251,14 +251,14 @@ public abstract class Placeable implements Measured {
         }
 
         /* renamed from: placeWithLayer-aW-9-wM$default  reason: not valid java name */
-        public static /* synthetic */ void m6037placeWithLayeraW9wM$default(PlacementScope placementScope, Placeable placeable, long j, GraphicsLayer graphicsLayer, float f, int i, Object obj) {
+        public static /* synthetic */ void m6767placeWithLayeraW9wM$default(PlacementScope placementScope, Placeable placeable, long j, GraphicsLayer graphicsLayer, float f, int i, Object obj) {
             if (obj != null) {
                 throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: placeWithLayer-aW-9-wM");
             }
             if ((i & 4) != 0) {
                 f = 0.0f;
             }
-            placementScope.m6047placeWithLayeraW9wM(placeable, j, graphicsLayer, f);
+            placementScope.m6777placeWithLayeraW9wM(placeable, j, graphicsLayer, f);
         }
 
         public static /* synthetic */ void placeRelativeWithLayer$default(PlacementScope placementScope, Placeable placeable, int i, int i2, GraphicsLayer graphicsLayer, float f, int i3, Object obj) {
@@ -272,50 +272,50 @@ public abstract class Placeable implements Measured {
         }
 
         /* renamed from: placeRelativeWithLayer-aW-9-wM$default  reason: not valid java name */
-        public static /* synthetic */ void m6035placeRelativeWithLayeraW9wM$default(PlacementScope placementScope, Placeable placeable, long j, GraphicsLayer graphicsLayer, float f, int i, Object obj) {
+        public static /* synthetic */ void m6765placeRelativeWithLayeraW9wM$default(PlacementScope placementScope, Placeable placeable, long j, GraphicsLayer graphicsLayer, float f, int i, Object obj) {
             if (obj != null) {
                 throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: placeRelativeWithLayer-aW-9-wM");
             }
             if ((i & 4) != 0) {
                 f = 0.0f;
             }
-            placementScope.m6045placeRelativeWithLayeraW9wM(placeable, j, graphicsLayer, f);
+            placementScope.m6775placeRelativeWithLayeraW9wM(placeable, j, graphicsLayer, f);
         }
 
         /* renamed from: placeAutoMirrored-aW-9-wM$ui_release  reason: not valid java name */
-        public final void m6042placeAutoMirroredaW9wM$ui_release(Placeable placeable, long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        public final void m6772placeAutoMirroredaW9wM$ui_release(Placeable placeable, long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
             if (getParentLayoutDirection() == LayoutDirection.Ltr || getParentWidth() == 0) {
                 handleMotionFrameOfReferencePlacement(placeable);
-                placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, function1);
+                placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, function1);
                 return;
             }
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((IntOffset.m7393getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m7392getXimpl(j)) << 32));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((IntOffset.m8124getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m8123getXimpl(j)) << 32));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, function1);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, function1);
         }
 
         /* renamed from: placeAutoMirrored-aW-9-wM$ui_release  reason: not valid java name */
-        public final void m6041placeAutoMirroredaW9wM$ui_release(Placeable placeable, long j, float f, GraphicsLayer graphicsLayer) {
+        public final void m6771placeAutoMirroredaW9wM$ui_release(Placeable placeable, long j, float f, GraphicsLayer graphicsLayer) {
             if (getParentLayoutDirection() == LayoutDirection.Ltr || getParentWidth() == 0) {
                 handleMotionFrameOfReferencePlacement(placeable);
-                placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, graphicsLayer);
+                placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, graphicsLayer);
                 return;
             }
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((IntOffset.m7393getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m7392getXimpl(j)) << 32));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((IntOffset.m8124getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m8123getXimpl(j)) << 32));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, graphicsLayer);
+            placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, graphicsLayer);
         }
 
         /* renamed from: placeApparentToRealOffset-aW-9-wM$ui_release  reason: not valid java name */
-        public final void m6040placeApparentToRealOffsetaW9wM$ui_release(Placeable placeable, long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        public final void m6770placeApparentToRealOffsetaW9wM$ui_release(Placeable placeable, long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, function1);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, function1);
         }
 
         /* renamed from: placeApparentToRealOffset-aW-9-wM$ui_release  reason: not valid java name */
-        public final void m6039placeApparentToRealOffsetaW9wM$ui_release(Placeable placeable, long j, float f, GraphicsLayer graphicsLayer) {
+        public final void m6769placeApparentToRealOffsetaW9wM$ui_release(Placeable placeable, long j, float f, GraphicsLayer graphicsLayer) {
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, graphicsLayer);
+            placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, graphicsLayer);
         }
 
         public final void withMotionFrameOfReferencePlacement(Function1<? super PlacementScope, Unit> function1) {
@@ -332,111 +332,111 @@ public abstract class Placeable implements Measured {
         }
 
         /* renamed from: placeRelative-70tqf50  reason: not valid java name */
-        public final void m6043placeRelative70tqf50(Placeable placeable, long j, float f) {
+        public final void m6773placeRelative70tqf50(Placeable placeable, long j, float f) {
             if (getParentLayoutDirection() == LayoutDirection.Ltr || getParentWidth() == 0) {
                 handleMotionFrameOfReferencePlacement(placeable);
-                placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
+                placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
                 return;
             }
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((IntOffset.m7393getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m7392getXimpl(j)) << 32));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((IntOffset.m8124getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m8123getXimpl(j)) << 32));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
         }
 
         public final void placeRelative(Placeable placeable, int i, int i2, float f) {
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((i << 32) | (i2 & 4294967295L));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((i << 32) | (i2 & 4294967295L));
             if (getParentLayoutDirection() == LayoutDirection.Ltr || getParentWidth() == 0) {
                 handleMotionFrameOfReferencePlacement(placeable);
-                placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
+                placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
                 return;
             }
-            long m7386constructorimpl2 = IntOffset.m7386constructorimpl((((getParentWidth() - placeable.getWidth()) - IntOffset.m7392getXimpl(m7386constructorimpl)) << 32) | (IntOffset.m7393getYimpl(m7386constructorimpl) & 4294967295L));
+            long m8117constructorimpl2 = IntOffset.m8117constructorimpl((((getParentWidth() - placeable.getWidth()) - IntOffset.m8123getXimpl(m8117constructorimpl)) << 32) | (IntOffset.m8124getYimpl(m8117constructorimpl) & 4294967295L));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl2, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl2, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
         }
 
         public final void place(Placeable placeable, int i, int i2, float f) {
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((i2 & 4294967295L) | (i << 32));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((i2 & 4294967295L) | (i << 32));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
         }
 
         /* renamed from: place-70tqf50  reason: not valid java name */
-        public final void m6038place70tqf50(Placeable placeable, long j, float f) {
+        public final void m6768place70tqf50(Placeable placeable, long j, float f) {
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, (Function1<? super GraphicsLayerScope, Unit>) null);
         }
 
         /* renamed from: placeRelativeWithLayer-aW-9-wM  reason: not valid java name */
-        public final void m6044placeRelativeWithLayeraW9wM(Placeable placeable, long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        public final void m6774placeRelativeWithLayeraW9wM(Placeable placeable, long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
             if (getParentLayoutDirection() == LayoutDirection.Ltr || getParentWidth() == 0) {
                 handleMotionFrameOfReferencePlacement(placeable);
-                placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, function1);
+                placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, function1);
                 return;
             }
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((IntOffset.m7393getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m7392getXimpl(j)) << 32));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((IntOffset.m8124getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m8123getXimpl(j)) << 32));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, function1);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, function1);
         }
 
         public final void placeRelativeWithLayer(Placeable placeable, int i, int i2, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((i << 32) | (i2 & 4294967295L));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((i << 32) | (i2 & 4294967295L));
             if (getParentLayoutDirection() == LayoutDirection.Ltr || getParentWidth() == 0) {
                 handleMotionFrameOfReferencePlacement(placeable);
-                placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, function1);
+                placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, function1);
                 return;
             }
-            long m7386constructorimpl2 = IntOffset.m7386constructorimpl((((getParentWidth() - placeable.getWidth()) - IntOffset.m7392getXimpl(m7386constructorimpl)) << 32) | (IntOffset.m7393getYimpl(m7386constructorimpl) & 4294967295L));
+            long m8117constructorimpl2 = IntOffset.m8117constructorimpl((((getParentWidth() - placeable.getWidth()) - IntOffset.m8123getXimpl(m8117constructorimpl)) << 32) | (IntOffset.m8124getYimpl(m8117constructorimpl) & 4294967295L));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl2, placeable.apparentToRealOffset), f, function1);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl2, placeable.apparentToRealOffset), f, function1);
         }
 
         public final void placeWithLayer(Placeable placeable, int i, int i2, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((i2 & 4294967295L) | (i << 32));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((i2 & 4294967295L) | (i << 32));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, function1);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, function1);
         }
 
         /* renamed from: placeWithLayer-aW-9-wM  reason: not valid java name */
-        public final void m6046placeWithLayeraW9wM(Placeable placeable, long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        public final void m6776placeWithLayeraW9wM(Placeable placeable, long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo5968placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, function1);
+            placeable.mo6698placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, function1);
         }
 
         public final void placeWithLayer(Placeable placeable, int i, int i2, GraphicsLayer graphicsLayer, float f) {
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((i2 & 4294967295L) | (i << 32));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((i2 & 4294967295L) | (i << 32));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, graphicsLayer);
+            placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, graphicsLayer);
         }
 
         /* renamed from: placeWithLayer-aW-9-wM  reason: not valid java name */
-        public final void m6047placeWithLayeraW9wM(Placeable placeable, long j, GraphicsLayer graphicsLayer, float f) {
+        public final void m6777placeWithLayeraW9wM(Placeable placeable, long j, GraphicsLayer graphicsLayer, float f) {
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, graphicsLayer);
+            placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, graphicsLayer);
         }
 
         public final void placeRelativeWithLayer(Placeable placeable, int i, int i2, GraphicsLayer graphicsLayer, float f) {
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((i << 32) | (i2 & 4294967295L));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((i << 32) | (i2 & 4294967295L));
             if (getParentLayoutDirection() == LayoutDirection.Ltr || getParentWidth() == 0) {
                 handleMotionFrameOfReferencePlacement(placeable);
-                placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, graphicsLayer);
+                placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, graphicsLayer);
                 return;
             }
-            long m7386constructorimpl2 = IntOffset.m7386constructorimpl((((getParentWidth() - placeable.getWidth()) - IntOffset.m7392getXimpl(m7386constructorimpl)) << 32) | (IntOffset.m7393getYimpl(m7386constructorimpl) & 4294967295L));
+            long m8117constructorimpl2 = IntOffset.m8117constructorimpl((((getParentWidth() - placeable.getWidth()) - IntOffset.m8123getXimpl(m8117constructorimpl)) << 32) | (IntOffset.m8124getYimpl(m8117constructorimpl) & 4294967295L));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl2, placeable.apparentToRealOffset), f, graphicsLayer);
+            placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl2, placeable.apparentToRealOffset), f, graphicsLayer);
         }
 
         /* renamed from: placeRelativeWithLayer-aW-9-wM  reason: not valid java name */
-        public final void m6045placeRelativeWithLayeraW9wM(Placeable placeable, long j, GraphicsLayer graphicsLayer, float f) {
+        public final void m6775placeRelativeWithLayeraW9wM(Placeable placeable, long j, GraphicsLayer graphicsLayer, float f) {
             if (getParentLayoutDirection() == LayoutDirection.Ltr || getParentWidth() == 0) {
                 handleMotionFrameOfReferencePlacement(placeable);
-                placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(j, placeable.apparentToRealOffset), f, graphicsLayer);
+                placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(j, placeable.apparentToRealOffset), f, graphicsLayer);
                 return;
             }
-            long m7386constructorimpl = IntOffset.m7386constructorimpl((IntOffset.m7393getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m7392getXimpl(j)) << 32));
+            long m8117constructorimpl = IntOffset.m8117constructorimpl((IntOffset.m8124getYimpl(j) & 4294967295L) | (((getParentWidth() - placeable.getWidth()) - IntOffset.m8123getXimpl(j)) << 32));
             handleMotionFrameOfReferencePlacement(placeable);
-            placeable.mo6029placeAtf8xVGno(IntOffset.m7396plusqkQi6aY(m7386constructorimpl, placeable.apparentToRealOffset), f, graphicsLayer);
+            placeable.mo6759placeAtf8xVGno(IntOffset.m8127plusqkQi6aY(m8117constructorimpl, placeable.apparentToRealOffset), f, graphicsLayer);
         }
     }
 }

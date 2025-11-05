@@ -25,33 +25,33 @@ final class AutoSizeStepBased implements TextAutoSize {
         this.minFontSize = j;
         this.maxFontSize = j2;
         this.stepSize = j3;
-        if (TextUnit.m7455equalsimpl0(j, TextUnit.Companion.m7469getUnspecifiedXSAIIZE())) {
+        if (TextUnit.m8186equalsimpl0(j, TextUnit.Companion.m8200getUnspecifiedXSAIIZE())) {
             throw new IllegalArgumentException("AutoSize.StepBased: TextUnit.Unspecified is not a valid value for minFontSize. Try using other values e.g. 10.sp");
         }
-        if (TextUnit.m7455equalsimpl0(j2, TextUnit.Companion.m7469getUnspecifiedXSAIIZE())) {
+        if (TextUnit.m8186equalsimpl0(j2, TextUnit.Companion.m8200getUnspecifiedXSAIIZE())) {
             throw new IllegalArgumentException("AutoSize.StepBased: TextUnit.Unspecified is not a valid value for maxFontSize. Try using other values e.g. 100.sp");
         }
-        if (TextUnit.m7455equalsimpl0(j3, TextUnit.Companion.m7469getUnspecifiedXSAIIZE())) {
+        if (TextUnit.m8186equalsimpl0(j3, TextUnit.Companion.m8200getUnspecifiedXSAIIZE())) {
             throw new IllegalArgumentException("AutoSize.StepBased: TextUnit.Unspecified is not a valid value for stepSize. Try using other values e.g. 0.25.sp");
         }
-        if (TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(this.minFontSize), TextUnit.m7457getTypeUIouoOA(j2))) {
+        if (TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(this.minFontSize), TextUnit.m8188getTypeUIouoOA(j2))) {
             long j4 = this.minFontSize;
-            TextUnitKt.m7472checkArithmeticNB67dxo(j4, j2);
-            if (Float.compare(TextUnit.m7458getValueimpl(j4), TextUnit.m7458getValueimpl(j2)) > 0) {
+            TextUnitKt.m8203checkArithmeticNB67dxo(j4, j2);
+            if (Float.compare(TextUnit.m8189getValueimpl(j4), TextUnit.m8189getValueimpl(j2)) > 0) {
                 this.minFontSize = j2;
             }
         }
-        if (TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(j3), TextUnitType.Companion.m7491getSpUIouoOA())) {
+        if (TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(j3), TextUnitType.Companion.m8222getSpUIouoOA())) {
             long sp = TextUnitKt.getSp(1.0E-4f);
-            TextUnitKt.m7472checkArithmeticNB67dxo(j3, sp);
-            if (Float.compare(TextUnit.m7458getValueimpl(j3), TextUnit.m7458getValueimpl(sp)) < 0) {
+            TextUnitKt.m8203checkArithmeticNB67dxo(j3, sp);
+            if (Float.compare(TextUnit.m8189getValueimpl(j3), TextUnit.m8189getValueimpl(sp)) < 0) {
                 throw new IllegalArgumentException("AutoSize.StepBased: stepSize must be greater than or equal to 0.0001f.sp");
             }
         }
-        if (TextUnit.m7458getValueimpl(this.minFontSize) < 0.0f) {
+        if (TextUnit.m8189getValueimpl(this.minFontSize) < 0.0f) {
             throw new IllegalArgumentException("AutoSize.StepBased: minFontSize must not be negative");
         }
-        if (TextUnit.m7458getValueimpl(j2) < 0.0f) {
+        if (TextUnit.m8189getValueimpl(j2) < 0.0f) {
             throw new IllegalArgumentException("AutoSize.StepBased: maxFontSize must not be negative");
         }
     }
@@ -83,14 +83,14 @@ final class AutoSizeStepBased implements TextAutoSize {
     }
 
     private final boolean didOverflow(TextLayoutResult textLayoutResult) {
-        int m6693getOverflowgIe3tQ8 = textLayoutResult.getLayoutInput().m6693getOverflowgIe3tQ8();
-        if (TextOverflow.m7190equalsimpl0(m6693getOverflowgIe3tQ8, TextOverflow.Companion.m7199getClipgIe3tQ8()) || TextOverflow.m7190equalsimpl0(m6693getOverflowgIe3tQ8, TextOverflow.Companion.m7203getVisiblegIe3tQ8())) {
+        int m7424getOverflowgIe3tQ8 = textLayoutResult.getLayoutInput().m7424getOverflowgIe3tQ8();
+        if (TextOverflow.m7921equalsimpl0(m7424getOverflowgIe3tQ8, TextOverflow.Companion.m7930getClipgIe3tQ8()) || TextOverflow.m7921equalsimpl0(m7424getOverflowgIe3tQ8, TextOverflow.Companion.m7934getVisiblegIe3tQ8())) {
             return didOverflowBounds(textLayoutResult);
         }
-        if (TextOverflow.m7190equalsimpl0(m6693getOverflowgIe3tQ8, TextOverflow.Companion.m7202getStartEllipsisgIe3tQ8()) || TextOverflow.m7190equalsimpl0(m6693getOverflowgIe3tQ8, TextOverflow.Companion.m7201getMiddleEllipsisgIe3tQ8()) || TextOverflow.m7190equalsimpl0(m6693getOverflowgIe3tQ8, TextOverflow.Companion.m7200getEllipsisgIe3tQ8())) {
+        if (TextOverflow.m7921equalsimpl0(m7424getOverflowgIe3tQ8, TextOverflow.Companion.m7933getStartEllipsisgIe3tQ8()) || TextOverflow.m7921equalsimpl0(m7424getOverflowgIe3tQ8, TextOverflow.Companion.m7932getMiddleEllipsisgIe3tQ8()) || TextOverflow.m7921equalsimpl0(m7424getOverflowgIe3tQ8, TextOverflow.Companion.m7931getEllipsisgIe3tQ8())) {
             return didOverflowByEllipsize(textLayoutResult);
         }
-        throw new IllegalArgumentException("TextOverflow type " + ((Object) TextOverflow.m7192toStringimpl(textLayoutResult.getLayoutInput().m6693getOverflowgIe3tQ8())) + " is not supported.");
+        throw new IllegalArgumentException("TextOverflow type " + ((Object) TextOverflow.m7923toStringimpl(textLayoutResult.getLayoutInput().m7424getOverflowgIe3tQ8())) + " is not supported.");
     }
 
     private final boolean didOverflowBounds(TextLayoutResult textLayoutResult) {
@@ -103,11 +103,11 @@ final class AutoSizeStepBased implements TextAutoSize {
             if (lineCount == 1) {
                 return textLayoutResult.isLineEllipsized(0);
             }
-            int m6693getOverflowgIe3tQ8 = textLayoutResult.getLayoutInput().m6693getOverflowgIe3tQ8();
-            if (TextOverflow.m7190equalsimpl0(m6693getOverflowgIe3tQ8, TextOverflow.Companion.m7202getStartEllipsisgIe3tQ8()) || TextOverflow.m7190equalsimpl0(m6693getOverflowgIe3tQ8, TextOverflow.Companion.m7201getMiddleEllipsisgIe3tQ8())) {
+            int m7424getOverflowgIe3tQ8 = textLayoutResult.getLayoutInput().m7424getOverflowgIe3tQ8();
+            if (TextOverflow.m7921equalsimpl0(m7424getOverflowgIe3tQ8, TextOverflow.Companion.m7933getStartEllipsisgIe3tQ8()) || TextOverflow.m7921equalsimpl0(m7424getOverflowgIe3tQ8, TextOverflow.Companion.m7932getMiddleEllipsisgIe3tQ8())) {
                 return didOverflowBounds(textLayoutResult);
             }
-            if (TextOverflow.m7190equalsimpl0(m6693getOverflowgIe3tQ8, TextOverflow.Companion.m7200getEllipsisgIe3tQ8())) {
+            if (TextOverflow.m7921equalsimpl0(m7424getOverflowgIe3tQ8, TextOverflow.Companion.m7931getEllipsisgIe3tQ8())) {
                 return textLayoutResult.isLineEllipsized(textLayoutResult.getLineCount() - 1);
             }
             return false;
@@ -122,13 +122,13 @@ final class AutoSizeStepBased implements TextAutoSize {
         }
         if (obj != null && (obj instanceof AutoSizeStepBased)) {
             AutoSizeStepBased autoSizeStepBased = (AutoSizeStepBased) obj;
-            return TextUnit.m7455equalsimpl0(autoSizeStepBased.minFontSize, this.minFontSize) && TextUnit.m7455equalsimpl0(autoSizeStepBased.maxFontSize, this.maxFontSize) && TextUnit.m7455equalsimpl0(autoSizeStepBased.stepSize, this.stepSize);
+            return TextUnit.m8186equalsimpl0(autoSizeStepBased.minFontSize, this.minFontSize) && TextUnit.m8186equalsimpl0(autoSizeStepBased.maxFontSize, this.maxFontSize) && TextUnit.m8186equalsimpl0(autoSizeStepBased.stepSize, this.stepSize);
         }
         return false;
     }
 
     @Override // androidx.compose.foundation.text.TextAutoSize
     public int hashCode() {
-        return (((TextUnit.m7459hashCodeimpl(this.minFontSize) * 31) + TextUnit.m7459hashCodeimpl(this.maxFontSize)) * 31) + TextUnit.m7459hashCodeimpl(this.stepSize);
+        return (((TextUnit.m8190hashCodeimpl(this.minFontSize) * 31) + TextUnit.m8190hashCodeimpl(this.maxFontSize)) * 31) + TextUnit.m8190hashCodeimpl(this.stepSize);
     }
 }

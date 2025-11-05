@@ -78,7 +78,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Publisher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Completable implements CompletableSource {
     protected abstract void subscribeActual(CompletableObserver completableObserver);
 

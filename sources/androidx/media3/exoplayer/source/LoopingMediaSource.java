@@ -9,7 +9,7 @@ import androidx.media3.exoplayer.upstream.Allocator;
 import java.util.HashMap;
 import java.util.Map;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class LoopingMediaSource extends WrappingMediaSource {
     private final Map<MediaSource.MediaPeriodId, MediaSource.MediaPeriodId> childMediaPeriodIdToMediaPeriodId;
     private final int loopCount;
@@ -78,7 +78,7 @@ public final class LoopingMediaSource extends WrappingMediaSource {
         return this.loopCount != Integer.MAX_VALUE ? this.childMediaPeriodIdToMediaPeriodId.get(mediaPeriodId) : mediaPeriodId;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class LoopingTimeline extends AbstractConcatenatedTimeline {
         private final int childPeriodCount;
         private final Timeline childTimeline;
@@ -146,7 +146,7 @@ public final class LoopingMediaSource extends WrappingMediaSource {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class InfinitelyLoopingTimeline extends ForwardingTimeline {
         public InfinitelyLoopingTimeline(Timeline timeline) {
             super(timeline);

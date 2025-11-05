@@ -42,43 +42,43 @@ final class FillNode extends Modifier.Node implements LayoutModifierNode {
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        int m7219getMinWidthimpl;
-        int m7217getMaxWidthimpl;
-        int m7216getMaxHeightimpl;
+        int m7950getMinWidthimpl;
+        int m7948getMaxWidthimpl;
+        int m7947getMaxHeightimpl;
         int i;
-        if (!Constraints.m7213getHasBoundedWidthimpl(j) || this.direction == Direction.Vertical) {
-            m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
-            m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j);
+        if (!Constraints.m7944getHasBoundedWidthimpl(j) || this.direction == Direction.Vertical) {
+            m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
+            m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
         } else {
-            int round = Math.round(Constraints.m7217getMaxWidthimpl(j) * this.fraction);
-            int m7219getMinWidthimpl2 = Constraints.m7219getMinWidthimpl(j);
-            m7219getMinWidthimpl = Constraints.m7217getMaxWidthimpl(j);
-            if (round < m7219getMinWidthimpl2) {
-                round = m7219getMinWidthimpl2;
+            int round = Math.round(Constraints.m7948getMaxWidthimpl(j) * this.fraction);
+            int m7950getMinWidthimpl2 = Constraints.m7950getMinWidthimpl(j);
+            m7950getMinWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+            if (round < m7950getMinWidthimpl2) {
+                round = m7950getMinWidthimpl2;
             }
-            if (round <= m7219getMinWidthimpl) {
-                m7219getMinWidthimpl = round;
+            if (round <= m7950getMinWidthimpl) {
+                m7950getMinWidthimpl = round;
             }
-            m7217getMaxWidthimpl = m7219getMinWidthimpl;
+            m7948getMaxWidthimpl = m7950getMinWidthimpl;
         }
-        if (!Constraints.m7212getHasBoundedHeightimpl(j) || this.direction == Direction.Horizontal) {
-            int m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j);
-            m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
-            i = m7218getMinHeightimpl;
+        if (!Constraints.m7943getHasBoundedHeightimpl(j) || this.direction == Direction.Horizontal) {
+            int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+            m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+            i = m7949getMinHeightimpl;
         } else {
-            int round2 = Math.round(Constraints.m7216getMaxHeightimpl(j) * this.fraction);
-            int m7218getMinHeightimpl2 = Constraints.m7218getMinHeightimpl(j);
-            i = Constraints.m7216getMaxHeightimpl(j);
-            if (round2 < m7218getMinHeightimpl2) {
-                round2 = m7218getMinHeightimpl2;
+            int round2 = Math.round(Constraints.m7947getMaxHeightimpl(j) * this.fraction);
+            int m7949getMinHeightimpl2 = Constraints.m7949getMinHeightimpl(j);
+            i = Constraints.m7947getMaxHeightimpl(j);
+            if (round2 < m7949getMinHeightimpl2) {
+                round2 = m7949getMinHeightimpl2;
             }
             if (round2 <= i) {
                 i = round2;
             }
-            m7216getMaxHeightimpl = i;
+            m7947getMaxHeightimpl = i;
         }
-        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(ConstraintsKt.Constraints(m7219getMinWidthimpl, m7217getMaxWidthimpl, i, m7216getMaxHeightimpl));
-        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.FillNode$$ExternalSyntheticLambda0
+        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(ConstraintsKt.Constraints(m7950getMinWidthimpl, m7948getMaxWidthimpl, i, m7947getMaxHeightimpl));
+        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.FillNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;

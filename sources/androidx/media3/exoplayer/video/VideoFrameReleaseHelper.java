@@ -13,7 +13,7 @@ import androidx.media3.common.C;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class VideoFrameReleaseHelper {
     private static final long MAX_ALLOWED_ADJUSTMENT_NS = 20000000;
     private static final int MINIMUM_FRAMES_WITHOUT_SYNC_TO_CLEAR_SURFACE_FRAME_RATE = 30;
@@ -253,7 +253,7 @@ public final class VideoFrameReleaseHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api30 {
         private Api30() {
         }
@@ -268,7 +268,7 @@ public final class VideoFrameReleaseHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class DisplayHelper implements DisplayManager.DisplayListener {
         private final DisplayManager displayManager;
 
@@ -305,7 +305,7 @@ public final class VideoFrameReleaseHelper {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class VSyncSampler implements Choreographer.FrameCallback, Handler.Callback {
         private static final int CREATE_CHOREOGRAPHER = 1;
         private static final VSyncSampler INSTANCE = new VSyncSampler();

@@ -17,50 +17,50 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class PlaceholderExtensions_androidKt {
     /* renamed from: getSpanUnit--R2X_6o$annotations  reason: not valid java name */
-    private static /* synthetic */ void m7001getSpanUnitR2X_6o$annotations(long j) {
+    private static /* synthetic */ void m7732getSpanUnitR2X_6o$annotations(long j) {
     }
 
     /* renamed from: getSpanVerticalAlign-do9X-Gg$annotations  reason: not valid java name */
-    private static /* synthetic */ void m7003getSpanVerticalAligndo9XGg$annotations(int i) {
+    private static /* synthetic */ void m7734getSpanVerticalAligndo9XGg$annotations(int i) {
     }
 
     private static final void setPlaceholder(Spannable spannable, Placeholder placeholder, int i, int i2, Density density) {
         for (Object obj : spannable.getSpans(i, i2, EmojiSpan.class)) {
             spannable.removeSpan((EmojiSpan) obj);
         }
-        SpannableExtensions_androidKt.setSpan(spannable, new PlaceholderSpan(TextUnit.m7458getValueimpl(placeholder.m6620getWidthXSAIIZE()), m7000getSpanUnitR2X_6o(placeholder.m6620getWidthXSAIIZE()), TextUnit.m7458getValueimpl(placeholder.m6618getHeightXSAIIZE()), m7000getSpanUnitR2X_6o(placeholder.m6618getHeightXSAIIZE()), density.getFontScale() * density.getDensity(), m7002getSpanVerticalAligndo9XGg(placeholder.m6619getPlaceholderVerticalAlignJ6kI3mc())), i, i2);
+        SpannableExtensions_androidKt.setSpan(spannable, new PlaceholderSpan(TextUnit.m8189getValueimpl(placeholder.m7351getWidthXSAIIZE()), m7731getSpanUnitR2X_6o(placeholder.m7351getWidthXSAIIZE()), TextUnit.m8189getValueimpl(placeholder.m7349getHeightXSAIIZE()), m7731getSpanUnitR2X_6o(placeholder.m7349getHeightXSAIIZE()), density.getFontScale() * density.getDensity(), m7733getSpanVerticalAligndo9XGg(placeholder.m7350getPlaceholderVerticalAlignJ6kI3mc())), i, i2);
     }
 
     /* renamed from: getSpanUnit--R2X_6o  reason: not valid java name */
-    private static final int m7000getSpanUnitR2X_6o(long j) {
-        long m7457getTypeUIouoOA = TextUnit.m7457getTypeUIouoOA(j);
-        if (TextUnitType.m7486equalsimpl0(m7457getTypeUIouoOA, TextUnitType.Companion.m7491getSpUIouoOA())) {
+    private static final int m7731getSpanUnitR2X_6o(long j) {
+        long m8188getTypeUIouoOA = TextUnit.m8188getTypeUIouoOA(j);
+        if (TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8222getSpUIouoOA())) {
             return 0;
         }
-        return TextUnitType.m7486equalsimpl0(m7457getTypeUIouoOA, TextUnitType.Companion.m7490getEmUIouoOA()) ? 1 : 2;
+        return TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8221getEmUIouoOA()) ? 1 : 2;
     }
 
     /* renamed from: getSpanVerticalAlign-do9X-Gg  reason: not valid java name */
-    private static final int m7002getSpanVerticalAligndo9XGg(int i) {
-        if (PlaceholderVerticalAlign.m6624equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6628getAboveBaselineJ6kI3mc())) {
+    private static final int m7733getSpanVerticalAligndo9XGg(int i) {
+        if (PlaceholderVerticalAlign.m7355equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7359getAboveBaselineJ6kI3mc())) {
             return 0;
         }
-        if (PlaceholderVerticalAlign.m6624equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6634getTopJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m7355equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7365getTopJ6kI3mc())) {
             return 1;
         }
-        if (PlaceholderVerticalAlign.m6624equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6629getBottomJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m7355equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7360getBottomJ6kI3mc())) {
             return 2;
         }
-        if (PlaceholderVerticalAlign.m6624equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6630getCenterJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m7355equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7361getCenterJ6kI3mc())) {
             return 3;
         }
-        if (PlaceholderVerticalAlign.m6624equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6633getTextTopJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m7355equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7364getTextTopJ6kI3mc())) {
             return 4;
         }
-        if (PlaceholderVerticalAlign.m6624equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6631getTextBottomJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m7355equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7362getTextBottomJ6kI3mc())) {
             return 5;
         }
-        if (PlaceholderVerticalAlign.m6624equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6632getTextCenterJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m7355equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7363getTextCenterJ6kI3mc())) {
             return 6;
         }
         throw new IllegalStateException("Invalid PlaceholderVerticalAlign".toString());

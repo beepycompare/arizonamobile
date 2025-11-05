@@ -24,9 +24,9 @@ final class DefaultScrollable2DState implements Scrollable2DState {
         /* renamed from: scrollBy-MK-Hz9U  reason: not valid java name */
         public long mo473scrollByMKHz9U(long j) {
             if (Float.isNaN(Float.intBitsToFloat((int) (j >> 32))) || Float.isNaN(Float.intBitsToFloat((int) (4294967295L & j)))) {
-                return Offset.Companion.m4321getZeroF1C5BW0();
+                return Offset.Companion.m5051getZeroF1C5BW0();
             }
-            return DefaultScrollable2DState.this.getOnDelta().invoke(Offset.m4294boximpl(j)).m4315unboximpl();
+            return DefaultScrollable2DState.this.getOnDelta().invoke(Offset.m5024boximpl(j)).m5045unboximpl();
         }
     };
     private final MutatorMutex scrollMutex = new MutatorMutex();
@@ -58,7 +58,7 @@ final class DefaultScrollable2DState implements Scrollable2DState {
     @Override // androidx.compose.foundation.gestures.Scrollable2DState
     /* renamed from: dispatchRawDelta-MK-Hz9U  reason: not valid java name */
     public long mo472dispatchRawDeltaMKHz9U(long j) {
-        return this.onDelta.invoke(Offset.m4294boximpl(j)).m4315unboximpl();
+        return this.onDelta.invoke(Offset.m5024boximpl(j)).m5045unboximpl();
     }
 
     @Override // androidx.compose.foundation.gestures.Scrollable2DState

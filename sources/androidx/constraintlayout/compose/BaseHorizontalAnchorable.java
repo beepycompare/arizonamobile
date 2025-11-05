@@ -22,7 +22,7 @@ public abstract class BaseHorizontalAnchorable implements HorizontalAnchorable {
 
     @Override // androidx.constraintlayout.compose.HorizontalAnchorable
     /* renamed from: linkTo-VpY3zN4  reason: not valid java name */
-    public final void mo7522linkToVpY3zN4(ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, float f, float f2) {
+    public final void mo8253linkToVpY3zN4(ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, float f, float f2) {
         String horizontalAnchorIndexToAnchorName = AnchorFunctions.INSTANCE.horizontalAnchorIndexToAnchorName(horizontalAnchor.getIndex$constraintlayout_compose_release());
         CLArray cLArray = new CLArray(new char[0]);
         cLArray.add(CLString.from(horizontalAnchor.getId$constraintlayout_compose_release().toString()));
@@ -34,7 +34,7 @@ public abstract class BaseHorizontalAnchorable implements HorizontalAnchorable {
 
     @Override // androidx.constraintlayout.compose.HorizontalAnchorable
     /* renamed from: linkTo-VpY3zN4  reason: not valid java name */
-    public final void mo7521linkToVpY3zN4(ConstraintLayoutBaseScope.BaselineAnchor baselineAnchor, float f, float f2) {
+    public final void mo8252linkToVpY3zN4(ConstraintLayoutBaseScope.BaselineAnchor baselineAnchor, float f, float f2) {
         CLArray cLArray = new CLArray(new char[0]);
         cLArray.add(CLString.from(baselineAnchor.getId$constraintlayout_compose_release().toString()));
         cLArray.add(CLString.from("baseline"));

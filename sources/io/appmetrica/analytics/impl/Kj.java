@@ -1,7 +1,18 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public abstract class Kj {
+
+import io.appmetrica.analytics.ModuleEvent;
+/* loaded from: classes3.dex */
+public final class Kj implements Xa {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0414lk f543a = new C0414lk();
+    public final /* synthetic */ ModuleEvent f561a;
+
+    public Kj(ModuleEvent moduleEvent) {
+        this.f561a = moduleEvent;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Xa
+    public final void a(Ya ya) {
+        ya.reportEvent(this.f561a);
+    }
 }

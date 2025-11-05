@@ -16,5 +16,5 @@ public interface DragAndDropModifierNode extends DelegatableNode, DragAndDropTar
 
     @Deprecated(message = "Use DragAndDropSourceModifierNode.requestDragAndDropTransfer instead")
     /* renamed from: drag-12SF9DM  reason: not valid java name */
-    void mo4060drag12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1);
+    void mo4790drag12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1);
 }

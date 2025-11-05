@@ -52,11 +52,11 @@ public final class TrieNodeKt {
         int i3 = 0;
         int i4 = 0;
         while (i3 < objArr.length) {
-            CommonFunctionsKt.m3984assert(i4 <= i3);
+            CommonFunctionsKt.m4714assert(i4 <= i3);
             if (((Boolean) function1.invoke(objArr[i3])).booleanValue()) {
                 objArr2[i + i4] = objArr[i3];
                 i4++;
-                CommonFunctionsKt.m3984assert(i + i4 <= objArr2.length);
+                CommonFunctionsKt.m4714assert(i + i4 <= objArr2.length);
             }
             i3++;
         }
@@ -67,11 +67,11 @@ public final class TrieNodeKt {
         int i2 = 0;
         int i3 = 0;
         while (i2 < objArr.length) {
-            CommonFunctionsKt.m3984assert(i3 <= i2);
+            CommonFunctionsKt.m4714assert(i3 <= i2);
             if (function1.invoke(objArr[i2]).booleanValue()) {
                 objArr2[i + i3] = objArr[i2];
                 i3++;
-                CommonFunctionsKt.m3984assert(i + i3 <= objArr2.length);
+                CommonFunctionsKt.m4714assert(i + i3 <= objArr2.length);
             }
             i2++;
         }

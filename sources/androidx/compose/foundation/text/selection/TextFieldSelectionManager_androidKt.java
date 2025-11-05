@@ -105,9 +105,9 @@ public final class TextFieldSelectionManager_androidKt {
         String text = transformedText$foundation_release != null ? transformedText$foundation_release.getText() : null;
         TextRange m1834getLatestSelectionMzsxiRA$foundation_release = textFieldSelectionManager.m1834getLatestSelectionMzsxiRA$foundation_release();
         if (m1834getLatestSelectionMzsxiRA$foundation_release != null) {
-            long m6730unboximpl = m1834getLatestSelectionMzsxiRA$foundation_release.m6730unboximpl();
+            long m7461unboximpl = m1834getLatestSelectionMzsxiRA$foundation_release.m7461unboximpl();
             OffsetMapping offsetMapping$foundation_release = textFieldSelectionManager.getOffsetMapping$foundation_release();
-            textRange = TextRange.m6714boximpl(TextRangeKt.TextRange(offsetMapping$foundation_release.originalToTransformed(TextRange.m6726getStartimpl(m6730unboximpl)), offsetMapping$foundation_release.originalToTransformed(TextRange.m6721getEndimpl(m6730unboximpl))));
+            textRange = TextRange.m7445boximpl(TextRangeKt.TextRange(offsetMapping$foundation_release.originalToTransformed(TextRange.m7457getStartimpl(m7461unboximpl)), offsetMapping$foundation_release.originalToTransformed(TextRange.m7452getEndimpl(m7461unboximpl))));
         }
         PlatformSelectionBehaviors_androidKt.m1753addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, editable, text, textRange, textFieldSelectionManager.getPlatformSelectionBehaviors$foundation_release(), new Function1() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1

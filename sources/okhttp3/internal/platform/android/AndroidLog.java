@@ -89,7 +89,11 @@ public final class AndroidLog {
                 enableLogging(entry.getKey(), entry.getValue());
             }
         } catch (RuntimeException e) {
+            System.err.println("Possibly running android unit test without robolectric");
             e.printStackTrace();
+        } catch (UnsatisfiedLinkError e2) {
+            System.err.println("Possibly running android unit test without robolectric");
+            e2.printStackTrace();
         }
     }
 

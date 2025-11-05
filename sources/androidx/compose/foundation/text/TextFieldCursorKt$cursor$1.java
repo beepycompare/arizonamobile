@@ -71,15 +71,15 @@ final class TextFieldCursorKt$cursor$1 implements Function3<Modifier, Composer, 
         final CursorAnimationState cursorAnimationState = rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
         Brush brush = this.$cursorBrush;
-        boolean z = ((brush instanceof SolidColor) && ((SolidColor) brush).m4901getValue0d7_KjU() == 16) ? false : true;
+        boolean z = ((brush instanceof SolidColor) && ((SolidColor) brush).m5631getValue0d7_KjU() == 16) ? false : true;
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(CompositionLocalsKt.getLocalWindowInfo());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        if (((WindowInfo) consume2).isWindowFocused() && this.$state.getHasFocus() && TextRange.m6720getCollapsedimpl(this.$value.m6977getSelectiond9O1mEE()) && z) {
+        if (((WindowInfo) consume2).isWindowFocused() && this.$state.getHasFocus() && TextRange.m7451getCollapsedimpl(this.$value.m7708getSelectiond9O1mEE()) && z) {
             composer.startReplaceGroup(-707487962);
             ComposerKt.sourceInformation(composer, "58@2517L81,58@2462L136,61@2631L1888");
             AnnotatedString annotatedString = this.$value.getAnnotatedString();
-            TextRange m6714boximpl = TextRange.m6714boximpl(this.$value.m6977getSelectiond9O1mEE());
+            TextRange m7445boximpl = TextRange.m7445boximpl(this.$value.m7708getSelectiond9O1mEE());
             ComposerKt.sourceInformationMarkerStart(composer, 392820132, "CC(remember):TextFieldCursor.kt#9igjgp");
             boolean changedInstance = composer.changedInstance(cursorAnimationState);
             TextFieldCursorKt$cursor$1$1$1 rememberedValue2 = composer.rememberedValue();
@@ -88,7 +88,7 @@ final class TextFieldCursorKt$cursor$1 implements Function3<Modifier, Composer, 
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            EffectsKt.LaunchedEffect(annotatedString, m6714boximpl, (Function2) rememberedValue2, composer, 0);
+            EffectsKt.LaunchedEffect(annotatedString, m7445boximpl, (Function2) rememberedValue2, composer, 0);
             ComposerKt.sourceInformationMarkerStart(composer, 392825587, "CC(remember):TextFieldCursor.kt#9igjgp");
             boolean changedInstance2 = composer.changedInstance(cursorAnimationState) | composer.changedInstance(this.$offsetMapping) | composer.changed(this.$value) | composer.changedInstance(this.$state) | composer.changed(this.$cursorBrush);
             final OffsetMapping offsetMapping = this.$offsetMapping;
@@ -131,21 +131,21 @@ final class TextFieldCursorKt$cursor$1 implements Function3<Modifier, Composer, 
         contentDrawScope.drawContent();
         float cursorAlpha = cursorAnimationState.getCursorAlpha();
         if (cursorAlpha != 0.0f) {
-            int originalToTransformed = offsetMapping.originalToTransformed(TextRange.m6726getStartimpl(textFieldValue.m6977getSelectiond9O1mEE()));
+            int originalToTransformed = offsetMapping.originalToTransformed(TextRange.m7457getStartimpl(textFieldValue.m7708getSelectiond9O1mEE()));
             TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
             if (layoutResult == null || (value = layoutResult.getValue()) == null || (rect = value.getCursorRect(originalToTransformed)) == null) {
                 rect = new Rect(0.0f, 0.0f, 0.0f, 0.0f);
             }
             float coerceAtLeast = RangesKt.coerceAtLeast((float) Math.floor(contentDrawScope.mo429toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness())), 1.0f);
             float f = coerceAtLeast / 2;
-            float coerceAtLeast2 = RangesKt.coerceAtLeast(RangesKt.coerceAtMost(rect.getLeft() + f, Float.intBitsToFloat((int) (contentDrawScope.mo5128getSizeNHjbRc() >> 32)) - f), f);
+            float coerceAtLeast2 = RangesKt.coerceAtLeast(RangesKt.coerceAtMost(rect.getLeft() + f, Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> 32)) - f), f);
             if (((int) coerceAtLeast) % 2 == 1) {
                 rint = ((float) Math.floor(coerceAtLeast2)) + 0.5f;
             } else {
                 rint = (float) Math.rint(coerceAtLeast2);
             }
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            DrawScope.m5113drawLine1RTmtNc$default(contentDrawScope2, brush, Offset.m4297constructorimpl((Float.floatToRawIntBits(rect.getTop()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), Offset.m4297constructorimpl((Float.floatToRawIntBits(rect.getBottom()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), coerceAtLeast, 0, null, cursorAlpha, null, 0, 432, null);
+            DrawScope.m5843drawLine1RTmtNc$default(contentDrawScope2, brush, Offset.m5027constructorimpl((Float.floatToRawIntBits(rect.getTop()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), Offset.m5027constructorimpl((Float.floatToRawIntBits(rect.getBottom()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), coerceAtLeast, 0, null, cursorAlpha, null, 0, 432, null);
         }
         return Unit.INSTANCE;
     }

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 /* compiled from: com.google.android.gms:play-services-appset@@16.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zza extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zza> CREATOR = new zzb();
     private final String zza;

@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzgg extends com.google.android.gms.internal.measurement.zzbm implements zzgh {
     public zzgg() {
         super("com.google.android.gms.measurement.internal.IUploadBatchesCallback");

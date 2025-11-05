@@ -1,7 +1,7 @@
 package com.arkivanov.decompose.extensions.compose.pages;
 
 import androidx.compose.foundation.pager.PagerState;
-import androidx.media3.extractor.ts.TsExtractor;
+import androidx.media3.container.MdtaMetadataEntry;
 import com.arkivanov.decompose.extensions.compose.pages.PagesScrollAnimation;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
@@ -15,7 +15,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: ChildPages.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$ChildPages$4$1", f = "ChildPages.kt", i = {}, l = {69, 70, TsExtractor.TS_SYNC_BYTE}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$ChildPages$4$1", f = "ChildPages.kt", i = {}, l = {74, MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT, 76}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes3.dex */
 final class ChildPagesKt$ChildPages$4$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ PagesScrollAnimation $scrollAnimation;
@@ -25,16 +25,16 @@ final class ChildPagesKt$ChildPages$4$1 extends SuspendLambda implements Functio
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ChildPagesKt$ChildPages$4$1(PagerState pagerState, int i, PagesScrollAnimation pagesScrollAnimation, Continuation<? super ChildPagesKt$ChildPages$4$1> continuation) {
+    public ChildPagesKt$ChildPages$4$1(PagerState pagerState, PagesScrollAnimation pagesScrollAnimation, int i, Continuation<? super ChildPagesKt$ChildPages$4$1> continuation) {
         super(2, continuation);
         this.$state = pagerState;
-        this.$selectedIndex = i;
         this.$scrollAnimation = pagesScrollAnimation;
+        this.$selectedIndex = i;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new ChildPagesKt$ChildPages$4$1(this.$state, this.$selectedIndex, this.$scrollAnimation, continuation);
+        return new ChildPagesKt$ChildPages$4$1(this.$state, this.$scrollAnimation, this.$selectedIndex, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -43,15 +43,15 @@ final class ChildPagesKt$ChildPages$4$1 extends SuspendLambda implements Functio
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x003f, code lost:
-        if (androidx.compose.foundation.pager.PagerState.scrollToPage$default(r12.$state, r6, 0.0f, r12, 2, null) == r0) goto L18;
+        if (androidx.compose.foundation.pager.PagerState.scrollToPage$default(r11.$state, r11.$selectedIndex, 0.0f, r11, 2, null) == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0055, code lost:
-        if (androidx.compose.foundation.pager.PagerState.animateScrollToPage$default(r12.$state, r6, 0.0f, null, r12, 6, null) == r0) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0057, code lost:
+        if (androidx.compose.foundation.pager.PagerState.animateScrollToPage$default(r11.$state, r11.$selectedIndex, 0.0f, null, r11, 6, null) == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0070, code lost:
-        if (androidx.compose.foundation.pager.PagerState.animateScrollToPage$default(r12.$state, r6, 0.0f, ((com.arkivanov.decompose.extensions.compose.pages.PagesScrollAnimation.Custom) r13).getSpec(), r12, 2, null) == r0) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0074, code lost:
+        if (androidx.compose.foundation.pager.PagerState.animateScrollToPage$default(r11.$state, r11.$selectedIndex, 0.0f, ((com.arkivanov.decompose.extensions.compose.pages.PagesScrollAnimation.Custom) r12).getSpec(), r11, 2, null) == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0072, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0076, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -63,9 +63,7 @@ final class ChildPagesKt$ChildPages$4$1 extends SuspendLambda implements Functio
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            int currentPage = this.$state.getCurrentPage();
-            int i2 = this.$selectedIndex;
-            if (currentPage != i2) {
+            if (!this.$state.isScrollInProgress()) {
                 PagesScrollAnimation pagesScrollAnimation = this.$scrollAnimation;
                 if (pagesScrollAnimation instanceof PagesScrollAnimation.Disabled) {
                     this.label = 1;

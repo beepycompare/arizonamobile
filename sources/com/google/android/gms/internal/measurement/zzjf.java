@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import android.content.ContentResolver;
 import android.net.Uri;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzjf {
     private static final zzjh zza;
 

@@ -2,7 +2,7 @@ package io.reactivex;
 
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.util.NotificationLite;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Notification<T> {
     static final Notification<Object> COMPLETE = new Notification<>(null);
     final Object value;

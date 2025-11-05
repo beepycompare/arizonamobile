@@ -212,7 +212,7 @@ public final class StatelessInputConnection implements InputConnection {
 
     @Override // android.view.inputmethod.InputConnection
     public CharSequence getSelectedText(int i) {
-        String obj = TextRange.m6720getCollapsedimpl(getText().m1446getSelectiond9O1mEE()) ? null : TextFieldCharSequenceKt.getSelectedText(getText()).toString();
+        String obj = TextRange.m7451getCollapsedimpl(getText().m1446getSelectiond9O1mEE()) ? null : TextFieldCharSequenceKt.getSelectedText(getText()).toString();
         logDebug("getSelectedText(" + i + "): " + ((Object) obj));
         return obj;
     }
@@ -251,7 +251,7 @@ public final class StatelessInputConnection implements InputConnection {
     @Override // android.view.inputmethod.InputConnection
     public int getCursorCapsMode(int i) {
         logDebug("getCursorCapsMode(" + i + ')');
-        return TextUtils.getCapsMode(getText(), TextRange.m6724getMinimpl(getText().m1446getSelectiond9O1mEE()), i);
+        return TextUtils.getCapsMode(getText(), TextRange.m7455getMinimpl(getText().m1446getSelectiond9O1mEE()), i);
     }
 
     @Override // android.view.inputmethod.InputConnection
@@ -281,37 +281,37 @@ public final class StatelessInputConnection implements InputConnection {
 
     @Override // android.view.inputmethod.InputConnection
     public boolean performEditorAction(int i) {
-        int m6908getDefaulteUduSuo;
+        int m7639getDefaulteUduSuo;
         logDebug("performEditorAction(" + i + ')');
         if (i == 0) {
-            m6908getDefaulteUduSuo = ImeAction.Companion.m6908getDefaulteUduSuo();
+            m7639getDefaulteUduSuo = ImeAction.Companion.m7639getDefaulteUduSuo();
         } else {
             switch (i) {
                 case 2:
-                    m6908getDefaulteUduSuo = ImeAction.Companion.m6910getGoeUduSuo();
+                    m7639getDefaulteUduSuo = ImeAction.Companion.m7641getGoeUduSuo();
                     break;
                 case 3:
-                    m6908getDefaulteUduSuo = ImeAction.Companion.m6914getSearcheUduSuo();
+                    m7639getDefaulteUduSuo = ImeAction.Companion.m7645getSearcheUduSuo();
                     break;
                 case 4:
-                    m6908getDefaulteUduSuo = ImeAction.Companion.m6915getSendeUduSuo();
+                    m7639getDefaulteUduSuo = ImeAction.Companion.m7646getSendeUduSuo();
                     break;
                 case 5:
-                    m6908getDefaulteUduSuo = ImeAction.Companion.m6911getNexteUduSuo();
+                    m7639getDefaulteUduSuo = ImeAction.Companion.m7642getNexteUduSuo();
                     break;
                 case 6:
-                    m6908getDefaulteUduSuo = ImeAction.Companion.m6909getDoneeUduSuo();
+                    m7639getDefaulteUduSuo = ImeAction.Companion.m7640getDoneeUduSuo();
                     break;
                 case 7:
-                    m6908getDefaulteUduSuo = ImeAction.Companion.m6913getPreviouseUduSuo();
+                    m7639getDefaulteUduSuo = ImeAction.Companion.m7644getPreviouseUduSuo();
                     break;
                 default:
                     logDebug("IME sent an unrecognized editor action: " + i);
-                    m6908getDefaulteUduSuo = ImeAction.Companion.m6908getDefaulteUduSuo();
+                    m7639getDefaulteUduSuo = ImeAction.Companion.m7639getDefaulteUduSuo();
                     break;
             }
         }
-        this.session.mo1480onImeActionKlQnJC8(m6908getDefaulteUduSuo);
+        this.session.mo1480onImeActionKlQnJC8(m7639getDefaulteUduSuo);
         return true;
     }
 

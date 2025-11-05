@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionAdapter;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextFieldDefaults.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class TextFieldDefaults$sam$androidx_compose_ui_graphics_ColorProducer$0 implements ColorProducer, FunctionAdapter {
     private final /* synthetic */ Function0 function;
@@ -36,7 +36,7 @@ final class TextFieldDefaults$sam$androidx_compose_ui_graphics_ColorProducer$0 i
 
     @Override // androidx.compose.ui.graphics.ColorProducer
     /* renamed from: invoke-0d7_KjU */
-    public final /* synthetic */ long mo2181invoke0d7_KjU() {
-        return ((Color) this.function.invoke()).m4559unboximpl();
+    public final /* synthetic */ long mo2299invoke0d7_KjU() {
+        return ((Color) this.function.invoke()).m5289unboximpl();
     }
 }

@@ -4,8 +4,8 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class zza implements IInterface {
     private final IBinder zza;
     private final String zzb;
@@ -40,6 +40,15 @@ public class zza implements IInterface {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void zzC(int i, Parcel parcel) throws RemoteException {
+        try {
+            this.zza.transact(2, parcel, null, 1);
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final void zzD(int i, Parcel parcel) throws RemoteException {
         Parcel obtain = Parcel.obtain();
         try {
             this.zza.transact(1, parcel, obtain, 0);
@@ -47,15 +56,6 @@ public class zza implements IInterface {
         } finally {
             parcel.recycle();
             obtain.recycle();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void zzD(int i, Parcel parcel) throws RemoteException {
-        try {
-            this.zza.transact(2, parcel, null, 1);
-        } finally {
-            parcel.recycle();
         }
     }
 

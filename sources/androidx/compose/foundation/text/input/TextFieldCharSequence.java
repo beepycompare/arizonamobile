@@ -31,9 +31,9 @@ public final class TextFieldCharSequence implements CharSequence {
         this.composingAnnotations = list;
         this.outputAnnotations = list2;
         this.text = charSequence instanceof TextFieldCharSequence ? ((TextFieldCharSequence) charSequence).text : charSequence;
-        this.selection = TextRangeKt.m6732coerceIn8ffj60Q(j, 0, charSequence.length());
-        this.composition = textRange != null ? TextRange.m6714boximpl(TextRangeKt.m6732coerceIn8ffj60Q(textRange.m6730unboximpl(), 0, charSequence.length())) : null;
-        this.highlight = pair != null ? Pair.copy$default(pair, null, TextRange.m6714boximpl(TextRangeKt.m6732coerceIn8ffj60Q(pair.getSecond().m6730unboximpl(), 0, charSequence.length())), 1, null) : null;
+        this.selection = TextRangeKt.m7463coerceIn8ffj60Q(j, 0, charSequence.length());
+        this.composition = textRange != null ? TextRange.m7445boximpl(TextRangeKt.m7463coerceIn8ffj60Q(textRange.m7461unboximpl(), 0, charSequence.length())) : null;
+        this.highlight = pair != null ? Pair.copy$default(pair, null, TextRange.m7445boximpl(TextRangeKt.m7463coerceIn8ffj60Q(pair.getSecond().m7461unboximpl(), 0, charSequence.length())), 1, null) : null;
     }
 
     @Override // java.lang.CharSequence
@@ -47,7 +47,7 @@ public final class TextFieldCharSequence implements CharSequence {
     }
 
     public /* synthetic */ TextFieldCharSequence(CharSequence charSequence, long j, TextRange textRange, Pair pair, List list, List list2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? "" : charSequence, (i & 2) != 0 ? TextRange.Companion.m6731getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (i & 8) != 0 ? null : pair, (i & 16) != 0 ? null : list, (i & 32) == 0 ? list2 : null, null);
+        this((i & 1) != 0 ? "" : charSequence, (i & 2) != 0 ? TextRange.Companion.m7462getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (i & 8) != 0 ? null : pair, (i & 16) != 0 ? null : list, (i & 32) == 0 ? list2 : null, null);
     }
 
     public final List<AnnotatedString.Range<AnnotatedString.Annotation>> getComposingAnnotations() {
@@ -112,17 +112,17 @@ public final class TextFieldCharSequence implements CharSequence {
         }
         if (obj != null && getClass() == obj.getClass()) {
             TextFieldCharSequence textFieldCharSequence = (TextFieldCharSequence) obj;
-            return TextRange.m6719equalsimpl0(this.selection, textFieldCharSequence.selection) && Intrinsics.areEqual(this.composition, textFieldCharSequence.composition) && Intrinsics.areEqual(this.highlight, textFieldCharSequence.highlight) && Intrinsics.areEqual(this.composingAnnotations, textFieldCharSequence.composingAnnotations) && contentEquals(textFieldCharSequence.text);
+            return TextRange.m7450equalsimpl0(this.selection, textFieldCharSequence.selection) && Intrinsics.areEqual(this.composition, textFieldCharSequence.composition) && Intrinsics.areEqual(this.highlight, textFieldCharSequence.highlight) && Intrinsics.areEqual(this.composingAnnotations, textFieldCharSequence.composingAnnotations) && contentEquals(textFieldCharSequence.text);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((this.text.hashCode() * 31) + TextRange.m6727hashCodeimpl(this.selection)) * 31;
+        int hashCode = ((this.text.hashCode() * 31) + TextRange.m7458hashCodeimpl(this.selection)) * 31;
         TextRange textRange = this.composition;
-        int m6727hashCodeimpl = (hashCode + (textRange != null ? TextRange.m6727hashCodeimpl(textRange.m6730unboximpl()) : 0)) * 31;
+        int m7458hashCodeimpl = (hashCode + (textRange != null ? TextRange.m7458hashCodeimpl(textRange.m7461unboximpl()) : 0)) * 31;
         Pair<TextHighlightType, TextRange> pair = this.highlight;
-        int hashCode2 = (m6727hashCodeimpl + (pair != null ? pair.hashCode() : 0)) * 31;
+        int hashCode2 = (m7458hashCodeimpl + (pair != null ? pair.hashCode() : 0)) * 31;
         List<AnnotatedString.Range<AnnotatedString.Annotation>> list = this.composingAnnotations;
         return hashCode2 + (list != null ? list.hashCode() : 0);
     }

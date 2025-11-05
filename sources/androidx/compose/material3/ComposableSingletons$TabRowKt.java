@@ -7,13 +7,13 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: TabRow.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$TabRowKt {
     public static final ComposableSingletons$TabRowKt INSTANCE = new ComposableSingletons$TabRowKt();
 
-    /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f46lambda1 = ComposableLambdaKt.composableLambdaInstance(-932273607, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda-1$1
+    /* renamed from: lambda$-1429684928  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f34lambda$1429684928 = ComposableLambdaKt.composableLambdaInstance(-1429684928, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$-1429684928$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -21,23 +21,23 @@ public final class ComposableSingletons$TabRowKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C163@7989L19:TabRow.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C160@7922L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-932273607, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-1.<anonymous> (TabRow.kt:163)");
+                ComposerKt.traceEventStart(-1429684928, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-1429684928.<anonymous> (TabRow.kt:160)");
             }
-            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
 
-    /* renamed from: lambda-2  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f47lambda2 = ComposableLambdaKt.composableLambdaInstance(-1371931157, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda-2$1
+    /* renamed from: lambda$-463596174  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f37lambda$463596174 = ComposableLambdaKt.composableLambdaInstance(-463596174, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$-463596174$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -45,23 +45,23 @@ public final class ComposableSingletons$TabRowKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C217@10930L19:TabRow.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C211@10788L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1371931157, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-2.<anonymous> (TabRow.kt:217)");
+                ComposerKt.traceEventStart(-463596174, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-463596174.<anonymous> (TabRow.kt:211)");
             }
-            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
 
-    /* renamed from: lambda-3  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f48lambda3 = ComposableLambdaKt.composableLambdaInstance(-711844679, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda-3$1
+    /* renamed from: lambda$-773954579  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f38lambda$773954579 = ComposableLambdaKt.composableLambdaInstance(-773954579, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$-773954579$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -69,23 +69,21 @@ public final class ComposableSingletons$TabRowKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C313@15807L19:TabRow.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C266@13880L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-711844679, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-3.<anonymous> (TabRow.kt:313)");
+                ComposerKt.traceEventStart(-773954579, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-773954579.<anonymous> (TabRow.kt:266)");
             }
-            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
-
-    /* renamed from: lambda-4  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f49lambda4 = ComposableLambdaKt.composableLambdaInstance(-764008582, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda-4$1
+    private static Function2<Composer, Integer, Unit> lambda$303717663 = ComposableLambdaKt.composableLambdaInstance(303717663, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$303717663$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -93,23 +91,21 @@ public final class ComposableSingletons$TabRowKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C369@18889L19:TabRow.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C336@17566L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-764008582, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-4.<anonymous> (TabRow.kt:369)");
+                ComposerKt.traceEventStart(303717663, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$303717663.<anonymous> (TabRow.kt:336)");
             }
-            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
-
-    /* renamed from: lambda-5  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f50lambda5 = ComposableLambdaKt.composableLambdaInstance(11728904, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda-5$1
+    private static Function2<Composer, Integer, Unit> lambda$2075817209 = ComposableLambdaKt.composableLambdaInstance(2075817209, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$2075817209$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -117,23 +113,23 @@ public final class ComposableSingletons$TabRowKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C438@22450L19:TabRow.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C831@36449L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(11728904, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-5.<anonymous> (TabRow.kt:438)");
+                ComposerKt.traceEventStart(2075817209, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$2075817209.<anonymous> (TabRow.kt:831)");
             }
-            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
 
-    /* renamed from: lambda-6  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f51lambda6 = ComposableLambdaKt.composableLambdaInstance(-713969278, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda-6$1
+    /* renamed from: lambda$-306947391  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f35lambda$306947391 = ComposableLambdaKt.composableLambdaInstance(-306947391, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$-306947391$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -141,23 +137,21 @@ public final class ComposableSingletons$TabRowKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C505@25862L19:TabRow.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C1202@51208L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-713969278, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-6.<anonymous> (TabRow.kt:505)");
+                ComposerKt.traceEventStart(-306947391, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-306947391.<anonymous> (TabRow.kt:1202)");
             }
-            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
-
-    /* renamed from: lambda-7  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f52lambda7 = ComposableLambdaKt.composableLambdaInstance(2134461426, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda-7$1
+    private static Function2<Composer, Integer, Unit> lambda$1187266255 = ComposableLambdaKt.composableLambdaInstance(1187266255, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$1187266255$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -165,53 +159,108 @@ public final class ComposableSingletons$TabRowKt {
         }
 
         public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C1017@44207L19:TabRow.kt#uh7d8r");
-            if ((i & 3) == 2 && composer.getSkipping()) {
+            ComposerKt.sourceInformation(composer, "C1233@52421L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                 composer.skipToGroupEnd();
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(2134461426, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-7.<anonymous> (TabRow.kt:1017)");
+                ComposerKt.traceEventStart(1187266255, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$1187266255.<anonymous> (TabRow.kt:1233)");
             }
-            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
 
-    /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2103getLambda1$material3_release() {
-        return f46lambda1;
+    /* renamed from: lambda$-1132537920  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f33lambda$1132537920 = ComposableLambdaKt.composableLambdaInstance(-1132537920, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$-1132537920$1
+        @Override // kotlin.jvm.functions.Function2
+        public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
+            invoke(composer, num.intValue());
+            return Unit.INSTANCE;
+        }
+
+        public final void invoke(Composer composer, int i) {
+            ComposerKt.sourceInformation(composer, "C1346@57878L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
+                composer.skipToGroupEnd();
+                return;
+            }
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-1132537920, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-1132537920.<anonymous> (TabRow.kt:1346)");
+            }
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+    });
+
+    /* renamed from: lambda$-358046007  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f36lambda$358046007 = ComposableLambdaKt.composableLambdaInstance(-358046007, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TabRowKt$lambda$-358046007$1
+        @Override // kotlin.jvm.functions.Function2
+        public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
+            invoke(composer, num.intValue());
+            return Unit.INSTANCE;
+        }
+
+        public final void invoke(Composer composer, int i) {
+            ComposerKt.sourceInformation(composer, "C1411@61371L19:TabRow.kt#uh7d8r");
+            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
+                composer.skipToGroupEnd();
+                return;
+            }
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-358046007, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-358046007.<anonymous> (TabRow.kt:1411)");
+            }
+            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+    });
+
+    /* renamed from: getLambda$-1132537920$material3  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m2173getLambda$1132537920$material3() {
+        return f33lambda$1132537920;
     }
 
-    /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2104getLambda2$material3_release() {
-        return f47lambda2;
+    /* renamed from: getLambda$-1429684928$material3  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m2174getLambda$1429684928$material3() {
+        return f34lambda$1429684928;
     }
 
-    /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2105getLambda3$material3_release() {
-        return f48lambda3;
+    /* renamed from: getLambda$-306947391$material3  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m2175getLambda$306947391$material3() {
+        return f35lambda$306947391;
     }
 
-    /* renamed from: getLambda-4$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2106getLambda4$material3_release() {
-        return f49lambda4;
+    /* renamed from: getLambda$-358046007$material3  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m2176getLambda$358046007$material3() {
+        return f36lambda$358046007;
     }
 
-    /* renamed from: getLambda-5$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2107getLambda5$material3_release() {
-        return f50lambda5;
+    /* renamed from: getLambda$-463596174$material3  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m2177getLambda$463596174$material3() {
+        return f37lambda$463596174;
     }
 
-    /* renamed from: getLambda-6$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2108getLambda6$material3_release() {
-        return f51lambda6;
+    /* renamed from: getLambda$-773954579$material3  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m2178getLambda$773954579$material3() {
+        return f38lambda$773954579;
     }
 
-    /* renamed from: getLambda-7$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2109getLambda7$material3_release() {
-        return f52lambda7;
+    public final Function2<Composer, Integer, Unit> getLambda$1187266255$material3() {
+        return lambda$1187266255;
+    }
+
+    public final Function2<Composer, Integer, Unit> getLambda$2075817209$material3() {
+        return lambda$2075817209;
+    }
+
+    public final Function2<Composer, Integer, Unit> getLambda$303717663$material3() {
+        return lambda$303717663;
     }
 }

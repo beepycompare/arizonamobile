@@ -21,7 +21,7 @@ import kotlinx.serialization.modules.SerializersModule;
 /* loaded from: classes.dex */
 public final class RememberSerializableKt {
     /* renamed from: rememberSerializable  reason: collision with other method in class */
-    public static final /* synthetic */ <T> T m3996rememberSerializable(Object[] objArr, SavedStateConfiguration savedStateConfiguration, Function0<? extends T> function0, Composer composer, int i, int i2) {
+    public static final /* synthetic */ <T> T m4726rememberSerializable(Object[] objArr, SavedStateConfiguration savedStateConfiguration, Function0<? extends T> function0, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -438135255, "CC(rememberSerializable)N(inputs,configuration,init)54@2511L182:RememberSerializable.kt#r2ddri");
         if ((i2 & 2) != 0) {
             savedStateConfiguration = SavedStateConfiguration.DEFAULT;
@@ -31,13 +31,13 @@ public final class RememberSerializableKt {
         SerializersModule serializersModule = savedStateConfiguration2.getSerializersModule();
         Intrinsics.reifiedOperationMarker(6, ExifInterface.GPS_DIRECTION_TRUE);
         MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.withModule");
-        T t = (T) m3997rememberSerializable(copyOf, SerializersKt.serializer(serializersModule, (KType) null), savedStateConfiguration2, function0, composer, (i << 3) & 8064, 0);
+        T t = (T) m4727rememberSerializable(copyOf, SerializersKt.serializer(serializersModule, (KType) null), savedStateConfiguration2, function0, composer, (i << 3) & 8064, 0);
         ComposerKt.sourceInformationMarkerEnd(composer);
         return t;
     }
 
     /* renamed from: rememberSerializable  reason: collision with other method in class */
-    public static final <T> T m3997rememberSerializable(Object[] objArr, KSerializer<T> kSerializer, SavedStateConfiguration savedStateConfiguration, Function0<? extends T> function0, Composer composer, int i, int i2) {
+    public static final <T> T m4727rememberSerializable(Object[] objArr, KSerializer<T> kSerializer, SavedStateConfiguration savedStateConfiguration, Function0<? extends T> function0, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1261607160, "C(rememberSerializable)N(inputs,serializer,configuration,init)96@4465L65:RememberSerializable.kt#r2ddri");
         if ((i2 & 4) != 0) {
             savedStateConfiguration = SavedStateConfiguration.DEFAULT;
@@ -45,7 +45,7 @@ public final class RememberSerializableKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1261607160, i, -1, "androidx.compose.runtime.saveable.rememberSerializable (RememberSerializable.kt:93)");
         }
-        T t = (T) RememberSaveableKt.m3994rememberSaveable(Arrays.copyOf(objArr, objArr.length), SerializableSaverKt.serializableSaver(kSerializer, savedStateConfiguration), (String) null, function0, composer, (i & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+        T t = (T) RememberSaveableKt.m4724rememberSaveable(Arrays.copyOf(objArr, objArr.length), SerializableSaverKt.serializableSaver(kSerializer, savedStateConfiguration), (String) null, function0, composer, (i & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -76,7 +76,7 @@ public final class RememberSerializableKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1248826527, i, -1, "androidx.compose.runtime.saveable.rememberSerializable (RememberSerializable.kt:163)");
         }
-        MutableState<T> mutableState = (MutableState) RememberSaveableKt.m3994rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) RememberSaveableKt.mutableStateSaver(SerializableSaverKt.serializableSaver(kSerializer, savedStateConfiguration)), (String) null, (Function0<? extends Object>) function0, composer, (i & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+        MutableState<T> mutableState = (MutableState) RememberSaveableKt.m4724rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) RememberSaveableKt.mutableStateSaver(SerializableSaverKt.serializableSaver(kSerializer, savedStateConfiguration)), (String) null, (Function0<? extends Object>) function0, composer, (i & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

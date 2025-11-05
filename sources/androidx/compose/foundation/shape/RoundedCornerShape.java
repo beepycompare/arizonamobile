@@ -22,17 +22,17 @@ public final class RoundedCornerShape extends CornerBasedShape {
     /* renamed from: createOutline-LjSzlW0 */
     public Outline mo1190createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection) {
         if (f + f2 + f3 + f4 == 0.0f) {
-            return new Outline.Rectangle(SizeKt.m4395toRectuvyYCjk(j));
+            return new Outline.Rectangle(SizeKt.m5125toRectuvyYCjk(j));
         }
-        Rect m4395toRectuvyYCjk = SizeKt.m4395toRectuvyYCjk(j);
+        Rect m5125toRectuvyYCjk = SizeKt.m5125toRectuvyYCjk(j);
         float f5 = layoutDirection == LayoutDirection.Ltr ? f : f2;
-        long m4259constructorimpl = CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f5) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L));
+        long m4989constructorimpl = CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f5) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L));
         float f6 = layoutDirection == LayoutDirection.Ltr ? f2 : f;
-        long m4259constructorimpl2 = CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f6) & 4294967295L) | (Float.floatToRawIntBits(f6) << 32));
+        long m4989constructorimpl2 = CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f6) & 4294967295L) | (Float.floatToRawIntBits(f6) << 32));
         float f7 = layoutDirection == LayoutDirection.Ltr ? f3 : f4;
-        long m4259constructorimpl3 = CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f7) << 32) | (Float.floatToRawIntBits(f7) & 4294967295L));
+        long m4989constructorimpl3 = CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f7) << 32) | (Float.floatToRawIntBits(f7) & 4294967295L));
         float f8 = layoutDirection == LayoutDirection.Ltr ? f4 : f3;
-        return new Outline.Rounded(RoundRectKt.m4357RoundRectZAM2FJo(m4395toRectuvyYCjk, m4259constructorimpl, m4259constructorimpl2, m4259constructorimpl3, CornerRadius.m4259constructorimpl((4294967295L & Float.floatToRawIntBits(f8)) | (Float.floatToRawIntBits(f8) << 32))));
+        return new Outline.Rounded(RoundRectKt.m5087RoundRectZAM2FJo(m5125toRectuvyYCjk, m4989constructorimpl, m4989constructorimpl2, m4989constructorimpl3, CornerRadius.m4989constructorimpl((4294967295L & Float.floatToRawIntBits(f8)) | (Float.floatToRawIntBits(f8) << 32))));
     }
 
     @Override // androidx.compose.foundation.shape.CornerBasedShape

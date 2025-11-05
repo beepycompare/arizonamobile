@@ -18,7 +18,7 @@ import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
 import java.util.ArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SilenceMediaSource extends BaseMediaSource {
     private static final int CHANNEL_COUNT = 2;
     private static final Format FORMAT;
@@ -47,7 +47,7 @@ public final class SilenceMediaSource extends BaseMediaSource {
     protected void releaseSourceInternal() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory {
         private long durationUs;
         private Object tag;
@@ -105,7 +105,7 @@ public final class SilenceMediaSource extends BaseMediaSource {
         this.mediaItem = mediaItem;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class SilenceMediaPeriod implements MediaPeriod {
         private static final TrackGroupArray TRACKS = new TrackGroupArray(new TrackGroup(SilenceMediaSource.FORMAT));
         private final long durationUs;
@@ -201,7 +201,7 @@ public final class SilenceMediaSource extends BaseMediaSource {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class SilenceSampleStream implements SampleStream {
         private final long durationBytes;
         private long positionBytes;

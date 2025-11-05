@@ -88,7 +88,7 @@ public abstract class Operation {
     }
 
     /* renamed from: objectParamName-31yXWZQ  reason: not valid java name */
-    public String mo3879objectParamName31yXWZQ(int i) {
+    public String mo4609objectParamName31yXWZQ(int i) {
         return "ObjectParameter(" + i + ')';
     }
 
@@ -104,49 +104,49 @@ public abstract class Operation {
         private final int offset;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ ObjectParameter m3904boximpl(int i) {
+        public static final /* synthetic */ ObjectParameter m4634boximpl(int i) {
             return new ObjectParameter(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static <T> int m3905constructorimpl(int i) {
+        public static <T> int m4635constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m3906equalsimpl(int i, Object obj) {
-            return (obj instanceof ObjectParameter) && i == ((ObjectParameter) obj).m3910unboximpl();
+        public static boolean m4636equalsimpl(int i, Object obj) {
+            return (obj instanceof ObjectParameter) && i == ((ObjectParameter) obj).m4640unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m3907equalsimpl0(int i, int i2) {
+        public static final boolean m4637equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m3908hashCodeimpl(int i) {
+        public static int m4638hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m3909toStringimpl(int i) {
+        public static String m4639toStringimpl(int i) {
             return "ObjectParameter(offset=" + i + ')';
         }
 
         public boolean equals(Object obj) {
-            return m3906equalsimpl(this.offset, obj);
+            return m4636equalsimpl(this.offset, obj);
         }
 
         public int hashCode() {
-            return m3908hashCodeimpl(this.offset);
+            return m4638hashCodeimpl(this.offset);
         }
 
         public String toString() {
-            return m3909toStringimpl(this.offset);
+            return m4639toStringimpl(this.offset);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m3910unboximpl() {
+        public final /* synthetic */ int m4640unboximpl() {
             return this.offset;
         }
 
@@ -203,22 +203,22 @@ public abstract class Operation {
         }
 
         /* renamed from: getNodes-HpuvwBQ  reason: not valid java name */
-        public final int m3892getNodesHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4622getNodesHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
             Intrinsics.checkNotNull(applier, "null cannot be cast to non-null type androidx.compose.runtime.Applier<kotlin.Any?>");
-            for (Object obj : (Object[]) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0))) {
+            for (Object obj : (Object[]) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0))) {
                 applier.down(obj);
             }
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "nodes" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "nodes" : super.mo4609objectParamName31yXWZQ(i);
         }
     }
 
@@ -263,19 +263,19 @@ public abstract class Operation {
         }
 
         /* renamed from: getEffect-HpuvwBQ  reason: not valid java name */
-        public final int m3917getEffectHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4647getEffectHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "effect" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "effect" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            rememberManager.sideEffect((Function0) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)));
+            rememberManager.sideEffect((Function0) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)));
         }
     }
 
@@ -291,19 +291,19 @@ public abstract class Operation {
         }
 
         /* renamed from: getValue-HpuvwBQ  reason: not valid java name */
-        public final int m3915getValueHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4645getValueHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "value" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "value" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            rememberManager.remembering((RememberObserverHolder) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)));
+            rememberManager.remembering((RememberObserverHolder) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)));
         }
     }
 
@@ -319,19 +319,19 @@ public abstract class Operation {
         }
 
         /* renamed from: getScope-HpuvwBQ  reason: not valid java name */
-        public final int m3916getScopeHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4646getScopeHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "scope" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "scope" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            rememberManager.rememberPausingScope((RecomposeScopeImpl) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)));
+            rememberManager.rememberPausingScope((RecomposeScopeImpl) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)));
         }
     }
 
@@ -347,19 +347,19 @@ public abstract class Operation {
         }
 
         /* renamed from: getScope-HpuvwBQ  reason: not valid java name */
-        public final int m3918getScopeHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4648getScopeHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "scope" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "scope" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            rememberManager.startResumingScope((RecomposeScopeImpl) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)));
+            rememberManager.startResumingScope((RecomposeScopeImpl) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)));
         }
     }
 
@@ -375,19 +375,19 @@ public abstract class Operation {
         }
 
         /* renamed from: getScope-HpuvwBQ  reason: not valid java name */
-        public final int m3895getScopeHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4625getScopeHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "scope" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "scope" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            rememberManager.endResumingScope((RecomposeScopeImpl) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)));
+            rememberManager.endResumingScope((RecomposeScopeImpl) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)));
         }
     }
 
@@ -403,29 +403,29 @@ public abstract class Operation {
         }
 
         /* renamed from: getAnchor-HpuvwBQ  reason: not valid java name */
-        public final int m3880getAnchorHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4610getAnchorHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getValue-HpuvwBQ  reason: not valid java name */
-        public final int m3881getValueHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4611getValueHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "anchor" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "value" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "anchor" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "value" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            Anchor anchor = (Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0));
-            Object mo3926getObject31yXWZQ = operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1));
-            if (mo3926getObject31yXWZQ instanceof RememberObserverHolder) {
-                rememberManager.remembering((RememberObserverHolder) mo3926getObject31yXWZQ);
+            Anchor anchor = (Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0));
+            Object mo4656getObject31yXWZQ = operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1));
+            if (mo4656getObject31yXWZQ instanceof RememberObserverHolder) {
+                rememberManager.remembering((RememberObserverHolder) mo4656getObject31yXWZQ);
             }
-            slotWriter.appendSlot(anchor, mo3926getObject31yXWZQ);
+            slotWriter.appendSlot(anchor, mo4656getObject31yXWZQ);
         }
     }
 
@@ -486,8 +486,8 @@ public abstract class Operation {
         }
 
         /* renamed from: getValue-HpuvwBQ  reason: not valid java name */
-        public final int m3925getValueHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4655getValueHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
@@ -500,18 +500,18 @@ public abstract class Operation {
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "value" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "value" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            Object mo3926getObject31yXWZQ = operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0));
+            Object mo4656getObject31yXWZQ = operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0));
             int i = operationArgContainer.getInt(0);
-            if (mo3926getObject31yXWZQ instanceof RememberObserverHolder) {
-                rememberManager.remembering((RememberObserverHolder) mo3926getObject31yXWZQ);
+            if (mo4656getObject31yXWZQ instanceof RememberObserverHolder) {
+                rememberManager.remembering((RememberObserverHolder) mo4656getObject31yXWZQ);
             }
-            Object obj = slotWriter.set(slotWriter.getCurrentGroup(), i, mo3926getObject31yXWZQ);
+            Object obj = slotWriter.set(slotWriter.getCurrentGroup(), i, mo4656getObject31yXWZQ);
             if (obj instanceof RememberObserverHolder) {
                 rememberManager.forgetting((RememberObserverHolder) obj);
             } else if (obj instanceof RecomposeScopeImpl) {
@@ -536,13 +536,13 @@ public abstract class Operation {
         }
 
         /* renamed from: getValue-HpuvwBQ  reason: not valid java name */
-        public final int m3921getValueHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4651getValueHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getAnchor-HpuvwBQ  reason: not valid java name */
-        public final int m3920getAnchorHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4650getAnchorHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
@@ -555,19 +555,19 @@ public abstract class Operation {
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "value" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "anchor" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "value" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "anchor" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            Object mo3926getObject31yXWZQ = operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0));
-            Anchor anchor = (Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1));
+            Object mo4656getObject31yXWZQ = operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0));
+            Anchor anchor = (Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1));
             int i = operationArgContainer.getInt(0);
-            if (mo3926getObject31yXWZQ instanceof RememberObserverHolder) {
-                rememberManager.remembering((RememberObserverHolder) mo3926getObject31yXWZQ);
+            if (mo4656getObject31yXWZQ instanceof RememberObserverHolder) {
+                rememberManager.remembering((RememberObserverHolder) mo4656getObject31yXWZQ);
             }
-            Object obj = slotWriter.set(slotWriter.anchorIndex(anchor), i, mo3926getObject31yXWZQ);
+            Object obj = slotWriter.set(slotWriter.anchorIndex(anchor), i, mo4656getObject31yXWZQ);
             if (obj instanceof RememberObserverHolder) {
                 rememberManager.forgetting((RememberObserverHolder) obj);
             } else if (obj instanceof RecomposeScopeImpl) {
@@ -588,19 +588,19 @@ public abstract class Operation {
         }
 
         /* renamed from: getData-HpuvwBQ  reason: not valid java name */
-        public final int m3922getDataHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4652getDataHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "data" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "data" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            slotWriter.updateAux(operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)));
+            slotWriter.updateAux(operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)));
         }
     }
 
@@ -633,19 +633,19 @@ public abstract class Operation {
         }
 
         /* renamed from: getAnchor-HpuvwBQ  reason: not valid java name */
-        public final int m3896getAnchorHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4626getAnchorHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "anchor" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "anchor" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            slotWriter.ensureStarted((Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)));
+            slotWriter.ensureStarted((Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)));
         }
     }
 
@@ -741,24 +741,24 @@ public abstract class Operation {
         }
 
         /* renamed from: getAction-HpuvwBQ  reason: not valid java name */
-        public final int m3893getActionHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4623getActionHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getComposition-HpuvwBQ  reason: not valid java name */
-        public final int m3894getCompositionHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4624getCompositionHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "anchor" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "composition" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "anchor" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "composition" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            ((Function1) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0))).invoke((Composition) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1)));
+            ((Function1) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0))).invoke((Composition) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1)));
         }
     }
 
@@ -791,24 +791,24 @@ public abstract class Operation {
         }
 
         /* renamed from: getValue-HpuvwBQ  reason: not valid java name */
-        public final int m3924getValueHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4654getValueHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getBlock-HpuvwBQ  reason: not valid java name */
-        public final int m3923getBlockHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4653getBlockHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "value" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "block" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "value" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "block" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            applier.apply((Function2) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1)), operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)));
+            applier.apply((Function2) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1)), operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)));
         }
     }
 
@@ -903,26 +903,26 @@ public abstract class Operation {
         }
 
         /* renamed from: getAnchor-HpuvwBQ  reason: not valid java name */
-        public final int m3899getAnchorHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4629getAnchorHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getFromSlotTable-HpuvwBQ  reason: not valid java name */
-        public final int m3900getFromSlotTableHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4630getFromSlotTableHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "anchor" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "from" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "anchor" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "from" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            SlotTable slotTable = (SlotTable) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1));
+            SlotTable slotTable = (SlotTable) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1));
             slotWriter.beginInsert();
-            slotWriter.moveFrom(slotTable, ((Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0))).toIndexFor(slotTable), false);
+            slotWriter.moveFrom(slotTable, ((Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0))).toIndexFor(slotTable), false);
             slotWriter.endInsert();
         }
     }
@@ -939,32 +939,32 @@ public abstract class Operation {
         }
 
         /* renamed from: getAnchor-HpuvwBQ  reason: not valid java name */
-        public final int m3901getAnchorHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4631getAnchorHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getFromSlotTable-HpuvwBQ  reason: not valid java name */
-        public final int m3903getFromSlotTableHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4633getFromSlotTableHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         /* renamed from: getFixups-HpuvwBQ  reason: not valid java name */
-        public final int m3902getFixupsHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(2);
+        public final int m4632getFixupsHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(2);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "anchor" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "from" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(2)) ? "fixups" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "anchor" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "from" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(2)) ? "fixups" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
             OperationErrorContext withCurrentStackTrace;
-            SlotTable slotTable = (SlotTable) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1));
-            Anchor anchor = (Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0));
-            FixupList fixupList = (FixupList) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(2));
+            SlotTable slotTable = (SlotTable) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1));
+            Anchor anchor = (Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0));
+            FixupList fixupList = (FixupList) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(2));
             SlotWriter openWriter = slotTable.openWriter();
             if (operationErrorContext != null) {
                 try {
@@ -1001,13 +1001,13 @@ public abstract class Operation {
         }
 
         /* renamed from: getFactory-HpuvwBQ  reason: not valid java name */
-        public final int m3897getFactoryHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4627getFactoryHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getGroupAnchor-HpuvwBQ  reason: not valid java name */
-        public final int m3898getGroupAnchorHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4628getGroupAnchorHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
@@ -1020,21 +1020,21 @@ public abstract class Operation {
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "factory" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "groupAnchor" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "factory" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "groupAnchor" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected Anchor getGroupAnchor(OperationArgContainer operationArgContainer, SlotWriter slotWriter) {
-            return (Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1));
+            return (Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1));
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            Object invoke = ((Function0) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0))).invoke();
+            Object invoke = ((Function0) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0))).invoke();
             int i = operationArgContainer.getInt(0);
             Intrinsics.checkNotNull(applier, "null cannot be cast to non-null type androidx.compose.runtime.Applier<kotlin.Any?>");
-            slotWriter.updateNode((Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1)), invoke);
+            slotWriter.updateNode((Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1)), invoke);
             applier.insertTopDown(i, invoke);
             applier.down(invoke);
         }
@@ -1056,8 +1056,8 @@ public abstract class Operation {
         }
 
         /* renamed from: getGroupAnchor-HpuvwBQ  reason: not valid java name */
-        public final int m3911getGroupAnchorHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4641getGroupAnchorHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
@@ -1070,13 +1070,13 @@ public abstract class Operation {
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "groupAnchor" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "groupAnchor" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected Anchor getGroupAnchor(OperationArgContainer operationArgContainer, SlotWriter slotWriter) {
-            return (Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0));
+            return (Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0));
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
@@ -1084,7 +1084,7 @@ public abstract class Operation {
             int i = operationArgContainer.getInt(0);
             applier.up();
             Intrinsics.checkNotNull(applier, "null cannot be cast to non-null type androidx.compose.runtime.Applier<kotlin.Any?>");
-            applier.insertBottomUp(i, slotWriter.node((Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0))));
+            applier.insertBottomUp(i, slotWriter.node((Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0))));
         }
     }
 
@@ -1134,27 +1134,27 @@ public abstract class Operation {
         }
 
         /* renamed from: getEffectiveNodeIndexOut-HpuvwBQ  reason: not valid java name */
-        public final int m3891getEffectiveNodeIndexOutHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4621getEffectiveNodeIndexOutHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getAnchor-HpuvwBQ  reason: not valid java name */
-        public final int m3890getAnchorHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4620getAnchorHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "effectiveNodeIndexOut" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "anchor" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "effectiveNodeIndexOut" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "anchor" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
             int positionToInsert;
             Intrinsics.checkNotNull(applier, "null cannot be cast to non-null type androidx.compose.runtime.Applier<kotlin.Any?>");
-            positionToInsert = OperationKt.positionToInsert(slotWriter, (Anchor) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1)), applier);
-            ((IntRef) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0))).setElement(positionToInsert);
+            positionToInsert = OperationKt.positionToInsert(slotWriter, (Anchor) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1)), applier);
+            ((IntRef) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0))).setElement(positionToInsert);
         }
     }
 
@@ -1170,25 +1170,25 @@ public abstract class Operation {
         }
 
         /* renamed from: getEffectiveNodeIndex-HpuvwBQ  reason: not valid java name */
-        public final int m3884getEffectiveNodeIndexHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4614getEffectiveNodeIndexHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getNodes-HpuvwBQ  reason: not valid java name */
-        public final int m3885getNodesHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4615getNodesHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "effectiveNodeIndex" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "nodes" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "effectiveNodeIndex" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "nodes" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            int element = ((IntRef) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0))).getElement();
-            List list = (List) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1));
+            int element = ((IntRef) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0))).getElement();
+            List list = (List) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1));
             int size = list.size();
             for (int i = 0; i < size; i++) {
                 Object obj = list.get(i);
@@ -1212,37 +1212,37 @@ public abstract class Operation {
         }
 
         /* renamed from: getResolvedState-HpuvwBQ  reason: not valid java name */
-        public final int m3888getResolvedStateHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4618getResolvedStateHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getParentCompositionContext-HpuvwBQ  reason: not valid java name */
-        public final int m3887getParentCompositionContextHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4617getParentCompositionContextHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         /* renamed from: getFrom-HpuvwBQ  reason: not valid java name */
-        public final int m3886getFromHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(2);
+        public final int m4616getFromHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(2);
         }
 
         /* renamed from: getTo-HpuvwBQ  reason: not valid java name */
-        public final int m3889getToHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(3);
+        public final int m4619getToHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(3);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "resolvedState" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "resolvedCompositionContext" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(2)) ? "from" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(3)) ? TypedValues.TransitionType.S_TO : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "resolvedState" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "resolvedCompositionContext" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(2)) ? "from" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(3)) ? TypedValues.TransitionType.S_TO : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            MovableContentStateReference movableContentStateReference = (MovableContentStateReference) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(2));
-            MovableContentStateReference movableContentStateReference2 = (MovableContentStateReference) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(3));
-            CompositionContext compositionContext = (CompositionContext) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1));
-            MovableContentState movableContentState = (MovableContentState) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0));
+            MovableContentStateReference movableContentStateReference = (MovableContentStateReference) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(2));
+            MovableContentStateReference movableContentStateReference2 = (MovableContentStateReference) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(3));
+            CompositionContext compositionContext = (CompositionContext) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1));
+            MovableContentState movableContentState = (MovableContentState) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0));
             if (movableContentState == null && (movableContentState = compositionContext.movableContentStateResolve$runtime(movableContentStateReference)) == null) {
                 ComposerKt.composeRuntimeError("Could not resolve state for movable content");
                 throw new KotlinNothingValueException();
@@ -1286,30 +1286,30 @@ public abstract class Operation {
         }
 
         /* renamed from: getComposition-HpuvwBQ  reason: not valid java name */
-        public final int m3912getCompositionHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4642getCompositionHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getParentCompositionContext-HpuvwBQ  reason: not valid java name */
-        public final int m3913getParentCompositionContextHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4643getParentCompositionContextHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         /* renamed from: getReference-HpuvwBQ  reason: not valid java name */
-        public final int m3914getReferenceHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(2);
+        public final int m4644getReferenceHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(2);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "composition" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "parentCompositionContext" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(2)) ? TypedValues.Custom.S_REFERENCE : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "composition" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "parentCompositionContext" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(2)) ? TypedValues.Custom.S_REFERENCE : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            MovableContentStateReference movableContentStateReference = (MovableContentStateReference) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(2));
-            ((CompositionContext) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1))).movableContentStateReleased$runtime(movableContentStateReference, ComposerKt.extractMovableContentAtCurrent((ControlledComposition) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0)), movableContentStateReference, slotWriter, null), applier);
+            MovableContentStateReference movableContentStateReference = (MovableContentStateReference) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(2));
+            ((CompositionContext) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1))).movableContentStateReleased$runtime(movableContentStateReference, ComposerKt.extractMovableContentAtCurrent((ControlledComposition) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0)), movableContentStateReference, slotWriter, null), applier);
         }
     }
 
@@ -1325,26 +1325,26 @@ public abstract class Operation {
         }
 
         /* renamed from: getChanges-HpuvwBQ  reason: not valid java name */
-        public final int m3882getChangesHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(0);
+        public final int m4612getChangesHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(0);
         }
 
         /* renamed from: getEffectiveNodeIndex-HpuvwBQ  reason: not valid java name */
-        public final int m3883getEffectiveNodeIndexHpuvwBQ() {
-            return ObjectParameter.m3905constructorimpl(1);
+        public final int m4613getEffectiveNodeIndexHpuvwBQ() {
+            return ObjectParameter.m4635constructorimpl(1);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         /* renamed from: objectParamName-31yXWZQ */
-        public String mo3879objectParamName31yXWZQ(int i) {
-            return ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(0)) ? "changes" : ObjectParameter.m3907equalsimpl0(i, ObjectParameter.m3905constructorimpl(1)) ? "effectiveNodeIndex" : super.mo3879objectParamName31yXWZQ(i);
+        public String mo4609objectParamName31yXWZQ(int i) {
+            return ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(0)) ? "changes" : ObjectParameter.m4637equalsimpl0(i, ObjectParameter.m4635constructorimpl(1)) ? "effectiveNodeIndex" : super.mo4609objectParamName31yXWZQ(i);
         }
 
         @Override // androidx.compose.runtime.changelist.Operation
         protected void execute(OperationArgContainer operationArgContainer, Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
-            IntRef intRef = (IntRef) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(1));
+            IntRef intRef = (IntRef) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(1));
             int element = intRef != null ? intRef.getElement() : 0;
-            ChangeList changeList = (ChangeList) operationArgContainer.mo3926getObject31yXWZQ(ObjectParameter.m3905constructorimpl(0));
+            ChangeList changeList = (ChangeList) operationArgContainer.mo4656getObject31yXWZQ(ObjectParameter.m4635constructorimpl(0));
             if (element > 0) {
                 applier = new OffsetApplier(applier, element);
             }
@@ -1399,7 +1399,7 @@ public abstract class Operation {
             this.intParams = arrayList;
             ArrayList arrayList2 = new ArrayList(i2);
             for (int i4 = 0; i4 < i2; i4++) {
-                arrayList2.add(ObjectParameter.m3904boximpl(ObjectParameter.m3905constructorimpl(i4)));
+                arrayList2.add(ObjectParameter.m4634boximpl(ObjectParameter.m4635constructorimpl(i4)));
             }
             this.objParams = arrayList2;
         }

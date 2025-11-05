@@ -19,7 +19,7 @@ public final class KeyboardOptions {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
     private static final KeyboardOptions Default = new KeyboardOptions(0, (Boolean) null, 0, 0, (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 127, (DefaultConstructorMarker) null);
-    private static final KeyboardOptions SecureTextField = new KeyboardOptions(0, (Boolean) false, KeyboardType.Companion.m6967getPasswordPjHm6EE(), 0, (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 121, (DefaultConstructorMarker) null);
+    private static final KeyboardOptions SecureTextField = new KeyboardOptions(0, (Boolean) false, KeyboardType.Companion.m7698getPasswordPjHm6EE(), 0, (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 121, (DefaultConstructorMarker) null);
     private final Boolean autoCorrectEnabled;
     private final int capitalization;
     private final LocaleList hintLocales;
@@ -66,7 +66,7 @@ public final class KeyboardOptions {
     }
 
     public /* synthetic */ KeyboardOptions(int i, Boolean bool, int i2, int i3, PlatformImeOptions platformImeOptions, Boolean bool2, LocaleList localeList, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? KeyboardCapitalization.Companion.m6943getUnspecifiedIUNYP9k() : i, (i4 & 2) != 0 ? null : bool, (i4 & 4) != 0 ? KeyboardType.Companion.m6970getUnspecifiedPjHm6EE() : i2, (i4 & 8) != 0 ? ImeAction.Companion.m6916getUnspecifiedeUduSuo() : i3, (i4 & 16) != 0 ? null : platformImeOptions, (i4 & 32) != 0 ? null : bool2, (i4 & 64) == 0 ? localeList : null, (DefaultConstructorMarker) null);
+        this((i4 & 1) != 0 ? KeyboardCapitalization.Companion.m7674getUnspecifiedIUNYP9k() : i, (i4 & 2) != 0 ? null : bool, (i4 & 4) != 0 ? KeyboardType.Companion.m7701getUnspecifiedPjHm6EE() : i2, (i4 & 8) != 0 ? ImeAction.Companion.m7647getUnspecifiedeUduSuo() : i3, (i4 & 16) != 0 ? null : platformImeOptions, (i4 & 32) != 0 ? null : bool2, (i4 & 64) == 0 ? localeList : null, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: getCapitalization-IUNYP9k  reason: not valid java name */
@@ -127,7 +127,7 @@ public final class KeyboardOptions {
     }
 
     public /* synthetic */ KeyboardOptions(int i, boolean z, int i2, int i3, PlatformImeOptions platformImeOptions, Boolean bool, LocaleList localeList, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? KeyboardCapitalization.Companion.m6943getUnspecifiedIUNYP9k() : i, z, (i4 & 4) != 0 ? KeyboardType.Companion.m6970getUnspecifiedPjHm6EE() : i2, (i4 & 8) != 0 ? ImeAction.Companion.m6916getUnspecifiedeUduSuo() : i3, (i4 & 16) != 0 ? null : platformImeOptions, (i4 & 32) != 0 ? null : bool, (i4 & 64) != 0 ? null : localeList, (DefaultConstructorMarker) null);
+        this((i4 & 1) != 0 ? KeyboardCapitalization.Companion.m7674getUnspecifiedIUNYP9k() : i, z, (i4 & 4) != 0 ? KeyboardType.Companion.m7701getUnspecifiedPjHm6EE() : i2, (i4 & 8) != 0 ? ImeAction.Companion.m7647getUnspecifiedeUduSuo() : i3, (i4 & 16) != 0 ? null : platformImeOptions, (i4 & 32) != 0 ? null : bool, (i4 & 64) != 0 ? null : localeList, (DefaultConstructorMarker) null);
     }
 
     private KeyboardOptions(int i, boolean z, int i2, int i3, PlatformImeOptions platformImeOptions, Boolean bool, LocaleList localeList) {
@@ -135,7 +135,7 @@ public final class KeyboardOptions {
     }
 
     public /* synthetic */ KeyboardOptions(int i, boolean z, int i2, int i3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? KeyboardCapitalization.Companion.m6943getUnspecifiedIUNYP9k() : i, (i4 & 2) != 0 ? Default.getAutoCorrectOrDefault() : z, (i4 & 4) != 0 ? KeyboardType.Companion.m6970getUnspecifiedPjHm6EE() : i2, (i4 & 8) != 0 ? ImeAction.Companion.m6908getDefaulteUduSuo() : i3, (DefaultConstructorMarker) null);
+        this((i4 & 1) != 0 ? KeyboardCapitalization.Companion.m7674getUnspecifiedIUNYP9k() : i, (i4 & 2) != 0 ? Default.getAutoCorrectOrDefault() : z, (i4 & 4) != 0 ? KeyboardType.Companion.m7701getUnspecifiedPjHm6EE() : i2, (i4 & 8) != 0 ? ImeAction.Companion.m7639getDefaulteUduSuo() : i3, (DefaultConstructorMarker) null);
     }
 
     private KeyboardOptions(int i, boolean z, int i2, int i3) {
@@ -143,7 +143,7 @@ public final class KeyboardOptions {
     }
 
     public /* synthetic */ KeyboardOptions(int i, boolean z, int i2, int i3, PlatformImeOptions platformImeOptions, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? KeyboardCapitalization.Companion.m6941getNoneIUNYP9k() : i, (i4 & 2) != 0 ? Default.getAutoCorrectOrDefault() : z, (i4 & 4) != 0 ? KeyboardType.Companion.m6969getTextPjHm6EE() : i2, (i4 & 8) != 0 ? ImeAction.Companion.m6908getDefaulteUduSuo() : i3, (i4 & 16) != 0 ? null : platformImeOptions, (DefaultConstructorMarker) null);
+        this((i4 & 1) != 0 ? KeyboardCapitalization.Companion.m7672getNoneIUNYP9k() : i, (i4 & 2) != 0 ? Default.getAutoCorrectOrDefault() : z, (i4 & 4) != 0 ? KeyboardType.Companion.m7700getTextPjHm6EE() : i2, (i4 & 8) != 0 ? ImeAction.Companion.m7639getDefaulteUduSuo() : i3, (i4 & 16) != 0 ? null : platformImeOptions, (DefaultConstructorMarker) null);
     }
 
     private KeyboardOptions(int i, boolean z, int i2, int i3, PlatformImeOptions platformImeOptions) {
@@ -172,29 +172,29 @@ public final class KeyboardOptions {
 
     /* renamed from: getCapitalizationOrDefault-IUNYP9k  reason: not valid java name */
     private final int m1276getCapitalizationOrDefaultIUNYP9k() {
-        KeyboardCapitalization m6928boximpl = KeyboardCapitalization.m6928boximpl(this.capitalization);
-        if (KeyboardCapitalization.m6931equalsimpl0(m6928boximpl.m6934unboximpl(), KeyboardCapitalization.Companion.m6943getUnspecifiedIUNYP9k())) {
-            m6928boximpl = null;
+        KeyboardCapitalization m7659boximpl = KeyboardCapitalization.m7659boximpl(this.capitalization);
+        if (KeyboardCapitalization.m7662equalsimpl0(m7659boximpl.m7665unboximpl(), KeyboardCapitalization.Companion.m7674getUnspecifiedIUNYP9k())) {
+            m7659boximpl = null;
         }
-        return m6928boximpl != null ? m6928boximpl.m6934unboximpl() : KeyboardCapitalization.Companion.m6941getNoneIUNYP9k();
+        return m7659boximpl != null ? m7659boximpl.m7665unboximpl() : KeyboardCapitalization.Companion.m7672getNoneIUNYP9k();
     }
 
     /* renamed from: getKeyboardTypeOrDefault-PjHm6EE  reason: not valid java name */
     private final int m1277getKeyboardTypeOrDefaultPjHm6EE() {
-        KeyboardType m6945boximpl = KeyboardType.m6945boximpl(this.keyboardType);
-        if (KeyboardType.m6948equalsimpl0(m6945boximpl.m6951unboximpl(), KeyboardType.Companion.m6970getUnspecifiedPjHm6EE())) {
-            m6945boximpl = null;
+        KeyboardType m7676boximpl = KeyboardType.m7676boximpl(this.keyboardType);
+        if (KeyboardType.m7679equalsimpl0(m7676boximpl.m7682unboximpl(), KeyboardType.Companion.m7701getUnspecifiedPjHm6EE())) {
+            m7676boximpl = null;
         }
-        return m6945boximpl != null ? m6945boximpl.m6951unboximpl() : KeyboardType.Companion.m6969getTextPjHm6EE();
+        return m7676boximpl != null ? m7676boximpl.m7682unboximpl() : KeyboardType.Companion.m7700getTextPjHm6EE();
     }
 
     /* renamed from: getImeActionOrDefault-eUduSuo$foundation_release  reason: not valid java name */
     public final int m1284getImeActionOrDefaulteUduSuo$foundation_release() {
-        ImeAction m6892boximpl = ImeAction.m6892boximpl(this.imeAction);
-        if (ImeAction.m6895equalsimpl0(m6892boximpl.m6898unboximpl(), ImeAction.Companion.m6916getUnspecifiedeUduSuo())) {
-            m6892boximpl = null;
+        ImeAction m7623boximpl = ImeAction.m7623boximpl(this.imeAction);
+        if (ImeAction.m7626equalsimpl0(m7623boximpl.m7629unboximpl(), ImeAction.Companion.m7647getUnspecifiedeUduSuo())) {
+            m7623boximpl = null;
         }
-        return m6892boximpl != null ? m6892boximpl.m6898unboximpl() : ImeAction.Companion.m6908getDefaulteUduSuo();
+        return m7623boximpl != null ? m7623boximpl.m7629unboximpl() : ImeAction.Companion.m7639getDefaulteUduSuo();
     }
 
     public final boolean getShowKeyboardOnFocusOrDefault$foundation_release() {
@@ -211,7 +211,7 @@ public final class KeyboardOptions {
     }
 
     private final boolean isCompletelyUnspecified() {
-        return KeyboardCapitalization.m6931equalsimpl0(this.capitalization, KeyboardCapitalization.Companion.m6943getUnspecifiedIUNYP9k()) && this.autoCorrectEnabled == null && KeyboardType.m6948equalsimpl0(this.keyboardType, KeyboardType.Companion.m6970getUnspecifiedPjHm6EE()) && ImeAction.m6895equalsimpl0(this.imeAction, ImeAction.Companion.m6916getUnspecifiedeUduSuo()) && this.platformImeOptions == null && this.showKeyboardOnFocus == null && this.hintLocales == null;
+        return KeyboardCapitalization.m7662equalsimpl0(this.capitalization, KeyboardCapitalization.Companion.m7674getUnspecifiedIUNYP9k()) && this.autoCorrectEnabled == null && KeyboardType.m7679equalsimpl0(this.keyboardType, KeyboardType.Companion.m7701getUnspecifiedPjHm6EE()) && ImeAction.m7626equalsimpl0(this.imeAction, ImeAction.Companion.m7647getUnspecifiedeUduSuo()) && this.platformImeOptions == null && this.showKeyboardOnFocus == null && this.hintLocales == null;
     }
 
     public static /* synthetic */ ImeOptions toImeOptions$foundation_release$default(KeyboardOptions keyboardOptions, boolean z, int i, Object obj) {
@@ -373,15 +373,15 @@ public final class KeyboardOptions {
         }
         if (obj instanceof KeyboardOptions) {
             KeyboardOptions keyboardOptions = (KeyboardOptions) obj;
-            return KeyboardCapitalization.m6931equalsimpl0(this.capitalization, keyboardOptions.capitalization) && Intrinsics.areEqual(this.autoCorrectEnabled, keyboardOptions.autoCorrectEnabled) && KeyboardType.m6948equalsimpl0(this.keyboardType, keyboardOptions.keyboardType) && ImeAction.m6895equalsimpl0(this.imeAction, keyboardOptions.imeAction) && Intrinsics.areEqual(this.platformImeOptions, keyboardOptions.platformImeOptions) && Intrinsics.areEqual(this.showKeyboardOnFocus, keyboardOptions.showKeyboardOnFocus) && Intrinsics.areEqual(this.hintLocales, keyboardOptions.hintLocales);
+            return KeyboardCapitalization.m7662equalsimpl0(this.capitalization, keyboardOptions.capitalization) && Intrinsics.areEqual(this.autoCorrectEnabled, keyboardOptions.autoCorrectEnabled) && KeyboardType.m7679equalsimpl0(this.keyboardType, keyboardOptions.keyboardType) && ImeAction.m7626equalsimpl0(this.imeAction, keyboardOptions.imeAction) && Intrinsics.areEqual(this.platformImeOptions, keyboardOptions.platformImeOptions) && Intrinsics.areEqual(this.showKeyboardOnFocus, keyboardOptions.showKeyboardOnFocus) && Intrinsics.areEqual(this.hintLocales, keyboardOptions.hintLocales);
         }
         return false;
     }
 
     public int hashCode() {
-        int m6932hashCodeimpl = KeyboardCapitalization.m6932hashCodeimpl(this.capitalization) * 31;
+        int m7663hashCodeimpl = KeyboardCapitalization.m7663hashCodeimpl(this.capitalization) * 31;
         Boolean bool = this.autoCorrectEnabled;
-        int hashCode = (((((m6932hashCodeimpl + (bool != null ? bool.hashCode() : 0)) * 31) + KeyboardType.m6949hashCodeimpl(this.keyboardType)) * 31) + ImeAction.m6896hashCodeimpl(this.imeAction)) * 31;
+        int hashCode = (((((m7663hashCodeimpl + (bool != null ? bool.hashCode() : 0)) * 31) + KeyboardType.m7680hashCodeimpl(this.keyboardType)) * 31) + ImeAction.m7627hashCodeimpl(this.imeAction)) * 31;
         PlatformImeOptions platformImeOptions = this.platformImeOptions;
         int hashCode2 = (hashCode + (platformImeOptions != null ? platformImeOptions.hashCode() : 0)) * 31;
         Boolean bool2 = this.showKeyboardOnFocus;
@@ -391,7 +391,7 @@ public final class KeyboardOptions {
     }
 
     public String toString() {
-        return "KeyboardOptions(capitalization=" + ((Object) KeyboardCapitalization.m6933toStringimpl(this.capitalization)) + ", autoCorrectEnabled=" + this.autoCorrectEnabled + ", keyboardType=" + ((Object) KeyboardType.m6950toStringimpl(this.keyboardType)) + ", imeAction=" + ((Object) ImeAction.m6897toStringimpl(this.imeAction)) + ", platformImeOptions=" + this.platformImeOptions + "showKeyboardOnFocus=" + this.showKeyboardOnFocus + ", hintLocales=" + this.hintLocales + ')';
+        return "KeyboardOptions(capitalization=" + ((Object) KeyboardCapitalization.m7664toStringimpl(this.capitalization)) + ", autoCorrectEnabled=" + this.autoCorrectEnabled + ", keyboardType=" + ((Object) KeyboardType.m7681toStringimpl(this.keyboardType)) + ", imeAction=" + ((Object) ImeAction.m7628toStringimpl(this.imeAction)) + ", platformImeOptions=" + this.platformImeOptions + "showKeyboardOnFocus=" + this.showKeyboardOnFocus + ", hintLocales=" + this.hintLocales + ')';
     }
 
     public final KeyboardOptions merge(KeyboardOptions keyboardOptions) {
@@ -406,24 +406,24 @@ public final class KeyboardOptions {
         if (isCompletelyUnspecified()) {
             return keyboardOptions;
         }
-        KeyboardCapitalization m6928boximpl = KeyboardCapitalization.m6928boximpl(this.capitalization);
-        if (KeyboardCapitalization.m6931equalsimpl0(m6928boximpl.m6934unboximpl(), KeyboardCapitalization.Companion.m6943getUnspecifiedIUNYP9k())) {
-            m6928boximpl = null;
+        KeyboardCapitalization m7659boximpl = KeyboardCapitalization.m7659boximpl(this.capitalization);
+        if (KeyboardCapitalization.m7662equalsimpl0(m7659boximpl.m7665unboximpl(), KeyboardCapitalization.Companion.m7674getUnspecifiedIUNYP9k())) {
+            m7659boximpl = null;
         }
-        int m6934unboximpl = m6928boximpl != null ? m6928boximpl.m6934unboximpl() : keyboardOptions.capitalization;
+        int m7665unboximpl = m7659boximpl != null ? m7659boximpl.m7665unboximpl() : keyboardOptions.capitalization;
         Boolean bool = this.autoCorrectEnabled;
         if (bool == null) {
             bool = keyboardOptions.autoCorrectEnabled;
         }
         Boolean bool2 = bool;
-        KeyboardType m6945boximpl = KeyboardType.m6945boximpl(this.keyboardType);
-        if (KeyboardType.m6948equalsimpl0(m6945boximpl.m6951unboximpl(), KeyboardType.Companion.m6970getUnspecifiedPjHm6EE())) {
-            m6945boximpl = null;
+        KeyboardType m7676boximpl = KeyboardType.m7676boximpl(this.keyboardType);
+        if (KeyboardType.m7679equalsimpl0(m7676boximpl.m7682unboximpl(), KeyboardType.Companion.m7701getUnspecifiedPjHm6EE())) {
+            m7676boximpl = null;
         }
-        int m6951unboximpl = m6945boximpl != null ? m6945boximpl.m6951unboximpl() : keyboardOptions.keyboardType;
-        ImeAction m6892boximpl = ImeAction.m6892boximpl(this.imeAction);
-        ImeAction imeAction = ImeAction.m6895equalsimpl0(m6892boximpl.m6898unboximpl(), ImeAction.Companion.m6916getUnspecifiedeUduSuo()) ? null : m6892boximpl;
-        int m6898unboximpl = imeAction != null ? imeAction.m6898unboximpl() : keyboardOptions.imeAction;
+        int m7682unboximpl = m7676boximpl != null ? m7676boximpl.m7682unboximpl() : keyboardOptions.keyboardType;
+        ImeAction m7623boximpl = ImeAction.m7623boximpl(this.imeAction);
+        ImeAction imeAction = ImeAction.m7626equalsimpl0(m7623boximpl.m7629unboximpl(), ImeAction.Companion.m7647getUnspecifiedeUduSuo()) ? null : m7623boximpl;
+        int m7629unboximpl = imeAction != null ? imeAction.m7629unboximpl() : keyboardOptions.imeAction;
         PlatformImeOptions platformImeOptions = this.platformImeOptions;
         if (platformImeOptions == null) {
             platformImeOptions = keyboardOptions.platformImeOptions;
@@ -438,6 +438,6 @@ public final class KeyboardOptions {
         if (localeList == null) {
             localeList = keyboardOptions.hintLocales;
         }
-        return new KeyboardOptions(m6934unboximpl, bool2, m6951unboximpl, m6898unboximpl, platformImeOptions2, bool4, localeList, (DefaultConstructorMarker) null);
+        return new KeyboardOptions(m7665unboximpl, bool2, m7682unboximpl, m7629unboximpl, platformImeOptions2, bool4, localeList, (DefaultConstructorMarker) null);
     }
 }

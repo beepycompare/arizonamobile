@@ -1,6 +1,6 @@
 package androidx.compose.material3;
 
-import androidx.compose.material3.internal.TextFieldImplKt;
+import androidx.compose.material3.internal.LayoutUtilKt;
 import androidx.compose.ui.layout.AlignmentLineKt;
 import androidx.compose.ui.layout.IntrinsicMeasurable;
 import androidx.compose.ui.layout.IntrinsicMeasureScope;
@@ -18,15 +18,14 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ListItem.kt */
-@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002JV\u0010\u0003\u001a\u00020\u0004*\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u00072\u0006\u0010\t\u001a\u00020\u00042,\u0010\n\u001a(\u0012\u0004\u0012\u00020\b\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\f\u0012\b\b\r\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\u00040\u000b¢\u0006\u0002\b\u000eH\u0002JV\u0010\u000f\u001a\u00020\u0004*\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u00072\u0006\u0010\u0010\u001a\u00020\u00042,\u0010\n\u001a(\u0012\u0004\u0012\u00020\b\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\f\u0012\b\b\r\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u00040\u000b¢\u0006\u0002\b\u000eH\u0002J(\u0010\u0011\u001a\u00020\u0004*\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u00072\u0006\u0010\t\u001a\u00020\u0004H\u0016J(\u0010\u0012\u001a\u00020\u0004*\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u00072\u0006\u0010\u0010\u001a\u00020\u0004H\u0016J2\u0010\u0013\u001a\u00020\u0014*\u00020\u00152\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00070\u00072\u0006\u0010\u0017\u001a\u00020\u0018H\u0016ø\u0001\u0000¢\u0006\u0004\b\u0019\u0010\u001aJ(\u0010\u001b\u001a\u00020\u0004*\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u00072\u0006\u0010\t\u001a\u00020\u0004H\u0016J(\u0010\u001c\u001a\u00020\u0004*\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u00072\u0006\u0010\u0010\u001a\u00020\u0004H\u0016\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001d"}, d2 = {"Landroidx/compose/material3/ListItemMeasurePolicy;", "Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "()V", "calculateIntrinsicHeight", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "width", "intrinsicMeasure", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "Lkotlin/ExtensionFunctionType;", "calculateIntrinsicWidth", "height", "maxIntrinsicHeight", "maxIntrinsicWidth", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicHeight", "minIntrinsicWidth", "material3_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J/\u0010\u0004\u001a\u00020\u0005*\u00020\u00062\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\t0\b0\b2\u0006\u0010\n\u001a\u00020\u000bH\u0016¢\u0006\u0004\b\f\u0010\rJ(\u0010\u000e\u001a\u00020\u000f*\u00020\u00102\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\b0\b2\u0006\u0010\u0012\u001a\u00020\u000fH\u0016J(\u0010\u0013\u001a\u00020\u000f*\u00020\u00102\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\b0\b2\u0006\u0010\u0014\u001a\u00020\u000fH\u0016J(\u0010\u0015\u001a\u00020\u000f*\u00020\u00102\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\b0\b2\u0006\u0010\u0012\u001a\u00020\u000fH\u0016J(\u0010\u0016\u001a\u00020\u000f*\u00020\u00102\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\b0\b2\u0006\u0010\u0014\u001a\u00020\u000fH\u0016JV\u0010\u0017\u001a\u00020\u000f*\u00020\u00102\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\b0\b2\u0006\u0010\u0014\u001a\u00020\u000f2,\u0010\u0018\u001a(\u0012\u0004\u0012\u00020\u0011\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u0014\u0012\u0004\u0012\u00020\u000f0\u0019¢\u0006\u0002\b\u001cH\u0002JV\u0010\u001d\u001a\u00020\u000f*\u00020\u00102\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\b0\b2\u0006\u0010\u0012\u001a\u00020\u000f2,\u0010\u0018\u001a(\u0012\u0004\u0012\u00020\u0011\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u000f0\u0019¢\u0006\u0002\b\u001cH\u0002¨\u0006\u001e"}, d2 = {"Landroidx/compose/material3/ListItemMeasurePolicy;", "Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "<init>", "()V", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;", "maxIntrinsicHeight", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "width", "maxIntrinsicWidth", "height", "minIntrinsicHeight", "minIntrinsicWidth", "calculateIntrinsicWidth", "intrinsicMeasure", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "Lkotlin/ExtensionFunctionType;", "calculateIntrinsicHeight", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ListItemMeasurePolicy implements MultiContentMeasurePolicy {
     @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo780measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
-        int subtractConstraintSafely;
         boolean isSupportingMultilineHeuristic;
-        float m2324verticalPaddingyh95HIg;
+        float m2529verticalPaddingyh95HIg;
         long j2;
         Placeable placeable;
         long j3;
@@ -34,70 +33,70 @@ public final class ListItemMeasurePolicy implements MultiContentMeasurePolicy {
         Placeable placeable3;
         Placeable placeable4;
         Placeable placeable5;
-        float m2324verticalPaddingyh95HIg2;
-        int m2323calculateWidthyeHjK3Y;
-        int m2322calculateHeightN4Jib3Y;
+        float m2529verticalPaddingyh95HIg2;
+        int m2528calculateWidthyeHjK3Y;
+        int m2527calculateHeightN4Jib3Y;
         MeasureResult place;
         List<? extends Measurable> list2 = list.get(0);
         List<? extends Measurable> list3 = list.get(1);
         List<? extends Measurable> list4 = list.get(2);
         List<? extends Measurable> list5 = list.get(3);
         List<? extends Measurable> list6 = list.get(4);
-        long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        long m7938copyZbe2FdA$default = Constraints.m7938copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         float listItemStartPadding = ListItemKt.getListItemStartPadding();
         float listItemEndPadding = ListItemKt.getListItemEndPadding();
-        int i = measureScope.mo423roundToPx0680j_4(Dp.m7264constructorimpl(listItemStartPadding + listItemEndPadding));
+        int i = measureScope.mo423roundToPx0680j_4(Dp.m7995constructorimpl(listItemStartPadding + listItemEndPadding));
         Measurable measurable = (Measurable) CollectionsKt.firstOrNull((List<? extends Object>) list5);
-        int minIntrinsicWidth = measurable != null ? measurable.minIntrinsicWidth(Constraints.m7216getMaxHeightimpl(j)) : 0;
+        int minIntrinsicWidth = measurable != null ? measurable.minIntrinsicWidth(Constraints.m7947getMaxHeightimpl(j)) : 0;
         Measurable measurable2 = (Measurable) CollectionsKt.firstOrNull((List<? extends Object>) list6);
-        subtractConstraintSafely = ListItemKt.subtractConstraintSafely(Constraints.m7217getMaxWidthimpl(m7207copyZbe2FdA$default), minIntrinsicWidth + (measurable2 != null ? measurable2.minIntrinsicWidth(Constraints.m7216getMaxHeightimpl(j)) : 0) + i);
+        int subtractConstraintSafely = LayoutUtilKt.subtractConstraintSafely(Constraints.m7948getMaxWidthimpl(m7938copyZbe2FdA$default), minIntrinsicWidth + (measurable2 != null ? measurable2.minIntrinsicWidth(Constraints.m7947getMaxHeightimpl(j)) : 0) + i);
         Measurable measurable3 = (Measurable) CollectionsKt.firstOrNull((List<? extends Object>) list4);
         isSupportingMultilineHeuristic = ListItemKt.isSupportingMultilineHeuristic(measureScope, measurable3 != null ? measurable3.minIntrinsicHeight(subtractConstraintSafely) : 0);
-        m2324verticalPaddingyh95HIg = ListItemKt.m2324verticalPaddingyh95HIg(ListItemType.Companion.m2337invokeZLSjz4$material3_release(CollectionsKt.firstOrNull((List<? extends Object>) list3) != null, CollectionsKt.firstOrNull((List<? extends Object>) list4) != null, isSupportingMultilineHeuristic));
+        m2529verticalPaddingyh95HIg = ListItemKt.m2529verticalPaddingyh95HIg(ListItemType.Companion.m2542invokeZLSjz4$material3(CollectionsKt.firstOrNull((List<? extends Object>) list3) != null, CollectionsKt.firstOrNull((List<? extends Object>) list4) != null, isSupportingMultilineHeuristic));
         float f = 2;
-        long m7236offsetNN6EwU = ConstraintsKt.m7236offsetNN6EwU(m7207copyZbe2FdA$default, -i, -measureScope.mo423roundToPx0680j_4(Dp.m7264constructorimpl(m2324verticalPaddingyh95HIg * f)));
+        long m7967offsetNN6EwU = ConstraintsKt.m7967offsetNN6EwU(m7938copyZbe2FdA$default, -i, -measureScope.mo423roundToPx0680j_4(Dp.m7995constructorimpl(m2529verticalPaddingyh95HIg * f)));
         Measurable measurable4 = (Measurable) CollectionsKt.firstOrNull((List<? extends Object>) list5);
-        Placeable mo5967measureBRTryo0 = measurable4 != null ? measurable4.mo5967measureBRTryo0(m7236offsetNN6EwU) : null;
-        int widthOrZero = TextFieldImplKt.widthOrZero(mo5967measureBRTryo0);
+        Placeable mo6697measureBRTryo0 = measurable4 != null ? measurable4.mo6697measureBRTryo0(m7967offsetNN6EwU) : null;
+        int widthOrZero = LayoutUtilKt.getWidthOrZero(mo6697measureBRTryo0);
         Measurable measurable5 = (Measurable) CollectionsKt.firstOrNull((List<? extends Object>) list6);
         if (measurable5 != null) {
-            j2 = m7236offsetNN6EwU;
-            placeable = measurable5.mo5967measureBRTryo0(ConstraintsKt.m7237offsetNN6EwU$default(j2, -widthOrZero, 0, 2, null));
+            j2 = m7967offsetNN6EwU;
+            placeable = measurable5.mo6697measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU$default(j2, -widthOrZero, 0, 2, null));
         } else {
-            j2 = m7236offsetNN6EwU;
+            j2 = m7967offsetNN6EwU;
             placeable = null;
         }
-        int widthOrZero2 = widthOrZero + TextFieldImplKt.widthOrZero(placeable);
+        int widthOrZero2 = widthOrZero + LayoutUtilKt.getWidthOrZero(placeable);
         Measurable measurable6 = (Measurable) CollectionsKt.firstOrNull((List<? extends Object>) list2);
         if (measurable6 != null) {
             j3 = j2;
-            placeable2 = measurable6.mo5967measureBRTryo0(ConstraintsKt.m7237offsetNN6EwU$default(j2, -widthOrZero2, 0, 2, null));
+            placeable2 = measurable6.mo6697measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU$default(j2, -widthOrZero2, 0, 2, null));
         } else {
             j3 = j2;
             placeable2 = null;
         }
-        int heightOrZero = TextFieldImplKt.heightOrZero(placeable2);
+        int heightOrZero = LayoutUtilKt.getHeightOrZero(placeable2);
         Measurable measurable7 = (Measurable) CollectionsKt.firstOrNull((List<? extends Object>) list4);
         if (measurable7 != null) {
             placeable3 = placeable;
-            placeable4 = mo5967measureBRTryo0;
-            placeable5 = measurable7.mo5967measureBRTryo0(ConstraintsKt.m7236offsetNN6EwU(j3, -widthOrZero2, -heightOrZero));
+            placeable4 = mo6697measureBRTryo0;
+            placeable5 = measurable7.mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(j3, -widthOrZero2, -heightOrZero));
         } else {
             placeable3 = placeable;
-            placeable4 = mo5967measureBRTryo0;
+            placeable4 = mo6697measureBRTryo0;
             placeable5 = null;
         }
-        int heightOrZero2 = heightOrZero + TextFieldImplKt.heightOrZero(placeable5);
+        int heightOrZero2 = heightOrZero + LayoutUtilKt.getHeightOrZero(placeable5);
         boolean z = (placeable5 == null || placeable5.get(AlignmentLineKt.getFirstBaseline()) == placeable5.get(AlignmentLineKt.getLastBaseline())) ? false : true;
         Measurable measurable8 = (Measurable) CollectionsKt.firstOrNull((List<? extends Object>) list3);
-        Placeable mo5967measureBRTryo02 = measurable8 != null ? measurable8.mo5967measureBRTryo0(ConstraintsKt.m7236offsetNN6EwU(j3, -widthOrZero2, -heightOrZero2)) : null;
-        int m2337invokeZLSjz4$material3_release = ListItemType.Companion.m2337invokeZLSjz4$material3_release(mo5967measureBRTryo02 != null, placeable5 != null, z);
-        m2324verticalPaddingyh95HIg2 = ListItemKt.m2324verticalPaddingyh95HIg(m2337invokeZLSjz4$material3_release);
-        float m7264constructorimpl = Dp.m7264constructorimpl(f * m2324verticalPaddingyh95HIg2);
+        Placeable mo6697measureBRTryo02 = measurable8 != null ? measurable8.mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(j3, -widthOrZero2, -heightOrZero2)) : null;
+        int m2542invokeZLSjz4$material3 = ListItemType.Companion.m2542invokeZLSjz4$material3(mo6697measureBRTryo02 != null, placeable5 != null, z);
+        m2529verticalPaddingyh95HIg2 = ListItemKt.m2529verticalPaddingyh95HIg(m2542invokeZLSjz4$material3);
+        float m7995constructorimpl = Dp.m7995constructorimpl(f * m2529verticalPaddingyh95HIg2);
         MeasureScope measureScope2 = measureScope;
-        m2323calculateWidthyeHjK3Y = ListItemKt.m2323calculateWidthyeHjK3Y(measureScope2, TextFieldImplKt.widthOrZero(placeable4), TextFieldImplKt.widthOrZero(placeable3), TextFieldImplKt.widthOrZero(placeable2), TextFieldImplKt.widthOrZero(mo5967measureBRTryo02), TextFieldImplKt.widthOrZero(placeable5), i, j);
-        m2322calculateHeightN4Jib3Y = ListItemKt.m2322calculateHeightN4Jib3Y(measureScope2, TextFieldImplKt.heightOrZero(placeable4), TextFieldImplKt.heightOrZero(placeable3), TextFieldImplKt.heightOrZero(placeable2), TextFieldImplKt.heightOrZero(mo5967measureBRTryo02), TextFieldImplKt.heightOrZero(placeable5), m2337invokeZLSjz4$material3_release, measureScope.mo423roundToPx0680j_4(m7264constructorimpl), j);
-        place = ListItemKt.place(measureScope, m2323calculateWidthyeHjK3Y, m2322calculateHeightN4Jib3Y, placeable4, placeable3, placeable2, mo5967measureBRTryo02, placeable5, ListItemType.m2329equalsimpl0(m2337invokeZLSjz4$material3_release, ListItemType.Companion.m2335getThreeLineAlXitO8()), measureScope.mo423roundToPx0680j_4(listItemStartPadding), measureScope.mo423roundToPx0680j_4(listItemEndPadding), measureScope.mo423roundToPx0680j_4(m2324verticalPaddingyh95HIg2));
+        m2528calculateWidthyeHjK3Y = ListItemKt.m2528calculateWidthyeHjK3Y(measureScope2, LayoutUtilKt.getWidthOrZero(placeable4), LayoutUtilKt.getWidthOrZero(placeable3), LayoutUtilKt.getWidthOrZero(placeable2), LayoutUtilKt.getWidthOrZero(mo6697measureBRTryo02), LayoutUtilKt.getWidthOrZero(placeable5), i, j);
+        m2527calculateHeightN4Jib3Y = ListItemKt.m2527calculateHeightN4Jib3Y(measureScope2, LayoutUtilKt.getHeightOrZero(placeable4), LayoutUtilKt.getHeightOrZero(placeable3), LayoutUtilKt.getHeightOrZero(placeable2), LayoutUtilKt.getHeightOrZero(mo6697measureBRTryo02), LayoutUtilKt.getHeightOrZero(placeable5), m2542invokeZLSjz4$material3, measureScope.mo423roundToPx0680j_4(m7995constructorimpl), j);
+        place = ListItemKt.place(measureScope, m2528calculateWidthyeHjK3Y, m2527calculateHeightN4Jib3Y, placeable4, placeable3, placeable2, mo6697measureBRTryo02, placeable5, ListItemType.m2534equalsimpl0(m2542invokeZLSjz4$material3, ListItemType.Companion.m2540getThreeLineAlXitO8()), measureScope.mo423roundToPx0680j_4(listItemStartPadding), measureScope.mo423roundToPx0680j_4(listItemEndPadding), measureScope.mo423roundToPx0680j_4(m2529verticalPaddingyh95HIg2));
         return place;
     }
 
@@ -122,7 +121,7 @@ public final class ListItemMeasurePolicy implements MultiContentMeasurePolicy {
     }
 
     private final int calculateIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends List<? extends IntrinsicMeasurable>> list, int i, Function2<? super IntrinsicMeasurable, ? super Integer, Integer> function2) {
-        int m2323calculateWidthyeHjK3Y;
+        int m2528calculateWidthyeHjK3Y;
         List<? extends IntrinsicMeasurable> list2 = list.get(0);
         List<? extends IntrinsicMeasurable> list3 = list.get(1);
         List<? extends IntrinsicMeasurable> list4 = list.get(2);
@@ -136,33 +135,32 @@ public final class ListItemMeasurePolicy implements MultiContentMeasurePolicy {
         IntrinsicMeasurable intrinsicMeasurable4 = (IntrinsicMeasurable) CollectionsKt.firstOrNull((List<? extends Object>) list3);
         int intValue4 = intrinsicMeasurable4 != null ? function2.invoke(intrinsicMeasurable4, Integer.valueOf(i)).intValue() : 0;
         IntrinsicMeasurable intrinsicMeasurable5 = (IntrinsicMeasurable) CollectionsKt.firstOrNull((List<? extends Object>) list4);
-        m2323calculateWidthyeHjK3Y = ListItemKt.m2323calculateWidthyeHjK3Y(intrinsicMeasureScope, intValue, intValue2, intValue3, intValue4, intrinsicMeasurable5 != null ? function2.invoke(intrinsicMeasurable5, Integer.valueOf(i)).intValue() : 0, intrinsicMeasureScope.mo423roundToPx0680j_4(Dp.m7264constructorimpl(ListItemKt.getListItemStartPadding() + ListItemKt.getListItemEndPadding())), ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null));
-        return m2323calculateWidthyeHjK3Y;
+        m2528calculateWidthyeHjK3Y = ListItemKt.m2528calculateWidthyeHjK3Y(intrinsicMeasureScope, intValue, intValue2, intValue3, intValue4, intrinsicMeasurable5 != null ? function2.invoke(intrinsicMeasurable5, Integer.valueOf(i)).intValue() : 0, intrinsicMeasureScope.mo423roundToPx0680j_4(Dp.m7995constructorimpl(ListItemKt.getListItemStartPadding() + ListItemKt.getListItemEndPadding())), ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null));
+        return m2528calculateWidthyeHjK3Y;
     }
 
     private final int calculateIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends List<? extends IntrinsicMeasurable>> list, int i, Function2<? super IntrinsicMeasurable, ? super Integer, Integer> function2) {
-        int subtractConstraintSafely;
         int i2;
         int i3;
         boolean isSupportingMultilineHeuristic;
-        float m2324verticalPaddingyh95HIg;
-        int m2322calculateHeightN4Jib3Y;
+        float m2529verticalPaddingyh95HIg;
+        int m2527calculateHeightN4Jib3Y;
         List<? extends IntrinsicMeasurable> list2 = list.get(0);
         List<? extends IntrinsicMeasurable> list3 = list.get(1);
         List<? extends IntrinsicMeasurable> list4 = list.get(2);
         List<? extends IntrinsicMeasurable> list5 = list.get(4);
-        subtractConstraintSafely = ListItemKt.subtractConstraintSafely(i, intrinsicMeasureScope.mo423roundToPx0680j_4(Dp.m7264constructorimpl(ListItemKt.getListItemStartPadding() + ListItemKt.getListItemEndPadding())));
+        int subtractConstraintSafely = LayoutUtilKt.subtractConstraintSafely(i, intrinsicMeasureScope.mo423roundToPx0680j_4(Dp.m7995constructorimpl(ListItemKt.getListItemStartPadding() + ListItemKt.getListItemEndPadding())));
         IntrinsicMeasurable intrinsicMeasurable = (IntrinsicMeasurable) CollectionsKt.firstOrNull((List<? extends Object>) list.get(3));
         if (intrinsicMeasurable != null) {
             i2 = function2.invoke(intrinsicMeasurable, Integer.valueOf(subtractConstraintSafely)).intValue();
-            subtractConstraintSafely = ListItemKt.subtractConstraintSafely(subtractConstraintSafely, intrinsicMeasurable.maxIntrinsicWidth(Integer.MAX_VALUE));
+            subtractConstraintSafely = LayoutUtilKt.subtractConstraintSafely(subtractConstraintSafely, intrinsicMeasurable.maxIntrinsicWidth(Integer.MAX_VALUE));
         } else {
             i2 = 0;
         }
         IntrinsicMeasurable intrinsicMeasurable2 = (IntrinsicMeasurable) CollectionsKt.firstOrNull((List<? extends Object>) list5);
         if (intrinsicMeasurable2 != null) {
             i3 = function2.invoke(intrinsicMeasurable2, Integer.valueOf(subtractConstraintSafely)).intValue();
-            subtractConstraintSafely = ListItemKt.subtractConstraintSafely(subtractConstraintSafely, intrinsicMeasurable2.maxIntrinsicWidth(Integer.MAX_VALUE));
+            subtractConstraintSafely = LayoutUtilKt.subtractConstraintSafely(subtractConstraintSafely, intrinsicMeasurable2.maxIntrinsicWidth(Integer.MAX_VALUE));
         } else {
             i3 = 0;
         }
@@ -173,11 +171,11 @@ public final class ListItemMeasurePolicy implements MultiContentMeasurePolicy {
         IntrinsicMeasurable intrinsicMeasurable5 = (IntrinsicMeasurable) CollectionsKt.firstOrNull((List<? extends Object>) list4);
         int intValue3 = intrinsicMeasurable5 != null ? function2.invoke(intrinsicMeasurable5, Integer.valueOf(subtractConstraintSafely)).intValue() : 0;
         isSupportingMultilineHeuristic = ListItemKt.isSupportingMultilineHeuristic(intrinsicMeasureScope, intValue3);
-        int m2337invokeZLSjz4$material3_release = ListItemType.Companion.m2337invokeZLSjz4$material3_release(intValue > 0, intValue3 > 0, isSupportingMultilineHeuristic);
-        m2324verticalPaddingyh95HIg = ListItemKt.m2324verticalPaddingyh95HIg(m2337invokeZLSjz4$material3_release);
+        int m2542invokeZLSjz4$material3 = ListItemType.Companion.m2542invokeZLSjz4$material3(intValue > 0, intValue3 > 0, isSupportingMultilineHeuristic);
+        m2529verticalPaddingyh95HIg = ListItemKt.m2529verticalPaddingyh95HIg(m2542invokeZLSjz4$material3);
         int i4 = intValue2;
         int i5 = intValue;
-        m2322calculateHeightN4Jib3Y = ListItemKt.m2322calculateHeightN4Jib3Y(intrinsicMeasureScope, i2, i3, i4, i5, intValue3, m2337invokeZLSjz4$material3_release, intrinsicMeasureScope.mo423roundToPx0680j_4(Dp.m7264constructorimpl(m2324verticalPaddingyh95HIg * 2)), ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null));
-        return m2322calculateHeightN4Jib3Y;
+        m2527calculateHeightN4Jib3Y = ListItemKt.m2527calculateHeightN4Jib3Y(intrinsicMeasureScope, i2, i3, i4, i5, intValue3, m2542invokeZLSjz4$material3, intrinsicMeasureScope.mo423roundToPx0680j_4(Dp.m7995constructorimpl(m2529verticalPaddingyh95HIg * 2)), ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null));
+        return m2527calculateHeightN4Jib3Y;
     }
 }

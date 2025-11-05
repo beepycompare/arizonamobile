@@ -42,11 +42,11 @@ public final class Pending {
         this.keyMap$delegate = LazyKt.lazy(new Function0<MultiValueMap<Object, KeyInfo>>() { // from class: androidx.compose.runtime.Pending$keyMap$2
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ MultiValueMap<Object, KeyInfo> invoke() {
-                return MultiValueMap.m3944boximpl(m3816invokefVlnmYg());
+                return MultiValueMap.m4674boximpl(m4546invokefVlnmYg());
             }
 
             /* renamed from: invoke-fVlnmYg  reason: not valid java name */
-            public final MutableScatterMap<Object, Object> m3816invokefVlnmYg() {
+            public final MutableScatterMap<Object, Object> m4546invokefVlnmYg() {
                 MutableScatterMap<Object, Object> multiMap;
                 Object joinedKey;
                 multiMap = ComposerKt.multiMap(Pending.this.getKeyInfos().size());
@@ -55,7 +55,7 @@ public final class Pending {
                 for (int i4 = 0; i4 < size2; i4++) {
                     KeyInfo keyInfo2 = pending.getKeyInfos().get(i4);
                     joinedKey = ComposerKt.getJoinedKey(keyInfo2);
-                    MultiValueMap.m3943addimpl(multiMap, joinedKey, keyInfo2);
+                    MultiValueMap.m4673addimpl(multiMap, joinedKey, keyInfo2);
                 }
                 return multiMap;
             }
@@ -79,12 +79,12 @@ public final class Pending {
     }
 
     /* renamed from: getKeyMap-fVlnmYg  reason: not valid java name */
-    public final MutableScatterMap<Object, Object> m3815getKeyMapfVlnmYg() {
-        return ((MultiValueMap) this.keyMap$delegate.getValue()).m3961unboximpl();
+    public final MutableScatterMap<Object, Object> m4545getKeyMapfVlnmYg() {
+        return ((MultiValueMap) this.keyMap$delegate.getValue()).m4691unboximpl();
     }
 
     public final KeyInfo getNext(int i, Object obj) {
-        return (KeyInfo) MultiValueMap.m3956removeFirstimpl(m3815getKeyMapfVlnmYg(), obj != null ? new JoinedKey(Integer.valueOf(i), obj) : Integer.valueOf(i));
+        return (KeyInfo) MultiValueMap.m4686removeFirstimpl(m4545getKeyMapfVlnmYg(), obj != null ? new JoinedKey(Integer.valueOf(i), obj) : Integer.valueOf(i));
     }
 
     public final boolean recordUsed(KeyInfo keyInfo) {

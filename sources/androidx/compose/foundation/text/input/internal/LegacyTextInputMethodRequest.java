@@ -60,7 +60,7 @@ public final class LegacyTextInputMethodRequest implements PlatformTextInputMeth
             return onImeActionPerformed$lambda$1;
         }
     };
-    private TextFieldValue state = new TextFieldValue("", TextRange.Companion.m6731getZerod9O1mEE(), (TextRange) null, 4, (DefaultConstructorMarker) null);
+    private TextFieldValue state = new TextFieldValue("", TextRange.Companion.m7462getZerod9O1mEE(), (TextRange) null, 4, (DefaultConstructorMarker) null);
     private ImeOptions imeOptions = ImeOptions.Companion.getDefault();
     private List<WeakReference<RecordingInputConnection>> ics = new ArrayList();
     private final Lazy baseInputConnection$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.foundation.text.input.internal.LegacyTextInputMethodRequest$$ExternalSyntheticLambda2
@@ -126,7 +126,7 @@ public final class LegacyTextInputMethodRequest implements PlatformTextInputMeth
 
     @Override // androidx.compose.ui.platform.PlatformTextInputMethodRequest
     public RecordingInputConnection createInputConnection(EditorInfo editorInfo) {
-        EditorInfo_androidKt.m1500updatepLxbY9I$default(editorInfo, this.state.getText(), this.state.m6977getSelectiond9O1mEE(), this.imeOptions, null, 8, null);
+        EditorInfo_androidKt.m1500updatepLxbY9I$default(editorInfo, this.state.getText(), this.state.m7708getSelectiond9O1mEE(), this.imeOptions, null, 8, null);
         LegacyPlatformTextInputServiceAdapter_androidKt.access$updateWithEmojiCompat(editorInfo);
         TextFieldValue textFieldValue = this.state;
         boolean autoCorrect = this.imeOptions.getAutoCorrect();
@@ -143,7 +143,7 @@ public final class LegacyTextInputMethodRequest implements PlatformTextInputMeth
             public void mo1528onImeActionKlQnJC8(int i) {
                 Function1 function1;
                 function1 = LegacyTextInputMethodRequest.this.onImeActionPerformed;
-                function1.invoke(ImeAction.m6892boximpl(i));
+                function1.invoke(ImeAction.m7623boximpl(i));
             }
 
             @Override // androidx.compose.foundation.text.input.internal.InputEventCallback2
@@ -182,7 +182,7 @@ public final class LegacyTextInputMethodRequest implements PlatformTextInputMeth
     }
 
     public final void updateState(TextFieldValue textFieldValue, TextFieldValue textFieldValue2) {
-        boolean z = (TextRange.m6719equalsimpl0(this.state.m6977getSelectiond9O1mEE(), textFieldValue2.m6977getSelectiond9O1mEE()) && Intrinsics.areEqual(this.state.m6976getCompositionMzsxiRA(), textFieldValue2.m6976getCompositionMzsxiRA())) ? false : true;
+        boolean z = (TextRange.m7450equalsimpl0(this.state.m7708getSelectiond9O1mEE(), textFieldValue2.m7708getSelectiond9O1mEE()) && Intrinsics.areEqual(this.state.m7707getCompositionMzsxiRA(), textFieldValue2.m7707getCompositionMzsxiRA())) ? false : true;
         this.state = textFieldValue2;
         int size = this.ics.size();
         for (int i = 0; i < size; i++) {
@@ -195,14 +195,14 @@ public final class LegacyTextInputMethodRequest implements PlatformTextInputMeth
         if (Intrinsics.areEqual(textFieldValue, textFieldValue2)) {
             if (z) {
                 InputMethodManager inputMethodManager = this.inputMethodManager;
-                int m6724getMinimpl = TextRange.m6724getMinimpl(textFieldValue2.m6977getSelectiond9O1mEE());
-                int m6723getMaximpl = TextRange.m6723getMaximpl(textFieldValue2.m6977getSelectiond9O1mEE());
-                TextRange m6976getCompositionMzsxiRA = this.state.m6976getCompositionMzsxiRA();
-                int m6724getMinimpl2 = m6976getCompositionMzsxiRA != null ? TextRange.m6724getMinimpl(m6976getCompositionMzsxiRA.m6730unboximpl()) : -1;
-                TextRange m6976getCompositionMzsxiRA2 = this.state.m6976getCompositionMzsxiRA();
-                inputMethodManager.updateSelection(m6724getMinimpl, m6723getMaximpl, m6724getMinimpl2, m6976getCompositionMzsxiRA2 != null ? TextRange.m6723getMaximpl(m6976getCompositionMzsxiRA2.m6730unboximpl()) : -1);
+                int m7455getMinimpl = TextRange.m7455getMinimpl(textFieldValue2.m7708getSelectiond9O1mEE());
+                int m7454getMaximpl = TextRange.m7454getMaximpl(textFieldValue2.m7708getSelectiond9O1mEE());
+                TextRange m7707getCompositionMzsxiRA = this.state.m7707getCompositionMzsxiRA();
+                int m7455getMinimpl2 = m7707getCompositionMzsxiRA != null ? TextRange.m7455getMinimpl(m7707getCompositionMzsxiRA.m7461unboximpl()) : -1;
+                TextRange m7707getCompositionMzsxiRA2 = this.state.m7707getCompositionMzsxiRA();
+                inputMethodManager.updateSelection(m7455getMinimpl, m7454getMaximpl, m7455getMinimpl2, m7707getCompositionMzsxiRA2 != null ? TextRange.m7454getMaximpl(m7707getCompositionMzsxiRA2.m7461unboximpl()) : -1);
             }
-        } else if (textFieldValue != null && (!Intrinsics.areEqual(textFieldValue.getText(), textFieldValue2.getText()) || (TextRange.m6719equalsimpl0(textFieldValue.m6977getSelectiond9O1mEE(), textFieldValue2.m6977getSelectiond9O1mEE()) && !Intrinsics.areEqual(textFieldValue.m6976getCompositionMzsxiRA(), textFieldValue2.m6976getCompositionMzsxiRA())))) {
+        } else if (textFieldValue != null && (!Intrinsics.areEqual(textFieldValue.getText(), textFieldValue2.getText()) || (TextRange.m7450equalsimpl0(textFieldValue.m7708getSelectiond9O1mEE(), textFieldValue2.m7708getSelectiond9O1mEE()) && !Intrinsics.areEqual(textFieldValue.m7707getCompositionMzsxiRA(), textFieldValue2.m7707getCompositionMzsxiRA())))) {
             restartInputImmediately();
         } else {
             int size2 = this.ics.size();

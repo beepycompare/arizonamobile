@@ -103,12 +103,12 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
                 ResultKt.throwOnFailure(obj);
                 pointerInputChange = (PointerInputChange) obj;
                 if (pointerInputChange != null) {
-                    this.$onDragStart.invoke(Offset.m4294boximpl(pointerInputChange.m5839getPositionF1C5BW0()));
-                    long m5837getIdJ3iCeTQ = pointerInputChange.m5837getIdJ3iCeTQ();
+                    this.$onDragStart.invoke(Offset.m5024boximpl(pointerInputChange.m6569getPositionF1C5BW0()));
+                    long m6567getIdJ3iCeTQ = pointerInputChange.m6567getIdJ3iCeTQ();
                     final Function2<PointerInputChange, Offset, Unit> function2 = this.$onDrag;
                     this.L$0 = awaitPointerEventScope;
                     this.label = 3;
-                    obj = DragGestureDetectorKt.m497dragjO51t88(awaitPointerEventScope, m5837getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
+                    obj = DragGestureDetectorKt.m497dragjO51t88(awaitPointerEventScope, m6567getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
                             Unit invokeSuspend$lambda$0;
@@ -130,7 +130,7 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
             }
             this.L$0 = awaitPointerEventScope;
             this.label = 2;
-            obj = DragGestureDetectorKt.m487awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m5837getIdJ3iCeTQ(), this);
+            obj = DragGestureDetectorKt.m487awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m6567getIdJ3iCeTQ(), this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -146,7 +146,7 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Function2 function2, PointerInputChange pointerInputChange) {
-        function2.invoke(pointerInputChange, Offset.m4294boximpl(PointerEventKt.positionChange(pointerInputChange)));
+        function2.invoke(pointerInputChange, Offset.m5024boximpl(PointerEventKt.positionChange(pointerInputChange)));
         pointerInputChange.consume();
         return Unit.INSTANCE;
     }

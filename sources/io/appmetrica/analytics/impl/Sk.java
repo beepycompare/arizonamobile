@@ -1,44 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 import java.util.Map;
-import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.collections.MapsKt;
-import kotlin.ranges.RangesKt;
-import kotlin.text.Charsets;
-/* loaded from: classes4.dex */
-public final class Sk implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Uk fromModel(Map<String, byte[]> map) {
-        Uk uk = new Uk();
-        ArrayList arrayList = new ArrayList(map.size());
-        for (Map.Entry<String, byte[]> entry : map.entrySet()) {
-            Vk vk = new Vk();
-            vk.f717a = entry.getKey().getBytes(Charsets.UTF_8);
-            vk.b = entry.getValue();
-            arrayList.add(vk);
-        }
-        Object[] array = arrayList.toArray(new Vk[0]);
-        if (array != null) {
-            uk.f704a = (Vk[]) array;
-            return uk;
-        }
-        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
+/* loaded from: classes3.dex */
+public final class Sk {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f688a;
+    public final Nk b;
+    public final Rk c;
+    public final IBinaryDataHelper d;
+
+    public Sk(Context context, X4 x4) {
+        x4.a();
+        this.f688a = "session_extras";
+        this.b = new Nk();
+        this.c = new Rk();
+        this.d = C0264g7.a(context).a(x4);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Map<String, byte[]> toModel(Uk uk) {
-        Vk[] vkArr = uk.f704a;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(vkArr.length), 16));
-        for (Vk vk : vkArr) {
-            Pair pair = TuplesKt.to(new String(vk.f717a, Charsets.UTF_8), vk.b);
-            linkedHashMap.put(pair.getFirst(), pair.getSecond());
+    public final Map a() {
+        try {
+            byte[] bArr = this.d.get(this.f688a);
+            if (bArr != null) {
+                if (!(bArr.length == 0)) {
+                    return this.b.toModel(this.c.toState(bArr));
+                }
+            }
+        } catch (Throwable unused) {
         }
-        return linkedHashMap;
+        Nk nk = this.b;
+        this.c.getClass();
+        return nk.toModel(new Pk());
     }
 }

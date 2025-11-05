@@ -190,7 +190,7 @@ public final class LazyGridKt {
                                 companion = obj;
                             } else {
                                 companion = i9 != 0 ? Modifier.Companion : obj;
-                                m835PaddingValues0680j_4 = i10 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj2;
+                                m835PaddingValues0680j_4 = i10 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj2;
                                 z6 = i5 == 0 ? z4 : false;
                                 if ((i3 & 64) != 0) {
                                     flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);

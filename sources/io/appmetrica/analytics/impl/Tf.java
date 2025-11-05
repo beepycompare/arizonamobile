@@ -1,41 +1,8 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.ecommerce.ECommerceAmount;
-import io.appmetrica.analytics.ecommerce.ECommercePrice;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
-public final class Tf {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Y f686a;
-    public final List b;
-
-    public Tf(ECommercePrice eCommercePrice) {
-        this(new Y(eCommercePrice.getFiat()), a(eCommercePrice.getInternalComponents()));
-    }
-
-    public static LinkedList a(List list) {
-        if (list != null) {
-            LinkedList linkedList = new LinkedList();
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                ECommerceAmount eCommerceAmount = (ECommerceAmount) it.next();
-                linkedList.add(new Y(eCommerceAmount.getAmount(), eCommerceAmount.getUnit()));
-            }
-            return linkedList;
-        }
-        return null;
-    }
-
-    public final String toString() {
-        return "PriceWrapper{fiat=" + this.f686a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Tf(Y y, LinkedList linkedList) {
-        this.f686a = y;
-        this.b = linkedList;
+/* loaded from: classes3.dex */
+public final class Tf implements A9 {
+    @Override // io.appmetrica.analytics.impl.A9
+    public final Integer a(S8 s8) {
+        return s8.i;
     }
 }

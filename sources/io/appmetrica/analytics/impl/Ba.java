@@ -1,47 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import java.io.File;
-import kotlin.io.FilesKt;
-/* loaded from: classes4.dex */
-public final class Ba implements Ho {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f368a;
-    public final String b;
-
-    public Ba(Context context, String str) {
-        this.f368a = context;
-        this.b = str;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ho
-    public final String a() {
-        try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f368a, this.b);
-            if (fileFromSdkStorage != null) {
-                fileFromSdkStorage.exists();
-                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f368a, this.b);
-                if (fileFromAppStorage != null) {
-                    FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
-                }
-                return FilesKt.readText$default(fileFromSdkStorage, null, 1, null);
-            }
-            return null;
-        } catch (Throwable unused) {
-            return null;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.Comparator;
+import java.util.Map;
+/* loaded from: classes3.dex */
+public final class Ba implements Comparator {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int utf8BytesLength = StringUtils.getUtf8BytesLength((String) ((Map.Entry) obj).getValue());
+        int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) ((Map.Entry) obj2).getValue());
+        if (utf8BytesLength < utf8BytesLength2) {
+            return -1;
         }
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ho
-    public final void a(String str) {
-        try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f368a, this.b);
-            if (fileFromSdkStorage != null) {
-                FilesKt.writeText$default(fileFromSdkStorage, str, null, 2, null);
-            }
-        } catch (Throwable unused) {
-        }
+        return utf8BytesLength == utf8BytesLength2 ? 0 : 1;
     }
 }

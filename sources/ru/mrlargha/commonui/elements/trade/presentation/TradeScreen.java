@@ -52,6 +52,7 @@ import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: TradeScreen.kt */
 @Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u00012\u00020\u0002:\u0001BB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020\u001cH\u0016J\b\u0010(\u001a\u00020&H\u0002J\b\u0010)\u001a\u00020&H\u0002J\b\u0010*\u001a\u00020&H\u0002J\u0018\u0010+\u001a\u00020&2\u0006\u0010,\u001a\u00020\u00062\u0006\u0010-\u001a\u00020\u0006H\u0002J\u0018\u0010.\u001a\u00020&2\u0006\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0006H\u0016J\u0018\u00102\u001a\u00020&2\u0006\u00103\u001a\u00020\u00162\u0006\u00104\u001a\u00020\u0016H\u0002J\u0010\u00105\u001a\u00020&2\u0006\u00106\u001a\u000207H\u0002J\u0018\u00108\u001a\u00020&2\u0006\u00109\u001a\u00020\u00062\u0006\u0010:\u001a\u00020;H\u0002J\u0010\u0010<\u001a\u00020&2\u0006\u0010=\u001a\u00020>H\u0002J\u0018\u0010?\u001a\u00020&2\u0006\u00101\u001a\u00020\u00062\u0006\u0010/\u001a\u000200H\u0002J\b\u0010@\u001a\u00020&H\u0002J\b\u0010A\u001a\u00020&H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u00158BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001f\u001a\n !*\u0004\u0018\u00010 0 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006C"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/TradeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "tradeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/TradeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "tradeInventoryAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/TradeInventoryAdapter;", "sendItemsAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/SendItemsAdapter;", "getItemsAdapter", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "sendItemsList", "getItemsList", "isConfirmedClicked", "", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "inventoryItemList", "selectedInventoryItem", "setVisible", "", "visible", "defaultScreenState", "initAdapters", "initObservers", "createEmptyLists", "trade", "forTrade", "onBackendMessage", "data", "", "subId", "sendDataFromDrop", "curItem", "toItem", "editValueCostUi", "response", "Lru/mrlargha/commonui/elements/trade/domain/TradeValueResponse;", "selectDrawableType", "type", "view", "Landroid/widget/EditText;", "editUi", "tradeResp", "Lru/mrlargha/commonui/elements/trade/domain/TradeResponse;", "sendData", "addLockedItems", "closeScreen", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -93,7 +94,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
                 tradeInventoryAdapter$lambda$0 = TradeScreen.tradeInventoryAdapter$lambda$0(TradeScreen.this, (DraggedItem) obj);
                 return tradeInventoryAdapter$lambda$0;
             }
-        }, rvInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda1
+        }, rvInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit tradeInventoryAdapter$lambda$1;
@@ -103,14 +104,14 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         });
         RecyclerView rvSendItems = bind.rvSendItems;
         Intrinsics.checkNotNullExpressionValue(rvSendItems, "rvSendItems");
-        this.sendItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda2
+        this.sendItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit sendItemsAdapter$lambda$0;
                 sendItemsAdapter$lambda$0 = TradeScreen.sendItemsAdapter$lambda$0(TradeScreen.this, (DraggedItem) obj);
                 return sendItemsAdapter$lambda$0;
             }
-        }, rvSendItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda3
+        }, rvSendItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit sendItemsAdapter$lambda$1;
@@ -120,14 +121,14 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         });
         RecyclerView rvReceiveItems = bind.rvReceiveItems;
         Intrinsics.checkNotNullExpressionValue(rvReceiveItems, "rvReceiveItems");
-        this.getItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda4
+        this.getItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit itemsAdapter$lambda$0;
                 itemsAdapter$lambda$0 = TradeScreen.getItemsAdapter$lambda$0((DraggedItem) obj);
                 return itemsAdapter$lambda$0;
             }
-        }, rvReceiveItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda5
+        }, rvReceiveItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit itemsAdapter$lambda$1;
@@ -147,25 +148,25 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         addViewToConstraintLayout(constraintLayout, -1, -1);
         UtilsKt.checkItemsName(activity, z);
         initAdapters();
-        bind.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda6
+        bind.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen._init_$lambda$0(TradeScreen.this, view);
             }
         });
-        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda7
+        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen.this.closeScreen();
             }
         });
-        bind.etSendItems.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda8
+        bind.etSendItems.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen._init_$lambda$2(TradeScreen.this, view);
             }
         });
-        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda9
+        bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TradeScreen.this.closeScreen();
@@ -178,6 +179,12 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             EditText etReceiveItems = bind.etReceiveItems;
             Intrinsics.checkNotNullExpressionValue(etReceiveItems, "etReceiveItems");
             UtilsKt.setDrawableEnd(etReceiveItems, R.drawable.ic_dollar, targetActivity);
+            CustomCardView btnSendItem = bind.btnSendItem;
+            Intrinsics.checkNotNullExpressionValue(btnSendItem, "btnSendItem");
+            btnSendItem.setVisibility(0);
+            CustomCardView btnReceiveItem = bind.btnReceiveItem;
+            Intrinsics.checkNotNullExpressionValue(btnReceiveItem, "btnReceiveItem");
+            btnReceiveItem.setVisibility(0);
         } else {
             EditText etSendItems2 = bind.etSendItems;
             Intrinsics.checkNotNullExpressionValue(etSendItems2, "etSendItems");
@@ -185,7 +192,25 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             EditText etReceiveItems2 = bind.etReceiveItems;
             Intrinsics.checkNotNullExpressionValue(etReceiveItems2, "etReceiveItems");
             UtilsKt.setDrawableEnd(etReceiveItems2, R.drawable.ic_rubble, targetActivity);
+            CustomCardView btnSendItem2 = bind.btnSendItem;
+            Intrinsics.checkNotNullExpressionValue(btnSendItem2, "btnSendItem");
+            btnSendItem2.setVisibility(0);
+            CustomCardView btnReceiveItem2 = bind.btnReceiveItem;
+            Intrinsics.checkNotNullExpressionValue(btnReceiveItem2, "btnReceiveItem");
+            btnReceiveItem2.setVisibility(0);
         }
+        bind.btnSendItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                SAMPUIElement.notifyClick$default(TradeScreen.this, 0, 9, null, 4, null);
+            }
+        });
+        bind.btnReceiveItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda4
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                SAMPUIElement.notifyClick$default(TradeScreen.this, 1, 9, null, 4, null);
+            }
+        });
         initObservers();
     }
 
@@ -306,10 +331,10 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
 
     private final void createEmptyLists(int i, int i2) {
         for (int i3 = 0; i3 < 10; i3++) {
-            this.sendItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i3, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, 2031614, null));
+            this.sendItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i3, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, 4128766, null));
         }
         for (int i4 = 0; i4 < 10; i4++) {
-            this.getItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i4, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i2, null, null, false, false, 2031614, null));
+            this.getItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i4, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i2, null, null, false, false, null, 4128766, null));
         }
     }
 
@@ -330,7 +355,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             List<InventoryItem> items = inventoryResponse.getItems();
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
             for (InventoryItem inventoryItem : items) {
-                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, 2031615, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, 4128767, null));
             }
             InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList);
             int type2 = inventoryResponse2.getType();
@@ -384,7 +409,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             ShowDialogInfo showDialogInfo = (ShowDialogInfo) fromJson3;
             InventoryItem inventoryItem4 = this.selectedInventoryItem;
             if (inventoryItem4 != null) {
-                new SelectorDialog(getTargetActivity(), 52, InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, 2096895, null), 0);
+                new SelectorDialog(getTargetActivity(), 52, InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, 4194047, null), 0);
             }
         } else if (i == 4) {
             if (StringsKt.contains$default((CharSequence) data, (CharSequence) "\"self\"", false, 2, (Object) null)) {
@@ -403,7 +428,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
                         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
                         for (InventoryItem inventoryItem6 : list) {
                             if (inventoryItem6.getSlot() == inventoryItem5.getSlot()) {
-                                inventoryItem6 = InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, null, null, null, null, null, inventoryItem5.getAvailable(), null, null, null, null, null, null, 0, null, null, false, false, 2096639, null);
+                                inventoryItem6 = InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, null, null, null, null, null, inventoryItem5.getAvailable(), null, null, null, null, null, null, 0, null, null, false, false, null, 4193791, null);
                             }
                             arrayList2.add(inventoryItem6);
                         }
@@ -498,7 +523,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             int i = 1;
             while (true) {
                 InventoryItem inventoryItem = (InventoryItem) CollectionsKt.lastOrNull((List<? extends Object>) getInventoryList());
-                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), inventoryItem != null ? inventoryItem.getSlot() + 1 : 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, 1048574, null));
+                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), inventoryItem != null ? inventoryItem.getSlot() + 1 : 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, 3145726, null));
                 if (i == nextMultipleOfFive) {
                     break;
                 }
@@ -508,7 +533,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         List<InventoryItem> list = this.inventoryItemList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, 2094591, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, 4191743, null));
         }
         List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList);
         this.inventoryItemList = mutableList;

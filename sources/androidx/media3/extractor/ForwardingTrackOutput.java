@@ -5,7 +5,7 @@ import androidx.media3.common.Format;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.TrackOutput;
 import java.io.IOException;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ForwardingTrackOutput implements TrackOutput {
     private final TrackOutput trackOutput;
 

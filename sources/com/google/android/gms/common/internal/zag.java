@@ -9,7 +9,7 @@ import android.util.Log;
 import androidx.fragment.app.Fragment;
 import com.google.android.gms.common.api.internal.LifecycleFragment;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zag implements DialogInterface.OnClickListener {
     public static zag zab(Activity activity, Intent intent, int i) {
         return new zad(intent, activity, i);

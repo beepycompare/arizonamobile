@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
+import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* loaded from: classes4.dex */
 public final class Score {
     private static final int BLUE_500 = -12417548;

@@ -17,20 +17,20 @@ public final class FixedThreshold implements ThresholdConfig {
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    private final float m7740component1D9Ej5fM() {
+    private final float m8471component1D9Ej5fM() {
         return this.offset;
     }
 
     /* renamed from: copy-0680j_4$default  reason: not valid java name */
-    public static /* synthetic */ FixedThreshold m7741copy0680j_4$default(FixedThreshold fixedThreshold, float f, int i, Object obj) {
+    public static /* synthetic */ FixedThreshold m8472copy0680j_4$default(FixedThreshold fixedThreshold, float f, int i, Object obj) {
         if ((i & 1) != 0) {
             f = fixedThreshold.offset;
         }
-        return fixedThreshold.m7742copy0680j_4(f);
+        return fixedThreshold.m8473copy0680j_4(f);
     }
 
     /* renamed from: copy-0680j_4  reason: not valid java name */
-    public final FixedThreshold m7742copy0680j_4(float f) {
+    public final FixedThreshold m8473copy0680j_4(float f) {
         return new FixedThreshold(f, null);
     }
 
@@ -38,15 +38,15 @@ public final class FixedThreshold implements ThresholdConfig {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof FixedThreshold) && Dp.m7269equalsimpl0(this.offset, ((FixedThreshold) obj).offset);
+        return (obj instanceof FixedThreshold) && Dp.m8000equalsimpl0(this.offset, ((FixedThreshold) obj).offset);
     }
 
     public int hashCode() {
-        return Dp.m7270hashCodeimpl(this.offset);
+        return Dp.m8001hashCodeimpl(this.offset);
     }
 
     public String toString() {
-        return "FixedThreshold(offset=" + ((Object) Dp.m7275toStringimpl(this.offset)) + ')';
+        return "FixedThreshold(offset=" + ((Object) Dp.m8006toStringimpl(this.offset)) + ')';
     }
 
     private FixedThreshold(float f) {

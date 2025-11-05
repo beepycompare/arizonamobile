@@ -18,6 +18,6 @@ public final class AndroidTextStyle_androidKt {
     }
 
     public static final PlatformParagraphStyle lerp(PlatformParagraphStyle platformParagraphStyle, PlatformParagraphStyle platformParagraphStyle2, float f) {
-        return platformParagraphStyle.getIncludeFontPadding() == platformParagraphStyle2.getIncludeFontPadding() ? platformParagraphStyle : new PlatformParagraphStyle(((EmojiSupportMatch) SpanStyleKt.lerpDiscrete(EmojiSupportMatch.m6553boximpl(platformParagraphStyle.m6635getEmojiSupportMatch_3YsG6Y()), EmojiSupportMatch.m6553boximpl(platformParagraphStyle2.m6635getEmojiSupportMatch_3YsG6Y()), f)).m6559unboximpl(), ((Boolean) SpanStyleKt.lerpDiscrete(Boolean.valueOf(platformParagraphStyle.getIncludeFontPadding()), Boolean.valueOf(platformParagraphStyle2.getIncludeFontPadding()), f)).booleanValue(), (DefaultConstructorMarker) null);
+        return platformParagraphStyle.getIncludeFontPadding() == platformParagraphStyle2.getIncludeFontPadding() ? platformParagraphStyle : new PlatformParagraphStyle(((EmojiSupportMatch) SpanStyleKt.lerpDiscrete(EmojiSupportMatch.m7284boximpl(platformParagraphStyle.m7366getEmojiSupportMatch_3YsG6Y()), EmojiSupportMatch.m7284boximpl(platformParagraphStyle2.m7366getEmojiSupportMatch_3YsG6Y()), f)).m7290unboximpl(), ((Boolean) SpanStyleKt.lerpDiscrete(Boolean.valueOf(platformParagraphStyle.getIncludeFontPadding()), Boolean.valueOf(platformParagraphStyle2.getIncludeFontPadding()), f)).booleanValue(), (DefaultConstructorMarker) null);
     }
 }

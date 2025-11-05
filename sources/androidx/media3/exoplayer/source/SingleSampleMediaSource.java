@@ -21,7 +21,7 @@ import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import java.util.concurrent.Executor;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SingleSampleMediaSource extends BaseMediaSource {
     private final DataSource.Factory dataSourceFactory;
     private final DataSpec dataSpec;
@@ -42,7 +42,7 @@ public final class SingleSampleMediaSource extends BaseMediaSource {
     protected void releaseSourceInternal() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory {
         private final DataSource.Factory dataSourceFactory;
         private Supplier<ReleasableExecutor> downloadExecutorSupplier;

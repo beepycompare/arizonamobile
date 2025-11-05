@@ -10,6 +10,7 @@ import androidx.compose.runtime.DisposableEffectScope;
 import androidx.compose.runtime.EffectsKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
+import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.State;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.ui.Modifier;
@@ -33,10 +34,11 @@ import kotlin.jvm.functions.Function4;
 import kotlin.jvm.functions.Function5;
 import kotlin.jvm.functions.Function6;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: ChildPages.kt */
-@Metadata(d1 = {"\u0000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u001aó\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u00032\u0018\u0010\u0005\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u00070\u00062!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u0094\u0001\b\u0002\u0010\u0012\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u00182 \b\u0002\u0010\u0015\u001a\u001a\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u001c\u0012\u0004\u0012\u00020\u00030\t2F\u0010\u0019\u001aB\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u00010\u001d¢\u0006\u0002\b\u0018¢\u0006\u0002\b\u001aH\u0007¢\u0006\u0002\u0010\u001f\u001aí\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u00032\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u00072!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u0094\u0001\b\u0002\u0010\u0012\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u00182 \b\u0002\u0010\u0015\u001a\u001a\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u001c\u0012\u0004\u0012\u00020\u00030\t2F\u0010\u0019\u001aB\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u00010\u001d¢\u0006\u0002\b\u0018¢\u0006\u0002\b\u001aH\u0007¢\u0006\u0002\u0010 \u001a\u0097\u0001\u0010!\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u0018¢\u0006\u0002\u0010\"\u001a\u0097\u0001\u0010#\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u0018¢\u0006\u0002\u0010\"*\u009c\u0002\b\u0000\u0010$\"\u0089\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00182\u0089\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u0018¨\u0006%²\u0006*\u0010&\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u0007\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003X\u008a\u0084\u0002"}, d2 = {"ChildPages", "", "C", "", ExifInterface.GPS_DIRECTION_TRUE, "pages", "Lcom/arkivanov/decompose/value/Value;", "Lcom/arkivanov/decompose/router/pages/ChildPages;", "onPageSelected", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "modifier", "Landroidx/compose/ui/Modifier;", "scrollAnimation", "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;", "pager", "Lkotlin/Function4;", "Landroidx/compose/foundation/pager/PagerState;", "key", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "Landroidx/compose/runtime/Composable;", "pageContent", "Lkotlin/ExtensionFunctionType;", "Lcom/arkivanov/decompose/extensions/compose/pages/Pager;", "Lcom/arkivanov/decompose/Child;", "Lkotlin/Function3;", "page", "(Lcom/arkivanov/decompose/value/Value;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;Lkotlin/jvm/functions/Function6;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function5;Landroidx/compose/runtime/Composer;II)V", "(Lcom/arkivanov/decompose/router/pages/ChildPages;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;Lkotlin/jvm/functions/Function6;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function5;Landroidx/compose/runtime/Composer;II)V", "defaultHorizontalPager", "()Lkotlin/jvm/functions/Function6;", "defaultVerticalPager", "Pager", "extensions-compose_release", RemoteConfigConstants.ResponseFieldKey.STATE}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u001aó\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u00032\u0018\u0010\u0005\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u00070\u00062!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u0094\u0001\b\u0002\u0010\u0012\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u00182 \b\u0002\u0010\u0015\u001a\u001a\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u001c\u0012\u0004\u0012\u00020\u00030\t2F\u0010\u0019\u001aB\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u00010\u001d¢\u0006\u0002\b\u0018¢\u0006\u0002\b\u001aH\u0007¢\u0006\u0002\u0010\u001f\u001aí\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u00032\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u00072!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u0094\u0001\b\u0002\u0010\u0012\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u00182 \b\u0002\u0010\u0015\u001a\u001a\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u001c\u0012\u0004\u0012\u00020\u00030\t2F\u0010\u0019\u001aB\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u00010\u001d¢\u0006\u0002\b\u0018¢\u0006\u0002\b\u001aH\u0007¢\u0006\u0002\u0010 \u001a\u0097\u0001\u0010!\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u0018¢\u0006\u0002\u0010\"\u001a\u0097\u0001\u0010#\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u0018¢\u0006\u0002\u0010\"*\u009a\u0002\u0010$\"\u0089\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00182\u0089\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u0018¨\u0006%²\u0006*\u0010&\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u0007\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003X\u008a\u0084\u0002"}, d2 = {"ChildPages", "", "C", "", ExifInterface.GPS_DIRECTION_TRUE, "pages", "Lcom/arkivanov/decompose/value/Value;", "Lcom/arkivanov/decompose/router/pages/ChildPages;", "onPageSelected", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "modifier", "Landroidx/compose/ui/Modifier;", "scrollAnimation", "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;", "pager", "Lkotlin/Function4;", "Landroidx/compose/foundation/pager/PagerState;", "key", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "Landroidx/compose/runtime/Composable;", "pageContent", "Lkotlin/ExtensionFunctionType;", "Lcom/arkivanov/decompose/extensions/compose/pages/ChildPagesPager;", "Lcom/arkivanov/decompose/Child;", "Lkotlin/Function3;", "page", "(Lcom/arkivanov/decompose/value/Value;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;Lkotlin/jvm/functions/Function6;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function5;Landroidx/compose/runtime/Composer;II)V", "(Lcom/arkivanov/decompose/router/pages/ChildPages;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;Lkotlin/jvm/functions/Function6;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function5;Landroidx/compose/runtime/Composer;II)V", "defaultHorizontalPager", "()Lkotlin/jvm/functions/Function6;", "defaultVerticalPager", "ChildPagesPager", "extensions-compose_release", RemoteConfigConstants.ResponseFieldKey.STATE}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ChildPagesKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -52,11 +54,11 @@ public final class ChildPagesKt {
     }
 
     public static final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> defaultHorizontalPager() {
-        return ComposableSingletons$ChildPagesKt.INSTANCE.m8582getLambda1$extensions_compose_release();
+        return ComposableSingletons$ChildPagesKt.INSTANCE.m9321getLambda1$extensions_compose_release();
     }
 
     public static final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> defaultVerticalPager() {
-        return ComposableSingletons$ChildPagesKt.INSTANCE.m8583getLambda2$extensions_compose_release();
+        return ComposableSingletons$ChildPagesKt.INSTANCE.m9322getLambda2$extensions_compose_release();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x0124  */
@@ -167,7 +169,7 @@ public final class ChildPagesKt {
                             function62 = defaultHorizontalPager();
                         }
                         if (i5 != 0) {
-                            startRestartGroup.startReplaceGroup(150774917);
+                            startRestartGroup.startReplaceGroup(150775013);
                             ChildPagesKt$ChildPages$1$1 rememberedValue = startRestartGroup.rememberedValue();
                             if (rememberedValue == Composer.Companion.getEmpty()) {
                                 rememberedValue = ChildPagesKt$ChildPages$1$1.INSTANCE;
@@ -314,21 +316,21 @@ public final class ChildPagesKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x015e  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0202  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0204  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x020c  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0232  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0234  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0240  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0281  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x028c  */
-    /* JADX WARN: Removed duplicated region for block: B:154:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x018a  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x01ae  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x01ff  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0201  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0208  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x022e  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0230  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0279  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0286  */
+    /* JADX WARN: Removed duplicated region for block: B:153:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0070  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0073  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0090  */
@@ -337,8 +339,8 @@ public final class ChildPagesKt {
     /* JADX WARN: Removed duplicated region for block: B:61:0x00b2  */
     /* JADX WARN: Removed duplicated region for block: B:70:0x00cb  */
     /* JADX WARN: Removed duplicated region for block: B:71:0x00ce  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x011a  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x011e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -349,22 +351,19 @@ public final class ChildPagesKt {
         Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> function62;
         int i5;
         Object obj;
-        int i6;
         final Function1<? super Child<? extends C, ? extends T>, ? extends Object> function12;
-        Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function63;
-        final PagesScrollAnimation pagesScrollAnimation2;
-        boolean changedInstance;
+        int coerceAtLeast;
         Object rememberedValue;
         boolean changed;
         ChildPagesKt$ChildPages$4$1 rememberedValue2;
-        boolean changed2;
+        boolean z;
         Object rememberedValue3;
-        boolean changedInstance2;
+        boolean changedInstance;
         Object rememberedValue4;
-        final Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function64;
-        final Modifier modifier2;
+        final Function1<? super Child<? extends C, ? extends T>, ? extends Object> function13;
+        final Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function63;
         ScopeUpdateScope endRestartGroup;
-        int i7;
+        int i6;
         PagesScrollAnimation.Disabled disabled = pagesScrollAnimation;
         Intrinsics.checkNotNullParameter(pages, "pages");
         Intrinsics.checkNotNullParameter(onPageSelected, "onPageSelected");
@@ -382,8 +381,8 @@ public final class ChildPagesKt {
         } else if ((i & 48) == 0) {
             i3 |= startRestartGroup.changedInstance(onPageSelected) ? 32 : 16;
         }
-        int i8 = i2 & 4;
-        if (i8 != 0) {
+        int i7 = i2 & 4;
+        if (i7 != 0) {
             i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             companion = modifier;
@@ -398,14 +397,14 @@ public final class ChildPagesKt {
                 if ((i2 & 16) == 0) {
                     function62 = function6;
                     if (startRestartGroup.changedInstance(function62)) {
-                        i7 = 16384;
-                        i3 |= i7;
+                        i6 = 16384;
+                        i3 |= i6;
                     }
                 } else {
                     function62 = function6;
                 }
-                i7 = 8192;
-                i3 |= i7;
+                i6 = 8192;
+                i3 |= i6;
             } else {
                 function62 = function6;
             }
@@ -427,7 +426,7 @@ public final class ChildPagesKt {
             if ((i3 & 599187) == 599186 || !startRestartGroup.getSkipping()) {
                 startRestartGroup.startDefaults();
                 if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
-                    if (i8 != 0) {
+                    if (i7 != 0) {
                         companion = Modifier.Companion;
                     }
                     if (i4 != 0) {
@@ -438,60 +437,57 @@ public final class ChildPagesKt {
                         function62 = defaultHorizontalPager();
                     }
                     if (i5 != 0) {
-                        startRestartGroup.startReplaceGroup(150799045);
+                        startRestartGroup.startReplaceGroup(150799461);
                         ChildPagesKt$ChildPages$3$1 rememberedValue5 = startRestartGroup.rememberedValue();
                         if (rememberedValue5 == Composer.Companion.getEmpty()) {
                             rememberedValue5 = ChildPagesKt$ChildPages$3$1.INSTANCE;
                             startRestartGroup.updateRememberedValue(rememberedValue5);
                         }
                         startRestartGroup.endReplaceGroup();
-                        i6 = i3;
                         function12 = (Function1) ((KFunction) rememberedValue5);
-                        function63 = function62;
-                        pagesScrollAnimation2 = disabled;
-                        Object obj2 = companion;
+                        Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function64 = function62;
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(123234442, i6, -1, "com.arkivanov.decompose.extensions.compose.pages.ChildPages (ChildPages.kt:58)");
+                            ComposerKt.traceEventStart(123234442, i3, -1, "com.arkivanov.decompose.extensions.compose.pages.ChildPages (ChildPages.kt:58)");
                         }
-                        int selectedIndex = pages.getSelectedIndex();
-                        startRestartGroup.startReplaceGroup(150806719);
-                        changedInstance = startRestartGroup.changedInstance(pages);
+                        coerceAtLeast = RangesKt.coerceAtLeast(pages.getSelectedIndex(), 0);
+                        final State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Integer.valueOf(pages.getItems().size()), startRestartGroup, 0);
+                        startRestartGroup.startReplaceGroup(150807688);
                         rememberedValue = startRestartGroup.rememberedValue();
-                        if (!changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-                            rememberedValue = new Function0() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda1
+                        if (rememberedValue == Composer.Companion.getEmpty()) {
+                            rememberedValue = PagerStateKt.PagerState$default(coerceAtLeast, 0.0f, new Function0() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
                                     int ChildPages$lambda$5$lambda$4;
-                                    ChildPages$lambda$5$lambda$4 = ChildPagesKt.ChildPages$lambda$5$lambda$4(ChildPages.this);
+                                    ChildPages$lambda$5$lambda$4 = ChildPagesKt.ChildPages$lambda$5$lambda$4(State.this);
                                     return Integer.valueOf(ChildPages$lambda$5$lambda$4);
                                 }
-                            };
+                            }, 2, null);
                             startRestartGroup.updateRememberedValue(rememberedValue);
                         }
+                        final PagerState pagerState = (PagerState) rememberedValue;
                         startRestartGroup.endReplaceGroup();
-                        final PagerState rememberPagerState = PagerStateKt.rememberPagerState(selectedIndex, 0.0f, (Function0) rememberedValue, startRestartGroup, 0, 2);
-                        Integer valueOf = Integer.valueOf(selectedIndex);
-                        startRestartGroup.startReplaceGroup(150809154);
-                        changed = ((i6 & 7168) != 2048 || ((i6 & 4096) != 0 && startRestartGroup.changedInstance(pagesScrollAnimation2))) | startRestartGroup.changed(rememberPagerState) | startRestartGroup.changed(selectedIndex);
+                        Integer valueOf = Integer.valueOf(coerceAtLeast);
+                        startRestartGroup.startReplaceGroup(150814137);
+                        changed = ((i3 & 7168) != 2048 || ((i3 & 4096) != 0 && startRestartGroup.changedInstance(disabled))) | startRestartGroup.changed(coerceAtLeast);
                         rememberedValue2 = startRestartGroup.rememberedValue();
                         if (!changed || rememberedValue2 == Composer.Companion.getEmpty()) {
-                            rememberedValue2 = new ChildPagesKt$ChildPages$4$1(rememberPagerState, selectedIndex, pagesScrollAnimation2, null);
+                            rememberedValue2 = new ChildPagesKt$ChildPages$4$1(pagerState, disabled, coerceAtLeast, null);
                             startRestartGroup.updateRememberedValue(rememberedValue2);
                         }
                         startRestartGroup.endReplaceGroup();
                         EffectsKt.LaunchedEffect(valueOf, (Function2) rememberedValue2, startRestartGroup, 0);
-                        Integer valueOf2 = Integer.valueOf(rememberPagerState.getCurrentPage());
-                        Integer valueOf3 = Integer.valueOf(rememberPagerState.getTargetPage());
-                        startRestartGroup.startReplaceGroup(150824821);
-                        changed2 = startRestartGroup.changed(rememberPagerState) | ((i6 & 112) == 32);
+                        Integer valueOf2 = Integer.valueOf(pagerState.getCurrentPage());
+                        Integer valueOf3 = Integer.valueOf(pagerState.getTargetPage());
+                        startRestartGroup.startReplaceGroup(150829525);
+                        z = (i3 & 112) == 32;
                         rememberedValue3 = startRestartGroup.rememberedValue();
-                        if (!changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
+                        if (!z || rememberedValue3 == Composer.Companion.getEmpty()) {
                             rememberedValue3 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function1
-                                public final Object invoke(Object obj3) {
+                                public final Object invoke(Object obj2) {
                                     DisposableEffectResult ChildPages$lambda$9$lambda$8;
-                                    ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj3);
+                                    ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
                                     return ChildPages$lambda$9$lambda$8;
                                 }
                             };
@@ -499,40 +495,39 @@ public final class ChildPagesKt {
                         }
                         startRestartGroup.endReplaceGroup();
                         EffectsKt.DisposableEffect(valueOf2, valueOf3, (Function1) rememberedValue3, startRestartGroup, 0);
-                        startRestartGroup.startReplaceGroup(150830851);
-                        changedInstance2 = ((458752 & i6) == 131072) | startRestartGroup.changedInstance(pages);
+                        startRestartGroup.startReplaceGroup(150835555);
+                        changedInstance = startRestartGroup.changedInstance(pages) | ((458752 & i3) == 131072);
                         rememberedValue4 = startRestartGroup.rememberedValue();
-                        if (!changedInstance2 || rememberedValue4 == Composer.Companion.getEmpty()) {
+                        if (!changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
                             rememberedValue4 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda3
                                 @Override // kotlin.jvm.functions.Function1
-                                public final Object invoke(Object obj3) {
+                                public final Object invoke(Object obj2) {
                                     Object ChildPages$lambda$11$lambda$10;
-                                    ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj3).intValue());
+                                    ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj2).intValue());
                                     return ChildPages$lambda$11$lambda$10;
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue4);
                         }
                         startRestartGroup.endReplaceGroup();
-                        Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function65 = function63;
-                        function65.invoke(obj2, rememberPagerState, (Function1) rememberedValue4, ComposableLambdaKt.rememberComposableLambda(1842706874, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$ChildPages$7
+                        function64.invoke(companion, pagerState, (Function1) rememberedValue4, ComposableLambdaKt.rememberComposableLambda(1842706874, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$ChildPages$7
                             @Override // kotlin.jvm.functions.Function4
                             public /* bridge */ /* synthetic */ Unit invoke(PagerScope pagerScope, Integer num, Composer composer2, Integer num2) {
                                 invoke(pagerScope, num.intValue(), composer2, num2.intValue());
                                 return Unit.INSTANCE;
                             }
 
-                            public final void invoke(PagerScope pager, int i9, Composer composer2, int i10) {
+                            public final void invoke(PagerScope pager, int i8, Composer composer2, int i9) {
                                 Intrinsics.checkNotNullParameter(pager, "$this$pager");
                                 if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(1842706874, i10, -1, "com.arkivanov.decompose.extensions.compose.pages.ChildPages.<anonymous> (ChildPages.kt:88)");
+                                    ComposerKt.traceEventStart(1842706874, i9, -1, "com.arkivanov.decompose.extensions.compose.pages.ChildPages.<anonymous> (ChildPages.kt:93)");
                                 }
-                                Child child = (Child) pages.getItems().get(i9);
+                                Child child = (Child) pages.getItems().get(i8);
                                 Object key = child.getKey();
-                                composer2.startReplaceGroup(750524051);
-                                boolean changed3 = composer2.changed(key);
+                                composer2.startReplaceGroup(750528755);
+                                boolean changed2 = composer2.changed(key);
                                 Object rememberedValue6 = composer2.rememberedValue();
-                                if (changed3 || rememberedValue6 == Composer.Companion.getEmpty()) {
+                                if (changed2 || rememberedValue6 == Composer.Companion.getEmpty()) {
                                     rememberedValue6 = new Ref(child.getInstance());
                                     composer2.updateRememberedValue(rememberedValue6);
                                 }
@@ -543,19 +538,18 @@ public final class ChildPagesKt {
                                 }
                                 Object value = ref.getValue();
                                 if (value != null) {
-                                    pageContent.invoke(pager, Integer.valueOf(i9), value, composer2, Integer.valueOf(i10 & WebSocketProtocol.PAYLOAD_SHORT));
+                                    pageContent.invoke(pager, Integer.valueOf(i8), value, composer2, Integer.valueOf(i9 & WebSocketProtocol.PAYLOAD_SHORT));
                                 }
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
                             }
-                        }, startRestartGroup, 54), startRestartGroup, Integer.valueOf(((i6 >> 6) & 14) | 3072 | (57344 & i6)));
-                        startRestartGroup = startRestartGroup;
+                        }, startRestartGroup, 54), startRestartGroup, Integer.valueOf(((i3 >> 6) & 14) | 3120 | (i3 & 57344)));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
-                        function64 = function65;
-                        modifier2 = obj2;
+                        function13 = function12;
+                        function63 = function64;
                     }
                 } else {
                     startRestartGroup.skipToGroupEnd();
@@ -563,93 +557,81 @@ public final class ChildPagesKt {
                         i3 &= -57345;
                     }
                 }
-                i6 = i3;
-                function63 = function62;
                 function12 = obj;
-                pagesScrollAnimation2 = disabled;
-                Object obj22 = companion;
+                Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function642 = function62;
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                int selectedIndex2 = pages.getSelectedIndex();
-                startRestartGroup.startReplaceGroup(150806719);
-                changedInstance = startRestartGroup.changedInstance(pages);
+                coerceAtLeast = RangesKt.coerceAtLeast(pages.getSelectedIndex(), 0);
+                final State rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(Integer.valueOf(pages.getItems().size()), startRestartGroup, 0);
+                startRestartGroup.startReplaceGroup(150807688);
                 rememberedValue = startRestartGroup.rememberedValue();
-                if (!changedInstance) {
+                if (rememberedValue == Composer.Companion.getEmpty()) {
                 }
-                rememberedValue = new Function0() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda1
-                    @Override // kotlin.jvm.functions.Function0
-                    public final Object invoke() {
-                        int ChildPages$lambda$5$lambda$4;
-                        ChildPages$lambda$5$lambda$4 = ChildPagesKt.ChildPages$lambda$5$lambda$4(ChildPages.this);
-                        return Integer.valueOf(ChildPages$lambda$5$lambda$4);
-                    }
-                };
-                startRestartGroup.updateRememberedValue(rememberedValue);
+                final PagerState pagerState2 = (PagerState) rememberedValue;
                 startRestartGroup.endReplaceGroup();
-                final PagerState rememberPagerState2 = PagerStateKt.rememberPagerState(selectedIndex2, 0.0f, (Function0) rememberedValue, startRestartGroup, 0, 2);
-                Integer valueOf4 = Integer.valueOf(selectedIndex2);
-                startRestartGroup.startReplaceGroup(150809154);
-                changed = ((i6 & 7168) != 2048 || ((i6 & 4096) != 0 && startRestartGroup.changedInstance(pagesScrollAnimation2))) | startRestartGroup.changed(rememberPagerState2) | startRestartGroup.changed(selectedIndex2);
+                Integer valueOf4 = Integer.valueOf(coerceAtLeast);
+                startRestartGroup.startReplaceGroup(150814137);
+                changed = ((i3 & 7168) != 2048 || ((i3 & 4096) != 0 && startRestartGroup.changedInstance(disabled))) | startRestartGroup.changed(coerceAtLeast);
                 rememberedValue2 = startRestartGroup.rememberedValue();
                 if (!changed) {
                 }
-                rememberedValue2 = new ChildPagesKt$ChildPages$4$1(rememberPagerState2, selectedIndex2, pagesScrollAnimation2, null);
+                rememberedValue2 = new ChildPagesKt$ChildPages$4$1(pagerState2, disabled, coerceAtLeast, null);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
                 startRestartGroup.endReplaceGroup();
                 EffectsKt.LaunchedEffect(valueOf4, (Function2) rememberedValue2, startRestartGroup, 0);
-                Integer valueOf22 = Integer.valueOf(rememberPagerState2.getCurrentPage());
-                Integer valueOf32 = Integer.valueOf(rememberPagerState2.getTargetPage());
-                startRestartGroup.startReplaceGroup(150824821);
-                changed2 = startRestartGroup.changed(rememberPagerState2) | ((i6 & 112) == 32);
+                Integer valueOf22 = Integer.valueOf(pagerState2.getCurrentPage());
+                Integer valueOf32 = Integer.valueOf(pagerState2.getTargetPage());
+                startRestartGroup.startReplaceGroup(150829525);
+                if ((i3 & 112) == 32) {
+                }
                 rememberedValue3 = startRestartGroup.rememberedValue();
-                if (!changed2) {
+                if (!z) {
                 }
                 rememberedValue3 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
-                    public final Object invoke(Object obj3) {
+                    public final Object invoke(Object obj2) {
                         DisposableEffectResult ChildPages$lambda$9$lambda$8;
-                        ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj3);
+                        ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
                         return ChildPages$lambda$9$lambda$8;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
                 startRestartGroup.endReplaceGroup();
                 EffectsKt.DisposableEffect(valueOf22, valueOf32, (Function1) rememberedValue3, startRestartGroup, 0);
-                startRestartGroup.startReplaceGroup(150830851);
-                changedInstance2 = ((458752 & i6) == 131072) | startRestartGroup.changedInstance(pages);
+                startRestartGroup.startReplaceGroup(150835555);
+                changedInstance = startRestartGroup.changedInstance(pages) | ((458752 & i3) == 131072);
                 rememberedValue4 = startRestartGroup.rememberedValue();
-                if (!changedInstance2) {
+                if (!changedInstance) {
                 }
                 rememberedValue4 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function1
-                    public final Object invoke(Object obj3) {
+                    public final Object invoke(Object obj2) {
                         Object ChildPages$lambda$11$lambda$10;
-                        ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj3).intValue());
+                        ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj2).intValue());
                         return ChildPages$lambda$11$lambda$10;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue4);
                 startRestartGroup.endReplaceGroup();
-                Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function652 = function63;
-                function652.invoke(obj22, rememberPagerState2, (Function1) rememberedValue4, ComposableLambdaKt.rememberComposableLambda(1842706874, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$ChildPages$7
+                function642.invoke(companion, pagerState2, (Function1) rememberedValue4, ComposableLambdaKt.rememberComposableLambda(1842706874, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$ChildPages$7
                     @Override // kotlin.jvm.functions.Function4
                     public /* bridge */ /* synthetic */ Unit invoke(PagerScope pagerScope, Integer num, Composer composer2, Integer num2) {
                         invoke(pagerScope, num.intValue(), composer2, num2.intValue());
                         return Unit.INSTANCE;
                     }
 
-                    public final void invoke(PagerScope pager, int i9, Composer composer2, int i10) {
+                    public final void invoke(PagerScope pager, int i8, Composer composer2, int i9) {
                         Intrinsics.checkNotNullParameter(pager, "$this$pager");
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(1842706874, i10, -1, "com.arkivanov.decompose.extensions.compose.pages.ChildPages.<anonymous> (ChildPages.kt:88)");
+                            ComposerKt.traceEventStart(1842706874, i9, -1, "com.arkivanov.decompose.extensions.compose.pages.ChildPages.<anonymous> (ChildPages.kt:93)");
                         }
-                        Child child = (Child) pages.getItems().get(i9);
+                        Child child = (Child) pages.getItems().get(i8);
                         Object key = child.getKey();
-                        composer2.startReplaceGroup(750524051);
-                        boolean changed3 = composer2.changed(key);
+                        composer2.startReplaceGroup(750528755);
+                        boolean changed2 = composer2.changed(key);
                         Object rememberedValue6 = composer2.rememberedValue();
-                        if (changed3 || rememberedValue6 == Composer.Companion.getEmpty()) {
+                        if (changed2 || rememberedValue6 == Composer.Companion.getEmpty()) {
                             rememberedValue6 = new Ref(child.getInstance());
                             composer2.updateRememberedValue(rememberedValue6);
                         }
@@ -660,32 +642,31 @@ public final class ChildPagesKt {
                         }
                         Object value = ref.getValue();
                         if (value != null) {
-                            pageContent.invoke(pager, Integer.valueOf(i9), value, composer2, Integer.valueOf(i10 & WebSocketProtocol.PAYLOAD_SHORT));
+                            pageContent.invoke(pager, Integer.valueOf(i8), value, composer2, Integer.valueOf(i9 & WebSocketProtocol.PAYLOAD_SHORT));
                         }
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
                     }
-                }, startRestartGroup, 54), startRestartGroup, Integer.valueOf(((i6 >> 6) & 14) | 3072 | (57344 & i6)));
-                startRestartGroup = startRestartGroup;
+                }, startRestartGroup, 54), startRestartGroup, Integer.valueOf(((i3 >> 6) & 14) | 3120 | (i3 & 57344)));
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                function64 = function652;
-                modifier2 = obj22;
+                function13 = function12;
+                function63 = function642;
             } else {
                 startRestartGroup.skipToGroupEnd();
-                pagesScrollAnimation2 = disabled;
-                modifier2 = companion;
-                function64 = function62;
-                function12 = obj;
+                function13 = obj;
+                function63 = function62;
             }
+            final PagesScrollAnimation pagesScrollAnimation2 = disabled;
+            final Modifier modifier2 = companion;
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
                 endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function2
-                    public final Object invoke(Object obj3, Object obj4) {
+                    public final Object invoke(Object obj2, Object obj3) {
                         Unit ChildPages$lambda$12;
-                        ChildPages$lambda$12 = ChildPagesKt.ChildPages$lambda$12(ChildPages.this, onPageSelected, modifier2, pagesScrollAnimation2, function64, function12, pageContent, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                        ChildPages$lambda$12 = ChildPagesKt.ChildPages$lambda$12(ChildPages.this, onPageSelected, modifier2, pagesScrollAnimation2, function63, function13, pageContent, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                         return ChildPages$lambda$12;
                     }
                 });
@@ -709,7 +690,7 @@ public final class ChildPagesKt {
         startRestartGroup.startDefaults();
         if ((i & 1) != 0) {
         }
-        if (i8 != 0) {
+        if (i7 != 0) {
         }
         if (i4 != 0) {
         }
@@ -717,93 +698,81 @@ public final class ChildPagesKt {
         }
         if (i5 != 0) {
         }
-        i6 = i3;
-        function63 = function62;
         function12 = obj;
-        pagesScrollAnimation2 = disabled;
-        Object obj222 = companion;
+        Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function6422 = function62;
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
-        int selectedIndex22 = pages.getSelectedIndex();
-        startRestartGroup.startReplaceGroup(150806719);
-        changedInstance = startRestartGroup.changedInstance(pages);
+        coerceAtLeast = RangesKt.coerceAtLeast(pages.getSelectedIndex(), 0);
+        final State rememberUpdatedState22 = SnapshotStateKt.rememberUpdatedState(Integer.valueOf(pages.getItems().size()), startRestartGroup, 0);
+        startRestartGroup.startReplaceGroup(150807688);
         rememberedValue = startRestartGroup.rememberedValue();
-        if (!changedInstance) {
+        if (rememberedValue == Composer.Companion.getEmpty()) {
         }
-        rememberedValue = new Function0() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda1
-            @Override // kotlin.jvm.functions.Function0
-            public final Object invoke() {
-                int ChildPages$lambda$5$lambda$4;
-                ChildPages$lambda$5$lambda$4 = ChildPagesKt.ChildPages$lambda$5$lambda$4(ChildPages.this);
-                return Integer.valueOf(ChildPages$lambda$5$lambda$4);
-            }
-        };
-        startRestartGroup.updateRememberedValue(rememberedValue);
+        final PagerState pagerState22 = (PagerState) rememberedValue;
         startRestartGroup.endReplaceGroup();
-        final PagerState rememberPagerState22 = PagerStateKt.rememberPagerState(selectedIndex22, 0.0f, (Function0) rememberedValue, startRestartGroup, 0, 2);
-        Integer valueOf42 = Integer.valueOf(selectedIndex22);
-        startRestartGroup.startReplaceGroup(150809154);
-        changed = ((i6 & 7168) != 2048 || ((i6 & 4096) != 0 && startRestartGroup.changedInstance(pagesScrollAnimation2))) | startRestartGroup.changed(rememberPagerState22) | startRestartGroup.changed(selectedIndex22);
+        Integer valueOf42 = Integer.valueOf(coerceAtLeast);
+        startRestartGroup.startReplaceGroup(150814137);
+        changed = ((i3 & 7168) != 2048 || ((i3 & 4096) != 0 && startRestartGroup.changedInstance(disabled))) | startRestartGroup.changed(coerceAtLeast);
         rememberedValue2 = startRestartGroup.rememberedValue();
         if (!changed) {
         }
-        rememberedValue2 = new ChildPagesKt$ChildPages$4$1(rememberPagerState22, selectedIndex22, pagesScrollAnimation2, null);
+        rememberedValue2 = new ChildPagesKt$ChildPages$4$1(pagerState22, disabled, coerceAtLeast, null);
         startRestartGroup.updateRememberedValue(rememberedValue2);
         startRestartGroup.endReplaceGroup();
         EffectsKt.LaunchedEffect(valueOf42, (Function2) rememberedValue2, startRestartGroup, 0);
-        Integer valueOf222 = Integer.valueOf(rememberPagerState22.getCurrentPage());
-        Integer valueOf322 = Integer.valueOf(rememberPagerState22.getTargetPage());
-        startRestartGroup.startReplaceGroup(150824821);
-        changed2 = startRestartGroup.changed(rememberPagerState22) | ((i6 & 112) == 32);
+        Integer valueOf222 = Integer.valueOf(pagerState22.getCurrentPage());
+        Integer valueOf322 = Integer.valueOf(pagerState22.getTargetPage());
+        startRestartGroup.startReplaceGroup(150829525);
+        if ((i3 & 112) == 32) {
+        }
         rememberedValue3 = startRestartGroup.rememberedValue();
-        if (!changed2) {
+        if (!z) {
         }
         rememberedValue3 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj3) {
+            public final Object invoke(Object obj2) {
                 DisposableEffectResult ChildPages$lambda$9$lambda$8;
-                ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj3);
+                ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
                 return ChildPages$lambda$9$lambda$8;
             }
         };
         startRestartGroup.updateRememberedValue(rememberedValue3);
         startRestartGroup.endReplaceGroup();
         EffectsKt.DisposableEffect(valueOf222, valueOf322, (Function1) rememberedValue3, startRestartGroup, 0);
-        startRestartGroup.startReplaceGroup(150830851);
-        changedInstance2 = ((458752 & i6) == 131072) | startRestartGroup.changedInstance(pages);
+        startRestartGroup.startReplaceGroup(150835555);
+        changedInstance = startRestartGroup.changedInstance(pages) | ((458752 & i3) == 131072);
         rememberedValue4 = startRestartGroup.rememberedValue();
-        if (!changedInstance2) {
+        if (!changedInstance) {
         }
         rememberedValue4 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj3) {
+            public final Object invoke(Object obj2) {
                 Object ChildPages$lambda$11$lambda$10;
-                ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj3).intValue());
+                ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj2).intValue());
                 return ChildPages$lambda$11$lambda$10;
             }
         };
         startRestartGroup.updateRememberedValue(rememberedValue4);
         startRestartGroup.endReplaceGroup();
-        Function6<? super Modifier, ? super PagerState, ? super Function1<? super Integer, ? extends Object>, ? super Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function6522 = function63;
-        function6522.invoke(obj222, rememberPagerState22, (Function1) rememberedValue4, ComposableLambdaKt.rememberComposableLambda(1842706874, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$ChildPages$7
+        function6422.invoke(companion, pagerState22, (Function1) rememberedValue4, ComposableLambdaKt.rememberComposableLambda(1842706874, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$ChildPages$7
             @Override // kotlin.jvm.functions.Function4
             public /* bridge */ /* synthetic */ Unit invoke(PagerScope pagerScope, Integer num, Composer composer2, Integer num2) {
                 invoke(pagerScope, num.intValue(), composer2, num2.intValue());
                 return Unit.INSTANCE;
             }
 
-            public final void invoke(PagerScope pager, int i9, Composer composer2, int i10) {
+            public final void invoke(PagerScope pager, int i8, Composer composer2, int i9) {
                 Intrinsics.checkNotNullParameter(pager, "$this$pager");
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1842706874, i10, -1, "com.arkivanov.decompose.extensions.compose.pages.ChildPages.<anonymous> (ChildPages.kt:88)");
+                    ComposerKt.traceEventStart(1842706874, i9, -1, "com.arkivanov.decompose.extensions.compose.pages.ChildPages.<anonymous> (ChildPages.kt:93)");
                 }
-                Child child = (Child) pages.getItems().get(i9);
+                Child child = (Child) pages.getItems().get(i8);
                 Object key = child.getKey();
-                composer2.startReplaceGroup(750524051);
-                boolean changed3 = composer2.changed(key);
+                composer2.startReplaceGroup(750528755);
+                boolean changed2 = composer2.changed(key);
                 Object rememberedValue6 = composer2.rememberedValue();
-                if (changed3 || rememberedValue6 == Composer.Companion.getEmpty()) {
+                if (changed2 || rememberedValue6 == Composer.Companion.getEmpty()) {
                     rememberedValue6 = new Ref(child.getInstance());
                     composer2.updateRememberedValue(rememberedValue6);
                 }
@@ -814,26 +783,27 @@ public final class ChildPagesKt {
                 }
                 Object value = ref.getValue();
                 if (value != null) {
-                    pageContent.invoke(pager, Integer.valueOf(i9), value, composer2, Integer.valueOf(i10 & WebSocketProtocol.PAYLOAD_SHORT));
+                    pageContent.invoke(pager, Integer.valueOf(i8), value, composer2, Integer.valueOf(i9 & WebSocketProtocol.PAYLOAD_SHORT));
                 }
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
             }
-        }, startRestartGroup, 54), startRestartGroup, Integer.valueOf(((i6 >> 6) & 14) | 3072 | (57344 & i6)));
-        startRestartGroup = startRestartGroup;
+        }, startRestartGroup, 54), startRestartGroup, Integer.valueOf(((i3 >> 6) & 14) | 3120 | (i3 & 57344)));
         if (ComposerKt.isTraceInProgress()) {
         }
-        function64 = function6522;
-        modifier2 = obj222;
+        function13 = function12;
+        function63 = function6422;
+        final PagesScrollAnimation pagesScrollAnimation22 = disabled;
+        final Modifier modifier22 = companion;
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int ChildPages$lambda$5$lambda$4(ChildPages childPages) {
-        return childPages.getItems().size();
+    public static final int ChildPages$lambda$5$lambda$4(State state) {
+        return ((Number) state.getValue()).intValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

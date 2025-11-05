@@ -5,7 +5,7 @@ import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
 import androidx.media3.common.util.Assertions;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SinglePeriodTimeline extends Timeline {
     private final long elapsedRealtimeEpochOffsetMs;
     private final boolean isDynamic;

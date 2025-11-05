@@ -1,23 +1,16 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Dj implements D4 {
+/* loaded from: classes3.dex */
+public final class Dj implements Xa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Xg f414a;
+    public final /* synthetic */ boolean f443a;
 
-    public Dj(Xg xg) {
-        this.f414a = xg;
+    public Dj(boolean z) {
+        this.f443a = z;
     }
 
-    @Override // io.appmetrica.analytics.impl.D4
-    public final void a() {
-    }
-
-    @Override // io.appmetrica.analytics.impl.D4
-    public final void a(C0478o6 c0478o6, N4 n4) {
-        Xg xg = this.f414a;
-        if (xg != null) {
-            xg.a(c0478o6, n4);
-        }
+    @Override // io.appmetrica.analytics.impl.Xa
+    public final void a(Ya ya) {
+        ya.setDataSendingEnabled(this.f443a);
     }
 }

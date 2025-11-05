@@ -8,7 +8,7 @@ import com.arkivanov.essenty.lifecycle.Lifecycle;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ComponentContextExt.kt */
-@Metadata(d1 = {"\u0000\u0018\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a3\u0010\u0000\u001a\u0002H\u0001\"\u000e\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002*\u0002H\u00012\u0006\u0010\u0003\u001a\u00020\u00042\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"childContext", "Ctx", "Lcom/arkivanov/decompose/GenericComponentContext;", "key", "", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "(Lcom/arkivanov/decompose/GenericComponentContext;Ljava/lang/String;Lcom/arkivanov/essenty/lifecycle/Lifecycle;)Lcom/arkivanov/decompose/GenericComponentContext;", "decompose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\u001a3\u0010\u0000\u001a\u0002H\u0001\"\u000e\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002*\u0002H\u00012\u0006\u0010\u0003\u001a\u00020\u00042\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006¢\u0006\u0002\u0010\u0007\u001a=\u0010\u0000\u001a\u0002H\u0001\"\u000e\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002*\u0002H\u00012\u0006\u0010\u0003\u001a\u00020\u00042\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"childContext", "Ctx", "Lcom/arkivanov/decompose/GenericComponentContext;", "key", "", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "(Lcom/arkivanov/decompose/GenericComponentContext;Ljava/lang/String;Lcom/arkivanov/essenty/lifecycle/Lifecycle;)Lcom/arkivanov/decompose/GenericComponentContext;", "backHandlerPriority", "", "(Lcom/arkivanov/decompose/GenericComponentContext;Ljava/lang/String;Lcom/arkivanov/essenty/lifecycle/Lifecycle;I)Lcom/arkivanov/decompose/GenericComponentContext;", "decompose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ComponentContextExtKt {
     public static /* synthetic */ GenericComponentContext childContext$default(GenericComponentContext genericComponentContext, String str, Lifecycle lifecycle, int i, Object obj) {
@@ -19,6 +19,19 @@ public final class ComponentContextExtKt {
     }
 
     public static final <Ctx extends GenericComponentContext<? extends Ctx>> Ctx childContext(Ctx ctx, String key, Lifecycle lifecycle) {
+        Intrinsics.checkNotNullParameter(ctx, "<this>");
+        Intrinsics.checkNotNullParameter(key, "key");
+        return (Ctx) childContext(ctx, key, lifecycle, 0);
+    }
+
+    public static /* synthetic */ GenericComponentContext childContext$default(GenericComponentContext genericComponentContext, String str, Lifecycle lifecycle, int i, int i2, Object obj) {
+        if ((i2 & 2) != 0) {
+            lifecycle = null;
+        }
+        return childContext(genericComponentContext, str, lifecycle, i);
+    }
+
+    public static final <Ctx extends GenericComponentContext<? extends Ctx>> Ctx childContext(Ctx ctx, String key, Lifecycle lifecycle, int i) {
         Intrinsics.checkNotNullParameter(ctx, "<this>");
         Intrinsics.checkNotNullParameter(key, "key");
         if (lifecycle != null) {
@@ -57,6 +70,6 @@ public final class ComponentContextExtKt {
                 }
             });
         }
-        return (Ctx) ctx.getComponentContextFactory().invoke(lifecycle == null ? ctx.getLifecycle() : new MergedLifecycle(ctx.getLifecycle(), lifecycle), ChildStateKeeperKt.child(ctx.getStateKeeper(), key, lifecycle), ChildInstanceKeeperKt.child(ctx.getInstanceKeeper(), key, lifecycle), ChildBackHandlerKt.child$default(ctx.getBackHandler(), lifecycle, 0, 2, null));
+        return (Ctx) ctx.getComponentContextFactory().invoke(lifecycle == null ? ctx.getLifecycle() : new MergedLifecycle(ctx.getLifecycle(), lifecycle), ChildStateKeeperKt.child(ctx.getStateKeeper(), key, lifecycle), ChildInstanceKeeperKt.child(ctx.getInstanceKeeper(), key, lifecycle), ChildBackHandlerKt.child(ctx.getBackHandler(), lifecycle, i));
     }
 }

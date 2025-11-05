@@ -3,18 +3,18 @@ package io.appmetrica.analytics.remotepermissions.impl;
 import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
 import java.util.Set;
 import kotlin.collections.SetsKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class e implements PermissionStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public Set f1288a = SetsKt.emptySet();
+    public Set f1329a = SetsKt.emptySet();
 
     public final synchronized void a(Set<String> set) {
-        this.f1288a = set;
+        this.f1329a = set;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
     public final synchronized boolean forbidUsePermission(String str) {
-        return !this.f1288a.contains(str);
+        return !this.f1329a.contains(str);
     }
 }

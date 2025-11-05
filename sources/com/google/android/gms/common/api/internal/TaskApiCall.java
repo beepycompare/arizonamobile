@@ -8,14 +8,14 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.BiConsumer;
 import com.google.android.gms.tasks.TaskCompletionSource;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TaskApiCall<A extends Api.AnyClient, ResultT> {
     private final Feature[] zaa;
     private final boolean zab;
     private final int zac;
 
     /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder<A extends Api.AnyClient, ResultT> {
         private RemoteCall zaa;
         private Feature[] zac;

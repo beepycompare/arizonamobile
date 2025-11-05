@@ -3,11 +3,11 @@ package io.appmetrica.analytics.networktasks.internal;
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
 import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ExponentialBackoffDataHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TimePassedChecker f1259a;
+    private final TimePassedChecker f1300a;
     private final TimeProvider b;
     private final HostRetryInfoProvider c;
     private long d;
@@ -37,7 +37,7 @@ public class ExponentialBackoffDataHolder {
         if (retryPolicyConfig != null) {
             long j = this.d;
             if (j != 0) {
-                TimePassedChecker timePassedChecker = this.f1259a;
+                TimePassedChecker timePassedChecker = this.f1300a;
                 int i = ((1 << (this.e - 1)) - 1) * retryPolicyConfig.exponentialMultiplier;
                 int i2 = retryPolicyConfig.maxIntervalSeconds;
                 if (i > i2) {
@@ -52,7 +52,7 @@ public class ExponentialBackoffDataHolder {
     ExponentialBackoffDataHolder(HostRetryInfoProvider hostRetryInfoProvider, SystemTimeProvider systemTimeProvider, TimePassedChecker timePassedChecker, String str) {
         this.c = hostRetryInfoProvider;
         this.b = systemTimeProvider;
-        this.f1259a = timePassedChecker;
+        this.f1300a = timePassedChecker;
         this.d = hostRetryInfoProvider.getLastAttemptTimeSeconds();
         this.e = hostRetryInfoProvider.getNextSendAttemptNumber();
         this.f = String.format("[ExponentialBackoffDataHolder-%s]", str);

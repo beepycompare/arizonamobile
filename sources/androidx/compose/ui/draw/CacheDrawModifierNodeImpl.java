@@ -66,8 +66,8 @@ public final class CacheDrawModifierNodeImpl extends Modifier.Node implements Ca
 
     @Override // androidx.compose.ui.draw.BuildDrawCacheParams
     /* renamed from: getSize-NH-jbRc */
-    public long mo4087getSizeNHjbRc() {
-        return IntSizeKt.m7447toSizeozmzZPI(DelegatableNodeKt.m6112requireCoordinator64DMado(this, NodeKind.m6258constructorimpl(128)).mo5975getSizeYbymL2g());
+    public long mo4817getSizeNHjbRc() {
+        return IntSizeKt.m8178toSizeozmzZPI(DelegatableNodeKt.m6842requireCoordinator64DMado(this, NodeKind.m6988constructorimpl(128)).mo6705getSizeYbymL2g());
     }
 
     public final GraphicsContext getGraphicsContext() {

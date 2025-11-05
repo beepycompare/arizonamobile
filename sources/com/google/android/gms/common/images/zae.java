@@ -3,14 +3,13 @@ package com.google.android.gms.common.images;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.widget.ImageView;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import com.google.android.gms.common.internal.Asserts;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.internal.base.zak;
 import com.google.android.gms.internal.base.zal;
 import java.lang.ref.WeakReference;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zae extends zag {
     private final WeakReference zac;
 
@@ -62,7 +61,7 @@ public final class zae extends zag {
                 } else if (drawable == null || !z4) {
                     return;
                 } else {
-                    ((zak) drawable).zab(ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION);
+                    ((zak) drawable).zab(250);
                     return;
                 }
             }

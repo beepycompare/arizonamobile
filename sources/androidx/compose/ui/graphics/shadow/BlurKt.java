@@ -11,13 +11,13 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class BlurKt {
     /* renamed from: configureShadow-FoewPVk$default  reason: not valid java name */
-    public static /* synthetic */ Paint m5263configureShadowFoewPVk$default(Paint paint, long j, int i, BlurMaskFilter blurMaskFilter, int i2, int i3, Object obj) {
+    public static /* synthetic */ Paint m5993configureShadowFoewPVk$default(Paint paint, long j, int i, BlurMaskFilter blurMaskFilter, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
-            j = Color.Companion.m4575getBlack0d7_KjU();
+            j = Color.Companion.m5305getBlack0d7_KjU();
         }
         long j2 = j;
         if ((i3 & 2) != 0) {
-            i = BlendMode.Companion.m4490getSrcOver0nO6VwU();
+            i = BlendMode.Companion.m5220getSrcOver0nO6VwU();
         }
         int i4 = i;
         if ((i3 & 4) != 0) {
@@ -25,16 +25,16 @@ public final class BlurKt {
         }
         BlurMaskFilter blurMaskFilter2 = blurMaskFilter;
         if ((i3 & 8) != 0) {
-            i2 = PaintingStyle.Companion.m4828getFillTiuSbCo();
+            i2 = PaintingStyle.Companion.m5558getFillTiuSbCo();
         }
-        return m5262configureShadowFoewPVk(paint, j2, i4, blurMaskFilter2, i2);
+        return m5992configureShadowFoewPVk(paint, j2, i4, blurMaskFilter2, i2);
     }
 
     /* renamed from: configureShadow-FoewPVk  reason: not valid java name */
-    public static final Paint m5262configureShadowFoewPVk(Paint paint, long j, int i, BlurMaskFilter blurMaskFilter, int i2) {
-        paint.mo4426setColor8_81llA(j);
-        paint.mo4425setBlendModes9anfk8(i);
-        paint.mo4430setStylek9PVt8s(i2);
+    public static final Paint m5992configureShadowFoewPVk(Paint paint, long j, int i, BlurMaskFilter blurMaskFilter, int i2) {
+        paint.mo5156setColor8_81llA(j);
+        paint.mo5155setBlendModes9anfk8(i);
+        paint.mo5160setStylek9PVt8s(i2);
         Blur_androidKt.setBlurFilter(paint, blurMaskFilter);
         return paint;
     }

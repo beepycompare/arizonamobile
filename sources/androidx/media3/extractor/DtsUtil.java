@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DtsUtil {
     public static final int DTS_EXPRESS_MAX_RATE_BITS_PER_SECOND = 768000;
     public static final int DTS_HD_MAX_RATE_BYTES_PER_SECOND = 2250000;
@@ -60,14 +60,14 @@ public final class DtsUtil {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface DtsAudioMimeType {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface FrameType {
     }
 
@@ -84,7 +84,7 @@ public final class DtsUtil {
         return (i == SYNC_VALUE_UHD_FTOC_NONSYNC_BE || i == SYNC_VALUE_UHD_FTOC_NONSYNC_LE) ? 4 : 0;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class DtsHeader {
         public final int bitrate;
         public final int channelCount;

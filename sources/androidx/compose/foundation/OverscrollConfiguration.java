@@ -46,16 +46,16 @@ public final class OverscrollConfiguration {
         if (Intrinsics.areEqual(getClass(), obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type androidx.compose.foundation.OverscrollConfiguration");
             OverscrollConfiguration overscrollConfiguration = (OverscrollConfiguration) obj;
-            return Color.m4550equalsimpl0(this.glowColor, overscrollConfiguration.glowColor) && Intrinsics.areEqual(this.drawPadding, overscrollConfiguration.drawPadding);
+            return Color.m5280equalsimpl0(this.glowColor, overscrollConfiguration.glowColor) && Intrinsics.areEqual(this.drawPadding, overscrollConfiguration.drawPadding);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Color.m4556hashCodeimpl(this.glowColor) * 31) + this.drawPadding.hashCode();
+        return (Color.m5286hashCodeimpl(this.glowColor) * 31) + this.drawPadding.hashCode();
     }
 
     public String toString() {
-        return "OverscrollConfiguration(glowColor=" + ((Object) Color.m4557toStringimpl(this.glowColor)) + ", drawPadding=" + this.drawPadding + ')';
+        return "OverscrollConfiguration(glowColor=" + ((Object) Color.m5287toStringimpl(this.glowColor)) + ", drawPadding=" + this.drawPadding + ')';
     }
 }

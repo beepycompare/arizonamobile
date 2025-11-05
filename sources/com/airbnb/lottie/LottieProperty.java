@@ -38,6 +38,9 @@ public interface LottieProperty {
     public static final Float TRANSFORM_POSITION_X;
     public static final Float TRANSFORM_POSITION_Y;
     public static final Float TRANSFORM_ROTATION;
+    public static final Float TRANSFORM_ROTATION_X;
+    public static final Float TRANSFORM_ROTATION_Y;
+    public static final Float TRANSFORM_ROTATION_Z;
     public static final ScaleXY TRANSFORM_SCALE;
     public static final Float TRANSFORM_SKEW;
     public static final Float TRANSFORM_SKEW_ANGLE;
@@ -65,6 +68,9 @@ public interface LottieProperty {
         POSITION = new PointF();
         TRANSFORM_SCALE = new ScaleXY();
         TRANSFORM_ROTATION = Float.valueOf(1.0f);
+        TRANSFORM_ROTATION_X = Float.valueOf(1.1f);
+        TRANSFORM_ROTATION_Y = Float.valueOf(1.2f);
+        TRANSFORM_ROTATION_Z = Float.valueOf(1.3f);
         TRANSFORM_SKEW = valueOf4;
         TRANSFORM_SKEW_ANGLE = valueOf4;
         STROKE_WIDTH = Float.valueOf(2.0f);

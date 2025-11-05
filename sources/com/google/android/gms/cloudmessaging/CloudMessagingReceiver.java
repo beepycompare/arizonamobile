@@ -24,13 +24,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CloudMessagingReceiver extends BroadcastReceiver {
     private static SoftReference zza;
     private static SoftReference zzb;
 
     /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class IntentActionKeys {
         public static final String NOTIFICATION_DISMISS = "com.google.firebase.messaging.NOTIFICATION_DISMISS";
         public static final String NOTIFICATION_OPEN = "com.google.firebase.messaging.NOTIFICATION_OPEN";
@@ -40,7 +40,7 @@ public abstract class CloudMessagingReceiver extends BroadcastReceiver {
     }
 
     /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class IntentKeys {
         public static final String PENDING_INTENT = "pending_intent";
         public static final String WRAPPED_INTENT = "wrapped_intent";

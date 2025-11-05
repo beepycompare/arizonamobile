@@ -41,7 +41,7 @@ public final class TextLayoutState {
         this.textLayoutNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
         this.coreNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
         this.decoratorNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7262boximpl(Dp.m7264constructorimpl(0)), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7993boximpl(Dp.m7995constructorimpl(0)), null, 2, null);
         this.minHeightForSingleLineField$delegate = mutableStateOf$default;
         this.bringIntoViewRequester = BringIntoViewRequesterKt.BringIntoViewRequester();
     }
@@ -84,12 +84,12 @@ public final class TextLayoutState {
 
     /* renamed from: getMinHeightForSingleLineField-D9Ej5fM  reason: not valid java name */
     public final float m1583getMinHeightForSingleLineFieldD9Ej5fM() {
-        return ((Dp) this.minHeightForSingleLineField$delegate.getValue()).m7278unboximpl();
+        return ((Dp) this.minHeightForSingleLineField$delegate.getValue()).m8009unboximpl();
     }
 
     /* renamed from: setMinHeightForSingleLineField-0680j_4  reason: not valid java name */
     public final void m1587setMinHeightForSingleLineField0680j_4(float f) {
-        this.minHeightForSingleLineField$delegate.setValue(Dp.m7262boximpl(f));
+        this.minHeightForSingleLineField$delegate.setValue(Dp.m7993boximpl(f));
     }
 
     public final BringIntoViewRequester getBringIntoViewRequester() {
@@ -139,7 +139,7 @@ public final class TextLayoutState {
         if (z) {
             j = m1582coercedInVisibleBoundsOfInputTextMKHz9U$foundation_release(j);
         }
-        return layoutResult.m6696getOffsetForPositionk4lQ0M(TextLayoutStateKt.m1589fromDecorationToTextLayoutUv8p0NA(this, j));
+        return layoutResult.m7427getOffsetForPositionk4lQ0M(TextLayoutStateKt.m1589fromDecorationToTextLayoutUv8p0NA(this, j));
     }
 
     /* renamed from: isPositionOnText-k-4lQ0M  reason: not valid java name */

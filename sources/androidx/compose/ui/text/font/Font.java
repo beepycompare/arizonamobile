@@ -20,13 +20,13 @@ public interface Font {
     }
 
     /* renamed from: getStyle-_-LCdwA */
-    int mo6791getStyle_LCdwA();
+    int mo7522getStyle_LCdwA();
 
     FontWeight getWeight();
 
     /* renamed from: getLoadingStrategy-PKNRLFQ */
-    default int mo6783getLoadingStrategyPKNRLFQ() {
-        return FontLoadingStrategy.Companion.m6831getBlockingPKNRLFQ();
+    default int mo7514getLoadingStrategyPKNRLFQ() {
+        return FontLoadingStrategy.Companion.m7562getBlockingPKNRLFQ();
     }
 
     /* compiled from: Font.kt */

@@ -63,9 +63,9 @@ public final class TextFieldSelectionState$maybeSuggestSelectionRange$1 extends 
         }
         TextRange textRange = (TextRange) obj;
         z = this.this$0.isPassword;
-        if (!z && textRange != null && Intrinsics.areEqual(this.this$0.getTextFieldState$foundation_release().getVisualText().getText(), this.$text) && TextRange.m6719equalsimpl0(this.this$0.getTextFieldState$foundation_release().getVisualText().m1446getSelectiond9O1mEE(), this.$selection)) {
-            if (!TextRange.m6719equalsimpl0(textRange.m6730unboximpl(), this.this$0.getTextFieldState$foundation_release().getVisualText().m1446getSelectiond9O1mEE())) {
-                this.this$0.getTextFieldState$foundation_release().m1603selectCharsIn5zctL8(textRange.m6730unboximpl());
+        if (!z && textRange != null && Intrinsics.areEqual(this.this$0.getTextFieldState$foundation_release().getVisualText().getText(), this.$text) && TextRange.m7450equalsimpl0(this.this$0.getTextFieldState$foundation_release().getVisualText().m1446getSelectiond9O1mEE(), this.$selection)) {
+            if (!TextRange.m7450equalsimpl0(textRange.m7461unboximpl(), this.this$0.getTextFieldState$foundation_release().getVisualText().m1446getSelectiond9O1mEE())) {
+                this.this$0.getTextFieldState$foundation_release().m1603selectCharsIn5zctL8(textRange.m7461unboximpl());
             }
         }
         return Unit.INSTANCE;

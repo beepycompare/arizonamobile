@@ -53,16 +53,16 @@ public abstract class CornerBasedShape implements Shape {
         float mo1198toPxTmRCtEA2 = this.topEnd.mo1198toPxTmRCtEA(j, density);
         float mo1198toPxTmRCtEA3 = this.bottomEnd.mo1198toPxTmRCtEA(j, density);
         float mo1198toPxTmRCtEA4 = this.bottomStart.mo1198toPxTmRCtEA(j, density);
-        float m4373getMinDimensionimpl = Size.m4373getMinDimensionimpl(j);
+        float m5103getMinDimensionimpl = Size.m5103getMinDimensionimpl(j);
         float f = mo1198toPxTmRCtEA + mo1198toPxTmRCtEA4;
-        if (f > m4373getMinDimensionimpl) {
-            float f2 = m4373getMinDimensionimpl / f;
+        if (f > m5103getMinDimensionimpl) {
+            float f2 = m5103getMinDimensionimpl / f;
             mo1198toPxTmRCtEA *= f2;
             mo1198toPxTmRCtEA4 *= f2;
         }
         float f3 = mo1198toPxTmRCtEA2 + mo1198toPxTmRCtEA3;
-        if (f3 > m4373getMinDimensionimpl) {
-            float f4 = m4373getMinDimensionimpl / f3;
+        if (f3 > m5103getMinDimensionimpl) {
+            float f4 = m5103getMinDimensionimpl / f3;
             mo1198toPxTmRCtEA2 *= f4;
             mo1198toPxTmRCtEA3 *= f4;
         }

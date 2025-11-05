@@ -1,17 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import android.os.ResultReceiver;
-/* loaded from: classes4.dex */
-public final class Vi extends Y4 {
-    public Vi(V4 v4) {
-        super(v4);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Y4
-    public final boolean a(C0478o6 c0478o6, S4 s4) {
-        Bundle bundle = c0478o6.m;
-        this.f753a.k.a(new U4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
-        return false;
+import java.util.Map;
+/* loaded from: classes3.dex */
+public final class Vi implements A9 {
+    @Override // io.appmetrica.analytics.impl.A9
+    public final Integer a(S8 s8) {
+        EnumC0320ib enumC0320ib = s8.h;
+        if (enumC0320ib == null) {
+            Map map = Uf.f719a;
+            return null;
+        }
+        return (Integer) Uf.c.get(enumC0320ib);
     }
 }

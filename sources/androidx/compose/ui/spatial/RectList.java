@@ -153,7 +153,7 @@ public final class RectList {
     }
 
     public final void updateSubhierarchy(int i, int i2, int i3) {
-        updateSubhierarchy(((this.itemsSize & 511) << 52) | (0 << 26) | (i & RectListKt.Lower26Bits), i2, i3);
+        updateSubhierarchy((Math.min(this.itemsSize, 511) << 52) | (0 << 26) | (i & RectListKt.Lower26Bits), i2, i3);
     }
 
     private final void updateSubhierarchy(long j, int i, int i2) {
@@ -162,7 +162,7 @@ public final class RectList {
         char c2;
         long[] jArr = this.items;
         long[] jArr2 = this.stack;
-        int size = getSize();
+        getSize();
         jArr2[0] = j;
         int i4 = 1;
         while (i4 > 0) {
@@ -173,42 +173,37 @@ public final class RectList {
             char c3 = 26;
             int i7 = ((int) (j2 >> 26)) & RectListKt.Lower26Bits;
             char c4 = '4';
-            char c5 = 511;
             int i8 = ((int) (j2 >> 52)) & 511;
-            int i9 = i8 == 511 ? size : i8 + i7;
+            int length = i8 == 511 ? jArr.length : i8 + i7;
             if (i7 < 0) {
                 return;
             }
-            while (i7 < jArr.length - 2 && i7 < i9) {
-                int i10 = i7 + 2;
-                long j3 = jArr[i10];
-                int i11 = i5;
-                char c6 = c3;
-                if ((((int) (j3 >> c6)) & i11) == i6) {
+            while (i7 < jArr.length - 2 && i7 < length) {
+                int i9 = i7 + 2;
+                long j3 = jArr[i9];
+                if ((((int) (j3 >> c3)) & i5) == i6) {
                     long j4 = jArr[i7];
-                    int i12 = i7 + 1;
-                    c = c4;
-                    long j5 = jArr[i12];
-                    i3 = i6;
+                    int i10 = i7 + 1;
+                    i3 = i5;
+                    c = c3;
+                    long j5 = jArr[i10];
+                    c2 = c4;
                     jArr[i7] = ((((int) j4) + i2) & 4294967295L) | ((((int) (j4 >> 32)) + i) << 32);
-                    jArr[i12] = ((((int) j5) + i2) & 4294967295L) | ((((int) (j5 >> 32)) + i) << 32);
-                    jArr[i10] = LockFreeTaskQueueCore.CLOSED_MASK | j3;
-                    c2 = 511;
-                    if ((((int) (j3 >> c)) & 511) > 0) {
-                        jArr2[i4] = (((i7 + 3) & i11) << c6) | (RectListKt.EverythingButParentId & j3);
+                    jArr[i10] = ((((int) j5) + i2) & 4294967295L) | ((((int) (j5 >> 32)) + i) << 32);
+                    jArr[i9] = LockFreeTaskQueueCore.CLOSED_MASK | j3;
+                    if ((((int) (j3 >> c2)) & 511) > 0) {
+                        jArr2[i4] = (RectListKt.EverythingButParentId & j3) | (((i7 + 3) & i3) << c);
                         i4++;
                     }
                 } else {
-                    i3 = i6;
-                    c = c4;
-                    c2 = c5;
+                    i3 = i5;
+                    c = c3;
+                    c2 = c4;
                 }
                 i7 += 3;
-                i5 = i11;
-                c3 = c6;
-                c5 = c2;
-                c4 = c;
-                i6 = i3;
+                i5 = i3;
+                c3 = c;
+                c4 = c2;
             }
         }
     }
@@ -502,7 +497,7 @@ public final class RectList {
         jArr2[i7] = (i2 << 32) | (i3 & 4294967295L);
         jArr2[i7 + 1] = (i4 << 32) | (i5 & 4294967295L);
         int i9 = i6 & RectListKt.Lower26Bits;
-        jArr2[i7 + 2] = ((z2 ? 1L : 0L) << 63) | ((z ? 1L : 0L) << 62) | (1 << 61) | (0 << 52) | (i9 << 26) | (i & RectListKt.Lower26Bits);
+        jArr2[i7 + 2] = ((z2 ? 1L : 0L) << 63) | ((z ? 1L : 0L) << 62) | (1 << 61) | (Math.min(0, 511) << 52) | (i9 << 26) | (i & RectListKt.Lower26Bits);
         if (i6 < 0) {
             return;
         }
@@ -510,7 +505,7 @@ public final class RectList {
             int i11 = i10 + 2;
             long j = jArr2[i11];
             if ((((int) j) & RectListKt.Lower26Bits) == i9) {
-                jArr2[i11] = (j & RectListKt.EverythingButLastChildOffset) | (((i7 - i10) & 511) << 52);
+                jArr2[i11] = (j & RectListKt.EverythingButLastChildOffset) | (Math.min(i7 - i10, 511) << 52);
                 return;
             }
         }

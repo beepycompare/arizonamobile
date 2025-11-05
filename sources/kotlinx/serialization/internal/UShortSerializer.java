@@ -21,12 +21,12 @@ public final class UShortSerializer implements KSerializer<UShort> {
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        return UShort.m9386boximpl(m10852deserializeBwKQO78(decoder));
+        return UShort.m10127boximpl(m11593deserializeBwKQO78(decoder));
     }
 
     @Override // kotlinx.serialization.SerializationStrategy
     public /* bridge */ /* synthetic */ void serialize(Encoder encoder, Object obj) {
-        m10853serializei8woANY(encoder, ((UShort) obj).m9442unboximpl());
+        m11594serializei8woANY(encoder, ((UShort) obj).m10183unboximpl());
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
@@ -35,14 +35,14 @@ public final class UShortSerializer implements KSerializer<UShort> {
     }
 
     /* renamed from: serialize-i8woANY  reason: not valid java name */
-    public void m10853serializei8woANY(Encoder encoder, short s) {
+    public void m11594serializei8woANY(Encoder encoder, short s) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         encoder.encodeInline(getDescriptor()).encodeShort(s);
     }
 
     /* renamed from: deserialize-BwKQO78  reason: not valid java name */
-    public short m10852deserializeBwKQO78(Decoder decoder) {
+    public short m11593deserializeBwKQO78(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
-        return UShort.m9392constructorimpl(decoder.decodeInline(getDescriptor()).decodeShort());
+        return UShort.m10133constructorimpl(decoder.decodeInline(getDescriptor()).decodeShort());
     }
 }

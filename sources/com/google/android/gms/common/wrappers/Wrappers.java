@@ -1,23 +1,23 @@
 package com.google.android.gms.common.wrappers;
 
 import android.content.Context;
-/* compiled from: com.google.android.gms:play-services-basement@@18.5.0 */
-/* loaded from: classes3.dex */
+/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* loaded from: classes4.dex */
 public class Wrappers {
-    private static final Wrappers zza = new Wrappers();
-    private PackageManagerWrapper zzb = null;
+    private static final Wrappers zzb = new Wrappers();
+    private PackageManagerWrapper zza = null;
 
     public static PackageManagerWrapper packageManager(Context context) {
-        return zza.zza(context);
+        return zzb.zza(context);
     }
 
     public final synchronized PackageManagerWrapper zza(Context context) {
-        if (this.zzb == null) {
+        if (this.zza == null) {
             if (context.getApplicationContext() != null) {
                 context = context.getApplicationContext();
             }
-            this.zzb = new PackageManagerWrapper(context);
+            this.zza = new PackageManagerWrapper(context);
         }
-        return this.zzb;
+        return this.zza;
     }
 }

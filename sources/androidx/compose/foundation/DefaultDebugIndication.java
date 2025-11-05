@@ -57,9 +57,9 @@ public final class DefaultDebugIndication implements IndicationNodeFactory {
         public void draw(ContentDrawScope contentDrawScope) {
             contentDrawScope.drawContent();
             if (this.isPressed) {
-                DrawScope.m5122drawRectnJ9OG0$default(contentDrawScope, Color.m4548copywmQWz5c$default(Color.Companion.m4575getBlack0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null), 0L, contentDrawScope.mo5128getSizeNHjbRc(), 0.0f, null, null, 0, 122, null);
+                DrawScope.m5852drawRectnJ9OG0$default(contentDrawScope, Color.m5278copywmQWz5c$default(Color.Companion.m5305getBlack0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null), 0L, contentDrawScope.mo5858getSizeNHjbRc(), 0.0f, null, null, 0, 122, null);
             } else if (this.isHovered || this.isFocused) {
-                DrawScope.m5122drawRectnJ9OG0$default(contentDrawScope, Color.m4548copywmQWz5c$default(Color.Companion.m4575getBlack0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null), 0L, contentDrawScope.mo5128getSizeNHjbRc(), 0.0f, null, null, 0, 122, null);
+                DrawScope.m5852drawRectnJ9OG0$default(contentDrawScope, Color.m5278copywmQWz5c$default(Color.Companion.m5305getBlack0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null), 0L, contentDrawScope.mo5858getSizeNHjbRc(), 0.0f, null, null, 0, 122, null);
             }
         }
     }

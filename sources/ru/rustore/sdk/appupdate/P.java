@@ -17,8 +17,8 @@ import ru.rustore.sdk.core.util.ContextExtKt;
 public final class P implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1365a;
-    public final C0811o b;
+    public final Context f1408a;
+    public final C0799o b;
     public final String c;
     public final AppUpdateParams d;
     public final Function1<AppUpdateInfo, Unit> e;
@@ -33,14 +33,14 @@ public final class P implements ServiceConnection {
         }
     }
 
-    public P(Context context, C0811o appUpdateInfoMapper, String applicationId, AppUpdateParams appUpdateParams, C0822z onSuccess, A onError) {
+    public P(Context context, C0799o appUpdateInfoMapper, String applicationId, AppUpdateParams appUpdateParams, C0810z onSuccess, A onError) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(appUpdateInfoMapper, "appUpdateInfoMapper");
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");
         Intrinsics.checkNotNullParameter(appUpdateParams, "appUpdateParams");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onError, "onError");
-        this.f1365a = context;
+        this.f1408a = context;
         this.b = appUpdateInfoMapper;
         this.c = applicationId;
         this.d = appUpdateParams;
@@ -61,13 +61,13 @@ public final class P implements ServiceConnection {
                 message = "";
             }
             function1.invoke(new RuStoreException(message));
-            ContextExtKt.unbindServiceSafely(this.f1365a, this);
+            ContextExtKt.unbindServiceSafely(this.f1408a, this);
         }
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
         this.f.invoke(new RuStoreException("onServiceDisconnected"));
-        ContextExtKt.unbindServiceSafely(this.f1365a, this);
+        ContextExtKt.unbindServiceSafely(this.f1408a, this);
     }
 }

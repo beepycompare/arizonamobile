@@ -21,8 +21,8 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: FloatingActionButton.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.FloatingActionButtonElevation$animateElevation$2$1", f = "FloatingActionButton.kt", i = {}, l = {548}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.FloatingActionButtonElevation$animateElevation$2$1", f = "FloatingActionButton.kt", i = {}, l = {651}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class FloatingActionButtonElevation$animateElevation$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ FloatingActionButtonElevationAnimatable $animatable;
@@ -83,23 +83,23 @@ final class FloatingActionButtonElevation$animateElevation$2$1 extends SuspendLa
                     } else if (interaction instanceof PressInteraction.Cancel) {
                         arrayList.remove(((PressInteraction.Cancel) interaction).getPress());
                     }
-                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new C00261(floatingActionButtonElevationAnimatable, (Interaction) CollectionsKt.lastOrNull((List<? extends Object>) arrayList), null), 3, null);
+                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new C00201(floatingActionButtonElevationAnimatable, (Interaction) CollectionsKt.lastOrNull((List<? extends Object>) arrayList), null), 3, null);
                     return Unit.INSTANCE;
                 }
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: FloatingActionButton.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.compose.material3.FloatingActionButtonElevation$animateElevation$2$1$1$1", f = "FloatingActionButton.kt", i = {}, l = {573}, m = "invokeSuspend", n = {}, s = {})
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.compose.material3.FloatingActionButtonElevation$animateElevation$2$1$1$1", f = "FloatingActionButton.kt", i = {}, l = {676}, m = "invokeSuspend", n = {}, s = {})
                 /* renamed from: androidx.compose.material3.FloatingActionButtonElevation$animateElevation$2$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
-                public static final class C00261 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+                public static final class C00201 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                     final /* synthetic */ FloatingActionButtonElevationAnimatable $animatable;
                     final /* synthetic */ Interaction $targetInteraction;
                     int label;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00261(FloatingActionButtonElevationAnimatable floatingActionButtonElevationAnimatable, Interaction interaction, Continuation<? super C00261> continuation) {
+                    C00201(FloatingActionButtonElevationAnimatable floatingActionButtonElevationAnimatable, Interaction interaction, Continuation<? super C00201> continuation) {
                         super(2, continuation);
                         this.$animatable = floatingActionButtonElevationAnimatable;
                         this.$targetInteraction = interaction;
@@ -107,12 +107,12 @@ final class FloatingActionButtonElevation$animateElevation$2$1 extends SuspendLa
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        return new C00261(this.$animatable, this.$targetInteraction, continuation);
+                        return new C00201(this.$animatable, this.$targetInteraction, continuation);
                     }
 
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                        return ((C00261) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                        return ((C00201) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

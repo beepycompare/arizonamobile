@@ -52,7 +52,7 @@ public class MotionKeyCycle extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo7744clone() {
+    public MotionKey mo8475clone() {
         return null;
     }
 

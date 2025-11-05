@@ -93,7 +93,7 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
         ContentInViewNode contentInViewNode = (ContentInViewNode) delegate(new ContentInViewNode(orientation, scrollingLogic, z2, bringIntoViewSpec));
         this.contentInViewNode = contentInViewNode;
         delegate(NestedScrollNodeKt.nestedScrollModifierNode(scrollableNestedScrollConnection, nestedScrollDispatcher));
-        delegate(FocusTargetModifierNodeKt.m4219FocusTargetModifierNodePYyLHbc$default(Focusability.Companion.m4240getNeverLCbbffg(), null, 2, null));
+        delegate(FocusTargetModifierNodeKt.m4949FocusTargetModifierNodePYyLHbc$default(Focusability.Companion.m4970getNeverLCbbffg(), null, 2, null));
         delegate(new BringIntoViewResponderNode(contentInViewNode));
         delegate(new FocusedBoundsObserverNode(new Function1() { // from class: androidx.compose.foundation.gestures.ScrollableNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
@@ -120,7 +120,7 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
     /* renamed from: dispatchScrollDeltaInfo-k-4lQ0M */
     public void mo535dispatchScrollDeltaInfok4lQ0M(long j) {
         if (isAttached()) {
-            DelegatableNodeKt.m6109dispatchOnScrollChangedUv8p0NA(this, j);
+            DelegatableNodeKt.m6839dispatchOnScrollChangedUv8p0NA(this, j);
         }
     }
 
@@ -212,17 +212,17 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onKeyEvent-ZmokQxo */
     public boolean mo236onKeyEventZmokQxo(KeyEvent keyEvent) {
-        long m4297constructorimpl;
+        long m5027constructorimpl;
         if (getEnabled()) {
-            if ((Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), Key.Companion.m5575getPageDownEK5gGoQ()) || Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), Key.Companion.m5576getPageUpEK5gGoQ())) && KeyEventType.m5688equalsimpl0(KeyEvent_androidKt.m5696getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5692getKeyDownCS__XNY()) && !KeyEvent_androidKt.m5699isCtrlPressedZmokQxo(keyEvent)) {
+            if ((Key.m6117equalsimpl0(KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent), Key.Companion.m6305getPageDownEK5gGoQ()) || Key.m6117equalsimpl0(KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent), Key.Companion.m6306getPageUpEK5gGoQ())) && KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6422getKeyDownCS__XNY()) && !KeyEvent_androidKt.m6429isCtrlPressedZmokQxo(keyEvent)) {
                 if (this.scrollingLogic.isVertical()) {
                     int m468getViewportSizeYbymL2g$foundation_release = (int) (this.contentInViewNode.m468getViewportSizeYbymL2g$foundation_release() & 4294967295L);
-                    m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (4294967295L & Float.floatToRawIntBits(Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), Key.Companion.m5576getPageUpEK5gGoQ()) ? m468getViewportSizeYbymL2g$foundation_release : -m468getViewportSizeYbymL2g$foundation_release)));
+                    m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (4294967295L & Float.floatToRawIntBits(Key.m6117equalsimpl0(KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent), Key.Companion.m6306getPageUpEK5gGoQ()) ? m468getViewportSizeYbymL2g$foundation_release : -m468getViewportSizeYbymL2g$foundation_release)));
                 } else {
                     int m468getViewportSizeYbymL2g$foundation_release2 = (int) (this.contentInViewNode.m468getViewportSizeYbymL2g$foundation_release() >> 32);
-                    m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), Key.Companion.m5576getPageUpEK5gGoQ()) ? m468getViewportSizeYbymL2g$foundation_release2 : -m468getViewportSizeYbymL2g$foundation_release2) << 32));
+                    m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Key.m6117equalsimpl0(KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent), Key.Companion.m6306getPageUpEK5gGoQ()) ? m468getViewportSizeYbymL2g$foundation_release2 : -m468getViewportSizeYbymL2g$foundation_release2) << 32));
                 }
-                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new ScrollableNode$onKeyEvent$1(this, m4297constructorimpl, null), 3, null);
+                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new ScrollableNode$onKeyEvent$1(this, m5027constructorimpl, null), 3, null);
                 return true;
             }
             return false;
@@ -247,7 +247,7 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
             i++;
         }
         if (getEnabled()) {
-            if (pointerEventPass == PointerEventPass.Initial && PointerEventType.m5788equalsimpl0(pointerEvent.m5781getType7fucELk(), PointerEventType.Companion.m5797getScroll7fucELk())) {
+            if (pointerEventPass == PointerEventPass.Initial && PointerEventType.m6518equalsimpl0(pointerEvent.m6511getType7fucELk(), PointerEventType.Companion.m6527getScroll7fucELk())) {
                 ensureMouseWheelScrollNodeInitialized();
             }
             MouseWheelScrollingLogic mouseWheelScrollingLogic = this.mouseWheelScrollingLogic;

@@ -5,25 +5,25 @@ import android.location.LocationListener;
 import android.os.Bundle;
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import java.util.Iterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class n implements LocationListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final p f1214a;
+    public final p f1255a;
 
     public n(p pVar) {
-        this.f1214a = pVar;
+        this.f1255a = pVar;
     }
 
     @Override // android.location.LocationListener
     public final void onLocationChanged(Location location) {
         if (location != null) {
-            p pVar = this.f1214a;
+            p pVar = this.f1255a;
             pVar.getClass();
             String provider = location.getProvider();
             t tVar = (t) pVar.e.get(provider);
             if (tVar == null) {
-                t tVar2 = new t(pVar.f1216a.f1209a);
+                t tVar2 = new t(pVar.f1257a.f1250a);
                 tVar2.c.add(pVar.c);
                 for (Consumer consumer : pVar.d) {
                     tVar2.c.add(consumer);
@@ -31,12 +31,12 @@ public final class n implements LocationListener {
                 pVar.e.put(provider, tVar2);
                 tVar = tVar2;
             } else {
-                tVar.f1218a = pVar.f1216a.f1209a;
+                tVar.f1259a = pVar.f1257a.f1250a;
             }
             if (tVar.d != null) {
-                boolean didTimePassMillis = tVar.b.didTimePassMillis(tVar.e, tVar.f1218a.getUpdateTimeInterval(), "isSavedLocationOutdated");
+                boolean didTimePassMillis = tVar.b.didTimePassMillis(tVar.e, tVar.f1259a.getUpdateTimeInterval(), "isSavedLocationOutdated");
                 boolean z = true;
-                boolean z2 = location.distanceTo(tVar.d) > tVar.f1218a.getUpdateDistanceInterval();
+                boolean z2 = location.distanceTo(tVar.d) > tVar.f1259a.getUpdateDistanceInterval();
                 if (tVar.d != null && location.getTime() - tVar.d.getTime() < 0) {
                     z = false;
                 }

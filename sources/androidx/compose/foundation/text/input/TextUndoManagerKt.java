@@ -46,10 +46,10 @@ public final class TextUndoManagerKt {
         } else if (changeList.getChangeCount() == 1) {
             long mo1442getOriginalRangejx7JFs = changeList.mo1442getOriginalRangejx7JFs(0);
             long mo1443getRangejx7JFs = changeList.mo1443getRangejx7JFs(0);
-            if (TextRange.m6720getCollapsedimpl(mo1442getOriginalRangejx7JFs) && TextRange.m6720getCollapsedimpl(mo1443getRangejx7JFs)) {
+            if (TextRange.m7451getCollapsedimpl(mo1442getOriginalRangejx7JFs) && TextRange.m7451getCollapsedimpl(mo1443getRangejx7JFs)) {
                 return;
             }
-            textUndoManager.record(new TextUndoOperation(TextRange.m6724getMinimpl(mo1442getOriginalRangejx7JFs), TextRangeKt.m6733substringFDrldGo(textFieldCharSequence, mo1442getOriginalRangejx7JFs), TextRangeKt.m6733substringFDrldGo(textFieldCharSequence2, mo1443getRangejx7JFs), textFieldCharSequence.m1446getSelectiond9O1mEE(), textFieldCharSequence2.m1446getSelectiond9O1mEE(), 0L, z, 32, null));
+            textUndoManager.record(new TextUndoOperation(TextRange.m7455getMinimpl(mo1442getOriginalRangejx7JFs), TextRangeKt.m7464substringFDrldGo(textFieldCharSequence, mo1442getOriginalRangejx7JFs), TextRangeKt.m7464substringFDrldGo(textFieldCharSequence2, mo1443getRangejx7JFs), textFieldCharSequence.m1446getSelectiond9O1mEE(), textFieldCharSequence2.m1446getSelectiond9O1mEE(), 0L, z, 32, null));
         }
     }
 

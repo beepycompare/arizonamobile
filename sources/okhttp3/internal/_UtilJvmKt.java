@@ -8,10 +8,8 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.lang.reflect.Field;
-import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketAddress;
 import java.net.SocketTimeoutException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -51,7 +49,7 @@ import okio.Buffer;
 import okio.BufferedSource;
 import okio.Source;
 /* compiled from: -UtilJvm.kt */
-@Metadata(d1 = {"\u0000´\u0001\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\"\n\u0002\u0010$\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0000\u001a\u0016\u0010\b\u001a\u00020\u0005*\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u0007H\u0000\u001a)\u0010\u000b\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\u00052\u0012\u0010\f\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u000e0\r\"\u00020\u000eH\u0000¢\u0006\u0002\u0010\u000f\u001a\u0014\u0010\u0010\u001a\u00020\u0011*\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0011H\u0000\u001a \u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019H\u0000\u001a\u001f\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u001aH\u0000¢\u0006\u0004\b\u001b\u0010\u001c\u001a\u0012\u0010\u001d\u001a\u00020\u001e*\b\u0012\u0004\u0012\u00020 0\u001fH\u0000\u001a\u0012\u0010!\u001a\b\u0012\u0004\u0012\u00020 0\u001f*\u00020\u001eH\u0000\u001a\u0014\u0010\"\u001a\u00020\u0007*\u00020\t2\u0006\u0010#\u001a\u00020\tH\u0000\u001a\f\u0010$\u001a\u00020%*\u00020&H\u0000\u001a\u001c\u0010'\u001a\u00020\u0007*\u00020(2\u0006\u0010\u0016\u001a\u00020\u00152\u0006\u0010)\u001a\u00020\u0019H\u0000\u001a\f\u0010'\u001a\u00020**\u00020\u0012H\u0000\u001a\u001c\u0010+\u001a\u00020\u0007*\u00020(2\u0006\u0010,\u001a\u00020\u00152\u0006\u0010)\u001a\u00020\u0019H\u0000\u001a\f\u0010-\u001a\u00020\u0005*\u00020.H\u0000\u001a\u0014\u0010/\u001a\u00020\u0007*\u00020.2\u0006\u00100\u001a\u00020\u0012H\u0000\u001a\"\u00101\u001a\u00020*2\u0006\u0010\u0004\u001a\u00020\u00052\f\u00102\u001a\b\u0012\u0004\u0012\u00020*03H\u0080\bø\u0001\u0000\u001a\f\u00104\u001a\u00020\u0017*\u000205H\u0000\u001a\u001f\u00106\u001a\b\u0012\u0004\u0012\u0002H70\u001f\"\u0004\b\u0000\u00107*\b\u0012\u0004\u0012\u0002H70\u001fH\u0080\b\u001a\u001f\u00106\u001a\b\u0012\u0004\u0012\u0002H708\"\u0004\b\u0000\u00107*\b\u0012\u0004\u0012\u0002H708H\u0080\b\u001a1\u00106\u001a\u000e\u0012\u0004\u0012\u0002H:\u0012\u0004\u0012\u0002H;09\"\u0004\b\u0000\u0010:\"\u0004\b\u0001\u0010;*\u000e\u0012\u0004\u0012\u0002H:\u0012\u0004\u0012\u0002H;09H\u0080\b\u001a\u001e\u0010<\u001a\b\u0012\u0004\u0012\u0002H70\u001f\"\u0004\b\u0000\u00107*\b\u0012\u0004\u0012\u0002H70\u001fH\u0000\u001a-\u0010=\u001a\b\u0012\u0004\u0012\u0002H70\u001f\"\u0004\b\u0000\u001072\u0012\u0010>\u001a\n\u0012\u0006\b\u0001\u0012\u0002H70\r\"\u0002H7H\u0001¢\u0006\u0002\u0010?\u001a'\u0010<\u001a\b\u0012\u0004\u0012\u0002H70\u001f\"\u0004\b\u0000\u00107*\f\u0012\u0006\b\u0001\u0012\u0002H7\u0018\u00010\rH\u0000¢\u0006\u0002\u0010?\u001a\f\u0010@\u001a\u00020**\u00020.H\u0000\u001a\f\u0010@\u001a\u00020**\u00020AH\u0000\u001a\f\u0010B\u001a\u00020\u0005*\u00020\u0017H\u0000\u001a\f\u0010B\u001a\u00020\u0005*\u00020\u0015H\u0000\u001a3\u0010C\u001a\u0004\u0018\u0001H7\"\u0004\b\u0000\u001072\u0006\u0010D\u001a\u00020\u000e2\f\u0010E\u001a\b\u0012\u0004\u0012\u0002H70F2\u0006\u0010G\u001a\u00020\u0005H\u0000¢\u0006\u0002\u0010H\u001a\f\u0010J\u001a\u00020**\u00020KH\u0000\"\u0010\u0010\u0000\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010I\u001a\u00020\u00078\u0000X\u0081\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010L\u001a\u00020\u00058\u0000X\u0081\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006M"}, d2 = {"UTC", "Ljava/util/TimeZone;", "threadFactory", "Ljava/util/concurrent/ThreadFactory;", "name", "", "daemon", "", "toHostHeader", "Lokhttp3/HttpUrl;", "includeDefaultPort", "format", "args", "", "", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;", "readBomAsCharset", "Ljava/nio/charset/Charset;", "Lokio/BufferedSource;", "default", "checkDuration", "", TypedValues.TransitionType.S_DURATION, "", "unit", "Ljava/util/concurrent/TimeUnit;", "Lkotlin/time/Duration;", "checkDuration-HG0u8IE", "(Ljava/lang/String;J)I", "toHeaders", "Lokhttp3/Headers;", "", "Lokhttp3/internal/http2/Header;", "toHeaderList", "canReuseConnectionFor", "other", "asFactory", "Lokhttp3/EventListener$Factory;", "Lokhttp3/EventListener;", "skipAll", "Lokio/Source;", "timeUnit", "", "discard", "timeout", "peerName", "Ljava/net/Socket;", "isHealthy", "source", "threadName", "block", "Lkotlin/Function0;", "headersContentLength", "Lokhttp3/Response;", "unmodifiable", ExifInterface.GPS_DIRECTION_TRUE, "", "", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "toImmutableList", "immutableListOf", "elements", "([Ljava/lang/Object;)Ljava/util/List;", "closeQuietly", "Ljava/net/ServerSocket;", "toHexString", "readFieldOrNull", "instance", "fieldType", "Ljava/lang/Class;", "fieldName", "(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;", "assertionsEnabled", "assertLockNotHeld", "Lokhttp3/Dispatcher;", "okHttpName", "okhttp"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000´\u0001\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\"\n\u0002\u0010$\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0000\u001a\u0016\u0010\b\u001a\u00020\u0005*\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u0007H\u0000\u001a)\u0010\u000b\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\u00052\u0012\u0010\f\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u000e0\r\"\u00020\u000eH\u0000¢\u0006\u0002\u0010\u000f\u001a\u0014\u0010\u0010\u001a\u00020\u0011*\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0011H\u0000\u001a \u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019H\u0000\u001a\u001f\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u001aH\u0000¢\u0006\u0004\b\u001b\u0010\u001c\u001a\u0012\u0010\u001d\u001a\u00020\u001e*\b\u0012\u0004\u0012\u00020 0\u001fH\u0000\u001a\u0012\u0010!\u001a\b\u0012\u0004\u0012\u00020 0\u001f*\u00020\u001eH\u0000\u001a\u0014\u0010\"\u001a\u00020\u0007*\u00020\t2\u0006\u0010#\u001a\u00020\tH\u0000\u001a\f\u0010$\u001a\u00020%*\u00020&H\u0000\u001a\u001c\u0010'\u001a\u00020\u0007*\u00020(2\u0006\u0010\u0016\u001a\u00020\u00152\u0006\u0010)\u001a\u00020\u0019H\u0000\u001a\f\u0010'\u001a\u00020**\u00020\u0012H\u0000\u001a\u001c\u0010+\u001a\u00020\u0007*\u00020(2\u0006\u0010,\u001a\u00020\u00152\u0006\u0010)\u001a\u00020\u0019H\u0000\u001a\u0014\u0010-\u001a\u00020\u0007*\u00020.2\u0006\u0010/\u001a\u00020\u0012H\u0000\u001a\"\u00100\u001a\u00020*2\u0006\u0010\u0004\u001a\u00020\u00052\f\u00101\u001a\b\u0012\u0004\u0012\u00020*02H\u0080\bø\u0001\u0000\u001a\f\u00103\u001a\u00020\u0017*\u000204H\u0000\u001a\u001f\u00105\u001a\b\u0012\u0004\u0012\u0002H60\u001f\"\u0004\b\u0000\u00106*\b\u0012\u0004\u0012\u0002H60\u001fH\u0080\b\u001a\u001f\u00105\u001a\b\u0012\u0004\u0012\u0002H607\"\u0004\b\u0000\u00106*\b\u0012\u0004\u0012\u0002H607H\u0080\b\u001a1\u00105\u001a\u000e\u0012\u0004\u0012\u0002H9\u0012\u0004\u0012\u0002H:08\"\u0004\b\u0000\u00109\"\u0004\b\u0001\u0010:*\u000e\u0012\u0004\u0012\u0002H9\u0012\u0004\u0012\u0002H:08H\u0080\b\u001a\u001e\u0010;\u001a\b\u0012\u0004\u0012\u0002H60\u001f\"\u0004\b\u0000\u00106*\b\u0012\u0004\u0012\u0002H60\u001fH\u0000\u001a-\u0010<\u001a\b\u0012\u0004\u0012\u0002H60\u001f\"\u0004\b\u0000\u001062\u0012\u0010=\u001a\n\u0012\u0006\b\u0001\u0012\u0002H60\r\"\u0002H6H\u0001¢\u0006\u0002\u0010>\u001a'\u0010;\u001a\b\u0012\u0004\u0012\u0002H60\u001f\"\u0004\b\u0000\u00106*\f\u0012\u0006\b\u0001\u0012\u0002H6\u0018\u00010\rH\u0000¢\u0006\u0002\u0010>\u001a\f\u0010?\u001a\u00020**\u00020.H\u0000\u001a\f\u0010?\u001a\u00020**\u00020@H\u0000\u001a\f\u0010A\u001a\u00020\u0005*\u00020\u0017H\u0000\u001a\f\u0010A\u001a\u00020\u0005*\u00020\u0015H\u0000\u001a3\u0010B\u001a\u0004\u0018\u0001H6\"\u0004\b\u0000\u001062\u0006\u0010C\u001a\u00020\u000e2\f\u0010D\u001a\b\u0012\u0004\u0012\u0002H60E2\u0006\u0010F\u001a\u00020\u0005H\u0000¢\u0006\u0002\u0010G\u001a\f\u0010I\u001a\u00020**\u00020JH\u0000\"\u0010\u0010\u0000\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010H\u001a\u00020\u00078\u0000X\u0081\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010K\u001a\u00020\u00058\u0000X\u0081\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006L"}, d2 = {"UTC", "Ljava/util/TimeZone;", "threadFactory", "Ljava/util/concurrent/ThreadFactory;", "name", "", "daemon", "", "toHostHeader", "Lokhttp3/HttpUrl;", "includeDefaultPort", "format", "args", "", "", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;", "readBomAsCharset", "Ljava/nio/charset/Charset;", "Lokio/BufferedSource;", "default", "checkDuration", "", TypedValues.TransitionType.S_DURATION, "", "unit", "Ljava/util/concurrent/TimeUnit;", "Lkotlin/time/Duration;", "checkDuration-HG0u8IE", "(Ljava/lang/String;J)I", "toHeaders", "Lokhttp3/Headers;", "", "Lokhttp3/internal/http2/Header;", "toHeaderList", "canReuseConnectionFor", "other", "asFactory", "Lokhttp3/EventListener$Factory;", "Lokhttp3/EventListener;", "skipAll", "Lokio/Source;", "timeUnit", "", "discard", "timeout", "isHealthy", "Ljava/net/Socket;", "source", "threadName", "block", "Lkotlin/Function0;", "headersContentLength", "Lokhttp3/Response;", "unmodifiable", ExifInterface.GPS_DIRECTION_TRUE, "", "", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "toImmutableList", "immutableListOf", "elements", "([Ljava/lang/Object;)Ljava/util/List;", "closeQuietly", "Ljava/net/ServerSocket;", "toHexString", "readFieldOrNull", "instance", "fieldType", "Ljava/lang/Class;", "fieldName", "(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;", "assertionsEnabled", "assertLockNotHeld", "Lokhttp3/Dispatcher;", "okHttpName", "okhttp"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class _UtilJvmKt {
     public static final TimeZone UTC;
@@ -59,7 +57,7 @@ public final class _UtilJvmKt {
     public static final String okHttpName;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final EventListener asFactory$lambda$9(EventListener eventListener, Call it) {
+    public static final EventListener asFactory$lambda$0(EventListener eventListener, Call it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return eventListener;
     }
@@ -79,15 +77,15 @@ public final class _UtilJvmKt {
         return new ThreadFactory() { // from class: okhttp3.internal._UtilJvmKt$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
-                Thread threadFactory$lambda$1;
-                threadFactory$lambda$1 = _UtilJvmKt.threadFactory$lambda$1(name, z, runnable);
-                return threadFactory$lambda$1;
+                Thread threadFactory$lambda$0;
+                threadFactory$lambda$0 = _UtilJvmKt.threadFactory$lambda$0(name, z, runnable);
+                return threadFactory$lambda$0;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Thread threadFactory$lambda$1(String str, boolean z, Runnable runnable) {
+    public static final Thread threadFactory$lambda$0(String str, boolean z, Runnable runnable) {
         Thread thread = new Thread(runnable, str);
         thread.setDaemon(z);
         return thread;
@@ -165,19 +163,19 @@ public final class _UtilJvmKt {
     }
 
     /* renamed from: checkDuration-HG0u8IE  reason: not valid java name */
-    public static final int m11010checkDurationHG0u8IE(String name, long j) {
+    public static final int m11753checkDurationHG0u8IE(String name, long j) {
         Intrinsics.checkNotNullParameter(name, "name");
-        if (Duration.m10489isNegativeimpl(j)) {
+        if (Duration.m11230isNegativeimpl(j)) {
             throw new IllegalStateException((name + " < 0").toString());
         }
-        long m10474getInWholeMillisecondsimpl = Duration.m10474getInWholeMillisecondsimpl(j);
-        if (m10474getInWholeMillisecondsimpl > SieveCacheKt.NodeLinkMask) {
+        long m11215getInWholeMillisecondsimpl = Duration.m11215getInWholeMillisecondsimpl(j);
+        if (m11215getInWholeMillisecondsimpl > SieveCacheKt.NodeLinkMask) {
             throw new IllegalArgumentException((name + " too large").toString());
         }
-        if (m10474getInWholeMillisecondsimpl == 0 && Duration.m10490isPositiveimpl(j)) {
+        if (m11215getInWholeMillisecondsimpl == 0 && Duration.m11231isPositiveimpl(j)) {
             throw new IllegalArgumentException((name + " too small").toString());
         }
-        return (int) m10474getInWholeMillisecondsimpl;
+        return (int) m11215getInWholeMillisecondsimpl;
     }
 
     public static final Headers toHeaders(List<Header> list) {
@@ -212,9 +210,9 @@ public final class _UtilJvmKt {
         return new EventListener.Factory() { // from class: okhttp3.internal._UtilJvmKt$$ExternalSyntheticLambda0
             @Override // okhttp3.EventListener.Factory
             public final EventListener create(Call call) {
-                EventListener asFactory$lambda$9;
-                asFactory$lambda$9 = _UtilJvmKt.asFactory$lambda$9(EventListener.this, call);
-                return asFactory$lambda$9;
+                EventListener asFactory$lambda$0;
+                asFactory$lambda$0 = _UtilJvmKt.asFactory$lambda$0(EventListener.this, call);
+                return asFactory$lambda$0;
             }
         };
     }
@@ -268,17 +266,6 @@ public final class _UtilJvmKt {
         } catch (IOException unused) {
             return false;
         }
-    }
-
-    public static final String peerName(Socket socket) {
-        Intrinsics.checkNotNullParameter(socket, "<this>");
-        SocketAddress remoteSocketAddress = socket.getRemoteSocketAddress();
-        if (remoteSocketAddress instanceof InetSocketAddress) {
-            String hostName = ((InetSocketAddress) remoteSocketAddress).getHostName();
-            Intrinsics.checkNotNullExpressionValue(hostName, "getHostName(...)");
-            return hostName;
-        }
-        return remoteSocketAddress.toString();
     }
 
     public static final boolean isHealthy(Socket socket, BufferedSource source) {

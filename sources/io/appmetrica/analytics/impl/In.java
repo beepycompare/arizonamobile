@@ -1,11 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
-/* loaded from: classes4.dex */
-public interface In {
-    Thread a();
+import java.util.ArrayList;
+import java.util.List;
+/* loaded from: classes3.dex */
+public final class In {
 
-    StackTraceElement[] b();
+    /* renamed from: a  reason: collision with root package name */
+    public final String f534a;
+    public final String b;
+    public final List c;
+    public final In d;
+    public final List e;
 
-    Map c();
+    public In(String str, String str2, ArrayList arrayList, In in, ArrayList arrayList2) {
+        this.f534a = str;
+        this.b = str2;
+        this.c = arrayList;
+        this.d = in;
+        this.e = arrayList2;
+    }
 }

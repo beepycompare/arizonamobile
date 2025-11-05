@@ -1,22 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-/* loaded from: classes4.dex */
-public final class P9 implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final N9 fromModel(O9 o9) {
-        N9 n9 = new N9();
-        String str = o9.f607a;
-        if (str != null) {
-            n9.f593a = str.getBytes();
-        }
-        return n9;
-    }
+import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+/* loaded from: classes3.dex */
+public final class P9 {
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final O9 toModel(N9 n9) {
-        return new O9(new String(n9.f593a));
+    /* renamed from: a  reason: collision with root package name */
+    public final C0210e5 f634a;
+    public final TimeProvider b;
+
+    public P9(C0210e5 c0210e5, TimeProvider timeProvider) {
+        this.f634a = c0210e5;
+        this.b = timeProvider;
     }
 }

@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.Allocator;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MaskingMediaSource extends WrappingMediaSource {
     private boolean hasRealTimeline;
     private boolean hasStartedPreparing;
@@ -209,7 +209,7 @@ public final class MaskingMediaSource extends WrappingMediaSource {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MaskingTimeline extends ForwardingTimeline {
         public static final Object MASKING_EXTERNAL_PERIOD_UID = new Object();
         private final Object replacedInternalPeriodUid;
@@ -268,7 +268,7 @@ public final class MaskingMediaSource extends WrappingMediaSource {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class PlaceholderTimeline extends Timeline {
         private final MediaItem mediaItem;
 

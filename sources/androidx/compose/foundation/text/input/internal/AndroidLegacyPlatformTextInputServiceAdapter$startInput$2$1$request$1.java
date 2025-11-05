@@ -22,7 +22,7 @@ import kotlin.jvm.internal.Intrinsics;
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(Matrix matrix) {
-        m1474invoke58bKbWc(matrix.m4814unboximpl());
+        m1474invoke58bKbWc(matrix.m5544unboximpl());
         return Unit.INSTANCE;
     }
 

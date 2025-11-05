@@ -1,16 +1,20 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Uj implements InterfaceC0534qb {
+
+import java.util.Map;
+/* loaded from: classes3.dex */
+public final class Uj implements Xa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ boolean f703a;
+    public final /* synthetic */ String f722a;
+    public final /* synthetic */ Map b;
 
-    public Uj(boolean z) {
-        this.f703a = z;
+    public Uj(String str, Map map) {
+        this.f722a = str;
+        this.b = map;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0534qb
-    public final void a(InterfaceC0558rb interfaceC0558rb) {
-        interfaceC0558rb.setDataSendingEnabled(this.f703a);
+    @Override // io.appmetrica.analytics.impl.Xa
+    public final void a(Ya ya) {
+        ya.reportEvent(this.f722a, this.b);
     }
 }

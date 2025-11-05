@@ -3,16 +3,16 @@ package io.appmetrica.analytics.ecommerce;
 import java.util.List;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ECommerceOrder {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f316a;
+    private final String f332a;
     private final List b;
     private Map c;
 
     public ECommerceOrder(String str, List<ECommerceCartItem> list) {
-        this.f316a = str;
+        this.f332a = str;
         this.b = list;
     }
 
@@ -21,7 +21,7 @@ public class ECommerceOrder {
     }
 
     public String getIdentifier() {
-        return this.f316a;
+        return this.f332a;
     }
 
     public Map<String, String> getPayload() {
@@ -34,6 +34,6 @@ public class ECommerceOrder {
     }
 
     public String toString() {
-        return "ECommerceOrder{identifier='" + this.f316a + "', cartItems=" + this.b + ", payload=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceOrder{identifier='" + this.f332a + "', cartItems=" + this.b + ", payload=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 }

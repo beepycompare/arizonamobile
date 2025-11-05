@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.coreutils.impl;
 
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class m implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ActivationBarrierCallback f279a;
+    public final /* synthetic */ ActivationBarrierCallback f295a;
 
     public m(ActivationBarrierCallback activationBarrierCallback) {
-        this.f279a = activationBarrierCallback;
+        this.f295a = activationBarrierCallback;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f279a.onWaitFinished();
+        this.f295a.onWaitFinished();
     }
 }

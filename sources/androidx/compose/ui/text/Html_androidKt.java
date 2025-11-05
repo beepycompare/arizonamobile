@@ -123,7 +123,7 @@ public final class Html_androidKt {
         Object[] spans;
         for (Object obj : spanned.getSpans(0, builder.getLength(), Object.class)) {
             long TextRange = TextRangeKt.TextRange(spanned.getSpanStart(obj), spanned.getSpanEnd(obj));
-            addSpan(builder, obj, TextRange.m6726getStartimpl(TextRange), TextRange.m6721getEndimpl(TextRange), textLinkStyles, linkInteractionListener);
+            addSpan(builder, obj, TextRange.m7457getStartimpl(TextRange), TextRange.m7452getEndimpl(TextRange), textLinkStyles, linkInteractionListener);
         }
     }
 
@@ -140,11 +140,11 @@ public final class Html_androidKt {
         } else if (obj instanceof BackgroundColorSpan) {
             builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, ColorKt.Color(((BackgroundColorSpan) obj).getBackgroundColor()), (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 63487, (DefaultConstructorMarker) null), i, i2);
         } else if (obj instanceof BulletSpanWithLevel) {
-            long m6550getDefaultIndentationXSAIIZE = Bullet.Companion.m6550getDefaultIndentationXSAIIZE();
+            long m7281getDefaultIndentationXSAIIZE = Bullet.Companion.m7281getDefaultIndentationXSAIIZE();
             BulletSpanWithLevel bulletSpanWithLevel = (BulletSpanWithLevel) obj;
             int indentationLevel = bulletSpanWithLevel.getIndentationLevel();
-            TextUnitKt.m7471checkArithmeticR2X_6o(m6550getDefaultIndentationXSAIIZE);
-            builder.m6540addBulletr9BaKPg(bulletSpanWithLevel.getBullet(), TextUnitKt.pack(TextUnit.m7456getRawTypeimpl(m6550getDefaultIndentationXSAIIZE), TextUnit.m7458getValueimpl(m6550getDefaultIndentationXSAIIZE) * indentationLevel), i, i2);
+            TextUnitKt.m8202checkArithmeticR2X_6o(m7281getDefaultIndentationXSAIIZE);
+            builder.m7271addBulletr9BaKPg(bulletSpanWithLevel.getBullet(), TextUnitKt.pack(TextUnit.m8187getRawTypeimpl(m7281getDefaultIndentationXSAIIZE), TextUnit.m8189getValueimpl(m7281getDefaultIndentationXSAIIZE) * indentationLevel), i, i2);
         } else if (obj instanceof ForegroundColorSpan) {
             builder.addStyle(new SpanStyle(ColorKt.Color(((ForegroundColorSpan) obj).getForegroundColor()), 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE, (DefaultConstructorMarker) null), i, i2);
         } else if (obj instanceof RelativeSizeSpan) {
@@ -157,9 +157,9 @@ public final class Html_androidKt {
                 builder.addStyle(spanStyle, i, i2);
             }
         } else if (obj instanceof SubscriptSpan) {
-            builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, BaselineShift.m7020boximpl(BaselineShift.Companion.m7031getSubscripty9eOQZs()), (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65279, (DefaultConstructorMarker) null), i, i2);
+            builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, BaselineShift.m7751boximpl(BaselineShift.Companion.m7762getSubscripty9eOQZs()), (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65279, (DefaultConstructorMarker) null), i, i2);
         } else if (obj instanceof SuperscriptSpan) {
-            builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, BaselineShift.m7020boximpl(BaselineShift.Companion.m7032getSuperscripty9eOQZs()), (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65279, (DefaultConstructorMarker) null), i, i2);
+            builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, BaselineShift.m7751boximpl(BaselineShift.Companion.m7763getSuperscripty9eOQZs()), (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65279, (DefaultConstructorMarker) null), i, i2);
         } else if (obj instanceof TypefaceSpan) {
             builder.addStyle(toSpanStyle((TypefaceSpan) obj), i, i2);
         } else if (obj instanceof UnderlineSpan) {
@@ -171,19 +171,19 @@ public final class Html_androidKt {
     }
 
     private static final ParagraphStyle toParagraphStyle(AlignmentSpan alignmentSpan) {
-        int m7153getStarte0LSkKk;
+        int m7884getStarte0LSkKk;
         Layout.Alignment alignment = alignmentSpan.getAlignment();
         int i = alignment == null ? -1 : WhenMappings.$EnumSwitchMapping$0[alignment.ordinal()];
         if (i == 1) {
-            m7153getStarte0LSkKk = TextAlign.Companion.m7153getStarte0LSkKk();
+            m7884getStarte0LSkKk = TextAlign.Companion.m7884getStarte0LSkKk();
         } else if (i == 2) {
-            m7153getStarte0LSkKk = TextAlign.Companion.m7148getCentere0LSkKk();
+            m7884getStarte0LSkKk = TextAlign.Companion.m7879getCentere0LSkKk();
         } else if (i == 3) {
-            m7153getStarte0LSkKk = TextAlign.Companion.m7149getEnde0LSkKk();
+            m7884getStarte0LSkKk = TextAlign.Companion.m7880getEnde0LSkKk();
         } else {
-            m7153getStarte0LSkKk = TextAlign.Companion.m7154getUnspecifiede0LSkKk();
+            m7884getStarte0LSkKk = TextAlign.Companion.m7885getUnspecifiede0LSkKk();
         }
-        return new ParagraphStyle(m7153getStarte0LSkKk, 0, 0L, (TextIndent) null, (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_POSITION_TYPE, (DefaultConstructorMarker) null);
+        return new ParagraphStyle(m7884getStarte0LSkKk, 0, 0L, (TextIndent) null, (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_POSITION_TYPE, (DefaultConstructorMarker) null);
     }
 
     private static final SpanStyle toSpanStyle(StyleSpan styleSpan) {
@@ -193,9 +193,9 @@ public final class Html_androidKt {
                 if (style != 3) {
                     return null;
                 }
-                return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), FontStyle.m6836boximpl(FontStyle.Companion.m6845getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65523, (DefaultConstructorMarker) null);
+                return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), FontStyle.m7567boximpl(FontStyle.Companion.m7576getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65523, (DefaultConstructorMarker) null);
             }
-            return new SpanStyle(0L, 0L, (FontWeight) null, FontStyle.m6836boximpl(FontStyle.Companion.m6845getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65527, (DefaultConstructorMarker) null);
+            return new SpanStyle(0L, 0L, (FontWeight) null, FontStyle.m7567boximpl(FontStyle.Companion.m7576getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65527, (DefaultConstructorMarker) null);
         }
         return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65531, (DefaultConstructorMarker) null);
     }

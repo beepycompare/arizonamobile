@@ -8,7 +8,7 @@ import androidx.media3.extractor.AacUtil;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.flv.TagPayloadReader;
 import java.util.Collections;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class AudioTagPayloadReader extends TagPayloadReader {
     private static final int AAC_PACKET_TYPE_AAC_RAW = 1;
     private static final int AAC_PACKET_TYPE_SEQUENCE_HEADER = 0;

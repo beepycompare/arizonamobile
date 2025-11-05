@@ -10,7 +10,7 @@ import androidx.media3.extractor.TrackOutput;
 import java.io.IOException;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ChunkReader {
     private static final int CHUNK_TYPE_AUDIO = 1651965952;
     private static final int CHUNK_TYPE_VIDEO_COMPRESSED = 1667497984;

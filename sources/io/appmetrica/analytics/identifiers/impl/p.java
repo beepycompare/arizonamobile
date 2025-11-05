@@ -4,11 +4,11 @@ import android.os.IBinder;
 import android.os.IInterface;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class p extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final p f336a = new p();
+    public static final p f352a = new p();
 
     public p() {
         super(1);
@@ -17,7 +17,7 @@ public final class p extends Lambda implements Function1 {
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
         IBinder iBinder = (IBinder) obj;
-        int i = t.f340a;
+        int i = t.f356a;
         if (iBinder == null) {
             return null;
         }

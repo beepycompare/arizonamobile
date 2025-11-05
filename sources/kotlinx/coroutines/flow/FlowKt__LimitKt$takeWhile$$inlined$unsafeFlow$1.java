@@ -1,6 +1,5 @@
 package kotlinx.coroutines.flow;
 
-import androidx.compose.material3.MenuKt;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -21,7 +20,7 @@ public final class FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1<T> implements
     final /* synthetic */ Flow $this_takeWhile$inlined;
 
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1", f = "Limit.kt", i = {0}, l = {MenuKt.InTransitionDuration}, m = "collect", n = {"collector$iv"}, s = {"L$0"})
+    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1", f = "Limit.kt", i = {0}, l = {120}, m = "collect", n = {"collector$iv"}, s = {"L$0"})
     /* renamed from: kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends ContinuationImpl {

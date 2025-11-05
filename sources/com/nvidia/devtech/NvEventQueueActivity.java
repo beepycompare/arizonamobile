@@ -24,7 +24,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import io.appmetrica.analytics.BuildConfig;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -707,7 +706,7 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
             boolean isCapsLockOn = keyEvent.isCapsLockOn();
             this.capsLockOn = isCapsLockOn;
             keyEvent2 = keyEvent;
-            keyEvent(isCapsLockOn ? 3 : 4, BuildConfig.API_LEVEL, 0, 0, keyEvent2);
+            keyEvent(isCapsLockOn ? 3 : 4, 115, 0, 0, keyEvent2);
         } else {
             keyEvent2 = keyEvent;
         }

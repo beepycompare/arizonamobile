@@ -2,7 +2,7 @@ package androidx.media3.extractor;
 
 import androidx.media3.common.DataReader;
 import java.io.IOException;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface ExtractorInput extends DataReader {
     void advancePeekPosition(int i) throws IOException;
 

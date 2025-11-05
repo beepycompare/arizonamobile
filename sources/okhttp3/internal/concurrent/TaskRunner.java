@@ -111,6 +111,10 @@ public final class TaskRunner implements Lockable {
                                 Task task = awaitTaskToRun;
                                 taskRunner3.afterRun(awaitTaskToRun, -1L, false);
                                 Unit unit = Unit.INSTANCE;
+                                if (th instanceof InterruptedException) {
+                                    Thread.currentThread().interrupt();
+                                    return;
+                                }
                                 throw th;
                             }
                         } finally {

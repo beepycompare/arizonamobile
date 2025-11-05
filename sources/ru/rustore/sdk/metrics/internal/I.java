@@ -17,25 +17,25 @@ import ru.rustore.sdk.metrics.internal.X;
 public final class I {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0837o f1429a;
-    public final InterfaceC0829g b;
+    public final C0825o f1472a;
+    public final InterfaceC0817g b;
     public final Lazy c;
 
     /* loaded from: classes6.dex */
     public static final class a extends Lambda implements Function0<String> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f1430a;
+        public final /* synthetic */ String f1473a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public a(String str) {
             super(0);
-            this.f1430a = str;
+            this.f1473a = str;
         }
 
         @Override // kotlin.jvm.functions.Function0
         public final String invoke() {
-            return this.f1430a;
+            return this.f1473a;
         }
     }
 
@@ -43,31 +43,31 @@ public final class I {
     public static final class b extends Lambda implements Function0<String> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ J f1431a;
+        public final /* synthetic */ J f1474a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public b(J j) {
             super(0);
-            this.f1431a = j;
+            this.f1474a = j;
         }
 
         @Override // kotlin.jvm.functions.Function0
         public final String invoke() {
-            return "Create row in storage " + ((Object) ("MetricsEventUuid(value=" + this.f1431a.f1432a + ')'));
+            return "Create row in storage " + ((Object) ("MetricsEventUuid(value=" + this.f1474a.f1475a + ')'));
         }
     }
 
-    public I(C0837o metricsEventDataBaseHelper, X.b logger) {
+    public I(C0825o metricsEventDataBaseHelper, X.b logger) {
         Intrinsics.checkNotNullParameter(metricsEventDataBaseHelper, "metricsEventDataBaseHelper");
         Intrinsics.checkNotNullParameter(logger, "logger");
-        this.f1429a = metricsEventDataBaseHelper;
+        this.f1472a = metricsEventDataBaseHelper;
         this.b = logger;
         this.c = LazyKt.lazy(new E(this));
     }
 
     public final void a(ArrayList persistentMetricsEventsDto) {
         Intrinsics.checkNotNullParameter(persistentMetricsEventsDto, "persistentMetricsEventsDto");
-        String joinToString$default = CollectionsKt.joinToString$default(persistentMetricsEventsDto, null, null, null, 0, null, G.f1427a, 31, null);
+        String joinToString$default = CollectionsKt.joinToString$default(persistentMetricsEventsDto, null, null, null, 0, null, G.f1470a, 31, null);
         String trimIndent = StringsKt.trimIndent("\n            DELETE FROM metrics_event_table\n            WHERE _id IN (\n                SELECT _id FROM metrics_event_table\n                WHERE uuid IN (" + joinToString$default + ")\n            )\n        ");
         try {
             ((SQLiteDatabase) this.c.getValue()).beginTransactionNonExclusive();
@@ -82,7 +82,7 @@ public final class I {
     public final void a(J persistentMetricsEventDto) {
         Intrinsics.checkNotNullParameter(persistentMetricsEventDto, "persistentMetricsEventDto");
         ContentValues contentValues = new ContentValues();
-        contentValues.put(CommonUrlParts.UUID, persistentMetricsEventDto.f1432a);
+        contentValues.put(CommonUrlParts.UUID, persistentMetricsEventDto.f1475a);
         contentValues.put("metrics_event", persistentMetricsEventDto.b);
         try {
             ((SQLiteDatabase) this.c.getValue()).beginTransactionNonExclusive();
@@ -93,7 +93,7 @@ public final class I {
                 this.b.a(new b(persistentMetricsEventDto));
                 return;
             }
-            String str = "Saving error " + ((Object) ("MetricsEventUuid(value=" + persistentMetricsEventDto.f1432a + ')'));
+            String str = "Saving error " + ((Object) ("MetricsEventUuid(value=" + persistentMetricsEventDto.f1475a + ')'));
             this.b.a(new a(str));
             throw new MetricsException.SaveMetricsEventError(str);
         } finally {

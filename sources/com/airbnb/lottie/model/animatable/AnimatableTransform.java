@@ -16,6 +16,9 @@ public class AnimatableTransform implements ModifierContent, ContentModel {
     private final AnimatableIntegerValue opacity;
     private final AnimatableValue<PointF, PointF> position;
     private final AnimatableFloatValue rotation;
+    private final AnimatableFloatValue rotationX;
+    private final AnimatableFloatValue rotationY;
+    private final AnimatableFloatValue rotationZ;
     private final AnimatableScaleValue scale;
     private final AnimatableFloatValue skew;
     private final AnimatableFloatValue skewAngle;
@@ -27,10 +30,14 @@ public class AnimatableTransform implements ModifierContent, ContentModel {
     }
 
     public AnimatableTransform() {
-        this(null, null, null, null, null, null, null, null, null);
+        this(null, null, null, null, null, null, null, null, null, null, null, null);
     }
 
     public AnimatableTransform(AnimatablePathValue animatablePathValue, AnimatableValue<PointF, PointF> animatableValue, AnimatableScaleValue animatableScaleValue, AnimatableFloatValue animatableFloatValue, AnimatableIntegerValue animatableIntegerValue, AnimatableFloatValue animatableFloatValue2, AnimatableFloatValue animatableFloatValue3, AnimatableFloatValue animatableFloatValue4, AnimatableFloatValue animatableFloatValue5) {
+        this(animatablePathValue, animatableValue, animatableScaleValue, animatableFloatValue, animatableIntegerValue, animatableFloatValue2, animatableFloatValue3, animatableFloatValue4, animatableFloatValue5, null, null, null);
+    }
+
+    public AnimatableTransform(AnimatablePathValue animatablePathValue, AnimatableValue<PointF, PointF> animatableValue, AnimatableScaleValue animatableScaleValue, AnimatableFloatValue animatableFloatValue, AnimatableIntegerValue animatableIntegerValue, AnimatableFloatValue animatableFloatValue2, AnimatableFloatValue animatableFloatValue3, AnimatableFloatValue animatableFloatValue4, AnimatableFloatValue animatableFloatValue5, AnimatableFloatValue animatableFloatValue6, AnimatableFloatValue animatableFloatValue7, AnimatableFloatValue animatableFloatValue8) {
         this.autoOrient = false;
         this.anchorPoint = animatablePathValue;
         this.position = animatableValue;
@@ -41,6 +48,9 @@ public class AnimatableTransform implements ModifierContent, ContentModel {
         this.endOpacity = animatableFloatValue3;
         this.skew = animatableFloatValue4;
         this.skewAngle = animatableFloatValue5;
+        this.rotationX = animatableFloatValue6;
+        this.rotationY = animatableFloatValue7;
+        this.rotationZ = animatableFloatValue8;
     }
 
     public void setAutoOrient(boolean z) {
@@ -83,8 +93,24 @@ public class AnimatableTransform implements ModifierContent, ContentModel {
         return this.skewAngle;
     }
 
+    public AnimatableFloatValue getRotationX() {
+        return this.rotationX;
+    }
+
+    public AnimatableFloatValue getRotationY() {
+        return this.rotationY;
+    }
+
+    public AnimatableFloatValue getRotationZ() {
+        return this.rotationZ;
+    }
+
     public boolean isAutoOrient() {
         return this.autoOrient;
+    }
+
+    public boolean has3DRotation() {
+        return (this.rotationX == null && this.rotationY == null && this.rotationZ == null) ? false : true;
     }
 
     public TransformKeyframeAnimation createAnimation() {

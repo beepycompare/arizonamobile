@@ -63,11 +63,11 @@ public final class LazyLayoutItemAnimation {
         this.isDisappearanceAnimationFinished$delegate = mutableStateOf$default4;
         long j = NotInitialized;
         this.rawOffset = j;
-        this.finalOffset = IntOffset.Companion.m7403getZeronOccac();
+        this.finalOffset = IntOffset.Companion.m8134getZeronOccac();
         this.layer = graphicsContext != null ? graphicsContext.createGraphicsLayer() : null;
-        this.placementDeltaAnimation = new Animatable<>(IntOffset.m7383boximpl(IntOffset.Companion.m7403getZeronOccac()), VectorConvertersKt.getVectorConverter(IntOffset.Companion), null, null, 12, null);
+        this.placementDeltaAnimation = new Animatable<>(IntOffset.m8114boximpl(IntOffset.Companion.m8134getZeronOccac()), VectorConvertersKt.getVectorConverter(IntOffset.Companion), null, null, 12, null);
         this.visibilityAnimation = new Animatable<>(Float.valueOf(1.0f), VectorConvertersKt.getVectorConverter(FloatCompanionObject.INSTANCE), null, null, 12, null);
-        mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntOffset.m7383boximpl(IntOffset.Companion.m7403getZeronOccac()), null, 2, null);
+        mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntOffset.m8114boximpl(IntOffset.Companion.m8134getZeronOccac()), null, 2, null);
         this.placementDelta$delegate = mutableStateOf$default5;
         this.lookaheadOffset = j;
     }
@@ -174,12 +174,12 @@ public final class LazyLayoutItemAnimation {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setPlacementDelta--gyyYBs  reason: not valid java name */
     public final void m1029setPlacementDeltagyyYBs(long j) {
-        this.placementDelta$delegate.setValue(IntOffset.m7383boximpl(j));
+        this.placementDelta$delegate.setValue(IntOffset.m8114boximpl(j));
     }
 
     /* renamed from: getPlacementDelta-nOcc-ac  reason: not valid java name */
     public final long m1033getPlacementDeltanOccac() {
-        return ((IntOffset) this.placementDelta$delegate.getValue()).m7401unboximpl();
+        return ((IntOffset) this.placementDelta$delegate.getValue()).m8132unboximpl();
     }
 
     public final void cancelPlacementAnimation() {
@@ -204,11 +204,11 @@ public final class LazyLayoutItemAnimation {
         if (finiteAnimationSpec == null) {
             return;
         }
-        long m7395minusqkQi6aY = IntOffset.m7395minusqkQi6aY(m1033getPlacementDeltanOccac(), j);
-        m1029setPlacementDeltagyyYBs(m7395minusqkQi6aY);
+        long m8126minusqkQi6aY = IntOffset.m8126minusqkQi6aY(m1033getPlacementDeltanOccac(), j);
+        m1029setPlacementDeltagyyYBs(m8126minusqkQi6aY);
         setPlacementAnimationInProgress(true);
         this.isRunningMovingAwayAnimation = z;
-        BuildersKt__Builders_commonKt.launch$default(this.coroutineScope, null, null, new LazyLayoutItemAnimation$animatePlacementDelta$1(this, finiteAnimationSpec, m7395minusqkQi6aY, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.coroutineScope, null, null, new LazyLayoutItemAnimation$animatePlacementDelta$1(this, finiteAnimationSpec, m8126minusqkQi6aY, null), 3, null);
     }
 
     public final void animateAppearance() {
@@ -258,7 +258,7 @@ public final class LazyLayoutItemAnimation {
             BuildersKt__Builders_commonKt.launch$default(this.coroutineScope, null, null, new LazyLayoutItemAnimation$release$3(this, null), 3, null);
         }
         this.isRunningMovingAwayAnimation = false;
-        m1029setPlacementDeltagyyYBs(IntOffset.Companion.m7403getZeronOccac());
+        m1029setPlacementDeltagyyYBs(IntOffset.Companion.m8134getZeronOccac());
         this.rawOffset = NotInitialized;
         GraphicsLayer graphicsLayer = this.layer;
         if (graphicsLayer != null && (graphicsContext = this.graphicsContext) != null) {
@@ -289,6 +289,6 @@ public final class LazyLayoutItemAnimation {
 
     static {
         long j = Integer.MAX_VALUE;
-        NotInitialized = IntOffset.m7386constructorimpl((j & 4294967295L) | (j << 32));
+        NotInitialized = IntOffset.m8117constructorimpl((j & 4294967295L) | (j << 32));
     }
 }

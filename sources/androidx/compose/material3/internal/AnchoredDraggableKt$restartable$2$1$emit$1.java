@@ -7,13 +7,12 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AnchoredDraggable.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.internal.AnchoredDraggableKt$restartable$2$1", f = "AnchoredDraggable.kt", i = {0, 0}, l = {718}, m = "emit", n = {"this", "latestInputs"}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.material3.internal.AnchoredDraggableKt$restartable$2$1", f = "AnchoredDraggable.kt", i = {0}, l = {711}, m = "emit", n = {"latestInputs"}, s = {"L$0"})
 /* loaded from: classes.dex */
 public final class AnchoredDraggableKt$restartable$2$1$emit$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;
-    Object L$2;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ AnchoredDraggableKt$restartable$2.AnonymousClass1<T> this$0;

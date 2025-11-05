@@ -82,11 +82,11 @@ public final class DraggableKt {
 
     /* renamed from: toFloat-sF-c-tU */
     public static final float m515toFloatsFctU(long j, Orientation orientation) {
-        return orientation == Orientation.Vertical ? Velocity.m7503getYimpl(j) : Velocity.m7502getXimpl(j);
+        return orientation == Orientation.Vertical ? Velocity.m8234getYimpl(j) : Velocity.m8233getXimpl(j);
     }
 
     /* renamed from: toValidVelocity-TH1AsA0 */
     public static final long m516toValidVelocityTH1AsA0(long j) {
-        return VelocityKt.Velocity(Float.isNaN(Velocity.m7502getXimpl(j)) ? 0.0f : Velocity.m7502getXimpl(j), Float.isNaN(Velocity.m7503getYimpl(j)) ? 0.0f : Velocity.m7503getYimpl(j));
+        return VelocityKt.Velocity(Float.isNaN(Velocity.m8233getXimpl(j)) ? 0.0f : Velocity.m8233getXimpl(j), Float.isNaN(Velocity.m8234getYimpl(j)) ? 0.0f : Velocity.m8234getYimpl(j));
     }
 }

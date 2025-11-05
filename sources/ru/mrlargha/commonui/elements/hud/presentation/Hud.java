@@ -18,6 +18,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
@@ -63,6 +64,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.BannerElementBinding;
 import ru.mrlargha.commonui.databinding.HudCaptBinding;
+import ru.mrlargha.commonui.databinding.HudElementCasesTimerBinding;
 import ru.mrlargha.commonui.databinding.HudElementPiratesBinding;
 import ru.mrlargha.commonui.databinding.HudElementPromoBinding;
 import ru.mrlargha.commonui.databinding.HudImprovingSkillsBinding;
@@ -86,6 +88,7 @@ import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudTimer;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.UnreadMessageModel;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.banner.BannerElement;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer.CaseTimerElement;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.pirates.PiratesElement;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.pirates.SquidHpModel;
@@ -100,7 +103,7 @@ import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.TokenManagerKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: Hud.kt */
-@Metadata(d1 = {"\u0000Ê\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000e\u0018\u0000 }2\u00020\u0001:\u0005yz{|}B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010/\u001a\u0002002\u0006\u00101\u001a\u000202H\u0002J\u000e\u00103\u001a\u0002002\u0006\u00104\u001a\u000202J\u001e\u00105\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u000102\u0012\u0004\u0012\u000202062\u0006\u00107\u001a\u000202H\u0002J\u0010\u00108\u001a\u0002002\u0006\u00109\u001a\u00020\u0019H\u0016J&\u0010:\u001a\u0002002\u0006\u0010;\u001a\u00020\u00052\u0006\u0010<\u001a\u00020\u00052\u0006\u0010=\u001a\u00020\u00052\u0006\u0010>\u001a\u00020\u0005J\u000e\u0010?\u001a\u0002002\u0006\u0010@\u001a\u00020\u0005J\u000e\u0010A\u001a\u0002002\u0006\u0010B\u001a\u00020\u0015J\u000e\u0010C\u001a\u0002002\u0006\u0010D\u001a\u00020\u0005J\u000e\u0010E\u001a\u0002002\u0006\u0010F\u001a\u000202J\u000e\u0010G\u001a\u0002002\u0006\u0010F\u001a\u000202J\u0010\u0010H\u001a\u0002002\u0006\u00109\u001a\u00020\u0005H\u0002J\u0010\u0010I\u001a\u0002002\u0006\u0010J\u001a\u00020\u0005H\u0002J\u0010\u0010K\u001a\u0002002\u0006\u0010L\u001a\u00020MH\u0002J\u0010\u0010N\u001a\u0002002\u0006\u0010O\u001a\u000202H\u0002J\b\u0010P\u001a\u000200H\u0002J\u001e\u0010Q\u001a\u0002002\u0006\u0010R\u001a\u0002022\f\u0010S\u001a\b\u0012\u0004\u0012\u00020U0TH\u0002J\b\u0010V\u001a\u000200H\u0002J\u0010\u0010W\u001a\u0002002\u0006\u0010X\u001a\u00020\u0005H\u0002J\u0010\u0010Y\u001a\u0002002\u0006\u0010Z\u001a\u00020[H\u0002J\u0018\u0010\\\u001a\u0002002\u0006\u0010F\u001a\u0002022\u0006\u0010]\u001a\u00020\u0005H\u0016J\u0010\u0010^\u001a\u0002002\u0006\u0010F\u001a\u000202H\u0002J\u0010\u0010_\u001a\u0002002\u0006\u0010L\u001a\u00020`H\u0002J\u0010\u0010a\u001a\u0002002\u0006\u00109\u001a\u00020\u0005H\u0002J\b\u0010b\u001a\u000200H\u0002J\u0016\u0010c\u001a\u0002002\f\u0010F\u001a\b\u0012\u0004\u0012\u00020d0TH\u0002J\u0016\u0010e\u001a\u0002002\f\u0010f\u001a\b\u0012\u0004\u0012\u00020d0TH\u0002J\u0010\u0010g\u001a\u0002002\u0006\u0010D\u001a\u00020\u0005H\u0002J\u0010\u0010h\u001a\u0002002\u0006\u0010f\u001a\u00020dH\u0002J\b\u0010i\u001a\u000200H\u0002J\b\u0010j\u001a\u000200H\u0002J\b\u0010k\u001a\u000200H\u0002J\u0010\u0010l\u001a\u0002002\u0006\u0010m\u001a\u000202H\u0002J\b\u0010n\u001a\u000200H\u0002J\u0010\u0010o\u001a\u0002002\u0006\u0010F\u001a\u00020pH\u0002J\u0010\u0010q\u001a\u0002002\u0006\u0010r\u001a\u00020\u0005H\u0002J\u0010\u0010s\u001a\u0002002\u0006\u0010r\u001a\u00020\u0005H\u0002J\b\u0010t\u001a\u000200H\u0002J\b\u0010u\u001a\u000200H\u0002J\u0010\u0010v\u001a\u0002002\u0006\u0010w\u001a\u00020\u0005H\u0002J\b\u0010x\u001a\u000200H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0012*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\n \u0012*\u0004\u0018\u00010\u00170\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006~"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "hud", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HudPageBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/commonui/elements/hud/presentation/api/HudApi;", "kotlin.jvm.PlatformType", "xPayDay", "previousMoneyValue", "", "sharedPref", "Landroid/content/SharedPreferences;", "isArizonaType", "", "trainTimer", "Landroid/os/CountDownTimer;", "moneyTimer", "missionsProgressAdapter", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionProgressAdapter;", "interactionButtonId", "streamerState", "handler", "Landroid/os/Handler;", "remainedTime", "isGroupButtonPressed", "groupAdapter", "Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "bannerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "promoElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/promo/PromoElement;", "counter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "radar", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/radar/RadarScreen;", "installServerLogotype", "", "uri", "", "setPlayerLocation", FirebaseAnalytics.Param.LOCATION, "parseString", "Lkotlin/Pair;", "input", "setVisibility", "visible", "installHud", "playerId", "serverId", "serverType", "isStreamerMode", "updateOnline", "currentOnline", "updateMoney", "money", "updateRouletteInfo", "id", "updateRouletteInfoText", "data", "updateMainRouletteText", "setTrainsVisibility", "startTrainTimer", "seconds", "setTrainInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "showInteractionButton", "text", "hideInteractionButton", "showMissionsProgress", "title", "missions", "", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionData;", "hideMissionsProgress", "setVip", "days", "setNoticeState", "noticeInfo", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$NoticeInfo;", "onBackendMessage", "subId", "setLocationVisibility", "setServerID", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "setGroupButtonVisibility", "changeGroupTableVisibility", "setGroupData", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "updateGroupData", "item", "deleteGroupMember", "addGroupMember", "showTimer", "updateTimer", "scheduleUpdateTimer", "showProgressBar", "next", "hideProgressBar", "setDataProgressBar", "Lru/mrlargha/commonui/elements/hud/presentation/models/ProgressBarModel;", "showOverlay", TypedValues.TransitionType.S_DURATION, "hideOverlay", "hideRouletteUi", "showRouletteUi", "setXPayDay", "value", "updatePayDay", "HudListener", "Spawner", "KaptGang", "KaptData", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ð\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000e\u0018\u0000 \u007f2\u00020\u0001:\u0005{|}~\u007fB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u00101\u001a\u0002022\u0006\u00103\u001a\u000204H\u0002J\u000e\u00105\u001a\u0002022\u0006\u00106\u001a\u000204J\u001e\u00107\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u000104\u0012\u0004\u0012\u000204082\u0006\u00109\u001a\u000204H\u0002J\u0010\u0010:\u001a\u0002022\u0006\u0010;\u001a\u00020\u0019H\u0016J&\u0010<\u001a\u0002022\u0006\u0010=\u001a\u00020\u00052\u0006\u0010>\u001a\u00020\u00052\u0006\u0010?\u001a\u00020\u00052\u0006\u0010@\u001a\u00020\u0005J\u000e\u0010A\u001a\u0002022\u0006\u0010B\u001a\u00020\u0005J\u000e\u0010C\u001a\u0002022\u0006\u0010D\u001a\u00020\u0015J\u000e\u0010E\u001a\u0002022\u0006\u0010F\u001a\u00020\u0005J\u000e\u0010G\u001a\u0002022\u0006\u0010H\u001a\u000204J\u000e\u0010I\u001a\u0002022\u0006\u0010H\u001a\u000204J\u0010\u0010J\u001a\u0002022\u0006\u0010;\u001a\u00020\u0005H\u0002J\u0010\u0010K\u001a\u0002022\u0006\u0010L\u001a\u00020\u0005H\u0002J\u0010\u0010M\u001a\u0002022\u0006\u0010N\u001a\u00020OH\u0002J\u0010\u0010P\u001a\u0002022\u0006\u0010Q\u001a\u000204H\u0002J\b\u0010R\u001a\u000202H\u0002J\u001e\u0010S\u001a\u0002022\u0006\u0010T\u001a\u0002042\f\u0010U\u001a\b\u0012\u0004\u0012\u00020W0VH\u0002J\b\u0010X\u001a\u000202H\u0002J\u0010\u0010Y\u001a\u0002022\u0006\u0010Z\u001a\u00020\u0005H\u0002J\u0010\u0010[\u001a\u0002022\u0006\u0010\\\u001a\u00020]H\u0002J\u0018\u0010^\u001a\u0002022\u0006\u0010H\u001a\u0002042\u0006\u0010_\u001a\u00020\u0005H\u0016J\u0010\u0010`\u001a\u0002022\u0006\u0010H\u001a\u000204H\u0002J\u0010\u0010a\u001a\u0002022\u0006\u0010N\u001a\u00020bH\u0002J\u0010\u0010c\u001a\u0002022\u0006\u0010;\u001a\u00020\u0005H\u0002J\b\u0010d\u001a\u000202H\u0002J\u0016\u0010e\u001a\u0002022\f\u0010H\u001a\b\u0012\u0004\u0012\u00020f0VH\u0002J\u0016\u0010g\u001a\u0002022\f\u0010h\u001a\b\u0012\u0004\u0012\u00020f0VH\u0002J\u0010\u0010i\u001a\u0002022\u0006\u0010F\u001a\u00020\u0005H\u0002J\u0010\u0010j\u001a\u0002022\u0006\u0010h\u001a\u00020fH\u0002J\b\u0010k\u001a\u000202H\u0002J\b\u0010l\u001a\u000202H\u0002J\b\u0010m\u001a\u000202H\u0002J\u0010\u0010n\u001a\u0002022\u0006\u0010o\u001a\u000204H\u0002J\b\u0010p\u001a\u000202H\u0002J\u0010\u0010q\u001a\u0002022\u0006\u0010H\u001a\u00020rH\u0002J\u0010\u0010s\u001a\u0002022\u0006\u0010t\u001a\u00020\u0005H\u0002J\u0010\u0010u\u001a\u0002022\u0006\u0010t\u001a\u00020\u0005H\u0002J\b\u0010v\u001a\u000202H\u0002J\b\u0010w\u001a\u000202H\u0002J\u0010\u0010x\u001a\u0002022\u0006\u0010y\u001a\u00020\u0005H\u0002J\b\u0010z\u001a\u000202H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0012*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\n \u0012*\u0004\u0018\u00010\u00170\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0080\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "hud", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HudPageBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/commonui/elements/hud/presentation/api/HudApi;", "kotlin.jvm.PlatformType", "xPayDay", "previousMoneyValue", "", "sharedPref", "Landroid/content/SharedPreferences;", "isArizonaType", "", "trainTimer", "Landroid/os/CountDownTimer;", "moneyTimer", "missionsProgressAdapter", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionProgressAdapter;", "interactionButtonId", "streamerState", "handler", "Landroid/os/Handler;", "remainedTime", "isGroupButtonPressed", "groupAdapter", "Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "bannerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "promoElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/promo/PromoElement;", "counter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "radar", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/radar/RadarScreen;", "caseTimer", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/case_timer/CaseTimerElement;", "installServerLogotype", "", "uri", "", "setPlayerLocation", FirebaseAnalytics.Param.LOCATION, "parseString", "Lkotlin/Pair;", "input", "setVisibility", "visible", "installHud", "playerId", "serverId", "serverType", "isStreamerMode", "updateOnline", "currentOnline", "updateMoney", "money", "updateRouletteInfo", "id", "updateRouletteInfoText", "data", "updateMainRouletteText", "setTrainsVisibility", "startTrainTimer", "seconds", "setTrainInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "showInteractionButton", "text", "hideInteractionButton", "showMissionsProgress", "title", "missions", "", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionData;", "hideMissionsProgress", "setVip", "days", "setNoticeState", "noticeInfo", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$NoticeInfo;", "onBackendMessage", "subId", "setLocationVisibility", "setServerID", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "setGroupButtonVisibility", "changeGroupTableVisibility", "setGroupData", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "updateGroupData", "item", "deleteGroupMember", "addGroupMember", "showTimer", "updateTimer", "scheduleUpdateTimer", "showProgressBar", "next", "hideProgressBar", "setDataProgressBar", "Lru/mrlargha/commonui/elements/hud/presentation/models/ProgressBarModel;", "showOverlay", TypedValues.TransitionType.S_DURATION, "hideOverlay", "hideRouletteUi", "showRouletteUi", "setXPayDay", "value", "updatePayDay", "HudListener", "Spawner", "KaptGang", "KaptData", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Hud extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -108,6 +111,7 @@ public final class Hud extends SAMPUIElement {
     private final IBackendNotifier backendNotifier;
     private final BannerElement bannerElement;
     private final HudPageBinding binding;
+    private final CaseTimerElement caseTimer;
     private final HudCounter counter;
     private final GroupAdapter groupAdapter;
     private final Handler handler;
@@ -190,6 +194,9 @@ public final class Hud extends SAMPUIElement {
         HudRadarScreenBinding radar = bind.radar;
         Intrinsics.checkNotNullExpressionValue(radar, "radar");
         this.radar = new RadarScreen(radar, i, getNotifier());
+        HudElementCasesTimerBinding casesTimer = bind.casesTimer;
+        Intrinsics.checkNotNullExpressionValue(casesTimer, "casesTimer");
+        this.caseTimer = new CaseTimerElement(casesTimer, hud);
         if (z) {
             bind.hudMoneyIcon.setImageResource(R.drawable.hud_dollar_icon);
         }
@@ -859,7 +866,17 @@ public final class Hud extends SAMPUIElement {
             return;
         }
         if (i == 1) {
-            updateRouletteInfo(Integer.parseInt(data));
+            CardView root = this.binding.banner.getRoot();
+            Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+            if (root.getVisibility() != 0) {
+                FrameLayout root2 = this.binding.casesTimer.getRoot();
+                Intrinsics.checkNotNullExpressionValue(root2, "getRoot(...)");
+                if (root2.getVisibility() != 0) {
+                    updateRouletteInfo(Integer.parseInt(data));
+                    return;
+                }
+            }
+            updateRouletteInfo(0);
         } else if (i == 2) {
             updateRouletteInfoText(data);
         } else if (i == 3) {
@@ -873,242 +890,245 @@ public final class Hud extends SAMPUIElement {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } else {
-            if (i == 5) {
-                ConstraintLayout trainSettings = this.binding.trainSettings;
-                Intrinsics.checkNotNullExpressionValue(trainSettings, "trainSettings");
-                trainSettings.setVisibility(Integer.parseInt(data) == 1 ? 0 : 8);
-            } else if (i == 6) {
-                if (Integer.parseInt(data) == 1) {
-                    this.binding.ivDoorsState.setImageResource(R.drawable.ic_switch_on);
-                } else {
-                    this.binding.ivDoorsState.setImageResource(R.drawable.ic_switch_none);
-                }
-            } else if (i == 7) {
-                this.counter.setTaximeterVisibility(data);
-            } else if (i == 8) {
-                this.counter.setTaxiPrice(data);
-            } else if (i == 9) {
-                this.counter.setTaximeterCounterType(data, false);
-            } else if (i == 10) {
-                this.counter.setTaximeterType(Integer.parseInt(data));
-            } else if (i == 11) {
-                setTrainsVisibility(Integer.parseInt(data));
-            } else if (i == 12) {
-                setTrainInfo((Companion.TrainInfo) MapperKt.toModel(data, Companion.TrainInfo.class));
-            } else if (i == 13) {
-                startTrainTimer(Integer.parseInt(data));
-            } else if (i == 14) {
-                setVip(Integer.parseInt(data));
-            } else if (i == 15) {
-                setNoticeState((Companion.NoticeInfo) MapperKt.toModel(data, Companion.NoticeInfo.class));
-            } else if (i == BackendHudIds.SHOW_MISSIONS_PROGRESS.getSubId()) {
-                List listModel = MapperKt.toListModel(data, MissionGroupData.class);
-                if (listModel.isEmpty()) {
-                    return;
-                }
-                MissionGroupData missionGroupData = (MissionGroupData) listModel.get(0);
-                showMissionsProgress(missionGroupData.getTitle(), missionGroupData.getQuests());
-            } else if (i == BackendHudIds.HIDE_MISSIONS_PROGRESS.getSubId()) {
-                hideMissionsProgress();
-            } else if (i == BackendHudIds.SHOW_INTERACTION_BUTTON.getSubId()) {
-                InteractionData interactionData = (InteractionData) MapperKt.toModel(data, InteractionData.class);
-                this.interactionButtonId = interactionData.getId();
-                showInteractionButton(interactionData.getText());
-            } else if (i == BackendHudIds.HIDE_INTERACTION_BUTTON.getSubId()) {
-                hideInteractionButton();
-            } else if (i == BackendHudIds.SHOW_ROULETTE.getSubId()) {
-                showRouletteUi();
-            } else if (i == BackendHudIds.HIDE_ROULETTE.getSubId()) {
-                hideRouletteUi();
-            } else if (i == BackendHudIds.OVERLAY_SHOW.getSubId()) {
-                showOverlay(Integer.parseInt(data));
-            } else if (i == BackendHudIds.OVERLAY_HIDE.getSubId()) {
-                hideOverlay(Integer.parseInt(data));
-            } else if (i == BackendHudIds.TAXITIMER_COUNTDOUWN.getSubId()) {
-                this.counter.setTaximeterCounterType(data, true);
-            } else if (i == BackendHudIds.TAXITIMER_STOP.getSubId()) {
-                this.counter.stopTaxiTimer(Integer.parseInt(data));
-            } else if (i == BackendHudIds.PROGRESS_BAR_SHOW.getSubId()) {
-                showProgressBar(data);
-            } else if (i == BackendHudIds.PROGRESS_BAR_HIDE.getSubId()) {
-                hideProgressBar();
-            } else if (i == BackendHudIds.PROGRESS_BAR_SET_DATA.getSubId()) {
-                setDataProgressBar((ProgressBarModel) MapperKt.toModel(data, ProgressBarModel.class));
-            } else if (i != BackendHudIds.KAPT_ZERO.getSubId()) {
-                if (i == BackendHudIds.KAPT_ONE.getSubId()) {
-                    ConstraintLayout root = this.binding.hudKaptScreen.getRoot();
-                    Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
-                    root.setVisibility(0);
-                    if (Integer.parseInt(data) == 0) {
-                        RodinaKaptScreenBinding rodinaKaptScreenBinding = this.binding.hudKaptScreen;
-                        rodinaKaptScreenBinding.textView42Top.setVisibility(8);
-                        rodinaKaptScreenBinding.rodinaKaptTimeRemainingTop.setVisibility(8);
-                        rodinaKaptScreenBinding.textView42.setVisibility(0);
-                        rodinaKaptScreenBinding.rodinaKaptTimeRemaining.setVisibility(0);
-                        Intrinsics.checkNotNull(rodinaKaptScreenBinding);
-                    } else if (Integer.parseInt(data) == 2) {
-                        ConstraintLayout root2 = this.binding.hudKaptScreen.getRoot();
-                        Intrinsics.checkNotNullExpressionValue(root2, "getRoot(...)");
-                        root2.setVisibility(8);
-                    } else {
-                        RodinaKaptScreenBinding rodinaKaptScreenBinding2 = this.binding.hudKaptScreen;
-                        rodinaKaptScreenBinding2.textView42.setVisibility(8);
-                        rodinaKaptScreenBinding2.rodinaKaptTimeRemaining.setVisibility(8);
-                        rodinaKaptScreenBinding2.textView42Top.setVisibility(0);
-                        rodinaKaptScreenBinding2.rodinaKaptTimeRemainingTop.setVisibility(0);
-                        Intrinsics.checkNotNull(rodinaKaptScreenBinding2);
-                    }
-                } else if (i == BackendHudIds.PROPOSAL_SCREEN.getSubId()) {
-                    HudProposalScreen.ProposalResponse proposalResponse = (HudProposalScreen.ProposalResponse) MapperKt.toModel(data, HudProposalScreen.ProposalResponse.class);
-                    HudProposalScreen hudProposalScreen = HudProposalScreen.INSTANCE;
-                    if (proposalResponse.getId() >= 0) {
-                        ConstraintLayout root3 = this.binding.hudProposalScreen.getRoot();
-                        Intrinsics.checkNotNullExpressionValue(root3, "getRoot(...)");
-                        root3.setVisibility(0);
-                        HudProposalScreenBinding hudProposalScreen2 = this.binding.hudProposalScreen;
-                        Intrinsics.checkNotNullExpressionValue(hudProposalScreen2, "hudProposalScreen");
-                        hudProposalScreen.showProposalScreen(hudProposalScreen2, proposalResponse, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda13
-                            @Override // kotlin.jvm.functions.Function1
-                            public final Object invoke(Object obj) {
-                                Unit onBackendMessage$lambda$3;
-                                onBackendMessage$lambda$3 = Hud.onBackendMessage$lambda$3(Hud.this, ((Integer) obj).intValue());
-                                return onBackendMessage$lambda$3;
-                            }
-                        });
-                        return;
-                    }
-                    ConstraintLayout root4 = this.binding.hudProposalScreen.getRoot();
+        } else if (i == 5) {
+            ConstraintLayout trainSettings = this.binding.trainSettings;
+            Intrinsics.checkNotNullExpressionValue(trainSettings, "trainSettings");
+            trainSettings.setVisibility(Integer.parseInt(data) == 1 ? 0 : 8);
+        } else if (i == 6) {
+            if (Integer.parseInt(data) == 1) {
+                this.binding.ivDoorsState.setImageResource(R.drawable.ic_switch_on);
+            } else {
+                this.binding.ivDoorsState.setImageResource(R.drawable.ic_switch_none);
+            }
+        } else if (i == 7) {
+            this.counter.setTaximeterVisibility(data);
+        } else if (i == 8) {
+            this.counter.setTaxiPrice(data);
+        } else if (i == 9) {
+            this.counter.setTaximeterCounterType(data, false);
+        } else if (i == 10) {
+            this.counter.setTaximeterType(Integer.parseInt(data));
+        } else if (i == 11) {
+            setTrainsVisibility(Integer.parseInt(data));
+        } else if (i == 12) {
+            setTrainInfo((Companion.TrainInfo) MapperKt.toModel(data, Companion.TrainInfo.class));
+        } else if (i == 13) {
+            startTrainTimer(Integer.parseInt(data));
+        } else if (i == 14) {
+            setVip(Integer.parseInt(data));
+        } else if (i == 15) {
+            setNoticeState((Companion.NoticeInfo) MapperKt.toModel(data, Companion.NoticeInfo.class));
+        } else if (i == BackendHudIds.SHOW_MISSIONS_PROGRESS.getSubId()) {
+            List listModel = MapperKt.toListModel(data, MissionGroupData.class);
+            if (listModel.isEmpty()) {
+                return;
+            }
+            MissionGroupData missionGroupData = (MissionGroupData) listModel.get(0);
+            showMissionsProgress(missionGroupData.getTitle(), missionGroupData.getQuests());
+        } else if (i == BackendHudIds.HIDE_MISSIONS_PROGRESS.getSubId()) {
+            hideMissionsProgress();
+        } else if (i == BackendHudIds.SHOW_INTERACTION_BUTTON.getSubId()) {
+            InteractionData interactionData = (InteractionData) MapperKt.toModel(data, InteractionData.class);
+            this.interactionButtonId = interactionData.getId();
+            showInteractionButton(interactionData.getText());
+        } else if (i == BackendHudIds.HIDE_INTERACTION_BUTTON.getSubId()) {
+            hideInteractionButton();
+        } else if (i == BackendHudIds.SHOW_ROULETTE.getSubId()) {
+            showRouletteUi();
+        } else if (i == BackendHudIds.HIDE_ROULETTE.getSubId()) {
+            hideRouletteUi();
+        } else if (i == BackendHudIds.OVERLAY_SHOW.getSubId()) {
+            showOverlay(Integer.parseInt(data));
+        } else if (i == BackendHudIds.OVERLAY_HIDE.getSubId()) {
+            hideOverlay(Integer.parseInt(data));
+        } else if (i == BackendHudIds.TAXITIMER_COUNTDOUWN.getSubId()) {
+            this.counter.setTaximeterCounterType(data, true);
+        } else if (i == BackendHudIds.TAXITIMER_STOP.getSubId()) {
+            this.counter.stopTaxiTimer(Integer.parseInt(data));
+        } else if (i == BackendHudIds.PROGRESS_BAR_SHOW.getSubId()) {
+            showProgressBar(data);
+        } else if (i == BackendHudIds.PROGRESS_BAR_HIDE.getSubId()) {
+            hideProgressBar();
+        } else if (i == BackendHudIds.PROGRESS_BAR_SET_DATA.getSubId()) {
+            setDataProgressBar((ProgressBarModel) MapperKt.toModel(data, ProgressBarModel.class));
+        } else if (i != BackendHudIds.KAPT_ZERO.getSubId()) {
+            if (i == BackendHudIds.KAPT_ONE.getSubId()) {
+                ConstraintLayout root3 = this.binding.hudKaptScreen.getRoot();
+                Intrinsics.checkNotNullExpressionValue(root3, "getRoot(...)");
+                root3.setVisibility(0);
+                if (Integer.parseInt(data) == 0) {
+                    RodinaKaptScreenBinding rodinaKaptScreenBinding = this.binding.hudKaptScreen;
+                    rodinaKaptScreenBinding.textView42Top.setVisibility(8);
+                    rodinaKaptScreenBinding.rodinaKaptTimeRemainingTop.setVisibility(8);
+                    rodinaKaptScreenBinding.textView42.setVisibility(0);
+                    rodinaKaptScreenBinding.rodinaKaptTimeRemaining.setVisibility(0);
+                    Intrinsics.checkNotNull(rodinaKaptScreenBinding);
+                } else if (Integer.parseInt(data) == 2) {
+                    ConstraintLayout root4 = this.binding.hudKaptScreen.getRoot();
                     Intrinsics.checkNotNullExpressionValue(root4, "getRoot(...)");
                     root4.setVisibility(8);
-                    hudProposalScreen.stopTimer();
-                } else if (i == BackendHudIds.UNREAD_MESSAGE_COUNT.getSubId()) {
-                    UnreadMessageModel unreadMessageModel = (UnreadMessageModel) MapperKt.toModel(data, UnreadMessageModel.class);
-                    if (unreadMessageModel.getUnreadMessengerMessages() > 0) {
-                        FrameLayout unreadMeassageContainer = this.binding.unreadMeassageContainer;
-                        Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer, "unreadMeassageContainer");
-                        unreadMeassageContainer.setVisibility(0);
-                        this.binding.tvMessageCount.setText(String.valueOf(unreadMessageModel.getUnreadMessengerMessages()));
-                        return;
-                    }
-                    FrameLayout unreadMeassageContainer2 = this.binding.unreadMeassageContainer;
-                    Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer2, "unreadMeassageContainer");
-                    unreadMeassageContainer2.setVisibility(8);
-                } else if (i == BackendHudIds.UNREAD_MESSAGE_COUNT.getSubId()) {
-                    UnreadMessageModel unreadMessageModel2 = (UnreadMessageModel) MapperKt.toModel(data, UnreadMessageModel.class);
-                    if (unreadMessageModel2.getUnreadMessengerMessages() > 0) {
-                        FrameLayout unreadMeassageContainer3 = this.binding.unreadMeassageContainer;
-                        Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer3, "unreadMeassageContainer");
-                        unreadMeassageContainer3.setVisibility(0);
-                        this.binding.tvMessageCount.setText(String.valueOf(unreadMessageModel2.getUnreadMessengerMessages()));
-                        return;
-                    }
-                    FrameLayout unreadMeassageContainer4 = this.binding.unreadMeassageContainer;
-                    Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer4, "unreadMeassageContainer");
-                    unreadMeassageContainer4.setVisibility(8);
-                } else if (i == BackendHudIds.UPDATE_MONEY.getSubId()) {
-                    updateMoney(Long.parseLong(data));
-                    Activity targetActivity = getTargetActivity();
-                    Intrinsics.checkNotNull(targetActivity, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.hud.presentation.Hud.HudListener");
-                    ((HudListener) targetActivity).hudUpdateMoney(Long.parseLong(data));
-                } else if (i == BackendHudIds.SHOW_IMPROVING_SKILLS.getSubId()) {
-                    HudImprovingSkills hudImprovingSkills = HudImprovingSkills.INSTANCE;
-                    HudImprovingSkillsBinding improvingSkills = this.binding.improvingSkills;
-                    Intrinsics.checkNotNullExpressionValue(improvingSkills, "improvingSkills");
-                    LinearLayout root5 = this.binding.improvingSkills.getRoot();
+                } else {
+                    RodinaKaptScreenBinding rodinaKaptScreenBinding2 = this.binding.hudKaptScreen;
+                    rodinaKaptScreenBinding2.textView42.setVisibility(8);
+                    rodinaKaptScreenBinding2.rodinaKaptTimeRemaining.setVisibility(8);
+                    rodinaKaptScreenBinding2.textView42Top.setVisibility(0);
+                    rodinaKaptScreenBinding2.rodinaKaptTimeRemainingTop.setVisibility(0);
+                    Intrinsics.checkNotNull(rodinaKaptScreenBinding2);
+                }
+            } else if (i == BackendHudIds.PROPOSAL_SCREEN.getSubId()) {
+                HudProposalScreen.ProposalResponse proposalResponse = (HudProposalScreen.ProposalResponse) MapperKt.toModel(data, HudProposalScreen.ProposalResponse.class);
+                HudProposalScreen hudProposalScreen = HudProposalScreen.INSTANCE;
+                if (proposalResponse.getId() >= 0) {
+                    ConstraintLayout root5 = this.binding.hudProposalScreen.getRoot();
                     Intrinsics.checkNotNullExpressionValue(root5, "getRoot(...)");
                     root5.setVisibility(0);
-                    hudImprovingSkills.showImprovingSkills(improvingSkills, data);
-                } else if (i == BackendHudIds.HIDE_IMPROVING_SKILLS.getSubId()) {
-                    LinearLayout root6 = this.binding.improvingSkills.getRoot();
-                    Intrinsics.checkNotNullExpressionValue(root6, "getRoot(...)");
-                    root6.setVisibility(8);
-                } else if (i == BackendHudIds.SHOW_TIMER.getSubId()) {
-                    HudTimer hudTimer = HudTimer.INSTANCE;
-                    HudTimerBinding timer = this.binding.timer;
-                    Intrinsics.checkNotNullExpressionValue(timer, "timer");
-                    LinearLayout root7 = this.binding.timer.getRoot();
-                    Intrinsics.checkNotNullExpressionValue(root7, "getRoot(...)");
-                    root7.setVisibility(0);
-                    hudTimer.showTimer(timer, data);
-                } else if (i == BackendHudIds.HIDE_TIMER.getSubId()) {
-                    LinearLayout root8 = this.binding.timer.getRoot();
-                    Intrinsics.checkNotNullExpressionValue(root8, "getRoot(...)");
-                    root8.setVisibility(8);
-                } else if (i == BackendHudIds.SHOW_WALKIE_TALKIE.getSubId()) {
-                    ImageView root9 = this.binding.walkieTalkie.getRoot();
-                    Intrinsics.checkNotNullExpressionValue(root9, "getRoot(...)");
-                    root9.setVisibility(0);
-                } else if (i == BackendHudIds.HIDE_WALKIE_TALKIE.getSubId()) {
-                    ImageView root10 = this.binding.walkieTalkie.getRoot();
-                    Intrinsics.checkNotNullExpressionValue(root10, "getRoot(...)");
-                    root10.setVisibility(8);
-                } else if (i == BackendHudIds.GROUP_BUTTON_VISIBILITY.getSubId()) {
-                    Integer intOrNull = StringsKt.toIntOrNull(data);
-                    setGroupButtonVisibility(intOrNull != null ? intOrNull.intValue() : 0);
-                } else if (i == BackendHudIds.GROUP_INIT_DATA.getSubId()) {
-                    setGroupData(MapperKt.toListModel(data, GroupItem.class));
-                } else if (i == BackendHudIds.GROUP_UPDATE_DATA.getSubId()) {
-                    updateGroupData(MapperKt.toListModel(data, GroupItem.class));
-                } else if (i == BackendHudIds.GROUP_DELETE_ITEM.getSubId()) {
-                    Integer intOrNull2 = StringsKt.toIntOrNull(data);
-                    deleteGroupMember(intOrNull2 != null ? intOrNull2.intValue() : -1);
-                } else if (i == BackendHudIds.GROUP_ADD_ITEM.getSubId()) {
-                    addGroupMember((GroupItem) MapperKt.toModel(data, GroupItem.class));
-                } else if (i == BackendHudIds.SET_SERVER_ID.getSubId()) {
-                    setServerID((ServerInfoItem) MapperKt.toModel(data, ServerInfoItem.class));
-                } else if (i == BackendHudIds.BANNER_INIT.getSubId()) {
-                    this.bannerElement.initializeBanner(data);
-                } else if (i == BackendHudIds.BANNER_SET_TYPE.getSubId()) {
-                    this.bannerElement.setTypeBanner(data);
-                } else if (i == BackendHudIds.BANNER_VISIBILITY.getSubId()) {
-                    this.bannerElement.setVisible(data);
-                    hideRouletteUi();
-                } else if (i == BackendHudIds.LOCATION_VISIBILITY.getSubId()) {
-                    setLocationVisibility(data);
-                } else if (i == BackendHudIds.CAPT.getSubId()) {
-                    HudCapt hudCapt = HudCapt.INSTANCE;
-                    HudCaptBinding capt = this.binding.capt;
-                    Intrinsics.checkNotNullExpressionValue(capt, "capt");
-                    hudCapt.showCapt(capt, data);
-                } else if (i == BackendHudIds.PromoSetInfo.getSubId()) {
-                    this.promoElement.setInfo(data);
-                } else if (i == BackendHudIds.PromoInvisible.getSubId()) {
-                    this.promoElement.close();
-                } else if (i == BackendHudIds.RODINA_SQUID_HEALTH_SHOW.getSubId()) {
-                    PiratesElement piratesElement = PiratesElement.INSTANCE;
-                    HudElementPiratesBinding pirates = this.binding.pirates;
-                    Intrinsics.checkNotNullExpressionValue(pirates, "pirates");
-                    piratesElement.showInfo(pirates, (SquidHpModel) MapperKt.toModel(data, SquidHpModel.class));
-                } else if (i == BackendHudIds.RODINA_SQUID_HEALTH_HIDE.getSubId()) {
-                    PiratesElement piratesElement2 = PiratesElement.INSTANCE;
-                    HudElementPiratesBinding pirates2 = this.binding.pirates;
-                    Intrinsics.checkNotNullExpressionValue(pirates2, "pirates");
-                    piratesElement2.hide(pirates2);
-                } else if (i == BackendHudIds.RADAR.getSubId()) {
-                    this.radar.getEvent(data);
+                    HudProposalScreenBinding hudProposalScreen2 = this.binding.hudProposalScreen;
+                    Intrinsics.checkNotNullExpressionValue(hudProposalScreen2, "hudProposalScreen");
+                    hudProposalScreen.showProposalScreen(hudProposalScreen2, proposalResponse, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda13
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Object invoke(Object obj) {
+                            Unit onBackendMessage$lambda$3;
+                            onBackendMessage$lambda$3 = Hud.onBackendMessage$lambda$3(Hud.this, ((Integer) obj).intValue());
+                            return onBackendMessage$lambda$3;
+                        }
+                    });
+                    return;
                 }
-            } else {
-                Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) KaptData.class);
-                Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
-                KaptData kaptData = (KaptData) fromJson;
-                ConstraintLayout root11 = this.binding.hudKaptScreen.getRoot();
+                ConstraintLayout root6 = this.binding.hudProposalScreen.getRoot();
+                Intrinsics.checkNotNullExpressionValue(root6, "getRoot(...)");
+                root6.setVisibility(8);
+                hudProposalScreen.stopTimer();
+            } else if (i == BackendHudIds.UNREAD_MESSAGE_COUNT.getSubId()) {
+                UnreadMessageModel unreadMessageModel = (UnreadMessageModel) MapperKt.toModel(data, UnreadMessageModel.class);
+                if (unreadMessageModel.getUnreadMessengerMessages() > 0) {
+                    FrameLayout unreadMeassageContainer = this.binding.unreadMeassageContainer;
+                    Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer, "unreadMeassageContainer");
+                    unreadMeassageContainer.setVisibility(0);
+                    this.binding.tvMessageCount.setText(String.valueOf(unreadMessageModel.getUnreadMessengerMessages()));
+                    return;
+                }
+                FrameLayout unreadMeassageContainer2 = this.binding.unreadMeassageContainer;
+                Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer2, "unreadMeassageContainer");
+                unreadMeassageContainer2.setVisibility(8);
+            } else if (i == BackendHudIds.UNREAD_MESSAGE_COUNT.getSubId()) {
+                UnreadMessageModel unreadMessageModel2 = (UnreadMessageModel) MapperKt.toModel(data, UnreadMessageModel.class);
+                if (unreadMessageModel2.getUnreadMessengerMessages() > 0) {
+                    FrameLayout unreadMeassageContainer3 = this.binding.unreadMeassageContainer;
+                    Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer3, "unreadMeassageContainer");
+                    unreadMeassageContainer3.setVisibility(0);
+                    this.binding.tvMessageCount.setText(String.valueOf(unreadMessageModel2.getUnreadMessengerMessages()));
+                    return;
+                }
+                FrameLayout unreadMeassageContainer4 = this.binding.unreadMeassageContainer;
+                Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer4, "unreadMeassageContainer");
+                unreadMeassageContainer4.setVisibility(8);
+            } else if (i == BackendHudIds.UPDATE_MONEY.getSubId()) {
+                updateMoney(Long.parseLong(data));
+                Activity targetActivity = getTargetActivity();
+                Intrinsics.checkNotNull(targetActivity, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.hud.presentation.Hud.HudListener");
+                ((HudListener) targetActivity).hudUpdateMoney(Long.parseLong(data));
+            } else if (i == BackendHudIds.SHOW_IMPROVING_SKILLS.getSubId()) {
+                HudImprovingSkills hudImprovingSkills = HudImprovingSkills.INSTANCE;
+                HudImprovingSkillsBinding improvingSkills = this.binding.improvingSkills;
+                Intrinsics.checkNotNullExpressionValue(improvingSkills, "improvingSkills");
+                LinearLayout root7 = this.binding.improvingSkills.getRoot();
+                Intrinsics.checkNotNullExpressionValue(root7, "getRoot(...)");
+                root7.setVisibility(0);
+                hudImprovingSkills.showImprovingSkills(improvingSkills, data);
+            } else if (i == BackendHudIds.HIDE_IMPROVING_SKILLS.getSubId()) {
+                LinearLayout root8 = this.binding.improvingSkills.getRoot();
+                Intrinsics.checkNotNullExpressionValue(root8, "getRoot(...)");
+                root8.setVisibility(8);
+            } else if (i == BackendHudIds.SHOW_TIMER.getSubId()) {
+                HudTimer hudTimer = HudTimer.INSTANCE;
+                HudTimerBinding timer = this.binding.timer;
+                Intrinsics.checkNotNullExpressionValue(timer, "timer");
+                LinearLayout root9 = this.binding.timer.getRoot();
+                Intrinsics.checkNotNullExpressionValue(root9, "getRoot(...)");
+                root9.setVisibility(0);
+                hudTimer.showTimer(timer, data);
+            } else if (i == BackendHudIds.HIDE_TIMER.getSubId()) {
+                LinearLayout root10 = this.binding.timer.getRoot();
+                Intrinsics.checkNotNullExpressionValue(root10, "getRoot(...)");
+                root10.setVisibility(8);
+            } else if (i == BackendHudIds.SHOW_WALKIE_TALKIE.getSubId()) {
+                ImageView root11 = this.binding.walkieTalkie.getRoot();
                 Intrinsics.checkNotNullExpressionValue(root11, "getRoot(...)");
                 root11.setVisibility(0);
-                RodinaKaptScreenBinding rodinaKaptScreenBinding3 = this.binding.hudKaptScreen;
-                rodinaKaptScreenBinding3.rodinaKaptLeftGangName.setText(kaptData.getLeftGang().getName());
-                rodinaKaptScreenBinding3.rodinaKaptRightGangName.setText(kaptData.getRightGang().getName());
-                rodinaKaptScreenBinding3.rodinaKaptLeftGangFragCountValue.setText(String.valueOf(kaptData.getLeftGang().getKills()));
-                rodinaKaptScreenBinding3.rodinaKaptRightGangFragCountValue.setText(String.valueOf(kaptData.getRightGang().getKills()));
-                rodinaKaptScreenBinding3.rodinaKaptLeftGangFragCountBg.setColorFilter(kaptData.getLeftGang().getColorInt(), PorterDuff.Mode.SRC_OVER);
-                rodinaKaptScreenBinding3.rodinaKaptLeftGangFlag.setColorFilter(kaptData.getLeftGang().getColorInt(), PorterDuff.Mode.SRC_OVER);
-                rodinaKaptScreenBinding3.rodinaKaptRightGangFragCountBg.setColorFilter(kaptData.getRightGang().getColorInt(), PorterDuff.Mode.SRC_OVER);
-                rodinaKaptScreenBinding3.rodinaKaptRightGangFlag.setColorFilter(kaptData.getRightGang().getColorInt(), PorterDuff.Mode.SRC_OVER);
-                this.handler.removeCallbacksAndMessages(null);
-                this.remainedTime = kaptData.getTime();
-                showTimer();
-                scheduleUpdateTimer();
+            } else if (i == BackendHudIds.HIDE_WALKIE_TALKIE.getSubId()) {
+                ImageView root12 = this.binding.walkieTalkie.getRoot();
+                Intrinsics.checkNotNullExpressionValue(root12, "getRoot(...)");
+                root12.setVisibility(8);
+            } else if (i == BackendHudIds.GROUP_BUTTON_VISIBILITY.getSubId()) {
+                Integer intOrNull = StringsKt.toIntOrNull(data);
+                setGroupButtonVisibility(intOrNull != null ? intOrNull.intValue() : 0);
+            } else if (i == BackendHudIds.GROUP_INIT_DATA.getSubId()) {
+                setGroupData(MapperKt.toListModel(data, GroupItem.class));
+            } else if (i == BackendHudIds.GROUP_UPDATE_DATA.getSubId()) {
+                updateGroupData(MapperKt.toListModel(data, GroupItem.class));
+            } else if (i == BackendHudIds.GROUP_DELETE_ITEM.getSubId()) {
+                Integer intOrNull2 = StringsKt.toIntOrNull(data);
+                deleteGroupMember(intOrNull2 != null ? intOrNull2.intValue() : -1);
+            } else if (i == BackendHudIds.GROUP_ADD_ITEM.getSubId()) {
+                addGroupMember((GroupItem) MapperKt.toModel(data, GroupItem.class));
+            } else if (i == BackendHudIds.SET_SERVER_ID.getSubId()) {
+                setServerID((ServerInfoItem) MapperKt.toModel(data, ServerInfoItem.class));
+            } else if (i == BackendHudIds.BANNER_INIT.getSubId()) {
+                this.bannerElement.initializeBanner(data);
+            } else if (i == BackendHudIds.BANNER_SET_TYPE.getSubId()) {
+                this.bannerElement.setTypeBanner(data);
+            } else if (i == BackendHudIds.BANNER_VISIBILITY.getSubId()) {
+                this.bannerElement.setVisible(data);
+                hideRouletteUi();
+            } else if (i == BackendHudIds.LOCATION_VISIBILITY.getSubId()) {
+                setLocationVisibility(data);
+            } else if (i == BackendHudIds.CAPT.getSubId()) {
+                HudCapt hudCapt = HudCapt.INSTANCE;
+                HudCaptBinding capt = this.binding.capt;
+                Intrinsics.checkNotNullExpressionValue(capt, "capt");
+                hudCapt.showCapt(capt, data);
+            } else if (i == BackendHudIds.PromoSetInfo.getSubId()) {
+                this.promoElement.setInfo(data);
+            } else if (i == BackendHudIds.PromoInvisible.getSubId()) {
+                this.promoElement.close();
+            } else if (i == BackendHudIds.RODINA_SQUID_HEALTH_SHOW.getSubId()) {
+                PiratesElement piratesElement = PiratesElement.INSTANCE;
+                HudElementPiratesBinding pirates = this.binding.pirates;
+                Intrinsics.checkNotNullExpressionValue(pirates, "pirates");
+                piratesElement.showInfo(pirates, (SquidHpModel) MapperKt.toModel(data, SquidHpModel.class));
+            } else if (i == BackendHudIds.RODINA_SQUID_HEALTH_HIDE.getSubId()) {
+                PiratesElement piratesElement2 = PiratesElement.INSTANCE;
+                HudElementPiratesBinding pirates2 = this.binding.pirates;
+                Intrinsics.checkNotNullExpressionValue(pirates2, "pirates");
+                piratesElement2.hide(pirates2);
+            } else if (i == BackendHudIds.RADAR.getSubId()) {
+                this.radar.getEvent(data);
+            } else if (i == BackendHudIds.CASE_TIMER_INIT.getSubId()) {
+                this.caseTimer.setInfo(data);
+                hideRouletteUi();
+            } else if (i == BackendHudIds.CASE_TIMER_HIDE.getSubId()) {
+                this.caseTimer.close();
             }
+        } else {
+            Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) KaptData.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
+            KaptData kaptData = (KaptData) fromJson;
+            ConstraintLayout root13 = this.binding.hudKaptScreen.getRoot();
+            Intrinsics.checkNotNullExpressionValue(root13, "getRoot(...)");
+            root13.setVisibility(0);
+            RodinaKaptScreenBinding rodinaKaptScreenBinding3 = this.binding.hudKaptScreen;
+            rodinaKaptScreenBinding3.rodinaKaptLeftGangName.setText(kaptData.getLeftGang().getName());
+            rodinaKaptScreenBinding3.rodinaKaptRightGangName.setText(kaptData.getRightGang().getName());
+            rodinaKaptScreenBinding3.rodinaKaptLeftGangFragCountValue.setText(String.valueOf(kaptData.getLeftGang().getKills()));
+            rodinaKaptScreenBinding3.rodinaKaptRightGangFragCountValue.setText(String.valueOf(kaptData.getRightGang().getKills()));
+            rodinaKaptScreenBinding3.rodinaKaptLeftGangFragCountBg.setColorFilter(kaptData.getLeftGang().getColorInt(), PorterDuff.Mode.SRC_OVER);
+            rodinaKaptScreenBinding3.rodinaKaptLeftGangFlag.setColorFilter(kaptData.getLeftGang().getColorInt(), PorterDuff.Mode.SRC_OVER);
+            rodinaKaptScreenBinding3.rodinaKaptRightGangFragCountBg.setColorFilter(kaptData.getRightGang().getColorInt(), PorterDuff.Mode.SRC_OVER);
+            rodinaKaptScreenBinding3.rodinaKaptRightGangFlag.setColorFilter(kaptData.getRightGang().getColorInt(), PorterDuff.Mode.SRC_OVER);
+            this.handler.removeCallbacksAndMessages(null);
+            this.remainedTime = kaptData.getTime();
+            showTimer();
+            scheduleUpdateTimer();
         }
     }
 

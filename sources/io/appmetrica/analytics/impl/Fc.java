@@ -1,18 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AppMetricaConfig;
-/* loaded from: classes4.dex */
-public final class Fc extends AbstractC0186co {
-    public final AppMetricaConfig b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Fc(InterfaceC0608tb interfaceC0608tb, AppMetricaConfig appMetricaConfig) {
-        super(interfaceC0608tb);
-        String str = appMetricaConfig.apiKey;
-        this.b = appMetricaConfig;
+import android.content.Context;
+import io.appmetrica.analytics.ReporterConfig;
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import io.appmetrica.analytics.internal.CounterConfiguration;
+/* loaded from: classes3.dex */
+public final class Fc extends Q2 {
+    public Fc(Context context, Gf gf, ReporterConfig reporterConfig, Bi bi, T9 t9) {
+        this(context, bi, new Kh(gf, new CounterConfiguration(reporterConfig), new I8(new C0656vl(LoggerStorage.getOrCreatePublicLogger(reporterConfig.apiKey), "Crash Environment")), reporterConfig.userProfileID), t9, C0338j4.l().n(), new Tn(), new Jg(), new C6(), new C0180d0(), new Oe(t9));
     }
 
-    public final InterfaceC0633ub a() {
-        return this.f831a.a().a(this.b);
+    @Override // io.appmetrica.analytics.impl.Q2
+    public final String j() {
+        return "[ManualReporter]";
+    }
+
+    public Fc(Context context, Bi bi, Kh kh, T9 t9, C0716y6 c0716y6, Tn tn, Jg jg, C6 c6, C0180d0 c0180d0, Oe oe) {
+        super(context, bi, kh, t9, c0716y6, tn, jg, c6, c0180d0, oe);
+        C0338j4.l().getClass();
     }
 }

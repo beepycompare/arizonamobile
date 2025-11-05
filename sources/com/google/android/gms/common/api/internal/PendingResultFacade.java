@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.TransformedResult;
 import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class PendingResultFacade<A extends Result, B extends Result> extends PendingResult<B> {
     @Override // com.google.android.gms.common.api.PendingResult
     public final void addStatusListener(PendingResult.StatusListener statusListener) {

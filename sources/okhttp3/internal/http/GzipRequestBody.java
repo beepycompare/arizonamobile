@@ -20,13 +20,13 @@ public final class GzipRequestBody extends RequestBody {
         return -1L;
     }
 
-    public final RequestBody getDelegate() {
-        return this.delegate;
-    }
-
     public GzipRequestBody(RequestBody delegate) {
         Intrinsics.checkNotNullParameter(delegate, "delegate");
         this.delegate = delegate;
+    }
+
+    public final RequestBody getDelegate() {
+        return this.delegate;
     }
 
     @Override // okhttp3.RequestBody

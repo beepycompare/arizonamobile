@@ -1,5 +1,7 @@
 package okhttp3.internal.connection;
 
+import androidx.core.app.NotificationCompat;
+import coil3.network.internal.UtilsKt;
 import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.net.Socket;
@@ -22,13 +24,14 @@ import okhttp3.internal.connection.RoutePlanner;
 import okhttp3.internal.connection.RouteSelector;
 import okhttp3.internal.platform.Platform;
 /* compiled from: RealRoutePlanner.kt */
-@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001Bg\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\u0007\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\r\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0006\u0010\u0011\u001a\u00020\u0012\u0012\u0006\u0010\u0013\u001a\u00020\u0014¢\u0006\u0004\b\u0015\u0010\u0016J\b\u0010$\u001a\u00020\rH\u0016J\b\u0010%\u001a\u00020!H\u0016J\n\u0010&\u001a\u0004\u0018\u00010'H\u0002J\r\u0010(\u001a\u00020)H\u0000¢\u0006\u0002\b*J-\u0010+\u001a\u0004\u0018\u00010'2\n\b\u0002\u0010,\u001a\u0004\u0018\u00010)2\u0010\b\u0002\u0010-\u001a\n\u0012\u0004\u0012\u00020\u001e\u0018\u00010.H\u0000¢\u0006\u0002\b/J'\u00100\u001a\u00020)2\u0006\u00101\u001a\u00020\u001e2\u0010\b\u0002\u0010-\u001a\n\u0012\u0004\u0012\u00020\u001e\u0018\u00010.H\u0000¢\u0006\u0002\b2J\u0010\u00103\u001a\u0002042\u0006\u00101\u001a\u00020\u001eH\u0002J\u0012\u00105\u001a\u00020\r2\b\u00106\u001a\u0004\u0018\u000107H\u0016J\u0012\u00108\u001a\u0004\u0018\u00010\u001e2\u0006\u00109\u001a\u000207H\u0002J\u0010\u0010:\u001a\u00020\r2\u0006\u0010;\u001a\u00020<H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\u00020\u0010X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#¨\u0006="}, d2 = {"Lokhttp3/internal/connection/RealRoutePlanner;", "Lokhttp3/internal/connection/RoutePlanner;", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "connectionPool", "Lokhttp3/internal/connection/RealConnectionPool;", "readTimeoutMillis", "", "writeTimeoutMillis", "socketConnectTimeoutMillis", "socketReadTimeoutMillis", "pingIntervalMillis", "retryOnConnectionFailure", "", "fastFallback", "address", "Lokhttp3/Address;", "routeDatabase", "Lokhttp3/internal/connection/RouteDatabase;", "connectionUser", "Lokhttp3/internal/connection/ConnectionUser;", "<init>", "(Lokhttp3/internal/concurrent/TaskRunner;Lokhttp3/internal/connection/RealConnectionPool;IIIIIZZLokhttp3/Address;Lokhttp3/internal/connection/RouteDatabase;Lokhttp3/internal/connection/ConnectionUser;)V", "getAddress", "()Lokhttp3/Address;", "routeSelection", "Lokhttp3/internal/connection/RouteSelector$Selection;", "routeSelector", "Lokhttp3/internal/connection/RouteSelector;", "nextRouteToTry", "Lokhttp3/Route;", "deferredPlans", "Lkotlin/collections/ArrayDeque;", "Lokhttp3/internal/connection/RoutePlanner$Plan;", "getDeferredPlans", "()Lkotlin/collections/ArrayDeque;", "isCanceled", "plan", "planReuseCallConnection", "Lokhttp3/internal/connection/ReusePlan;", "planConnect", "Lokhttp3/internal/connection/ConnectPlan;", "planConnect$okhttp", "planReusePooledConnection", "planToReplace", "routes", "", "planReusePooledConnection$okhttp", "planConnectToRoute", "route", "planConnectToRoute$okhttp", "createTunnelRequest", "Lokhttp3/Request;", "hasNext", "failedConnection", "Lokhttp3/internal/connection/RealConnection;", "retryRoute", "connection", "sameHostAndPort", "url", "Lokhttp3/HttpUrl;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0082\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001Bq\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\u0007\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\r\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0006\u0010\u0011\u001a\u00020\u0012\u0012\u0006\u0010\u0013\u001a\u00020\u0014\u0012\u0006\u0010\u0015\u001a\u00020\u0016¢\u0006\u0004\b\u0017\u0010\u0018J\b\u0010'\u001a\u00020\rH\u0016J\b\u0010(\u001a\u00020$H\u0016J\n\u0010)\u001a\u0004\u0018\u00010*H\u0002J\r\u0010+\u001a\u00020,H\u0000¢\u0006\u0002\b-J-\u0010.\u001a\u0004\u0018\u00010*2\n\b\u0002\u0010/\u001a\u0004\u0018\u00010,2\u0010\b\u0002\u00100\u001a\n\u0012\u0004\u0012\u00020!\u0018\u000101H\u0000¢\u0006\u0002\b2J'\u00103\u001a\u00020,2\u0006\u00104\u001a\u00020!2\u0010\b\u0002\u00100\u001a\n\u0012\u0004\u0012\u00020!\u0018\u000101H\u0000¢\u0006\u0002\b5J\u0010\u00106\u001a\u00020\u00162\u0006\u00104\u001a\u00020!H\u0002J\u0012\u00107\u001a\u00020\r2\b\u00108\u001a\u0004\u0018\u000109H\u0016J\u0012\u0010:\u001a\u0004\u0018\u00010!2\u0006\u0010;\u001a\u000209H\u0002J\u0010\u0010<\u001a\u00020\r2\u0006\u0010=\u001a\u00020>H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\u00020\u0010X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\"\u001a\b\u0012\u0004\u0012\u00020$0#X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&¨\u0006?"}, d2 = {"Lokhttp3/internal/connection/RealRoutePlanner;", "Lokhttp3/internal/connection/RoutePlanner;", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "connectionPool", "Lokhttp3/internal/connection/RealConnectionPool;", "readTimeoutMillis", "", "writeTimeoutMillis", "socketConnectTimeoutMillis", "socketReadTimeoutMillis", "pingIntervalMillis", "retryOnConnectionFailure", "", "fastFallback", "address", "Lokhttp3/Address;", "routeDatabase", "Lokhttp3/internal/connection/RouteDatabase;", NotificationCompat.CATEGORY_CALL, "Lokhttp3/internal/connection/RealCall;", "request", "Lokhttp3/Request;", "<init>", "(Lokhttp3/internal/concurrent/TaskRunner;Lokhttp3/internal/connection/RealConnectionPool;IIIIIZZLokhttp3/Address;Lokhttp3/internal/connection/RouteDatabase;Lokhttp3/internal/connection/RealCall;Lokhttp3/Request;)V", "getAddress", "()Lokhttp3/Address;", "doExtensiveHealthChecks", "routeSelection", "Lokhttp3/internal/connection/RouteSelector$Selection;", "routeSelector", "Lokhttp3/internal/connection/RouteSelector;", "nextRouteToTry", "Lokhttp3/Route;", "deferredPlans", "Lkotlin/collections/ArrayDeque;", "Lokhttp3/internal/connection/RoutePlanner$Plan;", "getDeferredPlans", "()Lkotlin/collections/ArrayDeque;", "isCanceled", "plan", "planReuseCallConnection", "Lokhttp3/internal/connection/ReusePlan;", "planConnect", "Lokhttp3/internal/connection/ConnectPlan;", "planConnect$okhttp", "planReusePooledConnection", "planToReplace", "routes", "", "planReusePooledConnection$okhttp", "planConnectToRoute", "route", "planConnectToRoute$okhttp", "createTunnelRequest", "hasNext", "failedConnection", "Lokhttp3/internal/connection/RealConnection;", "retryRoute", "connection", "sameHostAndPort", "url", "Lokhttp3/HttpUrl;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class RealRoutePlanner implements RoutePlanner {
     private final Address address;
+    private final RealCall call;
     private final RealConnectionPool connectionPool;
-    private final ConnectionUser connectionUser;
     private final ArrayDeque<RoutePlanner.Plan> deferredPlans;
+    private final boolean doExtensiveHealthChecks;
     private final boolean fastFallback;
     private Route nextRouteToTry;
     private final int pingIntervalMillis;
@@ -42,12 +45,13 @@ public final class RealRoutePlanner implements RoutePlanner {
     private final TaskRunner taskRunner;
     private final int writeTimeoutMillis;
 
-    public RealRoutePlanner(TaskRunner taskRunner, RealConnectionPool connectionPool, int i, int i2, int i3, int i4, int i5, boolean z, boolean z2, Address address, RouteDatabase routeDatabase, ConnectionUser connectionUser) {
+    public RealRoutePlanner(TaskRunner taskRunner, RealConnectionPool connectionPool, int i, int i2, int i3, int i4, int i5, boolean z, boolean z2, Address address, RouteDatabase routeDatabase, RealCall call, Request request) {
         Intrinsics.checkNotNullParameter(taskRunner, "taskRunner");
         Intrinsics.checkNotNullParameter(connectionPool, "connectionPool");
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(routeDatabase, "routeDatabase");
-        Intrinsics.checkNotNullParameter(connectionUser, "connectionUser");
+        Intrinsics.checkNotNullParameter(call, "call");
+        Intrinsics.checkNotNullParameter(request, "request");
         this.taskRunner = taskRunner;
         this.connectionPool = connectionPool;
         this.readTimeoutMillis = i;
@@ -59,7 +63,8 @@ public final class RealRoutePlanner implements RoutePlanner {
         this.fastFallback = z2;
         this.address = address;
         this.routeDatabase = routeDatabase;
-        this.connectionUser = connectionUser;
+        this.call = call;
+        this.doExtensiveHealthChecks = !Intrinsics.areEqual(request.method(), UtilsKt.HTTP_METHOD_GET);
         this.deferredPlans = new ArrayDeque<>();
     }
 
@@ -75,7 +80,7 @@ public final class RealRoutePlanner implements RoutePlanner {
 
     @Override // okhttp3.internal.connection.RoutePlanner
     public boolean isCanceled() {
-        return this.connectionUser.isCanceled();
+        return this.call.isCanceled();
     }
 
     @Override // okhttp3.internal.connection.RoutePlanner
@@ -100,42 +105,43 @@ public final class RealRoutePlanner implements RoutePlanner {
     }
 
     private final ReusePlan planReuseCallConnection() {
-        Socket releaseConnectionNoEvents;
+        Socket releaseConnectionNoEvents$okhttp;
         boolean z;
-        RealConnection candidateConnection = this.connectionUser.candidateConnection();
-        if (candidateConnection == null) {
+        RealConnection connection = this.call.getConnection();
+        if (connection == null) {
             return null;
         }
-        boolean isHealthy = candidateConnection.isHealthy(this.connectionUser.doExtensiveHealthChecks());
-        synchronized (candidateConnection) {
+        boolean isHealthy = connection.isHealthy(this.doExtensiveHealthChecks);
+        synchronized (connection) {
             if (!isHealthy) {
-                z = !candidateConnection.getNoNewExchanges();
-                candidateConnection.setNoNewExchanges(true);
-                releaseConnectionNoEvents = this.connectionUser.releaseConnectionNoEvents();
+                z = !connection.getNoNewExchanges();
+                connection.setNoNewExchanges(true);
+                releaseConnectionNoEvents$okhttp = this.call.releaseConnectionNoEvents$okhttp();
             } else {
-                if (!candidateConnection.getNoNewExchanges() && sameHostAndPort(candidateConnection.route().address().url())) {
+                if (!connection.getNoNewExchanges() && sameHostAndPort(connection.route().address().url())) {
                     z = false;
-                    releaseConnectionNoEvents = null;
+                    releaseConnectionNoEvents$okhttp = null;
                 }
-                releaseConnectionNoEvents = this.connectionUser.releaseConnectionNoEvents();
+                releaseConnectionNoEvents$okhttp = this.call.releaseConnectionNoEvents$okhttp();
                 z = false;
             }
         }
-        if (this.connectionUser.candidateConnection() != null) {
-            if (releaseConnectionNoEvents != null) {
+        if (this.call.getConnection() != null) {
+            if (releaseConnectionNoEvents$okhttp != null) {
                 throw new IllegalStateException("Check failed.");
             }
-            return new ReusePlan(candidateConnection);
+            return new ReusePlan(connection);
         }
-        if (releaseConnectionNoEvents != null) {
-            _UtilJvmKt.closeQuietly(releaseConnectionNoEvents);
+        if (releaseConnectionNoEvents$okhttp != null) {
+            _UtilJvmKt.closeQuietly(releaseConnectionNoEvents$okhttp);
         }
-        this.connectionUser.connectionReleased(candidateConnection);
-        this.connectionUser.connectionConnectionReleased(candidateConnection);
-        if (releaseConnectionNoEvents != null) {
-            this.connectionUser.connectionConnectionClosed(candidateConnection);
+        RealConnection realConnection = connection;
+        this.call.getEventListener$okhttp().connectionReleased(this.call, realConnection);
+        connection.getConnectionListener$okhttp().connectionReleased(realConnection, this.call);
+        if (releaseConnectionNoEvents$okhttp != null) {
+            connection.getConnectionListener$okhttp().connectionClosed(realConnection);
         } else if (z) {
-            this.connectionUser.noNewExchanges(candidateConnection);
+            connection.getConnectionListener$okhttp().noNewExchanges(realConnection);
         }
         return null;
     }
@@ -152,7 +158,7 @@ public final class RealRoutePlanner implements RoutePlanner {
         }
         RouteSelector routeSelector = this.routeSelector;
         if (routeSelector == null) {
-            routeSelector = new RouteSelector(getAddress(), this.routeDatabase, this.connectionUser, this.fastFallback);
+            routeSelector = new RouteSelector(getAddress(), this.routeDatabase, this.call, this.fastFallback);
             this.routeSelector = routeSelector;
         }
         if (!routeSelector.hasNext()) {
@@ -178,17 +184,18 @@ public final class RealRoutePlanner implements RoutePlanner {
     }
 
     public final ReusePlan planReusePooledConnection$okhttp(ConnectPlan connectPlan, List<Route> list) {
-        RealConnection callAcquirePooledConnection = this.connectionPool.callAcquirePooledConnection(this.connectionUser.doExtensiveHealthChecks(), getAddress(), this.connectionUser, list, connectPlan != null && connectPlan.isReady());
-        if (callAcquirePooledConnection == null) {
+        RealConnection callAcquirePooledConnection$okhttp = this.connectionPool.callAcquirePooledConnection$okhttp(this.doExtensiveHealthChecks, getAddress(), this.call, list, connectPlan != null && connectPlan.isReady());
+        if (callAcquirePooledConnection$okhttp == null) {
             return null;
         }
         if (connectPlan != null) {
             this.nextRouteToTry = connectPlan.getRoute();
             connectPlan.closeQuietly();
         }
-        this.connectionUser.connectionAcquired(callAcquirePooledConnection);
-        this.connectionUser.connectionConnectionAcquired(callAcquirePooledConnection);
-        return new ReusePlan(callAcquirePooledConnection);
+        RealConnection realConnection = callAcquirePooledConnection$okhttp;
+        this.call.getEventListener$okhttp().connectionAcquired(this.call, realConnection);
+        callAcquirePooledConnection$okhttp.getConnectionListener$okhttp().connectionAcquired(realConnection, this.call);
+        return new ReusePlan(callAcquirePooledConnection$okhttp);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -212,7 +219,7 @@ public final class RealRoutePlanner implements RoutePlanner {
         } else if (route.address().protocols().contains(Protocol.H2_PRIOR_KNOWLEDGE)) {
             throw new UnknownServiceException("H2_PRIOR_KNOWLEDGE cannot be used with HTTPS");
         }
-        return new ConnectPlan(this.taskRunner, this.connectionPool, this.readTimeoutMillis, this.writeTimeoutMillis, this.socketConnectTimeoutMillis, this.socketReadTimeoutMillis, this.pingIntervalMillis, this.retryOnConnectionFailure, this.connectionUser, this, route, list, 0, route.requiresTunnel() ? createTunnelRequest(route) : null, -1, false);
+        return new ConnectPlan(this.taskRunner, this.connectionPool, this.readTimeoutMillis, this.writeTimeoutMillis, this.socketConnectTimeoutMillis, this.socketReadTimeoutMillis, this.pingIntervalMillis, this.retryOnConnectionFailure, this.call, this, route, list, 0, route.requiresTunnel() ? createTunnelRequest(route) : null, -1, false);
     }
 
     private final Request createTunnelRequest(Route route) throws IOException {

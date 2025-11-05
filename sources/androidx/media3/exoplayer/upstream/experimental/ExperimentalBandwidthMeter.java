@@ -2,7 +2,6 @@ package androidx.media3.exoplayer.upstream.experimental;
 
 import android.content.Context;
 import android.os.Handler;
-import androidx.compose.material3.MenuKt;
 import androidx.compose.runtime.ComposerKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
@@ -18,7 +17,6 @@ import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
 import androidx.media3.exoplayer.upstream.TimeToFirstByteEstimator;
 import androidx.media3.exoplayer.upstream.experimental.SplitParallelSampleBandwidthEstimator;
-import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import androidx.media3.extractor.ts.PsExtractor;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.android.volley.DefaultRetryPolicy;
@@ -28,7 +26,6 @@ import com.google.common.base.Ascii;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import io.appmetrica.analytics.BuildConfig;
 import java.util.HashMap;
 import java.util.Map;
 import kotlin.text.Typography;
@@ -36,7 +33,8 @@ import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.internal.ws.WebSocketProtocol;
-/* loaded from: classes2.dex */
+import ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage;
+/* loaded from: classes3.dex */
 public final class ExperimentalBandwidthMeter implements BandwidthMeter, TransferListener {
     private static final int COUNTRY_GROUP_INDEX_2G = 1;
     private static final int COUNTRY_GROUP_INDEX_3G = 2;
@@ -77,7 +75,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
         DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_SA = ImmutableList.of(2700000L, (long) valueOf, 1600000L, 1300000L, 1000000L);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private final Context context;
         private final Map<Integer, Long> initialBitrateEstimates;
@@ -1733,7 +1731,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case '2':
             case '9':
             case 'q':
-            case AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID /* 116 */:
+            case 't':
             case ComposerKt.compositionLocalMapKey /* 202 */:
             case 225:
                 return new int[]{1, 2, 0, 0, 2, 2};
@@ -1902,7 +1900,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{3, 2, 2, 2, 2, 2};
             case 'E':
                 return new int[]{4, 2, 4, 0, 2, 2};
-            case 'F':
+            case ArizonaRentAddPage.MAX_CHAR_COUNT /* 70 */:
                 return new int[]{0, 2, 2, 0, 2, 2};
             case TsExtractor.TS_SYNC_BYTE /* 71 */:
                 return new int[]{1, 1, 1, 1, 0, 2};
@@ -1912,7 +1910,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{1, 1, 3, 2, 2, 2};
             case 'J':
                 return new int[]{2, 2, 0, 0, 2, 2};
-            case 'K':
+            case MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT /* 75 */:
                 return new int[]{1, 1, 0, 2, 2, 2};
             case 'L':
                 return new int[]{3, 2, 3, 3, 2, 2};
@@ -1947,7 +1945,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case 'Z':
                 return new int[]{0, 1, 0, 1, 1, 0};
             case '[':
-            case BuildConfig.API_LEVEL /* 115 */:
+            case 's':
                 return new int[]{1, 0, 0, 0, 0, 2};
             case '^':
                 return new int[]{3, 1, 3, 3, 2, 4};
@@ -1986,7 +1984,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{1, 2, 1, 3, 2, 2};
             case 'w':
                 return new int[]{3, 1, 1, 2, 2, 2};
-            case MenuKt.InTransitionDuration /* 120 */:
+            case 'x':
                 return new int[]{2, 2, 1, 1, 2, 2};
             case 'z':
             case TsExtractor.TS_STREAM_TYPE_DTS /* 138 */:

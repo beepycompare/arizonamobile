@@ -41,7 +41,7 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("width");
-                inspectorInfo.setValue(Dp.m7262boximpl(f));
+                inspectorInfo.setValue(Dp.m7993boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 10, null));
     }
@@ -63,23 +63,23 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("height");
-                inspectorInfo.setValue(Dp.m7262boximpl(f));
+                inspectorInfo.setValue(Dp.m7993boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 5, null));
     }
 
     /* renamed from: size-6HolHcs */
     public static final Modifier m895size6HolHcs(Modifier modifier, long j) {
-        return m896sizeVpY3zN4(modifier, DpSize.m7362getWidthD9Ej5fM(j), DpSize.m7360getHeightD9Ej5fM(j));
+        return m896sizeVpY3zN4(modifier, DpSize.m8093getWidthD9Ej5fM(j), DpSize.m8091getHeightD9Ej5fM(j));
     }
 
     /* renamed from: widthIn-VpY3zN4$default */
     public static /* synthetic */ Modifier m901widthInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         return m900widthInVpY3zN4(modifier, f, f2);
     }
@@ -101,8 +101,8 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("widthIn");
-                inspectorInfo.getProperties().set("min", Dp.m7262boximpl(f));
-                inspectorInfo.getProperties().set("max", Dp.m7262boximpl(f2));
+                inspectorInfo.getProperties().set("min", Dp.m7993boximpl(f));
+                inspectorInfo.getProperties().set("max", Dp.m7993boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 10, null));
     }
@@ -110,10 +110,10 @@ public final class SizeKt {
     /* renamed from: heightIn-VpY3zN4$default */
     public static /* synthetic */ Modifier m882heightInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         return m881heightInVpY3zN4(modifier, f, f2);
     }
@@ -135,8 +135,8 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("heightIn");
-                inspectorInfo.getProperties().set("min", Dp.m7262boximpl(f));
-                inspectorInfo.getProperties().set("max", Dp.m7262boximpl(f2));
+                inspectorInfo.getProperties().set("min", Dp.m7993boximpl(f));
+                inspectorInfo.getProperties().set("max", Dp.m7993boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 5, null));
     }
@@ -144,16 +144,16 @@ public final class SizeKt {
     /* renamed from: sizeIn-qDBjuR0$default */
     public static /* synthetic */ Modifier m898sizeInqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 4) != 0) {
-            f3 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f3 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 8) != 0) {
-            f4 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f4 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         return m897sizeInqDBjuR0(modifier, f, f2, f3, f4);
     }
@@ -175,10 +175,10 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("sizeIn");
-                inspectorInfo.getProperties().set("minWidth", Dp.m7262boximpl(f));
-                inspectorInfo.getProperties().set("minHeight", Dp.m7262boximpl(f2));
-                inspectorInfo.getProperties().set("maxWidth", Dp.m7262boximpl(f3));
-                inspectorInfo.getProperties().set("maxHeight", Dp.m7262boximpl(f4));
+                inspectorInfo.getProperties().set("minWidth", Dp.m7993boximpl(f));
+                inspectorInfo.getProperties().set("minHeight", Dp.m7993boximpl(f2));
+                inspectorInfo.getProperties().set("maxWidth", Dp.m7993boximpl(f3));
+                inspectorInfo.getProperties().set("maxHeight", Dp.m7993boximpl(f4));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
@@ -200,7 +200,7 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredWidth");
-                inspectorInfo.setValue(Dp.m7262boximpl(f));
+                inspectorInfo.setValue(Dp.m7993boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 10, null));
     }
@@ -222,23 +222,23 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredHeight");
-                inspectorInfo.setValue(Dp.m7262boximpl(f));
+                inspectorInfo.setValue(Dp.m7993boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 5, null));
     }
 
     /* renamed from: requiredSize-6HolHcs */
     public static final Modifier m887requiredSize6HolHcs(Modifier modifier, long j) {
-        return m888requiredSizeVpY3zN4(modifier, DpSize.m7362getWidthD9Ej5fM(j), DpSize.m7360getHeightD9Ej5fM(j));
+        return m888requiredSizeVpY3zN4(modifier, DpSize.m8093getWidthD9Ej5fM(j), DpSize.m8091getHeightD9Ej5fM(j));
     }
 
     /* renamed from: requiredWidthIn-VpY3zN4$default */
     public static /* synthetic */ Modifier m893requiredWidthInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         return m892requiredWidthInVpY3zN4(modifier, f, f2);
     }
@@ -260,8 +260,8 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredWidthIn");
-                inspectorInfo.getProperties().set("min", Dp.m7262boximpl(f));
-                inspectorInfo.getProperties().set("max", Dp.m7262boximpl(f2));
+                inspectorInfo.getProperties().set("min", Dp.m7993boximpl(f));
+                inspectorInfo.getProperties().set("max", Dp.m7993boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 10, null));
     }
@@ -269,10 +269,10 @@ public final class SizeKt {
     /* renamed from: requiredHeightIn-VpY3zN4$default */
     public static /* synthetic */ Modifier m885requiredHeightInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         return m884requiredHeightInVpY3zN4(modifier, f, f2);
     }
@@ -294,8 +294,8 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredHeightIn");
-                inspectorInfo.getProperties().set("min", Dp.m7262boximpl(f));
-                inspectorInfo.getProperties().set("max", Dp.m7262boximpl(f2));
+                inspectorInfo.getProperties().set("min", Dp.m7993boximpl(f));
+                inspectorInfo.getProperties().set("max", Dp.m7993boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 5, null));
     }
@@ -303,16 +303,16 @@ public final class SizeKt {
     /* renamed from: requiredSizeIn-qDBjuR0$default */
     public static /* synthetic */ Modifier m890requiredSizeInqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 4) != 0) {
-            f3 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f3 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 8) != 0) {
-            f4 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f4 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         return m889requiredSizeInqDBjuR0(modifier, f, f2, f3, f4);
     }
@@ -334,10 +334,10 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredSizeIn");
-                inspectorInfo.getProperties().set("minWidth", Dp.m7262boximpl(f));
-                inspectorInfo.getProperties().set("minHeight", Dp.m7262boximpl(f2));
-                inspectorInfo.getProperties().set("maxWidth", Dp.m7262boximpl(f3));
-                inspectorInfo.getProperties().set("maxHeight", Dp.m7262boximpl(f4));
+                inspectorInfo.getProperties().set("minWidth", Dp.m7993boximpl(f));
+                inspectorInfo.getProperties().set("minHeight", Dp.m7993boximpl(f2));
+                inspectorInfo.getProperties().set("maxWidth", Dp.m7993boximpl(f3));
+                inspectorInfo.getProperties().set("maxHeight", Dp.m7993boximpl(f4));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
@@ -444,10 +444,10 @@ public final class SizeKt {
     /* renamed from: defaultMinSize-VpY3zN4$default */
     public static /* synthetic */ Modifier m879defaultMinSizeVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m7284getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
         }
         return m878defaultMinSizeVpY3zN4(modifier, f, f2);
     }
@@ -474,7 +474,7 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("size");
-                inspectorInfo.setValue(Dp.m7262boximpl(f));
+                inspectorInfo.setValue(Dp.m7993boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
@@ -496,8 +496,8 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("size");
-                inspectorInfo.getProperties().set("width", Dp.m7262boximpl(f));
-                inspectorInfo.getProperties().set("height", Dp.m7262boximpl(f2));
+                inspectorInfo.getProperties().set("width", Dp.m7993boximpl(f));
+                inspectorInfo.getProperties().set("height", Dp.m7993boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
@@ -519,7 +519,7 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredSize");
-                inspectorInfo.setValue(Dp.m7262boximpl(f));
+                inspectorInfo.setValue(Dp.m7993boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
@@ -541,8 +541,8 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredSize");
-                inspectorInfo.getProperties().set("width", Dp.m7262boximpl(f));
-                inspectorInfo.getProperties().set("height", Dp.m7262boximpl(f2));
+                inspectorInfo.getProperties().set("width", Dp.m7993boximpl(f));
+                inspectorInfo.getProperties().set("height", Dp.m7993boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
