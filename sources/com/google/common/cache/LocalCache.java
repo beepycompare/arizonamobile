@@ -1736,7 +1736,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             loadFuture.addListener(new Runnable() { // from class: com.google.common.cache.LocalCache$Segment$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LocalCache.Segment.this.m9540lambda$loadAsync$0$comgooglecommoncacheLocalCache$Segment(key, hash, loadingValueReference, loadFuture);
+                    LocalCache.Segment.this.m9536lambda$loadAsync$0$comgooglecommoncacheLocalCache$Segment(key, hash, loadingValueReference, loadFuture);
                 }
             }, MoreExecutors.directExecutor());
             return loadFuture;
@@ -1745,7 +1745,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: Multi-variable type inference failed */
         /* renamed from: lambda$loadAsync$0$com-google-common-cache-LocalCache$Segment  reason: not valid java name */
-        public /* synthetic */ void m9540lambda$loadAsync$0$comgooglecommoncacheLocalCache$Segment(Object obj, int i, LoadingValueReference loadingValueReference, ListenableFuture listenableFuture) {
+        public /* synthetic */ void m9536lambda$loadAsync$0$comgooglecommoncacheLocalCache$Segment(Object obj, int i, LoadingValueReference loadingValueReference, ListenableFuture listenableFuture) {
             try {
                 getAndRecordStats(obj, i, loadingValueReference, listenableFuture);
             } catch (Throwable th) {
@@ -2885,7 +2885,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 return Futures.transform(reload, new Function() { // from class: com.google.common.cache.LocalCache$LoadingValueReference$$ExternalSyntheticLambda0
                     @Override // com.google.common.base.Function
                     public final Object apply(Object obj) {
-                        return LocalCache.LoadingValueReference.this.m9539x59597480(obj);
+                        return LocalCache.LoadingValueReference.this.m9535x59597480(obj);
                     }
                 }, MoreExecutors.directExecutor());
             } catch (Throwable th) {
@@ -2900,7 +2900,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: Multi-variable type inference failed */
         /* renamed from: lambda$loadFuture$0$com-google-common-cache-LocalCache$LoadingValueReference  reason: not valid java name */
-        public /* synthetic */ Object m9539x59597480(Object obj) {
+        public /* synthetic */ Object m9535x59597480(Object obj) {
             set(obj);
             return obj;
         }

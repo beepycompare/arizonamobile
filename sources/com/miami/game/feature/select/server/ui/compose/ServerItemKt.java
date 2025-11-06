@@ -340,7 +340,7 @@ public final class ServerItemKt {
                 ComposerKt.sourceInformation(startRestartGroup, "91@3657L200");
                 i3 = i2;
                 i4 = 6;
-                SingletonAsyncImageKt.m9076AsyncImage10Xjiaw(str2, null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(24)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, ((i2 >> 3) & 14) | 1573296, 0, 1976);
+                SingletonAsyncImageKt.m9072AsyncImage10Xjiaw(str2, null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(24)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, ((i2 >> 3) & 14) | 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
             } else {
                 i3 = i2;
@@ -356,7 +356,7 @@ public final class ServerItemKt {
             long sp = TextUnitKt.getSp(0.6d);
             TextUnitKt.m8202checkArithmeticR2X_6o(sp);
             str3 = str;
-            TextKt.m3168TextNvy7gAk(str3, null, m5316getWhite0d7_KjU, null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(21), startRestartGroup, i4), null, null, null, TextUnitKt.pack(TextUnit.m8187getRawTypeimpl(sp), -TextUnit.m8189getValueimpl(sp)), null, null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(22), startRestartGroup, i4), 0, false, 0, 0, null, labelMedium, startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 128746);
+            TextKt.m3168TextNvy7gAk(str3, null, m5316getWhite0d7_KjU, null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(21), startRestartGroup, i4), null, null, null, TextUnitKt.pack(TextUnit.m8187getRawTypeimpl(sp), -TextUnit.m8189getValueimpl(sp)), null, null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(22), startRestartGroup, i4), 0, false, 0, 0, null, labelMedium, startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 128746);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -436,8 +436,8 @@ public final class ServerItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 129289880, "C118@4492L10,119@4537L13,120@4577L13,116@4401L190,123@4702L10,124@4747L13,121@4600L212:ServerItem.kt#2ojkxh");
             float f = 21;
             composer2 = startRestartGroup;
-            TextKt.m3168TextNvy7gAk(String.valueOf(i), null, Color.Companion.m5316getWhite0d7_KjU(), null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
-            TextKt.m3168TextNvy7gAk(" / " + i2, OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7995constructorimpl(-Dp.m7995constructorimpl(1)), 1, null), Color.m5278copywmQWz5c$default(Color.Companion.m5316getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(15), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, 432, 0, 131048);
+            TextKt.m3168TextNvy7gAk(String.valueOf(i), null, Color.Companion.m5316getWhite0d7_KjU(), null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
+            TextKt.m3168TextNvy7gAk(" / " + i2, OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7995constructorimpl(-Dp.m7995constructorimpl(1)), 1, null), Color.m5278copywmQWz5c$default(Color.Companion.m5316getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(15), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, 432, 0, 131048);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

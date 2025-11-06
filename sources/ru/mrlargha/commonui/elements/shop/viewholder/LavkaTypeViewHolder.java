@@ -4,7 +4,6 @@ import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
 import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -17,9 +16,8 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ItemLavkaTypeBinding;
-import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEffectType;
-import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEntityKt;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
+import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: LavkaTypeViewHolder.kt */
@@ -41,7 +39,6 @@ public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
     }
 
     public final void bind(final InventoryItem itemVal) {
-        Object obj;
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
         ItemLavkaTypeBinding itemLavkaTypeBinding = this.binding;
@@ -52,6 +49,7 @@ public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
             }
         });
         Job job = this.loadImageJob;
+        Object obj = null;
         boolean z = true;
         if (job != null) {
             Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
@@ -82,13 +80,13 @@ public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
         Iterator<T> it = UtilsKt.getItemsName().iterator();
         while (true) {
             if (!it.hasNext()) {
-                obj = null;
                 break;
             }
-            obj = it.next();
-            int id = ((ItemsInfo) obj).getId();
+            Object next = it.next();
+            int id = ((ItemsInfo) next).getId();
             Integer item = itemVal.getItem();
             if (item != null && id == item.intValue()) {
+                obj = next;
                 break;
             }
         }
@@ -108,35 +106,12 @@ public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
             Intrinsics.checkNotNullExpressionValue(viewCenter2, "viewCenter");
             viewCenter2.setVisibility(0);
         }
-        InventoryItemEffectType effect = InventoryItemEntityKt.getEffect(itemVal);
-        if (effect.getResId() != null) {
-            if (effect == InventoryItemEffectType.FIRE || effect == InventoryItemEffectType.WHITE_FIRE) {
-                Glide.with(itemLavkaTypeBinding.ivEffectBackground.getContext()).load(effect.getResId()).into(itemLavkaTypeBinding.ivEffectBackground);
-                ImageView ivEffectBackground = itemLavkaTypeBinding.ivEffectBackground;
-                Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
-                ivEffectBackground.setVisibility(0);
-                ImageView ivEffectForeground = itemLavkaTypeBinding.ivEffectForeground;
-                Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-                ivEffectForeground.setVisibility(8);
-                return;
-            }
-            Glide.with(itemLavkaTypeBinding.ivEffectForeground.getContext()).load(effect.getResId()).into(itemLavkaTypeBinding.ivEffectForeground);
-            ImageView ivEffectBackground2 = itemLavkaTypeBinding.ivEffectBackground;
-            Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
-            ivEffectBackground2.setVisibility(8);
-            ImageView ivEffectForeground2 = itemLavkaTypeBinding.ivEffectForeground;
-            Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
-            ivEffectForeground2.setVisibility(0);
-            return;
-        }
-        itemLavkaTypeBinding.ivEffectBackground.setImageDrawable(null);
-        ImageView ivEffectBackground3 = itemLavkaTypeBinding.ivEffectBackground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectBackground3, "ivEffectBackground");
-        ivEffectBackground3.setVisibility(8);
-        itemLavkaTypeBinding.ivEffectForeground.setImageDrawable(null);
-        ImageView ivEffectForeground3 = itemLavkaTypeBinding.ivEffectForeground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectForeground3, "ivEffectForeground");
-        ivEffectForeground3.setVisibility(8);
+        Integer item2 = itemVal.getItem();
+        ImageView ivEffectBackground = itemLavkaTypeBinding.ivEffectBackground;
+        Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
+        ImageView ivEffectForeground = itemLavkaTypeBinding.ivEffectForeground;
+        Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
+        UtilKt.setInventoryItemEffect(item2, ivEffectBackground, ivEffectForeground);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

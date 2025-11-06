@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService", f = "UpdateService.kt", i = {0, 0, 0, 0}, l = {820}, m = "getFilesToDownload", n = {"sources", "dir", "destDir", "updateFiles"}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 1)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService", f = "UpdateService.kt", i = {0, 0, 0, 0}, l = {824}, m = "getFilesToDownload", n = {"sources", "dir", "destDir", "updateFiles"}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 1)
 /* loaded from: classes3.dex */
 public final class UpdateService$getFilesToDownload$1 extends ContinuationImpl {
     Object L$0;

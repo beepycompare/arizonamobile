@@ -74,7 +74,7 @@ final class FlowLiveDataConversions$asFlow$1<T> extends SuspendLambda implements
             Observer observer2 = new Observer() { // from class: androidx.lifecycle.FlowLiveDataConversions$asFlow$1$$ExternalSyntheticLambda0
                 @Override // androidx.lifecycle.Observer
                 public final void onChanged(Object obj2) {
-                    ProducerScope.this.mo8871trySendJP2dKIU(obj2);
+                    ProducerScope.this.mo8867trySendJP2dKIU(obj2);
                 }
             };
             this.L$0 = observer2;

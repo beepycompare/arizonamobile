@@ -35,7 +35,7 @@ public final class SizeFSerializer implements KSerializer<SizeF> {
             throw new IllegalArgumentException(BuiltInSerializerKt.encoderErrorMessage(INSTANCE.getDescriptor().getSerialName(), encoder).toString());
         }
         SavedStateEncoder savedStateEncoder = (SavedStateEncoder) encoder;
-        SavedStateWriter.m9023putSizeFimpl(SavedStateWriter.m8992constructorimpl(savedStateEncoder.getSavedState$savedstate_release()), savedStateEncoder.getKey$savedstate_release(), value);
+        SavedStateWriter.m9019putSizeFimpl(SavedStateWriter.m8988constructorimpl(savedStateEncoder.getSavedState$savedstate_release()), savedStateEncoder.getKey$savedstate_release(), value);
     }
 
     @Override // kotlinx.serialization.DeserializationStrategy
@@ -45,6 +45,6 @@ public final class SizeFSerializer implements KSerializer<SizeF> {
             throw new IllegalArgumentException(BuiltInSerializerKt.decoderErrorMessage(INSTANCE.getDescriptor().getSerialName(), decoder).toString());
         }
         SavedStateDecoder savedStateDecoder = (SavedStateDecoder) decoder;
-        return SavedStateReader.m8970getSizeFimpl(SavedStateReader.m8906constructorimpl(savedStateDecoder.getSavedState$savedstate_release()), savedStateDecoder.getKey$savedstate_release());
+        return SavedStateReader.m8966getSizeFimpl(SavedStateReader.m8902constructorimpl(savedStateDecoder.getSavedState$savedstate_release()), savedStateDecoder.getKey$savedstate_release());
     }
 }

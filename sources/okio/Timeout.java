@@ -212,9 +212,9 @@ public class Timeout {
         }
 
         /* renamed from: timeout-HG0u8IE  reason: not valid java name */
-        public final Timeout m11789timeoutHG0u8IE(Timeout timeout, long j) {
+        public final Timeout m11785timeoutHG0u8IE(Timeout timeout, long j) {
             Intrinsics.checkNotNullParameter(timeout, "$this$timeout");
-            return timeout.timeout(Duration.m11217getInWholeNanosecondsimpl(j), TimeUnit.NANOSECONDS);
+            return timeout.timeout(Duration.m11213getInWholeNanosecondsimpl(j), TimeUnit.NANOSECONDS);
         }
     }
 }

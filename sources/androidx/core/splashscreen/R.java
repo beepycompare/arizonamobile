@@ -4,6 +4,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class attr {
+        public static int isLightTheme = 0x7f040328;
         public static int postSplashScreenTheme = 0x7f0404ed;
         public static int splashScreenIconSize = 0x7f04059d;
         public static int windowSplashScreenAnimatedIcon = 0x7f0406eb;

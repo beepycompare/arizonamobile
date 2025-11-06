@@ -156,14 +156,14 @@ public final class RequirementsWatcher {
             RequirementsWatcher.this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.scheduler.RequirementsWatcher$NetworkCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RequirementsWatcher.NetworkCallback.this.m8715xcc18be42();
+                    RequirementsWatcher.NetworkCallback.this.m8711xcc18be42();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postCheckRequirements$0$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback  reason: not valid java name */
-        public /* synthetic */ void m8715xcc18be42() {
+        public /* synthetic */ void m8711xcc18be42() {
             if (RequirementsWatcher.this.networkCallback != null) {
                 RequirementsWatcher.this.checkRequirements();
             }
@@ -173,14 +173,14 @@ public final class RequirementsWatcher {
             RequirementsWatcher.this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.scheduler.RequirementsWatcher$NetworkCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RequirementsWatcher.NetworkCallback.this.m8716xfb2bca45();
+                    RequirementsWatcher.NetworkCallback.this.m8712xfb2bca45();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postRecheckNotMetNetworkRequirements$1$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback  reason: not valid java name */
-        public /* synthetic */ void m8716xfb2bca45() {
+        public /* synthetic */ void m8712xfb2bca45() {
             if (RequirementsWatcher.this.networkCallback != null) {
                 RequirementsWatcher.this.recheckNotMetNetworkRequirements();
             }

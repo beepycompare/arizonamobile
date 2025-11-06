@@ -67,7 +67,7 @@ public final class PredictiveBackHandlerCallback extends OnBackPressedCallback {
         super.handleOnBackProgressed(backEventCompat);
         OnBackInstance onBackInstance = this.onBackInstance;
         if (onBackInstance != null) {
-            ChannelResult.m11378boximpl(onBackInstance.m15sendJP2dKIU(backEventCompat));
+            ChannelResult.m11374boximpl(onBackInstance.m15sendJP2dKIU(backEventCompat));
         }
     }
 

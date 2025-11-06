@@ -74,7 +74,7 @@ public final class Pool {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m8891acquireWithTimeoutKLykuaI(long j, Function0<Unit> function0, Continuation<? super ConnectionWithLock> continuation) {
+    public final Object m8887acquireWithTimeoutKLykuaI(long j, Function0<Unit> function0, Continuation<? super ConnectionWithLock> continuation) {
         Pool$acquireWithTimeout$1 pool$acquireWithTimeout$1;
         int i;
         Ref.ObjectRef objectRef;
@@ -95,7 +95,7 @@ public final class Pool {
                     pool$acquireWithTimeout$1.L$1 = objectRef2;
                     pool$acquireWithTimeout$1.J$0 = j;
                     pool$acquireWithTimeout$1.label = 1;
-                    if (TimeoutKt.m11361withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
+                    if (TimeoutKt.m11357withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -121,7 +121,7 @@ public final class Pool {
                             pool$acquireWithTimeout$1.L$1 = objectRef2;
                             pool$acquireWithTimeout$1.J$0 = j;
                             pool$acquireWithTimeout$1.label = 1;
-                            if (TimeoutKt.m11361withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
+                            if (TimeoutKt.m11357withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
                             }
                         }
                         if (th instanceof TimeoutCancellationException) {
@@ -139,7 +139,7 @@ public final class Pool {
                         pool$acquireWithTimeout$1.L$1 = objectRef2;
                         pool$acquireWithTimeout$1.J$0 = j;
                         pool$acquireWithTimeout$1.label = 1;
-                        if (TimeoutKt.m11361withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
+                        if (TimeoutKt.m11357withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         function02 = function0;
@@ -156,7 +156,7 @@ public final class Pool {
                         pool$acquireWithTimeout$1.L$1 = objectRef2;
                         pool$acquireWithTimeout$1.J$0 = j;
                         pool$acquireWithTimeout$1.label = 1;
-                        if (TimeoutKt.m11361withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
+                        if (TimeoutKt.m11357withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
                         }
                     } catch (Throwable th5) {
                         ConnectionWithLock connectionWithLock = (ConnectionWithLock) objectRef.element;

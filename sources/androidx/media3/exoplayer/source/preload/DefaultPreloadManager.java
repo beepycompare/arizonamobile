@@ -313,14 +313,14 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultPreloadManager.this.m8741xafd85f69();
+                DefaultPreloadManager.this.m8737xafd85f69();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releaseInternal$1$androidx-media3-exoplayer-source-preload-DefaultPreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8741xafd85f69() {
+    public /* synthetic */ void m8737xafd85f69() {
         this.rendererCapabilitiesList.release();
         if (!this.deprecatedConstructorCalled) {
             this.trackSelector.release();

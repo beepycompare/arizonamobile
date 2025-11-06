@@ -45,7 +45,7 @@ public final class NavBackStackEntryKt {
                 pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
             arguments = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            SavedStateWriter.m8992constructorimpl(arguments);
+            SavedStateWriter.m8988constructorimpl(arguments);
         }
         Map<String, NavArgument> arguments2 = navBackStackEntry.getDestination().getArguments();
         LinkedHashMap linkedHashMap = new LinkedHashMap(MapsKt.mapCapacity(arguments2.size()));

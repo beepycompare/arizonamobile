@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.MediaController;
 import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.MediaItem;
@@ -153,14 +152,12 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
         int i = WhenMappings.$EnumSwitchMapping$0[videoMode.ordinal()];
         if (i == 1) {
             this.lastChoseVideo = videoMode;
-            new MediaController(getTargetActivity()).setVisibility(8);
             this.videoBackground.setVisibility(0);
             this.videoBackgroundBinding.video.setVisibility(0);
             this.videoBackgroundBinding.playerView.setVisibility(0);
             setVideo("/SAMP/auth_video.webm");
         } else if (i == 2) {
             this.lastChoseVideo = videoMode;
-            new MediaController(getTargetActivity()).setVisibility(8);
             this.videoBackground.setVisibility(0);
             this.videoBackgroundBinding.video.setVisibility(0);
             this.videoBackgroundBinding.playerView.setVisibility(0);

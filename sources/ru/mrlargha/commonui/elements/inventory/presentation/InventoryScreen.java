@@ -1646,7 +1646,6 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         Log.d("TAG_INVENTORY", "subID: " + i + " ===== data: " + data);
         Object obj6 = null;
         boolean z = true;
-        int i2 = 0;
         try {
             if (i == 0) {
                 Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
@@ -1689,8 +1688,11 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     if (inventoryResponse.getItems().get(0).getSlot() == 0) {
                         getSubAccessoriesList().clear();
                         getSubCaseArmorSkinList().clear();
+                        setSubAccessoriesList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                        Unit unit = Unit.INSTANCE;
+                    } else {
+                        Boolean.valueOf(getSubAccessoriesList().addAll(editResponseInfo(inventoryResponse)));
                     }
-                    setSubAccessoriesList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
                 } else {
                     if (!this.isArizonaType) {
                         id12 = RodinaBlockType.BLOCK_TYPE_IMPROV_GUN.getId();
@@ -1878,9 +1880,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 z = false;
                             }
                             if (!z) {
-                                i2 = 8;
+                                r13 = 8;
                             }
-                            textView.setVisibility(i2);
+                            textView.setVisibility(r13);
                             this.binding.layoutWarehouse.etStoreMoney.setText(String.valueOf(warehouseMoney.getMoney()));
                             if (this.isArizonaType) {
                                 TextView etStoreMoney2 = this.binding.layoutWarehouse.etStoreMoney;
@@ -1995,15 +1997,15 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         for (InventoryItem inventoryItem5 : items13) {
                             if (inventoryItem5.getSlot() < this.mainInventoryList.size() && !this.mainInventoryList.isEmpty()) {
                                 Iterator<InventoryItem> it4 = this.mainInventoryList.iterator();
-                                int i3 = 0;
+                                int i2 = 0;
                                 while (true) {
                                     if (!it4.hasNext()) {
-                                        i3 = -1;
+                                        i2 = -1;
                                         break;
                                     } else if (it4.next().getSlot() == inventoryItem5.getSlot()) {
                                         break;
                                     } else {
-                                        i3++;
+                                        i2++;
                                     }
                                 }
                                 Iterator<T> it5 = this.mainInventoryList.iterator();
@@ -2018,21 +2020,21 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                     }
                                 }
                                 InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj3, inventoryItem5);
-                                if (i3 >= 0) {
-                                    arrayList9.add(Integer.valueOf(i3));
+                                if (i2 >= 0) {
+                                    arrayList9.add(Integer.valueOf(i2));
                                     if (inventoryItem5.getItem() != null) {
                                         List<InventoryItem> list3 = this.mainInventoryList;
                                         if (updateInventoryItem == null) {
                                             updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
                                         }
-                                        list3.set(i3, updateInventoryItem);
+                                        list3.set(i2, updateInventoryItem);
                                     } else {
-                                        this.mainInventoryList.set(i3, inventoryItem5);
+                                        this.mainInventoryList.set(i2, inventoryItem5);
                                     }
                                 }
                             }
                         }
-                        Unit unit = Unit.INSTANCE;
+                        Unit unit2 = Unit.INSTANCE;
                     }
                     this.mainInventoryAdapter.submitList(CollectionsKt.toList(this.mainInventoryList));
                     for (Number number : arrayList9) {
@@ -2052,15 +2054,15 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         if (!getSubUpgradesList().isEmpty() && (items9 = inventoryEditResponse2.getItems()) != null) {
                             for (InventoryItem inventoryItem6 : items9) {
                                 Iterator<InventoryItem> it6 = getSubUpgradesList().iterator();
-                                int i4 = 0;
+                                int i3 = 0;
                                 while (true) {
                                     if (!it6.hasNext()) {
-                                        i4 = -1;
+                                        i3 = -1;
                                         break;
                                     } else if (it6.next().getSlot() == inventoryItem6.getSlot()) {
                                         break;
                                     } else {
-                                        i4++;
+                                        i3++;
                                     }
                                 }
                                 Iterator<T> it7 = getSubUpgradesList().iterator();
@@ -2075,20 +2077,20 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                     }
                                 }
                                 InventoryItem updateInventoryItem2 = UtilsKt.updateInventoryItem((InventoryItem) obj2, inventoryItem6);
-                                if (i4 >= 0) {
+                                if (i3 >= 0) {
                                     if (inventoryItem6.getItem() != null) {
                                         List<InventoryItem> subUpgradesList = getSubUpgradesList();
                                         if (updateInventoryItem2 == null) {
                                             updateInventoryItem2 = ConstantsKt.getEmptyInventoryItem();
                                         }
-                                        subUpgradesList.set(i4, updateInventoryItem2);
+                                        subUpgradesList.set(i3, updateInventoryItem2);
                                     } else {
-                                        getSubUpgradesList().set(i4, inventoryItem6);
+                                        getSubUpgradesList().set(i3, inventoryItem6);
                                     }
                                 }
                                 getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
                             }
-                            Unit unit2 = Unit.INSTANCE;
+                            Unit unit3 = Unit.INSTANCE;
                         }
                     } else {
                         if (!this.isArizonaType) {
@@ -2101,22 +2103,22 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                             if (items15 != null) {
                                 for (InventoryItem inventoryItem7 : items15) {
                                     Iterator<InventoryItem> it8 = getSubCaseArmorList().iterator();
-                                    int i5 = 0;
+                                    int i4 = 0;
                                     while (true) {
                                         if (!it8.hasNext()) {
-                                            i5 = -1;
+                                            i4 = -1;
                                             break;
                                         } else if (it8.next().getSlot() == inventoryItem7.getSlot()) {
                                             break;
                                         } else {
-                                            i5++;
+                                            i4++;
                                         }
                                     }
-                                    getSubCaseArmorList().set(i5, inventoryItem7);
+                                    getSubCaseArmorList().set(i4, inventoryItem7);
                                     BaseInventory.setSubCaseArmorSkinList$default(this, getSubCaseArmorList(), null, 2, null);
                                     this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                 }
-                                Unit unit3 = Unit.INSTANCE;
+                                Unit unit4 = Unit.INSTANCE;
                             }
                         } else {
                             if (!this.isArizonaType) {
@@ -2129,22 +2131,22 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 if (items16 != null) {
                                     for (InventoryItem inventoryItem8 : items16) {
                                         Iterator<InventoryItem> it9 = getSubSkinList().iterator();
-                                        int i6 = 0;
+                                        int i5 = 0;
                                         while (true) {
                                             if (!it9.hasNext()) {
-                                                i6 = -1;
+                                                i5 = -1;
                                                 break;
                                             } else if (it9.next().getSlot() == inventoryItem8.getSlot()) {
                                                 break;
                                             } else {
-                                                i6++;
+                                                i5++;
                                             }
                                         }
-                                        getSubSkinList().set(i6, inventoryItem8);
+                                        getSubSkinList().set(i5, inventoryItem8);
                                         BaseInventory.setSubCaseArmorSkinList$default(this, null, getSubSkinList(), 1, null);
                                         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                     }
-                                    Unit unit4 = Unit.INSTANCE;
+                                    Unit unit5 = Unit.INSTANCE;
                                 }
                             } else if (type3 == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
                                 List<InventoryItem> items17 = inventoryEditResponse2.getItems();
@@ -2152,25 +2154,25 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                     for (InventoryItem inventoryItem9 : items17) {
                                         this.currentModSkin = inventoryItem9;
                                         Iterator<InventoryItem> it10 = getSubCaseArmorSkinList().iterator();
-                                        int i7 = 0;
+                                        int i6 = 0;
                                         while (true) {
                                             if (!it10.hasNext()) {
-                                                i7 = -1;
+                                                i6 = -1;
                                                 break;
                                             }
                                             InventoryItem next2 = it10.next();
                                             if (next2.getSlot() == inventoryItem9.getSlot() && (next2.getInventoryType() == inventoryEditResponse2.getType() || next2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_SKIN.getId())) {
                                                 break;
                                             }
-                                            i7++;
+                                            i6++;
                                         }
-                                        if (i7 >= 0) {
-                                            getSubCaseArmorSkinList().set(i7, inventoryItem9);
+                                        if (i6 >= 0) {
+                                            getSubCaseArmorSkinList().set(i6, inventoryItem9);
                                         }
                                         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
-                                        getSubInventoryAdapter().notifyItemChanged(i7);
+                                        getSubInventoryAdapter().notifyItemChanged(i6);
                                     }
-                                    Unit unit5 = Unit.INSTANCE;
+                                    Unit unit6 = Unit.INSTANCE;
                                 }
                             } else {
                                 if (!this.isArizonaType) {
@@ -2192,25 +2194,25 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                     return;
                                                 }
                                                 Iterator<InventoryItem> it11 = guardInfo2.getAccessoriesList().iterator();
-                                                int i8 = 0;
+                                                int i7 = 0;
                                                 while (true) {
                                                     if (!it11.hasNext()) {
-                                                        i8 = -1;
+                                                        i7 = -1;
                                                         break;
                                                     }
                                                     InventoryItem next3 = it11.next();
                                                     if (next3.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || next3.getInventoryType() == RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId()) {
                                                         break;
                                                     }
-                                                    i8++;
+                                                    i7++;
                                                 }
-                                                if (i8 >= 0) {
-                                                    guardInfo2.getAccessoriesList().set(i8, inventoryItem10);
+                                                if (i7 >= 0) {
+                                                    guardInfo2.getAccessoriesList().set(i7, inventoryItem10);
                                                 }
                                                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo2.getAccessoriesList()));
-                                                this.guardSubInventoryAdapter.notifyItemChanged(i8);
+                                                this.guardSubInventoryAdapter.notifyItemChanged(i7);
                                             }
-                                            Unit unit6 = Unit.INSTANCE;
+                                            Unit unit7 = Unit.INSTANCE;
                                         }
                                     } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
                                         GuardInfo guardInfo3 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
@@ -2220,25 +2222,25 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                         if (!guardInfo3.getAccessoriesList().isEmpty() && (items7 = inventoryEditResponse2.getItems()) != null) {
                                             for (InventoryItem inventoryItem11 : items7) {
                                                 Iterator<InventoryItem> it12 = guardInfo3.getAccessoriesList().iterator();
-                                                int i9 = 0;
+                                                int i8 = 0;
                                                 while (true) {
                                                     if (!it12.hasNext()) {
-                                                        i9 = -1;
+                                                        i8 = -1;
                                                         break;
                                                     }
                                                     InventoryItem next4 = it12.next();
                                                     if (next4.getSlot() == inventoryItem11.getSlot() && next4.getId() == inventoryItem11.getId()) {
                                                         break;
                                                     }
-                                                    i9++;
+                                                    i8++;
                                                 }
-                                                if (i9 >= 0) {
-                                                    guardInfo3.getAccessoriesList().set(i9, inventoryItem11);
+                                                if (i8 >= 0) {
+                                                    guardInfo3.getAccessoriesList().set(i8, inventoryItem11);
                                                 }
                                                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo3.getAccessoriesList()));
-                                                this.guardSubInventoryAdapter.notifyItemChanged(i9);
+                                                this.guardSubInventoryAdapter.notifyItemChanged(i8);
                                             }
-                                            Unit unit7 = Unit.INSTANCE;
+                                            Unit unit8 = Unit.INSTANCE;
                                         }
                                     } else {
                                         if (!this.isArizonaType) {
@@ -2254,24 +2256,24 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                             if (!guardInfo4.getInventoryList().isEmpty() && (items6 = inventoryEditResponse2.getItems()) != null) {
                                                 for (InventoryItem inventoryItem12 : items6) {
                                                     Iterator<InventoryItem> it13 = guardInfo4.getInventoryList().iterator();
-                                                    int i10 = 0;
+                                                    int i9 = 0;
                                                     while (true) {
                                                         if (!it13.hasNext()) {
-                                                            i10 = -1;
+                                                            i9 = -1;
                                                             break;
                                                         } else if (it13.next().getSlot() == inventoryItem12.getSlot()) {
                                                             break;
                                                         } else {
-                                                            i10++;
+                                                            i9++;
                                                         }
                                                     }
-                                                    if (i10 >= 0) {
-                                                        guardInfo4.getInventoryList().set(i10, inventoryItem12);
+                                                    if (i9 >= 0) {
+                                                        guardInfo4.getInventoryList().set(i9, inventoryItem12);
                                                     }
                                                     this.guardInventoryAdapter.submitList(CollectionsKt.toList(guardInfo4.getInventoryList()));
-                                                    this.guardInventoryAdapter.notifyItemChanged(i10);
+                                                    this.guardInventoryAdapter.notifyItemChanged(i9);
                                                 }
-                                                Unit unit8 = Unit.INSTANCE;
+                                                Unit unit9 = Unit.INSTANCE;
                                             }
                                         } else {
                                             if (!this.isArizonaType) {
@@ -2283,25 +2285,25 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                 if (!this.vehicleVisualList.isEmpty() && (items5 = inventoryEditResponse2.getItems()) != null) {
                                                     for (InventoryItem inventoryItem13 : items5) {
                                                         Iterator<InventoryItem> it14 = this.vehicleVisualList.iterator();
-                                                        int i11 = 0;
+                                                        int i10 = 0;
                                                         while (true) {
                                                             if (!it14.hasNext()) {
-                                                                i11 = -1;
+                                                                i10 = -1;
                                                                 break;
                                                             } else if (it14.next().getSlot() == inventoryItem13.getSlot()) {
                                                                 break;
                                                             } else {
-                                                                i11++;
+                                                                i10++;
                                                             }
                                                         }
-                                                        if (i11 >= 0) {
-                                                            this.vehicleVisualList.set(i11, inventoryItem13);
+                                                        if (i10 >= 0) {
+                                                            this.vehicleVisualList.set(i10, inventoryItem13);
                                                         }
                                                         this.vehicleVisualAdapter.submitList(CollectionsKt.toList(this.vehicleVisualList));
-                                                        this.vehicleVisualAdapter.notifyItemChanged(i11);
+                                                        this.vehicleVisualAdapter.notifyItemChanged(i10);
                                                         this.vehicleVisualAdapter.notifyDataSetChanged();
                                                     }
-                                                    Unit unit9 = Unit.INSTANCE;
+                                                    Unit unit10 = Unit.INSTANCE;
                                                 }
                                             } else {
                                                 if (!this.isArizonaType) {
@@ -2313,25 +2315,25 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                     if (!this.vehicleTechnicalList.isEmpty() && (items4 = inventoryEditResponse2.getItems()) != null) {
                                                         for (InventoryItem inventoryItem14 : items4) {
                                                             Iterator<InventoryItem> it15 = this.vehicleTechnicalList.iterator();
-                                                            int i12 = 0;
+                                                            int i11 = 0;
                                                             while (true) {
                                                                 if (!it15.hasNext()) {
-                                                                    i12 = -1;
+                                                                    i11 = -1;
                                                                     break;
                                                                 } else if (it15.next().getSlot() == inventoryItem14.getSlot()) {
                                                                     break;
                                                                 } else {
-                                                                    i12++;
+                                                                    i11++;
                                                                 }
                                                             }
-                                                            if (i12 >= 0) {
-                                                                this.vehicleTechnicalList.set(i12, inventoryItem14);
+                                                            if (i11 >= 0) {
+                                                                this.vehicleTechnicalList.set(i11, inventoryItem14);
                                                             }
                                                             this.vehicleTechAdapter.submitList(CollectionsKt.toList(this.vehicleTechnicalList));
-                                                            this.vehicleTechAdapter.notifyItemChanged(i12);
+                                                            this.vehicleTechAdapter.notifyItemChanged(i11);
                                                             this.vehicleTechAdapter.notifyDataSetChanged();
                                                         }
-                                                        Unit unit10 = Unit.INSTANCE;
+                                                        Unit unit11 = Unit.INSTANCE;
                                                     }
                                                 } else {
                                                     if (!this.isArizonaType) {
@@ -2343,48 +2345,48 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                         if (!this.vehicleSubList.isEmpty() && (items3 = inventoryEditResponse2.getItems()) != null) {
                                                             for (InventoryItem inventoryItem15 : items3) {
                                                                 Iterator<InventoryItem> it16 = this.vehicleSubList.iterator();
-                                                                int i13 = 0;
+                                                                int i12 = 0;
                                                                 while (true) {
                                                                     if (!it16.hasNext()) {
-                                                                        i13 = -1;
+                                                                        i12 = -1;
                                                                         break;
                                                                     }
                                                                     InventoryItem next5 = it16.next();
                                                                     if (next5.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId() || next5.getInventoryType() == RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
                                                                         break;
                                                                     }
-                                                                    i13++;
+                                                                    i12++;
                                                                 }
-                                                                if (i13 >= 0) {
-                                                                    this.vehicleSubList.set(i13, inventoryItem15);
+                                                                if (i12 >= 0) {
+                                                                    this.vehicleSubList.set(i12, inventoryItem15);
                                                                 }
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i13);
+                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i12);
                                                             }
-                                                            Unit unit11 = Unit.INSTANCE;
+                                                            Unit unit12 = Unit.INSTANCE;
                                                         }
                                                     } else if (type3 == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
                                                         if (!this.vehicleSubList.isEmpty() && (items2 = inventoryEditResponse2.getItems()) != null) {
                                                             for (InventoryItem inventoryItem16 : items2) {
                                                                 Iterator<InventoryItem> it17 = this.vehicleSubList.iterator();
-                                                                int i14 = 0;
+                                                                int i13 = 0;
                                                                 while (true) {
                                                                     if (!it17.hasNext()) {
-                                                                        i14 = -1;
+                                                                        i13 = -1;
                                                                         break;
                                                                     } else if (it17.next().getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
                                                                         break;
                                                                     } else {
-                                                                        i14++;
+                                                                        i13++;
                                                                     }
                                                                 }
-                                                                if (i14 >= 0) {
-                                                                    this.vehicleSubList.set(i14, inventoryItem16);
+                                                                if (i13 >= 0) {
+                                                                    this.vehicleSubList.set(i13, inventoryItem16);
                                                                 }
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i14);
+                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i13);
                                                             }
-                                                            Unit unit12 = Unit.INSTANCE;
+                                                            Unit unit13 = Unit.INSTANCE;
                                                         }
                                                     } else {
                                                         if (this.isArizonaType) {
@@ -2395,24 +2397,24 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                         if (type3 == id11 && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
                                                             for (InventoryItem inventoryItem17 : items) {
                                                                 Iterator<InventoryItem> it18 = this.vehicleSubList.iterator();
-                                                                int i15 = 0;
+                                                                int i14 = 0;
                                                                 while (true) {
                                                                     if (!it18.hasNext()) {
-                                                                        i15 = -1;
+                                                                        i14 = -1;
                                                                         break;
                                                                     }
                                                                     if (it18.next().getInventoryType() == (this.isArizonaType ? ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId() : RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId())) {
                                                                         break;
                                                                     }
-                                                                    i15++;
+                                                                    i14++;
                                                                 }
-                                                                if (i15 >= 0) {
-                                                                    this.vehicleSubList.set(i15, inventoryItem17);
+                                                                if (i14 >= 0) {
+                                                                    this.vehicleSubList.set(i14, inventoryItem17);
                                                                 }
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i15);
+                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i14);
                                                             }
-                                                            Unit unit13 = Unit.INSTANCE;
+                                                            Unit unit14 = Unit.INSTANCE;
                                                         }
                                                     }
                                                 }
@@ -2427,15 +2429,15 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                     if (items18 != null) {
                                         for (InventoryItem inventoryItem18 : items18) {
                                             Iterator<InventoryItem> it19 = getWalletInventoryList().iterator();
-                                            int i16 = 0;
+                                            int i15 = 0;
                                             while (true) {
                                                 if (!it19.hasNext()) {
-                                                    i16 = -1;
+                                                    i15 = -1;
                                                     break;
                                                 } else if (it19.next().getSlot() == inventoryItem18.getSlot()) {
                                                     break;
                                                 } else {
-                                                    i16++;
+                                                    i15++;
                                                 }
                                             }
                                             Iterator<T> it20 = getWalletInventoryList().iterator();
@@ -2450,19 +2452,19 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                 }
                                             }
                                             InventoryItem updateInventoryItem3 = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem18);
-                                            if (i16 >= 0) {
+                                            if (i15 >= 0) {
                                                 if (inventoryItem18.getItem() != null) {
                                                     List<InventoryItem> walletInventoryList = getWalletInventoryList();
                                                     if (updateInventoryItem3 == null) {
                                                         updateInventoryItem3 = ConstantsKt.getEmptyInventoryItem();
                                                     }
-                                                    walletInventoryList.set(i16, updateInventoryItem3);
+                                                    walletInventoryList.set(i15, updateInventoryItem3);
                                                 } else {
-                                                    getWalletInventoryList().set(i16, inventoryItem18);
+                                                    getWalletInventoryList().set(i15, inventoryItem18);
                                                 }
                                             }
                                         }
-                                        Unit unit14 = Unit.INSTANCE;
+                                        Unit unit15 = Unit.INSTANCE;
                                     }
                                     getWalletInventoryAdapter().submitList(CollectionsKt.toList(getWalletInventoryList()));
                                 }
@@ -2475,46 +2477,46 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     if (items19 != null) {
                         for (InventoryItem inventoryItem19 : items19) {
                             Iterator<InventoryItem> it21 = this.warehouseList.iterator();
-                            int i17 = 0;
+                            int i16 = 0;
                             while (true) {
                                 if (!it21.hasNext()) {
-                                    i17 = -1;
+                                    i16 = -1;
                                     break;
                                 } else if (it21.next().getSlot() == inventoryItem19.getSlot()) {
                                     break;
                                 } else {
-                                    i17++;
+                                    i16++;
                                 }
                             }
-                            if (i17 >= 0) {
-                                this.warehouseList.set(i17, inventoryItem19);
+                            if (i16 >= 0) {
+                                this.warehouseList.set(i16, inventoryItem19);
                             }
                             this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
-                            this.warehouseAdapter.notifyItemChanged(i17);
+                            this.warehouseAdapter.notifyItemChanged(i16);
                         }
-                        Unit unit15 = Unit.INSTANCE;
+                        Unit unit16 = Unit.INSTANCE;
                     }
                 } else if (!this.isArizonaType && ConstantsKt.getRodinaWarehouseIds().contains(Integer.valueOf(inventoryEditResponse2.getType())) && (items10 = inventoryEditResponse2.getItems()) != null) {
                     for (InventoryItem inventoryItem20 : items10) {
                         Iterator<InventoryItem> it22 = this.warehouseList.iterator();
-                        int i18 = 0;
+                        int i17 = 0;
                         while (true) {
                             if (!it22.hasNext()) {
-                                i18 = -1;
+                                i17 = -1;
                                 break;
                             } else if (it22.next().getSlot() == inventoryItem20.getSlot()) {
                                 break;
                             } else {
-                                i18++;
+                                i17++;
                             }
                         }
-                        if (i18 >= 0) {
-                            this.warehouseList.set(i18, inventoryItem20);
+                        if (i17 >= 0) {
+                            this.warehouseList.set(i17, inventoryItem20);
                         }
                         this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
-                        this.warehouseAdapter.notifyItemChanged(i18);
+                        this.warehouseAdapter.notifyItemChanged(i17);
                     }
-                    Unit unit16 = Unit.INSTANCE;
+                    Unit unit17 = Unit.INSTANCE;
                 }
             } else if (i == 3) {
                 Object fromJson7 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) ShowDialogInfo.class);
@@ -2535,9 +2537,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, 4194047, null);
                     GuardInfo guardInfo5 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                     if (guardInfo5 != null && (id = guardInfo5.getId()) != null) {
-                        i2 = id.intValue();
+                        r13 = id.intValue();
                     }
-                    new SelectorDialog(targetActivity, currentBackendId, copy$default, i2);
+                    new SelectorDialog(targetActivity, currentBackendId, copy$default, r13);
                 }
             } else if (i == 5) {
                 setVisible(true);
@@ -2562,7 +2564,8 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     this.binding.personSection.btnUpgrades.performClick();
                 }
             } else if (i == 10) {
-                ConstantsKt.setHealthBar(Integer.parseInt(data));
+                Integer intOrNull = StringsKt.toIntOrNull(data);
+                ConstantsKt.setHealthBar(intOrNull != null ? intOrNull.intValue() : 0);
                 this.binding.ivHealthBar.setProgress(ConstantsKt.getHealthBar());
                 this.binding.tvHealthCount.setText(data);
             } else if (i == 11) {
@@ -2570,7 +2573,8 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 this.binding.ivShieldBar.setProgress(ConstantsKt.getShieldBar());
                 this.binding.tvShieldCount.setText(data);
             } else if (i == 12) {
-                ConstantsKt.setSatietyBar(Integer.parseInt(data));
+                Integer intOrNull2 = StringsKt.toIntOrNull(data);
+                ConstantsKt.setSatietyBar(intOrNull2 != null ? intOrNull2.intValue() : 0);
                 this.binding.ivFoodBar.setProgress(ConstantsKt.getSatietyBar());
                 this.binding.tvFoodCount.setText(data);
             } else if (i == UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {

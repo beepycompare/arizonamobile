@@ -16,7 +16,7 @@ public final class LayoutCornersKt {
 
     private static final float getProgressRadius(LayoutCorner layoutCorner, float f) {
         boolean isFixed = layoutCorner.isFixed();
-        float m9344getRadiusD9Ej5fM = layoutCorner.m9344getRadiusD9Ej5fM();
-        return isFixed ? m9344getRadiusD9Ej5fM : Dp.m7995constructorimpl(m9344getRadiusD9Ej5fM * f);
+        float m9340getRadiusD9Ej5fM = layoutCorner.m9340getRadiusD9Ej5fM();
+        return isFixed ? m9340getRadiusD9Ej5fM : Dp.m7995constructorimpl(m9340getRadiusD9Ej5fM * f);
     }
 }

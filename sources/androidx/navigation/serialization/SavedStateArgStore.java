@@ -34,6 +34,6 @@ final class SavedStateArgStore extends ArgStore {
     @Override // androidx.navigation.serialization.ArgStore
     public boolean contains(String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return SavedStateReader.m8907containsimpl(SavedStateReader.m8906constructorimpl(this.savedState), key);
+        return SavedStateReader.m8903containsimpl(SavedStateReader.m8902constructorimpl(this.savedState), key);
     }
 }

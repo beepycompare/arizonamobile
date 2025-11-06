@@ -17,53 +17,53 @@ import kotlin.jvm.internal.Intrinsics;
 class UCollectionsKt___UCollectionsKt {
     public static final byte[] toUByteArray(Collection<UByte> collection) {
         Intrinsics.checkNotNullParameter(collection, "<this>");
-        byte[] m9922constructorimpl = UByteArray.m9922constructorimpl(collection.size());
+        byte[] m9918constructorimpl = UByteArray.m9918constructorimpl(collection.size());
         int i = 0;
         for (UByte uByte : collection) {
-            UByteArray.m9933setVurrAj0(m9922constructorimpl, i, uByte.m9915unboximpl());
+            UByteArray.m9929setVurrAj0(m9918constructorimpl, i, uByte.m9911unboximpl());
             i++;
         }
-        return m9922constructorimpl;
+        return m9918constructorimpl;
     }
 
     public static final int[] toUIntArray(Collection<UInt> collection) {
         Intrinsics.checkNotNullParameter(collection, "<this>");
-        int[] m10001constructorimpl = UIntArray.m10001constructorimpl(collection.size());
+        int[] m9997constructorimpl = UIntArray.m9997constructorimpl(collection.size());
         int i = 0;
         for (UInt uInt : collection) {
-            UIntArray.m10012setVXSXFK8(m10001constructorimpl, i, uInt.m9999unboximpl());
+            UIntArray.m10008setVXSXFK8(m9997constructorimpl, i, uInt.m9995unboximpl());
             i++;
         }
-        return m10001constructorimpl;
+        return m9997constructorimpl;
     }
 
     public static final long[] toULongArray(Collection<ULong> collection) {
         Intrinsics.checkNotNullParameter(collection, "<this>");
-        long[] m10080constructorimpl = ULongArray.m10080constructorimpl(collection.size());
+        long[] m10076constructorimpl = ULongArray.m10076constructorimpl(collection.size());
         int i = 0;
         for (ULong uLong : collection) {
-            ULongArray.m10091setk8EXiF4(m10080constructorimpl, i, uLong.m10078unboximpl());
+            ULongArray.m10087setk8EXiF4(m10076constructorimpl, i, uLong.m10074unboximpl());
             i++;
         }
-        return m10080constructorimpl;
+        return m10076constructorimpl;
     }
 
     public static final short[] toUShortArray(Collection<UShort> collection) {
         Intrinsics.checkNotNullParameter(collection, "<this>");
-        short[] m10185constructorimpl = UShortArray.m10185constructorimpl(collection.size());
+        short[] m10181constructorimpl = UShortArray.m10181constructorimpl(collection.size());
         int i = 0;
         for (UShort uShort : collection) {
-            UShortArray.m10196set01HTLdE(m10185constructorimpl, i, uShort.m10183unboximpl());
+            UShortArray.m10192set01HTLdE(m10181constructorimpl, i, uShort.m10179unboximpl());
             i++;
         }
-        return m10185constructorimpl;
+        return m10181constructorimpl;
     }
 
     public static final int sumOfUInt(Iterable<UInt> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         int i = 0;
         for (UInt uInt : iterable) {
-            i = UInt.m9947constructorimpl(i + uInt.m9999unboximpl());
+            i = UInt.m9943constructorimpl(i + uInt.m9995unboximpl());
         }
         return i;
     }
@@ -72,7 +72,7 @@ class UCollectionsKt___UCollectionsKt {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         long j = 0;
         for (ULong uLong : iterable) {
-            j = ULong.m10026constructorimpl(j + uLong.m10078unboximpl());
+            j = ULong.m10022constructorimpl(j + uLong.m10074unboximpl());
         }
         return j;
     }
@@ -81,7 +81,7 @@ class UCollectionsKt___UCollectionsKt {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         int i = 0;
         for (UByte uByte : iterable) {
-            i = UInt.m9947constructorimpl(i + UInt.m9947constructorimpl(uByte.m9915unboximpl() & 255));
+            i = UInt.m9943constructorimpl(i + UInt.m9943constructorimpl(uByte.m9911unboximpl() & 255));
         }
         return i;
     }
@@ -90,7 +90,7 @@ class UCollectionsKt___UCollectionsKt {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         int i = 0;
         for (UShort uShort : iterable) {
-            i = UInt.m9947constructorimpl(i + UInt.m9947constructorimpl(uShort.m10183unboximpl() & UShort.MAX_VALUE));
+            i = UInt.m9943constructorimpl(i + UInt.m9943constructorimpl(uShort.m10179unboximpl() & UShort.MAX_VALUE));
         }
         return i;
     }

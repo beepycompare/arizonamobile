@@ -41,13 +41,13 @@ final class SubscriptionChannel<T> extends BufferedChannel<T> implements Observe
 
     @Override // io.reactivex.MaybeObserver
     public void onSuccess(T t) {
-        mo8871trySendJP2dKIU(t);
+        mo8867trySendJP2dKIU(t);
         close(null);
     }
 
     @Override // io.reactivex.Observer
     public void onNext(T t) {
-        mo8871trySendJP2dKIU(t);
+        mo8867trySendJP2dKIU(t);
     }
 
     @Override // io.reactivex.Observer

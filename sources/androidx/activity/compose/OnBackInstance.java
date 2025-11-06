@@ -49,7 +49,7 @@ final class OnBackInstance {
 
     /* renamed from: send-JP2dKIU  reason: not valid java name */
     public final Object m15sendJP2dKIU(BackEventCompat backEventCompat) {
-        return this.channel.mo8871trySendJP2dKIU(backEventCompat);
+        return this.channel.mo8867trySendJP2dKIU(backEventCompat);
     }
 
     public final boolean close() {

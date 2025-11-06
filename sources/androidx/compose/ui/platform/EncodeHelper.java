@@ -99,7 +99,7 @@ public final class EncodeHelper {
 
     /* renamed from: encode-8_81llA  reason: not valid java name */
     public final void m7138encode8_81llA(long j) {
-        m7139encodeVKZWuLQ(ULong.m10026constructorimpl(AndroidColor_androidKt.m5143toColorLong8_81llA(j)));
+        m7139encodeVKZWuLQ(ULong.m10022constructorimpl(AndroidColor_androidKt.m5143toColorLong8_81llA(j)));
     }
 
     /* renamed from: encode--R2X_6o  reason: not valid java name */

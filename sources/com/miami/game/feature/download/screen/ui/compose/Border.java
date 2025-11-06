@@ -16,14 +16,14 @@ public final class Border {
     }
 
     /* renamed from: copy-4WTKRHQ$default  reason: not valid java name */
-    public static /* synthetic */ Border m9740copy4WTKRHQ$default(Border border, float f, long j, int i, Object obj) {
+    public static /* synthetic */ Border m9736copy4WTKRHQ$default(Border border, float f, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             f = border.wight;
         }
         if ((i & 2) != 0) {
             j = border.color;
         }
-        return border.m9742copy4WTKRHQ(f, j);
+        return border.m9738copy4WTKRHQ(f, j);
     }
 
     public final float component1() {
@@ -31,12 +31,12 @@ public final class Border {
     }
 
     /* renamed from: component2-0d7_KjU  reason: not valid java name */
-    public final long m9741component20d7_KjU() {
+    public final long m9737component20d7_KjU() {
         return this.color;
     }
 
     /* renamed from: copy-4WTKRHQ  reason: not valid java name */
-    public final Border m9742copy4WTKRHQ(float f, long j) {
+    public final Border m9738copy4WTKRHQ(float f, long j) {
         return new Border(f, j, null);
     }
 
@@ -70,7 +70,7 @@ public final class Border {
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m9743getColor0d7_KjU() {
+    public final long m9739getColor0d7_KjU() {
         return this.color;
     }
 }

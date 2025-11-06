@@ -250,8 +250,8 @@ public final class ServerButtonKt {
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, 1583302100, "C82@3445L28,83@3498L273:ServerButton.kt#dswm0d");
                 float f2 = 16;
-                AnimatedLoadingKt.m9681AnimatedLoadinguFdPcIQ(true, Dp.m7995constructorimpl(f2), null, composer, 54, 4);
-                SingletonAsyncImageKt.m9076AsyncImage10Xjiaw(homeUiState.getCurrentServer().getIcon(), null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
+                AnimatedLoadingKt.m9677AnimatedLoadinguFdPcIQ(true, Dp.m7995constructorimpl(f2), null, composer, 54, 4);
+                SingletonAsyncImageKt.m9072AsyncImage10Xjiaw(homeUiState.getCurrentServer().getIcon(), null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 composer.endNode();
@@ -288,8 +288,8 @@ public final class ServerButtonKt {
                 ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, -1442354001, "C100@4318L10,101@4379L13,102@4435L13,96@4104L370,106@4601L11,107@4672L10,108@4733L12,104@4499L272:ServerButton.kt#dswm0d");
-                TextKt.m3168TextNvy7gAk(String.valueOf(homeUiState.getCurrentServer().getName()), null, Color.Companion.m5316getWhite0d7_KjU(), null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(f2), composer, 6), null, null, null, 0L, null, null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(17), composer, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
-                TextKt.m3168TextNvy7gAk("ВЫБРАТЬ СЕРВЕР", null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2102getPrimary0d7_KjU(), null, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(9), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131050);
+                TextKt.m3168TextNvy7gAk(String.valueOf(homeUiState.getCurrentServer().getName()), null, Color.Companion.m5316getWhite0d7_KjU(), null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(f2), composer, 6), null, null, null, 0L, null, null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(17), composer, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
+                TextKt.m3168TextNvy7gAk("ВЫБРАТЬ СЕРВЕР", null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2102getPrimary0d7_KjU(), null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(9), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131050);
                 composer2 = composer;
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);

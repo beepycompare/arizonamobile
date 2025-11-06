@@ -216,7 +216,7 @@ public final class ErrorDialogScreenKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m9717getLambda$1032883188$dialogs_release(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m9713getLambda$1032883188$dialogs_release(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, -1354242697, "CC(remember):ErrorDialogScreen.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();

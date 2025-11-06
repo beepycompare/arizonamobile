@@ -42,7 +42,7 @@ public final class BoolNavType extends NavType<Boolean> {
     public void put(Bundle bundle, String key, boolean z) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        SavedStateWriter.m8998putBooleanimpl(SavedStateWriter.m8992constructorimpl(bundle), key, z);
+        SavedStateWriter.m8994putBooleanimpl(SavedStateWriter.m8988constructorimpl(bundle), key, z);
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -50,10 +50,10 @@ public final class BoolNavType extends NavType<Boolean> {
     public Boolean get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m8906constructorimpl = SavedStateReader.m8906constructorimpl(bundle);
-        if (!SavedStateReader.m8907containsimpl(m8906constructorimpl, key) || SavedStateReader.m8985isNullimpl(m8906constructorimpl, key)) {
+        Bundle m8902constructorimpl = SavedStateReader.m8902constructorimpl(bundle);
+        if (!SavedStateReader.m8903containsimpl(m8902constructorimpl, key) || SavedStateReader.m8981isNullimpl(m8902constructorimpl, key)) {
             return null;
         }
-        return Boolean.valueOf(SavedStateReader.m8915getBooleanimpl(m8906constructorimpl, key));
+        return Boolean.valueOf(SavedStateReader.m8911getBooleanimpl(m8902constructorimpl, key));
     }
 }

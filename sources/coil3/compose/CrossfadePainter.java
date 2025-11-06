@@ -67,7 +67,7 @@ public final class CrossfadePainter extends Painter {
     }
 
     /* renamed from: getDuration-UwyO8pc  reason: not valid java name */
-    public final long m9071getDurationUwyO8pc() {
+    public final long m9067getDurationUwyO8pc() {
         return this.duration;
     }
 
@@ -93,7 +93,7 @@ public final class CrossfadePainter extends Painter {
         this.invalidateTick$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
         this.maxAlpha = 1.0f;
         this.start = painter;
-        this.intrinsicSize = m9070computeIntrinsicSizexjbvk4A(painter, painter2);
+        this.intrinsicSize = m9066computeIntrinsicSizexjbvk4A(painter, painter2);
     }
 
     private final int getInvalidateTick() {
@@ -126,14 +126,14 @@ public final class CrossfadePainter extends Painter {
             timeMark = this.timeSource.markNow();
             this.startTime = timeMark;
         }
-        float m11215getInWholeMillisecondsimpl = ((float) Duration.m11215getInWholeMillisecondsimpl(timeMark.mo11194elapsedNowUwyO8pc())) / ((float) Duration.m11215getInWholeMillisecondsimpl(this.duration));
-        float coerceIn = RangesKt.coerceIn(m11215getInWholeMillisecondsimpl, 0.0f, 1.0f);
+        float m11211getInWholeMillisecondsimpl = ((float) Duration.m11211getInWholeMillisecondsimpl(timeMark.mo11190elapsedNowUwyO8pc())) / ((float) Duration.m11211getInWholeMillisecondsimpl(this.duration));
+        float coerceIn = RangesKt.coerceIn(m11211getInWholeMillisecondsimpl, 0.0f, 1.0f);
         float f = this.maxAlpha;
         float f2 = coerceIn * f;
         if (this.fadeStart) {
             f -= f2;
         }
-        this.isDone = m11215getInWholeMillisecondsimpl >= 1.0f;
+        this.isDone = m11211getInWholeMillisecondsimpl >= 1.0f;
         drawPainter(drawScope, this.start, f);
         drawPainter(drawScope, this.end, f2);
         if (this.isDone) {
@@ -156,7 +156,7 @@ public final class CrossfadePainter extends Painter {
     }
 
     /* renamed from: computeIntrinsicSize-xjbvk4A  reason: not valid java name */
-    private final long m9070computeIntrinsicSizexjbvk4A(Painter painter, Painter painter2) {
+    private final long m9066computeIntrinsicSizexjbvk4A(Painter painter, Painter painter2) {
         long mo5978getIntrinsicSizeNHjbRc = painter != null ? painter.mo5978getIntrinsicSizeNHjbRc() : Size.Companion.m5113getZeroNHjbRc();
         long mo5978getIntrinsicSizeNHjbRc2 = painter2 != null ? painter2.mo5978getIntrinsicSizeNHjbRc() : Size.Companion.m5113getZeroNHjbRc();
         boolean z = mo5978getIntrinsicSizeNHjbRc != InlineClassHelperKt.UnspecifiedPackedFloats;
@@ -180,17 +180,17 @@ public final class CrossfadePainter extends Painter {
             return;
         }
         long mo5858getSizeNHjbRc = drawScope.mo5858getSizeNHjbRc();
-        long m9069computeDrawSizex8L_9b0 = m9069computeDrawSizex8L_9b0(painter.mo5978getIntrinsicSizeNHjbRc(), mo5858getSizeNHjbRc);
+        long m9065computeDrawSizex8L_9b0 = m9065computeDrawSizex8L_9b0(painter.mo5978getIntrinsicSizeNHjbRc(), mo5858getSizeNHjbRc);
         if (mo5858getSizeNHjbRc == InlineClassHelperKt.UnspecifiedPackedFloats || Size.m5106isEmptyimpl(mo5858getSizeNHjbRc)) {
-            painter.m5984drawx_KDEd0(drawScope, m9069computeDrawSizex8L_9b0, f, this.colorFilter);
+            painter.m5984drawx_KDEd0(drawScope, m9065computeDrawSizex8L_9b0, f, this.colorFilter);
             return;
         }
         float f2 = 2;
-        float intBitsToFloat = (Float.intBitsToFloat((int) (mo5858getSizeNHjbRc >> 32)) - Float.intBitsToFloat((int) (m9069computeDrawSizex8L_9b0 >> 32))) / f2;
-        float intBitsToFloat2 = (Float.intBitsToFloat((int) (mo5858getSizeNHjbRc & 4294967295L)) - Float.intBitsToFloat((int) (m9069computeDrawSizex8L_9b0 & 4294967295L))) / f2;
+        float intBitsToFloat = (Float.intBitsToFloat((int) (mo5858getSizeNHjbRc >> 32)) - Float.intBitsToFloat((int) (m9065computeDrawSizex8L_9b0 >> 32))) / f2;
+        float intBitsToFloat2 = (Float.intBitsToFloat((int) (mo5858getSizeNHjbRc & 4294967295L)) - Float.intBitsToFloat((int) (m9065computeDrawSizex8L_9b0 & 4294967295L))) / f2;
         drawScope.getDrawContext().getTransform().inset(intBitsToFloat, intBitsToFloat2, intBitsToFloat, intBitsToFloat2);
         try {
-            painter.m5984drawx_KDEd0(drawScope, m9069computeDrawSizex8L_9b0, f, this.colorFilter);
+            painter.m5984drawx_KDEd0(drawScope, m9065computeDrawSizex8L_9b0, f, this.colorFilter);
         } finally {
             float f3 = -intBitsToFloat;
             float f4 = -intBitsToFloat2;
@@ -199,7 +199,7 @@ public final class CrossfadePainter extends Painter {
     }
 
     /* renamed from: computeDrawSize-x8L_9b0  reason: not valid java name */
-    private final long m9069computeDrawSizex8L_9b0(long j, long j2) {
+    private final long m9065computeDrawSizex8L_9b0(long j, long j2) {
         return (j == InlineClassHelperKt.UnspecifiedPackedFloats || Size.m5106isEmptyimpl(j) || j2 == InlineClassHelperKt.UnspecifiedPackedFloats || Size.m5106isEmptyimpl(j2)) ? j2 : ScaleFactorKt.m6802timesUQTWf7w(j, this.contentScale.mo6690computeScaleFactorH7hwNQA(j, j2));
     }
 }

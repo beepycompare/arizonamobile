@@ -3336,6 +3336,7 @@
     <style name="Base.v21.Theme.SplashScreen" parent="@android:style/Theme.DeviceDefault.NoActionBar">
     </style>
     <style name="Base.v21.Theme.SplashScreen.Light" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="isLightTheme">true</item>
     </style>
     <style name="BasePreferenceThemeOverlay" parent="">
         <item name="android:scrollbars">vertical</item>

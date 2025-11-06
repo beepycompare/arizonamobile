@@ -1,6 +1,5 @@
 package ru.mrlargha.feature.mobile.presentation.page.rent;
 
-import android.app.Activity;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -14,14 +13,13 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 import retrofit2.Response;
-import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-import ru.mrlargha.feature.mobile.data.remote.rent.api_services.MobileRentApiService;
+import ru.mrlargha.feature.mobile.data.remote.MobileRetrofitClient;
 import ru.mrlargha.feature.mobile.databinding.MpArizonaRentPageBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$checkUpdate$1", f = "ArizonaRentPage.kt", i = {1}, l = {333, 348}, m = "invokeSuspend", n = {"data"}, s = {"L$0"}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$checkUpdate$1", f = "ArizonaRentPage.kt", i = {1}, l = {334, 349}, m = "invokeSuspend", n = {"data"}, s = {"L$0"}, v = 1)
 /* loaded from: classes6.dex */
 public final class ArizonaRentPage$checkUpdate$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -45,13 +43,13 @@ public final class ArizonaRentPage$checkUpdate$1 extends SuspendLambda implement
         return ((ArizonaRentPage$checkUpdate$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x004d, code lost:
-        if (r11 == r0) goto L30;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0039, code lost:
+        if (r6 == r0) goto L30;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00ae, code lost:
-        if (kotlinx.coroutines.DelayKt.delay(5000, r10) == r0) goto L30;
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x009a, code lost:
+        if (kotlinx.coroutines.DelayKt.delay(5000, r5) == r0) goto L30;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x00b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x009c, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -59,8 +57,7 @@ public final class ArizonaRentPage$checkUpdate$1 extends SuspendLambda implement
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        MobileRentApiService mobileRentApiService;
-        Activity context;
+        MobileRetrofitClient mobileRetrofitClient;
         boolean isOpen;
         List list;
         List list2;
@@ -70,11 +67,9 @@ public final class ArizonaRentPage$checkUpdate$1 extends SuspendLambda implement
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            mobileRentApiService = this.this$0.rentApiService;
-            Intrinsics.checkNotNullExpressionValue(mobileRentApiService, "access$getRentApiService$p(...)");
-            context = this.this$0.getContext();
+            mobileRetrofitClient = this.this$0.retrofitClient;
             this.label = 1;
-            obj = MobileRentApiService.getAds$default(mobileRentApiService, null, UtilsKt.getServerId(context).getServer(), this, 1, null);
+            obj = mobileRetrofitClient.getRentApiService().getAds(this);
         } else if (i != 1) {
             if (i == 2) {
                 Response response = (Response) this.L$0;

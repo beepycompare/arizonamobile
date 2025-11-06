@@ -37,12 +37,12 @@ public final class ComposableSingletons$NewVersionAvailableDialogKt {
     });
 
     /* renamed from: getLambda$-1405896063$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9713getLambda$1405896063$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9709getLambda$1405896063$dialogs_release() {
         return f53lambda$1405896063;
     }
 
     /* renamed from: getLambda$-1889472662$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9714getLambda$1889472662$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9710getLambda$1889472662$dialogs_release() {
         return f54lambda$1889472662;
     }
 

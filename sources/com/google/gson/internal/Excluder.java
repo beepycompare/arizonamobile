@@ -31,7 +31,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: clone */
-    public Excluder m9665clone() {
+    public Excluder m9661clone() {
         try {
             return (Excluder) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -40,45 +40,45 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     }
 
     public Excluder withVersion(double d) {
-        Excluder m9665clone = m9665clone();
-        m9665clone.version = d;
-        return m9665clone;
+        Excluder m9661clone = m9661clone();
+        m9661clone.version = d;
+        return m9661clone;
     }
 
     public Excluder withModifiers(int... iArr) {
-        Excluder m9665clone = m9665clone();
-        m9665clone.modifiers = 0;
+        Excluder m9661clone = m9661clone();
+        m9661clone.modifiers = 0;
         for (int i : iArr) {
-            m9665clone.modifiers = i | m9665clone.modifiers;
+            m9661clone.modifiers = i | m9661clone.modifiers;
         }
-        return m9665clone;
+        return m9661clone;
     }
 
     public Excluder disableInnerClassSerialization() {
-        Excluder m9665clone = m9665clone();
-        m9665clone.serializeInnerClasses = false;
-        return m9665clone;
+        Excluder m9661clone = m9661clone();
+        m9661clone.serializeInnerClasses = false;
+        return m9661clone;
     }
 
     public Excluder excludeFieldsWithoutExposeAnnotation() {
-        Excluder m9665clone = m9665clone();
-        m9665clone.requireExpose = true;
-        return m9665clone;
+        Excluder m9661clone = m9661clone();
+        m9661clone.requireExpose = true;
+        return m9661clone;
     }
 
     public Excluder withExclusionStrategy(ExclusionStrategy exclusionStrategy, boolean z, boolean z2) {
-        Excluder m9665clone = m9665clone();
+        Excluder m9661clone = m9661clone();
         if (z) {
             ArrayList arrayList = new ArrayList(this.serializationStrategies);
-            m9665clone.serializationStrategies = arrayList;
+            m9661clone.serializationStrategies = arrayList;
             arrayList.add(exclusionStrategy);
         }
         if (z2) {
             ArrayList arrayList2 = new ArrayList(this.deserializationStrategies);
-            m9665clone.deserializationStrategies = arrayList2;
+            m9661clone.deserializationStrategies = arrayList2;
             arrayList2.add(exclusionStrategy);
         }
-        return m9665clone;
+        return m9661clone;
     }
 
     @Override // com.google.gson.TypeAdapterFactory

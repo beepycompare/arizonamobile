@@ -49,12 +49,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class InputFieldKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit InputField_rAjV9yQ$lambda$1(MutableState mutableState, float f, int i, int i2, Composer composer, int i3) {
-        m9707InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m9703InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
     /* renamed from: InputField-rAjV9yQ  reason: not valid java name */
-    public static final void m9707InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
+    public static final void m9703InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(state, "state");
         Composer startRestartGroup = composer.startRestartGroup(-155401538);
@@ -112,7 +112,7 @@ public final class InputFieldKt {
             Modifier m899width3ABfNKs = SizeKt.m899width3ABfNKs(Modifier.Companion, f);
             String value = state.getValue();
             float f2 = 24;
-            TextStyle m7470copyp1EtxEg$default = TextStyle.m7470copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m5278copywmQWz5c$default(Color.Companion.m5316getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9801dpToSp8Feqmps(Dp.m7995constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
+            TextStyle m7470copyp1EtxEg$default = TextStyle.m7470copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m5278copywmQWz5c$default(Color.Companion.m5316getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -295204344, "CC(remember):InputField.kt#9igjgp");
             boolean z = (i4 & 14) == 4;
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -128,7 +128,7 @@ public final class InputFieldKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m899width3ABfNKs, false, false, m7470copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m9703getLambda$1682333503$dialogs_release(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
+            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m899width3ABfNKs, false, false, m7470copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m9699getLambda$1682333503$dialogs_release(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

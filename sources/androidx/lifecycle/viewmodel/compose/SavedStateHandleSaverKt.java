@@ -36,11 +36,11 @@ public final class SavedStateHandleSaverKt {
         if ((i & 2) != 0) {
             saver = SaverKt.autoSaver();
         }
-        return m8598saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
+        return m8594saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
     }
 
     /* renamed from: saveable  reason: collision with other method in class */
-    public static final <T> T m8598saveable(SavedStateHandle savedStateHandle, String str, final Saver<T, ? extends Object> saver, Function0<? extends T> function0) {
+    public static final <T> T m8594saveable(SavedStateHandle savedStateHandle, String str, final Saver<T, ? extends Object> saver, Function0<? extends T> function0) {
         final T invoke;
         Object obj;
         Intrinsics.checkNotNull(saver, "null cannot be cast to non-null type androidx.compose.runtime.saveable.Saver<T of androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt.saveable, kotlin.Any>");
@@ -65,7 +65,7 @@ public final class SavedStateHandleSaverKt {
     }
 
     public static final <T> MutableState<T> saveable(SavedStateHandle savedStateHandle, String str, Saver<T, ? extends Object> saver, Function0<? extends MutableState<T>> function0) {
-        return (MutableState) m8598saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) mutableStateSaver(saver), (Function0<? extends Object>) function0);
+        return (MutableState) m8594saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) mutableStateSaver(saver), (Function0<? extends Object>) function0);
     }
 
     public static /* synthetic */ PropertyDelegateProvider saveable$default(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, int i, Object obj) {
@@ -88,12 +88,12 @@ public final class SavedStateHandleSaverKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final ReadOnlyProperty saveable$lambda$3(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, Object obj, KProperty kProperty) {
-        final Object m8598saveable = m8598saveable(savedStateHandle, (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName(), (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
+        final Object m8594saveable = m8594saveable(savedStateHandle, (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName(), (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
         return new ReadOnlyProperty() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda4
             @Override // kotlin.properties.ReadOnlyProperty
             public final Object getValue(Object obj2, KProperty kProperty2) {
                 Object saveable$lambda$3$lambda$2;
-                saveable$lambda$3$lambda$2 = SavedStateHandleSaverKt.saveable$lambda$3$lambda$2(m8598saveable, obj2, kProperty2);
+                saveable$lambda$3$lambda$2 = SavedStateHandleSaverKt.saveable$lambda$3$lambda$2(m8594saveable, obj2, kProperty2);
                 return saveable$lambda$3$lambda$2;
             }
         };

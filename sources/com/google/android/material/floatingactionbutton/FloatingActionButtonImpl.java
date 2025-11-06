@@ -575,7 +575,7 @@ public class FloatingActionButtonImpl {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.floatingactionbutton.FloatingActionButtonImpl$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FloatingActionButtonImpl.this.m9490x7a82a444(alpha, f, scaleX, f2, scaleY, f4, f3, matrix, valueAnimator);
+                FloatingActionButtonImpl.this.m9486x7a82a444(alpha, f, scaleX, f2, scaleY, f4, f3, matrix, valueAnimator);
             }
         });
         arrayList.add(ofFloat);
@@ -587,7 +587,7 @@ public class FloatingActionButtonImpl {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createDefaultAnimator$0$com-google-android-material-floatingactionbutton-FloatingActionButtonImpl  reason: not valid java name */
-    public /* synthetic */ void m9490x7a82a444(float f, float f2, float f3, float f4, float f5, float f6, float f7, Matrix matrix, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9486x7a82a444(float f, float f2, float f3, float f4, float f5, float f6, float f7, Matrix matrix, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.view.setAlpha(AnimationUtils.lerp(f, f2, 0.0f, 0.2f, floatValue));
         this.view.setScaleX(AnimationUtils.lerp(f3, f4, floatValue));

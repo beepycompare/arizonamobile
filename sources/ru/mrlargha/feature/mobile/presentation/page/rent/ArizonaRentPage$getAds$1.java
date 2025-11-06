@@ -1,6 +1,5 @@
 package ru.mrlargha.feature.mobile.presentation.page.rent;
 
-import android.app.Activity;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -10,15 +9,13 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 import retrofit2.Response;
-import ru.mrlargha.commonui.utils.UtilsKt;
-import ru.mrlargha.feature.mobile.data.remote.rent.api_services.MobileRentApiService;
+import ru.mrlargha.feature.mobile.data.remote.MobileRetrofitClient;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$getAds$1", f = "ArizonaRentPage.kt", i = {}, l = {319}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$getAds$1", f = "ArizonaRentPage.kt", i = {}, l = {320}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes6.dex */
 public final class ArizonaRentPage$getAds$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -43,18 +40,15 @@ public final class ArizonaRentPage$getAds$1 extends SuspendLambda implements Fun
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        MobileRentApiService mobileRentApiService;
-        Activity context;
+        MobileRetrofitClient mobileRetrofitClient;
         List list;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            mobileRentApiService = this.this$0.rentApiService;
-            Intrinsics.checkNotNullExpressionValue(mobileRentApiService, "access$getRentApiService$p(...)");
-            context = this.this$0.getContext();
+            mobileRetrofitClient = this.this$0.retrofitClient;
             this.label = 1;
-            obj = MobileRentApiService.getAds$default(mobileRentApiService, null, UtilsKt.getServerId(context).getServer(), this, 1, null);
+            obj = mobileRetrofitClient.getRentApiService().getAds(this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }

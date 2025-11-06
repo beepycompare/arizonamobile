@@ -216,7 +216,7 @@ public final class ServerTopBarKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$ServerTopBarKt.INSTANCE.m9771getLambda$1484463318$select_server_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$ServerTopBarKt.INSTANCE.m9767getLambda$1484463318$select_server_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             Painter painterResource = PainterResources_androidKt.painterResource(R.drawable.select_server_label, startRestartGroup, 0);
             float f = 30;
             float f2 = 12;

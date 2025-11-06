@@ -567,7 +567,7 @@ public final class MotionLayoutKt {
 
                                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                             public final void invoke2() {
-                                                channel2.mo8871trySendJP2dKIU(constraintSet3);
+                                                channel2.mo8867trySendJP2dKIU(constraintSet3);
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue11);

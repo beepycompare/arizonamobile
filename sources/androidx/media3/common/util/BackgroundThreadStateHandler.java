@@ -39,7 +39,7 @@ public final class BackgroundThreadStateHandler<T> {
         runInBackground(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BackgroundThreadStateHandler.this.m8612x55c212ba(function2);
+                BackgroundThreadStateHandler.this.m8608x55c212ba(function2);
             }
         });
         updateStateInForeground(function.apply(this.foregroundState));
@@ -47,13 +47,13 @@ public final class BackgroundThreadStateHandler<T> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$updateStateAsync$1$androidx-media3-common-util-BackgroundThreadStateHandler  reason: not valid java name */
-    public /* synthetic */ void m8612x55c212ba(Function function) {
+    public /* synthetic */ void m8608x55c212ba(Function function) {
         final T t = (T) function.apply(this.backgroundState);
         this.backgroundState = t;
         runInForeground(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                BackgroundThreadStateHandler.this.m8611xc8d4fb9b(t);
+                BackgroundThreadStateHandler.this.m8607xc8d4fb9b(t);
             }
         });
     }
@@ -61,7 +61,7 @@ public final class BackgroundThreadStateHandler<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: lambda$updateStateAsync$0$androidx-media3-common-util-BackgroundThreadStateHandler  reason: not valid java name */
-    public /* synthetic */ void m8611xc8d4fb9b(Object obj) {
+    public /* synthetic */ void m8607xc8d4fb9b(Object obj) {
         int i = this.pendingOperations - 1;
         this.pendingOperations = i;
         if (i == 0) {
@@ -74,7 +74,7 @@ public final class BackgroundThreadStateHandler<T> {
         runInForeground(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BackgroundThreadStateHandler.this.m8610x5a135e8b(t);
+                BackgroundThreadStateHandler.this.m8606x5a135e8b(t);
             }
         });
     }
@@ -82,7 +82,7 @@ public final class BackgroundThreadStateHandler<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: lambda$setStateInBackground$2$androidx-media3-common-util-BackgroundThreadStateHandler  reason: not valid java name */
-    public /* synthetic */ void m8610x5a135e8b(Object obj) {
+    public /* synthetic */ void m8606x5a135e8b(Object obj) {
         if (this.pendingOperations == 0) {
             updateStateInForeground(obj);
         }

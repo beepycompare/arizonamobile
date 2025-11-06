@@ -96,7 +96,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         AccessibilityManager.TouchExplorationStateChangeListener touchExplorationStateChangeListener = new AccessibilityManager.TouchExplorationStateChangeListener() { // from class: com.google.android.material.behavior.HideBottomViewOnScrollBehavior$$ExternalSyntheticLambda0
             @Override // android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener
             public final void onTouchExplorationStateChanged(boolean z) {
-                HideBottomViewOnScrollBehavior.this.m9431x79d795e8(v, z);
+                HideBottomViewOnScrollBehavior.this.m9427x79d795e8(v, z);
             }
         };
         this.touchExplorationListener = touchExplorationStateChangeListener;
@@ -120,7 +120,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: lambda$disableIfTouchExplorationEnabled$0$com-google-android-material-behavior-HideBottomViewOnScrollBehavior  reason: not valid java name */
-    public /* synthetic */ void m9431x79d795e8(View view, boolean z) {
+    public /* synthetic */ void m9427x79d795e8(View view, boolean z) {
         if (z && isScrolledDown()) {
             slideUp(view);
         }

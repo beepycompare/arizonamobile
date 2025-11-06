@@ -214,7 +214,7 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                 }
                 Unit unit = Unit.INSTANCE;
                 Result.Companion companion = Result.Companion;
-                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9847constructorimpl(unit));
+                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9843constructorimpl(unit));
                 contentInViewNode = contentInViewNode2;
             }
             z2 = contentInViewNode2.trackingFocusedChild;

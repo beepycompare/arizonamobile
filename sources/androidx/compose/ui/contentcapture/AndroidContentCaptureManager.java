@@ -466,7 +466,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void notifySubtreeStateChangeIfNeeded() {
-        this.boundsUpdateChannel.mo8871trySendJP2dKIU(Unit.INSTANCE);
+        this.boundsUpdateChannel.mo8867trySendJP2dKIU(Unit.INSTANCE);
     }
 
     private final ViewStructureCompat toViewStructure(SemanticsNode semanticsNode, int i) {

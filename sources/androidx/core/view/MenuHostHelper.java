@@ -66,14 +66,14 @@ public class MenuHostHelper {
         this.mProviderToLifecycleContainers.put(menuProvider, new LifecycleContainer(lifecycle, new LifecycleEventObserver() { // from class: androidx.core.view.MenuHostHelper$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner2, Lifecycle.Event event) {
-                MenuHostHelper.this.m8508lambda$addMenuProvider$0$androidxcoreviewMenuHostHelper(menuProvider, lifecycleOwner2, event);
+                MenuHostHelper.this.m8504lambda$addMenuProvider$0$androidxcoreviewMenuHostHelper(menuProvider, lifecycleOwner2, event);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addMenuProvider$0$androidx-core-view-MenuHostHelper  reason: not valid java name */
-    public /* synthetic */ void m8508lambda$addMenuProvider$0$androidxcoreviewMenuHostHelper(MenuProvider menuProvider, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public /* synthetic */ void m8504lambda$addMenuProvider$0$androidxcoreviewMenuHostHelper(MenuProvider menuProvider, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         if (event == Lifecycle.Event.ON_DESTROY) {
             removeMenuProvider(menuProvider);
         }
@@ -88,14 +88,14 @@ public class MenuHostHelper {
         this.mProviderToLifecycleContainers.put(menuProvider, new LifecycleContainer(lifecycle, new LifecycleEventObserver() { // from class: androidx.core.view.MenuHostHelper$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner2, Lifecycle.Event event) {
-                MenuHostHelper.this.m8509lambda$addMenuProvider$1$androidxcoreviewMenuHostHelper(state, menuProvider, lifecycleOwner2, event);
+                MenuHostHelper.this.m8505lambda$addMenuProvider$1$androidxcoreviewMenuHostHelper(state, menuProvider, lifecycleOwner2, event);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addMenuProvider$1$androidx-core-view-MenuHostHelper  reason: not valid java name */
-    public /* synthetic */ void m8509lambda$addMenuProvider$1$androidxcoreviewMenuHostHelper(Lifecycle.State state, MenuProvider menuProvider, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public /* synthetic */ void m8505lambda$addMenuProvider$1$androidxcoreviewMenuHostHelper(Lifecycle.State state, MenuProvider menuProvider, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         if (event == Lifecycle.Event.upTo(state)) {
             addMenuProvider(menuProvider);
         } else if (event == Lifecycle.Event.ON_DESTROY) {

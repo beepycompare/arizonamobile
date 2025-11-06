@@ -157,14 +157,14 @@ public class NavDestination {
                     if (bundle == null || other.matchingArgs != null) {
                         if (bundle != null || other.matchingArgs == null) {
                             if (bundle != null) {
-                                int m8986sizeimpl = SavedStateReader.m8986sizeimpl(SavedStateReader.m8906constructorimpl(bundle));
+                                int m8982sizeimpl = SavedStateReader.m8982sizeimpl(SavedStateReader.m8902constructorimpl(bundle));
                                 Bundle bundle2 = other.matchingArgs;
                                 Intrinsics.checkNotNull(bundle2);
-                                int m8986sizeimpl2 = m8986sizeimpl - SavedStateReader.m8986sizeimpl(SavedStateReader.m8906constructorimpl(bundle2));
-                                if (m8986sizeimpl2 > 0) {
+                                int m8982sizeimpl2 = m8982sizeimpl - SavedStateReader.m8982sizeimpl(SavedStateReader.m8902constructorimpl(bundle2));
+                                if (m8982sizeimpl2 > 0) {
                                     return 1;
                                 }
-                                if (m8986sizeimpl2 < 0) {
+                                if (m8982sizeimpl2 < 0) {
                                     return -1;
                                 }
                             }
@@ -194,9 +194,9 @@ public class NavDestination {
             Set<String> keySet = bundle2.keySet();
             Intrinsics.checkNotNullExpressionValue(keySet, "keySet(...)");
             for (String str : keySet) {
-                Bundle m8906constructorimpl = SavedStateReader.m8906constructorimpl(bundle);
+                Bundle m8902constructorimpl = SavedStateReader.m8902constructorimpl(bundle);
                 Intrinsics.checkNotNull(str);
-                if (!SavedStateReader.m8907containsimpl(m8906constructorimpl, str)) {
+                if (!SavedStateReader.m8903containsimpl(m8902constructorimpl, str)) {
                     return false;
                 }
                 NavArgument navArgument = this.destination.getArguments().get(str);
@@ -420,7 +420,7 @@ public class NavDestination {
         }
         Matcher matcher = Pattern.compile("\\{(.+?)\\}").matcher(charSequence);
         StringBuffer stringBuffer = new StringBuffer();
-        if (bundle == null || (emptyMap = SavedStateReader.m8987toMapimpl(SavedStateReader.m8906constructorimpl(bundle))) == null) {
+        if (bundle == null || (emptyMap = SavedStateReader.m8983toMapimpl(SavedStateReader.m8902constructorimpl(bundle))) == null) {
             emptyMap = MapsKt.emptyMap();
         }
         while (matcher.find()) {
@@ -535,7 +535,7 @@ public class NavDestination {
             hashCode = destinationId + (navOptions != null ? navOptions.hashCode() : 0);
             Bundle defaultArguments = navAction.getDefaultArguments();
             if (defaultArguments != null) {
-                hashCode = (hashCode * 31) + SavedStateReader.m8909contentDeepHashCodeimpl(SavedStateReader.m8906constructorimpl(defaultArguments));
+                hashCode = (hashCode * 31) + SavedStateReader.m8905contentDeepHashCodeimpl(SavedStateReader.m8902constructorimpl(defaultArguments));
             }
         }
         for (String str : getArguments().keySet()) {

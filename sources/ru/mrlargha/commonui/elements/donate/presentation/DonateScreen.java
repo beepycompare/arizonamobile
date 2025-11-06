@@ -411,7 +411,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         this.isChangeCategory = true;
         getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$onCategoryClick$1$1(this, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11935getGridTemplateType().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11931getGridTemplateType().ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {

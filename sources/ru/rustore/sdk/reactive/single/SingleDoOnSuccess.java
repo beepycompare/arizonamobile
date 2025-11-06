@@ -41,7 +41,7 @@ final class SingleDoOnSuccess<T> extends Single<T> {
 
             @Override // ru.rustore.sdk.reactive.single.SingleObserver
             public void onSuccess(T t) {
-                Object m9847constructorimpl;
+                Object m9843constructorimpl;
                 Function1 function1;
                 SingleDoOnSuccess<T> singleDoOnSuccess = this;
                 try {
@@ -49,20 +49,20 @@ final class SingleDoOnSuccess<T> extends Single<T> {
                     SingleDoOnSuccess$subscribe$wrappedObserver$1<T> singleDoOnSuccess$subscribe$wrappedObserver$1 = this;
                     function1 = ((SingleDoOnSuccess) singleDoOnSuccess).block;
                     function1.invoke(t);
-                    m9847constructorimpl = Result.m9847constructorimpl(Unit.INSTANCE);
+                    m9843constructorimpl = Result.m9843constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9847constructorimpl = Result.m9847constructorimpl(ResultKt.createFailure(th));
+                    m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
                 }
                 SingleObserver<T> singleObserver = downstream;
-                if (Result.m9854isSuccessimpl(m9847constructorimpl)) {
-                    Unit unit = (Unit) m9847constructorimpl;
+                if (Result.m9850isSuccessimpl(m9843constructorimpl)) {
+                    Unit unit = (Unit) m9843constructorimpl;
                     singleObserver.onSuccess(t);
                 }
                 SingleObserver<T> singleObserver2 = downstream;
-                Throwable m9850exceptionOrNullimpl = Result.m9850exceptionOrNullimpl(m9847constructorimpl);
-                if (m9850exceptionOrNullimpl != null) {
-                    singleObserver2.onError(m9850exceptionOrNullimpl);
+                Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
+                if (m9846exceptionOrNullimpl != null) {
+                    singleObserver2.onError(m9846exceptionOrNullimpl);
                 }
             }
         });

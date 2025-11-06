@@ -33,7 +33,7 @@ import kotlin.jvm.functions.Function2;
 public final class AnimatedLoadingKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AnimatedLoading_uFdPcIQ$lambda$1(boolean z, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        m9681AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m9677AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -49,7 +49,7 @@ public final class AnimatedLoadingKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9681AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
+    public static final void m9677AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         float f2;
         int i4;

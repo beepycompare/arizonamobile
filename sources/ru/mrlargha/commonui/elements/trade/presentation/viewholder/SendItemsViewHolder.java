@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
 import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -24,9 +23,8 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ItemTradeBinding;
-import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEffectType;
-import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEntityKt;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
+import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.DraggedItem;
 import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.ItemsInfo;
@@ -86,7 +84,6 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
     }
 
     public final void bind(final InventoryItem itemVal, final boolean z) {
-        Object obj;
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
         ItemTradeBinding itemTradeBinding = this.binding;
@@ -114,6 +111,7 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
         });
         Job job = this.loadImageJob;
         boolean z2 = true;
+        Object obj = null;
         if (job != null) {
             Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
@@ -131,13 +129,13 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
         Iterator<T> it = UtilsKt.getItemsName().iterator();
         while (true) {
             if (!it.hasNext()) {
-                obj = null;
                 break;
             }
-            obj = it.next();
-            int id = ((ItemsInfo) obj).getId();
+            Object next = it.next();
+            int id = ((ItemsInfo) next).getId();
             Integer item = itemVal.getItem();
             if (item != null && id == item.intValue()) {
+                obj = next;
                 break;
             }
         }
@@ -146,35 +144,12 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
             z2 = false;
         }
         appCompatImageView.setVisibility(z2 ? 0 : 8);
-        InventoryItemEffectType effect = InventoryItemEntityKt.getEffect(itemVal);
-        if (effect.getResId() != null) {
-            if (effect == InventoryItemEffectType.FIRE || effect == InventoryItemEffectType.WHITE_FIRE) {
-                Glide.with(itemTradeBinding.ivEffectBackground.getContext()).load(effect.getResId()).into(itemTradeBinding.ivEffectBackground);
-                ImageView ivEffectBackground = itemTradeBinding.ivEffectBackground;
-                Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
-                ivEffectBackground.setVisibility(0);
-                ImageView ivEffectForeground = itemTradeBinding.ivEffectForeground;
-                Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-                ivEffectForeground.setVisibility(8);
-                return;
-            }
-            Glide.with(itemTradeBinding.ivEffectForeground.getContext()).load(effect.getResId()).into(itemTradeBinding.ivEffectForeground);
-            ImageView ivEffectBackground2 = itemTradeBinding.ivEffectBackground;
-            Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
-            ivEffectBackground2.setVisibility(8);
-            ImageView ivEffectForeground2 = itemTradeBinding.ivEffectForeground;
-            Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
-            ivEffectForeground2.setVisibility(0);
-            return;
-        }
-        itemTradeBinding.ivEffectBackground.setImageDrawable(null);
-        ImageView ivEffectBackground3 = itemTradeBinding.ivEffectBackground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectBackground3, "ivEffectBackground");
-        ivEffectBackground3.setVisibility(8);
-        itemTradeBinding.ivEffectForeground.setImageDrawable(null);
-        ImageView ivEffectForeground3 = itemTradeBinding.ivEffectForeground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectForeground3, "ivEffectForeground");
-        ivEffectForeground3.setVisibility(8);
+        Integer item2 = itemVal.getItem();
+        ImageView ivEffectBackground = itemTradeBinding.ivEffectBackground;
+        Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
+        ImageView ivEffectForeground = itemTradeBinding.ivEffectForeground;
+        Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
+        UtilKt.setInventoryItemEffect(item2, ivEffectBackground, ivEffectForeground);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

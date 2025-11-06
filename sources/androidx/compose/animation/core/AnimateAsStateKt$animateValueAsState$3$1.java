@@ -99,8 +99,8 @@ public final class AnimateAsStateKt$animateValueAsState$3$1 extends SuspendLambd
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
                 Object next = it.next();
-                Object m11383getOrNullimpl = ChannelResult.m11383getOrNullimpl(this.$channel.mo11371tryReceivePtdJZtk());
-                BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(m11383getOrNullimpl == null ? next : m11383getOrNullimpl, this.$animatable, this.$animSpec$delegate, this.$listener$delegate, null), 3, null);
+                Object m11379getOrNullimpl = ChannelResult.m11379getOrNullimpl(this.$channel.mo11367tryReceivePtdJZtk());
+                BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(m11379getOrNullimpl == null ? next : m11379getOrNullimpl, this.$animatable, this.$animSpec$delegate, this.$listener$delegate, null), 3, null);
                 this.L$0 = coroutineScope;
                 this.L$1 = it;
                 this.label = 1;

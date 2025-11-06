@@ -81,16 +81,14 @@ public final class HomeScreenKt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v16 */
+    /* JADX WARN: Type inference failed for: r4v11 */
     public static final void HomeRoute(final HomeComponent component, final Function0<Unit> navigateToSettings, final Function0<Unit> navigateToSelectServers, final Function0<Unit> navigateTooRepairGameSuccess, final Function1<? super String, Unit> navigateToDownloadDialog, final Function0<Unit> navigateToDownloadScreen, final Function2<? super Function0<Unit>, ? super String, Unit> navigateToErrorDialog, final Function0<Unit> navigateToNotification, Composer composer, final int i) {
         int i2;
         Composer composer2;
         final Context context;
-        int i3;
         String str;
-        int i4;
         State state;
-        int i5;
+        int i3;
         final HomeComponent homeComponent;
         Intrinsics.checkNotNullParameter(component, "component");
         Intrinsics.checkNotNullParameter(navigateToSettings, "navigateToSettings");
@@ -103,7 +101,7 @@ public final class HomeScreenKt {
         Composer startRestartGroup = composer.startRestartGroup(1774340913);
         ComposerKt.sourceInformation(startRestartGroup, "C(HomeRoute)N(component,navigateToSettings,navigateToSelectServers,navigateTooRepairGameSuccess,navigateToDownloadDialog,navigateToDownloadScreen,navigateToErrorDialog,navigateToNotification)47@2075L7,48@2120L29,49@2244L17,50@2322L920,50@2285L957,69@3283L34,74@3431L22,75@3479L24,76@3527L34,77@3585L22,78@3633L24,79@3684L25,80@3734L23,81@3785L26,82@3836L23,83@3892L30,84@3950L26,71@3323L659:HomeScreen.kt#dswm0d");
         if ((i & 6) == 0) {
-            i2 = ((i & 8) == 0 ? startRestartGroup.changed(component) : startRestartGroup.changedInstance(component) ? 4 : 2) | i;
+            i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -128,7 +126,6 @@ public final class HomeScreenKt {
         if ((12582912 & i) == 0) {
             i2 |= startRestartGroup.changedInstance(navigateToNotification) ? 8388608 : 4194304;
         }
-        int i6 = 1;
         if (!startRestartGroup.shouldExecute((4793491 & i2) != 4793490, i2 & 1)) {
             composer2 = startRestartGroup;
             composer2.skipToGroupEnd();
@@ -145,58 +142,51 @@ public final class HomeScreenKt {
             SharedEventFlow<HomeUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 39622153, "CC(remember):HomeScreen.kt#9igjgp");
-            boolean changed = ((i2 & 112) == 32) | ((i2 & 896) == 256) | ((57344 & i2) == 16384) | startRestartGroup.changed(collectAsStateWithLifecycle) | ((3670016 & i2) == 1048576);
-            int i7 = i2 & 14;
-            boolean changedInstance = changed | (i7 == 4 || ((i2 & 8) != 0 && startRestartGroup.changedInstance(component))) | ((i2 & 458752) == 131072) | ((i2 & 7168) == 2048) | ((29360128 & i2) == 8388608) | startRestartGroup.changedInstance(context2);
+            boolean changed = ((458752 & i2) == 131072) | ((i2 & 112) == 32) | ((i2 & 896) == 256) | ((57344 & i2) == 16384) | startRestartGroup.changed(collectAsStateWithLifecycle) | ((3670016 & i2) == 1048576) | startRestartGroup.changedInstance(component) | ((i2 & 7168) == 2048) | ((29360128 & i2) == 8388608) | startRestartGroup.changedInstance(context2);
             HomeScreenKt$HomeRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+            if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                 context = context2;
-                i3 = i7;
                 str = "CC(remember):HomeScreen.kt#9igjgp";
-                i4 = i2;
                 state = collectAsStateWithLifecycle;
-                i5 = 0;
+                i3 = 0;
                 homeComponent = component;
                 rememberedValue = new HomeScreenKt$HomeRoute$1$1(navigateToSettings, navigateToSelectServers, navigateToDownloadDialog, navigateToErrorDialog, component, navigateToDownloadScreen, navigateTooRepairGameSuccess, navigateToNotification, context, state, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             } else {
-                i3 = i7;
-                i4 = i2;
+                context = context2;
                 str = "CC(remember):HomeScreen.kt#9igjgp";
                 state = collectAsStateWithLifecycle;
-                i5 = 0;
-                context = context2;
+                i3 = 0;
                 homeComponent = component;
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             composer2 = startRestartGroup;
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, composer2, 0, 6);
-            ObserveExternalNavigationActionsKt.observeExternalNavigationActions(homeComponent.getExternalNavigationAction(), composer2, i5);
+            ObserveExternalNavigationActionsKt.observeExternalNavigationActions(homeComponent.getExternalNavigationAction(), composer2, i3);
             HomeUiState HomeRoute$lambda$0 = HomeRoute$lambda$0(state);
             String str2 = str;
             ComposerKt.sourceInformationMarkerStart(composer2, 39656743, str2);
-            int i8 = i3;
-            int i9 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$2$1 rememberedValue2 = composer2.rememberedValue();
-            if (i9 != 0 || rememberedValue2 == Composer.Companion.getEmpty()) {
+            if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new HomeScreenKt$HomeRoute$2$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function0 = (Function0) ((KFunction) rememberedValue2);
             ComposerKt.sourceInformationMarkerStart(composer2, 39658281, str2);
-            int i10 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance2 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$3$1 rememberedValue3 = composer2.rememberedValue();
-            if (i10 != 0 || rememberedValue3 == Composer.Companion.getEmpty()) {
+            if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new HomeScreenKt$HomeRoute$3$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function02 = (Function0) ((KFunction) rememberedValue3);
             ComposerKt.sourceInformationMarkerStart(composer2, 39659827, str2);
-            int changedInstance2 = composer2.changedInstance(context) | ((i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5);
+            boolean changedInstance3 = composer2.changedInstance(homeComponent) | composer2.changedInstance(context);
             Object rememberedValue4 = composer2.rememberedValue();
-            if (changedInstance2 != 0 || rememberedValue4 == Composer.Companion.getEmpty()) {
+            if (changedInstance3 || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new Function0() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
@@ -210,74 +200,72 @@ public final class HomeScreenKt {
             Function0 function03 = rememberedValue4;
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerStart(composer2, 39661671, str2);
-            int i11 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance4 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$5$1 rememberedValue5 = composer2.rememberedValue();
-            if (i11 != 0 || rememberedValue5 == Composer.Companion.getEmpty()) {
+            if (changedInstance4 || rememberedValue5 == Composer.Companion.getEmpty()) {
                 rememberedValue5 = new HomeScreenKt$HomeRoute$5$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue5);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function1 function1 = (Function1) ((KFunction) rememberedValue5);
             ComposerKt.sourceInformationMarkerStart(composer2, 39663209, str2);
-            int i12 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance5 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$6$1 rememberedValue6 = composer2.rememberedValue();
-            if (i12 != 0 || rememberedValue6 == Composer.Companion.getEmpty()) {
+            if (changedInstance5 || rememberedValue6 == Composer.Companion.getEmpty()) {
                 rememberedValue6 = new HomeScreenKt$HomeRoute$6$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue6);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function1 function12 = (Function1) ((KFunction) rememberedValue6);
             ComposerKt.sourceInformationMarkerStart(composer2, 39664842, str2);
-            int i13 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance6 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$7$1 rememberedValue7 = composer2.rememberedValue();
-            if (i13 != 0 || rememberedValue7 == Composer.Companion.getEmpty()) {
+            if (changedInstance6 || rememberedValue7 == Composer.Companion.getEmpty()) {
                 rememberedValue7 = new HomeScreenKt$HomeRoute$7$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue7);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function04 = (Function0) ((KFunction) rememberedValue7);
             ComposerKt.sourceInformationMarkerStart(composer2, 39666440, str2);
-            int i14 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance7 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$8$1 rememberedValue8 = composer2.rememberedValue();
-            if (i14 != 0 || rememberedValue8 == Composer.Companion.getEmpty()) {
+            if (changedInstance7 || rememberedValue8 == Composer.Companion.getEmpty()) {
                 rememberedValue8 = new HomeScreenKt$HomeRoute$8$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue8);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function05 = (Function0) ((KFunction) rememberedValue8);
             ComposerKt.sourceInformationMarkerStart(composer2, 39668075, str2);
-            int i15 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance8 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$9$1 rememberedValue9 = composer2.rememberedValue();
-            if (i15 != 0 || rememberedValue9 == Composer.Companion.getEmpty()) {
+            if (changedInstance8 || rememberedValue9 == Composer.Companion.getEmpty()) {
                 rememberedValue9 = new HomeScreenKt$HomeRoute$9$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue9);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function06 = (Function0) ((KFunction) rememberedValue9);
             ComposerKt.sourceInformationMarkerStart(composer2, 39669704, str2);
-            int i16 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance9 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$10$1 rememberedValue10 = composer2.rememberedValue();
-            if (i16 != 0 || rememberedValue10 == Composer.Companion.getEmpty()) {
+            if (changedInstance9 || rememberedValue10 == Composer.Companion.getEmpty()) {
                 rememberedValue10 = new HomeScreenKt$HomeRoute$10$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue10);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function07 = (Function0) ((KFunction) rememberedValue10);
             ComposerKt.sourceInformationMarkerStart(composer2, 39671503, str2);
-            int i17 = (i8 == 4 || ((i4 & 8) != 0 && composer2.changedInstance(homeComponent))) ? 1 : i5;
+            boolean changedInstance10 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$11$1 rememberedValue11 = composer2.rememberedValue();
-            if (i17 != 0 || rememberedValue11 == Composer.Companion.getEmpty()) {
+            if (changedInstance10 || rememberedValue11 == Composer.Companion.getEmpty()) {
                 rememberedValue11 = new HomeScreenKt$HomeRoute$11$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue11);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function08 = (Function0) ((KFunction) rememberedValue11);
             ComposerKt.sourceInformationMarkerStart(composer2, 39673355, str2);
-            if (i8 != 4 && ((i4 & 8) == 0 || !composer2.changedInstance(homeComponent))) {
-                i6 = i5;
-            }
+            boolean changedInstance11 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$12$1 rememberedValue12 = composer2.rememberedValue();
-            if (i6 != 0 || rememberedValue12 == Composer.Companion.getEmpty()) {
+            if (changedInstance11 || rememberedValue12 == Composer.Companion.getEmpty()) {
                 rememberedValue12 = new HomeScreenKt$HomeRoute$12$1(homeComponent);
                 composer2.updateRememberedValue(rememberedValue12);
             }
@@ -412,7 +400,7 @@ public final class HomeScreenKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            SingletonAsyncImageKt.m9076AsyncImage10Xjiaw(ImageRequestsKt.transformations(new ImageRequest.Builder((Context) consume).data(Integer.valueOf(uiState.getBackGroundId())), new CoilBlurTransformation(0, 0, 3, null)).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+            SingletonAsyncImageKt.m9072AsyncImage10Xjiaw(ImageRequestsKt.transformations(new ImageRequest.Builder((Context) consume).data(Integer.valueOf(uiState.getBackGroundId())), new CoilBlurTransformation(0, 0, 3, null)).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
             ImagesKt.BackgroundImage(uiState.getBackGroundId(), startRestartGroup, 0);
             HomeContent(uiState, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, startRestartGroup, 2147483646 & i3, i5 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
             composer2 = startRestartGroup;

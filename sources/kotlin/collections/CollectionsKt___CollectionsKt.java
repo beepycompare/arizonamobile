@@ -1806,7 +1806,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: maxOrThrow */
-    public static final float m10293maxOrThrow(Iterable<Float> iterable) {
+    public static final float m10289maxOrThrow(Iterable<Float> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Iterator<Float> it = iterable.iterator();
         if (!it.hasNext()) {
@@ -1820,7 +1820,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: maxOrThrow */
-    public static final <T extends Comparable<? super T>> T m10294maxOrThrow(Iterable<? extends T> iterable) {
+    public static final <T extends Comparable<? super T>> T m10290maxOrThrow(Iterable<? extends T> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Iterator<? extends T> it = iterable.iterator();
         if (!it.hasNext()) {
@@ -1909,7 +1909,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: maxOf */
-    private static final <T> float m10287maxOf(Iterable<? extends T> iterable, Function1<? super T, Float> selector) {
+    private static final <T> float m10283maxOf(Iterable<? extends T> iterable, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = iterable.iterator();
@@ -1924,7 +1924,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: maxOf */
-    private static final <T, R extends Comparable<? super R>> R m10288maxOf(Iterable<? extends T> iterable, Function1<? super T, ? extends R> selector) {
+    private static final <T, R extends Comparable<? super R>> R m10284maxOf(Iterable<? extends T> iterable, Function1<? super T, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = iterable.iterator();
@@ -1942,7 +1942,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: maxOfOrNull */
-    private static final <T> Double m10289maxOfOrNull(Iterable<? extends T> iterable, Function1<? super T, Double> selector) {
+    private static final <T> Double m10285maxOfOrNull(Iterable<? extends T> iterable, Function1<? super T, Double> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = iterable.iterator();
@@ -1957,7 +1957,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: maxOfOrNull */
-    private static final <T> Float m10290maxOfOrNull(Iterable<? extends T> iterable, Function1<? super T, Float> selector) {
+    private static final <T> Float m10286maxOfOrNull(Iterable<? extends T> iterable, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = iterable.iterator();
@@ -2027,7 +2027,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: maxOrNull */
-    public static final Double m10291maxOrNull(Iterable<Double> iterable) {
+    public static final Double m10287maxOrNull(Iterable<Double> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Iterator<Double> it = iterable.iterator();
         if (it.hasNext()) {
@@ -2041,7 +2041,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: maxOrNull */
-    public static final Float m10292maxOrNull(Iterable<Float> iterable) {
+    public static final Float m10288maxOrNull(Iterable<Float> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Iterator<Float> it = iterable.iterator();
         if (it.hasNext()) {
@@ -2120,7 +2120,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: minOrThrow */
-    public static final float m10301minOrThrow(Iterable<Float> iterable) {
+    public static final float m10297minOrThrow(Iterable<Float> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Iterator<Float> it = iterable.iterator();
         if (!it.hasNext()) {
@@ -2134,7 +2134,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: minOrThrow */
-    public static final <T extends Comparable<? super T>> T m10302minOrThrow(Iterable<? extends T> iterable) {
+    public static final <T extends Comparable<? super T>> T m10298minOrThrow(Iterable<? extends T> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Iterator<? extends T> it = iterable.iterator();
         if (!it.hasNext()) {
@@ -2223,7 +2223,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: minOf */
-    private static final <T> float m10295minOf(Iterable<? extends T> iterable, Function1<? super T, Float> selector) {
+    private static final <T> float m10291minOf(Iterable<? extends T> iterable, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = iterable.iterator();
@@ -2238,7 +2238,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: minOf */
-    private static final <T, R extends Comparable<? super R>> R m10296minOf(Iterable<? extends T> iterable, Function1<? super T, ? extends R> selector) {
+    private static final <T, R extends Comparable<? super R>> R m10292minOf(Iterable<? extends T> iterable, Function1<? super T, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = iterable.iterator();
@@ -2256,7 +2256,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: minOfOrNull */
-    private static final <T> Double m10297minOfOrNull(Iterable<? extends T> iterable, Function1<? super T, Double> selector) {
+    private static final <T> Double m10293minOfOrNull(Iterable<? extends T> iterable, Function1<? super T, Double> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = iterable.iterator();
@@ -2271,7 +2271,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: minOfOrNull */
-    private static final <T> Float m10298minOfOrNull(Iterable<? extends T> iterable, Function1<? super T, Float> selector) {
+    private static final <T> Float m10294minOfOrNull(Iterable<? extends T> iterable, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = iterable.iterator();
@@ -2341,7 +2341,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: minOrNull */
-    public static final Double m10299minOrNull(Iterable<Double> iterable) {
+    public static final Double m10295minOrNull(Iterable<Double> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Iterator<Double> it = iterable.iterator();
         if (it.hasNext()) {
@@ -2355,7 +2355,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     }
 
     /* renamed from: minOrNull */
-    public static final Float m10300minOrNull(Iterable<Float> iterable) {
+    public static final Float m10296minOrNull(Iterable<Float> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Iterator<Float> it = iterable.iterator();
         if (it.hasNext()) {
@@ -2709,23 +2709,23 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     private static final <T> int sumOfUInt(Iterable<? extends T> iterable, Function1<? super T, UInt> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9947constructorimpl = UInt.m9947constructorimpl(0);
+        int m9943constructorimpl = UInt.m9943constructorimpl(0);
         Iterator<? extends T> it = iterable.iterator();
         while (it.hasNext()) {
-            m9947constructorimpl = UInt.m9947constructorimpl(m9947constructorimpl + selector.invoke((T) it.next()).m9999unboximpl());
+            m9943constructorimpl = UInt.m9943constructorimpl(m9943constructorimpl + selector.invoke((T) it.next()).m9995unboximpl());
         }
-        return m9947constructorimpl;
+        return m9943constructorimpl;
     }
 
     private static final <T> long sumOfULong(Iterable<? extends T> iterable, Function1<? super T, ULong> selector) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10026constructorimpl = ULong.m10026constructorimpl(0L);
+        long m10022constructorimpl = ULong.m10022constructorimpl(0L);
         Iterator<? extends T> it = iterable.iterator();
         while (it.hasNext()) {
-            m10026constructorimpl = ULong.m10026constructorimpl(m10026constructorimpl + selector.invoke((T) it.next()).m10078unboximpl());
+            m10022constructorimpl = ULong.m10022constructorimpl(m10022constructorimpl + selector.invoke((T) it.next()).m10074unboximpl());
         }
-        return m10026constructorimpl;
+        return m10022constructorimpl;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

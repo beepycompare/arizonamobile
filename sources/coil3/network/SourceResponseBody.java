@@ -21,49 +21,49 @@ public final class SourceResponseBody implements NetworkResponseBody {
     private final BufferedSource source;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ SourceResponseBody m9112boximpl(BufferedSource bufferedSource) {
+    public static final /* synthetic */ SourceResponseBody m9108boximpl(BufferedSource bufferedSource) {
         return new SourceResponseBody(bufferedSource);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static BufferedSource m9114constructorimpl(BufferedSource bufferedSource) {
+    public static BufferedSource m9110constructorimpl(BufferedSource bufferedSource) {
         return bufferedSource;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m9115equalsimpl(BufferedSource bufferedSource, Object obj) {
-        return (obj instanceof SourceResponseBody) && Intrinsics.areEqual(bufferedSource, ((SourceResponseBody) obj).m9121unboximpl());
+    public static boolean m9111equalsimpl(BufferedSource bufferedSource, Object obj) {
+        return (obj instanceof SourceResponseBody) && Intrinsics.areEqual(bufferedSource, ((SourceResponseBody) obj).m9117unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m9116equalsimpl0(BufferedSource bufferedSource, BufferedSource bufferedSource2) {
+    public static final boolean m9112equalsimpl0(BufferedSource bufferedSource, BufferedSource bufferedSource2) {
         return Intrinsics.areEqual(bufferedSource, bufferedSource2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m9117hashCodeimpl(BufferedSource bufferedSource) {
+    public static int m9113hashCodeimpl(BufferedSource bufferedSource) {
         return bufferedSource.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m9118toStringimpl(BufferedSource bufferedSource) {
+    public static String m9114toStringimpl(BufferedSource bufferedSource) {
         return "SourceResponseBody(source=" + bufferedSource + ')';
     }
 
     public boolean equals(Object obj) {
-        return m9115equalsimpl(this.source, obj);
+        return m9111equalsimpl(this.source, obj);
     }
 
     public int hashCode() {
-        return m9117hashCodeimpl(this.source);
+        return m9113hashCodeimpl(this.source);
     }
 
     public String toString() {
-        return m9118toStringimpl(this.source);
+        return m9114toStringimpl(this.source);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ BufferedSource m9121unboximpl() {
+    public final /* synthetic */ BufferedSource m9117unboximpl() {
         return this.source;
     }
 
@@ -73,32 +73,32 @@ public final class SourceResponseBody implements NetworkResponseBody {
 
     @Override // coil3.network.NetworkResponseBody
     public Object writeTo(BufferedSink bufferedSink, Continuation<? super Unit> continuation) {
-        return m9119writeToimpl(this.source, bufferedSink, continuation);
+        return m9115writeToimpl(this.source, bufferedSink, continuation);
     }
 
     /* renamed from: writeTo-impl  reason: not valid java name */
-    public static Object m9119writeToimpl(BufferedSource bufferedSource, BufferedSink bufferedSink, Continuation<? super Unit> continuation) {
+    public static Object m9115writeToimpl(BufferedSource bufferedSource, BufferedSink bufferedSink, Continuation<? super Unit> continuation) {
         bufferedSource.readAll(bufferedSink);
         return Unit.INSTANCE;
     }
 
     @Override // coil3.network.NetworkResponseBody
     public Object writeTo(FileSystem fileSystem, Path path, Continuation<? super Unit> continuation) {
-        return m9120writeToimpl(this.source, fileSystem, path, continuation);
+        return m9116writeToimpl(this.source, fileSystem, path, continuation);
     }
 
     @Override // java.lang.AutoCloseable
     public void close() {
-        m9113closeimpl(this.source);
+        m9109closeimpl(this.source);
     }
 
     /* renamed from: close-impl  reason: not valid java name */
-    public static void m9113closeimpl(BufferedSource bufferedSource) {
+    public static void m9109closeimpl(BufferedSource bufferedSource) {
         bufferedSource.close();
     }
 
     /* renamed from: writeTo-impl  reason: not valid java name */
-    public static Object m9120writeToimpl(BufferedSource bufferedSource, FileSystem fileSystem, Path path, Continuation<? super Unit> continuation) {
+    public static Object m9116writeToimpl(BufferedSource bufferedSource, FileSystem fileSystem, Path path, Continuation<? super Unit> continuation) {
         BufferedSink buffer = Okio.buffer(fileSystem.sink(path, false));
         try {
             Boxing.boxLong(bufferedSource.readAll(buffer));

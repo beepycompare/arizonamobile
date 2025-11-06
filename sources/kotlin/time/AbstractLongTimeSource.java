@@ -84,49 +84,49 @@ public abstract class AbstractLongTimeSource implements TimeSource.WithComparabl
 
         @Override // kotlin.time.TimeMark
         /* renamed from: minus-LRDsOJo */
-        public /* bridge */ ComparableTimeMark mo11195minusLRDsOJo(long j) {
-            return ComparableTimeMark.DefaultImpls.m11199minusLRDsOJo(this, j);
+        public /* bridge */ ComparableTimeMark mo11191minusLRDsOJo(long j) {
+            return ComparableTimeMark.DefaultImpls.m11195minusLRDsOJo(this, j);
         }
 
         @Override // kotlin.time.TimeMark
         /* renamed from: elapsedNow-UwyO8pc */
-        public long mo11194elapsedNowUwyO8pc() {
-            return Duration.m11232minusLRDsOJo(LongSaturatedMathKt.saturatingOriginsDiff(this.timeSource.adjustedRead(), this.startedAt, this.timeSource.getUnit()), this.offset);
+        public long mo11190elapsedNowUwyO8pc() {
+            return Duration.m11228minusLRDsOJo(LongSaturatedMathKt.saturatingOriginsDiff(this.timeSource.adjustedRead(), this.startedAt, this.timeSource.getUnit()), this.offset);
         }
 
         @Override // kotlin.time.TimeMark
         /* renamed from: plus-LRDsOJo */
-        public ComparableTimeMark mo11197plusLRDsOJo(long j) {
+        public ComparableTimeMark mo11193plusLRDsOJo(long j) {
             DurationUnit unit = this.timeSource.getUnit();
-            if (Duration.m11229isInfiniteimpl(j)) {
-                return new LongTimeMark(LongSaturatedMathKt.m11307saturatingAddNuflL3o(this.startedAt, unit, j), this.timeSource, Duration.Companion.m11295getZEROUwyO8pc(), null);
+            if (Duration.m11225isInfiniteimpl(j)) {
+                return new LongTimeMark(LongSaturatedMathKt.m11303saturatingAddNuflL3o(this.startedAt, unit, j), this.timeSource, Duration.Companion.m11291getZEROUwyO8pc(), null);
             }
-            long m11247truncateToUwyO8pc$kotlin_stdlib = Duration.m11247truncateToUwyO8pc$kotlin_stdlib(j, unit);
-            long m11233plusLRDsOJo = Duration.m11233plusLRDsOJo(Duration.m11232minusLRDsOJo(j, m11247truncateToUwyO8pc$kotlin_stdlib), this.offset);
-            long m11307saturatingAddNuflL3o = LongSaturatedMathKt.m11307saturatingAddNuflL3o(this.startedAt, unit, m11247truncateToUwyO8pc$kotlin_stdlib);
-            long m11247truncateToUwyO8pc$kotlin_stdlib2 = Duration.m11247truncateToUwyO8pc$kotlin_stdlib(m11233plusLRDsOJo, unit);
-            long m11307saturatingAddNuflL3o2 = LongSaturatedMathKt.m11307saturatingAddNuflL3o(m11307saturatingAddNuflL3o, unit, m11247truncateToUwyO8pc$kotlin_stdlib2);
-            long m11232minusLRDsOJo = Duration.m11232minusLRDsOJo(m11233plusLRDsOJo, m11247truncateToUwyO8pc$kotlin_stdlib2);
-            long m11217getInWholeNanosecondsimpl = Duration.m11217getInWholeNanosecondsimpl(m11232minusLRDsOJo);
-            if (m11307saturatingAddNuflL3o2 != 0 && m11217getInWholeNanosecondsimpl != 0 && (m11307saturatingAddNuflL3o2 ^ m11217getInWholeNanosecondsimpl) < 0) {
-                long duration = DurationKt.toDuration(MathKt.getSign(m11217getInWholeNanosecondsimpl), unit);
-                m11307saturatingAddNuflL3o2 = LongSaturatedMathKt.m11307saturatingAddNuflL3o(m11307saturatingAddNuflL3o2, unit, duration);
-                m11232minusLRDsOJo = Duration.m11232minusLRDsOJo(m11232minusLRDsOJo, duration);
+            long m11243truncateToUwyO8pc$kotlin_stdlib = Duration.m11243truncateToUwyO8pc$kotlin_stdlib(j, unit);
+            long m11229plusLRDsOJo = Duration.m11229plusLRDsOJo(Duration.m11228minusLRDsOJo(j, m11243truncateToUwyO8pc$kotlin_stdlib), this.offset);
+            long m11303saturatingAddNuflL3o = LongSaturatedMathKt.m11303saturatingAddNuflL3o(this.startedAt, unit, m11243truncateToUwyO8pc$kotlin_stdlib);
+            long m11243truncateToUwyO8pc$kotlin_stdlib2 = Duration.m11243truncateToUwyO8pc$kotlin_stdlib(m11229plusLRDsOJo, unit);
+            long m11303saturatingAddNuflL3o2 = LongSaturatedMathKt.m11303saturatingAddNuflL3o(m11303saturatingAddNuflL3o, unit, m11243truncateToUwyO8pc$kotlin_stdlib2);
+            long m11228minusLRDsOJo = Duration.m11228minusLRDsOJo(m11229plusLRDsOJo, m11243truncateToUwyO8pc$kotlin_stdlib2);
+            long m11213getInWholeNanosecondsimpl = Duration.m11213getInWholeNanosecondsimpl(m11228minusLRDsOJo);
+            if (m11303saturatingAddNuflL3o2 != 0 && m11213getInWholeNanosecondsimpl != 0 && (m11303saturatingAddNuflL3o2 ^ m11213getInWholeNanosecondsimpl) < 0) {
+                long duration = DurationKt.toDuration(MathKt.getSign(m11213getInWholeNanosecondsimpl), unit);
+                m11303saturatingAddNuflL3o2 = LongSaturatedMathKt.m11303saturatingAddNuflL3o(m11303saturatingAddNuflL3o2, unit, duration);
+                m11228minusLRDsOJo = Duration.m11228minusLRDsOJo(m11228minusLRDsOJo, duration);
             }
-            if ((1 | (m11307saturatingAddNuflL3o2 - 1)) == Long.MAX_VALUE) {
-                m11232minusLRDsOJo = Duration.Companion.m11295getZEROUwyO8pc();
+            if ((1 | (m11303saturatingAddNuflL3o2 - 1)) == Long.MAX_VALUE) {
+                m11228minusLRDsOJo = Duration.Companion.m11291getZEROUwyO8pc();
             }
-            return new LongTimeMark(m11307saturatingAddNuflL3o2, this.timeSource, m11232minusLRDsOJo, null);
+            return new LongTimeMark(m11303saturatingAddNuflL3o2, this.timeSource, m11228minusLRDsOJo, null);
         }
 
         @Override // kotlin.time.ComparableTimeMark
         /* renamed from: minus-UwyO8pc */
-        public long mo11196minusUwyO8pc(ComparableTimeMark other) {
+        public long mo11192minusUwyO8pc(ComparableTimeMark other) {
             Intrinsics.checkNotNullParameter(other, "other");
             if (other instanceof LongTimeMark) {
                 LongTimeMark longTimeMark = (LongTimeMark) other;
                 if (Intrinsics.areEqual(this.timeSource, longTimeMark.timeSource)) {
-                    return Duration.m11233plusLRDsOJo(LongSaturatedMathKt.saturatingOriginsDiff(this.startedAt, longTimeMark.startedAt, this.timeSource.getUnit()), Duration.m11232minusLRDsOJo(this.offset, longTimeMark.offset));
+                    return Duration.m11229plusLRDsOJo(LongSaturatedMathKt.saturatingOriginsDiff(this.startedAt, longTimeMark.startedAt, this.timeSource.getUnit()), Duration.m11228minusLRDsOJo(this.offset, longTimeMark.offset));
                 }
             }
             throw new IllegalArgumentException("Subtracting or comparing time marks from different time sources is not possible: " + this + " and " + other);
@@ -134,21 +134,21 @@ public abstract class AbstractLongTimeSource implements TimeSource.WithComparabl
 
         @Override // kotlin.time.ComparableTimeMark
         public boolean equals(Object obj) {
-            return (obj instanceof LongTimeMark) && Intrinsics.areEqual(this.timeSource, ((LongTimeMark) obj).timeSource) && Duration.m11209equalsimpl0(mo11196minusUwyO8pc((ComparableTimeMark) obj), Duration.Companion.m11295getZEROUwyO8pc());
+            return (obj instanceof LongTimeMark) && Intrinsics.areEqual(this.timeSource, ((LongTimeMark) obj).timeSource) && Duration.m11205equalsimpl0(mo11192minusUwyO8pc((ComparableTimeMark) obj), Duration.Companion.m11291getZEROUwyO8pc());
         }
 
         @Override // kotlin.time.ComparableTimeMark
         public int hashCode() {
-            return (Duration.m11225hashCodeimpl(this.offset) * 37) + Long.hashCode(this.startedAt);
+            return (Duration.m11221hashCodeimpl(this.offset) * 37) + Long.hashCode(this.startedAt);
         }
 
         public String toString() {
-            return "LongTimeMark(" + this.startedAt + DurationUnitKt.shortName(this.timeSource.getUnit()) + " + " + ((Object) Duration.m11244toStringimpl(this.offset)) + ", " + this.timeSource + ')';
+            return "LongTimeMark(" + this.startedAt + DurationUnitKt.shortName(this.timeSource.getUnit()) + " + " + ((Object) Duration.m11240toStringimpl(this.offset)) + ", " + this.timeSource + ')';
         }
     }
 
     @Override // kotlin.time.TimeSource
     public ComparableTimeMark markNow() {
-        return new LongTimeMark(adjustedRead(), this, Duration.Companion.m11295getZEROUwyO8pc(), null);
+        return new LongTimeMark(adjustedRead(), this, Duration.Companion.m11291getZEROUwyO8pc(), null);
     }
 }

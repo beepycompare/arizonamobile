@@ -18,9 +18,9 @@ public final class MappedColumnsSQLiteStatementWrapper implements SQLiteStatemen
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindBlob */
-    public void mo8892bindBlob(int i, byte[] value) {
+    public void mo8888bindBlob(int i, byte[] value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        this.delegate.mo8892bindBlob(i, value);
+        this.delegate.mo8888bindBlob(i, value);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
@@ -30,8 +30,8 @@ public final class MappedColumnsSQLiteStatementWrapper implements SQLiteStatemen
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindDouble */
-    public void mo8893bindDouble(int i, double d) {
-        this.delegate.mo8893bindDouble(i, d);
+    public void mo8889bindDouble(int i, double d) {
+        this.delegate.mo8889bindDouble(i, d);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
@@ -46,27 +46,27 @@ public final class MappedColumnsSQLiteStatementWrapper implements SQLiteStatemen
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindLong */
-    public void mo8894bindLong(int i, long j) {
-        this.delegate.mo8894bindLong(i, j);
+    public void mo8890bindLong(int i, long j) {
+        this.delegate.mo8890bindLong(i, j);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindNull */
-    public void mo8895bindNull(int i) {
-        this.delegate.mo8895bindNull(i);
+    public void mo8891bindNull(int i) {
+        this.delegate.mo8891bindNull(i);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindText */
-    public void mo8896bindText(int i, String value) {
+    public void mo8892bindText(int i, String value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        this.delegate.mo8896bindText(i, value);
+        this.delegate.mo8892bindText(i, value);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: clearBindings */
-    public void mo8897clearBindings() {
-        this.delegate.mo8897clearBindings();
+    public void mo8893clearBindings() {
+        this.delegate.mo8893clearBindings();
     }
 
     @Override // androidx.sqlite.SQLiteStatement, java.lang.AutoCloseable

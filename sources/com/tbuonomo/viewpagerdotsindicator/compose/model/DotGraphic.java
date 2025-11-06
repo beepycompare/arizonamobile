@@ -23,7 +23,7 @@ public final class DotGraphic {
     }
 
     /* renamed from: copy-e8K48GY$default  reason: not valid java name */
-    public static /* synthetic */ DotGraphic m9817copye8K48GY$default(DotGraphic dotGraphic, float f, long j, Shape shape, Dp dp, long j2, int i, Object obj) {
+    public static /* synthetic */ DotGraphic m9813copye8K48GY$default(DotGraphic dotGraphic, float f, long j, Shape shape, Dp dp, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = dotGraphic.size;
         }
@@ -39,16 +39,16 @@ public final class DotGraphic {
         if ((i & 16) != 0) {
             j2 = dotGraphic.borderColor;
         }
-        return dotGraphic.m9822copye8K48GY(f, j, shape, dp, j2);
+        return dotGraphic.m9818copye8K48GY(f, j, shape, dp, j2);
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public final float m9818component1D9Ej5fM() {
+    public final float m9814component1D9Ej5fM() {
         return this.size;
     }
 
     /* renamed from: component2-0d7_KjU  reason: not valid java name */
-    public final long m9819component20d7_KjU() {
+    public final long m9815component20d7_KjU() {
         return this.color;
     }
 
@@ -57,17 +57,17 @@ public final class DotGraphic {
     }
 
     /* renamed from: component4-lTKBWiU  reason: not valid java name */
-    public final Dp m9820component4lTKBWiU() {
+    public final Dp m9816component4lTKBWiU() {
         return this.borderWidth;
     }
 
     /* renamed from: component5-0d7_KjU  reason: not valid java name */
-    public final long m9821component50d7_KjU() {
+    public final long m9817component50d7_KjU() {
         return this.borderColor;
     }
 
     /* renamed from: copy-e8K48GY  reason: not valid java name */
-    public final DotGraphic m9822copye8K48GY(float f, long j, Shape shape, Dp dp, long j2) {
+    public final DotGraphic m9818copye8K48GY(float f, long j, Shape shape, Dp dp, long j2) {
         Intrinsics.checkNotNullParameter(shape, "shape");
         return new DotGraphic(f, j, shape, dp, j2, null);
     }
@@ -107,12 +107,12 @@ public final class DotGraphic {
     }
 
     /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m9826getSizeD9Ej5fM() {
+    public final float m9822getSizeD9Ej5fM() {
         return this.size;
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m9825getColor0d7_KjU() {
+    public final long m9821getColor0d7_KjU() {
         return this.color;
     }
 
@@ -121,12 +121,12 @@ public final class DotGraphic {
     }
 
     /* renamed from: getBorderWidth-lTKBWiU  reason: not valid java name */
-    public final Dp m9824getBorderWidthlTKBWiU() {
+    public final Dp m9820getBorderWidthlTKBWiU() {
         return this.borderWidth;
     }
 
     /* renamed from: getBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m9823getBorderColor0d7_KjU() {
+    public final long m9819getBorderColor0d7_KjU() {
         return this.borderColor;
     }
 

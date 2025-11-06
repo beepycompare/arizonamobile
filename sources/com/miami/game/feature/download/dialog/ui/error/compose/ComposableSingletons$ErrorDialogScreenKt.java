@@ -35,7 +35,7 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
     });
 
     /* renamed from: getLambda$-1032883188$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9717getLambda$1032883188$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9713getLambda$1032883188$dialogs_release() {
         return f55lambda$1032883188;
     }
 

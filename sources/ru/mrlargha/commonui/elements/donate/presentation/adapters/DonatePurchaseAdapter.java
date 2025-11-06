@@ -217,7 +217,7 @@ public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, 
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonatePurshaseItemBinding donatePurshaseItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11936getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11932getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donatePurshaseItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");
