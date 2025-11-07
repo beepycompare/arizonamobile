@@ -104,7 +104,6 @@ public final class ChildSlotFactoryKt {
     }
 
     public static final <Ctx extends GenericComponentContext<? extends Ctx>, C, T> Value<ChildSlot<C, T>> childSlot(Ctx ctx, NavigationSource<SlotNavigation.Event<C>> source, final Function1<? super C, SerializableContainer> saveConfiguration, final Function1<? super SerializableContainer, ? extends C> restoreConfiguration, String key, final Function0<? extends C> initialConfiguration, final boolean z, Function2<? super C, ? super Ctx, ? extends T> childFactory) {
-        Value<ChildSlot<C, T>> children;
         Intrinsics.checkNotNullParameter(ctx, "<this>");
         Intrinsics.checkNotNullParameter(source, "source");
         Intrinsics.checkNotNullParameter(saveConfiguration, "saveConfiguration");
@@ -112,7 +111,7 @@ public final class ChildSlotFactoryKt {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(initialConfiguration, "initialConfiguration");
         Intrinsics.checkNotNullParameter(childFactory, "childFactory");
-        children = ChildrenFactoryKt.children(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.slot.ChildSlotFactoryKt$$ExternalSyntheticLambda3
+        return ChildrenFactoryKt.children$default(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.slot.ChildSlotFactoryKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 SlotNavState childSlot$lambda$2;
@@ -147,43 +146,21 @@ public final class ChildSlotFactoryKt {
                 childSlot$lambda$6 = ChildSlotFactoryKt.childSlot$lambda$6((SlotNavState) obj, (List) obj2);
                 return childSlot$lambda$6;
             }
-        }, (r26 & 128) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda8
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj, Object obj2) {
-                Unit children$lambda$4;
-                children$lambda$4 = ChildrenFactoryKt.children$lambda$4((NavState) obj, (NavState) obj2);
-                return children$lambda$4;
-            }
-        } : null, (r26 & 256) != 0 ? new Function3() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda9
-            @Override // kotlin.jvm.functions.Function3
-            public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit children$lambda$5;
-                children$lambda$5 = ChildrenFactoryKt.children$lambda$5(obj, (NavState) obj2, (NavState) obj3);
-                return children$lambda$5;
-            }
-        } : new Function3() { // from class: com.arkivanov.decompose.router.slot.ChildSlotFactoryKt$$ExternalSyntheticLambda8
+        }, null, new Function3() { // from class: com.arkivanov.decompose.router.slot.ChildSlotFactoryKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
                 Unit childSlot$lambda$7;
                 childSlot$lambda$7 = ChildSlotFactoryKt.childSlot$lambda$7((SlotNavigation.Event) obj, (SlotNavState) obj2, (SlotNavState) obj3);
                 return childSlot$lambda$7;
             }
-        }, (r26 & 512) != 0 ? new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$children$8
-            /* JADX WARN: Incorrect types in method signature: (TN;)Ljava/lang/Void; */
-            @Override // kotlin.jvm.functions.Function1
-            public final Void invoke(NavState it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return null;
-            }
-        } : new Function1() { // from class: com.arkivanov.decompose.router.slot.ChildSlotFactoryKt$$ExternalSyntheticLambda9
+        }, new Function1() { // from class: com.arkivanov.decompose.router.slot.ChildSlotFactoryKt$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Function0 childSlot$lambda$9;
                 childSlot$lambda$9 = ChildSlotFactoryKt.childSlot$lambda$9(z, (SlotNavState) obj);
                 return childSlot$lambda$9;
             }
-        }, childFactory);
-        return children;
+        }, childFactory, 128, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
