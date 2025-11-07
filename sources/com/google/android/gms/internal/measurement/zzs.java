@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes4.dex */
-public final class zzs extends zzai {
+final class zzs extends zzai {
     final boolean zza;
     final boolean zzb;
     final /* synthetic */ zzt zzc;

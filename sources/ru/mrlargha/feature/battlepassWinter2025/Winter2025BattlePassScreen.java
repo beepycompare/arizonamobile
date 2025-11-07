@@ -1166,7 +1166,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
             textView6.setAlpha(1.0f);
             textView6.setEnabled(true);
         }
-        if (mainBattlePassInfo.getLevel() + 95 > 100) {
+        if (mainBattlePassInfo.getLevel() > 100) {
             TextView textView7 = winterBattlepassLevelSetsLayoutBinding.legendaryPriceButton;
             textView7.setText("Недоступно");
             textView7.setAlpha(0.6f);

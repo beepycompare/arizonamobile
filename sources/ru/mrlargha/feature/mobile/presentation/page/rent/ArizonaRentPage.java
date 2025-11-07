@@ -29,8 +29,6 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.flow.MutableStateFlow;
@@ -57,7 +55,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentFilte
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentFilterModel;
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentRealEstateModel;
 /* compiled from: ArizonaRentPage.kt */
-@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0000\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 @2\u00020\u0001:\u0001@B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"H\u0016J\u0016\u0010#\u001a\u00020$2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0002J\b\u0010%\u001a\u00020\u001eH\u0002J\b\u0010&\u001a\u00020\u001eH\u0002J\u0010\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020\u000fH\u0002J\b\u0010)\u001a\u00020\u001eH\u0002J\b\u0010*\u001a\u00020\u001eH\u0002J\b\u0010+\u001a\u00020\u001eH\u0002J\b\u0010,\u001a\u00020\u001eH\u0002J\b\u0010-\u001a\u00020\u001eH\u0002J\b\u0010.\u001a\u00020\u001eH\u0002J\b\u0010/\u001a\u00020\u001eH\u0002J\b\u00100\u001a\u000201H\u0002J\b\u00102\u001a\u00020\u001eH\u0002J\b\u00103\u001a\u00020\u001eH\u0002J\b\u00104\u001a\u00020\u001eH\u0002J\b\u00105\u001a\u00020\u001eH\u0002J\u0012\u00106\u001a\u00020\u001e2\b\u00107\u001a\u0004\u0018\u00010\u001aH\u0002J \u00108\u001a\u00020\u001e2\u0006\u00109\u001a\u00020\u000f2\u000e\u0010:\u001a\n\u0012\u0004\u0012\u00020\u0016\u0018\u00010\u0015H\u0002J\u0018\u0010;\u001a\u00020\u001e2\u0006\u0010<\u001a\u00020=2\u0006\u00107\u001a\u00020\u0016H\u0002J\b\u0010>\u001a\u00020\u001eH\u0016J\b\u0010?\u001a\u00020\u001eH\u0016R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n\u0012\u0004\u0012\u00020\u0016\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0017\u001a\u0010\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u001a0\u00190\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006A"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent/ArizonaRentPage;", "Lru/mrlargha/feature/mobile/presentation/MobilePage;", "<init>", "()V", "view", "Landroid/view/View;", "getView", "()Landroid/view/View;", "binding", "Lru/mrlargha/feature/mobile/databinding/MpArizonaRentPageBinding;", "adAdapter", "Lru/mrlargha/feature/mobile/presentation/page/rent/adapters/ArizonaRentAdAdapter;", "currentToolbar", "Lru/mrlargha/feature/mobile/presentation/page/rent/ArizonaRentToolbarType;", "isOpenFilter", "", "scope", "Lkotlinx/coroutines/CoroutineScope;", "retrofitClient", "Lru/mrlargha/feature/mobile/data/remote/MobileRetrofitClient;", "adList", "", "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentAdModel;", "adState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/presentation/UiState;", "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentFilterContainerModel;", "isHasHoses", "isUpdate", "sendEvent", "", "subId", "Lru/mrlargha/feature/mobile/presentation/MobilePhoneGetSubIds;", "data", "", "setAdList", "", "notAd", "notMyAd", "filterNotFound", "isNotFound", "setupListeners", "setDefaultScreen", "initialize", "selectToolbarAll", "selectToolbarMy", "closeFilter", "openFilter", "setUpCollectors", "Lkotlinx/coroutines/Job;", "getAds", "checkUpdate", "hasUpdate", "update", "setFilterData", CommonUrlParts.MODEL, "setList", "isHasFilter", "filterAdList", "onAdClick", NotificationCompat.CATEGORY_EVENT, "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentAdClickEvent;", "hidePage", "renderPage", "Companion", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0000\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 >2\u00020\u0001:\u0001>B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\u0016\u0010!\u001a\u00020\"2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00140\u0013H\u0002J\b\u0010#\u001a\u00020\u001cH\u0002J\b\u0010$\u001a\u00020\u001cH\u0002J\u0010\u0010%\u001a\u00020\u001c2\u0006\u0010&\u001a\u00020\u000fH\u0002J\b\u0010'\u001a\u00020\u001cH\u0002J\b\u0010(\u001a\u00020\u001cH\u0002J\b\u0010)\u001a\u00020\u001cH\u0002J\b\u0010*\u001a\u00020\u001cH\u0002J\b\u0010+\u001a\u00020\u001cH\u0002J\b\u0010,\u001a\u00020\u001cH\u0002J\b\u0010-\u001a\u00020\u001cH\u0002J\b\u0010.\u001a\u00020/H\u0002J\b\u00100\u001a\u00020\u001cH\u0002J\b\u00101\u001a\u00020\u001cH\u0002J\b\u00102\u001a\u00020\u001cH\u0002J\b\u00103\u001a\u00020\u001cH\u0002J\u0012\u00104\u001a\u00020\u001c2\b\u00105\u001a\u0004\u0018\u00010\u0018H\u0002J \u00106\u001a\u00020\u001c2\u0006\u00107\u001a\u00020\u000f2\u000e\u00108\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u0013H\u0002J\u0018\u00109\u001a\u00020\u001c2\u0006\u0010:\u001a\u00020;2\u0006\u00105\u001a\u00020\u0014H\u0002J\b\u0010<\u001a\u00020\u001cH\u0016J\b\u0010=\u001a\u00020\u001cH\u0016R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0015\u001a\u0010\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00180\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006?"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent/ArizonaRentPage;", "Lru/mrlargha/feature/mobile/presentation/MobilePage;", "<init>", "()V", "view", "Landroid/view/View;", "getView", "()Landroid/view/View;", "binding", "Lru/mrlargha/feature/mobile/databinding/MpArizonaRentPageBinding;", "adAdapter", "Lru/mrlargha/feature/mobile/presentation/page/rent/adapters/ArizonaRentAdAdapter;", "currentToolbar", "Lru/mrlargha/feature/mobile/presentation/page/rent/ArizonaRentToolbarType;", "isOpenFilter", "", "retrofitClient", "Lru/mrlargha/feature/mobile/data/remote/MobileRetrofitClient;", "adList", "", "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentAdModel;", "adState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/presentation/UiState;", "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentFilterContainerModel;", "isHasHoses", "isUpdate", "sendEvent", "", "subId", "Lru/mrlargha/feature/mobile/presentation/MobilePhoneGetSubIds;", "data", "", "setAdList", "", "notAd", "notMyAd", "filterNotFound", "isNotFound", "setupListeners", "setDefaultScreen", "initialize", "selectToolbarAll", "selectToolbarMy", "closeFilter", "openFilter", "setUpCollectors", "Lkotlinx/coroutines/Job;", "getAds", "checkUpdate", "hasUpdate", "update", "setFilterData", CommonUrlParts.MODEL, "setList", "isHasFilter", "filterAdList", "onAdClick", NotificationCompat.CATEGORY_EVENT, "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentAdClickEvent;", "hidePage", "renderPage", "Companion", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class ArizonaRentPage extends MobilePage {
     public static final Companion Companion = new Companion(null);
@@ -71,7 +69,6 @@ public final class ArizonaRentPage extends MobilePage {
     private boolean isOpenFilter;
     private boolean isUpdate;
     private final MobileRetrofitClient retrofitClient;
-    private final CoroutineScope scope;
     private final View view;
 
     /* compiled from: ArizonaRentPage.kt */
@@ -113,7 +110,6 @@ public final class ArizonaRentPage extends MobilePage {
         super(MobilePhonePage.ARIZONA_RENT.getId());
         this.adAdapter = new ArizonaRentAdAdapter(new ArizonaRentPage$adAdapter$1(this));
         this.currentToolbar = ArizonaRentToolbarType.ALL;
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain());
         this.retrofitClient = new MobileRetrofitClient(getContext(), UIElementID.ARIZONA_MOBILE_PHONE.getId());
         this.adState = StateFlowKt.MutableStateFlow(UiState.Loading.INSTANCE);
         this.isHasHoses = true;
@@ -174,7 +170,7 @@ public final class ArizonaRentPage extends MobilePage {
             FrameLayout nothingNotContainer = mpArizonaRentPageBinding.nothingNotContainer;
             Intrinsics.checkNotNullExpressionValue(nothingNotContainer, "nothingNotContainer");
             nothingNotContainer.setVisibility(8);
-            launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ArizonaRentPage$setAdList$1$1(this, new ArizonaRentFilterContainerModel(null, list), null), 3, null);
+            launch$default = BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), Dispatchers.getIO(), null, new ArizonaRentPage$setAdList$1$1(this, new ArizonaRentFilterContainerModel(null, list), null), 2, null);
             return launch$default;
         }
     }
@@ -389,7 +385,7 @@ public final class ArizonaRentPage extends MobilePage {
     }
 
     private final void setDefaultScreen() {
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ArizonaRentPage$setDefaultScreen$1(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), Dispatchers.getMain(), null, new ArizonaRentPage$setDefaultScreen$1(this, null), 2, null);
         getMobilePhone().getBinding().phoneBackground.setBackgroundColor(Color.parseColor("#131516"));
         ArizonaRentFilterPage.INSTANCE.setDefault();
         initialize();
@@ -414,7 +410,7 @@ public final class ArizonaRentPage extends MobilePage {
         if (!(value instanceof UiState.Successful) || (list = this.adList) == null) {
             return;
         }
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ArizonaRentPage$selectToolbarAll$1$1$1(this, value, list, mpArizonaRentPageBinding, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), Dispatchers.getMain(), null, new ArizonaRentPage$selectToolbarAll$1$1$1(this, value, list, mpArizonaRentPageBinding, null), 2, null);
     }
 
     private final void selectToolbarMy() {
@@ -435,7 +431,7 @@ public final class ArizonaRentPage extends MobilePage {
                 arrayList.add(obj);
             }
         }
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ArizonaRentPage$selectToolbarMy$1$1$1(this, value, arrayList, mpArizonaRentPageBinding, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), Dispatchers.getMain(), null, new ArizonaRentPage$selectToolbarMy$1$1$1(this, value, arrayList, mpArizonaRentPageBinding, null), 2, null);
     }
 
     private final void closeFilter() {
@@ -489,7 +485,7 @@ public final class ArizonaRentPage extends MobilePage {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit openFilter$lambda$0$0(ArizonaRentPage arizonaRentPage, UiState uiState, boolean z, ArizonaRentFilterModel arizonaRentFilterModel) {
         if (z) {
-            BuildersKt__Builders_commonKt.launch$default(arizonaRentPage.scope, null, null, new ArizonaRentPage$openFilter$1$1$1(uiState, arizonaRentFilterModel, arizonaRentPage, null), 3, null);
+            BuildersKt__Builders_commonKt.launch$default(arizonaRentPage.retrofitClient.getRetrofit().getScope(), Dispatchers.getMain(), null, new ArizonaRentPage$openFilter$1$1$1(uiState, arizonaRentFilterModel, arizonaRentPage, null), 2, null);
         }
         arizonaRentPage.closeFilter();
         return Unit.INSTANCE;
@@ -497,7 +493,7 @@ public final class ArizonaRentPage extends MobilePage {
 
     private final Job setUpCollectors() {
         Job launch$default;
-        launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ArizonaRentPage$setUpCollectors$1$1(this, this.binding, null), 3, null);
+        launch$default = BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), Dispatchers.getMain(), null, new ArizonaRentPage$setUpCollectors$1$1(this, this.binding, null), 2, null);
         return launch$default;
     }
 
@@ -526,7 +522,7 @@ public final class ArizonaRentPage extends MobilePage {
 
     private final void update() {
         MpArizonaRentPageBinding mpArizonaRentPageBinding = this.binding;
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ArizonaRentPage$update$1$1(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), Dispatchers.getMain(), null, new ArizonaRentPage$update$1$1(this, null), 2, null);
         CustomCardView btnUpdate = mpArizonaRentPageBinding.btnUpdate;
         Intrinsics.checkNotNullExpressionValue(btnUpdate, "btnUpdate");
         btnUpdate.setVisibility(8);
