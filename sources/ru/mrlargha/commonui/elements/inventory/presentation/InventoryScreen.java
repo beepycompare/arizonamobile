@@ -96,7 +96,7 @@ import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 /* compiled from: InventoryScreen.kt */
-@Metadata(d1 = {"\u0000Ò\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 §\u00012\u00020\u00012\u00020\u0002:\u0004¦\u0001§\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010Q\u001a\u00020RH\u0002J\b\u0010S\u001a\u00020RH\u0002J\u0018\u0010T\u001a\u00020R2\u0006\u0010U\u001a\u00020\u00062\u0006\u0010V\u001a\u00020\u0006H\u0002J\u0010\u0010W\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0013H\u0002J\u0010\u0010Y\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0013H\u0002J\b\u0010Z\u001a\u00020RH\u0002J\b\u0010[\u001a\u00020RH\u0002J\b\u0010\\\u001a\u00020RH\u0002J\b\u0010]\u001a\u00020RH\u0002J\u0010\u0010^\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0011H\u0002J\b\u0010_\u001a\u00020RH\u0002J\b\u0010`\u001a\u00020RH\u0002J\u0016\u0010a\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0016\u0010c\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\b\u0010d\u001a\u00020RH\u0002J\u0018\u0010e\u001a\u00020R2\u0006\u0010f\u001a\u00020g2\u0006\u0010h\u001a\u00020\u0006H\u0002J\b\u0010i\u001a\u00020RH\u0002J\b\u0010j\u001a\u00020RH\u0002J \u0010k\u001a\u00020R2\u0006\u0010l\u001a\u00020\u00062\u0006\u0010m\u001a\u00020\u00062\u0006\u0010n\u001a\u00020\u0006H\u0002J\u0016\u0010o\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020&0\u0010H\u0002J\b\u0010p\u001a\u00020RH\u0002J\b\u0010q\u001a\u00020RH\u0002J\b\u0010r\u001a\u00020RH\u0002J\u0018\u0010s\u001a\u00020R2\u0006\u0010t\u001a\u00020u2\u0006\u0010U\u001a\u00020\u0006H\u0016J\u0010\u0010v\u001a\u00020R2\u0006\u0010w\u001a\u00020\u0006H\u0002J\u0010\u0010x\u001a\u00020R2\u0006\u0010w\u001a\u00020\u0006H\u0002J\b\u0010y\u001a\u00020RH\u0002J\b\u0010z\u001a\u00020RH\u0002J\b\u0010{\u001a\u00020RH\u0002J\u0010\u0010|\u001a\u00020R2\u0006\u0010}\u001a\u00020\u0006H\u0002J\u0010\u0010~\u001a\u00020R2\u0006\u0010}\u001a\u00020\u0006H\u0002J\u0016\u0010\u007f\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00060\u0010H\u0002J\u0017\u0010\u0080\u0001\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u000f\u0010\u0081\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020uJ\u0013\u0010\u0082\u0001\u001a\u00020R2\b\u0010X\u001a\u0004\u0018\u00010\u0011H\u0002J\t\u0010\u0083\u0001\u001a\u00020RH\u0002J\u001a\u0010\u0084\u0001\u001a\t\u0012\u0004\u0012\u00020\u00110\u0085\u00012\b\u0010\u0086\u0001\u001a\u00030\u0087\u0001H\u0002J\u001a\u0010\u0088\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u008a\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u008b\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u001a\u0010\u008c\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u008d\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u001a\u0010\u008e\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u008f\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0012\u0010\u0090\u0001\u001a\u00020R2\u0007\u0010\u0089\u0001\u001a\u000206H\u0002J\u0013\u0010\u0091\u0001\u001a\u00020R2\b\u0010\u0092\u0001\u001a\u00030\u0093\u0001H\u0002J\t\u0010\u0094\u0001\u001a\u00020RH\u0002J\u001a\u0010\u0095\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020\u00062\u0007\u0010\u0096\u0001\u001a\u00020\u0006H\u0016J\u001b\u0010\u0095\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020\u00062\b\u0010\u0096\u0001\u001a\u00030\u0097\u0001H\u0016J&\u0010\u0098\u0001\u001a\u00020R2\u0007\u0010f\u001a\u00030\u0099\u00012\u0007\u0010\u009a\u0001\u001a\u00020u2\t\b\u0002\u0010\u009b\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010\u009c\u0001\u001a\u00020R2\b\u0010\u009d\u0001\u001a\u00030\u009e\u0001H\u0002J\u001b\u0010\u009f\u0001\u001a\u00020R2\u0007\u0010 \u0001\u001a\u00020\u00112\u0007\u0010¡\u0001\u001a\u00020\u0011H\u0002J\t\u0010¢\u0001\u001a\u00020RH\u0002J\u0019\u0010£\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020u2\u0006\u0010U\u001a\u00020\u0006H\u0002J\u0012\u0010¤\u0001\u001a\u00020R2\u0007\u0010¥\u0001\u001a\u000206H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\u00020\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0014\u0010\"\u001a\u00020\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010;\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020=X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\n @*\u0004\u0018\u00010?0?X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010D\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010E\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010G\u001a\u00020H¢\u0006\b\n\u0000\u001a\u0004\bI\u0010JR\u0011\u0010K\u001a\u00020L¢\u0006\b\n\u0000\u001a\u0004\bM\u0010NR\u000e\u0010O\u001a\u00020PX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006¨\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "person", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "getSubInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "getAccessoriesInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "getUpgradesInventoryAdapter", "walletInventoryAdapter", "getWalletInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "getApi", "()Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "setItemBackground", "view", "Landroid/view/View;", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "initObservers", "refreshItemVisibility", "onBackendMessage", "data", "", "getArzWarehouseType", "id", "getRodWarehouseType", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "addAccessPages", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "colorItem", "isColorItem", "changeGuardSubList", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "getUserInfo", "onUpdateData", "value", "", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendGuardData", "fromItem", "toItem", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ò\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u0010\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 ¨\u00012\u00020\u00012\u00020\u0002:\u0004§\u0001¨\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010Q\u001a\u00020RH\u0002J\b\u0010S\u001a\u00020RH\u0002J\u0018\u0010T\u001a\u00020R2\u0006\u0010U\u001a\u00020\u00062\u0006\u0010V\u001a\u00020\u0006H\u0002J\u0010\u0010W\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0013H\u0002J\u0010\u0010Y\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0013H\u0002J\b\u0010Z\u001a\u00020RH\u0002J\b\u0010[\u001a\u00020RH\u0002J\b\u0010\\\u001a\u00020RH\u0002J\b\u0010]\u001a\u00020RH\u0002J\u0010\u0010^\u001a\u00020R2\u0006\u0010X\u001a\u00020\u0011H\u0002J\b\u0010_\u001a\u00020RH\u0002J\b\u0010`\u001a\u00020RH\u0002J\u0016\u0010a\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0016\u0010c\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\b\u0010d\u001a\u00020RH\u0002J\u0018\u0010e\u001a\u00020R2\u0006\u0010f\u001a\u00020g2\u0006\u0010h\u001a\u00020\u0006H\u0002J\b\u0010i\u001a\u00020RH\u0002J\b\u0010j\u001a\u00020RH\u0002J \u0010k\u001a\u00020R2\u0006\u0010l\u001a\u00020\u00062\u0006\u0010m\u001a\u00020\u00062\u0006\u0010n\u001a\u00020\u0006H\u0002J\u0016\u0010o\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020&0\u0010H\u0002J\b\u0010p\u001a\u00020RH\u0002J\b\u0010q\u001a\u00020RH\u0002J\b\u0010r\u001a\u00020RH\u0002J\u0018\u0010s\u001a\u00020R2\u0006\u0010t\u001a\u00020u2\u0006\u0010U\u001a\u00020\u0006H\u0016J\u0010\u0010v\u001a\u00020R2\u0006\u0010w\u001a\u00020\u0006H\u0002J\u0010\u0010x\u001a\u00020R2\u0006\u0010w\u001a\u00020\u0006H\u0002J\b\u0010y\u001a\u00020RH\u0002J\b\u0010z\u001a\u00020RH\u0002J\b\u0010{\u001a\u00020RH\u0002J\u0010\u0010|\u001a\u00020R2\u0006\u0010}\u001a\u00020\u0006H\u0002J\u0010\u0010~\u001a\u00020R2\u0006\u0010}\u001a\u00020\u0006H\u0002J\u0016\u0010\u007f\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00060\u0010H\u0002J\u0017\u0010\u0080\u0001\u001a\u00020R2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0011\u0010\u0081\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020uH\u0002J\u000f\u0010\u0082\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020uJ\u0013\u0010\u0083\u0001\u001a\u00020R2\b\u0010X\u001a\u0004\u0018\u00010\u0011H\u0002J\t\u0010\u0084\u0001\u001a\u00020RH\u0002J\u001a\u0010\u0085\u0001\u001a\t\u0012\u0004\u0012\u00020\u00110\u0086\u00012\b\u0010\u0087\u0001\u001a\u00030\u0088\u0001H\u0002J\u001a\u0010\u0089\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u008a\u0001\u001a\u000206H\u0002J\u0012\u0010\u008b\u0001\u001a\u00020R2\u0007\u0010\u008a\u0001\u001a\u000206H\u0002J\u0012\u0010\u008c\u0001\u001a\u00020R2\u0007\u0010\u008a\u0001\u001a\u000206H\u0002J\u001a\u0010\u008d\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u008a\u0001\u001a\u000206H\u0002J\u0012\u0010\u008e\u0001\u001a\u00020R2\u0007\u0010\u008a\u0001\u001a\u000206H\u0002J\u001a\u0010\u008f\u0001\u001a\u00020R2\u0006\u0010X\u001a\u00020\u00112\u0007\u0010\u008a\u0001\u001a\u000206H\u0002J\u0012\u0010\u0090\u0001\u001a\u00020R2\u0007\u0010\u008a\u0001\u001a\u000206H\u0002J\u0012\u0010\u0091\u0001\u001a\u00020R2\u0007\u0010\u008a\u0001\u001a\u000206H\u0002J\u0013\u0010\u0092\u0001\u001a\u00020R2\b\u0010\u0093\u0001\u001a\u00030\u0094\u0001H\u0002J\t\u0010\u0095\u0001\u001a\u00020RH\u0002J\u001a\u0010\u0096\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020\u00062\u0007\u0010\u0097\u0001\u001a\u00020\u0006H\u0016J\u001b\u0010\u0096\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020\u00062\b\u0010\u0097\u0001\u001a\u00030\u0098\u0001H\u0016J&\u0010\u0099\u0001\u001a\u00020R2\u0007\u0010f\u001a\u00030\u009a\u00012\u0007\u0010\u009b\u0001\u001a\u00020u2\t\b\u0002\u0010\u009c\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010\u009d\u0001\u001a\u00020R2\b\u0010\u009e\u0001\u001a\u00030\u009f\u0001H\u0002J\u001b\u0010 \u0001\u001a\u00020R2\u0007\u0010¡\u0001\u001a\u00020\u00112\u0007\u0010¢\u0001\u001a\u00020\u0011H\u0002J\t\u0010£\u0001\u001a\u00020RH\u0002J\u0019\u0010¤\u0001\u001a\u00020R2\u0006\u0010t\u001a\u00020u2\u0006\u0010U\u001a\u00020\u0006H\u0002J\u0012\u0010¥\u0001\u001a\u00020R2\u0007\u0010¦\u0001\u001a\u000206H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\u00020\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0014\u0010\"\u001a\u00020\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010;\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020=X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\n @*\u0004\u0018\u00010?0?X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010D\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010E\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010G\u001a\u00020H¢\u0006\b\n\u0000\u001a\u0004\bI\u0010JR\u0011\u0010K\u001a\u00020L¢\u0006\b\n\u0000\u001a\u0004\bM\u0010NR\u000e\u0010O\u001a\u00020PX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006©\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "person", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "getSubInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "getAccessoriesInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "getUpgradesInventoryAdapter", "walletInventoryAdapter", "getWalletInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "getApi", "()Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "setItemBackground", "view", "Landroid/view/View;", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "initObservers", "refreshItemVisibility", "onBackendMessage", "data", "", "getArzWarehouseType", "id", "getRodWarehouseType", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "setSkinType", "addAccessPages", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "colorItem", "isColorItem", "changeGuardSubList", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "getUserInfo", "onUpdateData", "value", "", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendGuardData", "fromItem", "toItem", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InventoryScreen extends BaseInventory implements InterfaceController {
     public static final Companion Companion = new Companion(null);
@@ -151,6 +151,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void initClickListeners$lambda$0$5(View view) {
+    }
+
+    private final void setSkinType(String str) {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -1795,8 +1798,11 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                                 if (type == id20) {
                                                                     if (inventoryResponse.getItems().get(0).getSlot() == 0) {
                                                                         this.vehicleVisualList.clear();
+                                                                        this.vehicleVisualList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+                                                                        Unit unit2 = Unit.INSTANCE;
+                                                                    } else {
+                                                                        Boolean.valueOf(this.vehicleVisualList.addAll(editResponseInfo(inventoryResponse)));
                                                                     }
-                                                                    this.vehicleVisualList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
                                                                 }
                                                             }
                                                         }
@@ -1827,6 +1833,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         }
                     }
                 }
+                Log.d(ConstantsKt.INVENTORY_TAG, "type " + inventoryResponse.getType());
                 if (this.isArizonaType && ConstantsKt.getArizonaWarehouseIds().contains(Integer.valueOf(inventoryResponse.getType()))) {
                     if (inventoryResponse.getItems().get(0).getSlot() == 0) {
                         this.warehouseList.clear();
@@ -1836,6 +1843,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     this.currentWarehouse = inventoryResponse.getType();
                     showWarehouseScreen();
                 } else if (!this.isArizonaType && ConstantsKt.getRodinaWarehouseIds().contains(Integer.valueOf(inventoryResponse.getType()))) {
+                    Log.d(ConstantsKt.INVENTORY_TAG, "openTrash");
                     if (inventoryResponse.getItems().get(0).getSlot() == 0) {
                         this.warehouseList.clear();
                     }
@@ -1880,9 +1888,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 z = false;
                             }
                             if (!z) {
-                                r13 = 8;
+                                r14 = 8;
                             }
-                            textView.setVisibility(r13);
+                            textView.setVisibility(r14);
                             this.binding.layoutWarehouse.etStoreMoney.setText(String.valueOf(warehouseMoney.getMoney()));
                             if (this.isArizonaType) {
                                 TextView etStoreMoney2 = this.binding.layoutWarehouse.etStoreMoney;
@@ -2034,7 +2042,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 }
                             }
                         }
-                        Unit unit2 = Unit.INSTANCE;
+                        Unit unit3 = Unit.INSTANCE;
                     }
                     this.mainInventoryAdapter.submitList(CollectionsKt.toList(this.mainInventoryList));
                     for (Number number : arrayList9) {
@@ -2090,7 +2098,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 }
                                 getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
                             }
-                            Unit unit3 = Unit.INSTANCE;
+                            Unit unit4 = Unit.INSTANCE;
                         }
                     } else {
                         if (!this.isArizonaType) {
@@ -2118,7 +2126,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                     BaseInventory.setSubCaseArmorSkinList$default(this, getSubCaseArmorList(), null, 2, null);
                                     this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                 }
-                                Unit unit4 = Unit.INSTANCE;
+                                Unit unit5 = Unit.INSTANCE;
                             }
                         } else {
                             if (!this.isArizonaType) {
@@ -2146,7 +2154,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                         BaseInventory.setSubCaseArmorSkinList$default(this, null, getSubSkinList(), 1, null);
                                         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                     }
-                                    Unit unit5 = Unit.INSTANCE;
+                                    Unit unit6 = Unit.INSTANCE;
                                 }
                             } else if (type3 == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
                                 List<InventoryItem> items17 = inventoryEditResponse2.getItems();
@@ -2172,7 +2180,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                         getSubInventoryAdapter().notifyItemChanged(i6);
                                     }
-                                    Unit unit6 = Unit.INSTANCE;
+                                    Unit unit7 = Unit.INSTANCE;
                                 }
                             } else {
                                 if (!this.isArizonaType) {
@@ -2212,7 +2220,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo2.getAccessoriesList()));
                                                 this.guardSubInventoryAdapter.notifyItemChanged(i7);
                                             }
-                                            Unit unit7 = Unit.INSTANCE;
+                                            Unit unit8 = Unit.INSTANCE;
                                         }
                                     } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
                                         GuardInfo guardInfo3 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
@@ -2240,7 +2248,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo3.getAccessoriesList()));
                                                 this.guardSubInventoryAdapter.notifyItemChanged(i8);
                                             }
-                                            Unit unit8 = Unit.INSTANCE;
+                                            Unit unit9 = Unit.INSTANCE;
                                         }
                                     } else {
                                         if (!this.isArizonaType) {
@@ -2273,7 +2281,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                     this.guardInventoryAdapter.submitList(CollectionsKt.toList(guardInfo4.getInventoryList()));
                                                     this.guardInventoryAdapter.notifyItemChanged(i9);
                                                 }
-                                                Unit unit9 = Unit.INSTANCE;
+                                                Unit unit10 = Unit.INSTANCE;
                                             }
                                         } else {
                                             if (!this.isArizonaType) {
@@ -2303,7 +2311,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                         this.vehicleVisualAdapter.notifyItemChanged(i10);
                                                         this.vehicleVisualAdapter.notifyDataSetChanged();
                                                     }
-                                                    Unit unit10 = Unit.INSTANCE;
+                                                    Unit unit11 = Unit.INSTANCE;
                                                 }
                                             } else {
                                                 if (!this.isArizonaType) {
@@ -2333,7 +2341,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                             this.vehicleTechAdapter.notifyItemChanged(i11);
                                                             this.vehicleTechAdapter.notifyDataSetChanged();
                                                         }
-                                                        Unit unit11 = Unit.INSTANCE;
+                                                        Unit unit12 = Unit.INSTANCE;
                                                     }
                                                 } else {
                                                     if (!this.isArizonaType) {
@@ -2363,7 +2371,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
                                                                 this.vehicleAccessoriesAdapter.notifyItemChanged(i12);
                                                             }
-                                                            Unit unit12 = Unit.INSTANCE;
+                                                            Unit unit13 = Unit.INSTANCE;
                                                         }
                                                     } else if (type3 == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
                                                         if (!this.vehicleSubList.isEmpty() && (items2 = inventoryEditResponse2.getItems()) != null) {
@@ -2386,7 +2394,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
                                                                 this.vehicleAccessoriesAdapter.notifyItemChanged(i13);
                                                             }
-                                                            Unit unit13 = Unit.INSTANCE;
+                                                            Unit unit14 = Unit.INSTANCE;
                                                         }
                                                     } else {
                                                         if (this.isArizonaType) {
@@ -2414,7 +2422,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                                 this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
                                                                 this.vehicleAccessoriesAdapter.notifyItemChanged(i14);
                                                             }
-                                                            Unit unit14 = Unit.INSTANCE;
+                                                            Unit unit15 = Unit.INSTANCE;
                                                         }
                                                     }
                                                 }
@@ -2464,7 +2472,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                 }
                                             }
                                         }
-                                        Unit unit15 = Unit.INSTANCE;
+                                        Unit unit16 = Unit.INSTANCE;
                                     }
                                     getWalletInventoryAdapter().submitList(CollectionsKt.toList(getWalletInventoryList()));
                                 }
@@ -2494,7 +2502,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                             this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
                             this.warehouseAdapter.notifyItemChanged(i16);
                         }
-                        Unit unit16 = Unit.INSTANCE;
+                        Unit unit17 = Unit.INSTANCE;
                     }
                 } else if (!this.isArizonaType && ConstantsKt.getRodinaWarehouseIds().contains(Integer.valueOf(inventoryEditResponse2.getType())) && (items10 = inventoryEditResponse2.getItems()) != null) {
                     for (InventoryItem inventoryItem20 : items10) {
@@ -2516,7 +2524,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         this.warehouseAdapter.submitList(CollectionsKt.toList(this.warehouseList));
                         this.warehouseAdapter.notifyItemChanged(i17);
                     }
-                    Unit unit17 = Unit.INSTANCE;
+                    Unit unit18 = Unit.INSTANCE;
                 }
             } else if (i == 3) {
                 Object fromJson7 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) ShowDialogInfo.class);
@@ -2537,9 +2545,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, 4194047, null);
                     GuardInfo guardInfo5 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                     if (guardInfo5 != null && (id = guardInfo5.getId()) != null) {
-                        r13 = id.intValue();
+                        r14 = id.intValue();
                     }
-                    new SelectorDialog(targetActivity, currentBackendId, copy$default, r13);
+                    new SelectorDialog(targetActivity, currentBackendId, copy$default, r14);
                 }
             } else if (i == 5) {
                 setVisible(true);

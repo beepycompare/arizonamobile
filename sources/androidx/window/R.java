@@ -26,9 +26,9 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int androidx_window_activity_scope = 0x7f0a00d6;
-        public static int locale = 0x7f0a0815;
-        public static int ltr = 0x7f0a0828;
-        public static int rtl = 0x7f0a0bd8;
+        public static int locale = 0x7f0a0817;
+        public static int ltr = 0x7f0a082a;
+        public static int rtl = 0x7f0a0bda;
 
         private id() {
         }

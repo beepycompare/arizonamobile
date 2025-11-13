@@ -25,10 +25,10 @@ public final class R {
     /* loaded from: classes4.dex */
     public static final class drawable {
         public static int dot_background = 0x7f0806ff;
-        public static int spring_dot_background = 0x7f080dff;
-        public static int spring_dot_stroke_background = 0x7f080e00;
-        public static int worm_dot_background = 0x7f080e6c;
-        public static int worm_dot_stroke_background = 0x7f080e6d;
+        public static int spring_dot_background = 0x7f080e04;
+        public static int spring_dot_stroke_background = 0x7f080e05;
+        public static int worm_dot_background = 0x7f080e71;
+        public static int worm_dot_stroke_background = 0x7f080e72;
 
         private drawable() {
         }
@@ -37,8 +37,8 @@ public final class R {
     /* loaded from: classes4.dex */
     public static final class id {
         public static int dot = 0x7f0a0460;
-        public static int spring_dot = 0x7f0a0d05;
-        public static int worm_dot = 0x7f0a0fbf;
+        public static int spring_dot = 0x7f0a0d07;
+        public static int worm_dot = 0x7f0a0fc1;
 
         private id() {
         }
@@ -47,8 +47,8 @@ public final class R {
     /* loaded from: classes4.dex */
     public static final class layout {
         public static int dot_layout = 0x7f0d00af;
-        public static int spring_dot_layout = 0x7f0d0248;
-        public static int worm_dot_layout = 0x7f0d0270;
+        public static int spring_dot_layout = 0x7f0d0249;
+        public static int worm_dot_layout = 0x7f0d0271;
 
         private layout() {
         }

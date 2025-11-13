@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.donate.domain.usecases;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
@@ -10,7 +9,6 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
@@ -166,8 +164,8 @@ public final class DonateGetItemUseCase {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0188, code lost:
-        if (r4 == null) goto L106;
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0185, code lost:
+        if (r4 == null) goto L99;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -176,87 +174,80 @@ public final class DonateGetItemUseCase {
         List<DonateBadgesModel> badges;
         ResultState<List<DonateItemModel>> value = this._itemList.getValue();
         if (value instanceof ResultState.Success) {
-            List mutableList = CollectionsKt.toMutableList((Collection) ((ResultState.Success) value).getData());
-            Iterator it = mutableList.iterator();
-            int i = 0;
-            while (true) {
-                if (!it.hasNext()) {
-                    i = -1;
-                    break;
-                } else if (((DonateItemModel) it.next()).getKey() == donateItemModel.getKey()) {
-                    break;
-                } else {
-                    i++;
-                }
+            ResultState.Success success = (ResultState.Success) value;
+            if (((List) success.getData()).isEmpty()) {
+                this.updatedItem.add(donateItemModel);
+                return Unit.INSTANCE;
             }
-            if (mutableList.isEmpty()) {
-                Boxing.boxBoolean(this.updatedItem.add(donateItemModel));
-            } else if (i != -1) {
-                DonateItemModel donateItemModel2 = (DonateItemModel) mutableList.get(i);
-                int position = donateItemModel.getPosition() > -1 ? donateItemModel.getPosition() : donateItemModel2.getPosition();
-                String name = donateItemModel.getName();
-                if (name.length() == 0) {
-                    name = donateItemModel2.getName();
-                }
-                String str = name;
-                String description = donateItemModel.getDescription();
-                if (description.length() == 0) {
-                    description = donateItemModel2.getDescription();
-                }
-                String str2 = description;
-                int price = donateItemModel.getPrice() > -1 ? donateItemModel.getPrice() : donateItemModel2.getPrice();
-                int priceCurrency = donateItemModel.getPriceCurrency() > -1 ? donateItemModel.getPriceCurrency() : donateItemModel2.getPriceCurrency();
-                int discount = donateItemModel.getDiscount() > 0 ? donateItemModel.getDiscount() : donateItemModel2.getDiscount();
-                int discountPrice = donateItemModel.getDiscountPrice() > 0 ? donateItemModel.getDiscountPrice() : donateItemModel2.getDiscountPrice();
-                int typeTemplate = donateItemModel.getTypeTemplate() > -1 ? donateItemModel.getTypeTemplate() : donateItemModel2.getTypeTemplate();
-                int iconButton = donateItemModel.getIconButton() > -1 ? donateItemModel.getIconButton() : donateItemModel2.getIconButton();
-                int isEnable = donateItemModel.isEnable() > -1 ? donateItemModel.isEnable() : donateItemModel2.isEnable();
-                List<String> colorListButton = donateItemModel.getColorListButton();
-                if (colorListButton.isEmpty()) {
-                    colorListButton = donateItemModel2.getColorListButton();
-                }
-                List<String> list = colorListButton;
-                String titleButton = donateItemModel.getTitleButton();
-                if (titleButton.length() == 0) {
-                    titleButton = donateItemModel2.getTitleButton();
-                }
-                String str3 = titleButton;
-                int image = donateItemModel.getImage() > -1 ? donateItemModel.getImage() : donateItemModel2.getImage();
-                String imageEffect = donateItemModel.getImageEffect();
-                if (imageEffect.length() == 0) {
-                    imageEffect = donateItemModel2.getImageEffect();
-                }
-                String str4 = imageEffect;
-                int backgroundId = donateItemModel.getBackgroundId() > -1 ? donateItemModel.getBackgroundId() : donateItemModel2.getBackgroundId();
-                int leftUnixTime = donateItemModel.getLeftUnixTime() > -1 ? donateItemModel.getLeftUnixTime() : donateItemModel2.getLeftUnixTime();
-                List<DonateBadgesModel> badges2 = donateItemModel.getBadges();
-                if (badges2 != null) {
-                    List<DonateBadgesModel> list2 = badges2;
-                    if (list2.isEmpty()) {
-                        list2 = donateItemModel2.getBadges();
+            Iterable<DonateItemModel> iterable = (Iterable) success.getData();
+            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(iterable, 10));
+            for (DonateItemModel donateItemModel2 : iterable) {
+                if (donateItemModel2.getKey() == donateItemModel.getKey()) {
+                    int position = donateItemModel.getPosition() > -1 ? donateItemModel.getPosition() : donateItemModel2.getPosition();
+                    String name = donateItemModel.getName();
+                    if (name.length() == 0) {
+                        name = donateItemModel2.getName();
                     }
-                    badges = list2;
+                    String str = name;
+                    String description = donateItemModel.getDescription();
+                    if (description.length() == 0) {
+                        description = donateItemModel2.getDescription();
+                    }
+                    String str2 = description;
+                    int price = donateItemModel.getPrice() > -1 ? donateItemModel.getPrice() : donateItemModel2.getPrice();
+                    int priceCurrency = donateItemModel.getPriceCurrency() > -1 ? donateItemModel.getPriceCurrency() : donateItemModel2.getPriceCurrency();
+                    int discount = donateItemModel.getDiscount() > 0 ? donateItemModel.getDiscount() : donateItemModel2.getDiscount();
+                    int discountPrice = donateItemModel.getDiscountPrice() > 0 ? donateItemModel.getDiscountPrice() : donateItemModel2.getDiscountPrice();
+                    int typeTemplate = donateItemModel.getTypeTemplate() > -1 ? donateItemModel.getTypeTemplate() : donateItemModel2.getTypeTemplate();
+                    int iconButton = donateItemModel.getIconButton() > -1 ? donateItemModel.getIconButton() : donateItemModel2.getIconButton();
+                    int isEnable = donateItemModel.isEnable() > -1 ? donateItemModel.isEnable() : donateItemModel2.isEnable();
+                    List<String> colorListButton = donateItemModel.getColorListButton();
+                    if (colorListButton.isEmpty()) {
+                        colorListButton = donateItemModel2.getColorListButton();
+                    }
+                    List<String> list = colorListButton;
+                    String titleButton = donateItemModel.getTitleButton();
+                    if (titleButton.length() == 0) {
+                        titleButton = donateItemModel2.getTitleButton();
+                    }
+                    String str3 = titleButton;
+                    int image = donateItemModel.getImage() > -1 ? donateItemModel.getImage() : donateItemModel2.getImage();
+                    String imageEffect = donateItemModel.getImageEffect();
+                    if (imageEffect.length() == 0) {
+                        imageEffect = donateItemModel2.getImageEffect();
+                    }
+                    String str4 = imageEffect;
+                    int backgroundId = donateItemModel.getBackgroundId() > -1 ? donateItemModel.getBackgroundId() : donateItemModel2.getBackgroundId();
+                    int leftUnixTime = donateItemModel.getLeftUnixTime() > -1 ? donateItemModel.getLeftUnixTime() : donateItemModel2.getLeftUnixTime();
+                    List<DonateBadgesModel> badges2 = donateItemModel.getBadges();
+                    if (badges2 != null) {
+                        List<DonateBadgesModel> list2 = badges2;
+                        if (list2.isEmpty()) {
+                            list2 = donateItemModel2.getBadges();
+                        }
+                        badges = list2;
+                    }
+                    badges = donateItemModel2.getBadges();
+                    List<DonateBadgesModel> list3 = badges;
+                    int animation = donateItemModel.getAnimation() > -1 ? donateItemModel.getAnimation() : donateItemModel2.getAnimation();
+                    List<String> textGradientColor = donateItemModel.getTextGradientColor();
+                    if (textGradientColor.isEmpty()) {
+                        textGradientColor = donateItemModel2.getTextGradientColor();
+                    }
+                    List<String> list4 = textGradientColor;
+                    int totalEarnings = donateItemModel.getTotalEarnings() > -1 ? donateItemModel.getTotalEarnings() : donateItemModel2.getTotalEarnings();
+                    int gifId = donateItemModel.getGifId() > -1 ? donateItemModel.getGifId() : donateItemModel2.getGifId();
+                    int blockedType = donateItemModel.getBlockedType() > -1 ? donateItemModel.getBlockedType() : donateItemModel2.getBlockedType();
+                    String blockedReason = donateItemModel.getBlockedReason();
+                    if (blockedReason.length() == 0) {
+                        blockedReason = donateItemModel2.getBlockedReason();
+                    }
+                    donateItemModel2 = DonateItemModel.copy$default(donateItemModel2, 0, position, str, str2, price, priceCurrency, 0, typeTemplate, iconButton, isEnable, list, str3, image, str4, discount, backgroundId, discountPrice, list3, blockedType, blockedReason, leftUnixTime, donateItemModel.getVisible() > -1 ? donateItemModel.getVisible() : donateItemModel2.getVisible(), animation, list4, totalEarnings, gifId, 0, 67108929, null);
                 }
-                badges = donateItemModel2.getBadges();
-                List<DonateBadgesModel> list3 = badges;
-                int animation = donateItemModel.getAnimation() > -1 ? donateItemModel.getAnimation() : donateItemModel2.getAnimation();
-                List<String> textGradientColor = donateItemModel.getTextGradientColor();
-                if (textGradientColor.isEmpty()) {
-                    textGradientColor = donateItemModel2.getTextGradientColor();
-                }
-                List<String> list4 = textGradientColor;
-                int totalEarnings = donateItemModel.getTotalEarnings() > -1 ? donateItemModel.getTotalEarnings() : donateItemModel2.getTotalEarnings();
-                int gifId = donateItemModel.getGifId() > -1 ? donateItemModel.getGifId() : donateItemModel2.getGifId();
-                int blockedType = donateItemModel.getBlockedType() > -1 ? donateItemModel.getBlockedType() : donateItemModel2.getBlockedType();
-                String blockedReason = donateItemModel.getBlockedReason();
-                if (blockedReason.length() == 0) {
-                    blockedReason = donateItemModel2.getBlockedReason();
-                }
-                mutableList.set(i, DonateItemModel.copy$default(donateItemModel2, 0, position, str, str2, price, priceCurrency, 0, typeTemplate, iconButton, isEnable, list, str3, image, str4, discount, backgroundId, discountPrice, list3, blockedType, blockedReason, leftUnixTime, donateItemModel.getVisible() > -1 ? donateItemModel.getVisible() : donateItemModel2.getVisible(), animation, list4, totalEarnings, gifId, 0, 67108929, null));
-                Object emit = this._itemList.emit(new ResultState.Success(mutableList), continuation);
-                return emit == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? emit : Unit.INSTANCE;
+                arrayList.add(donateItemModel2);
             }
-            return Unit.INSTANCE;
+            Object emit = this._itemList.emit(new ResultState.Success(arrayList), continuation);
+            return emit == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? emit : Unit.INSTANCE;
         }
         return Unit.INSTANCE;
     }

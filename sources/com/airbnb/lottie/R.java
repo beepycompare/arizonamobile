@@ -38,11 +38,11 @@ public final class R {
         public static int automatic = 0x7f0a013b;
         public static int disabled = 0x7f0a0417;
         public static int enabled = 0x7f0a04b7;
-        public static int hardware = 0x7f0a063b;
-        public static int lottie_layer_name = 0x7f0a0827;
-        public static int restart = 0x7f0a0b39;
-        public static int reverse = 0x7f0a0b40;
-        public static int software = 0x7f0a0cd5;
+        public static int hardware = 0x7f0a063c;
+        public static int lottie_layer_name = 0x7f0a0829;
+        public static int restart = 0x7f0a0b3b;
+        public static int reverse = 0x7f0a0b42;
+        public static int software = 0x7f0a0cd7;
 
         private id() {
         }

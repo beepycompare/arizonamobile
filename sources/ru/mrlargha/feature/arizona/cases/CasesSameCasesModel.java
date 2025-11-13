@@ -138,7 +138,7 @@ public final class CasesSameCasesModel {
     }
 
     /* renamed from: getCurrency  reason: collision with other method in class */
-    public final CasesCurrencyType m12065getCurrency() {
+    public final CasesCurrencyType m12062getCurrency() {
         Object obj;
         Iterator<E> it = CasesCurrencyType.getEntries().iterator();
         while (true) {

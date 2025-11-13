@@ -131,17 +131,23 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
             return "";
         }
         try {
-            return CollectionsKt.joinToString$default(this.rows.get(i), "\t", null, null, 0, null, new Function1() { // from class: ru.mrlargha.commonui.elements.dialogs.table.DialogTableAdapter$$ExternalSyntheticLambda0
-                @Override // kotlin.jvm.functions.Function1
-                public final Object invoke(Object obj) {
-                    CharSequence selectedRowText$lambda$0;
-                    selectedRowText$lambda$0 = DialogTableAdapter.getSelectedRowText$lambda$0((TableCell) obj);
-                    return selectedRowText$lambda$0;
+            List list = (List) CollectionsKt.getOrNull(this.rows, i);
+            if (list != null) {
+                String joinToString$default = CollectionsKt.joinToString$default(list, "\t", null, null, 0, null, new Function1() { // from class: ru.mrlargha.commonui.elements.dialogs.table.DialogTableAdapter$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        CharSequence selectedRowText$lambda$0;
+                        selectedRowText$lambda$0 = DialogTableAdapter.getSelectedRowText$lambda$0((TableCell) obj);
+                        return selectedRowText$lambda$0;
+                    }
+                }, 30, null);
+                if (joinToString$default != null) {
+                    return joinToString$default;
                 }
-            }, 30, null);
+            }
         } catch (ArrayIndexOutOfBoundsException unused) {
-            return "";
         }
+        return "";
     }
 
     /* JADX INFO: Access modifiers changed from: private */

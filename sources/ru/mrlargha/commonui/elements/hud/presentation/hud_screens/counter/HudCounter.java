@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -18,7 +19,6 @@ import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
-import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
@@ -32,7 +32,6 @@ import ru.mrlargha.commonui.databinding.HudTaximeterStopwatchBinding;
 import ru.mrlargha.commonui.elements.hud.presentation.TypeTaximeter;
 import ru.mrlargha.commonui.elements.hud.presentation.TypeTaximeterValue;
 import ru.mrlargha.commonui.elements.hud.presentation.models.TaximeterModel;
-import ru.mrlargha.commonui.utils.ConverterKt;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: HudCounter.kt */
@@ -182,19 +181,23 @@ public final class HudCounter {
                 iArr2[TypeTaximeter.GHOSTS.ordinal()] = 28;
             } catch (NoSuchFieldError unused30) {
             }
+            try {
+                iArr2[TypeTaximeter.FRANCLIN_STEIN.ordinal()] = 29;
+            } catch (NoSuchFieldError unused31) {
+            }
             $EnumSwitchMapping$1 = iArr2;
             int[] iArr3 = new int[HudCounterItemType.values().length];
             try {
                 iArr3[HudCounterItemType.SIMPLE_TEXT.ordinal()] = 1;
-            } catch (NoSuchFieldError unused31) {
-            }
-            try {
-                iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
             } catch (NoSuchFieldError unused32) {
             }
             try {
-                iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
+                iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
             } catch (NoSuchFieldError unused33) {
+            }
+            try {
+                iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused34) {
             }
             $EnumSwitchMapping$2 = iArr3;
         }
@@ -249,9 +252,9 @@ public final class HudCounter {
         hudTaximeterBinding.getRoot().setVisibility(0);
     }
 
-    public final Object setTaximeterCounterType(final String data, boolean z) {
+    public final Object setTaximeterCounterType(String data, boolean z) {
         Intrinsics.checkNotNullParameter(data, "data");
-        final HudTaximeterBinding hudTaximeterBinding = this.binding;
+        HudTaximeterBinding hudTaximeterBinding = this.binding;
         Context context = hudTaximeterBinding.getRoot().getContext();
         Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
         if (UtilsKt.getArizonaType(context)) {
@@ -266,62 +269,38 @@ public final class HudCounter {
                 textView.setText(data);
                 return Unit.INSTANCE;
             }
-            return new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$$ExternalSyntheticLambda0
-                @Override // kotlin.jvm.functions.Function0
-                public final Object invoke() {
-                    List taximeterCounterType$lambda$0$1;
-                    taximeterCounterType$lambda$0$1 = HudCounter.setTaximeterCounterType$lambda$0$1(HudTaximeterBinding.this, data, this);
-                    return taximeterCounterType$lambda$0$1;
-                }
-            };
+            String str = data;
+            hudTaximeterBinding.hudTaximeterLayoutContainer.tvTaximeterTime.setText(str);
+            hudTaximeterBinding.hudTaximeterArmySecond.tvArmySecondTimer.setText(str);
+            HudCounterItemBinding firstItem = this.binding.counter.firstItem;
+            Intrinsics.checkNotNullExpressionValue(firstItem, "firstItem");
+            List<TextView> counterTextList = getCounterTextList(firstItem);
+            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(counterTextList, 10));
+            for (TextView textView2 : counterTextList) {
+                textView2.setText(str);
+                arrayList.add(Unit.INSTANCE);
+            }
+            return arrayList;
         }
-        TextView textView2 = this.firstTextView;
-        if (textView2 != null) {
-            textView2.setText(UtilsKt.formatTime(Long.parseLong(data) * 1000));
+        TextView textView3 = this.firstTextView;
+        if (textView3 != null) {
+            textView3.setText(UtilsKt.formatTime(Long.parseLong(data) * 1000));
             return Unit.INSTANCE;
         }
-        return new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$$ExternalSyntheticLambda1
-            @Override // kotlin.jvm.functions.Function0
-            public final Object invoke() {
-                List taximeterCounterType$lambda$0$3;
-                taximeterCounterType$lambda$0$3 = HudCounter.setTaximeterCounterType$lambda$0$3(HudTaximeterBinding.this, data, this);
-                return taximeterCounterType$lambda$0$3;
-            }
-        };
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List setTaximeterCounterType$lambda$0$1(HudTaximeterBinding hudTaximeterBinding, String str, HudCounter hudCounter) {
-        String str2 = str;
-        hudTaximeterBinding.hudTaximeterLayoutContainer.tvTaximeterTime.setText(str2);
-        hudTaximeterBinding.hudTaximeterArmySecond.tvArmySecondTimer.setText(str2);
-        HudCounterItemBinding firstItem = hudCounter.binding.counter.firstItem;
-        Intrinsics.checkNotNullExpressionValue(firstItem, "firstItem");
-        List<TextView> counterTextList = hudCounter.getCounterTextList(firstItem);
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(counterTextList, 10));
-        for (TextView textView : counterTextList) {
-            textView.setText(str2);
-            arrayList.add(Unit.INSTANCE);
+        hudTaximeterBinding.hudTaximeterLayoutContainer.tvTaximeterTime.setText(UtilsKt.formatTime(Long.parseLong(data) * 1000));
+        hudTaximeterBinding.hudTaximeterArmySecond.tvArmySecondTimer.setText(UtilsKt.formatTime(Long.parseLong(data) * 1000));
+        HudCounterItemBinding firstItem2 = this.binding.counter.firstItem;
+        Intrinsics.checkNotNullExpressionValue(firstItem2, "firstItem");
+        List<TextView> counterTextList2 = getCounterTextList(firstItem2);
+        ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(counterTextList2, 10));
+        for (TextView textView4 : counterTextList2) {
+            textView4.setText(UtilsKt.formatTime(Long.parseLong(data) * 1000));
+            arrayList2.add(Unit.INSTANCE);
         }
-        return arrayList;
+        return arrayList2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List setTaximeterCounterType$lambda$0$3(HudTaximeterBinding hudTaximeterBinding, String str, HudCounter hudCounter) {
-        hudTaximeterBinding.hudTaximeterLayoutContainer.tvTaximeterTime.setText(UtilsKt.formatTime(Long.parseLong(str) * 1000));
-        hudTaximeterBinding.hudTaximeterArmySecond.tvArmySecondTimer.setText(UtilsKt.formatTime(Long.parseLong(str) * 1000));
-        HudCounterItemBinding firstItem = hudCounter.binding.counter.firstItem;
-        Intrinsics.checkNotNullExpressionValue(firstItem, "firstItem");
-        List<TextView> counterTextList = hudCounter.getCounterTextList(firstItem);
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(counterTextList, 10));
-        for (TextView textView : counterTextList) {
-            textView.setText(UtilsKt.formatTime(Long.parseLong(str) * 1000));
-            arrayList.add(Unit.INSTANCE);
-        }
-        return arrayList;
-    }
-
-    private final CountDownTimer startTaxiTimerCountdown(final int i) {
+    private final CountDownTimer startTaxiTimerCountdown(int i) {
         final HudTaximeterBinding hudTaximeterBinding = this.binding;
         CountDownTimer countDownTimer = null;
         if (this.isRunningTaxiTimer) {
@@ -333,20 +312,35 @@ public final class HudCounter {
             }
             countDownTimer2.cancel();
         }
-        long j = i * 1000;
-        this.taximeterTimer = new HudCounter$startTaxiTimerCountdown$1$1(this, hudTaximeterBinding, j);
+        final long j = i * 1000;
+        this.taximeterTimer = new CountDownTimer(j) { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$startTaxiTimerCountdown$1$1
+            @Override // android.os.CountDownTimer
+            public void onTick(long j2) {
+                TextView textView;
+                Log.d("taximeter", "onTickDownTick: " + UtilsKt.formatTime(j2));
+                textView = HudCounter.this.firstTextView;
+                if (textView != null) {
+                    textView.setText(UtilsKt.formatTime(j2));
+                    return;
+                }
+                HudTaximeterBinding hudTaximeterBinding2 = hudTaximeterBinding;
+                hudTaximeterBinding2.hudTaximeterLayoutContainer.tvTaximeterTime.setText(UtilsKt.formatTime(j2));
+                hudTaximeterBinding2.hudTaximeterArmySecond.tvArmySecondTimer.setText(UtilsKt.formatTime(j2));
+                hudTaximeterBinding2.counter.firstItem.tvSimpleTime.setText(UtilsKt.formatTime(j2));
+            }
+
+            @Override // android.os.CountDownTimer
+            public void onFinish() {
+                HudCounter.this.isRunningTaxiTimer = false;
+            }
+        };
         TextView textView = this.firstTextView;
         if (textView != null) {
             textView.setText(UtilsKt.formatTime(j));
         } else {
-            new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$$ExternalSyntheticLambda4
-                @Override // kotlin.jvm.functions.Function0
-                public final Object invoke() {
-                    Unit startTaxiTimerCountdown$lambda$0$1;
-                    startTaxiTimerCountdown$lambda$0$1 = HudCounter.startTaxiTimerCountdown$lambda$0$1(HudTaximeterBinding.this, i);
-                    return startTaxiTimerCountdown$lambda$0$1;
-                }
-            };
+            hudTaximeterBinding.hudTaximeterLayoutContainer.tvTaximeterTime.setText(UtilsKt.formatTime(j));
+            hudTaximeterBinding.hudTaximeterArmySecond.tvArmySecondTimer.setText(UtilsKt.formatTime(j));
+            hudTaximeterBinding.counter.firstItem.tvSimpleTime.setText(UtilsKt.formatTime(j));
         }
         this.isRunningTaxiTimer = true;
         CountDownTimer countDownTimer3 = this.taximeterTimer;
@@ -358,17 +352,8 @@ public final class HudCounter {
         return countDownTimer.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit startTaxiTimerCountdown$lambda$0$1(HudTaximeterBinding hudTaximeterBinding, int i) {
-        long j = i * 1000;
-        hudTaximeterBinding.hudTaximeterLayoutContainer.tvTaximeterTime.setText(UtilsKt.formatTime(j));
-        hudTaximeterBinding.hudTaximeterArmySecond.tvArmySecondTimer.setText(UtilsKt.formatTime(j));
-        hudTaximeterBinding.counter.firstItem.tvSimpleTime.setText(UtilsKt.formatTime(j));
-        return Unit.INSTANCE;
-    }
-
     private final CountDownTimer startTaxiTimerCountUp(int i) {
-        HudTaximeterBinding hudTaximeterBinding = this.binding;
+        final HudTaximeterBinding hudTaximeterBinding = this.binding;
         CountDownTimer countDownTimer = null;
         if (this.isRunningTaxiTimer) {
             this.isRunningTaxiTimer = false;
@@ -379,9 +364,48 @@ public final class HudCounter {
             }
             countDownTimer2.cancel();
         }
-        Ref.IntRef intRef = new Ref.IntRef();
+        final Ref.IntRef intRef = new Ref.IntRef();
         intRef.element = RangesKt.coerceAtMost(i, 3599);
-        this.taximeterTimer = new HudCounter$startTaxiTimerCountUp$1$1(intRef, 3599, this, hudTaximeterBinding, (3600 - intRef.element) * 1000);
+        final long j = (3600 - intRef.element) * 1000;
+        this.taximeterTimer = new CountDownTimer(j) { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$startTaxiTimerCountUp$1$1
+            @Override // android.os.CountDownTimer
+            public void onTick(long j2) {
+                TextView textView;
+                if (Ref.IntRef.this.element >= r2) {
+                    onFinish();
+                    return;
+                }
+                String formatTime = UtilsKt.formatTime(Ref.IntRef.this.element * 1000);
+                textView = this.firstTextView;
+                if (textView != null) {
+                    textView.setText(formatTime);
+                } else {
+                    HudTaximeterBinding hudTaximeterBinding2 = hudTaximeterBinding;
+                    String str = formatTime;
+                    hudTaximeterBinding2.hudTaximeterLayoutContainer.tvTaximeterTime.setText(str);
+                    hudTaximeterBinding2.hudTaximeterArmySecond.tvArmySecondTimer.setText(str);
+                    hudTaximeterBinding2.counter.firstItem.tvSimpleTime.setText(str);
+                }
+                Ref.IntRef.this.element++;
+            }
+
+            @Override // android.os.CountDownTimer
+            public void onFinish() {
+                TextView textView;
+                this.isRunningTaxiTimer = false;
+                String formatTime = UtilsKt.formatTime(Ref.IntRef.this.element * 1000);
+                textView = this.firstTextView;
+                if (textView != null) {
+                    textView.setText(formatTime);
+                    return;
+                }
+                HudTaximeterBinding hudTaximeterBinding2 = hudTaximeterBinding;
+                String str = formatTime;
+                hudTaximeterBinding2.hudTaximeterLayoutContainer.tvTaximeterTime.setText(str);
+                hudTaximeterBinding2.hudTaximeterArmySecond.tvArmySecondTimer.setText(str);
+                hudTaximeterBinding2.counter.firstItem.tvSimpleTime.setText(str);
+            }
+        };
         String formatTime = UtilsKt.formatTime(intRef.element * 1000);
         hudTaximeterBinding.hudTaximeterLayoutContainer.tvTaximeterTime.setText(formatTime);
         hudTaximeterBinding.hudTaximeterArmySecond.tvArmySecondTimer.setText(formatTime);
@@ -409,45 +433,25 @@ public final class HudCounter {
         hudTaximeterBinding.hudTaximeterArmySecond.tvArmySecondTimer.setText(UtilsKt.formatTime(j));
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v6, types: [T, java.lang.String] */
     public final Object setTaxiPrice(String text) {
         Intrinsics.checkNotNullParameter(text, "text");
-        final HudTaximeterContainerBinding hudTaximeterContainerBinding = this.binding.hudTaximeterLayoutContainer;
-        final HudCounterItemBinding secondItem = this.binding.counter.secondItem;
+        HudTaximeterContainerBinding hudTaximeterContainerBinding = this.binding.hudTaximeterLayoutContainer;
+        HudCounterItemBinding secondItem = this.binding.counter.secondItem;
         Intrinsics.checkNotNullExpressionValue(secondItem, "secondItem");
-        final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.element = text;
-        int i = WhenMappings.$EnumSwitchMapping$0[this.typeTaximeterValue.ordinal()];
-        if (i == 1) {
-            objectRef.element = text;
-        } else if (i == 2) {
-            objectRef.element = text + "%";
-        } else {
-            objectRef.element = text;
+        if (WhenMappings.$EnumSwitchMapping$0[this.typeTaximeterValue.ordinal()] == 2) {
+            text = text + "%";
         }
         TextView textView = this.secondTextView;
         if (textView != null) {
-            textView.setText((CharSequence) objectRef.element);
+            textView.setText(text);
             return Unit.INSTANCE;
         }
-        return new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$$ExternalSyntheticLambda2
-            @Override // kotlin.jvm.functions.Function0
-            public final Object invoke() {
-                List taxiPrice$lambda$0$1;
-                taxiPrice$lambda$0$1 = HudCounter.setTaxiPrice$lambda$0$1(HudTaximeterContainerBinding.this, objectRef, this, secondItem);
-                return taxiPrice$lambda$0$1;
-            }
-        };
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List setTaxiPrice$lambda$0$1(HudTaximeterContainerBinding hudTaximeterContainerBinding, Ref.ObjectRef objectRef, HudCounter hudCounter, HudCounterItemBinding hudCounterItemBinding) {
-        hudTaximeterContainerBinding.tvTaximeterSum.setText((CharSequence) objectRef.element);
-        List<TextView> counterTextList = hudCounter.getCounterTextList(hudCounterItemBinding);
+        String str = text;
+        hudTaximeterContainerBinding.tvTaximeterSum.setText(str);
+        List<TextView> counterTextList = getCounterTextList(secondItem);
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(counterTextList, 10));
-        for (TextView textView : counterTextList) {
-            textView.setText((CharSequence) objectRef.element);
+        for (TextView textView2 : counterTextList) {
+            textView2.setText(str);
             arrayList.add(Unit.INSTANCE);
         }
         return arrayList;
@@ -468,7 +472,7 @@ public final class HudCounter {
         Intrinsics.checkNotNullExpressionValue(ivDopIcon, "ivDopIcon");
         ivDopIcon.setVisibility(8);
         TypeTaximeter valueOf = TypeTaximeter.Companion.valueOf(i);
-        hudTaximeterContainerBinding3.btnNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$$ExternalSyntheticLambda3
+        hudTaximeterContainerBinding3.btnNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 HudCounter.setTaximeterType$lambda$0$0$0(HudCounter.this, view);
@@ -486,6 +490,8 @@ public final class HudCounter {
         FrameLayout root4 = hudTaximeterBinding.counter.getRoot();
         Intrinsics.checkNotNullExpressionValue(root4, "getRoot(...)");
         root4.setVisibility(8);
+        this.firstTextView = null;
+        this.secondTextView = null;
         switch (WhenMappings.$EnumSwitchMapping$1[valueOf.ordinal()]) {
             case 1:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
@@ -703,6 +709,11 @@ public final class HudCounter {
                 this.firstTextView = hudTaximeterBinding.ghosts.tvFirst;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
+            case 29:
+                setVisible(valueOf);
+                this.secondTextView = hudTaximeterBinding.franclinStein.tvSecond;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
             default:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
@@ -730,15 +741,7 @@ public final class HudCounter {
         root.setVisibility(0);
         Context context = hudTaximeterContainerBinding.getRoot().getContext();
         hudTaximeterContainerBinding.priseTimeContainer.setImageResource(num != null ? num.intValue() : R.drawable.bg_taximeter);
-        if (z) {
-            TextView textView = hudTaximeterContainerBinding.tvTaximeterSumTitle;
-            Intrinsics.checkNotNull(context);
-            textView.setTextSize(ConverterKt.pxToDp(20.0f, context));
-        } else {
-            TextView textView2 = hudTaximeterContainerBinding.tvTaximeterSumTitle;
-            Intrinsics.checkNotNull(context);
-            textView2.setTextSize(ConverterKt.pxToDp(15.0f, context));
-        }
+        hudTaximeterContainerBinding.tvTaximeterSumTitle.setTextSize(0, context.getResources().getDimension(z ? R.dimen._6sdp : R.dimen._5sdp));
         Typeface font = ResourcesCompat.getFont(context, i3);
         hudTaximeterContainerBinding.tvTaximeterTime.setTypeface(font);
         hudTaximeterContainerBinding.tvTaximeterSum.setTypeface(font);
@@ -984,5 +987,8 @@ public final class HudCounter {
         FrameLayout root12 = hudTaximeterBinding.ghosts.getRoot();
         Intrinsics.checkNotNullExpressionValue(root12, "getRoot(...)");
         root12.setVisibility(typeTaximeter == TypeTaximeter.GHOSTS ? 0 : 8);
+        LinearLayout root13 = hudTaximeterBinding.franclinStein.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root13, "getRoot(...)");
+        root13.setVisibility(typeTaximeter == TypeTaximeter.FRANCLIN_STEIN ? 0 : 8);
     }
 }

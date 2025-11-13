@@ -411,7 +411,7 @@ public final class FloatingActionButtonKt {
     /* JADX WARN: Removed duplicated region for block: B:95:0x010e  */
     /* JADX WARN: Removed duplicated region for block: B:98:0x0116  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x0119  */
-    /* JADX WARN: Type inference failed for: r10v4, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r10v4, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r10v5 */
     /* JADX WARN: Type inference failed for: r10v6 */
     /* renamed from: FloatingActionButton-lF-WlFE  reason: not valid java name */

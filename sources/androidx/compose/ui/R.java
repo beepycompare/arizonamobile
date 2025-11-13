@@ -48,9 +48,9 @@ public final class R {
         public static int androidx_compose_ui_view_composition_context = 0x7f0a00d5;
         public static int compose_view_saveable_id_tag = 0x7f0a0380;
         public static int consume_window_insets_tag = 0x7f0a0387;
-        public static int hide_in_inspector_tag = 0x7f0a064e;
-        public static int inspection_slot_table_set = 0x7f0a06f5;
-        public static int wrapped_composition_tag = 0x7f0a0fc3;
+        public static int hide_in_inspector_tag = 0x7f0a064f;
+        public static int inspection_slot_table_set = 0x7f0a06f6;
+        public static int wrapped_composition_tag = 0x7f0a0fc5;
 
         private id() {
         }

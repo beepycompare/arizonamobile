@@ -12,4 +12,5 @@
     <include android:id="@+id/halloween_coins" android:visibility="gone" layout="@layout/hud_counter_halloween_coins"/>
     <include android:id="@+id/lord_rigns" android:visibility="gone" layout="@layout/hud_counter_lord_rings"/>
     <include android:id="@+id/ghosts" android:visibility="gone" layout="@layout/hud_counter_ghosts"/>
+    <include android:id="@+id/franclin_stein" android:visibility="gone" layout="@layout/hud_counter_franclin_stein"/>
 </FrameLayout>

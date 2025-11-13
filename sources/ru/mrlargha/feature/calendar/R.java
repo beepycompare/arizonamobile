@@ -28,7 +28,7 @@ public final class R {
         public static int daily_rewards_prize_ic = 0x7f08061c;
         public static int daily_rewards_tip_container_bg = 0x7f08061d;
         public static int daily_rewerd_item_get_bg = 0x7f08061e;
-        public static int new_year_reward_bg = 0x7f080bd8;
+        public static int new_year_reward_bg = 0x7f080bdd;
 
         private drawable() {
         }
@@ -42,28 +42,28 @@ public final class R {
         public static int description = 0x7f0a03f6;
         public static int done_container = 0x7f0a045c;
         public static int exit_button = 0x7f0a04dc;
-        public static int get_button = 0x7f0a0573;
-        public static int get_button_text = 0x7f0a0574;
-        public static int info_ic = 0x7f0a06e4;
-        public static int left_line = 0x7f0a07db;
-        public static int main_container = 0x7f0a0832;
-        public static int prize_ic = 0x7f0a0a86;
-        public static int rc_bottom_line = 0x7f0a0ae4;
-        public static int rc_top_line = 0x7f0a0ae6;
-        public static int reward_count = 0x7f0a0b43;
-        public static int reward_count_container = 0x7f0a0b44;
-        public static int reward_description = 0x7f0a0b45;
-        public static int reward_ic = 0x7f0a0b46;
-        public static int reward_item = 0x7f0a0b47;
-        public static int reward_name = 0x7f0a0b48;
-        public static int rewards_rc = 0x7f0a0b4b;
-        public static int right_line = 0x7f0a0b64;
-        public static int time_pgb = 0x7f0a0e07;
-        public static int tip_container = 0x7f0a0e14;
-        public static int title = 0x7f0a0e15;
-        public static int top_line = 0x7f0a0e36;
-        public static int top_prize_ic_line = 0x7f0a0e38;
-        public static int tv_tips = 0x7f0a0f3c;
+        public static int get_button = 0x7f0a0574;
+        public static int get_button_text = 0x7f0a0575;
+        public static int info_ic = 0x7f0a06e5;
+        public static int left_line = 0x7f0a07dd;
+        public static int main_container = 0x7f0a0834;
+        public static int prize_ic = 0x7f0a0a88;
+        public static int rc_bottom_line = 0x7f0a0ae6;
+        public static int rc_top_line = 0x7f0a0ae8;
+        public static int reward_count = 0x7f0a0b45;
+        public static int reward_count_container = 0x7f0a0b46;
+        public static int reward_description = 0x7f0a0b47;
+        public static int reward_ic = 0x7f0a0b48;
+        public static int reward_item = 0x7f0a0b49;
+        public static int reward_name = 0x7f0a0b4a;
+        public static int rewards_rc = 0x7f0a0b4d;
+        public static int right_line = 0x7f0a0b66;
+        public static int time_pgb = 0x7f0a0e09;
+        public static int tip_container = 0x7f0a0e16;
+        public static int title = 0x7f0a0e17;
+        public static int top_line = 0x7f0a0e38;
+        public static int top_prize_ic_line = 0x7f0a0e3a;
+        public static int tv_tips = 0x7f0a0f3e;
 
         private id() {
         }
