@@ -6,6 +6,6 @@ public final class BuildConfig {
     public static final boolean DEBUG = false;
     public static final String FLAVOR = "arizona";
     public static final boolean IS_ARIZONA = true;
-    public static final int VERSION_CODE = 1675;
-    public static final String VERSION_NAME = "v16.7.5";
+    public static final int VERSION_CODE = 1677;
+    public static final String VERSION_NAME = "v16.7.7";
 }
