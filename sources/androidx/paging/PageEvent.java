@@ -39,7 +39,14 @@ public abstract class PageEvent<T> {
         jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.paging.PageEvent.flatMap$suspendImpl(androidx.paging.PageEvent<T>, kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super java.lang.Iterable<? extends R>>, ? extends java.lang.Object>, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>>):java.lang.Object
         	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
         	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-        Caused by: java.lang.NullPointerException
+        Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
+        	... 1 more
         */
     public <R> java.lang.Object flatMap(kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super java.lang.Iterable<? extends R>>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
@@ -54,7 +61,14 @@ public abstract class PageEvent<T> {
         jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.paging.PageEvent.map$suspendImpl(androidx.paging.PageEvent<T>, kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super R>, ? extends java.lang.Object>, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>>):java.lang.Object
         	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
         	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-        Caused by: java.lang.NullPointerException
+        Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
+        	... 1 more
         */
     public <R> java.lang.Object map(kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super R>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
@@ -1320,7 +1334,13 @@ public abstract class PageEvent<T> {
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException
+        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
         */
     static /* synthetic */ <T, R> java.lang.Object map$suspendImpl(androidx.paging.PageEvent<T> r0, kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super R>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
@@ -1332,7 +1352,13 @@ public abstract class PageEvent<T> {
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException
+        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
         */
     static /* synthetic */ <T, R> java.lang.Object flatMap$suspendImpl(androidx.paging.PageEvent<T> r0, kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super java.lang.Iterable<? extends R>>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
